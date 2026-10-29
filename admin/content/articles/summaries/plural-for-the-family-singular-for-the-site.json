@@ -1,0 +1,71 @@
+{
+ "slug": "plural-for-the-family-singular-for-the-site",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "The AWS site is aws.twin.sgit.ai, and every family follows one rule: plural hub, singular instance.",
+   "para": "aws.twin.sgit.ai is a twin first: an AWS-shaped interface on a vault, with the live account as a second backend, like the S3 container twin. Every family now follows one rule, plural for the hub and singular for the instance. Four hosts break it, three providers and a game. On GitHub Pages no wildcard certificate is needed.",
+   "hash": "75a3668588cd"
+  },
+  "in-short": {
+   "line": "Seven lines: the name, why a twin, the pattern, the rule, repositories, four exceptions, a correction.",
+   "para": "The AWS site is aws.twin.sgit.ai, with repository Twin__AWS and hub twins.sgit.ai, because it is a twin first, like the S3 container. Plural is the family, singular the instance, and repositories use the singular family name. Four hosts break it today. And on GitHub Pages each host gets its own certificate, so no wildcard is needed.",
+   "hash": "e47d6c3991a1"
+  },
+  "decision": {
+   "line": "The name: aws.twin.sgit.ai, repository SGit-AI__Website__Twin__AWS, hub twins.sgit.ai.",
+   "para": "The site proposed in AWS from the vault is aws.twin.sgit.ai, its repository follows the shape of Hook__Tokens, and its hub is twins.sgit.ai. The repository was created this morning and the host already resolves.",
+   "hash": "edb8804e1c67"
+  },
+  "twin-first": {
+   "line": "Twin first: build the interface on a vault, then put the live account in front as a backend.",
+   "para": "An AWS-shaped interface for S3, Lambda, EC2, IAM, billing and logs, backed by a vault; then a temporary Identity Center session as a second backend; and code written against the interface works on both. It repeats the S3 container, which boto3 cannot tell from S3. It allows credential-free development, rehearsed deployments, comparable snapshots and an account graph.",
+   "hash": "fff2ef0dbc01"
+  },
+  "options": {
+   "line": "Rejected: aws.sgit.ai, aws.platform.sgit.ai and aws.provider.sgit.ai, and why.",
+   "para": "aws.sgit.ai loses the twin-first framing at the core of the design. aws.platform.sgit.ai names nothing in the estate, a namespace with one occupant. aws.provider.sgit.ai is wrong because provider sites are reports, not tools; a companion report may come later.",
+   "hash": "eb14d77d501e"
+  },
+  "convention": {
+   "line": "Plural is the hub, singular the instance; repositories use the singular family name.",
+   "para": "twins, hooks and providers are hubs; aws.twin, tokens.hook and elevenlabs.provider are instances. Repositories are SGit-AI__Website__Family__Instance with the family singular. API sites, a site's client code, and editions, the same site for another audience, are separate patterns the rule leaves alone.",
+   "hash": "36a9c582d364"
+  },
+  "estate": {
+   "line": "Held against the estate: the new families follow it; three provider hosts and one game break it.",
+   "para": "tokens.hook, aws.twin and two demo hosts follow the rule, all reserved. elevenlabs.providers and ungovr.providers are live and break it, and openrouter.providers is listed but not serving. what-can-it-do.games, live since 8 September, breaks it too. Every family repository already uses the singular; only hosts need to move.",
+   "hash": "72fb12b785ac"
+  },
+  "dns": {
+   "line": "A correction: on GitHub Pages each host gets its own certificate; what it needs is a DNS record.",
+   "para": "The note said each singular namespace needs a wildcard certificate. GitHub Pages requests a Let's Encrypt certificate per custom domain automatically, so none is needed. Each host needs its own CNAME record, as today, with no wildcard under sgit.ai; GitHub strongly recommends against wildcard DNS records because of domain takeovers.",
+   "hash": "9144ebce29ae"
+  },
+  "twins": {
+   "line": "On twins.sgit.ai: a twin's interface holds no credentials; a live backend borrows the user's session.",
+   "para": "A proposed paragraph for the naming ruling: the credential belongs to the backend and lives in the user's vault for the session; the S3 container and AWS twin are the examples. Also: keep the execution broker distinct, use lower case for the AWS twin, make the site a hub with each twin's state, and decide on s3.twin.sgit.ai.",
+   "hash": "e1328814b551"
+  },
+  "providers": {
+   "line": "On providers.sgit.ai: move instances to the singular, redirect the plural, switch hosts first.",
+   "para": "Move elevenlabs, ungovr and openrouter to .provider.sgit.ai, keeping plural hosts as redirects. Switch canonical hosts before links, since the hub's sync script and build check would otherwise lock in the plural. A later AWS provider report needs the hub's disclosure checked against sgit.ai's AWS page. The games instance moves the same way.",
+   "hash": "af0e418db783"
+  },
+  "here": {
+   "line": "Here: AWS from the vault now uses aws.twin.sgit.ai and describes the twin-first design.",
+   "para": "The newsroom article now uses the new name in its title, summary, text and diagram, says the name is decided, and adds the twin-first design. The changes to twins.sgit.ai and providers.sgit.ai belong to those sites.",
+   "hash": "3ccf4b718774"
+  },
+  "limits": {
+   "line": "Nothing is built or renamed yet; the twins paragraph is proposed; hosting facts are GitHub's.",
+   "para": "aws.twin.sgit.ai has a repository and a DNS record but no site. The provider and game hosts still use the plural. The twins ruling is unchanged so far. The facts about certificates and DNS come from GitHub's documentation, read on 21 October 2026.",
+   "hash": "02781eb3d70a"
+  },
+  "sources": {
+   "line": "A naming discussion, twins.sgit.ai, providers.sgit.ai, the estate's DNS, and GitHub's documentation.",
+   "para": "A naming discussion of 21 October 2026, captured as decisions; twins.sgit.ai's home, naming ruling and built pages; providers.sgit.ai; every site's repository and DNS; and GitHub's pages on custom domains and HTTPS, read the same day.",
+   "hash": "dcc404ca6839"
+  }
+ }
+}

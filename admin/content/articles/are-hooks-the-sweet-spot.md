@@ -10,7 +10,7 @@ tags: hooks, agents, agent-behaviour-policy, enforcement, policy-as-code, claude
 status: published
 ---
 
-!shot hs-rules.webp | images/ | The eleven rules of this site's writing session, rule by rule. Today one rule is kept by a hook, one in part by a disabled push URL, and the rest by the agent's good behaviour. Moved into hooks and tested on fixed inputs in a throwaway repository: four fully, two mostly, three partly, two not at all. | comparison
+!shot hs-rules.webp | images/ | The eleven rules of this site's writing session, rule by rule, and how well hooks could keep each. | comparison
 
 ## In short {#in-short}
 
@@ -49,7 +49,7 @@ The rest moved partly or not at all. Never leaking a key is covered where it wou
 
 ## Where a hook sits {#layers}
 
-!shot hs-layers.webp | images/ | Where a rule can be kept. From the prompt, which sees everything and enforces nothing, through agent hooks and the tools' own hooks, to the sandbox, a gateway off the machine, and the service itself. Each layer down is harder for the agent to change and sees less of what the agent meant to do. | architecture
+!shot hs-layers.webp | images/ | Where a rule can be kept, from the prompt down to the service itself, with each layer harder for the agent to change. | architecture
 
 That result is why I think hooks are the sweet spot for now. They are the first layer that does not depend on the model: the same input gets the same answer every time, at no model cost. And they are the last layer that still sees the action as the agent meant it: a tool call by name, a commit with its message, a pull request with its title. A sandbox sees files and hosts. A gateway sees requests. Further down, enforcement is stronger and the intent is harder to read.
 

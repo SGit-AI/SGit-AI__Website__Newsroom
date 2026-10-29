@@ -10,11 +10,11 @@
 
 # Inside the Thistlewood twin: Phil Venables' ten questions answered one by one on the graph of an invented retailer, with the plot, the evidence and the decisions each one proposes
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.0.0](versions/inside-the-thistlewood-twin.md) · [newsroom v0.12.137](https://newsroom.sgit.ai/admin/versions.html) · cisographsrisk-acceptancevaultstwinarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.1.0, 2 versions](versions/inside-the-thistlewood-twin.md) · [newsroom v0.12.137](https://newsroom.sgit.ai/admin/versions.html) · cisographsrisk-acceptancevaultstwinarticle
 
 ***Abstract:** A tour of the vault behind ten questions, one graph. Thistlewood Retail is invented: four board risks, sixteen risks beneath them, nine accepted until a date, nine business processes on sixteen systems and twelve suppliers, four sales channels, fifteen controls, 38 incidents and 100 humans and agents. A deterministic engine answers each of Phil Venables' ten questions on that graph. An extra £250k goes to warehouse backups, hardware keys for staff and a second payment provider, and takes about a million pounds a year off the expected loss; the £250k cut is long log retention and the awareness programme, for about £30k a year of extra risk that someone has to accept. Eight accepted risks need revisiting after three events. Cheaper passkeys and bundled hardware keys could cover almost everyone at the same spend. Ransomware in the warehouse is the scenario the minimum viable processes cannot withstand. Identity admins and deploy agents have the largest blast radius, and 29 of 40 agents can reach beyond their mandate. Every answer shows the part of the graph it came from, and proposes decisions, 29 in all, each held by one person with a chain to the board. The back-test shows where the model is wrong.*
 
-The Thistlewood decision twin, opened from its vault in the official vault UI, read-only, with the published key: the case, with the expected annual loss computed from the graph, 100 humans and agents, nine of sixteen risks accepted, sales of £920k a day at peak, and the ten questions.
+The Thistlewood decision twin opened read-only from its vault in the official vault UI: the case and the ten questions.
 
 Thistlewood: ten questions, one graph
 
@@ -38,7 +38,7 @@ Thistlewood Retail sells through a web store, a mobile app, marketplace listings
 
 There are 100 identities: 60 humans, from platform engineers to service agents, and 40 agents, from deploy agents to a refund agent, each with the systems it can reach directly and the identities it can act as. One of each kind of agent was set up under a behaviour policy and holds only its mandate; the rest hold more. Everything is invented, and nothing calls a model.
 
-The whole company as one graph, before any question: the board, business risks, operational and technical risks, recurring causes, controls, processes, systems, suppliers and channels, and the five humans and five agents with the largest reach. Edges run from cause to effect.
+The whole company as one graph, before any question: risks, controls, processes, systems, suppliers, humans and agents.
 
 ## 1 and 2: where £250k goes, and where it can come from
 
@@ -50,13 +50,13 @@ The cut runs the other way: remove what adds the least risk per pound saved. Log
 
 Exposure is the security risk carried by a process plus the reliability risk of the suppliers under it. Pick, pack and ship comes first, at about £1.6 million a year, then taking an order and payment, releasing software, customer sign-in and marketing email. Each gets its three things to do now, with cost and loss avoided: for pick, pack and ship, warehouse backups, a second courier, and a fallback for the warehouse supplier, still to price.
 
-Question 3: the five most exposed processes, the security and reliability exposure of each, and the three things to do now, each with its holder, cost and loss avoided; then the evidence, and the decisions it proposes, each with the chain to the board.
+Question 3: the five most exposed processes, the three things to do now, then the evidence and the decisions proposed.
 
 ## 4: what keeps recurring, and why
 
 The 38 incidents of the last year come from eight recurring causes. The top three are credential stuffing on customer login (9 incidents), bot surges at checkout (7) and expired TLS certificates (6). Each cause is followed five levels down, and the last level is rarely technical: "The acceptance assumed the old price", "The cost case was never redone", "The risk was accepted in 2024 and never revisited". That last level is where the fix belongs, and it has a holder.
 
-Question 4: each recurring cause with its count and cost, followed five levels down, from what happened to the decision that let it keep happening.
+Question 4: each recurring cause with its count and cost, followed five levels down to the decision behind it.
 
 ## 5 and 6: acceptances whose assumptions changed
 
@@ -74,13 +74,13 @@ The suppliers whose five-day outage would hurt customers most are the cloud host
 
 Phil asks for 100 of each; the twin has 60 humans and 40 agents. Blast radius weighs every system an identity can reach, directly, through the identities it can act as, through the secrets store and through staff sign-on: customer records times sensitivity, plus the sales its processes carry. The three identity admins top the humans, because staff sign-on reaches everything. The deploy agents top the agents: each reaches seven systems, six of them beyond what its behaviour policy says it needs. Across the company, 29 of the 40 agents reach beyond their mandate.
 
-Question 9: the humans and the agents with the largest blast radius, how many systems they reach directly and in all, how many other identities they can act as, and, for agents, how many systems lie beyond their behaviour policy's mandate.
+Question 9: the humans and agents with the largest blast radius, and the systems and identities each can reach.
 
 ## The decisions, up to the board
 
 The ten answers propose 29 decisions. The ledger lists them by holder, each with its door, fund, fix, accept or revisit, and its interval, and shows how many pass through each level on the way up: all 29 reach the chief executive and the board, eight pass through the chief operating officer, eight through the chief technology officer, and seven through the CISO. Nobody accepts on anybody else's behalf; their boss sees it arrive. In the vault, each is a file in `decisions/`.
 
-The ledger: every proposed decision by the person who holds it, with the door, the interval and the chain to the board, and on the right how many decisions pass through each role on the way up.
+The ledger: every proposed decision by the person who holds it, with the chain to the board and the roles on the way.
 
 ## Evidence, and where the model is wrong
 
@@ -88,7 +88,7 @@ Every answer lists the sources it rests on, and in the twin they are measured on
 
 The back-test compares what the model predicts for a year with the last twelve months of incidents. Two causes are close. Supplier bank fraud cost about twice what the model predicts, and four others cost far less, the leaked pipeline secret and the courier misses most of all. A near miss is not a loss, and the model should know the difference before anyone relies on those answers.
 
-Evidence and back-test: the measured sources the answers rest on, and the model's prediction for each recurring cause against the last twelve months of incidents, with the ratio.
+Evidence and back-test: the measured sources behind the answers, and the model's prediction against past incidents.
 
 ## How it is built
 

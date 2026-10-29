@@ -30,13 +30,14 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
       <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
       <a class="sl" href="../about/index.html">Why this exists</a>
       <a class="sl" href="../desks/index.html">The five desks</a>
@@ -86,6 +87,8 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -153,17 +156,19 @@
   <script src="../assets/reader/strip.js" defer></script>
   <script src="../assets/reader/highlights.js" defer></script>
   <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
   <div class="theme-pick"></div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working</p>
  <h1>A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working</h1>
- <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-18 &middot; <a href="versions/a-browser-for-one.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.111</a> &middot; <span class="chip">browsers</span><span class="chip">ios</span><span class="chip">webkit</span><span class="chip">newsroom</span><span class="chip">explorer-coding</span><span class="chip">villagers</span><span class="chip">brief</span><span class="chip">article</span></p>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-18 &middot; <a href="versions/a-browser-for-one.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.111</a> &middot; <span class="chip">browsers</span><span class="chip">ios</span><span class="chip">webkit</span><span class="chip">newsroom</span><span class="chip">explorer-coding</span><span class="chip">villagers</span><span class="chip">brief</span><span class="chip">article</span></p>
  <p class="abstract"><em><b>Abstract:</b> The browsers on my iPhone have frustrated me to the point where I would like to build one. Not a general browser: an app that only opens my newsroom, where I left it, knows what I have read, opens my vault, keeps my tabs, works offline, never reloads a page on its own, lets me build my own reading workflows, and receives what my agents send me. A year ago I would have put up with it. Now I can do something about it, and that changes how much bad interface I am willing to tolerate. This is the brief. The facts decide most of it. In the UK an iPhone app that browses the web must use WebKit; Firefox and Chrome on iOS are WebKit too. Passkeys inside an app and push notifications both need Apple's paid developer membership, and the app has to be built on a Mac, so not by a cloud session like the one that writes this site. The one real unknown is whether the passkey extension the vault depends on works inside an app's web view, so that is the first thing to test. And there is a second point, which matters more than the app. Once it works, it will be part of my day, and I will not want to maintain it. Not because I cannot; because it is not my focus. Being able to compile a Linux kernel does not mean I want to. Even power users will pay someone to keep the thing they built working, and this app is the first example I will live with.</em></p>
-<figure class="shot" data-shot="bo-app.webp" data-dir="images/" data-alt="A browser for one, sketched on an iPhone. It opens on the newsroom where it was left, with tabs in a strip that hides as you read, read and unread marked, the vault open, an inbox of what the agents sent, and reading workflows as runs of tabs. Underneath: a native Swift shell around WebKit, a small bridge to the page, an offline cache, and a push sender. The first step is a test: do passkeys with the PRF extension work inside the app." data-kind="concept"><figcaption>A browser for one, sketched on an iPhone. It opens on the newsroom where it was left, with tabs in a strip that hides as you read, read and unread marked, the vault open, an inbox of what the agents sent, and reading workflows as runs of tabs. Underneath: a native Swift shell around WebKit, a small bridge to the page, an offline cache, and a push sender. The first step is a test: do passkeys with the PRF extension work inside the app.</figcaption></figure>
+<figure class="shot" data-shot="bo-app.webp" data-dir="images/" data-alt="A browser for one, sketched on an iPhone: tabs, the vault, an inbox from the agents, and reading workflows." data-kind="concept"><figcaption>A browser for one, sketched on an iPhone: tabs, the vault, an inbox from the agents, and reading workflows.</figcaption></figure>
 <h2 id="in-short">In short</h2>
 <ul>
 <li><b>The browsers on my phone have lost my patience.</b> Wrong page, reloads, no offline, no memory of where I was.</li>
@@ -224,6 +229,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo from me on 18 October 2026. The research, read that day by a research agent: Apple, <a href="https://developer.apple.com/support/alternative-browser-engines/">alternative browser engines</a>, <a href="https://developer.apple.com/help/account/reference/supported-capabilities-ios/">supported capabilities</a> (the table read directly) and <a href="https://developer.apple.com/documentation/authenticationservices/supporting-passkeys">supporting passkeys</a>; the CMA's <a href="https://www.gov.uk/cma-cases/sms-investigation-into-apples-mobile-platform">case page</a>; WebKit, <a href="https://webkit.org/blog/16993/news-from-wwdc25-web-technology-coming-this-fall-in-safari-26-beta/">WWDC25</a> and <a href="https://webkit.org/blog/10882/app-bound-domains/">app-bound domains</a>; GitHub, <a href="https://docs.github.com/en/billing/reference/actions-runner-pricing">runner pricing</a>; PiunikaWeb on <a href="https://piunikaweb.com/2026/09/30/mozilla-gecko-ios-apple-eu-rules/">Mozilla and Gecko on iOS</a>, 30 September 2026. The site's own unlock: <code>assets/door.js</code> and <code>assets/vault-pane/vault-pane.js</code>. Related: <a href="a-minimal-viable-browser.html">a minimal viable browser</a>, <a href="a-custom-firefox-of-my-own.html">a custom Firefox of my own</a>, <a href="software-vendors-as-villagers.html">software vendors as villagers</a>, <a href="who-will-fix-your-mess.html">who will fix your mess</a>, <a href="explorer-coding.html">explorer coding</a>, <a href="your-reading-your-controls.html">your reading, your controls</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
 <sg-meter view="page" kind="article" date="2026-10-18" topics="site-and-engineering startups-and-strategy" title="A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Site &amp; engineering</span><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#a-browser-for-one">This article as a graph &rarr;</a></p>
@@ -259,7 +265,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-browser-for-one.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-browser-for-one.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -293,6 +299,8 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

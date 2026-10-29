@@ -10,7 +10,7 @@ tags: omnichannel, agentic-development, voice-memos, code-review, custom-uis, va
 status: published
 ---
 
-!shot oc-multi-omni.webp | images/ | Multichannel and omnichannel programming: on the left, each channel keeps its own copy of the work and a person carries the context between them; on the right, every channel reads and writes one shared state, so work started in one continues in any other. | comparison
+!shot oc-multi-omni.webp | images/ | Multichannel and omnichannel programming: separate copies of the work on the left, one shared state on the right. | comparison
 
 ## In short {#in-short}
 
@@ -37,7 +37,7 @@ None of these channels is new. Claude Code itself went to the web and the iOS ap
 
 ## This site, counted {#counted}
 
-!shot oc-session.webp | images/ | One session, many channels: what this newsroom session used from 13 to 15 October 2026, counted from its transcript and the repository log: what came in, what went out, what it was checked against, what kept it safe, and how I read it back, all around one shared state. | architecture
+!shot oc-session.webp | images/ | One session, many channels: what this newsroom session used from 13 to 15 October 2026, around one shared state. | architecture
 
 This site is written this way, so it can be counted. In the three days from 13 to 15 October 2026, the agent session that writes it took 54 messages from me. Ten were voice memos transcribed by Otter; five were images; others were links to sites and vaults to review, corrections, and an access key so that it could make a vault of its own. Out of that came 40 releases of this site, 36 new articles and 87 figures, each one live within minutes of its push.
 
@@ -55,7 +55,7 @@ Interfaces are a channel in the same way. [Custom UIs are not the exception](/ar
 
 ## Every stage, every altitude {#stages}
 
-!shot oc-spectrum.webp | images/ | Omnichannel at every stage of a Wardley map: explorers, villagers and town planners each use all the channels, at every altitude from voice and intent, through interfaces and code, down to evidence. What changes between stages is what the work needs, not the channel. | comparison
+!shot oc-spectrum.webp | images/ | Omnichannel at every stage of a Wardley map: explorers, villagers and town planners, at every altitude. | comparison
 
 It would be easy to say this is how explorers work, and that the serious work happens elsewhere. It is not. Simon Wardley's three kinds of people, explorers, villagers and town planners, each use every channel, and at every altitude.
 

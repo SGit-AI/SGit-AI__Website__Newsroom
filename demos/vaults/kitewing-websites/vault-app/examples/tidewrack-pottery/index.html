@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tidewrack Studio Pottery</title>
+<meta name="description" content="Tidewrack Studio Pottery, a fictional ceramicist in the made-up town of Harrowby. A demonstration site built for newsroom.sgit.ai.">
+<style>
+:root{
+  --clay:#a95f3c; --clay-deep:#7f4329; --clay-soft:#e3c3aa;
+  --oat:#f3ede2; --oat-2:#e9e0d0; --paper:#fbf8f2;
+  --sea:#6f8790; --sea-deep:#43565e; --sea-soft:#d5dfe1;
+  --ink:#2e2925; --ink-2:#5b524a; --line:#d9cdb9;
+  --serif:"Iowan Old Style","Palatino Linotype",Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--oat);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);font-weight:normal;line-height:1.15;margin:0 0 .5em;color:var(--ink)}
+h1{font-size:clamp(2.3rem,6vw,4.2rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+h3{font-size:1.3rem}
+p{margin:0 0 1em}
+a{color:var(--clay-deep)}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--sea-deep);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--sans);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sea-deep);margin:0 0 .9em}
+
+/* demo banner */
+.demo{background:var(--sea-deep);color:#eef3f3;font-size:.85rem;padding:8px 0;text-align:center}
+.demo a{color:#fff}
+
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(243,237,226,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--serif);font-size:1.25rem}
+.brand small{display:block;font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+nav.main{display:flex;flex-wrap:wrap;gap:4px 18px}
+nav.main a{color:var(--ink);text-decoration:none;font-size:.95rem;padding:4px 0;border-bottom:1px solid transparent}
+nav.main a:hover{border-bottom-color:var(--clay)}
+section{scroll-margin-top:80px}
+
+/* hero */
+.hero{padding:64px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+.hero p.lede{font-family:var(--serif);font-size:1.3rem;color:var(--ink-2);max-width:32em}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn{display:inline-block;border:1px solid var(--clay-deep);background:var(--clay-deep);color:#fff;text-decoration:none;padding:10px 20px;border-radius:999px;font-size:.95rem}
+.btn.ghost{background:transparent;color:var(--clay-deep)}
+.hero-art svg{width:100%;height:auto;display:block}
+.tideline{display:block;width:100%;height:28px;color:var(--sea)}
+
+/* maker */
+.band{padding:72px 0}
+.band.paper{background:var(--paper)}
+.maker{display:grid;grid-template-columns:1.4fr 1fr;gap:56px}
+#maker-text p:first-child::first-letter{font-family:var(--serif);float:left;font-size:3.6rem;line-height:.9;padding:6px 10px 0 0;color:var(--clay)}
+dl.facts{margin:0;border-top:1px solid var(--line)}
+dl.facts dt{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sea-deep);margin-top:16px}
+dl.facts dd{margin:2px 0 16px;font-family:var(--serif);font-size:1.15rem;padding-bottom:14px;border-bottom:1px solid var(--line)}
+
+/* catalogue */
+.cat-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:24px}
+.cat-head p{max-width:36em;color:var(--ink-2);margin:0}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 12px}
+.chip{border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:6px 14px;border-radius:999px;font-size:.9rem}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--oat)}
+.glaze-filter{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 24px;font-size:.9rem;color:var(--ink-2)}
+.swatch{width:26px;height:26px;border-radius:50%;border:2px solid var(--paper);box-shadow:0 0 0 1px var(--line);padding:0}
+.swatch[aria-pressed="true"]{box-shadow:0 0 0 2px var(--ink)}
+.count{font-size:.9rem;color:var(--ink-2);margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:20px}
+.piece{background:var(--paper);border:1px solid var(--line);border-radius:6px;display:flex;flex-direction:column;overflow:hidden}
+.piece .art{background:linear-gradient(180deg,var(--oat-2),var(--oat));padding:14px 18px 6px}
+.piece .art svg{display:block;width:100%;height:auto;max-height:170px}
+.piece .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.piece h3{font-size:1.2rem;margin:0}
+.ref{font-size:.75rem;letter-spacing:.12em;color:var(--ink-2)}
+.meta{font-size:.88rem;color:var(--ink-2)}
+.glz{display:inline-flex;align-items:center;gap:6px}
+.glz i{width:11px;height:11px;border-radius:50%;display:inline-block;border:1px solid rgba(0,0,0,.15)}
+.price-row{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:10px}
+.price{font-family:var(--serif);font-size:1.15rem}
+.status{font-size:.78rem;color:var(--sea-deep);text-transform:uppercase;letter-spacing:.08em}
+.ask{margin-top:10px;border:1px solid var(--clay);background:transparent;color:var(--clay-deep);border-radius:4px;padding:7px 10px;font-size:.88rem}
+.ask:hover{background:var(--clay);color:#fff}
+.empty{padding:32px;text-align:center;color:var(--ink-2);font-family:var(--serif);font-size:1.2rem}
+.nocheckout{margin-top:28px;padding:16px 20px;border-left:3px solid var(--sea);background:var(--sea-soft);color:var(--sea-deep);font-size:.95rem}
+
+/* glazes */
+.glaze-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:22px 32px;margin-top:24px}
+.glaze-item{display:flex;gap:14px;align-items:flex-start}
+.glaze-item .dot{flex:0 0 46px;height:46px;border-radius:50%}
+.glaze-item h3{font-size:1.1rem;margin:0 0 2px}
+.glaze-item p{margin:0;font-size:.92rem;color:var(--ink-2)}
+
+/* classes */
+.two{display:grid;grid-template-columns:1.3fr 1fr;gap:48px}
+.class{border-top:1px solid var(--line);padding:20px 0}
+.class header{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.class h3{margin:0}
+.class .price{color:var(--clay-deep)}
+.class .when{font-size:.9rem;color:var(--sea-deep);margin:4px 0 8px}
+.class p{margin:0;color:var(--ink-2)}
+.days{list-style:none;margin:0;padding:0}
+.days li{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:16px 18px;margin-bottom:14px}
+.days time{display:block;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--clay-deep)}
+.days strong{display:block;font-family:var(--serif);font-weight:normal;font-size:1.2rem;margin:2px 0 4px}
+.days span{color:var(--ink-2);font-size:.95rem}
+
+/* care */
+.care{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:0 40px;counter-reset:care;margin-top:24px}
+.care article{border-top:1px solid var(--line);padding:18px 0 18px 44px;position:relative;counter-increment:care}
+.care article::before{content:counter(care,decimal-leading-zero);position:absolute;left:0;top:18px;font-family:var(--serif);font-size:1.3rem;color:var(--clay)}
+.care h3{font-size:1.15rem;margin:0 0 4px}
+.care p{margin:0;color:var(--ink-2);font-size:.95rem}
+
+/* visit */
+.visit{background:var(--sea-deep);color:#eef3f3}
+.visit h2,.visit h3{color:#fff}
+.visit .two{align-items:center}
+.visit address{font-style:normal;font-family:var(--serif);font-size:1.4rem;line-height:1.4;margin-bottom:12px}
+.visit .eyebrow{color:var(--sea-soft)}
+.visit svg{width:100%;height:auto;display:block}
+
+/* enquiry sheet */
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--paper);border-top:3px solid var(--clay);box-shadow:0 -12px 40px rgba(46,41,37,.22);padding:20px 0}
+.sheet[hidden]{display:none}
+.sheet .wrap{display:grid;grid-template-columns:110px 1fr auto;gap:20px;align-items:start}
+.sheet svg{width:110px;height:auto;display:block}
+.sheet h3{margin:0 0 4px}
+.sheet p{margin:0 0 6px;color:var(--ink-2);font-size:.95rem}
+.close{border:1px solid var(--line);background:var(--oat);border-radius:999px;padding:6px 14px}
+
+/* footer */
+footer.foot{background:var(--ink);color:#d9d1c4;padding:48px 0 32px;font-size:.92rem}
+footer.foot a{color:#f0d5c2}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:32px}
+.foot h3{color:#fff;font-size:1.2rem}
+.kitewing{margin-top:12px}
+.agent{margin-top:32px;padding:14px 16px;border:1px dashed #6d645a;border-radius:4px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.5;color:#c4bbae}
+.agent strong{color:#fff}
+
+@media (max-width:860px){
+  .hero .wrap,.maker,.two,.foot-grid{grid-template-columns:1fr}
+  .hero{padding-top:36px}
+  .maker{gap:28px}
+  .two{gap:32px}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .band{padding:52px 0}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .piece .art{padding:10px 10px 4px}
+  .piece .body{padding:10px 12px 12px}
+  .piece h3{font-size:1.05rem}
+  .meta{font-size:.82rem}
+  .ask{padding:6px 8px;font-size:.82rem}
+  .sheet .wrap{grid-template-columns:64px 1fr;gap:12px}
+  .sheet svg{width:64px}
+  .sheet .close{grid-column:1 / -1;justify-self:end}
+  nav.main{gap:2px 14px}
+  nav.main a{font-size:.9rem}
+}
+</style>
+</head>
+<body>
+<p class="demo">A fictional pottery in a made-up town, built as a demonstration for <a href="https://newsroom.sgit.ai/articles/websites-you-own.html">newsroom.sgit.ai</a>.</p>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Tidewrack Studio Pottery, back to top">
+      <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><path d="M13 6h14v5q0 3 4 7q6 6 5 12q-1 6-8 7h-16q-7-1-8-7q-1-6 5-12q4-4 4-7z" fill="#a95f3c"/><path d="M4 30q4-3 8 0t8 0t8 0t8 0" stroke="#43565e" stroke-width="2" fill="none"/></svg>
+      <span>Tidewrack<small>Studio Pottery, Harrowby</small></span>
+    </a>
+    <nav class="main" aria-label="Sections">
+      <a href="#catalogue">Catalogue</a>
+      <a href="#maker">The maker</a>
+      <a href="#classes">Classes</a>
+      <a href="#care">Care</a>
+      <a href="#visit">Visit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow" id="hero-eyebrow">Stoneware from the quay</p>
+        <h1 id="hero-title">Tidewrack Studio Pottery</h1>
+        <p class="lede" id="hero-lede"></p>
+        <p class="meta" id="hero-hours"></p>
+        <p class="actions"><a class="btn" href="#catalogue">See this season's pieces</a><a class="btn ghost" href="#classes">Classes and open days</a></p>
+      </div>
+      <div class="hero-art" id="hero-art" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <svg class="tideline" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true"><path d="M0 14 Q 50 2 100 14 T 200 14 T 300 14 T 400 14 T 500 14 T 600 14 T 700 14 T 800 14 T 900 14 T 1000 14 T 1100 14 T 1200 14" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+
+  <section class="band" id="maker">
+    <div class="wrap maker">
+      <div class="text">
+        <p class="eyebrow">About the maker</p>
+        <h2 id="maker-name"></h2>
+        <div id="maker-text"></div>
+      </div>
+      <dl class="facts" id="maker-facts"></dl>
+    </div>
+  </section>
+
+  <section class="band paper" id="catalogue">
+    <div class="wrap">
+      <div class="cat-head">
+        <div>
+          <p class="eyebrow">Catalogue</p>
+          <h2>On the shelves this season</h2>
+        </div>
+        <p>Every piece is made by hand, so sizes and glazes vary a little. Filter by kind of piece or by glaze.</p>
+      </div>
+      <div class="filters" id="type-filters" role="group" aria-label="Filter by kind of piece"></div>
+      <div class="glaze-filter" id="glaze-filters" role="group" aria-label="Filter by glaze"></div>
+      <p class="count" id="count" aria-live="polite"></p>
+      <div class="grid" id="grid"></div>
+      <p class="nocheckout" id="nocheckout"></p>
+    </div>
+  </section>
+
+  <section class="band" id="glazes">
+    <div class="wrap">
+      <p class="eyebrow">The glazes</p>
+      <h2>Eight glazes, named after the shore</h2>
+      <div class="glaze-list" id="glaze-list"></div>
+    </div>
+  </section>
+
+  <section class="band paper" id="classes">
+    <div class="wrap two">
+      <div>
+        <p class="eyebrow">Classes</p>
+        <h2>Learn at the wheel</h2>
+        <div id="class-list"></div>
+      </div>
+      <div>
+        <p class="eyebrow">Open studio days</p>
+        <h2>Come and look round</h2>
+        <ul class="days" id="days"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="care">
+    <div class="wrap">
+      <p class="eyebrow">Care guide</p>
+      <h2>Looking after your pots</h2>
+      <div class="care" id="care-list"></div>
+    </div>
+  </section>
+
+  <section class="band visit" id="visit">
+    <div class="wrap two">
+      <div>
+        <p class="eyebrow">Visit the studio</p>
+        <h2>Find us on Quay Row</h2>
+        <address id="address"></address>
+        <p id="hours"></p>
+        <p>There is no online shop. Pieces are sold from the studio shelves, and every enquiry is made in person.</p>
+      </div>
+      <svg viewBox="0 0 400 220" aria-hidden="true">
+        <rect x="0" y="150" width="400" height="70" fill="#6f8790"/>
+        <path d="M0 160 q25-8 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0" stroke="#d5dfe1" stroke-width="2" fill="none"/>
+        <path d="M0 182 q25-8 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0" stroke="#d5dfe1" stroke-width="1.5" fill="none" opacity=".6"/>
+        <rect x="40" y="130" width="320" height="22" fill="#5b524a"/>
+        <path d="M110 130 v-62 l55-38 l55 38 v62z" fill="#e9e0d0"/>
+        <path d="M100 70 l65-46 l65 46" stroke="#a95f3c" stroke-width="8" fill="none" stroke-linejoin="round"/>
+        <rect x="150" y="92" width="30" height="38" fill="#43565e"/>
+        <rect x="124" y="80" width="18" height="18" fill="#c99a4b"/>
+        <rect x="188" y="80" width="18" height="18" fill="#c99a4b"/>
+        <path d="M262 130 v-22 q0-4 4-6 q6-4 6-10 h10 q0 6 6 10 q4 2 4 6 v22z" fill="#5f7a5e"/>
+        <path d="M300 130 v-14 q0-4 6-4 h14 q6 0 6 4 v14z" fill="#e6dfd0"/>
+        <circle cx="330" cy="40" r="16" fill="#efe7da" opacity=".9"/>
+      </svg>
+    </div>
+  </section>
+</main>
+
+<aside class="sheet" id="sheet" hidden aria-labelledby="sheet-title" role="dialog">
+  <div class="wrap">
+    <span id="sheet-art"></span>
+    <div>
+      <h3 id="sheet-title"></h3>
+      <p id="sheet-meta"></p>
+      <p id="sheet-text"></p>
+    </div>
+    <button class="close" id="sheet-close" type="button">Close</button>
+  </div>
+</aside>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>Tidewrack Studio Pottery</h3>
+        <p id="foot-note"></p>
+        <p>Read the article this demonstration belongs to: <a href="https://newsroom.sgit.ai/articles/websites-you-own.html">Websites you own, and can talk to</a>.</p>
+      </div>
+      <div>
+        <p>This site is a static catalogue with no checkout, no forms and no tracking. Its content lives in one file, so the owner can change it by asking Claude.</p>
+        <p class="kitewing"><a href="../../index.html">Built by Kitewing Websites, a made-up studio</a></p>
+      </div>
+    </div>
+    <div class="agent">
+      <strong>For an agent:</strong> this is the home page of Tidewrack Studio Pottery, a fictional pottery in the made-up town of Harrowby, built as a demonstration for newsroom.sgit.ai.<br>
+      All text, pieces, classes and prices come from content.json in this folder (examples/tidewrack-pottery/content.json); edit that file to change the site.<br>
+      Nothing here is a real business, product or offer.
+    </div>
+  </div>
+</footer>
+
+<script>
+const FALLBACK = /*__DATA__*/{"site":{"name":"Tidewrack Studio Pottery","tagline":"Thrown and glazed by hand on the quay at Harrowby","address":"The Net Loft, Quay Row, Harrowby","hours":"Studio shop open Thursday to Saturday, 10am to 4pm","demo_note":"A fictional pottery in the made-up town of Harrowby, built as a demonstration for newsroom.sgit.ai. The maker, the pieces and the prices are invented.","article_url":"https://newsroom.sgit.ai/articles/websites-you-own.html"},"maker":{"name":"Nell Carrow","paragraphs":["Nell Carrow throws stoneware in an old net loft on Quay Row, a few steps from the harbour wall. The studio window looks out over the tideline, and most of the glazes are named after what the sea leaves behind.","Every piece is thrown on the wheel or built by hand, trimmed, bisque fired, glazed and fired again to stoneware temperature. Glazes are mixed in the studio from local wood ash and a few plain minerals, so each batch comes out a little different.","There is no online shop. The catalogue below shows what is on the shelves this season. If something catches your eye, enquire in the studio and Nell will tell you if it is still there, or when the next firing is."],"facts":[["Clay","Buff stoneware with grog"],["Firing","Reduction, around 1280 degrees"],["Glazes","Eight, mixed in the studio"],["Kiln","Fired roughly once a month"]]},"types":[{"id":"mug","label":"Mugs and cups"},{"id":"bowl","label":"Bowls"},{"id":"vase","label":"Vases and jugs"},{"id":"plate","label":"Plates"}],"glazes":{"tidewrack":{"name":"Tidewrack green","body":"#5f7a5e","rim":"#3f5641","note":"A layered ash glaze that breaks brown on the edges, like weed left on the sand."},"oyster":{"name":"Oyster white","body":"#e6dfd0","rim":"#b9ad97","note":"A soft satin white with a little iron speckle showing through."},"harbour":{"name":"Harbour blue","body":"#4d6f86","rim":"#2f4a5c","note":"A deep cobalt and iron blue that pools darker in the hollows."},"ironred":{"name":"Iron red","body":"#9a4a31","rim":"#6a2e1c","note":"A warm iron glaze that goes rust red where it runs thick."},"kelp":{"name":"Kelp brown","body":"#6b5435","rim":"#463620","note":"A glossy tenmoku style brown, almost black on the rims."},"seaglass":{"name":"Sea glass","body":"#9cbdb4","rim":"#6f978c","note":"A pale celadon that collects in the throwing lines."},"slate":{"name":"Slate","body":"#5b6168","rim":"#3b4046","note":"A matt grey stone glaze, quiet and very hard wearing."},"honey":{"name":"Honey ash","body":"#c99a4b","rim":"#9c7130","note":"A runny amber glaze with drips that stop just short of the foot."}},"pieces":[{"ref":"TW-01","name":"Morning mug","type":"mug","glaze":"oyster","size":"300 ml, 9 cm tall","price":32,"note":"A straight sided mug with a thumb rest on the handle.","status":"Available"},{"ref":"TW-02","name":"Quay mug","type":"mug","glaze":"harbour","size":"350 ml, 10 cm tall","price":34,"note":"Slightly bellied, sits well in two hands.","status":"Available"},{"ref":"TW-03","name":"Low tide mug","type":"mug","glaze":"tidewrack","size":"280 ml, 8.5 cm tall","price":32,"note":"Short and wide, a good tea mug.","status":"Available"},{"ref":"TW-04","name":"Net loft mug","type":"mug","glaze":"kelp","size":"400 ml, 11 cm tall","price":36,"note":"A tall mug with a pulled handle and a dark rim.","status":"Available"},{"ref":"TW-05","name":"Pebble cup","type":"mug","glaze":"seaglass","size":"180 ml, 7 cm tall","price":24,"note":"A handleless cup, thrown thin.","status":"Available"},{"ref":"TW-06","name":"Harbour wall mug","type":"mug","glaze":"slate","size":"320 ml, 9.5 cm tall","price":32,"note":"Matt outside, glossy inside, for easy cleaning.","status":"Two left"},{"ref":"TW-07","name":"Ember mug","type":"mug","glaze":"ironred","size":"300 ml, 9 cm tall","price":34,"note":"The iron red breaks almost black at the handle.","status":"One left"},{"ref":"TW-08","name":"Breakfast bowl","type":"bowl","glaze":"oyster","size":"16 cm across","price":38,"note":"Deep enough for porridge, wide enough for salad.","status":"Available"},{"ref":"TW-09","name":"Rockpool bowl","type":"bowl","glaze":"seaglass","size":"14 cm across","price":34,"note":"The glaze pools pale green in the well.","status":"Available"},{"ref":"TW-10","name":"Dune bowl","type":"bowl","glaze":"honey","size":"18 cm across","price":44,"note":"A wide shallow bowl with amber runs down the outside.","status":"Available"},{"ref":"TW-11","name":"Noodle bowl","type":"bowl","glaze":"harbour","size":"19 cm across","price":48,"note":"A tall sided bowl with a generous foot.","status":"Available"},{"ref":"TW-12","name":"Kelp serving bowl","type":"bowl","glaze":"kelp","size":"28 cm across","price":null,"note":"A large bowl for the table. Each one is a little different.","status":"Made to order"},{"ref":"TW-13","name":"Tideline nesting set","type":"bowl","glaze":"tidewrack","size":"Three bowls, 10 to 16 cm","price":95,"note":"Three bowls that stack into one another.","status":"One set left"},{"ref":"TW-14","name":"Slate dip bowl","type":"bowl","glaze":"slate","size":"9 cm across","price":18,"note":"Small bowls for olives, salt or keys.","status":"Available"},{"ref":"TW-15","name":"Driftwood bud vase","type":"vase","glaze":"kelp","size":"12 cm tall","price":28,"note":"A single stem vase with a narrow neck.","status":"Available"},{"ref":"TW-16","name":"Seawall bottle","type":"vase","glaze":"slate","size":"26 cm tall","price":85,"note":"A tall bottle form with a pinched neck.","status":"Available"},{"ref":"TW-17","name":"Spring tide vase","type":"vase","glaze":"seaglass","size":"20 cm tall","price":64,"note":"A rounded vase, good for a handful of garden flowers.","status":"Available"},{"ref":"TW-18","name":"Lantern vase","type":"vase","glaze":"ironred","size":"22 cm tall","price":70,"note":"Wide shouldered, with the glaze running thick at the top.","status":"Available"},{"ref":"TW-19","name":"Moon jar","type":"vase","glaze":"oyster","size":"30 cm tall","price":null,"note":"Thrown in two halves and joined. Only a few each year.","status":"On enquiry"},{"ref":"TW-20","name":"Wrackline jug","type":"vase","glaze":"tidewrack","size":"1 litre, 21 cm tall","price":68,"note":"A pouring jug that doubles as a vase.","status":"Available"},{"ref":"TW-21","name":"Amber bottle","type":"vase","glaze":"honey","size":"18 cm tall","price":52,"note":"A small bottle with drips that catch the light.","status":"Two left"},{"ref":"TW-22","name":"Side plate","type":"plate","glaze":"oyster","size":"20 cm across","price":26,"note":"An everyday plate with a raised rim.","status":"Available"},{"ref":"TW-23","name":"Dinner plate","type":"plate","glaze":"harbour","size":"27 cm across","price":42,"note":"Blue to the edge, paler where the rim thins.","status":"Available"},{"ref":"TW-24","name":"Shoreline platter","type":"plate","glaze":"tidewrack","size":"36 cm across","price":null,"note":"A large serving platter, glazed in two layers.","status":"Made to order"},{"ref":"TW-25","name":"Tapas plate","type":"plate","glaze":"ironred","size":"15 cm across","price":20,"note":"Small plates for sharing.","status":"Available"},{"ref":"TW-26","name":"Slate cheese board","type":"plate","glaze":"slate","size":"30 by 18 cm","price":48,"note":"An oval board with an unglazed underside.","status":"Available"},{"ref":"TW-27","name":"Honey dessert plate","type":"plate","glaze":"honey","size":"18 cm across","price":24,"note":"A small plate with a wide amber rim.","status":"Available"},{"ref":"TW-28","name":"Sea glass saucer","type":"plate","glaze":"seaglass","size":"14 cm across","price":16,"note":"Matches the pebble cup, or sits under a plant pot.","status":"Available"}],"enquiry":"There is no checkout and no contact form on this site, by design: it is a simple static catalogue. To ask about a piece, enquire in the studio. Quote the reference number and Nell will tell you if it is still on the shelf, or when the next firing is due.","classes":[{"title":"Wheel taster evening","when":"Thursdays from 5 November 2026, 6pm to 8.30pm","length":"One evening","price":"£45","places":"6 places","text":"Your first go on the wheel. Throw a few cylinders and bowls; Nell trims, glazes and fires the one you like most."},{"title":"Six week throwing course","when":"Tuesdays from 12 January 2027, 6.30pm to 9pm","length":"Six evenings","price":"£260","places":"5 places","text":"Centring, opening, pulling walls, trimming and handles. You glaze your own pieces in week six. Clay and firing included."},{"title":"Hand building weekend","when":"Saturday 6 and Sunday 7 February 2027","length":"Two days","price":"£150","places":"8 places","text":"Pinch, coil and slab. Make a set of small dishes and one larger piece. No wheel needed."},{"title":"Glazing afternoon","when":"Saturday 13 March 2027, 1pm to 4pm","length":"One afternoon","price":"£40","places":"8 places","text":"For past students. Learn how the studio glazes are mixed and layered, and glaze your bisque ware."}],"open_days":[{"date":"Saturday 28 November 2026","title":"Winter open studio","text":"Seconds shelf, mulled apple juice, and the kiln opened at 11am."},{"date":"Saturday 12 December 2026","title":"Last firing before the holidays","text":"Collect pieces from the taster evenings and see the new moon jars."},{"date":"Saturday 27 March 2027","title":"Spring open studio","text":"Throwing demonstrations every hour and a look round the glaze room."},{"date":"Saturday 26 June 2027","title":"Harbour day open studio","text":"The studio doors open onto the quay for the town harbour day."}],"care":[{"title":"Dishwasher","text":"Mugs, bowls and plates are fired to stoneware and can go in the dishwasher. Hand washing keeps the glaze bright for longer."},{"title":"Microwave","text":"Plain glazed pieces are fine in the microwave. Pieces with iron red or kelp brown glazes can get hot at the rim, so take care."},{"title":"Oven","text":"Bowls and plates can warm in a low oven. Put them in cold and let them heat up with the oven, and avoid sudden changes of temperature."},{"title":"Unglazed feet","text":"The bare clay on the foot of each piece can mark a table. A dab of beeswax, or a felt pad, stops it scratching."},{"title":"Vases","text":"Vases are glazed inside and hold water. Empty and dry them now and then so the water line does not stain."},{"title":"Chips and cracks","text":"Stoneware is tough, not unbreakable. If a piece chips at the rim, stop using it for drinking and bring it to the studio to look at."}]};
+
+const CLAY = '#c9a27e';
+const $ = id => document.getElementById(id);
+function el(tag, cls, text){ const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+function hash(s){ let h = 7; for (const c of s) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h; }
+
+function drips(g, seed, xs, top, maxLen){
+  let out = '';
+  xs.forEach((x, i) => {
+    const len = 6 + ((seed >>> (i * 3)) % maxLen);
+    out += '<path d="M' + (x - 3) + ' ' + top + ' v' + len + ' q3 5 6 0 v-' + len + 'z" fill="' + g.rim + '" opacity=".85"/>';
+  });
+  return out;
+}
+
+function potSVG(type, g, name){
+  const seed = hash(name || type);
+  const shadow = '<ellipse cx="60" cy="104" rx="38" ry="5" fill="#2e2925" opacity=".12"/>';
+  let s = '';
+  if (type === 'mug'){
+    s = shadow +
+      '<path d="M78 42 q20 0 20 18 t-20 18" stroke="' + g.body + '" stroke-width="8" fill="none" stroke-linecap="round"/>' +
+      '<path d="M32 28 h46 v62 q0 10 -10 10 h-26 q-10 0 -10 -10 z" fill="' + g.body + '"/>' +
+      drips(g, seed, [40, 52, 64, 72], 28, 14) +
+      '<path d="M32 86 h46 v4 q0 10 -10 10 h-26 q-10 0 -10 -10 z" fill="' + CLAY + '"/>' +
+      '<ellipse cx="55" cy="28" rx="23" ry="4.5" fill="' + g.rim + '"/>' +
+      '<path d="M38 36 v42" stroke="#fff" stroke-width="3" opacity=".18" stroke-linecap="round"/>';
+  } else if (type === 'bowl'){
+    s = shadow +
+      '<path d="M12 46 q48 10 96 0 q-6 44 -48 50 q-42 -6 -48 -50 z" fill="' + g.body + '"/>' +
+      drips(g, seed, [30, 48, 70, 88], 50, 12) +
+      '<path d="M44 94 q16 4 32 0 v8 h-32 z" fill="' + CLAY + '"/>' +
+      '<ellipse cx="60" cy="46" rx="48" ry="9" fill="' + g.rim + '"/>' +
+      '<ellipse cx="60" cy="47" rx="42" ry="6" fill="' + g.body + '" opacity=".75"/>' +
+      '<path d="M22 56 q8 18 22 26" stroke="#fff" stroke-width="3" opacity=".18" fill="none" stroke-linecap="round"/>';
+  } else if (type === 'vase'){
+    s = shadow +
+      '<path d="M50 12 h20 v12 q0 8 9 16 q19 17 17 38 q-2 20 -20 24 h-32 q-18 -4 -20 -24 q-2 -21 17 -38 q9 -8 9 -16 z" fill="' + g.body + '"/>' +
+      drips(g, seed, [36, 50, 68, 82], 44, 18) +
+      '<path d="M26 92 q4 8 18 10 h32 q14 -2 18 -10 z" fill="' + CLAY + '"/>' +
+      '<ellipse cx="60" cy="12" rx="10" ry="3" fill="' + g.rim + '"/>' +
+      '<path d="M34 64 q-2 14 6 26" stroke="#fff" stroke-width="3" opacity=".18" fill="none" stroke-linecap="round"/>';
+  } else {
+    s = '<ellipse cx="60" cy="96" rx="48" ry="8" fill="#2e2925" opacity=".1"/>' +
+      '<ellipse cx="60" cy="62" rx="50" ry="34" fill="' + g.rim + '"/>' +
+      '<ellipse cx="60" cy="62" rx="44" ry="29" fill="' + g.body + '"/>' +
+      '<ellipse cx="60" cy="64" rx="30" ry="18" fill="' + g.rim + '" opacity=".22"/>' +
+      '<path d="M26 52 q10 -14 30 -16" stroke="#fff" stroke-width="3" opacity=".25" fill="none" stroke-linecap="round"/>';
+  }
+  return '<svg viewBox="0 0 120 112" role="img" aria-label="Drawing of ' + (name || type) + ' in ' + g.name + '">' + s + '</svg>';
+}
+
+function heroArt(data){
+  const G = data.glazes;
+  const one = (t, gk, x, w) => '<g transform="translate(' + x + ' 0) scale(' + w + ')">' + potSVG(t, G[gk], t + gk).replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '') + '</g>';
+  return '<svg viewBox="0 0 480 300" role="img" aria-label="Drawings of a vase, a mug and a bowl on a shelf">' +
+    '<rect x="0" y="0" width="480" height="300" rx="8" fill="#e9e0d0"/>' +
+    '<circle cx="380" cy="70" r="34" fill="#fbf8f2"/>' +
+    '<path d="M0 238 q40 -10 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 v62 h-480z" fill="#d5dfe1"/>' +
+    '<rect x="20" y="226" width="440" height="10" fill="#7f4329"/>' +
+    '<g transform="translate(0 30)">' + one('vase', 'tidewrack', 30, 1.9) + '</g>' +
+    '<g transform="translate(0 97)">' + one('mug', 'oyster', 206, 1.25) + '</g>' +
+    '<g transform="translate(0 86)">' + one('bowl', 'harbour', 330, 1.35) + '</g>' +
+    '</svg>';
+}
+
+const state = { type: 'all', glaze: 'all' };
+let DATA = null;
+
+function priceText(p){ return p.price == null ? 'Price on enquiry' : '£' + p.price; }
+
+function renderFilters(){
+  const tf = $('type-filters'); tf.textContent = '';
+  const types = [{ id: 'all', label: 'All pieces' }].concat(DATA.types);
+  types.forEach(t => {
+    const b = el('button', 'chip', t.label);
+    b.type = 'button';
+    b.setAttribute('aria-pressed', String(state.type === t.id));
+    b.addEventListener('click', () => { state.type = t.id; renderFilters(); renderGrid(); });
+    tf.appendChild(b);
+  });
+  const gf = $('glaze-filters'); gf.textContent = '';
+  gf.appendChild(el('span', null, 'Glaze:'));
+  const all = el('button', 'chip', 'Any');
+  all.type = 'button';
+  all.setAttribute('aria-pressed', String(state.glaze === 'all'));
+  all.addEventListener('click', () => { state.glaze = 'all'; renderFilters(); renderGrid(); });
+  gf.appendChild(all);
+  Object.keys(DATA.glazes).forEach(k => {
+    const g = DATA.glazes[k];
+    const b = el('button', 'swatch');
+    b.type = 'button';
+    b.style.background = g.body;
+    b.title = g.name;
+    b.setAttribute('aria-label', g.name);
+    b.setAttribute('aria-pressed', String(state.glaze === k));
+    b.addEventListener('click', () => { state.glaze = state.glaze === k ? 'all' : k; renderFilters(); renderGrid(); });
+    gf.appendChild(b);
+  });
+}
+
+function renderGrid(){
+  const grid = $('grid'); grid.textContent = '';
+  const list = DATA.pieces.filter(p => (state.type === 'all' || p.type === state.type) && (state.glaze === 'all' || p.glaze === state.glaze));
+  const gName = state.glaze === 'all' ? '' : ' in ' + DATA.glazes[state.glaze].name;
+  $('count').textContent = 'Showing ' + list.length + ' of ' + DATA.pieces.length + ' pieces' + gName + '.';
+  if (!list.length){
+    const e = el('p', 'empty', 'Nothing in that combination this season. Try another glaze.');
+    e.style.gridColumn = '1 / -1';
+    grid.appendChild(e);
+    return;
+  }
+  list.forEach(p => {
+    const g = DATA.glazes[p.glaze];
+    const card = el('article', 'piece');
+    const art = el('figure', 'art'); art.style.margin = '0';
+    art.innerHTML = potSVG(p.type, g, p.name);
+    card.appendChild(art);
+    const body = el('section', 'body');
+    body.appendChild(el('span', 'ref', p.ref));
+    body.appendChild(el('h3', null, p.name));
+    const glz = el('span', 'meta glz');
+    const dot = el('i'); dot.style.background = g.body; glz.appendChild(dot);
+    glz.appendChild(document.createTextNode(g.name));
+    body.appendChild(glz);
+    body.appendChild(el('span', 'meta', p.size));
+    const row = el('p', 'price-row'); row.style.margin = '0';
+    row.appendChild(el('span', 'price', priceText(p)));
+    row.appendChild(el('span', 'status', p.status));
+    body.appendChild(row);
+    const ask = el('button', 'ask', 'Ask about this piece');
+    ask.type = 'button';
+    ask.addEventListener('click', () => openSheet(p, ask));
+    body.appendChild(ask);
+    card.appendChild(body);
+    grid.appendChild(card);
+  });
+}
+
+let lastFocus = null;
+function openSheet(p, from){
+  const g = DATA.glazes[p.glaze];
+  lastFocus = from;
+  $('sheet-art').innerHTML = potSVG(p.type, g, p.name);
+  $('sheet-title').textContent = p.name + ' (' + p.ref + ')';
+  $('sheet-meta').textContent = g.name + ', ' + p.size + ', ' + priceText(p).toLowerCase() + '. ' + p.note;
+  $('sheet-text').textContent = DATA.enquiry;
+  $('sheet').hidden = false;
+  $('sheet-close').focus();
+}
+function closeSheet(){
+  $('sheet').hidden = true;
+  if (lastFocus) lastFocus.focus();
+}
+
+function render(data){
+  DATA = data;
+  const s = data.site;
+  $('hero-lede').textContent = s.tagline + '. Mugs, bowls, vases and plates in eight glazes mixed in the studio, sold from the shelves of an old net loft.';
+  $('hero-hours').textContent = s.hours + '.';
+  $('hero-art').innerHTML = heroArt(data);
+
+  $('maker-name').textContent = data.maker.name;
+  const mt = $('maker-text'); mt.textContent = '';
+  data.maker.paragraphs.forEach(t => mt.appendChild(el('p', null, t)));
+  const mf = $('maker-facts'); mf.textContent = '';
+  data.maker.facts.forEach(f => { mf.appendChild(el('dt', null, f[0])); mf.appendChild(el('dd', null, f[1])); });
+
+  renderFilters();
+  renderGrid();
+  $('nocheckout').textContent = data.enquiry;
+
+  const gl = $('glaze-list'); gl.textContent = '';
+  Object.keys(data.glazes).forEach(k => {
+    const g = data.glazes[k];
+    const item = el('article', 'glaze-item');
+    const d = el('span', 'dot'); d.style.background = 'radial-gradient(circle at 35% 30%, ' + g.body + ' 55%, ' + g.rim + ')';
+    item.appendChild(d);
+    const t = el('section');
+    t.appendChild(el('h3', null, g.name));
+    t.appendChild(el('p', null, g.note));
+    item.appendChild(t);
+    gl.appendChild(item);
+  });
+
+  const cl = $('class-list'); cl.textContent = '';
+  data.classes.forEach(c => {
+    const a = el('article', 'class');
+    const h = el('header');
+    h.appendChild(el('h3', null, c.title));
+    h.appendChild(el('span', 'price', c.price));
+    a.appendChild(h);
+    a.appendChild(el('p', 'when', c.when + ' · ' + c.length + ' · ' + c.places));
+    a.appendChild(el('p', null, c.text));
+    cl.appendChild(a);
+  });
+  const cnote = el('p', 'meta', 'Book a place in the studio. Class dates and prices are part of the demonstration.');
+  cnote.style.marginTop = '12px';
+  cl.appendChild(cnote);
+
+  const days = $('days'); days.textContent = '';
+  data.open_days.forEach(d => {
+    const li = el('li');
+    li.appendChild(el('time', null, d.date));
+    li.appendChild(el('strong', null, d.title));
+    li.appendChild(el('span', null, d.text));
+    days.appendChild(li);
+  });
+
+  const care = $('care-list'); care.textContent = '';
+  data.care.forEach(c => {
+    const a = el('article');
+    a.appendChild(el('h3', null, c.title));
+    a.appendChild(el('p', null, c.text));
+    care.appendChild(a);
+  });
+
+  $('address').textContent = s.address;
+  $('hours').textContent = s.hours + '.';
+  $('foot-note').textContent = s.demo_note;
+}
+
+async function load(){
+  let data = null;
+  try { if (window.sg && sg.vfs) data = JSON.parse(await sg.vfs.readText('content.json')); } catch (e) {}
+  if (!data) { try { const r = await fetch('content.json'); if (r.ok) data = await r.json(); } catch (e) {} }
+  if (!data || !data.pieces) data = FALLBACK;
+  render(data);
+  try { window.parent && window.parent.postMessage({ type: 'sg-app-ready' }, '*'); } catch (e) {}
+}
+
+$('sheet-close').addEventListener('click', closeSheet);
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('sheet').hidden) closeSheet(); });
+load();
+</script>
+</body>
+</html>

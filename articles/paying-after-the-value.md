@@ -10,11 +10,11 @@
 
 # Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.0.0](versions/paying-after-the-value.md) · [newsroom v0.12.54](https://newsroom.sgit.ai/admin/versions.html) · business-modelspricingpsychologysubscriptionsreading-meterpay-after-you-readwikipedianewsroomarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/paying-after-the-value.md) · [newsroom v0.12.54](https://newsroom.sgit.ai/admin/versions.html) · business-modelspricingpsychologysubscriptionsreading-meterpay-after-you-readwikipedianewsroomarticle
 
 ***Abstract:** Almost every time I buy something, I am buying future value. A subscription, a gym membership, a big security product on a good deal, even a one-off purchase: I am betting that I will use it enough for the price of each use to fall to a number I am comfortable with. Often I lose the bet, and the cost of unsubscribing keeps me paying. The research agrees: gym members on a monthly contract paid more than $17 a visit when they could have paid $10. This newsroom is trying the opposite. You start with £5 of credit, each article you read uses a few pence, you can set the price from free to double or refuse it, and the balance can go below zero and stay there. By the time you are asked to pay, you have the value in front of you: what you read, how much, what you liked. The payment is connected to what you received, not what you hope to receive. That only works where the cost of serving is close to zero, which is true of a static site on a CDN, and where the value adds up in a way the reader can see. Wikipedia is the counter-example: £20 a year asked for at a moment with no value in view, even though it is a few pence an article. Add prices fair by country, the Big Mac index for reading, and a view of where the money goes, and payment becomes a choice people are glad to make. The experiment is live, with written hypotheses and a review in December, and I will report back.*
 
-Paying for the future, or paying for what you got. A subscription, a gym or an annual donation asks you to pay at the moment of most doubt, for value that may arrive. A meter that lets the balance go negative turns it round: the value arrives first, piece by piece, and the payment comes when you can see what it bought.
+Paying for the future, or paying for what you got: a subscription asks first, a meter that can go negative asks last.
 
 ## In short
 
@@ -41,7 +41,7 @@ So paying first feels good at the moment of use and bad at the moment of payment
 
 ## The newsroom's version
 
-The experiment, as it runs today and what comes next: what the reading meter on this site does now, what is partly built, and what this article proposes, with the five hypotheses it will be reviewed against on 6 December 2026.
+The reading meter experiment: what works now, what is partly built, and what the article proposes, with five hypotheses.
 
 This site runs the experiment, and its rules are written down in [Pay after you read](pay-after-you-read.md) and [Going live with the reading meter](going-live-with-the-reading-meter.md). "Everyone starts with £5.00 of credit." Reading uses it: "10p for a new article read to the end, 5p for an older one, less for other pages", and only as far as you read, so the first screen of an article costs a penny. You set the price: a rating moves it from free to double, and you can refuse to pay for a page, with a reason, and the charge comes back. And "Your balance can go below zero and stay there; nothing is blocked and nothing nags." When you want to, you top up with one £5 payment link, which has been live on this site since 11 October, with no account and nothing that renews.
 
@@ -101,6 +101,8 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#pay
 
 ### Continued by
 
+- [The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed](the-reading-account-as-built.md) The meter, the credit, Stripe top-ups and the account in your own vault run today; checking payments is what is proposed.
+- [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](the-user-keeps-the-meter.md) A proposed design for billing on vaults: the user's browser keeps the meter, credit now and validated later, one light check at the server.
 - [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](free-to-copy-paid-at-the-source.md) Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.
 - [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](our-first-customers.md) Agent Behaviour Policies move to execution: a first batch of customers with credit, a start-here site, daily follow-up, and a list for the next batch.
 - [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](the-no-server-startup.md) A blueprint for products with no server and no database of yours: static files, the user's own AI key and storage, and agents to build them.

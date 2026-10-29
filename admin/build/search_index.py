@@ -28,8 +28,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 from page import newsroom_page, write, HOST  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
-SKIP_PREFIX = ("search/", "og/", "assets/", "404")
-SKIP_CLASSES = {"crumb", "lkit", "athreads", "athreads areviews", "aseries", "aseries-all", "trail-end", "agent", "small dim", "subteaser", "meter-card", "sgm", "note-archive", "archive-note"}
+SKIP_PREFIX = ("search/", "og/", "assets/", "404", "drafts/")   # drafts/: review drafts, not yet approved (drafts.py)
+SKIP_CLASSES = {"crumb", "lkit", "athreads", "athreads areviews", "rvstatus rv-none", "rvstatus rv-open", "rvstatus rv-stale", "rvstatus rv-both", "rvstatus rv-people", "rvstatus rv-agents", "rvcredit", "aseries", "aseries-all", "trail-end", "agent", "small dim", "subteaser", "meter-card", "sgm", "note-archive", "archive-note"}
 BLOCK = {"p", "li", "blockquote", "figcaption", "dd", "dt", "td", "th", "pre"}
 MAX_WORDS = 160
 

@@ -30,13 +30,14 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
       <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
       <a class="sl" href="../about/index.html">Why this exists</a>
       <a class="sl" href="../desks/index.html">The five desks</a>
@@ -86,6 +87,8 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -153,11 +156,13 @@
   <script src="../assets/reader/strip.js" defer></script>
   <script src="../assets/reader/highlights.js" defer></script>
   <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
   <div class="theme-pick"></div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Open source is not free: who pays to keep the long tail working?</p>
  <h1>Open source is not free: who pays to keep the long tail working?</h1>
@@ -288,6 +293,7 @@
 <p>The case: a clean install on my agents' iMac, checked against Apple's compatibility and security pages, the Homebrew, Docker, Python, MacPorts and OpenCore Legacy Patcher documentation, and the Go, Node.js, Rust and Chrome support notes, all read on 10 October 2026. The economics: the Harvard Business School working paper on the value of open source, the Linux Foundation's 2024 funding study, the Tidelift maintainer surveys, Black Duck's OSSRA 2026, Sonatype's reports, Oracle, Red Hat, IBM and Rimini Street filings, published price lists from Microsoft, Canonical, TuxCare, Docker and the payment providers, and Homebrew and PyPI analytics, fetched the same day. Every source is listed, with its quote, in the vault.</p>
 <p>My earlier positions, which this article tries to stay consistent with: <a href="https://open-source.sgit.ai/views/index.html">the position</a>, <a href="https://open-source.sgit.ai/funding/index.html">three funding proposals</a>, <a href="https://open-source.sgit.ai/views/open-core.html">open core, or packaging?</a>, <a href="https://open-source.sgit.ai/history/numbers.html">the numbers, and the ones we refuse to publish</a> and <a href="https://open-source.sgit.ai/funding/curl.html">cURL's closed bug bounty</a> on open-source.sgit.ai; and on diniscruz.ai, <a href="https://diniscruz.ai/2025/04/02/the-future-of-news-monetization__embracing-micro-and-nano-payments.html">micro and nano payments</a>, <a href="https://diniscruz.ai/2025/07/04/usage-based-billable-entities-aligning-saas-pricing-with-customer-usage.html">usage-based billable entities</a> and <a href="https://diniscruz.ai/2025/06/07/genai-legacy-code-refactoring-business-plan.html">GenAI legacy code refactoring</a>.</p>
 <sg-meter view="page" kind="article" date="2026-10-10" topics="startups-and-strategy vaults-and-method" title="Open source is not free: who pays to keep the long tail working?, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Startups &amp; strategy</span><span class="tchip">Vaults &amp; method</span> <a href="graphs.html#open-source-is-not-free">This article as a graph &rarr;</a></p>
@@ -323,7 +329,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="open-source-is-not-free.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="open-source-is-not-free.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -357,6 +363,8 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

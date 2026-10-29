@@ -1,0 +1,34 @@
+{
+ "slug": "sources-and-shadows",
+ "teaser": "Each reference's licence, access, links and quotes, reading a paywalled article through its shadow, and paying the sources we use.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "Every reference carries primitives worth recording (licence, access, links, quotes, quality, history); when an article cannot be read, the shadow of who cites and quotes it is evidence, as Wikipedia's paywalled citations show, and disagreements between shadow and source become visible, building a record of who got it right and a basis for paying the sources used.",
+ "nodes": [
+  {"id": "explore", "label": "Explore there, settle here", "kind": "claim", "summary": "PHP agents explore; the newsroom's wires adopt."},
+  {"id": "prims", "label": "Primitives of a reference", "kind": "method", "summary": "Licence, access, links, quotes, quality, history."},
+  {"id": "watch", "label": "The source watch", "kind": "example", "summary": "913 pages: 735 open, 59 challenged, 15 paywalled."},
+  {"id": "shadow", "label": "The shadow of an article", "kind": "method", "summary": "Who cites it, what they quote."},
+  {"id": "wiki", "label": "Wikipedia's paywalled citations", "kind": "example", "summary": "8 of 39 statements rest on subscription titles."},
+  {"id": "disagree", "label": "Disagreements", "kind": "claim", "summary": "Quotes that no longer match a changed source."},
+  {"id": "record", "label": "Who got it right", "kind": "claim", "summary": "A record from captures, quotes, corrections."},
+  {"id": "pay", "label": "Paying the sources", "kind": "method", "summary": "Micropayments funnelled to sources used."}
+ ],
+ "edges": [
+  {"from": "explore", "to": "prims", "rel": "produces"},
+  {"from": "watch", "to": "prims", "rel": "example-of"},
+  {"from": "shadow", "to": "prims", "rel": "depends-on"},
+  {"from": "wiki", "to": "shadow", "rel": "example-of"},
+  {"from": "shadow", "to": "disagree", "rel": "produces"},
+  {"from": "disagree", "to": "record", "rel": "produces"},
+  {"from": "prims", "to": "pay", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["signed-by-the-source", "on-the-record", "free-to-copy-paid-at-the-source", "who-signs-for-this", "php-daily-2026-10-24", "explorer-coding"],
+  "pages": [],
+  "sites": ["https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.html", "https://php.oct.2026.newsroom.sgit.ai/wikipedia/php2shell/references/index.html", "https://newsroom.sgit.ai/wire/index.html"]
+ },
+ "quotes": [
+  {"text": "A reference we cannot read, because we have no licence, is still a node in the graph, with its shadow around it.", "why": "The shadow of an article."},
+  {"text": "not to read around the wall, but to pay through it, per use, for what we actually cite.", "why": "Paying the sources we use."}
+ ]
+}

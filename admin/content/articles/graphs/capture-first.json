@@ -1,0 +1,198 @@
+{
+  "slug": "capture-first",
+  "teaser": "A BBC live page at breakfast became an evidence vault, a section and a dedicated site by lunchtime: capture first, because a breaking story's pages change by the hour.",
+  "topics": [
+    "vaults-and-method"
+  ],
+  "core_idea": "When a story is still breaking, the first thing to build is the vault that captures the evidence, dated and hashed, before the pages change, and the pages, the section and the dedicated site are then readers of that vault, with what went wrong kept in the record too.",
+  "nodes": [
+    {
+      "id": "bbc",
+      "label": "The BBC live page",
+      "kind": "example",
+      "summary": "Opened at 06:16 UTC on 22 October; a new post appeared between the first two copies."
+    },
+    {
+      "id": "doubt",
+      "label": "Numbers that did not add up",
+      "kind": "question",
+      "summary": "70% of the internet beside 30 million websites, and agencies saying take sites offline."
+    },
+    {
+      "id": "capfirst",
+      "label": "Capture before you write",
+      "kind": "claim",
+      "summary": "Live pages, down pages and posts change within hours, so the evidence is kept before the article is written."
+    },
+    {
+      "id": "vault",
+      "label": "The evidence vault",
+      "kind": "artefact",
+      "summary": "A private sgit vault created at 08:03, holding 184 sources and 177 captures by 12:05."
+    },
+    {
+      "id": "tool",
+      "label": "The capture tool",
+      "kind": "method",
+      "summary": "Raw page, rendered page, text, screenshot and headers, each hashed in a provenance file."
+    },
+    {
+      "id": "additive",
+      "label": "Captures are only added",
+      "kind": "method",
+      "summary": "A page captured many times leaves a dated series that records how the story moved."
+    },
+    {
+      "id": "perfile",
+      "label": "One file per writer",
+      "kind": "method",
+      "summary": "A row per source and claims and timeline files per agent, so several agents write at once."
+    },
+    {
+      "id": "section",
+      "label": "The /php-flaws/ section",
+      "kind": "artefact",
+      "summary": "Pushed at 08:13 with what is known, what is not, the timeline and the claims by status."
+    },
+    {
+      "id": "ncscnl",
+      "label": "NCSC-NL's inventory, bundled",
+      "kind": "example",
+      "summary": "The whole repository kept as a git bundle; 674 products counted at commit cca173c64ec5."
+    },
+    {
+      "id": "numbers",
+      "label": "Numbers pinned to measures",
+      "kind": "claim",
+      "summary": "70% of websites, 2.6 million hosts, about 6,000 resources in Latvia: different things measured."
+    },
+    {
+      "id": "agencies",
+      "label": "Agencies disagree on offline",
+      "kind": "claim",
+      "summary": "The NSA and CISA say take systems offline; the NCSC-NL does not advise it."
+    },
+    {
+      "id": "wrong",
+      "label": "Forty sources nearly lost",
+      "kind": "example",
+      "summary": "Two agents stopped before committing; the lead agent recovered their captures hours later."
+    },
+    {
+      "id": "site",
+      "label": "A site of its own",
+      "kind": "artefact",
+      "summary": "php.oct.2026.newsroom.sgit.ai reads the same vault, facts only, with briefings per role."
+    },
+    {
+      "id": "retire",
+      "label": "Retire the section",
+      "kind": "method",
+      "summary": "The section moves to the dedicated site and leaves a pointer; the newsroom keeps context and opinion."
+    }
+  ],
+  "edges": [
+    {
+      "from": "bbc",
+      "to": "doubt",
+      "rel": "leads-to"
+    },
+    {
+      "from": "doubt",
+      "to": "capfirst",
+      "rel": "leads-to"
+    },
+    {
+      "from": "capfirst",
+      "to": "vault",
+      "rel": "produces"
+    },
+    {
+      "from": "tool",
+      "to": "vault",
+      "rel": "produces"
+    },
+    {
+      "from": "additive",
+      "to": "tool",
+      "rel": "extends"
+    },
+    {
+      "from": "perfile",
+      "to": "vault",
+      "rel": "depends-on"
+    },
+    {
+      "from": "vault",
+      "to": "section",
+      "rel": "produces"
+    },
+    {
+      "from": "ncscnl",
+      "to": "vault",
+      "rel": "example-of"
+    },
+    {
+      "from": "vault",
+      "to": "numbers",
+      "rel": "produces"
+    },
+    {
+      "from": "vault",
+      "to": "agencies",
+      "rel": "produces"
+    },
+    {
+      "from": "numbers",
+      "to": "doubt",
+      "rel": "answers"
+    },
+    {
+      "from": "wrong",
+      "to": "perfile",
+      "rel": "contrasts"
+    },
+    {
+      "from": "vault",
+      "to": "site",
+      "rel": "produces"
+    },
+    {
+      "from": "site",
+      "to": "retire",
+      "rel": "leads-to"
+    },
+    {
+      "from": "section",
+      "to": "site",
+      "rel": "compared-with"
+    }
+  ],
+  "links": {
+    "articles": [
+      "footprint-and-blast-radius",
+      "future-of-news-story-vault-not-paywall",
+      "two-agents-one-vault",
+      "explorer-to-villager-newsroom"
+    ],
+    "pages": [],
+    "sites": [
+      "https://newsroom.sgit.ai/php-flaws/index.html",
+      "https://www.bbc.co.uk/news/live/ckgel5xp2xv9t",
+      "https://github.com/NCSC-NL/php2shell",
+      "https://www.php.net/archive/2026.php#2026-10-21-5",
+      "https://php.oct.2026.newsroom.sgit.ai/",
+      "https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A finished article can wait; the evidence for it cannot.",
+      "why": "The argument of the article in one line: why the vault came before the page."
+    },
+    {
+      "text": "A count like 674 is only useful with the commit it was counted at, because the next pull request changes it.",
+      "why": "Provenance for a number, stated as a working rule."
+    }
+  ]
+}

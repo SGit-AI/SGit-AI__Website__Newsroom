@@ -1,0 +1,125 @@
+{
+  "slug": "agents-need-direction",
+  "teaser": "Agents need direction: every skill in one role, contained by scope, steered by people, and teams that send each other pull requests.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Agents can go in all directions and bring every skill to a focused role, so they must be contained by scope and repository boundaries and steered by people who sometimes slow things down; and because they can do the work themselves, teams of agents should send each other pull requests that villagers and town planners later refactor or replace.",
+  "nodes": [
+    {
+      "id": "direction",
+      "label": "Agents need direction",
+      "kind": "claim",
+      "summary": "They can go in all directions."
+    },
+    {
+      "id": "debt",
+      "label": "Technical debt",
+      "kind": "example",
+      "summary": "The reason for the villager."
+    },
+    {
+      "id": "skills",
+      "label": "Every skill in one role",
+      "kind": "claim",
+      "summary": "The historian as five roles."
+    },
+    {
+      "id": "contain",
+      "label": "Contained",
+      "kind": "method",
+      "summary": "Role files, then repository boundaries."
+    },
+    {
+      "id": "people",
+      "label": "People give focus",
+      "kind": "claim",
+      "summary": "Go slow to go fast."
+    },
+    {
+      "id": "prs",
+      "label": "Pull requests between teams",
+      "kind": "method",
+      "summary": "Explorer code handed to the owner."
+    },
+    {
+      "id": "villagers",
+      "label": "Villagers and town planners",
+      "kind": "method",
+      "summary": "Refactor, then replace."
+    }
+  ],
+  "edges": [
+    {
+      "from": "debt",
+      "to": "direction",
+      "rel": "example-of"
+    },
+    {
+      "from": "skills",
+      "to": "direction",
+      "rel": "depends-on"
+    },
+    {
+      "from": "contain",
+      "to": "skills",
+      "rel": "answers"
+    },
+    {
+      "from": "people",
+      "to": "contain",
+      "rel": "depends-on"
+    },
+    {
+      "from": "prs",
+      "to": "skills",
+      "rel": "depends-on"
+    },
+    {
+      "from": "villagers",
+      "to": "prs",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "who-creates-the-original",
+      "a-call-for-help",
+      "a-villager-for-the-agents",
+      "explorer-coding",
+      "jobs-that-never-scaled",
+      "our-first-pr-in-ruflo",
+      "a-pull-request-by-another-name"
+    ],
+    "pages": [],
+    "sites": [
+      "https://php.oct.2026.newsroom.sgit.ai/admin/agents/historian/index.html",
+      "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__proposal__one-repository-into-six/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A human team would need five people for that.",
+      "why": "One role, every skill."
+    },
+    {
+      "text": "Go slow to go fast.",
+      "why": "Where the people come in."
+    }
+  ],
+  "figures": [
+    {
+      "file": "dr-many.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dr-many.webp",
+      "caption": "One role, many skills, one scope: the historian at the centre, the roles it can also be, and the scope that contains it.",
+      "kind": "concept"
+    },
+    {
+      "file": "dr-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dr-flow.webp",
+      "caption": "Teams that send each other pull requests: an explorer builds, the owner reviews, villagers refactor, planners replace.",
+      "kind": "process"
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "slug": "almost-working",
+  "teaser": "A researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why it has to be built slowly.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "The PHP story site is updated by three scheduled agents in a chain, from raw captures to curated evidence to the published site; because neither Claude's scheduled tasks nor ChatGPT gives an agent an identity or a secret, each agent session gets its vault key once by a QR handshake on pki.sgit.ai and is then woken on a schedule, a workflow that is almost working and is being built slowly, in its genesis stage.",
+  "nodes": [
+    {
+      "id": "update",
+      "label": "Updatability",
+      "kind": "question",
+      "summary": "When did we last check, and can we prove nothing changed?"
+    },
+    {
+      "id": "researcher",
+      "label": "The researcher",
+      "kind": "artefact",
+      "summary": "Captures pages, raw, into the source watch."
+    },
+    {
+      "id": "curator",
+      "label": "The curator",
+      "kind": "artefact",
+      "summary": "Promotes what holds into the evidence vault."
+    },
+    {
+      "id": "journalist",
+      "label": "The journalist",
+      "kind": "artefact",
+      "summary": "Updates the site and its versioned views."
+    },
+    {
+      "id": "gap",
+      "label": "No identity, no secrets",
+      "kind": "claim",
+      "summary": "Scheduled tasks and ChatGPT have no place for an agent's key."
+    },
+    {
+      "id": "handshake",
+      "label": "The QR handshake",
+      "kind": "method",
+      "summary": "A session key, the root on pki.sgit.ai, one sealed QR image."
+    },
+    {
+      "id": "schedule",
+      "label": "A schedule wakes the session",
+      "kind": "method",
+      "summary": "The same session, still holding its key."
+    },
+    {
+      "id": "risk",
+      "label": "Feature and vulnerability",
+      "kind": "claim",
+      "summary": "A session with a write key acting unattended."
+    },
+    {
+      "id": "queue",
+      "label": "Control is the queue",
+      "kind": "method",
+      "summary": "The schedule vault: schedules, tasks, run records."
+    },
+    {
+      "id": "state",
+      "label": "Almost working",
+      "kind": "claim",
+      "summary": "Structure in place; runs not yet all recorded by the agents."
+    },
+    {
+      "id": "genesis",
+      "label": "Genesis",
+      "kind": "concept",
+      "summary": "Built slowly by hand, then a product."
+    }
+  ],
+  "edges": [
+    {
+      "from": "update",
+      "to": "researcher",
+      "rel": "leads-to"
+    },
+    {
+      "from": "researcher",
+      "to": "curator",
+      "rel": "produces"
+    },
+    {
+      "from": "curator",
+      "to": "journalist",
+      "rel": "produces"
+    },
+    {
+      "from": "gap",
+      "to": "handshake",
+      "rel": "leads-to"
+    },
+    {
+      "from": "handshake",
+      "to": "schedule",
+      "rel": "leads-to"
+    },
+    {
+      "from": "schedule",
+      "to": "risk",
+      "rel": "produces"
+    },
+    {
+      "from": "queue",
+      "to": "risk",
+      "rel": "answers"
+    },
+    {
+      "from": "state",
+      "to": "genesis",
+      "rel": "example-of"
+    },
+    {
+      "from": "journalist",
+      "to": "update",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-secret-is-a-qr-code",
+      "pki-everywhere",
+      "the-human-is-the-network",
+      "capture-first",
+      "the-false-positives-are-the-next-incident"
+    ],
+    "pages": [],
+    "sites": [
+      "https://pki.sgit.ai/handover/",
+      "https://php.oct.2026.newsroom.sgit.ai/team/schedule/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "It is a slightly mad solution, and a lovely one.",
+      "why": "The handshake."
+    },
+    {
+      "text": "Collection is easy. Collection with an identity, a secret and a schedule is not.",
+      "why": "Where it broke."
+    },
+    {
+      "text": "Nothing an agent does on a schedule is outside a task someone queued.",
+      "why": "The schedule vault: control is the queue."
+    }
+  ],
+  "figures": [
+    {
+      "file": "wk-pipeline.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wk-pipeline.webp",
+      "caption": "Three agents, three stores, one site: the source watch, the evidence vault and the schedule vault.",
+      "kind": "architecture"
+    },
+    {
+      "file": "wk-handshake.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wk-handshake.webp",
+      "caption": "One handshake, then a schedule: the agent's session key, the editor's check and the vault key sealed on pki.sgit.ai.",
+      "kind": "diagram"
+    },
+    {
+      "file": "wk-state.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wk-state.webp",
+      "caption": "Almost working, on the evening of 23 October: what works, what is set up but not yet proven, and what is missing.",
+      "kind": "comparison"
+    }
+  ]
+}

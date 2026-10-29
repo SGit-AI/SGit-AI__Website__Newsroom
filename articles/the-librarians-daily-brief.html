@@ -30,13 +30,14 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
       <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
       <a class="sl" href="../about/index.html">Why this exists</a>
       <a class="sl" href="../desks/index.html">The five desks</a>
@@ -86,6 +87,8 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -153,17 +156,19 @@
   <script src="../assets/reader/strip.js" defer></script>
   <script src="../assets/reader/highlights.js" defer></script>
   <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
   <div class="theme-pick"></div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today</p>
  <h1>The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today</h1>
- <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-18 &middot; <a href="versions/the-librarians-daily-brief.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.111</a> &middot; <span class="chip">agents</span><span class="chip">librarian</span><span class="chip">daily-brief</span><span class="chip">github</span><span class="chip">memory</span><span class="chip">newsroom</span><span class="chip">brief</span><span class="chip">article</span></p>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-18 &middot; <a href="versions/the-librarians-daily-brief.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.111</a> &middot; <span class="chip">agents</span><span class="chip">librarian</span><span class="chip">daily-brief</span><span class="chip">github</span><span class="chip">memory</span><span class="chip">newsroom</span><span class="chip">brief</span><span class="chip">article</span></p>
  <p class="abstract"><em><b>Abstract:</b> I am in the most productive mode I have been in for years, and I would like to keep it, and even speed it up. But I work on many things at once, I follow tangents, and because I try to work where my leverage is highest, it is easy to miss a thread that has become worth picking up again. Today I could not even remember which cloud session had built something. So the idea is a daily brief, written by an agent before I start: everything that happened yesterday across every repository and organisation, the pull requests, including other people's, the releases, what each scheduled run and cloud session did and cost, the reviews, the briefs that moved; then the threads I left that are worth returning to, what is coming up, and at most three suggestions for where my leverage is today. The agent is the Librarian, my favourite role: the one that catalogues everything and keeps it in sync. Most of the sources already exist on this site: one file per release, a ledger of every scheduled run with its cost, a map of sixty-eight briefs, a status file for every review. It borrows its loop from rUv's Ruflo: retrieve, judge, distill, consolidate, so each day's brief learns from what I acted on the day before. It is for me first. But every team needs one, and it can be started small and retrofitted backwards.</em></p>
-<figure class="shot" data-shot="lb-brief.webp" data-dir="images/" data-alt="The Librarian&#x27;s daily brief. On the left, what it reads each morning: GitHub across the organisations, pull requests including outside contributions, this site&#x27;s release files, the accountant&#x27;s ledger of scheduled runs and costs, the cloud sessions, the briefs map, the review status, a calendar file and the wires. In the middle, the Librarian, which reads everything and writes only its own folder. On the right, one page: what needs Dinis, yesterday, the agents&#x27; debrief, threads to pick up, what is coming, and at most three places where his leverage is. Underneath, the loop: what he acted on weights the next day&#x27;s brief." data-kind="architecture"><figcaption>The Librarian's daily brief. On the left, what it reads each morning: GitHub across the organisations, pull requests including outside contributions, this site's release files, the accountant's ledger of scheduled runs and costs, the cloud sessions, the briefs map, the review status, a calendar file and the wires. In the middle, the Librarian, which reads everything and writes only its own folder. On the right, one page: what needs Dinis, yesterday, the agents' debrief, threads to pick up, what is coming, and at most three places where his leverage is. Underneath, the loop: what he acted on weights the next day's brief.</figcaption></figure>
+<figure class="shot" data-shot="lb-brief.webp" data-dir="images/" data-alt="The Librarian&#x27;s daily brief: what it reads each morning, its page, and the loop." data-kind="architecture"><figcaption>The Librarian's daily brief: what it reads each morning, its page, and the loop.</figcaption></figure>
 <h2 id="in-short">In short</h2>
 <ul>
 <li><b>I work on many threads at once.</b> And it is easy to lose one that has become worth picking up.</li>
@@ -225,6 +230,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo from me on 18 October 2026. The research, read that day by a research agent: GitHub's documentation on <a href="https://docs.github.com/en/rest/activity/events">events</a>, <a href="https://docs.github.com/en/rest/search/search">search</a>, <a href="https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api">rate limits</a> and <a href="https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows">scheduled workflows</a>; the organisations' public pages; Ruflo's <a href="https://github.com/ruvnet/ruflo">README</a> and its <a href="https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-intelligence">intelligence plugin</a>; The Decoder on <a href="https://the-decoder.com/openais-new-pulse-feature-lets-chatgpt-start-the-conversation/">ChatGPT Pulse</a>; SiliconANGLE on <a href="https://siliconangle.com/2025/12/16/google-tests-cc-ai-agent-summarize-email-calendars-documents/">Google's daily brief</a>. This site's own files: the release notes, <code>admin/build/wire-runs.json</code>, <code>admin/content/briefs.json</code>, <code>reviews/status.json</code> and <code>newsroom/policies.md</code>. Related: <a href="the-agents-write-too.html">the agents write too</a>, <a href="places-of-highest-leverage.html">places of highest leverage</a>, <a href="the-briefs-so-far.html">the briefs so far</a>, <a href="our-first-pr-in-ruflo.html">our first PR in Ruflo</a>, <a href="bringing-my-past-work-back.html">bringing my past work back</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
 <sg-meter view="page" kind="article" date="2026-10-18" topics="agents-and-policy site-and-engineering" title="The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#the-librarians-daily-brief">This article as a graph &rarr;</a></p>
@@ -260,7 +266,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-librarians-daily-brief.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-librarians-daily-brief.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -294,6 +300,8 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

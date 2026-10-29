@@ -10,11 +10,11 @@
 
 # PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.0.0](versions/pki-everywhere.md) · [newsroom v0.12.155](https://newsroom.sgit.ai/admin/versions.html) · pkikeysagentsidentitysecuritysgitarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.1.0, 2 versions](versions/pki-everywhere.md) · [newsroom v0.12.155](https://newsroom.sgit.ai/admin/versions.html) · pkikeysagentsidentitysecuritysgitarticle
 
 ***Abstract:** This is a strategic decision. From now on, every message, every secret and every transmission of data we make should be signed, and in some cases encrypted, with public key cryptography. Everything starts with a PKI handshake, including our first customers and the workflows we build for them. We are at a level of maturity where this is possible: pki.sgit.ai now has a register of people and their public keys, and since its v0.2.1 a workflow for an agent to get a key its operator confirms, with trust that runs both ways and has an end date. The hard part is the first key. As far as we found, no major agent platform gives an individual agent session its own key pair; what exists signs at the level of the platform. So there are two patterns, and we need both. In the first, the agent makes a key only it knows, sends the public half over an append lane, and a person compares fingerprints and approves it: that proves who is here now. In the second, the agent asks a central workflow, a person approves as a second step, and the agent receives an identity key that is made and held centrally: logged, revocable, and the same in the next session. A central store of the keys that give agents their identity is fine, and the agent can always make its own keys for its own work.*
 
-How an agent gets its first key: two patterns. A, the agent's own key, confirmed by a person comparing fingerprints, is built at pki.sgit.ai. B, an identity key issued and held centrally after a second-step approval, is proposed.
+How an agent gets its first key: pattern A, its own key confirmed by a person, and pattern B, a central identity key.
 
 ## In short
 
@@ -95,6 +95,12 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#pki-eve
 
 ### Continued by
 
+- [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](agents-have-an-identity-now.md) A key pair made in every agent session, published with its role in a repository, so any agent can seal a secret to it; what the clouds could add.
+- [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](the-push-is-the-authorisation.md) The PHP newsroom accepts a new agent session's key because it was pushed to the team repository, which makes who can push a security decision.
+- [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](a-pen-and-a-key.md) Every article now has a Pen to mark it, comment and tell the newsroom, and a browser key pki.sgit.ai vouches for signs each note as mine.
+- [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](messaging-fs.md) A proposed encrypted messenger between vaults: append lanes for transport, PKI for trust, and Messaging-FS as the schema.
+- [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](aws-from-the-vault.md) A proposed aws.twin.sgit.ai: an AWS twin on a vault first, then a temporary AWS session from the user's vault.
+- [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](the-user-keeps-the-meter.md) A proposed design for billing on vaults: the user's browser keeps the meter, credit now and validated later, one light check at the server.
 - [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](v0-12-in-numbers.md) v0.12 in numbers: 159 versions in eight days, 131 articles, 292,000 words, a graph for every article, and the mistakes the data shows.
 - [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](free-to-copy-paid-at-the-source.md) Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.
 - [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](a-leak-without-breaking-the-policy.md) A key can leak through an allowed action. Told, checked, never given: a hook tested on nine leaks, four experimental rules, and a real sweep.

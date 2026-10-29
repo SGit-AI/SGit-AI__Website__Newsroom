@@ -10,11 +10,11 @@
 
 # From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.0.0](versions/from-send-to-sgit.md) · [newsroom v0.12.62](https://newsroom.sgit.ai/admin/versions.html) · sg-sendsgitvaultshistoryagentic-developmentbriefsproduct-market-fitexplorersvillagersencryptionarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.1.0, 2 versions](versions/from-send-to-sgit.md) · [newsroom v0.12.62](https://newsroom.sgit.ai/admin/versions.html) · sg-sendsgitvaultshistoryagentic-developmentbriefsproduct-market-fitexplorersvillagersencryptionarticle
 
 ***Abstract:** SG/Send started because sending a file was harder than it should be, and because I wanted to build a service where the server holds nothing: the best way to protect an asset is not to have one. Eight months later it has become sgit, encrypted version control with Git's model, and the vaults that this site runs on. The whole journey is in public repositories, so this time I asked this site's agent to check my memory against the record: 4,476 commits on the SG/Send app on 246 of its first 249 days, 1,620 on the sgit command line, 739 release tags, 1,389 brief files and 268 debriefs. The record changes the order I remembered. The vault and the data room were named in February, before folders, zips and Git; the first feature a paying user asked for went from proposal to production in 22 minutes; the move to Git's model took about two weeks of briefs and a simulation that found 14 gaps before any code was written. It also shows the pace: fast from February to May, a turn to focus in June, two long pauses on the command line, and a burst in October. And it shows the lesson: by 5 March the briefs already said "Users buy credits, test once, and don't come back." The technology worked. The use case was not there yet.*
 
-Eight months of SG/Send and sgit, week by week: commits per week across all branches of the SG/Send app (bars) and the sgit command line (line), from 8 February to 14 October 2026, with the milestones the briefs and commits record and the command line's two long pauses shaded.
+Eight months of SG/Send and sgit, week by week, from 8 February to 14 October 2026, with milestones marked.
 
 ## In short
 
@@ -53,7 +53,7 @@ This is where my memory and the record part ways, in an instructive direction. I
 
 ## Copy Git
 
-The order I remembered, and the order the record shows: the memo's sequence on the left, the same steps dated from the briefs and commits on the right. The vault and the data room were named in February, before folders, zips and Git.
+The order I remembered, and the order the record shows: the memo's sequence beside the dated steps.
 
 A vault you can only replace whole is not much of a vault. Two sessions saving at once lost data; there was no history and no way to merge. The architecture brief of 4 March is the turning point, and it is short on hesitation: "stop inventing solutions to these problems. Git already solved all of them. Copy Git." The model was Git's, commits, trees, blobs, refs and branches, with encryption on top, and a server that is "a dumb key-value blob store" while "All intelligence lives in the client."
 
@@ -67,7 +67,7 @@ Once sgit existed, the vault became its interface, and then much more than a bet
 
 ## The pace
 
-sgit's unit tests as recorded in its commit messages, from 237 on 5 March to 4,232 on 14 October, and its releases to PyPI per month: the tests grew fastest from March to May; the releases came in bursts.
+sgit's unit tests from 237 on 5 March to 4,232 on 14 October, and its releases to PyPI per month.
 
 The repositories show the speed, and its shape. The SG/Send app has 4,476 commits on 246 of its first 249 days, and 739 release tags from v0.1.0 to v0.34.0: 196 tags in February, 253 in March, then fewer each month, and five in September. The busiest weeks were in March, at 427 and 439 commits.
 
@@ -108,6 +108,7 @@ Vaults & methodStartups & strategy[This article as a graph →](graphs.md#from-s
 
 ### Continued by
 
+- [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](where-to-invest-in-sgit.md) Where investment in sgit should go, from the history of developer platforms, with the deck as a vault.
 - [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](can-you-sell-it.md) Start selling what you have, however rough. The point is not the sale but what you learn trying, and a payment is the best signal there is.
 - [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](the-librarians-daily-brief.md) A daily brief from the Librarian: yesterday across every repository, the agents' debrief, threads to pick up, and where my leverage is today.
 - [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](three-linkedin-pages.md) Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.

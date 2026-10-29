@@ -1,0 +1,168 @@
+{
+  "slug": "the-human-is-the-network",
+  "teaser": "Two AI sessions sharing nothing passed keys, a certificate, images and an encrypted message through QR codes and a screenshot.",
+  "topics": [
+    "site-and-engineering"
+  ],
+  "core_idea": "A person relaying screenshots between two isolated AI sessions is a lossless channel for QR codes up to the format's 2,953-byte limit, enough for keys, certificates, compressed images and encrypted, signed messages; the trust still comes from signatures and a human checking fingerprints, and QR codes are a friendlier way to move keys than blobs of text.",
+  "nodes": [
+    {
+      "id": "relay",
+      "label": "The human relay",
+      "kind": "method",
+      "summary": "Screenshot, paste, nothing else."
+    },
+    {
+      "id": "layers",
+      "label": "Layer by layer",
+      "kind": "example",
+      "summary": "Text, JSON, keys, images, encryption."
+    },
+    {
+      "id": "screenshot",
+      "label": "Four codes in one screenshot",
+      "kind": "example",
+      "summary": "2,953 bytes at 1.3 px a square."
+    },
+    {
+      "id": "capacity",
+      "label": "Capacity",
+      "kind": "concept",
+      "summary": "2,953 bytes; base45 costs 3%."
+    },
+    {
+      "id": "images",
+      "label": "Images in a code",
+      "kind": "example",
+      "summary": "An infographic in 539 bytes."
+    },
+    {
+      "id": "exchange",
+      "label": "The key exchange",
+      "kind": "artefact",
+      "summary": "QRE1: X25519, ChaCha20-Poly1305, Ed25519."
+    },
+    {
+      "id": "failures",
+      "label": "The failures",
+      "kind": "claim",
+      "summary": "No reading by eye; a lost key."
+    },
+    {
+      "id": "auth",
+      "label": "Integrity is not authenticity",
+      "kind": "concept",
+      "summary": "Fingerprints checked by a person."
+    },
+    {
+      "id": "friendly",
+      "label": "Friendlier than text blobs",
+      "kind": "claim",
+      "summary": "Keys a person can see and hand over."
+    }
+  ],
+  "edges": [
+    {
+      "from": "relay",
+      "to": "screenshot",
+      "rel": "produces"
+    },
+    {
+      "from": "layers",
+      "to": "exchange",
+      "rel": "leads-to"
+    },
+    {
+      "from": "screenshot",
+      "to": "capacity",
+      "rel": "example-of"
+    },
+    {
+      "from": "images",
+      "to": "capacity",
+      "rel": "example-of"
+    },
+    {
+      "from": "failures",
+      "to": "auth",
+      "rel": "leads-to"
+    },
+    {
+      "from": "exchange",
+      "to": "auth",
+      "rel": "depends-on"
+    },
+    {
+      "from": "relay",
+      "to": "friendly",
+      "rel": "produces"
+    },
+    {
+      "from": "friendly",
+      "to": "exchange",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "sixteen-notes-i-did-not-want-to-lose",
+      "secrets-on-public-keys",
+      "handing-secrets-to-agents",
+      "a-directory-of-people-and-keys"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "one of those super interesting sort of serendipity things that happens when you're doing a bunch of experiments",
+      "why": "The question."
+    },
+    {
+      "text": "QR codes are way more user friendly than what we were using to share the vault keys and the encrypted messages.",
+      "why": "Why it matters."
+    },
+    {
+      "text": "A signature proves the bytes did not change; a key that travels inside its own message proves nothing about who sent it.",
+      "why": "Integrity is not authenticity."
+    }
+  ],
+  "figures": [
+    {
+      "file": "hn-collage.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hn-collage.webp",
+      "caption": "Six QR codes passed between two Claude sessions by screenshot and paste, from plain text to a certificate.",
+      "kind": "infographic"
+    },
+    {
+      "file": "hn-screenshot.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hn-screenshot.webp",
+      "caption": "The screenshot that carried four QR codes from one session to the other, as Session A showed them in its chat.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "hn-capacity.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hn-capacity.webp",
+      "caption": "Left: the bytes in each code of the graded test set. Right: what a version 40 code holds in raw, base45 and base64.",
+      "kind": "comparison"
+    },
+    {
+      "file": "hn-images.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hn-images.webp",
+      "caption": "Two images inside single QR codes, each next to the image rebuilt from its decoded bytes.",
+      "kind": "comparison"
+    },
+    {
+      "file": "hn-exchange.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hn-exchange.webp",
+      "caption": "The key exchange by screenshot: Session B publishes a key as a QR code, Session A answers with an encrypted message.",
+      "kind": "concept"
+    },
+    {
+      "file": "hn-first.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hn-first.webp",
+      "caption": "Session B's reply to the first QR code: it verified the signed key offer and noted what that proves.",
+      "kind": "screenshot"
+    }
+  ]
+}

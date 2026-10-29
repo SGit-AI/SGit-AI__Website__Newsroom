@@ -10,11 +10,11 @@
 
 # sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.0.0](versions/sgit-actions-side-by-side.md) · [newsroom v0.12.50](https://newsroom.sgit.ai/admin/versions.html) · sgitgithub-actionscivaultsartefactsappend-lanesperformancellmtoken-budgetbriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/sgit-actions-side-by-side.md) · [newsroom v0.12.50](https://newsroom.sgit.ai/admin/versions.html) · sgitgithub-actionscivaultsartefactsappend-lanesperformancellmtoken-budgetbriefarticle
 
 ***Abstract:** sgit in a CI pipeline described how an encrypted vault can carry data in and out of GitHub Actions, and between its jobs. The next step is to show it running, and to keep showing it. So this is a brief for a dedicated repository and website, just for that: its own issues, its own CI pipeline, and on every run four ways of moving a vault between jobs, side by side, in parallel. A vault server with the keys in the repository's secrets; the encrypted vault itself as an artefact, a zip that one job uploads and the next downloads; the vault published as files and cloned read-only from any web host; and append lanes for jobs that only need to hand results in. Each lane reports its time, its bytes, the keys each job held and a screenshot, and repeats on vaults of growing size with full, thin and path clones. I measured the core of it locally for this article. A clone of one folder barely grows with the vault: 0.59 seconds at 100 files, 0.77 at 2,000. A full clone grows with it, from 0.95 to 5.55 seconds. The repository should also have a budget, because some steps will call models, from more than one provider, and every token they spend should be counted against it.*
 
-Four ways to move a vault between jobs, run side by side: a vault server with keys in secrets, the vault as an artefact, the vault published as files, and append lanes for shards. On every run of the showcase repository, each lane reports its time, its bytes, the keys each job held, a screenshot of the result, and the tokens spent by any LLM step against the run's budget.
+Four ways to move a vault between jobs, run side by side on every run of the showcase repository.
 
 ## In short
 
@@ -48,7 +48,7 @@ Then it repeats on vaults of growing size, with a full clone, a thin clone of th
 
 ## Measured locally
 
-Clone time as a vault grows, measured locally: median of three runs, sgit 0.21.0 against a local vault server over HTTP, on four cores. A clone of one folder, 5% of the files, barely grows with the vault; a full clone grows with it. Git, reading local disk without encryption, is shown for scale, not as a like-for-like race.
+Clone time as a vault grows, measured locally: median of three runs, sgit 0.21.0 against a local vault server.
 
 I measured the core of it for this article on one machine, sgit 0.21.0 against a local vault server over HTTP, with files of random bytes spread over 20 folders, three runs each.
 

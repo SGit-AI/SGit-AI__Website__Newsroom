@@ -1,0 +1,128 @@
+{
+  "slug": "the-reading-account-as-built",
+  "teaser": "The meter, the credit, Stripe top-ups and the account in your own vault run today; checking payments is what is proposed.",
+  "topics": [
+    "vaults-and-method",
+    "site-and-engineering"
+  ],
+  "core_idea": "The reader's account on this site is built and in daily use, the meter, starting credit, Stripe top-ups and an account kept in the reader's own vault across devices with a lane any browser can write to, while the server sees only ciphertext; what remains proposed is checking each payment against Stripe and signing the result, and a missing status page let an agent mistake one for the other.",
+  "nodes": [
+    {
+      "id": "meter",
+      "label": "The meter",
+      "kind": "artefact",
+      "summary": "Charges by how much was read."
+    },
+    {
+      "id": "topup",
+      "label": "Stripe top-ups",
+      "kind": "artefact",
+      "summary": "Credited once per payment reference."
+    },
+    {
+      "id": "vault",
+      "label": "The account in your vault",
+      "kind": "artefact",
+      "summary": "One file per device."
+    },
+    {
+      "id": "balance",
+      "label": "A balance across devices",
+      "kind": "concept",
+      "summary": "A payment counts once."
+    },
+    {
+      "id": "lane",
+      "label": "Send to my vault",
+      "kind": "artefact",
+      "summary": "Any browser can write."
+    },
+    {
+      "id": "cipher",
+      "label": "Ciphertext only",
+      "kind": "claim",
+      "summary": "The server reads nothing."
+    },
+    {
+      "id": "check",
+      "label": "Payments checked and signed",
+      "kind": "method",
+      "summary": "Proposed."
+    },
+    {
+      "id": "gap",
+      "label": "A missing status page",
+      "kind": "claim",
+      "summary": "An agent misread the proposal."
+    }
+  ],
+  "edges": [
+    {
+      "from": "meter",
+      "to": "vault",
+      "rel": "produces"
+    },
+    {
+      "from": "topup",
+      "to": "balance",
+      "rel": "produces"
+    },
+    {
+      "from": "vault",
+      "to": "balance",
+      "rel": "produces"
+    },
+    {
+      "from": "lane",
+      "to": "vault",
+      "rel": "extends"
+    },
+    {
+      "from": "vault",
+      "to": "cipher",
+      "rel": "depends-on"
+    },
+    {
+      "from": "check",
+      "to": "topup",
+      "rel": "extends"
+    },
+    {
+      "from": "gap",
+      "to": "check",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-user-keeps-the-meter",
+      "paying-after-the-value",
+      "the-vault-opened",
+      "sixteen-notes-i-did-not-want-to-lose"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "Half of that is wrong.",
+      "why": "The correction."
+    },
+    {
+      "text": "it does not, and cannot, verify the payment",
+      "why": "What the return page says."
+    },
+    {
+      "text": "For something with no server keeping the balance, it is quite powerful",
+      "why": "From here."
+    }
+  ],
+  "figures": [
+    {
+      "file": "rb-built.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rb-built.webp",
+      "caption": "The reading account, piece by piece: what is built, and what is proposed.",
+      "kind": "comparison"
+    }
+  ]
+}

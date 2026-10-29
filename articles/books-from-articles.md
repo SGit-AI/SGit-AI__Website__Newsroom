@@ -10,11 +10,11 @@
 
 # Books from articles: why my books stall at 95%, why these articles do not, and a plan to turn them into books by Web Summit
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.3.0, 4 versions](versions/books-from-articles.md) · [newsroom v0.12.77](https://newsroom.sgit.ai/admin/versions.html) · bookspublishingwritingworkflowsagentsfeedback-loopleverageweb-summitportugalgraphsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.4.0, 5 versions](versions/books-from-articles.md) · [newsroom v0.12.77](https://newsroom.sgit.ai/admin/versions.html) · bookspublishingwritingworkflowsagentsfeedback-loopleverageweb-summitportugalgraphsarticle
 
 ***Abstract:** I have left a lot of books behind. On Leanpub there are ten, and most stop between 60% and 95% complete; in August, agents wrote three more on graphs.sgit.ai in a day, about 100,000 words, which I read on a long flight, and two months later they are still under review. The reason is the same every time. A book is one big batch: by the time the first version exists, every change is expensive, the review piles up on one person, and when my energy moves to the next place of highest leverage, the book stays behind. The articles on this site work the other way. Each one is researched, checked, released and read on the day, links to what is already written instead of repeating it, and comes back with feedback while it still matters. So here is my hypothesis: a book is a curated, ordered set of finished articles, plus the editorial thread that connects them, and the workflow that makes the articles can make the books. The test is close. Web Summit is in Lisbon from 9 to 12 November, and I would like to have books there: one on agents with a mandate, one on graphs, a new Hacking Portugal, and one on making books this way. This article maps the plan, the material we already have, and what has to be true for it to work.*
 
-Why three books stopped and the articles keep moving: the August book workflow wrote three books in a day, waited on one big review, blocked on one person and was left behind; the October article workflow ships one finished, linked article per memo and gets feedback while it matters.
+Why three books stopped and the articles keep moving: the August book workflow against the October article workflow.
 
 ## In short
 
@@ -48,7 +48,7 @@ Books matter, and not only as a revenue stream. They are a great way to learn, t
 
 ## The material we already have
 
-From articles to books by Web Summit: four candidate books, agents with a mandate, graphs, Hacking Portugal and books from articles, with the articles each starts from, and six steps from mapping the books on 16 October to author copies in Lisbon on 9 to 12 November.
+From articles to books by Web Summit: four candidate books and six steps from 16 October to author copies in Lisbon.
 
 Counting the articles on this site and on sgit.ai, by hand and approximately:
 

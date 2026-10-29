@@ -1,0 +1,182 @@
+{
+  "slug": "php-daily-2026-10-23",
+  "teaser": "Update 2: the story held, the site watches its own readers privately, agents run on a schedule, and decisions wait on me.",
+  "topics": [
+    "news-and-evidence",
+    "agents-and-policy"
+  ],
+  "core_idea": "On 23 October the php2shell story held its key line, no named compromise, while the newsroom covering it moved to scheduled agents, pack-mode vaults and self-observation, and the main constraint became the editor's decisions.",
+  "nodes": [
+    {
+      "id": "story",
+      "label": "The story held",
+      "kind": "claim",
+      "summary": "No named compromise, no KEV listing, 109 of 751 fixed."
+    },
+    {
+      "id": "curator",
+      "label": "The scheduled curator",
+      "kind": "artefact",
+      "summary": "33 captures promoted, 260 sources."
+    },
+    {
+      "id": "watch",
+      "label": "The scheduled source watch",
+      "kind": "artefact",
+      "summary": "Five wakes a day, into pack mode."
+    },
+    {
+      "id": "pack",
+      "label": "Pack mode",
+      "kind": "method",
+      "summary": "A clone in 95 seconds instead of 13 minutes 47."
+    },
+    {
+      "id": "telemetry",
+      "label": "Telemetry",
+      "kind": "artefact",
+      "summary": "Every chart a filter; journeys as a Sankey."
+    },
+    {
+      "id": "risk",
+      "label": "The risk graph as a tool",
+      "kind": "artefact",
+      "summary": "713 nodes, computed gaps."
+    },
+    {
+      "id": "sherpa",
+      "label": "The Sherpa",
+      "kind": "artefact",
+      "summary": "Readers' feedback answered point by point."
+    },
+    {
+      "id": "status",
+      "label": "The status snapshot",
+      "kind": "artefact",
+      "summary": "Twenty sessions read at 23:30 UTC."
+    },
+    {
+      "id": "waits",
+      "label": "Waiting on the editor",
+      "kind": "claim",
+      "summary": "Fifteen of twenty agents."
+    }
+  ],
+  "edges": [
+    {
+      "from": "watch",
+      "to": "curator",
+      "rel": "produces"
+    },
+    {
+      "from": "pack",
+      "to": "watch",
+      "rel": "depends-on"
+    },
+    {
+      "from": "curator",
+      "to": "story",
+      "rel": "produces"
+    },
+    {
+      "from": "status",
+      "to": "waits",
+      "rel": "produces"
+    },
+    {
+      "from": "telemetry",
+      "to": "sherpa",
+      "rel": "compared-with"
+    },
+    {
+      "from": "risk",
+      "to": "story",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "almost-working",
+      "a-tangent-that-shipped",
+      "php-october-at-8pm",
+      "the-false-positives-are-the-next-incident"
+    ],
+    "pages": [],
+    "sites": [
+      "https://php.oct.2026.newsroom.sgit.ai/team/status/",
+      "https://php.oct.2026.newsroom.sgit.ai/admin/pack-mode/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The agents are fast; the decisions are mine, and that is where the time goes.",
+      "why": "What waits on me."
+    },
+    {
+      "text": "That is the kind of honest gap list I want every system to have.",
+      "why": "The risk graph as a tool."
+    }
+  ],
+  "figures": [
+    {
+      "file": "dy-telemetry-filters.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dy-telemetry-filters.webp",
+      "caption": "The PHP site's telemetry dashboard on 23 October, filtered to readers in the United Kingdom with phones left out.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "dy-telemetry-who.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dy-telemetry-who.webp",
+      "caption": "All 1,093 page views by group: readers, the editor, power users and the team, synthetic readers and crawlers.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "dy-telemetry-timeline.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dy-telemetry-timeline.webp",
+      "caption": "Page views per hour from 22 to 23 October, by group, with the crawler working through the night.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "dy-telemetry-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dy-telemetry-map.webp",
+      "caption": "Readers by country, on a log scale: eighteen countries, with the United Kingdom first by far.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "dy-telemetry-journeys.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dy-telemetry-journeys.webp",
+      "caption": "How reader sessions move through the PHP site, step by step, from the front page onward.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "dy-telemetry-network.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dy-telemetry-network.webp",
+      "caption": "The same moves as a network: each page a node sized by the sessions that saw it, with the front page as the hub.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "dy-telemetry-what-works.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dy-telemetry-what-works.webp",
+      "caption": "What works, page by page: further right is read more, higher up is where readers go on.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "dy-risk-explore.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dy-risk-explore.webp",
+      "caption": "The PHP story's risk graph explored from CVE-2026-109618, with inferred links dashed and hideable.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "dy-risk-gaps.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dy-risk-gaps.webp",
+      "caption": "What the risk graph is missing, computed at every release over its 713 nodes and 1,418 edges.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "dy-redesign-a.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dy-redesign-a.webp",
+      "caption": "Mockup A of the PHP site's redesign: a board member's front page with the Focus, Standard and Everything dial. Not live.",
+      "kind": "screenshot"
+    }
+  ]
+}

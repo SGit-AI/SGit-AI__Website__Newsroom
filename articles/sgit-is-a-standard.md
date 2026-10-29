@@ -10,11 +10,11 @@
 
 # sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/sgit-is-a-standard.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · sgitstandardsgitvaultsencryptionarchitecturecachingstatic-hostingopen-sourcedeploymentarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.2.0, 3 versions](versions/sgit-is-a-standard.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · sgitstandardsgitvaultsencryptionarchitecturecachingstatic-hostingopen-sourcedeploymentarticle
 
 ***Abstract:** Git won not because of GitHub but because it is a standard: a way of laying out objects that any tool, any host and any person can read, and that GitHub, GitLab and a folder on a laptop all implement. sgit is the same kind of thing, and I think that is the most important thing to understand about it. People read encrypted git and picture a product with a server in the middle. There is a server, and it is the least interesting part. A vault is a set of encrypted files laid out by a convention: blobs, trees, commits and one mutable pointer per branch, every immutable object named by the SHA-256 of its ciphertext and marked -imm- in its name. Nothing in it has to be discovered: the vault key gives the read key, the read key gives the name of the ref, and the ref leads to the commit, the trees and the file, four plain GETs from any host that answers one. Writing is the same objects plus one compare-and-swap, which is all the API is for. Two independent implementations, the CLI and the browser app, speak it and check each other. So deploying sgit is choosing where the objects live, from a folder to a laptop to a static host to the hosted service, and how fast it is depends on how close they are. That design was not a plan to be minimal: it is what is left when the server cannot read a byte.*
 
-Everything in a vault is one hash away: the vault key gives the read key, the read key gives the ref's name by an HMAC, and the ref, the commit, the trees on the path and the blob are plain GETs; reads come from any host that answers a GET, writes need a compare-and-swap, and caching is by name, not by header.
+Everything in a vault is one hash away: from the vault key to the read key, the ref, the commit, the trees and the blob.
 
 ## In short
 
@@ -53,7 +53,7 @@ Two independent implementations speak this format: the CLI, and the browser vaul
 
 ## Any storage implements the read half
 
-Deploying sgit is choosing where the objects live: a folder; a laptop running the hosted image; your own server; a static host such as GitHub Pages; or the hosted service, a Lambda in front of S3 behind CloudFront; from closer and faster to further and shared.
+Deploying sgit is choosing where the objects live, from a folder to the hosted service, closer to further.
 
 Because reading is plain GETs of fixed paths, any storage that answers a GET implements the read half of the convention: an S3 bucket, a CDN, GitHub Pages, a folder, Python's one-line file server. `sgit clone --transport static` reads from any of them, and `sgit publish` lays a vault out for one. This site [measured the difference](the-homepage-is-a-vault.md): 317 milliseconds a request through the vault API, against 44 for a small file from GitHub Pages.
 

@@ -1,0 +1,136 @@
+{
+ "slug": "how-a-journalist-agent-publishes-here",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 154,
+   "line": "The handbook for a journalist agent on this newsroom: from a brief to a live page, with the rules and tools.",
+   "para": "It sets out the role and its limits, the rules never bent, the eleven release steps, the article's shape, figures, graph, summaries and front page row, CI owning the version, vaults and key handover, reviews and other agents' drafts, and the mistakes that each produced a rule. Tools are in admin/writer/.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 148,
+   "line": "Read it before the first article: markdown in, pages built, version picked by CI, and nothing secret anywhere.",
+   "para": "An article has a fixed shape and needs a graph, summaries and a front page row. Build and test before committing; CI numbers and deploys after the push. The rules on keys, names, research and quotes are never bent, and the past mistakes are listed with their rules.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "role",
+   "label": "Who you are, and what you may do",
+   "words": 187,
+   "line": "The agent writes in Dinis Cruz's voice, pushes only to dev, and reads every other repository.",
+   "para": "The editor decides what is written and published. The agent may push to the newsroom's dev branch, read sgit.ai from a clone with pushing disabled, read the repositories the editor names, and search the web. It opens no pull request or issue and contacts nobody unless asked.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "rules",
+   "label": "The rules that are never bent",
+   "words": 418,
+   "line": "Eight rules: no secrets, the leak scan, people, research first, verbatim quotes, wording, model ids, tests.",
+   "para": "No key or token in any file and no key printed; the leak scan passes before every commit; no names from the private list and no private emails; every fact checked against a primary source; only verbatim quotes; British English without em dashes or superlatives; model ids only in the byline; no push on an unexplained test failure.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "build",
+   "label": "How the site is built",
+   "words": 211,
+   "line": "Markdown under admin/content becomes pages; the build replays history and writes into the repository.",
+   "para": "publish.py rebuilds articles from every commit that touched them plus the working tree, so a once-committed file stays in the replay. The generated pages are committed with the article, since CI only numbers, stamps, gates and deploys. validate.js is the gate, and seventeen browser tests run locally and on CI.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "setup",
+   "label": "Setting up",
+   "words": 126,
+   "line": "Two clones, Python, Node with sharp, playwright and jsqr, the sgit CLI, five variables and the private lists.",
+   "para": "The newsroom on dev and a read-only sgit.ai clone; a node_modules folder with the three packages and a Chromium for Playwright; pip install sgit-ai; WRITER_SITE, WRITER_NODE, WRITER_TMP, WRITER_KEYS and the access token; and the editor's private lists outside the repository.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "article",
+   "label": "Writing the article",
+   "words": 347,
+   "line": "One markdown file with fixed front matter, a first figure, In short, anchored sections, limits and sources.",
+   "para": "The slug never changes. Front matter has nine fields and no angle brackets. The first figure becomes the card. Sections carry ids for the summaries. Links go only to existing articles, and a figure is one !shot line with a caption of at most 120 characters, a kind, and optionally a size and aside.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "figures",
+   "label": "Figures",
+   "words": 176,
+   "line": "Figures are SVG in code, rendered to 1,400-pixel WebP, looked at, and given a unique prefix.",
+   "para": "figlib.mjs holds the palette and helpers; figure code goes after it and runs with OUT_DIR and a png folder. Every PNG is inspected for overlaps. Each figure has a finding as title, a measure as subtitle and a source in the footer, and its prefix is checked unused in three folders.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "extras",
+   "label": "The graph, the summaries and the front page row",
+   "words": 257,
+   "line": "Every article also needs a graph, a summary per section and one row on the front page.",
+   "para": "graph.py checks six topics, six node kinds, eight relations, verbatim quotes, existing links and a short teaser. Summaries give a line and a paragraph per section id, stamped and checked after the build to zero stale and zero extracts. sections.json takes one row in one of eight sections.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "release",
+   "label": "The release",
+   "words": 382,
+   "line": "Ten steps, with CI choosing the number: pending version, build, check, scan, commit, wait, verify.",
+   "para": "Fast-forward dev, set the pending version, give the article v0.13.125, run release.sh to fails=0, stamp and check summaries, check phone width, stage and scan, commit with no number and push. CI's site vX.Y.Z commit is the release; check the live page before calling it done.",
+   "by": "newsroom.writer",
+   "stale": true
+  },
+  {
+   "id": "tests",
+   "label": "When a test fails",
+   "words": 105,
+   "line": "Three timing tests can fail under load; rerun them alone. Anything else is real.",
+   "para": "test_reading, test_search and test_meter measure time and may fail with six tests in parallel. If one passes alone it was load, and the report says so. Any other failure is fixed or reported to the editor, and no test is skipped to get a release out.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "vaults",
+   "label": "Vaults",
+   "words": 296,
+   "line": "A vault is built, scanned, published with its public read key, linked, and its key sealed to whom the editor names.",
+   "para": "Folders get a README and nothing private; a third-party file with a private name is withheld with its hash. vault-publish.sh pushes, writes the card and verifies a read-only clone. Vault apps inline everything and read data through the bridge. Keys are sealed in memory to a fingerprint the editor gives.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "reviews",
+   "label": "Reviews, and other agents' drafts",
+   "words": 182,
+   "line": "Reviews go on the record; another agent's draft is checked like a source and brought in as one commit.",
+   "para": "A model's review is filed with answers per finding and a corrected section. A branch draft is read whole and checked against its sources and the gate's rules; if its images clash, it is merged, changed, and folded into one new commit, crediting both agents.",
+   "by": "newsroom.writer",
+   "stale": true
+  },
+  {
+   "id": "mistakes",
+   "label": "Mistakes, and the rule each one produced",
+   "words": 302,
+   "line": "Eleven mistakes, each with the rule it produced, from version collisions to guessed pronouns.",
+   "para": "Version collisions led to CI owning the number; a missing prefix to number-free subjects; an image clash to unique prefixes; raw HTML to bracket-free front matter; a half-written draft to keeping drafts outside; mismatched counts, paraphrased quotes, a flagged URL and guessed pronouns to their own rules.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 73,
+   "line": "It describes the pipeline on 28 October 2026; scripts win where they disagree, and the private lists are not here.",
+   "para": "When the handbook and a script differ, the script is right and the page is corrected. Without the private lists the full leak scan cannot run, and an agent must say so. The times given are typical, not measured limits.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 82,
+   "line": "The repository's README, notes, build scripts, workflow and tools, and the releases of the past week.",
+   "para": "Drawn from the README, the CI note, the writer conventions, release_stamp.py, publish.py, validate.js, run_tests.sh and the workflow, plus releases v0.13.103 to v0.13.123 and their failures, written by the site's writing agent at the editor's request.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

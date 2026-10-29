@@ -1,0 +1,158 @@
+{
+  "slug": "the-rules-of-the-game",
+  "teaser": "A policy for which files an agent may change, and the least GitHub can enforce on a public repository today without a new tool.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Agents that can change the pipeline that checks them can pass any release, so the rules are written as a five-zone policy; on a public repository GitHub offers only a workflow-permission boundary for paths, so a hook and a CI guard make bypassing a deliberate two-step act, a token without workflow rights makes the guard a boundary, and a sidecar repository closes the rest.",
+  "nodes": [
+    {
+      "id": "hole",
+      "label": "Agents change the pipeline",
+      "kind": "example",
+      "summary": "62 of 227 commits touched the checks."
+    },
+    {
+      "id": "policy",
+      "label": "The rules of the game",
+      "kind": "artefact",
+      "summary": "Five zones, from free to never."
+    },
+    {
+      "id": "second",
+      "label": "Second key, not never",
+      "kind": "claim",
+      "summary": "Agreement on changes to the checks."
+    },
+    {
+      "id": "github",
+      "label": "GitHub on a public repository",
+      "kind": "concept",
+      "summary": "Path rules only for private repositories."
+    },
+    {
+      "id": "hook",
+      "label": "A hook in the harness",
+      "kind": "method",
+      "summary": "Catches mistakes; a setting."
+    },
+    {
+      "id": "guard",
+      "label": "A guard job in CI",
+      "kind": "method",
+      "summary": "A second deliberate change to bypass."
+    },
+    {
+      "id": "token",
+      "label": "A token without workflow rights",
+      "kind": "method",
+      "summary": "Makes the guard a boundary."
+    },
+    {
+      "id": "gap",
+      "label": "The old-workflow gap",
+      "kind": "question",
+      "summary": "An identical file on another branch."
+    },
+    {
+      "id": "sidecar",
+      "label": "The sidecar repository",
+      "kind": "concept",
+      "summary": "Out of reach under full compromise."
+    }
+  ],
+  "edges": [
+    {
+      "from": "hole",
+      "to": "policy",
+      "rel": "leads-to"
+    },
+    {
+      "from": "policy",
+      "to": "second",
+      "rel": "produces"
+    },
+    {
+      "from": "github",
+      "to": "token",
+      "rel": "produces"
+    },
+    {
+      "from": "hook",
+      "to": "guard",
+      "rel": "leads-to"
+    },
+    {
+      "from": "token",
+      "to": "guard",
+      "rel": "extends"
+    },
+    {
+      "from": "gap",
+      "to": "token",
+      "rel": "contrasts"
+    },
+    {
+      "from": "sidecar",
+      "to": "gap",
+      "rel": "answers"
+    },
+    {
+      "from": "guard",
+      "to": "policy",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "where-a-check-runs",
+      "behaviour-policies-from-the-checks",
+      "the-checks-measured",
+      "the-sidecar-repository",
+      "the-delegation-record"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "an agent may change content freely; it may change what checks its work only with a second key; it may never change its own rules",
+      "why": "The principle."
+    },
+    {
+      "text": "An agent does not do both by accident.",
+      "why": "Two deliberate changes."
+    },
+    {
+      "text": "one owner setting turns the whole gates zone into a second-key zone",
+      "why": "The token step."
+    }
+  ],
+  "figures": [
+    {
+      "file": "rg-zones.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rg-zones.webp",
+      "caption": "The rules of the game in five zones: content, the gates, identity, vendored code and the rules themselves.",
+      "kind": "concept"
+    },
+    {
+      "file": "rg-commits.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rg-commits.webp",
+      "caption": "Commits that touched the checks, by agent, from 11 to 22 October 2026: 62 of 227 in all.",
+      "kind": "comparison"
+    },
+    {
+      "file": "rg-github.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rg-github.webp",
+      "caption": "What GitHub offers a public repository today without a new tool, and what needs a paid plan or an organisation.",
+      "kind": "comparison"
+    },
+    {
+      "file": "rg-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rg-layers.webp",
+      "caption": "The controls in order, and what it takes to get round each, from the policy to the sidecar repository.",
+      "kind": "concept"
+    }
+  ]
+}

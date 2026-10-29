@@ -41,6 +41,7 @@ PARENT_TITLE = ("sgit.ai — the parent project: the vault layer and the shipped
 NAV = [
     ("Newsroom", "index.html", [
         ("Front page", "index.html"),
+        ("Investigation: the PHP flaws", "php-flaws/index.html"),
         ("For publishers: start here", "sections/publishers/index.html"),
         ("Why this exists", "about/index.html"),
         ("The five desks", "desks/index.html"),
@@ -53,7 +54,7 @@ NAV = [
         ("Read as a persona", "persona/index.html"),
         ("Make a reading list", "for/make.html"),
         ("Subscribe", "subscribe/index.html"),
-    ], ("articles/", "subscribe/", "persona/", "for/", "sections/")),
+    ], ("articles/", "subscribe/", "persona/", "for/", "sections/", "php-flaws/")),
     ("Industry Wire", "wire/index.html", [
         ("Today's edition", "wire/index.html"),
         ("The sources", "wire/sources.html"),
@@ -81,7 +82,9 @@ NAV = [
         ("The board", "newsroom/board.html"),
         ("The run log", "newsroom/log.html"),
         ("The briefs: what is left to build", "briefs/index.html"),
-    ], ("newsroom/", "briefs/")),
+        ("The team: who does what", "team/index.html"),
+        ("Independent review: ChatGPT, Perplexity and the gate", "reviews/index.html"),
+    ], ("newsroom/", "briefs/", "reviews/", "team/")),
     ("Design", "design/index.html", [
         ("The design, and what runs", "design/index.html"),
         ("The thesis: sell the graph", "thesis/index.html"),
@@ -161,6 +164,8 @@ FOOTER = [
         ("How to publish", "newsroom/publish.html"),
         ("The board", "newsroom/board.html"),
         ("The run log", "newsroom/log.html"),
+        ("The team", "team/index.html"),
+        ("Independent review", "reviews/index.html"),
     ]),
     ("The design", [
         ("The design, and what runs", "design/index.html"),
@@ -261,7 +266,10 @@ def nav_html(rel, up, newsroom=False, meter=False):
                f'  <link rel="stylesheet" href="{up}assets/reader/strip.css">\n'
                f'  <script src="{up}assets/reader/strip.js" defer></script>\n'
                f'  <script src="{up}assets/reader/highlights.js" defer></script>\n'
-               f'  <script src="{up}assets/reader/folds.js" defer></script>\n' if meter else '')
+               f'  <script src="{up}assets/reader/folds.js" defer></script>\n'
+               # the Pen (card 090): mark the page, comment, tell the newsroom, signed with a key pki.sgit.ai vouches for
+               f'  <link rel="stylesheet" href="{up}assets/pen/pen.css">\n'
+               f'  <script type="module" src="{up}assets/pen/pen.js"></script>\n' if meter else '')
             + f'  <div class="theme-pick"></div>\n'
             f'  <a class="gh" href="{GH}" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>\n'
             f'  </div>\n'

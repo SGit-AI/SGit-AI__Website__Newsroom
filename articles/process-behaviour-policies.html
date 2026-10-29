@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second, SGit Newsroom</title>
+<meta name="description" content="The behaviour policy family has policies for agents, decisions, workflows, skills and applications. This one is for a process. It started with sgit and keys: we want sgit to work with PKI keys rather than holding a vault key, so the vault key has to live somewhere else, in a small process acting as a key service or a network broker. That only helps if sgit's own process cannot reach the key, which led to a bigger question. Inside a cloud container, everything runs as root, which is bad practice and no defence in depth. So what is the most locked-down process Linux lets us build there? We built it, in this newsroom's own Claude Code container, and measured it. A policy is derived from one traced run: every file the process reads, every system call it makes, every host it talks to. Then the kernel enforces it with seven walls: a user that exists for one run, an empty read-only root holding only the listed files, its own namespaces, Landlock, a seccomp allowlist, a network broker that only opens tunnels to the policy's hosts, and limits. A probe that, as root, could read /etc/shadow, the agent's home and the internet could do none of it under the policy. The cost was 92 to 187 milliseconds a run. And the size of the policy is a measure of the software: Hello World in C needs 1 file and 12 system calls; sgit needs 1,025 files and 58.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/process-behaviour-policies.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/process-behaviour-policies.html">
+<meta property="og:title" content="Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second, SGit Newsroom">
+<meta property="og:description" content="The behaviour policy family has policies for agents, decisions, workflows, skills and applications. This one is for a process. It started with sgit and keys: we want sgit to work with PKI keys rather than holding a vault key, so the vault key has to live somewhere else, in a small process acting as a key service or a network broker. That only helps if sgit's own process cannot reach the key, which led to a bigger question. Inside a cloud container, everything runs as root, which is bad practice and no defence in depth. So what is the most locked-down process Linux lets us build there? We built it, in this newsroom's own Claude Code container, and measured it. A policy is derived from one traced run: every file the process reads, every system call it makes, every host it talks to. Then the kernel enforces it with seven walls: a user that exists for one run, an empty read-only root holding only the listed files, its own namespaces, Landlock, a seccomp allowlist, a network broker that only opens tunnels to the policy's hosts, and limits. A probe that, as root, could read /etc/shadow, the agent's home and the internet could do none of it under the policy. The cost was 92 to 187 milliseconds a run. And the size of the policy is a measure of the software: Hello World in C needs 1 file and 12 system calls; sgit needs 1,025 files and 58.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/process-behaviour-policies.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/process-behaviour-policies.jpg">
+<link rel="alternate" type="text/markdown" href="process-behaviour-policies.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second, SGit Newsroom", "headline": "Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second, SGit Newsroom", "description": "The behaviour policy family has policies for agents, decisions, workflows, skills and applications. This one is for a process. It started with sgit and keys: we want sgit to work with PKI keys rather than holding a vault key, so the vault key has to live somewhere else, in a small process acting as a key service or a network broker. That only helps if sgit's own process cannot reach the key, which led to a bigger question. Inside a cloud container, everything runs as root, which is bad practice and no defence in depth. So what is the most locked-down process Linux lets us build there? We built it, in this newsroom's own Claude Code container, and measured it. A policy is derived from one traced run: every file the process reads, every system call it makes, every host it talks to. Then the kernel enforces it with seven walls: a user that exists for one run, an empty read-only root holding only the listed files, its own namespaces, Landlock, a seccomp allowlist, a network broker that only opens tunnels to the policy's hosts, and limits. A probe that, as root, could read /etc/shadow, the agent's home and the internet could do none of it under the policy. The cost was 92 to 187 milliseconds a run. And the size of the policy is a measure of the software: Hello World in C needs 1 file and 12 system calls; sgit needs 1,025 files and 58.", "url": "https://newsroom.sgit.ai/articles/process-behaviour-policies.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second</p>
+ <h1>Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-24 &middot; <a href="versions/process-behaviour-policies.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.68</a> &middot; <span class="chip">behaviour-policies</span><span class="chip">linux</span><span class="chip">least-privilege</span><span class="chip">sandboxing</span><span class="chip">sgit</span><span class="chip">landlock</span><span class="chip">seccomp</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> The behaviour policy family has policies for agents, decisions, workflows, skills and applications. This one is for a process. It started with sgit and keys: we want sgit to work with PKI keys rather than holding a vault key, so the vault key has to live somewhere else, in a small process acting as a key service or a network broker. That only helps if sgit's own process cannot reach the key, which led to a bigger question. Inside a cloud container, everything runs as root, which is bad practice and no defence in depth. So what is the most locked-down process Linux lets us build there? We built it, in this newsroom's own Claude Code container, and measured it. A policy is derived from one traced run: every file the process reads, every system call it makes, every host it talks to. Then the kernel enforces it with seven walls: a user that exists for one run, an empty read-only root holding only the listed files, its own namespaces, Landlock, a seccomp allowlist, a network broker that only opens tunnels to the policy's hosts, and limits. A probe that, as root, could read /etc/shadow, the agent's home and the internet could do none of it under the policy. The cost was 92 to 187 milliseconds a run. And the size of the policy is a measure of the software: Hello World in C needs 1 file and 12 system calls; sgit needs 1,025 files and 58.</em></p>
+<figure class="shot" data-shot="px-walls.webp" data-dir="images/" data-alt="Seven walls around one process, set from its policy and enforced by Linux inside this cloud container." data-kind="concept"><figcaption>Seven walls around one process, set from its policy and enforced by Linux inside this cloud container.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>A new member of the family.</b> Policies for agents, decisions, workflows, skills and applications; now one for a process.</li>
+<li><b>It started with sgit's keys.</b> If sgit should not hold the vault key, its process must not be able to reach it.</li>
+<li><b>In a cloud container, everything runs as root.</b> So we built the most locked-down process Linux allows there.</li>
+<li><b>The policy is derived, not written.</b> One traced run lists every file, system call and host the process needs.</li>
+<li><b>The kernel enforces it.</b> Seven walls, set from the policy; the policy itself executes nothing.</li>
+<li><b>It held.</b> A probe that could do 13 of 14 things as root could do none of them under the policy.</li>
+<li><b>It is cheap.</b> 92 to 187 milliseconds a run, measured.</li>
+<li><b>The policy's size measures the software.</b> 1 file and 12 system calls for Hello World; 1,025 files and 58 for sgit.</li>
+</ul>
+<h2 id="why">Why a process</h2>
+<p>We already have <a href="https://newsroom.sgit.ai/articles/a-policy-beside-the-prompt.html">agent behaviour policies</a>, <a href="https://newsroom.sgit.ai/articles/three-policies-for-an-agent.html">decision and workflow policies</a>, <a href="https://newsroom.sgit.ai/articles/skill-behaviour-policy.html">skill behaviour policies</a> and, since php2shell, <a href="https://newsroom.sgit.ai/articles/application-behaviour-policies.html">application behaviour policies</a>. I want to add one more, for the thing everything else eventually runs as: a process. On Windows and on Linux, it is all processes.</p>
+<p>This came from a practical question. We want to run sgit with PKI keys rather than vault keys. The logic is that we do not want to give the vault key to the sgit process, but it has to live somewhere. So the idea is a small separate process, an agent of its own, acting like a key management service, or a network broker that adds what is needed to a request on the way out. <a href="https://newsroom.sgit.ai/articles/the-key-is-not-the-risk.html">The key is not the risk</a> made the general point: credential injection is a good pattern, and the first question is still what the process can do. Because if we do this, we need to make sure the sgit process itself cannot reach the key, the broker's memory or its files.</p>
+<p>And that is where it gets uncomfortable. Inside a cloud container like the one this newsroom's agent runs in, processes run as root. Every process can read every file, signal every other process and talk to anything on the network. That is bad practice, and it is not defence in depth. So why not give sgit a process of its own, and while we are at it, lock it down properly: define everything it may do, and have the operating system refuse everything else?</p>
+<h2 id="question">The question, made concrete</h2>
+<p>What is the most locked-down process we can create today, with whatever this environment offers? If a process prints "Hello World", or runs a Python program that needs a few files, it should not be able to do anything else. It should have, in effect, an immutable file system. It should run as a user that exists only for that run, with access to a couple of directories, a couple of hosts, and nothing else Linux provides: no other executables, no other processes, no way to look around.</p>
+<p>And the policy should list every file the process needs, every dependency, all the way down. This is the blast radius idea, the <a href="https://newsroom.sgit.ai/articles/footprint-and-blast-radius.html">footprint and blast radius</a> of an agent, applied to a process: reverse-engineer what it actually needs, and make that the limit.</p>
+<h2 id="container">What the container offers</h2>
+<p>This newsroom's agent runs in a Claude Code cloud container: Ubuntu 24.04 in a Firecracker microVM, Linux 6.18, as root with nearly every capability. That microVM is already a wall around the whole container. What we wanted was walls inside it, around one process. We checked what was available, and it is a lot:</p>
+<ul>
+<li><b>Landlock, at ABI 7.</b> The kernel's own sandbox for a process, which needs no privileges: read, write and execute per path, TCP connect per port, and no signals to processes outside it.</li>
+<li><b>seccomp,</b> for an allowlist of system calls.</li>
+<li><b>Namespaces:</b> mount, process, IPC, hostname, cgroup and network.</li>
+<li><b>cgroups</b> (version 1 here), for process and memory limits.</li>
+<li><b>iptables,</b> which can match on the user that owns a connection.</li>
+<li><b>useradd, chroot, strace and a C compiler</b> with static libraries.</li>
+</ul>
+<p>Nothing extra needed installing.</p>
+<h2 id="derive">Derive the policy from a run</h2>
+<p>The policy is not written by hand. A script runs the command once under <code>strace -f</code> and reads what it did: every file it opened successfully, every directory it listed, every program it executed, every system call it made, every connection it opened. It adds what the trace cannot see, the ELF interpreter the kernel loads for each binary and the interpreter named on a script's first line, and writes it all down as a policy.</p>
+<p>The smallest one, for Hello World in C, reads in full: one file, the program itself; no directories; no devices; no network; and twelve system calls, from <code>arch_prctl</code> to <code>write</code>. Nothing else. The policy also records the user (ephemeral, no groups, no capabilities, no new privileges), what the process may see of other processes (nothing), and its limits (64 processes, 512 MB, two minutes).</p>
+<h2 id="enforce">Enforce it with seven walls</h2>
+<p>A second script takes the policy and builds the process's world, then a small static launcher applies the last walls from inside it and starts the program:</p>
+<ol>
+<li><b>An ephemeral user.</b> <code>useradd</code> makes one for this run, and it is removed afterwards. The launcher drops to it, with no groups and no capabilities, and sets no_new_privs, so nothing it runs can gain privileges.</li>
+<li><b>An empty, read-only root.</b> A fresh, tiny filesystem in which each file the policy lists is bind-mounted read-only at its own path. Then the whole root is made read-only, and the process is put inside it. For Hello World, the root holds one file. <code>/etc/shadow</code>, <code>/root</code> and <code>/bin/sh</code> are not refused: they do not exist.</li>
+<li><b>Its own namespaces.</b> Mount, process, IPC, hostname and cgroup. Inside, the process sees one process: itself. If the policy has no network, it also gets a network namespace with nothing in it.</li>
+<li><b>Landlock.</b> Read access to the listed files, execute access only to the listed programs, write access only to the listed folders, TCP connect only to the broker's port, and no signals to anything outside.</li>
+<li><b>A seccomp allowlist.</b> Only the system calls the traced run made. Everything else returns "not permitted".</li>
+<li><b>A network broker.</b> When the policy names hosts, the process's only way out is a small proxy, run outside the sandbox, that opens a tunnel to those hosts and refuses everything else, plus an iptables rule that rejects any other connection from that one user.</li>
+<li><b>Limits.</b> A cgroup caps the number of processes and the memory; a timer caps the run.</li>
+</ol>
+<p>The broker is the shape of the key service. In this test it only decides where a process may go. The next step is for it to hold the credential, so the process never does.</p>
+<h2 id="probe">Did it hold?</h2>
+<p>To find out, we wrote a probe: a small program that tries everything a sandboxed process should never do, and reports each result. We ran it three ways.</p>
+<figure class="shot" data-shot="px-probe.webp" data-dir="images/" data-alt="What the probe tried, and what stopped it: as root, under the Hello World policy, and with two walls switched off." data-kind="comparison"><figcaption>What the probe tried, and what stopped it: as root, under the Hello World policy, and with two walls switched off.</figcaption></figure>
+<ul>
+<li><b>As root, today.</b> It could do 13 of its 14 attempts. Only tracing process 1 was refused.</li>
+<li><b>Under the policy.</b> It could do none of them.</li>
+<li><b>With seccomp and Landlock switched off.</b> The other walls still refused all but two. The files were not there, <code>/tmp</code> was read-only, it saw one process, and there was no network. The two it got through: opening a netlink socket, and signalling process 1, which inside its namespace is the probe itself.</li>
+</ul>
+<p>That is the point of defence in depth. No single wall has to be right, and switching one off does not open the door.</p>
+<p>We also tested the parts that do not show in that table:</p>
+<ul>
+<li><b>The broker.</b> Under a policy for a Python script that fetches one page, the script fetched send.sgraph.ai, and the broker refused example.com and api.anthropic.com with a 403. When the probe ran under the same policy and tried to go around the broker, Landlock refused the connection. With Landlock off, the firewall rule for that user refused it.</li>
+<li><b>The process limit.</b> A loop of forks stopped at 63 processes. With seccomp on, it could not fork at all, because the traced Hello World never did.</li>
+</ul>
+<h2 id="sgit">sgit, under its own policy</h2>
+<p>Then the real target. We traced sgit initialising a vault, committing a file and checking its status, in one working folder, and ran the same thing under the policy. It worked: the vault was created, the file committed. And the trace caught something worth knowing. <code>sgit status</code> talks to the server even when there is nothing to push, so the policy needed its host, dev.send.sgraph.ai, through the broker. A policy derived from a run tells you what the software actually does, not what you assumed.</p>
+<h2 id="cost">What it costs</h2>
+<p>We expected the setup to be the expensive part, and at first it was: building the root with a shell script, calling <code>mount</code> three times per file, took 1.7 seconds for 169 files. Doing the same with direct system calls from one small program brought it to about 60 milliseconds, whatever the number of files.</p>
+<figure class="shot" data-shot="px-cost.webp" data-dir="images/" data-alt="The size of a policy and what it costs, for four programs from Hello World in C to sgit init, commit and status." data-kind="comparison"><figcaption>The size of a policy and what it costs, for four programs from Hello World in C to sgit init, commit and status.</figcaption></figure>
+<p>The overhead, the median of five runs, is between 92 and 187 milliseconds: making the user, the firewall rule and the limits, building the root, and cleaning up. The run itself is within noise of the bare run. For sgit, whose clone already takes from seconds to tens of seconds, that is 5% on a three-and-a-half-second job. And most of it can be done in advance: the user, the rules and the root can be prepared before they are needed. Making the user alone is about 20 milliseconds, and a uid that simply is not in use would do without it.</p>
+<h2 id="policy-of-policies">A policy of policies</h2>
+<p>This is also a great example of a policy of policies. There is a policy for the operating system, one for the environment, one for Python, one for sgit, and one for this execution. Each narrows the one before it and never widens it, the way <a href="https://newsroom.sgit.ai/articles/approve-at-altitude.html">decisions at every level</a> may narrow the level above. The process gets only what is left.</p>
+<figure class="shot" data-shot="px-layers.webp" data-dir="images/" data-alt="A policy of policies: operating system, environment, runtime, application and execution, each narrowing the one above." data-kind="concept"><figcaption>A policy of policies: operating system, environment, runtime, application and execution, each narrowing the one above.</figcaption></figure>
+<p>And, as with hooks, the policy executes nothing. It says what is allowed; the runtime enforces it. <a href="https://newsroom.sgit.ai/articles/hooks-are-kernel-code.html">Hooks are kernel code</a> argued that an agent's rules should move from hope into enforcement. This is the same move, one level down, into the kernel itself.</p>
+<h2 id="measure">The size of the policy measures the software</h2>
+<p>There is a bonus. Once a process has a policy, you can see how well engineered it is by the size of what it needs. The smallest possible Linux process has a tiny policy: Hello World in C needs one file and twelve system calls. Hello World in Python needs 37 files and 34. A Python script that fetches one page needs 169 files. sgit needs 1,025 files, 66 MB and 58 system calls: 544 files of its own modules, 231 from Python's standard library, 122 from osbot_utils and 85 from cryptography, 15 MB on its own.</p>
+<p>That is not a criticism; it is a map. It says where the attack surface is, which dependencies carry the weight, and what a smaller, purpose-built sgit for one job could drop. It is all about least privilege, and you cannot have least privilege until you know what the least is.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>One run is not every path.</b> A trace sees only what that run did; error paths and rare branches need more runs, ideally the test suite, which is one more reason to have one.</li>
+<li><b>seccomp filters by call, not by argument.</b> The netlink socket got through because <code>socket</code> was allowed; filtering on the arguments is the next step.</li>
+<li><b>This is a prototype.</b> About 350 lines of Python and C, run in one container, not a hardened tool.</li>
+<li><b>The microVM is still the outer wall.</b> This adds walls inside it; it does not replace it.</li>
+<li><b>The key service is not built.</b> The broker here decides where a process may go; it does not yet hold a credential.</li>
+<li><b>The numbers are this machine's.</b> Four cores, one container; sgit-ai 0.21.0 as installed here.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>My voice memo of 24 October 2026. The experiment, run that day in this newsroom's Claude Code cloud container by this site's agent: the code, the four policies and the results are in <a href="data/process-behaviour-policies__pack.json">the data pack</a>. The kernel interfaces are documented in the Linux kernel's <a href="https://docs.kernel.org/userspace-api/landlock.html">Landlock</a> and <a href="https://docs.kernel.org/userspace-api/seccomp_filter.html">seccomp</a> pages. Related: <a href="https://newsroom.sgit.ai/articles/application-behaviour-policies.html">application behaviour policies</a>, <a href="https://newsroom.sgit.ai/articles/skill-behaviour-policy.html">a skill behaviour policy</a>, <a href="https://newsroom.sgit.ai/articles/allowed-is-not-right.html">allowed is not right</a>, <a href="https://newsroom.sgit.ai/articles/a-policy-beside-the-prompt.html">a policy beside the prompt</a>, <a href="https://newsroom.sgit.ai/articles/approve-at-altitude.html">approve at altitude</a>, <a href="https://newsroom.sgit.ai/articles/hooks-are-kernel-code.html">hooks are kernel code</a>, <a href="https://newsroom.sgit.ai/articles/the-key-is-not-the-risk.html">the key is not the risk</a>, <a href="https://newsroom.sgit.ai/articles/footprint-and-blast-radius.html">footprint and blast radius</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
+<sg-meter view="page" kind="article" date="2026-10-24" topics="agents-and-policy startups-and-strategy" title="Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#process-behaviour-policies">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Continued by</h3><ul><li><a href="introducing-sharness.html">SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback</a> <span class="dim">SHarness, the secure harness we built when we could not find one: behaviour policies the Linux kernel enforces on every process an agent starts.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 276 &middot; <a href="../for/make.html#r=276">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/process-behaviour-policies.jpg" download>process-behaviour-policies.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="process-behaviour-policies.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

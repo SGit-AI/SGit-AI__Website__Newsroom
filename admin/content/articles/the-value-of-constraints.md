@@ -10,7 +10,7 @@ tags: constraints, encryption, sgit, open-source, sovereignty, gdpr, engineering
 status: published
 ---
 
-!shot cv-table.webp | images/ | Two constraints and what they take away: client-side encryption forbids the server from reading the data and removes the temptation to process there; open source, all of it, forbids private code and removes lock-in, the evaluation edition and building every customer's integration. | comparison
+!shot cv-table.webp | images/ | Two constraints and what they take away: client-side encryption and open source, all of it. | comparison
 
 ## In short {#in-short}
 
@@ -30,7 +30,7 @@ What took me a while to see is where those features came from. Innovation needs 
 
 ## From the data to the keys {#keys}
 
-!shot cv-keys.webp | images/ | Encryption on the client moves the problem from the data to the keys: a server that can read has to protect all the data, runs code next to it, and puts the sovereignty line where the data is; a server that holds ciphertext needs the keys protected, runs no code next to the data, and puts the line at whoever holds the keys. | comparison
+!shot cv-keys.webp | images/ | Encryption on the client moves the problem from the data to the keys, and the sovereignty line with it. | comparison
 
 The security benefit is the one everyone expects, and it is real. When the server can read what it stores, all of it has to be protected: every copy, backup, log and replica, and every person and process with access. When the server holds ciphertext, named by the hash of that ciphertext, the problem moves to protecting the keys, which is a much smaller problem.
 

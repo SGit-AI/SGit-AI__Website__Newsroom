@@ -10,11 +10,11 @@
 
 # Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.3.0, 4 versions](versions/hooks-are-kernel-code.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · hooksagentskernelmaturity-modelcode-reviewfractal-semantic-graphsblast-radiuslethal-trifectabillingagent-behaviour-policybriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.4.0, 5 versions](versions/hooks-are-kernel-code.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · hooksagentskernelmaturity-modelcode-reviewfractal-semantic-graphsblast-radiuslethal-trifectabillingagent-behaviour-policybriefarticle
 
 ***Abstract:** The hooks we are now going to deploy are code, and very critical code. They are also a very good example of code that is simple in many ways: a hook can be five lines. That makes them a good case study for everything we do on code review, code practices, semantic graphs and change blast radius, because the problem is small enough to do completely. A hook runs on every matching action, with the user's permissions, and can see, block or rewrite what the agent does; we should treat it like kernel code. Hooks also range from completely deterministic scripts to hooks that call a model or a whole agent, so I propose a maturity model: five levels from the prompt to off the machine, and three questions for every hook, how much power it has, which legs of the lethal trifecta it touches, and how much sandbox it runs in. I mapped the first ten: three this session runs, five tested in a sandbox, two proposed. They are between 4 and 26 lines, and the smallest of them depend on much more: the eleven-line commit hook calls a 37-line scan, so one line changed in the scan moves the commit gate for every session. And this is a brief for a site and a feed to manage them, like a skills manager: every hook from its intent, with its graph, tests, version and signature, installable anywhere, and a billing model where nobody pays to run a hook, but paying buys state.*
 
-The first ten hooks. Three this session runs, five tested in a sandbox, and two proposed: a hook that checks the other hooks, and an agent hook that reviews a push on the most capable model, read-only and without network. Between 4 and 26 lines of code each, and every one runs on every matching action, with the user's permissions.
+The first ten hooks: three this session runs, five tested in a sandbox and two proposed.
 
 ## In short
 
@@ -52,7 +52,7 @@ That is the fractal part. A hook calls a script, which reads configuration, whic
 
 ## A maturity model
 
-A maturity model for hooks: five levels of how a rule is kept, from the prompt to off the machine, and three questions for every hook at every level: its power, the legs of the lethal trifecta it touches, and its sandbox. The less deterministic a hook is, the less it should be able to reach.
+A maturity model for hooks: five levels of how a rule is kept, and three questions for every hook.
 
 Hooks run from completely deterministic to completely not. Claude Code lists five kinds of handler: a command, an HTTP call, an MCP tool, a prompt hook, which sends "a prompt to a Claude model for single-turn evaluation", and an agent. There is a time and a place for each, including the ones that look like black magic. So the model has two parts.
 
@@ -76,7 +76,7 @@ Hooks also need somewhere to run that is not the developer's machine. The isolat
 
 ## A site and a feed
 
-A hooks site and feed, run like a kernel tree. Every hook starts as an intent, a row of a behaviour policy, and is published with its graph, tests, version and signature. The feed lists every hook with its level, power, trifecta legs, version and hash; the change blast radius view climbs from a change to the intents and sessions it affects; installs are free and can run inside an organisation with no call home; paying buys state.
+A hooks site and feed, run like a kernel tree: how a hook is published and what the feed lists.
 
 So the proposal is a site and a feed to manage the hooks we deploy, the hooks equivalent of a skills manager. [A policy for every skill](a-policy-for-every-skill.md) argued that "Skills are the new dependency"; hooks are the dependency that guards the others. Every hook on the site starts from an intent, the row of the behaviour policy it serves, and carries its graph, its fixtures, its version, its hash and its signature. The feed is one file that people, agents and installers can read:
 
@@ -151,6 +151,8 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#hooks-a
 
 ### Continued by
 
+- [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](introducing-sharness.md) SHarness, the secure harness we built when we could not find one: behaviour policies the Linux kernel enforces on every process an agent starts.
+- [How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing](how-a-memo-becomes-a-release.md) From voice memo to tagged release: the session's checks, GitHub's checks, the times, what is redundant, and what a new session would lack.
 - [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](free-to-copy-paid-at-the-source.md) Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.
 - [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](governs-enforces-attests.md) An ABP governs and names the enforcer at three levels: prompt, hooks, or a third-party system. An attestation layer signs it so a third party can verify.
 - [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](three-policies-for-an-agent.md) Behaviour says what an agent may do, decision who chooses at a branch point, workflow in what order. Zoom into one ABP cell and it becomes both.

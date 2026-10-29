@@ -1,0 +1,29 @@
+{
+ "id": "newsroom-reviews",
+ "handle": "@newsroom.reviews",
+ "status": "draft",
+ "agreed_by_editor": false,
+ "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+ "writes": [
+  "admin/content/reviews/**",
+  "admin/content/articles/reviews/*/20??-??-??__*.json"
+ ],
+ "writes_except": [
+  "admin/content/reviews/queue.json"
+ ],
+ "appends": [
+  "admin/notes/**"
+ ],
+ "vaults_may_hold": [
+  "REVIEW_VAULT_KEY__<ID> for each reviewer's vault",
+  "SG_SEND_ACCESS_TOKEN",
+  "REVIEW_LANE_SECRET",
+  "its own signing key, in this session only"
+ ],
+ "never_holds": [
+  "NEWSROOM_SECURITY_KEY or the security agent's key",
+  "the editor's root key",
+  "any reviewer's own signing key"
+ ],
+ "note": ""
+}

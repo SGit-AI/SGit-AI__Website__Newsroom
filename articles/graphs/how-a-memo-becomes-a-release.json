@@ -1,0 +1,153 @@
+{
+  "slug": "how-a-memo-becomes-a-release",
+  "teaser": "From voice memo to tagged release: the session's checks, GitHub's checks, the times, what is redundant, and what a new session would lack.",
+  "topics": [
+    "site-and-engineering"
+  ],
+  "core_idea": "An article moves from a voice memo through research and writing, a sequence of checks in the writer's session, and a second set of checks on GitHub that gates the tag and deploy; the browser tests are redundant in the session for article releases, and several of the session's tools must move into the repository for a new session to work the same way.",
+  "nodes": [
+    {
+      "id": "memo",
+      "label": "A voice memo",
+      "kind": "artefact",
+      "summary": "Transcribed and pasted in."
+    },
+    {
+      "id": "write",
+      "label": "Research and writing",
+      "kind": "method",
+      "summary": "Article, figures, graph, summaries."
+    },
+    {
+      "id": "local",
+      "label": "The session's checks",
+      "kind": "method",
+      "summary": "Generator, builders, tests, leak scan."
+    },
+    {
+      "id": "ci",
+      "label": "GitHub's checks",
+      "kind": "method",
+      "summary": "Validate, test, tag, deploy."
+    },
+    {
+      "id": "time",
+      "label": "400 and 290 seconds",
+      "kind": "example",
+      "summary": "After v0.13.7."
+    },
+    {
+      "id": "redundant",
+      "label": "Tests run twice",
+      "kind": "claim",
+      "summary": "Browser tests could run on GitHub only."
+    },
+    {
+      "id": "where",
+      "label": "Where each part lives",
+      "kind": "concept",
+      "summary": "Repository, GitHub, session, container."
+    },
+    {
+      "id": "gap",
+      "label": "What a new session lacks",
+      "kind": "claim",
+      "summary": "Release script, helpers, leak scan, policy."
+    },
+    {
+      "id": "next",
+      "label": "Move the tools in",
+      "kind": "method",
+      "summary": "Keep private lists outside."
+    }
+  ],
+  "edges": [
+    {
+      "from": "memo",
+      "to": "write",
+      "rel": "leads-to"
+    },
+    {
+      "from": "write",
+      "to": "local",
+      "rel": "leads-to"
+    },
+    {
+      "from": "local",
+      "to": "ci",
+      "rel": "leads-to"
+    },
+    {
+      "from": "time",
+      "to": "local",
+      "rel": "example-of"
+    },
+    {
+      "from": "redundant",
+      "to": "local",
+      "rel": "answers"
+    },
+    {
+      "from": "where",
+      "to": "gap",
+      "rel": "produces"
+    },
+    {
+      "from": "gap",
+      "to": "next",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "v0-12-in-numbers",
+      "a-leak-without-breaking-the-policy",
+      "hooks-are-kernel-code",
+      "the-riskmandate-roadmap"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "Either is enough to stop a broken release reaching readers",
+      "why": "Why the tests are redundant."
+    },
+    {
+      "text": "The leak scan and the session's behaviour policy are not in the repository at all.",
+      "why": "The gap."
+    }
+  ],
+  "figures": [
+    {
+      "file": "pi-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pi-flow.webp",
+      "caption": "From a memo to a release in three stages: writing and checking in the session, then shipping on GitHub.",
+      "kind": "architecture"
+    },
+    {
+      "file": "pi-ci.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pi-ci.webp",
+      "caption": "The jobs on GitHub: a push to dev, a pull request into main, and a push to main.",
+      "kind": "architecture"
+    },
+    {
+      "file": "pi-time.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pi-time.webp",
+      "caption": "One release timed in seconds, in the session and on GitHub.",
+      "kind": "timeline"
+    },
+    {
+      "file": "pi-where.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pi-where.webp",
+      "caption": "Where each part lives: in the repository, only in this session, or only in this container.",
+      "kind": "architecture"
+    },
+    {
+      "file": "pi-split.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pi-split.webp",
+      "caption": "The proposed split between the session and GitHub, with the time each would take.",
+      "kind": "architecture"
+    }
+  ]
+}

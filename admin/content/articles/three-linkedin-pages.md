@@ -10,7 +10,7 @@ tags: linkedin, companies, sgit, riskmandate, newsroom, article
 status: published
 ---
 
-!shot li-pages.webp | images/ | Three LinkedIn pages and a profile. sgit.ai, Git for encrypted vaults; the SGit Newsroom, a publication written in the open by an editor and a desk of agents; and RiskMandate, Agent Behaviour Policies for AI agents; each with its tagline, its industry and ten first posts drawn from material already published; and the founder's profile tying them together. The Cyber Boardroom, the legal entity behind sgit.ai and RiskMandate, sits underneath. | concept
+!shot li-pages.webp | images/ | Three LinkedIn pages and a profile: sgit.ai, the SGit Newsroom and RiskMandate, tied together by the founder's profile. | concept
 
 ## In short {#in-short}
 

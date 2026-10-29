@@ -10,11 +10,11 @@
 
 # The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.3.0, 4 versions](versions/the-policy-draws-the-liability-line.md) · [newsroom v0.12.15](https://newsroom.sgit.ai/admin/versions.html) · agentsaccountabilityliabilityagent-behaviour-policyriskmandateproduct-liabilityshared-responsibilityprompt-injectiongovernanceresponsearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.4.0, 5 versions](versions/the-policy-draws-the-liability-line.md) · [newsroom v0.12.15](https://newsroom.sgit.ai/admin/versions.html) · agentsaccountabilityliabilityagent-behaviour-policyriskmandateproduct-liabilityshared-responsibilityprompt-injectiongovernanceresponsearticle
 
 ***Abstract:** Ralf Thomas posted on LinkedIn this week that if an employee wrecks a client's systems the company pays, and asked why AI agents should be any different. The post's record of 2026 is mostly right, and its four moves of the accountability shell game, blame the agent, blame the customer, hide behind the contract, disclose late, are a good map. I agree with its conclusion, and I would like to add the piece I think is missing, because it explains why the shell game works. When an agent goes wrong today, nothing was written down between the person clicking allow and the failure. The agent had reach, and nobody had told it, in a form anyone could later point to, what it must not do. So "misuse", "full-access mode" and "you allowed it" are hard to answer. An Agent Behaviour Policy changes that. It is still mostly hope, an expectation the model is asked to keep, but it is explicit: do not send email directly, do not touch labels you do not need, do not edit other agents' files, do not start scheduled tasks, do not attack other sites because you can, speak on your own behalf and not mine, make no offers, stay inside the mandate. My hypothesis is that an explicit prohibition the agent then breaks moves liability towards the platform that runs it. That sharpens something I have said before, that liability sits with whoever granted the reach. Towards the world it still does. Between the customer and the vendor, the written policy is the evidence that turns "user error" into "your product ignored what it was told". And that points to the direction of travel: every agent that runs in a loop, anything with the lethal trifecta, should take a behaviour policy beside its system prompt, and its vendor should be accountable for honouring it.*
 
-The four moves of the accountability shell game, from Ralf Thomas's post, and what a written behaviour policy changes in each. Without one, every move has an easy answer; with one, the question becomes whether the product honoured what it was explicitly told.
+The four moves of the accountability shell game, from Ralf Thomas's post, and what a written policy changes in each.
 
 **What came next.** [A policy beside the prompt](a-policy-beside-the-prompt.md), written the same day, takes this answer further: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and what aviation and payments say about who should want it.
 
@@ -71,7 +71,7 @@ But here is the big but. An expectation that is written down, explicitly, and gi
 
 ## Where the liability goes
 
-Two directions of liability. Towards the world, the deployer answers for what its agent did, as the tribunal held in Moffatt. Between the deployer and the vendor, the written policy decides whose failure it was: inside the reach and unforbidden, the deployer's; explicitly forbidden and done anyway, the product's.
+Two directions of liability: towards the world, and between the deployer and the vendor, decided by the written policy.
 
 I have said before, in [Ten hard questions](riskmandate-ten-questions.md) and in [Who owns the words](who-owns-the-words.md), that liability sits with whoever granted the reach: the moment of authorisation is the grant. I still think that is where it starts, and the tribunal in Moffatt said the same thing to Air Canada: "It should be obvious to Air Canada that it is responsible for all the information on its website." Towards customers, regulators and the people harmed, the deployer answers. An agent has no balance sheet, and a customer cannot sue a model.
 

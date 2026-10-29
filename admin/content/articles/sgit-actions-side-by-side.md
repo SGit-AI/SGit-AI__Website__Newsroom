@@ -10,7 +10,7 @@ tags: sgit, github-actions, ci, vaults, artefacts, append-lanes, performance, ll
 status: published
 ---
 
-!shot as-lanes.webp | images/ | Four ways to move a vault between jobs, run side by side: a vault server with keys in secrets, the vault as an artefact, the vault published as files, and append lanes for shards. On every run of the showcase repository, each lane reports its time, its bytes, the keys each job held, a screenshot of the result, and the tokens spent by any LLM step against the run's budget. | architecture
+!shot as-lanes.webp | images/ | Four ways to move a vault between jobs, run side by side on every run of the showcase repository. | architecture
 
 ## In short {#in-short}
 
@@ -44,7 +44,7 @@ Then it repeats on vaults of growing size, with a full clone, a thin clone of th
 
 ## Measured locally {#measured}
 
-!shot as-clones.webp | images/ | Clone time as a vault grows, measured locally: median of three runs, sgit 0.21.0 against a local vault server over HTTP, on four cores. A clone of one folder, 5% of the files, barely grows with the vault; a full clone grows with it. Git, reading local disk without encryption, is shown for scale, not as a like-for-like race. | comparison
+!shot as-clones.webp | images/ | Clone time as a vault grows, measured locally: median of three runs, sgit 0.21.0 against a local vault server. | comparison
 
 I measured the core of it for this article on one machine, sgit 0.21.0 against a local vault server over HTTP, with files of random bytes spread over 20 folders, three runs each.
 

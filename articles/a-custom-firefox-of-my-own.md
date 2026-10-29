@@ -10,11 +10,11 @@
 
 # A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/a-custom-firefox-of-my-own.md) · [newsroom v0.12.76](https://newsroom.sgit.ai/admin/versions.html) · firefoxmozillacustomisationforksagentsruflosgitagent-behaviour-policyipadbusiness-modelsexplorersvillagerstown-plannersarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.2.0, 3 versions](versions/a-custom-firefox-of-my-own.md) · [newsroom v0.12.76](https://newsroom.sgit.ai/admin/versions.html) · firefoxmozillacustomisationforksagentsruflosgitagent-behaviour-policyipadbusiness-modelsexplorersvillagerstown-plannersarticle
 
 ***Abstract:** The previous articles argued that software vendors should let users explore and sell them the maintenance of what they build. This is the practical version, for the product I used as the example: a plan to make a custom Firefox with the workflow we showed at the agentics talk, a Ruflo hive of Claude Code workers, an sgit vault as its memory and a behaviour policy as its mandate, and to run it on my laptop and my iPad. The plan puts each thing I want on the least invasive layer that can deliver it: enterprise policies, hidden preferences, a stylesheet for the browser's own interface, an extension, and only then a patch set on Firefox's source, built in a mode that skips the C++ compile. The iPad is different: Apple requires WebKit, Firefox for iOS is a separate Swift codebase, and the only route is a fork of it, installed with a developer account. The plan works, and it shows where the cost is. Since September Firefox ships every two weeks, so a fork has to be rebased 26 times a year, on two codebases. I can have the hive do that, but it is exactly what I would pay Mozilla to do. Mozilla now sells a branded build and custom development to organisations; I think it should sell the same to one person: explore for free, keep it working for about 50p a release, a change built properly for £50 to £500.*
 
-A custom Firefox, from the least invasive layer to a fork: policies, preferences, the browser's own stylesheet, an extension, and a patch set rebased every two weeks; the iPad has only one option, a fork of the separate iOS codebase.
+A custom Firefox, from the least invasive layer to a fork: policies, preferences, stylesheet, extension and patch set.
 
 ## In short
 
@@ -66,7 +66,7 @@ None of the desktop layers exist there. The only route is a fork of that codebas
 
 ## Step 5: keeping it working
 
-The maintenance loop: each Firefox release starts a run in which the hive rebases the patches, rebuilds, tests each want, compares screenshots and reports, with everything in the sgit vault and every role under a behaviour policy; I approve or refuse.
+The maintenance loop: each Firefox release starts a run in which the hive rebases, rebuilds, tests and reports.
 
 This is the step that decides whether the whole thing is worth it. Since Firefox 155, on 1 September, [a new major release is made every two weeks](https://firefox-admin-docs.mozilla.org/guides/firefox-channels/), so a fork has 26 releases a year to follow, on each of two codebases. LibreWolf, with a team, ships within "three days from each upstream stable release". Waterfox's maintainer, [writing about 15 years of forking](https://waterfox.com/blog/15-years-of-forking), describes a project often run by one person and "a few months in the red recently".
 
@@ -76,7 +76,7 @@ Agents can do much of this. [PortGPT](https://arxiv.org/abs/2510.22396), a resea
 
 ## Step 6: what Mozilla could sell
 
-How Mozilla could sell it: explore in the browser for free; keep your customisation tested against every release for about 50p a release; adopt a change built properly for £50 to £500; own a maintained branded build by contract, which exists today for organisations.
+How Mozilla could sell it: explore free, keep tested, adopt a change, or own a maintained build.
 
 The plan works, and it makes the case for its own replacement. Two codebases rebased 26 times a year is a lot of work to keep a browser the way I like it. I would much rather pay Firefox to do it, and Mozilla is better placed than I am: it is the only one that can ship a modified build called Firefox; it signs the extensions; it builds the next release and can test my changes against it before it ships; and it already maintains both codebases.
 

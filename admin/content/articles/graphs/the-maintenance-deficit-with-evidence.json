@@ -1,0 +1,40 @@
+{
+ "slug": "the-maintenance-deficit-with-evidence",
+ "teaser": "Dion Wiggins' maintenance deficit ratio, checked, with the PHP story's evidence, and why open source's business model pays the wrong layer.",
+ "topics": ["startups-and-strategy", "news-and-evidence"],
+ "core_idea": "Dion Wiggins' maintenance deficit ratio for Germany and PHP holds at two orders of magnitude under every cut of the primary sources, and the PHP story's evidence two days on shows the gap in distribution and the absence of named compromise, because open source's business model pays integrators, platforms and hosts while maintainers and packagers sell nothing a buyer can buy, and AI has made discovery cheaper than fixing.",
+ "nodes": [
+  {"id": "ratio", "label": "The maintenance deficit ratio", "kind": "concept", "summary": "Migration spend over maintenance spend."},
+  {"id": "checked", "label": "Checked: 179 to 263 to 1", "kind": "claim", "summary": "Two orders of magnitude, every cut."},
+  {"id": "stack", "label": "The sovereignty stack", "kind": "example", "summary": "PHP, OpenSSL, curl, FFmpeg and more."},
+  {"id": "inventory", "label": "109 of 751 fixed", "kind": "example", "summary": "The Dutch inventory, two days on."},
+  {"id": "compromise", "label": "No named compromise", "kind": "claim", "summary": "As of 20:50 UTC, 22 October."},
+  {"id": "assessment", "label": "An assessment in a day", "kind": "example", "summary": "Agents and an evidence vault."},
+  {"id": "model", "label": "The wrong layer is paid", "kind": "claim", "summary": "Integrators and hosts, not maintainers."},
+  {"id": "ai", "label": "Finding cheap, fixing scarce", "kind": "claim", "summary": "Discoverers outresource maintainers."},
+  {"id": "product", "label": "Maintenance as the product", "kind": "method", "summary": "Scope, owner, service level."},
+  {"id": "source", "label": "Paid at the source", "kind": "method", "summary": "Signed, timely builds."},
+  {"id": "measure", "label": "Measure it everywhere", "kind": "method", "summary": "The ratio and each site's reach."}
+ ],
+ "edges": [
+  {"from": "checked", "to": "ratio", "rel": "answers"},
+  {"from": "stack", "to": "ratio", "rel": "example-of"},
+  {"from": "inventory", "to": "model", "rel": "example-of"},
+  {"from": "compromise", "to": "assessment", "rel": "produces"},
+  {"from": "model", "to": "ai", "rel": "extends"},
+  {"from": "product", "to": "model", "rel": "answers"},
+  {"from": "source", "to": "model", "rel": "answers"},
+  {"from": "measure", "to": "ratio", "rel": "extends"},
+  {"from": "assessment", "to": "model", "rel": "contrasts"}
+ ],
+ "links": {
+  "articles": ["the-eyeballs-get-cheap", "the-code-you-do-not-ship", "free-to-copy-paid-at-the-source", "application-behaviour-policies", "php-october-at-8pm", "a-desk-anyone-can-open"],
+  "pages": [],
+  "sites": ["https://php.oct.2026.newsroom.sgit.ai/", "https://www.linkedin.com/pulse/maintenance-deficit-governments-building-digital-nobody-dion-wiggins-zv7pf/"]
+ },
+ "quotes": [
+  {"text": "That is not a funding gap; it is a missing product.", "why": "Why this is a business model failure."},
+  {"text": "The capacity to understand an incident has become cheap. The capacity to fix the code has not.", "why": "An assessment in a day."},
+  {"text": "The patch was the easy part.", "why": "Two days on."}
+ ]
+}

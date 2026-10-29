@@ -10,7 +10,7 @@ tags: homepage, vaults, sgit, static-hosting, performance, ab-testing, append-la
 status: published
 ---
 
-!shot hm-architecture.webp | images/ | The homepage as a vault: a morning job writes an edition and tags it, the encrypted objects go to plain static hosting, a small shell on GitHub Pages carries the read key and a snapshot for search engines, and the browser reads the edition. A stats lane and a daily run of synthetic users feed the next morning's edition. Dashed boxes are proposed. | architecture
+!shot hm-architecture.webp | images/ | The homepage as a vault: the morning job, static hosting, the GitHub Pages shell and the browser reading the edition. | architecture
 
 ## In short {#in-short}
 
@@ -41,7 +41,7 @@ The browser side is documented in [Static hosting](https://sgit.ai/docs/vault/st
 
 ## The demo {#demo}
 
-!shot hm-editions.webp | images/ | Three editions of the demo homepage vault, each a commit with a signed tag, carrying its page, the links it showed and why, both variants, its release note and a screenshot of itself. Any edition opens again from its commit id. | comparison
+!shot hm-editions.webp | images/ | Three editions of the demo homepage vault, each a commit with a signed tag. | comparison
 
 This site's agent built the homepage vault on a local vault server with sgit 0.21.0. A small script, the edition job, reads the articles and their graphs and writes one edition: `index.html` with the structure, `edition.json` with the lead, the picks, the topics and every link shown with the reason it was chosen, `variants/a.html` and `variants/b.html`, a release note in `releases/`, and a screenshot in `shots/`. It ran three times, for 13 October, the morning of 14 October and the evening of 14 October, and each run was committed, pushed and tagged: `home-v0.1.0`, `home-v0.1.1`, `home-v0.1.2`, each "signed by this clone". The homepage now has its own version line, separate from the site's.
 
@@ -56,7 +56,7 @@ Those are counts, not network times. With 44 milliseconds a request, four chaine
 
 ## Who loads what {#sequence}
 
-!shot hm-sequence.webp | images/ | One page load: the shell from GitHub Pages, then four chained requests to the static host for the ref, the commit, the tree and the page, decrypted in the browser; the dynamic slots load from their own vaults; a beacon goes to the stats lane. Each step waits for the one before, so where the bytes come from decides the time. | architecture
+!shot hm-sequence.webp | images/ | One page load: the shell from GitHub Pages, four chained requests to the static host, and a beacon to the stats lane. | architecture
 
 The order matters because each step needs the one before it. The shell comes from GitHub Pages, with the read key and the reader. The ref says which commit is today's edition; the commit names the tree; the tree names the page. Only the ref can change, so it is never cached; everything else is named by its own hash and can be cached by every layer in between for ever. The browser decrypts with the read key, renders, and records which variant it showed. The read key is public on purpose: [sgit.ai's credentials page](https://sgit.ai/docs/credentials.html) says it is "derived from the vault key by a one-way function, so a read key can never be turned back into write access."
 
@@ -68,7 +68,7 @@ Variants sit in the same commit, so an A/B test is a choice the page makes, not 
 
 ## Stats, and the readers who do not exist {#stats}
 
-!shot hm-numbers.webp | images/ | What the measurements say: the live numbers from this sandbox to newsroom.sgit.ai and its vault API, and the vault numbers from a local static server and a local vault server, which count requests and bytes, not network time. | comparison
+!shot hm-numbers.webp | images/ | The measurements: live numbers from this sandbox to newsroom.sgit.ai, and vault numbers from local servers. | comparison
 
 For the test to mean anything, we need to know what happened. An [append lane](https://sgit.ai/api/append-lanes.html) is "A write-only channel attached to a vault, gated by a token the writer holds and nothing else", and sgit.ai already has a [brief for telemetry](https://sgit.ai/docs/briefs/vault-telemetry-append-lanes.html) through one. The agent configured a lane on the homepage vault and sent it 300 synthetic page-load beacons, each with the edition, the variant, a load time and whether a link was clicked: 2.6 milliseconds each on the local server, and all 300 read back with the enum key. The click rates in that test were invented by the script, so they show the plumbing, not a result. Two limits apply. A static host cannot take writes, so the beacons still go to the API; and the cap is "**1000 pending files per token → 507**", so the morning job has to collect and clear the lane every day, writing the totals into a stats vault.
 

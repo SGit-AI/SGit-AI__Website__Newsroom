@@ -10,11 +10,11 @@
 
 # Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.0.0](versions/three-linkedin-pages.md) · [newsroom v0.12.107](https://newsroom.sgit.ai/admin/versions.html) · linkedincompaniessgitriskmandatenewsroomarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/three-linkedin-pages.md) · [newsroom v0.12.107](https://newsroom.sgit.ai/admin/versions.html) · linkedincompaniessgitriskmandatenewsroomarticle
 
 ***Abstract:** I now have three active companies, sgit.ai, the SGit Newsroom and RiskMandate, and none of them has a LinkedIn page. So I asked this site's agent to gather what LinkedIn needs, what we already have, and to draft the pages, the first posts and a new profile and bio for me. I am publishing the result rather than keeping it private, because that is what this site is for: documenting the story of what is actually going on, including the parts that are usually done quietly. The newsroom is the story, and the people who subscribe to it are following exactly this. What follows is the decisions to make first, with what LinkedIn says about each (the newsroom gets a company page rather than a showcase page, because people need to be able to say they work there); the drafted fields for each page, with their character counts against LinkedIn's limits; ten first posts for each, every one an article or page already published; and my own headline, about and bios. The addresses for all three looked free on 18 October. The RiskMandate page will be agreed with my co-founder before it goes up.*
 
-Three LinkedIn pages and a profile. sgit.ai, Git for encrypted vaults; the SGit Newsroom, a publication written in the open by an editor and a desk of agents; and RiskMandate, Agent Behaviour Policies for AI agents; each with its tagline, its industry and ten first posts drawn from material already published; and the founder's profile tying them together. The Cyber Boardroom, the legal entity behind sgit.ai and RiskMandate, sits underneath.
+Three LinkedIn pages and a profile: sgit.ai, the SGit Newsroom and RiskMandate, tied together by the founder's profile.
 
 ## In short
 

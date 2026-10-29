@@ -10,11 +10,11 @@
 
 # Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.1.0, 2 versions](versions/our-first-customers.md) · [newsroom v0.12.154](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policystartupscustomerspricingearly-accessarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.2.0, 3 versions](versions/our-first-customers.md) · [newsroom v0.12.154](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policystartupscustomerspricingearly-accessarticle
 
 ***Abstract:** Agent Behaviour Policies are ready for the next level. We have a workflow that works, a mapping to what regulators are asking for, and a clear idea of how it should all fit together. What is left is execution, and execution starts with customers. We now have a first group of people who are engaged and motivated: consultants who will sell this and already use some of it, people I work with, and us. So we are launching an early access programme, and I would like to call the people in it customers, not beta users: each one starts with credit to spend on a site we run, and the site already meters and bills, the way this newsroom does today, starting at £5. We will follow each customer closely, an email every day if that is what it takes, with objectives and milestones written with them, on a dedicated site with a start-here page. What we want to discover is the usage moment: the simplest policy that is useful, the entry point with least friction, and the price that feels fair. Everyone else who asks goes on a mailing list for the next batch. This is the brief.*
 
-The first customers, from credit to the moment they would pay: credit, a start-here page, a first policy, milestones and the value, with a daily follow-up and the meter alongside. Proposed.
+The first customers, from credit to the moment they would pay, with a daily follow-up and the meter. Proposed.
 
 ## In short
 
@@ -68,7 +68,7 @@ The things to track for each customer are simple: when they started, when they w
 
 This is not a launch. It is a first batch, small enough to follow closely. Alongside it we start a mailing list: everyone who asks to join is kept for the next batch, with what they want to use it for. The next batch gets a start-here page made from what the first one taught us, and needs less hand-holding per customer.
 
-Batches, not a launch: the first batch of friendlies, what we learn from them, the mailing list, and the second batch. Proposed.
+Batches, not a launch: the first batch of friendlies, the mailing list and the second batch. Proposed.
 
 ## What this does not claim
 
@@ -98,6 +98,12 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#our-fi
 
 ### Continued by
 
+- [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](the-delegation-record.md) RiskMandate's go-to-market plan: one workflow from an existing business rule to evidence that still holds after a change, starting with our own inbox.
+- [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](approved-business-mandates.md) Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.
+- [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](an-analysts-blueprint-for-riskmandate.md) An analyst's blueprint for RiskMandate from the WestCap CISO Summit, the vendors already moving, and our answer.
+- [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](how-to-help.md) Six steps for anyone who wants to help or be involved with sgit, Risk Mandate or this newsroom, and what they get back.
+- [Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor](agent-behaviour-policies-move-to-the-open-security-summit.md) The Agent Behaviour Policy moves to the Open Security Summit CIC as its first hosted project, with a charter and an independent steering majority to come.
+- [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](the-riskmandate-roadmap.md) A proposed strategy for RiskMandate, a spectrum of trust: policies, understand, risk acceptance, contain, manage, insure.
 - [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](v0-12-in-numbers.md) v0.12 in numbers: 159 versions in eight days, 131 articles, 292,000 words, a graph for every article, and the mistakes the data shows.
 - [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](free-to-copy-paid-at-the-source.md) Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.
 - [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](pki-everywhere.md) From now on every message, secret and handover is signed. The hard part is an agent's first key: two patterns, one built and one proposed.

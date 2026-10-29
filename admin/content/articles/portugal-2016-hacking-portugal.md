@@ -10,7 +10,7 @@ tags: portugal, hacking-portugal, bsides-lisbon, talks, books, application-secur
 status: published
 ---
 
-!shot pt-2016-slides.webp | images/ | Twelve slides from Hacking Portugal at BSidesLisbon 2016: the summary, a Portuguese network hostile to insecure code, how secure is Portugal, the Hacking Service, hacking like football, a Code Made in Portugal brand, cyber security as public health, OpenSource.pt, a Ministry of Code, a Clear Software Act, a national bug bounty, and the future of Portugal. | comparison
+!shot pt-2016-slides.webp | images/ | Twelve slides from Hacking Portugal at BSidesLisbon 2016, from the summary to the future of Portugal. | comparison
 
 ## In short {#in-short}
 

@@ -10,11 +10,11 @@
 
 # Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.0.0](versions/sixteen-notes-i-did-not-want-to-lose.md) · [newsroom v0.12.23](https://newsroom.sgit.ai/admin/versions.html) · vaultsappend-lanesqr-codespasskeysidentityusabilitygmailagentswireproductbriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.1.0, 2 versions](versions/sixteen-notes-i-did-not-want-to-lose.md) · [newsroom v0.12.23](https://newsroom.sgit.ai/admin/versions.html) · vaultsappend-lanesqr-codespasskeysidentityusabilitygmailagentswireproductbriefarticle
 
 ***Abstract:** I opened the newsroom on my iPhone, in a browser that looked like Chrome but could not reach my passkeys, and the vault button told me there were sixteen changes that existed only in that browser. My reaction is the most interesting part: those were notes and reads I wanted to keep. They had become pieces of intelligence, and I was happy to do a couple of steps to get them into my vault, as long as I only had to do it once. That is the nudge working for the right reason. So this is a feature request and a brief. Every reader vault should have a lane that any browser can write to, by a link, a piece of text or a QR code carrying only where to write and the key to encrypt with, so that a browser with no passkey, no sign-in, or an old operating system can send what it holds into my vault, and the vault takes it from there the next time I open it. The newsroom already does exactly this to send a reading summary to sgit.ai, so it is a pattern pointed at myself. It is also a commentary. Identity is still a mess: passkeys that work in one browser and not in the one an app opens a link in, and an email connector that makes attachments, inline images and a clean reply in a thread far harder than the underlying service does. Users will accept a lot of friction, once, when the value is clear, which is how WhatsApp links a computer and how Midjourney grew on a Discord bot. What they will not accept is losing their data. And the other half of the day's news is the opposite story: two new wires, OWASP and AWS, built from two small config files on the same pipeline, and suddenly a new product line.*
 
-Send to my vault, from any browser. The reader's vault offers a link three ways, a URL, text and a QR code, carrying only where to write and the public key to encrypt with. Any browser, with no passkey and no sign-in, encrypts what it holds and appends it to the lane; it can write and never read. The next time the vault is opened with the passkey, the pane drains the lane into the reader's records.
+Send to my vault, from any browser: a link offered three ways that lets a browser write to a lane and never read.
 
 ## In short
 
@@ -51,7 +51,7 @@ And this is a good example of the non-linear path I keep writing about, in [Not 
 
 ## The brief
 
-The brief in six steps, with what already exists beside each: the append lanes, the browser-side encryption the meter already uses, the drain the reply lane needs anyway, and the tests. Only the reader's key pair and the pane's link are new.
+The brief in six steps, with what already exists beside each, and the little that is new.
 
 *For the session that builds the reader's vault pane on newsroom.sgit.ai. Written by @newsroom.writer for Dinis Cruz, 13 October 2026, on top of the vault pane at v0.12.22.*
 
@@ -82,7 +82,7 @@ None of these are limits of Gmail itself. Google's API lets a program ["upload f
 
 ## Two config files, a new product line
 
-One pipeline, three wires. A wire is a vault plus a config: the Industry Wire came first, and the OWASP Wire and the AWS Wire were added on 13 October with two 17-line configs, the same builder and the same reader, each with its own audience to find.
+One pipeline, three wires: the Industry Wire, the OWASP Wire and the AWS Wire, each a vault plus a config.
 
 The day's other story is the opposite of all that friction. The wire started simple: one agent writing industry news into an encrypted vault, [and this site drawing it](two-agents-one-vault.md) with only the read key. Today the agent that runs it added two more: an [OWASP Wire](https://newsroom.sgit.ai/wire/owasp/), everything happening at and about OWASP, joined to a graph of its projects, and an [AWS Wire](https://newsroom.sgit.ai/wire/aws/), everything AWS announced, filtered by a declared stack. On this site that was barely a feature: two configuration files of seventeen lines each, and one builder that now serves every wire. In the release's own words, "a wire is a vault plus a config".
 
@@ -118,6 +118,9 @@ Vaults & methodSite & engineering[This article as a graph →](graphs.md#sixteen
 
 ### Continued by
 
+- [The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed](the-reading-account-as-built.md) The meter, the credit, Stripe top-ups and the account in your own vault run today; checking payments is what is proposed.
+- [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](the-human-is-the-network.md) Two AI sessions sharing nothing passed keys, a certificate, images and an encrypted message through QR codes and a screenshot.
+- [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](a-secret-is-a-qr-code.md) Send a QR code and a link to a public key: the workflow the QR experiment opens, who already does this, and a format to share.
 - [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](the-briefs-so-far.md) Sixty-five briefs this newsroom has asked of itself, audited from the code: 11 built, 21 partly, 32 not, each open one with a session brief.
 - [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](the-editors-channel.md) A key makes a browser an editor's: reads, sign-offs and fixes go to a vault, a daily pass acts and replies, and five lanes set what any reader sends.
 - [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](the-vault-opened.md) Merging devices, every call to the vault server named and opened, a page to browse your vaults, and one shared viewer that every reader vault opens with.

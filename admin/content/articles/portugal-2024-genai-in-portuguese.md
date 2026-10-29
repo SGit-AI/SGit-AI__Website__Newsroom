@@ -10,7 +10,7 @@ tags: portugal, owasp, genai, cyber-boardroom, talks, provenance, graphs, agents
 status: published
 ---
 
-!shot pt-2024-slides.webp | images/ | Twelve slides from Deterministic GenAI Outputs with Provenance, OWASP Global AppSec EU, Lisbon, June 2024: the title, prompts in natural language, Portuguese as a programming language, GenAI understands, hallucinations, secure or safe, The Cyber Boardroom, GenAI as the most vulnerable API, key principles, what GenAI is good at, graphs instead of RAG, and security incidents as a good thing. | comparison
+!shot pt-2024-slides.webp | images/ | Twelve slides from Deterministic GenAI Outputs with Provenance, OWASP Global AppSec EU, Lisbon, June 2024. | comparison
 
 ## In short {#in-short}
 

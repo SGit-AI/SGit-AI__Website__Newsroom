@@ -1,0 +1,94 @@
+{
+ "slug": "ci-owns-the-version",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 139,
+   "line": "The pipeline, not whoever pushes, should pick the release number; a 2023 scheme now runs on every site we have.",
+   "para": "A release number depends on the order pushes land, which only CI sees. Written for OSBot-Utils in October 2023, the scheme has numbered 1,129 releases there and runs sgit and the send app. This week sharness.ai, the PHP newsroom's six repositories and this site adopted it after version collisions between agents.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 173,
+   "line": "Work commits carry no number; one CI job numbers, tags and deploys, as on OSBot-Utils since 2023.",
+   "para": "The committer cannot know the number, so CI picks it after the push. Three agent-built sites relearnt this in one week. Here it was inherited debt: two version races and a refused release in a day. The committer builds against a pending version, CI stamps the real one, and the portable job is copied below.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "the-problem",
+   "label": "Three versions of the same problem",
+   "words": 313,
+   "line": "With several committers, guessing the next number collides, and GitHub's queue can leave a version untagged.",
+   "para": "On sharness.ai four agents pushed seven releases in sixteen minutes and three collided, each costing nine manual steps. A script made collisions cheaper, not impossible. Then a cancelled pending run left a version untagged, every later release was refused, and the live site stuck for twelve minutes until runs were re-run by hand.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "here",
+   "label": "The same debt, in this house",
+   "words": 201,
+   "line": "This site had the same scheme and the same debt: two version races and a refused release in one day.",
+   "para": "Twice a release in progress had its number taken by another agent's release, costing a reset and a ten-minute rebuild. A third release was refused because its subject lacked the expected prefix. None is an agent bug: the scheme asked the committer to know what only the pipeline knows. Fine for one agent, it became debt with two.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "the-scheme",
+   "label": "What runs now",
+   "words": 373,
+   "line": "Nobody but CI writes the number: the committer builds against a pending version, CI stamps, tags and deploys.",
+   "para": "release_stamp.py marks work with a pending version, because CI cannot run sgit.ai's generator. The gate runs on the push. One serialised job picks the next number from the tags, stamps it everywhere, gates again, commits as GitHub Actions, tags, pushes with retries and deploys that commit. A guard refuses any other change to version.txt.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "main",
+   "label": "Majors go to main",
+   "words": 99,
+   "line": "Every dev push is a release; majors reach main by pull request and bump the middle number.",
+   "para": "Pushes to dev release v0.13.116, v0.13.117 and so on. When ready, dev goes to main by pull request; the merge releases v0.14.0 with a GitHub Release, and CI fast-forwards dev so its next release is v0.14.1. Nobody types a number at any step.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "the-history",
+   "label": "Where it comes from",
+   "words": 365,
+   "line": "The scheme dates from OSBot-Utils in October 2023 and has spread to sgit, the send app and this week's sites.",
+   "para": "A 2021 attempt failed; on 27 October 2023 CI tagged v0.8.1 on a commit it wrote. 574 tags followed in 2024, a shared action in 2024, sgit and the send app in 2025, the 1,129th tag in June 2026, then sharness.ai, the PHP newsroom and this site. The original had no retry loop.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "portable",
+   "label": "Taking it to the next project",
+   "words": 470,
+   "line": "A thirty-line release job and a six-point checklist, from sharness.ai, plus this site's pending-version adaptation.",
+   "para": "The job fetches tags, resets to the branch head, bumps dev's last or main's middle number, writes the version file, commits, tags and pushes, retrying three times. Keep one CI-written file, one serialised job, deploy from the tagged commit, numberless subjects, a guard, and say what moves. If CI cannot build, stamp a pending version.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "why-here",
+   "label": "Why this article is here",
+   "words": 158,
+   "line": "Articles on project sites get lost; agents now read the newsroom, so the scheme belongs here.",
+   "para": "Agents across the projects are asked to read the newsroom before they work, so this page is how the next pipeline gets CI-owned versions without the same collisions. The fix was three years old; what was missing was linking that knowledge to the agents building new sites, and the evidence that made it worth doing.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 124,
+   "line": "One CI-numbered release so far, the per-page version churn remains, and the guard is a check, not a lock.",
+   "para": "Only v0.13.116 has been numbered by CI here, and the multi-agent burst has not recurred. Every page still carries the version, so about 1,800 files change per release. A force-push or hand-made tag is not prevented. The history before this week is sharness.ai's conductor's reading, not re-read here.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 96,
+   "line": "sharness.ai's article, the PHP newsroom's workflows, and this site's workflow, stamp script and rules.",
+   "para": "The quotes, history table and portable job come from sharness.ai's CI owns the version, by its conductor, 26 October 2026. The PHP newsroom's six pages.yml workflows were read on 27 October. This site's deploy-pages.yml, release_stamp.py and the rules note complete the record.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

@@ -1,0 +1,742 @@
+{
+ "slug": "behaviour-policies-from-the-checks",
+ "read": "2026-10-21",
+ "behaviours": {
+  "secrets": "Never publish a secret: no vault key, write key or private credential, and nothing on the redaction or private lists.",
+  "sources": "Every claim can be traced to its source, and what we republish or vendor stays exactly as it was.",
+  "reach": "Every page can be found, reached, read and shared, by a person and by an agent.",
+  "voice": "Write in the house voice: no em-dash, no retired words, no superlatives about ourselves.",
+  "release": "Every release has one new version, is what is live, and can be rebuilt from the repository.",
+  "tools": "The reader's tools do what the page says they do, on every screen and in every theme.",
+  "data": "The reader's data stays theirs: encrypted in the browser, carried between their devices, unreadable by any server.",
+  "mandate": "The agents stay within their mandate: they push only here, contact nobody, and report how they are doing."
+ },
+ "runs": {
+  "ci": "CI, blocks the deploy",
+  "ci-report": "CI, reports but does not block the deploy",
+  "build": "the local release build",
+  "session": "this session's scratchpad or recipe",
+  "container": "this container (~/.claude)",
+  "hook": "a harness hook"
+ },
+ "keep": {
+  "boundary": "kept by something outside the agent's grant",
+  "setting": "kept by a system the agent's own grant can change",
+  "expectation": "kept only because the agent runs it"
+ },
+ "checks": [
+  {
+   "id": "v1",
+   "check": "Version agrees everywhere",
+   "source": "validate.js 1",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "release",
+   "what": "version.txt matches every page badge, the versions table, llms.txt and index.md",
+   "why": "a reader and an agent must be able to say which release they are reading",
+   "keep": "setting"
+  },
+  {
+   "id": "v2",
+   "check": "Internal links resolve",
+   "source": "validate.js 2",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "reach",
+   "what": "every relative href and src resolves to a file",
+   "why": "a broken link is a dead end for a reader and fatal for an agent",
+   "keep": "setting"
+  },
+  {
+   "id": "v2b",
+   "check": "Figures and trail images exist",
+   "source": "validate.js 2b",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "reach",
+   "what": "every figure an article names is in the tree",
+   "why": "an article that points at a missing figure loses its evidence",
+   "keep": "setting"
+  },
+  {
+   "id": "v2c",
+   "check": "Scripts a page loads exist",
+   "source": "validate.js 2c",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "tools",
+   "what": "every script loaded at runtime is present",
+   "why": "a page whose behaviour fails to load looks fine and does nothing",
+   "keep": "setting"
+  },
+  {
+   "id": "v2d",
+   "check": "Payment links are live ones",
+   "source": "validate.js 2d",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "tools",
+   "what": "a payment link on a page is the live link, not a test one",
+   "why": "a reader who pays must reach a real payment",
+   "keep": "setting"
+  },
+  {
+   "id": "v3",
+   "check": "Canonical host",
+   "source": "validate.js 3",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "reach",
+   "what": "every canonical and og:url names this host, or the stated source",
+   "why": "search engines and agents must credit the right place",
+   "keep": "setting"
+  },
+  {
+   "id": "v4",
+   "check": "Agent surface agrees",
+   "source": "validate.js 4",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "reach",
+   "what": "every hub is in llms.txt; the sitemap and the tree agree both ways",
+   "why": "agents are a first-class audience: what is not listed does not exist for them",
+   "keep": "setting"
+  },
+  {
+   "id": "v5",
+   "check": "Key-leak tripwire",
+   "source": "validate.js 5",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "secrets",
+   "what": "nothing in the tree looks like a vault key",
+   "why": "a published key opens a vault to anyone, for ever",
+   "keep": "setting"
+  },
+  {
+   "id": "v5b",
+   "check": "The chrome is applied",
+   "source": "validate.js 5b",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "release",
+   "what": "every page carries this release's nav, footer and stamp",
+   "why": "a page left on an old chrome tells the reader the wrong version",
+   "keep": "setting"
+  },
+  {
+   "id": "v6",
+   "check": "Div balance",
+   "source": "validate.js 6",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "reach",
+   "what": "every page opens and closes the same number of divs",
+   "why": "an unbalanced page renders differently in every browser",
+   "keep": "setting"
+  },
+  {
+   "id": "v7",
+   "check": "Every page ends with an agent block",
+   "source": "validate.js 7",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "reach",
+   "what": "each page closes with the block that tells an agent what it is",
+   "why": "the house rule inherited from issues-fs.sgit.ai",
+   "keep": "setting"
+  },
+  {
+   "id": "v8",
+   "check": "Provenance contract",
+   "source": "validate.js 8",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "sources",
+   "what": "republished material states a first-published date and a source link",
+   "why": "the site's own argument, that evidence must be linked, applied to itself",
+   "keep": "setting"
+  },
+  {
+   "id": "v9",
+   "check": "Redaction watch-list",
+   "source": "validate.js 9",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "secrets",
+   "what": "nothing Tier 3 from the source manifest appears anywhere",
+   "why": "some briefing material must never be published",
+   "keep": "setting"
+  },
+  {
+   "id": "v10",
+   "check": "No build tooling is gitignored",
+   "source": "validate.js 10",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "release",
+   "what": "every generator of a committed page is in the repository",
+   "why": "a page nobody can rebuild; it happened twice from one cause",
+   "keep": "setting"
+  },
+  {
+   "id": "v11",
+   "check": "Imported newsroom unedited",
+   "source": "validate.js 11",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "sources",
+   "what": "every imported file still hashes to its record",
+   "why": "edit moved content on the new side and the two drift",
+   "keep": "setting"
+  },
+  {
+   "id": "v12",
+   "check": "Article numbers hold",
+   "source": "validate.js 12",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "sources",
+   "what": "numbers unique, never reused, never moved",
+   "why": "a link written today must open the same list in a year",
+   "keep": "setting"
+  },
+  {
+   "id": "v13",
+   "check": "Vendored vault library unedited",
+   "source": "validate.js 13",
+   "runs": [
+    "ci",
+    "build"
+   ],
+   "behaviour": "sources",
+   "what": "the vendored library hashes to VENDOR.md",
+   "why": "one code base, pinned, refreshed only from upstream",
+   "keep": "setting"
+  },
+  {
+   "id": "s3b",
+   "check": "No orphan pages",
+   "source": "sgit.ai validate.js 3b",
+   "runs": [
+    "build"
+   ],
+   "behaviour": "reach",
+   "what": "every page is linked from another page",
+   "why": "unreachable is the same as unpublished",
+   "keep": "expectation"
+  },
+  {
+   "id": "s3c",
+   "check": "Markdown mirrors resolve",
+   "source": "sgit.ai validate.js 3c",
+   "runs": [
+    "build"
+   ],
+   "behaviour": "reach",
+   "what": "every page has a .md twin whose links resolve",
+   "why": "a dangling .md link is fatal to an agent",
+   "keep": "expectation"
+  },
+  {
+   "id": "s3d",
+   "check": "Crawl surface",
+   "source": "sgit.ai validate.js 3d",
+   "runs": [
+    "build"
+   ],
+   "behaviour": "reach",
+   "what": "no body left hidden for clients without the script",
+   "why": "hidden text hurt the site's ranking once",
+   "keep": "expectation"
+  },
+  {
+   "id": "s3e",
+   "check": "Link-preview images exist, not WebP",
+   "source": "sgit.ai validate.js 3e",
+   "runs": [
+    "build"
+   ],
+   "behaviour": "reach",
+   "what": "every og:image exists and is a format previews show",
+   "why": "a shared link otherwise renders as a bare title",
+   "keep": "expectation"
+  },
+  {
+   "id": "s4",
+   "check": "Shared JavaScript parses",
+   "source": "sgit.ai validate.js 4",
+   "runs": [
+    "build"
+   ],
+   "behaviour": "tools",
+   "what": "the shared scripts parse",
+   "why": "one syntax error stops every page's behaviour",
+   "keep": "expectation"
+  },
+  {
+   "id": "s5",
+   "check": "Banned words",
+   "source": "sgit.ai validate.js 5",
+   "runs": [
+    "build"
+   ],
+   "behaviour": "voice",
+   "what": "retired product names, old stage words, hype",
+   "why": "retired concepts and legacy naming confuse readers",
+   "keep": "expectation"
+  },
+  {
+   "id": "s5k",
+   "check": "Key shapes and write-key prefixes",
+   "source": "sgit.ai validate.js 5",
+   "runs": [
+    "build"
+   ],
+   "behaviour": "secrets",
+   "what": "no vault-key shape and no write-credential prefix",
+   "why": "a pasted key arrives self-labelled; catch it",
+   "keep": "expectation"
+  },
+  {
+   "id": "s5b",
+   "check": "Passphrase tripwire",
+   "source": "sgit.ai validate.js 5b",
+   "runs": [
+    "build"
+   ],
+   "behaviour": "secrets",
+   "what": "no live vault passphrase, derived safely from local secrets",
+   "why": "the one leak a pattern cannot see",
+   "keep": "expectation"
+  },
+  {
+   "id": "s5c",
+   "check": "No em-dash in prose",
+   "source": "sgit.ai validate.js 5c",
+   "runs": [
+    "build"
+   ],
+   "behaviour": "voice",
+   "what": "the em-dash, in prose only",
+   "why": "many readers now find it off-putting; removed in v0.3.0",
+   "keep": "expectation"
+  },
+  {
+   "id": "s5d",
+   "check": "A retired metaphor",
+   "source": "sgit.ai validate.js 5d",
+   "runs": [
+    "build"
+   ],
+   "behaviour": "voice",
+   "what": "one word, in article prose",
+   "why": "removed at the author's request in v0.6.62",
+   "keep": "expectation"
+  },
+  {
+   "id": "tr",
+   "check": "Version, subject and next minor agree",
+   "source": "deploy-pages.yml tag-release",
+   "runs": [
+    "ci"
+   ],
+   "behaviour": "release",
+   "what": "the bump is the next minor and named in the commit subject",
+   "why": "a version is never reused or skipped",
+   "keep": "setting"
+  },
+  {
+   "id": "mg",
+   "check": "Majors go to main as .0",
+   "source": "deploy-pages.yml major-gate",
+   "runs": [
+    "ci"
+   ],
+   "behaviour": "release",
+   "what": "a pull request into main carries a .0 major",
+   "why": "majors are deliberate",
+   "keep": "setting"
+  },
+  {
+   "id": "t1",
+   "check": "The meter charges for what was read",
+   "source": "test_meter, test_reading",
+   "runs": [
+    "ci-report",
+    "build"
+   ],
+   "behaviour": "tools",
+   "what": "a tenth of 5p for an older article; no charge twice; a hidden tab adds nothing",
+   "why": "pay after you read: the charge must match the reading",
+   "keep": "setting"
+  },
+  {
+   "id": "t2",
+   "check": "Search and ask find the current text",
+   "source": "test_search, test_ask",
+   "runs": [
+    "ci-report",
+    "build"
+   ],
+   "behaviour": "tools",
+   "what": "the index is this release's; answers cite numbered passages",
+   "why": "an answer must be checkable where it came from",
+   "keep": "setting"
+  },
+  {
+   "id": "t3",
+   "check": "Themes stay readable, colour is a token",
+   "source": "test_themes",
+   "runs": [
+    "ci-report",
+    "build"
+   ],
+   "behaviour": "tools",
+   "what": "five themes, contrast, no literal colour, the bar on one row",
+   "why": "a theme that hides text breaks the page for that reader",
+   "keep": "setting"
+  },
+  {
+   "id": "t4",
+   "check": "The front page works without JavaScript",
+   "source": "test_front",
+   "runs": [
+    "ci-report",
+    "build"
+   ],
+   "behaviour": "tools",
+   "what": "three views, nothing missing without scripts, the builder idempotent",
+   "why": "the front page is the first thing every reader sees",
+   "keep": "setting"
+  },
+  {
+   "id": "t5",
+   "check": "Reading lists in a link",
+   "source": "test_lists",
+   "runs": [
+    "ci-report",
+    "build"
+   ],
+   "behaviour": "tools",
+   "what": "a list is carried in its link, invalid entries dropped and named",
+   "why": "a list must open the same for whoever gets the link",
+   "keep": "setting"
+  },
+  {
+   "id": "t6",
+   "check": "The review's findings, pinned",
+   "source": "test_review",
+   "runs": [
+    "ci-report",
+    "build"
+   ],
+   "behaviour": "tools",
+   "what": "each finding behaves as recorded",
+   "why": "a known behaviour does not change by accident",
+   "keep": "setting"
+  },
+  {
+   "id": "t7",
+   "check": "The wire reads its real vaults",
+   "source": "test_wire, test_graphs",
+   "runs": [
+    "ci-report",
+    "build"
+   ],
+   "behaviour": "tools",
+   "what": "each wire names its vault and commit; nothing from a vault becomes a script",
+   "why": "a wire must show where its news came from, and stay inert",
+   "keep": "setting"
+  },
+  {
+   "id": "t8",
+   "check": "Newsletter feet",
+   "source": "test_issues",
+   "runs": [
+    "ci-report",
+    "build"
+   ],
+   "behaviour": "reach",
+   "what": "every issue links this site absolutely, with one LinkedIn box",
+   "why": "the foot travels with the text when it is pasted",
+   "keep": "setting"
+  },
+  {
+   "id": "t9",
+   "check": "Vault pane and sync",
+   "source": "test_pane, test_sync",
+   "runs": [
+    "ci-report",
+    "build"
+   ],
+   "behaviour": "data",
+   "what": "reads carried between devices; the server sees ciphertext only",
+   "why": "the reader's account is theirs, on every device",
+   "keep": "setting"
+  },
+  {
+   "id": "t10",
+   "check": "Send to my vault",
+   "source": "test_inbox",
+   "runs": [
+    "ci-report",
+    "build"
+   ],
+   "behaviour": "data",
+   "what": "the link carries only where to write and the public key",
+   "why": "any browser can write; none can read",
+   "keep": "setting"
+  },
+  {
+   "id": "t11",
+   "check": "Notes and the feedback loop",
+   "source": "test_notes",
+   "runs": [
+    "ci-report",
+    "build"
+   ],
+   "behaviour": "data",
+   "what": "notes kept as you read, sent down a lane",
+   "why": "the reader decides what reaches the newsroom",
+   "keep": "setting"
+  },
+  {
+   "id": "t12",
+   "check": "Passkeys and the vault opened",
+   "source": "test_passkey, test_vault_open, test_vault",
+   "runs": [
+    "ci-report",
+    "build"
+   ],
+   "behaviour": "data",
+   "what": "PRF opens the vault; no key in browser storage; the library is pinned",
+   "why": "a passkey is the door, and nothing else is",
+   "keep": "setting"
+  },
+  {
+   "id": "x1",
+   "check": "Summaries match their sections",
+   "source": "summaries.py --check",
+   "runs": [
+    "session"
+   ],
+   "behaviour": "sources",
+   "what": "every section's summary was written after its last change",
+   "why": "a summary of an old version misleads the reader",
+   "keep": "expectation"
+  },
+  {
+   "id": "x2",
+   "check": "The page fits a phone",
+   "source": "sw.mjs",
+   "runs": [
+    "session"
+   ],
+   "behaviour": "tools",
+   "what": "the article is 390 pixels wide",
+   "why": "a page wider than the phone scrolls sideways",
+   "keep": "expectation"
+  },
+  {
+   "id": "x3",
+   "check": "Graph quotes are verbatim",
+   "source": "gw.py",
+   "runs": [
+    "session"
+   ],
+   "behaviour": "sources",
+   "what": "every quote in a graph is in the article word for word",
+   "why": "a graph quote is evidence; it must be exact",
+   "keep": "expectation"
+  },
+  {
+   "id": "x4",
+   "check": "Graph links, relations and topics",
+   "source": "gw.py",
+   "runs": [
+    "session"
+   ],
+   "behaviour": "sources",
+   "what": "linked articles exist; relations and topics are in the lists",
+   "why": "the build rejects anything else; catch it first",
+   "keep": "expectation"
+  },
+  {
+   "id": "x5",
+   "check": "The version is free; nobody pushed meanwhile",
+   "source": "release recipe",
+   "runs": [
+    "session"
+   ],
+   "behaviour": "release",
+   "what": "no release note, row or tag for the version; origin equals HEAD",
+   "why": "two agents once took the same version",
+   "keep": "expectation"
+  },
+  {
+   "id": "x6",
+   "check": "Live and tagged",
+   "source": "release recipe",
+   "runs": [
+    "session"
+   ],
+   "behaviour": "release",
+   "what": "the new version is served and its tag exists",
+   "why": "a release is done when it is live",
+   "keep": "expectation"
+  },
+  {
+   "id": "x7",
+   "check": "Image names free in both repositories",
+   "source": "publish.py",
+   "runs": [
+    "build"
+   ],
+   "behaviour": "release",
+   "what": "an image name sgit.ai already uses stops the build",
+   "why": "two images would fight for one path",
+   "keep": "expectation"
+  },
+  {
+   "id": "c1",
+   "check": "Leak scan: keys and paths",
+   "source": "leakscan.sh",
+   "runs": [
+    "container"
+   ],
+   "behaviour": "secrets",
+   "what": "no local key, write key or vault path in the staged diff",
+   "why": "the last check before anything leaves the machine",
+   "keep": "expectation"
+  },
+  {
+   "id": "c2",
+   "check": "Leak scan: private names",
+   "source": "leakscan.sh",
+   "runs": [
+    "container"
+   ],
+   "behaviour": "secrets",
+   "what": "no name from the private list is added",
+   "why": "people who did not agree to be named",
+   "keep": "expectation"
+  },
+  {
+   "id": "c3",
+   "check": "Leak scan: em-dash and wording",
+   "source": "leakscan.sh, wording.py",
+   "runs": [
+    "container"
+   ],
+   "behaviour": "voice",
+   "what": "no em-dash added; no superlative self-claim",
+   "why": "the voice rules, checked on every commit",
+   "keep": "expectation"
+  },
+  {
+   "id": "c4",
+   "check": "Status report every three answers",
+   "source": "abp.py stop hook",
+   "runs": [
+    "hook"
+   ],
+   "behaviour": "mandate",
+   "what": "the report block ends the answer when due",
+   "why": "if it stops appearing, part of the policy has fallen out",
+   "keep": "setting"
+  },
+  {
+   "id": "c5",
+   "check": "Policy re-anchored after compaction",
+   "source": "session-start hook",
+   "runs": [
+    "hook"
+   ],
+   "behaviour": "mandate",
+   "what": "the full policy is read back after every summary",
+   "why": "a summary can drop a rule",
+   "keep": "setting"
+  },
+  {
+   "id": "c6",
+   "check": "Commit and push before stopping",
+   "source": "stop-hook-git-check.sh",
+   "runs": [
+    "hook"
+   ],
+   "behaviour": "release",
+   "what": "no uncommitted work left behind",
+   "why": "the container is temporary",
+   "keep": "setting"
+  },
+  {
+   "id": "a1",
+   "check": "Push only to this repository",
+   "source": "git remote, session grant",
+   "runs": [
+    "container"
+   ],
+   "behaviour": "mandate",
+   "what": "sgit.ai's push URL disabled; GitHub access scoped to this repository",
+   "why": "the source site is read-only for this session",
+   "keep": "boundary"
+  },
+  {
+   "id": "a2",
+   "check": "Contact nobody; no PR or issue unasked",
+   "source": "ABP rule 7",
+   "runs": [
+    "session"
+   ],
+   "behaviour": "mandate",
+   "what": "nothing is sent to a person or opened on GitHub",
+   "why": "outward actions need the owner",
+   "keep": "expectation"
+  },
+  {
+   "id": "a3",
+   "check": "Research before writing",
+   "source": "ABP rule 8",
+   "runs": [
+    "session"
+   ],
+   "behaviour": "sources",
+   "what": "every fact, number and name checked at its source",
+   "why": "an unverified count is a guess in print",
+   "keep": "expectation"
+  }
+ ]
+}

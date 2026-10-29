@@ -30,13 +30,14 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
       <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
       <a class="sl" href="../about/index.html">Why this exists</a>
       <a class="sl" href="../desks/index.html">The five desks</a>
@@ -86,6 +87,8 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -153,17 +156,19 @@
   <script src="../assets/reader/strip.js" defer></script>
   <script src="../assets/reader/highlights.js" defer></script>
   <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
   <div class="theme-pick"></div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot</p>
  <h1>Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot</h1>
- <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-18 &middot; <a href="versions/free-models-your-own-key.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.104</a> &middot; <span class="chip">llm</span><span class="chip">free-models</span><span class="chip">api-keys</span><span class="chip">cors</span><span class="chip">groq</span><span class="chip">gemini</span><span class="chip">mistral</span><span class="chip">openrouter</span><span class="chip">own-key</span><span class="chip">research</span><span class="chip">article</span></p>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-18 &middot; <a href="versions/free-models-your-own-key.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.104</a> &middot; <span class="chip">llm</span><span class="chip">free-models</span><span class="chip">api-keys</span><span class="chip">cors</span><span class="chip">groq</span><span class="chip">gemini</span><span class="chip">mistral</span><span class="chip">openrouter</span><span class="chip">own-key</span><span class="chip">research</span><span class="chip">article</span></p>
  <p class="abstract"><em><b>Abstract:</b> I would like readers of this newsroom to be able to talk to it with a capable model, for free, without us paying for their questions and without us ever holding their key. The newsroom already answers questions from its own passages, with Chrome's built-in model or the reader's own OpenRouter key, and OpenRouter's free models stop at 50 requests a day until you buy credits. So we looked at every free inference offer we could find, as it stands on 18 October 2026, for material that is not private. Two things decide whether a provider works for this. Can anyone start free without a card? And can a web page call it directly, so the key goes from the reader's browser to the provider and nowhere else? We read each provider's pricing, limits and terms, and tested every API from the newsroom's own address. Four pass both tests: Groq, Google's Gemini API through AI Studio, Mistral's free mode, and OpenRouter's free models, which also offer a sign-in flow so the reader never copies a key. Cohere's trial and Pollinations pass too, with smaller limits. Cloudflare Workers AI has the most generous free allowance and does not train on what you send, but a page cannot call it, so it needs a small server the reader can deploy. NVIDIA's catalogue is strong and free, but it fails both tests that matter here, and its terms say trial use only. And a lot changed in 2026: GitHub Models was retired, Hugging Face stopped giving free accounts credits, and Cerebras and SambaNova now need a card. This is the map, what is possible, what is not, and what we will build.</em></p>
-<figure class="shot" data-shot="fi-map.webp" data-dir="images/" data-alt="Every free inference offer we checked on 18 October 2026, placed by two questions. Across: can a web page call the provider directly, with the reader&#x27;s key? Up: can anyone start free without a card? Top right are Groq, Gemini through AI Studio, Mistral&#x27;s free mode and OpenRouter&#x27;s free models, with Cohere&#x27;s trial and Pollinations; Alibaba Model Studio is there with a catch. Top left, free but needing a server in between: Cloudflare Workers AI, Z.ai and NVIDIA. Bottom, a card, credits or gone: Cerebras, Together, Hugging Face, Fireworks, DeepInfra, SambaNova and the retired GitHub Models." data-kind="comparison"><figcaption>Every free inference offer we checked on 18 October 2026, placed by two questions. Across: can a web page call the provider directly, with the reader's key? Up: can anyone start free without a card? Top right are Groq, Gemini through AI Studio, Mistral's free mode and OpenRouter's free models, with Cohere's trial and Pollinations; Alibaba Model Studio is there with a catch. Top left, free but needing a server in between: Cloudflare Workers AI, Z.ai and NVIDIA. Bottom, a card, credits or gone: Cerebras, Together, Hugging Face, Fireworks, DeepInfra, SambaNova and the retired GitHub Models.</figcaption></figure>
+<figure class="shot" data-shot="fi-map.webp" data-dir="images/" data-alt="Every free inference offer we checked on 18 October 2026, placed by two questions." data-kind="comparison"><figcaption>Every free inference offer we checked on 18 October 2026, placed by two questions.</figcaption></figure>
 <h2 id="in-short">In short</h2>
 <ul>
 <li><b>The goal.</b> A reader talks to the newsroom with a capable model, free, on their own key, which we never hold.</li>
@@ -294,6 +299,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo from me on 18 October 2026, and research by this site's agent the same day: two research agents reading each provider's pages, and a CORS preflight to every endpoint from <code>https://newsroom.sgit.ai</code>. The main sources, all read on 18 October 2026: Groq, <a href="https://console.groq.com/docs/rate-limits">rate limits</a>, <a href="https://console.groq.com/docs/models">models</a> and <a href="https://console.groq.com/docs/your-data">your data</a>; Google, <a href="https://ai.google.dev/gemini-api/docs/pricing">Gemini API pricing</a>, <a href="https://ai.google.dev/gemini-api/terms">terms</a> and <a href="https://ai.google.dev/gemini-api/docs/api-key">API keys</a>; Mistral, <a href="https://docs.mistral.ai/getting-started/quickstarts/studio/activate-and-generate-api-key.md">activating an API key</a> and <a href="https://docs.mistral.ai/admin/billing-usage/usage-limits.md">usage limits</a>; OpenRouter, <a href="https://openrouter.ai/docs/api/reference/limits">limits</a>, <a href="https://openrouter.ai/docs/guides/overview/auth/oauth">OAuth PKCE</a>, <a href="https://openrouter.ai/docs/guides/privacy/logging">logging</a> and <a href="https://openrouter.ai/terms">terms</a>; Cloudflare, <a href="https://developers.cloudflare.com/workers-ai/platform/pricing/">Workers AI pricing</a> and <a href="https://developers.cloudflare.com/workers-ai/platform/data-usage/">data usage</a>; Alibaba Cloud, <a href="https://www.alibabacloud.com/help/en/model-studio/new-free-quota">Model Studio free quota</a>; Z.ai, <a href="https://docs.z.ai/guides/overview/pricing">pricing</a>; Cohere, <a href="https://docs.cohere.com/docs/rate-limits">rate limits</a>; Pollinations, <a href="https://github.com/pollinations/pollinations/blob/main/APIDOCS.md">API docs</a>; NVIDIA, <a href="https://assets.ngc.nvidia.com/products/api-catalog/legal/NVIDIA%20API%20Trial%20Terms%20of%20Service.pdf">API trial terms of service</a> and <a href="https://forums.developer.nvidia.com/t/368420">the forum thread on rate limits</a>, 29 April 2026; Cerebras, <a href="https://inference-docs.cerebras.ai/support/rate-limits">rate limits</a>; SambaNova, <a href="https://cloud.sambanova.ai/plans">plans</a>; Hugging Face, <a href="https://huggingface.co/docs/inference-providers/pricing">Inference Providers pricing</a>; GitHub, <a href="https://github.blog/changelog/2026-07-30-github-models-is-now-retired/">GitHub Models is now retired</a>, 30 July 2026. Written up and checked by this site's agent; the editorial responsibility is mine.</p>
 <sg-meter view="page" kind="article" date="2026-10-18" topics="agents-and-policy" title="Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#free-models-your-own-key">This article as a graph &rarr;</a></p>
@@ -329,7 +335,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="free-models-your-own-key.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="free-models-your-own-key.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -363,6 +369,8 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

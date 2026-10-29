@@ -1,0 +1,258 @@
+{
+  "slug": "underwriting-the-agent-economy-reviewed",
+  "teaser": "A review of the AI insurance stack blueprint, the companies selling agent cover, and what agent behaviour policies add to it.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "The AI insurance stack blueprint says what insurers must build and what they need from the companies they cover, accountability, reach, change history and evidence that controls held; agent behaviour policies, the delegation record and insurability computed from evidence are how a deploying company produces that, with clear gaps still to fill.",
+  "nodes": [
+    {
+      "id": "paper",
+      "label": "The AI insurance stack",
+      "kind": "artefact",
+      "summary": "arXiv 2607.11999: eight components, 37 authors."
+    },
+    {
+      "id": "silent",
+      "label": "Silent coverage",
+      "kind": "claim",
+      "summary": "Agent risk unpriced inside existing policies."
+    },
+    {
+      "id": "concentration",
+      "label": "Three providers, 80%",
+      "kind": "claim",
+      "summary": "A defect becomes a correlated shock."
+    },
+    {
+      "id": "tests",
+      "label": "Recurring technical tests",
+      "kind": "method",
+      "summary": "Evaluations, red teaming, chaos testing."
+    },
+    {
+      "id": "ul",
+      "label": "Underwriters Laboratories",
+      "kind": "example",
+      "summary": "Insurers in 1894; the mark became a test of insurability."
+    },
+    {
+      "id": "standards",
+      "label": "AI standards",
+      "kind": "concept",
+      "summary": "ISO 42001, NIST AI RMF, STAR for AI, AIUC-1."
+    },
+    {
+      "id": "pricing",
+      "label": "Expected loss",
+      "kind": "method",
+      "summary": "Severity times probability times usage."
+    },
+    {
+      "id": "market",
+      "label": "The market today",
+      "kind": "example",
+      "summary": "Harbor, Armilla, Munich Re with Mosaic, AIUC."
+    },
+    {
+      "id": "abp",
+      "label": "Agent behaviour policy",
+      "kind": "method",
+      "summary": "Owner, reach, mandate, enforcement, evidence."
+    },
+    {
+      "id": "record",
+      "label": "The delegation record",
+      "kind": "artefact",
+      "summary": "Approval, grant, gap, controls, evidence, version."
+    },
+    {
+      "id": "hooks",
+      "label": "Hooks and audit logs",
+      "kind": "method",
+      "summary": "Blocked attempts logged apart from executed actions."
+    },
+    {
+      "id": "conformance",
+      "label": "Insurability as a query",
+      "kind": "artefact",
+      "summary": "AIUC-1 evidence on a date: conditions and exclusions."
+    },
+    {
+      "id": "gaps",
+      "label": "What we still miss",
+      "kind": "question",
+      "summary": "Loss numbers, pooled data, accumulation, contracts."
+    },
+    {
+      "id": "signoff",
+      "label": "Maintainers' sign-off",
+      "kind": "concept",
+      "summary": "The UL mark for open source."
+    }
+  ],
+  "edges": [
+    {
+      "from": "silent",
+      "to": "paper",
+      "rel": "leads-to"
+    },
+    {
+      "from": "concentration",
+      "to": "paper",
+      "rel": "leads-to"
+    },
+    {
+      "from": "paper",
+      "to": "tests",
+      "rel": "depends-on"
+    },
+    {
+      "from": "paper",
+      "to": "standards",
+      "rel": "depends-on"
+    },
+    {
+      "from": "ul",
+      "to": "standards",
+      "rel": "example-of"
+    },
+    {
+      "from": "tests",
+      "to": "pricing",
+      "rel": "produces"
+    },
+    {
+      "from": "market",
+      "to": "paper",
+      "rel": "example-of"
+    },
+    {
+      "from": "abp",
+      "to": "tests",
+      "rel": "answers"
+    },
+    {
+      "from": "record",
+      "to": "standards",
+      "rel": "answers"
+    },
+    {
+      "from": "hooks",
+      "to": "abp",
+      "rel": "depends-on"
+    },
+    {
+      "from": "conformance",
+      "to": "pricing",
+      "rel": "compared-with"
+    },
+    {
+      "from": "standards",
+      "to": "conformance",
+      "rel": "produces"
+    },
+    {
+      "from": "gaps",
+      "to": "abp",
+      "rel": "extends"
+    },
+    {
+      "from": "signoff",
+      "to": "ul",
+      "rel": "compared-with"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-delegation-record",
+      "an-agent-that-may-only-chat",
+      "the-policy-draws-the-liability-line",
+      "who-maintains-the-php-you-run"
+    ],
+    "pages": [],
+    "sites": [
+      "https://arxiv.org/abs/2607.11999v2",
+      "https://sgit.ai/demos/vaults/aiuc-1-conformance/index.html",
+      "https://riskmandate.ai"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A standard tells you what good looks like. It cannot tell you whether you do it.",
+      "why": "What we did with AIUC-1."
+    },
+    {
+      "text": "That is the job we have been doing.",
+      "why": "What the paper asks for, and does not build."
+    },
+    {
+      "text": "Insurers first, then standards, then codes",
+      "why": "Standards, and the precedent that makes the case."
+    }
+  ],
+  "figures": [
+    {
+      "file": "uw-cover.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/uw-cover.webp",
+      "caption": "The cover of \"Underwriting the Agent Economy: The Blueprint for an AI Insurance Stack\", July 2026, arXiv 2607.11999v2.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "uw-cliff.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/uw-cliff.webp",
+      "caption": "The paper on one page: the problem, the proposal, the precedents and the tails.",
+      "kind": "concept"
+    },
+    {
+      "file": "uw-failures.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/uw-failures.webp",
+      "caption": "Table 1 of the paper: common failure modes of AI agents, with the risks and a real example of each.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "uw-stack.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/uw-stack.webp",
+      "caption": "Figure 1 of the paper, the AI insurance stack, with incident data looping through each stage back to itself.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "uw-standards.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/uw-standards.webp",
+      "caption": "Table 3 of the paper: ISO 42001, the NIST AI RMF, STAR for AI and AIUC-1 compared side by side.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "uw-ul.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/uw-ul.webp",
+      "caption": "Section II.3.E of the paper: Underwriters Laboratories, founded by property insurers in 1894, and the UL mark.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "uw-tower.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/uw-tower.webp",
+      "caption": "Figure 2 of the paper: a hypothetical coverage tower for frontier AI catastrophic risk. Proportions are illustrative.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "uw-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/uw-map.webp",
+      "caption": "The paper's eight components, and what RiskMandate and sgit already produce for each. Dashed lines are proposed.",
+      "kind": "concept"
+    },
+    {
+      "file": "uw-insurability.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/uw-insurability.webp",
+      "caption": "The AIUC-1 conformance layer on sgit.ai computing insurability for an invented subject. Unofficial and derivative.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "uw-gaps.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/uw-gaps.webp",
+      "caption": "What the paper has that we still miss: a loss number, incident data at scale, accumulation and more.",
+      "kind": "concept"
+    }
+  ]
+}

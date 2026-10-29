@@ -30,13 +30,14 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
       <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
       <a class="sl" href="../about/index.html">Why this exists</a>
       <a class="sl" href="../desks/index.html">The five desks</a>
@@ -86,6 +87,8 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -153,11 +156,13 @@
   <script src="../assets/reader/strip.js" defer></script>
   <script src="../assets/reader/highlights.js" defer></script>
   <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
   <div class="theme-pick"></div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Story vault underneath, Reader Skills on top: why local journalism has the most to gain</p>
  <h1>Story vault underneath, Reader Skills on top: why local journalism has the most to gain</h1>
@@ -210,6 +215,7 @@
 <figure class="shot shot--medium" data-shot="lu-chatgpt-infographic.webp" data-dir="images/" data-alt="The infographic of Markus Franz&#x27;s article, made with ChatGPT from the article&#x27;s text and posted under his LinkedIn post, where he replied that he liked &quot;how clearly you visualised the shift from Liquid Content to Liquid Utility&quot;. Faithful on the six skills, the layers and the safeguards; the note below says what it adds and what it drops."><figcaption>The infographic of Markus Franz's article, made with ChatGPT from the article's text and posted under his LinkedIn post, where he replied that he liked "how clearly you visualised the shift from Liquid Content to Liquid Utility". Faithful on the six skills, the layers and the safeguards; the note below says what it adds and what it drops.</figcaption></figure>
 <div class="note"><b>Reading it against Markus's article.</b> It gets the substance right: the gap, Liquid Utility, the six Reader Skills, the layered system, the safeguards and the advice to start small. Four things to know. The taglines ("Same facts. A more useful tomorrow", "People informed, people empowered, stronger societies", "Real journalism. Greater possibilities") and the line "Trust turns useful services into lasting relationships" are the infographic's, not Markus's. "An AI feature alone is not the advantage. Reliability is" is a fair compression, but his own wording is more careful: the publisher's case <em>would have to rest</em> on original access, maintained data, local reporting and accountability, and even then the service must be demonstrably better for a particular task. It drops his qualifiers, that the six skills are a proposed framework rather than a universal taxonomy and that reach, utility, relationship and reciprocity are a hypothesis to measure rather than a funnel. And it leaves out his evidence on search and clicks, and his boundary that "relevant to me" must not become "nothing beyond my immediate interests".</div>
 <p><em>Drafted from Markus Franz's article and LinkedIn post of 7 October 2026, his reply to my comment, and a voice note by Dinis Cruz, who is the author of the argument and the person with editorial responsibility, by agent@riskmandate.ai (Claude Opus 5.5, claude-opus-5-5) in the sgit.ai site session, on 7 October 2026. Quotations from Markus Franz are from his published article and his public reply, credited and linked; Liquid Utility, Reader Skills and Journalism as a Capability System are his terms. The mapping, the bridge graph, the payment chain and its illustrative split are ours. Places, dates and hashes in the bridge figure are illustrative.</em></p>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">News &amp; evidence</span><span class="tchip">Graphs &amp; knowledge</span> <a href="graphs.html#story-vault-meets-reader-skills">This article as a graph &rarr;</a></p>
@@ -248,7 +254,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="story-vault-meets-reader-skills.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="story-vault-meets-reader-skills.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -282,6 +288,8 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

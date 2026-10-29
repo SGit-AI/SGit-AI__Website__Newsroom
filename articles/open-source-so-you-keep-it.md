@@ -10,11 +10,11 @@
 
 # Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.0.0](versions/open-source-so-you-keep-it.md) · [newsroom v0.12.132](https://newsroom.sgit.ai/admin/versions.html) · open-sourcefounderscareerspublishinggen-z-bookarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.1.0, 2 versions](versions/open-source-so-you-keep-it.md) · [newsroom v0.12.132](https://newsroom.sgit.ai/admin/versions.html) · open-sourcefounderscareerspublishinggen-z-bookarticle
 
 ***Abstract:** People worry that if they open source their ideas, others will copy them. It does not happen: I have been open sourcing my ideas for years, and the ones I did not follow up are still there, not taken. The advantage people miss is that open source is how you get to keep using your own work. When you work for a company, what you build gets locked in, and when you leave you start from scratch. My trick was to work on open source projects that I brought into each company, so I was more productive there and never started again; my work kept getting better as I moved. The Cyber Boardroom began like that: an open experiment with AI while I was working for two companies, with my managers aware of it, and when I left both roles I continued where I had left off. So publish early, and rough. A rough public history shows an employer that it is an experiment and learning, which it is, and shows anyone who asks later how it evolved, bit by bit. A polished thing that appears from nowhere raises questions, and you never want lawyers involved. Keep it on separate machines, never build a competitor to your employer, and remember that the learning makes you better at the day job too.*
 
-Two careers, side by side. Closed: at each company you build something, it stays locked in when you leave, and at the next company you start from zero. Open: you bring your open source projects into each company, improve them there in the open, and carry them forward, so each job starts where the last one ended; the experiment you started on the side becomes a company.
+Two careers, side by side: closed, where each job starts from zero, and open, where the work carries forward.
 
 ## In short
 
@@ -89,6 +89,8 @@ Startups & strategyVaults & method[This article as a graph →](graphs.md#open-s
 
 ### Continued by
 
+- [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](investor-sgit-ai.md) A brief for investor.sgit.ai: investors and founders using our tools, with news, contracts as graphs, deal rooms as vaults and sgit as the case study.
+- [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](where-to-invest-in-sgit.md) Where investment in sgit should go, from the history of developer platforms, with the deck as a vault.
 - [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](the-exit-is-when-you-sell-control.md) A founder's exit is the day someone else buys control, which can come long before the shares go. Leave then, and agree the terms at the start.
 - [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](a-trusted-framework-for-agentic-finance.md) The FCA plans a framework for agentic finance. Our open behaviour policies cover its four elements; a vault shows six bank agents at play.
 - [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](fund-it-with-time.md) A startup needs time before money. Start from your own revenue, start while employed, ask for part time, and treat debt as buying time. Avoid regret.

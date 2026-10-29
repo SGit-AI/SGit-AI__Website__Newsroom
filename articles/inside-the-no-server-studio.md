@@ -10,11 +10,11 @@
 
 # Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.0.0](versions/inside-the-no-server-studio.md) · [newsroom v0.12.146](https://newsroom.sgit.ai/admin/versions.html) · startupsarchitectureclient-sideno-servervaultsbusiness-modelsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.1.0, 2 versions](versions/inside-the-no-server-studio.md) · [newsroom v0.12.146](https://newsroom.sgit.ai/admin/versions.html) · startupsarchitectureclient-sideno-servervaultsbusiness-modelsarticle
 
 ***Abstract:** A tour of the vault behind the no-server startup. The no-server studio turns a document into an infographic in the browser. It is one HTML file of seven native web components, with no framework, no build step and no server, built from separate component files that a small script inlines, because a vault app must be one page. Most of it is simulated, on purpose. A deterministic extractor stands in for the model, so every feature works offline and every result replays; inside the vault, the studio asks the vault host for a model, and on a public read the host answers that there is no key, so the studio says so and stays in simulation. Served as its own page, it can use OpenRouter's OAuth or a pasted key, held in memory; that path is written and checked, not yet run against a live key. The flow walks the blueprint's eight steps with invented money. The business plan, for somebody to build, has three businesses, prices as hypotheses and a calculator. Nine of the blueprint's twelve steps are done, two are partial and one is simulated. Three synthetic users walked it before it was published, and the vault caught one real bug on the way: its sandbox has no session storage.*
 
-The no-server studio, opened from its vault in the official vault UI, read-only, with the published key. The host reports no AI key for a public read, and the studio says so and stays in simulation.
+The no-server studio opened from its vault in the official vault UI, read-only, staying in simulation.
 
 The no-server startup
 
@@ -62,7 +62,7 @@ There are three ways, and the studio shows which one is in use.
 
 The flow tab walks the blueprint's eight steps. Press each one: a simulated passkey produces a storage key; a simulated OAuth round trip returns a key on the user's account; £10 of credit is bought at the provider, not the studio; a cap of £2 is set; a generation spends a penny of it; the result is kept with the user. The eighth step is the gap: the studio would earn £2 of that £10 if a provider paid apps a fifth, and none does today.
 
-The flow after every step has been tried: the credit at the provider, what was spent, and what the studio would earn at a fifth.
+The flow after every step has been tried: the credit at the provider, what was spent, and what the studio would earn.
 
 ## The business plan
 
@@ -110,6 +110,7 @@ Startups & strategyVaults & method[This article as a graph →](graphs.md#inside
 
 ### Continued by
 
+- [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](the-attack-surface-you-do-not-have.md) Every CVE makes me smile: moving to the client side took my servers out of the news, and the constraint turned out to be speed.
 - [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](a-leak-without-breaking-the-policy.md) A key can leak through an allowed action. Told, checked, never given: a hook tested on nine leaks, four experimental rules, and a real sweep.
 - [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](the-no-server-startup.md) A blueprint for products with no server and no database of yours: static files, the user's own AI key and storage, and agents to build them.
 

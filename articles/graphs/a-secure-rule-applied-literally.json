@@ -1,0 +1,126 @@
+{
+  "slug": "a-secure-rule-applied-literally",
+  "teaser": "A secure rule, applied literally: the CSP that made an agent copy shared code into every repository, and the person accountable who asked why.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "The PHP security agent's sound rule to load scripts only from the page's own host, applied literally to the split into several sites, led the developer agent to copy the shared runtime into each site, adding cost, drift and no single source of truth; no agent challenged it, and the accountable editor did, replacing the copies with one versioned, hashed source named in the policy.",
+  "nodes": [
+    {
+      "id": "rule",
+      "label": "Scripts only from the site",
+      "kind": "claim",
+      "summary": "A sound CSP rule."
+    },
+    {
+      "id": "split",
+      "label": "One repository into six",
+      "kind": "example",
+      "summary": "The refactoring plan."
+    },
+    {
+      "id": "copies",
+      "label": "A copy in every site",
+      "kind": "example",
+      "summary": "Four copies, drift, no single source."
+    },
+    {
+      "id": "nobody",
+      "label": "Nobody challenged it",
+      "kind": "claim",
+      "summary": "Each agent did its job."
+    },
+    {
+      "id": "complexity",
+      "label": "Agents handle complexity",
+      "kind": "claim",
+      "summary": "The good news and the bad news."
+    },
+    {
+      "id": "editor",
+      "label": "The person accountable",
+      "kind": "method",
+      "summary": "Reads the notes, asks why."
+    },
+    {
+      "id": "fix",
+      "label": "One pinned source",
+      "kind": "method",
+      "summary": "Versioned press, sha256, hosts in the CSP."
+    }
+  ],
+  "edges": [
+    {
+      "from": "split",
+      "to": "copies",
+      "rel": "produces"
+    },
+    {
+      "from": "rule",
+      "to": "copies",
+      "rel": "produces"
+    },
+    {
+      "from": "complexity",
+      "to": "nobody",
+      "rel": "produces"
+    },
+    {
+      "from": "nobody",
+      "to": "copies",
+      "rel": "depends-on"
+    },
+    {
+      "from": "editor",
+      "to": "copies",
+      "rel": "answers"
+    },
+    {
+      "from": "fix",
+      "to": "editor",
+      "rel": "depends-on"
+    },
+    {
+      "from": "fix",
+      "to": "rule",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "agents-need-direction",
+      "a-villager-for-the-agents",
+      "who-signs-for-this",
+      "signed-by-the-source"
+    ],
+    "pages": [],
+    "sites": [
+      "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__proposal__one-repository-into-six/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A rule meant to make us more secure was making us less so.",
+      "why": "The story, without the jargon."
+    },
+    {
+      "text": "Without it, every agent can be right and the system still wrong.",
+      "why": "Where the person comes in."
+    }
+  ],
+  "figures": [
+    {
+      "file": "cq-copies.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cq-copies.webp",
+      "caption": "A secure rule applied literally: shared code copied into four sites, against loaded from the press.",
+      "kind": "comparison"
+    },
+    {
+      "file": "cq-chain.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cq-chain.webp",
+      "caption": "Where the question was asked: from the security policy of 24 October to the developer's v0.22.2.",
+      "kind": "process"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+ "slug": "the-rules-of-the-game",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 226,
+   "line": "Agents can change the pipeline that checks them; a five-zone policy and the least GitHub enforces today.",
+   "para": "The agents that build this site changed the checks in 62 of 227 commits in eleven days. So the rules are now written as a policy in five zones, and mapped against GitHub's controls for a public repository: a hook and a CI guard make bypassing deliberate, a token without workflow rights makes it a boundary, and a sidecar closes the rest.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 89,
+   "line": "Seven lines: agents change the pipeline, five zones, second key, two changes, one owner setting, private-only path rules, a gap.",
+   "para": "Agents touched the checks in 62 of 227 commits. The policy has five zones, from free to never. Gates need a second key, not a ban. A hook plus a CI guard means two deliberate changes to bypass. A token without workflow rights makes it a boundary. Path rules are private-only. One known gap remains.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "hole",
+   "label": "The hole",
+   "words": 213,
+   "line": "The agents can change the workflow, validator and tests that gate their own releases.",
+   "para": "Every push to dev is a release, gated by a workflow the agents can edit. From 11 to 22 October, 62 of 227 commits touched files that check the work, from six agents; 17 changed the workflow, one of them this session's browser cache. Most were improvements, so the rule is a second key, not a ban.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "policy",
+   "label": "The policy",
+   "words": 231,
+   "line": "The policy: content free, gates second key, identity owner only, vendored from upstream, rules never.",
+   "para": "One principle: change content freely, change what checks you only with a second key, never change your own rules. Five zones list the paths, including the reader's browser code as a gate. The published copy is for reading; the copy that counts must live where the agent cannot write.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "github",
+   "label": "What GitHub offers today",
+   "words": 355,
+   "line": "On a public repository, GitHub's only path boundary is a token that cannot change workflow files.",
+   "para": "Push rulesets that restrict file paths exist, but only for private and internal repositories. Required workflows and code owners work through pull requests, not direct pushes. Branch rules, deployment reviewers and a token without the workflow permission are available on public repositories for free.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "minimal",
+   "label": "The least we can do",
+   "words": 398,
+   "line": "Policy, hook, CI guard, a token without workflow rights, then the sidecar.",
+   "para": "The hook catches mistakes but not a script writing the file. The CI guard fails a release that changes gate paths without an approved pull request. Bypassing both takes two deliberate changes, visible in history. A token that cannot change workflows makes the guard itself unchangeable, so every gate path needs a second key.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "gaps",
+   "label": "Where it can still break",
+   "words": 234,
+   "line": "Open routes: an old workflow returning, rewritten history, manual runs, self-approval, free content.",
+   "para": "GitHub's docs allow committing a workflow identical to one on another branch without the permission, so an old workflow may return. Blocking force pushes and branch creation helps; deployment branch rules limit manual runs. The approver must be an account the agent does not act as. Content stays free.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "second-key",
+   "label": "Second key, not never",
+   "words": 129,
+   "line": "The aim is agreement on changes to the checks, not a ban on improving them.",
+   "para": "Agents improved the pipeline many times, including a cache that sped up every release. A change to what checks the work differs from an article and should be agreed by someone else, as in the delegation record. Even a written policy alone is a specification others can enforce.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 93,
+   "line": "Nothing is enforced yet; findings are from documentation; the token step and App behaviour are untested.",
+   "para": "The policy is proposed and nothing enforces it yet. The GitHub findings come from documentation read on 22 October, not tests. Whether this session's integration can lose the workflow permission is unknown, as is App token behaviour on the old-workflow gap. Commits are counted by path.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 118,
+   "line": "The memo, the repository's history and workflow, and GitHub's and Claude Code's documentation.",
+   "para": "Sources: the voice memo of 22 October 2026, this repository's history by path and agent label, the workflow at v0.13.38, and GitHub and Claude Code documentation on rulesets, protection, code owners, environments, token scopes, permissions and hooks, checked against the documentation's source.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

@@ -10,11 +10,11 @@
 
 # Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.0.0](versions/start-a-company.md) · [newsroom v0.12.128](https://newsroom.sgit.ai/admin/versions.html) · startupscompanieseuropegen-z-bookarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.1.0, 2 versions](versions/start-a-company.md) · [newsroom v0.12.128](https://newsroom.sgit.ai/admin/versions.html) · startupscompanieseuropegen-z-bookarticle
 
 ***Abstract:** If you are an entrepreneur, start a company, as soon as you have a bit of revenue to put through it. It is more professional, it lets you register for things and keep your work and your intellectual property in one place, and above all it is something a founder has to learn: how companies work, how to read a balance sheet, how shares and the rules between shareholders are set. There is no magic to it. A company is governed by a set of contracts, which today we can read in detail, draw as infographics and make sure are in our favour, and the founder who understands them can bring the rules of the game instead of being played by them. Where you do it matters. In the UK it takes an afternoon: £100 online, model articles by default, and very little to do until you start making real money. In Portugal, forming one is just as quick, but keeping one costs a certified accountant every month, by law, even with no trading, which is why I am closing mine. Lithuania looks as if it has thought this through, and its e-residency is where I would like to look next. I count what I paid in Portugal as the cost of learning. And the first thing to do with the company is the same as before you have one: sell.*
 
-Three ways to start a company, side by side. The UK, the one I know well: about £100 online, usually within a day, model articles by default, and little to do until there is real trade. Portugal, where I learned the hard way: just as quick to form, but a certified accountant is required by law from the first month, about €200 to €300 a month in my case, trading or not. Lithuania, where I would like to go next: e-residency for a digital identity and signature, a small partnership with no minimum capital, and a registered address still needed.
+Three ways to start a company, side by side: the UK, Portugal and Lithuania.
 
 ## In short
 
@@ -108,6 +108,8 @@ Startups & strategy[This article as a graph →](graphs.md#start-a-company)
 
 ### Continued by
 
+- [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](investor-sgit-ai.md) A brief for investor.sgit.ai: investors and founders using our tools, with news, contracts as graphs, deal rooms as vaults and sgit as the case study.
+- [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](jobs-that-never-scaled.md) What never scaled is on-demand expertise: the before and after the meeting. Agents can now carry them, for any expert, anywhere.
 - [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](fund-it-with-time.md) A startup needs time before money. Start from your own revenue, start while employed, ask for part time, and treat debt as buying time. Avoid regret.
 - [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](can-you-sell-it.md) Start selling what you have, however rough. The point is not the sale but what you learn trying, and a payment is the best signal there is.
 

@@ -10,7 +10,7 @@ tags: books, graphs, fractal-semantic-graphs, agents, publishing, workflows, cas
 status: published
 ---
 
-!shot bk-shelf.webp | images/ | The shelf on graphs.sgit.ai: three books, each with its own version, and v1.0.0 reserved for a final release; Fractal Semantic Graphs at v0.3.0, under review, 18 chapters and 38,824 words, with the change that moved it. | comparison
+!shot bk-shelf.webp | images/ | The shelf on graphs.sgit.ai: three books, each with its own version, and v1.0.0 reserved for a final release. | comparison
 
 ## In short {#in-short}
 
@@ -40,7 +40,7 @@ Then, on 26 August, I sent a memo: "can you write a brief to write three books/p
 
 ## The experiments around them {#experiments}
 
-!shot bk-ladder.webp | images/ | The altitude ladder: the first edition at five altitudes, from the book in one paragraph to the six parts, the seventeen units, the sections and the book itself; every highlighted phrase descends into what it compressed, coloured by the evidence behind it. | comparison
+!shot bk-ladder.webp | images/ | The first edition at five altitudes, from the book in one paragraph to the book itself, each phrase descending further. | comparison
 
 What I find most valuable now is not the books but what was tried around them.
 
@@ -54,7 +54,7 @@ What I find most valuable now is not the books but what was tried around them.
 
 ## Why one book read better {#better}
 
-!shot bk-graph.webp | images/ | The book as a graph: Creating a Book Using Agentic Workflows decomposed into book, chapter, section, block, sentence and word, with the counts per chapter, and every chapter rebuilt byte-identical on the build. | comparison
+!shot bk-graph.webp | images/ | The book Creating a Book Using Agentic Workflows as a graph, from book and chapter down to sentence and word. | comparison
 
 When I read them, the difference was striking. In my memo after the flight I said the alignment of the making-of was "way stronger, like by orders of magnitude" than the book about graphs; reading it, "there was actually not that much stuff I felt wanted to change." The site's release notes give the reason, and it is the most important lesson in the whole estate: "the same agent, the same day, the difference being that book C was written over 41 narrated release rows, 38 verbatim briefs and a repository it could interrogate, while book B was written over an argument."
 
@@ -62,7 +62,7 @@ That is what these articles are now: a record. Every article here starts from a 
 
 ## Where it stopped {#stopped}
 
-!shot bk-board.webp | images/ | The project board for the making-of book: queued, up next and in progress, nothing done; the naming question and the workflow document both four stages of seven in and blocked, waiting on the founder, and publishing held until part one lands. | comparison
+!shot bk-board.webp | images/ | The project board for the making-of book: queued, up next and in progress, with nothing done. | comparison
 
 This is the part worth learning from. After the flight I asked for review as change control: "we start by planning, mapping, defining, reviewing, approving, and then implementing, and then approving the implementation". The agents built it, with care: a [board](https://graphs.sgit.ai/v2/books/making-a-book/board.html) of eight workstreams, 40 tasks and seven stages per change. And the board tells the story itself: "The two change-control workstreams are both blocked at the same stage, on the same person." The state map says it more plainly: the approved stage "has two items waiting and nothing has ever passed through it".
 

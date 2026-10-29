@@ -16,18 +16,18 @@
    "path": "passkey/vectors.json",
    "what": "its test vectors, from sgit's Python",
    "lines": 19,
-   "sha256": "d50a3642c131bbaa8b9858438138fc1dc78ae3249e9bab89c1b7541f95a447b8"
+   "sha256": "48627efae8134cbc815b54e1110cee174dd3ece3523395c9e46a6b1621b52b8f"
   },
   {
    "path": "passkey/index.html",
    "what": "the page",
-   "lines": 335,
+   "lines": 342,
    "sha256": "54c5b8357d8c67118cffb3b7d017fb1ec3d5c96ab10fea66a052a3222072991d"
   }
  ],
  "what": "The map of everything a reader does on newsroom.sgit.ai, and the review of it: phase 0 of the move described in https://newsroom.sgit.ai/articles/explorer-to-villager-newsroom.html. Written by admin/build/api_map.py on every build. The hashes are the 'before' for the move's rule that the live site serves the same bytes after it: scripts, styles and JSON raw; pages with the site chrome and version stamps normalised.",
  "api_means": "client-side: components, formats and contracts the browser runs, with no server and nothing to deploy but files",
- "release": "v0.13.0",
+ "release": "v999.0.0",
  "date": "11 October 2026",
  "source": {
   "sgit_ai": "",
@@ -36,7 +36,7 @@
   "meter_on_sgit_ai": "1.3.1"
  },
  "counts": {
-  "reader_code_lines": 11101,
+  "reader_code_lines": 11389,
   "reader_files": 68,
   "pages": 30,
   "views": 12,
@@ -45,7 +45,7 @@
   "outputs": 9,
   "contracts": 14,
   "findings": 18,
-  "tests": 518,
+  "tests": 528,
   "frozen_files": 28,
   "frozen_lines": 8735,
   "pages_with_csp": 0
@@ -153,9 +153,9 @@
    "path": "for/reading-list.js",
    "what": "A reading list in a link: parse, build, show, open as a persona",
    "from": "this site",
-   "lines": 343,
-   "bytes": 20117,
-   "sha256": "5f8fa1378b99c24cdba945cd0bb965a56f03a04ce069a3ab56b3ec340881b1ee",
+   "lines": 373,
+   "bytes": 22306,
+   "sha256": "432f944a7081e027235ad4e889b6a76e65786061c08d785b1ca25a34804d2124",
    "hosts": [],
    "fetch": 1,
    "storage": [],
@@ -185,9 +185,9 @@
    "path": "for/for.css",
    "what": "Styles for the two reading-list pages",
    "from": "this site",
-   "lines": 109,
-   "bytes": 8123,
-   "sha256": "6ad9b2f9c39e99748a089d55670a1233983ff08cc5d02e53a9034adb9735a17d",
+   "lines": 367,
+   "bytes": 27246,
+   "sha256": "e61d801f353c536b9ed6348262cd077b408deb211df552b07dde81fffd70b5b5",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -579,9 +579,9 @@
    "path": "articles/ids.json",
    "what": "A number for every article: the contract reading lists are built on",
    "from": "this site, generated",
-   "lines": 3328,
-   "bytes": 135820,
-   "sha256": "56ce1bb2357a8e82aeb14c401519be7938cadced49c3edf3166dbd02a65f2782",
+   "lines": 4623,
+   "bytes": 193406,
+   "sha256": "33db27a08b3f175af83376b9d6ae3e61f9f1814e0a6f92fe8a63aef3c9832ff0",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -596,8 +596,8 @@
    "what": "The persona links, for whoever writes to someone",
    "from": "this site, generated",
    "lines": 268,
-   "bytes": 13440,
-   "sha256": "8569d0beaebb75d2724caba0c09c737cd2b22d6382e0061802615e667d1005e5",
+   "bytes": 13442,
+   "sha256": "bdbf1c1176f7165d0b551dba61510fda39501494ddbb31790d95cfef9c3a7fef",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -611,9 +611,9 @@
    "path": "articles/graphs.json",
    "what": "The feed the picks and the graph read: every article with topics, tags and citations",
    "from": "sgit.ai, imported",
-   "lines": 54378,
-   "bytes": 2197794,
-   "sha256": "0fd3b076b757ec345b3c24e1d024c618d3e4e290344e09e29fc8ec06fe20646c",
+   "lines": 72719,
+   "bytes": 2773760,
+   "sha256": "0605340e043b338cc4c0536ce1db1c4b837819436ac3071594a2e104a1454cf9",
    "hosts": [],
    "fetch": 0,
    "storage": [],
@@ -1208,181 +1208,181 @@
   {
    "path": "account/index.html",
    "what": "the reading account",
-   "lines": 269,
+   "lines": 276,
    "sha256": "79134051f702c72fc42be20a9cbfdb302903ba8df990cd96b58d56feb7c664da"
   },
   {
    "path": "account/newsroom.html",
    "what": "the reader's newsroom",
-   "lines": 264,
+   "lines": 271,
    "sha256": "c7ff1366a64f9aed135d1cb0f4f3bccc9ec8ed5264ff82dda59ee40bbe1244b7"
   },
   {
    "path": "account/personas.html",
    "what": "the personas",
-   "lines": 264,
+   "lines": 271,
    "sha256": "1d9bea6a0c413b38b11effdf20a10894db05330a3fa1742d3bb04bf1a5c5c123"
   },
   {
    "path": "account/share.html",
    "what": "send us your reading",
-   "lines": 266,
+   "lines": 273,
    "sha256": "aaa67ae80a6da494859397774079f34ea61c79c74bb5bda3b69f416558cec8e2"
   },
   {
    "path": "account/top-up.html",
    "what": "the top-up",
-   "lines": 264,
+   "lines": 271,
    "sha256": "b47d72b247d1cb45b097a96e0aa4c2fd1b808dd6854d6dffb146ead68e46bcf5"
   },
   {
    "path": "account/topped-up.html",
    "what": "the page a payment returns to",
-   "lines": 263,
+   "lines": 270,
    "sha256": "d5df648ac4b3bcab6e45df40e8c7336f0cee82b41390e6a577849b5aefad61e8"
   },
   {
    "path": "subscribe/index.html",
    "what": "subscribe",
-   "lines": 284,
+   "lines": 291,
    "sha256": "67defb9b87a6b162cba1b44ff6190a0ba1200a3b9b6e13bae72d1ba8fc980eee"
   },
   {
    "path": "persona/index.html",
    "what": "the persona picker",
-   "lines": 247,
+   "lines": 254,
    "sha256": "e8c8b0e3a3d44a6b6a0f3861a5b77170a4b90cf7af2b02d03e69f7bcb90d1567"
   },
   {
    "path": "persona/founder/index.html",
    "what": "a persona link",
-   "lines": 254,
+   "lines": 261,
    "sha256": "73bcd5f5885ea67a581b7cfb263c3661e1ed3dddb7f0ddf6a2ba4b4288079156"
   },
   {
    "path": "persona/journalist/index.html",
    "what": "a persona link",
-   "lines": 254,
+   "lines": 261,
    "sha256": "7855b33fe190d2d6da17b1a797b93a2f5bb800540df4a902830998007905c407"
   },
   {
    "path": "persona/security/index.html",
    "what": "a persona link",
-   "lines": 254,
+   "lines": 261,
    "sha256": "fff3bce6c8e38b17d4d95397f6644606428e397ea351a252c7be4734e49b56ba"
   },
   {
    "path": "persona/builder/index.html",
    "what": "a persona link",
-   "lines": 254,
+   "lines": 261,
    "sha256": "69781503768b71c05c7f005c3e3af1d037e46fd694d1956ffa77821508587de8"
   },
   {
    "path": "persona/board/index.html",
    "what": "a persona link",
-   "lines": 254,
+   "lines": 261,
    "sha256": "34ed82d4b4c6dc99bb13f1413286883857bd4d66ab3a1b156a92cf6c4c51dbc1"
   },
   {
    "path": "for/index.html",
    "what": "a reading list",
-   "lines": 261,
-   "sha256": "fa9fd9201173284aecd8e3da497748c4627f937662c735b74f193811ae87b814"
+   "lines": 268,
+   "sha256": "46e33be6726e250f73f71f3a0ae274c7db611472c51aecf492423b5a4d25fb78"
   },
   {
    "path": "for/make.html",
    "what": "make a reading list",
-   "lines": 251,
+   "lines": 258,
    "sha256": "fb54f9c196921c6354cc8097a0cf21cf1e6d67fa909a174a3735f8adcb89a62a"
   },
   {
    "path": "wire/index.html",
    "what": "the Industry Wire's edition",
-   "lines": 271,
+   "lines": 278,
    "sha256": "7102dc51aa4332ceadcec9ee7474cb62a6334e37fbbf5a099389e957889b4312"
   },
   {
    "path": "wire/sources.html",
    "what": "the wire's sources",
-   "lines": 252,
+   "lines": 259,
    "sha256": "6dd7973179a8a55ad2b6c97c45f6873588883600b945950b515ec02f66613aae"
   },
   {
    "path": "wire/how.html",
    "what": "how the wire is read, and its documents",
-   "lines": 257,
+   "lines": 264,
    "sha256": "c00e9e56478a92aca087475a4fde43f0f9cbbf73504fb2266837a5b2dfde3643"
   },
   {
    "path": "wire/owasp/index.html",
    "what": "the OWASP Wire's edition, with the projects graph",
-   "lines": 272,
+   "lines": 279,
    "sha256": "a20ae108f77dd0928d87c0bd1cb9ac6087578804e650f94d4cbb87615dcb1400"
   },
   {
    "path": "wire/aws/index.html",
    "what": "the AWS Wire's edition, with the stack and its deadlines",
-   "lines": 272,
+   "lines": 279,
    "sha256": "cb2e100ca073d69c9d2e3fd7a0a554779d912458c4c9cc35af4fcfdee0ba8474"
   },
   {
    "path": "wire/portugal/index.html",
    "what": "the Portugal Wire's edition, in English and Portuguese, with the ecosystem map",
-   "lines": 272,
+   "lines": 279,
    "sha256": "ff1996c03578a4dcdc6d52025a856f6414cd9ef6ad8263593237832fbe0202e9"
   },
   {
    "path": "wire/days.html",
    "what": "every wire day by day",
-   "lines": 253,
+   "lines": 260,
    "sha256": "02d60e54a6b59505e1075bb5c0ee58bd65571e619b28ec7a289709bb5ff1accf"
   },
   {
    "path": "wire/costs.html",
    "what": "what the wires' pictures cost: every image, edition, wire and month, and the key's budget; wire/costs.json is the data",
-   "lines": 264,
-   "sha256": "5141267ecc57f27effddb319f9e691302393b71faa5f0add64ddd8a3b6bb3a07"
+   "lines": 271,
+   "sha256": "d40179d033712bb32b633583ac8a484770a517f219525fc337abc8535a382c8e"
   },
   {
    "path": "wire/charter.html",
    "what": "the charter of the wires",
-   "lines": 268,
+   "lines": 275,
    "sha256": "1e6211d977df9da214bd9c07c554b22a0f5c5c81149522f8779ffd62577c08d3"
   },
   {
    "path": "wire/desk-brief.html",
    "what": "the brief for the desks",
-   "lines": 273,
+   "lines": 280,
    "sha256": "5eeb9d492df688f6e4b4e77f9bddbdc63d664799ac59492afa520df708d3fbc3"
   },
   {
    "path": "wire/reach.html",
    "what": "who should know, by organisation route",
-   "lines": 252,
+   "lines": 259,
    "sha256": "47890db0bfcd37c0cf0bc9363b52f5521d67a47770c8838cfb422d97184c0c51"
   },
   {
    "path": "vault/index.html",
    "what": "your vault: the reading account carried between devices, with the pane open",
-   "lines": 283,
+   "lines": 290,
    "sha256": "2f141b0342bbcdc9b90e7779e8d7029801f034c97532de40ae3242a05f31eec2"
   },
   {
    "path": "meter/index.html",
    "what": "SG Meter, documented",
-   "lines": 405,
+   "lines": 412,
    "sha256": "dd4f20305437d7fe7c72733428b2eb690d768d0c629bc37f65d01ff01663890f"
   },
   {
    "path": "meter/security.html",
    "what": "the meter's security model",
-   "lines": 290,
+   "lines": 297,
    "sha256": "b063711b4a83046e31c3dfbf5de4a987a2bb8a7f250d57e5103a4d45ea46df02"
   },
   {
    "path": "demos/vaults/newsroom-synthetic-users/index.html",
    "what": "the synthetic-readers study, with the embedded vault",
-   "lines": 351,
+   "lines": 358,
    "sha256": "c828a8898c8c7ae3579e478e7b7073fe368f0806272ab498c80e231f828ad615"
   }
  ],
@@ -1410,7 +1410,7 @@
   {
    "path": "admin/build/sync_newsroom.py",
    "what": "the import: re-points the meter to v1.5.0, applies the text rules, prints the article number",
-   "lines": 716
+   "lines": 720
   },
   {
    "path": "admin/build/newsroom-meter.json",
@@ -1435,7 +1435,7 @@
   {
    "path": "admin/build/lane.py",
    "what": "the newsroom's end of the feedback loop: clones or pulls a reader's lane with its read key (from the environment, never a file) and prints the notes by page",
-   "lines": 147
+   "lines": 243
   },
   {
    "path": "admin/build/search_index.py",
@@ -1455,12 +1455,12 @@
   {
    "path": "admin/build/chrome.py",
    "what": "the nav and footer on every page, with the meter's balance and the Vault button and pane on pages that carry the meter",
-   "lines": 369
+   "lines": 377
   },
   {
    "path": "admin/build/validate.js",
    "what": "the gate: checks 2d (live link), 5 (key tripwire), 11 (imports unedited), 12 (numbers hold)",
-   "lines": 497
+   "lines": 531
   }
  ],
  "tests": [
@@ -1473,13 +1473,13 @@
   {
    "path": "admin/build/test_lists.mjs",
    "what": "the parser in Node and the list pages in Chromium",
-   "lines": 214,
-   "checks": 58
+   "lines": 259,
+   "checks": 68
   },
   {
    "path": "admin/build/test_review.mjs",
    "what": "the review's findings, pinned as the behaviour is today",
-   "lines": 145,
+   "lines": 148,
    "checks": 14
   },
   {
@@ -1515,7 +1515,7 @@
   {
    "path": "admin/build/test_search.mjs",
    "what": "search: the index and the ranking in Node, the page in Chromium",
-   "lines": 148,
+   "lines": 149,
    "checks": 37
   },
   {
@@ -1544,23 +1544,12 @@
   }
  ],
  "ci_runs": [
-  "admin/build/test_meter.mjs",
-  "admin/build/test_lists.mjs",
-  "admin/build/test_review.mjs",
-  "admin/build/test_passkey.mjs",
-  "admin/build/test_wire.mjs",
-  "admin/build/test_vault.mjs",
-  "admin/build/test_sync.mjs",
-  "admin/build/test_pane.mjs",
-  "admin/build/test_search.mjs",
-  "admin/build/test_ask.mjs",
-  "admin/build/test_inbox.mjs",
-  "admin/build/test_notes.mjs"
+  "admin/build/test_wire.mjs"
  ],
  "loader": {
   "lines": 17,
   "sha256": "f114004ba2928d82754ef83afff66b889bed92db083064323e78440d488e1e91",
-  "pages_that_eval": 807
+  "pages_that_eval": 1262
  },
  "frozen": [
   {
@@ -1708,7 +1697,7 @@
   "account": 1,
   "landing": 6,
   "newsroom": 1,
-  "page": 1116,
+  "page": 1735,
   "personas": 1,
   "share": 1,
   "topped-up": 1,

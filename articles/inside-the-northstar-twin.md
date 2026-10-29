@@ -10,11 +10,11 @@
 
 # Inside the Northstar twin: thirteen refunds, four designs, and every decision played back
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.0.0](versions/inside-the-northstar-twin.md) · [newsroom v0.12.101](https://newsroom.sgit.ai/admin/versions.html) · agentsdigital-twinvaultssimulationrefundsagent-decision-policyagent-behaviour-policyverificationcase-lawwalkthrougharticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/inside-the-northstar-twin.md) · [newsroom v0.12.101](https://newsroom.sgit.ai/admin/versions.html) · agentsdigital-twinvaultssimulationrefundsagent-decision-policyagent-behaviour-policyverificationcase-lawwalkthrougharticle
 
 ***Abstract:** A tour of the Northstar refund twin, the vault built to test the reply to Ashish Rajan's article. It runs his fictional retailer as a store: thirteen synthetic refund requests, each with something an agent can get wrong, through four designs of the controls, from the one in his article to one with behaviour, decision and workflow policies. Every case can be played step by step, stepped back, replayed and compared, and a reader can tick any of the ten controls to build a design of their own. This walks through it tab by tab and case by case: his $150 refund in each design; the $260 refund that design A refuses and nobody owns; the instruction hidden in a customer's message; the right name on the wrong order; the cap that cannot tell $132 from $120; the $261 refund split into three to fit the limit; the discount applied twice; the retry loop; and the three damaged items customers want to keep, which become the casebook. It ends with how the twin is built, a deterministic engine and one content file with no model called, what a digital twin means here and what it does not, and how to make one for your own process.*
 
-The first tab of the twin: the scenario from Ashish Rajan's article, the four designs side by side with what each overpaid, left owed, got right and cost in people's time, and the thirteen cases, each with what goes wrong and how design A handles it.
+The first tab of the twin: the scenario from Ashish Rajan's article, the four designs side by side and thirteen cases.
 
 Northstar: allowed is not right
 
@@ -62,7 +62,7 @@ Under the designs, "The controls in this design, or build your own" opens the te
 
 ## Playing a case
 
-N-1001 in design A, played to the end. The steps run down the middle, request, lookup, propose, pay and record, each tagged with its pillar and policy. On the right, the agent read the jacket at $150; the records say $120 was paid after AUTUMN20. The ledger shows $150 refunded on an order that paid $120. The trace is complete. Outcome: overpaid $30.
+Case N-1001 in design A, played to the end: the steps, the agent's reading, the ledger and the outcome, overpaid $30.
 
 Pick a design, pick a case, press Play. The steps appear one at a time, and the track above them lights up the workflow's eight stages: request, lookup, propose, check, decide, pay, reconcile, record. Each step is coloured by what happened, green for passed, amber for a warning, red for blocked, blue for information, and tagged with its pillar and its policy. Step back and forward, show every step at once, replay, or run the whole day, all thirteen cases in order.
 
@@ -76,7 +76,7 @@ N-1001 is the case in his article: a $150 jacket bought with a 20% discount, so 
 - **In B**, the cap at what was paid refuses it: $150 is more than the $120 paid. No money is lost, and the customer gets nothing. Blocked, still owed $120.
 - **In C**, the expected amount from the records is $120. The proposal does not match, so it is blocked and goes to a person, who pays $120. Right, in six minutes of their time.
 - **In D**, the decision policy decides $120 from the rules, and the workflow pays it. The agent's $150 is recorded as a difference, not paid, and nobody needs to be called.
-N-1001 in design D: the agent still proposes $150; the expected amount from the records is $120; the decided amount stands and the difference is recorded, not paid; the workflow pays $120; the decision record names the rule and the decider.
+Case N-1001 in design D: the agent's proposal, the expected amount from the records, and the decision record.
 
 ## The other cases
 
@@ -87,7 +87,7 @@ N-1001 in design D: the agent still proposes $150; the expected amount from the 
 - **N-1008, the right amount, the wrong decider.** The agent works out $261 correctly, and pays it as three refunds of $87, each under the limit. A, B and C all pass it, because every payment is allowed and the total is right. D's decision policy says a team lead decides above $200, and the workflow pays one amount, after their approval.
 - **N-1009, the customer loses.** The agent applies the discount twice and refunds $70.40 instead of $88. No limit notices a refund that is too small. Only verification does.
 - **N-1013, a loop.** The payment call times out and the agent retries six times; in A every one goes through, $108 for $18 of socks. From B on, the cap stops it after the first.
-N-1008 in design D: the agent proposes three refunds of $87; the expected amount is $261 and the proposal matches; the decision table routes anything over $200 to a team lead, who approves; the workflow pays one refund of $261.
+Case N-1008 in design D: three refunds of $87 proposed, routed to a team lead, and one refund of $261 paid.
 
 ## The casebook
 
@@ -96,7 +96,7 @@ Three cases have no rule. Each customer has a damaged item and would rather keep
 - **N-1010**, a daypack with a torn strap. In A and B the agent guesses half, $45. In C and D it goes to a person, who decides 30%, $27: "Minor damage, item still usable, customer keeps it." In D that decision becomes **precedent P-1**.
 - **N-1011**, the next day, a headlamp with a cracked clip. Same material facts: minor damage, kept, paid under $150. In C it goes to a person again. In D, P-1 settles it, $13.50, with no person.
 - **N-1012**, a $150 jacket with a broken zip. In D the twin checks P-1 and finds the facts differ: $150 is not under $150, and a broken zip affects use. It is **distinguished**, and goes to a person, who decides 40% and asks for the supplier to be reviewed.
-The casebook tab: precedent P-1, set by N-1010, with its material facts and reasons; and the three damaged-but-kept cases in design D, one decided by a person and recorded, one settled by the precedent, one distinguished and sent to a person.
+The casebook tab: precedent P-1, set by N-1010, and the three damaged-but-kept cases in design D.
 
 That is [case law for agents](case-law-for-agents.md), on three cases. The time it saves is small here, six minutes. Over a year, it is every case that repeats.
 
@@ -104,7 +104,7 @@ That is [case law for agents](case-law-for-agents.md), on three cases. The time 
 
 The policies tab shows each policy on its own: the behaviour policy's rows, with capability, reach, mandate and barrier; the decision policy as a table of who decides the amount and on what evidence; and the workflow as its eight stages, with the controls attached to each.
 
-The three policies tab: the behaviour policy's five rows, from read.orders.sender to send.reply.sender; the decision table, from "the rules, by the calculator" to "a person, whose decision is recorded with reasons"; and the workflow's eight stages with the controls at each.
+The three policies tab: the behaviour policy's five rows, the decision table, and the workflow's eight stages.
 
 The four questions tab puts each of Ashish Rajan's questions beside our answer and the controls that carry it, and lists what the twin adds to them. [The reply](allowed-is-not-right.md#mapping) has the same mapping as a table.
 
@@ -152,6 +152,7 @@ Vaults & methodAgents & policy[This article as a graph →](graphs.md#inside-the
 
 ### Continued by
 
+- [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](approved-business-mandates.md) Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.
 - [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](allowed-is-not-right.md) Ashish Rajan's Northstar refund: allowed to refund $200, owed $120, paid $150. His four questions mapped to three policies, and tested on a twin.
 
 [All articles](index.md) · [All graphs](graphs.md)

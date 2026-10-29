@@ -10,11 +10,11 @@
 
 # Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.5.0, 6 versions](versions/who-will-fix-your-mess.md) · [newsroom v0.12.102](https://newsroom.sgit.ai/admin/versions.html) · explorer-codingvibe-codingwardley-mapsbuild-or-buydeployment-gapopen-sourceagentsstartupshbrarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.6.0, 7 versions](versions/who-will-fix-your-mess.md) · [newsroom v0.12.102](https://newsroom.sgit.ai/admin/versions.html) · explorer-codingvibe-codingwardley-mapsbuild-or-buydeployment-gapopen-sourceagentsstartupshbrarticle
 
 ***Abstract:** Harvard Business Review published "Turn Vibe-Coded Prototypes Into Tools Your Company Can Actually Use" on 16 October 2026, by José Parra Moyano and Karl Schmedders of IMD, Olivier Laplace of Vi Partners and Benjamin Torben-Nielsen of Roche. Its argument, as its summary and Olivier's post put it: AI has made building software feel almost free, so the prototype is the easy part and turning it into a tool people rely on is the hard part, which they call the deployment gap; nobody in-house knows how an AI-designed tool is built; build where you are different and partner where specialists live the problem. I agree with almost all of it, and I think this site has already answered the question in a set of articles, with Simon Wardley's explorers, villagers and town planners as the frame. The gap is not a place to stop; it is a handover between people with different skills. The prototype is not the mess; it is a better brief than any document. The architecture an agent designed can be known, if the agents leave a record: a mandate, a memory and a graph. Their bonus test is the town planner's accountability by another name. And the answer to "who will fix your mess?" should never depend on one partner: if the code is open, anyone can. I have read the public summary and Olivier's post, not the full article, which is behind a paywall.*
 
-The points in the HBR article's public summary and in Olivier Laplace's post, on the left, and the article on this site that answers each one, on the right: explorer coding, the citizen developer, knowledge that maintains itself, how cheap it is to undo, the expert founders, software vendors as villagers and the fork next door.
+The points in the HBR summary and Olivier Laplace's post, each matched to the article on this site that answers it.
 
 ## In short
 
@@ -40,7 +40,7 @@ I agree with almost all of it. What I would like to add is that this site has be
 
 ## The prototype is not the mess
 
-Explorer coding and the handover that makes it last: explorers build by talking to an agent, and what they build is the brief; villagers maintain it, with policies, data handling and tests; town planners own the code in production. From Explorer coding.
+Explorer coding and its handover: explorers build, villagers maintain, town planners own the code in production.
 
 The word "vibe" is part of the problem. In [Explorer coding](explorer-coding.md) I proposed a better name for it, from Simon Wardley's explorers, villagers and town planners. What people are doing when they build an app by talking to an agent is exploring, with the fast feedback loop that made spreadsheets win. And what they build is a better brief than any document: what the user actually wants, in a form that runs. [The citizen developer](the-citizen-developer.md) makes the same case for the people outside IT who are now building: it is the spreadsheet grown up, and spreadsheets ran the world for decades despite their errors.
 
@@ -48,11 +48,11 @@ So I would not start from "who will fix your mess?". The prototype is not a mess
 
 ## The gap is a handover
 
-The deployment gap on a Wardley map: the prototype in genesis, built by explorers; the tool people rely on, made reliable by villagers; the platform it runs on, owned by town planners. The gap is the handover from explorer to villager.
+The deployment gap on a Wardley map: the handover from explorers to villagers to town planners.
 
 On a Wardley map, the deployment gap has a place. It is the move from genesis to custom built and product, and it is a change of people, not only of code. Explorers are good at finding what is needed. Villagers are good at making it reliable: tests, data handling, releases that do not break it, and now [behaviour policies](https://abp.sgit.ai/what-is-an-abp/index.html) for the agents that work on it. Town planners are good at running it at scale, and they own it in production.
 
-From the spreadsheet to the town planners: the citizen developer's path, from what people built with what they controlled, to the application they need, to the villagers and town planners who make it last. From The citizen developer.
+The citizen developer's path from the spreadsheet to the villagers and town planners who make it last.
 
 That is why the bank's story went the way it did. It is not that the internal team was weak, or that building is always wrong. An explorer team was asked to be villagers and town planners as well, on a regulated, data-heavy, daily-use tool, and those are different jobs. The startup had already done the villager and town planner work, many times, for many clients.
 
@@ -60,11 +60,11 @@ That is why the bank's story went the way it did. It is not that the internal te
 
 This is the point in the post I most want to answer, because I think it is the one that most needs to change: "the AI designs the architecture, not your team. So nobody in-house knows how the tool is built." That is true of most agent-built software today. It does not have to be.
 
-Knowledge that maintains itself: sources kept in their own vocabularies, agents that keep a semantic graph of them up to date, and people and agents briefed from the graph. From Knowledge that maintains itself.
+Knowledge that maintains itself: sources, agents that keep a semantic graph up to date, and people briefed from it.
 
 If the agents work under a written mandate, keep their memory in a versioned store the company owns, and describe what they built as a graph, then the architecture is not a mystery. It is a record the next team can read. [Knowledge that maintains itself](knowledge-that-maintains-itself.md) is about exactly that: a graph of what an organisation knows, kept up to date by agents and used to brief people and agents. Each article on this site carries one, and you can [read them all as graphs](graphs.md).
 
-One article as a graph, as this site publishes it for every article: Explorer coding's twelve nodes, from "vibe coding, the word" to "town planners own it", with the edges between them and the quotes that carry them. A screenshot of the graphs page on newsroom.sgit.ai.A prototype that is ready for the villagers: Mondweep Chakravorty's SGit × Ruflo run, twelve steps, five worked, three safeguards refused as intended, recall by meaning marked as not tested. From What if an agent loses its workspace?
+The graphs page on newsroom.sgit.ai, showing Explorer coding as a graph of twelve nodes, with edges and quotes.Mondweep Chakravorty's SGit × Ruflo run: twelve steps, five worked, three safeguards refused, one thing not tested.
 
 For what a prototype ready for the handover looks like, Mondweep Chakravorty's [SGit × Ruflo proof of concept](what-if-an-agent-loses-its-workspace.md) is a good example: built with agents, but with its versions pinned, sixteen tests, a folder of evidence, a written behaviour policy, and a README that says plainly what it does not do yet. A villager can pick that up. The pieces after it, [when the vault is actually used](when-is-the-vault-actually-used.md) and [the path the policy does not guard](the-policy-guards-the-door.md), are what a villager's first review of it reads like.
 
@@ -76,19 +76,19 @@ I like the bonus test a lot: would your team accept a bonus tied to how the tool
 
 ## Build where it is cheap to undo
 
-The spectrum: across, how much it costs to undo, from a two-way door to a one-way door; up, how mature the controls and the record are, from explorer to town planner. Where an output sits decides how much a person needs to be in the loop. From How cheap is it to undo?
+The spectrum of how costly an output is to undo, against how mature its controls are, from explorer to town planner.
 
 "Build where you are different, for narrow internal tools, or to prototype what you need." I agree, and I would add the test I use for how far to let something go. In [How cheap is it to undo?](how-cheap-is-it-to-undo.md), the question is not build or buy, but how much it costs to reverse a mistake and how mature the controls are. A narrow internal tool that a few people use and that can be switched off is a two-way door: build it, explore, learn. A tool that touches regulated data every day is a one-way door until the controls are mature: that is where the villagers have to be in place first, yours or a partner's.
 
 ## Partner with the specialist, and the specialist may be the founder
 
-Two playbooks: the outsider who finds a gap, raises first and hires the experts; and the expert who lives the problem and builds it with agents. From The expert founders.
+Two playbooks: the outsider who finds a gap and hires the experts, and the expert who builds with agents.
 
 "Partner where specialists live the problem every day." Yes, and the specialist is changing. In [The expert founders](the-expert-founders.md) I argued that agents let the people who know a problem best build the product themselves, without the millions that used to come first. That is good news for the buyer: more of the startups worth partnering with will be run by people who have lived the problem, not by outsiders who hired them.
 
 ## The specialist should be the villager underneath you
 
-A product as explorers, villagers and town planners: users explore on top, talking to the app and writing the best brief the vendor will get; the vendor maintains the customisations, and runs the platform. From Software vendors should become villagers and town planners.
+A product as explorers, villagers and town planners: users explore, the vendor maintains and runs the platform.
 
 "Every edge case one client hits makes the product better for all the others." That is the strongest argument for a partner, and it is also why I think vendors should change what they sell. In [Software vendors should become villagers and town planners](software-vendors-as-villagers.md) I argued that a software company should stop being the only explorer and let its users explore on top of the product, by talking to it, while it sells them the maintenance of what they built, and learns from every one of them. That keeps the network effect Olivier describes, and it closes the deployment gap from the vendor's side: the client's explorers keep exploring, and the vendor is the villager. [A custom Firefox of my own](a-custom-firefox-of-my-own.md) is the worked example, for a product I use every day.
 

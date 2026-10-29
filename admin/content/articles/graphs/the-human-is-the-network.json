@@ -1,0 +1,37 @@
+{
+ "slug": "the-human-is-the-network",
+ "teaser": "Two AI sessions sharing nothing passed keys, a certificate, images and an encrypted message through QR codes and a screenshot.",
+ "topics": ["site-and-engineering"],
+ "core_idea": "A person relaying screenshots between two isolated AI sessions is a lossless channel for QR codes up to the format's 2,953-byte limit, enough for keys, certificates, compressed images and encrypted, signed messages; the trust still comes from signatures and a human checking fingerprints, and QR codes are a friendlier way to move keys than blobs of text.",
+ "nodes": [
+  {"id": "relay", "label": "The human relay", "kind": "method", "summary": "Screenshot, paste, nothing else."},
+  {"id": "layers", "label": "Layer by layer", "kind": "example", "summary": "Text, JSON, keys, images, encryption."},
+  {"id": "screenshot", "label": "Four codes in one screenshot", "kind": "example", "summary": "2,953 bytes at 1.3 px a square."},
+  {"id": "capacity", "label": "Capacity", "kind": "concept", "summary": "2,953 bytes; base45 costs 3%."},
+  {"id": "images", "label": "Images in a code", "kind": "example", "summary": "An infographic in 539 bytes."},
+  {"id": "exchange", "label": "The key exchange", "kind": "artefact", "summary": "QRE1: X25519, ChaCha20-Poly1305, Ed25519."},
+  {"id": "failures", "label": "The failures", "kind": "claim", "summary": "No reading by eye; a lost key."},
+  {"id": "auth", "label": "Integrity is not authenticity", "kind": "concept", "summary": "Fingerprints checked by a person."},
+  {"id": "friendly", "label": "Friendlier than text blobs", "kind": "claim", "summary": "Keys a person can see and hand over."}
+ ],
+ "edges": [
+  {"from": "relay", "to": "screenshot", "rel": "produces"},
+  {"from": "layers", "to": "exchange", "rel": "leads-to"},
+  {"from": "screenshot", "to": "capacity", "rel": "example-of"},
+  {"from": "images", "to": "capacity", "rel": "example-of"},
+  {"from": "failures", "to": "auth", "rel": "leads-to"},
+  {"from": "exchange", "to": "auth", "rel": "depends-on"},
+  {"from": "relay", "to": "friendly", "rel": "produces"},
+  {"from": "friendly", "to": "exchange", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["sixteen-notes-i-did-not-want-to-lose", "secrets-on-public-keys", "handing-secrets-to-agents", "a-directory-of-people-and-keys"],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "one of those super interesting sort of serendipity things that happens when you're doing a bunch of experiments", "why": "The question."},
+  {"text": "QR codes are way more user friendly than what we were using to share the vault keys and the encrypted messages.", "why": "Why it matters."},
+  {"text": "A signature proves the bytes did not change; a key that travels inside its own message proves nothing about who sent it.", "why": "Integrity is not authenticity."}
+ ]
+}

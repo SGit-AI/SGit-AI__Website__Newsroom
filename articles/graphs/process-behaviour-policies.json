@@ -1,0 +1,148 @@
+{
+  "slug": "process-behaviour-policies",
+  "teaser": "The most locked-down Linux process we could build inside Claude's cloud container: a policy traced from one run, seven kernel walls, 0.1 s.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "A process behaviour policy, derived from one traced run as the files, system calls and hosts a process needs, can be enforced inside a root-everywhere cloud container by Linux itself (ephemeral user, read-only root, namespaces, Landlock, seccomp, a network broker and cgroup limits) for about a tenth of a second, and its size measures how well engineered the software is.",
+  "nodes": [
+    {
+      "id": "keys",
+      "label": "sgit without the vault key",
+      "kind": "claim",
+      "summary": "The key lives in a broker the process cannot reach."
+    },
+    {
+      "id": "root",
+      "label": "Root everywhere",
+      "kind": "claim",
+      "summary": "Containers run every process as root."
+    },
+    {
+      "id": "trace",
+      "label": "Derive from one run",
+      "kind": "method",
+      "summary": "strace lists files, calls, programs and hosts."
+    },
+    {
+      "id": "walls",
+      "label": "Seven walls",
+      "kind": "method",
+      "summary": "User, root, namespaces, Landlock, seccomp, broker, limits."
+    },
+    {
+      "id": "probe",
+      "label": "The probe",
+      "kind": "example",
+      "summary": "13 of 14 attempts as root; none under the policy."
+    },
+    {
+      "id": "cost",
+      "label": "92 to 187 ms",
+      "kind": "example",
+      "summary": "Median overhead per run, measured."
+    },
+    {
+      "id": "size",
+      "label": "Policy size as a measure",
+      "kind": "claim",
+      "summary": "1 file for Hello World; 1,025 for sgit."
+    },
+    {
+      "id": "layers",
+      "label": "A policy of policies",
+      "kind": "claim",
+      "summary": "OS, environment, runtime, application, execution."
+    }
+  ],
+  "edges": [
+    {
+      "from": "keys",
+      "to": "walls",
+      "rel": "depends-on"
+    },
+    {
+      "from": "root",
+      "to": "walls",
+      "rel": "contrasts"
+    },
+    {
+      "from": "trace",
+      "to": "walls",
+      "rel": "produces"
+    },
+    {
+      "from": "probe",
+      "to": "walls",
+      "rel": "example-of"
+    },
+    {
+      "from": "cost",
+      "to": "walls",
+      "rel": "example-of"
+    },
+    {
+      "from": "trace",
+      "to": "size",
+      "rel": "produces"
+    },
+    {
+      "from": "layers",
+      "to": "walls",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "application-behaviour-policies",
+      "skill-behaviour-policy",
+      "three-policies-for-an-agent",
+      "a-policy-beside-the-prompt",
+      "approve-at-altitude",
+      "hooks-are-kernel-code",
+      "the-key-is-not-the-risk"
+    ],
+    "pages": [],
+    "sites": [
+      "https://docs.kernel.org/userspace-api/landlock.html",
+      "https://docs.kernel.org/userspace-api/seccomp_filter.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "`/etc/shadow`, `/root` and `/bin/sh` are not refused: they do not exist.",
+      "why": "Enforce it with seven walls."
+    },
+    {
+      "text": "It is all about least privilege, and you cannot have least privilege until you know what the least is.",
+      "why": "The size of the policy measures the software."
+    }
+  ],
+  "figures": [
+    {
+      "file": "px-walls.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/px-walls.webp",
+      "caption": "Seven walls around one process, set from its policy and enforced by Linux inside this cloud container.",
+      "kind": "concept"
+    },
+    {
+      "file": "px-probe.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/px-probe.webp",
+      "caption": "What the probe tried, and what stopped it: as root, under the Hello World policy, and with two walls switched off.",
+      "kind": "comparison"
+    },
+    {
+      "file": "px-cost.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/px-cost.webp",
+      "caption": "The size of a policy and what it costs, for four programs from Hello World in C to sgit init, commit and status.",
+      "kind": "comparison"
+    },
+    {
+      "file": "px-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/px-layers.webp",
+      "caption": "A policy of policies: operating system, environment, runtime, application and execution, each narrowing the one above.",
+      "kind": "concept"
+    }
+  ]
+}

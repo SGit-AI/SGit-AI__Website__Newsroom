@@ -10,7 +10,7 @@ tags: ai, careers, paywalls, publishers, pay-as-you-read, wardley-maps, article
 status: published
 ---
 
-!shot tw-visit.webp | images/ | One visit, two models. On the left, what the visit to the essay gave: the headline, the byline, three paragraphs and adverts in three places, then a box offering a 14-day trial that renews at $12.95 every four weeks, or $49 for a year that renews at $149. On the right, what Dinis wanted: read the essay, pay a few pence for what he read, a share to the author, the option to challenge it or say the headline was unfair, and trust earned over many articles before any subscription. | comparison
+!shot tw-visit.webp | images/ | One visit, two models: what the visit to the essay gave, and what Dinis wanted instead. | comparison
 
 ## In short {#in-short}
 

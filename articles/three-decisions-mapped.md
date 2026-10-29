@@ -10,11 +10,11 @@
 
 # Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.1.0, 2 versions](versions/three-decisions-mapped.md) · [newsroom v0.12.101](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policyagent-decision-policyagent-workflow-policyscenariosruflosgitnewsroomcustomer-servicegovernanceseriesarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.2.0, 3 versions](versions/three-decisions-mapped.md) · [newsroom v0.12.101](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policyagent-decision-policyagent-workflow-policyscenariosruflosgitnewsroomcustomer-servicegovernanceseriesarticle
 
 ***Abstract:** The fourth article in the series on agent decision policies puts the pieces together on three scenarios, two of them real. First, deleting an agent's memory in Mondweep Chakravorty's SGit adapter for Ruflo: the behaviour row is defined, implemented and enforced, the decision behind its "approval" is not yet defined, and nothing records what happened. Second, this newsroom's own release, which ships on its own: the behaviour boundary holds at the platform, the workflow is a script and a validator, and the interesting part is a decision nobody wrote down. In every release since this afternoon I shipped with one failing test that predates my changes, and I made that call each time on my own. It should be a written decision with an owner and an expiry. The same evening produced two small cases for the case-law article: a figure that shipped with a date nobody had checked, and a counter that flagged two commits without a leak scan, both of which turned out to be in scratch test repositories, a case the rule did not mean to cover. Third, an illustrative customer refund built on the third design in Hope or enforcement, where the limits are already in the tools, and a new workflow that tries to widen them is caught by a subset check before it runs. Each element is mapped with the policy it belongs to and five states: defined, implemented, enforced, observed and verified.*
 
-Three scenarios mapped element by element: memory deletion in the SGit adapter for Ruflo, this newsroom's release, and an illustrative customer refund. Each element is labelled ABP, decision or workflow, with five states: defined, implemented, enforced, observed and verified. The memory row is enforced but not observed; the newsroom's decision to ship with a failing test is not defined at all; the refund's limits are enforced and observed, and nothing verifies the amount under them.
+Three scenarios mapped element by element, each labelled by kind and by five states from defined to verified.
 
 Agent decision policies: a series in four parts
 
@@ -150,6 +150,8 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#three-deci
 
 ### Continued by
 
+- [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](the-delegation-record.md) RiskMandate's go-to-market plan: one workflow from an existing business rule to evidence that still holds after a change, starting with our own inbox.
+- [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](approved-business-mandates.md) Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.
 - [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](allowed-is-not-right.md) Ashish Rajan's Northstar refund: allowed to refund $200, owed $120, paid $150. His four questions mapped to three policies, and tested on a twin.
 - [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](three-policies-for-an-agent.md) Behaviour says what an agent may do, decision who chooses at a branch point, workflow in what order. Zoom into one ABP cell and it becomes both.
 - [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](case-law-for-agents.md) Nobody predicts every case. Borrow the shape of English case law: escalate what the policy does not settle, record it, follow it, then compile it.

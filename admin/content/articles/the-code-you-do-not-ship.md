@@ -10,7 +10,7 @@ tags: software, minimal-code, attack-surface, dependencies, debloating, wardley-
 status: published
 ---
 
-!shot nc-path.webp | images/ | The minimal viable code path. From the use case down through features, components, libraries, the runtime and the operating system, each layer keeps only the code the layer above calls; everything else is shipped and never called, and should go. The bars are illustrative; the measured example below them is from this site's own tool: of 1,500 files in sgit and its dependencies, 428 ran for a CI use case, and a tree holding only those passed it. | concept
+!shot nc-path.webp | images/ | The minimal viable code path, from the use case down to the operating system, with a measured example from sgit. | concept
 
 !trail less-code
 

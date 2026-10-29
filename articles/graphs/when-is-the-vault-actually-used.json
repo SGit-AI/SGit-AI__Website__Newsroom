@@ -154,37 +154,37 @@
     {
       "file": "rf-matrix.webp",
       "url": "https://newsroom.sgit.ai/articles/images/rf-matrix.webp",
-      "caption": "Who does what, step by step: the vault is written or read in steps 5, 8 and 11, protected in step 6 and survives step 7; Ruflo's own command line touches memory in steps 3, 9 and 10, where the ABP is not on the path. From the architecture addendum to the analysis of Mondweep Chakravorty's video.",
+      "caption": "Who does what, step by step: which steps write or read the vault and which use Ruflo's own command line.",
       "kind": "comparison"
     },
     {
       "file": "rf-map.webp",
       "url": "https://newsroom.sgit.ai/articles/images/rf-map.webp",
-      "caption": "The component map: the test script calls Ruflo's command line in steps 3, 9 and 10 and the ABP adapter's tools in steps 4, 5, 6, 8 and 11; the ABP rows are compiled to Ruflo rules and checked by a pinned copy of Ruflo's evaluator in enforce mode, which leads to the SGit library, which writes the vault and its keys on the machine's disk. Ruflo's hive-mind, its running policy state and a remote vault server were not used. Blue is Ruflo, amber the ABP adapter, green SGit and the vault, grey plain files.",
+      "caption": "The component map: the test script, Ruflo's command line, the ABP adapter, the SGit library and the vault on disk.",
       "kind": "architecture"
     },
     {
       "file": "rf-stage-05.webp",
       "url": "https://newsroom.sgit.ai/articles/images/rf-stage-05.webp",
-      "caption": "Step 5: the checkpoint tool passes the policy gate; a SQLite backup takes a consistent copy of memory.db; fingerprints of the database, the ABP and the policy are taken; the SGit library encrypts on the machine and writes ciphertext only to the checkpoint store, with keys kept apart.",
+      "caption": "Step 5: the checkpoint tool passes the policy gate and the SGit library writes ciphertext to the checkpoint store.",
       "kind": "architecture"
     },
     {
       "file": "rf-stage-08.webp",
       "url": "https://newsroom.sgit.ai/articles/images/rf-stage-08.webp",
-      "caption": "Step 8: a new MCP server process restores the checkpoint; the policy gate allows it; the SGit library reads ciphertext from the vault and keys from the private folder, decrypts and verifies, and writes memory.sqlite into the fresh-runner workspace, with the same SHA-256 as in step 5.",
+      "caption": "Step 8: a new MCP server process restores the checkpoint, and memory.sqlite is written into the fresh-runner workspace.",
       "kind": "architecture"
     },
     {
       "file": "rf-stage-11.webp",
       "url": "https://newsroom.sgit.ai/articles/images/rf-stage-11.webp",
-      "caption": "Step 11: one object in the vault is altered; the restore tool passes the policy gate; the adapter compares the digest of the stored ciphertext with the one recorded in step 5, finds a mismatch, and a ValueError means the tampered workspace is never created; SGit is never asked to decrypt.",
+      "caption": "Step 11: one object in the vault is altered, the adapter finds a digest mismatch and no workspace is created.",
       "kind": "architecture"
     },
     {
       "file": "rf-where.webp",
       "url": "https://newsroom.sgit.ai/articles/images/rf-where.webp",
-      "caption": "Where the video's vault lives: on one machine, the adapter and SGit library, the checkpoint store, the private key folder and the workspaces; a vault server was not used.",
+      "caption": "Where the video's vault lives: on one machine, with the adapter, the SGit library, the checkpoint store and the keys.",
       "kind": "architecture"
     }
   ]

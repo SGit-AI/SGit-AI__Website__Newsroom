@@ -1,0 +1,71 @@
+{
+ "id": "newsroom-dev",
+ "handle": "@newsroom.dev",
+ "status": "draft",
+ "agreed_by_editor": false,
+ "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+ "writes": [
+  "admin/build/**",
+  "assets/pen/**",
+  "assets/reviews/**",
+  "assets/vendor/**",
+  "assets/*.js",
+  "assets/*.css",
+  "assets/components/**",
+  "assets/search/**",
+  "assets/page-fixes/**",
+  "for/**",
+  ".github/**",
+  "README.md",
+  "admin/engineering/**",
+  "admin/content/php-oct-2026/**",
+  "admin/content/vaults/**",
+  "admin/php-oct-2026/**",
+  "php-flaws/**",
+  "admin/content/publishers/**",
+  "admin/content/sections/**",
+  "admin/content/features.json",
+  "admin/content/find/**",
+  "admin/content/agents.json",
+  "admin/content/videos/**"
+ ],
+ "writes_except": [
+  "admin/build/wire*",
+  "admin/build/infographics.py",
+  "admin/build/accountant.py",
+  "admin/build/runs_ledger.py",
+  "admin/build/test_wire.mjs",
+  "admin/build/front.py",
+  "admin/build/test_front.mjs",
+  "admin/build/test_themes.mjs",
+  "admin/build/test_reading.mjs",
+  "admin/build/shots_themes.mjs",
+  "admin/build/test_pane.mjs",
+  "admin/build/test_vault*.mjs",
+  "admin/build/test_sync.mjs",
+  "admin/build/test_notes.mjs",
+  "admin/build/test_inbox.mjs",
+  "admin/build/vault_*",
+  "admin/build/viewer_vault.mjs",
+  "admin/build/vault-mock.mjs",
+  "admin/build/newsletter*",
+  "assets/site.css",
+  "assets/site-nav.css",
+  "assets/newsroom.css",
+  "assets/fonts.css",
+  "assets/newsroom-vault.js",
+  "assets/door.js"
+ ],
+ "appends": [
+  "admin/notes/**"
+ ],
+ "vaults_may_hold": [
+  "SG_SEND_ACCESS_TOKEN (to make vaults, when asked)"
+ ],
+ "never_holds": [
+  "a reviewer's key",
+  "the security agent's key",
+  "the editor's root key"
+ ],
+ "note": "Also writes admin/engineering/** (the cards and release notes) and, through release_stamp.py, the version."
+}

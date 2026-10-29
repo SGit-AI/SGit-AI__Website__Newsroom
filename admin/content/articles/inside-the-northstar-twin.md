@@ -10,7 +10,7 @@ tags: agents, digital-twin, vaults, simulation, refunds, agent-decision-policy, 
 status: published
 ---
 
-!shot nt-overview.webp | images/ | The first tab of the twin: the scenario from Ashish Rajan's article, the four designs side by side with what each overpaid, left owed, got right and cost in people's time, and the thirteen cases, each with what goes wrong and how design A handles it. | medium | screenshot
+!shot nt-overview.webp | images/ | The first tab of the twin: the scenario from Ashish Rajan's article, the four designs side by side and thirteen cases. | medium | screenshot
 
 !trail northstar
 
@@ -52,7 +52,7 @@ Under the designs, "The controls in this design, or build your own" opens the te
 
 ## Playing a case {#play}
 
-!shot nt-play-a.webp | images/ | N-1001 in design A, played to the end. The steps run down the middle, request, lookup, propose, pay and record, each tagged with its pillar and policy. On the right, the agent read the jacket at $150; the records say $120 was paid after AUTUMN20. The ledger shows $150 refunded on an order that paid $120. The trace is complete. Outcome: overpaid $30. | medium | screenshot
+!shot nt-play-a.webp | images/ | Case N-1001 in design A, played to the end: the steps, the agent's reading, the ledger and the outcome, overpaid $30. | medium | screenshot
 
 Pick a design, pick a case, press Play. The steps appear one at a time, and the track above them lights up the workflow's eight stages: request, lookup, propose, check, decide, pay, reconcile, record. Each step is coloured by what happened, green for passed, amber for a warning, red for blocked, blue for information, and tagged with its pillar and its policy. Step back and forward, show every step at once, replay, or run the whole day, all thirteen cases in order.
 
@@ -67,7 +67,7 @@ N-1001 is the case in his article: a $150 jacket bought with a 20% discount, so 
 - **In C**, the expected amount from the records is $120. The proposal does not match, so it is blocked and goes to a person, who pays $120. Right, in six minutes of their time.
 - **In D**, the decision policy decides $120 from the rules, and the workflow pays it. The agent's $150 is recorded as a difference, not paid, and nobody needs to be called.
 
-!shot nt-play-d.webp | images/ | N-1001 in design D: the agent still proposes $150; the expected amount from the records is $120; the decided amount stands and the difference is recorded, not paid; the workflow pays $120; the decision record names the rule and the decider. | medium | screenshot
+!shot nt-play-d.webp | images/ | Case N-1001 in design D: the agent's proposal, the expected amount from the records, and the decision record. | medium | screenshot
 
 ## The other cases {#cases}
 
@@ -79,7 +79,7 @@ N-1001 is the case in his article: a $150 jacket bought with a 20% discount, so 
 - **N-1009, the customer loses.** The agent applies the discount twice and refunds $70.40 instead of $88. No limit notices a refund that is too small. Only verification does.
 - **N-1013, a loop.** The payment call times out and the agent retries six times; in A every one goes through, $108 for $18 of socks. From B on, the cap stops it after the first.
 
-!shot nt-split-d.webp | images/ | N-1008 in design D: the agent proposes three refunds of $87; the expected amount is $261 and the proposal matches; the decision table routes anything over $200 to a team lead, who approves; the workflow pays one refund of $261. | medium | screenshot
+!shot nt-split-d.webp | images/ | Case N-1008 in design D: three refunds of $87 proposed, routed to a team lead, and one refund of $261 paid. | medium | screenshot
 
 ## The casebook {#casebook}
 
@@ -89,7 +89,7 @@ Three cases have no rule. Each customer has a damaged item and would rather keep
 - **N-1011**, the next day, a headlamp with a cracked clip. Same material facts: minor damage, kept, paid under $150. In C it goes to a person again. In D, P-1 settles it, $13.50, with no person.
 - **N-1012**, a $150 jacket with a broken zip. In D the twin checks P-1 and finds the facts differ: $150 is not under $150, and a broken zip affects use. It is **distinguished**, and goes to a person, who decides 40% and asks for the supplier to be reviewed.
 
-!shot nt-casebook.webp | images/ | The casebook tab: precedent P-1, set by N-1010, with its material facts and reasons; and the three damaged-but-kept cases in design D, one decided by a person and recorded, one settled by the precedent, one distinguished and sent to a person. | medium | screenshot
+!shot nt-casebook.webp | images/ | The casebook tab: precedent P-1, set by N-1010, and the three damaged-but-kept cases in design D. | medium | screenshot
 
 That is [case law for agents](/articles/case-law-for-agents.html), on three cases. The time it saves is small here, six minutes. Over a year, it is every case that repeats.
 
@@ -97,7 +97,7 @@ That is [case law for agents](/articles/case-law-for-agents.html), on three case
 
 The policies tab shows each policy on its own: the behaviour policy's rows, with capability, reach, mandate and barrier; the decision policy as a table of who decides the amount and on what evidence; and the workflow as its eight stages, with the controls attached to each.
 
-!shot nt-policies.webp | images/ | The three policies tab: the behaviour policy's five rows, from read.orders.sender to send.reply.sender; the decision table, from "the rules, by the calculator" to "a person, whose decision is recorded with reasons"; and the workflow's eight stages with the controls at each. | medium | screenshot
+!shot nt-policies.webp | images/ | The three policies tab: the behaviour policy's five rows, the decision table, and the workflow's eight stages. | medium | screenshot
 
 The four questions tab puts each of Ashish Rajan's questions beside our answer and the controls that carry it, and lists what the twin adds to them. [The reply](/articles/allowed-is-not-right.html#mapping) has the same mapping as a table.
 

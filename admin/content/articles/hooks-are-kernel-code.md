@@ -10,7 +10,7 @@ tags: hooks, agents, kernel, maturity-model, code-review, fractal-semantic-graph
 status: published
 ---
 
-!shot hk-first10.webp | images/ | The first ten hooks. Three this session runs, five tested in a sandbox, and two proposed: a hook that checks the other hooks, and an agent hook that reviews a push on the most capable model, read-only and without network. Between 4 and 26 lines of code each, and every one runs on every matching action, with the user's permissions. | comparison
+!shot hk-first10.webp | images/ | The first ten hooks: three this session runs, five tested in a sandbox and two proposed. | comparison
 
 ## In short {#in-short}
 
@@ -48,7 +48,7 @@ That is the fractal part. A hook calls a script, which reads configuration, whic
 
 ## A maturity model {#maturity}
 
-!shot hk-maturity.webp | images/ | A maturity model for hooks: five levels of how a rule is kept, from the prompt to off the machine, and three questions for every hook at every level: its power, the legs of the lethal trifecta it touches, and its sandbox. The less deterministic a hook is, the less it should be able to reach. | architecture
+!shot hk-maturity.webp | images/ | A maturity model for hooks: five levels of how a rule is kept, and three questions for every hook. | architecture
 
 Hooks run from completely deterministic to completely not. Claude Code lists five kinds of handler: a command, an HTTP call, an MCP tool, a prompt hook, which sends "a prompt to a Claude model for single-turn evaluation", and an agent. There is a time and a place for each, including the ones that look like black magic. So the model has two parts.
 
@@ -72,7 +72,7 @@ Hooks also need somewhere to run that is not the developer's machine. The isolat
 
 ## A site and a feed {#site}
 
-!shot hk-site.webp | images/ | A hooks site and feed, run like a kernel tree. Every hook starts as an intent, a row of a behaviour policy, and is published with its graph, tests, version and signature. The feed lists every hook with its level, power, trifecta legs, version and hash; the change blast radius view climbs from a change to the intents and sessions it affects; installs are free and can run inside an organisation with no call home; paying buys state. | architecture
+!shot hk-site.webp | images/ | A hooks site and feed, run like a kernel tree: how a hook is published and what the feed lists. | architecture
 
 So the proposal is a site and a feed to manage the hooks we deploy, the hooks equivalent of a skills manager. [A policy for every skill](/articles/a-policy-for-every-skill.html) argued that "Skills are the new dependency"; hooks are the dependency that guards the others. Every hook on the site starts from an intent, the row of the behaviour policy it serves, and carries its graph, its fixtures, its version, its hash and its signature. The feed is one file that people, agents and installers can read:
 

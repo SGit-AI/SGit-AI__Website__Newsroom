@@ -10,11 +10,11 @@
 
 # Hacking Portugal, 2016: my BSidesLisbon keynote and the book that stopped at 95%, slide by slide, with what holds ten years later and what a new edition needs
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.0.0](versions/portugal-2016-hacking-portugal.md) · [newsroom v0.12.78](https://newsroom.sgit.ai/admin/versions.html) · portugalhacking-portugalbsides-lisbontalksbooksapplication-securityopen-sourceeuropehistoryarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/portugal-2016-hacking-portugal.md) · [newsroom v0.12.78](https://newsroom.sgit.ai/admin/versions.html) · portugalhacking-portugalbsides-lisbontalksbooksapplication-securityopen-sourceeuropehistoryarticle
 
 ***Abstract:** On 11 November 2016 I gave the keynote at BSidesLisbon, Hacking Portugal and making it a global player in software development, 103 slides, and three weeks later published it as a book on Leanpub, 75 pages, which still says 95% complete. The idea was that if to hack means to solve problems, Portugal should hack itself: make its network hostile to insecure code, replace the old military service with a Portuguese Hacking Service for 15 to 21 year olds, create a hackathon league as famous as football, a Code Made in Portugal brand, OpenSource.pt for all government code, a Ministry of Code, a Clear Software Act, and a national bug bounty, because cyber security is a public health problem. Ten years later, the regulation I asked for has mostly arrived from Europe, and Portugal has open-sourced a national AI model, which is the spirit of OpenSource.pt. The Hacking Service, the league and the Ministry of Code have not happened. And the biggest change is one I did not see: with agents, everybody can now build software by talking, which makes the talk's central claim, that a small country can choose to lead in code, more possible than it was. This article goes through the talk and says what a new edition, for Web Summit in Lisbon, needs.*
 
-Twelve slides from Hacking Portugal at BSidesLisbon 2016: the summary, a Portuguese network hostile to insecure code, how secure is Portugal, the Hacking Service, hacking like football, a Code Made in Portugal brand, cyber security as public health, OpenSource.pt, a Ministry of Code, a Clear Software Act, a national bug bounty, and the future of Portugal.
+Twelve slides from Hacking Portugal at BSidesLisbon 2016, from the summary to the future of Portugal.
 
 ## In short
 

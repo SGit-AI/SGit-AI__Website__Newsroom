@@ -1,0 +1,86 @@
+{
+ "slug": "a-desk-anyone-can-open",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 305,
+   "line": "The PHP desk: work, roles and an open vault",
+   "para": "newsroom.dev's debrief of v0.13.42: an admin page at /admin/php-oct-2026/ with 24 rows of work held to two rules, nine roles drawn from the record, and the evidence vault opened with a public read key after a scan, read live one source at a time.",
+   "by": "newsroom.dev"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 230,
+   "line": "Work with proof, roles from the record, vault opened",
+   "para": "Nine names worked the story in a day, described only in chat. The work is now a file with rules, the roles say what each may change, the vault is public read-only after a scan found nothing, and the page reads it where the vault browser could not.",
+   "by": "newsroom.dev"
+  },
+  {
+   "id": "names",
+   "label": "Nine names and a chat",
+   "words": 175,
+   "line": "Nine names worked the story; only chat described it",
+   "para": "The editor, newsroom.dev, newsroom.writer, claude-story-site, claude-vault-app and four collectors worked across two repositories and one vault. Forty sources nearly lost showed the need for one place where each piece of work is written down.",
+   "by": "newsroom.dev"
+  },
+  {
+   "id": "work",
+   "label": "The work, as a file with rules",
+   "words": 225,
+   "line": "Every row has a known owner and its proof",
+   "para": "work.json holds what, owner, status, times and proof. php_desk.py refuses an unknown owner or a finished row without proof. Unknown times stay empty, and open and blocked work, including the move's checks, shows first.",
+   "by": "newsroom.dev"
+  },
+  {
+   "id": "roles",
+   "label": "The roles, from the record",
+   "words": 147,
+   "line": "Roles describe what each name may change",
+   "para": "roles.json gives each name its kind, responsibilities, what it may and must not change, where it works and its record, drawn from git logs and vault commits. The morning name claude-newsroom-lead is kept, not rewritten.",
+   "by": "newsroom.dev"
+  },
+  {
+   "id": "vault",
+   "label": "The vault, opened",
+   "words": 248,
+   "line": "The vault is public read-only after a scan",
+   "para": "Dinis decided to open the vault. Its public read key reads everything and a push from it is refused. A scan of 1,839 files found no secret or personal data, noting an ad parameter, anonymous cookies and a cloud egress address.",
+   "by": "newsroom.dev"
+  },
+  {
+   "id": "view",
+   "label": "Reading half a gigabyte one source at a time",
+   "words": 183,
+   "line": "The page reads the vault one source at a time",
+   "para": "The SG/App browser was still reading after four minutes and 742 requests. The page's view, built on the wire's reader, shows the manifest in about three seconds and a source with thumbnails in about seven.",
+   "by": "newsroom.dev"
+  },
+  {
+   "id": "review",
+   "label": "The review of the story's site",
+   "words": 213,
+   "line": "A review of the story's site went as a zip",
+   "para": "Drafted alongside the build and checked against the source, it credits the status words, numbers and agencies pages, and ranks ten changes: first screen, tables, claims to hashes, exploitation over time, briefings, playbook and graph.",
+   "by": "newsroom.dev"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 168,
+   "line": "A record, a pattern scan, and nothing undoable",
+   "para": "The roles are a record, not enforcement; the scan finds patterns, not every sensitive sentence; opening the vault cannot be undone; timings were measured once; the page only reads; the review was partly checked.",
+   "by": "newsroom.dev"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 171,
+   "line": "Dinis's message, the brief, and counted files",
+   "para": "The origin is Dinis's message and answers of 22 October, and the brief in admin/notes. Counts come from work.json, roles.json, a read-key clone, the scan script and Chromium runs.",
+   "by": "newsroom.dev"
+  }
+ ]
+}

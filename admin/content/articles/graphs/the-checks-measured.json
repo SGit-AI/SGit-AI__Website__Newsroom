@@ -1,0 +1,37 @@
+{
+ "slug": "the-checks-measured",
+ "teaser": "A release measured step by step, 123 local builds, 245 CI runs and 1,061 test checks, and where each check actually lives.",
+ "topics": ["site-and-engineering"],
+ "core_idea": "Measuring the newsroom's checks shows a release takes about 8 minutes locally, half of it a borrowed generator, and about 5 in CI, with the same tests run twice; most CI failures come from tests coupled to live services; failed tests do not stop the deploy; and several checks live only in the session, the container or nowhere, so moving them into the repository and CI is the work.",
+ "nodes": [
+  {"id": "release", "label": "Where a release's time goes", "kind": "claim", "summary": "8 minutes here, 5 in CI."},
+  {"id": "generator", "label": "The borrowed generator", "kind": "concept", "summary": "sgit.ai's, run in a clone."},
+  {"id": "twice", "label": "The tests run twice", "kind": "claim", "summary": "Locally and in CI."},
+  {"id": "tests", "label": "18 test files, 1,061 checks", "kind": "example", "summary": "Mostly in a browser."},
+  {"id": "live", "label": "Live coupling", "kind": "concept", "summary": "A server, a vault's contents."},
+  {"id": "deploy", "label": "Tests do not gate the deploy", "kind": "claim", "summary": "43 deploys after a failed run."},
+  {"id": "where", "label": "Where each check lives", "kind": "method", "summary": "Repository, session, container, nowhere."},
+  {"id": "session", "label": "Session-only checks", "kind": "concept", "summary": "Lost in a new session."},
+  {"id": "proposals", "label": "What to change", "kind": "method", "summary": "Five jobs, decoupled tests, checks in the repo."}
+ ],
+ "edges": [
+  {"from": "release", "to": "generator", "rel": "depends-on"},
+  {"from": "release", "to": "twice", "rel": "depends-on"},
+  {"from": "tests", "to": "twice", "rel": "example-of"},
+  {"from": "live", "to": "tests", "rel": "contrasts"},
+  {"from": "live", "to": "deploy", "rel": "leads-to"},
+  {"from": "where", "to": "session", "rel": "produces"},
+  {"from": "deploy", "to": "proposals", "rel": "leads-to"},
+  {"from": "session", "to": "proposals", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["the-briefs-so-far"],
+  "pages": [],
+  "sites": ["https://newsroom.sgit.ai/articles/hope-or-enforcement.html"]
+ },
+ "quotes": [
+  {"text": "That is the strongest case for change, because a test that fails for reasons outside the code teaches everyone to ignore it.", "why": "Live coupling."},
+  {"text": "A check is only as durable as the place it lives", "why": "Where checks live."},
+  {"text": "Half the local time is the borrowed generator, which is the cutover not yet finished.", "why": "Where the time goes."}
+ ]
+}

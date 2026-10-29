@@ -10,7 +10,7 @@ tags: vaults, chrome-profiles, browser, state, memory, passkeys, newsroom, local
 status: published
 ---
 
-!shot vp-profiles.webp | images/ | Two Chrome profiles on one computer, each signed in to a different Google account, each with its own local storage that the other cannot see. The reader's vault sits outside both: each profile writes its own file to it and reads the other's, so the marks, the reading and the balance in one are there in the other. The way in differs by where the passkey lives. | architecture
+!shot vp-profiles.webp | images/ | Two Chrome profiles on one computer, each signed in to a different Google account, sharing the reader's vault. | architecture
 
 ## In short {#in-short}
 
@@ -28,7 +28,7 @@ I have several Google accounts, and each lives in its own Chrome profile: mine, 
 
 ## How we got here, which was not a straight line {#path}
 
-!shot vp-path.webp | images/ | Six steps, three days, and not a straight line. Each of the first five was built for its own reason, following what the reader valued; the sixth was not built at all, it was found by using the others. Dates and releases from the release histories of sgit.ai and the newsroom. | timeline
+!shot vp-path.webp | images/ | Six steps over three days, from the release histories of sgit.ai and the newsroom. | timeline
 
 None of this was designed as a way to cross profiles, and the path is worth telling, because I wrote yesterday that [progress is not a straight line](/articles/not-a-straight-line.html) and this is a small, clean example of it.
 

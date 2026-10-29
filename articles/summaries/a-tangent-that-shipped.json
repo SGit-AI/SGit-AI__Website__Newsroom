@@ -1,0 +1,78 @@
+{
+ "slug": "a-tangent-that-shipped",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 214,
+   "line": "How a tangent about zips became sgit's pack mode in ten days, and took a 13-minute clone to 95 seconds.",
+   "para": "A slow-clone bug led to a tangent: running a vault from a zip, so vaults can live on Drive, Dropbox or a USB stick with no server to maintain. Researched, specified and reviewed four times, pack mode shipped in sgit-ai 0.24.0 on 22 October. The next day the PHP story's source watch moved to it: a 13-minute clone became 95 seconds.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 128,
+   "line": "Seven lines: a bug, a tangent, research first, a release in ten days, the vault that needed it, gaps, use in anger.",
+   "para": "A 59-second and a 3½-minute clone started it. The tangent was running a vault from a zip. Research came before code. Pack mode shipped in 0.24.0 after four review rounds. The PHP source watch needed it the next day, going from 13 minutes 47 to 95 seconds. It shipped without a web view, deliberately, and agents used it on a live story.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "the-tangent",
+   "label": "A bug, then a tangent",
+   "words": 252,
+   "line": "A batch bug fixed in 0.23.0, a comms vault clone of 3½ minutes, and the idea of a vault in one zip.",
+   "para": "This newsroom measured a 59-second clone of a small vault; the cause was batches over the Lambda limit, fixed the same day. The comms vault, 35,423 objects, took 3½ minutes. That led to running a vault from a zip, so it can live on Drive, Dropbox or a USB stick, with no server to maintain.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "how-it-shipped",
+   "label": "Research, then a design, then four reviews",
+   "words": 216,
+   "line": "Research with no code, a pack per push, a spec reviewed before the build, four review rounds, a release.",
+   "para": "Research measured what the API already allowed, and a server change was parked for a design that needed none: one zip per push and a snapshot. A spec was reviewed before the build, tests counted requests, the comms vault cloned in 25 seconds, and a second agent's four review rounds ended with no blockers. sgit-ai 0.24.0 shipped on 22 October.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "the-source-watch",
+   "label": "The vault that needed it",
+   "words": 426,
+   "line": "The source watch hit the server's listing limit; as a pack vault it cloned in 95 seconds and pushed in 96.",
+   "para": "At 63,662 objects the server's listing timed out, so a clone took 13 minutes 47 seconds and one push needed 12 attempts over 2 hours 42 minutes. The memo's S3 limit was this listing. Imported as a pack vault, it cloned in 95 seconds, listed in 0.73, pulled in 4, pushed its history in 96, and shrank to 1.18 GB.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "not-everything",
+   "label": "Not everything at once",
+   "words": 176,
+   "line": "It shipped with gaps, no web view among them, because the vault that needed it did not need them.",
+   "para": "The web UI cannot open a pack vault yet, scoped clones take packs whole, compaction is manual, and local walks are still slow. None of that mattered for a vault read by agents, so it did not block it. Small, reviewed, incremental changes made a very large difference: fix the real constraint, write down the rest, come back.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "why-it-mattered",
+   "label": "Why the tangent mattered",
+   "words": 119,
+   "line": "Treated as research, the tangent was ready the day the biggest vault hit the wall.",
+   "para": "Without the zip tangent, the batch bug would have been fixed and the watch would have kept failing. Instead the fix was researched, built, reviewed and released the day before it was needed. And the original goal stands: a vault in one file can live on Drive, Dropbox or a USB stick, with no server to maintain.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 99,
+   "line": "One run each, the S3 limit was the listing, pack mode is opt-in, no web view, Drive and Dropbox are research.",
+   "para": "The PHP site's numbers are single timed runs from a cloud sandbox; the CLI's medians are in its release notes. The limit hit was the server's listing, not storage. Pack mode is opt-in, a pack vault opens empty in the browser for now, and range reads on Drive and Dropbox are reported, not yet verified.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 113,
+   "line": "My memo, the PHP site's pack-mode page, the CLI team's articles, research and release notes, and PyPI.",
+   "para": "My voice memo of 24 October; the PHP site's pack-mode page and data from 23 October; cli.sgit.ai's 0.24.0 release notes, a pack per push, the design review, the four review rounds, a vault in one file, a vault you can carry, the path from article to release, the comms-vault report and the playbook; and PyPI's release times.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

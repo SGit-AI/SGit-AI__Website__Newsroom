@@ -1,0 +1,42 @@
+{
+ "slug": "the-false-positives-are-the-next-incident",
+ "teaser": "Jeremiah Grossman's warning about php2shell scanners, checked against what the evidence holds a day later: loud noise, a quiet signal.",
+ "topics": ["news-and-evidence"],
+ "core_idea": "Most php2shell scanners read the version string, which cannot see a distribution's backported fix, so patched servers are reported vulnerable; the noise is already in bulk while the compromise map holds no named victim, so the false positives, and the sites switched off because of them, are an incident of their own.",
+ "nodes": [
+  {"id": "post", "label": "Jeremiah Grossman's warning", "kind": "claim", "summary": "Makeshift scanners' false positives will be apocalyptic."},
+  {"id": "reply", "label": "No company named as hit", "kind": "claim", "summary": "My reply: no public record, as of the night before."},
+  {"id": "version", "label": "Version checks", "kind": "method", "summary": "Read the banner and compare with the fixed release."},
+  {"id": "backport", "label": "Distribution backports", "kind": "concept", "summary": "Fixed package, old upstream number."},
+  {"id": "ubuntu", "label": "Ubuntu 8.5.4-0ubuntu1.5", "kind": "example", "summary": "Patched, reported vulnerable by a check script."},
+  {"id": "fault", "label": "Producing the fault", "kind": "method", "summary": "Try the trigger, read the response."},
+  {"id": "bulk", "label": "53 templated notices", "kind": "example", "summary": "One account, each saying it may be a false positive."},
+  {"id": "rule", "label": "The rule that never fired", "kind": "example", "summary": "A ModSecurity rule withdrawn by its author."},
+  {"id": "signal", "label": "The compromise map", "kind": "artefact", "summary": "Millions of attempts, zero named via php2shell."},
+  {"id": "incident", "label": "The noise as an incident", "kind": "claim", "summary": "Patched sites switched off on a scanner's word."},
+  {"id": "lab", "label": "The lab test", "kind": "method", "summary": "Public scanners against patched and unpatched PHP."},
+  {"id": "ask", "label": "Ask how it decides", "kind": "method", "summary": "Check the package, not the banner."}
+ ],
+ "edges": [
+  {"from": "post", "to": "incident", "rel": "leads-to"},
+  {"from": "reply", "to": "signal", "rel": "depends-on"},
+  {"from": "version", "to": "ubuntu", "rel": "produces"},
+  {"from": "backport", "to": "version", "rel": "contrasts"},
+  {"from": "fault", "to": "version", "rel": "compared-with"},
+  {"from": "bulk", "to": "incident", "rel": "example-of"},
+  {"from": "rule", "to": "incident", "rel": "example-of"},
+  {"from": "signal", "to": "bulk", "rel": "contrasts"},
+  {"from": "lab", "to": "fault", "rel": "depends-on"},
+  {"from": "ask", "to": "incident", "rel": "answers"}
+ ],
+ "links": {
+  "articles": ["who-maintains-the-php-you-run", "the-maintenance-deficit-with-evidence", "php-october-at-8pm"],
+  "pages": [],
+  "sites": ["https://php.oct.2026.newsroom.sgit.ai/compromise/", "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/"]
+ },
+ "quotes": [
+  {"text": "A false positive in one scanner is a bug. A false positive sent to many people at once is noise, and it scales.", "why": "The noise is already in bulk."},
+  {"text": "The problem is that the people downstream act on the first version.", "why": "Detection rules fail in both directions."},
+  {"text": "It is an incident of its own, and it is not in anyone's breach count.", "why": "A quiet signal under a loud alarm."}
+ ]
+}

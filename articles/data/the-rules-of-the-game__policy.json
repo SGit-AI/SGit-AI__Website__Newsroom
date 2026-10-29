@@ -1,0 +1,111 @@
+{
+ "policy": "the rules of the game for agents working in SGit-AI/SGit-AI__Website__Newsroom",
+ "version": "0.1",
+ "date": "2026-10-22",
+ "owner": "Dinis Cruz",
+ "status": "proposed: written down, not yet enforced by anything outside the agent. This copy is published for reading; the copy that counts is meant to live in a repository the agent cannot write to.",
+ "principle": "An agent may change content freely. It may change what checks its work only with a second key. It may never change its own rules.",
+ "zones": [
+  {
+   "id": "content",
+   "rule": "free",
+   "meaning": "an agent may change these in a normal release",
+   "paths": [
+    "admin/content/articles/**",
+    "admin/content/newsletter/**",
+    "admin/engineering/releases/**",
+    "admin/versions.html",
+    "admin/notes/**",
+    "every page the builders generate"
+   ],
+   "conditions": [
+    "admin/build/version.txt only to the next version, as the tag-release job already checks"
+   ]
+  },
+  {
+   "id": "gates",
+   "rule": "second key",
+   "meaning": "files that check the agent's work: a change needs approval from someone other than the agent that made it",
+   "paths": [
+    ".github/workflows/**",
+    "admin/build/validate.js",
+    "admin/build/run_tests.sh",
+    "admin/build/test_*.mjs",
+    "admin/build/vault-mock.mjs",
+    "admin/build/wording.py",
+    "admin/build/wording-allow.txt",
+    "admin/build/summaries.py",
+    "admin/build/publish.py",
+    "admin/build/sync_newsroom.py",
+    ".gitignore",
+    "every .js and .mjs file outside admin/build and assets/vendor: the code that runs in the reader's browser"
+   ],
+   "why": "an agent that can change the check can pass any release, and code that runs in a reader's browser is not content; 62 of 227 commits from 11 to 22 October 2026 touched machinery files, from six agents, so the rule is a second key, not never"
+  },
+  {
+   "id": "identity",
+   "rule": "owner only",
+   "meaning": "who the agents are, which keys are published, and where the site is served",
+   "paths": [
+    "admin/content/agents.json",
+    "admin/content/vaults/**",
+    "CNAME",
+    ".claude/**"
+   ],
+   "why": "an agent should not define itself, publish keys, move the site or change its own settings"
+  },
+  {
+   "id": "vendored",
+   "rule": "from upstream only",
+   "meaning": "copied from another project and pinned by hash",
+   "paths": [
+    "assets/vendor/**"
+   ],
+   "why": "one code base, refreshed only from its source; the validator already checks the hashes"
+  },
+  {
+   "id": "the-rules",
+   "rule": "never by an agent",
+   "meaning": "this policy, and whatever enforces it",
+   "paths": [
+    "this policy",
+    "CODEOWNERS",
+    "the repository's rulesets",
+    "the sidecar repository"
+   ],
+   "why": "an agent must not set its own boundaries"
+  }
+ ],
+ "barriers": {
+  "expectation": "this file, read by the agent",
+  "setting": "a hook or permission rule in the agent's harness, and a check in this repository's CI, both of which an agent with write access could change",
+  "boundary": "rulesets and code-owner review on the platform, and checks in a repository the agent cannot write to, set by the owner"
+ },
+ "minimal_controls_today": [
+  {
+   "control": "this file",
+   "barrier": "expectation",
+   "catches": "nothing on its own; it is what the other controls enforce"
+  },
+  {
+   "control": "deny rules and a PreToolUse hook in the agent's harness, for the gate, identity and rules paths",
+   "barrier": "setting",
+   "catches": "mistakes, at the moment of the edit; not a script that writes the file"
+  },
+  {
+   "control": "a guard job in this repository's CI: a push that changes a gate, identity or rules path, and did not arrive as a pull request approved by someone else, fails validation and does not deploy",
+   "barrier": "setting",
+   "catches": "mistakes the hook missed; defeating it needs a second, deliberate change to the workflow"
+  },
+  {
+   "control": "the agent's token without permission to change workflow files",
+   "barrier": "boundary",
+   "catches": "any change to .github/workflows; the owner's step"
+  },
+  {
+   "control": "a repository the agent cannot write to, which checks each release against this policy and is the only thing that deploys",
+   "barrier": "boundary",
+   "catches": "total compromise of the agent; the owner's step, described in the sidecar repository article"
+  }
+ ]
+}

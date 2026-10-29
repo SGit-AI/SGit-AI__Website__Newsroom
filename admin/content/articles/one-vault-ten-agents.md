@@ -10,7 +10,7 @@ tags: sgit, vaults, agents, performance, measurement, partial-clones, scion, ver
 status: published
 ---
 
-!shot ov-size.webp | images/ | The newsroom's vault against two of our own git repositories: 5,281 files, 1,295 commits and 35,423 objects, against the SG/Send application's 5,584 files, 4,399 commits and 42,434 objects, and the sgit CLI's 1,811 files, 1,603 commits and 13,985 objects. | comparison
+!shot ov-size.webp | images/ | The newsroom's vault against two of our own git repositories: the SG/Send application and the sgit CLI. | comparison
 
 ## In short {#in-short}
 
@@ -32,7 +32,7 @@ The comparison in the figure above is why I think this matters beyond agents. Th
 
 ## What an agent fetches {#fetch}
 
-!shot ov-fetch.webp | images/ | What an agent fetches from the 35,000-object vault and what it costs, on a log scale: the full clone 210 seconds; the whole tree with one commit 57; one 130-file folder with one commit 13 seconds and 137 objects; structure only 27; one folder with all its history 227; the biggest folder with all its history 264; widening a clone by a folder 7.8; one file on demand 2.9; a pull with nothing new 2.5. | comparison
+!shot ov-fetch.webp | images/ | What an agent fetches from the 35,000-object vault and what it costs, in seconds, on a log scale. | comparison
 
 Nobody working in this vault needs all of it, and the point of the design is that they do not have to take it. The sgit CLI team measured each way of asking, from a cloud sandbox, on 14 and 16 October:
 
@@ -58,7 +58,7 @@ The command an agent runs most is not clone but pull: come back, take what chang
 
 ## Where the time goes {#storage}
 
-!shot ov-storage.webp | images/ | The same vault and client with the objects in three places: hosted, a plain file server on local disk, and a local API server. Full clone 210, 111 and 69 seconds; one commit 57, 25 and 12; one folder with one commit 13, 2.3 and 0.8; one folder with all history 181 hosted against 7.1 locally; one file on demand 2.5, 1.8 and 1.8. | comparison
+!shot ov-storage.webp | images/ | The same vault and client with the objects in three places: hosted, a plain file server and a local API server. | comparison
 
 The CLI team then copied the same 35,000 objects to local disk and served them two ways: a plain file server, and the same API server the hosted service runs, as one local process. The one-folder, one-commit clone fell from 13 seconds to 2.3 and 0.8. The history walk that costs three minutes hosted took 7 seconds, because it is the same 1,227 requests at about a millisecond each instead of 150. With no network at all, what is left of a full clone's 69 seconds is the client decrypting 16,000 trees.
 
@@ -75,7 +75,7 @@ I started this vault as memory for agents, and the numbers say it is now a repos
 ## What this does not claim {#limits}
 
 - **Not proven at Scion's scale.** 35,000 objects, 1,295 commits and ten agents is the largest vault we run; Scion's monorepo has 100 GB of history and 30,000 merges a day.
-- **No blame or bisect.** Path history, signed commits, signed tags and verification exist; blame is not written yet.
+- **No bisect yet.** Path history, signed commits, signed tags and verification exist, and blame shipped in sgit-ai 0.27.0 on 28 October; bisect is designed and in the CLI team's queue.
 - **A partial clone of a long history is slow without a depth, today.** The fix is designed, not shipped.
 - **One run each, from sandboxes that send every request through a proxy.** A plain connection does better.
 - **The source-code use is a proposal.** The vault holds notes, mail and analysis, not code.

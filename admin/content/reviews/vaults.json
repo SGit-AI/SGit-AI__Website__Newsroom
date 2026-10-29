@@ -1,0 +1,46 @@
+{
+ "what": "The reviewers' vaults (card 092): one public sgit vault per external reviewer, where it reads its brief and queue and writes its reviews, issues and tasks. The read keys here are public on purpose: everything in these vaults is public, for ever. The vault keys are not here: each is held by its reviewer and by the review desk. admin/build/review_vault.py makes, publishes to, gates and takes from them.",
+ "roles": {
+  "@newsroom.vault": "Makes each reviewer's vault (review_vault.py create) and hands its vault key to the editor, sealed to the editor's pki.sgit.ai key.",
+  "@newsroom.security": "On a schedule, before anything is taken: reads each vault with its public read key, checks every file (the layout, the signatures, secrets, private people, text addressed to the agents, records against the criteria) and signs a verdict with its own key (keys/newsroom-security.json), pushed to the repository's review-gate branch. It cannot write to a vault.",
+  "@newsroom.desk": "On a schedule, after the security agent: takes into the repository only the files whose SHA-256 the signed verdict cleared, proposes the fixes for the editor, and writes the brief, the queue and the answers into each vault, signed with its own key (keys/newsroom-desk.json), so a reviewer follows only what the desk signed.",
+  "the reviewer": "Holds its own vault's key and its own sgit pki key, kept between runs; signs every file it writes. Its key is pinned here (reviewer_key) once the editor has confirmed the fingerprint with it."
+ },
+ "public_emails": [],
+ "reviewers": {
+  "openai-chatgpt": {
+   "vault_id": "gfzbzp41",
+   "read_key": "sgit_public_read_f2c0cf1882142dd079228046fb534a0f27f2249205c895976111cf729544144a:gfzbzp41",
+   "endpoint": "https://dev.send.sgraph.ai",
+   "reviewer_key": "sha256:dec7fa758ecb9eb1",
+   "created": "2026-10-27",
+   "reviewer_key_note": "The ChatGPT session's own key (\"ChatGPT newsroom reviewer, this workspace\"), made in that session and kept there; handed to the newsroom by the editor as a pki.sgit.ai key QR code on 28 October 2026. The vault key was sealed to it. A new ChatGPT session means a new key, pinned the same way."
+  }
+ },
+ "retired": [
+  {
+   "what": "vault",
+   "id": "uni3mldz",
+   "made": "2026-10-27",
+   "why": "ChatGPT's first vault (v0.13.111). Its key was sealed to the editor as a link too long for a QR code, and the newsroom keeps no copy, so it was replaced the same evening by a vault whose sealed key fits one. It holds only the desk's first signed files; nobody was given its key."
+  },
+  {
+   "what": "key",
+   "id": "sha256:2fed42a3c24d6d20",
+   "made": "2026-10-27",
+   "why": "The review desk's first key (v0.13.111), replaced with the vault above: never filed in the register, never used."
+  },
+  {
+   "what": "key",
+   "id": "sha256:e43d606266630bec",
+   "made": "2026-10-27",
+   "why": "The security agent's first key (v0.13.111), replaced with it: never filed in the register, never used."
+  },
+  {
+   "what": "vault",
+   "id": "cs4d0nzk",
+   "made": "2026-10-27",
+   "why": "The review lane's first vault (v0.13.103): the script stopped before it handed the lane's secret over, so nobody holds its keys. Empty, and unusable."
+  }
+ ]
+}

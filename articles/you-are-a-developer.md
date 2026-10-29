@@ -10,11 +10,11 @@
 
 # You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.1.0, 2 versions](versions/you-are-a-developer.md) · [newsroom v0.12.131](https://newsroom.sgit.ai/admin/versions.html) · foundersdevelopersexplorer-codingbooksgen-z-bookarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.2.0, 3 versions](versions/you-are-a-developer.md) · [newsroom v0.12.131](https://newsroom.sgit.ai/admin/versions.html) · foundersdevelopersexplorer-codingbooksgen-z-bookarticle
 
 ***Abstract:** Every GenAI founder I know is a developer, and none of them think so. When I tell them, they look at me as if I were joking: they just tell the model to do things. But look at what they do all day. They write requirements, they own the product, they design, they engineer, they deploy continuously, they run a development team. Some of it is crude, but much of the industry does it worse: underfunded teams, ridiculous deadlines, ship it anyway, which is where so many vulnerabilities come from, because a vulnerability is a sign of an engineering gap. The founders do not know that because they never saw the sausage factory. They grew up on polished, second- and third-generation products. They did not see the iPhone launched on a golden path of taps that kept the prototype from crashing, or developers giving a mock-up a hand-drawn theme so the business would not think it was finished. Now, building things themselves, they complain about versioning, stability and security, the non-functional requirements nobody used to fund. They are developers. Which brings me to the book: it is very hard to tell someone what they are in a word they do not relate to, so my hypothesis is that it should be called Generation ZX Founders, with "you are a developer" kept for the end, as the reveal.*
 
-One GenAI founder, many roles. In the middle, the founder who says "I am not a developer, I just tell the model what to do". Around them, what they actually do every day: senior stakeholder and business owner (decides what matters and pays for it), product owner (writes the requirements), designer, developer and engineer (builds, with agents), release manager (continuous deployment), and the head of a development team (the agents). Each of those is a job title in a technology company.
+One GenAI founder, many roles: the founder at the centre and the job titles they hold around them.
 
 ## In short
 
@@ -62,7 +62,7 @@ There is a funny example of the other side. In the early days of the new generat
 
 So some teams started making their mock-ups look rough on purpose, with themes that look hand-drawn and slightly misaligned, so that the business would see something still being worked on. Bootstrap has one, [Sketchy](https://bootswatch.com/sketchy/), "a hand-drawn look suitable for mockups". The idea is older. In 2002 Joel Spolsky wrote, in [The Iceberg Secret, Revealed](https://www.joelonsoftware.com/2002/02/13/the-iceberg-secret-revealed/): "If you show a nonprogrammer a screen which has a user interface which is 100% beautiful, they will think the program is almost done." His advice was to build the interface "in such a way that unfinished parts *look* unfinished", and around 2004 [Napkin Look & Feel](https://napkinlaf.sourceforge.net/) did exactly that for Java applications.
 
-The iceberg they never saw. Above the waterline, what a user of polished products sees: the interface and the demo, about 10% of the work in Joel Spolsky's 2002 estimate. Below it, what was there when those products were new: the back end and the data; versioning; validation, authentication and authorisation; resilience; the release pipeline and real users. On the left, what founders saw, such as the iPhone launched on a golden path of taps; on the right, what they meet now that they build: versioning, stability and security.
+An iceberg: above the waterline what a user sees, below it what polished products were built on.
 
 It is a bit of a joke, but it was common. The business made decisions without the visibility, and it was not their fault: how could they know? They had never been inside.
 
@@ -113,6 +113,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#you-ar
 
 ### Continued by
 
+- [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](programming-taught-upside-down.md) We teach programming the way Lockhart says we teach maths: concepts first. Explorer coding starts where the hook is.
 - [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](reading-with-a-pen.md) Mark the printed page, photograph it, and an agent does the processing that always made me stop highlighting. The book's new name is in its margins.
 
 [All articles](index.md) · [All graphs](graphs.md)

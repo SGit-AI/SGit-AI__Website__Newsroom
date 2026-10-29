@@ -1,0 +1,159 @@
+{
+  "slug": "programming-taught-upside-down",
+  "teaser": "We teach programming the way Lockhart says we teach maths: concepts first. Explorer coding starts where the hook is.",
+  "topics": [
+    "startups-and-strategy"
+  ],
+  "core_idea": "Programming, like maths in Lockhart's lament, is usually taught upside down, concepts before purpose, so people dislike it and return to Excel; what hooks a programmer is control in a short feedback loop, which the good tools always had, and explorer coding by voice now starts at that end, with coding understood as communication whose primitives people will read more, not less.",
+  "nodes": [
+    {
+      "id": "lockhart",
+      "label": "Lockhart's lament",
+      "kind": "artefact",
+      "summary": "Maths taught to destroy curiosity."
+    },
+    {
+      "id": "upside",
+      "label": "Programming taught upside down",
+      "kind": "claim",
+      "summary": "Concepts before purpose."
+    },
+    {
+      "id": "hook",
+      "label": "Control is the hook",
+      "kind": "claim",
+      "summary": "From a thought to something that works."
+    },
+    {
+      "id": "repl",
+      "label": "The REPL loop",
+      "kind": "method",
+      "summary": "Read, evaluate, print, loop."
+    },
+    {
+      "id": "tools",
+      "label": "Tools that got the loop right",
+      "kind": "example",
+      "summary": "BASIC, Visual Basic, spreadsheets, Scratch, Code Club."
+    },
+    {
+      "id": "excel",
+      "label": "Back to Excel",
+      "kind": "example",
+      "summary": "The most widely used programming language."
+    },
+    {
+      "id": "explorer",
+      "label": "Explorer coding",
+      "kind": "method",
+      "summary": "What you want, by voice, seen working."
+    },
+    {
+      "id": "concepts",
+      "label": "Concepts when needed",
+      "kind": "claim",
+      "summary": "Variables and classes, met through a problem."
+    },
+    {
+      "id": "communication",
+      "label": "Coding is communication",
+      "kind": "concept",
+      "summary": "The primitives stay; more code is read."
+    }
+  ],
+  "edges": [
+    {
+      "from": "lockhart",
+      "to": "upside",
+      "rel": "extends"
+    },
+    {
+      "from": "upside",
+      "to": "excel",
+      "rel": "produces"
+    },
+    {
+      "from": "hook",
+      "to": "repl",
+      "rel": "depends-on"
+    },
+    {
+      "from": "tools",
+      "to": "repl",
+      "rel": "example-of"
+    },
+    {
+      "from": "upside",
+      "to": "hook",
+      "rel": "contrasts"
+    },
+    {
+      "from": "explorer",
+      "to": "hook",
+      "rel": "answers"
+    },
+    {
+      "from": "explorer",
+      "to": "concepts",
+      "rel": "leads-to"
+    },
+    {
+      "from": "concepts",
+      "to": "communication",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "explorer-coding",
+      "the-citizen-developer",
+      "you-are-a-developer",
+      "omnichannel-programming",
+      "jobs-that-never-scaled"
+    ],
+    "pages": [],
+    "sites": [
+      "https://gen-z-developers.sgit.ai/v2/book/connect-the-dots-backwards.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The thing about programming is the ability to control something: to make something work.",
+      "why": "The hook."
+    },
+    {
+      "text": "They program wherever the loop is short and the result is theirs.",
+      "why": "The Excel irony."
+    },
+    {
+      "text": "Coding is communication: speaking to a computer, through an abstraction layer.",
+      "why": "Communication."
+    }
+  ],
+  "figures": [
+    {
+      "file": "pu-upside.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pu-upside.webp",
+      "caption": "Programming, taught upside down: how it is usually taught, and how it is learned.",
+      "kind": "concept"
+    },
+    {
+      "file": "pu-loop.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pu-loop.webp",
+      "caption": "The tools that got the loop right, from BASIC on the ZX Spectrum to explorer coding.",
+      "kind": "timeline"
+    },
+    {
+      "file": "pu-excel.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pu-excel.webp",
+      "caption": "The irony: people taught programming with nothing to build go back to the spreadsheet and program there anyway.",
+      "kind": "concept"
+    },
+    {
+      "file": "pu-communication.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pu-communication.webp",
+      "caption": "Coding is communication: voice and briefs, visual blocks, code and its primitives, and the machine underneath.",
+      "kind": "concept"
+    }
+  ]
+}

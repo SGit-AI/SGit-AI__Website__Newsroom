@@ -10,11 +10,11 @@
 
 # Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/cedar-and-the-policy-vault.md) · [newsroom v0.12.55](https://newsroom.sgit.ai/admin/versions.html) · cedarpolicy-as-codeagent-behaviour-policysgitvaultsappend-lanescncfawsagentcoreevidencefractal-semantic-graphsbriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.2.0, 3 versions](versions/cedar-and-the-policy-vault.md) · [newsroom v0.12.55](https://newsroom.sgit.ai/admin/versions.html) · cedarpolicy-as-codeagent-behaviour-policysgitvaultsappend-lanescncfawsagentcoreevidencefractal-semantic-graphsbriefarticle
 
 ***Abstract:** Cedar is the policy language I think we should adopt rather than compete with. AWS open-sourced it in May 2023 under Apache 2.0; it joined the Cloud Native Computing Foundation as a Sandbox project on 8 October 2025; it is the language of Amazon Verified Permissions and of AgentCore Policy, which checks every agent tool call before it runs; and its design is modelled and proved in Lean. That is a mature environment, and it already says most of what our agent behaviour policies say: permit for the grant, forbid for the barrier, a schema for the footprint. What it does not carry is why a rule exists, which version was in force, or the evidence of what it decided. Those are exactly what an encrypted, versioned vault is good at. So I asked this site's agent to try it: Cedar policies, schema, entities and tests in an sgit vault, a gate that refuses any version that fails validation, tags signed by the releasing clone, enforcement points that clone with a read key and cannot write, and an append lane that keeps a sealed, hash-chained record of every decision. It worked on a local server, and it found one thing worth knowing: Cedar skips a policy whose evaluation fails, so a forbid that refers to a missing attribute lets the action through. This article is the debrief, the crosswalk between their terms and ours, and the brief for the agent that will build the MVP.*
 
-Cedar policies in an sgit vault, from the rule to the evidence: a gate that validates every version against the schema and its tests, tags signed by the releasing clone, enforcement points that clone with the read key only, and an append lane that keeps a sealed record of every decision. What ran in the demo for this article is solid; the gateway and the sync into managed stores are proposed.
+Cedar policies in an sgit vault, from the rule to the evidence: a gate, signed tags, enforcement points, an append lane.
 
 ## In short
 
@@ -48,7 +48,7 @@ The paper is also direct about the comparison with the other two languages peopl
 
 ## Their terms, our terms
 
-Our behaviour-policy terms, Cedar's, and where each one lives in the vault. Most map directly: the grant is permit, the barrier is forbid, the footprint is the entities. Two have no Cedar construct, the mandate and the version in force, and those are what the vault adds.
+Our behaviour-policy terms, Cedar's, and where each one lives in the vault, with the two Cedar lacks.
 
 Most of an [agent behaviour policy](re-anchoring-agent-behaviour-policies.md) maps onto Cedar without strain. The grant, what the agent can touch, is a permit and the actions and resource types in the schema. A barrier, a limit on the grant, is a forbid, and Cedar's rule that forbid always wins is exactly how we want barriers to behave. The footprint, what exists to act on, from [Footprint and blast radius](footprint-and-blast-radius.md), is the entities. A row of a [skill behaviour policy](skill-behaviour-policy.md) is a forbid on labels the session carries. And the business layers of [The behaviour policy is the business logic](the-behaviour-policy-is-the-business-logic.md) are forbids on facts from the ledger or the CRM, passed in as context.
 
@@ -58,7 +58,7 @@ This is the translation element I keep coming back to. A [fractal semantic graph
 
 ## How Cedar policies are kept today
 
-Amazon Verified Permissions as its documentation describes it, a plain repository, and the vault from the demo. The managed store validates strictly and is protected by IAM, but its API has no history or export, and deleting it is permanent. A repository has history but no keys. The vault has both, and puts the evidence next to the rules.
+Amazon Verified Permissions as its documentation describes it, a plain repository, and the vault from the demo.
 
 My guess in the memo was that policies are often deployed as loose JSON with no version control. The truth is better than that, and the gap is still real. Cedar policies are text, with a JSON form "to allow for programmatically constructing and parsing policies". In AWS, they live in a [policy store](https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/policy-stores.html), "a container for policies and policy templates", with a STRICT validation mode that "Requires a schema to be present in the policy store", and IAM deciding who can change what.
 
@@ -139,6 +139,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#cedar-and-
 
 ### Continued by
 
+- [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](an-analysts-blueprint-for-riskmandate.md) An analyst's blueprint for RiskMandate from the WestCap CISO Summit, the vendors already moving, and our answer.
 - [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](governs-enforces-attests.md) An ABP governs and names the enforcer at three levels: prompt, hooks, or a third-party system. An attestation layer signs it so a third party can verify.
 
 [All articles](index.md) · [All graphs](graphs.md)

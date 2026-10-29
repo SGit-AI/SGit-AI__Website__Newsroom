@@ -10,11 +10,11 @@
 
 # The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.0.0](versions/the-value-of-constraints.md) · [newsroom v0.12.76](https://newsroom.sgit.ai/admin/versions.html) · constraintsencryptionsgitopen-sourcesovereigntygdprengineeringbusiness-modelsopen-coredesignarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/the-value-of-constraints.md) · [newsroom v0.12.76](https://newsroom.sgit.ai/admin/versions.html) · constraintsencryptionsgitopen-sourcesovereigntygdprengineeringbusiness-modelsopen-coredesignarticle
 
 ***Abstract:** The value I get from two of sgit's design choices is not the obvious one. sgit is encrypted on the client, and we often lead with that, but I made that mistake myself: nobody will buy sgit for its encryption. If it succeeds, it will be because it has better features and better workflows, and many of those came from the encryption, as a constraint. Encryption on the client moves the security problem from protecting all the data to protecting the keys, and moves the sovereignty line from where the data is stored to who holds the keys; the European Data Protection Board treats that as an effective measure for transfers. It does not take you out of GDPR, which my memo said it did: the data is still personal data for whoever holds the keys, but a breach of the ciphertext alone need not be notified to the people in it. The biggest benefit, though, is engineering. A server that cannot read the data removes the temptation to process anything on it, so there is no server code to write, deploy and secure, and the features that make sgit good, like scoped clones, came from working within that. Open source is the same kind of constraint: no private code removes the temptation to lock customers in, makes the code easy to deploy anywhere, and ends the startup curse of building every customer's integration. That is why it has to be all of it; open core is an evaluation version. The business model that follows is selling customisation.*
 
-Two constraints and what they take away: client-side encryption forbids the server from reading the data and removes the temptation to process there; open source, all of it, forbids private code and removes lock-in, the evaluation edition and building every customer's integration.
+Two constraints and what they take away: client-side encryption and open source, all of it.
 
 ## In short
 
@@ -34,7 +34,7 @@ What took me a while to see is where those features came from. Innovation needs 
 
 ## From the data to the keys
 
-Encryption on the client moves the problem from the data to the keys: a server that can read has to protect all the data, runs code next to it, and puts the sovereignty line where the data is; a server that holds ciphertext needs the keys protected, runs no code next to the data, and puts the line at whoever holds the keys.
+Encryption on the client moves the problem from the data to the keys, and the sovereignty line with it.
 
 The security benefit is the one everyone expects, and it is real. When the server can read what it stores, all of it has to be protected: every copy, backup, log and replica, and every person and process with access. When the server holds ciphertext, named by the hash of that ciphertext, the problem moves to protecting the keys, which is a much smaller problem.
 

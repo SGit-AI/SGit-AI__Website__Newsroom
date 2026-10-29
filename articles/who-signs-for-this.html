@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see, SGit Newsroom</title>
+<meta name="description" content="My article on who maintains the PHP you run argued for versions signed off by the people who maintain them. On LinkedIn, Andrey Lazarev, co-founder and CEO/CTO of TactiQ AI, took it a step further. A maintainer's signature says who stands behind a version, not whether that version is what the device actually booted. That needs a measured boot record, checked against the signed reference by someone other than the supplier. And the context of where it runs splits in two: what the device can measure itself, and what it cannot see, which has to be declared and signed by an operator or an auditor. A certificate stays honest when it keeps the two apart and names who signed each line. I think that is exactly right, and it generalises. Once people sign for what they are accountable for, they also define what they do not sign for. Map every layer, from the hardware to the business contract, and each line ends either in somebody who signed, or in a blind spot. That map is a fractal graph of signed certificates, and complexity is not the objection: how much of it you need depends on how much the application matters. The point is to make the blind spots visible, so the business and its insurers can decide whether they are comfortable with them, and so the experts who close them get paid. And when the person who signed leaves, the gap shows.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/who-signs-for-this.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/who-signs-for-this.html">
+<meta property="og:title" content="Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see, SGit Newsroom">
+<meta property="og:description" content="My article on who maintains the PHP you run argued for versions signed off by the people who maintain them. On LinkedIn, Andrey Lazarev, co-founder and CEO/CTO of TactiQ AI, took it a step further. A maintainer's signature says who stands behind a version, not whether that version is what the device actually booted. That needs a measured boot record, checked against the signed reference by someone other than the supplier. And the context of where it runs splits in two: what the device can measure itself, and what it cannot see, which has to be declared and signed by an operator or an auditor. A certificate stays honest when it keeps the two apart and names who signed each line. I think that is exactly right, and it generalises. Once people sign for what they are accountable for, they also define what they do not sign for. Map every layer, from the hardware to the business contract, and each line ends either in somebody who signed, or in a blind spot. That map is a fractal graph of signed certificates, and complexity is not the objection: how much of it you need depends on how much the application matters. The point is to make the blind spots visible, so the business and its insurers can decide whether they are comfortable with them, and so the experts who close them get paid. And when the person who signed leaves, the gap shows.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/who-signs-for-this.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/who-signs-for-this.jpg">
+<link rel="alternate" type="text/markdown" href="who-signs-for-this.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see, SGit Newsroom", "headline": "Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see, SGit Newsroom", "description": "My article on who maintains the PHP you run argued for versions signed off by the people who maintain them. On LinkedIn, Andrey Lazarev, co-founder and CEO/CTO of TactiQ AI, took it a step further. A maintainer's signature says who stands behind a version, not whether that version is what the device actually booted. That needs a measured boot record, checked against the signed reference by someone other than the supplier. And the context of where it runs splits in two: what the device can measure itself, and what it cannot see, which has to be declared and signed by an operator or an auditor. A certificate stays honest when it keeps the two apart and names who signed each line. I think that is exactly right, and it generalises. Once people sign for what they are accountable for, they also define what they do not sign for. Map every layer, from the hardware to the business contract, and each line ends either in somebody who signed, or in a blind spot. That map is a fractal graph of signed certificates, and complexity is not the objection: how much of it you need depends on how much the application matters. The point is to make the blind spots visible, so the business and its insurers can decide whether they are comfortable with them, and so the experts who close them get paid. And when the person who signed leaves, the gap shows.", "url": "https://newsroom.sgit.ai/articles/who-signs-for-this.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see</p>
+ <h1>Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-24 &middot; <a href="versions/who-signs-for-this.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.69</a> &middot; <span class="chip">accountability</span><span class="chip">signatures</span><span class="chip">attestation</span><span class="chip">supply-chain</span><span class="chip">maintenance</span><span class="chip">fractal-graphs</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> My article on who maintains the PHP you run argued for versions signed off by the people who maintain them. On LinkedIn, Andrey Lazarev, co-founder and CEO/CTO of TactiQ AI, took it a step further. A maintainer's signature says who stands behind a version, not whether that version is what the device actually booted. That needs a measured boot record, checked against the signed reference by someone other than the supplier. And the context of where it runs splits in two: what the device can measure itself, and what it cannot see, which has to be declared and signed by an operator or an auditor. A certificate stays honest when it keeps the two apart and names who signed each line. I think that is exactly right, and it generalises. Once people sign for what they are accountable for, they also define what they do not sign for. Map every layer, from the hardware to the business contract, and each line ends either in somebody who signed, or in a blind spot. That map is a fractal graph of signed certificates, and complexity is not the objection: how much of it you need depends on how much the application matters. The point is to make the blind spots visible, so the business and its insurers can decide whether they are comfortable with them, and so the experts who close them get paid. And when the person who signed leaves, the gap shows.</em></p>
+<figure class="shot" data-shot="ky-map.webp" data-dir="images/" data-alt="An accountability map from the business to the hardware: who signs each layer, with the building signed by nobody." data-kind="concept"><figcaption>An accountability map from the business to the hardware: who signs each layer, with the building signed by nobody.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>A signature says who stands behind a version.</b> It does not say that the version is what is running.</li>
+<li><b>Andrey Lazarev's split.</b> Some context the device can measure; the rest has to be declared and signed by someone.</li>
+<li><b>Somebody has to be accountable.</b> The person you pay to maintain it, patch it, fix it and handle its incidents.</li>
+<li><b>Signers define the gaps.</b> What they sign, and what they do not, is the shared responsibility model taken all the way up and down.</li>
+<li><b>Every line is a graph of its own.</b> A fractal graph of signed certificates, across hardware, software, products and contracts.</li>
+<li><b>The point is the blind spots.</b> The lines nobody signs, made visible, so someone decides whether they are acceptable.</li>
+<li><b>The experts who close them get paid.</b> And when the person who signed leaves, the gap shows.</li>
+</ul>
+<h2 id="thread">The thread</h2>
+<figure class="shot shot--small" data-shot="ky-thread.webp" data-dir="images/" data-alt="The LinkedIn thread under my post sharing &quot;Who maintains the PHP you run?&quot;, 24 October 2026." data-kind="aside"><figcaption>The LinkedIn thread under my post sharing "Who maintains the PHP you run?", 24 October 2026.</figcaption></figure>
+<p>I shared <a href="https://newsroom.sgit.ai/articles/who-maintains-the-php-you-run.html">who maintains the PHP you run?</a> on LinkedIn, and it started a thread worth more than a reply. Andrey Lazarev, co-founder and CEO/CTO of TactiQ AI, wrote:</p>
+<div class="note">"the sign-off you describe answers “who stands behind this version”. The step after it is “is that version what the device actually booted”. On a device that is a measured boot record checked against the signed reference, by someone other than the supplier."</div>
+<p>Without that, as he put it, the buyer holds a maintainer's signature for something they cannot prove is running. I replied that once we can make somebody accountable for what is running, we will also need to certify where it runs and its context, for example how secure the deployment is. His answer is the one this article is built on:</p>
+<div class="note">"In my view that part splits in two. Some of the context the device can measure itself: firmware, bootloader, kernel configuration, and which hardware root signed the record. The rest it cannot see: who can reach it physically, what network it sits on, what is plugged into it. That part is a declaration by the operator or an auditor, signed by them. I think a certificate stays honest when it keeps the two apart and names who signed each line."</div>
+<p>I called it a fractal graph architecture: in this case, a big graph of signed certificates. Here is what I meant.</p>
+<h2 id="accountable">Somebody has to be accountable</h2>
+<p>When we talk about making people accountable for code by signing it, the point is not the signature. The point is that somebody has to be accountable. Some person or company will be looking at each part of the infrastructure, and what we do not want is a part that nobody is looking at.</p>
+<p>And we know who that should be. It is the person who maintains it, the person you pay for it: responsible for patching it, fixing it, handling its security incidents, being able to rebuild it, replicate it and move it. All of the non-functional requirements. That is the same argument as <a href="https://newsroom.sgit.ai/articles/patch-for-breakfast.html">patch for breakfast</a>: the ability to change a system safely has to belong to someone.</p>
+<h2 id="gaps">Signers define the gaps</h2>
+<p>Here is the interesting part. Once people sign off, they define the gaps. They say what they sign for, and, just as important, what they do not.</p>
+<p>We already do this between companies and cloud providers. AWS calls it <a href="https://aws.amazon.com/compliance/shared-responsibility-model/">the shared responsibility model</a>: security "of" the cloud versus security "in" the cloud. AWS is "responsible for protecting the infrastructure that runs all of the services offered in the AWS Cloud", its "hardware, software, networking, and facilities", and some controls a customer simply inherits: "Physical and Environmental controls". <a href="https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility">Microsoft</a> says the same in its words, "For all cloud deployment types, you own your data and identities", and <a href="https://docs.cloud.google.com/architecture/framework/security/shared-responsibility-shared-fate">Google</a> goes a step further with "shared fate", where it works more closely with the customer on the customer's side of the line. And the providers do sign: <a href="https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html">AWS Artifact</a> hands customers the SOC reports and ISO certificates that attest to AWS's side, while reminding them they remain "responsible for developing or obtaining documents that demonstrate the security and compliance of their companies".</p>
+<p>What I am saying is that this model should go all the way to the top. Not only the infrastructure, but the application, the product, and the business. A cloud provider can sign that a customer's use is within its guidance, with this level of security capability and these controls. A maintainer can sign the version. A product owner can sign that what was delivered is what was asked for. A business owner can sign that the application does what the contract says. And it goes down as well, all the way to the hardware. You can go in every direction.</p>
+<h2 id="measured">What is measured, and what is declared</h2>
+<p>Andrey's split is what keeps this honest. Some lines can be measured; others can only be declared.</p>
+<p>On a device, the measured line has a well-defined shape. The firmware writes a hash of each thing it loads into the TPM's registers and an event log: "The preboot firmware maintains an event log that gets new entries every time something gets hashed by it to any of the PCR registers", in the <a href="https://docs.kernel.org/security/tpm/tpm_event_log.html">Linux kernel's description</a>. Remote attestation then has named roles, set out by the IETF in <a href="https://www.rfc-editor.org/rfc/rfc9334">RFC 9334</a>: an Attester produces Evidence; a Verifier "appraises the validity of Evidence about an Attester and produces Attestation Results to be used by a Relying Party"; an Endorser, "typically a manufacturer", vouches for the hardware; a Reference Value Provider supplies the "known-good values" the measurements should match. Every role is someone who signs. That is Andrey's "checked against the signed reference, by someone other than the supplier".</p>
+<p>Software has its own measured lines. <a href="https://slsa.dev/spec/v1.2/build-provenance">SLSA</a> provenance describes "how an artifact or set of artifacts was produced" so consumers can "verify that the artifact was built according to expectations", and since version 1.2 its source track goes up to level 4, "Require code review". <a href="https://in-toto.io/">in-toto</a> records "what steps were performed, by whom and in what order". <a href="https://docs.sigstore.dev/about/overview/">Sigstore</a> puts signing events in a transparency log so they "can be publicly audited". And this week we built a small version for a running process: a <a href="https://newsroom.sgit.ai/articles/process-behaviour-policies.html">process behaviour policy</a>, traced from one run, listing every file, system call and host a process needs, and enforced by the kernel.</p>
+<p>The declared lines are the rest: who can reach the machine, what network it sits on, what is plugged into it, whether the product does what the business needed. Those cannot be measured from inside. They are statements, and their value is exactly who signed them. ISO/IEC 27001 has a whole group of physical controls, from perimeters and entry to monitoring and the disposal of equipment, and an auditor signs that they are in place. The honest certificate keeps the two kinds apart, and names the signer of each.</p>
+<h2 id="fractal">A fractal graph of signed certificates</h2>
+<figure class="shot" data-shot="ky-fractal.webp" data-dir="images/" data-alt="Every signed line is a graph of its own: the device line opens into measurement, reference, verifier and endorsement." data-kind="concept"><figcaption>Every signed line is a graph of its own: the device line opens into measurement, reference, verifier and endorsement.</figcaption></figure>
+<p>This is why I call it fractal. It is the same idea as <a href="https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html">fractal semantic graphs</a>: there are multiple universes, multiple domains, each a graph that can be opened into more graph. Here the domains are hardware, software, business applications and even business contracts. Is the application actually doing what it is supposed to do? Have the business owners signed that? Have the product owners signed what was delivered? Has someone read the code that went live? Is the release the one the maintainers stand behind? Is it what booted? Every one of those is a line, every line has a signer, and every signature can be opened into its own graph of evidence and the people who stand behind it.</p>
+<h2 id="blind-spots">The blind spots</h2>
+<p>The point of all this is to identify the areas nobody is responsible for. Those blind spots are where the risk is, and where the commercial opportunity is.</p>
+<p>Take physical security. If you host in a data centre, the provider signs for it. If your server sits somewhere else, then whoever maintains that physical security should be signing off, on the record, connected to the system they protect. Otherwise you have black magic: a piece of the puzzle that nobody can account for.</p>
+<p>A blind spot is not automatically a failure. It is a decision: is the business comfortable with that blind spot, and that level of assurance? Are the insurers? That is ultimately what we pay for. But today those blind spots exist without anyone deciding about them, because nobody can see them.</p>
+<p>A lot of people look at this and say it is too complex. I do not think so. It means that, depending on how important the application is and its context, you want more or less of it. A hobby site needs one line. A payment system needs the whole map. The problem right now is that organisations spend a lot of money on highly critical applications without visibility of their blind spots. My point is to make those visible: somebody is paying attention, somebody is certifying something, and where nobody is, that is a blind spot, named.</p>
+<h2 id="experts">The experts sign, and get paid</h2>
+<p>The people who should sign are the experts: the people who actually understand each layer. Doing it in a scalable way means the experts get the money, and the money funds the work. That is the <a href="https://newsroom.sgit.ai/articles/who-maintains-the-php-you-run.html">commercial model</a> of signed versions, extended to every line of the map.</p>
+<p>It also says something about who can sign what. In the language of <a href="https://newsroom.sgit.ai/articles/explorer-coding.html">explorers, villagers and town planners</a>, an explorer team can only give so many guarantees, and should say so. Town planners can sign for much more, because that is their job. The map makes the difference visible: did somebody read the code that goes live? Are the people who wrote it still in the building?</p>
+<h2 id="leaves">When the person who signed leaves</h2>
+<p>Here is an interesting consequence. If a certification is connected to a person, and that person leaves the company with nobody to replace them, then nobody certifies that code any more. The line goes from signed to blind spot, and everyone can see it.</p>
+<p>That would do wonders for something we rarely measure. Companies would think twice before letting the talent that holds a system together walk out of the door, or before cutting it because they can and do not see the risk, until the whole thing blows up and the people who could fix it are not in the building any more. Research on open source shows how thin that line already is: in a study of 133 popular GitHub projects, 65% had a <a href="https://arxiv.org/abs/1604.06766">truck factor</a> of two or fewer, "the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated". A signed map makes that visible before the truck arrives. It is also why <a href="https://newsroom.sgit.ai/articles/a-team-frozen-in-time.html">a team frozen in time</a> matters: agent sessions that keep a system's knowledge can be part of who stands behind it.</p>
+<p>There is a precedent for tying a signature to a person. In the UK, the FCA's <a href="https://www.fca.org.uk/firms/senior-managers-certification-regime">Senior Managers and Certification Regime</a> exists to make "individuals more accountable for their conduct and competence". In the US, <a href="https://www.law.cornell.edu/uscode/text/15/7241">Sarbanes-Oxley</a> has the chief executive and the chief financial officer certify that they have reviewed each report and "are responsible for establishing and maintaining internal controls". We already accept that someone signs for the numbers. The systems that produce the numbers deserve the same.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The map is an illustration.</b> It is the shape of the argument, not an audit of any system.</li>
+<li><b>Measured is not the same as safe.</b> A boot record proves what booted, not that it is free of flaws.</li>
+<li><b>A signature can be wrong.</b> It makes someone accountable, which is the point, not infallible.</li>
+<li><b>The software tools are partial.</b> SLSA, in-toto and Sigstore cover build and source; nothing yet signs "the product does what the contract says" in the same way.</li>
+<li><b>The ISO 27001 detail is from a secondary source.</b> The standard itself sits behind ISO's paywall.</li>
+<li><b>Andrey's comments are quoted from the LinkedIn thread,</b> shown in the screenshot; the first is cut where LinkedIn truncates it.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>The LinkedIn thread under my post sharing <a href="https://newsroom.sgit.ai/articles/who-maintains-the-php-you-run.html">who maintains the PHP you run?</a>, 24 October 2026, with Andrey Lazarev's comments quoted from it; and my voice memos the same evening. Sources, read on 24 October 2026: IETF <a href="https://www.rfc-editor.org/rfc/rfc9334">RFC 9334</a>; the Linux kernel's <a href="https://docs.kernel.org/security/tpm/tpm_event_log.html">TPM event log</a>; Microsoft on <a href="https://learn.microsoft.com/en-us/azure/security/fundamentals/measured-boot-host-attestation">measured boot and host attestation</a> and <a href="https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility">shared responsibility</a>; AWS's <a href="https://aws.amazon.com/compliance/shared-responsibility-model/">shared responsibility model</a> and <a href="https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html">AWS Artifact</a>; Google Cloud's <a href="https://docs.cloud.google.com/architecture/framework/security/shared-responsibility-shared-fate">shared responsibility and shared fate</a>; <a href="https://slsa.dev/spec/v1.2/build-provenance">SLSA 1.2</a>; <a href="https://in-toto.io/">in-toto</a>; <a href="https://docs.sigstore.dev/about/overview/">Sigstore</a>; URM Consulting on <a href="https://urmconsulting.com/blog/iso-27001-2022-annex-a-physical-controls">ISO/IEC 27001:2022 physical controls</a>; Avelino, Passos, Hora and Valente, <a href="https://arxiv.org/abs/1604.06766">A Novel Approach for Estimating Truck Factors</a>, ICPC 2016; the FCA on <a href="https://www.fca.org.uk/firms/senior-managers-certification-regime">SM&amp;CR</a>; <a href="https://www.law.cornell.edu/uscode/text/15/7241">15 U.S.C. § 7241</a>. Related: <a href="https://newsroom.sgit.ai/articles/who-maintains-the-php-you-run.html">who maintains the PHP you run?</a>, <a href="https://newsroom.sgit.ai/articles/signed-by-the-source.html">signed by the source</a>, <a href="https://newsroom.sgit.ai/articles/process-behaviour-policies.html">process behaviour policies</a>, <a href="https://newsroom.sgit.ai/articles/patch-for-breakfast.html">patch for breakfast</a>, <a href="https://newsroom.sgit.ai/articles/a-team-frozen-in-time.html">a team frozen in time</a>, <a href="https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html">introducing fractal semantic graphs</a>, <a href="https://newsroom.sgit.ai/articles/underwriting-the-agent-economy-reviewed.html">underwriting the agent economy, reviewed</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
+<sg-meter view="page" kind="article" date="2026-10-24" topics="agents-and-policy startups-and-strategy" title="Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#who-signs-for-this">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Continued by</h3><ul><li><a href="the-vendors-layer.html">The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product</a> <span class="dim">Each row of an agent behaviour policy gets a vendor's share, carried when the vendor's conditions held; contracts cap at a year's fees, Europe moves the line.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 277 &middot; <a href="../for/make.html#r=277">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/who-signs-for-this.jpg" download>who-signs-for-this.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="who-signs-for-this.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

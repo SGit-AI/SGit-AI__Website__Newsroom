@@ -34,6 +34,7 @@ check(/class="door door-pub" href="publishers\/index.html"/.test(html) && (html.
 check(/data-you="balance"/.test(html) && /data-you="spent"/.test(html) && /class="dk-progress" role="progressbar"/.test(html) && /data-count="done"/.test(html), 'Your desk: the You card, the progress bar, the board')
 const body = html.replace(/<nav class="site">[\s\S]*?<\/nav>/, '').replace(/<footer class="site">[\s\S]*?<\/footer>/, '').replace(/<script type="application\/json" id="sg-meter-config">[\s\S]*?<\/script>/, '')
 const out = [...body.matchAll(/href="(https?:\/\/[^"]+)"/g)].map(m => m[1]).filter(u => !u.startsWith('https://newsroom.sgit.ai') && !u.startsWith('https://api.newsroom.sgit.ai'))
+    .filter(u => !/^https:\/\/[a-z0-9.-]+\.newsroom\.sgit\.ai\//.test(u))   // a story's own site under the newsroom's name (card 088)
 check(out.length === 0, `no link off the site in the front page's own body${out.length ? ' (' + out.join(' ') + ')' : ''}`)
 check(/<link rel="canonical" href="https:\/\/newsroom\.sgit\.ai\/">/.test(html) && !/<link rel="canonical" href="https:\/\/newsroom\.sgit\.ai\/">/.test(read('articles/index.html').replace(/<nav[\s\S]*?<\/nav>/, '')) || true, 'canonical / is the front page')
 const lead = html.match(/<h2 class="lead-h" id="bs-lead-h"><a href="articles\/([^"]+)\.html">/)[1]

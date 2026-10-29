@@ -10,11 +10,11 @@
 
 # secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.1.0, 2 versions](versions/secrets-on-public-keys.md) · [newsroom v0.12.65](https://newsroom.sgit.ai/admin/versions.html) · secretspkipublic-keyspasskeysvaultssgitsg-sendqr-codespassword-managersbusiness-modelsbriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.2.0, 3 versions](versions/secrets-on-public-keys.md) · [newsroom v0.12.65](https://newsroom.sgit.ai/admin/versions.html) · secretspkipublic-keyspasskeysvaultssgitsg-sendqr-codespassword-managersbusiness-modelsbriefarticle
 
 ***Abstract:** secrets.sgit.ai started on 5 October as the MVP of a password manager unlocked by a passkey, and it is a good example of our non-linear path: its passkey work became the reader's vault on this newsroom, and its own app was never built; its reality page lists 42 claims shipped, all of them the site, the pipeline and the labs, and the app itself as proposed. Now I would like to turn it into a commercial service for one job: moving a secret from A to B. The principle is to stop sharing keys altogether. We tried keys that were easy to use, and the sgit team's own security review found them broken: about 30 bits, a public id that is an unsalted hash of the key, and one precomputed table that opens every one; the command line team disabled creating them in June. So everything moves to public-key cryptography, which the pieces we already have support. Every person, browser and agent has a key pair; the public key is shared freely, by link, QR code, email or WhatsApp; the secret comes back encrypted to it, as a one-time drop, a file or a QR code; and the private key lives in a vault of its own, unlocked by a passkey that Google Password Manager or iCloud Keychain keeps. This site's agent tested the parts that matter: an agent's key pair and a one-time drop, end to end; and a browser key that cannot be exported, which survived a restart and still decrypted. Eight scenarios, what exists for each, what to build, and what to charge for.*
 
-secrets.sgit.ai on public keys: an identity vault for the private key, unlocked by a passkey; a directory of signed public keys; a request that carries my public key and where to write; channels and clients that mostly exist; and what is charged for. Dashed boxes are to build.
+secrets.sgit.ai on public keys: the identity vault, the directory, the request, the channels, and what is charged for.
 
 ## In short
 
@@ -39,7 +39,7 @@ The lesson is the one that also explains why SG/Send did not take off: the hard 
 
 ## Eight ways a secret moves
 
-Eight ways a secret moves, on public keys only: who needs the secret, how the public key reaches the sender, how the ciphertext comes back, where the private key lives, and what exists today.
+Eight ways a secret moves on public keys only, compared on five questions.
 
 1. **Ask me for a secret.** I send my public key, as a link, a QR code, an email or a WhatsApp message. The sender's browser encrypts the secret to it and gives back a one-time drop, an encrypted file, or a QR code: a short secret encrypted with an RSA-4096 key is 512 bytes, well inside one QR code. I open it wherever my private key is.
 2. **Give someone a secret.** I take their signed public key from the directory, encrypt to it, and leave it as a one-time drop or in their inbox.
@@ -104,6 +104,10 @@ Vaults & methodStartups & strategy[This article as a graph →](graphs.md#secret
 
 ### Continued by
 
+- [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](the-push-is-the-authorisation.md) The PHP newsroom accepts a new agent session's key because it was pushed to the team repository, which makes who can push a security decision.
+- [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](the-human-is-the-network.md) Two AI sessions sharing nothing passed keys, a certificate, images and an encrypted message through QR codes and a screenshot.
+- [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](a-secret-is-a-qr-code.md) Send a QR code and a link to a public key: the workflow the QR experiment opens, who already does this, and a format to share.
+- [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](the-user-keeps-the-meter.md) A proposed design for billing on vaults: the user's browser keeps the meter, credit now and validated later, one light check at the server.
 - [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](a-leak-without-breaking-the-policy.md) A key can leak through an allowed action. Told, checked, never given: a hook tested on nine leaks, four experimental rules, and a real sweep.
 - [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](pki-everywhere.md) From now on every message, secret and handover is signed. The hard part is an agent's first key: two patterns, one built and one proposed.
 - [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](a-directory-of-people-and-keys.md) pki.sgit.ai for the people I work with: a passkey and a key, evidence, me as the anchor, and links that only count when they go both ways.

@@ -1,0 +1,131 @@
+{
+  "slug": "one-researcher-for-every-newsroom",
+  "teaser": "One researcher for every newsroom: research.newsroom.sgit.ai, a light, focused archive captured on a schedule into a pack a day.",
+  "topics": [
+    "vaults-and-method",
+    "news-and-evidence"
+  ],
+  "core_idea": "Instead of each newsroom running its own slow researcher over overlapping sources, one shared researcher should run scheduled, parallel captures of the daily web, Wikipedia and focus requests into a daily sgit pack with its provenance, publish them at research.newsroom.sgit.ai by licence tier, open pages in full and the rest as records, and let each team research only what is not covered.",
+  "nodes": [
+    {
+      "id": "problem",
+      "label": "A researcher in every newsroom",
+      "kind": "claim",
+      "summary": "The same sources, read again, slowly."
+    },
+    {
+      "id": "watch",
+      "label": "The source watch",
+      "kind": "example",
+      "summary": "About 900 pages, 2,946 snapshots."
+    },
+    {
+      "id": "site",
+      "label": "research.newsroom.sgit.ai",
+      "kind": "method",
+      "summary": "A light, focused Internet Archive."
+    },
+    {
+      "id": "runs",
+      "label": "Parallel runs",
+      "kind": "method",
+      "summary": "Daily web, Wikipedia, focus runs."
+    },
+    {
+      "id": "packs",
+      "label": "A pack a day",
+      "kind": "method",
+      "summary": "sgit pack mode, provenance in the zip."
+    },
+    {
+      "id": "tiers",
+      "label": "Published by tier",
+      "kind": "claim",
+      "summary": "A in full; B and C as records."
+    },
+    {
+      "id": "reuse",
+      "label": "Reuse by every newsroom",
+      "kind": "claim",
+      "summary": "Teams research only the gaps."
+    }
+  ],
+  "edges": [
+    {
+      "from": "watch",
+      "to": "problem",
+      "rel": "example-of"
+    },
+    {
+      "from": "site",
+      "to": "problem",
+      "rel": "answers"
+    },
+    {
+      "from": "runs",
+      "to": "site",
+      "rel": "produces"
+    },
+    {
+      "from": "packs",
+      "to": "runs",
+      "rel": "depends-on"
+    },
+    {
+      "from": "tiers",
+      "to": "site",
+      "rel": "depends-on"
+    },
+    {
+      "from": "reuse",
+      "to": "site",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "web-summit-2026-the-plan",
+      "sources-and-shadows",
+      "who-creates-the-original",
+      "feisty-duck-briefed",
+      "a-villager-for-the-agents"
+    ],
+    "pages": [],
+    "sites": [
+      "https://team.php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__phased-source-watch-pass/index.html",
+      "https://php.oct.2026.newsroom.sgit.ai/wikipedia/php2shell/index.html",
+      "https://newsroom.sgit.ai/wire/how.html",
+      "https://web.archive.org/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The researcher already describes its source watch as \"a small Wayback Machine for one story\".",
+      "why": "A light, focused Internet Archive."
+    },
+    {
+      "text": "Most of what makes the archive useful, what changed, when, and who said it first, is in the record, not the bytes.",
+      "why": "What we may publish."
+    }
+  ],
+  "figures": [
+    {
+      "file": "rz-arch.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rz-arch.webp",
+      "caption": "research.newsroom.sgit.ai, one researcher shared by every newsroom: watch list, runs, packs, site and readers. Proposed.",
+      "kind": "process"
+    },
+    {
+      "file": "rz-pack.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rz-pack.webp",
+      "caption": "Pack mode against a normal sgit vault, measured on the PHP site's source watch vault on 23 October 2026.",
+      "kind": "chart"
+    },
+    {
+      "file": "rz-tiers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rz-tiers.webp",
+      "caption": "What the research site may publish, by licence tier A, B and C, and the opt-out for any publisher.",
+      "kind": "concept"
+    }
+  ]
+}

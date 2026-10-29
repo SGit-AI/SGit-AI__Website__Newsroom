@@ -10,7 +10,7 @@ tags: agent-skills, agent-behaviour-policy, natural-language-policy, ci, policy-
 status: published
 ---
 
-!shot sk-pipeline.webp | images/ | A policy for every skill. The natural-language control at the top is the canonical source; each contributed skill passes deterministic checks, a model that reads it in its context, rules an agent generated from the control, and a human review, before it reaches the organisation's repository and the developers who pull it. | architecture
+!shot sk-pipeline.webp | images/ | A policy for every skill: the control at the top and the checks each contributed skill passes. | architecture
 
 ## In short {#in-short}
 
@@ -43,7 +43,7 @@ The public tooling for reviewing skills is arriving too, and it shows where the 
 
 ## It is a behaviour policy for a skill {#abp}
 
-!shot sk-context.webp | images/ | Same check, different context, different verdict. Two illustrative skills described in the columns of an agent behaviour policy: one that turns internal documentation into a post, with trusted inputs and a person pressing publish; one that researches the web, with untrusted inputs and a barrier that must treat fetched text as data. | comparison
+!shot sk-context.webp | images/ | Two illustrative skills in the columns of an agent behaviour policy, with the same check and different verdicts. | comparison
 
 When Sean described it, I recognised the columns. An [agent behaviour policy](/articles/footprint-and-blast-radius.html) describes one agent in one setting by its mandate, what it is for; its reach, everything it can actually touch; the gap between the two, which is the risk; and the barrier in front of each row of the gap. Describe a skill that way and the context question answers itself.
 

@@ -10,11 +10,11 @@
 
 # The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.0.0](versions/the-fork-next-door.md) · [newsroom v0.12.83](https://newsroom.sgit.ai/admin/versions.html) · foundersstartupsinvestorsopen-sourceforksgovernancewardley-mapsnon-competesresearcharticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/the-fork-next-door.md) · [newsroom v0.12.83](https://newsroom.sgit.ai/admin/versions.html) · foundersstartupsinvestorsopen-sourceforksgovernancewardley-mapsnon-competesresearcharticle
 
 ***Abstract:** In Sell, don't issue I argued that open source can replace control rights as the investor's insurance: if the founder goes wrong, investors can take the code and back a better service next door. This piece looks at the whole triangle of founders, customers and investors. Each corner is protected from the others by the same thing: anyone can fork. If the founders stop executing, investors can fund a team next door. If the investors or a new owner take the company somewhere the founders will not follow, the founders can leave with the code, as long as no broad non-compete stops them. If either lets the customers down, the customers can move, as long as their data moves with them. The evidence supports the central part of this. Forking is treated as a last resort, few forks merge back, and the famous forks that took hold followed a breakdown: a licence change, a new owner, a governance fight. Where the original kept executing, as MySQL did under Oracle, the fork stayed a hedge. MySQL's own commits have now fallen by about two thirds since 2019, which makes it the case to watch. There are real limits: a bigger player can out-serve you with your own healthy code, the original's brand survives a fork, forks are expensive, and a single copyright holder can still change the terms going forward.*
 
-Three corners, one exit each: the open code sits in the middle, and each corner can take it and carry on. The founders can leave if no broad non-compete stops them; the investors can fund a team next door if they can pay for it; the customers can move if their data leaves with them, cheaply. Illustrative.
+Three corners, one exit each: founders, investors and customers around the open code. Illustrative.
 
 Founders, investors and the fork
 
@@ -51,7 +51,7 @@ The rest of this piece is the evidence for each row, and for the conditions.
 
 ## Forks only take hold when something breaks
 
-Six forks: what broke, the year each fork began, and what happened next. MariaDB stayed a hedge while MySQL kept shipping; io.js merged back once a foundation fixed the governance; LibreOffice, Nextcloud, OpenTofu and Valkey took hold after a new owner, a change of direction or a licence change.
+Six forks: what broke, the year each began and what happened next.
 
 The theory says anyone can fork at any time. The practice says few do, and usually because something has gone wrong. Robles and González-Barahona studied 220 significant forks in [A Comprehensive Study of Software Forks](https://inria.hal.science/hal-01519079/document) and note that forking "is considered as a last resort", even though it is built into free software. Only 7 of the 220, about 3%, merged back with the original. In 44% both carried on side by side, and in 30% the original was discontinued, often because it was already dying when the fork began. A fork is a serious, expensive and usually permanent decision.
 
@@ -71,7 +71,7 @@ The common thread is not that the original stopped innovating. It is that it sto
 
 The reverse case matters just as much. MariaDB was created in 2009 to protect MySQL from its new owners, first Sun and then Oracle. Oracle kept MySQL going, and in October 2026 MySQL is second in the [DB-Engines ranking](https://db-engines.com/en/ranking), with MariaDB thirteenth. The fork was a hedge. It never became the default, because the original kept shipping.
 
-Commits a year to the trunk branch of mysql/mysql-server: about 8,900 in 2019 and about 2,800 in 2025, a fall of roughly two thirds. 2026 runs to 28 September. Measured by this site from a clone of the repository.
+Commits a year to the trunk branch of mysql/mysql-server, 2019 to 28 September 2026, measured from a clone.
 
 That case may now test the argument from the other side. I counted the commits to MySQL's main repository on GitHub, [mysql/mysql-server](https://github.com/mysql/mysql-server), year by year. They fell from about 8,900 in 2019 to about 2,800 in 2025. Commit counts are a rough measure, and Oracle pushes this mirror in batches, but a fall of two thirds is not noise. If the argument here is right, this is when MariaDB's share should start to grow. That is a prediction, and it can be checked.
 

@@ -1,0 +1,143 @@
+{
+  "slug": "own-the-stack-and-the-trust",
+  "teaser": "A reply to Bert Kok: agents that augment journalists, publishers that own the now cheap stack, and the reader's trust above all.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Bert Kok is right that AI platforms now own synthesis and the interface while publishers fund costly discovery; the knowledge architecture and reader feedback loop the essay calls for already exist in our open-source stack, where agents augment rather than replace journalists, so publishers should own that cheap stack and, above all, the reader's trust.",
+  "nodes": [
+    {
+      "id": "kok",
+      "label": "Bert Kok's essay",
+      "kind": "claim",
+      "summary": "Publishers fund the costliest layer, capture the least."
+    },
+    {
+      "id": "layers",
+      "label": "Three layers converging",
+      "kind": "claim",
+      "summary": "Synthesis and the interface in one platform."
+    },
+    {
+      "id": "arch",
+      "label": "Knowledge architecture",
+      "kind": "method",
+      "summary": "Facts, claims, sources, checks, changes."
+    },
+    {
+      "id": "sensor",
+      "label": "The interface as a sensor",
+      "kind": "method",
+      "summary": "Readers' feedback turned into features."
+    },
+    {
+      "id": "augment",
+      "label": "Agents augment journalists",
+      "kind": "claim",
+      "summary": "Missing: more journalists and more readers."
+    },
+    {
+      "id": "stack",
+      "label": "Own the stack",
+      "kind": "claim",
+      "summary": "No longer millions; open source."
+    },
+    {
+      "id": "trust",
+      "label": "Own the trust",
+      "kind": "claim",
+      "summary": "What platforms cannot copy."
+    },
+    {
+      "id": "tour",
+      "label": "A guided tour",
+      "kind": "example",
+      "summary": "The PHP site, the bridge, the wire."
+    }
+  ],
+  "edges": [
+    {
+      "from": "kok",
+      "to": "layers",
+      "rel": "depends-on"
+    },
+    {
+      "from": "arch",
+      "to": "kok",
+      "rel": "answers"
+    },
+    {
+      "from": "sensor",
+      "to": "kok",
+      "rel": "answers"
+    },
+    {
+      "from": "augment",
+      "to": "arch",
+      "rel": "depends-on"
+    },
+    {
+      "from": "stack",
+      "to": "layers",
+      "rel": "contrasts"
+    },
+    {
+      "from": "trust",
+      "to": "stack",
+      "rel": "depends-on"
+    },
+    {
+      "from": "tour",
+      "to": "arch",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "local-trust-certified-upwards",
+      "sources-and-shadows",
+      "signed-by-the-source",
+      "the-side-stories-of-php2shell",
+      "php-daily-2026-10-24",
+      "why-agent-loops-are-hard",
+      "a-pen-and-a-key"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.linkedin.com/pulse/publishers-may-fund-most-expensive-layer-capture-least-bert-kok-mba-lkgif",
+      "https://www.journalism.cuny.edu/2026/10/tow-knight-center-report-journalisms-future-ai-information/",
+      "https://php.oct.2026.newsroom.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Owning the stack is now a matter of choosing, not of spending.",
+      "why": "Where I disagree: own the stack."
+    },
+    {
+      "text": "One person sending feedback changed the product.",
+      "why": "Agents augment journalists; they do not replace them."
+    }
+  ],
+  "figures": [
+    {
+      "file": "kb-collage.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/kb-collage.webp",
+      "caption": "What we have built, in twelve pages, from this newsroom's front page to Pulse.",
+      "kind": "collage"
+    },
+    {
+      "file": "kb-post.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/kb-post.webp",
+      "caption": "Bert Kok's post on LinkedIn, 25 October 2026, sharing the essay for The News Stack.",
+      "kind": "aside"
+    },
+    {
+      "file": "kb-comment.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/kb-comment.webp",
+      "caption": "A reply under Bert Kok's post, 25 October 2026, about building MVPs for capturing, linking and monetising story data.",
+      "kind": "aside"
+    }
+  ]
+}

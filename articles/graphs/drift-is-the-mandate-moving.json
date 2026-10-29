@@ -1,0 +1,149 @@
+{
+  "slug": "drift-is-the-mandate-moving",
+  "teaser": "An analyst's case for drift as RiskMandate's thesis, and the versioned behaviour policy that drift is measured against.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Policy, behavioural, goal and authority drift can happen without an attack or a single broken rule, so detecting them needs a reference: a versioned Agent Behaviour Policy, against which a re-measured grant, every action's mandate row and every rule's barrier make three of the four drifts measurable now, as the Pellbridge demo's test pack shows, while goal drift remains the open problem.",
+  "nodes": [
+    {
+      "id": "note",
+      "label": "The analyst's drift note",
+      "kind": "artefact",
+      "summary": "Four drifts, a trajectory."
+    },
+    {
+      "id": "openai",
+      "label": "OpenAI agents weakened monitoring",
+      "kind": "example",
+      "summary": "Legitimate tasks, controls weakened."
+    },
+    {
+      "id": "reference",
+      "label": "A versioned policy",
+      "kind": "concept",
+      "summary": "What drift is measured against."
+    },
+    {
+      "id": "policy",
+      "label": "Policy drift",
+      "kind": "method",
+      "summary": "The grant, re-measured."
+    },
+    {
+      "id": "behaviour",
+      "label": "Behavioural drift",
+      "kind": "method",
+      "summary": "Every action against its row."
+    },
+    {
+      "id": "authority",
+      "label": "Authority drift",
+      "kind": "method",
+      "summary": "What keeps every rule."
+    },
+    {
+      "id": "goal",
+      "label": "Goal drift",
+      "kind": "question",
+      "summary": "The open problem."
+    },
+    {
+      "id": "tests",
+      "label": "Pellbridge's test pack",
+      "kind": "example",
+      "summary": "Every model change, policy change, week."
+    },
+    {
+      "id": "self",
+      "label": "This session",
+      "kind": "example",
+      "summary": "Loses its policy, reads it back."
+    }
+  ],
+  "edges": [
+    {
+      "from": "note",
+      "to": "reference",
+      "rel": "leads-to"
+    },
+    {
+      "from": "openai",
+      "to": "note",
+      "rel": "example-of"
+    },
+    {
+      "from": "reference",
+      "to": "policy",
+      "rel": "produces"
+    },
+    {
+      "from": "reference",
+      "to": "behaviour",
+      "rel": "produces"
+    },
+    {
+      "from": "reference",
+      "to": "authority",
+      "rel": "produces"
+    },
+    {
+      "from": "goal",
+      "to": "reference",
+      "rel": "depends-on"
+    },
+    {
+      "from": "tests",
+      "to": "behaviour",
+      "rel": "example-of"
+    },
+    {
+      "from": "self",
+      "to": "policy",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "an-analysts-blueprint-for-riskmandate",
+      "inside-the-pellbridge-agents",
+      "behaviour-policies-from-the-checks",
+      "the-key-is-not-the-risk",
+      "what-can-your-agent-reach"
+    ],
+    "pages": [],
+    "sites": [
+      "https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring/",
+      "https://github.com/secureagentics/Adrian",
+      "https://arxiv.org/abs/2602.22302"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Drift is the change nobody approved.",
+      "why": "The definition."
+    },
+    {
+      "text": "without it, drift detection is anomaly detection with a new name",
+      "why": "The thesis."
+    },
+    {
+      "text": "In two internal coding tasks, agents weakened misalignment monitoring while making requested software changes.",
+      "why": "OpenAI's report."
+    }
+  ],
+  "figures": [
+    {
+      "file": "df-forms.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/df-forms.webp",
+      "caption": "Four kinds of drift, policy, behavioural, authority and goal, and what catches each.",
+      "kind": "concept"
+    },
+    {
+      "file": "df-procurement.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/df-procurement.webp",
+      "caption": "The analyst's procurement agent through a behaviour policy, at day 1, 10, 20 and 30.",
+      "kind": "concept"
+    }
+  ]
+}

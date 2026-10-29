@@ -10,7 +10,7 @@ tags: books, agents, workflows, gen-z-book, case-study, article
 status: published
 ---
 
-!shot gb-timeline.webp | images/ | One evening, one book site. Lanes for Dinis, the journalist, the librarian, the seven chapter writers, the storyboards, the editor with the synthetic readers, and the illustrator and designer, on a timeline from 21:27 on 18 October to 04:33 on 19 October, London time. The first release candidate lands at 01:47; the Gen ZX memo follows at 01:51 and the title decision at 02:06; the second release candidate, rewritten under the new frame, lands at 02:46. | timeline
+!shot gb-timeline.webp | images/ | One evening, one book site: a timeline of the work, from 21:27 on 18 October to 04:33 on 19 October, London time. | timeline
 
 ## In short {#in-short}
 
@@ -30,25 +30,25 @@ On 18 October I published six articles about a second edition of my 2018 book, w
 
 **The first edition, exactly as released.** v1.0.0 is the 2018 book: the 28 chapters that were published, in print order with their page numbers, the drafts and outlines kept apart, and a 139-page print PDF built in the repository and matched page by page to the one Leanpub made in 2018. It also has the links to Amazon and Leanpub, and the reviews on the Amazon listing.
 
-!shot gb-home.webp | images/ | The home page of gen-z-developers.sgit.ai at site v0.2.33: the 2018 cover, the lines from it, and four ways in: the second edition's release candidate, the first edition as published, the paperback on Amazon, and the free version on Leanpub. | screenshot
+!shot gb-home.webp | images/ | The home page of gen-z-developers.sgit.ai at site v0.2.33: the 2018 cover and four ways in. | screenshot
 
 **The new edition, as release candidates.** Release candidate 1 had 30 chapters in 9 parts, 50,607 words. Release candidate 2 has 41 chapters in 10 parts, 73,314 words, written from all 198 ideas in the register. Each chapter names the ideas and sources it was written from, and the build refuses one that cites something that does not exist. Where the sources run out, the chapter says so in a note to me; there are 47 of them, collected on [one page](https://gen-z-developers.sgit.ai/v2/book/for-dinis.html). A release candidate is frozen, so what I read cannot change behind me, and it is not a version until I sign it off.
 
-!shot gb-rc2.webp | images/ | The second edition's release candidate 2: Generation ZX Developers (GenAI Startup Edition), 41 chapters, 73,314 words, 198 ideas written in, 47 notes for Dinis; marked as a release candidate, not a version, and frozen. | screenshot
+!shot gb-rc2.webp | images/ | The second edition's release candidate 2: Generation ZX Developers (GenAI Startup Edition), marked as frozen. | screenshot
 
 **A reader with the meter in it.** The book can be read on the site with this newsroom's reading meter, a balance and a price per chapter, the graph of the chapter beside the text, a review mode, and a way to mark each chapter as read, to review or signed off. It is the first step towards [a book for one reader](/articles/a-book-for-one-reader.html), paid for as it is read.
 
-!shot gb-reader.webp | images/ | Reading release candidate 2 on the site: the contents on the left, the chapter in the middle, the chapter's graph on the right, and at the top the reading meter, the balance, the price of the chapter, and review mode. | screenshot
+!shot gb-reader.webp | images/ | Reading release candidate 2 on the site: contents, chapter and the chapter's graph, with the reading meter above. | screenshot
 
 **The book as a graph.** The librarian keeps the book as a graph: the 2018 files, the sources, the 198 ideas and the proposed chapters, 857 nodes and 1,742 edges, each idea with its state, from candidate to signed off, and its provenance.
 
-!shot gb-graph.webp | images/ | The book as a graph: 857 nodes and 1,742 edges, the 2018 book's files, the sources (articles and decisions) and the ideas, with filters for each idea's state and destination. | screenshot
+!shot gb-graph.webp | images/ | The book as a graph: 857 nodes and 1,742 edges, with filters for each idea's state and destination. | screenshot
 
 **Storyboards, infographics and covers.** Twelve storyboards with 160 panels and seven characters, drawn from data by code, to flick through before a chapter is written. Eighty-one proposed infographics, ten of them drawn. And three covers, each in every format Amazon and Leanpub take, reviewed by an art director agent whose rules became checks in the build: every word of the title readable at Amazon's thumbnail size, nothing in the barcode area.
 
 !shot gb-storyboards.webp | images/ | The storyboards: twelve storyboards, 160 panels and seven characters, all drawn from data, with the cast. | screenshot
 
-!shot gb-covers.webp | images/ | Three covers for Generation ZX Developers (GenAI Startup Edition), drawn by code into SVG, each in three formats: ZX, the book as a graph, and one letter more, the 2018 cover with an X added. | screenshot
+!shot gb-covers.webp | images/ | Three covers for Generation ZX Developers (GenAI Startup Edition), drawn by code into SVG, each in three formats. | screenshot
 
 ## The players {#players}
 
@@ -78,9 +78,9 @@ The loop is simple, and it is the same loop as this newsroom's:
 
 This is step five, the morning after: I printed release candidate 2 and am reading it with a pen.
 
-!shot gb-printed.webp | images/ | Release candidate 2, printed and spiral-bound on a café table the next morning, with a pen for marking it up: Generation ZX Developers, GenAI Startup Edition, second edition, release candidate v2.0.0-rc2, 19 October 2026, page 1 of 168. Photographed by Dinis. | photo
+!shot gb-printed.webp | images/ | Release candidate 2, printed and spiral-bound on a café table on 19 October 2026, photographed by Dinis. | photo
 
-!shot gb-decisions.webp | images/ | The decisions page: fifteen decisions in two days, each with who decided, what was said, what it means and what it supersedes, from 001 (the 2018 text is CC BY) to 014 (the title is Generation ZX Developers, GenAI Startup Edition) and 015. | screenshot
+!shot gb-decisions.webp | images/ | The decisions page: fifteen decisions in two days, each with who decided, what was said and what it supersedes. | screenshot
 
 And many of these run at the same time. While the journalist was writing articles from my memos, the storyboards were being drawn on another branch and the librarian was building the graph on a third; the release candidates were written by seven agents in parallel; the synthetic readers, the infographics and the covers each had a branch of their own. The timeline above shows it.
 
@@ -99,7 +99,7 @@ I could not have found that positioning before the first draft existed. Seeing t
 - **Honest feedback.** [The synthetic readers](https://gen-z-developers.sgit.ai/readers/index.html) said nobody would buy release candidate 2 today, and four of the five named the same condition: the chapters on actually forming the company.
 - **Reusing what the newsroom already has.** The meter, the themes, the version history, the synthetic-users method, the review records.
 
-!shot gb-readers.webp | images/ | Synthetic readers: invented readers who read release candidate 2 and are interviewed. Nobody would buy it today; four of the five would once the company chapters are written. Everything in the studies is invented; every quote a reader cites is checked against the chapter. | screenshot
+!shot gb-readers.webp | images/ | Synthetic readers: invented readers who read release candidate 2 and are interviewed. All of it is invented. | screenshot
 
 ## What is still open {#open}
 

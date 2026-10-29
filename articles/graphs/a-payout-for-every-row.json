@@ -1,0 +1,209 @@
+{
+  "slug": "a-payout-for-every-row",
+  "teaser": "Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "An insurer de-risks an action up to a limit under conditions, and an agent behaviour policy already has that shape, so the insurance should be one-to-one with it: each row it names has its own limit, each row it does not name is excluded, each enforced control lowers that row's premium by a deterministic factor while a line in the prompt earns nothing, the runtime is part of the price, and the premium starts near the cover for an uncontrolled agent and falls with every real control.",
+  "nodes": [
+    {
+      "id": "house",
+      "label": "A house against burglary",
+      "kind": "example",
+      "summary": "Conditions, a limit per item, exclusions, and a check at the claim."
+    },
+    {
+      "id": "abp",
+      "label": "The behaviour policy as rows",
+      "kind": "concept",
+      "summary": "Grant, mandate and delta: each reachable capability is a row."
+    },
+    {
+      "id": "delta",
+      "label": "The delta is uninsurable",
+      "kind": "claim",
+      "summary": "Reach outside the mandate is what no policy covers, by design."
+    },
+    {
+      "id": "row",
+      "label": "One row, one limit",
+      "kind": "method",
+      "summary": "£20,000 for corrupted records, £50,000 for leaked data, and so on."
+    },
+    {
+      "id": "formula",
+      "label": "A deterministic formula",
+      "kind": "method",
+      "summary": "Base rate times the factors of enforced controls times the runtime."
+    },
+    {
+      "id": "enforced",
+      "label": "Only enforced controls count",
+      "kind": "claim",
+      "summary": "A hook, a proxy or a removed grant earns a factor; a prompt line does not."
+    },
+    {
+      "id": "hooks",
+      "label": "3 of 12 against 12 of 12",
+      "kind": "example",
+      "summary": "The line alone against the line with a deny-all hook, in a drill."
+    },
+    {
+      "id": "max",
+      "label": "Start from the maximum",
+      "kind": "claim",
+      "summary": "Uncontrolled: £69,850 for £80,000 of cover; controlled: £6,720."
+    },
+    {
+      "id": "measured",
+      "label": "Insurers price what they measure",
+      "kind": "example",
+      "summary": "Black boxes for young drivers, medical underwriting, cyber scans."
+    },
+    {
+      "id": "runtime",
+      "label": "Where the agent runs",
+      "kind": "concept",
+      "summary": "A certified runtime lowers the price; an uncertified one raises it."
+    },
+    {
+      "id": "licence",
+      "label": "The licence to operate",
+      "kind": "artefact",
+      "summary": "Simulated in vault posrhzp3: band, ceiling, pool, premium."
+    },
+    {
+      "id": "vendors",
+      "label": "The vendors' share",
+      "kind": "question",
+      "summary": "Indemnities conditional on guardrails, performance guarantees, AIUC-1 cover."
+    },
+    {
+      "id": "next",
+      "label": "Who can underwrite this today?",
+      "kind": "question",
+      "summary": "The next article in the series, a research brief."
+    }
+  ],
+  "edges": [
+    {
+      "from": "house",
+      "to": "row",
+      "rel": "leads-to"
+    },
+    {
+      "from": "abp",
+      "to": "row",
+      "rel": "produces"
+    },
+    {
+      "from": "abp",
+      "to": "delta",
+      "rel": "produces"
+    },
+    {
+      "from": "row",
+      "to": "formula",
+      "rel": "depends-on"
+    },
+    {
+      "from": "enforced",
+      "to": "formula",
+      "rel": "extends"
+    },
+    {
+      "from": "hooks",
+      "to": "enforced",
+      "rel": "example-of"
+    },
+    {
+      "from": "formula",
+      "to": "max",
+      "rel": "produces"
+    },
+    {
+      "from": "runtime",
+      "to": "formula",
+      "rel": "extends"
+    },
+    {
+      "from": "measured",
+      "to": "formula",
+      "rel": "compared-with"
+    },
+    {
+      "from": "licence",
+      "to": "formula",
+      "rel": "example-of"
+    },
+    {
+      "from": "vendors",
+      "to": "row",
+      "rel": "extends"
+    },
+    {
+      "from": "max",
+      "to": "next",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-riskmandate-roadmap",
+      "what-can-your-agent-reach",
+      "governs-enforces-attests",
+      "approved-business-mandates",
+      "an-agent-that-may-only-chat",
+      "underwriting-the-agent-economy-reviewed"
+    ],
+    "pages": [
+      "articles/data/a-payout-for-every-row__worked-example.json"
+    ],
+    "sites": [
+      "https://sgit.ai/demos/vaults/licence-to-operate/index.html",
+      "https://riskmandate.ai/licence-to-operate.html",
+      "https://riskmandate.ai/insurance.html",
+      "https://www.howdeninsurance.co.uk/personal/home/home-insurance/guides/single-article-limit/",
+      "https://moneysupermarket.com/home-insurance/house-locks",
+      "https://www.ingenie.com/how-it-works",
+      "https://www.howdeninsurance.co.uk/personal/motor/young-driver/guides/black-box-insurance-myths/",
+      "https://www.coalitioninc.com/blog/risk-engineering-at-coalition-collaboration-to",
+      "https://www.munichre.com/en/solutions/for-industry-clients/insure-ai/faq.html",
+      "https://fortune.com/2025/07/23/ai-agent-insurance-startup-aiuc-stealth-15-million-seed-nat-friedman/",
+      "https://blogs.microsoft.com/on-the-issues/2023/09/07/copilot-copyright-commitment-ai-legal-concerns/",
+      "https://intercom.help/fin4all/en/articles/11645601-what-is-the-fin-guarantee",
+      "https://elevenlabs.io/blog/aiuc-announcement"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "It may be good practice; it is not a control an insurer can price.",
+      "why": "The rule that decides what counts as a control."
+    },
+    {
+      "text": "That is not a weakness of the idea. It is the idea.",
+      "why": "Exclusion is the design, not the flaw."
+    }
+  ],
+  "figures": [
+    {
+      "file": "pr-rows.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pr-rows.webp",
+      "caption": "One agent's behaviour policy as an insurance policy: a limit, controls and a premium per row. Illustrative.",
+      "kind": "comparison"
+    },
+    {
+      "file": "pr-house.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pr-house.webp",
+      "caption": "A home contents policy and an agent behaviour policy, question by question.",
+      "kind": "comparison"
+    },
+    {
+      "file": "pr-walk.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pr-walk.webp",
+      "caption": "The annual premium for £80,000 of cover as enforced controls are added, one at a time. Illustrative.",
+      "kind": "comparison"
+    }
+  ]
+}

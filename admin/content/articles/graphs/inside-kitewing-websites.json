@@ -1,0 +1,32 @@
+{
+ "slug": "inside-kitewing-websites",
+ "teaser": "Inside Kitewing Websites: a made-up studio and three made-up client sites, built as vault apps, each one file and each different.",
+ "topics": ["vaults-and-method", "startups-and-strategy"],
+ "core_idea": "A made-up studio, Kitewing Websites, and three made-up client sites in different industries, a potter's catalogue, a community garden and a plumber's guides library, show the websites-you-own model in practice: each is one self-contained HTML file with its data in JSON, changeable by asking an agent, and built as an sgit vault app, with the studio's vault holding the examples.",
+ "nodes": [
+  {"id": "studio", "label": "Kitewing Websites", "kind": "example", "summary": "The one-off offer, stated."},
+  {"id": "pottery", "label": "Tidewrack Studio Pottery", "kind": "example", "summary": "28 pieces, no checkout."},
+  {"id": "garden", "label": "Fennick Lane Community Garden", "kind": "example", "summary": "Events, rota, 14 guides."},
+  {"id": "plumber", "label": "Quillon Heat & Plumbing", "kind": "example", "summary": "A map and 19 guides."},
+  {"id": "file", "label": "One file, data beside it", "kind": "method", "summary": "No external requests."},
+  {"id": "edit", "label": "Changed by asking", "kind": "method", "summary": "Edits to content.json."},
+  {"id": "vaults", "label": "A vault in a vault", "kind": "method", "summary": "Pushed, public read keys published."}
+ ],
+ "edges": [
+  {"from": "pottery", "to": "studio", "rel": "example-of"},
+  {"from": "garden", "to": "studio", "rel": "example-of"},
+  {"from": "plumber", "to": "studio", "rel": "example-of"},
+  {"from": "file", "to": "studio", "rel": "depends-on"},
+  {"from": "edit", "to": "file", "rel": "depends-on"},
+  {"from": "vaults", "to": "file", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["websites-you-own", "inside-the-no-server-studio", "your-own-newsroom", "the-homepage-is-a-vault"],
+  "pages": [],
+  "sites": ["https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/index.html"]
+ },
+ "quotes": [
+  {"text": "A vault in a vault:", "why": "In short."},
+  {"text": "That is the handover the studio sells.", "why": "How each one is made."}
+ ]
+}

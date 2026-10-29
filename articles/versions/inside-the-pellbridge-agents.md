@@ -10,13 +10,14 @@
 
 # Versions of: Inside the Pellbridge agents
 
-2 published versions of [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](../inside-the-pellbridge-agents.md). The current one is **v1.1.0**.
+3 published versions of [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](../inside-the-pellbridge-agents.md). The current one is **v1.2.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-20 | minor | 3,503 | +1,258 / −0 words; 2 changed, 28 added, 0 removed paragraphs | [`d54a7ab8d`](https://github.com/SGit-AI/SGit-AI__Website/commit/d54a7ab8d727dbe1c649b2791a561f312d7708ca) | [what changed](inside-the-pellbridge-agents/v1.1.0.md) · [current](../inside-the-pellbridge-agents.md) |
+| **v1.2.0** | 2026-10-27 | minor | 3,327 | +0 / −176 words; 9 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](inside-the-pellbridge-agents/v1.2.0.md) · [current](../inside-the-pellbridge-agents.md) |
+| **v1.1.0** | 2026-10-20 | minor | 3,503 | +1,258 / −0 words; 2 changed, 28 added, 0 removed paragraphs | [`d54a7ab8d`](https://github.com/SGit-AI/SGit-AI__Website/commit/d54a7ab8d727dbe1c649b2791a561f312d7708ca) | [what changed](inside-the-pellbridge-agents/v1.1.0.md) |
 | **v1.0.0** | 2026-10-20 | published | 2,245 | first published | [`964bd8adb`](https://github.com/SGit-AI/SGit-AI__Website/commit/964bd8adb136c648dbff1c6fcf096f7a2a96e8a0) |  |
 
 [← Back to the article](../inside-the-pellbridge-agents.md) · [All articles](../index.md)

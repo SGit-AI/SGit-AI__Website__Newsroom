@@ -18,6 +18,9 @@
  * under node. Everything that touches the page is below them, and writes data from the link with
  * textContent and never as HTML.
  *
+ * The list as a recipient sees it, in five views with what they have read, is for/list-views.js (card 086);
+ * renderList() below is the plain list, still used by the preview on /for/make.html.
+ *
  * @module reading-list
  */
 
@@ -204,6 +207,15 @@ export function replyLink(p) {
     return h('a', { class: 'rl-btn', href: `mailto:${p.email}?subject=${subject}` }, p.from ? `Reply to ${p.from}` : 'Reply')
 }
 
+/** The personas and collections a list says to follow, as links. */
+export function followersOf(p, root = '') {
+    return p.follow.map(f => f.kind === 'persona'
+        ? h('a', { class: 'rl-follow', href: `${root}persona/${f.id}/`, style: f.theme ? `--pc:${f.theme}` : null },
+            h('b', {}, `Read as ${f.name}, ${f.label.charAt(0).toLowerCase()}${f.label.slice(1)}`), h('span', {}, f.blurb || ''))
+        : h('a', { class: 'rl-follow', href: `${root}articles/collections/${f.slug}.html` },
+            h('b', {}, `The collection: ${f.title}`), h('span', {}, 'Articles gathered on one question.')))
+}
+
 /**
  * The list as the recipient sees it. o: { root, price(entry) → pence, money(pence) → text, afterHeader: node,
  * preview: boolean }. Nothing in p is trusted as markup.
@@ -226,11 +238,7 @@ export function renderList(p, o = {}) {
     const first = (p.read.find(e => !e.withdrawn) || p.look.find(e => !e.withdrawn))
     const total = live.reduce((n, e) => n + price(e), 0)
     const reply = replyLink(p)
-    const followers = p.follow.map(f => f.kind === 'persona'
-        ? h('a', { class: 'rl-follow', href: `${root}persona/${f.id}/`, style: f.theme ? `--pc:${f.theme}` : null },
-            h('b', {}, `Read as ${f.name}, ${f.label.charAt(0).toLowerCase()}${f.label.slice(1)}`), h('span', {}, f.blurb || ''))
-        : h('a', { class: 'rl-follow', href: `${root}articles/collections/${f.slug}.html` },
-            h('b', {}, `The collection: ${f.title}`), h('span', {}, 'Articles gathered on one question.')))
+    const followers = followersOf(p, root)
     return h('section', { class: 'rl', 'aria-label': titleFor(p) },
         h('header', { class: 'rl-head' },
             h(o.level === 1 ? 'h1' : 'h2', { class: 'rl-title' }, titleFor(p)),
@@ -285,13 +293,20 @@ export async function openList(opts) {
     const price = e => meter.priceOf({ kind: 'article', date: e.date })
     const money = n => n >= 100 ? meter.money(n) : n === 0 ? '0p' : meter.pence(n)
     let state = null           // the persona this link made, and what the reader has done with it
+    let page = null            // the list as drawn, with refresh() for when the reading changes
+    const views = await import('./list-views.js')
+    // the reader's notes (done, later, not for me): the vault pane's module, which has no imports and touches no network
+    const notes = await import(`${opts.root}assets/vault-pane/notes.js`).catch(() => null)
+    const bySlug = new Map([...ctx.byNumber.values()].map(e => [e.slug, e]))
+    const extrasFor = new Map()
     // For a recipient the list is the page: its own heading replaces the page's, and the notes on how a link is made step aside.
     const pageHead = [...document.querySelectorAll('main.doc > p.eyebrow, main.doc > h1, main.doc > p.lead')]
     const docs = document.getElementById('rl-docs')
-    const listOnly = on => { for (const el of pageHead) el.hidden = on; if (docs) docs.hidden = on }
+    const listOnly = on => { for (const el of pageHead) el.hidden = on; if (docs) docs.hidden = on; mount.closest('main').classList.toggle('lv-wide', on) }
 
-    const show = () => {
+    const show = async () => {
         const p = parse(location.hash, ctx)
+        page = null
         listOnly(false)
         if (!p.given) { state = null; document.title = 'A reading list · newsroom.sgit.ai'; mount.replaceChildren(explainer(ctx, opts.root)); return }
         document.title = `${titleFor(p)} · newsroom.sgit.ai`
@@ -324,10 +339,25 @@ export async function openList(opts) {
                     h('button', { type: 'button', class: 'rl-btn', onclick: () => { state = { key, mode: 'visiting', id: visitList(meter, p).id }; paintBar() } }, 'Add it again')))
         }
         paintBar()
-        mount.replaceChildren(renderList(p, { root: opts.root, price, money, afterHeader: bar, level: 1 }))
+        const live = [...p.read, ...p.look].filter(e => !e.withdrawn)
+        const missing = live.filter(e => !extrasFor.has(e.slug))
+        if (missing.length) for (const [k, v] of await views.loadExtras(missing, opts.root)) extrasFor.set(k, v)
+        if (listKey(parse(location.hash, ctx)) !== key) return      // the link changed while the data loaded
+        const followers = followersOf(p, opts.root)
+        page = views.renderListPage(p, {
+            root: opts.root, price, money, bySlug, extras: extrasFor, notes, personaBar: h('section', { class: 'lv-card-side' }, h('h2', {}, 'This list, as a persona'), bar),
+            follow: followers.length ? h('section', { class: 'lv-card-side' }, h('h2', {}, 'To follow'), h('div', { class: 'rl-follows' }, followers)) : null,
+            ignored: p.ignored.length ? h('p', { class: 'rl-ignored' }, h('b', {}, 'Left out of this list: '), p.ignored.join('; '), '.') : null,
+        })
+        mount.replaceChildren(page.el)
     }
     show()
     window.addEventListener('hashchange', show)
+    // another tab read an article on the list, or the reader came back to this one: draw what they have read now
+    const again = () => { if (page) page.refresh() }
+    window.addEventListener('storage', e => { if (!e.key || /^sgit\.(reading|meter|notes)/.test(e.key)) again() })
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) again() })
+    window.addEventListener('pageshow', again)
 }
 
 /** What a reading list is, with an example, for a visitor who arrives with no list in the link. */

@@ -10,7 +10,7 @@ tags: llm, free-models, api-keys, cors, groq, gemini, mistral, openrouter, own-k
 status: published
 ---
 
-!shot fi-map.webp | images/ | Every free inference offer we checked on 18 October 2026, placed by two questions. Across: can a web page call the provider directly, with the reader's key? Up: can anyone start free without a card? Top right are Groq, Gemini through AI Studio, Mistral's free mode and OpenRouter's free models, with Cohere's trial and Pollinations; Alibaba Model Studio is there with a catch. Top left, free but needing a server in between: Cloudflare Workers AI, Z.ai and NVIDIA. Bottom, a card, credits or gone: Cerebras, Together, Hugging Face, Fireworks, DeepInfra, SambaNova and the retired GitHub Models. | comparison
+!shot fi-map.webp | images/ | Every free inference offer we checked on 18 October 2026, placed by two questions. | comparison
 
 ## In short {#in-short}
 

@@ -30,13 +30,14 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
       <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
       <a class="sl" href="../about/index.html">Why this exists</a>
       <a class="sl" href="../desks/index.html">The five desks</a>
@@ -86,6 +87,8 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -153,11 +156,13 @@
   <script src="../assets/reader/strip.js" defer></script>
   <script src="../assets/reader/highlights.js" defer></script>
   <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
   <div class="theme-pick"></div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / No server, by design: first I retired the database, now I am retiring the back end</p>
  <h1>No server, by design: first I retired the database, now I am retiring the back end</h1>
@@ -276,6 +281,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>Two voice memos of mine. I asked an agent in a separate Claude session to turn them into this article, with its figures and data, and to check every feature against the newsroom's and this site's own pages and repositories; this site's agent then rewrote it in the voice of this site, checked two things the draft could not confirm, and corrected them: the payment link was not set yet (the live top-up page was still the simulated cart; it went live later the same day, and the article now says so), and client-side sign-in is next, not shipped. The argument is mine, and so is the editorial responsibility. The release counts are from this site's git log as of 11 October 2026, counted before this release; the accepted gaps are SG Meter's security model, paraphrased. Sources: <a href="https://docs.diniscruz.ai/2025/05/27/lets__load-extract-transform-save__a-deterministic-and-debuggable-data-pipeline_architecture.html">LETS (Load, Extract, Transform, Save): a deterministic and debuggable data pipeline architecture</a>, May 2025; <a href="https://pypi.org/project/issues-fs/">Issues-FS</a> on PyPI; on the newsroom, <a href="https://newsroom.sgit.ai/databases/index.html">Databases with no server</a>, <a href="https://newsroom.sgit.ai/meter/security.html">SG Meter's security model</a> and <a href="https://newsroom.sgit.ai/">the newsroom</a>; on this site, <a href="where-the-vault-keys-live.html">Where the vault keys live</a>, <a href="encrypted-memory-for-isolated-agents.html">Encrypted memory for agents that run somewhere else</a>, <a href="a-link-to-a-persona.html">A link to a persona</a>, <a href="pay-to-keep-your-persona.html">Pay to keep your persona</a>, <a href="going-live-with-the-reading-meter.html">Going live with the reading meter</a>, <a href="pay-after-you-read.html">Pay after you read</a>, <a href="who-are-you-protecting-against.html">Who are you protecting against?</a>, <a href="every-mistake-added-a-rule.html">Every mistake added a rule</a>, <a href="how-to-run-synthetic-users.html">How to run synthetic users</a> and <a href="chat-on-a-static-site.html">A chat box on a site with no server</a>; and Martin Kleppmann, Adam Wiggins, Peter van Hardenberg and Mark McGranaghan, <a href="https://www.inkandswitch.com/local-first/">Local-first software: you own your data, in spite of the cloud</a>, Ink &amp; Switch, 2019.</p>
 <sg-meter view="page" kind="article" date="2026-10-11" topics="site-and-engineering vaults-and-method" title="No server, by design: first I retired the database, now I am retiring the back end, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Site &amp; engineering</span><span class="tchip">Vaults &amp; method</span> <a href="graphs.html#no-server-by-design">This article as a graph &rarr;</a></p>
@@ -311,7 +317,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="no-server-by-design.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="no-server-by-design.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -345,6 +351,8 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

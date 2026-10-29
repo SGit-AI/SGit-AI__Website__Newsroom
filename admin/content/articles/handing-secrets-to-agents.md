@@ -10,7 +10,7 @@ tags: secrets, pki, agents, browsers, sg-send, sgit, vaults, qr-codes, passkeys,
 status: published
 ---
 
-!shot ks-flow.webp | images/ | Handing a secret to an agent or a browser, without anyone seeing it: the recipient makes its own key pair and shows only the public half; the owner encrypts to it, signs and drops the ciphertext for one download; the recipient decrypts it straight into the tool that needs it. Steps 1 to 4 ran end to end on a local SG/Send server. | architecture
+!shot ks-flow.webp | images/ | Handing a secret to an agent or a browser without anyone seeing it. Steps 1 to 4 ran on a local SG/Send server. | architecture
 
 ## In short {#in-short}
 
@@ -63,7 +63,7 @@ A vault key is different. The whole point of a zero-knowledge vault is that decr
 
 ## What exists, and the name {#prior}
 
-!shot ks-prior.webp | images/ | One-time secret sharing, and what is different about handing one to an agent: where the secret is encrypted, whether it is read once, whether it expires, whether it is encrypted to the recipient's own key, and whether there is a command line, from each tool's documentation; the last row was run. | comparison
+!shot ks-prior.webp | images/ | One-time secret sharing tools compared with handing a secret to an agent, from each tool's documentation. | comparison
 
 One-time secrets are a solved problem for people: Bitwarden Send, 1Password's share links, Yopass and PrivateBin all encrypt in the client and expire. [Magic Wormhole](https://magic-wormhole.readthedocs.io/en/latest/welcome.html) solves the short code properly, with a key exchange where "Each code is one-time use only", and [age](https://github.com/FiloSottile/age) encrypts to a recipient's public key from the command line. What none of them is built around is a recipient that is an agent or a browser, making its own key, with an owner's signature it checks. The closest I found are small plugins for agent frameworks, such as Hermes' secret handoff, which keeps the value out of the transcript but, by its own account, not out of the chat history of the surface that asked for it.
 

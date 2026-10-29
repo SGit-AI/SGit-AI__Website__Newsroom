@@ -10,7 +10,7 @@ tags: riskmandate, agent-behaviour-policy, enterprise-ai, oversharing, due-dilig
 status: published
 ---
 
-!shot ga-gap.webp | images/ | One agent, three sets. The grant is everything the agent can actually reach through its credentials and connectors; the mandate is what the organisation authorised it to do; the delta is the difference, the authority nobody accepted. Each capability in the grant carries a barrier: nothing in the way, a rule in prose, a setting the agent's own account can change, or a boundary enforced above it. Only the last bounds anything. | concept
+!shot ga-gap.webp | images/ | One agent, three sets: the grant, the mandate and the delta, with a barrier on each capability in the grant. | concept
 
 ## In short {#in-short}
 
@@ -86,7 +86,7 @@ To make it something you can see rather than read, we built the refund as a twin
 
 ## How does it get into the room? {#room}
 
-!shot ga-doors.webp | images/ | Five ways into the room, each a question someone already has to answer: a contract, where legal and procurement ask what the vendor's agent will do with the data; a security questionnaire, where a customer asks which agents touch their data; an insurance renewal, where the question is whether AI is excluded from cover; the board's risk appetite, where the question is who can pull the plug; and twenty minutes, where anyone running an assistant asks what it can actually do. | concept
+!shot ga-doors.webp | images/ | Five ways into the room: a contract, a security questionnaire, an insurance renewal, the board and twenty minutes. | concept
 
 This is the hardest of the four points, and the one I agree with most. There really are two groups: the people who see how fast this is moving, and the much larger group who do not. The second group will not ask for an agent risk tool, because they do not see the risk. So I do not think the way in is to sell the need. It is to answer a question somebody already has, with a deadline, and that needs exactly this record.
 

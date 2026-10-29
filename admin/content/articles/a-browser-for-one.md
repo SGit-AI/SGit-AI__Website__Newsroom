@@ -10,7 +10,7 @@ tags: browsers, ios, webkit, newsroom, explorer-coding, villagers, brief, articl
 status: published
 ---
 
-!shot bo-app.webp | images/ | A browser for one, sketched on an iPhone. It opens on the newsroom where it was left, with tabs in a strip that hides as you read, read and unread marked, the vault open, an inbox of what the agents sent, and reading workflows as runs of tabs. Underneath: a native Swift shell around WebKit, a small bridge to the page, an offline cache, and a push sender. The first step is a test: do passkeys with the PRF extension work inside the app. | concept
+!shot bo-app.webp | images/ | A browser for one, sketched on an iPhone: tabs, the vault, an inbox from the agents, and reading workflows. | concept
 
 ## In short {#in-short}
 

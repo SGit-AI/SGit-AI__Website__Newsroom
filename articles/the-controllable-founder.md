@@ -10,11 +10,11 @@
 
 # The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.2.0, 3 versions](versions/the-controllable-founder.md) · [newsroom v0.12.83](https://newsroom.sgit.ai/admin/versions.html) · foundersstartupsinvestorsventure-capitalsurvivorship-biaswardley-mapscontroleuroperesearcharticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.3.0, 4 versions](versions/the-controllable-founder.md) · [newsroom v0.12.83](https://newsroom.sgit.ai/admin/versions.html) · foundersstartupsinvestorsventure-capitalsurvivorship-biaswardley-mapscontroleuroperesearcharticle
 
 ***Abstract:** We tend to explain success by studying the winners: they did this, this and this, so do the same. We rarely count the people who did exactly the same things and failed. My hypothesis is that, when an investor chooses between two founders with the same idea, drive and talent, one of the deciding factors is which one they believe they can control. The investor's relationship with the founder is financial, not emotional; the founder is a means to a return, and replaceable if needed. In Wardley terms, the investor moves the founder towards commodity, the way record labels moved performers once the songs, the producers and the distribution were the real assets. The research gets close to this without testing it directly. Investors prefer coachable founders, even though coachability does not reliably predict success. Venture contracts hand investors control when things go badly, and include clauses that make it expensive for founders to leave. Half of founders were no longer CEO three years in. The investors' answer is that control creates value, and the data partly backs them; but it measures valuations and exits, not the mission, and over the long run founder-led companies have returned more to shareholders. Strong-minded founders with strong ethics are the profile this selection filters out, and I propose how to test whether it does.*
 
-We study the survivors: of everyone who made the same moves, a few won and are studied; others were funded, did the same and failed; most did the same and were never funded. A risky practice can be unrelated to success across everyone and still look like its cause among survivors. Illustrative.
+Survivorship bias: those who won are studied, while others did the same and failed. Illustrative.
 
 Founders, investors and the fork
 
@@ -41,7 +41,7 @@ Jerker Denrell put this on a formal footing in 2003. In [Vicarious Learning, Und
 
 ## Who is the commodity
 
-Who is the commodity: in music, the songs, the producers, the venues and radio stay scarce while the performer is moved towards commodity; in venture, the investor's network stays scarce while the founder is moved the same way. A sketch of the argument, not a measured map.
+Who is the commodity: the performer in music and the founder in venture. A sketch of the argument, not measured.
 
 One way to say this is with a [Wardley map](why-i-love-wardley-maps.md). On the evolution axis, from genesis to commodity, where does the person sit? Record labels behave like investors: someone with capital chooses which artist to put it behind. And some of the most successful pop acts were not the best musicians, singers or performers. What I used to tell musician friends is: look at who is actually the talent. Often it was not the performer. It was the production, the access to venues and radio, and above all the songs.
 
@@ -61,7 +61,7 @@ The key line comes from the researchers themselves. Reviewing the evidence in 20
 
 ## Control is written into the contract
 
-Control moves with performance: when a company performs poorly, investors take full control; as it improves, the founder gains control; when it performs very well, investors keep their cash-flow rights but give up most control. A schematic of Kaplan and Strömberg's finding, not their data.
+Control moves with performance: a schematic of Kaplan and Strömberg's finding, not their data.
 
 You do not have to guess whether investors care about control. It is in the paperwork. Kaplan and Strömberg read [213 venture investments in 119 companies](https://doi.org/10.1111/1467-937X.00245). What distinguishes venture deals, they found, is that cash-flow, voting, board and liquidation rights are separated and allocated separately, often contingent on performance: "if the firm performs poorly, the VCs obtain full control. As performance improves, the entrepreneur retains/obtains more control rights. If the firm performs very well, the VCs retain their cash flow rights, but relinquish most of their control and liquidation rights." That last clause is what I call the big stick: once the founder, or the artist, can credibly say "I leave and you cannot replace me", the contract hands power back.
 
@@ -135,6 +135,7 @@ Startups & strategyNews & evidence[This article as a graph →](graphs.md#the-co
 
 ### Continued by
 
+- [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](investor-sgit-ai.md) A brief for investor.sgit.ai: investors and founders using our tools, with news, contracts as graphs, deal rooms as vaults and sgit as the case study.
 - [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](the-exit-is-when-you-sell-control.md) A founder's exit is the day someone else buys control, which can come long before the shares go. Leave then, and agree the terms at the start.
 - [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](a-small-slice-sets-the-price.md) The 2026 mega-listings priced trillion-dollar companies by selling a few per cent of them. What was sold, what it raised, and the founder's lesson.
 - [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](the-fork-next-door.md) Founders, customers and investors are each protected from the others because anyone can fork; forks take hold only after a breakdown.

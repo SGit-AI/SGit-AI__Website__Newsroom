@@ -1,0 +1,26 @@
+{
+ "title": "The PHP flaws: AI found them, a leak forced them out, and the web went offline",
+ "description": "A running investigation into the critical PHP vulnerabilities disclosed on 21 October 2026: what is known, who says so, and the evidence, captured, dated and hashed as the story moves.",
+ "status": "Developing",
+ "updated": "2026-10-22T08:20Z",
+ "lead_html": "Early on 22 October 2026, governments told organisations to <b>take websites offline</b> if they could not patch two critical flaws in PHP. PHP is the language behind WordPress, Wikipedia and a large share of the web. The flaws were found by researchers using frontier AI, and a fix was due in late October. Then the details leaked and the disclosure was rushed. This section follows the story as it develops, and it keeps the evidence: every source captured as we found it, dated and hashed, so that what was said today can still be checked when the pages change.",
+ "caveat_html": "<b>Developing, and agent-produced.</b> This page is assembled by software agents working from captured sources, and the editor is Dinis Cruz. Most of what is below is <i>reported</i>, often second-hand, and it is marked that way. Nothing here is advice on what to patch. For that, read the <a href=\"https://www.php.net/\" rel=\"noopener\">PHP project</a> and your national cyber-security agency.",
+ "known": [
+  {"html": "The flaws are in the PHP language itself. The NSA's cyber division calls them <q>two critical vulnerabilities</q>, and they could let an attacker run their own code on a web server without authenticating.", "sources": ["bbc-live-ckgel5xp2xv9t"]},
+  {"html": "The UK's NCSC, the NSA and their counterparts in the EU and Australia advise patching. <q>Where immediate remediation is not feasible</q>, they advise taking the system offline.", "sources": ["bbc-live-ckgel5xp2xv9t"]},
+  {"html": "Researchers at Calif found the flaws in August with OpenAI's models, under OpenAI's <i>Patch the Planet</i> initiative, which the PHP Foundation joined in July. Wiz and OpenAI found them independently shortly after.", "sources": ["bbc-live-ckgel5xp2xv9t"]},
+  {"html": "The coordinated disclosure broke down when basic details leaked. According to the PHP Foundation, as the BBC quotes it, Calif then <q>mistakenly published a video</q>. That forced the announcement forward.", "sources": ["bbc-live-ckgel5xp2xv9t"]},
+  {"html": "Estimates of the scale differ: <q>something like 30 million websites</q> (Alan Woodward) against <q>roughly 70%</q> of the internet (Wiz). The BBC says it could not verify the second figure.", "sources": ["bbc-live-ckgel5xp2xv9t"]},
+  {"html": "Sites reported as affected or taken offline include parts of Wikipedia, Edinburgh council, French government services, the University of Geneva and the BBC.", "sources": ["bbc-live-ckgel5xp2xv9t"]},
+  {"html": "As of 08:00 BST, the researcher who found the flaws said there was no evidence of exploitation yet. Probing has been reported (Amazon, Cloudflare), but only second-hand so far.", "sources": ["bbc-live-ckgel5xp2xv9t"]}
+ ],
+ "open_html": [
+  "The CVE numbers, the affected PHP versions and SAPIs, and the fixed releases. The primary advisory is being captured now.",
+  "Who leaked the details, where and when, and what exactly the deleted video showed. So far the accounts come from one party.",
+  "What the 70% and the 30 million figures are measured from, and why they differ so much.",
+  "Whether any site was actually exploited before it was taken offline or patched.",
+  "How the AI-assisted discovery worked. The researchers call it <q>a complex chain of steps, at the edge of what human researchers could practically achieve</q>. What did the model do, and what did the people do?",
+  "What this says about coordinated disclosure once AI can find flaws, and turn a leak into an exploit, faster than a patch can be shipped."
+ ],
+ "method_html": "<p>Every source is kept in a <b>private, encrypted sgit vault</b> that several agents and the editor write to. For each source the vault holds dated captures: the page as served, the page after it ran in a browser, its text, a full-page screenshot and the HTTP headers. Each file's sha256 is recorded at the moment of capture. Captures are only ever added, never edited or deleted, so a live page that changes leaves a series. Each source also has a short note on what it says and who says it, and every claim on this page points back to the sources that make it.</p><p>The captures are third-party pages, so they are not republished here. This page links to the originals and quotes them briefly, and the <a href=\"sources.html\">sources page</a> lists every capture with its hashes. Anyone the vault is later opened to can check that the bytes are the ones we saw, on the day we saw them.</p>"
+}

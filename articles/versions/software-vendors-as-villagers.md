@@ -10,13 +10,14 @@
 
 # Versions of: Software vendors should become villagers and town planners
 
-1 published version of [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](../software-vendors-as-villagers.md). The current one is **v1.0.0**.
+2 published versions of [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](../software-vendors-as-villagers.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-16 | published | 2,107 | first published | [`25f7ed3c9`](https://github.com/SGit-AI/SGit-AI__Website/commit/25f7ed3c90e43eb20fed9ceebddab0647c8f0ba9) | [current](../software-vendors-as-villagers.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,054 | +0 / −53 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](software-vendors-as-villagers/v1.1.0.md) · [current](../software-vendors-as-villagers.md) |
+| **v1.0.0** | 2026-10-16 | published | 2,107 | first published | [`25f7ed3c9`](https://github.com/SGit-AI/SGit-AI__Website/commit/25f7ed3c90e43eb20fed9ceebddab0647c8f0ba9) |  |
 
 [← Back to the article](../software-vendors-as-villagers.md) · [All articles](../index.md)
 

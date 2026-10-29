@@ -234,6 +234,7 @@ News & evidenceGraphs & knowledge[This article as a graph →](graphs.md#future-
 
 ### Continued by
 
+- [Capture first: how a BBC live page at breakfast became an evidence vault, a section here and a site of its own by lunchtime, for a story that was still changing as we covered it](capture-first.md) A BBC live page at breakfast became an evidence vault, a section and a dedicated site by lunchtime: capture first, because a breaking story's pages change by the hour.
 - [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](three-linkedin-pages.md) Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.
 - [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](i-just-want-to-buy-the-article.md) I tried to pay HBR for one article and was offered a subscription. The arithmetic says 24p to 55p; and ten things HBR could sell a reader like me.
 - [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](not-a-straight-line.md) Working on the newsroom solved RiskMandate's oldest problem in two days: progress is not a straight line, and the thinking is never wasted.

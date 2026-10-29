@@ -10,11 +10,11 @@
 
 # Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.0.0](versions/every-link-points-back.md) · [newsroom v0.12.24](https://newsroom.sgit.ai/admin/versions.html) · linksgraphscorrectionsversionsnavigationnewsroomanalysisreadingarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.1.0, 2 versions](versions/every-link-points-back.md) · [newsroom v0.12.24](https://newsroom.sgit.ai/admin/versions.html) · linksgraphscorrectionsversionsnavigationnewsroomanalysisreadingarticle
 
 ***Abstract:** I tend to write these articles in sequence, and I think of them as reading in sequence. Then I go back to one and realise there is no path from it to the next, because the earlier article cannot know what came after it. So we counted. Across the 105 articles on this site there are 566 links from one article to another, written into the text, and 551 of them point back in time. Only 15 point forward, and every one of those was added later, by an edit. 94 of the 105 articles are cited by a later one, 551 citations in all, and 11 of them are answered by a link the other way. Of 104 pairs of articles published one after the other, the later one links to the earlier one 42 times; the earlier one links to the later one 7 times. That is by design: a link is written when the article is written, and the future does not exist yet. The site already derives a Continued by list at the foot of every article, so the path exists, but it sits below the sources, it does not say why, and it treats a correction the same as a passing mention. Corrections matter most. We found three kinds: an article revised in place, which the version pages already show; a later article correcting an earlier one, of which there is one clear case and its earlier article does point to it; and the quieter one, a plan described in one article that a later article says has not happened. So this release adds What came next notes at the top of the four articles I wrote in a row today, and proposes four kinds of forward link, so that the graph of articles can be read in both directions.*
 
-Every link points back. The links written into the text of 105 articles to other articles, counted by article number: 551 of 566 point to an earlier article; of 551 later citations, 11 are answered by a link the other way; and of 104 pairs published one after the other, the later links the earlier six times as often as the reverse.
+Every link points back: links between 105 articles, counted by article number.
 
 ## In short
 
@@ -62,7 +62,7 @@ A forward link to a sequel is a convenience. A forward link to a correction is t
 
 ## Four kinds of forward link
 
-Four articles written in a row on 13 October: each was written with a link back, and none could link forward. This release adds a What came next note to the top of the first three. Below, the four kinds of forward link proposed, three at the top of the page and one at the foot.
+Four articles written in a row on 13 October, and the four kinds of forward link proposed.
 
 What I would like, for every article, is to be able to see what came after it, and to be told when something later changed what it says. Concretely:
 

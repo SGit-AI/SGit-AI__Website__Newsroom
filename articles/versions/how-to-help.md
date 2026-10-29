@@ -1,0 +1,27 @@
+# Versions of How to help, sgit.ai
+
+> Every published version of the article "How to help", with the date, the words and what changed.
+
+*Source: <https://newsroom.sgit.ai/articles/versions/how-to-help.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+
+---
+
+[Home](../../index.md) / [Articles](../index.md) / [How to help](../how-to-help.md) / Versions
+
+# Versions of: How to help
+
+2 published versions of [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](../how-to-help.md). The current one is **v1.1.0**.
+
+v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
+
+| Version | Date | Kind | Words | Change from the version before | Commit |  |
+|---|---|---|---|---|---|---|
+| **v1.1.0** | 2026-10-27 | minor | 1,527 | +0 / −87 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](how-to-help/v1.1.0.md) · [current](../how-to-help.md) |
+| **v1.0.0** | 2026-10-21 | published | 1,614 | first published | [`227de9287`](https://github.com/SGit-AI/SGit-AI__Website/commit/227de9287adcf6f5c55dd66e8935e9fb3aa979a2) |  |
+
+[← Back to the article](../how-to-help.md) · [All articles](../index.md)
+
+
+---
+
+*[Site index for agents](../../llms.txt) · [HTML version](https://newsroom.sgit.ai/articles/versions/how-to-help.html)*

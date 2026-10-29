@@ -1,0 +1,81 @@
+{
+ "slug": "what-sgit-does-that-git-does-not",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "Ten sgit releases turned minutes into seconds; an honest map against Git, corrected after the sgit CLI team's review.",
+   "para": "Between 3 and 27 October sgit shipped ten releases, each fixing a bottleneck real work found, and on 28 October 0.27.0 closed six of Git's eighteen leads. The ideas came from MGraph-DB, Memory-FS, content-address caching and the writer pays. The article maps what Git lacks, what it shares, where Git still leads and what a host that reads nothing never can.",
+   "hash": "cc51b632ab3e"
+  },
+  "in-short": {
+   "line": "Ten releases, per-command speed-ups, the lineage, and a five-way verdict against Git, reviewed by the CLI team.",
+   "para": "Releases took commands from minutes to seconds. Git has no equivalent for a host that reads nothing, read keys, custody without access, vault-carried policy, blind writes or ranged folder reads. 0.27.0 closed line merges, partial commits, own-key signing, renames, blame and grep; Git still leads on rebase, bisect, deltas and hosted tools.",
+   "hash": "ec8724294270"
+  },
+  "releases": {
+   "line": "Each release fixed a bottleneck a real workload found, ending with pack mode, caches and index packs.",
+   "para": "Field reports from the PHP newsroom were reproduced and fixed. Pack mode cut a 1.6 GB clone from 827 to 95 seconds. In 0.25.0 a one-file commit went from 1,739 to 4.6 seconds on cli.sgit.ai's vault, 4 minutes to 9 on the newsroom's. 0.26.0 cut a pull from 566 to 31.7 seconds, under a profiler.",
+   "hash": "bcee529c4640"
+  },
+  "numbers": {
+   "line": "The speed-ups are per command, measured in stated settings, with one regression and a known price.",
+   "para": "The newsroom's full pass went from 57 to 35 minutes, mostly capture work. Synthetic numbers left the network out. The first status after the 0.25.0 upgrade took 18 minutes 23 seconds while the new cache read every file of a fresh 4.2 GB clone; 0.26.0 fixed it. First pushes and compactions are 35 to 50 seconds slower.",
+   "hash": "75eda5ddf695"
+  },
+  "lineage": {
+   "line": "The speed came from earlier work: MGraph-DB, Memory-FS, content-address caching, Type_Safe and the writer pays.",
+   "para": "MGraph-DB's two-way cross-references became index members mapping blobs to paths and files to commits. Memory-FS's lesson, read by offset, gave the pack store. Content addresses need no cache invalidation. Type_Safe parsing on reads caused the 0.24.0 slowness, so types stay at the writer. The writer pays once; readers skip the walk.",
+   "hash": "3d2febd689e6"
+  },
+  "framing": {
+   "line": "sgit's docs still call it git for encrypted vaults; the comparison should be what Git lacks.",
+   "para": "The Git framing helped when sgit was young: same verbs, same model. It now undersells sgit, because the interesting parts are those Git does not have. A row-by-row comparison against Git's and GitHub's own documentation gives four verdicts: no equivalent, Git has it too, Git is ahead, and next.",
+   "hash": "807c448b427d"
+  },
+  "only-sgit": {
+   "line": "Git has no equivalent for a host that reads nothing, read keys, mirrors, vault-carried policy and ranged reads.",
+   "para": "Privacy: encrypted metadata with a stated leak list, read keys as capability while writing is host-checked, rekey and move, and mirroring a vault without its key. Trust: policy enforced at clone and pull, rewinds refused, a secret guard, signed writer-built indexes. Storage: ranged folder clones, a cache read path, serve and publish, append lanes, agent writes, sealed files.",
+   "hash": "f515226b5b95"
+  },
+  "git-has-it": {
+   "line": "The memo over-claimed: Git has packs, partial, shallow and no-checkout clones, and named-file commits.",
+   "para": "Git's packs are delta-compressed and kept whole by default. clone --path resembles partial clone with sparse-checkout. Both commit some files, and since 0.27.0 sgit commits hunks too, with no persistent staging area. sgit has the history tools, and since 0.27.0 blame, grep, the pickaxe, renames and own-key signatures.",
+   "hash": "a423b265ef95"
+  },
+  "git-ahead": {
+   "line": "Six of Git's leads closed in 0.27.0; twelve remain, most designed",
+   "para": "sgit-ai 0.27.0 shipped line-level merges, partial commits, own-key signing, rename detection, blame and grep, each checked against Git: 4,500 merges byte-identical, 90 of 90 renames, 25 of 25 blames, 120 of 120 greps. Cherry-pick, hooks, rebase, bisect and worktrees are designed and next; deltas, GC and per-folder keys later; accounts and review go to a future server.",
+   "hash": "5305bddb249e"
+  },
+  "next": {
+   "line": "Reading one file from a pack vault with no clone, and websites served from vaults, are designed, not shipped.",
+   "para": "On normal vaults a file is four plain requests at the root, one more per folder, or one batch for a cached path; history log already runs with no clone. Pack vault reads by byte range with no clone are Phase 4. PROJECT-003 would move site files into vaults because history grows with generated files.",
+   "hash": "bed538cec5c1"
+  },
+  "workflows": {
+   "line": "Six jobs are hard in Git and natural in sgit today.",
+   "para": "Many agents each clone one folder of a huge vault, with out-of-scope commits refused. A reader gets read-only access with no account. An agent deposits into an inbox it cannot read. Indexes are trusted only under the vault's signature policy. A backup host mirrors a vault it cannot read. A vault's rules travel with every clone.",
+   "hash": "efd13db54681"
+  },
+  "limits": {
+   "line": "Timings are others' measurements, verdicts are against 0.26.0, and sgit's own docs are partly stale.",
+   "para": "The timings come from the CLI team, cli.sgit.ai and the newsroom, not re-run. Verdicts compare sgit-ai 0.26.0, and for Git's lead 0.27.0, with Git's and GitHub's documentation. The checks against Git are the CLI build agent's. No equivalent means the mainstream toolchain, not add-ons.",
+   "hash": "c16bc6891121"
+  },
+  "sources": {
+   "line": "sgit's release notes, cli.sgit.ai articles and docs, the CLI repository, the CLI team's review, PyPI, briefs, Git and GitHub docs.",
+   "para": "Sources include cli.sgit.ai's sgit-and-Git comparison, its 0.27.0 sign-off and the Git-parity roadmap, sgit's 0.24.0 to 0.26.0 notes, cli.sgit.ai's articles and docs, the CLI changelog and threat model, the CLI team's review of 28 October, PyPI, the PHP newsroom's briefs, and Git's and GitHub's documentation.",
+   "hash": "cc6ab451e8f0"
+  },
+  "limits-of-the-model": {
+   "line": "A few things are impossible when the host reads nothing, each with a client-side substitute.",
+   "para": "The host cannot search, diff, scan or merge content, so the client or a key-holding runner does. Nobody can take back what a reader has; sgit rotates forward. Per-folder permissions need per-folder keys. Metadata leaks can shrink, never vanish. Store optimisation and fast-forward enforcement move to the client, where the rewind guard ships.",
+   "hash": "540873e03935"
+  },
+  "review": {
+   "line": "The sgit CLI team reviewed the article against their code; it is corrected and extended.",
+   "para": "The 29-minute figure is sourced from cli.sgit.ai's notes and now attributed. Two claims were too strong: signatures prove a key holder, and indexes follow the vault's signature policy. Several were too weak: named-file commits, no-clone reads, rotation, mirroring, vault-carried policy, rewind refusal and the secret guard. Smaller dates and numbers were fixed.",
+   "hash": "85a28203162f"
+  }
+ }
+}

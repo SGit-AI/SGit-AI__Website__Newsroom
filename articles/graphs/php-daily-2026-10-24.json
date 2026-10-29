@@ -1,0 +1,142 @@
+{
+  "slug": "php-daily-2026-10-24",
+  "teaser": "Update 3: no confirmed victim after three days, a vendor claim withdrawn, a third flaw, and agents that review each other.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "By 24 October php2shell still had no confirmed victim and Sophos had withdrawn the only vendor claim of a break-in, while PHP disclosed a third flaw; the newsroom reorganised its agents into a pipeline where each stage reads the previous one, and the correspondent's first review caught nine misses, while a control room exposed the decisions still waiting on the editor.",
+  "nodes": [
+    {
+      "id": "novictim",
+      "label": "No confirmed victim",
+      "kind": "claim",
+      "summary": "Three days in, nobody says php2shell compromised it."
+    },
+    {
+      "id": "sophos",
+      "label": "Sophos withdraws",
+      "kind": "example",
+      "summary": "Scanning and failed attempts, no compromise."
+    },
+    {
+      "id": "third",
+      "label": "A third flaw",
+      "kind": "example",
+      "summary": "CVE-2026-115560 affects fully patched PHP."
+    },
+    {
+      "id": "pipeline",
+      "label": "A pipeline of agents",
+      "kind": "method",
+      "summary": "Researcher, curator, journalist, correspondent, graphs."
+    },
+    {
+      "id": "review",
+      "label": "Nine catches",
+      "kind": "example",
+      "summary": "The correspondent's first review of 94 verdicts."
+    },
+    {
+      "id": "control",
+      "label": "The control room",
+      "kind": "method",
+      "summary": "Every agent, the pipeline and the editor's queue."
+    },
+    {
+      "id": "wiki",
+      "label": "Wikipedia as a graph",
+      "kind": "method",
+      "summary": "364 revisions, statements joined to evidence."
+    },
+    {
+      "id": "waits",
+      "label": "Decisions waiting",
+      "kind": "claim",
+      "summary": "16 items wait on the editor."
+    }
+  ],
+  "edges": [
+    {
+      "from": "sophos",
+      "to": "novictim",
+      "rel": "example-of"
+    },
+    {
+      "from": "pipeline",
+      "to": "review",
+      "rel": "produces"
+    },
+    {
+      "from": "review",
+      "to": "third",
+      "rel": "produces"
+    },
+    {
+      "from": "control",
+      "to": "waits",
+      "rel": "produces"
+    },
+    {
+      "from": "wiki",
+      "to": "pipeline",
+      "rel": "depends-on"
+    },
+    {
+      "from": "control",
+      "to": "pipeline",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "php-october-at-8pm",
+      "php-daily-2026-10-23",
+      "who-maintains-the-php-you-run",
+      "patch-for-breakfast",
+      "a-team-frozen-in-time"
+    ],
+    "pages": [],
+    "sites": [
+      "https://php.oct.2026.newsroom.sgit.ai/views/state/v3/index.html",
+      "https://php.oct.2026.newsroom.sgit.ai/team/control/index.html",
+      "https://php.oct.2026.newsroom.sgit.ai/wikipedia/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The notes are material, never instructions.",
+      "why": "The agents became a pipeline."
+    },
+    {
+      "text": "the agents are fast, and the decisions are mine.",
+      "why": "What waits on me."
+    }
+  ],
+  "figures": [
+    {
+      "file": "u3-control.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/u3-control.webp",
+      "caption": "The PHP site's new control room, at release v0.17.3: data freshness, blocked agents, waiting items and the pipeline.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "u3-wikipedia.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/u3-wikipedia.webp",
+      "caption": "Wikipedia's PHP2Shell article, read by the PHP site as a fractal semantic graph, with its references and editors.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "u3-lens.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/u3-lens.webp",
+      "caption": "Prototype E, the lens, built from the live data of release v0.17.3. Not the live site.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "u3-appsec.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/u3-appsec.webp",
+      "caption": "The PHP site's application security section: the security advisories and the system's five trust zones.",
+      "kind": "screenshot"
+    }
+  ]
+}

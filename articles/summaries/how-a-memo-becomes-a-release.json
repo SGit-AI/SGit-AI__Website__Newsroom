@@ -1,0 +1,102 @@
+{
+ "slug": "how-a-memo-becomes-a-release",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 257,
+   "line": "How a memo becomes a release, end to end, and what a new session would lack.",
+   "para": "Every article starts as a voice memo and ends as a tagged release. The session researches, writes and runs its checks; GitHub validates, tests, tags and deploys. After v0.13.7: about 400 seconds in the session and 290 on GitHub, or about 720 in the session for a new article. The browser tests run twice, and several tools live only in this session.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 134,
+   "line": "Seven points: memo, session checks, GitHub checks, times, redundancy, where things live.",
+   "para": "A voice memo starts it. The session checks wording, summaries, sgit.ai's generator, the builders, 18 tests, phone width and a leak scan. GitHub validates and tests again, then tags and deploys: about 400 and 290 seconds, or 720 in the session for a new article. The browser tests could run only on GitHub. Several tools are not yet in the repository.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "write",
+   "label": "From voice to article",
+   "words": 197,
+   "line": "From voice to article.",
+   "para": "A memo is transcribed by Otter.ai and pasted into the writer's session. The writer reads earlier articles and briefs, researches primary sources, then writes the article, figures drawn by Node scripts, a graph with exact quotes, and a summary per section. The voice, shape and wording rules live in the articles README.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "local",
+   "label": "The checks in the session",
+   "words": 310,
+   "line": "The checks in the session, in order.",
+   "para": "wording.py and summaries --check; publish.py, which runs sgit.ai's generator and validator in a clone with this site's 135 article commits replayed; thirty-odd builders; validate.js; 18 tests side by side; a 390-pixel width check; and a leak scan of the staged diff, gated on its exit code. Then commit and push, if dev has not moved.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "ci",
+   "label": "The checks on GitHub",
+   "words": 201,
+   "line": "The checks on GitHub, and the path for majors.",
+   "para": "A push to dev runs validate and reader-tests side by side, then tag-release and deploy; if a check fails, nothing is tagged or deployed. Majors go to main by pull request, through major-gate, then major-release publishes a GitHub Release. Pull requests have their own queue. The writer then polls the live version until it appears.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "time",
+   "label": "How long each part takes",
+   "words": 201,
+   "line": "How long each part takes.",
+   "para": "v0.13.7, with no new article: about 402 seconds in the session and 291 on GitHub, down from 747 and 636. A new article still takes about 720 in the session, because its card and banner need all three sgit.ai page builds. The tests take about 170 seconds locally and 174 on GitHub. The writing itself is not counted.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "where",
+   "label": "What runs where, and what lasts",
+   "words": 185,
+   "line": "What runs where, and what lasts.",
+   "para": "The repository holds 47 builders, the tests and their runner, the workflow and the writing rules. GitHub holds runs, tags, releases and the site. Only this session has the release script, graph writer, figure helpers, width check and packages. Only this container has the behaviour policy, its hooks and the leak scan. sgit.ai is read only.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "redundancy",
+   "label": "What is redundant",
+   "words": 278,
+   "line": "What is redundant, and a proposed split.",
+   "para": "The 15 browser tests run in both places, though either stops a broken release, since nothing deploys until GitHub's pass. Proposal: the session runs what only it can, including the 3 Node tests and the leak scan, and GitHub the browser tests; both when assets or build code change. That saves about 165 seconds on every release.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "new-session",
+   "label": "What a new session would have",
+   "words": 299,
+   "line": "What a new session would have, and what it would lack.",
+   "para": "GitHub's checks would be identical, from the repository. The session's would not: the release script, packages, sgit.ai clone, graph writer, figure helpers and width check would need rebuilding. More important, the leak scan and behaviour policy are not in the repository. Next step: move the shareable tools in, and keep the private lists outside.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 79,
+   "line": "What this does not claim.",
+   "para": "The times are two releases', measured on 21 October 2026. The split is a proposal; the session still runs all 18 tests. Moving the tools into the repository is not done yet. The writing time is not measured. The private lists stay private; the article says what they are for.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "diagrams",
+   "label": "The diagrams, as source",
+   "words": 654,
+   "line": "The diagrams, as Mermaid source.",
+   "para": "The five diagrams are Mermaid, rendered for the page: the flow, the GitHub jobs, the timings, where things live, and the proposed split. Their source is here to reuse or correct.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 89,
+   "line": "Where this comes from.",
+   "para": "A voice memo of 21 October 2026; the repository's build scripts, test runner, workflow and articles README; a release timed step by step in the session and GitHub's run for v0.13.7; and an inventory of the session's scratchpad and container.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

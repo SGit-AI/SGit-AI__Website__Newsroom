@@ -10,7 +10,7 @@ tags: knowledge-management, fractal-semantic-graphs, ontologies, taxonomies, bri
 status: published
 ---
 
-!shot kq-loop.webp | images/ | Knowledge that maintains itself. Sources kept in their own vocabularies; agents build and maintain the graph; people and agents are briefed from it; what looks odd is noticed and asked about; the fix lands at the right altitude; and each brief travels as a vault, scoped and encrypted to the one who needs it. | architecture
+!shot kq-loop.webp | images/ | Knowledge that maintains itself: sources, agents, graph, briefs and fixes, with each brief travelling as a vault. | architecture
 
 ## In short {#in-short}
 
@@ -32,7 +32,7 @@ Then you brief from the graph. A person joining a team, or an agent starting a t
 
 ## Briefing from the graph {#briefing}
 
-!shot kq-briefing.webp | images/ | Briefing from the graph, measured on this site. The 112 articles in full are about 704,000 tokens; their graphs as JSON with all their structure about 199,000; the graphs' text alone, teaser, core idea, nodes and edges, about 87,000. Below, what a graph gives that similarity search does not: the same answer to the same question, the path behind it, a diff of what changed, and a maintainer. | comparison
+!shot kq-briefing.webp | images/ | Briefing from the graph, measured on this site: the tokens in the articles, their graphs and the graphs' text alone. | comparison
 
 This site already works this way, so I measured it. Every article here has a graph, 8 to 18 nodes with typed edges, a teaser and a one-paragraph core idea, written with the article and checked by the validator on every release. Across the 112 articles there are 1,435 nodes and 1,538 edges. The articles' text, counted from their markdown, is about 704,000 tokens at four characters a token; the graphs as JSON, with every bracket and field name, about 199,000; the graphs' own words, teaser, core idea, node labels and summaries and the edges between them, about 87,000. That is 12.4% of the text, an eighth, and the median article's graph is 12.8% of the article.
 

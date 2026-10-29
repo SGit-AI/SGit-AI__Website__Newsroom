@@ -1,0 +1,46 @@
+{
+ "what": "The roster of newsroom.sgit.ai: every person, agent and scheduled run that works on it, and the independent reviewers that check it. One row per member; each has admin/content/agents/<id>/ROLE.md (what it is, when it has failed, its rules) and policy.json (the files it alone writes, the vaults it may hold), and admin/build/team.py draws /team/ and a page each from them and checks that no file is claimed by two members. A draft until the editor agrees each policy.",
+ "groups": [
+  {"id": "editor", "title": "The editor", "about": "Sets direction and makes the calls; every agent works for him."},
+  {"id": "writing", "title": "Writing", "about": "The articles and the newsletter, in the editor's voice."},
+  {"id": "building", "title": "Building the site", "about": "The build, the release, the reader's experience and the reader's vault."},
+  {"id": "wires", "title": "The wires and their cost", "about": "Industry news read live from vaults, and what each run costs."},
+  {"id": "review", "title": "Independent review", "about": "Reviewers from other vendors, and the two agents that run the review on the newsroom's side."}
+ ],
+ "members": [
+  {"id": "dinis-cruz", "handle": "Dinis Cruz", "name": "Dinis Cruz", "kind": "human", "group": "editor", "status": "active",
+   "line": "Editor and owner. Directs by voice memo, reads what the agents wrote and says go; holds the root key that vouches for every agent key.", "since": "the beginning", "byline": null, "cards": []},
+  {"id": "newsroom-writer", "handle": "@newsroom.writer", "name": "newsroom.writer", "kind": "agent", "group": "writing", "status": "active",
+   "line": "Writes the articles from the editor's voice memos, with the figures, graphs and summaries; corrects them when a review finds something.", "since": "13 October 2026, v0.12.16", "byline": "about/newsroom-writer.html", "cards": []},
+  {"id": "newsletter", "handle": "@newsletter", "name": "newsletter", "kind": "agent", "group": "writing", "status": "idle",
+   "line": "Writes the newsletter issues, reading every article an issue cites in full.", "since": "13 October 2026, v0.12.25", "byline": "about/newsletter.html", "cards": []},
+  {"id": "newsroom-dev", "handle": "@newsroom.dev", "name": "newsroom.dev", "kind": "agent", "group": "building", "status": "active",
+   "line": "Builds the site's functionality and release machinery: the PHP desk, reading lists, the Pen, the review tools.", "since": "22 October 2026, v0.13.40", "byline": "about/newsroom-dev.html", "cards": ["086", "087", "088", "089", "090", "091", "092", "093"]},
+  {"id": "newsroom-ux", "handle": "@newsroom.ux", "name": "newsroom.ux", "kind": "agent", "group": "building", "status": "idle",
+   "line": "The reader's experience: the bar, the themes, the front page, the reading strip, highlights.", "since": "13 October 2026, v0.12.12", "byline": "about/newsroom-ux.html", "cards": ["036", "037", "038", "063", "066", "073", "074"]},
+  {"id": "newsroom-vault", "handle": "@newsroom.vault", "name": "newsroom.vault", "kind": "agent", "group": "building", "status": "idle",
+   "line": "The reader's vault: the pane, the account between devices, the inbox and its lane, the shared viewer.", "since": "17 October 2026, v0.12.88", "byline": "about/newsroom-vault.html", "cards": ["058", "059", "077", "078", "079"]},
+  {"id": "newsroom-conductor", "handle": "@newsroom.conductor", "name": "newsroom.conductor", "kind": "agent", "group": "building", "status": "planned",
+   "line": "Would keep the site as a whole true: branches, versions, tests, deploy, and this team page. Specified on 14 October, never started.", "since": "", "byline": null, "cards": []},
+  {"id": "newsroom-wire", "handle": "@newsroom.wire", "name": "newsroom.wire", "kind": "agent", "group": "wires", "status": "idle",
+   "line": "Built the wires: the pages that read each wire's vault, the snapshot, the infographics pipeline, the first scheduled runs.", "since": "14 October 2026", "byline": null, "cards": []},
+  {"id": "wire-desks", "handle": "the wire desks", "name": "The wire desks", "kind": "scheduled", "group": "wires", "status": "active",
+   "line": "The scheduled sessions that write the wires' vaults and the newsroom's morning run, each costed.", "since": "14 October 2026", "byline": null, "cards": []},
+  {"id": "newsroom-accountant", "handle": "@newsroom.accountant", "name": "newsroom.accountant", "kind": "agent", "group": "wires", "status": "active",
+   "line": "Records what every run and picture cost, daily.", "since": "14 October 2026", "byline": null, "cards": ["071"]},
+  {"id": "newsroom-reviews", "handle": "@newsroom.reviews", "name": "newsroom.reviews", "kind": "agent", "group": "review", "status": "starting",
+   "line": "Runs independent review: signs each reviewer's brief and queue, takes what the security agent cleared, puts each finding to the editor.", "since": "28 October 2026", "byline": null, "cards": ["091", "092", "093"]},
+  {"id": "newsroom-security", "handle": "@newsroom.security", "name": "newsroom.security", "kind": "agent", "group": "review", "status": "planned",
+   "line": "Reads every file in a reviewer's public vault and signs a verdict before the newsroom takes any of it.", "since": "", "byline": null, "cards": ["092"]},
+  {"id": "openai-chatgpt", "handle": "openai-chatgpt", "name": "ChatGPT (OpenAI)", "kind": "reviewer", "group": "review", "status": "active",
+   "line": "Independent reviewer; works in its own public vault, gfzbzp41.", "since": "27 October 2026", "byline": null, "cards": []},
+  {"id": "perplexity", "handle": "perplexity", "name": "Perplexity", "kind": "reviewer", "group": "review", "status": "registered",
+   "line": "Independent reviewer to run on a schedule; nothing sent yet, no vault yet.", "since": "27 October 2026", "byline": null, "cards": []},
+  {"id": "anthropic-fable", "handle": "anthropic-fable", "name": "Claude Fable (Anthropic)", "kind": "reviewer", "group": "review", "status": "occasional",
+   "line": "Reviewer id for reviews run at the editor's request; its 18 October reviews are on the record.", "since": "18 October 2026", "byline": null, "cards": []}
+ ],
+ "related": [
+  {"title": "The PHP story site's team", "url": "https://team.php.oct.2026.newsroom.sgit.ai/team/", "about": "The agents of the PHP story site (php.oct.2026.newsroom.sgit.ai): a conductor, a fact-check desk, collectors, a researcher and others, each with a page, a policy and a task list. Its own roster."},
+  {"title": "The desk's six roles", "url": "newsroom/index.html#roles", "about": "The original editor, journalist, historian, designer, developer and contributor roles from sgit.ai, with the behaviour policies the policy checker reads."}
+ ]
+}

@@ -1,0 +1,212 @@
+{
+ "schema": "newsroom-review/v1",
+ "criteria": "v1.2",
+ "slug": "what-sgit-does-that-git-does-not",
+ "article_version": "v0.13.119",
+ "reviewer": "sgit-cli-team",
+ "kind": "agent",
+ "model": "Claude, in the sgit CLI team's session (SGit-AI__CLI)",
+ "run_by": "the sgit CLI team, passed on by the editor on 28 October 2026",
+ "at": "2026-10-28T01:00:00Z",
+ "verdict": "changes-needed",
+ "summary": "Accurate on the whole, and its honesty sections are mostly fair. One headline number is not in the CLI's records (29 minutes to 4.6 seconds); the line on signing since 0.19.0 is wrong the other way. Two claims are too strong in sgit's favour (signatures name a clone; every index is checked against a signed commit), and the article undersells sgit: partial commits, one file with no clone on a normal vault, key rotation, mirror, policy carried by the vault, rewind detection and the secret guard. Almost everything on the 'Git is ahead' list can be built client-side; what cannot is what needs the host to read, and taking back data a reader has.",
+ "checks": {
+  "facts": {
+   "result": "issues",
+   "notes": "Checked against SGit-AI__CLI at 640069a: the source, sgit --help for every command group, CHANGELOG.md, the threat model and the response notes under team/humans/dinis_cruz/claude-code-web/10/. Numbers from the newsroom's briefs and cli.sgit.ai were marked external, not contradicted."
+  },
+  "claims": {
+   "result": "issues",
+   "notes": "Two claims overstated in sgit's favour (TM-R01, TM-R42); several capabilities understated or missing."
+  },
+  "voice": {
+   "result": "not-checked",
+   "notes": "Not reviewed."
+  },
+  "conversions": {
+   "result": "not-checked",
+   "notes": "Not reviewed."
+  },
+  "health": {
+   "result": "not-checked",
+   "notes": "Not reviewed."
+  },
+  "people": {
+   "result": "not-checked",
+   "notes": "Not reviewed."
+  }
+ },
+ "findings": [
+  {
+   "id": "f1",
+   "criterion": "facts",
+   "severity": "high",
+   "section": "releases",
+   "quote": "On a 76,000-file vault, a one-file commit went from 1,739 seconds to 4.6.",
+   "issue": "The 29-minute figure is not in the CLI CHANGELOG or any note in the CLI repository. The 0.25.0 record has a one-file commit going from 4 min on the newsroom's 79,465-file vault, and 47 min for the first commit on the 228,000-file synthetic vault, to 9 s.",
+   "verification": "unsupported",
+   "evidence": "SGit-AI__CLI at 640069a (branch claude/charming-babbage-5hzcxq, same code as dev), read 28 October 2026",
+   "suggestion": "Source it, or use the CLI record's figures."
+  },
+  {
+   "id": "f2",
+   "criterion": "facts",
+   "severity": "medium",
+   "section": "limits",
+   "quote": "though commits have been signed since 0.19.0",
+   "issue": "Commits were signed (ECDSA P-256, per clone key) long before October. 0.19.0 fixed the canonical signing input and added verification (check verify, fsck) and signatures-required on pull.",
+   "verification": "contradicted",
+   "evidence": "SGit-AI__CLI at 640069a (branch claude/charming-babbage-5hzcxq, same code as dev), read 28 October 2026",
+   "suggestion": "Say signed for months, verified since 0.19.0."
+  },
+  {
+   "id": "f3",
+   "criterion": "facts",
+   "severity": "low",
+   "section": "numbers",
+   "quote": "The first status after upgrading to 0.25.0 took 18 minutes 23 seconds",
+   "issue": "It was the first status after a fresh clone (a 4.2 GB pack clone, nearly all of it disk wait), not after an upgrade.",
+   "verification": "inconsistent",
+   "evidence": "SGit-AI__CLI at 640069a (branch claude/charming-babbage-5hzcxq, same code as dev), read 28 October 2026",
+   "suggestion": "Say after a fresh clone on 0.25.0."
+  },
+  {
+   "id": "f4",
+   "criterion": "facts",
+   "severity": "low",
+   "section": "releases",
+   "quote": "A fix on a branch, planned for 0.26.1",
+   "issue": "Since the CI change of 27 October, dev publishes it as the pre-release 0.26.1.dev0; it ships in the next release from main.",
+   "verification": "stale",
+   "evidence": "SGit-AI__CLI at 640069a (branch claude/charming-babbage-5hzcxq, same code as dev), read 28 October 2026",
+   "suggestion": "Say on dev as 0.26.1.dev0, in the next release."
+  },
+  {
+   "id": "f5",
+   "criterion": "claims",
+   "severity": "medium",
+   "section": "releases",
+   "quote": "signed commits checked on every client",
+   "issue": "On every sgit client, and only when the vault turns on signatures-required. The web UI and old clients do not enforce it (TM-R26).",
+   "verification": "overstated",
+   "evidence": "SGit-AI__CLI at 640069a (branch claude/charming-babbage-5hzcxq, same code as dev), read 28 October 2026",
+   "suggestion": "Qualify."
+  },
+  {
+   "id": "f6",
+   "criterion": "claims",
+   "severity": "medium",
+   "section": "only-sgit",
+   "quote": "The honest edge: sgit's host still sees sizes, timing and object counts, and in pack mode which commit each push carried.",
+   "issue": "The leak list is short: the host also sees tree equality (deterministic tree encryption), compressibility under blob-deflate, index pack sizes, which blobs share a folder in path-ordered packs, and which ranges a scoped clone reads.",
+   "verification": "overstated",
+   "evidence": "SGit-AI__CLI at 640069a (branch claude/charming-babbage-5hzcxq, same code as dev), read 28 October 2026",
+   "suggestion": "Add the missing items."
+  },
+  {
+   "id": "f7",
+   "criterion": "claims",
+   "severity": "high",
+   "section": "only-sgit",
+   "quote": "A read key is a capability, not a permission.",
+   "issue": "Reading is a capability; writing is a permission the host checks. A read-key holder with store write access can author history that check verify calls verified (TM-R01, the top accepted risk). A signature proves a key holder, not a particular clone.",
+   "verification": "overstated",
+   "evidence": "SGit-AI__CLI at 640069a (branch claude/charming-babbage-5hzcxq, same code as dev), read 28 October 2026",
+   "suggestion": "Add TM-R01 in one line, in the read-key bullet and the identity row."
+  },
+  {
+   "id": "f8",
+   "criterion": "claims",
+   "severity": "medium",
+   "section": "only-sgit",
+   "quote": "are checked against the commit and its signature before use",
+   "issue": "An unsigned index is accepted unless the vault has signatures-required, and the snapshot index's flat member below the root is not checked by the reader (TM-R42).",
+   "verification": "overstated",
+   "evidence": "SGit-AI__CLI at 640069a (branch claude/charming-babbage-5hzcxq, same code as dev), read 28 October 2026",
+   "suggestion": "Say anchored to its commit and checked under the vault's signature policy."
+  },
+  {
+   "id": "f9",
+   "criterion": "facts",
+   "severity": "medium",
+   "section": "git-ahead",
+   "quote": "sgit refuses them by design",
+   "issue": "Whole-file partial commits exist: sgit write <path> --file F [--also P:F] [--push] commits named files atomically to HEAD, leaving other edits uncommitted.",
+   "verification": "contradicted",
+   "evidence": "SGit-AI__CLI at 640069a (branch claude/charming-babbage-5hzcxq, same code as dev), read 28 October 2026",
+   "suggestion": "Add sgit write."
+  },
+  {
+   "id": "f10",
+   "criterion": "claims",
+   "severity": "medium",
+   "section": "git-ahead",
+   "quote": "Most of it needs a host that can read the content",
+   "issue": "Blame, bisect, search, IDE support and most of review are client-side in Git too and can be built; sgit already has history log --grep/--since/--until/--author/--file/--patch/--stat, history diff, show and reflog.",
+   "verification": "overstated",
+   "evidence": "SGit-AI__CLI at 640069a (branch claude/charming-babbage-5hzcxq, same code as dev), read 28 October 2026",
+   "suggestion": "Say which parts need a host that reads and which can be built."
+  },
+  {
+   "id": "f11",
+   "criterion": "facts",
+   "severity": "low",
+   "section": "next",
+   "quote": "a file is four plain GETs of fixed paths",
+   "issue": "Four only for a file at the root; one more per folder on the path. For paths declared with sgit cache add, one batch request.",
+   "verification": "inconsistent",
+   "evidence": "SGit-AI__CLI at 640069a (branch claude/charming-babbage-5hzcxq, same code as dev), read 28 October 2026",
+   "suggestion": "Qualify."
+  },
+  {
+   "id": "f12",
+   "criterion": "claims",
+   "severity": "low",
+   "section": "releases",
+   "quote": "A pull of a 300-file pass on 228,000 files went from 566 to 31.7 seconds",
+   "issue": "Measured under cProfile, which inflates absolute times; the ratio stands. 31.7 to 16.9 s was a plain run.",
+   "verification": "style",
+   "evidence": "SGit-AI__CLI at 640069a (branch claude/charming-babbage-5hzcxq, same code as dev), read 28 October 2026",
+   "suggestion": "Note the profiler."
+  },
+  {
+   "id": "f13",
+   "criterion": "claims",
+   "severity": "medium",
+   "section": "only-sgit",
+   "quote": "Encrypt a file to a person, inside the store.",
+   "issue": "The article misses several things Git has no equivalent for: vault mirror (custody without access), policy carried by the vault and enforced at clone and pull, rewind detection on every clone, the secret guard, write --push --json, serve and publish, and the cache layer. It also misses key rotation (rekey, move).",
+   "verification": "unsupported",
+   "evidence": "SGit-AI__CLI at 640069a (branch claude/charming-babbage-5hzcxq, same code as dev), read 28 October 2026",
+   "suggestion": "Consider adding them."
+  },
+  {
+   "id": "f14",
+   "criterion": "facts",
+   "severity": "low",
+   "section": "only-sgit",
+   "quote": "sgit's cannot be revoked after the fact",
+   "issue": "Add the remedy sgit ships: vault rekey and vault move rotate the key going forward. Git and GitHub cannot revoke an existing clone either.",
+   "verification": "style",
+   "evidence": "SGit-AI__CLI at 640069a (branch claude/charming-babbage-5hzcxq, same code as dev), read 28 October 2026",
+   "suggestion": "Add rekey and move."
+  }
+ ],
+ "verified": [
+  "Ten releases, 0.17.0 to 0.26.0, PyPI dates",
+  "One-folder clone of a pack vault 36 s to 2.8 s, 12.5 MB against 88 MB",
+  "First push and compaction 35 to 50 s slower in 0.26.0",
+  "Type_Safe parsing about 3 ms a tree in 0.24.0",
+  "Append lanes have no sgit command",
+  "Byte-range scoped clone on pack vaults, objects verified by hash",
+  "Whole-file merges with conflict files; no rename detection",
+  "Format 1 ids 48-bit, format 2 128-bit opt-in",
+  "Shallow clones exist (--depth, fetch --unshallow)"
+ ],
+ "not_checked": [
+  "Numbers from the newsroom's own briefs (0.24.0 listing and clone; the researcher's 57 s a pack)",
+  "Numbers from cli.sgit.ai pages (the 1.3 s Memory-FS read; the 29-minute commit)",
+  "Whether the browser library reads pack vaults"
+ ],
+ "article_hash": "828e4d3673ca"
+}

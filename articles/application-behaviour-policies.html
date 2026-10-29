@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius, SGit Newsroom</title>
+<meta name="description" content="We write Agent Behaviour Policies to see what an agent can reach, what it was asked to do, and the gap between the two, because whoever takes the agent over inherits its reach and ignores its mandate. A remote code execution flaw does exactly that to an application. With php2shell, anyone on the internet who could only read a website's pages could, on an unpatched server, run commands as the website itself, with everything the website can reach. So the same method applies. An application behaviour policy writes down, for one application, what it can reach: its files, its database, its mail, its network, its secrets, the other systems that trust it; what it is for; the gap; the barrier in front of each row; and the blast radius of each row if the whole application were taken over, with whether there is a way back. Decision and workflow policies say who accepts that blast radius and in what order things happen. This matters today for a practical reason. Organisations took websites offline as a precaution, and the question in front of them now is not only whether they have patched. It is: if this site were taken over anyway, what would we lose? With the map, the decision to bring a site back is a decision about known rows, with the cheap ones cut first and the signals to watch named. The worked example is invented; the method, the PHP evidence and our own sites are not. Updated with the story site's compromise map: as of 20:50 UTC, millions of attempts, three vendors reporting exploitation without naming a victim, and no named organisation saying php2shell was the way in. That silence lowers the likelihood; it does not change the blast radius.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/application-behaviour-policies.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/application-behaviour-policies.html">
+<meta property="og:title" content="Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius, SGit Newsroom">
+<meta property="og:description" content="We write Agent Behaviour Policies to see what an agent can reach, what it was asked to do, and the gap between the two, because whoever takes the agent over inherits its reach and ignores its mandate. A remote code execution flaw does exactly that to an application. With php2shell, anyone on the internet who could only read a website's pages could, on an unpatched server, run commands as the website itself, with everything the website can reach. So the same method applies. An application behaviour policy writes down, for one application, what it can reach: its files, its database, its mail, its network, its secrets, the other systems that trust it; what it is for; the gap; the barrier in front of each row; and the blast radius of each row if the whole application were taken over, with whether there is a way back. Decision and workflow policies say who accepts that blast radius and in what order things happen. This matters today for a practical reason. Organisations took websites offline as a precaution, and the question in front of them now is not only whether they have patched. It is: if this site were taken over anyway, what would we lose? With the map, the decision to bring a site back is a decision about known rows, with the cheap ones cut first and the signals to watch named. The worked example is invented; the method, the PHP evidence and our own sites are not. Updated with the story site's compromise map: as of 20:50 UTC, millions of attempts, three vendors reporting exploitation without naming a victim, and no named organisation saying php2shell was the way in. That silence lowers the likelihood; it does not change the blast radius.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/application-behaviour-policies.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/application-behaviour-policies.jpg">
+<link rel="alternate" type="text/markdown" href="application-behaviour-policies.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius, SGit Newsroom", "headline": "Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius, SGit Newsroom", "description": "We write Agent Behaviour Policies to see what an agent can reach, what it was asked to do, and the gap between the two, because whoever takes the agent over inherits its reach and ignores its mandate. A remote code execution flaw does exactly that to an application. With php2shell, anyone on the internet who could only read a website's pages could, on an unpatched server, run commands as the website itself, with everything the website can reach. So the same method applies. An application behaviour policy writes down, for one application, what it can reach: its files, its database, its mail, its network, its secrets, the other systems that trust it; what it is for; the gap; the barrier in front of each row; and the blast radius of each row if the whole application were taken over, with whether there is a way back. Decision and workflow policies say who accepts that blast radius and in what order things happen. This matters today for a practical reason. Organisations took websites offline as a precaution, and the question in front of them now is not only whether they have patched. It is: if this site were taken over anyway, what would we lose? With the map, the decision to bring a site back is a decision about known rows, with the cheap ones cut first and the signals to watch named. The worked example is invented; the method, the PHP evidence and our own sites are not. Updated with the story site's compromise map: as of 20:50 UTC, millions of attempts, three vendors reporting exploitation without naming a victim, and no named organisation saying php2shell was the way in. That silence lowers the likelihood; it does not change the blast radius.", "url": "https://newsroom.sgit.ai/articles/application-behaviour-policies.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius</p>
+ <h1>Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-22 &middot; <a href="versions/application-behaviour-policies.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.45</a> &middot; <span class="chip">abp</span><span class="chip">php2shell</span><span class="chip">applications</span><span class="chip">blast-radius</span><span class="chip">appsec</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> We write Agent Behaviour Policies to see what an agent can reach, what it was asked to do, and the gap between the two, because whoever takes the agent over inherits its reach and ignores its mandate. A remote code execution flaw does exactly that to an application. With php2shell, anyone on the internet who could only read a website's pages could, on an unpatched server, run commands as the website itself, with everything the website can reach. So the same method applies. An application behaviour policy writes down, for one application, what it can reach: its files, its database, its mail, its network, its secrets, the other systems that trust it; what it is for; the gap; the barrier in front of each row; and the blast radius of each row if the whole application were taken over, with whether there is a way back. Decision and workflow policies say who accepts that blast radius and in what order things happen. This matters today for a practical reason. Organisations took websites offline as a precaution, and the question in front of them now is not only whether they have patched. It is: if this site were taken over anyway, what would we lose? With the map, the decision to bring a site back is a decision about known rows, with the cheap ones cut first and the signals to watch named. The worked example is invented; the method, the PHP evidence and our own sites are not. Updated with the story site's compromise map: as of 20:50 UTC, millions of attempts, three vendors reporting exploitation without naming a victim, and no named organisation saying php2shell was the way in. That silence lowers the likelihood; it does not change the blast radius.</em></p>
+<figure class="shot" data-shot="ay-grant.webp" data-dir="images/" data-alt="What a remote code execution flaw does to the grant: a visitor requests pages before, and runs commands after." data-kind="concept"><figcaption>What a remote code execution flaw does to the grant: a visitor requests pages before, and runs commands after.</figcaption></figure>
+<div class="note"><b>Updated at 21:30 UTC.</b> With the story site's new <a href="https://php.oct.2026.newsroom.sgit.ai/compromise/index.html">compromise map</a>: what it searched, what it found, three readings of the silence, and whether this is where everyone should be looking. The report that the fix might be incomplete has also been answered.</div>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>An exploit hands over the application's reach.</b> And ignores what it was for.</li>
+<li><b>So map the application like an agent.</b> Reach, mandate, gap, barrier, blast radius.</li>
+<li><b>Blast radius is defined over the reach.</b> Plus one more axis: is there a way back?</li>
+<li><b>Decision and workflow policies complete it.</b> Who accepts the risk, and in what order.</li>
+<li><b>This is the bring-back question.</b> Not only "have we patched?", but "what if it is taken over anyway?"</li>
+<li><b>Cut the cheap rows first.</b> Egress, credentials, mail, metadata, admin.</li>
+<li><b>Name the signals before you switch it on.</b> The footprint tells you when a row is being used.</li>
+<li><b>Millions of attempts, no named compromise.</b> A finding in itself, as of 20:50 UTC on 22 October.</li>
+<li><b>The silence lowers the likelihood, not the blast radius.</b> And it may be partly silence.</li>
+</ul>
+<h2 id="question">The question in front of the offline sites</h2>
+<p>On 22 October, organisations took websites offline as a precaution against <a href="https://newsroom.sgit.ai/articles/php-october-at-8pm.html">php2shell</a>, the two critical flaws in PHP: the Dutch national cyber security centre's own site, UK councils, a set of game wikis whose servers were off for 13 hours, and others in <a href="https://php.oct.2026.newsroom.sgit.ai/impact/index.html">the impact ledger</a> of the story's own site. Several government agencies advised exactly that for anyone who could not patch.</p>
+<p>Now they want them back. The obvious question is "have we installed the fix?", and it is necessary. It is not sufficient. The report that the fix might be incomplete was answered by PHP's security team on the morning of 22 October as an unrelated crash bug, but there will be another flaw after this one; and some sites run on versions of PHP that have no ready-made fix. The question that actually lets someone sign off a restore is a different one: if this website were completely taken over anyway, today, what would we lose, and could we get it back?</p>
+<p>Almost nobody can answer that quickly, because almost nobody has written down what their website can reach. That is the same problem we found with agents.</p>
+<h2 id="compromise">What the compromise map shows</h2>
+<figure class="shot" data-shot="ay-layers.webp" data-dir="images/" data-alt="From attempts to a named compromise, as of 20:50 UTC on 22 October, with the sources the PHP site watches behind it." data-kind="comparison"><figcaption>From attempts to a named compromise, as of 20:50 UTC on 22 October, with the sources the PHP site watches behind it.</figcaption></figure>
+<p>There is also a second half to the bring-back decision: how likely is the takeover? This evening the story's site published a page that answers that as well as anyone can today: <a href="https://php.oct.2026.newsroom.sgit.ai/compromise/index.html">the compromise map</a>. It takes one statement, "No named organisation has said it was compromised through php2shell", as of 20:50 UTC on 22 October, and lays out the evidence behind it, row by row: 33 statements, each with who said it, when, in their words, and where the capture is.</p>
+<p>What it searched is the part I want people to notice. The evidence vault's 184 sources. A source watch of 773 pages from 474 publishers in 57 countries and 34 languages, checked hourly, with 339 pages read in their own language. 3,444 news items scanned from 1,621 publishers. And 295 sites somebody had named as taken offline, probed every 30 minutes.</p>
+<p>And what it found, in layers:</p>
+<ul>
+<li><b>Attempts: millions.</b> Cloudflare's chief executive, Amazon, watchTowr, CERT.LV and others report attempts against sensors, honeypots and their edges.</li>
+<li><b>Exploitation reported, no victim named: three vendors.</b> Hadrian, Patchstack and Amazon say exploitation is happening. None names a victim.</li>
+<li><b>Named organisations saying they were attacked: one.</b> The Czech Technical University said it faced an attack that was "part of worldwide attempts to hit PHP sites", and that "the active attack was stopped". Whether it succeeded is not stated.</li>
+<li><b>Named organisations saying php2shell was the way in: none.</b> One Japanese company reported a break-in without stating a cause; another first blamed the PHP flaw, then corrected itself: the attackers had used a flaw in its own service.</li>
+<li><b>No success known.</b> CISA, the PHP Foundation, Huntress and the governments or national agencies of Germany, the Netherlands, Japan, Switzerland, Belgium and Austria say they know of no successful attack, each within what it can see.</li>
+<li><b>The official signals.</b> At 18:16 UTC, CISA's catalogue of known exploited vulnerabilities did not list either flaw. CISA's own assessment on the CVE records says exploitation: none; automatable: no; technical impact: total. And FIRST's exploit prediction score puts the modelled probability of exploitation activity in the next 30 days at 0.053 and 0.058.</li>
+</ul>
+<p>The page is careful, and so should we be: this is "a time-bounded absence, not a confirmed fact". One statement from one organisation would end it, and the page lists what would: a named organisation's own notice, a cause stated by the companies that reported incidents, a listing in the catalogue, a regulator's breach notice, a vendor naming a victim with consent.</p>
+<h2 id="silence">Three readings of the silence</h2>
+<p>Even so, I think it is an important finding. About 31 hours after the flaws were disclosed, with exploit attempts in the millions and, by one scanner's count on the day of the release, more than a million and a half hosts still unpatched, you would expect to see compromises. We do not. There are three readings, and they are not exclusive:</p>
+<ol>
+<li><b>The flaws are harder to use than they look.</b> The CVE records rate the attack complexity high, and the site's fact-check desk records the researchers' view that triggering the bug is much easier than turning it into code execution. Add the edge protections that went up within hours. If that is the explanation, the likelihood is lower than the 9.2 suggests, and so is the risk.</li>
+<li><b>Compromises are happening and not being disclosed.</b> Most organisations have no obligation to say quickly, and in public, that they were broken into; where a rule exists, it usually runs to a regulator first and in days, not hours. This is the same pressure I keep writing about with software companies, from <a href="https://newsroom.sgit.ai/articles/saas-apocalypse-decided-by-inertia-not-by-ai.html">the SaaS apocalypse</a> onwards: they have every reason to stay quiet if they can. It is also why I keep coming back to aviation, which, as I argued in <a href="https://newsroom.sgit.ai/articles/a-policy-beside-the-prompt.html">a policy beside the prompt</a>, got safe because crashes became news. In software, most crashes still do not.</li>
+<li><b>The attackers are quiet too.</b> That is the strange part. Mass exploitation is often noisy: defacements, ransom notes, botnets, sales of access. Quiet is what a careful attacker with a valuable target would choose, but it is not what we normally see.</li>
+</ol>
+<p>For the application behaviour policy, the conclusion does not depend on which reading is right. The silence lowers the likelihood; it does nothing to the blast radius. A site owner who reads the compromise map can reasonably decide that the probability of a takeover today is lower than the headlines suggested, and still has to know what a takeover would cost. And because public silence is not evidence that nothing happened to you, your own footprint is the only evidence that is about your site.</p>
+<h2 id="watching">Is this where everyone should be looking?</h2>
+<p>There is a wider question too. php2shell has had governments telling organisations to switch websites off, and live pages in the national press. In the same weeks, as I noted in <a href="https://newsroom.sgit.ai/articles/the-attack-surface-you-do-not-have.html">the attack surface you do not have</a>, CISA's catalogue was filling with flaws in VPN gateways, mail gateways and firewalls that were exploited, some as zero-days. If php2shell, with millions of attempts, has no named victim yet, while quieter flaws in edge devices are in the catalogue because they were used, then attention and actual exploitation may be pointing at different places. I am asking another researcher to collect the flaws of the last week and what is known about their exploitation, so we can answer that with data rather than impression.</p>
+<h2 id="method">The same method, a different subject</h2>
+<p>In <a href="https://newsroom.sgit.ai/articles/footprint-and-blast-radius.html">footprint and blast radius</a> we set out the words of an Agent Behaviour Policy. Reach is what the agent can do, measured. Mandate is what you asked it to do. The gap is the difference. The barrier in front of each row of the gap is typed honestly: a boundary, a setting, an expectation, or nothing. Footprint is what it actually did, read afterwards. And blast radius is what it would cost if a row were used in full, "defined over the reach, because whoever takes the agent over inherits its reach and ignores its mandate", with a second axis: whether there is a way back.</p>
+<p>Every one of those words fits an application:</p>
+<ul>
+<li><b>Reach</b> is what the application's process can do on the server: the files it can read and write, the database user it connects as, the mail it can send, the network it can open connections to, the secrets in its configuration, the cloud credentials on its machine, and the other systems that trust requests from it.</li>
+<li><b>Mandate</b> is what the website is for: serve these pages, accept this form, send this confirmation email, let these editors publish.</li>
+<li><b>The gap</b> is everything it can reach and does not need to. A website that serves pages and takes one form rarely needs to write its own code files, open connections to the internet, read the whole database, or send mail to anyone.</li>
+<li><b>The barrier</b> is what stops each row of the gap, typed the same way. A firewall rule outside the server is a boundary. A configuration setting the application's own user can change is a setting. A rule in a wiki is an expectation.</li>
+<li><b>Footprint</b> is the application's actual behaviour, read from its logs: what it connected to, what it wrote, what it sent.</li>
+<li><b>Blast radius</b> is what each row would cost if an attacker used it in full, and whether there is a way back.</li>
+</ul>
+<p>A remote code execution flaw shows it directly. Before it, an anonymous visitor's grant is tiny: request a page, submit a form. On an unpatched server, the same visitor runs commands as the application. Their grant becomes the application's reach. In <a href="https://newsroom.sgit.ai/articles/the-code-you-do-not-ship.html">the code you do not ship</a> I made the same point about code: every piece of it has its own grant, and it is "usually far larger than the policy above it". An exploit is the moment somebody else starts using the difference.</p>
+<h2 id="three">Three policies, not one</h2>
+<figure class="shot" data-shot="ay-three.webp" data-dir="images/" data-alt="Three policies for an application: behaviour, decision and workflow, with the gap and blast radius per row." data-kind="concept"><figcaption>Three policies for an application: behaviour, decision and workflow, with the gap and blast radius per row.</figcaption></figure>
+<p>For agents we use three kinds of policy, and an application needs all three:</p>
+<ul>
+<li><b>The behaviour policy</b> is the map: reach, mandate, gap, barriers and blast radius, row by row.</li>
+<li><b>The decision policy</b> says who decides what. Who may accept the blast radius of each row that stays open; who decides the site comes back; which actions inside the application need a person, such as creating an administrator or changing where payments go. <a href="https://newsroom.sgit.ai/articles/approved-business-mandates.html">Approved business mandates</a> made the point that companies already have these rules for people; the application has to follow them too.</li>
+<li><b>The workflow policy</b> says in what order things happen. For the bring-back: patch, map, cut, set the signals, decide, restore, watch. Inside the application: a form submission is stored, then a confirmation is sent, never the other way round, and nothing in that flow ever needs to write a code file.</li>
+</ul>
+<h2 id="example">A worked example</h2>
+<figure class="shot" data-shot="ay-map.webp" data-dir="images/" data-alt="An application behaviour policy for an invented council website on PHP: ten rows of reach, with the barrier and the cut." data-kind="comparison"><figcaption>An application behaviour policy for an invented council website on PHP: ten rows of reach, with the barrier and the cut.</figcaption></figure>
+<p>To make it concrete, here is an invented example: a council website running a PHP content management system on a virtual machine in a cloud. It serves pages, has a contact form and a search box, and a few editors publish news. Nothing here describes any real council. The rows are typical of how such sites are often set up, which is exactly why they are worth mapping:</p>
+<ol>
+<li><b>Serve pages; accept the contact form.</b> The mandate. If taken over: defacement and false notices. Way back: yes, redeploy.</li>
+<li><b>Write its own code files.</b> Not in the mandate; most sites only need to write uploads. If taken over: a persistent backdoor that survives the patch. Way back: only by rebuilding from a known-good source. Cut: make the code read-only to the web server's user.</li>
+<li><b>Read and write the whole database.</b> The configuration file holds a database user that can do everything. If taken over: every resident's form submission, every editor's password hash. Way back: none for data already read. Cut: a database user limited to what the site does, and old submissions moved out.</li>
+<li><b>Send mail as the council.</b> If taken over: phishing from a trusted domain. Way back: partial, after reputational damage. Cut: send through a relay that allows only the confirmation template, to the address on the form, at a set rate.</li>
+<li><b>Open connections to the internet.</b> If taken over: downloading tools, sending data out, joining a botnet. Cut: deny outbound traffic at the network, except to named services. This is the single cheapest row to cut, and the most useful.</li>
+<li><b>Reach the internal network.</b> If the server can see other council systems, a takeover is a foothold. Cut: put it in its own segment.</li>
+<li><b>Read the cloud's instance credentials.</b> On many clouds a process on a virtual machine can ask for the machine's credentials. If those can read storage or start machines, the blast radius is the cloud account. Cut: block or require tokens for the metadata service, and give the machine a role that can do almost nothing.</li>
+<li><b>Hold administrator sessions.</b> Editors log in on the same site. If taken over: their sessions and passwords. Cut: a separate administration host, or an administration path reachable only from the council's network.</li>
+<li><b>See the backups.</b> If backups are mounted on the server, an attacker can read or delete them. Way back depends on this row. Cut: backups pushed out, never readable back.</li>
+<li><b>Hold third-party keys.</b> A payment or mapping key in the configuration. If taken over: whatever that key allows. Cut: keys with the narrowest scope, or calls made from somewhere else.</li>
+</ol>
+<p>Read the table and the decision changes shape. Before the cuts, a takeover of this site is a data breach, a phishing campaign and possibly the cloud account. After rows 2, 4, 5, 7 and 9 are cut, which are configuration changes rather than projects, the worst case is defacement and the data in the database, with a way back from everything except what was read. That is a blast radius a council's risk owner can accept or refuse knowingly, and the decision policy names who.</p>
+<h2 id="ours">Our own sites, as a measured contrast</h2>
+<p>This newsroom and the PHP story's site are static pages served by GitHub Pages. Their application behaviour policy at run time is short: no PHP, no database, no server process of ours, no mail, no secrets on a server. If the pages were taken over, the worst case is false content, with a way back by redeploying a known commit. That is what <a href="https://newsroom.sgit.ai/articles/the-attack-surface-you-do-not-have.html">the attack surface you do not have</a> argued from the other side.</p>
+<p>But the blast radius did not disappear; it moved to the pipeline. Whoever controls what is deployed controls the site. That is why the policy for this repository, in <a href="https://newsroom.sgit.ai/articles/the-rules-of-the-game.html">the rules of the game</a>, puts the workflow and the validator in their own zone, and why <a href="https://newsroom.sgit.ai/articles/the-sidecar-repository.html">the sidecar repository</a> moves deployment out of the agents' reach. The same method found the row that matters for us.</p>
+<h2 id="bring-back">Bringing a site back</h2>
+<figure class="shot" data-shot="ay-back.webp" data-dir="images/" data-alt="Bringing a site back, in order: patch, map the reach, cut rows, name the signals, decide, restore, read the footprint." data-kind="concept"><figcaption>Bringing a site back, in order: patch, map the reach, cut rows, name the signals, decide, restore, read the footprint.</figcaption></figure>
+<p>So the workflow for a site switched off for php2shell, written as a policy:</p>
+<ol>
+<li><b>Patch.</b> To PHP 8.5.12, 8.4.27, 8.3.36 or 8.2.35, or a supplier's fixed build. On an older branch with no fix, the rest of this list matters more, not less.</li>
+<li><b>Map the reach.</b> One row per thing the application can do, from the server itself: its user, its files, its database grants, its mail, its network routes, its credentials.</li>
+<li><b>Write the mandate.</b> What the site is for, in a few lines, from the people who own it.</li>
+<li><b>Cut the cheap rows.</b> Outbound traffic, write access to code, mail, cloud credentials, mounted backups. Each is a configuration change with a large effect on the blast radius.</li>
+<li><b>Name the signals.</b> For each row left open, the trace it would leave if used. For php2shell, the story's site already collects <a href="https://php.oct.2026.newsroom.sgit.ai/defence/index.html">detection signals</a> with their sources: a PHP worker starting a shell, memory errors outside any script, crashes in clusters, uploads to pages that take none. Add the rows' own: new outbound connections, new files in the code directories, new administrator accounts, mail volume.</li>
+<li><b>Decide.</b> The owner named in the decision policy accepts the blast radius of what remains, or does not, with the likelihood as the evidence stands: for php2shell, the compromise map.</li>
+<li><b>Restore, and read the footprint.</b> In the first hours, then weekly. A row the footprint never uses is a candidate to cut; a row used outside the mandate is a near miss.</li>
+</ol>
+<h2 id="new">What is new, and what is not</h2>
+<p>None of the pieces is new. Least privilege, network segmentation, threat modelling and business impact analysis are long-standing practice, and many organisations do parts of this already. What I think is new is writing them as one policy per application, in the same five words we use for agents, with the barrier typed honestly and the blast radius per row, so that the same people, tools and reviews work for both. An agent and an application are both code acting with a grant. The day an exploit is published, the difference between them stops mattering.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The council example is invented.</b> Typical rows, not a real site; no real council is described.</li>
+<li><b>The cuts reduce the blast radius; they do not remove the flaw.</b> Patch first.</li>
+<li><b>The signals are evidence, not a guarantee.</b> A careful attacker leaves fewer traces.</li>
+<li><b>We have not mapped any third party's site.</b> Our own are the only measured example.</li>
+<li><b>The PHP facts are as the story's site records them.</b> The compromise map is as of 20:50 UTC on 22 October, at site v0.5.9.</li>
+<li><b>The three readings are mine.</b> The compromise map makes no assessment of risk, and says so.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>My voice memo of 22 October 2026; the method in <a href="https://newsroom.sgit.ai/articles/footprint-and-blast-radius.html">footprint and blast radius</a> and <a href="https://newsroom.sgit.ai/articles/the-code-you-do-not-ship.html">the code you do not ship</a>; the impact ledger, detection signals, fact-check and <a href="https://php.oct.2026.newsroom.sgit.ai/compromise/index.html">compromise map</a> of <a href="https://php.oct.2026.newsroom.sgit.ai/">php.oct.2026.newsroom.sgit.ai</a> at v0.5.9, read from its repository at 21:06 UTC; and this site's own deployment. Related: <a href="https://newsroom.sgit.ai/articles/php-october-at-8pm.html">PHP October 2026, at 8pm</a>, <a href="https://newsroom.sgit.ai/articles/approved-business-mandates.html">approved business mandates</a>, <a href="https://newsroom.sgit.ai/articles/the-rules-of-the-game.html">the rules of the game</a>, <a href="https://newsroom.sgit.ai/articles/the-attack-surface-you-do-not-have.html">the attack surface you do not have</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
+<sg-meter view="page" kind="article" date="2026-10-22" topics="agents-and-policy news-and-evidence" title="Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">News &amp; evidence</span> <a href="graphs.html#application-behaviour-policies">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Continued by</h3><ul><li><a href="who-carries-the-risk.html">Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital</a> <span class="dim">Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 262 &middot; <a href="../for/make.html#r=262">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/application-behaviour-policies.jpg" download>application-behaviour-policies.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="application-behaviour-policies.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

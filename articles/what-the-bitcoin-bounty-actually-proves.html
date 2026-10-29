@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch, SGit Newsroom</title>
+<meta name="description" content="A researcher won a public "steal my bitcoin" bounty against a deliberately vulnerable PHP server, a rare independent, live confirmation that php2shell gives an attacker full control of a machine. I wanted to know more than that it worked. How hard was it, really, once the target was actually reachable? Could a web application firewall have blocked it, given how many vendors say they already detect it? And if you cannot patch today, does hardening the server around PHP, rather than PHP itself, actually protect you? The answers, checked against the operator's own site, the researcher's public write-up, five vendors' own advisories and GrapheneOS's own record of a server it chose to take offline rather than trust its own mitigations: the bounty took three hours once there was a page to attack, not the nineteen the headlines reported; every vendor's own detection coverage comes with a gap it names itself; and every hardening measure anyone has published is described by its own authors as partial. Patching remains the only complete fix.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/what-the-bitcoin-bounty-actually-proves.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/what-the-bitcoin-bounty-actually-proves.html">
+<meta property="og:title" content="What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch, SGit Newsroom">
+<meta property="og:description" content="A researcher won a public "steal my bitcoin" bounty against a deliberately vulnerable PHP server, a rare independent, live confirmation that php2shell gives an attacker full control of a machine. I wanted to know more than that it worked. How hard was it, really, once the target was actually reachable? Could a web application firewall have blocked it, given how many vendors say they already detect it? And if you cannot patch today, does hardening the server around PHP, rather than PHP itself, actually protect you? The answers, checked against the operator's own site, the researcher's public write-up, five vendors' own advisories and GrapheneOS's own record of a server it chose to take offline rather than trust its own mitigations: the bounty took three hours once there was a page to attack, not the nineteen the headlines reported; every vendor's own detection coverage comes with a gap it names itself; and every hardening measure anyone has published is described by its own authors as partial. Patching remains the only complete fix.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/what-the-bitcoin-bounty-actually-proves.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/what-the-bitcoin-bounty-actually-proves.jpg">
+<link rel="alternate" type="text/markdown" href="what-the-bitcoin-bounty-actually-proves.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch, SGit Newsroom", "headline": "What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch, SGit Newsroom", "description": "A researcher won a public \"steal my bitcoin\" bounty against a deliberately vulnerable PHP server, a rare independent, live confirmation that php2shell gives an attacker full control of a machine. I wanted to know more than that it worked. How hard was it, really, once the target was actually reachable? Could a web application firewall have blocked it, given how many vendors say they already detect it? And if you cannot patch today, does hardening the server around PHP, rather than PHP itself, actually protect you? The answers, checked against the operator's own site, the researcher's public write-up, five vendors' own advisories and GrapheneOS's own record of a server it chose to take offline rather than trust its own mitigations: the bounty took three hours once there was a page to attack, not the nineteen the headlines reported; every vendor's own detection coverage comes with a gap it names itself; and every hardening measure anyone has published is described by its own authors as partial. Patching remains the only complete fix.", "url": "https://newsroom.sgit.ai/articles/what-the-bitcoin-bounty-actually-proves.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch</p>
+ <h1>What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-26 &middot; <a href="versions/what-the-bitcoin-bounty-actually-proves.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.97</a> &middot; <span class="chip">php2shell</span><span class="chip">security</span><span class="chip">exploitation</span><span class="chip">detection</span><span class="chip">waf</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> A researcher won a public "steal my bitcoin" bounty against a deliberately vulnerable PHP server, a rare independent, live confirmation that php2shell gives an attacker full control of a machine. I wanted to know more than that it worked. How hard was it, really, once the target was actually reachable? Could a web application firewall have blocked it, given how many vendors say they already detect it? And if you cannot patch today, does hardening the server around PHP, rather than PHP itself, actually protect you? The answers, checked against the operator's own site, the researcher's public write-up, five vendors' own advisories and GrapheneOS's own record of a server it chose to take offline rather than trust its own mitigations: the bounty took three hours once there was a page to attack, not the nineteen the headlines reported; every vendor's own detection coverage comes with a gap it names itself; and every hardening measure anyone has published is described by its own authors as partial. Patching remains the only complete fix.</em></p>
+<figure class="shot" data-shot="dt-timeline.webp" data-dir="images/" data-alt="The real timeline of the challenge from 21 October to 26 October, against the &quot;19.28 hours&quot; the site&#x27;s counter gave." data-kind="chart"><figcaption>The real timeline of the challenge from 21 October to 26 October, against the "19.28 hours" the site's counter gave.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>A real, independent, live win.</b> Not a lab claim: a researcher broke into a deliberately vulnerable public server and published how.</li>
+<li><b>The real number is three hours, not nineteen.</b> The target had no PHP-executing page to attack for most of that time.</li>
+<li><b>It needed an exact build.</b> The published method is tuned to one specific PHP image; a different one and it fails outright.</li>
+<li><b>It is a race, not a certainty.</b> The author's own repeated runs against their lab succeeded about seven times in ten.</li>
+<li><b>Every vendor names its own gap.</b> Cloudflare, AWS, Azure, Emerging Threats and Sophos each publish detection, and each publishes what it does not catch.</li>
+<li><b>Hardening is partial, by its authors' own account.</b> No published config change, container limit or edge rule is called a fix by the people who wrote it.</li>
+<li><b>GrapheneOS tried three mitigations, then chose to go offline anyway.</b> Patched and back within seven hours.</li>
+<li><b>The method leaves a signature.</b> It depends on deliberately forcing PHP past its own memory limit, which is loud, not silent.</li>
+</ul>
+<h2 id="bounty">What actually happened</h2>
+<p>On 25 October a researcher using the handle "killa" (named in press coverage as the UK pentester Jaydip Modhwadia) won a public bounty run at stealmybitcoin.com: break into a server left deliberately unpatched, and the bitcoin on it is yours. He recovered a private key through php2shell and the site posted "Challenge won"; the pot was 0.02511679 BTC, then worth $2,021.22. The win was logged at 15:47 UTC on 25 October (00:47 Japan time on the 26th). His own write-up, a single Python file published on GitHub, is public: it builds the requests itself, checks each step before moving on, and records the exact HTTP bytes from a fresh run, so the claim is checkable, not just asserted.</p>
+<p>That matters on its own. Every claim so far had been "we reproduced this in our lab." This is the first I have seen where an independent outsider, against a target they did not build, with no special access, got to command execution and published enough that others can check the account. It is also, importantly, a game with a consenting target: the server was built to fall, and the "victim" offered the prize. The real-world count of named organisations compromised through php2shell is still zero, as the newsroom's own <a href="https://newsroom.sgit.ai/articles/php-daily-2026-10-26.html">reader-question pieces</a> on the PHP story site have covered. This article is about a narrower question: now that it has been done once, in public, how hard was it, could it have been caught, and can you protect a server you cannot yet patch?</p>
+<h2 id="timeline">The real timeline is three hours, not nineteen</h2>
+<p>The headline number, repeated across the coverage, is "stolen after 19.28 hours": the site's own elapsed-time counter since the challenge launched. That number answers how long the page sat up, not how hard the exploit was, and it is worth separating the two.</p>
+<p>The target launched at 08:21 UTC on 21 October carrying <b>no page that executed PHP at all</b>. For most of the following day and a half, there was nothing php2shell could reach, whatever anyone tried. One report puts it plainly: after more than 17 hours, nobody had solved it, because "the original server did not expose any page that executed PHP programs." The operator added a PHP-executing page at around 22:00 Japan time on 25 October. Killa solved it roughly three hours after that, at 00:47 JST on 26 October.</p>
+<p>Three hours, against a target that was actually reachable, by one specialist, working from a published method, is the number that answers your question. Nineteen hours is mostly the story of a target that could not yet be attacked.</p>
+<h2 id="effort">How hard was it, really</h2>
+<p>The published write-up is explicit about its own limits, which is unusual and useful. A few things it says about itself, as the author wrote them:</p>
+<ul>
+<li><b>It needs an exact build, not just a version number.</b> The method is calibrated against one specific PHP image and worker model. A different build that reports the identical version string is not a safe substitute, and the author's own tooling checks a fingerprint before it will proceed, specifically to reject a mismatch rather than fail confusingly later.</li>
+<li><b>It is a race.</b> Run ten times against the author's own lab, with nothing else happening and no retries, it succeeded about seven times in ten. The rest either produced no result (the stage that needs a specific happen-to-be-reused process did not land) or reached the final step without the markers that confirm it worked.</li>
+<li><b>It needs few requests, but they must be shaped exactly right.</b> The author's own count is twenty HTTP requests at most for a full run: one health check, two batches of pipelined requests, and one final request. That small number is itself informative: this is not a brute-force or a scan, it is a short, precise sequence.</li>
+<li><b>The original run was against the live, non-lab target</b>, and the author is candid that the full outgoing request from that specific run was not fully captured at the time; what is published is a reconstruction from the same code, plus the artefacts the original run did leave behind, not a byte-for-byte original capture.</li>
+</ul>
+<p>None of that makes the exploit a hoax or a stunt. It makes it what the <a href="https://php.oct.2026.newsroom.sgit.ai/articles/steal-my-bitcoin/index.html">correspondent's own reporting on the PHP story site</a> already said: real proof the flaw gives an attacker full control of a machine, from a specialist, against a cooperative, purpose-built target, not an off-the-shelf weapon that anyone could point at an arbitrary production server and expect to work.</p>
+<h2 id="shell">What kind of access did it actually get</h2>
+<p>You asked, reasonably, what "shell" means here. By the author's own account, the final step runs one operating-system command and returns its output over the connection that is already open: in that run, the command printed a fresh marker so the run could be told apart from any other, the output of <code>id</code> (confirming which user the PHP process was running as), and a hash of a file on the target, as independent evidence the command genuinely executed where the write-up said it did. That is command execution as the PHP process's own user, demonstrated once per run, not a standing interactive shell and not a reverse connection back out to the attacker. Whether a given production deployment running as a lower-privileged user would hand over anything less useful is a separate, real question the write-up does not answer, because the lab and the challenge were both set up to run as a privileged account.</p>
+<h2 id="waf">Could a firewall have seen it coming</h2>
+<figure class="shot" data-shot="dt-waf.webp" data-dir="images/" data-alt="Detection coverage for php2shell from Cloudflare, AWS WAF, Azure Front Door, Emerging Threats and Sophos, and each gap." data-kind="chart"><figcaption>Detection coverage for php2shell from Cloudflare, AWS WAF, Azure Front Door, Emerging Threats and Sophos, and each gap.</figcaption></figure>
+<p>You asked, in a LinkedIn comment at the time, whether any web application firewall could see this coming a mile away. The honest answer is: several vendors say they already do, and each says so with a caveat attached, in their own words, not mine.</p>
+<ul>
+<li><b>Cloudflare</b> had rules live from 03:02 UTC on 21 October, nine hours before PHP's own public advisory. It later added inspection of the server's response, not only the request, because request data alone "could not always tell an exploit from ordinary traffic." Cloudflare also reports that attackers changed their payloads to test its defences.</li>
+<li><b>AWS WAF</b> ships two rules in its PHP managed rule group, inspecting the request body, defaulting to Block. AWS's own blog names the gap: many small part headers can expand far more inside PHP's memory than their size on the wire suggests, which can stay under its size-restriction rule, and a rate-based rule "reduces the volume an exploit needs, but it doesn't stop a single successful request."</li>
+<li><b>Azure Front Door's</b> managed rule for this is disabled by default and was still rolling out as of 28 October. A rule that exists but is off protects nobody until someone turns it on.</li>
+<li><b>Emerging Threats</b> published IDS signatures for both CVEs on 22 October. Signature matching, by its nature, can be dodged by a request reshaped just enough to miss the pattern.</li>
+<li><b>Sophos's</b> intrusion-prevention signatures detect exploitation attempts, but by its own advisory its Web Application Firewall product carries no rule specific to these flaws.</li>
+</ul>
+<p>So: not "any WAF could see that coming", and not "nothing can see it coming" either. The honest middle is that detection exists, arrived fast in at least one case, and every vendor who published it also published where it falls short. That is close to what <a href="https://newsroom.sgit.ai/articles/the-side-stories-of-php2shell.html">the newsroom's own earlier piece on the PHP story</a> already said: detection does not look mature yet, and the inconsistency between huge attempt counts and near-silent compromise counts is itself a data gap worth tracking, not a reason to assume either extreme.</p>
+<h2 id="hardening">Hardening without patching: what actually holds</h2>
+<figure class="shot" data-shot="dt-harden.webp" data-dir="images/" data-alt="Hardening without patching: four measures that their own authors call partial, and what GrapheneOS did instead." data-kind="chart"><figcaption>Hardening without patching: four measures that their own authors call partial, and what GrapheneOS did instead.</figcaption></figure>
+<p>This is the question I most wanted answered: if upgrading breaks things and people are nervous about it, can you harden the environment around PHP, invisibly to the application, and be safe without touching the PHP binary? The published record says: not fully, and the people who wrote these mitigations say so themselves.</p>
+<ul>
+<li><b>Turning off session upload progress</b> (<code>session.upload_progress.enabled=0</code>) closes the path tied to one of the two CVEs. PHP's own advisory is explicit that the other flaw uses a separate path this setting does not touch. A PHP core developer put it more bluntly in public: "the only mitigation is patching / upgrading PHP. I sadly know too much."</li>
+<li><b>Raising or removing the memory limit</b> (<code>memory_limit=-1</code>) removes one way the flaw gets triggered. PHP's own caveat: an underlying allocation failure further down can still reach the vulnerable code even with the limit raised.</li>
+<li><b>Blocking multipart uploads at the edge</b>, if your application does not need them, closes paths that depend on a file upload. It does not close a path that one of the CVEs can reach through ordinary warning or logging behaviour, which needs no multipart body at all.</li>
+<li><b>A container or cgroup memory limit</b> bounds the blast radius of a worker crashing, ideally configured to kill only the affected process rather than take the whole service down. That is containment, not prevention: it limits the mess, it does not stop the command from running first.</li>
+</ul>
+<p>The most useful real-world test of this is <a href="https://bsky.app/profile/grapheneos.org/post/3myepsdnhpc2u">GrapheneOS's own record</a>, which I read directly from its public feed rather than through a summary. At 08:21 UTC on 21 October it took its discussion forum, its only service running PHP, offline, in its own words "due to vulnerability details already being available and proof of concept exploits being developed." Thirty-three minutes later it posted that it had in fact deployed three specific mitigations (upload progress off, multipart blocking, and a set of Zend memory-manager debug flags), tested them, and decided to turn the forum off anyway rather than rely on them. At 15:30 UTC, having patched to PHP 8.5.12, the forum came back up. Total time offline: about seven hours.</p>
+<p>That is a team that could plausibly have run any of the published stopgaps, chose to test them, and judged that none of them earned enough trust to keep the service up while waiting for the real fix. I have not found a single public account of someone relying on configuration or edge hardening alone and being confirmed safe against a live, motivated attempt; I have found several of people trying it and still taking the service down.</p>
+<h2 id="logs">What a defender would actually see</h2>
+<p>Your question about logs and crashes has a general, public answer, without needing the exploit's internals. The published method depends on deliberately forcing PHP past its own configured memory limit, more than once, as one of its steps. That is not a quiet technique: PHP's own fatal-error path for an exhausted memory limit is exactly what you would expect to see, repeated, from the same client, in a short window, alongside a worker process that gets reused in a way that is unusual for ordinary traffic. A defender watching PHP's own error log for repeated memory-exhaustion fatals from one source has a real signal available to them today, independent of any WAF vendor's rule. Whether anyone is actually watching for that pattern, as opposed to the generic access log, is the open question, and it is the same gap the newsroom's earlier piece named: the data on real-world detection is thin, because almost nobody is publishing it.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>This is one bounty, one researcher, one target.</b> It is strong evidence the flaw is exploitable in the real world by a skilled person; it is not a measurement of how common successful attacks are.</li>
+<li><b>No named organisation has reported a real compromise through php2shell</b>, separately from this voluntary challenge, as of the newsroom's latest check.</li>
+<li><b>Vendor detection coverage changes quickly.</b> What is listed here is current as of the dates given; several vendors were still rolling out or revising rules through late October.</li>
+<li><b>I have not independently reproduced any part of the exploit.</b> What is reported here about its mechanism and limits comes from the author's own published account of his own work.</li>
+<li><b>The GrapheneOS timeline is read from the organisation's own public posts,</b> not from a secondary summary, but it describes one team's one decision, not a general rule for every deployment.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>My voice memo of 26 October 2026. The challenge site <a href="https://stealmybitcoin.com/">stealmybitcoin.com</a> and the researcher's own write-up and proof-of-concept, <a href="https://github.com/KillaBoi/StealMyBitcoin-PoC">KillaBoi/StealMyBitcoin-PoC</a> on GitHub; press coverage of the win from <a href="https://cybersecuritynews.com/php2shell-flaws-exploited/">Cybersecurity News</a>, <a href="https://www.cryptopolitan.com/hacker-wins-bitcoin-php-challenge-19-hours/">Cryptopolitan</a>, <a href="https://daily.dev/posts/uk-pentester-killa-claims-2k-bitcoin-prize-in-php2shell-capture-the-flag-contest-rhnd8wp6d">daily.dev</a> and <a href="https://finance.biggo.com/news/ff3909cf-4557-44f3-8780-68f21e74f6ae">BigGo</a>; vendor detection posts from <a href="https://ppc.land/cloudflare-blocks-php2shell-exploits-9-hours-before-php-flaws-went-public/">Cloudflare (via PPC Land)</a> and <a href="https://www.technobezz.com/news/cloudflare-waf-adds-php2shell-protection-across-plans">Technobezz</a>, <a href="https://aws.amazon.com/blogs/security/using-aws-waf-to-apply-mitigations-for-php2shell-rce-vulnerabilities-cve-2026-109618-and-cve-2026-109619/">AWS</a>, <a href="https://community.emergingthreats.net/t/detection-coverage-php2shell-cve-2026-109618-and-cve-2026-109619/3488">Emerging Threats</a>, and <a href="https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell">Sophos's advisory</a>; a reading of <a href="https://bsky.app/profile/grapheneos.org">GrapheneOS's own posts on Bluesky</a> from 21 October 2026, taken directly from its public feed; analysis of PHP's own mitigation guidance via <a href="https://lilting.ch/en/articles/php2shell-official-patch">lilting.ch</a>; the CISA Known Exploited Vulnerabilities catalogue, checked directly, which did not list either CVE as of its 23 October snapshot. Related: <a href="https://newsroom.sgit.ai/articles/the-side-stories-of-php2shell.html">the side stories of php2shell</a>, <a href="https://newsroom.sgit.ai/articles/php-daily-2026-10-26.html">PHP October 2026, update 4</a>, <a href="https://php.oct.2026.newsroom.sgit.ai/articles/steal-my-bitcoin/index.html">the PHP story site's own piece on the bounty</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
+<sg-meter view="page" kind="article" date="2026-10-26" topics="news-and-evidence agents-and-policy" title="What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">News &amp; evidence</span><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#what-the-bitcoin-bounty-actually-proves">This article as a graph &rarr;</a></p>
+ <p class="small dim">No other article links here yet.</p>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 299 &middot; <a href="../for/make.html#r=299">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/what-the-bitcoin-bounty-actually-proves.jpg" download>what-the-bitcoin-bounty-actually-proves.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="what-the-bitcoin-bounty-actually-proves.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

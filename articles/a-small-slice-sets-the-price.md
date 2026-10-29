@@ -10,11 +10,11 @@
 
 # A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.2.0, 3 versions](versions/a-small-slice-sets-the-price.md) · [newsroom v0.12.150](https://newsroom.sgit.ai/admin/versions.html) · startupsfoundersipovaluationmarketsdata-analysisarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.3.0, 4 versions](versions/a-small-slice-sets-the-price.md) · [newsroom v0.12.150](https://newsroom.sgit.ai/admin/versions.html) · startupsfoundersipovaluationmarketsdata-analysisarticle
 
 ***Abstract:** Something has been nagging me about the talk of bubbles and trillion-dollar listings. The headline valuations are set by selling a small slice of each company, and I wanted to check the numbers, including my own. Two of mine were wrong. OpenAI has not listed: its trillion-dollar figure is a private round under discussion, about 2% of the company, and its listing is now expected next year at the earliest. And SpaceX did not sell half a per cent at its IPO: it sold about 4%, $75bn of new shares, the largest IPO ever and more than twice the previous record in today's dollars. What holds is the pattern. The share of a company sold at listing has been falling for decades, from a median of about 30% to 14.5% last year, and the biggest companies sell the least. A small slice sets the price of the whole, low floats rise more on the first day, and index rules have been changed to absorb them. These companies earn revenue at a scale and speed nobody has seen, but at multiples close to the dot-com peak, and OpenAI and SpaceX are not yet profitable. For a founder, the lesson is that a valuation is a price the market allows for a slice, and the founder who controls the company decides how big the slice is.*
 
-A small slice sets the price of the whole. At the IPO, 4.2% of SpaceX was sold at $135 a share, and the whole company was priced at $1.77tn. The valuations reported along the way were set the same way, by small transactions.
+A small slice sets the price of the whole: 4.2% of SpaceX sold at $135 a share priced it at $1.77tn.
 
 ## In short
 
@@ -46,7 +46,7 @@ So the pattern I saw is real, but it is mostly in private rounds and in one list
 
 The share of a company sold at listing, the public float, has been falling for a long time. Jay Ritter at the University of Florida keeps the standard dataset: 9,343 US IPOs from 1980 to 2025, with a median float of 27.3%. In 1990 the median was 30.5%; in 2000, 19.4%; in 2023, 12.6%; in 2025, 14.5%. And the biggest companies sell the least: Google sold 7.2% in 2004, Arm 9.3% in 2023, Saudi Aramco 1.5% in 2019, and SpaceX 4.2% this year.
 
-How much of each company was sold at its IPO, from the final prospectuses, with the median for all US IPOs since 1980 and for 2025 from Jay Ritter's statistics.
+How much of each company was sold at its IPO, with the median for all US IPOs since 1980 and for 2025.
 
 So SpaceX is low, but not alone: Aramco sold a smaller share seven years earlier. What is new is the size of the company selling the small share.
 
@@ -56,7 +56,7 @@ My instinct was that the amounts raised are not out of line with the great IPOs 
 
 Against the size of the market, it is less extreme. By the World Bank's count, the US stock market was worth about $18.7tn at the end of 2012, and Facebook raised about 0.09% of that; it was worth about $68.9tn at the end of 2025, the latest year, and SpaceX raised about 0.11% of that. Measured against the market, SpaceX's raise is about a quarter larger than Facebook's, not five times.
 
-The biggest IPOs, base offering only, in September 2026 dollars; and, for three of them, the money raised as a share of the US stock market.
+The biggest IPOs, base offering only, in September 2026 dollars, and for three of them, the share of the US market.
 
 ## Revenue at record speed, profit not yet
 
@@ -66,7 +66,7 @@ The profit part does not, yet. SpaceX lost $4.8bn in the first half of 2026, by 
 
 And the prices are in dot-com territory. In 2000 the median tech IPO priced at 31.7 times its sales, in Ritter's data, and Cisco at its peak was worth about 38 times its sales. OpenAI's reported round is about 28 times its run-rate revenue; Anthropic's last round, about 20 times; SpaceX at its IPO price, about 57 times its second quarter's revenue, annualised. The difference is the scale: a median of about $12m of sales for a tech IPO in 2000, against $50bn a year at OpenAI.
 
-Valuation against a year of revenue: the dot-com peak, using trailing revenue, and the 2026 AI companies, using annualised run-rates.
+Valuation against a year of revenue: the dot-com peak and the 2026 AI companies.
 
 So it is not only hype, because the revenue is real and very large. But it is not proof of soundness either: the multiples assume the growth continues for years, and two of the three are losing money.
 
@@ -112,6 +112,7 @@ Startups & strategyNews & evidence[This article as a graph →](graphs.md#a-smal
 
 ### Continued by
 
+- [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](investor-sgit-ai.md) A brief for investor.sgit.ai: investors and founders using our tools, with news, contracts as graphs, deal rooms as vaults and sgit as the case study.
 - [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](the-exit-is-when-you-sell-control.md) A founder's exit is the day someone else buys control, which can come long before the shares go. Leave then, and agree the terms at the start.
 
 [All articles](index.md) · [All graphs](graphs.md)

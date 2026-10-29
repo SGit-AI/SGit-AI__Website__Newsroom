@@ -1,0 +1,167 @@
+{
+ "schema": "newsroom-review/v1",
+ "criteria": "v1.2",
+ "slug": "the-evidence-behind-four-days",
+ "article_version": "v0.13.104",
+ "article_hash": "9e801a61ac06",
+ "reviewer": "anthropic-fable",
+ "kind": "agent",
+ "model": "Claude Fable",
+ "run_by": "newsroom.writer, at the editor's request, as a fresh look after the corrections of v0.13.104",
+ "at": "2026-10-27T15:49:22Z",
+ "verdict": "approve-with-changes",
+ "summary": "The article's numbers reproduce from the primary sources: the CVE record's timestamp, NVD's 1,394 for the window and its daily and status breakdown, the absence of Exploit-DB or Metasploit references, the 25 VulnCheck CVEs with old-year IDs, CISA's catalogue dates and version, the EPSS bands and daily series, all four yearly totals, and the PHP story site's 53 compromise rows and Pulse counts; all nine of ChatGPT's fixes hold in the current text, and every quote of Jeremiah Grossman's post matches the screenshot. Fix first: the VulnCheck row says 'the count matches' when the post counts 24 old bugs and the article's NVD query finds 25, so the two counts are near but not the same; after that, the five links to the PHP data site's version 0.1.77 files now return 404.",
+ "checks": {
+  "facts": {
+   "result": "issues",
+   "notes": "Re-ran NVD's CVE API 2.0 for the window (1,394, with the status, day, ID-year and assigner breakdowns), FIRST's EPSS for all 1,394 at the 26 October scores and the three-CVE time series, CISA's KEV JSON (version 2026.10.26, 1,758 entries, additions per year to 26 October), the four CVE records at cveawg.mitre.org, and NVD's yearly totals in chunks of at most 120 days for 2023 to 2026. Read Fortinet's and Wiz's posts, the PHP story site's compromise, exploitation, claims, numbers and pulse files at version 0.1.77 through its manifest and blob store, the KEV-listing-run report, the brief for the PHP team, and the linked bounty article. Compared every quote of the post against the screenshot. One count presented as matching does not (f1); the heading's 1,393 is off by one (f3); one NVD status count has moved (f4)."
+  },
+  "voice": {
+   "result": "pass",
+   "notes": "First person, the post's claims and the article's own verdicts kept apart, limits stated. No em dashes, superlatives or hype found; the only 'nobody has' is inside a quotation of the post. One punctuation slip (f6)."
+  },
+  "claims": {
+   "result": "pass",
+   "notes": "What was read, what was not (VulnCheck's KEV, Censys's dashboard) and what is forecast rather than observed are marked, in the table, the body and the limits. The watchTowr honeypot claim is correctly left unconfirmed: the PHP site's claims file marks it 'unverified: watchtowr.com returns HTTP 403'."
+  },
+  "conversions": {
+   "result": "issues",
+   "notes": "Recomputed: 274/210 = 1.305 (30%); 89,531/40,266 = 2.22 (more than twice); the shares 0.616%, 0.454%, 0.522%, 0.306% round to the stated 0.62%, 0.45%, 0.52%, 0.31%. The same-number check was done across the summary, In short, the table, the captions and the body; one rounding differs between the summary and the body (f5)."
+  },
+  "health": {
+   "result": "issues",
+   "notes": "All newsroom, PHP story site, team site and vendor links answered 200 on 27 October, except the five data links at version 0.1.77, which answered 404 (f2). The graph's six quotes appear in the page text. The seven figure files exist and the captions match the body. The compromise line is unchanged at the latest data version (0.1.82, as of 12:13 UTC on 27 October, now 56 rows). No folded section summaries were found in the page, so none were checked."
+  },
+  "people": {
+   "result": "pass",
+   "notes": "Jeremiah Grossman is a public author of a public post, named with his title as the screenshot shows it. The eight organisations are named from published statements captured by the PHP story site. No key or token in the text or the dataset."
+  }
+ },
+ "findings": [
+  {
+   "id": "f1",
+   "criterion": "facts",
+   "severity": "medium",
+   "section": "claims",
+   "quote": "The count matches; KEV membership and when the IDs were assigned not checked",
+   "issue": "The post says 25 CVEs are on VulnCheck's KEV and that 24 of those 25 are old bugs given IDs on 22 October. The article's NVD query finds 25 VulnCheck-assigned CVEs with 2017 to 2025 IDs, all published on 22 October, and calls that a matching count. It matches the post's 25 only if the old-bug count is 25, but the post puts it at 24, with one further entry that is not an old bug. The two counts are near, not the same, and the summary's 'VulnCheck published 25 old bugs' and the window section's 'matches the count and the pattern' carry the same mismatch.",
+   "verification": "inconsistent",
+   "evidence": "The screenshot of the post, admin/content/articles/images/jg-post.webp, and https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-21T13:48:34.000&pubEndDate=2026-10-25T13:48:34.000&resultsPerPage=2000, read 27 October 2026 at 15:44 UTC",
+   "source_passage": "VulnCheck puts 25 of the 1,448 (1.7%) on its KEV list, its catalog of bugs adversaries have been seen exploiting. 24 of those 25 are old bugs. VulnCheck only now gave them CVE IDs, all at once on October 22, with ID years from 2017 to 2025.",
+   "method": "From the NVD window response, filter sourceIdentifier == disclosure@vulncheck.com and ID year != 2026: 25 records, all with published date 2026-10-22, ID years 2017 to 2025 (CVE-2017-20287 to CVE-2025-71434). The post's figure for old bugs is 24; 25 is its total on VulnCheck's KEV including one entry that is not an old bug.",
+   "suggestion": "Say 'NVD shows 25 old-ID VulnCheck CVEs against the post's 24 of 25: close, not the same' in the table, the summary and the window section, and keep the KEV-membership caveat."
+  },
+  {
+   "id": "f2",
+   "criterion": "health",
+   "severity": "medium",
+   "section": "sources",
+   "quote": "The PHP story site's data at version 0.1.77",
+   "issue": "The five links to compromise.json, exploitation.json, claims.json, numbers.json and pulse.json at /v/0.1.77/ return 404. The data site serves only its newest five versions at plain paths, and the latest is now 0.1.82, so the pinned version the article's counts come from has dropped off the plain path. The content is still reachable: /v/0.1.77/manifest.json still answers, and each file's sha256 there resolves at /blobs/<sha256>.",
+   "verification": "stale",
+   "evidence": "https://data.php.oct.2026.newsroom.sgit.ai/v/0.1.77/compromise.json (404), https://data.php.oct.2026.newsroom.sgit.ai/v/0.1.77/manifest.json (200), https://data.php.oct.2026.newsroom.sgit.ai/ and versions.json (latest 0.1.82), read 27 October 2026 at 15:44 UTC",
+   "source_passage": "The newest 5 versions are also served plain, at /v/<version>/<file>. Latest: v0.1.82",
+   "method": "curl each of the five article URLs: all return HTTP 404 with the GitHub Pages not-found page. curl /v/0.1.77/manifest.json: 200; the sha256 for compromise.json there is 7582d4c6168e59f1ad58d609737538bb0c0709b4c27461f2c4adc73ecf708352 and /blobs/ of that hash returns the 26,534-byte file with as_of 2026-10-27T09:43Z and 53 rows.",
+   "suggestion": "Link the five files by their blob hashes, or link the version's manifest.json and say the plain paths expire after five versions."
+  },
+  {
+   "id": "f3",
+   "criterion": "facts",
+   "severity": "low",
+   "section": "window",
+   "quote": "The other 1,393",
+   "issue": "Both php2shell CVEs are among NVD's 1,394 for the window (NVD's publication times are 14:17:09 UTC on 21 October for both), and the section itself treats them as two. The CVEs other than php2shell therefore number 1,392, not 1,393.",
+   "verification": "inconsistent",
+   "evidence": "The NVD window response, read 27 October 2026 at 15:44 UTC",
+   "source_passage": "CVE-2026-109618 published 2026-10-21T14:17:09.357, CVE-2026-109619 published 2026-10-21T14:17:09.823 (NVD's published fields)",
+   "method": "Count the 1,394 IDs in the response; both CVE-2026-109618 and CVE-2026-109619 are present; 1,394 minus 2 is 1,392.",
+   "suggestion": "Head the section 'The other 1,392', or say 'the others' if php2shell is meant as one."
+  },
+  {
+   "id": "f4",
+   "criterion": "facts",
+   "severity": "low",
+   "section": "window",
+   "quote": "NVD had fully analysed 3",
+   "issue": "True from the dataset collected on 27 October, but NVD's status counts for the same 1,394 records had moved by 15:44 UTC the same day: Analyzed 30, Undergoing Analysis 83, Awaiting Analysis 492, Received 219, Deferred 558, Rejected 12. The article says counts move; the sentence still states one of them without a time.",
+   "verification": "stale",
+   "evidence": "The NVD window response, read 27 October 2026 at 15:44 UTC",
+   "source_passage": "vulnStatus counts: Deferred 558, Awaiting Analysis 492, Received 219, Undergoing Analysis 83, Analyzed 30, Rejected 12",
+   "method": "Counter of cve.vulnStatus over the 1,394 records, compared with the dataset's by_status (Analyzed 3, Undergoing Analysis 109, Awaiting Analysis 493).",
+   "suggestion": "Add the time of the count, or drop the analysed figure and keep the 12 rejected, which has not moved."
+  },
+  {
+   "id": "f5",
+   "criterion": "conversions",
+   "severity": "low",
+   "section": "top",
+   "quote": "went from about 0.1 to above 0.999 the day before",
+   "issue": "The body gives the 24 October scores as about 0.06 and 0.12; FIRST's series has 0.06217 and 0.11841. 'About 0.1' describes one of the two and overstates the other by half.",
+   "verification": "inconsistent",
+   "evidence": "https://api.first.org/data/v1/epss?cve=CVE-2026-109618,CVE-2026-109619,CVE-2026-114625&scope=time-series, read 27 October 2026 at 15:43 UTC",
+   "source_passage": "CVE-2026-109619: 0.06217 on 2026-10-24, 0.99997 on 2026-10-25; CVE-2026-109618: 0.11841 on 2026-10-24, 0.99981 on 2026-10-25",
+   "method": "Read the time-series values for 24 and 25 October for both CVEs and compared them with the summary and the body.",
+   "suggestion": "Say 'from about 0.06 and 0.12 to above 0.999', as the body does."
+  },
+  {
+   "id": "f6",
+   "criterion": "voice",
+   "severity": "low",
+   "section": "exposure",
+   "quote": "on 22 October, If both figures are the same measure",
+   "issue": "A comma followed by a capital: two sentences have been run together.",
+   "verification": "style",
+   "evidence": "The article's text, read 27 October 2026",
+   "source_passage": "",
+   "method": "Read the paragraph.",
+   "suggestion": "A full stop after '22 October'."
+  },
+  {
+   "id": "f7",
+   "criterion": "facts",
+   "severity": "low",
+   "section": "specific",
+   "quote": "ELLIO's sensors and Chainguard's honeypots logged hits from the first morning",
+   "issue": "The PHP story site's exploitation record supports 'the first morning' for ELLIO (first sensor hit at 08:36 UTC on 21 October) but not for Chainguard: its row is dated 22 October, is second-hand via The Register, and gives no time.",
+   "verification": "overstated",
+   "evidence": "https://data.php.oct.2026.newsroom.sgit.ai/blobs/b51ff8179b0b75f5e8ef2916484a28c9a0d707d8542594f6b0c844fa44b54914 (exploitation.json at version 0.1.77), read 27 October 2026 at 15:45 UTC",
+   "source_passage": "2026-10-22, Dan Lorenc, Chainguard, via The Register: Chainguard's honeypots trapped IPs from China and Russia; several unnamed vendors reported exploits in the wild. kind: claim; status: reported, second-hand",
+   "method": "Read the ELLIO and Chainguard rows in exploitation.json and compared their 'when' fields with the sentence.",
+   "suggestion": "Say 'ELLIO's sensors from the first morning, and Chainguard's honeypots by the next day, as reported second-hand'."
+  }
+ ],
+ "verified": [
+  "ChatGPT f1 holds: In short now reads 'Almost none are expected to be exploited' and calls EPSS 'a 30-day forecast, not a count'; the window section says a low score means the model does not expect exploitation, not that none was seen; the limits list it.",
+  "ChatGPT f2 holds: the yearly numbers are now said to 'describe the background' and 'cannot test' the AI claim, with the differing populations named and what a test would need.",
+  "ChatGPT f3 holds: Wiz's account is quoted, and both quotes match Wiz's post word for word ('to develop and adapt working exploits across multiple applications in hours'; 'a single researcher completed in a week what previously would have taken a world-class team months of work', the second from Wiz's own conclusion, not a partner's quote).",
+  "ChatGPT f4 holds: 0.99997 and 0.99981 in the window section, the changed section and the EPSS caption; 'above 0.999' in In short; both match FIRST's API for 25 and 26 October.",
+  "ChatGPT f5 holds: the absence carries 09:43 UTC on 27 October in the summary, In short and the table; attempts, lab or honeypot success and production compromise are kept apart; 'Exploitation: active' and 'Automatable: no' are on both CVE records' CISA-ADP SSVC entries (timestamps 12:14 and 12:15 UTC on 27 October).",
+  "ChatGPT f6 holds: 'not reconciled' in In short, the table and the window section, with two possible causes and the note that only the two ID lists would settle it. NVD's own times support the first cause: NVD publishes CVE-2026-109618 at 14:17:09, the CVE record at 13:48:34.",
+  "ChatGPT f7 holds in the text: assignment dates and KEV membership are marked not checked in the table, the window section and the limits (but see f1 for the count itself).",
+  "ChatGPT f8 holds: the attention caption and text say 53 to 55 feeds, 'not necessarily the same ones', a named pair against single CVEs, and 'a description of coverage in this collection, not a controlled measure'; the limits list it.",
+  "ChatGPT f9 holds: the fall from 36.7 to 32 million is now 'a question, not a finding', with scan coverage, services offline, fingerprints and method as other causes, and Fortinet's sentence on backports quoted exactly.",
+  "Every quote of the post matches the screenshot: 'plenty of people are calling it...', 'the evidence says otherwise', 'for specific environments and a generic wide sweeping exploit is unlikely', 'have caught plenty of attempts', 'nobody has reported mass compromise, some reports of individual breaches, but nothing confirmed', 'driving up how many vulnerabilities adversaries exploit, or how fast', 'keep working a small set of bugs until those stop paying', 'patch what adversaries exploit', 'I can't imagine any exploit writer or cyber adversary not using heavy AI tooling at this point', and the caption's 'php2shell went public four days ago, at 13:48:34 UTC on October 21, 2026'; the title 'Chief Executive Officer, Root Evidence' is on the screenshot; 1,448, 25, 24, 22 October, 2017 to 2025, CVE-2026-114625 and 32 million are as the post gives them.",
+  "CVE-2026-109618 datePublished 2026-10-21T13:48:34.845Z at cveawg.mitre.org; CVE-2026-114625 2026-10-22T20:47:56.427Z; CVE-2026-110447 (Collabora) 2026-10-14T02:27:42.315Z. Both php2shell records carry CVSS 4.0 with AC:H.",
+  "NVD window, re-run 27 October 15:44 UTC: totalResults 1,394; by day 288, 494, 497, 76, 39; rejected 12; ID years 2017 to 2025 as in the dataset; 25 VulnCheck-assigned old-ID CVEs all published 22 October; zero references to exploit-db or metasploit URLs; top assigners as the dataset lists them.",
+  "CISA KEV JSON: catalogVersion 2026.10.26, dateReleased 2026-10-26T22:24:24.6101Z, 1,758 entries; CVE-2026-109618 and CVE-2026-109619 added 2026-10-26 with dueDate 2026-10-29; CVE-2026-114625 added 2026-10-23; CVE-2026-110447 (Collabora) also added 2026-10-23; additions 1 January to 26 October: 156, 148, 210, 274.",
+  "NVD yearly totals, 1 January to 26 October, in chunks of at most 120 days: 2023 10,185 + 9,745 + 5,396 = 25,326; 2024 7,064 + 5,576 + 14,166 + 5,763 = 32,569; 2025 16,554 + 15,473 + 8,239 = 40,266; 2026 22,140 + 37,096 + 30,295 = 89,531.",
+  "EPSS for the 1,394 window CVEs at date=2026-10-26: 1,383 scored; 1,361 below 0.01, 19 between 0.01 and 0.1, 1 between 0.1 and 0.5 (CVE-2026-111497 at 0.36027), 2 at 0.5 or above (0.99997 and 0.99981). The three-CVE series matches the dataset for every date; the Arista flaw is 0.01025 on 25 and 26 October.",
+  "PHP story site compromise.json at 0.1.77 (via its blob): statement 'No named organisation has said it was compromised through php2shell.', as_of 2026-10-27T09:43Z, 53 rows: no-success-known 22, attempts 13, named-organisation 8, vendor-exploitation 5, official-signal 4, allegation 1; the eight organisations and their readings as the article gives them. At the latest version (0.1.82, as_of 12:13Z) the statement is unchanged.",
+  "claims.json at 0.1.77: Unit 42's retraction on 25 October of its 23 October statement, via SC Media; Jake Knott's 'a firm No'; the 35 shells 'in a deliberately favourable setup'; VulnCheck's finding as cited by rjmendez; Fastly's note on the running binary's layout.",
+  "exploitation.json at 0.1.77: Amazon's MadPot attempt on 17 October, four days before disclosure; ELLIO's first sensor hit 08:36 UTC on 21 October; Matthew Prince's 'millions'; watchTowr's claim marked unverified because the site blocks capture.",
+  "numbers.json at 0.1.77: Censys 1.57 million unpatched hosts on 21 October; VulnCheck 2,608,039 hosts; VirusTotal 5.1 million IPs (in claims.json); Unit 42 22.6 million instances; 'almost 70%' of websites; 274 KEV additions in 2026.",
+  "pulse.json at 0.1.77 (generated 24 October): CVE-2026-109618 295 items over 55 feeds, rungs 1 and 4; the twelve rows at 53 feeds have 11 to 48 items, all with rung 5; five are old flaws newly listed on 8 October, three of them from 2015 and 2016 (ProFTPD, BIND, Struts); BeyondTrust 48, Ivanti 44.",
+  "Fortinet's post: 'approximately 36.7 million internet-facing services' in Censys's 22 October snapshot, and the sentence on backports, word for word.",
+  "The KEV-listing-run report: '5 h 21 min later, at 03:45:48 UTC'. The bounty article: three hours once a PHP page existed; 'about seven times in ten'.",
+  "The brief for the PHP team exists at the linked path and asks for the items the article lists. The reviews page lists ChatGPT's record for this article."
+ ],
+ "not_checked": [
+  "Whether the 25 VulnCheck-assigned CVEs are on VulnCheck's KEV, and when their IDs were assigned: VulnCheck's KEV needs an account.",
+  "Censys's dashboard and the post's 32 million: the dashboard was not read.",
+  "Jake Knott's title at watchTowr ('head of threat intelligence'): the SC Media page could not be fetched (scworld.com answered 403) and a web search did not surface it.",
+  "The 1,448 of the post: no ID list to compare with NVD's.",
+  "The captured sources behind each PHP story site row (the references site) were not opened individually; the rows' own 'when', 'who' and 'says' fields were used.",
+  "The rendered charts' readability on a phone.",
+  "Section summaries shown when a section is folded: none were found in the page markup."
+ ]
+}

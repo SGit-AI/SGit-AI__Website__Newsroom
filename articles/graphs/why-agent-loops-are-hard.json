@@ -1,0 +1,153 @@
+{
+  "slug": "why-agent-loops-are-hard",
+  "teaser": "Ten agents in sequence, a schedule that must land in the right session, and why visibility is half the work of an agent loop.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Running a pipeline of about ten scheduled agents unattended is brittle: each needs a persistent, readable session holding state, keys and data, which only became workable when scheduling could target a chosen session, and reliability still depends on run records and visualisation, so the work goes slowly, leans on platform features, and moves next to a dedicated account, because the unit of work is the whole platform.",
+  "nodes": [
+    {
+      "id": "pipe",
+      "label": "Ten agents in sequence",
+      "kind": "example",
+      "summary": "Researcher, curator, journalist, correspondent, then four more."
+    },
+    {
+      "id": "session",
+      "label": "One session per agent",
+      "kind": "method",
+      "summary": "State, keys and vaults kept between wakes, readable."
+    },
+    {
+      "id": "newsess",
+      "label": "A new session per run",
+      "kind": "claim",
+      "summary": "Secrets and state restart; sessions pile up."
+    },
+    {
+      "id": "target",
+      "label": "Scheduling into a chosen session",
+      "kind": "method",
+      "summary": "The wake lands where the agent is briefed and keyed."
+    },
+    {
+      "id": "brittle",
+      "label": "Brittle",
+      "kind": "example",
+      "summary": "5 wakes met, 11 missed, mostly no run record."
+    },
+    {
+      "id": "visible",
+      "label": "Visibility is half the work",
+      "kind": "claim",
+      "summary": "Schedule, control room, desk."
+    },
+    {
+      "id": "account",
+      "label": "A dedicated account",
+      "kind": "method",
+      "summary": "Isolation, costs, usage, models."
+    },
+    {
+      "id": "unit",
+      "label": "The unit is the platform",
+      "kind": "claim",
+      "summary": "Complete separate instances, like AWS accounts."
+    }
+  ],
+  "edges": [
+    {
+      "from": "pipe",
+      "to": "session",
+      "rel": "depends-on"
+    },
+    {
+      "from": "newsess",
+      "to": "target",
+      "rel": "contrasts"
+    },
+    {
+      "from": "target",
+      "to": "session",
+      "rel": "produces"
+    },
+    {
+      "from": "brittle",
+      "to": "visible",
+      "rel": "depends-on"
+    },
+    {
+      "from": "visible",
+      "to": "pipe",
+      "rel": "answers"
+    },
+    {
+      "from": "account",
+      "to": "session",
+      "rel": "depends-on"
+    },
+    {
+      "from": "unit",
+      "to": "account",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "almost-working",
+      "a-tangent-that-shipped",
+      "a-team-frozen-in-time",
+      "explorer-coding",
+      "php-daily-2026-10-24"
+    ],
+    "pages": [],
+    "sites": [
+      "https://php.oct.2026.newsroom.sgit.ai/team/schedule/index.html",
+      "https://php.oct.2026.newsroom.sgit.ai/team/control/index.html",
+      "https://code.claude.com/docs/en/routines.md"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The unit of work is your entire platform.",
+      "why": "For platform builders: the unit of work is the platform."
+    },
+    {
+      "text": "I spend as much time visualising, mapping and getting control of the setup of this environment as on the setup itself.",
+      "why": "Visibility is half the work."
+    }
+  ],
+  "figures": [
+    {
+      "file": "lp-timeline.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lp-timeline.webp",
+      "caption": "The PHP site's wake timeline at 11:34 London on 25 October 2026, with each agent's wakes marked met, missed or due.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "lp-schedule.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lp-schedule.webp",
+      "caption": "The PHP site's schedule page on 25 October 2026: one day of wakes in London time, with the quiet hours shaded.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "lp-pieces.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lp-pieces.webp",
+      "caption": "What a loop of agents needs before it can run without you: six needs, learned on the PHP story.",
+      "kind": "concept"
+    },
+    {
+      "file": "lp-history.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lp-history.webp",
+      "caption": "How scheduling agents got easier, one platform feature at a time, ending with a proposed dedicated account for the team.",
+      "kind": "timeline"
+    },
+    {
+      "file": "lp-runs.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lp-runs.webp",
+      "caption": "The latest runs on the PHP site's schedule page, 25 October 2026: the conductor, the desk and the factcheck sweep.",
+      "kind": "screenshot"
+    }
+  ]
+}

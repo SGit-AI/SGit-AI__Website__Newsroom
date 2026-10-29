@@ -10,11 +10,11 @@
 
 # Agentics, ready to sell: what we showed at Agentic Engineering Live, who else is selling agentic services and at what price, the engagement path, and a marketplace for the consultants who deliver it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/agentics-ready-to-sell.md) · [newsroom v0.12.73](https://newsroom.sgit.ai/admin/versions.html) · agenticsagentic-workflowsconsultingruflosgitagent-behaviour-policygo-to-marketpricingmarketplaceconsultantsagentics-foundationarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.2.0, 3 versions](versions/agentics-ready-to-sell.md) · [newsroom v0.12.73](https://newsroom.sgit.ai/admin/versions.html) · agenticsagentic-workflowsconsultingruflosgitagent-behaviour-policygo-to-marketpricingmarketplaceconsultantsagentics-foundationarticle
 
 ***Abstract:** After Thursday's talk at Agentic Engineering Live in London, I think we are ready to sell this. The talk ran itself, twenty-six slides on a clock, most of them live pages that animated their own explanation, and the whole thing was built by the method it described: a Ruflo hive whose workers were Claude Code subagents, an sgit vault per run that kept everything they made, encrypted and versioned, and Agent Behaviour Policies that say what each role may do. ruv.sgit.ai has the five articles written straight after it, the talk, and four offers with published prices. So this article maps the market before we go into it. Who else sells agentic services: the big consultancies with agent platforms, the model vendors with partner networks and forward-deployed engineers, Cognitum with its own four-week discovery, and boutiques selling £2,500 audits and €2,900 sprints. Where the gap is: Gartner expects more than 40% of agentic projects to be cancelled by the end of 2027 for cost, unclear value or weak risk controls. Our position is the evidence: every run leaves a vault and a ledger the client keeps. The engagement path starts with a run and two hours of expert time, and grows to a four-day pilot and a maintained setup. And the delivery needs people, so the last part is a marketplace for consultants: Mondweep Chakravorty, co-founder of the Agentics Foundation's London chapter, and I are the first two; this is the invitation to the rest of the community, with the onboarding we propose.*
 
-Where agentic services sit in October 2026: boutiques with fixed-price audits, Cognitum's consulting, the big consultancies, agent platforms and the model vendors' engineers, by the price of a first engagement and how much the offer rests on governance and evidence you can check; ruv.sgit engagements sit at low price and high evidence.
+Where agentic services sit in October 2026, by price of a first engagement and how much rests on evidence.
 
 ## In short
 
@@ -50,7 +50,7 @@ What they lack is not another platform. It is evidence: a run they can inspect, 
 
 ## The engagement path
 
-The engagement path: a free conversation, a first run on a real problem for £10 to £50, expert time at £500 for two hours or £1,500 for a day, a four-day pilot in the client's environment for £5,000, and a maintained repository from £149 a month.
+The engagement path: from a free conversation and a first run to a pilot and a maintained repository.
 
 ruv.sgit.ai already publishes [four offers](https://ruv.sgit.ai/business/): task runs from £10 to £50, dedicated compute by the eight-hour block, a maintained repository of the whole setup from £149 a month, and expert time at £500 for about two hours, £1,500 for a day, and £5,000 for four days setting it up in the client's own environment. Expert time sits exactly in the band I would like to start with, £1,500 to £5,000, and in the middle of the boutiques' prices.
 
@@ -58,7 +58,7 @@ So the path is: a conversation, free, about what the client wants agents to do a
 
 ## A marketplace for the people who deliver it
 
-A marketplace for the people who deliver it: clients pick a project type, then the consultants; consultants join through an application, proof of work, peer review, an interview, a shadowed pilot and standards; the platform share is a proposal.
+A marketplace for the people who deliver it: clients pick a project type, then the consultants.
 
 This only scales with people. Agentic engagements need someone who knows the client's world and can steer a hive in it, and there are many more of those people in the community than there are hours in my week. So alongside the offers, the idea is a marketplace: a small, curated list of consultants who deliver agentic engagements on this stack, where a client picks the kind of project first and then the people.
 

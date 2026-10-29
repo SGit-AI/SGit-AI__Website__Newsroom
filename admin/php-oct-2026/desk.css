@@ -1,0 +1,51 @@
+/* The PHP desk (card 089). Theme tokens only (assets/themes/README.md). */
+.pd-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.pd-table th,.pd-table td{border-bottom:1px solid var(--line);padding:.42rem .5rem;text-align:left;vertical-align:top}
+.pd-table th{color:var(--head);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+.pd-table small{color:var(--dim)}
+.pd-table td.n{text-align:right;font-family:var(--mono)}
+.pd-small{font-size:.78rem}
+.pd-when{white-space:nowrap;font-family:var(--mono);font-size:.7rem;color:var(--dim)}
+.pd-st{display:inline-block;font-size:.64rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.05rem .4rem;border-radius:6px;background:var(--mute-bg);color:var(--text)}
+.pd-done .pd-st{background:var(--info-bg);color:var(--info-ink)}
+.pd-blocked .pd-st,.pd-open .pd-st{background:var(--warn-bg);color:var(--warn-ink)}
+.pd-doing .pd-st{background:var(--tint);color:var(--accent-dk)}
+.pd-owners-h,.pd-k{margin:.9rem 0 .3rem;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.pd-owners{font-size:.82rem;columns:2 18rem}
+.pd-checks{list-style:none;padding:0;font-size:.85rem}.pd-checks small{color:var(--dim)}
+.pd-checks li.ok{color:var(--accent-dk)}
+.pd-roles{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.pd-role{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:.8rem .95rem}
+.pd-role h3{margin:.1rem 0 .4rem;font-size:1rem}
+.pd-role p{margin:0 0 .5rem;font-size:.84rem}
+.pd-kind{font-size:.64rem!important;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--warm);margin:0!important}
+.pd-role dl{margin:0;font-size:.76rem}
+.pd-role dt{color:var(--dim);font-weight:700;margin-top:.35rem}
+.pd-role dd{margin:0}
+.pd-key{border:2px solid var(--accent);background:var(--tint);border-radius:12px;padding:.9rem 1.1rem;margin:.8rem 0 1.2rem}
+.pd-key pre{white-space:pre-wrap;word-break:break-all;margin:.2rem 0 .6rem}
+.pd-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.pd-commits{font-size:.78rem}
+.vv{border:1px solid var(--line);border-radius:10px;padding:.7rem .9rem;background:var(--panel);margin:.6rem 0 1.2rem}
+.vv-status{font-size:.8rem;color:var(--dim);margin:.2rem 0 .6rem}
+.vv-bar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:0 0 .6rem}
+.vv-q{flex:1 1 16rem;padding:.35rem .5rem;border:1px solid var(--line);border-radius:6px;background:var(--input-bg);color:var(--fg)}
+.vv-bar select{padding:.3rem;border:1px solid var(--line);border-radius:6px;background:var(--input-bg);color:var(--fg)}
+.vv-count{font-family:var(--mono);font-size:.72rem;color:var(--dim)}
+.vv-list{max-height:70vh;overflow:auto}
+.vv-src{border-top:1px solid var(--line);padding:.35rem 0;font-size:.84rem}
+.vv-src summary{cursor:pointer}
+.vv-meta,.vv-dim{color:var(--dim);font-size:.76rem}
+.vv-st{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:0 .35rem;border-radius:5px;background:var(--mute-bg);color:var(--text)}
+.vv-captured{background:var(--info-bg);color:var(--info-ink)}
+.vv-blocked,.vv-failed{background:var(--warn-bg);color:var(--warn-ink)}
+.vv-body{padding:.4rem 0 .4rem 1rem}
+.vv-notes{font-size:.82rem;border-left:3px solid var(--line);padding-left:.7rem;margin:.4rem 0}
+.vv-cap{border:1px solid var(--line);border-radius:8px;padding:.5rem .7rem;margin:.5rem 0}
+.vv-cap-h{margin:0 0 .3rem;font-size:.78rem}
+.vv-thumb{display:block;max-width:100%;width:480px;border:1px solid var(--line);border-radius:6px}
+.vv-full{display:block;max-width:100%;border:1px solid var(--line)}
+.vv-acts{display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0}
+.vv-acts button{font-size:.75rem;padding:.25rem .55rem;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg);cursor:pointer}
+.vv-text{white-space:pre-wrap;max-height:30rem;overflow:auto;font-size:.72rem}
+.vv-hashes{font-size:.7rem}.vv-h{word-break:break-all;color:var(--dim)}

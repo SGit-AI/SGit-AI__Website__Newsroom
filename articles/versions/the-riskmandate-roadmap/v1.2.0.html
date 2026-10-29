@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A proposed roadmap for RiskMandate: what changed in v1.2.0, SGit Newsroom</title>
+<meta name="description" content="The changes to the article "A proposed roadmap for RiskMandate" in v1.2.0, paragraph by paragraph.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/versions/the-riskmandate-roadmap/v1.2.0.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/versions/the-riskmandate-roadmap/v1.2.0.html">
+<meta property="og:title" content="A proposed roadmap for RiskMandate: what changed in v1.2.0, SGit Newsroom">
+<meta property="og:description" content="The changes to the article "A proposed roadmap for RiskMandate" in v1.2.0, paragraph by paragraph.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A proposed roadmap for RiskMandate: what changed in v1.2.0, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<link rel="alternate" type="text/markdown" href="v1.2.0.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "A proposed roadmap for RiskMandate: what changed in v1.2.0, SGit Newsroom", "headline": "A proposed roadmap for RiskMandate: what changed in v1.2.0, SGit Newsroom", "description": "The changes to the article \"A proposed roadmap for RiskMandate\" in v1.2.0, paragraph by paragraph.", "url": "https://newsroom.sgit.ai/articles/versions/the-riskmandate-roadmap/v1.2.0.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../../../assets/themes/themes.css">
+  <link rel="stylesheet" href="../../../assets/site-nav.css">
+  <script src="../../../assets/themes/themes.js"></script>
+  <script src="../../../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../../../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../../../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../../../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../index.html">Front page</a>
+      <a class="sl" href="../../../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../../../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../../../about/index.html">Why this exists</a>
+      <a class="sl" href="../../../desks/index.html">The five desks</a>
+      <a class="sl" href="../../../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../../../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../../../articles/index.html#all">Every article</a>
+      <a class="sl" href="../../../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../../../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../../../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../../../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../../../for/make.html">Make a reading list</a>
+      <a class="sl" href="../../../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../wire/index.html">Today's edition</a>
+      <a class="sl" href="../../../wire/sources.html">The sources</a>
+      <a class="sl" href="../../../wire/how.html">How the wire works</a>
+      <a class="sl" href="../../../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../../../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../../../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../../../wire/days.html">Day by day</a>
+      <a class="sl" href="../../../wire/charter.html">The charter</a>
+      <a class="sl" href="../../../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../account/index.html">Your reading account</a>
+      <a class="sl" href="../../../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../../../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../../../account/personas.html">Your personas</a>
+      <a class="sl" href="../../../account/top-up.html">Top up</a>
+      <a class="sl" href="../../../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../../../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../../../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../../../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../../../newsroom/board.html">The board</a>
+      <a class="sl" href="../../../newsroom/log.html">The run log</a>
+      <a class="sl" href="../../../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../../../team/index.html">The team: who does what</a>
+      <a class="sl" href="../../../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../../../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../../../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../../../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../../../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../../../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../../../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../../../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../../../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../../../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../../../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../../../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../../../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../../../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../../../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../../../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../../../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../archive/index.html">The archive</a>
+      <a class="sl" href="../../../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../../../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../../../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../../../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../../../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../../../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../../../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../../../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../../../network/index.html">The network</a>
+      <a class="sl" href="../../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../../../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../../../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../../../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../../../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../../../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../../../assets/reader/strip.css">
+  <script src="../../../assets/reader/strip.js" defer></script>
+  <script src="../../../assets/reader/highlights.js" defer></script>
+  <script src="../../../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../../../assets/pen/pen.css">
+  <script type="module" src="../../../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../../../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc diff">
+ <p class="crumb"><a href="../../../index.html">Home</a> / <a href="../../index.html">Articles</a> / <a href="../../the-riskmandate-roadmap.html">A proposed roadmap for RiskMandate</a> / <a href="../the-riskmandate-roadmap.html">Versions</a> / v1.2.0</p>
+ <h1>A proposed roadmap for RiskMandate: what changed in v1.2.0</h1>
+ <p class="lead">From v1.1.0 (2026-10-20, <code>3a760bc1c</code>) to v1.2.0 (2026-10-21, <code>b5b23e25c</code>), paragraph by paragraph.</p>
+ <p class="small dim">24 paragraphs added, 21 removed, 10 changed in place, 6 unchanged. About 1,011 words added and 713 removed. Insertions are marked like <ins>this</ins>, deletions like <del>this</del>; unchanged runs are folded to one line; figures appear as their file names.</p>
+ <style>.diff ins{background:#e6f4ea;color:#1a5c36;text-decoration:none;padding:0 2px}.diff del{background:#fde8e6;color:#8a1c12;text-decoration:line-through;padding:0 2px}.diff .diff-same{color:#8a8780;font-size:.85em;border-left:3px solid #e3e0d8;padding-left:.7em;margin:1.2em 0}.diff .added{border-left:3px solid #1a7f5a;padding-left:.7em}.diff .removed{border-left:3px solid #b42318;padding-left:.7em;color:#6b6863;text-decoration:line-through}.diff .changed{border-left:3px solid #b45309;padding-left:.7em}.diff .diff-fig{font-style:italic;color:#6b6863}.diff .diff-li{margin:.3em 0 .3em 1em}</style>
+ <p class="small"><a href="v1.1.0.html">&larr; v1.1.0</a> &middot; <a href="../the-riskmandate-roadmap.html">all versions</a> &middot; <a href="v1.3.0.html">v1.3.0 &rarr;</a></p>
+ <p class="changed"># The RiskMandate roadmap: policies, understand, <del>contain,</del><ins>risk acceptance, contain and</ins> manage, <del>accelerate, then insurance, and </del>a <del>home</del><ins>spectrum</ins> <del>for</del><ins>of</ins> <del>the</del><ins>trust</ins> <del>Agent</del><ins>we</ins> <del>Behaviour</del><ins>walk</ins> <del>Policy</del><ins>with</ins> <del>outside</del><ins>each</ins> <del>RiskMandate</del><ins>customer</ins></p>
+ <p class="changed">Summary: This is <ins>the strategy for RiskMandate as </ins>a <del>proposed</del><ins>company, and the path we will walk with each customer. The question behind it is how we start engaging with a customer, how we earn their trust, and how we become a player: running our code and our vaults, and being there with them. So think of the</ins> roadmap <del>for</del><ins>as</ins> <del>RiskMandate,</del><ins>a spectrum of trust, where each stage answers the next question a customer asks once the last one is answered. Policies first, because we can create them today</ins> and <del>two</del><ins>they</ins> <del>decisions. The first is about governance. On 8 October RiskMandate's two founders decided to propose the Agent Behaviour Policy to OWASP as an open project, because</del><ins>are</ins> a <del>description</del><ins>microcosm</ins> of what <del>an</del><ins>we</ins> <del>agent</del><ins>do: the grant, the gap, the hooks, a first picture. Then understand: help us get a grip, what is our exposure, where are our agents and what</ins> can <ins>they reach. Then risk acceptance: which of these risks </ins>do <del>should</del><ins>we</ins> <del>not</del><ins>carry,</ins> <del>belong</del><ins>and</ins> <del>to</del><ins>who decides. Then contain: make</ins> the <del>company</del><ins>blast</ins> <del>that</del><ins>radius</ins> <del>sells</del><ins>smaller.</ins> <del>it.</del><ins>Then</ins> <del>It</del><ins>manage:</ins> <del>was not</del><ins>run</ins> the <del>right fit for an OWASP project, so the policy will move to the Open Security Summit instead,</del><ins>agents</ins> as a <del>hosted</del><ins>fleet.</ins> <del>project:</del><ins>Acceleration is not a stage; it is what every stage gives</ins> the <del>point</del><ins>business. Insurance comes after, once the evidence exists, and whether we play there</ins> is <del>the</del><ins>a</ins> <del>same,</del><ins>future decision. At every stage there are other companies</ins> that <ins>should be </ins>the <del>policy</del><ins>big players, and where they do not move fast enough, there</ins> is <del>governed</del><ins>an</ins> <del>outside</del><ins>opportunity</ins> <del>the</del><ins>for</ins> <del>RiskMandate organisation, which today is mostly The Cyber Boardroom. The second is the roadmap: five stages of development, then insurance. Policies, then understand, then contain, then manage, then accelerate, and then insurance.</del><ins>us.</ins> We are in the first <del>stage: creating the policies and the flows,</del><ins>stage,</ins> with our first <del>customers, whose programme is now running at customers.riskmandate.ai. The later stages we will start as they are needed, as we get more customers and users and the offering matures. This is the plan; the stages after the first are a first reading, to be refined with the people using it.</del><ins>customers.</ins></p>
+ <p class="changed">!shot rr-roadmap.webp | images/ | The RiskMandate <del>roadmap:</del><ins>roadmap as a spectrum of trust:</ins> five <del>stages of development,</del><ins>stages,</ins> policies, understand, <del>contain,</del><ins>risk</ins> <del>manage</del><ins>acceptance, contain</ins> and <del>accelerate,</del><ins>manage,</ins> <del>then</del><ins>each</ins> <del>insurance.</del><ins>answering the customer's next question. Acceleration runs through all of them; insurance comes after, as a future decision.</ins> We are in the <del>first, writing the policies and the flows with our </del>first <del>customers.</del><ins>stage.</ins> | concept</p>
+ <p class="diff-same">1 unchanged paragraph, under In short {#in-short}</p>
+ <p class="diff-li removed">&bull; <b>The policy needs a home outside RiskMandate.</b> Governed by more people than us.</p>
+ <p class="diff-li removed">&bull; <b>It will be hosted by the Open Security Summit.</b> OWASP was not the right fit.</p>
+ <p class="diff-li removed">&bull; <b>The roadmap has five stages, then insurance.</b> Policies, understand, contain, manage, accelerate.</p>
+ <p class="diff-li removed">&bull; <b>We are in the first stage.</b> Creating the policies and the flows.</p>
+ <p class="diff-li removed">&bull; <b>Our first customers are where it happens.</b> Their programme is live at customers.riskmandate.ai.</p>
+ <p class="diff-li removed">&bull; <b>Later stages start as they are needed.</b> With more customers, more users and a more mature offering.</p>
+ <p class="diff-li removed">&bull; <b>Everything stays open.</b> CC BY 4.0 for the policies and pages, Apache 2.0 for the code.</p>
+ <h2 class="removed">A home outside RiskMandate {#foundation}</h2>
+ <p class="removed">On 8 October, RiskMandate's two founders decided to propose the Agent Behaviour Policy to OWASP as an open project, with RiskMandate as its sponsor. The reason is on <a href="https://riskmandate.ai/owasp/">the proposal's page</a>: "A description of what an agent can do should not belong to the company that sells it." A format that the buyer, the vendor, the reviewer and the insurer all write in has to be one that none of them owns.</p>
+ <p class="removed">It was not the right fit for an OWASP project. The reason for proposing it has not changed, so we are going to give it another home: the <a href="../../agent-behaviour-policies-move-to-the-open-security-summit.html">Open Security Summit</a>, as its first hosted project. What that means, fundamentally, is that we want the governance of the Agent Behaviour Policy to happen outside the RiskMandate organisation, which at the moment is predominantly <a href="https://thecyberboardroom.com/">The Cyber Boardroom</a>. The vocabulary, the schema and the published policies are already open, under CC BY 4.0 and Apache 2.0, at <a href="https://abp.sgit.ai/">abp.sgit.ai</a>; the new home is where decisions about them will be made, by people who are not only us.</p>
+ <p class="removed">RiskMandate stays what it is: a company that sells services on the policy, from the pack to a policy a professional signs, as <a href="https://riskmandate.ai/pricing.html">its pricing page</a> sets out. The line between the two is the one the OWASP proposal drew, and it still holds: the policy is shared; the work done with it can be sold.</p>
+ <h2 class="removed">Five stages, then insurance {#roadmap}</h2>
+ <p class="removed">The roadmap maps five stages of development, and then insurance. Each stage builds on the one before. The meanings below are how I read each stage today; they will be refined with the people who use them.</p>
+ <p class="diff-li removed">&bull; <b>Policies.</b> Write the Agent Behaviour Policy for each agent: what it can reach (the grant), what it was authorised to do (the mandate), the gap between them (the delta), and what stands in the way (the barrier). This is the stage we are in.</p>
+ <p class="diff-li removed">&bull; <b>Understand.</b> See what each agent actually does, measured against its policy: its receipts, its footprint against its blast radius, and its near misses, the rows only the model kept.</p>
+ <p class="diff-li removed">&bull; <b>Contain.</b> Move each rule out of the agent's reach, from a sentence in the prompt, to a hook in its harness, to a system the agent cannot touch. <a href="../../inside-the-pellbridge-agents.html">The Pellbridge agents</a> showed the same day with 16 breaches and with none, depending only on where the rules were kept.</p>
+ <p class="diff-li removed">&bull; <b>Manage.</b> A holder for every rule, a decision for every gap, and a test pack run on every change of model or policy. This is the work in <a href="https://newsroom.sgit.ai/articles/every-risk-is-already-accepted.html">every risk is already accepted</a>, applied to agents.</p>
+ <p class="diff-li removed">&bull; <b>Accelerate.</b> With the rules kept and managed, give agents more to do, and faster. Control is what makes it safe to say yes.</p>
+ <p class="diff-li removed">&bull; <b>Insurance.</b> Evidence of what contains each agent is what an insurer needs to cover it. It is the top of the ladder RiskMandate already publishes, from the <a href="https://riskmandate.ai/">policy</a>, to a <a href="https://riskmandate.ai/licence-to-operate.html">licence to operate</a>, to <a href="https://riskmandate.ai/insurance.html">insurable</a>.</p>
+ <p class="diff-li added">&bull; <b>This is RiskMandate's strategy, and the path we walk with each customer.</b> Each stage earns more trust.</p>
+ <p class="diff-li added">&bull; <b>Policies first.</b> We can create them today, and they are a microcosm of what we do.</p>
+ <p class="diff-li added">&bull; <b>Then understand.</b> Help the customer get a grip on their exposure.</p>
+ <p class="diff-li added">&bull; <b>Then risk acceptance.</b> Which risks they carry, and who decides.</p>
+ <p class="diff-li added">&bull; <b>Then contain, then manage.</b> A smaller blast radius, then a fleet run strategically.</p>
+ <p class="diff-li added">&bull; <b>Acceleration runs through all of it.</b> Insurance comes after, as a future decision.</p>
+ <p class="diff-li added">&bull; <b>We are in the first stage.</b> With our first customers.</p>
+ <h2 class="added">A spectrum of trust {#strategy}</h2>
+ <p class="added">What we are describing here is the strategy for RiskMandate as a company, and the path we are going to walk with each customer. The question behind it is simple to ask and harder to answer: how do we start engaging with a customer? How do we earn their trust? How do we become a player, running our code and our vaults, and being there with them?</p>
+ <p class="added">So the way to think about the roadmap is as a spectrum of trust. Each stage answers a different question the customer has, and each one is only asked once the one before it has been answered. The further along we are with a customer, the deeper the relationship, and the more we are helping them in the way they work. The stages are a sequence of events, not always a straight line: with some customers two will overlap, and with others one will come early. But the order is the one we can operate in.</p>
+ <h2 class="added">The five stages {#roadmap}</h2>
+ <p class="added"><b>Policies.</b> *"What can this agent do, and what stops it?"* This is where we can start, today, and it is a great place to engage. The policies are a microcosm of everything else: for one agent we already have the grant, the gap, the barriers and the enforcement, the hooks, and a first visualisation. A customer gets to experience what we do, on one agent, in a way that is useful to them on its own.</p>
+ <p class="added"><b>Understand.</b> *"Can you help us get a grip on the situation? What is our exposure?"* The next stage of trust is the customer asking for help to understand their risk: where their agents are, which agents they have, what each one can reach, and what they were meant to do. This is where the policies scale, from one agent to many, across the organisation. A lot of this is not straightforward, and that is exactly why it needs help.</p>
+ <p class="added"><b>Risk acceptance.</b> *"Which of these risks do we carry, and who decides?"* Once the exposure is understood, someone has to decide what to do about each gap: fix it, fund the control, or accept it until a date, with a person who holds the decision and a chain to the board. This is the work we have written about in <a href="https://newsroom.sgit.ai/articles/every-risk-is-already-accepted.html">every risk is already accepted</a>, and it is a lot of the work of working with customers.</p>
+ <p class="added"><b>Contain.</b> *"How do we make the blast radius smaller?"* With the risks accepted, there is a lot that needs containing. So we work with the customer to reduce scope: move rules out of the agents' reach, take away what they do not need, and make each blast radius smaller. <a href="../../inside-the-pellbridge-agents.html">The Pellbridge agents</a> showed what that does: the same day had 16 breaches with no policy and none with every rule kept outside the agent.</p>
+ <p class="added"><b>Manage.</b> *"How do we run the fleet?"* Once the agents are contained, the customer can think much more strategically about them, as a fleet: which agents they need, the resources each one uses, how changes are tested and released, and what the fleet should be doing next.</p>
+ <h2 class="added">Accelerate, all the way through {#accelerate}</h2>
+ <p class="added">I first had accelerate as a stage of its own, after manage. I do not think it is one. Acceleration is what every stage gives the business: each one lets it do more with its agents, with more confidence, and faster. It reads better as the reason for the roadmap than as a step on it, so it runs along the whole length of it.</p>
+ <h2 class="added">Insurance, and the players at every stage {#insurance}</h2>
+ <p class="added">After manage, the customer is ready for insurance: the evidence an insurer needs, of what each agent can reach and what contains it, already exists. RiskMandate already publishes how that would work, from the <a href="https://riskmandate.ai/">policy</a>, to a <a href="https://riskmandate.ai/licence-to-operate.html">licence to operate</a>, to <a href="https://riskmandate.ai/insurance.html">insurable</a>. Whether we play in insurance ourselves, or work with the players who do, is a future decision, and we will be well placed for it either way.</p>
+ <p class="added">The same is true at every stage. Each one has other companies that should be the big players in it: in discovering agents, in risk management, in enforcement, in fleet management. Many of them we will work with. Where they do not move fast enough, there is a business opportunity for us to get into that space, because we will already be there with the customer.</p>
+ <p class="diff-same">1 unchanged paragraph, under Where we are: the policies {#now}</p>
+ <p class="changed"><del>If you look at the execution, we</del><ins>We</ins> are in <del>stage</del><ins>the</ins> <del>one:</del><ins>first stage:</ins> really sorting out the policies, and the flows that produce them. That is what <a href="../../our-first-customers.html">our first customers</a> are for, and their programme now runs as a site of its own, at <a href="https://customers.riskmandate.ai/">customers.riskmandate.ai</a>.</p>
+ <p class="changed">Its milestones are the first stage, step by step. A customer starts with credit and names one agent; then its grant is measured, its mandate is written in the customer's own words, and the <del>delta</del><ins>gap</ins> gives a first finding. Then comes the part of the policy the agent's harness can hold as hooks, and finally the usage moment: the point where the policy became worth something to that customer, and what a fair price would be. Seven steps in all, from S0 to S6, each done when the thing it names exists.</p>
+ <p class="diff-same">1 unchanged paragraph</p>
+ <h2 class="removed">The later stages, as they are needed {#later}</h2>
+ <p class="removed">The stages after the first are not a schedule. We will start each one as we get more customers and more users, and as the offering matures: when a customer needs to understand what their agents did, or to contain one, that is when that stage begins, with them. Some of the pieces already exist in what we have published, from the hooks and the test packs to the insurance pages. What the roadmap adds is the order, and the name of the plan.</p>
+ <h2 class="added">A side note: the policy and its home {#home}</h2>
+ <p class="added">One operational note, which does not change the strategy. The Agent Behaviour Policy started inside RiskMandate, and its stewardship is moving to the Open Security Summit, as <a href="../../agent-behaviour-policies-move-to-the-open-security-summit.html">its first hosted project</a>, so that it is governed by more people than us. RiskMandate is still the one operating it with customers.</p>
+ <p class="added">And the policies themselves are a stepping stone. Behaviour policies, and the decision and workflow policies that come after them, as in <a href="../../three-policies-for-an-agent.html">three policies for an agent</a>, are how we start. What we are pursuing is the whole path above: being the people a customer trusts with their agents, from the first policy to the managed fleet.</p>
+ <p class="diff-same">1 unchanged paragraph, under What this does not claim {#limits}</p>
+ <p class="changed diff-li">&bull; <b>The <del>hosting</del><ins>stages</ins> <del>is</del><ins>are</ins> <del>proposed.</b></del><ins>a</ins> <del>The</del><ins>sequence,</ins> <del>charter</del><ins>not a schedule.** They have no dates,</ins> and <del>the</del><ins>may</ins> <del>steering group come first.</del><ins>overlap.</ins></p>
+ <p class="changed diff-li">&bull; <del><b>OWASP</del><ins></b>Only</ins> <del>has</del><ins>the</ins> <del>not</del><ins>first</ins> <del>endorsed</del><ins>stage</ins> <del>anything.<b></del><ins>is under way.</b></ins> The <del>project</del><ins>others</ins> <del>was</del><ins>are</ins> <del>not</del><ins>described</ins> <del>a</del><ins>as</ins> <del>fit</del><ins>we</ins> <del>for</del><ins>see</ins> <del>it.</del><ins>them today.</ins></p>
+ <p class="changed diff-li">&bull; <del><b>The</del><ins></b>Insurance</ins> <del>stage meanings are</del><ins>is</ins> a <del>first</del><ins>future</ins> <del>reading.<b></del><ins>decision.</b></ins> <del>Only</del><ins>We</ins> <del>the</del><ins>have</ins> <del>first</del><ins>not</ins> <del>stage</del><ins>decided</ins> <del>is</del><ins>to</ins> <del>under</del><ins>play</ins> <del>way.</del><ins>there.</ins></p>
+ <p class="changed diff-li">&bull; <b>The <del>roadmap</del><ins>other</ins> <del>has</del><ins>players</ins> <del>no</del><ins>are</ins> <del>dates.</b></del><ins>not</ins> <del>Each</del><ins>named.** Which ones lead each</ins> stage <del>starts</del><ins>is</ins> <del>when</del><ins>still</ins> <del>customers</del><ins>to</ins> <del>need</del><ins>be</ins> <del>it.</del><ins>seen.</ins></p>
+ <p class="diff-same">2 unchanged paragraphs, under Where this comes from {#sources}</p>
+ <p class="changed"><del>A</del><ins>Two</ins> voice <del>memo</del><ins>memos</ins> of 20 October 2026. RiskMandate's<del> <a href="https://riskmandate.ai/owasp/">OWASP proposal page</a>, its <a href="https://riskmandate.ai/pricing.html">pricing</a>,</del> <a href="https://riskmandate.ai/licence-to-operate.html">licence to operate</a> and <a href="https://riskmandate.ai/insurance.html">insurance</a> pages, and <a href="https://customers.riskmandate.ai/">customers.riskmandate.ai</a> at v0.1.1, its home page and <a href="https://customers.riskmandate.ai/milestones/">milestones</a>, read the same day. Related: <a href="../../our-first-customers.html">our first customers</a>, <a href="../../inside-the-pellbridge-agents.html">inside the Pellbridge agents</a>, <del><a href="../../three-policies-for-an-agent.html">a</del><ins>[three</ins> <del>leak</del><ins>policies</ins> <del>without</del><ins>for</ins> <del>breaking</del><ins>an agent</a>, <a href="../../a-leak-without-breaking-the-policy.html">Agent Behaviour Policies move to</ins> the <del>policy</a>,</del><ins>Open</ins> <del><a href="../../free-to-copy-paid-at-the-source.html">free</del><ins>Security</ins> <del>to copy, paid at the source</a>.</del><ins>Summit](/articles/agent-behaviour-policies-move-to-the-open-security-summit.html).</ins> Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
+ <p class="small" style="margin-top:2rem"><a href="v1.1.0.html">&larr; v1.1.0</a> &middot; <a href="../the-riskmandate-roadmap.html">all versions</a> &middot; <a href="v1.3.0.html">v1.3.0 &rarr;</a></p>
+</main>
+<sg-meter view="page" kind="page" date="" topics="" title="A proposed roadmap for RiskMandate: what changed in v1.2.0, SGit Newsroom" quiet></sg-meter>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../../../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../../admin/versions.html">v999.0.0</a> &middot; <a href="../../../admin/index.html">engineering</a> &middot; <a href="v1.2.0.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../../../index.html">&#8594; The front page</a>
+    <a href="../../../about/index.html">Why this exists</a>
+    <a href="../../../desks/index.html">The five desks</a>
+    <a href="../../../agents/index.html">Written by the agents</a>
+    <a href="../../../wire/index.html">The Industry Wire</a>
+    <a href="../../../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../../../wire/aws/index.html">The AWS Wire</a>
+    <a href="../../../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../../../articles/index.html#all">Every article</a>
+    <a href="../../../articles/newsletter/index.html">The newsletter</a>
+    <a href="../../../articles/collections/index.html">Collections</a>
+    <a href="../../../articles/desk/index.html">From the desk</a>
+    <a href="../../../articles/graphs.html">As graphs</a>
+    <a href="../../../subscribe/index.html">Subscribe</a>
+    <a href="../../../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../../../account/index.html">Your reading account</a>
+    <a href="../../../account/newsroom.html">Your newsroom</a>
+    <a href="../../../account/personas.html">Your personas</a>
+    <a href="../../../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../../../newsroom/index.html">How the newsroom runs</a>
+    <a href="../../../newsroom/policies.html">Behaviour policies</a>
+    <a href="../../../newsroom/publish.html">How to publish</a>
+    <a href="../../../newsroom/board.html">The board</a>
+    <a href="../../../newsroom/log.html">The run log</a>
+    <a href="../../../team/index.html">The team</a>
+    <a href="../../../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../../../design/index.html">The design, and what runs</a>
+    <a href="../../../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../../../corrections/index.html">Corrections must propagate</a>
+    <a href="../../../provenance/index.html">Provenance is the product</a>
+    <a href="../../../economics/index.html">Paying the fact creator</a>
+    <a href="../../../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../../../replicate/index.html">Replicate this newsroom</a>
+    <a href="../../../publishers/index.html">For publishers</a>
+    <a href="../../../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../../../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../../../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../../../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../../../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../../../archive/index.html">The archive</a>
+    <a href="../../../network/index.html">The network</a>
+    <a href="../../../admin/versions.html">Release history</a>
+    <a href="../../../admin/index.html">Admin &amp; engineering</a>
+    <a href="../../../about/participant.html">Where we lose</a>
+    <a href="../../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

@@ -13,9 +13,9 @@
   {
    "id": "in-short",
    "label": "In short",
-   "words": 105,
+   "words": 112,
    "line": "Shared core ideas, opposite centres of gravity, real gaps",
-   "para": "Agents broke Git's assumptions at Anthropic, so Scion moved history and merges to the server. sgit shares immutable objects, fetch-only-what-you-need, no packfiles and compare-and-swap, but keeps the server dumb and blind. On a 35,000-object vault one folder clones in 13 seconds and 3 MB; blame and bisect are missing.",
+   "para": "Agents broke Git's assumptions at Anthropic, so Scion moved history and merges to the server. sgit shares immutable objects, fetch-only-what-you-need, no packfiles and compare-and-swap, but keeps the server dumb and blind. On a 35,000-object vault one folder clones in 13 seconds and 3 MB; bisect is still missing, blame shipped in 0.27.0.",
    "by": "newsroom.ux"
   },
   {
@@ -45,9 +45,9 @@
   {
    "id": "gaps",
    "label": "Where Scion is ahead",
-   "words": 198,
-   "line": "Scion leads on blame, bisect, server merges and scale",
-   "para": "sgit's server cannot read commits, so history work runs on the client, and there is no blame or bisect yet. A partial clone with all 1,295 commits takes nearly four minutes, file history costs minutes of CPU, and proof stops at 35,000 objects and ten agents. No bridge converts Git history to sgit.",
+   "words": 216,
+   "line": "Scion leads on bisect, server merges and scale",
+   "para": "sgit's server cannot read commits, so history work runs on the client; since 0.27.0 that includes blame, grep and line merges, but not yet bisect. A partial clone with all 1,295 commits takes nearly four minutes, file history costs minutes of CPU, and proof stops at 35,000 objects and ten agents.",
    "by": "newsroom.ux"
   },
   {

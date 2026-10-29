@@ -10,13 +10,14 @@
 
 # Versions of: Policy as code needs a policy first
 
-1 published version of [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](../policy-as-code-needs-a-policy-first.md). The current one is **v1.0.0**.
+2 published versions of [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](../policy-as-code-needs-a-policy-first.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-14 | published | 2,821 | first published | [`484d23815`](https://github.com/SGit-AI/SGit-AI__Website/commit/484d2381504a0c3db8db5f0a30fb5bfc627bd553) | [current](../policy-as-code-needs-a-policy-first.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,713 | +0 / −108 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](policy-as-code-needs-a-policy-first/v1.1.0.md) · [current](../policy-as-code-needs-a-policy-first.md) |
+| **v1.0.0** | 2026-10-14 | published | 2,821 | first published | [`484d23815`](https://github.com/SGit-AI/SGit-AI__Website/commit/484d2381504a0c3db8db5f0a30fb5bfc627bd553) |  |
 
 [← Back to the article](../policy-as-code-needs-a-policy-first.md) · [All articles](../index.md)
 

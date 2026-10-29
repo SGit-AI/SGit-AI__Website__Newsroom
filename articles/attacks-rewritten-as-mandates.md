@@ -10,11 +10,11 @@
 
 # Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.1.0, 2 versions](versions/attacks-rewritten-as-mandates.md) · [newsroom v0.12.33](https://newsroom.sgit.ai/admin/versions.html) · supply-chainagentsagent-behaviour-policyreachmandateopen-sourceregistriesskillssgitriskmandatechainguardarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.2.0, 3 versions](versions/attacks-rewritten-as-mandates.md) · [newsroom v0.12.33](https://newsroom.sgit.ai/admin/versions.html) · supply-chainagentsagent-behaviour-policyreachmandateopen-sourceregistriesskillssgitriskmandatechainguardarticle
 
 ***Abstract:** Chainguard keeps a public ledger of software supply-chain attacks, 28 incidents from May 2024 to October 2026, 23 of them this year. I read it the way I read an agent's permissions, and every row turns out to be the same shape. A credential, a tag or a build step could do far more than it was ever meant to do, and the attacker used the difference. A maintainer token that could publish any version of any package, used by someone whose job was to release one SDK from a reviewed build. That is reach beyond mandate, the gap an Agent Behaviour Policy is written to make visible. Sorted by what would have stopped each attack, by our reading, a control on the consumer's side, a hardened registry, a cooldown, no install scripts, appears in 26 of the 28; a control on the publisher's side, a written answer to what a credential was for, appears in 16. The first kind is a product you can buy. The second is a document almost nobody has written. And it matters more every month, because the next maintainer holding a publish token is an agent: Chainguard's own engineers describe a fleet that opened 4,746 pull requests in eight weeks against their code, fenced by rules that are an excellent mandate, kept in prompts, bot configuration and a blog post. One pipeline needs three records: trusted inputs, a written mandate, and provable outputs with a memory that outlives the session. As an open source project we would like to be on the first list, and this article is about the other two.*
 
-The ledger. Chainguard's 28 public supply-chain incidents, May 2024 to October 2026, each dot one incident, coloured by its first vector; 23 of them are from 2026. Below, every vector counted, by our reading: an install-time hook ran the payload in 17, a maintainer account or token was taken over in 16.
+Chainguard's 28 public supply-chain incidents, May 2024 to October 2026, one dot each, with every vector counted.
 
 ## In short
 
@@ -50,7 +50,7 @@ By my reading, the other rows have the same shape. A version tag that could be m
 
 ## Two kinds of barrier
 
-For each of the 28 incidents, the control that would most likely have stopped it, by our reading: on the consumer's side, what you let in; on the publisher's side, what a credential was for. A consumer-side control appears in 26, a publisher-side mandate in 16, both in 14. And one case where the consumer was a model.
+For each of the 28 incidents, the control that would most likely have stopped it, by our reading.
 
 For each incident I wrote down what would most likely have stopped it, and sorted the answers into two kinds.
 
@@ -70,7 +70,7 @@ Read as a policy, that post already has three of the four columns. The reach is 
 
 ## One pipeline, three records
 
-One pipeline, three records: what an agent consumes, what it was allowed to do, and what it produced and remembers. The first has products; the second and third are what RiskMandate and sgit work on.
+One pipeline, three records: what an agent consumes, what it was allowed to do, and what it produced and remembers.
 
 So I think the supply chain for an agent needs three records, and only the first has a market yet.
 
@@ -117,6 +117,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#attacks-re
 
 ### Continued by
 
+- [The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent](the-key-is-not-the-risk.md) Credential injection for AI agents is a good pattern; the first question is still what an attacker can make the agent do.
 - [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](a-briefing-for-the-ciso-summit.md) A briefing for the WestCap CISO Summit: Agent Behaviour Policies and RiskMandate, said for six kinds of person in the room, with what to read next.
 - [Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in](chainguard-mapped.md) Chainguard mapped from OS to agents, its public feeds counted, and the context layer above the package where an open policy and a vault fit.
 - [The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool](the-minimum-code-below.md) Container security from the top down: at every layer, keep only the code the layer above needs. Measured on one real tool, with its limits.

@@ -10,7 +10,7 @@ tags: chainguard, supply-chain, containers, vulnerabilities, vex, osv, context, 
 status: published
 ---
 
-!shot cn-map.webp | images/ | Chainguard, mapped. From the operating system to agents: what it builds, the public data a third party can read today, and where an open policy and an encrypted vault could add the context that decides whether an image can ship. | comparison
+!shot cn-map.webp | images/ | Chainguard, mapped from the operating system to agents: what it builds, the public data, and where a policy could help. | comparison
 
 ## In short {#in-short}
 
@@ -57,7 +57,7 @@ The public records say what the status is. In the current feed, a "false positiv
 
 ## How deep the graph goes {#depth}
 
-!shot cn-context.webp | images/ | How far up the stack the context goes. Chainguard's data describes packages and the components inside them; the decision whether an image can ship today is about the application above: is the vulnerable code reachable from what is exposed? A context layer from the user story to the code would sort each finding into must fix, ship now with a reason, and ship now and watch. | architecture
+!shot cn-context.webp | images/ | How far up the stack the context goes: from Chainguard's package data to the application above, with three outcomes. | architecture
 
 The archive holds 30,030 advisories across 1,616 packages, and 2,850 decisions that a vulnerability did not apply. Their reasons, counted:
 

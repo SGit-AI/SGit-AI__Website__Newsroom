@@ -30,13 +30,14 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
       <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
       <a class="sl" href="../about/index.html">Why this exists</a>
       <a class="sl" href="../desks/index.html">The five desks</a>
@@ -86,6 +87,8 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -153,17 +156,19 @@
   <script src="../assets/reader/strip.js" defer></script>
   <script src="../assets/reader/highlights.js" defer></script>
   <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
   <div class="theme-pick"></div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks</p>
  <h1>The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks</h1>
- <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/the-wire-as-a-graph.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.46</a> &middot; <span class="chip">wire</span><span class="chip">newsroom</span><span class="chip">fractal-semantic-graphs</span><span class="chip">ontology</span><span class="chip">ids</span><span class="chip">evidence</span><span class="chip">provenance</span><span class="chip">vaults</span><span class="chip">sgit</span><span class="chip">multi-model</span><span class="chip">brief</span><span class="chip">article</span></p>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/the-wire-as-a-graph.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.46</a> &middot; <span class="chip">wire</span><span class="chip">newsroom</span><span class="chip">fractal-semantic-graphs</span><span class="chip">ontology</span><span class="chip">ids</span><span class="chip">evidence</span><span class="chip">provenance</span><span class="chip">vaults</span><span class="chip">sgit</span><span class="chip">multi-model</span><span class="chip">brief</span><span class="chip">article</span></p>
  <p class="abstract"><em><b>Abstract:</b> The wires already collect the day's news into encrypted vaults on a schedule. This is the next step, and the way to design it is to start at the end, with what the reader sees, and work backwards to the data. A story should read as a short narrative in which every name is a link, to a person, a company, an event or a place, each with a long-lived ID, and every sentence is a claim with its evidence: a fact, an observation, a statement by a party, or our analysis. Stories group into stories, and that is the fractal part: a thread is a story made of stories, and an article someone else published is a story too. From there, the primitives: a run that collects, captures that freeze what was read, claims, stories, stories of stories and names, each with a random ID that never changes. I measured the four wires' public vaults today: 202 stories, 1,358 distinct names, only 171 of them in more than one story and 48 in more than one wire, and only 44% of the names a story lists appear in its own text. Those numbers say where the work is, and how big a folder tree it needs: a name gets its own folder when it has gravity. Earlier experiments that linked every word of a long text were the right idea done too much. A wire story's narrative is about 55 words, small enough to link every phrase. Cheaper models can do the heavy lifting and a more capable one can check it. This article is also the brief for the desks and the wire agent.</em></p>
-<figure class="shot" data-shot="wg-reader.webp" data-dir="images/" data-alt="Start from what the reader sees. One story from the Industry Wire, shortened, as it could read: every name in its narrative is a link to something with an ID and a type, and every sentence is a claim with its evidence. The NCSC is named in this story&#x27;s text but not in its tags, and is tagged in another story; with an ID, the two would join. Below, the three other views the same data gives: the day, the story of stories, and the name." data-kind="architecture"><figcaption>Start from what the reader sees. One story from the Industry Wire, shortened, as it could read: every name in its narrative is a link to something with an ID and a type, and every sentence is a claim with its evidence. The NCSC is named in this story's text but not in its tags, and is tagged in another story; with an ID, the two would join. Below, the three other views the same data gives: the day, the story of stories, and the name.</figcaption></figure>
+<figure class="shot" data-shot="wg-reader.webp" data-dir="images/" data-alt="One story from the Industry Wire, shortened, with every name a link and every sentence a claim with its evidence." data-kind="architecture"><figcaption>One story from the Industry Wire, shortened, with every name a link and every sentence a claim with its evidence.</figcaption></figure>
 <h2 id="in-short">In short</h2>
 <ul>
 <li><b>Start from the end.</b> Design what the reader sees first, then work back to the data and the schedule that produce it.</li>
@@ -191,7 +196,7 @@
 </ul>
 <p>None of this is a mistake by the desks; it is what tags are. It is why the next step is IDs.</p>
 <h2 id="primitives">The primitives</h2>
-<figure class="shot" data-shot="wg-model.webp" data-dir="images/" data-alt="The primitives, and where each lives. A run collects; captures freeze what was read; claims are typed and point at evidence; a story is a short narrative over claims and names; stories group into stories; a name earns its own folder when it has gravity. Every object has a long-lived random ID, and an index of every ID, alias and slug." data-kind="architecture"><figcaption>The primitives, and where each lives. A run collects; captures freeze what was read; claims are typed and point at evidence; a story is a short narrative over claims and names; stories group into stories; a name earns its own folder when it has gravity. Every object has a long-lived random ID, and an index of every ID, alias and slug.</figcaption></figure>
+<figure class="shot" data-shot="wg-model.webp" data-dir="images/" data-alt="The primitives and where each lives: runs, captures, claims, stories and names, each with a long-lived random ID." data-kind="architecture"><figcaption>The primitives and where each lives: runs, captures, claims, stories and names, each with a long-lived random ID.</figcaption></figure>
 <p>Working back from the reader, these are the objects the data needs.</p>
 <ul>
 <li><b>The run.</b> A collection time: which wire, when, on what schedule, which models, which sources were polled, and what was produced. Daily, weekly or on any schedule; each run is an object with its own ID, not just a date.</li>
@@ -237,6 +242,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo of mine on 14 October 2026, written by this site's writer agent in the voice of this site; the argument and the editorial responsibility are mine. The numbers were measured for this article from read-only clones of the four wires' public vaults, using the read keys this site publishes, and the wires' charter, desk brief and design notes in this repository. The earlier experiments are this site's own articles, linked above.</p>
 <sg-meter view="page" kind="article" date="2026-10-14" topics="news-and-evidence graphs-and-knowledge" title="The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">News &amp; evidence</span><span class="tchip">Graphs &amp; knowledge</span> <a href="graphs.html#the-wire-as-a-graph">This article as a graph &rarr;</a></p>
@@ -272,7 +278,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-wire-as-a-graph.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-wire-as-a-graph.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -306,6 +312,8 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

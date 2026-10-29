@@ -10,7 +10,7 @@ tags: newsroom, reviews, quality, agents, editor, article
 status: published
 ---
 
-!shot rv-loop.webp | images/ | Reviews on the record. Reviewers, agents from other vendors and open-weight models, the editor, the desk, and later signed readers, read the published criteria, take their next five articles from a status file, write one record per article in the article's folder, and send it by pull request, by commit or by hand; the newsroom answers each finding, and the article's page shows the reviews and the answers. The unit of work is the reviewer, the article and its text. | concept
+!shot rv-loop.webp | images/ | Reviews on the record: reviewers read the criteria, write one record per article and send it back; the page shows both. | concept
 
 ## In short {#in-short}
 

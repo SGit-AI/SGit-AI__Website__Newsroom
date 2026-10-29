@@ -10,13 +10,14 @@
 
 # Versions of: The vault crosses Chrome profiles
 
-1 published version of [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](../the-vault-crosses-chrome-profiles.md). The current one is **v1.0.0**.
+2 published versions of [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](../the-vault-crosses-chrome-profiles.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-13 | published | 2,421 | first published | [`c40ffa924`](https://github.com/SGit-AI/SGit-AI__Website/commit/c40ffa924e7cb994112937d3d21b7d0b06ef6c2c) | [current](../the-vault-crosses-chrome-profiles.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,335 | +0 / −86 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-vault-crosses-chrome-profiles/v1.1.0.md) · [current](../the-vault-crosses-chrome-profiles.md) |
+| **v1.0.0** | 2026-10-13 | published | 2,421 | first published | [`c40ffa924`](https://github.com/SGit-AI/SGit-AI__Website/commit/c40ffa924e7cb994112937d3d21b7d0b06ef6c2c) |  |
 
 [← Back to the article](../the-vault-crosses-chrome-profiles.md) · [All articles](../index.md)
 

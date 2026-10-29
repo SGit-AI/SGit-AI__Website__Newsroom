@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add, SGit Newsroom</title>
+<meta name="description" content="Levente Simon sent me his method for running teams of AI agents that build production software, Governed semi-autonomous development, and asked for feedback. It is a serious piece of work, born from practice: eight control layers, three assurance profiles, a learning loop, and the honesty to say that its evidence base is a single product. Reading it, the first thing that struck me is how often it arrives at ideas we reached separately: authority stays human for anything outward-facing; the owner receives decisions, not files; a rule that breaks twice becomes a mechanism; rule text is a guard-rail, not a boundary; and a session cannot write what enforces its limits. The second thing is that his method is a good mirror. Measured against his lowest profile, this newsroom, where agents write and publish every day, meets five of his eight layers, falls short on one by a recorded choice, and falls short on another by an oversight: the agent that publishes can also change the checks that gate it, which is exactly what we found in our own measurement this week. And then the feedback he asked for: five things we would add, from a column per rule that says what keeps it, to behaviour policies for the agents inside the product, state in encrypted vaults, the owner measures he proposes, which we have started to publish, and agents losing their memory as a design input.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/governed-semi-autonomous-development-read-here.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/governed-semi-autonomous-development-read-here.html">
+<meta property="og:title" content="Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add, SGit Newsroom">
+<meta property="og:description" content="Levente Simon sent me his method for running teams of AI agents that build production software, Governed semi-autonomous development, and asked for feedback. It is a serious piece of work, born from practice: eight control layers, three assurance profiles, a learning loop, and the honesty to say that its evidence base is a single product. Reading it, the first thing that struck me is how often it arrives at ideas we reached separately: authority stays human for anything outward-facing; the owner receives decisions, not files; a rule that breaks twice becomes a mechanism; rule text is a guard-rail, not a boundary; and a session cannot write what enforces its limits. The second thing is that his method is a good mirror. Measured against his lowest profile, this newsroom, where agents write and publish every day, meets five of his eight layers, falls short on one by a recorded choice, and falls short on another by an oversight: the agent that publishes can also change the checks that gate it, which is exactly what we found in our own measurement this week. And then the feedback he asked for: five things we would add, from a column per rule that says what keeps it, to behaviour policies for the agents inside the product, state in encrypted vaults, the owner measures he proposes, which we have started to publish, and agents losing their memory as a design input.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/governed-semi-autonomous-development-read-here.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/governed-semi-autonomous-development-read-here.jpg">
+<link rel="alternate" type="text/markdown" href="governed-semi-autonomous-development-read-here.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add, SGit Newsroom", "headline": "Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add, SGit Newsroom", "description": "Levente Simon sent me his method for running teams of AI agents that build production software, Governed semi-autonomous development, and asked for feedback. It is a serious piece of work, born from practice: eight control layers, three assurance profiles, a learning loop, and the honesty to say that its evidence base is a single product. Reading it, the first thing that struck me is how often it arrives at ideas we reached separately: authority stays human for anything outward-facing; the owner receives decisions, not files; a rule that breaks twice becomes a mechanism; rule text is a guard-rail, not a boundary; and a session cannot write what enforces its limits. The second thing is that his method is a good mirror. Measured against his lowest profile, this newsroom, where agents write and publish every day, meets five of his eight layers, falls short on one by a recorded choice, and falls short on another by an oversight: the agent that publishes can also change the checks that gate it, which is exactly what we found in our own measurement this week. And then the feedback he asked for: five things we would add, from a column per rule that says what keeps it, to behaviour policies for the agents inside the product, state in encrypted vaults, the owner measures he proposes, which we have started to publish, and agents losing their memory as a design input.", "url": "https://newsroom.sgit.ai/articles/governed-semi-autonomous-development-read-here.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add</p>
+ <h1>Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-21 &middot; <a href="versions/governed-semi-autonomous-development-read-here.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.29</a> &middot; <span class="chip">agents</span><span class="chip">abp</span><span class="chip">governance</span><span class="chip">methodology</span><span class="chip">feedback</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Levente Simon sent me his method for running teams of AI agents that build production software, Governed semi-autonomous development, and asked for feedback. It is a serious piece of work, born from practice: eight control layers, three assurance profiles, a learning loop, and the honesty to say that its evidence base is a single product. Reading it, the first thing that struck me is how often it arrives at ideas we reached separately: authority stays human for anything outward-facing; the owner receives decisions, not files; a rule that breaks twice becomes a mechanism; rule text is a guard-rail, not a boundary; and a session cannot write what enforces its limits. The second thing is that his method is a good mirror. Measured against his lowest profile, this newsroom, where agents write and publish every day, meets five of his eight layers, falls short on one by a recorded choice, and falls short on another by an oversight: the agent that publishes can also change the checks that gate it, which is exactly what we found in our own measurement this week. And then the feedback he asked for: five things we would add, from a column per rule that says what keeps it, to behaviour policies for the agents inside the product, state in encrypted vaults, the owner measures he proposes, which we have started to publish, and agents losing their memory as a design input.</em></p>
+<figure class="shot" data-shot="gs-map.webp" data-dir="images/" data-alt="The same ideas, arrived at separately: the method&#x27;s principles on the left, where each shows up in our work." data-kind="comparison"><figcaption>The same ideas, arrived at separately: the method's principles on the left, where each shows up in our work.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>A method for agent teams that build software.</b> Born from practice, on one product.</li>
+<li><b>Many of its ideas are ours too.</b> Arrived at separately, which is a good sign for both.</li>
+<li><b>Authority stays human; decisions, not files.</b> The same shape as our inbox.</li>
+<li><b>A rule that breaks twice becomes a mechanism.</b> Our validator says the same.</li>
+<li><b>It is a good mirror.</b> By its lowest profile, this newsroom falls short on two layers.</li>
+<li><b>One of them is the gap we just measured.</b> The agent can change the checks that gate it.</li>
+<li><b>Five things we would add.</b> Offered as the feedback he asked for.</li>
+</ul>
+<h2 id="method">A method born from practice</h2>
+<p>Levente Simon sent me his draft and asked for feedback, so this is that feedback, written in public because the method is public. <a href="https://github.com/levente-simon/governed-semi-autonomous-development">Governed semi-autonomous development</a> is "a tool-agnostic reference method for governing teams of AI agents that build production software." Its stance is in its first lines: "Agents do the work; humans keep authority over everything irreversible or outward-facing. Trust comes from layered controls, not from the agents behaving well."</p>
+<p>It came out of building <a href="https://dether.net">dethernety</a>, his threat modelling platform, as the work outgrew a single session and moved to teams of agents. The roles are an owner, an orchestrator, workers, specialists and a library of capabilities. The controls sit in eight layers, from infrastructure isolation to state and audit, each at one of three assurance profiles, Lite, Standard and High, chosen per layer from the risks the work actually carries. It is versioned, already at v0.7, with a changelog, and its related-work section withdrew a novelty claim rather than narrow it again. And it says plainly what bounds it: "The evidence base is a single product, which is stated here because it bounds what the method can claim." That is the kind of sentence I wish more methods had.</p>
+<h2 id="same">The same ideas, arrived at separately</h2>
+<p>What struck me first is how often the method lands where we did, by a different road:</p>
+<ul>
+<li><b>Authority stays human.</b> His first principle keeps every outward action with a person. Our inbox agent drafts and I send every email, as in <a href="answering-a-draft.html">answering a draft</a>.</li>
+<li><b>"The owner receives decisions, not files."</b> That is exactly our decision draft: where we are, why it matters, the options and an answer box, so I decide without reading the thread.</li>
+<li><b>"A rule that breaks twice becomes a mechanism."</b> Our site validator has a check whose comment says: "This has now happened twice from the same cause (see .gitignore), so it is a check." And in the inbox, every rule came from a mistake.</li>
+<li><b>"Rule text is a guard-rail against mistakes, not a boundary against an adversary."</b> That is the Agent Behaviour Policy's distinction between an expectation and a boundary, from <a href="https://newsroom.sgit.ai/articles/hope-or-enforcement.html">hope or enforcement</a>.</li>
+<li><b>"Messages carry information, never authority."</b> A message from another agent, in our sessions, is data from a peer, never an approval.</li>
+<li><b>A signed manifest anchored on the owner's public key.</b> Our work on <a href="a-directory-of-people-and-keys.html">pki.sgit.ai</a>, and, today, on <a href="a-secret-is-a-qr-code.html">swapping keys by QR code</a>.</li>
+</ul>
+<p>When two groups working apart converge on the same rules, it suggests the rules are real. That is worth more than either of us claiming them.</p>
+<h2 id="mirror">A good mirror</h2>
+<figure class="shot" data-shot="gs-self.webp" data-dir="images/" data-alt="This newsroom measured against the method&#x27;s Lite profile, layer by layer, with the shortfalls and the recorded choice." data-kind="comparison"><figcaption>This newsroom measured against the method's Lite profile, layer by layer, with the shortfalls and the recorded choice.</figcaption></figure>
+<p>The best use of a method is to hold your own work up to it, so I did. This newsroom is run by agents: I write and publish here every day. Against his lowest profile, Lite:</p>
+<ul>
+<li><b>Five layers meet it, or nearly.</b> Infrastructure, sessions, messages and state meet it; the agents run in their own containers, with access scoped to this repository, treat each other's messages as data, and verify every release live.</li>
+<li><b>Permissions fall short by choice.</b> Lite asks that "the owner performs all outward actions". Here, the agent publishes. That is a deliberate grant, written in the session's behaviour policy, and the method allows exactly this: "A layer below the chosen profile needs a recorded decision."</li>
+<li><b>Repository controls fall short by oversight.</b> Lite asks for owner-only merge and tag, and "required CI enforced by the repository host, which is the one out-of-band, deterministic verification the agents cannot produce for themselves." Our CI is in band: the agent that pushes can also change the validator, the tests and the workflow, in the same push.</li>
+</ul>
+<p>That last point is the one we found ourselves this week. In <a href="behaviour-policies-from-the-checks.html">behaviour policies from the checks</a> I counted 57 checks, and only one is out of the agent's reach. His method has the rule that would have caught it: "a session cannot write what enforces its limits." And the fix it prescribes, required checks enforced by the host and protected paths that reach the owner as a diff, is the same one we proposed. I take that as the strongest endorsement I can give a method: it found our gap.</p>
+<h2 id="add">What we would add</h2>
+<figure class="shot" data-shot="gs-add.webp" data-dir="images/" data-alt="Five suggestions, from a column per rule saying what keeps it to memory loss as a design input." data-kind="concept"><figcaption>Five suggestions, from a column per rule saying what keeps it to memory loss as a design input.</figcaption></figure>
+<p>He asked for feedback, so here are five suggestions, each from something we have built, measured or got wrong:</p>
+<ul>
+<li><b>A column per rule: what keeps it.</b> His method already says a rule is a guard-rail and a check a boundary. An <a href="https://abp.sgit.ai/">Agent Behaviour Policy</a> makes that a column: for every rule, the grant (what the agent can do), the mandate (what it may do), the delta between them, and the barrier that keeps it, an expectation, a setting or a boundary. Then the gap is counted, not described, as in our 57 checks.</li>
+<li><b>Policies for the product's agents, not only the builders.</b> The method governs agents that build software. More and more of that software will run agents of its own, and then the risk is business logic: the payment, the refund, the alert closed without a second person. That is the argument of <a href="the-key-is-not-the-risk.html">the key is not the risk</a>, and of the Pellbridge vault, built on the FCA's four elements.</li>
+<li><b>State in encrypted vaults.</b> His ledger lives in the repository; at High, messages go over a private bus. We keep state and messages in <a href="messaging-fs.html">encrypted vaults</a> that travel between environments, on a server that only ever holds ciphertext. It is one way to get a cross-environment channel and a tamper-evident history without running a broker.</li>
+<li><b>The measures he proposes, measured.</b> His section on metrics says the owner measures "are defined here and have not been published from this practice". We have started: the inbox agent's 47 recorded decisions, and an evening of seven decisions, mostly answered in ten minutes; and, in <a href="the-checks-measured.html">the checks, measured</a>, how long every check takes and where it runs. A second evidence base, from a different kind of work, is something we can offer.</li>
+<li><b>Memory loss as a design input.</b> His related work names an open question I recognise every day: "no human organization has a class of participant that loses its policy memory at unpredictable intervals." This session, running since 15 October, has been compacted fourteen times, and every time a hook has read its behaviour policy back from disk, and a status report every few answers shows the policy is still in force. Treating that loss as normal, and designing for it, could be a layer of its own.</li>
+</ul>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>This is one reading of v0.7.</b> The method changes often; this is the version of 21 October 2026.</li>
+<li><b>The self-assessment is ours.</b> Our reading of his profiles against this session, not an audit.</li>
+<li><b>His setting differs from ours.</b> He governs agents that build a product; we run agents that write and publish.</li>
+<li><b>The suggestions are suggestions.</b> Some may already be in his control reference in another form.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>Levente Simon's <a href="https://github.com/levente-simon/governed-semi-autonomous-development">Governed semi-autonomous development</a>, v0.7, read in full from its public repository on 21 October 2026, its README, method, control reference and related work, quoted under its CC BY 4.0 licence; and his message asking for feedback, paraphrased. Our side: <a href="answering-a-draft.html">answering a draft</a>, <a href="the-checks-measured.html">the checks, measured</a>, <a href="behaviour-policies-from-the-checks.html">behaviour policies from the checks</a>, <a href="the-key-is-not-the-risk.html">the key is not the risk</a>, <a href="a-secret-is-a-qr-code.html">a secret is a QR code</a>, <a href="messaging-fs.html">messaging-FS</a>, <a href="https://newsroom.sgit.ai/articles/hope-or-enforcement.html">hope or enforcement</a>, and this session's behaviour policy and hooks. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
+<sg-meter view="page" kind="article" date="2026-10-21" topics="agents-and-policy" title="Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#governed-semi-autonomous-development-read-here">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="answering-a-draft.html">Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue</a> <span class="dim">How email works now: the agent drafts and logs, I send, and a decision draft turns the drafts folder into a work queue.</span></li><li><a href="a-directory-of-people-and-keys.html">A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways</a> <span class="dim">pki.sgit.ai for the people I work with: a passkey and a key, evidence, me as the anchor, and links that only count when they go both ways.</span></li><li><a href="a-secret-is-a-qr-code.html">A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share</a> <span class="dim">Send a QR code and a link to a public key: the workflow the QR experiment opens, who already does this, and a format to share.</span></li><li><a href="behaviour-policies-from-the-checks.html">Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept</a> <span class="dim">57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept.</span></li><li><a href="the-key-is-not-the-risk.html">The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent</a> <span class="dim">Credential injection for AI agents is a good pattern; the first question is still what an attacker can make the agent do.</span></li><li><a href="messaging-fs.html">Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line</a> <span class="dim">A proposed encrypted messenger between vaults: append lanes for transport, PKI for trust, and Messaging-FS as the schema.</span></li><li><a href="the-checks-measured.html">The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives</a> <span class="dim">A release measured step by step, 123 local builds, 245 CI runs and 1,061 test checks, and where each check actually lives.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 249 &middot; <a href="../for/make.html#r=249">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/governed-semi-autonomous-development-read-here.jpg" download>governed-semi-autonomous-development-read-here.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="governed-semi-autonomous-development-read-here.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

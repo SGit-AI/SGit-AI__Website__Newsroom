@@ -1,0 +1,218 @@
+{
+  "slug": "who-carries-the-risk",
+  "teaser": "Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Several companies already sell AI agent cover but none we found prices per row of a behaviour policy; the insurance industry already separates the parts such a company needs (evidence, pricing and binding, the balance sheet, reinsurance), capital is the business for a carrier but not for a managing agent, so the first company can price on someone else's capital, start small, earn a loss record, and later carry the risk, with providers insuring their own agents and cover that lapses on unpatched known vulnerabilities.",
+  "nodes": [
+    {
+      "id": "have",
+      "label": "Most of the pieces exist",
+      "kind": "claim",
+      "summary": "The open policy, controls mapped to risks, AIUC-1 as a graph, the formula."
+    },
+    {
+      "id": "market",
+      "label": "Who sells agent cover today",
+      "kind": "example",
+      "summary": "AIUC, Armilla, Testudo, Munich Re, Harbor."
+    },
+    {
+      "id": "gap",
+      "label": "Nobody found prices per row",
+      "kind": "claim",
+      "summary": "Per named risk and per enforced control, not yet."
+    },
+    {
+      "id": "chain",
+      "label": "Four parts of an insurer",
+      "kind": "concept",
+      "summary": "Evidence, pricing and binding, balance sheet, reinsurance."
+    },
+    {
+      "id": "mga",
+      "label": "The managing agent",
+      "kind": "concept",
+      "summary": "Prices and binds on a carrier's behalf, without balance-sheet risk."
+    },
+    {
+      "id": "parametric",
+      "label": "Claims close to parametric",
+      "kind": "method",
+      "summary": "The event maps to a row; the log says if conditions held."
+    },
+    {
+      "id": "neobank",
+      "label": "The neobank comparison",
+      "kind": "question",
+      "summary": "Early neobanks needed little capital; the licence was the hard part."
+    },
+    {
+      "id": "capital",
+      "label": "Capital is a carrier's business",
+      "kind": "claim",
+      "summary": "Survive a one-in-two-hundred-year year; floors of £2.4 million."
+    },
+    {
+      "id": "path",
+      "label": "MGA first, carrier later",
+      "kind": "example",
+      "summary": "Coalition in 2022 and At-Bay in 2023 bought carriers."
+    },
+    {
+      "id": "small",
+      "label": "Start small",
+      "kind": "method",
+      "summary": "Niche agents, agents in QA, a few per cent of users."
+    },
+    {
+      "id": "lapse",
+      "label": "Cover lapses on unpatched CVEs",
+      "kind": "example",
+      "summary": "Chubb's 45-day grace period; a CVSS 8 exclusion after three weeks."
+    },
+    {
+      "id": "providers",
+      "label": "Providers insuring their agents",
+      "kind": "question",
+      "summary": "OpenAI considered self-insurance; cover up to $300 million."
+    },
+    {
+      "id": "compulsory",
+      "label": "Insurance may become required",
+      "kind": "question",
+      "summary": "Like motor insurance; the European Parliament asked in 2020."
+    },
+    {
+      "id": "questions",
+      "label": "Seven questions for experts",
+      "kind": "question",
+      "summary": "Binding authority, capital, correlation, claims, certification, providers, market."
+    }
+  ],
+  "edges": [
+    {
+      "from": "have",
+      "to": "market",
+      "rel": "leads-to"
+    },
+    {
+      "from": "market",
+      "to": "gap",
+      "rel": "produces"
+    },
+    {
+      "from": "gap",
+      "to": "chain",
+      "rel": "leads-to"
+    },
+    {
+      "from": "chain",
+      "to": "mga",
+      "rel": "produces"
+    },
+    {
+      "from": "chain",
+      "to": "parametric",
+      "rel": "produces"
+    },
+    {
+      "from": "neobank",
+      "to": "capital",
+      "rel": "contrasts"
+    },
+    {
+      "from": "capital",
+      "to": "mga",
+      "rel": "leads-to"
+    },
+    {
+      "from": "mga",
+      "to": "path",
+      "rel": "example-of"
+    },
+    {
+      "from": "path",
+      "to": "small",
+      "rel": "depends-on"
+    },
+    {
+      "from": "lapse",
+      "to": "chain",
+      "rel": "extends"
+    },
+    {
+      "from": "small",
+      "to": "providers",
+      "rel": "leads-to"
+    },
+    {
+      "from": "providers",
+      "to": "compulsory",
+      "rel": "leads-to"
+    },
+    {
+      "from": "compulsory",
+      "to": "questions",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-payout-for-every-row",
+      "what-can-your-agent-reach",
+      "underwriting-the-agent-economy-reviewed",
+      "application-behaviour-policies",
+      "who-maintains-the-php-you-run"
+    ],
+    "pages": [],
+    "sites": [
+      "https://fortune.com/2025/07/23/ai-agent-insurance-startup-aiuc-stealth-15-million-seed-nat-friedman/",
+      "https://fintech.global/2026/09/17/aiuc-raises-40m-to-police-risk-in-frontier-ai-agents/",
+      "https://www.armilla.ai/resources/armilla-launches-affirmative-ai-liability-insurance-with-lloyds-underwriter-chaucer",
+      "https://fintech.global/2026/03/09/testudo-expands-ai-liability-capacity-to-9-25m/",
+      "https://www.munichre.com/en/solutions/for-industry-clients/insure-ai/faq.html",
+      "https://www.lloyds.com/market-resources/delegated-authorities/compliance-and-operations/about-coverholders",
+      "https://www.eiopa.europa.eu/rulebook/solvency-ii-single-rulebook/article-2188_en",
+      "https://www.prarulebook.co.uk/pra-rules/minimum-capital-requirement/03-06-2026",
+      "https://www.bankofengland.co.uk/prudential-regulation/new-bank-start-up-unit",
+      "https://www.coalitioninc.com/announcements/Coalition-completes-acquisition-of-insurance-carrier-with-licenses-in-all-50-states",
+      "https://www.at-bay.com/articles/introducing-at-bay-specialty-insurance-company/",
+      "https://chubb.com/content/dam/chubb-sites/chubb-com/nordic-en/_assets/documents/Chubb_DK_EN043_Cyber_Endorsement_202202.pdf",
+      "https://amp.insurancejournal.com/news/national/2025/10/08/843087.htm",
+      "https://www.legislation.gov.uk/ukpga/1988/52/section/143"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "For an insurer, I was closer to right. The risk is the product, so capital is the business.",
+      "why": "The correction to the neobank comparison, in one line."
+    },
+    {
+      "text": "A row of a behaviour policy is close to that: the event maps to a row, and the log says whether the conditions held.",
+      "why": "Why claims on agents can be simple."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ck-chain.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ck-chain.webp",
+      "caption": "The four parts of an insurer for agent behaviour policies, and who already does each one today.",
+      "kind": "diagram"
+    },
+    {
+      "file": "ck-capital.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ck-capital.webp",
+      "caption": "What an e-money firm, a new bank, an insurance carrier and a managing agent must hold, and the hard part of each.",
+      "kind": "comparison"
+    },
+    {
+      "file": "ck-path.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ck-path.webp",
+      "caption": "From a managing agent on someone else's capital to a carrier that reinsures the tail, with two cyber precedents.",
+      "kind": "timeline"
+    }
+  ]
+}

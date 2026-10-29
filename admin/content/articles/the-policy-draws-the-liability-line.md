@@ -10,7 +10,7 @@ tags: agents, accountability, liability, agent-behaviour-policy, riskmandate, pr
 status: published
 ---
 
-!shot pl-shell.webp | images/ | The four moves of the accountability shell game, from Ralf Thomas's post, and what a written behaviour policy changes in each. Without one, every move has an easy answer; with one, the question becomes whether the product honoured what it was explicitly told. | comparison
+!shot pl-shell.webp | images/ | The four moves of the accountability shell game, from Ralf Thomas's post, and what a written policy changes in each. | comparison
 
 > **What came next.** [A policy beside the prompt](/articles/a-policy-beside-the-prompt.html), written the same day, takes this answer further: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and what aviation and payments say about who should want it.
 
@@ -67,7 +67,7 @@ But here is the big but. An expectation that is written down, explicitly, and gi
 
 ## Where the liability goes {#liability}
 
-!shot pl-lines.webp | images/ | Two directions of liability. Towards the world, the deployer answers for what its agent did, as the tribunal held in Moffatt. Between the deployer and the vendor, the written policy decides whose failure it was: inside the reach and unforbidden, the deployer's; explicitly forbidden and done anyway, the product's. | diagram
+!shot pl-lines.webp | images/ | Two directions of liability: towards the world, and between the deployer and the vendor, decided by the written policy. | diagram
 
 I have said before, in [Ten hard questions](/articles/riskmandate-ten-questions.html) and in [Who owns the words](/articles/who-owns-the-words.html), that liability sits with whoever granted the reach: the moment of authorisation is the grant. I still think that is where it starts, and the tribunal in Moffatt said the same thing to Air Canada: "It should be obvious to Air Canada that it is responsible for all the information on its website." Towards customers, regulators and the people harmed, the deployer answers. An agent has no balance sheet, and a customer cannot sue a model.
 

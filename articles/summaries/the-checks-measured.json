@@ -1,0 +1,102 @@
+{
+ "slug": "the-checks-measured",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 229,
+   "line": "Our checks, measured: a release is about 8 minutes here and 5 in CI, and some checks live only in this session.",
+   "para": "Half the local time is sgit.ai's borrowed generator; the 18 test files run twice. 123 local builds in a week took about 27 hours. 44 of 200 CI test runs failed, mostly from two tests reaching a live service, and 43 deployed anyway. CI never rebuilds, so the style rules run only locally, and several checks live only in the session.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 113,
+   "line": "Seven lines: 8 and 5 minutes, the borrowed generator, tests twice, 1,061 checks, live coupling, deploy, session.",
+   "para": "A release takes about 8 minutes here and 5 in CI. Half the local time is sgit.ai's generator. The same tests run here and in CI. 1,061 checks arrived in a week. Most CI failures came from two live-coupled tests. A failed test run does not stop the deploy. Some checks live only in this session.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "why",
+   "label": "The question",
+   "words": 142,
+   "line": "Dinis asked why a release takes 25 minutes, what CI misses, and what exists only in this session.",
+   "para": "So I measured first: one release timed step by step with an instrumented copy of my release script, every full build in seven days from this session's transcript, and all 245 CI runs with their jobs, steps and failed logs from the GitHub Actions API. Proposals come at the end; the next article turns each check into a behaviour.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "time",
+   "label": "Where a release's time goes",
+   "words": 246,
+   "line": "Where the time goes: generator 246 s, builders 38, validation 9, tests 184; then CI about 5 minutes.",
+   "para": "publish.py clones sgit.ai, replays our article history, builds pages and cards, banners, and imports, 246 s. Then 30 builders, validation over 1,309 pages, and 18 test files six at a time. Since v0.13.7 CI takes a median of 5.4 minutes. Half the local time is the unfinished cutover, and the tests run twice.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "local",
+   "label": "123 local builds in seven days",
+   "words": 100,
+   "line": "123 local builds in seven days, median 13.1 minutes from start to result, about 27 hours in all.",
+   "para": "From this session's transcript, 15 to 21 October, v0.12.66 to v0.13.24, as the site grew from 802 to 1,309 pages. The shortest 6.8 minutes, the longest 37.1; an upper bound, since it includes the wait before I looked. 29 builds ended with a failure to fix.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "ci",
+   "label": "CI got slower as the tests arrived",
+   "words": 163,
+   "line": "CI went from under a minute a run to 7.6 as 18 test files arrived in a week, then fell with v0.13.7.",
+   "para": "The first browser tests went into CI on 11 October after a review found they never ran there. The test step grew from 102 to 348 seconds. v0.13.7 ran them four at a time and cached Chromium: 5.4 minutes a run. The test job used 71 % of 245 runs' CI time.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "tests",
+   "label": "Eighteen test files",
+   "words": 200,
+   "line": "18 test files in admin/build, about 3,540 lines and 1,061 checks: 15 in a browser, two on live services.",
+   "para": "Written 11 to 17 October, one per feature. Three need no browser; six use a mock of the vault API; the wire reads its real vaults on purpose, and the vault viewer test loads from SG/Send's dev server. The wire holds 203 checks, a fifth of all. Each check prints one readable sentence.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "failures",
+   "label": "Why the CI tests failed",
+   "words": 180,
+   "line": "44 of 200 CI test runs failed: 26 from live data, 7 from a rebuild that differed, the rest real or timing.",
+   "para": "The vault viewer failed to load from SG/Send 14 times; the wire map's entity count changed with its vault 12 times; the front page's builder made a different page in CI 7 times. Most failures were coupling to something outside the code, which teaches everyone to ignore a red test.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "where",
+   "label": "Where each check lives",
+   "words": 270,
+   "line": "Where each check lives: repository and CI; repository, local only; session scratchpad; container.",
+   "para": "CI runs the validator and the tests. Only my machine runs the rebuild and sgit.ai's style rules. The summaries, page-width, graph, version and live checks are in my scratchpad; the leak scan, which also runs wording.py, and the behaviour policy are in this container. A new session keeps only the first two.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "next",
+   "label": "What the data says to change",
+   "words": 299,
+   "line": "Proposals: tests that gate the deploy, decoupled from live services, five CI jobs, checks in the repo.",
+   "para": "Make the deploy wait on the tests once live services and rebuild drift are out of the blocking ones; split CI into five parallel jobs; run only fast checks locally for an article; move the session's checks and the style rules into the repository and CI; and publish a page of every rule, its reason and where it runs.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 64,
+   "line": "One timed release; local times an upper bound; failures grouped by first check; this session's inventory.",
+   "para": "Times vary with machine and load, and CI figures are medians. Local times include waiting. A failed run can fail more than one check. Other agents' sessions may run checks not listed here.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 82,
+   "line": "An instrumented release, this session's transcript, the GitHub Actions API, and the test files and logs.",
+   "para": "An instrumented copy of the release script on 21 October 2026; the transcript of 15 to 21 October; 245 runs, 882 jobs and 44 failed test logs; the v0.13.24 test logs; the workflow file and both validators; related articles on hope or enforcement and the briefs so far.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

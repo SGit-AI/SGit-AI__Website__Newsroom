@@ -1,0 +1,37 @@
+{
+ "slug": "where-a-check-runs",
+ "teaser": "Tests as enforcers of behaviour policies, and what moving them out of the agent's environment would gain, measured on this newsroom.",
+ "topics": ["agents-and-policy", "site-and-engineering"],
+ "core_idea": "Tests are deterministic enforcers of Agent Behaviour Policies, and where a test runs decides what kind of control it is: moving this site's checks from the agent's environment into a CI gate would take the deploy-blocking checks from 19 to 49 and, by estimate from measured parts, cut each release by about a third, but only if the new place is a gate, and only as boundaries once the platform protects the pipeline.",
+ "nodes": [
+  {"id": "tests", "label": "Tests as enforcers", "kind": "concept", "summary": "Deterministic: run or not, pass or fail."},
+  {"id": "place", "label": "Where a check runs", "kind": "claim", "summary": "Decides expectation, setting or boundary."},
+  {"id": "today", "label": "Today", "kind": "example", "summary": "19 gating, 26 on the agent's side."},
+  {"id": "moved", "label": "Moved", "kind": "method", "summary": "49 gating, 7 with the agent."},
+  {"id": "time", "label": "About a third faster", "kind": "claim", "summary": "An estimate from measured parts."},
+  {"id": "gate", "label": "Only into a gate", "kind": "claim", "summary": "43 deploys after failed tests."},
+  {"id": "platform", "label": "Platform protection", "kind": "method", "summary": "Branch protection and reviews."},
+  {"id": "signing", "label": "Signed test runs", "kind": "method", "summary": "Skipping made visible."},
+  {"id": "context", "label": "Context-specific", "kind": "concept", "summary": "Pipelines, not chat agents."}
+ ],
+ "edges": [
+  {"from": "tests", "to": "place", "rel": "depends-on"},
+  {"from": "today", "to": "moved", "rel": "leads-to"},
+  {"from": "moved", "to": "time", "rel": "produces"},
+  {"from": "gate", "to": "moved", "rel": "depends-on"},
+  {"from": "platform", "to": "gate", "rel": "extends"},
+  {"from": "signing", "to": "tests", "rel": "extends"},
+  {"from": "context", "to": "place", "rel": "contrasts"},
+  {"from": "place", "to": "platform", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["behaviour-policies-from-the-checks", "the-checks-measured", "the-delegation-record", "a-secret-is-a-qr-code"],
+  "pages": [],
+  "sites": ["https://newsroom.sgit.ai/articles/hope-or-enforcement.html"]
+ },
+ "quotes": [
+  {"text": "Moving a check out of the agent's environment improves security only if the new place is a gate.", "why": "The rule."},
+  {"text": "A test is a behaviour policy in disguise.", "why": "The idea."},
+  {"text": "an agent should not set its own boundaries", "why": "The owner's step."}
+ ]
+}

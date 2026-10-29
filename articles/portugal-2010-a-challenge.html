@@ -30,13 +30,14 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
       <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
       <a class="sl" href="../about/index.html">Why this exists</a>
       <a class="sl" href="../desks/index.html">The five desks</a>
@@ -86,6 +87,8 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -153,17 +156,19 @@
   <script src="../assets/reader/strip.js" defer></script>
   <script src="../assets/reader/highlights.js" defer></script>
   <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
   <div class="theme-pick"></div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A web application security challenge to Portugal, 2010: my IBWAS keynote in Lisbon, slide by slide, with what came true, what I got wrong and what still stands</p>
  <h1>A web application security challenge to Portugal, 2010: my IBWAS keynote in Lisbon, slide by slide, with what came true, what I got wrong and what still stands</h1>
- <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-16 &middot; <a href="versions/portugal-2010-a-challenge.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.78</a> &middot; <span class="chip">portugal</span><span class="chip">owasp</span><span class="chip">application-security</span><span class="chip">talks</span><span class="chip">history</span><span class="chip">regulation</span><span class="chip">europe</span><span class="chip">open-source</span><span class="chip">hacking-portugal</span><span class="chip">article</span></p>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-16 &middot; <a href="versions/portugal-2010-a-challenge.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.78</a> &middot; <span class="chip">portugal</span><span class="chip">owasp</span><span class="chip">application-security</span><span class="chip">talks</span><span class="chip">history</span><span class="chip">regulation</span><span class="chip">europe</span><span class="chip">open-source</span><span class="chip">hacking-portugal</span><span class="chip">article</span></p>
  <p class="abstract"><em><b>Abstract:</b> In December 2010, at OWASP's IBWAS conference in Lisbon, I gave a keynote called A 'Web Application Security' Challenge to Portugal. It had 168 slides, five proposed focuses and twelve proposed actions for government and industry, from allowing ethical hacking and publishing security score cards to liability for software, an independent vulnerability-disclosure agency, paying for open-source security and proper SSL for half of all websites. It ended with an argument that Portugal, which had nothing to lose, could become the Switzerland of hacking. Reading it again sixteen years later, more of it came true than I expected, though mostly from Brussels rather than Lisbon: software now falls under strict product liability, Europe has its own vulnerability database, manufacturers must report exploited vulnerabilities, and encrypted connections are the norm. What I got wrong was the mechanism. I thought fear of disasters would move governments; what moved them was regulation built slowly over a decade. And the part about Portugal itself, an open, ethical security industry as a way out of a depressed economy, is still mostly to do. This is the first of a series of articles on the talks I have given about Portugal, ahead of a new edition of Hacking Portugal.</em></p>
-<figure class="shot" data-shot="pt-2010-slides.webp" data-dir="images/" data-alt="Twelve slides from the IBWAS 2010 keynote in Lisbon: the title, the five proposed focuses, the twelve proposed actions such as allowing ethical hacking, score cards, procurement requirements, rewriting computer laws and open-sourcing end-of-life applications, application security as health and safety, a country-wide fire drill, and Portugal as the Switzerland of hacking." data-kind="comparison"><figcaption>Twelve slides from the IBWAS 2010 keynote in Lisbon: the title, the five proposed focuses, the twelve proposed actions such as allowing ethical hacking, score cards, procurement requirements, rewriting computer laws and open-sourcing end-of-life applications, application security as health and safety, a country-wide fire drill, and Portugal as the Switzerland of hacking.</figcaption></figure>
+<figure class="shot" data-shot="pt-2010-slides.webp" data-dir="images/" data-alt="Twelve slides from the IBWAS 2010 keynote in Lisbon: the five focuses, the twelve actions and Portugal as Switzerland." data-kind="comparison"><figcaption>Twelve slides from the IBWAS 2010 keynote in Lisbon: the five focuses, the twelve actions and Portugal as Switzerland.</figcaption></figure>
 <h2 id="in-short">In short</h2>
 <ul>
 <li><b>December 2010, Lisbon.</b> The IBWAS keynote: 168 slides, five focuses, twelve actions.</li>
@@ -206,6 +211,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo of mine on 16 October 2026, written by this site's agent in the voice of this site; the commentary and the editorial responsibility are mine. The slides, <a href="https://wiki.owasp.org/images/0/0d/Dcruz.pdf">A 'Web Application Security' Challenge to Portugal</a>, December 2010, on the OWASP wiki, and <a href="https://diniscruz.blogspot.com/2011/01/keynote-at-owasp-ibwas-conference-lots.html">my blog post</a> of 12 January 2011. For today: the Product Liability Directive, via <a href="https://www.hoganlovells.com/en/publications/eu-introduces-comprehensive-digitalera-product-liability-directive">Hogan Lovells</a>; the European Commission on the <a href="https://digital-strategy.ec.europa.eu/en/news/eu-launches-european-vulnerability-database-boost-its-digital-security">EUVD</a>, 13 May 2025; the Cyber Resilience Act's reporting duties, via <a href="https://www.mccannfitzgerald.com/knowledge/data-privacy-and-cyber-risk/cyber-resilience-act-reporting-obligations-apply-from-11-september-2026">McCann FitzGerald</a>; Decreto-Lei 125/2025, via <a href="https://www.pwc.pt/pt/temas-actuais/dl-125-2025.html">PwC Portugal</a>. Read on 16 October 2026.</p>
 <sg-meter view="page" kind="article" date="2026-10-16" topics="news-and-evidence startups-and-strategy" title="A web application security challenge to Portugal, 2010: my IBWAS keynote in Lisbon, slide by slide, with what came true, what I got wrong and what still stands, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">News &amp; evidence</span><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#portugal-2010-a-challenge">This article as a graph &rarr;</a></p>
@@ -241,7 +247,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="portugal-2010-a-challenge.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="portugal-2010-a-challenge.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -275,6 +281,8 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

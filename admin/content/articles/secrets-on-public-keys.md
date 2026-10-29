@@ -10,7 +10,7 @@ tags: secrets, pki, public-keys, passkeys, vaults, sgit, sg-send, qr-codes, pass
 status: published
 ---
 
-!shot ss-architecture.webp | images/ | secrets.sgit.ai on public keys: an identity vault for the private key, unlocked by a passkey; a directory of signed public keys; a request that carries my public key and where to write; channels and clients that mostly exist; and what is charged for. Dashed boxes are to build. | architecture
+!shot ss-architecture.webp | images/ | secrets.sgit.ai on public keys: the identity vault, the directory, the request, the channels, and what is charged for. | architecture
 
 ## In short {#in-short}
 
@@ -35,7 +35,7 @@ The lesson is the one that also explains why SG/Send did not take off: the hard 
 
 ## Eight ways a secret moves {#scenarios}
 
-!shot ss-scenarios.webp | images/ | Eight ways a secret moves, on public keys only: who needs the secret, how the public key reaches the sender, how the ciphertext comes back, where the private key lives, and what exists today. | comparison
+!shot ss-scenarios.webp | images/ | Eight ways a secret moves on public keys only, compared on five questions. | comparison
 
 1. **Ask me for a secret.** I send my public key, as a link, a QR code, an email or a WhatsApp message. The sender's browser encrypts the secret to it and gives back a one-time drop, an encrypted file, or a QR code: a short secret encrypted with an RSA-4096 key is 512 bytes, well inside one QR code. I open it wherever my private key is.
 2. **Give someone a secret.** I take their signed public key from the directory, encrypt to it, and leave it as a one-time drop or in their inbox.

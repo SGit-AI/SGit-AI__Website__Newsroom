@@ -10,7 +10,7 @@ tags: agents, agent-behaviour-policy, standards, liability, prompt-injection, tr
 status: published
 ---
 
-!shot pp-inputs.webp | images/ | What an agent is given, today in two modes and as proposed. Over the API we write the whole system prompt, so our behaviour policy goes inside it; in the Claude apps and Claude Code the vendor's system prompt comes first and our policy goes into what we add. In both, it is text the model is asked to keep, in the same channel as every email and page it reads, and the vendor's checks are its own. Proposed: the policy as a separate, versioned input, layered over the vendor's own published policy, checked outside the model where it can be. | diagram
+!shot pp-inputs.webp | images/ | What an agent is given today in two modes, and as proposed: the policy as a separate, versioned input. | diagram
 
 > **What came next.** [The human in the loop](/articles/the-human-in-the-loop.html) asks where a person belongs once the policy exists: on the outputs that cannot be undone, with controls that do not get tired everywhere else.
 
@@ -47,7 +47,7 @@ Two industries have been here, and both are worth looking at, because neither go
 
 ## Aviation did not get safe out of altruism {#aviation}
 
-!shot pp-aviation.webp | images/ | Fatal airliner accidents, 1995 and 2025. At 1995's rate of 2.72 per million flights, 2025's 38.7 million flights would have produced about 105 fatal accidents. There were 12. Rates from the Aviation Safety Network via Our World in Data; 2025 accidents from the Flight Safety Foundation's report of the ASN data; flights from IATA. | comparison
+!shot pp-aviation.webp | images/ | Fatal airliner accidents in 1995 and 2025, and what 1995's rate would have produced in 2025. | comparison
 
 Aviation is a good example of a complex system of technology, business process and people that learned to be safe, and I keep coming back to it, in [The ultimate insider](/articles/ultimate-insider-three-collisions.html) and in [The investigation GitHub owes its customers](/articles/the-investigation-github-owes-its-customers.html). But let us be clear about why. It did not get there for altruistic reasons, or because it was the right thing to do, although, to be fair, the people who run airlines also fly, so they have some interest of their own. It got there because everybody knew that every crash, anywhere in the world, would be news, and more so every year.
 
@@ -55,7 +55,7 @@ When I was growing up, a plane crash was a regular news story. Here is the arith
 
 ## Payments got safe because liability moved {#payments}
 
-!shot pp-payments.webp | images/ | Where the liability for payment fraud was moved, and what followed. Each step put the loss on the party best placed to stop it, and the security followed the loss: caps for consumers, a liability shift onto whoever had not adopted chip cards, standards written by the card brands, and reimbursement of scam victims. | timeline
+!shot pp-payments.webp | images/ | Where the liability for payment fraud was moved, and what followed at each step. | timeline
 
 The second example is payments. If you compare payments with privacy, or with most of cyber security, card payments have had, for a long time, some of the best security teams, some of the best fraud detection and some of the best security measures anywhere. Why there? Very simple: the liability was moved onto the companies.
 
@@ -74,7 +74,7 @@ The places where we saw real improvement were the places where three things line
 
 ## The user answers outside the policy, the vendor inside it {#inside}
 
-!shot pp-split.webp | images/ | The proposed split. The vendor publishes its own built-in policy and accepts the deployer's; for every row it accepts, it says what enforces it and answers if it breaks. Everything the policy does not cover stays with the user, as it does today. The vendors that keep more rows as boundaries can sell that as the product. | decision
+!shot pp-split.webp | images/ | The proposed split between the vendor's built-in policy, the deployer's policy and what stays with the user. | decision
 
 So here is the core of the proposal. If we want agents to be trustworthy, we need to push some enforcement, some criteria for enforcement and, eventually, some liability onto the vendors of the models and the agents. An Agent Behaviour Policy is a good standard to do it with, because it makes the split explicit. The agent runs with a policy. The rows the vendor accepted, the vendor keeps, and answers for if they break. Everything the policy does not cover stays with the user, as it does today. That is a much better model than the one we have, where the user is liable for everything because they clicked allow, which is the shell game [the last article](/articles/the-policy-draws-the-liability-line.html) described.
 

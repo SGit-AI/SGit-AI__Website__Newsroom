@@ -10,7 +10,7 @@ tags: tokens, costs, prompt-caching, hooks, claude-code, agent-behaviour-policy,
 status: published
 ---
 
-!shot tk-architecture.webp | images/ | The tokens hook: a policy file says what to count, show and limit; the hook reads only the new lines of the session transcript each time, counts each response once, prices it by its model and keeps running totals. Its output goes to the user, to the model, to a block when the budget is spent, or to a collector. Dashed boxes are proposed. | architecture
+!shot tk-architecture.webp | images/ | The tokens hook: a policy file, a hook that counts and prices each response, and where its output goes. | architecture
 
 ## In short {#in-short}
 
@@ -31,7 +31,7 @@ That is a reason to treat tokens as one more thing an [agent behaviour policy](/
 
 ## Asking the model does not work {#prompt}
 
-!shot tk-prompt-vs-hook.webp | images/ | The same two-turn conversation in headless Claude Code, once with a system prompt asking the model to report its tokens and cost, once with the tokens hook. With the prompt, the model said it could not see the numbers. With the hook, it reported them exactly, one turn behind. | comparison
+!shot tk-prompt-vs-hook.webp | images/ | The same two-turn conversation in headless Claude Code, once with a system prompt and once with the tokens hook. | comparison
 
 The obvious first attempt is a line in the system prompt or in a project's instructions: report your token usage and cost at the end of every answer. This site's agent tried it, with a two-turn conversation in headless Claude Code. The model was honest both times: "I can't give you these figures… Any split or dollar amount from me would be invented." The numbers existed, 37,019 tokens of input in the first turn, $0.05 and then $0.09, but not anywhere the model could read them.
 
@@ -78,7 +78,7 @@ The hook still earns its place, because it is a policy: it carries limits and mo
 
 ## Other tools {#tools}
 
-!shot tk-where.webp | images/ | Where the token numbers are, tool by tool: what a hook can see and what the user is shown in the coding agents and chat apps checked for this article, from each tool's documentation or source code. | comparison
+!shot tk-where.webp | images/ | Where the token numbers are, tool by tool: what a hook can see and what the user is shown. | comparison
 
 The coding agents are converging on the same shape. OpenAI's Codex CLI has [hooks](https://learn.chatgpt.com/docs/hooks) for prompts, tools and stops, a `/status` command that shows "token usage" and "remaining context capacity", and OpenTelemetry. Google's Gemini CLI has hooks before and after each model call, and its `/stats` command shows "token usage and cached token savings". Cursor added hooks in [version 1.7](https://cursor.com/changelog/1-7) on 29 September 2025, "to observe, control, and extend the Agent loop"; its documented hooks carry context tokens only before a compaction, and its admin API reports cache writes, cache reads and cost. GitHub Copilot moved to usage-based billing on 1 June 2026, where the cost "depends on … the model and the number of tokens consumed". Cline shows prompt tokens, completion tokens, cache writes, cache reads and cost on every task. The chat apps show least: Claude.ai has bars for the five-hour session and the week, and I found no token count per conversation in Claude.ai or ChatGPT.
 

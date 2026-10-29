@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The patient holds the keys: vaults, passkeys and PKI for Chinmay Gupte&#x27;s knee health sites, a design with no server-side store of sensitive data &middot; newsroom.sgit.ai</title>
+<meta name="description" content="For a few months I have been working with Chinmay Gupte, a consultant knee surgeon in London, on how the knee health sites (My Knee Score, MyKneeScan, OmKneeHealth, Sports Healing) should handle patient data. Our first MVPs already stored real patients&#x27; knee questionnaires in sgit vaults; what was missing was a good place for each patient&#x27;s first key. Passkeys solve that, and pki.sgit.ai already runs the pieces: a passkey that opens the patient&#x27;s own vaults, a key pair made in the browser, sealed messages, and sign-in for other sites. This is the architecture that follows from it: the patient holds the keys, the sites keep no patient database, anything stored centrally is ciphertext, a clinician receives data sealed to their public key, and the same lanes carry feedback, private analytics and an agent&#x27;s inbox. With it come guidance that a clinician signs with an expiry date, paid reading, behaviour policies, and what all of this does, and does not do, for GDPR.">
+<link rel="canonical" href="https://newsroom.sgit.ai/drafts/omkneehealth-vaults.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="newsroom.sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/drafts/omkneehealth-vaults.html">
+<meta property="og:title" content="The patient holds the keys: vaults, passkeys and PKI for Chinmay Gupte&#x27;s knee health sites, a design with no server-side store of sensitive data">
+<meta property="og:description" content="For a few months I have been working with Chinmay Gupte, a consultant knee surgeon in London, on how the knee health sites (My Knee Score, MyKneeScan, OmKneeHealth, Sports Healing) should handle patient data. Our first MVPs already stored real patients&#x27; knee questionnaires in sgit vaults; what was missing was a good place for each patient&#x27;s first key. Passkeys solve that, and pki.sgit.ai already runs the pieces: a passkey that opens the patient&#x27;s own vaults, a key pair made in the browser, sealed messages, and sign-in for other sites. This is the architecture that follows from it: the patient holds the keys, the sites keep no patient database, anything stored centrally is ciphertext, a clinician receives data sealed to their public key, and the same lanes carry feedback, private analytics and an agent&#x27;s inbox. With it come guidance that a clinician signs with an expiry date, paid reading, behaviour policies, and what all of this does, and does not do, for GDPR.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/newsroom.css">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / The patient holds the keys: vaults, passkeys and PKI for Chinmay Gupte&#x27;s knee health sites, a design with no server-side store of sensitive data</p>
+ <p class="eyebrow">Review draft &middot; 2026-10-26</p>
+ <h1>The patient holds the keys: vaults, passkeys and PKI for Chinmay Gupte&#x27;s knee health sites, a design with no server-side store of sensitive data</h1>
+ 
+<blockquote><p><b>Review draft.</b> Not linked from the home page or the article list, and not yet reviewed by Chinmay Gupte. Everything below is marked as built, designed or proposed.</p></blockquote>
+<figure class="shot shot--in"><img src="images/ok-architecture.webp" alt="The architecture for the knee health sites: the patient&#x27;s device, the sites, the clinician, the agents and the register." loading="lazy"><figcaption>The architecture for the knee health sites: the patient's device, the sites, the clinician, the agents and the register.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul><li><b>Vaults are already in production here.</b> Our MVPs stored real patients' knee questionnaires in sgit vaults.</li><li><b>The missing piece was the first key.</b> Now a passkey gives it, on every device, and nobody else ever holds it.</li><li><b>The patient holds the keys.</b> The sites keep no patient database; whatever is stored centrally is ciphertext.</li><li><b>One sign-in across the sites,</b> each asking only for the vaults it needs.</li><li><b>A clinician gets data sealed to their public key,</b> by QR code or by an inbox.</li><li><b>The same lanes carry feedback, private analytics and an agent's inbox.</b></li><li><b>Guidance a clinician signs, with an expiry date,</b> and readers who pay for it.</li><li><b>GDPR gets easier, not optional.</b> A stolen store of ciphertext is the case the law already describes.</li><li><b>Next: a small MVP.</b> One login across two sites, and the team's feedback.</li></ul>
+<h2 id="project">The project</h2>
+<p><a href="https://www.chinmaygupte.com">Chinmay Gupte</a> is a consultant knee surgeon in London and a clinical reader at Imperial College. I wrote about the project in <a href="https://newsroom.sgit.ai/articles/the-expert-founders.html">the expert founders</a>: a specialist building the product their own patients need. It is a family of sites, each doing one thing:</p>
+<ul><li><b><a href="https://mykneescore.com">My Knee Score</a>:</b> "Ten questions about pain, movement and daily life. One score out of 100."</li><li><b><a href="https://mykneescan.com">MyKneeScan</a>:</b> private knee MRI scans at an imaging centre on Harley Street, "Scans from £550", with an optional specialist review of the report.</li><li><b><a href="https://www.omkneehealth.com">OmKneeHealth</a>:</b> "a clinically led platform dedicated exclusively to knee health": guidance, supplements, products, and a Knee + Sleep Score that is "calculated in your browser".</li><li><b><a href="https://sportshealing.com">Sports Healing</a>:</b> the clinic, for when treatment is needed.</li></ul>
+<p>What a patient gets today is what most of us get: useful pieces that do not talk to each other, and very little follow-up. What Chim wants is a service that follows the patient, from the first score to the scan, the review, the treatment and the check-ins, without the sites becoming a store of sensitive data. Health data is a special category under data protection law, and Chim wants to do the right thing with it. So do I.</p>
+<h2 id="mvp">What already runs</h2>
+<p>We started a couple of months ago with MVPs on sgit vaults, and they worked well: patients filled in knee questionnaires, and their answers were stored in vaults, encrypted in the browser. The problem was onboarding. Each patient's key was created centrally and had to be sent to them: we onboarded patients with a link carrying their key, opened in the browser. The experience was good. But a key made centrally is a key someone other than the patient held, even once; and a key made in the browser raised two questions I could not answer well: how does it get to the patient's next device, and how do we learn its public half?</p>
+<h2 id="first-key">The missing piece was the first key</h2>
+<figure class="shot shot--in"><img src="images/ok-firstkey.webp" alt="The first key: a passkey, its PRF bytes, a door vault derived from them, a master vault and the vault of vaults." loading="lazy"><figcaption>The first key: a passkey, its PRF bytes, a door vault derived from them, a master vault and the vault of vaults.</figcaption></figure>
+<p>This is the dot that connects the rest. A passkey is something the patient already has, in Safari, Chrome, a password manager or a security key, and the browser can ask it for a secret that never leaves the device. <a href="https://pki.sgit.ai/">pki.sgit.ai</a> already runs the whole chain, <a href="https://pki.sgit.ai/articles/a-login-made-of-a-passkey.md">in its own words</a>:</p>
+<ol><li><b>The passkey.</b> "Sign in with a passkey": one button that signs up and in.</li><li><b>Its PRF bytes.</b> The authenticator returns 32 bytes for a fixed input, through the WebAuthn PRF extension; a passkey that syncs (iCloud Keychain, Google Password Manager) gives the same bytes on every device.</li><li><b>The door.</b> From those bytes, by HKDF, a vault id and a passphrase. "There is nothing on a server that says an account exists."</li><li><b>The master.</b> A vault that holds the private keys, made in the browser, byte-compatible with <code>sgit pki</code>. The public half is published as a signed statement in the register.</li><li><b>The vault of vaults.</b> The patient's other vaults hang from the master: for the knee health sites, a knee score vault, a scan and report vault, a check-in vault.</li></ol>
+<p>The <a href="https://newsroom.sgit.ai/passkey/index.html">passkey lab</a> on this newsroom shows the same derivation step by step, including a recovery code. What remains is making it work on every device and browser the patients use; some flows, such as signing in on a laptop with a phone by QR code, still need ironing out.</p>
+<h2 id="journey">A patient's journey</h2>
+<figure class="shot shot--in"><img src="images/ok-journey.webp" alt="A patient&#x27;s journey across the sites with one login, from the score and the scan to the review and follow-up." loading="lazy"><figcaption>A patient's journey across the sites with one login, from the score and the scan to the review and follow-up.</figcaption></figure>
+<p>Take me as the patient. I have a knee problem; I take my supplements; I want to know I am doing the right thing. On My Knee Score I sign in with my passkey and answer the ten questions; the answers and the score go into my knee score vault. On MyKneeScan I book an MRI; the payment goes to the payment provider, the only place that holds something about me in the clear, and the booking and later the report go into my scan vault. I share the report and my score history with the consultant, sealed to their key. If I need treatment, Sports Healing reads only what I shared with it. On OmKneeHealth I check in, retake the score over time, get guidance, and find discounts on what I buy. And what I have read stays in my own vault, so I am not shown the same article twice and can find it again.</p>
+<h2 id="storage">Who stores the data, and who pays</h2>
+<p>The data is always encrypted in the patient's browser. Where the ciphertext lives is a choice, and we still have to get the experience right:</p>
+<ul><li><b>An sgit vault server,</b> run by us or by a provider that wants to offer the service.</li><li><b>The patient's own cloud storage.</b> I am about to add sign-in with Google, which would let a patient keep their vaults in their own Google Drive. Proposed.</li><li><b>A dedicated health provider,</b> if one wants to offer encrypted storage to patients.</li></ul>
+<p>Each holds blobs it cannot read. The open question is the business one: who pays for the storage, the patient, the sites or a provider. The point of the passkey is that it makes all of these possible: once the patient has a key, connecting another service is a login signed with that key.</p>
+<h2 id="sign-in">One sign-in across the sites</h2>
+<p>The sites should feel like one service. pki.sgit.ai already offers <a href="https://pki.sgit.ai/sso/index.html">sign-in for other sites</a>: a site redirects to pki.sgit.ai, and the person signs a delegation with their own key for one browser key at one site. It can be soft (signed, until a date) or strong (valid only while the person's record lists it: "withdraw it and it stops, no revocation list"). On top of that we are finishing the familiar authorisation step: when you arrive at a site, it asks which of your vaults it may read and write, and you decide.</p>
+<p>The sites themselves get keys too. The register already accepts a proof line in a domain's DNS (a TXT record at <code>_pki.sgit.ai.&lt;domain&gt;</code>) or at <code>/.well-known/pki.sgit.ai.txt</code>, so a patient's browser can check that the site asking for their data is really mykneescan.com before it hands anything over. Planned for the main sites.</p>
+<h2 id="clinician">Sharing with a clinician</h2>
+<p>The patient decides who sees what. Every clinician on the team has a published public key in the register. To share a scan report or a score history, the patient's browser seals it to that key: either as a QR code, which also works in person, in the consulting room; or as a message to the clinician's inbox, a write-only lane only their key can read. The sealed message format is the register's own, and <a href="https://sgit.ai/docs/pki.md"><code>sgit pki decrypt</code></a> opens it.</p>
+<p>The QR workflow is a good one in the other direction too. When a patient signs up, they can send their public key to the team as a QR code, and the team uses it to open a private channel between clinician and patient. After that, it is logistics: what to share, and where the shared data lives. In the patient's vault, in a vault just for that clinician and that patient, in the clinician's own vault, or anonymised, for research. Each is a choice the patient makes, and can see.</p>
+<h2 id="lanes">Lanes: feedback, analytics and an agent's inbox</h2>
+<figure class="shot shot--in"><img src="images/ok-lanes.webp" alt="Write-only lanes: a site&#x27;s feedback and anonymous events go in sealed, and cannot be read back through the lane." loading="lazy"><figcaption>Write-only lanes: a site's feedback and anonymous events go in sealed, and cannot be read back through the lane.</figcaption></figure>
+<p>Three things we already use fit the same shape:</p>
+<ul><li><b>Feedback.</b> I have Claude agents with their own vault, which receive appended lines from a website. For the MVP, the team can give feedback on the sites the same way.</li><li><b>An agent's inbox.</b> Ask a Claude session for its public key, give it to the website, and the website can send data that only that session can read. The agents' identities are already in the register: <a href="https://pki.sgit.ai/agents/index.html">identities for agents</a>, operated by a person, with an end date. Earlier today, the agent writing this sealed four vault keys to a public key and handed them over as a QR code.</li><li><b>Analytics without IP addresses.</b> This newsroom's telemetry, and the PHP story site's, send one anonymous event per page: the page, the referrer, a rough location (a country and a city, from a lookup), the language, the kind of screen and a random id for the tab. "No IP address, no cookie, no name." It is encrypted in the browser and appended to a write-only lane. If a patient agrees, an id could join their events to their account; better still, their reading history belongs in their own vault.</li></ul>
+<h2 id="certified">Guidance a clinician signs</h2>
+<figure class="shot shot--in"><img src="images/ok-certified.webp" alt="Guidance a clinician signs, with a date it expires: from captured sources to certified facts, as proposed." loading="lazy"><figcaption>Guidance a clinician signs, with a date it expires: from captured sources to certified facts, as proposed.</figcaption></figure>
+<p>Chim has a lot of sites, and the strategy is to have many more: specific, deep guidance on narrow topics that the web covers badly. They should work like this newsroom does. The curation workflow maps the sources and their provenance, the concepts, the projections and the transformations; for medical guidance it adds one step. A fact is on the page because a clinician said it is correct: "if you have this injury, do this; if you have that one, do not". The clinician signs it with their key, on the record, the same idea as <a href="https://newsroom.sgit.ai/articles/signed-by-the-source.html">signed by the source</a> and as <a href="https://newsroom.sgit.ai/articles/software-is-now-a-product.html">software that is certified and insurable</a>. And every certified fact expires: a piece of guidance may be good for six months, and after that the page says it is due for review until someone signs it again.</p>
+<p>The sites should also follow this newsroom's business model: readers top up and pay for what they read, <a href="https://newsroom.sgit.ai/articles/the-user-keeps-the-meter.html">and they keep the meter</a>. That gives the sites a revenue stream that funds writing more of them, and it pays the experts for the expertise they certify. Proposed.</p>
+<h2 id="policies">Behaviour policies</h2>
+<p>At a later stage, the workflows get the controls this newsroom and RiskMandate already use: <a href="https://newsroom.sgit.ai/articles/application-behaviour-policies.html">agent behaviour policies</a> for what each agent and each site may reach, <a href="https://newsroom.sgit.ai/articles/process-behaviour-policies.html">process behaviour policies</a> for what a process may do on the machine, and decision policies for what needs a person's approval, joined up as <a href="https://newsroom.sgit.ai/articles/approved-business-mandates.html">approved business mandates</a>. In a clinical setting they are how we show, not only say, that an agent curating guidance cannot read a patient's data. Proposed for this project.</p>
+<h2 id="gdpr">GDPR: what the design does, and does not</h2>
+<figure class="shot shot--in"><img src="images/ok-gdpr.webp" alt="What the design does for GDPR, by article, from Article 9 to the EDPS v SRB ruling of 2025. Not legal advice." loading="lazy"><figcaption>What the design does for GDPR, by article, from Article 9 to the EDPS v SRB ruling of 2025. Not legal advice.</figcaption></figure>
+<p>Health data is a special category: under Article 9, processing "data concerning health" is prohibited unless an exception applies. The design does not change that for whoever processes it. What it changes is how much of the regulation the sites carry:</p>
+<ul><li><b>By design, not by policy.</b> Article 25 asks for measures "such as pseudonymisation", to implement principles "such as data minimisation". A site that holds no patient database has minimised by construction.</li><li><b>Encryption is named.</b> Article 32 lists "the pseudonymisation and encryption of personal data" among the security measures.</li><li><b>A breach of ciphertext.</b> Article 34 requires telling each person about a breach likely to put them at high risk, unless the data was made "unintelligible to any person who is not authorised to access it, such as encryption". A stolen store of vault blobs is that case.</li><li><b>Rights the patient already has.</b> Access, erasure and portability (Articles 15, 17 and 20) are easy when the patient holds the data and the keys.</li><li><b>The storage providers.</b> In <a href="https://curia.europa.eu/juris/liste.jsf?num=C-413/23">EDPS v SRB</a>, on 4 September 2025, the EU Court of Justice held, in <a href="https://www.jonesday.com/en/insights/2025/09/cjeu-clarifies-scope-of-personal-data-in-edps-v-srb-decision">one law firm's summary</a>, that "pseudonymized data is not automatically personal data for every actor who processes such data". That may matter for a provider holding only ciphertext; for the patient and the clinician, it is personal data.</li></ul>
+<p>None of this is legal advice, and the UK's version of the regulation, which applies to sites run from London, uses the same articles. It is a separate exercise worth doing properly: which obligations the design meets well, and which ones are simply out of scope because the data is not there.</p>
+<h2 id="compromise">What a compromise looks like</h2>
+<figure class="shot shot--in"><img src="images/ok-breach.webp" alt="What a server compromise exposes: the usual design set against the vault design, row by row." loading="lazy"><figcaption>What a server compromise exposes: the usual design set against the vault design, row by row.</figcaption></figure>
+<p>In the usual design, a compromise of the server is the end of the story: everything there is readable. Here, a compromise of storage exposes ciphertext. The risk that remains is the hosting: the code the sites serve to the browser. That is where the protections go. pki.sgit.ai already publishes its shared code as <a href="https://pki.sgit.ai/lib/index.json">immutable versions with a signed manifest</a>, every file's sha256 and its integrity hash, so a page can check what it loads, and a client can refuse code that is not signed. It is not as bad as a server compromise, where once it happens, everything is gone. This is what I mean by <a href="https://newsroom.sgit.ai/articles/the-attack-surface-you-do-not-have.html">the attack surface you do not have</a>: a whole class of risks architected out.</p>
+<h2 id="beyond">Beyond knees</h2>
+<p>This is a good example of using vaults where the bar is high: a profession with sensitive data, heavy regulation and patients who have every reason to care. The same design fits legal work, accountancy, therapy, any profession with the same duties: the client holds the keys, the professional receives what is sealed to them, and the service in between holds nothing it could lose. It is also a step up from what we already run in production: vaults with real users, now with identity and user management on top.</p>
+<h2 id="next">What happens next</h2>
+<p>Start small. An MVP where the sites log in from one to the other with the patient's passkey: just the login, just the team. Then the team's feedback, through a write-only lane to an agent. Then the first vault a site asks for, the knee score, with the patient choosing where it lives.</p>
+<h2 id="status">What is built, designed and proposed</h2>
+<table><thead><tr><th>Piece</th><th>State</th></tr></thead><tbody><tr><td>Patient questionnaires stored in vaults, onboarded by a link with a key</td><td>Built and used, in our MVPs</td></tr><tr><td>Passkey sign-in, the door, master and book vaults, keys made in the browser</td><td>Built, on pki.sgit.ai</td></tr><tr><td>Sealed messages, by QR code or link; agents' identities and vault handovers</td><td>Built, on pki.sgit.ai</td></tr><tr><td>Sign-in for other sites, by a signed delegation</td><td>On pki.sgit.ai; the authorisation step is being finished</td></tr><tr><td>Write-only lanes for telemetry and feedback, analytics without IP addresses</td><td>Built, on this newsroom and the PHP story site</td></tr><tr><td>Reading meter and paid reading</td><td>Built, on this newsroom</td></tr><tr><td>One sign-in across the knee health sites, vaults per site, sharing with clinicians</td><td>Designed</td></tr><tr><td>Storage choice, including the patient's Google Drive</td><td>Proposed</td></tr><tr><td>DNS proof for the sites, signed and expiring clinical guidance, paid reading on the sites</td><td>Proposed</td></tr><tr><td>Behaviour policies for the project</td><td>Proposed</td></tr></tbody></table>
+<h2 id="limits">What this does not claim</h2>
+<ul><li><b>Not reviewed by Chinmay Gupte yet.</b> This is a review draft.</li><li><b>The MVPs are described from my own account.</b> They are not on the public sites; My Knee Score today says "No account needed".</li><li><b>Passkeys do not work everywhere yet.</b> PRF support varies by browser and device; some flows still need work.</li><li><b>Not legal advice.</b> The GDPR section reads the articles; it is not an assessment.</li><li><b>The code served to browsers remains a risk.</b> Signing reduces it; it does not remove it.</li></ul>
+<h2 id="sources">Where this comes from</h2>
+<p>My voice memo of 26 October 2026; the transcript's "Team Gupta", "omni health", "my scan" and "miniscore" are Chinmay Gupte, OmKneeHealth, MyKneeScan and My Knee Score. The sites as served on 26 October 2026: <a href="https://mykneescore.com">My Knee Score</a>, <a href="https://mykneescan.com">MyKneeScan</a>, <a href="https://www.omkneehealth.com">OmKneeHealth</a>, <a href="https://sportshealing.com">Sports Healing</a> and <a href="https://www.chinmaygupte.com">chinmaygupte.com</a>. pki.sgit.ai's <a href="https://pki.sgit.ai/llms.txt">llms.txt</a>, <a href="https://pki.sgit.ai/articles/a-login-made-of-a-passkey.md">A login made of a passkey</a> and <a href="https://pki.sgit.ai/lib/index.json">its shared library</a>; this newsroom's <a href="https://newsroom.sgit.ai/passkey/index.html">passkey lab</a>, <a href="https://newsroom.sgit.ai/articles/pki-everywhere.html">PKI everywhere</a>, <a href="https://newsroom.sgit.ai/articles/a-directory-of-people-and-keys.html">a directory of people and keys</a>, <a href="https://newsroom.sgit.ai/articles/a-secret-is-a-qr-code.html">a secret is a QR code</a> and <a href="https://newsroom.sgit.ai/articles/secrets-on-public-keys.html">secrets on public keys</a>; the telemetry as described in <a href="https://newsroom.sgit.ai/articles/php-daily-2026-10-23.html">PHP October 2026, update 2</a>; a patient-held record as a vault in <a href="https://sgit.ai/demos/vaults/supplement-stack/index.html">the supplement stack demo</a>. The GDPR <a href="https://gdpr-info.eu/art-9-gdpr/">Articles 9</a>, <a href="https://gdpr-info.eu/art-25-gdpr/">25</a>, <a href="https://gdpr-info.eu/art-32-gdpr/">32</a> and <a href="https://gdpr-info.eu/art-34-gdpr/">34</a>, and <a href="https://curia.europa.eu/juris/liste.jsf?num=C-413/23">the Court's case page for EDPS v SRB</a>, C-413/23 P, read through <a href="https://www.jonesday.com/en/insights/2025/09/cjeu-clarifies-scope-of-personal-data-in-edps-v-srb-decision">Jones Day's summary</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
+<div class="agent">
+  <h4>For an agent</h4>
+  <p>A review draft by Dinis Cruz, not yet approved: it is not linked from the home page or the article list and asks not to be indexed. Its source is admin/content/drafts/omkneehealth-vaults.md; when it is approved it becomes an article at /articles/.</p>
+</div>
+</main>
+<sg-meter view="page" kind="free" date="" topics="" title="The patient holds the keys: vaults, passkeys and PKI for Chinmay Gupte&#x27;s knee health sites, a design with no server-side store of sensitive data, SGit Newsroom" quiet></sg-meter>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

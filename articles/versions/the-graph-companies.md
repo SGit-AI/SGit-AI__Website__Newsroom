@@ -10,13 +10,14 @@
 
 # Versions of: The graph companies
 
-2 published versions of [The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in](../the-graph-companies.md). The current one is **v1.1.0**.
+3 published versions of [The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in](../the-graph-companies.md). The current one is **v1.2.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-19 | minor | 1,864 | +0 / −0 words; 2 changed, 0 added, 0 removed paragraphs | [`68300c48f`](https://github.com/SGit-AI/SGit-AI__Website/commit/68300c48f96fda6068afd1e3f0d603884e13e617) | [what changed](the-graph-companies/v1.1.0.md) · [current](../the-graph-companies.md) |
+| **v1.2.0** | 2026-10-27 | minor | 1,677 | +0 / −187 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-graph-companies/v1.2.0.md) · [current](../the-graph-companies.md) |
+| **v1.1.0** | 2026-10-19 | minor | 1,864 | +0 / −0 words; 2 changed, 0 added, 0 removed paragraphs | [`68300c48f`](https://github.com/SGit-AI/SGit-AI__Website/commit/68300c48f96fda6068afd1e3f0d603884e13e617) | [what changed](the-graph-companies/v1.1.0.md) |
 | **v1.0.0** | 2026-10-19 | published | 1,864 | first published | [`5448d200e`](https://github.com/SGit-AI/SGit-AI__Website/commit/5448d200e4f2ef78b17600f185d040bbfc3e68f8) |  |
 
 [← Back to the article](../the-graph-companies.md) · [All articles](../index.md)

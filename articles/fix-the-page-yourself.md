@@ -10,11 +10,11 @@
 
 # Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.2.0, 3 versions](versions/fix-the-page-yourself.md) · [newsroom v0.12.93](https://newsroom.sgit.ai/admin/versions.html) · uxcustomisationbookmarkletsbrowser-extensionsjavascriptaccessibilityexplorer-codingagentsplaywrightbriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.3.0, 4 versions](versions/fix-the-page-yourself.md) · [newsroom v0.12.93](https://newsroom.sgit.ai/admin/versions.html) · uxcustomisationbookmarkletsbrowser-extensionsjavascriptaccessibilityexplorer-codingagentsplaywrightbriefarticle
 
 ***Abstract:** Years ago, during a security assessment, I packaged an exploit as a bookmarklet, a bookmark that runs a line of JavaScript on the page you are on, and gave it to the business owner to show that one user could see data they should never see. She was more excited about the interface I had wrapped it in than about the vulnerability, because my quick Bootstrap page was so much better than the application she used every day. That story still describes most of the web. Sites are built to show ads and hold attention, not to let me read; even the newest products have gaps their own users could fix in a line of code. My argument is that the next generation of user experience is the one the user customises, and that sites should encourage it: publish a small JavaScript API for the page, the primitives a fix needs, so that every fix is one line, the same API serves tests and agents, and the fixes people keep become a better brief than the site could write itself. It is also the cheapest route to accessibility, because each reader can build what they need on primitives the site provides. This newsroom now does it: a page API with six fixes, from reading mode to WCAG text spacing, as buttons, bookmarklets and code. The rest is a brief: a community library of fixes, per-site extensions that only touch the tab you click, and the same API on sgit.ai and ruv.sgit.ai.*
 
-One click on this newsroom: an article as published, and the same page after three fixes from its page API, reading mode, bigger text and an outline of the headings. Nothing on the site changed; it is CSS in the reader's browser.
+One click on this newsroom: an article as published, and the same page after three fixes from its page API.
 
 ## In short
 
@@ -55,7 +55,7 @@ The fix is for the site to take part. If a page publishes a small JavaScript API
 
 We already have the convention. The SGraph tools put each tool's API on the page at `window.__tools`, announce it with a `tool:ready` event, and describe it in an `api.json`; the principle, in the architect's review, is "API is the tool, UI is a consumer". The same surface that a user's fix calls is the one Playwright tests call, and the one an agent driving a browser calls. A page with an API is a page that can be automated, tested and fixed with the least code, by people and by agents alike.
 
-The user's fix is the best brief the site will get: the site publishes primitives; readers write fixes in a line or two; the site learns from the fixes people keep; popular ones are adopted as settings or themes, and personal ones are maintained for a fee.
+How the user's fix becomes a brief: the site publishes primitives, readers write fixes and the site adopts popular ones.
 
 And here is the part sites should want. A fix a user writes, and keeps, is a better brief than any the site could write itself: what a real person needed, in a form that runs. It is [explorer coding](explorer-coding.md) applied to the page in front of you. The fixes many people keep should become settings, and then the script disappears, because the product does it. This newsroom has done exactly that once already: the first outside reaction to its Industry Wire was two words on WhatsApp, "Dark mode!", and [five themes](dark-mode-and-four-more.md) shipped soon after. The personal fixes that stay personal are where the vendor becomes the villager and is paid to maintain them.
 

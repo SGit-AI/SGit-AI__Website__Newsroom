@@ -10,7 +10,7 @@ tags: newsroom, publishers, findability, taxonomy, article
 status: published
 ---
 
-!shot sx-section.webp | images/ | A section for publishers, and how it keeps itself current. Three inputs: the desks and controlled subjects every article already has, the section's own file of rules and the editor's words, and a register of the site's features with when each shipped. One build step places every article into the section's streams, says which rule placed it, and writes the page and its JSON twin. The page: five pieces to start with, the latest, the features a publisher can use today, and four streams of articles. | concept
+!shot sx-section.webp | images/ | A section for publishers and how it keeps itself current: three inputs, one build step, and the page with its JSON twin. | concept
 
 ## In short {#in-short}
 

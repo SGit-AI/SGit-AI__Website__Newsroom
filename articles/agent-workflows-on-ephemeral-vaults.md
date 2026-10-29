@@ -10,11 +10,11 @@
 
 # Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/agent-workflows-on-ephemeral-vaults.md) · [newsroom v0.12.50](https://newsroom.sgit.ai/admin/versions.html) · sgitagentsmulti-agentephemeral-vaultsappend-lanesvault-appsarchitecturecitemplatesbriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.2.0, 3 versions](versions/agent-workflows-on-ephemeral-vaults.md) · [newsroom v0.12.50](https://newsroom.sgit.ai/admin/versions.html) · sgitagentsmulti-agentephemeral-vaultsappend-lanesvault-appsarchitecturecitemplatesbriefarticle
 
 ***Abstract:** There is a pattern I keep using for agents that work together: give them an encrypted vault as their shared memory and their way of talking, and let it exist only for as long as the work does. I would like to capture it properly, as a series of architectures from simple to complex, each in a repository of its own with its agents, its keys, its fixtures and a CI job that proves it works, so that people and agents can fork them as templates, recipes and skills. The repository should run as one of the checks before anything reaches sgit's main branch. The key questions are the same at every level: how do you give agents shared memory, how do they communicate, how do they work asynchronously, and how do you know what each one is doing at any moment. The answer depends on who holds which key. Because the only thing that ever leaves the environment is ciphertext, you can be more relaxed about where the logs and the data go: it is all about the keys, and about whether the vault is ephemeral. A vault app can draw what the agents are doing, and the screenshot can go back into the vault. And I wanted to know how far it scales, so we measured it locally: a hundred writers posting ten entries each landed a thousand entries in an append lane in 4.9 seconds, none lost. The same test found four defects, which is the case for the release gate in one paragraph.*
 
-Agent workflows on ephemeral vaults: seven architectures, simple to complex, from one agent with one ephemeral vault to a swarm of a hundred writing to append lanes. Each is a folder in its own repository, with agents, keys, fixtures and a CI job that proves it works, and each says who holds which key.
+Agent workflows on ephemeral vaults: seven architectures, from one agent to a swarm of a hundred.
 
 ## In short
 
@@ -64,7 +64,7 @@ One comment I keep hearing, and I would like the same thing, is a visual represe
 
 ## The swarm, measured
 
-The swarm, measured on one machine. With in-memory storage, a hundred writers posting ten entries each landed a thousand entries in 4.9 seconds, none lost; the same load on disk storage ran at about three entries a second because of a defect in the disk layer. Ten scoped clones at once took 1.9 seconds; ten full clones, 21.1.
+The swarm, measured on one machine: in-memory against disk storage, and scoped against full clones.
 
 I wanted to know how far this goes, so a research agent measured it locally for this article: sgit 0.21.0, version 0.34.0 of the vault server as one process, four cores, everything on one machine.
 
@@ -126,6 +126,8 @@ Vaults & methodAgents & policy[This article as a graph →](graphs.md#agent-work
 
 ### Continued by
 
+- [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](messaging-fs.md) A proposed encrypted messenger between vaults: append lanes for transport, PKI for trust, and Messaging-FS as the schema.
+- [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](aws-from-the-vault.md) A proposed aws.twin.sgit.ai: an AWS twin on a vault first, then a temporary AWS session from the user's vault.
 - [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](the-editors-channel.md) A key makes a browser an editor's: reads, sign-offs and fixes go to a vault, a daily pass acts and replies, and five lanes set what any reader sends.
 - [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](one-vault-ten-agents.md) The vault behind this newsroom, 35,000 objects and ten agents, measured eight ways: one folder in 13 seconds, history as the edge, storage as the bottleneck.
 - [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](your-own-newsroom.md) The recipe for a founder's own site: voice memos, an agent wired to GitHub that checks and publishes, GitHub Pages, and readers who pay a little.

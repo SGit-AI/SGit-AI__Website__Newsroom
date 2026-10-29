@@ -10,7 +10,7 @@ tags: books, generation-z, careers, developers, leanpub, back-catalogue, article
 status: published
 ---
 
-!shot gz-outlines.webp | images/ | From the 2018 book to the 2026 articles. On the left, chapters of Generation Z Developers: five left as outlines in 2018 (pioneers, settlers and town planners; graphs; your future self; publish, publish, publish; GitHub as your CV) and two that were written (machine learning and AI; open source). On the right, the newsroom articles that have since written each one: software vendors as villagers and explorer coding; the graphs books and search as navigation; bringing my past work back; your own newsroom; act as the job you want; hired for the workflow; the fork next door. Of the book's 138 files, 90 are still outlines. | concept
+!shot gz-outlines.webp | images/ | From the 2018 book to the 2026 articles: chapters left as outlines, and the articles that have since written them. | concept
 
 **Update, 19 October 2026.** The name moved on once the book's website started building the edition. Decision 010 made it *Gen Z Developers (GenAI Edition)*; after the first release candidate, decision 014 made it **Generation ZX Developers (GenAI Startup Edition)**: for Generation Z and Generation X, with the founder as the reader. [Discovering the book](/articles/discovering-the-book.html) tells how that happened. This article is kept as it was written, as the step before.
 
@@ -54,7 +54,7 @@ Reading them now, many are briefs that this newsroom has since written as articl
 
 ## The cover {#cover}
 
-!shot gz-cover.webp | images/ | The printed early release of Generation Z Developers, September 2018: "Key concepts and ideas for the next generation of developers", and seven lines on the cover: question everything; make fact based decisions; understand the history of tech; learn how to learn; understand what game is being played; develop intellectual curiosity; shake things up. Creative Commons BY, with the repository's address. Photographed by Dinis. | narrow | photo
+!shot gz-cover.webp | images/ | The printed early release of Generation Z Developers, September 2018, cover (photo: Dinis). | narrow | photo
 
 I still have the printed early release, from September 2018. Its cover says what the book was for, in seven lines: question everything; make fact based decisions; understand the history of tech; learn how to learn; understand what game is being played; develop intellectual curiosity; shake things up. I would keep all seven. They read more urgently now than they did then.
 

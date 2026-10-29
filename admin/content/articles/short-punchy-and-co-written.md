@@ -10,7 +10,7 @@ tags: books, generation-z, writing, quality, gen-z-book, article
 status: published
 ---
 
-!shot sp-paragraph.webp | images/ | Every paragraph knows what it is. One paragraph of the book as a node in its graph, carrying its purpose, the evidence behind it, the facts it states and the hypotheses it proposes, linked to the chapter above it and to the paragraphs that say something close, which is how repetition shows up. Around it, the loop: voice memos in, the draft, the editor's review, synthetic readers' reactions, a decision on each finding (fix, or not doing it), and sign-off. | concept
+!shot sp-paragraph.webp | images/ | One paragraph of the book as a node in its graph, linked to its chapter and similar paragraphs, with the review loop. | concept
 
 ## In short {#in-short}
 

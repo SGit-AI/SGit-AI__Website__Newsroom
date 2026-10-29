@@ -10,7 +10,7 @@ tags: search, graphs, fractal-semantic-graphs, ontology, taxonomy, graph-rag, ne
 status: published
 ---
 
-!shot sn-explore.webp | images/ | Search as navigation. A query built from chips, Portugal and startups, each resolved to a thing in the graph; on the side, what the words could mean, what sits nearest and which combinations are worth following, each with an exact count; in the middle, the views of the same result: the graph, the sections as one-liners, a collage of the figures, a timeline and the ranked list; and a pane that shows what was fetched, how each result arrived and the time each step took. All of it in the browser, from files built at release, with no model. | concept
+!shot sn-explore.webp | images/ | Search as navigation: a query built from chips, five views of the same result, and what was fetched. | concept
 
 ## In short {#in-short}
 

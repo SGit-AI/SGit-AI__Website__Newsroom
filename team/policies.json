@@ -1,0 +1,608 @@
+{
+ "what": "Every member's policy, the overlap check and the count of files nobody owns, as build.py found them. Written by admin/build/team.py.",
+ "overlaps": 0,
+ "source_files": 1777,
+ "unowned": 0,
+ "unowned_by_dir": {},
+ "agreed_by_editor": 0,
+ "members": [
+  {
+   "id": "dinis-cruz",
+   "handle": "Dinis Cruz",
+   "name": "Dinis Cruz",
+   "kind": "human",
+   "group": "editor",
+   "status": "active",
+   "line": "Editor and owner. Directs by voice memo, reads what the agents wrote and says go; holds the root key that vouches for every agent key.",
+   "since": "the beginning",
+   "cards": [],
+   "policy": {
+    "id": "dinis-cruz",
+    "handle": "Dinis Cruz",
+    "status": "draft",
+    "agreed_by_editor": false,
+    "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+    "writes": [
+     "admin/content/reviews/queue.json",
+     "admin/content/team.json",
+     "admin/content/agents/*/policy.json"
+    ],
+    "writes_except": [],
+    "appends": [],
+    "vaults_may_hold": [
+     "the root key sha256:db7f79fdd87e030a",
+     "every vault key",
+     "SG_SEND_ACCESS_TOKEN",
+     "the cloud environment's secrets"
+    ],
+    "never_holds": [],
+    "note": "A person: no write scope is enforced; he can change anything and the history shows it. These are the files that are his alone to decide: the review queue's priority order, the roster, and every member's policy."
+   }
+  },
+  {
+   "id": "newsroom-writer",
+   "handle": "@newsroom.writer",
+   "name": "newsroom.writer",
+   "kind": "agent",
+   "group": "writing",
+   "status": "active",
+   "line": "Writes the articles from the editor's voice memos, with the figures, graphs and summaries; corrects them when a review finds something.",
+   "since": "13 October 2026, v0.12.16",
+   "cards": [],
+   "policy": {
+    "id": "newsroom-writer",
+    "handle": "@newsroom.writer",
+    "status": "draft",
+    "agreed_by_editor": false,
+    "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+    "writes": [
+     "admin/content/articles/*.md",
+     "admin/content/articles/graphs/**",
+     "admin/content/articles/summaries/**",
+     "admin/content/articles/images/**",
+     "admin/content/articles/data/**",
+     "admin/content/articles/reviews/*/status.json",
+     "admin/content/trails.json",
+     "admin/content/series.json",
+     "admin/content/briefs.json",
+     "admin/notes/writer-conventions.md",
+     "admin/content/drafts/**"
+    ],
+    "writes_except": [],
+    "appends": [
+     "admin/notes/**"
+    ],
+    "vaults_may_hold": [
+     "none"
+    ],
+    "never_holds": [
+     "any vault key",
+     "a release number"
+    ],
+    "note": ""
+   }
+  },
+  {
+   "id": "newsletter",
+   "handle": "@newsletter",
+   "name": "newsletter",
+   "kind": "agent",
+   "group": "writing",
+   "status": "idle",
+   "line": "Writes the newsletter issues, reading every article an issue cites in full.",
+   "since": "13 October 2026, v0.12.25",
+   "cards": [],
+   "policy": {
+    "id": "newsletter",
+    "handle": "@newsletter",
+    "status": "draft",
+    "agreed_by_editor": false,
+    "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+    "writes": [
+     "admin/content/newsletter/**",
+     "admin/build/newsletter*"
+    ],
+    "writes_except": [],
+    "appends": [
+     "admin/notes/**"
+    ],
+    "vaults_may_hold": [
+     "none"
+    ],
+    "never_holds": [
+     "any vault key"
+    ],
+    "note": ""
+   }
+  },
+  {
+   "id": "newsroom-dev",
+   "handle": "@newsroom.dev",
+   "name": "newsroom.dev",
+   "kind": "agent",
+   "group": "building",
+   "status": "active",
+   "line": "Builds the site's functionality and release machinery: the PHP desk, reading lists, the Pen, the review tools.",
+   "since": "22 October 2026, v0.13.40",
+   "cards": [
+    "086",
+    "087",
+    "088",
+    "089",
+    "090",
+    "091",
+    "092",
+    "093"
+   ],
+   "policy": {
+    "id": "newsroom-dev",
+    "handle": "@newsroom.dev",
+    "status": "draft",
+    "agreed_by_editor": false,
+    "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+    "writes": [
+     "admin/build/**",
+     "assets/pen/**",
+     "assets/reviews/**",
+     "assets/vendor/**",
+     "assets/*.js",
+     "assets/*.css",
+     "assets/components/**",
+     "assets/search/**",
+     "assets/page-fixes/**",
+     "for/**",
+     ".github/**",
+     "README.md",
+     "admin/engineering/**",
+     "admin/content/php-oct-2026/**",
+     "admin/content/vaults/**",
+     "admin/php-oct-2026/**",
+     "php-flaws/**",
+     "admin/content/publishers/**",
+     "admin/content/sections/**",
+     "admin/content/features.json",
+     "admin/content/find/**",
+     "admin/content/agents.json",
+     "admin/content/videos/**"
+    ],
+    "writes_except": [
+     "admin/build/wire*",
+     "admin/build/infographics.py",
+     "admin/build/accountant.py",
+     "admin/build/runs_ledger.py",
+     "admin/build/test_wire.mjs",
+     "admin/build/front.py",
+     "admin/build/test_front.mjs",
+     "admin/build/test_themes.mjs",
+     "admin/build/test_reading.mjs",
+     "admin/build/shots_themes.mjs",
+     "admin/build/test_pane.mjs",
+     "admin/build/test_vault*.mjs",
+     "admin/build/test_sync.mjs",
+     "admin/build/test_notes.mjs",
+     "admin/build/test_inbox.mjs",
+     "admin/build/vault_*",
+     "admin/build/viewer_vault.mjs",
+     "admin/build/vault-mock.mjs",
+     "admin/build/newsletter*",
+     "assets/site.css",
+     "assets/site-nav.css",
+     "assets/newsroom.css",
+     "assets/fonts.css",
+     "assets/newsroom-vault.js",
+     "assets/door.js"
+    ],
+    "appends": [
+     "admin/notes/**"
+    ],
+    "vaults_may_hold": [
+     "SG_SEND_ACCESS_TOKEN (to make vaults, when asked)"
+    ],
+    "never_holds": [
+     "a reviewer's key",
+     "the security agent's key",
+     "the editor's root key"
+    ],
+    "note": "Also writes admin/engineering/** (the cards and release notes) and, through release_stamp.py, the version."
+   }
+  },
+  {
+   "id": "newsroom-ux",
+   "handle": "@newsroom.ux",
+   "name": "newsroom.ux",
+   "kind": "agent",
+   "group": "building",
+   "status": "idle",
+   "line": "The reader's experience: the bar, the themes, the front page, the reading strip, highlights.",
+   "since": "13 October 2026, v0.12.12",
+   "cards": [
+    "036",
+    "037",
+    "038",
+    "063",
+    "066",
+    "073",
+    "074"
+   ],
+   "policy": {
+    "id": "newsroom-ux",
+    "handle": "@newsroom.ux",
+    "status": "draft",
+    "agreed_by_editor": false,
+    "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+    "writes": [
+     "assets/reader/**",
+     "assets/themes/**",
+     "assets/front/**",
+     "assets/site.css",
+     "assets/site-nav.css",
+     "assets/newsroom.css",
+     "assets/fonts.css",
+     "assets/fonts/**",
+     "assets/img/**",
+     "admin/content/front/**",
+     "admin/build/front.py",
+     "admin/build/test_front.mjs",
+     "admin/build/test_themes.mjs",
+     "admin/build/test_reading.mjs",
+     "admin/build/shots_themes.mjs"
+    ],
+    "writes_except": [],
+    "appends": [
+     "admin/notes/**"
+    ],
+    "vaults_may_hold": [
+     "none"
+    ],
+    "never_holds": [
+     "any vault key"
+    ],
+    "note": ""
+   }
+  },
+  {
+   "id": "newsroom-vault",
+   "handle": "@newsroom.vault",
+   "name": "newsroom.vault",
+   "kind": "agent",
+   "group": "building",
+   "status": "idle",
+   "line": "The reader's vault: the pane, the account between devices, the inbox and its lane, the shared viewer.",
+   "since": "17 October 2026, v0.12.88",
+   "cards": [
+    "058",
+    "059",
+    "077",
+    "078",
+    "079"
+   ],
+   "policy": {
+    "id": "newsroom-vault",
+    "handle": "@newsroom.vault",
+    "status": "draft",
+    "agreed_by_editor": false,
+    "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+    "writes": [
+     "assets/vault-pane/**",
+     "assets/newsroom-vault.js",
+     "assets/door.js",
+     "vault/**",
+     "admin/build/vault_*",
+     "admin/build/viewer_vault.mjs",
+     "admin/build/vault-mock.mjs",
+     "admin/build/test_vault*.mjs",
+     "admin/build/test_pane.mjs",
+     "admin/build/test_sync.mjs",
+     "admin/build/test_notes.mjs",
+     "admin/build/test_inbox.mjs"
+    ],
+    "writes_except": [],
+    "appends": [
+     "admin/notes/**"
+    ],
+    "vaults_may_hold": [
+     "a vault key made for its own tests, in memory"
+    ],
+    "never_holds": [
+     "a reader's vault key",
+     "a reviewer's vault key"
+    ],
+    "note": ""
+   }
+  },
+  {
+   "id": "newsroom-conductor",
+   "handle": "@newsroom.conductor",
+   "name": "newsroom.conductor",
+   "kind": "agent",
+   "group": "building",
+   "status": "planned",
+   "line": "Would keep the site as a whole true: branches, versions, tests, deploy, and this team page. Specified on 14 October, never started.",
+   "since": "",
+   "cards": [],
+   "policy": {
+    "id": "newsroom-conductor",
+    "handle": "@newsroom.conductor",
+    "status": "draft",
+    "agreed_by_editor": false,
+    "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+    "writes": [],
+    "writes_except": [],
+    "appends": [],
+    "vaults_may_hold": [
+     "none"
+    ],
+    "never_holds": [
+     "any vault key"
+    ],
+    "note": "Not started: no scope is claimed."
+   }
+  },
+  {
+   "id": "newsroom-wire",
+   "handle": "@newsroom.wire",
+   "name": "newsroom.wire",
+   "kind": "agent",
+   "group": "wires",
+   "status": "idle",
+   "line": "Built the wires: the pages that read each wire's vault, the snapshot, the infographics pipeline, the first scheduled runs.",
+   "since": "14 October 2026",
+   "cards": [],
+   "policy": {
+    "id": "newsroom-wire",
+    "handle": "@newsroom.wire",
+    "status": "draft",
+    "agreed_by_editor": false,
+    "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+    "writes": [
+     "admin/build/wire*",
+     "admin/build/infographics.py",
+     "admin/build/test_wire.mjs",
+     "wire/**",
+     "admin/notes/wires-ux/**"
+    ],
+    "writes_except": [
+     "wire/costs.html",
+     "wire/costs.json",
+     "admin/build/wire-runs.json"
+    ],
+    "appends": [
+     "admin/notes/**"
+    ],
+    "vaults_may_hold": [
+     "OPENROUTER_API_KEY, from the environment"
+    ],
+    "never_holds": [
+     "a vault's write key on a page"
+    ],
+    "note": ""
+   }
+  },
+  {
+   "id": "wire-desks",
+   "handle": "the wire desks",
+   "name": "The wire desks",
+   "kind": "scheduled",
+   "group": "wires",
+   "status": "active",
+   "line": "The scheduled sessions that write the wires' vaults and the newsroom's morning run, each costed.",
+   "since": "14 October 2026",
+   "cards": [],
+   "policy": {
+    "id": "wire-desks",
+    "handle": "the wire desks",
+    "status": "draft",
+    "agreed_by_editor": false,
+    "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+    "writes": [],
+    "writes_except": [],
+    "appends": [],
+    "vaults_may_hold": [
+     "each wire's vault write key, as that wire's desk needs"
+    ],
+    "never_holds": [
+     "the reviewers' vault keys"
+    ],
+    "note": "Writes to the wires' own vaults, not to this repository."
+   }
+  },
+  {
+   "id": "newsroom-accountant",
+   "handle": "@newsroom.accountant",
+   "name": "newsroom.accountant",
+   "kind": "agent",
+   "group": "wires",
+   "status": "active",
+   "line": "Records what every run and picture cost, daily.",
+   "since": "14 October 2026",
+   "cards": [
+    "071"
+   ],
+   "policy": {
+    "id": "newsroom-accountant",
+    "handle": "@newsroom.accountant",
+    "status": "draft",
+    "agreed_by_editor": false,
+    "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+    "writes": [
+     "admin/build/accountant.py",
+     "admin/build/runs_ledger.py",
+     "admin/build/wire-runs.json",
+     "wire/costs.html",
+     "wire/costs.json"
+    ],
+    "writes_except": [],
+    "appends": [],
+    "vaults_may_hold": [
+     "none"
+    ],
+    "never_holds": [
+     "any vault key",
+     "a session's free text"
+    ],
+    "note": ""
+   }
+  },
+  {
+   "id": "newsroom-reviews",
+   "handle": "@newsroom.reviews",
+   "name": "newsroom.reviews",
+   "kind": "agent",
+   "group": "review",
+   "status": "starting",
+   "line": "Runs independent review: signs each reviewer's brief and queue, takes what the security agent cleared, puts each finding to the editor.",
+   "since": "28 October 2026",
+   "cards": [
+    "091",
+    "092",
+    "093"
+   ],
+   "policy": {
+    "id": "newsroom-reviews",
+    "handle": "@newsroom.reviews",
+    "status": "draft",
+    "agreed_by_editor": false,
+    "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+    "writes": [
+     "admin/content/reviews/**",
+     "admin/content/articles/reviews/*/20??-??-??__*.json"
+    ],
+    "writes_except": [
+     "admin/content/reviews/queue.json"
+    ],
+    "appends": [
+     "admin/notes/**"
+    ],
+    "vaults_may_hold": [
+     "REVIEW_VAULT_KEY__<ID> for each reviewer's vault",
+     "SG_SEND_ACCESS_TOKEN",
+     "REVIEW_LANE_SECRET",
+     "its own signing key, in this session only"
+    ],
+    "never_holds": [
+     "NEWSROOM_SECURITY_KEY or the security agent's key",
+     "the editor's root key",
+     "any reviewer's own signing key"
+    ],
+    "note": ""
+   }
+  },
+  {
+   "id": "newsroom-security",
+   "handle": "@newsroom.security",
+   "name": "newsroom.security",
+   "kind": "agent",
+   "group": "review",
+   "status": "planned",
+   "line": "Reads every file in a reviewer's public vault and signs a verdict before the newsroom takes any of it.",
+   "since": "",
+   "cards": [
+    "092"
+   ],
+   "policy": {
+    "id": "newsroom-security",
+    "handle": "@newsroom.security",
+    "status": "draft",
+    "agreed_by_editor": false,
+    "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+    "writes": [
+     "gate/**"
+    ],
+    "writes_except": [],
+    "appends": [],
+    "vaults_may_hold": [
+     "a reviewer vault's public read key",
+     "its own signing key, in its session only"
+    ],
+    "never_holds": [
+     "any vault key",
+     "SG_SEND_ACCESS_TOKEN",
+     "@newsroom.reviews's key",
+     "the editor's root key"
+    ],
+    "note": "Writes only to the review-gate branch, which holds nothing else."
+   }
+  },
+  {
+   "id": "openai-chatgpt",
+   "handle": "openai-chatgpt",
+   "name": "ChatGPT (OpenAI)",
+   "kind": "reviewer",
+   "group": "review",
+   "status": "active",
+   "line": "Independent reviewer; works in its own public vault, gfzbzp41.",
+   "since": "27 October 2026",
+   "cards": [],
+   "policy": {
+    "id": "openai-chatgpt",
+    "handle": "openai-chatgpt",
+    "status": "draft",
+    "agreed_by_editor": false,
+    "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+    "writes": [],
+    "writes_except": [],
+    "appends": [],
+    "vaults_may_hold": [
+     "its own signing key",
+     "its vault key"
+    ],
+    "never_holds": [
+     "any newsroom key"
+    ],
+    "note": "Writes to its own vault, not to this repository."
+   }
+  },
+  {
+   "id": "perplexity",
+   "handle": "perplexity",
+   "name": "Perplexity",
+   "kind": "reviewer",
+   "group": "review",
+   "status": "registered",
+   "line": "Independent reviewer to run on a schedule; nothing sent yet, no vault yet.",
+   "since": "27 October 2026",
+   "cards": [],
+   "policy": {
+    "id": "perplexity",
+    "handle": "perplexity",
+    "status": "draft",
+    "agreed_by_editor": false,
+    "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+    "writes": [],
+    "writes_except": [],
+    "appends": [],
+    "vaults_may_hold": [],
+    "never_holds": [
+     "any newsroom key"
+    ],
+    "note": "Has not started."
+   }
+  },
+  {
+   "id": "anthropic-fable",
+   "handle": "anthropic-fable",
+   "name": "Claude Fable (Anthropic)",
+   "kind": "reviewer",
+   "group": "review",
+   "status": "occasional",
+   "line": "Reviewer id for reviews run at the editor's request; its 18 October reviews are on the record.",
+   "since": "18 October 2026",
+   "cards": [],
+   "policy": {
+    "id": "anthropic-fable",
+    "handle": "anthropic-fable",
+    "status": "draft",
+    "agreed_by_editor": false,
+    "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+    "writes": [],
+    "writes_except": [],
+    "appends": [],
+    "vaults_may_hold": [],
+    "never_holds": [
+     "any newsroom key"
+    ],
+    "note": "Records its reviews as files; it holds no scope here."
+   }
+  }
+ ]
+}

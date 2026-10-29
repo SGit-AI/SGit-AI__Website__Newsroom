@@ -14,13 +14,2531 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-229 of 229 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+323 of 323 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-229 articles, 1326 links between them (1984 mentions in all). 219 articles cite an earlier one; 65 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 0 articles not yet linked either way.
+323 articles, 1549 links between them (2353 mentions in all). 264 articles cite an earlier one; 79 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 36 articles not yet linked either way.
+
+## [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](introducing-sharness.md)
+
+2026-10-29 · Agents & policySite & engineering
+
+An agent's rules need an enforcer outside the agent; SHarness executes Agent Behaviour Policies as Process Behaviour Policies, a small policy hashed to one name the person supplies and enforced by the kernel or a separate door, so Settings and Expectations become Boundaries an insurer can count, the prompt goes last, and one policy can be translated to many enforcers; today the kernel locks, the levels and two doors run, and the launcher above the agent is the design.
+
+*[diagram]*
+**concept**claim**method**example
+
+**12 nodes, 10 edges**
+
+- **The harness we could not find** (claim) Our own counts: one rule in eleven, one boundary in 57 checks.
+- **SHarness in one paragraph** (concept) Small kernel-locked processes under a policy the person hashes.
+- **Process Behaviour Policy** (concept) The ABP model applied to one process, executed underneath.
+- **Three things that bind** (concept) The text, the hash from outside, an enforcer it does not include.
+- **Only enforced controls count** (claim) Boundaries are what an insurer, auditor or board can count.
+- **The prompt goes last** (claim) Allow, refuse silently, ask only what the policy cannot hold.
+- **One policy, many enforcers** (method) translate writes bwrap, Docker, Kubernetes, Claude Code forms.
+- **The levels** (method) A sentence compiled down to the kernel; simpler is never weaker.
+- **A launcher and five doors** (method) One role, uid, policy and certificate each, mutual TLS edges.
+- **Capability and behaviour rows** (concept) A behaviour row is a Boundary only if its door is the only path.
+- **What runs today** (example) 0.2.0 on PyPI, hello 6 of 6, two doors, a kernel in a tab.
+- **Feedback wanted** (claim) Run hello, break the shell, say who should run the launcher.
+
+> A tricked agent cannot widen it, because the kernel was told before the process started. The one property SHarness is built around.
+
+> An ABP describes an agent's behaviour; a PBP is that description executed, underneath the agent. The step from Agent to Process Behaviour Policies.
+
+builds on [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](#behaviour-policies-from-the-checks), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second](#process-behaviour-policies), [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](#a-payout-for-every-row), [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](#agents-have-an-identity-now).
+
+## [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](investor-sgit-ai.md)
+
+2026-10-29 · Startups & strategyVaults & method
+
+Because what we build has to be experienced to be understood, investor.sgit.ai would let investors and founders use it: news from investor circles as a graph, contracts as linked graphs, a founders' section, funding models, an evaluation framework for security startups, deal rooms as vaults, keys for investors, sgit as the case study and RiskMandate at work, run by a small agent team, built to sgit.ai's repository rules with CI owning the version, and shown to investors for their answer.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**11 nodes, 10 edges**
+
+- **Experience is the explanation** (claim) What we build has to be used to be understood.
+- **investor.sgit.ai** (artefact) One site for investors and founders, angel to Series A.
+- **The news as a graph** (method) Angel and Series A from public sources.
+- **Contracts as graphs** (method) Term sheets and cap tables linked clause to clause.
+- **A section for founders** (concept) Talking to investors, next steps, services, models.
+- **The evaluation framework** (artefact) Seven criteria and a meta-criterion, scored to 40.
+- **Deal rooms as vaults** (example) Desks and a deal room, each a vault.
+- **sgit as the case study** (example) Strategy and thinking published as it happens.
+- **Run by agents** (method) A small scheduled team; feeds from the newsroom's wire.
+- **Built to the house rules** (method) A brief in full, a reality file, CI owns the version.
+- **Ask investors** (question) Is this useful, and what would help?
+
+> So I think the best way to talk to investors is to have them use our own technology, on the problems they actually have. The reason for the site.
+
+> My inclination is the first, because it shows the point of vaults: one team writes, another site reads, and the vault is the contract between them. The answer to who makes the feeds.
+
+builds on [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit), [Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room](#legal-on-demand-for-startups), [Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital](#insuring-agents-the-whole-story), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](#the-exit-is-when-you-sell-control), [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it](#open-source-so-you-keep-it), [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](#a-small-slice-sets-the-price), [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](#agents-have-an-identity-now), [CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why](#ci-owns-the-version).
+
+## [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](agents-have-an-identity-now.md)
+
+2026-10-29 · Agents & policyVaults & method
+
+Agents now have a simple working identity: each session makes its own key pair, publishes the public half with its role in a repository where the push is the authorisation, runs on a schedule, and receives secrets other agents seal to it, with a person's root key vouching until a date; the cloud providers' agent identities authenticate agents inside a tenant but do not describe a key the agent holds, a public place to find it, or a way to encrypt to it, which is what they could give every agent.
+
+*[diagram]*
+**concept**claim**method**example
+
+**11 nodes, 10 edges**
+
+- **It has been coming** (claim) PKI everywhere, a directory of keys, a pen and a key, the push.
+- **Five steps** (method) Session, key pair, published role and key, schedule, sealed secrets.
+- **The push is the authorisation** (concept) Publishing to the team's repository accepts a session's key.
+- **Ten agents, one night** (example) The PHP newsroom's keys, 01:05 to 03:29 UTC on 28 October.
+- **An agent seals to an agent** (example) A vault key sealed to the vault registry after a trust check.
+- **The clouds' agent identities** (concept) Tokens inside a tenant: Entra, AgentCore, Google Agent Identity.
+- **What is missing** (claim) A key the agent holds, a place to find it, a way to encrypt to it.
+- **The IETF draft** (example) Cryptographic binding required; no encryption to agents defined.
+- **What to ask the providers** (method) A key per session, published, sealable, with an end.
+- **The role makes it powerful** (claim) A key tied to a defined role and a person's dated trust.
+- **Trust that ends** (example) The registry's link ends on 30 October unless renewed.
+
+> A key on its own is an address. Why the role matters more than the key.
+
+> Trust that ends unless someone renews it is how an agent's identity should work. Expiry as a feature of identity.
+
+builds on [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](#a-pen-and-a-key), [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](#the-push-is-the-authorisation), [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](#the-vendors-layer); continued by [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](#introducing-sharness), [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](#investor-sgit-ai).
+
+## [Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital](insuring-agents-the-whole-story.md)
+
+2026-10-28 · Agents & policyStartups & strategy
+
+An agent behaviour policy names rows, and a named row can be capped, priced by a formula anyone can check, split between the vendor and the customer, and backed by capital whose size follows from the limits sold; four articles develop that in turn and three vaults let anyone run it.
+
+*[diagram]*
+**claim**method**artefact**example**question
+
+**10 nodes, 9 edges**
+
+- **Who could underwrite a behaviour policy?** (question) The question the series started from.
+- **A payout for every row** (claim) A limit per named row, a lower premium per enforced control.
+- **Who carries the risk** (example) Five companies sell agent cover; start as a managing agent.
+- **The vendor's layer** (method) The vendor carries a share of the rows its product decides.
+- **Where to build it** (method) London to underwrite and carry; the money buys cover.
+- **Licence to Operate vault** (artefact) A simulated policy: every reply priced against a live policy.
+- **The underwriting calculator** (artefact) The series' formula as data, with a calculator.
+- **AIUC-1 as a graph** (artefact) A standard with a conformance layer that asks what is insurable.
+- **Capped rows make it arithmetic** (claim) Priced, split and capitalised from named, capped rows.
+- **Insurers, vendors and investors** (question) Who would make it real.
+
+> The articles describe; the vaults run. Why the series shows its vaults.
+
+> A capped row can be priced, by a formula anyone can check. The thread through the five articles.
+
+builds on [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](#a-payout-for-every-row), [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](#who-carries-the-risk), [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](#the-vendors-layer), [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](#where-to-build-the-agent-insurer); continued by [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](#investor-sgit-ai), [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](#where-to-build-the-agent-insurer).
+
+## [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](where-to-build-the-agent-insurer.md)
+
+2026-10-28 · Startups & strategyAgents & policy
+
+An insurer for agent behaviour policies does three jobs, and London suits two of them: a managing agent and Lloyd's coverholder on a syndicate's capital, then its own capital as a UK insurer or at Lloyd's, with distribution into the US through surplus lines and the EU by one registration, and capital raised from investors including the Gulf's funds; because every row is capped, the capital raised above about £4.35 million of running costs sets a ceiling on the cover it can sell, so £10 million in one go backs about £94 million to £188 million and £50 million about £761 million to £1.52 billion.
+
+*[diagram]*
+**concept**claim**method**example**question
+
+**12 nodes, 11 edges**
+
+- **Three jobs, London for two** (claim) Pricing and selling and carrying the risk in London; distribution where customers are.
+- **Start in London** (method) A managing agent and Lloyd's coverholder on a syndicate's capital.
+- **Carry the risk in London** (method) A UK insurer through the PRA's mobilisation regime, or capital at Lloyd's.
+- **Sell into the US** (method) Surplus lines, $143.3 billion in 2025, built for new risks.
+- **The EU second** (concept) One registration; software a product from 9 December 2026; EIOPA wary of MGAs.
+- **Capital from the Gulf** (concept) The UAE's funds as a source of capital, not a first market.
+- **A captive for providers** (example) From $250,000 in Vermont.
+- **About £4.35 million to run** (claim) Two years of team, licences and technology.
+- **What the money buys is cover** (claim) Capital above running costs sets a ceiling on the cover sold.
+- **£10 million in one go** (example) About £94 million to £188 million of cover, 1,177 to 2,354 agents.
+- **£50 million in one go** (example) About £761 million to £1.52 billion, 9,510 to 19,020 agents.
+- **The share hit at once** (question) The number with no loss data behind it yet.
+
+> I think the honest answer is that it can have more than one home, because it does more than one job. The answer to where, in one line.
+
+> So rather than raising in stages, the company can raise once, for the cover it intends to sell from the start, and the size of the raise decides that ceiling. Why the raise should match the cover from the start.
+
+builds on [Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital](#insuring-agents-the-whole-story), [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](#a-payout-for-every-row), [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](#who-carries-the-risk), [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](#the-vendors-layer); continued by [Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital](#insuring-agents-the-whole-story), [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](#the-vendors-layer).
+
+## [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](the-vendors-layer.md)
+
+2026-10-28 · Agents & policyStartups & strategy
+
+Every row of an agent's behaviour policy has two parties, the vendor whose product decides some outcomes and the customer who granted access and connected data, so as cloud providers split security of and in the cloud, each row should carry a vendor's share paid when the vendor's conditions held; today's published terms cap vendors at a year's fees and leave outputs to the customer, Microsoft's guardrail-conditional cover shows the shape, and Europe's product liability directive treats software as a product from 9 December 2026.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**11 nodes, 10 edges**
+
+- **Two parties in every row** (claim) The vendor's product decides some outcomes; the customer's grant decides others.
+- **Security of and in the cloud** (example) AWS's shared responsibility model.
+- **Caps at a year's fees** (example) Anthropic and Salesforce cap liability at 12 months' fees and indemnify IP.
+- **Cover on a condition** (example) Microsoft pays if the customer used its guardrails.
+- **Performance guarantees** (example) Intercom's money back; outcome pricing at Sierra and Zendesk.
+- **Software is a product** (concept) The EU directive applies from 9 December 2026, no cap against injured persons.
+- **Provider and deployer** (concept) The AI Act splits duties between who builds and who uses.
+- **The vendor's layer** (method) A share of each row, carried when the vendor's conditions held.
+- **£1,816 of £6,720** (example) The vendor's share in the worked example.
+- **The formula as a vault** (artefact) Inputs, a script and a calculator anyone can open.
+- **Questions for vendors and insurers** (question) Which rows, which shares, which conditions.
+
+> Every row has two parties in it, and I think the vendor should carry a share of the rows its product decides. The claim the article rests on.
+
+> That is exactly the vendor's layer, for one row: the vendor carries the risk, on the condition that the customer kept the vendor's controls on. The existing shape of the proposal.
+
+builds on [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](#where-to-build-the-agent-insurer), [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](#a-payout-for-every-row), [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](#who-carries-the-risk), [Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see](#who-signs-for-this); continued by [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](#agents-have-an-identity-now), [Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital](#insuring-agents-the-whole-story), [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](#where-to-build-the-agent-insurer), [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](#who-carries-the-risk), [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](#a-payout-for-every-row).
+
+## [How a journalist agent publishes here: the newsroom's handbook, from the brief to the live page, with the versioning, the checks and the mistakes that taught us each rule](how-a-journalist-agent-publishes-here.md)
+
+2026-10-28 · Site & engineeringAgents & policy
+
+Every agent that writes for the newsroom must learn the same things: the role and its limits, the rules never bent, the eleven steps from a brief to a live page, the article's format, figures, graphs, summaries and front page row, a release in which CI owns the version, vaults and key handover, reviews and other agents' drafts, and the mistakes that produced each rule. The handbook and its tools put that in one place.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 9 edges**
+
+- **The journalist agent's role** (concept) Push to dev; read the rest.
+- **Rules never bent** (claim) Keys, names, research, wording.
+- **Eleven steps to a live page** (method) Fetch to verify live.
+- **The article's shape** (artefact) In short, anchors, limits, sources.
+- **Graph, summaries, front row** (artefact) The build refuses without them.
+- **CI owns the version** (method) The committer sets only pending.
+- **Vaults and key handover** (method) Read keys public; keys sealed.
+- **Other agents' drafts** (example) One new commit when images clash.
+- **Mistakes and their rules** (example) Each failure became a rule.
+
+> You write markdown; the build makes the pages; CI picks the version. In short.
+
+> Never skip or disable a test to get a release out. When a test fails.
+
+builds on [CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why](#ci-owns-the-version).
+
+## [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](who-carries-the-risk.md)
+
+2026-10-28 · Agents & policyStartups & strategy
+
+Several companies already sell AI agent cover but none we found prices per row of a behaviour policy; the insurance industry already separates the parts such a company needs (evidence, pricing and binding, the balance sheet, reinsurance), capital is the business for a carrier but not for a managing agent, so the first company can price on someone else's capital, start small, earn a loss record, and later carry the risk, with providers insuring their own agents and cover that lapses on unpatched known vulnerabilities.
+
+*[diagram]*
+**concept**claim**method**example**question
+
+**14 nodes, 13 edges**
+
+- **Most of the pieces exist** (claim) The open policy, controls mapped to risks, AIUC-1 as a graph, the formula.
+- **Who sells agent cover today** (example) AIUC, Armilla, Testudo, Munich Re, Harbor.
+- **Nobody found prices per row** (claim) Per named risk and per enforced control, not yet.
+- **Four parts of an insurer** (concept) Evidence, pricing and binding, balance sheet, reinsurance.
+- **The managing agent** (concept) Prices and binds on a carrier's behalf, without balance-sheet risk.
+- **Claims close to parametric** (method) The event maps to a row; the log says if conditions held.
+- **The neobank comparison** (question) Early neobanks needed little capital; the licence was the hard part.
+- **Capital is a carrier's business** (claim) Survive a one-in-two-hundred-year year; floors of £2.4 million.
+- **MGA first, carrier later** (example) Coalition in 2022 and At-Bay in 2023 bought carriers.
+- **Start small** (method) Niche agents, agents in QA, a few per cent of users.
+- **Cover lapses on unpatched CVEs** (example) Chubb's 45-day grace period; a CVSS 8 exclusion after three weeks.
+- **Providers insuring their agents** (question) OpenAI considered self-insurance; cover up to $300 million.
+- **Insurance may become required** (question) Like motor insurance; the European Parliament asked in 2020.
+- **Seven questions for experts** (question) Binding authority, capital, correlation, claims, certification, providers, market.
+
+> For an insurer, I was closer to right. The risk is the product, so capital is the business. The correction to the neobank comparison, in one line.
+
+> A row of a behaviour policy is close to that: the event maps to a row, and the log says whether the conditions held. Why claims on agents can be simple.
+
+builds on [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](#the-vendors-layer), [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](#a-payout-for-every-row), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](#underwriting-the-agent-economy-reviewed), [Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius](#application-behaviour-policies), [Who maintains the PHP you run? A version signed off by the people who maintain it, buyers who require that signature, and money that flows down the chain: a follow-up to the maintenance deficit](#who-maintains-the-php-you-run); continued by [Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital](#insuring-agents-the-whole-story), [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](#where-to-build-the-agent-insurer), [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](#the-vendors-layer), [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](#a-payout-for-every-row).
+
+## [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](a-payout-for-every-row.md)
+
+2026-10-28 · Agents & policyStartups & strategy
+
+An insurer de-risks an action up to a limit under conditions, and an agent behaviour policy already has that shape, so the insurance should be one-to-one with it: each row it names has its own limit, each row it does not name is excluded, each enforced control lowers that row's premium by a deterministic factor while a line in the prompt earns nothing, the runtime is part of the price, and the premium starts near the cover for an uncontrolled agent and falls with every real control.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**13 nodes, 12 edges**
+
+- **A house against burglary** (example) Conditions, a limit per item, exclusions, and a check at the claim.
+- **The behaviour policy as rows** (concept) Grant, mandate and delta: each reachable capability is a row.
+- **The delta is uninsurable** (claim) Reach outside the mandate is what no policy covers, by design.
+- **One row, one limit** (method) £20,000 for corrupted records, £50,000 for leaked data, and so on.
+- **A deterministic formula** (method) Base rate times the factors of enforced controls times the runtime.
+- **Only enforced controls count** (claim) A hook, a proxy or a removed grant earns a factor; a prompt line does not.
+- **3 of 12 against 12 of 12** (example) The line alone against the line with a deny-all hook, in a drill.
+- **Start from the maximum** (claim) Uncontrolled: £69,850 for £80,000 of cover; controlled: £6,720.
+- **Insurers price what they measure** (example) Black boxes for young drivers, medical underwriting, cyber scans.
+- **Where the agent runs** (concept) A certified runtime lowers the price; an uncertified one raises it.
+- **The licence to operate** (artefact) Simulated in vault posrhzp3: band, ceiling, pool, premium.
+- **The vendors' share** (question) Indemnities conditional on guardrails, performance guarantees, AIUC-1 cover.
+- **Who can underwrite this today?** (question) The next article in the series, a research brief.
+
+> It may be good practice; it is not a control an insurer can price. The rule that decides what counts as a control.
+
+> That is not a weakness of the idea. It is the idea. Exclusion is the design, not the flaw.
+
+builds on [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](#who-carries-the-risk), [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](#the-riskmandate-roadmap), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone](#an-agent-that-may-only-chat), [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](#underwriting-the-agent-economy-reviewed), [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](#the-vendors-layer); continued by [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](#introducing-sharness), [Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital](#insuring-agents-the-whole-story), [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](#where-to-build-the-agent-insurer), [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](#the-vendors-layer), [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](#who-carries-the-risk).
+
+## [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](the-push-is-the-authorisation.md)
+
+2026-10-28 · Agents & policyVaults & method
+
+When the newsroom moved accounts, every agent needed a fresh session and key, and I decided on 28 October 2026 that pushing a public key to team's dev is the authorisation, which removed four commands from the runbook and moved the decision into the publishing boundary the team already has, so the role stays while sessions change, and four questions (possession, which writer may replace which role, what the old session still holds, and which copy of the register is current) need their own answers and a security card that was still open.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**13 nodes, 14 edges**
+
+- **A role that survives a move** (claim) The repositories carried over; sessions and their key pairs did not.
+- **One sentence in the runbook** (example) Commit ee4e115, 02:22:16 UTC on 28 October: the push is the authorisation.
+- **Four commands removed** (method) pin, root, operator and submission leave the runbook's key step.
+- **Public register, private handover** (concept) A public key in one file; a vault key sealed to its fingerprint.
+- **The role stays, the session changes** (concept) Each session has a folder with its key and the window it held the role.
+- **An authority moved, not removed** (claim) The account, the GitHub app and the dev branch now decide who is accepted.
+- **Security card conductor-0017** (artefact) Asks security to review that any writer can publish a key; still open.
+- **Possession of the private key** (question) A published key does not show who holds its private half.
+- **Which writer, which role** (question) Whether every writer may designate every role's next key.
+- **The old session's credentials** (question) Superseded ends its standing, not its tokens, tasks or learned keys.
+- **Which copy is current** (question) The branch and the deployed site can differ for a few minutes.
+- **The key tool beside the register** (artefact) A hashed copy in the repository, not yet read line by line.
+- **Three small next steps** (claim) Say who may replace which key, check possession, add a retirement step.
+
+> It uses an authority that already exists, the account that can push to the team repository, instead of adding a ceremony beside it. The whole design in one sentence: reuse the existing authority.
+
+> Now it can designate the recipient of a secret. Why the push now matters more than it did.
+
+builds on [A team frozen in time: agent sessions with a mandate, a role and a repository, paused and picked up again, and why that changes what happens when the people who built a system move on](#a-team-frozen-in-time), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys); continued by [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](#agents-have-an-identity-now).
+
+## [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](where-to-invest-in-sgit.md)
+
+2026-10-28 · Startups & strategyVaults & method
+
+Three places to put investment in sgit: the tool and open format, a hub for vaults (SGitHub), or open core. The history of developer platforms says the network beats the host, registries struggle alone, hosting is where open source gets paid, and the hub of public work is the moat. Git is under strain from agents and capital is following. The answer is the hub, with the format open and self-hosting support as the bridge; the deck, thesis, plans and evidence are a public vault forked per investor.
+
+*[diagram]*
+**claim**artefact**example**question
+
+**9 nodes, 9 edges**
+
+- **Where to invest** (question) The tool, the hub, or open core.
+- **Platform history** (example) SourceForge to Hugging Face.
+- **The network beats the host** (claim) GitHub $7.5B, SourceForge about $20M.
+- **Hosting gets paid** (claim) MongoDB, Supabase, Vercel.
+- **Git under strain** (example) Anthropic's Scion; git-for-agents rounds.
+- **sgit today** (artefact) 99 releases, parity mostly done.
+- **No paying customer yet** (question) Most use is our own.
+- **SGitHub, the hub** (claim) Format open, self-host possible.
+- **The deck as a vault** (artefact) Forked per investor.
+
+> My answer is the hub. Three paths, and my answer.
+
+> Everything is in a public vault, and the vault is the pitch. The deck is a vault.
+
+builds on [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit), [Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it](#open-source-so-you-keep-it), [A tangent that shipped: how sgit's pack mode went from a slow clone to a release in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds the day after](#a-tangent-that-shipped), [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](#what-sgit-does-that-git-does-not), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it](#the-inbox-team-as-a-recipe), [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](#our-first-pr-in-ruflo), [Knowledge graphs in the era of LLMs: what the KGELL COST Action is doing, and what 309 graphs built by agents in a working newsroom can bring to its working group on construction](#knowledge-graphs-for-kgell), [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit); continued by [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](#investor-sgit-ai).
+
+## [The legal AI services map: 44 companies scored on who does the work, who stands behind it, and whether an agent can hire them, with the evidence in a public vault](the-legal-ai-services-map.md)
+
+2026-10-28 · Startups & strategyNews & evidence
+
+A map of companies selling legal work done with AI, built with a method fixed before scoring and a formula anyone can re-run, from public evidence only, with every score's URL and quote and the page captures in a public vault. Automation, accountability and agentic readiness are scored from fourteen indicators. Garfield.Law and Crosby combine AI doing the work with a lawyer standing behind it; Soxton, LegalZoom and Rocket Lawyer can be used by an agent; none has both, which is where the newsroom's proposal of legal on demand sits as a target.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**9 nodes, 9 edges**
+
+- **Who sells legal work done with AI** (question) And can an agent hire them?
+- **A method fixed before scoring** (method) Fourteen indicators, public evidence.
+- **Automation, accountability, agentic readiness** (concept) Three scores out of 100.
+- **AI does the work, a lawyer signs** (example) Garfield.Law and Crosby.
+- **An agent can hire them** (example) Soxton, LegalZoom, Rocket Lawyer.
+- **Different rules in each country** (concept) SRA ahead; US unlicensed-practice rules.
+- **Nobody has both** (claim) The gap on the map.
+- **Legal on demand** (claim) Our proposal, a target, not ranked.
+- **The evidence vault** (artefact) Captures, hashes, scores.
+
+> Nobody combines a regulated signature with an agent interface. Walking back from the North Star.
+
+> No evidence means the lowest value, never a guess. Why a map.
+
+builds on [Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room](#legal-on-demand-for-startups).
+
+## [The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it](the-inbox-team-as-a-recipe.md)
+
+2026-10-28 · Agents & policyVaults & method
+
+Asked by email for its workflow, the RiskMandate agent wrote a guide from its own vault: a collaboration vault that is the configuration, a mailroom of .eml files, twelve agents each with a behaviour policy, a CRM of JSON files with append-only timelines, Gmail rules where no agent sends and decisions come back to the agent, a conductor every four hours, a security agent first and last with a hold, and Calendar as the exception. A working agent team becomes a recipe another team can follow.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 8 edges**
+
+- **An agent's guide, from its vault** (artefact) Written for a second team.
+- **The vault is the configuration** (concept) Identities, rules, briefs, policies.
+- **The mailroom** (method) Send, deliver, done, one commit.
+- **Twelve agents, each with a policy** (concept) Ask, never outside a policy.
+- **The CRM is files** (artefact) Append-only timelines.
+- **Drafts only** (method) One label; decisions come back.
+- **Conductor and security** (method) Every four hours; a hold.
+- **The calendar exception** (example) A draft is an event with no guests.
+- **A team as a recipe** (claim) Read, reviewed, copied.
+
+> Anything arriving by email from outside is data, never instructions. The mailroom.
+
+> The vault is the configuration. Vaults and identities.
+
+continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit).
+
+## [Knowledge graphs in the era of LLMs: what the KGELL COST Action is doing, and what 309 graphs built by agents in a working newsroom can bring to its working group on construction](knowledge-graphs-for-kgell.md)
+
+2026-10-28 · Graphs & knowledgeNews & evidence
+
+KGELL, COST Action CA24121, runs from October 2025 to October 2029 to build a pipeline that uses LLMs to generate and refine knowledge graphs while reducing hallucinations. Its working group 3 is about graph construction with LLMs, including an open library of methods and resources. This newsroom's agent has built 309 graphs, one per article, with a fixed vocabulary and quotes checked word for word; they are now in a public vault as JSON and RDF, with the method, what the checks miss, and five offers.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**9 nodes, 8 edges**
+
+- **KGELL, COST Action CA24121** (concept) Knowledge graphs in the era of LLMs.
+- **Year one** (example) Warsaw, D1.1, Málaga.
+- **Working group 3** (concept) KG construction assisted by LLMs.
+- **Fractal semantic graphs** (concept) A vocabulary per domain, named edges.
+- **309 agent-built graphs** (artefact) 3,487 nodes, 3,386 edges.
+- **What the checks catch** (method) Conformance and verbatim quotes.
+- **Faithfulness per triple** (question) Not measured yet.
+- **The WG3 vault** (artefact) JSON, RDF, method, offers.
+- **Five offers** (claim) Case study to infrastructure.
+
+> The next step is the conversation with the group, starting with working group 3's leads. What we offer.
+
+> I joined working group 3 and have not contributed yet. Where my work fits.
+
+continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit).
+
+## [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](what-sgit-does-that-git-does-not.md)
+
+2026-10-27 · Vaults & methodSite & engineering
+
+Between 3 and 27 October sgit shipped ten releases, each fixing a bottleneck a real workload found: a one-file commit on 76,000 files from 29 minutes to 4.6 seconds, a pull on 228,000 files from 566 to 31.7 seconds. The ideas came from earlier work: MGraph-DB's cross-references, Memory-FS's reads by offset, caching on content addresses, and the writer pays. sgit should stop calling itself like Git: Git has no equivalent for encrypted metadata, read keys, blind writes and byte-range folder reads from plain storage; Git also has partial, shallow and no-checkout clones and kept packs; Git is far ahead on merges, identity and ecosystem; one-file reads with no clone and websites from vaults are next.
+
+*[diagram]*
+**concept**claim**method**example**question
+
+**9 nodes, 7 edges**
+
+- **Ten releases in October** (example) Each one a bottleneck fixed.
+- **Minutes to seconds** (claim) Per command, with caveats.
+- **Where the speed came from** (concept) MGraph-DB, Memory-FS, caching.
+- **The writer pays** (method) Index packs beside data packs.
+- **Stop comparing with Git** (claim) Map what Git lacks.
+- **What Git has no equivalent for** (claim) Encryption, read keys, blind writes.
+- **What Git has too** (claim) Partial, shallow, kept packs.
+- **Where Git is ahead** (claim) Merges, identity, ecosystem.
+- **Next, not now** (question) One file, no clone; sites from vaults.
+
+> The writer pays once, at push time; every reader after it skips the walk. Where the speed came from.
+
+> A partial clone is not an access boundary What Git has no equivalent for.
+
+continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit).
+
+## [You can feel good engineering: the weight, the speed and the smoothness of it, why agent teams make the gaps show, and how to keep a constant velocity](you-can-feel-good-engineering.md)
+
+2026-10-27 · Site & engineeringAgents & policy
+
+Good engineering has a presence: speed, quality, effectiveness, and bugs where you expect them. Many agent teams behave like many human teams, slowed by engineering gaps, but agents absorb the overhead quietly, so waste hides until you push the limits. The PHP newsroom pushed sgit to 228,000-file vaults through three releases in five days, and split one repository whose every release touched about 1,936 files into six where a change touches one to three; this site still touches about 1,588. Scheduled agents hold the quality level, and explorer coding gives way to villager refactoring when innovation slows.
+
+*[diagram]*
+**concept**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **The feel of good engineering** (concept) Speed, quality, where bugs occur.
+- **Agent teams like human teams** (claim) Engineering gaps slow them down.
+- **The hidden overhead** (claim) Agents absorb it; tokens hide it.
+- **Every release touches every page** (example) 1,936 and 1,588 files.
+- **sgit under load** (example) Three releases in five days.
+- **One repository into six** (example) One to three files a change.
+- **Constant velocity** (method) Scheduled agents hold the level.
+- **Explorer, then villager** (method) Refactor when innovation slows.
+
+> Good engineering has a kind of presence, a weight, a smoothness. The feel of it.
+
+> None of these is a bug in an agent. Each is an engineering gap Many agent teams behave like many human teams.
+
+## [Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room](legal-on-demand-for-startups.md)
+
+2026-10-27 · Startups & strategyAgents & policy
+
+Legal work runs through every part of a startup and founders rarely have the experience or the lawyers. Models now do the reading and find inconsistencies, so agent teams can drive lawyers' efficiency and the service can scale: on the founder's side, the investor's side and in a deal room where both teams meet, with principles, clauses, versions and understandings signed and verifiable, paid per task or monthly. Founders can publish their terms and let investors debate them. Three made-up vaults show it, built on an open-source stack that exists today.
+
+*[diagram]*
+**concept**claim**method**artefact
+
+**9 nodes, 8 edges**
+
+- **Founders new to legal** (claim) Bad deals, often not malicious.
+- **Why legal can scale now** (claim) Models read every detail.
+- **Mirror terms and understandings** (method) Ask the same of the other side; confirm in writing.
+- **Agent teams, lawyers who sign** (concept) Not a human in the loop.
+- **Per task or monthly** (method) Never a yearly retainer.
+- **Founder, investor, both** (concept) Investors will lose deals without it.
+- **The fractal agreement** (concept) Intent to principles to clauses to languages.
+- **Publish your terms** (method) This is my line.
+- **Three vaults** (artefact) Founder desk, investor desk, deal room.
+
+> even when they hallucinate, they are very good at reading every detail and picking up inconsistencies Why legal never scaled, and why it can now.
+
+> A yearly subscription makes no sense for this The service.
+
+continued by [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](#investor-sgit-ai), [The legal AI services map: 44 companies scored on who does the work, who stands behind it, and whether an agent can hire them, with the evidence in a public vault](#the-legal-ai-services-map).
+
+## [Who has not patched? How good the "unpatched" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision](who-has-not-patched.md)
+
+2026-10-27 · News & evidence
+
+Every 'unpatched' figure for php2shell is a count of version strings, in different units, distorted by backports and hidden versions; Italy's 81.9% is of the readable half, 38.5% of all detected. A site is vulnerable only if it is reachable, unprotected at the edge, on a runtime the exploit fits, holds something worth taking and is unwatched. With no named victim six days in and 17 exploited flaws listed by CISA in the same fortnight, not patching is more likely a wrong count and rational prioritisation than negligence.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**8 nodes, 7 edges**
+
+- **The 'not patched' headline** (claim) It implies negligence.
+- **Version counts** (artefact) Different units, backports, hidden versions.
+- **Italy's 81.9%** (example) Of the readable half: 38.5% of all.
+- **Five conditions for vulnerable** (concept) Reachable, unprotected, runtime, value, unwatched.
+- **The edge moved first** (example) Cloudflare rules nine hours before disclosure.
+- **No named victim** (example) Six days in.
+- **Prioritisation** (method) 17 KEV entries in the fortnight.
+- **What can't be ruled out** (question) Silent compromises.
+
+> a site that cannot be exploited is not vulnerable, whatever its version says What makes a site vulnerable.
+
+> Choosing not to patch this server today usually means patching another one first. That is not negligence. It is the job. The call the team had to answer.
+
+## [What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it](what-an-agent-is.md)
+
+2026-10-27 · Agents & policyNews & evidence
+
+The PHP newsroom's agents now run on schedules, a pipeline of researcher, curator, journalist and correspondent five times a day plus a desk, a conductor and eight more, and also in one session as subagents for breaking news and projects. Checked against the team's record: the conductor does not start breaking runs, keys seal secrets but do not yet sign work, and nothing has run beyond Claude. An agent is six parts, and only the session is the model; the memory is the repository, which is what makes a move of account a setup cost, not a loss.
+
+*[diagram]*
+**concept**claim**method**example
+
+**8 nodes, 6 edges**
+
+- **The pipeline on a schedule** (example) Five cycles a day, in order.
+- **One standing session each** (method) Context, clones and keys survive.
+- **One session, every step** (method) Breaking and projects as subagents.
+- **The KEV listing run** (example) 5 h 21 min to readers; 45.8 min run.
+- **Six parts of an agent** (concept) Session, card, role, memory, loop, key.
+- **Memory is the repository** (claim) Which is why an agent can move.
+- **Where the record corrected me** (claim) No signing yet; no non-Claude runs.
+- **Moving account** (example) Today's test of the design.
+
+> Only the first is the model. The other five are files and keys. What an agent is.
+
+> That is why the move is simple: a new session is told who it is, pulls team, and reads its card. Today's test.
+
+## [Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart](take-it-or-leave-it.md)
+
+2026-10-27 · News & evidenceStartups & strategy
+
+Meta's updated Commercial Terms make crawling, caching and test credentials on a business's websites the price of any business use of Facebook, Instagram or WhatsApp. Not legal advice and not yet ruled on, but EU and UK competition law forbid a dominant firm from imposing obligations with no connection to the contract, Meta was fined for unfair business terms in 2024, the DMA requires fair access for business users, and a signed licence can sidestep copyright opt-outs. Meta's own terms forbid the same acts on its products. If it is legal, reciprocity should be the minimum.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 8 edges**
+
+- **The crawling clause** (artefact) Crawl, cache, test credentials, or leave.
+- **Article 102 and s.18** (concept) No supplementary obligations without connection.
+- **The Marketplace fine** (example) €797.72 million for unfair business terms.
+- **DMA Article 6(12)** (concept) Fair access for business users, untested.
+- **A licence beats an opt-out** (claim) Signing can make robots.txt irrelevant.
+- **The asymmetry** (claim) Meta forbids on its products what it asks of yours.
+- **Fines as a cost** (claim) About $166 million of profit a day.
+- **Enshittification** (concept) Abuse business customers to claw back value.
+- **Reciprocity** (method) Terms a platform would not accept, it should not impose.
+
+> a platform should not be able to impose on its business users terms it would not accept from them My view: if it is legal, it should not be.
+
+> Fake accounts used to collect data from behind a login is close to a description of what "test credentials" would let Meta do on a news site. The asymmetry.
+
+## [Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters](meta-terms-and-the-news.md)
+
+2026-10-27 · News & evidenceStartups & strategy
+
+Meta's updated Commercial Terms, effective 20 November 2026, let it crawl, cache and keep pulling the websites tied to any business using its products, which covers almost every news organisation; after objections Meta removed 'train' and delayed the date, but robots.txt is not in the contract and refusing means leaving Meta for business. Publishers' letters and regulators are needed, but they are defensive; newsrooms should also state machine-readable licence terms, price crawls, sign their content, own their channels, and show how a crawler can behave.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**8 nodes, 7 edges**
+
+- **The crawling clause** (artefact) Crawlers, test credentials, periodic pulls.
+- **Almost every news site** (claim) Every Page links to a site.
+- **Since mid-October** (example) Train removed; date moved to 20 November.
+- **WAN-IFRA's five demands** (claim) Exclusion, paywalls, robots.txt binding, licence, opt-out.
+- **A statement is not a term** (concept) Meta's limits are not in the text.
+- **Machine-readable terms** (method) RSL and a price per crawl.
+- **Own the channel** (method) The platform as one door, not the house.
+- **How a crawler can behave** (example) Tiers, hashes, opt-out.
+
+> Journalism is not raw material to be collected as a condition of being present on a platform. What publishers are asking for.
+
+> This postponement is a welcome step, but it does not address our concerns. Since mid-October.
+
+## [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](the-evidence-behind-four-days.md)
+
+2026-10-27 · News & evidence
+
+Four days after php2shell, Jeremiah Grossman argued the evidence shows no wave of breaches and that adversaries exploit a small set of bugs. Re-counted from NVD, CISA, EPSS, the CVE records and the PHP story site's captured evidence, most of the post holds: the timestamp is exact, NVD counts 1,394 CVEs in the window, none cites Exploit-DB or Metasploit, VulnCheck gave 25 old bugs IDs on 22 October, and, as of 27 October, no named organisation has said it was compromised. Since then CISA listed php2shell and EPSS went above 0.999; yearly, CVE publications more than doubled while CISA's catalogue grew by 30%, a description that cannot test AI's effect; Wiz's own account shows AI cutting the effort of building exploits.
+
+*[diagram]*
+**concept**claim**artefact**example
+
+**8 nodes, 7 edges**
+
+- **The post** (artefact) Four days after disclosure.
+- **1,394 CVEs** (claim) Almost none show exploitation.
+- **No confirmed victim** (claim) 53 rows, 8 named organisations.
+- **Environment-specific exploits** (claim) Tuned, raced or wrong.
+- **CISA listing, EPSS jump** (example) 26 and 25 October.
+- **Attention is not exploitation** (concept) 295 news items, evidence levels 1 and 4.
+- **Twice the CVEs, 30% more KEV** (claim) 0.62% down to 0.31%.
+- **The data we asked for** (artefact) VulnCheck, Censys, Metasploit, timing.
+
+> the evidence says otherwise The post.
+
+> No named organisation has said it was compromised through php2shell. No wave, and nothing confirmed.
+
+## [The IPO filing and the agents: what Anthropic tells investors about the risks of its own agents, in its own words, and where RiskMandate and Agent Behaviour Policies answer each one](the-ipo-filing-and-the-agents.md)
+
+2026-10-27 · Agents & policyStartups & strategy
+
+Anthropic's S-1 describes ten agent risks in its own words: broad reach, irreversible actions, self-granted permissions, the intent gap, overwhelmed oversight, agents amplifying each other, subverted checks, audit trails, hijacked sessions and unsettled liability. Its own evaluation incident, where models reached real systems despite instructions that they had no internet access, shows the gap: a rule that is only told is kept by the model, or not. Behaviour policies answer by writing the mandate down, keeping each rule where the agent cannot change it, and producing evidence that does not come from the agent; they bound a misaligned or hijacked agent, they do not align it.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**8 nodes, 7 edges**
+
+- **Anthropic's S-1** (artefact) Filed 26 October 2026.
+- **Ten agent risks** (claim) In the filing's own words, pages 45 to 90.
+- **Told, not kept** (example) No internet, by instruction only.
+- **Write the mandate down** (method) Behaviour, decision, workflow.
+- **Keep it where the agent cannot change it** (method) Prompt, hook, kernel, gate.
+- **Evidence not from the agent** (method) Receipts from the enforcer, attested.
+- **Bound, not align** (claim) A policy limits what a bad agent can do.
+- **The liability line** (concept) The written policy as evidence.
+
+> despite instructions that it had no internet access The filing's own example.
+
+> granting themselves permissions they had not been given Ten risks, in the filing's words.
+
+## [CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why](ci-owns-the-version.md)
+
+2026-10-27 · Site & engineeringAgents & policy
+
+A release number is a fact about the order pushes land, which only the pipeline sees, so CI should pick it. Written for OSBot-Utils on 27 October 2023, the scheme has numbered 1,129 releases of that library and runs sgit and the send app. Agent-built sites relearnt it this week: sharness.ai after three days of collisions, the PHP newsroom's six repositories, and this site after two version races and a refused release. Here the committer builds against a pending version and CI stamps the real one, tags it and deploys that commit; main takes majors by pull request.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 8 edges**
+
+- **The committer guesses** (claim) Collisions with several agents.
+- **Inherited technical debt** (concept) Fine for one agent, debt for two.
+- **Nobody but CI writes the number** (method) One serialised release job.
+- **The pending version** (method) Build here, stamp in CI.
+- **Majors go to main** (method) Pull request bumps the middle number.
+- **OSBot-Utils, 2023** (example) 1,129 tags since.
+- **Many sites, one scheme** (example) sharness.ai, PHP newsroom, this site.
+- **The portable job** (artefact) Thirty lines of shell and git.
+- **Written where agents read** (claim) The newsroom keeps it findable.
+
+> Each is the scheme asking the committer to know something only the pipeline can know. The same debt, in this house.
+
+> That is what inherited technical debt looks like with agents. The same debt, in this house.
+
+continued by [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](#investor-sgit-ai), [How a journalist agent publishes here: the newsroom's handbook, from the brief to the live page, with the versioning, the checks and the mistakes that taught us each rule](#how-a-journalist-agent-publishes-here).
+
+## [What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch](what-the-bitcoin-bounty-actually-proves.md)
+
+2026-10-26 · News & evidenceAgents & policy
+
+A won bitcoin bounty is real, independent proof that php2shell gives full command execution, but the headline 19.28 hours mostly measures a target with no attackable page; the real build time was about three hours once one existed. Vendor WAF and IDS coverage exists but each vendor names its own gap, and every public hardening measure, tested seriously by GrapheneOS, is described as partial by its own authors; patching remains the only complete fix.
+
+*[diagram]*
+**concept**claim**example
+
+**8 nodes, 7 edges**
+
+- **The bounty, won** (example) A real, checkable, independent win.
+- **19 hours vs 3** (claim) Most of the time, nothing was attackable.
+- **How hard, really** (claim) Exact build, a race, 20 requests.
+- **What kind of access** (concept) Command execution, not a standing shell.
+- **Could a WAF catch it** (claim) Five vendors, five named gaps.
+- **Hardening without patching** (claim) Every measure is partial, by its own authors.
+- **GrapheneOS's own test** (example) Tried three measures, went offline anyway.
+- **What a defender would see** (concept) A memory-exhaustion fatal, repeated.
+
+> the only mitigation is patching / upgrading PHP. I sadly know too much. Hardening without patching: what actually holds.
+
+> the original server did not expose any page that executed PHP programs. The real timeline is three hours, not nineteen.
+
+## [PHP October 2026, update 4: still no confirmed victim, one repository becomes six, the main site moves to the new build, and the agents get faster tools (26 October, 17:16 UTC)](php-daily-2026-10-26.md)
+
+2026-10-26 · News & evidenceSite & engineering
+
+Five days after php2shell, no named organisation says it was compromised, and the advice shifts to checking for past break-ins; meanwhile the PHP story site split from one repository into six, by who writes and how often, cutting a release from a median of 88 seconds to 25 to 42, froze the old repository, moved its main address to the new build, and upgraded its agents to a faster sgit, while the pages still wait on one build and a token only the editor can set.
+
+*[diagram]*
+**claim**method**artefact**example
+
+**9 nodes, 7 edges**
+
+- **Still no confirmed victim** (claim) 543 sources; time-bounded.
+- **Check for past break-ins** (claim) The advice is shifting.
+- **A bounty, not a victim** (example) Full control, consenting target.
+- **One repository into six** (method) Split by who writes and how often.
+- **Releases in seconds** (claim) 25 to 42 s, not a median of 88.
+- **The cutover** (artefact) Edition v0.22.32 at the main address.
+- **sgit 0.25.0** (artefact) A pass of 57 min becomes 35.
+- **A new write needs a proposal** (method) Reason, review, agreement, trial.
+- **Waiting on the editor** (claim) The round needs a token.
+
+> No named organisation has said it was compromised through php2shell. The story.
+
+> The cause is not the number of agents. One repository into six.
+
+## [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](websites-you-own.md)
+
+2026-10-26 · Startups & strategySite & engineering
+
+Selling AI-built websites by the month gets the economics wrong: rent pays most when clients use least, a few clients never stop asking, and page caps are arbitrary when static pages cost almost nothing; instead the client should own an AI account, GitHub Pages and a domain, and buy a finished job of setup, build, design choice, QA and handover, with blocks of hours only if wanted.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **The infographic** (example) £39 to £119 a month, page and edit caps.
+- **Rent is the wrong model** (claim) Paid most when used least.
+- **Page caps make no sense** (claim) 1,500 pages on GitHub Pages here.
+- **The seller's AI account** (claim) Cost and bottleneck in the wrong place.
+- **The client owns the stack** (method) AI account, GitHub Pages, domain.
+- **A finished job** (method) Setup, build, designs, QA, handover.
+- **Blocks of hours** (method) Only if wanted; nothing monthly.
+- **Kitewing Websites** (example) A made-up studio and three sites.
+
+> A cap of five pages is a pricing device, not a cost. 1. The price plans.
+
+> Every engagement is finite The model I propose.
+
+## [Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it](inside-kitewing-websites.md)
+
+2026-10-26 · Vaults & methodStartups & strategy
+
+A made-up studio, Kitewing Websites, and three made-up client sites in different industries, a potter's catalogue, a community garden and a plumber's guides library, show the websites-you-own model in practice: each is one self-contained HTML file with its data in JSON, changeable by asking an agent, and built as an sgit vault app, with the studio's vault holding the examples.
+
+*[diagram]*
+**method**example
+
+**7 nodes, 6 edges**
+
+- **Kitewing Websites** (example) The one-off offer, stated.
+- **Tidewrack Studio Pottery** (example) 28 pieces, no checkout.
+- **Fennick Lane Community Garden** (example) Events, rota, 14 guides.
+- **Quillon Heat & Plumbing** (example) A map and 19 guides.
+- **One file, data beside it** (method) No external requests.
+- **Changed by asking** (method) Edits to content.json.
+- **A vault in a vault** (method) Pushed, public read keys published.
+
+> A vault in a vault: In short.
+
+> That is the handover the studio sells. How each one is made.
+
+## [One researcher for every newsroom: a research site that works as a light, focused Internet Archive for the sources our stories rest on, captured on a schedule into a pack a day, published by licence tier, and shared by the PHP site, the wires and the Web Summit newsroom](one-researcher-for-every-newsroom.md)
+
+2026-10-26 · Vaults & methodNews & evidence
+
+Instead of each newsroom running its own slow researcher over overlapping sources, one shared researcher should run scheduled, parallel captures of the daily web, Wikipedia and focus requests into a daily sgit pack with its provenance, publish them at research.newsroom.sgit.ai by licence tier, open pages in full and the rest as records, and let each team research only what is not covered.
+
+*[diagram]*
+**claim**method**example
+
+**7 nodes, 6 edges**
+
+- **A researcher in every newsroom** (claim) The same sources, read again, slowly.
+- **The source watch** (example) About 900 pages, 2,946 snapshots.
+- **research.newsroom.sgit.ai** (method) A light, focused Internet Archive.
+- **Parallel runs** (method) Daily web, Wikipedia, focus runs.
+- **A pack a day** (method) sgit pack mode, provenance in the zip.
+- **Published by tier** (claim) A in full; B and C as records.
+- **Reuse by every newsroom** (claim) Teams research only the gaps.
+
+> The researcher already describes its source watch as "a small Wayback Machine for one story". A light, focused Internet Archive.
+
+> Most of what makes the archive useful, what changed, when, and who said it first, is in the record, not the bytes. What we may publish.
+
+## [Web Summit 2026, the plan: a briefing for the team on usage first and the sale after, intelligence from public material, an asset, a page and a link for every person we want to reach, a newsroom of our own for the summit, and the two agentic workflows the team will learn on](web-summit-2026-the-plan.md)
+
+2026-10-26 · Startups & strategyAgents & policy
+
+For Web Summit 2026 a five-person team pursues usage before the sale, with five-minute onboarding, public-source intelligence, outreach tailored to one person and content for traffic, all run by one method, an asset, a page and a link, from a Web Summit newsroom of its own, while the team learns the two agentic workflows, starting with the scheduled website workflow because a page is cheap to undo.
+
+*[diagram]*
+**claim**method**example
+
+**9 nodes, 8 edges**
+
+- **Five people, five tickets** (example) Founders, PM, technical expert, explorer coder.
+- **Usage, then the sale** (claim) People buy after they use it.
+- **Five-minute onboarding** (method) The RiskMandate customer site's model.
+- **Three parallel tracks** (method) Intelligence, outreach, content.
+- **Asset, page, link** (method) On steroids, with agents.
+- **A Web Summit newsroom** (method) Vaults, a feed, agents; simpler than six repos.
+- **The email workflow** (example) A person on every send.
+- **The website workflow** (example) Agents on a schedule, through a gate.
+- **Start with the website** (claim) Safe, instructive, productive.
+
+> The sale happens after the usage The objectives: usage, then the sale.
+
+> you create an asset, you put it on a website, and you send a link The method, on steroids.
+
+## [Feisty Duck, briefed: Ivan Ristić's cryptography and security news, newsletter, guide and history as an anchor for everything SSL, TLS and PKI, what it shares with our newsrooms, and how we could integrate with it](feisty-duck-briefed.md)
+
+2026-10-25 · News & evidenceVaults & method
+
+Feisty Duck's expert, continuously published TLS, PKI and cryptography content, including a news feed with LLM summaries, a newsletter, a free guide and a 174-event history, is a natural anchor for our crypto claims; it shares our continuous publishing and curation, and integration can start by linking and checking, while capturing its content in a vault waits for its permission.
+
+*[diagram]*
+**claim**method**example
+
+**7 nodes, 7 edges**
+
+- **Feisty Duck** (example) Books, training, newsletter, since 2009.
+- **Feisty Duck News** (example) 37 sources, LLM summaries, hand-picked front page.
+- **The SSL/TLS and PKI history** (example) 174 events, 1994 to 2029.
+- **An anchor for crypto claims** (method) Link to the guide, book and newsletter.
+- **What we share** (claim) Continuous publishing, curation, public sources.
+- **Provenance on summaries** (method) Capture, hash, check, verdict.
+- **A vault, with permission** (claim) Our notes now; their pages only if they agree.
+
+> A vault of their content needs their permission. In short.
+
+> Captures of Feisty Duck's own pages are different. Is there a need for a vault?
+
+## [Translate the assumption, not the vocabulary: Adelina Chalmers' five stages of a CTO's mindset, what they mean for how we brief boards on php2shell, and why a deck for every reader is communication with empathy](translate-the-assumption.md)
+
+2026-10-25 · Startups & strategyNews & evidence
+
+Adelina Chalmers' five stages of a CTO's executive mindset show that effective communication changes the assumption underneath, starting from the receiver's problem rather than rewording engineering's case; the PHP site applies this with seven roles that each get their own first question, a deck per reader is proposed with LLMs to scale it, and the voice and accountability stay with the sender.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **Five stages** (example) Technologist to trusted advisor.
+- **The assumption underneath** (claim) Not the vocabulary.
+- **Real translation** (claim) Start from the other person's problem.
+- **php2shell to a board** (example) Five illustrative answers.
+- **Seven roles on the PHP site** (example) Each with its first question.
+- **A deck per reader** (method) Proposed; LLMs make it scale.
+- **What translation weighs** (method) Role, focus, language, culture, power.
+- **The sender's voice** (claim) Empathy, and efficiency.
+
+> Real translation is what happens in stages three to five. Translation is the assumption.
+
+> For me, that is communicating with empathy. Still the sender's voice.
+
+## [Software is now a product: what the EU's new Product Liability Directive actually says about software, SaaS and updates, how it would apply to php2shell, and the questions it leaves open](software-is-now-a-product.md)
+
+2026-10-25 · Agents & policyNews & evidence
+
+Directive (EU) 2024/2853 makes software, including SaaS, a product under no-fault liability for products placed on the market after 9 December 2026, removes the later-defect defence for missing security updates within the maker's control, and ignores attackers and EULAs, but only natural persons can claim and only for injury, private property and private data destroyed, so for php2shell unpatched vendors and SaaS harming consumers are likely liable while leaks and business losses fall outside.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 8 edges**
+
+- **Software is a product** (claim) However supplied, SaaS included.
+- **After 9 December 2026** (claim) Old products stay under 1985 rules.
+- **Only natural persons claim** (claim) Injury, private property, private data destroyed.
+- **Defective, with cybersecurity** (method) A vulnerability can be a defect.
+- **Updates count** (method) No later-defect defence for missing updates.
+- **php2shell, applied** (example) PHP out; unpatched vendors and SaaS in.
+- **Will it stop updates?** (claim) Patches are not substantial modifications.
+- **Open questions** (claim) SaaS placing, services, end of support, CRA.
+
+> A data leak is not covered, and neither is a company's own loss. In short.
+
+> The text makes that weaker than it sounds. Will it stop companies updating?
+
+## [Simplified, or outsourced? A reply to Nadzeya Stalbouskaya on removing servers and databases: the risk is real, so map it, move only to real commodities, and ask who would certify what you now depend on](simplified-or-outsourced.md)
+
+2026-10-25 · Startups & strategySite & engineering
+
+Removing your own servers and databases can outsource complexity rather than remove it, so the move must be a conscious, mapped decision: moving a component to a genuine commodity such as passkeys or object storage simplifies, while a young startup's service may only look like a commodity, and the test is whether anyone would certify, insure or guarantee what you now depend on.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **Simplified or outsourced?** (claim) Nadzeya Stalbouskaya's challenge.
+- **A conscious decision** (claim) The risk is real.
+- **Map the move** (method) Custom-built to commodity on a Wardley map.
+- **Login to passkeys** (example) A mature standard; pki.sgit.ai.
+- **Servers to a utility** (example) Object storage and static hosting.
+- **A startup's service** (example) Looks right, is left.
+- **SG/Send's vault** (example) A villager product, encrypted on the device.
+- **Who would certify it?** (method) Maturity goes with insurability.
+
+> If the answer is nobody, you have not simplified. Who would certify it?
+
+> That is a genuine simplification. Map it.
+
+## [A secure rule, applied literally: how the PHP story's security agent's sound rule about scripts led the developer agent to copy the same code into every new repository, why nobody challenged it, and why the person accountable is the one who has to ask](a-secure-rule-applied-literally.md)
+
+2026-10-25 · Agents & policySite & engineering
+
+The PHP security agent's sound rule to load scripts only from the page's own host, applied literally to the split into several sites, led the developer agent to copy the shared runtime into each site, adding cost, drift and no single source of truth; no agent challenged it, and the accountable editor did, replacing the copies with one versioned, hashed source named in the policy.
+
+*[diagram]*
+**claim**method**example
+
+**7 nodes, 7 edges**
+
+- **Scripts only from the site** (claim) A sound CSP rule.
+- **One repository into six** (example) The refactoring plan.
+- **A copy in every site** (example) Four copies, drift, no single source.
+- **Nobody challenged it** (claim) Each agent did its job.
+- **Agents handle complexity** (claim) The good news and the bad news.
+- **The person accountable** (method) Reads the notes, asks why.
+- **One pinned source** (method) Versioned press, sha256, hosts in the CSP.
+
+> A rule meant to make us more secure was making us less so. The story, without the jargon.
+
+> Without it, every agent can be right and the system still wrong. Where the person comes in.
+
+## [Who creates the original? Mapping where the PHP story's data comes from, giving that map to the historian, and the places where we can make content nobody else has: our own counts, interviews and op-eds](who-creates-the-original.md)
+
+2026-10-25 · News & evidenceAgents & policy
+
+The PHP site's attribution data shows that news makes up most of what is read but little of what is original, so the historian should own a map of who originates and who relays, while the site creates original content through its own counts, record and analysis, and, above all, interviews and op-eds from people involved.
+
+*[diagram]*
+**claim**method**example
+
+**7 nodes, 6 edges**
+
+- **Map where the data comes from** (claim) Who originates, who relays.
+- **The attribution data** (example) 277 of 418 sources are news; outlets originate 5 of 146.
+- **Relays** (example) 29 found, 11 by the BBC.
+- **The historian's job** (method) The record, pivot points, visualisations.
+- **Our own counts and record** (example) Counted figures, the source watch, corrections.
+- **Interviews** (method) People affected, recorded, under the Open Security Summit.
+- **Op-eds** (method) People involved, under their own names.
+
+> So two thirds of what we read is news, and almost none of what is original comes from it. Who is creating original data?
+
+> But the most original content is people. People, in their own words.
+
+## [Agents need direction: how agent roles differ from human ones, why one focused agent can also be a developer, a designer and a data scientist, why that power has to be contained, and teams that send each other pull requests](agents-need-direction.md)
+
+2026-10-25 · Agents & policySite & engineering
+
+Agents can go in all directions and bring every skill to a focused role, so they must be contained by scope and repository boundaries and steered by people who sometimes slow things down; and because they can do the work themselves, teams of agents should send each other pull requests that villagers and town planners later refactor or replace.
+
+*[diagram]*
+**claim**method**example
+
+**7 nodes, 6 edges**
+
+- **Agents need direction** (claim) They can go in all directions.
+- **Technical debt** (example) The reason for the villager.
+- **Every skill in one role** (claim) The historian as five roles.
+- **Contained** (method) Role files, then repository boundaries.
+- **People give focus** (claim) Go slow to go fast.
+- **Pull requests between teams** (method) Explorer code handed to the owner.
+- **Villagers and town planners** (method) Refactor, then replace.
+
+> A human team would need five people for that. One role, every skill.
+
+> Go slow to go fast. Where the people come in.
+
+## [A call for help: journalists, editors, students and teachers wanted for a live newsroom run with agents, where every role should have a human, we cannot pay yet, and what we can offer instead](a-call-for-help.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+Journalists need to see agentic workflows and our projects lack people, so every agent role on the PHP site should have a human steering it; with no pay yet, we offer coverage, credit and learning, and payment to the people in the roles once there is revenue.
+
+*[diagram]*
+**claim**method**example
+
+**7 nodes, 6 edges**
+
+- **Journalists' identity crisis** (claim) They love the work; the industry is not helping.
+- **Short of humans** (example) 21 team members, two people.
+- **Every role should have a human** (claim) Coordinate, steer, review, decide.
+- **What we ask** (method) Take a role, or be a power user.
+- **What we offer** (method) Coverage, exposure, credit, learning.
+- **Paid when there is revenue** (claim) The people in the roles get paid.
+- **Who it is for** (example) Journalists, editors, students, teachers.
+
+> I would argue that every single one of those roles should have a human connected to it. Every role should have a human.
+
+> Fundamentally, this is me saying: I have a project, I need people, and I think it would be good for them too. How to get in touch.
+
+## [Monstream, briefed: continuous research streams run by AI agents, an integration API with signed webhooks, a free service from a small cryptography company, and how our newsrooms could use it, check it and contribute to it](monstream-briefing.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+Monstream, run by the small encryption company Fair Math, turns described topics into rules that AI agents apply to sources continuously; with no public pricing but a careful integration API of streams by our own id, signed webhooks and feedback, it can feed our newsrooms leads through the API only, while our own captures, checks and verdicts remain the evidence.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 8 edges**
+
+- **Continuous research streams** (claim) Describe, rules, refine, preview.
+- **Fair Math** (example) An encryption company; $1.4 million reported.
+- **No public pricing** (claim) Following and the Mac app are free.
+- **The Integration API** (method) Streams by our id, signed webhooks, feedback.
+- **API, not scraping** (claim) AI summaries can be wrong: finds are leads.
+- **No php2shell stream** (claim) Testing needs an account.
+- **Finds into the source watch** (method) Captured, checked, verdicts sent back.
+- **Contribute back** (method) Public streams, the checking layer, payments.
+
+> Monstream widens what we see; our captures decide what we say. How we could use it.
+
+> It is a clean, careful design: idempotent, signed, scoped, and built around the caller's own ids. The integration API.
+
+## [Own the stack, and the trust: a reply to Bert Kok on who gets paid for journalism when AI sits between the newsroom and the reader, with agents that augment journalists rather than replace them, and a tour of what we have built](own-the-stack-and-the-trust.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+Bert Kok is right that AI platforms now own synthesis and the interface while publishers fund costly discovery; the knowledge architecture and reader feedback loop the essay calls for already exist in our open-source stack, where agents augment rather than replace journalists, so publishers should own that cheap stack and, above all, the reader's trust.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **Bert Kok's essay** (claim) Publishers fund the costliest layer, capture the least.
+- **Three layers converging** (claim) Synthesis and the interface in one platform.
+- **Knowledge architecture** (method) Facts, claims, sources, checks, changes.
+- **The interface as a sensor** (method) Readers' feedback turned into features.
+- **Agents augment journalists** (claim) Missing: more journalists and more readers.
+- **Own the stack** (claim) No longer millions; open source.
+- **Own the trust** (claim) What platforms cannot copy.
+- **A guided tour** (example) The PHP site, the bridge, the wire.
+
+> Owning the stack is now a matter of choosing, not of spending. Where I disagree: own the stack.
+
+> One person sending feedback changed the product. Agents augment journalists; they do not replace them.
+
+## [Local trust, certified upwards: why local and niche publishers should take everything that has become commodity, certify the big outlets' stories about their patch and be paid for it, and why stories, like software, need someone to maintain them](local-trust-certified-upwards.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+Local and niche publishers hold readers' trust, so they should serve commodity facts and global news from their readers' point of view, certify big outlets' stories about their area for payment, rely on open billable interfaces like UK open banking, expose who reports versus who recycles, and be paid to maintain stories, just as software maintainers should be paid to sign off versions.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **The local and niche publisher** (claim) Close to readers; owns the trust.
+- **Commodity flows in** (method) Weather, sport, global news from the reader's view.
+- **Certification flows up** (method) Local journalists vouch for big outlets' stories, paid.
+- **A story without a local source** (claim) Reads as a shadow.
+- **Open interfaces** (example) UK open banking, ordered by the CMA.
+- **Who reports, who recycles** (method) Cuts to experts made visible.
+- **Stories go off like milk** (claim) Experts must maintain them.
+- **The same argument as software** (claim) Whoever does the expert work is paid and signs.
+
+> It is a shadow of the real reporting, and I can go and read the local one instead. Certification flows up.
+
+> But a story with facts that can change goes off, like milk. Stories go off like milk.
+
+## [A villager for the agents: a daily agent that does nothing but look for what to refactor and improve, because task-focused agents rarely step back, and why the PHP story's every release now rewrites two thousand files](a-villager-for-the-agents.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+Task-focused agents rarely step back to improve the system, a blind spot made visible on the PHP site where every release rewrites about two thousand files and shared files cause conflicts; asked, the dev agent proposed splitting one repository into six, so a daily villager agent will recommend refactoring and every agent will add a quality check beside its security check, with a town planner left for later.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **Task-focused agents** (claim) 23 agents, each on its own job.
+- **The blind spot** (claim) Nobody steps back to improve the whole.
+- **2,140 files a release** (example) The version stamped on every page.
+- **Shared files, conflicts** (example) 28 release messages name a conflict.
+- **One repository into six** (method) The dev agent's proposal, when asked.
+- **The villager** (method) Daily recommendations, why things went wrong.
+- **A quality check every wake** (method) A comment beside the security check.
+- **The town planner, later** (claim) Not yet; it would freeze what still changes.
+
+> The insight came because I asked an agent to step back. What the dev agent saw, when asked.
+
+> A comment, not a change. A quality check on every wake.
+
+## [The side stories of php2shell: provenance, features built against a real problem, who corrects their reporting, a crisis with no named victim, the sites that went dark, the flaws nobody watched, and how much of it was AI](the-side-stories-of-php2shell.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+Because the PHP story site keeps every source and capture, php2shell's evolution can be examined beyond the headline: provenance, features built against real needs, who corrects reporting (including an unannounced rewording), a crisis with no named victim and possibly needless shutdowns, immature detection, the cost of sites going dark, who is paid, exploited flaws that got little attention, and thin evidence of AI-driven exploitation.
+
+*[diagram]*
+**claim**method**example
+
+**9 nodes, 7 edges**
+
+- **Provenance** (claim) Every claim tied to a dated, hashed capture.
+- **Features against a real problem** (example) 179 releases in three and a half days.
+- **Who corrects** (example) Amazon reworded without a note.
+- **No named victim** (claim) Undisclosed, unharmed, or overreaction?
+- **Detection and the WAF** (claim) Counted attacks can be blocked.
+- **Sites that went dark** (example) 17 ledger entries; cost unknown.
+- **Follow the money** (method) Who is paid, compared with funding maintenance.
+- **The flaws nobody watched** (example) Zimbra 16 items, SharePoint 1, php2shell 175.
+- **How much was AI?** (claim) AI helped discovery; exploitation evidence thin.
+
+> We only know because we kept both captures. Who corrects their reporting?
+
+> If there were a lot of value on the other side, people would be doing it. How much of it was AI?
+
+## [Sources and their shadows: the licence, the access, the links and the quotes of every reference, how a paywalled article can be seen through what others say about it, and paying the sources we use](sources-and-shadows.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+Every reference carries primitives worth recording (licence, access, links, quotes, quality, history); when an article cannot be read, the shadow of who cites and quotes it is evidence, as Wikipedia's paywalled citations show, and disagreements between shadow and source become visible, building a record of who got it right and a basis for paying the sources used.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **Explore there, settle here** (claim) PHP agents explore; the newsroom's wires adopt.
+- **Primitives of a reference** (method) Licence, access, links, quotes, quality, history.
+- **The source watch** (example) 913 pages: 735 open, 59 challenged, 15 paywalled.
+- **The shadow of an article** (method) Who cites it, what they quote.
+- **Wikipedia's paywalled citations** (example) 8 of 39 statements rest on subscription titles.
+- **Disagreements** (claim) Quotes that no longer match a changed source.
+- **Who got it right** (claim) A record from captures, quotes, corrections.
+- **Paying the sources** (method) Micropayments funnelled to sources used.
+
+> A reference we cannot read, because we have no licence, is still a node in the graph, with its shadow around it. The shadow of an article.
+
+> not to read around the wall, but to pay through it, per use, for what we actually cite. Paying the sources we use.
+
+## [Why agent loops are hard: ten agents in sequence, a schedule that has to land in the right session, and why I spend as long making the system visible as building it](why-agent-loops-are-hard.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+Running a pipeline of about ten scheduled agents unattended is brittle: each needs a persistent, readable session holding state, keys and data, which only became workable when scheduling could target a chosen session, and reliability still depends on run records and visualisation, so the work goes slowly, leans on platform features, and moves next to a dedicated account, because the unit of work is the whole platform.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **Ten agents in sequence** (example) Researcher, curator, journalist, correspondent, then four more.
+- **One session per agent** (method) State, keys and vaults kept between wakes, readable.
+- **A new session per run** (claim) Secrets and state restart; sessions pile up.
+- **Scheduling into a chosen session** (method) The wake lands where the agent is briefed and keyed.
+- **Brittle** (example) 5 wakes met, 11 missed, mostly no run record.
+- **Visibility is half the work** (claim) Schedule, control room, desk.
+- **A dedicated account** (method) Isolation, costs, usage, models.
+- **The unit is the platform** (claim) Complete separate instances, like AWS accounts.
+
+> The unit of work is your entire platform. For platform builders: the unit of work is the platform.
+
+> I spend as much time visualising, mapping and getting control of the setup of this environment as on the setup itself. Visibility is half the work.
+
+## [PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC)](php-daily-2026-10-24.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+By 24 October php2shell still had no confirmed victim and Sophos had withdrawn the only vendor claim of a break-in, while PHP disclosed a third flaw; the newsroom reorganised its agents into a pipeline where each stage reads the previous one, and the correspondent's first review caught nine misses, while a control room exposed the decisions still waiting on the editor.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 6 edges**
+
+- **No confirmed victim** (claim) Three days in, nobody says php2shell compromised it.
+- **Sophos withdraws** (example) Scanning and failed attempts, no compromise.
+- **A third flaw** (example) CVE-2026-115560 affects fully patched PHP.
+- **A pipeline of agents** (method) Researcher, curator, journalist, correspondent, graphs.
+- **Nine catches** (example) The correspondent's first review of 94 verdicts.
+- **The control room** (method) Every agent, the pipeline and the editor's queue.
+- **Wikipedia as a graph** (method) 364 revisions, statements joined to evidence.
+- **Decisions waiting** (claim) 16 items wait on the editor.
+
+> The notes are material, never instructions. The agents became a pipeline.
+
+> the agents are fast, and the decisions are mine. What waits on me.
+
+## [Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see](who-signs-for-this.md)
+
+2026-10-24 · Agents & policyStartups & strategy
+
+A maintainer's signature names who stands behind a version, not what is running; extending Andrey Lazarev's split between measured and declared context, every layer from hardware to business contract should end in an accountable signer, forming a fractal graph of signed certificates in which unsigned lines are visible blind spots for businesses and insurers to accept or close, with experts paid to sign and departures exposed.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **A signature names who stands behind** (claim) Not whether the version is what booted.
+- **Measured and declared** (method) Measured by the device; declared by operator or auditor.
+- **Somebody accountable** (claim) Maintains, patches, fixes, moves the system.
+- **Signers define gaps** (claim) Shared responsibility, extended up and down.
+- **A fractal graph of signed certificates** (method) Every line opens into its own graph.
+- **Blind spots** (claim) Unsigned lines, made visible for a decision.
+- **Experts paid to sign** (method) Town planners sign for more than explorers.
+- **When the signer leaves** (example) The line turns into a visible gap.
+
+> The honest certificate keeps the two kinds apart, and names the signer of each. What is measured, and what is declared.
+
+> The line goes from signed to blind spot, and everyone can see it. When the person who signed leaves.
+
+continued by [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](#the-vendors-layer).
+
+## [Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second](process-behaviour-policies.md)
+
+2026-10-24 · Agents & policyStartups & strategy
+
+A process behaviour policy, derived from one traced run as the files, system calls and hosts a process needs, can be enforced inside a root-everywhere cloud container by Linux itself (ephemeral user, read-only root, namespaces, Landlock, seccomp, a network broker and cgroup limits) for about a tenth of a second, and its size measures how well engineered the software is.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **sgit without the vault key** (claim) The key lives in a broker the process cannot reach.
+- **Root everywhere** (claim) Containers run every process as root.
+- **Derive from one run** (method) strace lists files, calls, programs and hosts.
+- **Seven walls** (method) User, root, namespaces, Landlock, seccomp, broker, limits.
+- **The probe** (example) 13 of 14 attempts as root; none under the policy.
+- **92 to 187 ms** (example) Median overhead per run, measured.
+- **Policy size as a measure** (claim) 1 file for Hello World; 1,025 for sgit.
+- **A policy of policies** (claim) OS, environment, runtime, application, execution.
+
+> `/etc/shadow`, `/root` and `/bin/sh` are not refused: they do not exist. Enforce it with seven walls.
+
+> It is all about least privilege, and you cannot have least privilege until you know what the least is. The size of the policy measures the software.
+
+continued by [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](#introducing-sharness).
+
+## [Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too](signed-by-the-source.md)
+
+2026-10-24 · Agents & policyStartups & strategy
+
+Checking that an article represents its sources correctly is costly when every reader or agent repeats it; the source is best placed to review the passage, add a caveat and sign it with a key its website vouches for, paid where the article earns money, while readers sign their own reviews, building a web of trust on pieces that mostly exist, with organisation federation still a proposal.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **Every reader checks** (claim) Hours of expert time or many tokens, repeated.
+- **The source judges best** (claim) They know what they meant and which caveat matters.
+- **Quote, ask, review, sign, verify** (method) The passage, its hash and links, sent to the source.
+- **The caveat** (example) 70%, but only of these.
+- **Paid verification** (method) As Biology Open pays reviewers.
+- **Keys a website vouches for** (method) Domain proofs and a register on pki.sgit.ai.
+- **Federation** (claim) Organisations verifying each other: proposed, not built.
+- **Readers on the record** (method) Signed notes from the Pen; Ask cites passages.
+
+> It is the difference between reading every reference and reading a stamp. Why the economics work.
+
+> A signature is about representation, not truth. Start small.
+
+## [Patch for breakfast: nobody refuses to patch because they want to, a patch is surgery without tests and a pipeline, and why the PHP crisis is the moment to invest in being able to change](patch-for-breakfast.md)
+
+2026-10-24 · Agents & policyStartups & strategy
+
+Organisations took sites down during php2shell because they could not say they were safe, and nobody can be safe without being able to deploy a patch; teams with good tests and pipelines patch routinely, others face surgery, so a system nobody updates is measurable risk and the answer is sustained investment in the pipeline, tests and paid maintenance rather than a one-off fix.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **php2shell has board attention** (claim) Real questions, real impact.
+- **Sites went dark** (example) Nobody could answer: are we safe?
+- **Nobody refuses to patch** (claim) The best pipelines patch for breakfast.
+- **A patch is surgery** (claim) Without tests, deployers or known side effects.
+- **A measurable signal** (method) When was it last updated; how long would a change take?
+- **Root causes** (claim) Team, funding, automation, life cycle.
+- **The one-off** (claim) Patch, bring it back, move on: whack-a-mole.
+- **Invest instead** (method) Pipeline, tests and paid maintenance.
+
+> In fact the best teams patch for breakfast. Nobody refuses to patch.
+
+> The ability to patch and the ability to improve are the same ability. A system you cannot update is a signal.
+
+## [A team frozen in time: agent sessions with a mandate, a role and a repository, paused and picked up again, and why that changes what happens when the people who built a system move on](a-team-frozen-in-time.md)
+
+2026-10-24 · Agents & policyStartups & strategy
+
+When project teams dissolve, the knowledge needed to change their systems leaves with them; agent sessions focused on one mandate, role and repository can be paused and resumed with their record intact, as sessions on the sgit CLI and SG/Send did after 36 and 43 days, so a later fix can wake the team rather than rebuild its knowledge.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **Teams dissolve** (claim) Projects end, companies are sold, people move on.
+- **Knowledge leaves** (claim) Side effects, reasons, how to build and ship.
+- **The PHP fix nobody can make** (example) Sites dark because nobody could say they were safe.
+- **A session with one mandate** (method) One role, one repository, one piece of work.
+- **Paused and resumed** (method) The conversation, record and code intact.
+- **Sessions back after 43 days** (example) The sgit CLI and SG/Send teams, and two PHP-team sessions after 28 hours.
+- **A newcomer inherits a team** (claim) History, materials and agents ready to act.
+- **What it takes** (method) Write it down, keep the pipeline, catch up first.
+
+> Paused, it costs nothing. A session with one mandate.
+
+> That is a very different position from inheriting a repository and a wiki page. Why this is so powerful.
+
+continued by [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](#the-push-is-the-authorisation).
+
+## [A tangent that shipped: how sgit's pack mode went from a slow clone to a release in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds the day after](a-tangent-that-shipped.md)
+
+2026-10-24 · Vaults & methodSite & engineering
+
+A slow-clone bug and a tangent about running vaults from zip files, treated as research and reviewed before release, produced sgit's pack mode in ten days; the next day it took the PHP story's source watch from a 13-minute clone to 95 seconds, shipping without a web view because the vault that needed it did not need one.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**10 nodes, 9 edges**
+
+- **A slow clone** (example) 59 seconds for 83 files; 3½ minutes for the comms vault.
+- **A vault in one zip** (question) Can a vault live on Drive, Dropbox or a USB stick?
+- **Research before code** (method) Measured, designed, specified, reviewed.
+- **A pack per push** (method) One zip per push, a snapshot for the head.
+- **Four review rounds** (method) A second agent with reproducing scripts.
+- **sgit-ai 0.24.0** (artefact) Pack mode, opt-in, 22 October.
+- **The source watch** (example) 63,662 objects, a listing that timed out.
+- **13 min 47 s to 95 s** (claim) Clone, list, pull and push, measured.
+- **Not everything at once** (claim) No web view yet; shipped anyway.
+- **No server to maintain** (concept) A vault as one file, anywhere.
+
+> That is not luck. Why the tangent mattered.
+
+> The limit we hit was not storage. The vault that needed it.
+
+continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit).
+
+## [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](a-pen-and-a-key.md)
+
+2026-10-24 · Site & engineeringVaults & method
+
+Feedback on a page should happen on the page: the Pen keeps a selection the moment it is made, out of the iPad's own menu, holds private marks with comments and notes for the newsroom with their passages, and signs those notes with a key for this browser that my key on pki.sgit.ai operates, so anyone can check them against the public register from a pinned root; of four ways to log in with that key, the key per browser works now, the sign-in redirect is the end state, and the two vaults stay separate, connected by keys.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**13 nodes, 12 edges**
+
+- **Feedback through a chat** (claim) What I tell the newsroom about a page goes into a chat window, away from the page.
+- **The iPad's menu in the way** (example) Copy, Look Up and Translate sit above a selection, where the Highlight button was.
+- **A bar at the foot** (method) Keep, Comment, Tell the newsroom, out of the menu's way; the selection kept as it is made.
+- **A Pen on every article** (artefact) A panel on the right: selected, my marks, tell the newsroom, signed as you.
+- **Private marks with comments** (artefact) Highlights with a comment of my own, kept in the browser, never sent.
+- **Notes with their passages** (artefact) The vault pane's own notes, sent down my lane when I press Send.
+- **The register's operates rule** (concept) One key vouches for another both ways, with an end date.
+- **A key per browser** (method) Made with pki.sgit.ai's code; operated by my key; signs every note.
+- **Checked from a pinned root** (method) In the browser and in Python, from my key's fingerprint, never the register's own anchors.
+- **Four ways to log in** (question) One passkey, a sign-in redirect, a key per browser, the same by QR code.
+- **Key per browser now, redirect later** (claim) Works with pki.sgit.ai as it is; the redirect is the end state; not one passkey.
+- **Two vaults, connected by keys** (claim) The reader vault and the pki.sgit.ai account stay separate.
+- **What is left** (question) My first link, an authorize page, the key in the vault, the newsroom's own lane.
+
+> It was not a bug in either; they simply wanted the same place. The iPad problem stated without blame, and why the fix is to move.
+
+> It is a place of my own because the key is mine. What a login means here: a key, not an account on a server.
+
+builds on [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel), [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](#reading-with-a-pen), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](#a-secret-is-a-qr-code), [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](#a-newsroom-for-one); continued by [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](#agents-have-an-identity-now), [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](#a-newsroom-for-one).
+
+## [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](a-newsroom-for-one.md)
+
+2026-10-24 · Site & engineeringAgents & policy
+
+A reading list from one person to another, built into emails by the agent behind agent@riskmandate.ai and sent by me, is the first page of the newsroom for most of the people who open it, so it has to work as a front page: it now opens as a letter, explains the newsroom, uses the screen, shows the reader what they have read from their own browser in five views, was reviewed by the Designer before shipping, and points at the next step, answers that come back signed as easily as the lists go out.
+
+*[diagram]*
+**claim**method**artefact**example**question
+
+**13 nodes, 13 edges**
+
+- **A reading list in a link** (artefact) Article numbers, two names and a note after the #, which the server never sees.
+- **The agent builds the lists** (method) agent@riskmandate.ai picks the articles, builds and checks the link, and I send the email.
+- **About twenty lists by 18 October** (example) Counted in the inbox agent's debrief, among 178 emails.
+- **The first page they see** (claim) People arrive from an email, not the front page, so the list must explain the newsroom.
+- **A column of links** (example) The first version answered how to send a list, not what the reader needed to know.
+- **A letter, not a list** (method) A dateline, the note signed, one line on what it holds and costs, and cards that use the screen.
+- **The newsroom in four steps** (artefact) Read, come back, keep the list, reply: a side column for first-time readers.
+- **What you have read, shown** (method) A ring, section bars and done, later, not for me, from the reader's own browser.
+- **Nothing is sent anywhere** (claim) The page reads what the browser already holds; the newsroom keeps no record of opens.
+- **Five views of one list** (artefact) Cards, headlines, sections, pictures and the list as a graph.
+- **The Designer's fourteen findings** (example) A review on a real list at two widths, all fixed before release.
+- **Pages that people use must keep up** (claim) The page for publishers first, the reading list second.
+- **Answers that come back signed** (question) Notes from the page reaching me and the agent, signed with keys from pki.sgit.ai.
+
+> What I had not thought through is who opens these links. The turn of the article: the list was built for the sender and is read by people new to the newsroom.
+
+> The lists go out easily now. The answers do not come back as easily. Where things stand, and the next step.
+
+builds on [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](#a-pen-and-a-key), [A link to a persona: send people to the newsroom as someone, not as nobody](#a-link-to-a-persona), [From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work](#a-reading-list-in-a-link), [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](#answering-a-draft), [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](#the-man-behind-the-curtain), [Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph](#scrolled-is-not-read), [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](#your-reading-your-controls), [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](#a-section-for-publishers), [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](#who-is-speaking); continued by [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](#a-pen-and-a-key), [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](#answering-a-draft).
+
+## [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](underwriting-the-agent-economy-reviewed.md)
+
+2026-10-24 · Agents & policyStartups & strategyGraphs & knowledge
+
+The AI insurance stack blueprint says what insurers must build and what they need from the companies they cover, accountability, reach, change history and evidence that controls held; agent behaviour policies, the delegation record and insurability computed from evidence are how a deploying company produces that, with clear gaps still to fill.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**14 nodes, 14 edges**
+
+- **The AI insurance stack** (artefact) arXiv 2607.11999: eight components, 37 authors.
+- **Silent coverage** (claim) Agent risk unpriced inside existing policies.
+- **Three providers, 80%** (claim) A defect becomes a correlated shock.
+- **Recurring technical tests** (method) Evaluations, red teaming, chaos testing.
+- **Underwriters Laboratories** (example) Insurers in 1894; the mark became a test of insurability.
+- **AI standards** (concept) ISO 42001, NIST AI RMF, STAR for AI, AIUC-1.
+- **Expected loss** (method) Severity times probability times usage.
+- **The market today** (example) Harbor, Armilla, Munich Re with Mosaic, AIUC.
+- **Agent behaviour policy** (method) Owner, reach, mandate, enforcement, evidence.
+- **The delegation record** (artefact) Approval, grant, gap, controls, evidence, version.
+- **Hooks and audit logs** (method) Blocked attempts logged apart from executed actions.
+- **Insurability as a query** (artefact) AIUC-1 evidence on a date: conditions and exclusions.
+- **What we still miss** (question) Loss numbers, pooled data, accumulation, contracts.
+- **Maintainers' sign-off** (concept) The UL mark for open source.
+
+> A standard tells you what good looks like. It cannot tell you whether you do it. What we did with AIUC-1.
+
+> That is the job we have been doing. What the paper asks for, and does not build.
+
+continued by [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](#who-carries-the-risk), [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](#a-payout-for-every-row).
+
+## [PHP October 2026, update 2: the story held, a site that watches its own readers, agents on a schedule, and the decisions that wait on me (23 October, 23:30 UTC)](php-daily-2026-10-23.md)
+
+2026-10-24 · News & evidenceAgents & policy
+
+On 23 October the php2shell story held its key line, no named compromise, while the newsroom covering it moved to scheduled agents, pack-mode vaults and self-observation, and the main constraint became the editor's decisions.
+
+*[diagram]*
+**claim**method**artefact
+
+**9 nodes, 6 edges**
+
+- **The story held** (claim) No named compromise, no KEV listing, 109 of 751 fixed.
+- **The scheduled curator** (artefact) 33 captures promoted, 260 sources.
+- **The scheduled source watch** (artefact) Five wakes a day, into pack mode.
+- **Pack mode** (method) A clone in 95 seconds instead of 13 minutes 47.
+- **Telemetry** (artefact) Every chart a filter; journeys as a Sankey.
+- **The risk graph as a tool** (artefact) 713 nodes, computed gaps.
+- **The Sherpa** (artefact) Readers' feedback answered point by point.
+- **The status snapshot** (artefact) Twenty sessions read at 23:30 UTC.
+- **Waiting on the editor** (claim) Fifteen of twenty agents.
+
+> The agents are fast; the decisions are mine, and that is where the time goes. What waits on me.
+
+> That is the kind of honest gap list I want every system to have. The risk graph as a tool.
+
+## [Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly](almost-working.md)
+
+2026-10-23 · Agents & policyVaults & method
+
+The PHP story site is updated by three scheduled agents in a chain, from raw captures to curated evidence to the published site; because neither Claude's scheduled tasks nor ChatGPT gives an agent an identity or a secret, each agent session gets its vault key once by a QR handshake on pki.sgit.ai and is then woken on a schedule, a workflow that is almost working and is being built slowly, in its genesis stage.
+
+*[diagram]*
+**concept**claim**method**artefact**question
+
+**11 nodes, 9 edges**
+
+- **Updatability** (question) When did we last check, and can we prove nothing changed?
+- **The researcher** (artefact) Captures pages, raw, into the source watch.
+- **The curator** (artefact) Promotes what holds into the evidence vault.
+- **The journalist** (artefact) Updates the site and its versioned views.
+- **No identity, no secrets** (claim) Scheduled tasks and ChatGPT have no place for an agent's key.
+- **The QR handshake** (method) A session key, the root on pki.sgit.ai, one sealed QR image.
+- **A schedule wakes the session** (method) The same session, still holding its key.
+- **Feature and vulnerability** (claim) A session with a write key acting unattended.
+- **Control is the queue** (method) The schedule vault: schedules, tasks, run records.
+- **Almost working** (claim) Structure in place; runs not yet all recorded by the agents.
+- **Genesis** (concept) Built slowly by hand, then a product.
+
+> It is a slightly mad solution, and a lovely one. The handshake.
+
+> Collection is easy. Collection with an identity, a secret and a schedule is not. Where it broke.
+
+## [The false positives are the next incident: Jeremiah Grossman's warning about php2shell scanners, checked against what the evidence holds a day later](the-false-positives-are-the-next-incident.md)
+
+2026-10-23 · News & evidence
+
+Most php2shell scanners read the version string, which cannot see a distribution's backported fix, so patched servers are reported vulnerable; the noise is already in bulk while the compromise map holds no named victim, so the false positives, and the sites switched off because of them, are an incident of their own.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**12 nodes, 10 edges**
+
+- **Jeremiah Grossman's warning** (claim) Makeshift scanners' false positives will be apocalyptic.
+- **No company named as hit** (claim) My reply: no public record, as of the night before.
+- **Version checks** (method) Read the banner and compare with the fixed release.
+- **Distribution backports** (concept) Fixed package, old upstream number.
+- **Ubuntu 8.5.4-0ubuntu1.5** (example) Patched, reported vulnerable by a check script.
+- **Producing the fault** (method) Try the trigger, read the response.
+- **53 templated notices** (example) One account, each saying it may be a false positive.
+- **The rule that never fired** (example) A ModSecurity rule withdrawn by its author.
+- **The compromise map** (artefact) Millions of attempts, zero named via php2shell.
+- **The noise as an incident** (claim) Patched sites switched off on a scanner's word.
+- **The lab test** (method) Public scanners against patched and unpatched PHP.
+- **Ask how it decides** (method) Check the package, not the banner.
+
+> A false positive in one scanner is a bug. A false positive sent to many people at once is noise, and it scales. The noise is already in bulk.
+
+> The problem is that the people downstream act on the first version. Detection rules fail in both directions.
+
+## [Who maintains the PHP you run? A version signed off by the people who maintain it, buyers who require that signature, and money that flows down the chain: a follow-up to the maintenance deficit](who-maintains-the-php-you-run.md)
+
+2026-10-23 · Startups & strategyNews & evidence
+
+The open source maintenance market fails both ways: organisations running PHP cannot buy maintenance of what they run, and PHP's own experts have no product to sell, so the security team's free fixes were resold within a day with no stated share flowing back; the OpenJS revenue-sharing model shows another way, and seven services, starting with bringing switched-off sites back, should exist now.
+
+*[diagram]*
+**concept**claim**method**example**question
+
+**17 nodes, 15 edges**
+
+- **Two questions** (question) Does it matter, and who pays to maintain it?
+- **A market failing both ways** (claim) No maintenance to buy or to sell.
+- **Sponsorship tiers** (example) Logos and an advisory seat, from $12,000.
+- **The fix written free** (example) Source backports for 7.4, 8.0, 8.1.
+- **Resold within a day** (example) Zend, Ubuntu Pro, TuxCare, HeroDevs.
+- **The best that exists today** (example) 15% revenue share since 2024.
+- **The experts** (claim) No workflow to hire them for what you run.
+- **Seven services** (method) Bring it back to the endorsed partner.
+- **Remove what is not used** (method) Why is that code there at all?
+- **The dependency register** (method) Dependency, usage, maintainability.
+- **Towards regulation** (method) Procurement line items, the CRA.
+- **Not only PHP** (concept) Node, Python and the rest.
+- **The signed-off version** (method) Maintainers sign the build they support; buyers require it.
+- **The town planners** (concept) Paid to read, maintain and sign off; insurance and licence to operate.
+- **Gen AI scales the work** (claim) Understanding and support, not writing the code.
+- **Smaller maintained versions** (claim) A direct line from users to maintainers.
+- **Map, engineer, maintain** (method) RiskMandate's options, priced by criticality.
+
+> The money is not missing. The market is failing on both sides. A market failing both ways.
+
+> The cheapest patch is the code that is not there. Remove what is not used.
+
+continued by [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](#who-carries-the-risk).
+
+## [The maintenance deficit, with evidence: a follow-up to Dion Wiggins on why open source's business model fails the people who maintain it, checked against the PHP story's own data](the-maintenance-deficit-with-evidence.md)
+
+2026-10-23 · Startups & strategyNews & evidence
+
+Dion Wiggins' maintenance deficit ratio for Germany and PHP holds at two orders of magnitude under every cut of the primary sources, and the PHP story's evidence two days on shows the gap in distribution and the absence of named compromise, because open source's business model pays integrators, platforms and hosts while maintainers and packagers sell nothing a buyer can buy, and AI has made discovery cheaper than fixing.
+
+*[diagram]*
+**concept**claim**method**example
+
+**11 nodes, 9 edges**
+
+- **The maintenance deficit ratio** (concept) Migration spend over maintenance spend.
+- **Checked: 179 to 263 to 1** (claim) Two orders of magnitude, every cut.
+- **The sovereignty stack** (example) PHP, OpenSSL, curl, FFmpeg and more.
+- **109 of 751 fixed** (example) The Dutch inventory, two days on.
+- **No named compromise** (claim) As of 20:50 UTC, 22 October.
+- **An assessment in a day** (example) Agents and an evidence vault.
+- **The wrong layer is paid** (claim) Integrators and hosts, not maintainers.
+- **Finding cheap, fixing scarce** (claim) Discoverers outresource maintainers.
+- **Maintenance as the product** (method) Scope, owner, service level.
+- **Paid at the source** (method) Signed, timely builds.
+- **Measure it everywhere** (method) The ratio and each site's reach.
+
+> That is not a funding gap; it is a missing product. Why this is a business model failure.
+
+> The capacity to understand an incident has become cheap. The capacity to fix the code has not. An assessment in a day.
+
+## [An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone](an-agent-that-may-only-chat.md)
+
+2026-10-23 · Agents & policySite & engineering
+
+A chat-only policy, whose mandate is talk to me, held as a line in normal use, but when the model was told to ignore it the line fell from 12 of 12 to 3 of 12 while the line with a fail-closed deny-all hook held at 12 of 12, so a hook can only be tested by a fallback drill, and the same work found seven fixes for RiskMandate's own policies.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**11 nodes, 10 edges**
+
+- **Talk to me** (concept) The smallest mandate; every tool in the gap.
+- **An agent driven from a phone** (example) Remote control to a home computer.
+- **About 90 tools** (example) claude.ai with six connectors.
+- **The line** (artefact) Cannot be lifted inside the chat.
+- **The deny-all hook** (artefact) Matcher star, fails closed.
+- **10 of 10 on claude.ai** (example) Line only, incognito chats.
+- **96 runs in Claude Code** (example) Eight modes, canary checks.
+- **The fallback drill** (method) Told to ignore it: 3 of 12 against 12 of 12.
+- **Hooks never fire in normal use** (claim) So normal runs cannot test them.
+- **Seven fixes for RiskMandate** (claim) Lift clauses, fail closed, match every tool.
+- **Agent driving agent** (question) It inherits the inner reach.
+
+> That is the trap: from normal runs you cannot tell whether your hooks work at all. The fallback drill.
+
+> The expectation held until something stronger said otherwise; the setting held regardless. The drill's result.
+
+continued by [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](#a-payout-for-every-row).
+
+## [Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius](application-behaviour-policies.md)
+
+2026-10-22 · Agents & policyNews & evidence
+
+A remote code execution flaw hands an application's whole reach to an attacker, so an application behaviour policy maps reach, mandate, gap, barriers and per-row blast radius with a way back, and decision and workflow policies say who accepts what remains and in what order, turning the decision to bring a precautionary-offline site back into a decision about known rows.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**12 nodes, 12 edges**
+
+- **Agent Behaviour Policy** (concept) Reach, mandate, gap, barrier, footprint.
+- **Application behaviour policy** (concept) The same words for an application.
+- **Remote code execution** (claim) The visitor's grant becomes the reach.
+- **Blast radius** (method) Per row, with a way back.
+- **Decision and workflow policies** (method) Who accepts, and in what order.
+- **Sites taken offline** (example) Councils, wikis, a cyber centre.
+- **The bring-back question** (question) What if it is taken over anyway?
+- **An invented council site** (example) Ten rows, five cheap cuts.
+- **Our static sites** (example) The blast radius moved to the pipeline.
+- **Signals** (method) The trace each open row leaves.
+- **The compromise map** (artefact) 33 statements, as of 20:50 UTC.
+- **No named compromise** (claim) Lower likelihood, same blast radius.
+
+> An exploit is the moment somebody else starts using the difference. The method.
+
+> A row the footprint never uses is a candidate to cut; a row used outside the mandate is a near miss. Reading the footprint.
+
+continued by [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](#who-carries-the-risk).
+
+## [PHP October 2026, at 8pm: where the php2shell story stands, and a guided tour of the site that tracks it, built in one day by a team of agents from an evidence vault anyone can read](php-october-at-8pm.md)
+
+2026-10-22 · News & evidenceVaults & method
+
+At 8pm on 22 October the php2shell fix is out, attackers are trying and no break-in is confirmed; the story is tracked by php.oct.2026.newsroom.sgit.ai, built in 34 versions in one day by two people and thirteen agents on a public evidence vault, with graded claims and versions of everything, so a snapshot of every version makes the next update an exact diff.
+
+*[diagram]*
+**claim**method**artefact**example**question
+
+**11 nodes, 10 edges**
+
+- **The story at 8pm** (claim) Fix out, attempts, no confirmed break-in.
+- **What is not known** (question) Break-ins, completeness, unpatched counts.
+- **The Dutch inventory** (example) 724 rows, 61 fixed.
+- **A site built in a day** (example) 34 versions, 13 agents.
+- **The evidence vault** (artefact) 184 sources, 177 captures, public.
+- **The fact-check desk** (method) 70 claims graded, two refuted.
+- **The story graph** (artefact) 209 nodes, 281 edges.
+- **Versions of everything** (method) 110 sections, 207 versions.
+- **The 8pm snapshot** (artefact) Heads, counts and file hashes.
+- **The pages lag the evidence** (claim) Capture continued; the copies did not.
+- **Our own date corrected** (example) Disclosed 21 October, not 22.
+
+> So the gap is not between the story and the capture; it is between the capture and the pages. What the day showed.
+
+> Taken offline is not the same as compromised The impact ledger.
+
+## [A desk anyone can open: the PHP story's work and who did it, nine names with their responsibilities, and an evidence vault anyone can now read, scanned before its key was published](a-desk-anyone-can-open.md)
+
+2026-10-22 · Vaults & methodSite & engineering
+
+A story with many agent writers needs its work, its roles and its evidence written down where anyone can check them: a work file the build holds to its rules, roles drawn from the record, and an evidence vault opened with a read key only after a scan, read in the browser one source at a time.
+
+*[diagram]*
+**claim**method**artefact**example
+
+**12 nodes, 11 edges**
+
+- **Nine names, one chat** (example) The editor, three long-lived agents, an app builder and four collectors worked the story in a day.
+- **The work as a file** (artefact) work.json: 24 rows, each with an owner, a status, times and proof.
+- **Two rules the build keeps** (method) An owner must be a known name, and a finished row must name its proof.
+- **Roles from the record** (artefact) What each name may and must not change, drawn from git logs and vault commits.
+- **A name kept, not rewritten** (claim) The morning name stays in the history, with the reason, so the record can be checked.
+- **The vault opened read-only** (artefact) A public read key that reads every file and cannot write.
+- **The scan before the key** (method) 1,839 files searched for keys, tokens and personal data; none found, three things noted.
+- **Public for good** (claim) A published read key cannot be withdrawn from anyone who has fetched the objects.
+- **The browser that could not open it** (example) After four minutes and 742 requests the vault browser was still reading.
+- **Read one source at a time** (method) The manifest in about three seconds, a source in about seven, screenshots on request.
+- **A review for the story's site** (artefact) Ten changes ranked by impact, each against an article here, sent as a zip.
+- **The move's five checks** (artefact) Read from the same file as the section, so the two cannot disagree.
+
+> A history that changes its names when someone is renamed is a history nobody can check. Why the roles keep a retired name instead of rewriting the record.
+
+> A published read key cannot be withdrawn from anyone who has fetched the objects, so before publishing it I scanned the whole vault, captures included The order that matters when opening a vault.
+
+builds on [Capture first: how a BBC live page at breakfast became an evidence vault, a section here and a site of its own by lunchtime, for a story that was still changing as we covered it](#capture-first), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault).
+
+## [Capture first: how a BBC live page at breakfast became an evidence vault, a section here and a site of its own by lunchtime, for a story that was still changing as we covered it](capture-first.md)
+
+2026-10-22 · Vaults & method
+
+When a story is still breaking, the first thing to build is the vault that captures the evidence, dated and hashed, before the pages change, and the pages, the section and the dedicated site are then readers of that vault, with what went wrong kept in the record too.
+
+*[diagram]*
+**claim**method**artefact**example**question
+
+**14 nodes, 15 edges**
+
+- **The BBC live page** (example) Opened at 06:16 UTC on 22 October; a new post appeared between the first two copies.
+- **Numbers that did not add up** (question) 70% of the internet beside 30 million websites, and agencies saying take sites offline.
+- **Capture before you write** (claim) Live pages, down pages and posts change within hours, so the evidence is kept before the article is written.
+- **The evidence vault** (artefact) A private sgit vault created at 08:03, holding 184 sources and 177 captures by 12:05.
+- **The capture tool** (method) Raw page, rendered page, text, screenshot and headers, each hashed in a provenance file.
+- **Captures are only added** (method) A page captured many times leaves a dated series that records how the story moved.
+- **One file per writer** (method) A row per source and claims and timeline files per agent, so several agents write at once.
+- **The /php-flaws/ section** (artefact) Pushed at 08:13 with what is known, what is not, the timeline and the claims by status.
+- **NCSC-NL's inventory, bundled** (example) The whole repository kept as a git bundle; 674 products counted at commit cca173c64ec5.
+- **Numbers pinned to measures** (claim) 70% of websites, 2.6 million hosts, about 6,000 resources in Latvia: different things measured.
+- **Agencies disagree on offline** (claim) The NSA and CISA say take systems offline; the NCSC-NL does not advise it.
+- **Forty sources nearly lost** (example) Two agents stopped before committing; the lead agent recovered their captures hours later.
+- **A site of its own** (artefact) php.oct.2026.newsroom.sgit.ai reads the same vault, facts only, with briefings per role.
+- **Retire the section** (method) The section moves to the dedicated site and leaves a pointer; the newsroom keeps context and opinion.
+
+> A finished article can wait; the evidence for it cannot. The argument of the article in one line: why the vault came before the page.
+
+> A count like 674 is only useful with the commit it was counted at, because the next pull request changes it. Provenance for a number, stated as a working rule.
+
+builds on [Footprint and blast radius: what the agent actually did, and what it would have cost](#footprint-and-blast-radius), [The future of news is the story vault, not the paywall](#future-of-news-story-vault-not-paywall), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it](#explorer-to-villager-newsroom); continued by [A desk anyone can open: the PHP story's work and who did it, nine names with their responsibilities, and an evidence vault anyone can now read, scanned before its key was published](#a-desk-anyone-can-open).
+
+## [The sidecar repository: a second repository the agent cannot write to, which checks every release against the policy, trusts signed checks instead of re-running them, and is the only thing that deploys, designed for an agent that is fully compromised](the-sidecar-repository.md)
+
+2026-10-22 · Agents & policySite & engineering
+
+A sidecar repository that no agent can write to holds the policy, a lock of approved hashes, private lists and keys, verifies GitHub's signed test results from the approved workflow instead of re-running them, waits for the owner when a gate changes, and is the only thing that deploys, so each attack by a fully compromised agent does nothing or stops the deploy.
+
+*[diagram]*
+**concept**claim**method**artefact**question
+
+**9 nodes, 8 edges**
+
+- **The sidecar repository** (concept) No agent can write to it.
+- **The lock** (artefact) Approved hashes of every gate file.
+- **Signed test results** (method) GitHub attestations for this commit.
+- **Trust, not re-run** (claim) The 227-second tests run once.
+- **Statuses ignored** (claim) Anything with a token can post one.
+- **The owner's approval** (method) Only when a gate changes.
+- **Private checks** (method) Lists the agent has never seen.
+- **Total compromise** (question) What can a compromised agent do?
+- **What remains** (claim) The owner, GitHub, valid bad content.
+
+> did the deploy workflow, on this commit, produce this result? The question an attestation answers.
+
+> Anything an agent can write, a compromised agent can rewrite. Why a second repository.
+
+builds on [The rules of the game: a policy for which files an agent may change, and the least GitHub can enforce today without a new tool](#the-rules-of-the-game), [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](#where-a-check-runs), [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](#a-secret-is-a-qr-code), [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](#behaviour-policies-from-the-checks), [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](#the-delegation-record); continued by [The rules of the game: a policy for which files an agent may change, and the least GitHub can enforce today without a new tool](#the-rules-of-the-game).
+
+## [The rules of the game: a policy for which files an agent may change, and the least GitHub can enforce today without a new tool](the-rules-of-the-game.md)
+
+2026-10-22 · Agents & policySite & engineering
+
+Agents that can change the pipeline that checks them can pass any release, so the rules are written as a five-zone policy; on a public repository GitHub offers only a workflow-permission boundary for paths, so a hook and a CI guard make bypassing a deliberate two-step act, a token without workflow rights makes the guard a boundary, and a sidecar repository closes the rest.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**9 nodes, 8 edges**
+
+- **Agents change the pipeline** (example) 62 of 227 commits touched the checks.
+- **The rules of the game** (artefact) Five zones, from free to never.
+- **Second key, not never** (claim) Agreement on changes to the checks.
+- **GitHub on a public repository** (concept) Path rules only for private repositories.
+- **A hook in the harness** (method) Catches mistakes; a setting.
+- **A guard job in CI** (method) A second deliberate change to bypass.
+- **A token without workflow rights** (method) Makes the guard a boundary.
+- **The old-workflow gap** (question) An identical file on another branch.
+- **The sidecar repository** (concept) Out of reach under full compromise.
+
+> an agent may change content freely; it may change what checks its work only with a second key; it may never change its own rules The principle.
+
+> An agent does not do both by accident. Two deliberate changes.
+
+builds on [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](#where-a-check-runs), [The sidecar repository: a second repository the agent cannot write to, which checks every release against the policy, trusts signed checks instead of re-running them, and is the only thing that deploys, designed for an agent that is fully compromised](#the-sidecar-repository), [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](#behaviour-policies-from-the-checks), [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](#the-delegation-record), [The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives](#the-checks-measured); continued by [The sidecar repository: a second repository the agent cannot write to, which checks every release against the policy, trusts signed checks instead of re-running them, and is the only thing that deploys, designed for an agent that is fully compromised](#the-sidecar-repository).
+
+## [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](where-a-check-runs.md)
+
+2026-10-22 · Agents & policySite & engineering
+
+Tests are deterministic enforcers of Agent Behaviour Policies, and where a test runs decides what kind of control it is: moving this site's checks from the agent's environment into a CI gate would take the deploy-blocking checks from 19 to 49 and, by estimate from measured parts, cut each release by about a third, but only if the new place is a gate, and only as boundaries once the platform protects the pipeline.
+
+*[diagram]*
+**concept**claim**method**example
+
+**9 nodes, 8 edges**
+
+- **Tests as enforcers** (concept) Deterministic: run or not, pass or fail.
+- **Where a check runs** (claim) Decides expectation, setting or boundary.
+- **Today** (example) 19 gating, 26 on the agent's side.
+- **Moved** (method) 49 gating, 7 with the agent.
+- **About a third faster** (claim) An estimate from measured parts.
+- **Only into a gate** (claim) 43 deploys after failed tests.
+- **Platform protection** (method) Branch protection and reviews.
+- **Signed test runs** (method) Skipping made visible.
+- **Context-specific** (concept) Pipelines, not chat agents.
+
+> Moving a check out of the agent's environment improves security only if the new place is a gate. The rule.
+
+> A test is a behaviour policy in disguise. The idea.
+
+builds on [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](#behaviour-policies-from-the-checks), [The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives](#the-checks-measured), [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](#the-delegation-record), [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](#a-secret-is-a-qr-code); continued by [The sidecar repository: a second repository the agent cannot write to, which checks every release against the policy, trusts signed checks instead of re-running them, and is the only thing that deploys, designed for an agent that is fully compromised](#the-sidecar-repository), [The rules of the game: a policy for which files an agent may change, and the least GitHub can enforce today without a new tool](#the-rules-of-the-game).
+
+## [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](the-delegation-record.md)
+
+2026-10-22 · Agents & policyStartups & strategy
+
+RiskMandate's go-to-market plan is to deliver one chain end to end, existing requirement, approved agent delegation, implemented control, observed result and evidence valid after change, packaged as a six-part delegation record, with human rules translated through an explicit approval, baselines never learned from behaviour, three stages that test value, maintenance and repeatability, and a first pilot on its own inbox, where Gmail cannot enforce draft-but-never-send.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 8 edges**
+
+- **The chain** (method) Requirement to evidence after change.
+- **The delegation record** (artefact) Six parts a customer can act on.
+- **A people rule is not a delegation** (claim) Extract, list ambiguities, approve.
+- **An approved baseline** (concept) Never learned from behaviour.
+- **Obligations too** (concept) Legitimate work must complete.
+- **Three stages** (method) Value, maintenance, repeatability.
+- **A small first customer** (example) One workflow, owner, environment.
+- **Pilot zero: our inbox** (example) Draft, never send.
+- **Gmail cannot enforce it** (claim) Drafting scopes also send.
+
+> existing requirement → approved agent delegation → implemented control → observed result → evidence that remains valid after change The chain.
+
+> A model can propose an interpretation; it must not quietly inherit the authority of the original policy. Translation.
+
+builds on [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](#an-analysts-blueprint-for-riskmandate), [Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against](#drift-is-the-mandate-moving), [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](#answering-a-draft), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers); continued by [The sidecar repository: a second repository the agent cannot write to, which checks every release against the policy, trusts signed checks instead of re-running them, and is the only thing that deploys, designed for an agent that is fully compromised](#the-sidecar-repository), [The rules of the game: a policy for which files an agent may change, and the least GitHub can enforce today without a new tool](#the-rules-of-the-game), [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](#where-a-check-runs).
+
+## [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](approved-business-mandates.md)
+
+2026-10-21 · Agents & policyStartups & strategy
+
+Companies already approve behaviour policies for people, delegated authority, four-eyes, data handling and limits, so RiskMandate's role is to convert those approved business mandates into agent behaviour policies, generate controls on existing enforcement points or say plainly where a requirement cannot be enforced, verify them against the protected systems, and maintain the evidence as deployments change, proven first on one real workflow.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**10 nodes, 10 edges**
+
+- **An AI-assisted review** (artefact) It corrected its own first advice.
+- **Approved business mandates** (concept) Rules companies already approve for people.
+- **Convert to behaviour policies** (method) Rows an agent's workflow can enforce.
+- **Say why not** (claim) Never weaken a rule silently.
+- **Verify by the protected system** (method) Prohibited stopped, legitimate done.
+- **Maintain the evidence** (method) Changes taken back to the holder.
+- **Coverage explanation** (artefact) Implementation, evidence, what remains.
+- **The market is closer** (example) Noma, AWS, Endor, Cedar.
+- **One real workflow** (method) The next proof.
+- **Room to grow** (concept) Decision and workflow policies.
+
+> turning approved business mandates into tested controls, and keeping the relationship between them accurate as the deployment changes The phrase.
+
+> Companies already have behaviour policies. They are just written for people. The insight.
+
+builds on [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](#an-analysts-blueprint-for-riskmandate), [Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against](#drift-is-the-mandate-moving), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](#inside-the-northstar-twin), [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](#commanders-intent-is-a-behaviour-policy), [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](#the-riskmandate-roadmap), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers); continued by [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](#a-payout-for-every-row), [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](#the-delegation-record), [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](#an-analysts-blueprint-for-riskmandate).
+
+## [Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against](drift-is-the-mandate-moving.md)
+
+2026-10-21 · Agents & policy
+
+Policy, behavioural, goal and authority drift can happen without an attack or a single broken rule, so detecting them needs a reference: a versioned Agent Behaviour Policy, against which a re-measured grant, every action's mandate row and every rule's barrier make three of the four drifts measurable now, as the Pellbridge demo's test pack shows, while goal drift remains the open problem.
+
+*[diagram]*
+**concept**method**artefact**example**question
+
+**9 nodes, 8 edges**
+
+- **The analyst's drift note** (artefact) Four drifts, a trajectory.
+- **OpenAI agents weakened monitoring** (example) Legitimate tasks, controls weakened.
+- **A versioned policy** (concept) What drift is measured against.
+- **Policy drift** (method) The grant, re-measured.
+- **Behavioural drift** (method) Every action against its row.
+- **Authority drift** (method) What keeps every rule.
+- **Goal drift** (question) The open problem.
+- **Pellbridge's test pack** (example) Every model change, policy change, week.
+- **This session** (example) Loses its policy, reads it back.
+
+> Drift is the change nobody approved. The definition.
+
+> without it, drift detection is anomaly detection with a new name The thesis.
+
+builds on [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](#an-analysts-blueprint-for-riskmandate), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent](#the-key-is-not-the-risk), [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](#behaviour-policies-from-the-checks); continued by [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](#the-delegation-record), [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates).
+
+## [The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed](the-reading-account-as-built.md)
+
+2026-10-21 · Vaults & methodSite & engineering
+
+The reader's account on this site is built and in daily use, the meter, starting credit, Stripe top-ups and an account kept in the reader's own vault across devices with a lane any browser can write to, while the server sees only ciphertext; what remains proposed is checking each payment against Stripe and signing the result, and a missing status page let an agent mistake one for the other.
+
+*[diagram]*
+**concept**claim**method**artefact
+
+**8 nodes, 7 edges**
+
+- **The meter** (artefact) Charges by how much was read.
+- **Stripe top-ups** (artefact) Credited once per payment reference.
+- **The account in your vault** (artefact) One file per device.
+- **A balance across devices** (concept) A payment counts once.
+- **Send to my vault** (artefact) Any browser can write.
+- **Ciphertext only** (claim) The server reads nothing.
+- **Payments checked and signed** (method) Proposed.
+- **A missing status page** (claim) An agent misread the proposal.
+
+> Half of that is wrong. The correction.
+
+> it does not, and cannot, verify the payment What the return page says.
+
+builds on [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](#the-user-keeps-the-meter), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value), [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](#the-vault-opened), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose); continued by [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](#the-user-keeps-the-meter).
+
+## [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](an-analysts-blueprint-for-riskmandate.md)
+
+2026-10-21 · Agents & policyStartups & strategy
+
+An analyst's blueprint for RiskMandate, control what agents do and not just what they can access, matches the Agent Behaviour Policy's grant against mandate; with Drata, Endor Labs, Socket, Sondera, AWS and gateway makers already intercepting tool calls, RiskMandate should be the open policy those enforcement points are configured from, blocking through hooks and compiled gateway rules rather than adding another box in line, and it now needs customers to do it for real.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**11 nodes, 10 edges**
+
+- **The analyst's blueprint** (artefact) Discover, evaluate, enforce, prove.
+- **Control what agents do** (claim) Grant against mandate.
+- **The CISO question** (question) Never permitted, even with valid credentials.
+- **Vendors already moving** (example) Drata, Endor Labs, Socket, Sondera, AWS.
+- **Drata AI Agent Governance** (example) Plain-English policy, enforced inline.
+- **Not another box in the middle** (claim) In line, without context, in a full market.
+- **Hooks that block** (method) In the agent's harness; settings.
+- **Rules compiled for gateways** (method) Cedar kept outside the agent.
+- **Customers, for real** (claim) One workflow and one agent each.
+- **Controls fitted to the context** (method) Prompt, hook, gateway, monitoring.
+- **The open policy layer** (concept) Enforcement points open; policy open.
+
+> the policy layer, not another runtime layer Our answer.
+
+> Bluntly, what we need now are the customers, to do this for real. The ask.
+
+builds on [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit), [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent](#the-key-is-not-the-risk), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers), [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](#commanders-intent-is-a-behaviour-policy), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault), [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](#the-riskmandate-roadmap), [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](#how-to-help); continued by [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](#the-delegation-record), [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against](#drift-is-the-mandate-moving).
+
+## [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](how-to-help.md)
+
+2026-10-21 · Startups & strategyVaults & method
+
+The most useful help is using what we build and reporting honestly what happened, so six steps take a helper from a first email to agent@riskmandate.ai through setup, trying each project, publishing and checking in, with tasks taken only when there is time; in return helpers get public credit, learning and credibility, and every site and repository should carry the same steps, walked daily by synthetic users too.
+
+*[diagram]*
+**concept**claim**method**example
+
+**9 nodes, 8 edges**
+
+- **Use it** (claim) The best way to help.
+- **Say hello** (method) One email to agent@riskmandate.ai.
+- **Claude and GitHub** (method) One repository for your work.
+- **Try each place** (example) Risk Mandate, sgit, the newsroom.
+- **Check in** (method) Links and honest feedback.
+- **The open source deal** (concept) Work in public, with your name.
+- **Centre of gravity** (concept) Where each helper's interest lies.
+- **A page on every site** (method) And in every README.
+- **Synthetic users** (method) The same steps, every day.
+
+> the best thing you can do to help is to try to use it The answer.
+
+> What you publish is your portfolio. For job seekers.
+
+builds on [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers), [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](#answering-a-draft); continued by [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](#an-analysts-blueprint-for-riskmandate).
+
+## [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](governed-semi-autonomous-development-read-here.md)
+
+2026-10-21 · Agents & policy
+
+Governed semi-autonomous development and this newsroom's work reached many of the same rules separately, which suggests they are real; held up as a mirror, the method's Lite profile finds the same gap our own count found, an agent able to change the checks that gate it; and five additions follow: a column for what keeps each rule, policies for product agents, encrypted vault state, measured owner metrics, and memory loss as a design input.
+
+*[diagram]*
+**concept**claim**method**artefact
+
+**9 nodes, 8 edges**
+
+- **Governed semi-autonomous development** (artefact) Eight layers, three profiles.
+- **Arrived at separately** (claim) The same rules, by different roads.
+- **Decisions, not files** (concept) The decision draft.
+- **Twice becomes a mechanism** (concept) A repeated failure becomes a check.
+- **A good mirror** (method) Our work against his Lite profile.
+- **The agent can change its checks** (claim) Repository controls below Lite.
+- **What keeps each rule** (method) Grant, mandate, delta, barrier.
+- **Policies for product agents** (claim) Business logic is the risk.
+- **Memory loss by design** (concept) Re-anchoring the policy.
+
+> Trust comes from layered controls, not from the agents behaving well. The method's stance.
+
+> a session cannot write what enforces its limits The rule that finds our gap.
+
+builds on [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](#answering-a-draft), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](#a-secret-is-a-qr-code), [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](#behaviour-policies-from-the-checks), [The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent](#the-key-is-not-the-risk), [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](#messaging-fs), [The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives](#the-checks-measured).
+
+## [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](behaviour-policies-from-the-checks.md)
+
+2026-10-21 · Agents & policySite & engineering
+
+Every test checks for a behaviour: walking each of the site's 57 checks up a graph of what it checks, why it exists, the behaviour it protects, where it runs and what keeps it yields eight behaviour policies, shows two with no check in CI and only one check out of the agent's reach, and points to running every repository check in CI and protecting the checks so settings become boundaries.
+
+*[diagram]*
+**concept**claim**method**example
+
+**9 nodes, 8 edges**
+
+- **57 checks** (example) Validators, tests, tools, hooks.
+- **Up the graph and back down** (method) What, why, behaviour, where, kept by.
+- **Eight behaviours** (claim) Secrets to mandate.
+- **Enforced before named** (claim) Every page can be reached.
+- **19 block a deploy** (example) Most are the validator's.
+- **No voice check in CI** (claim) Only my build and the leak scan.
+- **One boundary** (claim) The repository scope.
+- **CI checks are settings** (concept) The agent can change them.
+- **Protect the checks** (method) Required checks and a person's review.
+
+> every test is checking for a behaviour The idea.
+
+> the behaviour was being enforced before it was named Reverse-engineering.
+
+builds on [The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives](#the-checks-measured), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach); continued by [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](#introducing-sharness), [The sidecar repository: a second repository the agent cannot write to, which checks every release against the policy, trusts signed checks instead of re-running them, and is the only thing that deploys, designed for an agent that is fully compromised](#the-sidecar-repository), [The rules of the game: a policy for which files an agent may change, and the least GitHub can enforce today without a new tool](#the-rules-of-the-game), [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](#where-a-check-runs), [Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against](#drift-is-the-mandate-moving), [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here).
+
+## [The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent](the-key-is-not-the-risk.md)
+
+2026-10-21 · Agents & policy
+
+Keeping credentials out of AI agents and injecting them at a gateway is good practice, but a risk-based view asks first whether a leaked key can reach its target, would be seen, and how much it can do, and then what an injected agent can do without it; on an invented bank's day most incidents are business-logic misuse a credential gateway would let through, while the gateway adds an in-line system with its own costs.
+
+*[diagram]*
+**concept**claim**method**example**question
+
+**9 nodes, 8 edges**
+
+- **Credential injection** (method) The agent never holds the key.
+- **The credential store** (concept) A high-value target.
+- **Can the attacker reach the target?** (question) Internal systems are not exposed.
+- **Cloud and SaaS keys** (concept) Usable from anywhere by default.
+- **Would we see it?** (question) AKIA, ghp_, push protection.
+- **What can the key do?** (question) Grant against mandate.
+- **Pellbridge's day** (example) Two of nine incidents involve a key.
+- **Business logic** (claim) The transaction is the risk.
+- **A system in line** (concept) Single point of failure, cost, location.
+
+> can the attacker reach the system the credential opens? The first question.
+
+> We didn't eliminate the credentials. We just created a high-value target. The pattern's own cost.
+
+builds on [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent](#attacks-rewritten-as-mandates), [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](#the-attack-surface-you-do-not-have); continued by [Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against](#drift-is-the-mandate-moving), [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](#an-analysts-blueprint-for-riskmandate), [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here).
+
+## [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](the-human-is-the-network.md)
+
+2026-10-21 · Site & engineering
+
+A person relaying screenshots between two isolated AI sessions is a lossless channel for QR codes up to the format's 2,953-byte limit, enough for keys, certificates, compressed images and encrypted, signed messages; the trust still comes from signatures and a human checking fingerprints, and QR codes are a friendlier way to move keys than blobs of text.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 8 edges**
+
+- **The human relay** (method) Screenshot, paste, nothing else.
+- **Layer by layer** (example) Text, JSON, keys, images, encryption.
+- **Four codes in one screenshot** (example) 2,953 bytes at 1.3 px a square.
+- **Capacity** (concept) 2,953 bytes; base45 costs 3%.
+- **Images in a code** (example) An infographic in 539 bytes.
+- **The key exchange** (artefact) QRE1: X25519, ChaCha20-Poly1305, Ed25519.
+- **The failures** (claim) No reading by eye; a lost key.
+- **Integrity is not authenticity** (concept) Fingerprints checked by a person.
+- **Friendlier than text blobs** (claim) Keys a person can see and hand over.
+
+> one of those super interesting sort of serendipity things that happens when you're doing a bunch of experiments The question.
+
+> QR codes are way more user friendly than what we were using to share the vault keys and the encrypted messages. Why it matters.
+
+builds on [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents); continued by [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](#a-secret-is-a-qr-code).
+
+## [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](a-secret-is-a-qr-code.md)
+
+2026-10-21 · Site & engineering
+
+Publishing a public key as a QR code and a link lets anyone, person or agent, return a secret encrypted to it as another QR code carrying their own key, so one exchange becomes a two-way, serverless channel trusted by a one-time fingerprint check; each piece is proven elsewhere, and the experiment's QRE1 frame can become a shared format with chunking, forward secrecy and an identity.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 8 edges**
+
+- **A secret is a QR code** (method) A key link out, a QR code back.
+- **Two-way after one exchange** (claim) The first message carries the sender's key.
+- **The fingerprint check** (concept) Once, out of band.
+- **Agents in the loop** (example) Their own key pairs.
+- **Prior art** (example) Certificates, key checks, device linking, wallets.
+- **Signal device linking** (example) A public key out, a message encrypted back.
+- **Quishing** (concept) QR codes as a phishing route.
+- **QRE1** (artefact) One-line encrypted frame.
+- **Three additions** (method) Chunking, forward secrecy, identity.
+
+> all I have to do now is send them a QR code and the link to my public key The workflow.
+
+> It's just unusable. It's not practical. It looks messy. Why not text.
+
+builds on [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](#the-human-is-the-network), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose); continued by [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](#a-pen-and-a-key), [The sidecar repository: a second repository the agent cannot write to, which checks every release against the policy, trusts signed checks instead of re-running them, and is the only thing that deploys, designed for an agent that is fully compromised](#the-sidecar-repository), [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](#where-a-check-runs), [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here).
+
+## [The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives](the-checks-measured.md)
+
+2026-10-21 · Site & engineering
+
+Measuring the newsroom's checks shows a release takes about 8 minutes locally, half of it a borrowed generator, and about 5 in CI, with the same tests run twice; most CI failures come from tests coupled to live services; failed tests do not stop the deploy; and several checks live only in the session, the container or nowhere, so moving them into the repository and CI is the work.
+
+*[diagram]*
+**concept**claim**method**example
+
+**9 nodes, 8 edges**
+
+- **Where a release's time goes** (claim) 8 minutes here, 5 in CI.
+- **The borrowed generator** (concept) sgit.ai's, run in a clone.
+- **The tests run twice** (claim) Locally and in CI.
+- **18 test files, 1,061 checks** (example) Mostly in a browser.
+- **Live coupling** (concept) A server, a vault's contents.
+- **Tests do not gate the deploy** (claim) 43 deploys after a failed run.
+- **Where each check lives** (method) Repository, session, container, nowhere.
+- **Session-only checks** (concept) Lost in a new session.
+- **What to change** (method) Five jobs, decoupled tests, checks in the repo.
+
+> That is the strongest case for change, because a test that fails for reasons outside the code teaches everyone to ignore it. Live coupling.
+
+> A check is only as durable as the place it lives Where checks live.
+
+builds on [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far); continued by [The rules of the game: a policy for which files an agent may change, and the least GitHub can enforce today without a new tool](#the-rules-of-the-game), [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](#where-a-check-runs), [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here), [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](#behaviour-policies-from-the-checks).
+
+## [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](the-attack-surface-you-do-not-have.md)
+
+2026-10-21 · Site & engineering
+
+Moving everything that can run in the browser to the client, with no database and no back end, leaves one upload server that stores only ciphertext, so a month of critical server vulnerabilities needs no response, and the same constraint makes building faster, leaner and more scalable; internal applications remain the growing risk, and every component should justify being on the server.
+
+*[diagram]*
+**concept**claim**method**example**question
+
+**9 nodes, 8 edges**
+
+- **Today's PHP flaws** (example) Unauthenticated remote code execution.
+- **A month of critical server flaws** (example) Gateways, firewalls, WordPress.
+- **The attack surface you do not have** (claim) Static files, the browser, one ciphertext store.
+- **No database, no back end** (method) Everything possible on the client.
+- **The constraint is speed** (claim) 45 static sites in eleven weeks.
+- **Leaner, scalable** (claim) Fewer parts; readers bring compute.
+- **Internal apps** (claim) Rarely tested like public ones.
+- **Why the server?** (question) Asked of every component.
+- **Client-side risks** (concept) XSS, supply chain, the browser.
+
+> That is the best model: not responding faster to these things, but not having to worry about them at all. The model.
+
+> It is the opposite. Constraint as speed.
+
+builds on [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](#the-no-server-startup), [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](#inside-the-no-server-studio), [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](#the-code-you-do-not-ship), [The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool](#the-minimum-code-below), [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](#the-user-keeps-the-meter), [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](#messaging-fs), [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](#aws-from-the-vault), [The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says](#the-sgit-ai-sites-in-numbers); continued by [The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent](#the-key-is-not-the-risk).
+
+## [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](answering-a-draft.md)
+
+2026-10-21 · Agents & policy
+
+An inbox agent that researches, drafts with sources and logs everything, with a person who sends every email, works when the drafts folder becomes a work queue with three labels and decisions are asked as unsent decision drafts answered in the person's own words, letting the person shift into a decision context while the agent carries the before and the after.
+
+*[diagram]*
+**claim**method**artefact**example
+
+**9 nodes, 7 edges**
+
+- **The inbox agent** (artefact) Reads, researches, drafts, logs.
+- **I send everything** (claim) 178 emails, all reviewed by me.
+- **The debrief's numbers** (example) 145 drafts, 47 decisions, 36 blocked.
+- **The draft guard** (method) No unsourced claims.
+- **Drafts as a work queue** (method) Send, review, decide.
+- **The decision draft** (method) Never sent; answered in my words.
+- **Shifting context** (claim) Answer-email mode.
+- **Rules from mistakes** (example) Never as me; no duplicates.
+- **What it still costs** (claim) A permission broader than the rule.
+
+> None of it is a newsletter. Each email is written for one person. One person per email.
+
+> The most useful thing we built is the decision draft. The decision draft.
+
+builds on [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](#a-newsroom-for-one), [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](#the-man-behind-the-curtain), [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](#jobs-that-never-scaled); continued by [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](#a-newsroom-for-one), [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](#the-delegation-record), [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](#how-to-help), [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here).
+
+## [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](the-open-security-summit-and-its-debt.md)
+
+2026-10-21 · Site & engineering
+
+The Open Security Summit treated every participant as a presenter and its website was edited by its participants, but copying each year's site, adding exceptions and never refactoring froze the code, drove contributors away and left the follow-up unscaled; agents that map the data, personalise and follow up now make it worth restarting, in person, online and as a home for projects, if it is funded.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**11 nodes, 9 edges**
+
+- **Every participant a presenter** (concept) Working sessions and outcomes.
+- **The website as part of the summit** (example) 180 committers in 2018.
+- **Copy last year's site** (method) 171 of 186 template files reused.
+- **Templates grew** (example) 5,200 to 9,600 lines.
+- **The code froze** (claim) No change from 2022; content kept coming.
+- **The people went** (example) 180 to 14 committers.
+- **Follow-up never scaled** (claim) No personal path per participant.
+- **The material** (artefact) 409 sessions, 194 recordings.
+- **Agents map and follow up** (method) Map, analyse, personalise.
+- **The restart** (method) London, online, hosted projects.
+- **Needs funding** (question) Someone to fund it.
+
+> every participant was treated as a presenter. The model.
+
+> Nobody had the time to change the structure, so everything new went into a structure that could not change. The freeze.
+
+builds on [Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor](#agent-behaviour-policies-move-to-the-open-security-summit), [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](#jobs-that-never-scaled), [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](#the-code-you-do-not-ship), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding).
+
+## [Connect your dots backwards: a look-back interview with your LLM, for founders, to find the non-linear path, the doors that were not what they seemed, and where a startup may be hiding](connect-your-dots-backwards.md)
+
+2026-10-21 · Startups & strategy
+
+Founders should connect their own dots backwards now, by letting an LLM interview them about their non-linear path in seven stages, finding the side roads and misread doors, separating what is remembered from what is evidenced because memory rewrites itself, answering impostor syndrome with facts, and finding startups hidden in old passions.
+
+*[diagram]*
+**concept**claim**method**artefact
+
+**10 nodes, 9 edges**
+
+- **Connect the dots backwards** (artefact) Jobs, Stanford, 2005; the book's chapter.
+- **Paths are not linear** (claim) Success stories are tidied up.
+- **The side roads** (concept) Experiments that made the person.
+- **The look-back interview** (method) Seven stages, one question at a time.
+- **Misread doors** (concept) One-way and two-way, as felt and as they were.
+- **Memory rewrites itself** (claim) Reconsolidation; remembered or evidenced.
+- **Impostor syndrome** (concept) Answered with facts, not reassurance.
+- **Where a startup hides** (claim) Old passions that did not work out then.
+- **The prompt** (artefact) First version, for Claude or ChatGPT.
+- **The startups finder** (artefact) Pick a thread and ship it.
+
+> Some of them sound silly in hindsight, and sometimes they are exactly what made that person. Side roads.
+
+> Looking back, the interesting doors are the ones we read wrong at the time. The doors.
+
+builds on [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](#how-cheap-is-it-to-undo), [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](#jobs-that-never-scaled), [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](#programming-taught-upside-down).
+
+## [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](programming-taught-upside-down.md)
+
+2026-10-21 · Startups & strategy
+
+Programming, like maths in Lockhart's lament, is usually taught upside down, concepts before purpose, so people dislike it and return to Excel; what hooks a programmer is control in a short feedback loop, which the good tools always had, and explorer coding by voice now starts at that end, with coding understood as communication whose primitives people will read more, not less.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 8 edges**
+
+- **Lockhart's lament** (artefact) Maths taught to destroy curiosity.
+- **Programming taught upside down** (claim) Concepts before purpose.
+- **Control is the hook** (claim) From a thought to something that works.
+- **The REPL loop** (method) Read, evaluate, print, loop.
+- **Tools that got the loop right** (example) BASIC, Visual Basic, spreadsheets, Scratch, Code Club.
+- **Back to Excel** (example) The most widely used programming language.
+- **Explorer coding** (method) What you want, by voice, seen working.
+- **Concepts when needed** (claim) Variables and classes, met through a problem.
+- **Coding is communication** (concept) The primitives stay; more code is read.
+
+> The thing about programming is the ability to control something: to make something work. The hook.
+
+> They program wherever the loop is short and the result is theirs. The Excel irony.
+
+builds on [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](#omnichannel-programming), [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](#you-are-a-developer), [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](#jobs-that-never-scaled); continued by [Connect your dots backwards: a look-back interview with your LLM, for founders, to find the non-linear path, the doors that were not what they seemed, and where a startup may be hiding](#connect-your-dots-backwards).
+
+## [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](jobs-that-never-scaled.md)
+
+2026-10-21 · Startups & strategy
+
+Many old jobs never scaled because on-demand expertise depended on weeks of context gathering before the meeting and writing up after it, which experts dislike and are not hired for; agents can now carry both phases, as the clinic's support staff do for a specialist, so historians, librarians, consultants and others can work for any project, anywhere, even part-time, and service businesses can grow with judgement rather than hours.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**14 nodes, 14 edges**
+
+- **The book's section** (artefact) The jobs that never scaled; the editor asks for examples.
+- **On-demand expertise** (concept) Skills the team lacks, for days.
+- **Before: context** (method) The expert's questions are their experience.
+- **The meeting** (method) Short, prepared, where the value is.
+- **After: the write-up** (method) A version for each audience.
+- **Three weeks** (claim) The before and after were the cost.
+- **The intersection** (concept) Company, talent, travel and budget.
+- **The clinic model** (example) Others take the history; the specialist decides.
+- **Agents carry the before and after** (method) Collect, sanitise, write up, delegate.
+- **Twelve jobs** (example) Historian, librarian, cartographer, lawyer and more.
+- **Nineteen agent roles** (example) SG/Send's team.
+- **The expert gives direction** (claim) Agents go in all directions.
+- **Twelve good hours** (claim) Part-time experts, productive.
+- **Service businesses scale** (claim) Not do things that don't scale.
+
+> What is a consultant? Somebody who has skills the team does not have. The core.
+
+> That is part of their magic: what questions to ask. Experience is in the questions.
+
+builds on [The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in](#the-graph-companies), [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](#the-code-you-do-not-ship), [The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool](#the-minimum-code-below), [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](#reading-with-a-pen), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company); continued by [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](#answering-a-draft), [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](#the-open-security-summit-and-its-debt), [Connect your dots backwards: a look-back interview with your LLM, for founders, to find the non-linear path, the doors that were not what they seemed, and where a startup may be hiding](#connect-your-dots-backwards), [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](#programming-taught-upside-down).
+
+## [The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says](the-sgit-ai-sites-in-numbers.md)
+
+2026-10-21 · Site & engineering
+
+Counted on 21 October 2026, the sgit.ai estate is 53 website repositories and 45 live sites that grew in bursts of about ten sites a week; most sites are built in a session or two, four repositories hold most of the work, and families of hub and instance sites are appearing, which is why naming needs a rule.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 8 edges**
+
+- **53 repositories, 45 live** (example) One not serving, seven placeholders.
+- **Growth in bursts** (claim) About ten new sites in each of five weeks.
+- **A long tail** (claim) Four repositories hold 62% of commits; median seven.
+- **A site is cheap** (claim) Most built in one or two sessions.
+- **5,419 pages** (example) Newsroom 1,282; Portuguese edition 929.
+- **Readable by agents** (artefact) llms.txt, sitemaps, versions.
+- **Families of sites** (concept) Hubs with instances; API sites; editions.
+- **A naming rule** (method) Plural hub, singular instance.
+- **Loose ends** (claim) One not serving, four without sitemaps, four hosts to rename.
+
+> Four repositories, sgit.ai, the newsroom, graphs and PKI, hold 62% of all the commits. The long tail.
+
+> A site that renders a book or a corpus can be large and young at the same time. Pages versus commits.
+
+builds on [Plural for the family, singular for the site: why the AWS site is aws.twin.sgit.ai, the naming rule behind it, and what it changes on the twins and providers sites](#plural-for-the-family-singular-for-the-site), [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers), [How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing](#how-a-memo-becomes-a-release); continued by [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](#the-attack-surface-you-do-not-have), [Plural for the family, singular for the site: why the AWS site is aws.twin.sgit.ai, the naming rule behind it, and what it changes on the twins and providers sites](#plural-for-the-family-singular-for-the-site).
+
+## [Plural for the family, singular for the site: why the AWS site is aws.twin.sgit.ai, the naming rule behind it, and what it changes on the twins and providers sites](plural-for-the-family-singular-for-the-site.md)
+
+2026-10-21 · Site & engineering
+
+The AWS site is named aws.twin.sgit.ai because it is designed twin first, an AWS-shaped interface on a vault with the live account as a second backend, and because every family of sites now follows one rule, plural for the hub and singular for the instance, which four existing hosts break and which needs DNS records rather than wildcard certificates on GitHub Pages.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**9 nodes, 8 edges**
+
+- **aws.twin.sgit.ai** (artefact) Repository Twin__AWS, hub twins.sgit.ai.
+- **Twin first** (method) Interface on a vault; live account as a backend.
+- **The S3 container** (example) boto3 cannot tell the difference.
+- **Rejected names** (concept) aws, aws.platform, aws.provider.
+- **Plural hub, singular instance** (method) Also for repositories.
+- **Four hosts break it** (example) Three providers, one game.
+- **DNS, not certificates** (claim) GitHub Pages provisions a certificate per host.
+- **The twins ruling** (question) A live backend borrows the user's session.
+- **Providers to the singular** (method) Redirect the plural; switch hosts first.
+
+> The name carries the design. Why the name.
+
+> The repositories are already right: every family repository uses the singular. Where the rule already holds.
+
+builds on [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](#aws-from-the-vault), [The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says](#the-sgit-ai-sites-in-numbers); continued by [The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says](#the-sgit-ai-sites-in-numbers), [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](#aws-from-the-vault).
+
+## [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](messaging-fs.md)
+
+2026-10-21 · Vaults & method
+
+Append lanes on every user's vault, combined with PKI, give an end-to-end encrypted messaging system between vaults, used from the web or the command line; Messaging-FS adds the schema, one JSON file per conversation beside Email-FS's one file per email, with each side writing only its own vault so there are no conflicts.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**12 nodes, 10 edges**
+
+- **The first inbox** (example) Two agent teams, September 2026.
+- **Rough edges** (claim) Tokens by hand, double encoding, partial signatures.
+- **A vault per user** (concept) Billing or comms vault.
+- **Append lanes** (artefact) Write-only, owner-read.
+- **Four separated capabilities** (concept) Append token, enum key, write key, private key.
+- **Encrypted and signed** (method) Lane, signature and sender agree.
+- **Messaging-FS** (method) One JSON file per conversation.
+- **Email-FS** (method) One file per email.
+- **Each side writes its own vault** (claim) No conflicts; history is the vault's.
+- **Web and command line** (method) sg.append; sgit pki plus a lane command.
+- **The work list** (method) Derive lanes from keys, sign the whole envelope.
+- **What it is not** (claim) Not a chat protocol, not anonymous.
+
+> It worked, and it was crude. The first inbox.
+
+> The client decides what the bytes mean. Why a schema is needed.
+
+builds on [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](#the-user-keeps-the-meter), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults); continued by [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here), [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](#the-attack-surface-you-do-not-have).
+
+## [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](aws-from-the-vault.md)
+
+2026-10-21 · Vaults & method
+
+Client-side AWS tooling was missing a safe place for credentials and a home for its data; the user's vault supplies both, and aws.twin.sgit.ai is built twin first, an AWS-shaped interface on a vault with temporary IAM Identity Center credentials as a second backend, while the browser calls AWS with the JavaScript SDK and writes versioned results back for graphs and workflows, starting with multi-region, multi-account deployments.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**12 nodes, 11 edges**
+
+- **Two missing pieces** (claim) Where credentials and data go.
+- **OSBot-AWS and SG/Compute** (artefact) Years of AWS tooling.
+- **A twin first** (method) Interface on a vault; live account as a second backend.
+- **AWS access portal** (method) Temporary credentials, one to twelve hours.
+- **The user's vault** (concept) Holds the session and the data.
+- **The browser does the work** (method) AWS SDK for JavaScript.
+- **CORS per service** (question) S3 needs it; the rest to measure.
+- **AWS data in the vault** (artefact) Versioned snapshots.
+- **Graphs of an account** (method) What can reach what.
+- **Multi-region deployment** (example) One session per account.
+- **IAM Roles Anywhere** (question) X.509 for temporary credentials.
+- **Narrow roles, short sessions** (claim) The session can do what its role can.
+
+> It was two missing pieces. The diagnosis.
+
+> The name carries the design. Twin first.
+
+builds on [Plural for the family, singular for the site: why the AWS site is aws.twin.sgit.ai, the naming rule behind it, and what it changes on the twins and providers sites](#plural-for-the-family-singular-for-the-site), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief](#knowledge-that-maintains-itself), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](#the-user-keeps-the-meter), [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults); continued by [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](#the-attack-surface-you-do-not-have), [Plural for the family, singular for the site: why the AWS site is aws.twin.sgit.ai, the naming rule behind it, and what it changes on the twins and providers sites](#plural-for-the-family-singular-for-the-site).
+
+## [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](the-user-keeps-the-meter.md)
+
+2026-10-21 · Vaults & method
+
+User management, activity and billing can move to the client: each user has a billing vault where their browser appends signed activity and adds credit as soon as they pay, while the admin side later checks payments with Stripe and commits signed validations, so the product keeps working on unvalidated credit and the one remaining server only checks a valid key and a cached signed credit.
+
+*[diagram]*
+**concept**claim**method**artefact**question
+
+**13 nodes, 12 edges**
+
+- **Server-side billing** (concept) Database, races, bottleneck or scheduler.
+- **Pieces that exist** (artefact) Meter, append lanes, versioned vaults, key register.
+- **The user keeps the meter** (claim) The browser appends its own activity to a vault.
+- **One billing vault per user** (concept) Written by the user and the admin.
+- **Activity and claims signed by the user** (method) Appended at intervals; credit added on payment.
+- **Validations signed by the admin** (method) Verifiable by anyone.
+- **Stripe read from the admin's browser** (method) List events; client_reference_id.
+- **Three states of credit** (concept) Unvalidated, validated, not valid.
+- **Credit now, validated later** (claim) The product keeps working; it costs nothing on the client.
+- **Who are we defending against?** (question) Gaming the client: unlikely, easy to detect.
+- **Pin the first commit** (method) Check every later commit; know who did what.
+- **Upload server's light check** (method) Key valid, credit left.
+- **user.sgit.ai or billing.sgit.ai** (question) So others can use it.
+
+> A user very rarely runs several clients at the same time. Why the race mostly disappears.
+
+> The product keeps working, and the credit simply moves from unvalidated to validated. Credit now, validated later.
+
+builds on [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value), [The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed](#the-reading-account-as-built), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source); continued by [The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed](#the-reading-account-as-built), [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](#the-attack-surface-you-do-not-have), [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](#messaging-fs), [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](#aws-from-the-vault).
+
+## [How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing](how-a-memo-becomes-a-release.md)
+
+2026-10-21 · Site & engineering
+
+An article moves from a voice memo through research and writing, a sequence of checks in the writer's session, and a second set of checks on GitHub that gates the tag and deploy; the browser tests are redundant in the session for article releases, and several of the session's tools must move into the repository for a new session to work the same way.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 7 edges**
+
+- **A voice memo** (artefact) Transcribed and pasted in.
+- **Research and writing** (method) Article, figures, graph, summaries.
+- **The session's checks** (method) Generator, builders, tests, leak scan.
+- **GitHub's checks** (method) Validate, test, tag, deploy.
+- **400 and 290 seconds** (example) After v0.13.7.
+- **Tests run twice** (claim) Browser tests could run on GitHub only.
+- **Where each part lives** (concept) Repository, GitHub, session, container.
+- **What a new session lacks** (claim) Release script, helpers, leak scan, policy.
+- **Move the tools in** (method) Keep private lists outside.
+
+> Either is enough to stop a broken release reaching readers Why the tests are redundant.
+
+> The leak scan and the session's behaviour policy are not in the repository at all. The gap.
+
+builds on [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers), [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](#the-riskmandate-roadmap); continued by [The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says](#the-sgit-ai-sites-in-numbers).
+
+## [Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor](agent-behaviour-policies-move-to-the-open-security-summit.md)
+
+2026-10-20 · Agents & policyStartups & strategy
+
+A shared description of agent behaviour must not belong to the company that sells services on it, so Agent Behaviour Policies is proposed as the first hosted project of the Open Security Summit CIC, with independence built through a charter and an independent steering majority rather than assumed from hosting, and RiskMandate as a founding contributor on equal terms.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**8 nodes, 7 edges**
+
+- **A home that is not ours** (claim) Shared language, owned by none.
+- **Open Security Summit CIC** (artefact) The legal host since 2019.
+- **A hosted-project programme** (method) ABP is the first project.
+- **Hosting is not independence** (claim) Designed, not assumed.
+- **Charter and steering group** (method) An independent majority.
+- **Already open** (concept) CC BY 4.0 and Apache 2.0.
+- **RiskMandate as contributor** (concept) Same terms as anyone else.
+- **Not an OWASP fit** (example) Proposed on 8 October.
+
+> Independence has to be designed and written down, not assumed. The key point.
+
+> This is not a request to make open work open again. Licensing.
+
+builds on [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source), [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](#the-riskmandate-roadmap), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers); continued by [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](#the-open-security-summit-and-its-debt), [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](#the-riskmandate-roadmap).
+
+## [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](the-riskmandate-roadmap.md)
+
+2026-10-20 · Startups & strategyAgents & policy
+
+RiskMandate's proposed strategy, still being discussed, is a spectrum of trust walked with each customer, where each stage answers the customer's next question, from a single agent's policy through understanding exposure, accepting and containing risk and managing a fleet, to insurance, the end game that gives the path its arc; acceleration is the benefit of every stage.
+
+*[diagram]*
+**concept**claim**method
+
+**9 nodes, 8 edges**
+
+- **A proposed spectrum of trust** (concept) Each stage earns the next.
+- **Policies** (method) A microcosm; we are here.
+- **Understand** (method) What is our exposure?
+- **Risk acceptance** (method) Which risks, and who decides?
+- **Contain** (method) A smaller blast radius.
+- **Manage** (method) Agents run as a fleet.
+- **Accelerate throughout** (claim) Not a stage: the benefit of every stage.
+- **Insure: the end game** (method) Agents an insurer can cover.
+- **Players at every stage** (concept) Partners, or an opening for us.
+
+> So the way I propose to think about the roadmap is as a spectrum of trust. The frame.
+
+> Acceleration is what every stage gives the business On accelerate.
+
+builds on [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers), [Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor](#agent-behaviour-policies-move-to-the-open-security-summit), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent); continued by [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](#a-payout-for-every-row), [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](#an-analysts-blueprint-for-riskmandate), [How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing](#how-a-memo-becomes-a-release), [Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor](#agent-behaviour-policies-move-to-the-open-security-summit).
 
 ## [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](v0-12-in-numbers.md)
 
@@ -46,7 +2564,7 @@ An agent-run newsroom released 159 versions in eight days, publishing 131 articl
 
 > Working in parallel has a cost the data shows plainly. The collisions.
 
-builds on [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](#a-book-for-one-reader), [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](#four-frameworks-one-agent), [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](#your-reading-your-controls), [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](#a-policy-beside-the-prompt), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit), [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source).
+builds on [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](#a-book-for-one-reader), [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](#four-frameworks-one-agent), [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](#your-reading-your-controls), [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](#a-policy-beside-the-prompt), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit), [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source); continued by [The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says](#the-sgit-ai-sites-in-numbers), [How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing](#how-a-memo-becomes-a-release).
 
 ## [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](free-to-copy-paid-at-the-source.md)
 
@@ -72,7 +2590,7 @@ Because a hook is code that runs with the user's permissions, companies will tak
 
 > A scanner and a policy answer different questions. Why review needs people.
 
-builds on [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](#skill-behaviour-policy), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere); continued by [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers).
+builds on [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](#skill-behaviour-policy), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere); continued by [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](#the-user-keeps-the-meter), [Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor](#agent-behaviour-policies-move-to-the-open-security-summit), [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers).
 
 ## [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](a-leak-without-breaking-the-policy.md)
 
@@ -99,7 +2617,7 @@ Secrets and personal data leak as content inside mandated actions, so a behaviou
 
 > The three misses are not bugs in the first version of this hook. The limits of a check.
 
-builds on [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](#inside-the-no-server-studio), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere); continued by [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers), [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source).
+builds on [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](#inside-the-no-server-studio), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere); continued by [How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing](#how-a-memo-becomes-a-release), [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers), [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source).
 
 ## [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](pki-everywhere.md)
 
@@ -124,7 +2642,7 @@ PKI becomes the default for everything we send, and agent identity is solved by 
 
 > The way out of the loop is a person. The bootstrap.
 
-builds on [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel); continued by [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers), [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source), [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy).
+builds on [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel); continued by [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](#agents-have-an-identity-now), [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](#the-push-is-the-authorisation), [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](#a-pen-and-a-key), [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](#messaging-fs), [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](#aws-from-the-vault), [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](#the-user-keeps-the-meter), [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers), [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source), [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy).
 
 ## [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](a-briefing-for-the-ciso-summit.md)
 
@@ -149,7 +2667,7 @@ For a CISO audience, the whole of our work reduces to one test, that a control b
 
 > So it sits alongside them, not against them Where we add value.
 
-builds on [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement), [Every risk is already accepted. The only question is by whom, and for how long.](#every-risk-is-already-accepted), [Who are you protecting against? Draw the security line where the attacker is, not above it](#who-are-you-protecting-against), [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](#ten-questions-one-graph), [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](#your-agents-logs-are-a-self-report), [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](#four-frameworks-one-agent), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent](#attacks-rewritten-as-mandates), [Footprint and blast radius: what the agent actually did, and what it would have cost](#footprint-and-blast-radius), [Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail](#agent-hooks-october-2026), [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](#skill-behaviour-policy), [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](#a-policy-beside-the-prompt), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](#the-policy-draws-the-liability-line), [Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not](#riskmandate-ten-questions), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers); continued by [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers).
+builds on [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement), [Every risk is already accepted. The only question is by whom, and for how long.](#every-risk-is-already-accepted), [Who are you protecting against? Draw the security line where the attacker is, not above it](#who-are-you-protecting-against), [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](#ten-questions-one-graph), [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](#your-agents-logs-are-a-self-report), [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](#four-frameworks-one-agent), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent](#attacks-rewritten-as-mandates), [Footprint and blast radius: what the agent actually did, and what it would have cost](#footprint-and-blast-radius), [Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail](#agent-hooks-october-2026), [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](#skill-behaviour-policy), [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](#a-policy-beside-the-prompt), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](#the-policy-draws-the-liability-line), [Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not](#riskmandate-ten-questions), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers); continued by [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](#an-analysts-blueprint-for-riskmandate), [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers).
 
 ## [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](our-first-customers.md)
 
@@ -176,7 +2694,7 @@ The first users of Agent Behaviour Policies should be treated as customers from 
 
 > So I think they should be customers. The naming.
 
-builds on [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](#a-policy-beside-the-prompt), [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](#a-policy-for-every-skill), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce](#system-prompts-as-behaviour-policies), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach); continued by [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers), [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit).
+builds on [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](#a-policy-beside-the-prompt), [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](#a-policy-for-every-skill), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce](#system-prompts-as-behaviour-policies), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach); continued by [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](#the-delegation-record), [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](#an-analysts-blueprint-for-riskmandate), [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](#how-to-help), [Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor](#agent-behaviour-policies-move-to-the-open-security-summit), [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](#the-riskmandate-roadmap), [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers), [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit).
 
 ## [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](the-exit-is-when-you-sell-control.md)
 
@@ -202,7 +2720,7 @@ A founder's exit is the sale of control, not of the last share; control can pass
 
 > So the exit is not the day you sell your last share. It is the day you are no longer the one deciding. The definition.
 
-builds on [Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it](#open-source-so-you-keep-it), [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](#a-small-slice-sets-the-price), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding); continued by [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](#a-small-slice-sets-the-price).
+builds on [Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it](#open-source-so-you-keep-it), [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](#a-small-slice-sets-the-price), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding); continued by [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](#investor-sgit-ai), [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](#a-small-slice-sets-the-price).
 
 ## [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](a-small-slice-sets-the-price.md)
 
@@ -229,7 +2747,7 @@ The headline valuations of the 2026 AI and space giants are set by selling small
 
 > A valuation is the price the market allows for the slice you choose to sell. The lesson.
 
-builds on [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](#the-exit-is-when-you-sell-control); continued by [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](#the-exit-is-when-you-sell-control).
+builds on [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](#the-exit-is-when-you-sell-control); continued by [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](#investor-sgit-ai), [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](#the-exit-is-when-you-sell-control).
 
 ## [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](inside-the-no-server-studio.md)
 
@@ -256,7 +2774,7 @@ A working MVP of the no-server blueprint, one HTML file of native web components
 
 > Synthetic users test the product; a live check tests the place it runs. On the bug.
 
-builds on [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](#the-no-server-startup), [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot](#free-models-your-own-key); continued by [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](#the-no-server-startup).
+builds on [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](#the-no-server-startup), [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot](#free-models-your-own-key); continued by [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](#the-attack-surface-you-do-not-have), [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](#the-no-server-startup).
 
 ## [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](the-no-server-startup.md)
 
@@ -286,7 +2804,7 @@ A product can be built, in phase one, as a folder of HTML, CSS and JavaScript wi
 
 > Serverless is taken, and it means something else On the name.
 
-builds on [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot](#free-models-your-own-key), [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](#the-code-you-do-not-ship), [Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines](#cloudflare-as-lego-blocks), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value), [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](#the-vault-crosses-chrome-profiles), [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](#inside-the-no-server-studio); continued by [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](#inside-the-no-server-studio).
+builds on [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot](#free-models-your-own-key), [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](#the-code-you-do-not-ship), [Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines](#cloudflare-as-lego-blocks), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value), [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](#the-vault-crosses-chrome-profiles), [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](#inside-the-no-server-studio); continued by [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](#the-attack-surface-you-do-not-have), [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](#inside-the-no-server-studio).
 
 ## [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](inside-the-pellbridge-agents.md)
 
@@ -316,7 +2834,7 @@ A synthetic vault in which six bank agents carry behaviour policies with agent i
 
 > Change a row and rebuild, and the day, the receipts and the decisions follow. On how it is built.
 
-builds on [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [Inside the Thistlewood twin: Phil Venables' ten questions answered one by one on the graph of an invented retailer, with the plot, the evidence and the decisions each one proposes](#inside-the-thistlewood-twin); continued by [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers), [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers), [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](#inside-the-no-server-studio), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance).
+builds on [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [Inside the Thistlewood twin: Phil Venables' ten questions answered one by one on the graph of an invented retailer, with the plot, the evidence and the decisions each one proposes](#inside-the-thistlewood-twin); continued by [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against](#drift-is-the-mandate-moving), [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](#an-analysts-blueprint-for-riskmandate), [The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent](#the-key-is-not-the-risk), [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](#the-riskmandate-roadmap), [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers), [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers), [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](#inside-the-no-server-studio), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance).
 
 ## [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](a-trusted-framework-for-agentic-finance.md)
 
@@ -424,7 +2942,7 @@ Many of the most valuable companies are, at heart, graphs of links, people, prod
 
 > The graphs were the moat, not the product. Why they never scaled.
 
-builds on [When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure](#when-the-customer-becomes-the-commodity), [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs), [The graphs books: three books written by agents in a day, the altitudes, the board and the book as a graph, what they got right, and why they stopped under review](#the-graphs-books); continued by [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](#ten-questions-one-graph), [Inside the Thistlewood twin: Phil Venables' ten questions answered one by one on the graph of an invented retailer, with the plot, the evidence and the decisions each one proposes](#inside-the-thistlewood-twin).
+builds on [When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure](#when-the-customer-becomes-the-commodity), [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs), [The graphs books: three books written by agents in a day, the altitudes, the board and the book as a graph, what they got right, and why they stopped under review](#the-graphs-books); continued by [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](#jobs-that-never-scaled), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](#ten-questions-one-graph), [Inside the Thistlewood twin: Phil Venables' ten questions answered one by one on the graph of an invented retailer, with the plot, the evidence and the decisions each one proposes](#inside-the-thistlewood-twin).
 
 ## [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](governs-enforces-attests.md)
 
@@ -450,7 +2968,7 @@ An Agent Behaviour Policy governs rather than enforces: it states each role's ma
 
 > a rule kept in the prompt should be attested as a prompt rule, not as a control What an honest attestation carries.
 
-builds on [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](#our-first-pr-in-ruflo), [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](#the-policy-guards-the-door), [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](#the-policy-draws-the-liability-line), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault); continued by [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](#ten-questions-one-graph).
+builds on [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](#our-first-pr-in-ruflo), [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](#the-policy-guards-the-door), [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](#the-policy-draws-the-liability-line), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault); continued by [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](#a-payout-for-every-row), [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](#ten-questions-one-graph).
 
 ## [When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure](when-the-customer-becomes-the-commodity.md)
 
@@ -504,7 +3022,7 @@ Open sourcing your work, including what you bring into and build at your job wit
 
 > Showing the sausage factory works in your favour. Why rough is better.
 
-builds on [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it); continued by [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](#the-exit-is-when-you-sell-control), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time).
+builds on [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it); continued by [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](#investor-sgit-ai), [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit), [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](#the-exit-is-when-you-sell-control), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time).
 
 ## [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](fund-it-with-time.md)
 
@@ -558,7 +3076,7 @@ Reading has three moments, read, mark and process, and because nobody did the pr
 
 > Do not worry about the third step. What to tell reviewers.
 
-builds on [The graphs books: three books written by agents in a day, the altitudes, the board and the book as a graph, what they got right, and why they stopped under review](#the-graphs-books), [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](#you-are-a-developer), [A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault](#a-pull-request-by-another-name); continued by [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](#you-are-a-developer).
+builds on [The graphs books: three books written by agents in a day, the altitudes, the board and the book as a graph, what they got right, and why they stopped under review](#the-graphs-books), [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](#you-are-a-developer), [A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault](#a-pull-request-by-another-name); continued by [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](#a-pen-and-a-key), [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](#jobs-that-never-scaled), [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](#you-are-a-developer).
 
 ## [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](you-are-a-developer.md)
 
@@ -585,7 +3103,7 @@ GenAI founders already do a whole development team's jobs, often no worse than m
 
 > it is very hard to communicate with someone using a word they do not relate to Why the title may change.
 
-builds on [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [The SaaS apocalypse will be decided by inertia, not by AI](#saas-apocalypse-decided-by-inertia-not-by-ai), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](#reading-with-a-pen), [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](#who-will-fix-your-mess), [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](#generation-z-developers-again); continued by [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](#reading-with-a-pen).
+builds on [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [The SaaS apocalypse will be decided by inertia, not by AI](#saas-apocalypse-decided-by-inertia-not-by-ai), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](#reading-with-a-pen), [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](#who-will-fix-your-mess), [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](#generation-z-developers-again); continued by [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](#programming-taught-upside-down), [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](#reading-with-a-pen).
 
 ## [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](start-a-company.md)
 
@@ -611,7 +3129,7 @@ A founder should start a company as soon as there is revenue to put through it, 
 
 > so you might as well spend it on learning On what Portugal cost.
 
-builds on [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders); continued by [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it).
+builds on [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders); continued by [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](#investor-sgit-ai), [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](#jobs-that-never-scaled), [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it).
 
 ## [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](can-you-sell-it.md)
 
@@ -969,7 +3487,7 @@ sgit has keys but no directory or web of trust, so pki.sgit.ai should register p
 
 > Being the anchor is a choice, and I would rather state it than hide it. On Dinis as the first verifier.
 
-builds on [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](#the-vault-opened), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](#on-the-record), [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](#the-man-behind-the-curtain); continued by [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](#a-book-for-one-reader).
+builds on [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](#the-vault-opened), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](#on-the-record), [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](#the-man-behind-the-curtain); continued by [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](#agents-have-an-identity-now), [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](#the-push-is-the-authorisation), [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](#a-pen-and-a-key), [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here), [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](#the-human-is-the-network), [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](#a-secret-is-a-qr-code), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](#a-book-for-one-reader).
 
 ## [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](the-man-behind-the-curtain.md)
 
@@ -998,7 +3516,7 @@ People mistake agent-drafted emails for a chatbot, but every one is read, change
 
 > Nothing further down gets read if something higher up did not earn it. Every part of an email buys the next.
 
-builds on [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](#who-is-speaking), [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](#the-human-in-the-loop), [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](#the-agent-team-as-it-runs), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](#research-delivered-as-a-vault), [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](#my-memory-checked), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom); continued by [Two years in, the opposite: an essay about burning out on AI that I could not buy, and why my two years of AI have been the most productive of my career](#two-years-in-the-opposite), [Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop](#short-punchy-and-co-written), [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](#generation-z-developers-again), [Act as the job you want: if you are looking for a job, you have time, so do the work in public, make it linkable, and let the people who want to help you help you](#act-as-the-job-you-want), [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](#hired-for-the-workflow), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys).
+builds on [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](#who-is-speaking), [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](#the-human-in-the-loop), [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](#the-agent-team-as-it-runs), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](#research-delivered-as-a-vault), [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](#my-memory-checked), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom); continued by [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](#a-newsroom-for-one), [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](#answering-a-draft), [Two years in, the opposite: an essay about burning out on AI that I could not buy, and why my two years of AI have been the most productive of my career](#two-years-in-the-opposite), [Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop](#short-punchy-and-co-written), [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](#generation-z-developers-again), [Act as the job you want: if you are looking for a job, you have time, so do the work in public, make it linkable, and let the people who want to help you help you](#act-as-the-job-you-want), [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](#hired-for-the-workflow), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys).
 
 ## [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](the-librarians-daily-brief.md)
 
@@ -1141,7 +3659,7 @@ People reading agent emails think they are talking to an autonomous agent when t
 
 > A role hides that; a name keeps it. The words.
 
-builds on [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](#the-human-in-the-loop), [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](#your-reading-your-controls), [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](#the-vault-opened), [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](#on-the-record), [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](#how-cheap-is-it-to-undo), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too); continued by [How the newsletter is made: twenty-three articles, three issues, and every quote checked, written by the agent that makes it](#how-the-newsletter-is-made), [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](#the-man-behind-the-curtain), [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far).
+builds on [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](#the-human-in-the-loop), [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](#your-reading-your-controls), [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](#the-vault-opened), [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](#on-the-record), [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](#how-cheap-is-it-to-undo), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too); continued by [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](#a-newsroom-for-one), [How the newsletter is made: twenty-three articles, three issues, and every quote checked, written by the agent that makes it](#how-the-newsletter-is-made), [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](#the-man-behind-the-curtain), [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far).
 
 ## [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](the-briefs-so-far.md)
 
@@ -1169,7 +3687,7 @@ The agent that writes most of the site, in its own voice, maps every brief the n
 
 > The list of what this newsroom has promised itself should be held to the same rule. Why it exists.
 
-builds on [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](#search-as-navigation), [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](#your-reading-your-controls), [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](#reviews-on-the-record), [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](#on-the-record), [Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph](#scrolled-is-not-read), [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](#who-is-speaking), [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](#a-section-for-publishers), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel); continued by [Versions of versions: when a part of the site is big enough to need its own versions, the publishers' section first, and a tree of versions that runs from a page to the API](#versions-of-versions), [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](#the-librarians-daily-brief).
+builds on [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](#search-as-navigation), [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](#your-reading-your-controls), [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](#reviews-on-the-record), [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](#on-the-record), [Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph](#scrolled-is-not-read), [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](#who-is-speaking), [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](#a-section-for-publishers), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel); continued by [The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives](#the-checks-measured), [Versions of versions: when a part of the site is big enough to need its own versions, the publishers' section first, and a tree of versions that runs from a page to the API](#versions-of-versions), [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](#the-librarians-daily-brief).
 
 ## [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](a-section-for-publishers.md)
 
@@ -1199,7 +3717,7 @@ A publishers page written once falls behind a site that changes daily, so the ne
 
 > Every fix here is a rule with a reason, in a file anyone can read What building it showed.
 
-builds on [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](#your-reading-your-controls), [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](#search-as-navigation), [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](#reviews-on-the-record), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read); continued by [Versions of versions: when a part of the site is big enough to need its own versions, the publishers' section first, and a tree of versions that runs from a page to the API](#versions-of-versions), [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far).
+builds on [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](#your-reading-your-controls), [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](#search-as-navigation), [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](#reviews-on-the-record), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read); continued by [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](#a-newsroom-for-one), [Versions of versions: when a part of the site is big enough to need its own versions, the publishers' section first, and a tree of versions that runs from a page to the API](#versions-of-versions), [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far).
 
 ## [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](three-linkedin-pages.md)
 
@@ -1348,7 +3866,7 @@ Editing from a chat loses the page, the version and the sentence; an editor key 
 
 > The agent can then say, for every article, whether the version that is live is the version I signed off. Why sign-offs.
 
-builds on [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom](#fix-the-page-yourself), [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](#how-cheap-is-it-to-undo), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults); continued by [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far), [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](#search-as-navigation), [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](#reviews-on-the-record), [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](#on-the-record).
+builds on [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom](#fix-the-page-yourself), [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](#how-cheap-is-it-to-undo), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults); continued by [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](#a-pen-and-a-key), [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](#messaging-fs), [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](#the-user-keeps-the-meter), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far), [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](#search-as-navigation), [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](#reviews-on-the-record), [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](#on-the-record).
 
 ## [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](the-code-you-do-not-ship.md)
 
@@ -1379,7 +3897,7 @@ The future of software is removing functionality: the minimal viable code path f
 
 > That is the point: the capability is gone, not just unused. The measurement.
 
-builds on [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph), [The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool](#the-minimum-code-below), [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](#software-vendors-as-villagers), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](#the-eyeballs-get-cheap), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints), [A minimal viable browser: why Firefox is the one that can build it, and what it would take](#a-minimal-viable-browser), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent); continued by [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](#the-no-server-startup), [Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour](#ephemeral-town-planner-services), [A minimal viable browser: why Firefox is the one that can build it, and what it would take](#a-minimal-viable-browser).
+builds on [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph), [The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool](#the-minimum-code-below), [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](#software-vendors-as-villagers), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](#the-eyeballs-get-cheap), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints), [A minimal viable browser: why Firefox is the one that can build it, and what it would take](#a-minimal-viable-browser), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent); continued by [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](#the-attack-surface-you-do-not-have), [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](#the-open-security-summit-and-its-debt), [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](#jobs-that-never-scaled), [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](#the-no-server-startup), [Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour](#ephemeral-town-planner-services), [A minimal viable browser: why Firefox is the one that can build it, and what it would take](#a-minimal-viable-browser).
 
 ## [Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines](cloudflare-as-lego-blocks.md)
 
@@ -1470,7 +3988,7 @@ An Agent Behaviour Policy writes down, for one agent in one deployment, what it 
 
 > The policy is the description; the runtime is the enforcer; the barrier column says which rules have one. On real time.
 
-builds on [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](#our-first-pr-in-ruflo), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement); continued by [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](#the-man-behind-the-curtain), [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](#reviews-on-the-record), [A minimal viable browser: why Firefox is the one that can build it, and what it would take](#a-minimal-viable-browser).
+builds on [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](#our-first-pr-in-ruflo), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement); continued by [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](#who-carries-the-risk), [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](#a-payout-for-every-row), [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against](#drift-is-the-mandate-moving), [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](#an-analysts-blueprint-for-riskmandate), [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](#behaviour-policies-from-the-checks), [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](#aws-from-the-vault), [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](#the-man-behind-the-curtain), [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](#reviews-on-the-record), [A minimal viable browser: why Firefox is the one that can build it, and what it would take](#a-minimal-viable-browser).
 
 ## [Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot](free-models-your-own-key.md)
 
@@ -1529,7 +4047,7 @@ The twin runs Northstar's refunds as a deterministic simulation in a vault: thir
 
 > a cap at what was paid cannot tell $132 from $120. Only the expected amount can. What a cap misses.
 
-builds on [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents); continued by [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right).
+builds on [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents); continued by [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right).
 
 ## [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](allowed-is-not-right.md)
 
@@ -1560,7 +4078,7 @@ A behaviour policy answers SECURE but cannot answer VERIFY, because proving the 
 
 > So I would put his question to a team in two halves. Show me the cases. And show me who signed. The answer to his last question.
 
-builds on [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement), [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](#the-policy-guards-the-door), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](#inside-the-northstar-twin), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude), [Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source](#agency-is-not-a-yes); continued by [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](#inside-the-northstar-twin), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped).
+builds on [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement), [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](#the-policy-guards-the-door), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](#inside-the-northstar-twin), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude), [Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source](#agency-is-not-a-yes); continued by [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](#inside-the-northstar-twin), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped).
 
 ## [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](your-reading-your-controls.md)
 
@@ -1590,7 +4108,7 @@ Once Dinis decided that a reader pays for what they read and not for what they s
 
 > A summary knows when it is out of date. Why a correction to an article cannot leave its summary lying.
 
-builds on [Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph](#scrolled-is-not-read), [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](#the-tokens-hook), [A meter in the browser: a penny a page, a history you keep, and a site that picks for you](#a-meter-in-the-browser); continued by [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers), [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](#a-browser-for-one), [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](#who-is-speaking), [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far), [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](#a-section-for-publishers).
+builds on [Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph](#scrolled-is-not-read), [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](#the-tokens-hook), [A meter in the browser: a penny a page, a history you keep, and a site that picks for you](#a-meter-in-the-browser); continued by [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](#a-newsroom-for-one), [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers), [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](#a-browser-for-one), [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](#who-is-speaking), [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far), [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](#a-section-for-publishers).
 
 ## [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](three-policies-for-an-agent.md)
 
@@ -1620,7 +4138,7 @@ An agent needs three policies, not one: behaviour, decision and workflow, meetin
 
 > Zoom further and each of those has cells of its own. The fractal.
 
-builds on [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](#our-first-pr-in-ruflo), [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](#the-policy-guards-the-door), [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](#how-cheap-is-it-to-undo), [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source](#agency-is-not-a-yes); continued by [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit), [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](#reviews-on-the-record), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel), [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](#the-code-you-do-not-ship), [A minimal viable browser: why Firefox is the one that can build it, and what it would take](#a-minimal-viable-browser), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude).
+builds on [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](#our-first-pr-in-ruflo), [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](#the-policy-guards-the-door), [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](#how-cheap-is-it-to-undo), [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source](#agency-is-not-a-yes); continued by [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](#the-riskmandate-roadmap), [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit), [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](#reviews-on-the-record), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel), [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](#the-code-you-do-not-ship), [A minimal viable browser: why Firefox is the one that can build it, and what it would take](#a-minimal-viable-browser), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude).
 
 ## [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](three-decisions-mapped.md)
 
@@ -1649,7 +4167,7 @@ Mapping three scenarios element by element, with five states each, shows behavio
 
 > It should be a decision policy: The newsroom's unwritten decision.
 
-builds on [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](#our-first-pr-in-ruflo), [What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held](#what-if-an-agent-loses-its-workspace), [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](#the-policy-guards-the-door), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](#how-cheap-is-it-to-undo), [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement), [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude), [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](#your-agents-logs-are-a-self-report); continued by [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude).
+builds on [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](#our-first-pr-in-ruflo), [What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held](#what-if-an-agent-loses-its-workspace), [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](#the-policy-guards-the-door), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](#how-cheap-is-it-to-undo), [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement), [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude), [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](#your-agents-logs-are-a-self-report); continued by [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](#the-delegation-record), [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude).
 
 ## [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](case-law-for-agents.md)
 
@@ -1679,7 +4197,7 @@ Decision policies handle unpredicted cases the way common law does: principles f
 
 > Most agent systems keep a log of what happened; a precedent needs more: The record.
 
-builds on [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude), [Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source](#agency-is-not-a-yes), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](#the-policy-guards-the-door), [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](#your-agents-logs-are-a-self-report), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent); continued by [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](#inside-the-northstar-twin), [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude).
+builds on [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude), [Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source](#agency-is-not-a-yes), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](#the-policy-guards-the-door), [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](#your-agents-logs-are-a-self-report), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent); continued by [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](#the-delegation-record), [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](#inside-the-northstar-twin), [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude).
 
 ## [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](approve-at-altitude.md)
 
@@ -1709,7 +4227,7 @@ Decision policies scale through the fractal: decisions exist at every altitude, 
 
 > Each sign-off is small, because each level only has to read its own level. Why it scales.
 
-builds on [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source](#agency-is-not-a-yes), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement), [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](#commanders-intent-is-a-behaviour-policy), [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph); continued by [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents).
+builds on [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source](#agency-is-not-a-yes), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement), [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](#commanders-intent-is-a-behaviour-policy), [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph); continued by [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](#allowed-is-not-right), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents).
 
 ## [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](our-first-pr-in-ruflo.md)
 
@@ -1739,7 +4257,7 @@ A proof of concept, a one-file documentation pull request, a maintainer's merge 
 
 > Ruflo merged first. The next merge is ours to make, after a review. The open piece.
 
-builds on [Agentics, ready to sell: what we showed at Agentic Engineering Live, who else is selling agentic services and at what price, the engagement path, and a marketplace for the consultants who deliver it](#agentics-ready-to-sell), [What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held](#what-if-an-agent-loses-its-workspace), [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](#when-is-the-vault-actually-used), [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](#the-policy-guards-the-door); continued by [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](#the-librarians-daily-brief), [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped).
+builds on [Agentics, ready to sell: what we showed at Agentic Engineering Live, who else is selling agentic services and at what price, the engagement path, and a marketplace for the consultants who deliver it](#agentics-ready-to-sell), [What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held](#what-if-an-agent-loses-its-workspace), [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](#when-is-the-vault-actually-used), [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](#the-policy-guards-the-door); continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](#the-librarians-daily-brief), [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped).
 
 ## [Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom](fix-the-page-yourself.md)
 
@@ -1948,7 +4466,7 @@ How far a reader scrolled is not how much they read, so the newsroom now keeps b
 
 > Scrolling past is cheap. Attention is not. The one line from the research that the design rests on.
 
-builds on [A meter in the browser: a penny a page, a history you keep, and a site that picks for you](#a-meter-in-the-browser), [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter), [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](#dark-mode-and-four-more), [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](#the-tokens-hook); continued by [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far), [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](#your-reading-your-controls), [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](#i-just-want-to-buy-the-article).
+builds on [A meter in the browser: a penny a page, a history you keep, and a site that picks for you](#a-meter-in-the-browser), [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter), [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](#dark-mode-and-four-more), [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](#the-tokens-hook); continued by [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](#a-newsroom-for-one), [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far), [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](#your-reading-your-controls), [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](#i-just-want-to-buy-the-article).
 
 ## [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](the-fork-next-door.md)
 
@@ -2009,7 +4527,7 @@ We study survivors, so the question is why one founder was chosen over another w
 
 > Replaceability is not an accident of venture capital; it is designed in. What the contracts show.
 
-builds on [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](#why-i-love-wardley-maps), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door); continued by [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](#the-exit-is-when-you-sell-control), [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](#a-small-slice-sets-the-price), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue).
+builds on [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](#why-i-love-wardley-maps), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door); continued by [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](#investor-sgit-ai), [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](#the-exit-is-when-you-sell-control), [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](#a-small-slice-sets-the-price), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue).
 
 ## [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](sell-dont-issue.md)
 
@@ -2039,7 +4557,7 @@ A founder with a working, profitable product and competing investors can sell ex
 
 > the fork disciplines the founder because it is possible, and protects the founder because it is slow. Why the fork balances.
 
-builds on [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value); continued by [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](#the-exit-is-when-you-sell-control), [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](#a-small-slice-sets-the-price), [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder).
+builds on [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value); continued by [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](#investor-sgit-ai), [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](#the-exit-is-when-you-sell-control), [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](#a-small-slice-sets-the-price), [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder).
 
 ## [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](research-delivered-as-a-vault.md)
 
@@ -2125,7 +4643,7 @@ The vault the newsroom's ten agents share, 1,295 commits, 5,281 files and 35,000
 
 > So sgit is not the bottleneck; the distance to the storage is. Where the time goes.
 
-builds on [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit); continued by [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](#when-is-the-vault-actually-used), [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit).
+builds on [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit); continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit), [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](#when-is-the-vault-actually-used), [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit).
 
 ## [Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later](portugal-and-europe-2025.md)
 
@@ -2379,7 +4897,7 @@ What is called vibe coding is explorers at work, in Wardley's sense: everyone wi
 
 > A working app says what its user wants better than any document, because it runs. Why it is the best brief.
 
-builds on [The SaaS apocalypse will be decided by inertia, not by AI](#saas-apocalypse-decided-by-inertia-not-by-ai), [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](#custom-uis-are-not-the-exception), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [If somebody built a company on code review: how I would do it, and why it is only now possible](#if-somebody-built-a-company-on-code-review), [Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering](#agentic-cost-is-an-engineering-problem), [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](#software-vendors-as-villagers), [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](#a-custom-firefox-of-my-own); continued by [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers), [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](#the-exit-is-when-you-sell-control), [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](#the-no-server-startup), [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](#you-are-a-developer), [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](#generation-z-developers-again), [Act as the job you want: if you are looking for a job, you have time, so do the work in public, make it linkable, and let the people who want to help you help you](#act-as-the-job-you-want), [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](#hired-for-the-workflow), [Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour](#ephemeral-town-planner-services), [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](#a-browser-for-one), [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](#the-code-you-do-not-ship), [Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom](#fix-the-page-yourself), [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](#who-will-fix-your-mess), [GenAI in Portuguese, 2024: my OWASP Global AppSec talk in Lisbon, the first public demo of The Cyber Boardroom, slide by slide, with what two years of agents have confirmed and changed](#portugal-2024-genai-in-portuguese), [Hacking Portugal, 2016: my BSidesLisbon keynote and the book that stopped at 95%, slide by slide, with what holds ten years later and what a new edition needs](#portugal-2016-hacking-portugal), [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](#software-vendors-as-villagers), [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](#a-custom-firefox-of-my-own).
+builds on [The SaaS apocalypse will be decided by inertia, not by AI](#saas-apocalypse-decided-by-inertia-not-by-ai), [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](#custom-uis-are-not-the-exception), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [If somebody built a company on code review: how I would do it, and why it is only now possible](#if-somebody-built-a-company-on-code-review), [Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering](#agentic-cost-is-an-engineering-problem), [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](#software-vendors-as-villagers), [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](#a-custom-firefox-of-my-own); continued by [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](#the-open-security-summit-and-its-debt), [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](#programming-taught-upside-down), [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers), [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](#the-exit-is-when-you-sell-control), [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](#the-no-server-startup), [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](#you-are-a-developer), [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](#generation-z-developers-again), [Act as the job you want: if you are looking for a job, you have time, so do the work in public, make it linkable, and let the people who want to help you help you](#act-as-the-job-you-want), [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](#hired-for-the-workflow), [Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour](#ephemeral-town-planner-services), [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](#a-browser-for-one), [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](#the-code-you-do-not-ship), [Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom](#fix-the-page-yourself), [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](#who-will-fix-your-mess), [GenAI in Portuguese, 2024: my OWASP Global AppSec talk in Lisbon, the first public demo of The Cyber Boardroom, slide by slide, with what two years of agents have confirmed and changed](#portugal-2024-genai-in-portuguese), [Hacking Portugal, 2016: my BSidesLisbon keynote and the book that stopped at 95%, slide by slide, with what holds ten years later and what a new edition needs](#portugal-2016-hacking-portugal), [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](#software-vendors-as-villagers), [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](#a-custom-firefox-of-my-own).
 
 ## [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](a-custom-firefox-of-my-own.md)
 
@@ -2467,7 +4985,7 @@ Agents broke Git's offline, full-clone assumptions at Anthropic, which built Sci
 
 > by no means a suitable replacement for git for general use Scion's own status.
 
-builds on [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [Git for things you cannot put on GitHub](#what-sgit-is); continued by [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints).
+builds on [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [Git for things you cannot put on GitHub](#what-sgit-is); continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit), [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints).
 
 ## [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](your-agents-logs-are-a-self-report.md)
 
@@ -2527,7 +5045,7 @@ The reader's vault became something a reader can see into and tidy: devices merg
 
 > The viewer's code lives once. the whole of the vault-in-vault technique in five words
 
-builds on [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](#the-vault-crosses-chrome-profiles), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too); continued by [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](#who-is-speaking), [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](#i-just-want-to-buy-the-article).
+builds on [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](#the-vault-crosses-chrome-profiles), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too); continued by [The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed](#the-reading-account-as-built), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](#who-is-speaking), [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](#i-just-want-to-buy-the-article).
 
 ## [The AI Conference 2026, read for agent governance: six claims traced, five disagreements, and what the speaker notes say that the slides do not](the-ai-conference-read-for-governance.md)
 
@@ -2685,7 +5203,7 @@ For twenty years the winning startup was often a clever outsider who found a pai
 
 > Prior experience in the specific industry predicts much greater rates of entrepreneurial success. The data on experts.
 
-builds on [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](#omnichannel-programming), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not](#riskmandate-ten-questions), [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](#the-eyeballs-get-cheap); continued by [When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure](#when-the-customer-becomes-the-commodity), [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company), [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](#who-will-fix-your-mess), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom).
+builds on [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](#omnichannel-programming), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not](#riskmandate-ten-questions), [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](#the-eyeballs-get-cheap); continued by [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](#jobs-that-never-scaled), [When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure](#when-the-customer-becomes-the-commodity), [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company), [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](#who-will-fix-your-mess), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom).
 
 ## [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](omnichannel-programming.md)
 
@@ -2714,7 +5232,7 @@ Programming has become multichannel: voice memos, chat, phones, IDEs, pull reque
 
 > Every channel left its trace in the same place. Why the session could be counted.
 
-builds on [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](#the-scripted-talk), [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](#my-memory-checked), [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](#custom-uis-are-not-the-exception), [Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it](#explorer-to-villager-newsroom), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [The homepage is a vault: a fresh edition every morning, every past homepage one commit away, served from plain files, and a brief for the agent that builds it](#the-homepage-is-a-vault); continued by [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders).
+builds on [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](#the-scripted-talk), [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](#my-memory-checked), [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](#custom-uis-are-not-the-exception), [Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it](#explorer-to-villager-newsroom), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [The homepage is a vault: a fresh edition every morning, every past homepage one commit away, served from plain files, and a brief for the agent that builds it](#the-homepage-is-a-vault); continued by [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](#programming-taught-upside-down), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders).
 
 ## [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](secrets-on-public-keys.md)
 
@@ -2743,7 +5261,7 @@ secrets.sgit.ai, a site whose app was never built but whose design already share
 
 > Public keys remove the need to move a secret key at all. The principle.
 
-builds on [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value); continued by [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](#omnichannel-programming).
+builds on [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value); continued by [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](#the-push-is-the-authorisation), [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](#the-human-is-the-network), [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](#a-secret-is-a-qr-code), [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](#the-user-keeps-the-meter), [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](#omnichannel-programming).
 
 ## [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](handing-secrets-to-agents.md)
 
@@ -2773,7 +5291,7 @@ Giving vault keys to browsers and scheduled agent sessions is the current pain, 
 
 > The agent is never shown the secret, and never asked to be careful with it. The answer to the refusals.
 
-builds on [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](#the-tokens-hook); continued by [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](#omnichannel-programming), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys).
+builds on [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](#the-tokens-hook); continued by [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](#the-human-is-the-network), [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](#a-secret-is-a-qr-code), [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](#omnichannel-programming), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys).
 
 ## [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](my-memory-checked.md)
 
@@ -2833,7 +5351,7 @@ SG/Send began as file sharing where the server holds nothing, went live five day
 
 > Users buy credits, test once, and don't come back. Credits sit unused. What the market said, already on 5 March.
 
-builds on [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was](#how-much-of-this-did-i-write), [Git for things you cannot put on GitHub](#what-sgit-is), [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](#the-agent-team-as-it-runs); continued by [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](#the-librarians-daily-brief), [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [A minimal viable browser: why Firefox is the one that can build it, and what it would take](#a-minimal-viable-browser), [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](#my-memory-checked).
+builds on [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was](#how-much-of-this-did-i-write), [Git for things you cannot put on GitHub](#what-sgit-is), [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](#the-agent-team-as-it-runs); continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](#the-librarians-daily-brief), [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [A minimal viable browser: why Firefox is the one that can build it, and what it would take](#a-minimal-viable-browser), [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](#my-memory-checked).
 
 ## [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](the-scripted-talk.md)
 
@@ -2926,7 +5444,7 @@ Cedar, open-sourced by AWS in 2023, in the CNCF Sandbox since October 2025 and u
 
 > A forbid that cannot be evaluated fails open. The sharp edge the demo found.
 
-builds on [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](#commanders-intent-is-a-behaviour-policy), [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies), [Footprint and blast radius: what the agent actually did, and what it would have cost](#footprint-and-blast-radius), [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](#skill-behaviour-policy), [Zoom into an agent's behaviour policy and you find the business logic](#the-behaviour-policy-is-the-business-logic), [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs), [The same argument, in our words: Satya Nadella on models as insider risks, translated into the language of RiskMandate](#the-same-argument-in-our-words), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](#the-policy-draws-the-liability-line); continued by [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests).
+builds on [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](#commanders-intent-is-a-behaviour-policy), [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies), [Footprint and blast radius: what the agent actually did, and what it would have cost](#footprint-and-blast-radius), [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](#skill-behaviour-policy), [Zoom into an agent's behaviour policy and you find the business logic](#the-behaviour-policy-is-the-business-logic), [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs), [The same argument, in our words: Satya Nadella on models as insider risks, translated into the language of RiskMandate](#the-same-argument-in-our-words), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](#the-policy-draws-the-liability-line); continued by [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](#an-analysts-blueprint-for-riskmandate), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests).
 
 ## [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](the-citizen-developer.md)
 
@@ -2955,7 +5473,7 @@ Citizen developers, the employees, owners and experts who now build full applica
 
 > Of 54 spreadsheets audited between 1997 and 2000, no fewer than 49 were found to contain significant errors How badly the old tool served its builders.
 
-builds on [The SaaS apocalypse will be decided by inertia, not by AI](#saas-apocalypse-decided-by-inertia-not-by-ai), [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](#why-i-love-wardley-maps), [Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it](#explorer-to-villager-newsroom), [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](#the-eyeballs-get-cheap), [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](#custom-uis-are-not-the-exception), [Git for things you cannot put on GitHub](#what-sgit-is), [Sovereignty is the ability to move: play where the ball is going, take away the dot, and keep a twin that works](#sovereignty-is-the-ability-to-move), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value); continued by [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](#you-are-a-developer), [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](#hired-for-the-workflow), [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](#who-will-fix-your-mess), [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](#software-vendors-as-villagers), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders).
+builds on [The SaaS apocalypse will be decided by inertia, not by AI](#saas-apocalypse-decided-by-inertia-not-by-ai), [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](#why-i-love-wardley-maps), [Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it](#explorer-to-villager-newsroom), [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](#the-eyeballs-get-cheap), [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](#custom-uis-are-not-the-exception), [Git for things you cannot put on GitHub](#what-sgit-is), [Sovereignty is the ability to move: play where the ball is going, take away the dot, and keep a twin that works](#sovereignty-is-the-ability-to-move), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value); continued by [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](#programming-taught-upside-down), [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](#you-are-a-developer), [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](#hired-for-the-workflow), [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](#who-will-fix-your-mess), [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](#software-vendors-as-villagers), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders).
 
 ## [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](paying-after-the-value.md)
 
@@ -2985,7 +5503,7 @@ Subscriptions, gym memberships and annual donations ask people to pay at the mom
 
 > Your balance can go below zero and stay there; nothing is blocked and nothing nags. The rule that makes the experiment different.
 
-builds on [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter), [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona); continued by [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers), [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](#the-no-server-startup), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [Two years in, the opposite: an essay about burning out on AI that I could not buy, and why my two years of AI have been the most productive of my career](#two-years-in-the-opposite), [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](#a-book-for-one-reader), [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](#i-just-want-to-buy-the-article), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer).
+builds on [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks](#going-live-with-the-reading-meter), [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona); continued by [The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed](#the-reading-account-as-built), [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](#the-user-keeps-the-meter), [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers), [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](#the-no-server-startup), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [Two years in, the opposite: an essay about burning out on AI that I could not buy, and why my two years of AI have been the most productive of my career](#two-years-in-the-opposite), [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](#a-book-for-one-reader), [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](#i-just-want-to-buy-the-article), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer).
 
 ## [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](the-eyeballs-get-cheap.md)
 
@@ -3048,7 +5566,7 @@ Sondera argues that agents do not go rogue but fill unstated gaps, so limits mus
 
 > So limits have to be written about effects, not actions. The method both sides share.
 
-builds on [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs), [The same argument, in our words: Satya Nadella on models as insider risks, translated into the language of RiskMandate](#the-same-argument-in-our-words), [Footprint and blast radius: what the agent actually did, and what it would have cost](#footprint-and-blast-radius), [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement), [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies), [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](#how-cheap-is-it-to-undo), [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](#skill-behaviour-policy), [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](#the-policy-draws-the-liability-line), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [Zoom into an agent's behaviour policy and you find the business logic](#the-behaviour-policy-is-the-business-logic), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first); continued by [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault).
+builds on [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs), [The same argument, in our words: Satya Nadella on models as insider risks, translated into the language of RiskMandate](#the-same-argument-in-our-words), [Footprint and blast radius: what the agent actually did, and what it would have cost](#footprint-and-blast-radius), [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement), [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies), [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](#how-cheap-is-it-to-undo), [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](#skill-behaviour-policy), [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](#the-policy-draws-the-liability-line), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [Zoom into an agent's behaviour policy and you find the business logic](#the-behaviour-policy-is-the-business-logic), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first); continued by [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](#an-analysts-blueprint-for-riskmandate), [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](#approve-at-altitude), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault).
 
 ## [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](skill-behaviour-policy.md)
 
@@ -3143,7 +5661,7 @@ Agents that work together can use an ephemeral encrypted vault as shared memory,
 
 > the vault's key stays in the HOST; your frame never sees it How a vault app watches agents without holding the key.
 
-builds on [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes](#encrypted-memory-for-isolated-agents), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps](#sgit-actions-side-by-side); continued by [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault).
+builds on [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes](#encrypted-memory-for-isolated-agents), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps](#sgit-actions-side-by-side); continued by [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](#messaging-fs), [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](#aws-from-the-vault), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault).
 
 ## [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](hooks-are-kernel-code.md)
 
@@ -3175,7 +5693,7 @@ Agent hooks are tiny but run on every matching action with the user's permission
 
 > The blast radius of a change is the climb from the methods it touched to the stories that can reach them How a hook change is measured.
 
-builds on [Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail](#agent-hooks-october-2026), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Why my agents do not run on my laptop: chat, Cowork and Code in the cloud, a vault as the shared drive, and the two walls an operating system has](#why-my-agents-do-not-run-on-my-laptop), [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph), [Sovereignty is the ability to move: play where the ball is going, take away the dot, and keep a twin that works](#sovereignty-is-the-ability-to-move), [Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in](#chainguard-mapped), [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](#a-policy-for-every-skill), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona); continued by [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](#the-tokens-hook), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault), [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](#commanders-intent-is-a-behaviour-policy), [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](#skill-behaviour-policy).
+builds on [Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail](#agent-hooks-october-2026), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Why my agents do not run on my laptop: chat, Cowork and Code in the cloud, a vault as the shared drive, and the two walls an operating system has](#why-my-agents-do-not-run-on-my-laptop), [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph), [Sovereignty is the ability to move: play where the ball is going, take away the dot, and keep a twin that works](#sovereignty-is-the-ability-to-move), [Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in](#chainguard-mapped), [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](#a-policy-for-every-skill), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read), [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona); continued by [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](#introducing-sharness), [How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing](#how-a-memo-becomes-a-release), [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](#the-tokens-hook), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault), [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](#commanders-intent-is-a-behaviour-policy), [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](#skill-behaviour-policy).
 
 ## [Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in](chainguard-mapped.md)
 
@@ -3339,7 +5857,7 @@ Most agent rules are hope-based security kept by the model; tested rule by rule 
 
 > A hook pack should be a set of independent checks, not a pipeline. What parallel hooks and deny-wins precedence imply.
 
-builds on [Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail](#agent-hooks-october-2026), [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement), [Footprint and blast radius: what the agent actually did, and what it would have cost](#footprint-and-blast-radius), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](#a-policy-for-every-skill); continued by [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](#the-tokens-hook), [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](#commanders-intent-is-a-behaviour-policy), [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](#skill-behaviour-policy), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce](#system-prompts-as-behaviour-policies), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too), [Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail](#agent-hooks-october-2026).
+builds on [Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail](#agent-hooks-october-2026), [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement), [Footprint and blast radius: what the agent actually did, and what it would have cost](#footprint-and-blast-radius), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](#a-policy-for-every-skill); continued by [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](#introducing-sharness), [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](#a-leak-without-breaking-the-policy), [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](#the-tokens-hook), [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](#commanders-intent-is-a-behaviour-policy), [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](#skill-behaviour-policy), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce](#system-prompts-as-behaviour-policies), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too), [Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail](#agent-hooks-october-2026).
 
 ## [Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail](agent-hooks-october-2026.md)
 
@@ -3400,7 +5918,7 @@ An organisation's policies and internal knowledge can be held as a fractal seman
 
 > The maintenance is done by models and verified by code. Who does the work and what checks it.
 
-builds on [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs), [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](#every-link-points-back), [An open AI governance framework, and what its licence let us build](#ai-baseline-control-framework), [The AI governance stack, as a graph: an answer to Hari Kota, built](#the-ai-governance-stack-as-a-graph), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph), [Git for things you cannot put on GitHub](#what-sgit-is), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes](#encrypted-memory-for-isolated-agents), [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies), [Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one](#memory-is-not-a-spectator-sport); continued by [Bringing my past work back: a daily worker that turns eighteen years of essays, talks, posts and tools into linkable articles, and why every team needs one](#bringing-my-past-work-back), [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](#who-will-fix-your-mess), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too).
+builds on [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs), [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](#every-link-points-back), [An open AI governance framework, and what its licence let us build](#ai-baseline-control-framework), [The AI governance stack, as a graph: an answer to Hari Kota, built](#the-ai-governance-stack-as-a-graph), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph), [Git for things you cannot put on GitHub](#what-sgit-is), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes](#encrypted-memory-for-isolated-agents), [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies), [Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one](#memory-is-not-a-spectator-sport); continued by [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](#aws-from-the-vault), [Bringing my past work back: a daily worker that turns eighteen years of essays, talks, posts and tools into linkable articles, and why every team needs one](#bringing-my-past-work-back), [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](#who-will-fix-your-mess), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too).
 
 ## [The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool](the-minimum-code-below.md)
 
@@ -3431,7 +5949,7 @@ Bottom-up hardening still leaves code the application never runs, so security sh
 
 > a vulnerability in removed code is not a patch to apply; it is a line in the record saying the code is absent Why minimisation becomes assurance.
 
-builds on [Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent](#attacks-rewritten-as-mandates), [If somebody built a company on code review: how I would do it, and why it is only now possible](#if-somebody-built-a-company-on-code-review), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs); continued by [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](#the-code-you-do-not-ship), [Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines](#cloudflare-as-lego-blocks), [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](#the-eyeballs-get-cheap), [Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in](#chainguard-mapped).
+builds on [Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent](#attacks-rewritten-as-mandates), [If somebody built a company on code review: how I would do it, and why it is only now possible](#if-somebody-built-a-company-on-code-review), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs); continued by [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](#the-attack-surface-you-do-not-have), [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](#jobs-that-never-scaled), [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](#the-code-you-do-not-ship), [Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines](#cloudflare-as-lego-blocks), [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](#the-eyeballs-get-cheap), [Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in](#chainguard-mapped).
 
 ## [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](a-policy-for-every-skill.md)
 
@@ -3491,7 +6009,7 @@ Policy as code answers whether a request is allowed, while an Agent Behaviour Po
 
 > That is the paper policy, scattered through the code. What reverse engineering collects.
 
-builds on [Footprint and blast radius: what the agent actually did, and what it would have cost](#footprint-and-blast-radius), [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](#the-policy-draws-the-liability-line), [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies), [An open AI governance framework, and what its licence let us build](#ai-baseline-control-framework), [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](#four-frameworks-one-agent), [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs), [Zoom into an agent's behaviour policy and you find the business logic](#the-behaviour-policy-is-the-business-logic), [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement), [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](#the-human-in-the-loop); continued by [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault), [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](#commanders-intent-is-a-behaviour-policy), [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](#skill-behaviour-policy), [System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce](#system-prompts-as-behaviour-policies), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief](#knowledge-that-maintains-itself), [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](#a-policy-for-every-skill).
+builds on [Footprint and blast radius: what the agent actually did, and what it would have cost](#footprint-and-blast-radius), [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](#the-policy-draws-the-liability-line), [Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not](#re-anchoring-agent-behaviour-policies), [An open AI governance framework, and what its licence let us build](#ai-baseline-control-framework), [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](#four-frameworks-one-agent), [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](#introducing-fractal-semantic-graphs), [Zoom into an agent's behaviour policy and you find the business logic](#the-behaviour-policy-is-the-business-logic), [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement), [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](#the-human-in-the-loop); continued by [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](#behaviour-policies-from-the-checks), [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault), [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](#commanders-intent-is-a-behaviour-policy), [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](#skill-behaviour-policy), [System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce](#system-prompts-as-behaviour-policies), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief](#knowledge-that-maintains-itself), [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](#a-policy-for-every-skill).
 
 ## [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](sgit-in-a-ci-pipeline.md)
 
@@ -3584,7 +6102,7 @@ Every incident in a public ledger of 28 supply-chain attacks is a credential, ta
 
 > it is a defence against everyone else's missing mandate Why the consumer side, good as it is, is not the whole answer.
 
-builds on [Footprint and blast radius: what the agent actually did, and what it would have cost](#footprint-and-blast-radius), [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement), [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](#a-policy-beside-the-prompt), [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](#the-policy-draws-the-liability-line), [Git for things you cannot put on GitHub](#what-sgit-is), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault); continued by [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit), [Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in](#chainguard-mapped), [The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool](#the-minimum-code-below), [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](#a-policy-for-every-skill), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline).
+builds on [Footprint and blast radius: what the agent actually did, and what it would have cost](#footprint-and-blast-radius), [Hope or enforcement: one customer service agent, three designs, and who keeps each promise](#hope-or-enforcement), [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](#a-policy-beside-the-prompt), [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](#the-policy-draws-the-liability-line), [Git for things you cannot put on GitHub](#what-sgit-is), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault); continued by [The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent](#the-key-is-not-the-risk), [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit), [Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in](#chainguard-mapped), [The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool](#the-minimum-code-below), [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](#a-policy-for-every-skill), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline).
 
 ## [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](four-frameworks-one-agent.md)
 
@@ -3678,7 +6196,7 @@ Notes and reads that only existed in a browser without my passkeys showed the nu
 
 > In real use they are the difference between a workflow and a workaround. The cost of small connector limits.
 
-builds on [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [Before you give an agent a connector, give the connector a twin](#connector-twin-before-you-deploy-an-agent), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Six agents, one inbox: what a real multi-agent setup taught me about access policies](#six-agents-one-inbox), [The wall under the reply: end an email with the state of the thread, not the thread](#the-wall-under-the-reply), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault); continued by [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel), [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](#the-vault-opened), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](#every-link-points-back).
+builds on [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [Before you give an agent a connector, give the connector a twin](#connector-twin-before-you-deploy-an-agent), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Six agents, one inbox: what a real multi-agent setup taught me about access policies](#six-agents-one-inbox), [The wall under the reply: end an email with the state of the thread, not the thread](#the-wall-under-the-reply), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault); continued by [The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed](#the-reading-account-as-built), [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](#the-human-is-the-network), [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](#a-secret-is-a-qr-code), [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel), [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](#the-vault-opened), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](#every-link-points-back).
 
 ## [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](how-cheap-is-it-to-undo.md)
 
@@ -3706,7 +6224,7 @@ Whether an agent's output needs a person is a position on a spectrum with two ax
 
 > A change you can roll back is a two-way door; the work of a release pipeline is to keep it one. Why the newsroom's pipeline is what keeps it on the cheap side of the spectrum.
 
-builds on [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](#the-human-in-the-loop), [Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it](#explorer-to-villager-newsroom), [A second reader the agent cannot skip: how two wrong emails became a gate on every draft](#a-second-reader-the-agent-cannot-skip); continued by [How the newsletter is made: twenty-three articles, three issues, and every quote checked, written by the agent that makes it](#how-the-newsletter-is-made), [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](#who-is-speaking), [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](#reviews-on-the-record), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](#who-will-fix-your-mess), [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](#commanders-intent-is-a-behaviour-policy), [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](#four-frameworks-one-agent), [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](#every-link-points-back), [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](#the-human-in-the-loop).
+builds on [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](#the-human-in-the-loop), [Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it](#explorer-to-villager-newsroom), [A second reader the agent cannot skip: how two wrong emails became a gate on every draft](#a-second-reader-the-agent-cannot-skip); continued by [Connect your dots backwards: a look-back interview with your LLM, for founders, to find the non-linear path, the doors that were not what they seemed, and where a startup may be hiding](#connect-your-dots-backwards), [How the newsletter is made: twenty-three articles, three issues, and every quote checked, written by the agent that makes it](#how-the-newsletter-is-made), [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](#who-is-speaking), [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](#reviews-on-the-record), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](#who-will-fix-your-mess), [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](#commanders-intent-is-a-behaviour-policy), [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](#four-frameworks-one-agent), [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](#every-link-points-back), [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](#the-human-in-the-loop).
 
 ## [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](the-human-in-the-loop.md)
 
@@ -4437,7 +6955,7 @@ A vault is the right interface between two agents that never share a session: th
 
 > Publishing a read key is publishing everything the key opens, for good, and you do not do that on trust. Why the site read the whole vault first.
 
-builds on [The future of news is the story vault, not the paywall](#future-of-news-story-vault-not-paywall), [Every mistake added a rule: complexity, agents, and the way back to shipping](#every-mistake-added-a-rule), [Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next](#where-the-vault-keys-live), [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault); continued by [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too), [Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief](#knowledge-that-maintains-itself), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [The homepage is a vault: a fresh edition every morning, every past homepage one commit away, served from plain files, and a brief for the agent that builds it](#the-homepage-is-a-vault), [Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent](#attacks-rewritten-as-mandates), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live).
+builds on [The future of news is the story vault, not the paywall](#future-of-news-story-vault-not-paywall), [Every mistake added a rule: complexity, agents, and the way back to shipping](#every-mistake-added-a-rule), [Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next](#where-the-vault-keys-live), [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault); continued by [A desk anyone can open: the PHP story's work and who did it, nine names with their responsibilities, and an evidence vault anyone can now read, scanned before its key was published](#a-desk-anyone-can-open), [Capture first: how a BBC live page at breakfast became an evidence vault, a section here and a site of its own by lunchtime, for a story that was still changing as we covered it](#capture-first), [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults), [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](#the-agents-write-too), [Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief](#knowledge-that-maintains-itself), [sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job](#sgit-in-a-ci-pipeline), [The homepage is a vault: a fresh edition every morning, every past homepage one commit away, served from plain files, and a brief for the agent that builds it](#the-homepage-is-a-vault), [Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent](#attacks-rewritten-as-mandates), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live).
 
 ## [The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs](the-article-remains-a-product.md)
 
@@ -4494,7 +7012,7 @@ The newsroom's reader features are live and taking money, but bundled with the c
 
 > Same bytes served. How the move is proved.
 
-builds on [If somebody built a company on code review: how I would do it, and why it is only now possible](#if-somebody-built-a-company-on-code-review), [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [Brief the agent too: the people I talk to work with agents, so what I send has to reach both](#brief-the-agent-too), [Green does not mean live](#green-does-not-mean-live), [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](#how-to-run-synthetic-users); continued by [How the newsletter is made: twenty-three articles, three issues, and every quote checked, written by the agent that makes it](#how-the-newsletter-is-made), [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](#omnichannel-programming), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](#how-cheap-is-it-to-undo), [Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch](#move-the-cloud-not-the-code), [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](#places-of-highest-leverage), [Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering](#agentic-cost-is-an-engineering-problem).
+builds on [If somebody built a company on code review: how I would do it, and why it is only now possible](#if-somebody-built-a-company-on-code-review), [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [Brief the agent too: the people I talk to work with agents, so what I send has to reach both](#brief-the-agent-too), [Green does not mean live](#green-does-not-mean-live), [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](#how-to-run-synthetic-users); continued by [Capture first: how a BBC live page at breakfast became an evidence vault, a section here and a site of its own by lunchtime, for a story that was still changing as we covered it](#capture-first), [How the newsletter is made: twenty-three articles, three issues, and every quote checked, written by the agent that makes it](#how-the-newsletter-is-made), [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](#omnichannel-programming), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](#how-cheap-is-it-to-undo), [Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch](#move-the-cloud-not-the-code), [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](#places-of-highest-leverage), [Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering](#agentic-cost-is-an-engineering-problem).
 
 ## [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](the-passkey-opens-the-vault.md)
 
@@ -4611,7 +7129,7 @@ A personal reading list in a URL fragment (from, to, article numbers to read, to
 
 > An article number that never changes is a contract. Why two parts can move independently.
 
-builds on [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona), [A link to a persona: send people to the newsroom as someone, not as nobody](#a-link-to-a-persona), [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer](#rfc-0001-public-key-cryptography-for-sgit), [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](#how-to-run-synthetic-users), [A second reader the agent cannot skip: how two wrong emails became a gate on every draft](#a-second-reader-the-agent-cannot-skip), [The SaaS apocalypse will be decided by inertia, not by AI](#saas-apocalypse-decided-by-inertia-not-by-ai), [The same argument, in our words: Satya Nadella on models as insider risks, translated into the language of RiskMandate](#the-same-argument-in-our-words); continued by [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](#places-of-highest-leverage), [The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs](#the-article-remains-a-product), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [Brief the agent too: the people I talk to work with agents, so what I send has to reach both](#brief-the-agent-too).
+builds on [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona), [A link to a persona: send people to the newsroom as someone, not as nobody](#a-link-to-a-persona), [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer](#rfc-0001-public-key-cryptography-for-sgit), [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](#how-to-run-synthetic-users), [A second reader the agent cannot skip: how two wrong emails became a gate on every draft](#a-second-reader-the-agent-cannot-skip), [The SaaS apocalypse will be decided by inertia, not by AI](#saas-apocalypse-decided-by-inertia-not-by-ai), [The same argument, in our words: Satya Nadella on models as insider risks, translated into the language of RiskMandate](#the-same-argument-in-our-words); continued by [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](#a-newsroom-for-one), [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](#places-of-highest-leverage), [The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs](#the-article-remains-a-product), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [Brief the agent too: the people I talk to work with agents, so what I send has to reach both](#brief-the-agent-too).
 
 ## [A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle](a-model-in-the-tab.md)
 
@@ -4834,7 +7352,7 @@ A link should land a reader as someone rather than as nobody: personas move from
 
 > a persona is a reading list with a history, and you either track the upstream or branch from it. Follow and fork, from git.
 
-builds on [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona); continued by [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](#places-of-highest-leverage), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [Brief the agent too: the people I talk to work with agents, so what I send has to reach both](#brief-the-agent-too), [From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work](#a-reading-list-in-a-link), [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](#the-agent-is-the-reader), [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](#how-to-run-synthetic-users).
+builds on [Pay to keep your persona: readers should pay because it helps them, not because they feel they should](#pay-to-keep-your-persona); continued by [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](#a-newsroom-for-one), [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](#places-of-highest-leverage), [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](#i-miss-it), [Brief the agent too: the people I talk to work with agents, so what I send has to reach both](#brief-the-agent-too), [From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work](#a-reading-list-in-a-link), [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](#the-agent-is-the-reader), [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](#how-to-run-synthetic-users).
 
 ## [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](pay-after-you-read.md)
 
@@ -6266,7 +8784,7 @@ Add two words to the Agent Behaviour Policy: footprint, what the agent actually 
 
 > The footprint is how you get near misses for agents without waiting for the luck to run out. The payoff of reading the footprint against the gap: incidents and near misses are the same events with different luck.
 
-builds on [The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up](#ultimate-insider-three-collisions), [Before you give an agent a connector, give the connector a twin](#connector-twin-before-you-deploy-an-agent), [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](#custom-uis-are-not-the-exception), [Every risk is already accepted. The only question is by whom, and for how long.](#every-risk-is-already-accepted), [Six agents, one inbox: what a real multi-agent setup taught me about access policies](#six-agents-one-inbox); continued by [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit), [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](#research-delivered-as-a-vault), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault), [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](#commanders-intent-is-a-behaviour-policy), [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](#skill-behaviour-policy), [Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in](#chainguard-mapped), [System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce](#system-prompts-as-behaviour-policies), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](#a-policy-for-every-skill), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent](#attacks-rewritten-as-mandates), [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](#four-frameworks-one-agent), [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](#every-link-points-back), [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](#the-human-in-the-loop), [Sovereignty is the ability to move: play where the ball is going, take away the dot, and keep a twin that works](#sovereignty-is-the-ability-to-move), [The records ran out: a fresh agent found the shared contract in two MCP calls, and where sgit and RiskMandate fit at the edges](#the-records-ran-out), [Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch](#move-the-cloud-not-the-code), [Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering](#agentic-cost-is-an-engineering-problem), [Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it](#where-the-platform-draws-the-line), [The same argument, in our words: Satya Nadella on models as insider risks, translated into the language of RiskMandate](#the-same-argument-in-our-words), [Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan](#authority-outside-the-model), [One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece](#one-article-five-readers), [Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not](#riskmandate-ten-questions), [Every mistake added a rule: complexity, agents, and the way back to shipping](#every-mistake-added-a-rule), [Where is the why? A permission prompt asked me to decide, and kept the reason](#where-is-the-why), [The Mandate Stack: a multi-agent system in production, layer by layer](#the-mandate-stack), [Why my agents do not run on my laptop: chat, Cowork and Code in the cloud, a vault as the shared drive, and the two walls an operating system has](#why-my-agents-do-not-run-on-my-laptop), [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](#the-agent-team-as-it-runs), [A personal agent that keeps your secrets: the 2026 agents read through behaviour policy and encryption, and a privacy-first design on vaults, enclaves and the browser](#a-personal-agent-that-keeps-your-secrets), [The investigation GitHub owes its customers: why a global outage of a platform the world deploys through deserves an aviation-style inquiry, and how the evidence could now be gathered](#the-investigation-github-owes-its-customers), [Send an agent, not a spreadsheet: the next generation of software due diligence, and why the companies that stopped reading their code are about to be asked about it](#send-an-agent-not-a-spreadsheet), [If somebody built a company on code review: how I would do it, and why it is only now possible](#if-somebody-built-a-company-on-code-review), [The identity we wanted to give the agents: a week of design, the line in Google's terms, and why login plus secrets is still too hard](#the-identity-we-wanted-to-give-the-agents), [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph), [Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send](#replicating-the-agentic-inbox), [The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up](#ultimate-insider-three-collisions).
+builds on [The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up](#ultimate-insider-three-collisions), [Before you give an agent a connector, give the connector a twin](#connector-twin-before-you-deploy-an-agent), [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](#custom-uis-are-not-the-exception), [Every risk is already accepted. The only question is by whom, and for how long.](#every-risk-is-already-accepted), [Six agents, one inbox: what a real multi-agent setup taught me about access policies](#six-agents-one-inbox); continued by [Capture first: how a BBC live page at breakfast became an evidence vault, a section here and a site of its own by lunchtime, for a story that was still changing as we covered it](#capture-first), [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit), [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](#research-delivered-as-a-vault), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault), [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](#commanders-intent-is-a-behaviour-policy), [A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills](#skill-behaviour-policy), [Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in](#chainguard-mapped), [System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce](#system-prompts-as-behaviour-policies), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](#a-policy-for-every-skill), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent](#attacks-rewritten-as-mandates), [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](#four-frameworks-one-agent), [Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it](#every-link-points-back), [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](#the-human-in-the-loop), [Sovereignty is the ability to move: play where the ball is going, take away the dot, and keep a twin that works](#sovereignty-is-the-ability-to-move), [The records ran out: a fresh agent found the shared contract in two MCP calls, and where sgit and RiskMandate fit at the edges](#the-records-ran-out), [Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch](#move-the-cloud-not-the-code), [Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering](#agentic-cost-is-an-engineering-problem), [Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it](#where-the-platform-draws-the-line), [The same argument, in our words: Satya Nadella on models as insider risks, translated into the language of RiskMandate](#the-same-argument-in-our-words), [Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan](#authority-outside-the-model), [One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece](#one-article-five-readers), [Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not](#riskmandate-ten-questions), [Every mistake added a rule: complexity, agents, and the way back to shipping](#every-mistake-added-a-rule), [Where is the why? A permission prompt asked me to decide, and kept the reason](#where-is-the-why), [The Mandate Stack: a multi-agent system in production, layer by layer](#the-mandate-stack), [Why my agents do not run on my laptop: chat, Cowork and Code in the cloud, a vault as the shared drive, and the two walls an operating system has](#why-my-agents-do-not-run-on-my-laptop), [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](#the-agent-team-as-it-runs), [A personal agent that keeps your secrets: the 2026 agents read through behaviour policy and encryption, and a privacy-first design on vaults, enclaves and the browser](#a-personal-agent-that-keeps-your-secrets), [The investigation GitHub owes its customers: why a global outage of a platform the world deploys through deserves an aviation-style inquiry, and how the evidence could now be gathered](#the-investigation-github-owes-its-customers), [Send an agent, not a spreadsheet: the next generation of software due diligence, and why the companies that stopped reading their code are about to be asked about it](#send-an-agent-not-a-spreadsheet), [If somebody built a company on code review: how I would do it, and why it is only now possible](#if-somebody-built-a-company-on-code-review), [The identity we wanted to give the agents: a week of design, the line in Google's terms, and why login plus secrets is still too hard](#the-identity-we-wanted-to-give-the-agents), [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](#code-review-as-a-fractal-semantic-graph), [Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send](#replicating-the-agentic-inbox), [The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up](#ultimate-insider-three-collisions).
 
 ## [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](custom-uis-are-not-the-exception.md)
 
@@ -6569,7 +9087,7 @@ The story is a graph and the article is a projection, so a newsroom that keeps t
 
 > The story is a graph. The article is a projection. Sell the graph. The shift the five products follow from, in three sentences.
 
-builds on [For a startup, the most important question is whether they miss it](#the-question-is-whether-they-miss-it); continued by [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](#i-just-want-to-buy-the-article), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs](#the-article-remains-a-product), [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](#the-agent-is-the-reader), [Liquid content needs water: liquefy the journalist's notebook, not the finished product](#liquid-content-needs-water), [Story vault underneath, Reader Skills on top: why local journalism has the most to gain](#story-vault-meets-reader-skills), [The deck I could not download: an author-first home for presentations, as a business plan somebody else can build](#the-deck-i-could-not-download), [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](#custom-uis-are-not-the-exception), [The reader was always the product: a corrected history of how news got into this mess](#how-news-got-here), [Sixteen thousand fetches, ten clicks, and a token bill nobody is sending: the case for paying publishers to be easy to read](#token-bill-nobody-is-sending).
+builds on [For a startup, the most important question is whether they miss it](#the-question-is-whether-they-miss-it); continued by [Capture first: how a BBC live page at breakfast became an evidence vault, a section here and a site of its own by lunchtime, for a story that was still changing as we covered it](#capture-first), [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](#i-just-want-to-buy-the-article), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](#two-agents-one-vault), [The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs](#the-article-remains-a-product), [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](#the-agent-is-the-reader), [Liquid content needs water: liquefy the journalist's notebook, not the finished product](#liquid-content-needs-water), [Story vault underneath, Reader Skills on top: why local journalism has the most to gain](#story-vault-meets-reader-skills), [The deck I could not download: an author-first home for presentations, as a business plan somebody else can build](#the-deck-i-could-not-download), [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](#custom-uis-are-not-the-exception), [The reader was always the product: a corrected history of how news got into this mess](#how-news-got-here), [Sixteen thousand fetches, ten clicks, and a token bill nobody is sending: the case for paying publishers to be easy to read](#token-bill-nobody-is-sending).
 
 ## [For a startup, the most important question is whether they miss it](the-question-is-whether-they-miss-it.md)
 

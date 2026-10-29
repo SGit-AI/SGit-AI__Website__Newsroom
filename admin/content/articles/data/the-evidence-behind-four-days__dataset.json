@@ -1,0 +1,256 @@
+{
+ "about": "The data behind the newsroom article \"The evidence behind four days\", collected on 27 October 2026 by newsroom.writer from public APIs. Every number in the article that is not from the PHP story site comes from here, with the query that produced it.",
+ "collected": "2026-10-27",
+ "queries": {
+  "nvd_window": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-21T13:48:34.000&pubEndDate=2026-10-25T13:48:34.000&resultsPerPage=2000",
+  "nvd_year_counts": "the same API, pubStartDate/pubEndDate in chunks of at most 120 days, 1 January to 26 October of each year, totalResults summed",
+  "cisa_kev": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+  "epss": "https://api.first.org/data/v1/epss?cve=<up to 100 CVE ids>; time series with &scope=time-series",
+  "cve_records": "https://cveawg.mitre.org/api/cve/<CVE id>"
+ },
+ "window": {
+  "start": "2026-10-21T13:48:34Z",
+  "end": "2026-10-25T13:48:34Z"
+ },
+ "nvd_window": {
+  "total": 1394,
+  "by_status": {
+   "Awaiting Analysis": 493,
+   "Deferred": 558,
+   "Analyzed": 3,
+   "Received": 219,
+   "Rejected": 12,
+   "Undergoing Analysis": 109
+  },
+  "by_day": {
+   "2026-10-21": 288,
+   "2026-10-22": 494,
+   "2026-10-23": 497,
+   "2026-10-24": 76,
+   "2026-10-25": 39
+  },
+  "by_id_year": {
+   "2017": 4,
+   "2018": 2,
+   "2019": 2,
+   "2020": 1,
+   "2021": 5,
+   "2022": 6,
+   "2023": 2,
+   "2024": 8,
+   "2025": 31,
+   "2026": 1333
+  },
+  "old_id_year_by_assigner": {
+   "ed10eef1-636d-4fbe-9993-6890dfa878f8": 6,
+   "cve@mitre.org": 15,
+   "416baaa9-dc9f-4396-8d5f-8c081fb06d67": 1,
+   "security@apache.org": 2,
+   "disclosure@vulncheck.com": 25,
+   "cvd@cert.pl": 11,
+   "contact@wpscan.com": 1
+  },
+  "vulncheck_old_ids": {
+   "count": 25,
+   "published": [
+    "2026-10-22"
+   ]
+  },
+  "references_to_exploit_db_or_metasploit": 0,
+  "top_assigners": [
+   [
+    "416baaa9-dc9f-4396-8d5f-8c081fb06d67",
+    220
+   ],
+   [
+    "security-advisories@github.com",
+    181
+   ],
+   [
+    "disclosure@vulncheck.com",
+    173
+   ],
+   [
+    "audit@patchstack.com",
+    90
+   ],
+   [
+    "cna@vuldb.com",
+    77
+   ],
+   [
+    "mlhess@drupal.org",
+    72
+   ],
+   [
+    "security-alert@hpe.com",
+    71
+   ],
+   [
+    "contact@wpscan.com",
+    66
+   ],
+   [
+    "psirt@cisco.com",
+    65
+   ],
+   [
+    "cve@mitre.org",
+    50
+   ]
+  ]
+ },
+ "cisa_kev": {
+  "catalog_version": "2026.10.26",
+  "released": "2026-10-26T22:24:24.6101Z",
+  "entries": 1758,
+  "window_cves_listed": [
+   {
+    "cve": "CVE-2026-109618",
+    "added": "2026-10-26",
+    "vendor": "PHP Group",
+    "product": "PHP"
+   },
+   {
+    "cve": "CVE-2026-109619",
+    "added": "2026-10-26",
+    "vendor": "PHP Group",
+    "product": "PHP"
+   },
+   {
+    "cve": "CVE-2026-114625",
+    "added": "2026-10-23",
+    "vendor": "Arista",
+    "product": "VeloCloud Orchestrator"
+   }
+  ],
+  "additions_1jan_26oct_vs_nvd": {
+   "2023": {
+    "nvd_published": 25326,
+    "kev_added": 156,
+    "ratio_pct": 0.62
+   },
+   "2024": {
+    "nvd_published": 32569,
+    "kev_added": 148,
+    "ratio_pct": 0.45
+   },
+   "2025": {
+    "nvd_published": 40266,
+    "kev_added": 210,
+    "ratio_pct": 0.52
+   },
+   "2026": {
+    "nvd_published": 89531,
+    "kev_added": 274,
+    "ratio_pct": 0.31
+   }
+  }
+ },
+ "cve_record_times": {
+  "CVE-2026-109618": "2026-10-21T13:48:34.845Z",
+  "CVE-2026-114625": "2026-10-22T20:47:56.427Z",
+  "CVE-2026-110447": "2026-10-14T02:27:42.315Z"
+ },
+ "epss_window": {
+  "scored": 1383,
+  "by_band": {
+   "<0.01": 1361,
+   ">=0.5": 2,
+   "0.01-0.1": 19,
+   "0.1-0.5": 1
+  },
+  "date": "2026-10-26",
+  "top": [
+   {
+    "cve": "CVE-2026-109619",
+    "epss": 0.99997
+   },
+   {
+    "cve": "CVE-2026-109618",
+    "epss": 0.99981
+   },
+   {
+    "cve": "CVE-2026-111497",
+    "epss": 0.36027
+   },
+   {
+    "cve": "CVE-2026-114575",
+    "epss": 0.0221
+   },
+   {
+    "cve": "CVE-2021-48014",
+    "epss": 0.02031
+   }
+  ]
+ },
+ "epss_time_series": {
+  "CVE-2026-114625": [
+   {
+    "date": "2026-10-26",
+    "epss": 0.01025
+   },
+   {
+    "date": "2026-10-25",
+    "epss": 0.01025
+   },
+   {
+    "date": "2026-10-24",
+    "epss": 0.00813
+   },
+   {
+    "date": "2026-10-23",
+    "epss": 0.00555
+   }
+  ],
+  "CVE-2026-109619": [
+   {
+    "date": "2026-10-26",
+    "epss": 0.99997
+   },
+   {
+    "date": "2026-10-25",
+    "epss": 0.99997
+   },
+   {
+    "date": "2026-10-24",
+    "epss": 0.06217
+   },
+   {
+    "date": "2026-10-23",
+    "epss": 0.05991
+   },
+   {
+    "date": "2026-10-22",
+    "epss": 0.05757
+   }
+  ],
+  "CVE-2026-109618": [
+   {
+    "date": "2026-10-26",
+    "epss": 0.99981
+   },
+   {
+    "date": "2026-10-25",
+    "epss": 0.99981
+   },
+   {
+    "date": "2026-10-24",
+    "epss": 0.11841
+   },
+   {
+    "date": "2026-10-23",
+    "epss": 0.1162
+   },
+   {
+    "date": "2026-10-22",
+    "epss": 0.05307
+   }
+  ]
+ },
+ "not_reproduced": [
+  "the post's 1,448 (NVD gives 1,394 for the same window)",
+  "VulnCheck KEV membership (needs a VulnCheck account)",
+  "Censys's 32 million (the dashboard is not public in a form we could read; Fortinet quotes 36.7 million on 22 October)"
+ ]
+}

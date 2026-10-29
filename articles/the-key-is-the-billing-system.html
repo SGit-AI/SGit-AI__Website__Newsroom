@@ -30,13 +30,14 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
       <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
       <a class="sl" href="../about/index.html">Why this exists</a>
       <a class="sl" href="../desks/index.html">The five desks</a>
@@ -86,6 +87,8 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -153,11 +156,13 @@
   <script src="../assets/reader/strip.js" defer></script>
   <script src="../assets/reader/highlights.js" defer></script>
   <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
   <div class="theme-pick"></div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The key is the billing system: VoiceDebrief, a product with no server, the one thing it cannot sell, and who could let it</p>
  <h1>The key is the billing system: VoiceDebrief, a product with no server, the one thing it cannot sell, and who could let it</h1>
@@ -248,6 +253,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo of mine on 12 October 2026, written by this site's agent in the voice of this site. The argument and the editorial responsibility are mine, and I am involved in VoiceDebrief. The product description and prices are from <a href="https://voicedebrief.ai/">voicedebrief.ai</a>, its <a href="https://voicedebrief.ai/openrouter-key/">key page</a>, its updates and engineering pages, read on 12 October 2026; the commit and tag counts are from its <a href="https://github.com/sgraph-ai/SGraph-AI__SaaS__WhatsApp__Audio__Transcription">public repository</a>, counted by week on the same day; the commercial model is from the project's brief pack of 28 July 2026 in that repository. Provider facts: <a href="https://openrouter.ai/terms">OpenRouter terms</a> (31 August 2026) and <a href="https://openrouter.ai/docs/features/provisioning-api-keys">Management API docs</a>; <a href="https://elevenlabs.io/terms-of-use">ElevenLabs terms</a> (9 October 2026), <a href="https://elevenlabs.io/oem-terms">OEM terms</a> (28 February 2025), <a href="https://elevenlabs.io/docs/overview/administration/workspaces/api-keys">API keys</a>, <a href="https://elevenlabs.io/pricing/api">API pricing</a> and <a href="https://elevenlabs.io/grants">Grants</a>; <a href="https://deepgram.com/terms">Deepgram terms</a> and <a href="https://developers.deepgram.com/docs/create-additional-api-keys">key docs</a>; <a href="https://console.groq.com/docs/spend-limits">Groq spend limits</a> and <a href="https://console.groq.com/docs/model/whisper-large-v3-turbo">Whisper pricing</a>; <a href="https://docs.mistral.ai/admin/quickstarts/manage-workspaces">Mistral workspaces</a>; <a href="https://developers.openai.com/api/docs/guides/admin-apis">OpenAI Admin APIs</a> and <a href="https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety">key safety</a>; <a href="https://www.assemblyai.com/contact/startup-program">AssemblyAI startup programme</a>; <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-controls.html">AWS Budgets actions</a>; <a href="https://portkey.ai/docs/product/ai-gateway/virtual-keys/budget-limits">Portkey budget limits</a>; <a href="https://developer.puter.com/ai/">Puter's AI gateway</a>. Transcription prices for AssemblyAI, Deepgram and Mistral are from 2026 comparison pages and should be checked against each vendor before use. The figure was drawn for this article. Related: <a href="an-agent-desktop-by-the-minute.html">An agent desktop by the minute</a>, <a href="no-server-by-design.html">No server, by design</a>, <a href="the-vault-is-live.html">The vault is live</a> and <a href="pay-after-you-read.html">Pay after you read</a>.</p>
 <sg-meter view="page" kind="article" date="2026-10-12" topics="startups-and-strategy site-and-engineering agents-and-policy" title="The key is the billing system: VoiceDebrief, a product with no server, the one thing it cannot sell, and who could let it, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Startups &amp; strategy</span><span class="tchip">Site &amp; engineering</span><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#the-key-is-the-billing-system">This article as a graph &rarr;</a></p>
@@ -283,7 +289,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-key-is-the-billing-system.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-key-is-the-billing-system.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -317,6 +323,8 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

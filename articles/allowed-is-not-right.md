@@ -10,11 +10,11 @@
 
 # Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/allowed-is-not-right.md) · [newsroom v0.12.101](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policyagent-decision-policyagent-workflow-policyverificationrefundsdigital-twinvaultsai-securityreplyarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.2.0, 3 versions](versions/allowed-is-not-right.md) · [newsroom v0.12.101](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policyagent-decision-policyagent-workflow-policyverificationrefundsdigital-twinvaultsai-securityreplyarticle
 
 ***Abstract:** Ashish Rajan's article on trustworthy AI systems opens with a good example of the gap between what an agent is allowed to do and what it should do. Northstar's support agent may refund up to $200, enforced by the payment service. A customer is owed $120; the agent misreads a discount and refunds $150. Every control passes, and the outcome is wrong. His answer is four questions, SECURE, OBSERVE, RESPOND and VERIFY, and I agree with all four. This is how we answer them, and what I think the example adds. The Agent Behaviour Policy we publish answers SECURE: what an agent may do and reach, enforced where the agent cannot argue. But a behaviour policy cannot answer VERIFY, because to prove the intended outcome occurred, someone has to have written down what the intended outcome is. That is a decision policy: who decides the amount, on what evidence, and who is called when the rules run out. With a workflow policy for the order things happen in, the three policies map onto his four questions, and his example showed me a gap in my own series. To test it, we built his store as a twin in a vault: thirteen synthetic refund requests, four designs of the controls, every decision replayable. The design in the article overpays $458 and leaves $341.60 owed. Adding SECURE, OBSERVE and RESPOND stops most of the overpayment by refusing, and leaves customers waiting. Adding VERIFY gets every amount right at 57 minutes of people's time a day. Adding a decision policy and precedents gets every case right, decided by the right decider, in 18. And his closing question, what evidence would let us remove the human, has an answer in the record those precedents leave.*
 
-Ashish Rajan's four questions down the side, SECURE, OBSERVE, RESPOND and VERIFY, and this newsroom's three policies across the top, behaviour, decision and workflow. Each cell holds the controls in the Northstar twin that answer that question in that policy. VERIFY has nothing in the behaviour column: a limit says what may be done, never what is right.
+Ashish Rajan's four questions against this newsroom's three policies: behaviour, decision and workflow.
 
 Northstar: allowed is not right
 
@@ -85,7 +85,7 @@ Two cells are worth reading on their own. VERIFY has nothing in the behaviour co
 
 To test this, we built Northstar as a twin: [the Northstar refund twin](https://newsroom.sgit.ai/demos/vaults/northstar-twin/index.html), an sgit vault you can open and play. It has thirteen synthetic refund requests, each with something an agent can get wrong: his misread discount, a refund already paid, an instruction hidden in a customer's message, the right name on the wrong order, shipping refunded when it should not be, a refund split to fit under the limit, a discount applied twice, a retry loop, and three damaged items the customer wants to keep, which no rule covers. Each runs through four designs of the controls, and every step can be played, replayed and compared. Nothing is called live: the agent's mistakes are scripted per case, so every run replays exactly. [The tour](inside-the-northstar-twin.md) walks through it.
 
-The thirteen cases under the four designs. Design A, as in the article, overpays on nine cases. B refuses several of them and leaves customers owed. C gets every amount right, with a person on most cases. D gets every case right, including the split refund, which only a decision policy catches.
+The thirteen cases under the four designs, A to D, and how each design pays them.
 
 | Design | Overpaid | Short or still owed | Right | People's time |
 |---|---|---|---|---|
@@ -162,6 +162,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#allowed-is
 
 ### Continued by
 
+- [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](approved-business-mandates.md) Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.
 - [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](what-can-your-agent-reach.md) RiskMandate and the Agent Behaviour Policy in plain words: what it does, why it is not real time, which agents it covers, and how it gets into the room.
 - [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](inside-the-northstar-twin.md) A tour of the Northstar refund twin: thirteen synthetic refunds through four designs, every decision played step by step, replayed and compared.
 - [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](three-policies-for-an-agent.md) Behaviour says what an agent may do, decision who chooses at a branch point, workflow in what order. Zoom into one ABP cell and it becomes both.

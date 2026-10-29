@@ -1,0 +1,37 @@
+{
+ "slug": "the-delegation-record",
+ "teaser": "RiskMandate's go-to-market plan: one workflow from an existing business rule to evidence that still holds after a change, starting with our own inbox.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "RiskMandate's go-to-market plan is to deliver one chain end to end, existing requirement, approved agent delegation, implemented control, observed result and evidence valid after change, packaged as a six-part delegation record, with human rules translated through an explicit approval, baselines never learned from behaviour, three stages that test value, maintenance and repeatability, and a first pilot on its own inbox, where Gmail cannot enforce draft-but-never-send.",
+ "nodes": [
+  {"id": "chain", "label": "The chain", "kind": "method", "summary": "Requirement to evidence after change."},
+  {"id": "record", "label": "The delegation record", "kind": "artefact", "summary": "Six parts a customer can act on."},
+  {"id": "translate", "label": "A people rule is not a delegation", "kind": "claim", "summary": "Extract, list ambiguities, approve."},
+  {"id": "baseline", "label": "An approved baseline", "kind": "concept", "summary": "Never learned from behaviour."},
+  {"id": "obligations", "label": "Obligations too", "kind": "concept", "summary": "Legitimate work must complete."},
+  {"id": "stages", "label": "Three stages", "kind": "method", "summary": "Value, maintenance, repeatability."},
+  {"id": "customer", "label": "A small first customer", "kind": "example", "summary": "One workflow, owner, environment."},
+  {"id": "pilotzero", "label": "Pilot zero: our inbox", "kind": "example", "summary": "Draft, never send."},
+  {"id": "gmail", "label": "Gmail cannot enforce it", "kind": "claim", "summary": "Drafting scopes also send."}
+ ],
+ "edges": [
+  {"from": "chain", "to": "record", "rel": "produces"},
+  {"from": "translate", "to": "chain", "rel": "depends-on"},
+  {"from": "baseline", "to": "record", "rel": "depends-on"},
+  {"from": "obligations", "to": "record", "rel": "extends"},
+  {"from": "stages", "to": "customer", "rel": "leads-to"},
+  {"from": "pilotzero", "to": "record", "rel": "example-of"},
+  {"from": "gmail", "to": "pilotzero", "rel": "produces"},
+  {"from": "pilotzero", "to": "customer", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["approved-business-mandates", "drift-is-the-mandate-moving", "an-analysts-blueprint-for-riskmandate", "answering-a-draft", "three-decisions-mapped", "case-law-for-agents", "our-first-customers"],
+  "pages": [],
+  "sites": ["https://developers.google.com/workspace/gmail/api/auth/scopes"]
+ },
+ "quotes": [
+  {"text": "existing requirement → approved agent delegation → implemented control → observed result → evidence that remains valid after change", "why": "The chain."},
+  {"text": "A model can propose an interpretation; it must not quietly inherit the authority of the original policy.", "why": "Translation."},
+  {"text": "there is no permission that lets an agent draft without also letting it send", "why": "Pilot zero's first finding."}
+ ]
+}

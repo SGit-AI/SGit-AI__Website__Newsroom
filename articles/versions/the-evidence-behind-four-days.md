@@ -1,0 +1,29 @@
+# Versions of The evidence behind four days, sgit.ai
+
+> Every published version of the article "The evidence behind four days", with the date, the words and what changed.
+
+*Source: <https://newsroom.sgit.ai/articles/versions/the-evidence-behind-four-days.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+
+---
+
+[Home](../../index.md) / [Articles](../index.md) / [The evidence behind four days](../the-evidence-behind-four-days.md) / Versions
+
+# Versions of: The evidence behind four days
+
+4 published versions of [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](../the-evidence-behind-four-days.md). The current one is **v1.3.0**.
+
+v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
+
+| Version | Date | Kind | Words | Change from the version before | Commit |  |
+|---|---|---|---|---|---|---|
+| **v1.3.0** | 2026-10-27 | minor | 3,652 | +0 / −320 words; 7 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-evidence-behind-four-days/v1.3.0.md) · [current](../the-evidence-behind-four-days.md) |
+| **v1.2.0** | 2026-10-27 | minor | 3,972 | +262 / −0 words; 9 changed, 1 added, 0 removed paragraphs | [`4cb930e25`](https://github.com/SGit-AI/SGit-AI__Website/commit/4cb930e25b99ae2d389f2b9962b1a37273a1fd09) | [what changed](the-evidence-behind-four-days/v1.2.0.md) |
+| **v1.1.0** | 2026-10-27 | minor | 3,710 | +1,399 / −486 words; 15 changed, 14 added, 5 removed paragraphs | [`019ddf902`](https://github.com/SGit-AI/SGit-AI__Website/commit/019ddf90254f4e20ec51d9597647bdeea6b3b0a8) | [what changed](the-evidence-behind-four-days/v1.1.0.md) |
+| **v1.0.0** | 2026-10-27 | published | 2,797 | first published | [`15683c53c`](https://github.com/SGit-AI/SGit-AI__Website/commit/15683c53c8e6c79759a6c7db4db2a1dc0e33a94a) |  |
+
+[← Back to the article](../the-evidence-behind-four-days.md) · [All articles](../index.md)
+
+
+---
+
+*[Site index for agents](../../llms.txt) · [HTML version](https://newsroom.sgit.ai/articles/versions/the-evidence-behind-four-days.html)*

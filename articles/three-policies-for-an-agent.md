@@ -10,11 +10,11 @@
 
 # Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.2.0, 3 versions](versions/three-policies-for-an-agent.md) · [newsroom v0.12.101](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policyagent-decision-policyagent-workflow-policydecision-makinggovernanceriskfractal-semantic-graphsseriesarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.3.0, 4 versions](versions/three-policies-for-an-agent.md) · [newsroom v0.12.101](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policyagent-decision-policyagent-workflow-policydecision-makinggovernanceriskfractal-semantic-graphsseriesarticle
 
 ***Abstract:** When something goes wrong with an agent, the question people ask is how it made that decision. A behaviour policy cannot answer it on its own, because it says what an agent may do, not who chooses at a branch point or why. This is the first of four articles on what I think the answer looks like. There are three policies, not one. The Agent Behaviour Policy, the ABP we already publish, says what an agent may do and where. An Agent Decision Policy says, at a branch point, who chooses, on what evidence, within what limits, and who to call when it is out of bounds. An Agent Workflow Policy says which steps run in what order. They meet at fixed points: a workflow transition is gated by a decision, and the decision's outcome is carried out by behaviours the ABP permits. We have been putting light decisions into behaviour policies all along, and that is fine at low zoom: the ABP's approval cell is a small decision. Zoom into one cell and it becomes a decision policy and a workflow policy of its own. Every element of all three can be defined before it can be enforced: what gets enforced, and where, depends on what is wired up, so each element carries five states, defined, implemented, enforced, observed and verified. The word "decision" matters because it is the one the business and the risk team already use.*
 
-The three policies, behaviour, decision and workflow, each with the question it answers; and one ABP row from the SGit memory adapter merged into Ruflo's docs, delete.memory.project with mandate approval, zoomed in: today the row says only that a human must approve, so the answer is stop; zoomed in, it holds a decision policy (who decides, on what evidence, within what envelope, with a record) and a workflow (request, verify the checkpoint, approve or refuse, delete, record).
+The three policies, behaviour, decision and workflow, and one ABP row, delete.memory.project, zoomed in.
 
 Agent decision policies: a series in four parts
 
@@ -144,6 +144,8 @@ Agents & policy[This article as a graph →](graphs.md#three-policies-for-an-age
 
 ### Continued by
 
+- [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](approved-business-mandates.md) Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.
+- [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](the-riskmandate-roadmap.md) A proposed strategy for RiskMandate, a spectrum of trust: policies, understand, risk acceptance, contain, manage, insure.
 - [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](a-briefing-for-the-ciso-summit.md) A briefing for the WestCap CISO Summit: Agent Behaviour Policies and RiskMandate, said for six kinds of person in the room, with what to read next.
 - [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](reviews-on-the-record.md) Published criteria, one record per article and text, five at a time, answered finding by finding: reviews by other models, the editor and the desk.
 - [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](the-editors-channel.md) A key makes a browser an editor's: reads, sign-offs and fixes go to a vault, a daily pass acts and replies, and five lanes set what any reader sends.

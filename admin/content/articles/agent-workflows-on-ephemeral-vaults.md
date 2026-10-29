@@ -10,7 +10,7 @@ tags: sgit, agents, multi-agent, ephemeral-vaults, append-lanes, vault-apps, arc
 status: published
 ---
 
-!shot aw-catalogue.webp | images/ | Agent workflows on ephemeral vaults: seven architectures, simple to complex, from one agent with one ephemeral vault to a swarm of a hundred writing to append lanes. Each is a folder in its own repository, with agents, keys, fixtures and a CI job that proves it works, and each says who holds which key. | comparison
+!shot aw-catalogue.webp | images/ | Agent workflows on ephemeral vaults: seven architectures, from one agent to a swarm of a hundred. | comparison
 
 ## In short {#in-short}
 
@@ -60,7 +60,7 @@ One comment I keep hearing, and I would like the same thing, is a visual represe
 
 ## The swarm, measured {#swarm}
 
-!shot aw-measured.webp | images/ | The swarm, measured on one machine. With in-memory storage, a hundred writers posting ten entries each landed a thousand entries in 4.9 seconds, none lost; the same load on disk storage ran at about three entries a second because of a defect in the disk layer. Ten scoped clones at once took 1.9 seconds; ten full clones, 21.1. | comparison
+!shot aw-measured.webp | images/ | The swarm, measured on one machine: in-memory against disk storage, and scoped against full clones. | comparison
 
 I wanted to know how far this goes, so a research agent measured it locally for this article: sgit 0.21.0, version 0.34.0 of the vault server as one process, four cores, everything on one machine.
 

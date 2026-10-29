@@ -10,7 +10,7 @@ tags: research, evidence, provenance, fact-checking, voice-memos, deep-research,
 status: published
 ---
 
-!shot mc-ledger.webp | images/ | What I said, and what the record said: the claims from the voice memos behind the last eight articles, each confirmed, corrected or not found before publishing, and the two corrections that went the other way. | comparison
+!shot mc-ledger.webp | images/ | What I said, and what the record said: the claims from the voice memos behind the last eight articles. | comparison
 
 ## In short {#in-short}
 
@@ -36,7 +36,7 @@ What fascinated me was where it found it. On 11 February 2025, eight days after 
 
 ## Peer review moved {#peer-review}
 
-!shot mc-loop.webp | images/ | Peer review moved before publishing: the memo, the research, the verdicts and the article, then readers and their agents checking again from the links, and every checked article becoming evidence for the next memo. The old way, posting and waiting to be corrected, is the dashed box. | architecture
+!shot mc-loop.webp | images/ | Peer review moved before publishing: the memo, research, verdicts and article, with the old way as a dashed box. | architecture
 
 We used to get this from other people, afterwards. In the early days of Twitter, and still on LinkedIn, if you post something that is wrong, somebody usually tells you. There is even a law for it, named by Steven McGeady after Ward Cunningham: "the best way to get the right answer on the internet is not to ask a question; it's to post the wrong answer." It works, but it is slow, public and noisy, and it corrects what has already spread.
 

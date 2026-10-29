@@ -10,7 +10,7 @@ tags: subscriptions, refunds, consumer-rights, freelancers, agents, agent-behavi
 status: published
 ---
 
-!shot sr-flow.webp | images/ | One subscription, worked by a helper and an agent for the person who pays for it. Two questions run in parallel, ours and theirs; the evidence meets; a friendly letter asks for a pause and a refund; the payments stop either way; and the answer goes into an open register. The right of access is the dashed box: a next step, not the first. | playbook
+!shot sr-flow.webp | images/ | One subscription, worked by a helper and an agent for the person who pays: two questions, a letter and an open register. | playbook
 
 ## In short {#in-short}
 
@@ -91,7 +91,7 @@ All of this should be done agentically, and the setup is the one I already run, 
 
 So the controls, today, are two, and they are simple to say. **Secrets are entered by the freelancer. Drafts are sent by the freelancer. Everything else is automated.** And the agent can make the decisions along the way, but, as I argued in [Who owns the words](/articles/who-owns-the-words.html), the responsibility stays with the person who sends.
 
-!shot sr-policy.webp | images/ | The helper's agent as a behaviour policy: what it could reach once a session is signed in, whether that is in its mandate, the gap, and what actually stands in the way. Green rows need nothing more; orange rows are held by the tool or by a recorded decision; red rows are where a control is still owed. A proposal written before the first run, not a measured deployment. | comparison
+!shot sr-policy.webp | images/ | The helper's agent as a behaviour policy: reach, mandate, gap and what stands in the way. A proposal, not measured. | comparison
 
 The policy is where the hard part stays visible. Once the freelancer has signed in, the session the agent works in has the account's whole reach: the same login that downloads the invoices can delete the data, close the account, upgrade the plan or change the card. And the Gmail connector can [send as well as draft](https://support.claude.com/en/articles/10166901-use-google-workspace-connectors); by default Claude asks for approval before sending, and on a Team plan the owner decides whether that can be switched off. So "drafts only" is our policy, held by that approval and by the freelancer, not something the tool makes impossible, and the figure says so. That is fine for a first MVP with beta users who know what they are trying. It is also exactly what the MVP is for: finding which of these rows can be turned into real controls.
 

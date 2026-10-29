@@ -10,11 +10,11 @@
 
 # Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.1.0, 2 versions](versions/our-first-pr-in-ruflo.md) · [newsroom v0.12.95](https://newsroom.sgit.ai/admin/versions.html) · agentsruflosgitagent-behaviour-policyopen-sourcepull-requestgithubmemorymilestonearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.2.0, 3 versions](versions/our-first-pr-in-ruflo.md) · [newsroom v0.12.95](https://newsroom.sgit.ai/admin/versions.html) · agentsruflosgitagent-behaviour-policyopen-sourcepull-requestgithubmemorymilestonearticle
 
 ***Abstract:** On 17 October at 14:59 London time, rUv merged pull request #4239 into Ruflo's main branch. It was opened by Mondweep Chakravorty the night before, and it adds one page, docs/integrations/sgit-memory-checkpoints.md, 83 lines that document his adapter: an Agent Behaviour Policy compiled into Ruflo's own rules, checked by Ruflo's evaluator in enforce mode, gating checkpoints into an encrypted SGit vault. Of the 9,625 commits on Ruflo's main branch, it is the first to mention SGit or an ABP. This article puts the four pieces side by side, with a screenshot of each. The proof of concept: mondweep/sgit-ruv-memory, MIT, with sixteen passing tests and the video we analysed the same day. The pull request: three commits in one hour, one file, a description that states its own limits. How it was accepted: a review was requested from rUv as code owner, no formal approval was recorded and no checks ran; the maintainer merged it, squashed into commit 332f22e. And where it lives: a new docs/integrations folder on main, pinned to exact commits of the code, SGit and Ruflo. The page is careful about what it does not claim, which is why it could be merged quickly. One piece is still open, and it is on our side: the runnable example, SGit-AI/SGit-AI__Website__Ruv pull request #1, has had no review yet.*
 
-The pieces in order, London time: the talk and ruv.sgit.ai on 15 October; Mondweep's proof of concept on 16 October; pull request #4239 opened at 23:02 with three commits in the next hour; merged by rUv at 14:59 on 17 October as commit 332f22e; the page on Ruflo's main branch. Beside it, the video, our analysis, and the companion pull request on our side, still open.
+The pieces in order, London time, from the talk on 15 October to the merge on 17 October.
 
 SGit × Ruflo: one run, five ways in
 
@@ -46,7 +46,7 @@ Here are the four pieces, each with what you can see on GitHub.
 
 ## Piece 1: the proof of concept
 
-mondweep/sgit-ruv-memory on GitHub: public, MIT licence, one contributor, five commits, the last of them 7607d72, "Validate Ruflo CLI exact and keyword recovery; disclose semantic vector gap". Folders for evidence, examples, scripts, the package, tests and the vendored Ruflo evaluator.
+The mondweep/sgit-ruv-memory repository on GitHub: public, MIT licence, five commits.
 
 The code came first. [mondweep/sgit-ruv-memory](https://github.com/mondweep/sgit-ruv-memory) is a small MCP server, MIT-licensed, with five commits on 16 October, the last at 23:58. It does one job: it compiles an ABP into Ruflo's rule format, asks a pinned copy of Ruflo's own policy evaluator for a decision in enforce mode before each of its tools runs, and keeps each memory checkpoint in its own encrypted SGit vault. Sixteen tests pass, by the author's own evidence.
 
@@ -59,7 +59,7 @@ We have already written about it, the same day, in three pieces and a page:
 
 ## Piece 2: the pull request
 
-Pull request #4239 on ruvnet/ruflo, marked Merged: "ruvnet merged 3 commits into ruvnet:main from mondweep:docs/sgit-memory-checkpoints". Conversation 2, Commits 3, Checks 0, Files changed 1, +83. Mondweep's description gives the flow, the validation, the source at 7607d72, the executable example in SGit-AI/SGit-AI__Website__Ruv#1, and "Documentation-only change in Ruflo". On the right, ruvnet is listed as reviewer, with the review still pending.
+Pull request #4239 on ruvnet/ruflo, marked Merged, with Mondweep's description and the reviewer list.
 
 The pull request is called "docs: ABP-governed SGit memory checkpoints and Ruflo CLI recovery validation". It came from a branch on Mondweep's fork, `mondweep:docs/sgit-memory-checkpoints`, into `ruvnet:main`. Its description gives the chain in one line:
 
@@ -77,11 +77,11 @@ It has three commits, all on the evening of 16 October, London time:
 
 The second commit is the one that matters most to me. The first version documented the adapter; the second documents the ABP compiled into Ruflo's rules and enforced on every operation. Mondweep's comment on the pull request says it plainly: "the missing ABP layer is now implemented and validated, and this guide has been updated accordingly."
 
-Files changed: one new file, docs/integrations/sgit-memory-checkpoints.md, 83 lines added, none removed. It opens with "External SGit memory checkpoints governed by an ABP", "This opt-in community example connects an Agent Behaviour Policy to a local memory adapter", the chain in bold, and a reproduce section that checks out the code at commit 7607d72.
+The Files changed tab: one new file, docs/integrations/sgit-memory-checkpoints.md, 83 lines added.
 
 ## Piece 3: how it was accepted
 
-The end of the pull request's timeline: Mondweep's follow-up to @ruvnet, "the missing ABP layer is now implemented and validated", with the source at e86cefa and the SGit example; the third commit, 6b49d58; the title change; and "ruvnet merged commit 332f22e into ruvnet:main".
+The end of the pull request's timeline: Mondweep's follow-up, the third commit and the merge by ruvnet.
 
 The GitHub timeline, in London time:
 
@@ -94,7 +94,7 @@ So "accepted" here means one specific thing, and it is worth being exact about i
 
 ## Piece 4: where it lives
 
-The merged file on Ruflo's main branch, at ruflo / docs / integrations / sgit-memory-checkpoints.md: 83 lines, 7.5 KB, last commit 332f22e by mondweep. The rendered page, "External SGit memory checkpoints governed by an ABP", with links to the source and the SGit executable-example PR, and install steps that check out the code at an exact commit.
+The merged file on Ruflo's main branch, docs/integrations/sgit-memory-checkpoints.md, and its rendered page.
 
 The page lives on [Ruflo's main branch, in docs/integrations](https://github.com/ruvnet/ruflo/blob/main/docs/integrations/sgit-memory-checkpoints.md). It is the only file in a new `docs/integrations/` folder. It is not yet linked from Ruflo's docs index or its README, so for now you find it by link or by browsing the folder.
 
@@ -117,7 +117,7 @@ The three proposed capabilities matter for the ABP too. They are the first memor
 
 ## The piece still open is ours
 
-SGit-AI/SGit-AI__Website__Ruv pull request #1, "Add local MCP example for policy-gated SQLite checkpoints and restore", marked Open: mondweep wants to merge 3 commits into SGit-AI:dev from mondweep:feat/mcp-memory-checkpoints. 35 files, +3,081. Companion: ruvnet/ruflo#4239, shown as Merged. No reviews.
+SGit-AI/SGit-AI__Website__Ruv pull request #1, marked Open, with the companion ruvnet/ruflo#4239 shown as Merged.
 
 The Ruflo page points to two things: Mondweep's repository, and a companion pull request in our own organisation, [SGit-AI/SGit-AI__Website__Ruv #1](https://github.com/SGit-AI/SGit-AI__Website__Ruv/pull/1). That one adds the runnable example to ruv.sgit.ai: 3 commits, 35 files, 3,081 lines. It is still open, with no reviews. His follow-up on the Ruflo pull request notes that his own updates to it were limited by connector permissions, though its branch, README and evidence are current.
 
@@ -164,6 +164,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#our-first-
 
 ### Continued by
 
+- [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](where-to-invest-in-sgit.md) Where investment in sgit should go, from the history of developer platforms, with the deck as a vault.
 - [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](governs-enforces-attests.md) An ABP governs and names the enforcer at three levels: prompt, hooks, or a third-party system. An attestation layer signs it so a third party can verify.
 - [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](the-librarians-daily-brief.md) A daily brief from the Librarian: yesterday across every repository, the agents' debrief, threads to pick up, and where my leverage is today.
 - [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](three-linkedin-pages.md) Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.

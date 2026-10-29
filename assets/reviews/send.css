@@ -1,0 +1,12 @@
+/* reviews/send.html: the review lane's send page (card 091), on top of assets/vault-pane/send.css's .send-box. */
+.send-box .rv-list { margin: .8rem 0 0; padding-left: 1.1rem; }
+.send-box .rv-list > li { margin: .35rem 0; overflow-wrap: anywhere; }
+.send-box .rv-err { color: var(--bad-ink, #9b1c1c); }
+.send-box .rv-warns { margin: .2rem 0 0; font-size: .88rem; color: var(--warn-ink, #8a5a0a); }
+/* reviews/vaults.html: the QR codes of the public parts (card 093) */
+.rv-qrs { display: flex; flex-wrap: wrap; gap: 1rem 1.4rem; margin: .8rem 0 1.2rem; }
+.rv-qr { flex: 1 1 15rem; min-width: 0; padding: .7rem .8rem; border: 1px solid var(--line, #eceef2); border-radius: 10px; background: var(--panel, #fff); }
+.rv-qr [data-qr] { background: #fff; padding: 6px; border-radius: 6px; width: min(100%, 15rem); }
+.rv-qr [data-qr] svg { display: block; width: 100%; height: auto; }
+.rv-qr code { overflow-wrap: anywhere; font-size: .78rem; }
+.rv-qr h4 { margin: 0 0 .4rem; }

@@ -10,7 +10,7 @@ tags: agents, agent-behaviour-policy, startups, customers, pricing, early-access
 status: published
 ---
 
-!shot ea-journey.webp | images/ | The first customers, from credit to the moment they would pay: credit, a start-here page, a first policy, milestones and the value, with a daily follow-up and the meter alongside. Proposed. | concept
+!shot ea-journey.webp | images/ | The first customers, from credit to the moment they would pay, with a daily follow-up and the meter. Proposed. | concept
 
 ## In short {#in-short}
 
@@ -64,7 +64,7 @@ The things to track for each customer are simple: when they started, when they w
 
 This is not a launch. It is a first batch, small enough to follow closely. Alongside it we start a mailing list: everyone who asks to join is kept for the next batch, with what they want to use it for. The next batch gets a start-here page made from what the first one taught us, and needs less hand-holding per customer.
 
-!shot ea-batches.webp | images/ | Batches, not a launch: the first batch of friendlies, what we learn from them, the mailing list, and the second batch. Proposed. | concept
+!shot ea-batches.webp | images/ | Batches, not a launch: the first batch of friendlies, the mailing list and the second batch. Proposed. | concept
 
 ## What this does not claim {#limits}
 

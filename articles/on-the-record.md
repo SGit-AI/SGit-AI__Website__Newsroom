@@ -10,11 +10,11 @@
 
 # On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/on-the-record.md) · [newsroom v0.12.107](https://newsroom.sgit.ai/admin/versions.html) · newsroomidentitypublic-keysexpertspaymentsreviewsprovenancearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.2.0, 3 versions](versions/on-the-record.md) · [newsroom v0.12.107](https://newsroom.sgit.ai/admin/versions.html) · newsroomidentitypublic-keysexpertspaymentsreviewsprovenancearticle
 
 ***Abstract:** Reviews on the record gave this site's articles a second reader. The next step is to let the people who know a subject go on the record about an article: I support this, I do not, and here is why, or use something else instead. Not a comments section, which many news sites have closed, but a professional opinion, signed with the person's own key and kept with the article, which they can later withdraw. The value is in the disagreement: an expert should not agree with everything, and sometimes the challenge is as interesting as the article, because that is where the facts get tested. Identity comes in levels, from an anonymous tap to a key bound to a domain and backed by a track record, and the pieces exist: Bluesky's domain handles, Mastodon's links back, did:web, signed commits. So does the precedent for paying for opinions: open peer review publishes signed reviews, and Biology Open, which pays reviewers £220, cut its time to a first decision from 37.7 to 5.5 working days. I think readers who rate an opinion as insightful should be able to pay for it, and the expert should get a share; and when an article that earns money is built from other people's ideas, they should get a share of that too. The research on signed comments is more mixed than people assume: real names did not make comments better in the largest study, stable identities did. So the case for signing is accountability and payment, not civility. This maps what exists here, what is missing, and what to build.*
 
-Going on the record. Left, the levels of identity, from an anonymous tap to a key bound to a domain and a track record; each level allows more: a tap, a note, a review, an opinion that counts, and payment. Right, an opinion on the record: a position on the article, the reasons, the evidence, signed by its author's key, answered by the newsroom, rated by readers, paid from what readers pay, and withdrawable, with the withdrawal recorded.
+Going on the record: the levels of identity on the left, and a signed opinion on the record on the right.
 
 ## In short
 

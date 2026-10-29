@@ -1,0 +1,49 @@
+{
+ "slug": "jobs-that-never-scaled",
+ "teaser": "What never scaled is on-demand expertise: the before and after the meeting. Agents can now carry them, for any expert, anywhere.",
+ "topics": ["startups-and-strategy"],
+ "core_idea": "Many old jobs never scaled because on-demand expertise depended on weeks of context gathering before the meeting and writing up after it, which experts dislike and are not hired for; agents can now carry both phases, as the clinic's support staff do for a specialist, so historians, librarians, consultants and others can work for any project, anywhere, even part-time, and service businesses can grow with judgement rather than hours.",
+ "nodes": [
+  {"id": "book", "label": "The book's section", "kind": "artefact", "summary": "The jobs that never scaled; the editor asks for examples."},
+  {"id": "core", "label": "On-demand expertise", "kind": "concept", "summary": "Skills the team lacks, for days."},
+  {"id": "before", "label": "Before: context", "kind": "method", "summary": "The expert's questions are their experience."},
+  {"id": "meeting", "label": "The meeting", "kind": "method", "summary": "Short, prepared, where the value is."},
+  {"id": "after", "label": "After: the write-up", "kind": "method", "summary": "A version for each audience."},
+  {"id": "cost", "label": "Three weeks", "kind": "claim", "summary": "The before and after were the cost."},
+  {"id": "intersection", "label": "The intersection", "kind": "concept", "summary": "Company, talent, travel and budget."},
+  {"id": "clinic", "label": "The clinic model", "kind": "example", "summary": "Others take the history; the specialist decides."},
+  {"id": "agents", "label": "Agents carry the before and after", "kind": "method", "summary": "Collect, sanitise, write up, delegate."},
+  {"id": "examples", "label": "Twelve jobs", "kind": "example", "summary": "Historian, librarian, cartographer, lawyer and more."},
+  {"id": "team", "label": "Nineteen agent roles", "kind": "example", "summary": "SG/Send's team."},
+  {"id": "direction", "label": "The expert gives direction", "kind": "claim", "summary": "Agents go in all directions."},
+  {"id": "hours", "label": "Twelve good hours", "kind": "claim", "summary": "Part-time experts, productive."},
+  {"id": "startups", "label": "Service businesses scale", "kind": "claim", "summary": "Not do things that don't scale."}
+ ],
+ "edges": [
+  {"from": "book", "to": "core", "rel": "leads-to"},
+  {"from": "core", "to": "before", "rel": "depends-on"},
+  {"from": "core", "to": "meeting", "rel": "depends-on"},
+  {"from": "core", "to": "after", "rel": "depends-on"},
+  {"from": "before", "to": "cost", "rel": "produces"},
+  {"from": "after", "to": "cost", "rel": "produces"},
+  {"from": "cost", "to": "intersection", "rel": "produces"},
+  {"from": "clinic", "to": "agents", "rel": "example-of"},
+  {"from": "agents", "to": "cost", "rel": "answers"},
+  {"from": "agents", "to": "examples", "rel": "leads-to"},
+  {"from": "team", "to": "examples", "rel": "example-of"},
+  {"from": "direction", "to": "agents", "rel": "extends"},
+  {"from": "agents", "to": "hours", "rel": "produces"},
+  {"from": "agents", "to": "startups", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["the-graph-companies", "the-code-you-do-not-ship", "the-minimum-code-below", "reading-with-a-pen", "the-expert-founders", "start-a-company"],
+  "pages": [],
+  "sites": ["https://gen-z-developers.sgit.ai/articles/lucky-to-be-here.html", "https://sgit.ai/articles/send-an-agent-not-a-spreadsheet.html"]
+ },
+ "quotes": [
+  {"text": "What is a consultant? Somebody who has skills the team does not have.", "why": "The core."},
+  {"text": "That is part of their magic: what questions to ask.", "why": "Experience is in the questions."},
+  {"text": "The specialist is not effective because they work less.", "why": "The clinic."},
+  {"text": "But agents can go in all directions, and you need somebody who provides the direction.", "why": "The expert's role."}
+ ]
+}

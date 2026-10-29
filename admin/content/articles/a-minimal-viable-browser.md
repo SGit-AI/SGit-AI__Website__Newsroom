@@ -10,7 +10,7 @@ tags: browsers, firefox, mozilla, minimal-code, agents, prompt-injection, extens
 status: published
 ---
 
-!shot mb-browser.webp | images/ | A minimal viable browser: a small kernel of network, TLS, parsing, layout and process isolation, reviewed hardest and changed least; and components loaded only when needed, from JavaScript, with or without the JIT, to media, WebGL, PDF, downloads, extensions and sync. Three shapes from the same engine: a browser for one app, with only JavaScript and forms; a browser for one agent, the same; and the reader's own browser, with everything they use loaded as they use it and each extension in its own box. | concept
+!shot mb-browser.webp | images/ | A minimal viable browser: a small kernel, components loaded only when needed, and three shapes from the same engine. | concept
 
 !trail less-code
 

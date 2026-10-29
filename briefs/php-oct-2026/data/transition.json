@@ -1,0 +1,51 @@
+{
+ "what": "The PHP flaws story on its own site, as last checked by php-flaws/build/track.py. Read by build.py and front.py.",
+ "site": "https://php.oct.2026.newsroom.sgit.ai/",
+ "repo": "https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP",
+ "checked_utc": "2026-10-22T12:12Z",
+ "version": "0.2.2",
+ "released": "2026-10-22",
+ "data_as_of": "2026-10-22T11:34Z",
+ "vault_commit": "200d08971937",
+ "counts": {
+  "sources": 144,
+  "captures": 137,
+  "hashed_files": 857
+ },
+ "releases": 4,
+ "checks": [
+  {
+   "id": "live",
+   "label": "The site answers at its own domain",
+   "ok": true,
+   "detail": "HTTP 200"
+  },
+  {
+   "id": "status-json",
+   "label": "The site publishes /status.json for this newsroom to read",
+   "ok": false,
+   "detail": "HTTP 404"
+  },
+  {
+   "id": "sources",
+   "label": "Every source the section lists is on the site",
+   "ok": false,
+   "detail": "144 of 184; missing 20min-fr-suisse-romande, abc-au-gov-sites-exposed, abc-au-politics-live, actu17-prefectures, bleepingcomputer-php2shell"
+  },
+  {
+   "id": "front-page",
+   "label": "The newsroom's front page links to the site",
+   "ok": true,
+   "detail": "the Developing strip, from admin/content/front/developing.json"
+  },
+  {
+   "id": "pointer",
+   "label": "The section is replaced by a page that points to the site",
+   "ok": false,
+   "detail": "the last step, done here once the checks above pass"
+  }
+ ],
+ "passed": 2,
+ "total": 5,
+ "ready_to_retire": false
+}

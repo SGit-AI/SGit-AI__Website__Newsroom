@@ -23,13 +23,14 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
       <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
       <a class="sl" href="../about/index.html">Why this exists</a>
       <a class="sl" href="../desks/index.html">The five desks</a>
@@ -79,6 +80,8 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -146,6 +149,8 @@
   <script src="../assets/reader/strip.js" defer></script>
   <script src="../assets/reader/highlights.js" defer></script>
   <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
   <div class="theme-pick"></div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
@@ -170,7 +175,7 @@ openList({ core: '../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter-core.js'
 <p>Anything malformed is dropped, and the page says what it left out. Names and notes are shown as text and never as markup. Nothing in a link should be private, because a link travels in an email and can be forwarded.</p>
 
 <h2 id="persona">What opens</h2>
-<p>The list, with each article&rsquo;s number, title, teaser, price and reading time, and a <b>Start reading</b> button. The list is also added to the reader&rsquo;s personas as a visitor, named for the two people (&ldquo;Steve&rsquo;s list, from Dinis&rdquo;), with its articles as the reading list and the picks that follow from them. It is the active persona while the reader is on the page, and removing it is one tap. Opening a list charges nothing, and the articles are priced as everywhere on the site, from the reader&rsquo;s own credit.</p>
+<p>The list, across the whole width of the window, in five views the reader can switch between: <b>Cards</b> (each article&rsquo;s card picture, its one-line teaser and a bar of its sections, filled as they are read), <b>Headlines</b> (one line each), <b>Sections</b> (every section as its one-line summary, ticked as it is read, each a link to that section), <b>Pictures</b> (the articles&rsquo; figures) and <b>Graph</b> (the list as a path, each article&rsquo;s main ideas, the links between them, and the articles beyond the list they point to). Above them, how much of the list has been read, the time left, what it has cost, and a button that goes to the first section not yet read; beside them, what the reader is looking at and how this newsroom works. What was read comes from this browser&rsquo;s own records (the reading strip, the meter and the reader&rsquo;s notes, the same records the reader&rsquo;s vault carries); <b>Done</b>, <b>Later</b> and <b>Not for me</b> on each article are kept as notes. The code is <code>for/list-views.js</code>. The list is also added to the reader&rsquo;s personas as a visitor, named for the two people (&ldquo;Steve&rsquo;s list, from Dinis&rdquo;), with its articles as the reading list and the picks that follow from them. It is the active persona while the reader is on the page, and removing it is one tap. Opening a list charges nothing, and the articles are priced as everywhere on the site, from the reader&rsquo;s own credit.</p>
 
 <h2 id="not">What this does not do</h2>
 <p>It has no accounts, no endpoint on a server, and nothing that counts who opened a link or when. The names are whatever the link says: there is no way yet to prove who sent a list, and a signed list is a later step, on the keys of <a href="../articles/rfc-0001-public-key-cryptography-for-sgit.html">RFC 0001</a>. The sender learns anything from the reply, if there is one. This is the first step of <a href="../articles/a-reading-list-in-a-link.html">From me to you, in a link</a>.</p>
@@ -192,7 +197,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -226,6 +231,8 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

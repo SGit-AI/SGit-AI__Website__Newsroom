@@ -10,7 +10,7 @@ tags: startups, selling, pricing, founders, gen-z-book, article
 status: published
 ---
 
-!shot cs-loop.webp | images/ | Selling is how you learn. Put up for sale what you have, however rough. To sell it you have to ship it; to ship it you solve the small problems; someone either buys or does not, and both are signals; you change the product or the price, and try again. Underneath, the rule that holds it together: make it easy to pay you, from the start. | concept
+!shot cs-loop.webp | images/ | Selling is how you learn: put it up for sale, ship it, learn from a buy or no buy, change it, and try again. | concept
 
 ## In short {#in-short}
 

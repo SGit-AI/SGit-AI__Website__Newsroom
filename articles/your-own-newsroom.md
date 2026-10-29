@@ -10,11 +10,11 @@
 
 # Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.2.0, 3 versions](versions/your-own-newsroom.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · newsroomreplicatevoice-memosgithub-pagesgithub-actionsclaude-codefounderssg-meterpaymentsclient-sidehow-toarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.3.0, 4 versions](versions/your-own-newsroom.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · newsroomreplicatevoice-memosgithub-pagesgithub-actionsclaude-codefounderssg-meterpaymentsclient-sidehow-toarticle
 
 ***Abstract:** The founders I most want to see succeed are the authentic ones, the people who come from the field they are building for. Their brand is themselves, and they need a medium for it: a place that keeps their history, what they do, their stories, their struggles, their ideas, their path and their milestones, so that they remember it and others can find it. This site is written that way. I record a voice memo, an agent session wired to GitHub researches it, checks every claim, writes it in my voice and publishes it to a static site, and readers pay a few pence a page if they find it useful. Everything needed to do the same exists today. This is the recipe, step by step: one public GitHub repository; GitHub Pages, published by GitHub Actions after a validation step; a Claude plan with cloud sessions and the Claude GitHub App, used from a browser or a phone; a house-rules file the agent reads first; the reader meter from api.newsroom.sgit.ai, pinned to a release, with a Stripe Payment Link you own; and the habits that make it trustworthy: corrections in the open, sources at the end, and nothing confidential in a public repository. It is simpler than this newsroom, and it does not need to be called a newsroom. It is also a good way to learn, in a native way, what publishing a pure client-side site actually means.*
 
-The loop: speak a memo; an agent session connected to one repository researches, writes and checks it; it commits and pushes; GitHub Actions validates and publishes to GitHub Pages; readers read, rate and top up through a payment link you own; and the record grows.
+The loop: speak a memo, an agent researches and writes, GitHub Actions publishes, readers read, rate and top up.
 
 ## In short
 
@@ -38,7 +38,7 @@ And there is a second reason. Building one teaches what a pure client-side site 
 
 ## What you need
 
-What you need, what it costs, and what is ready: a public GitHub repository, GitHub Pages published by GitHub Actions, a Claude plan with cloud sessions and the Claude GitHub App, a recorder that transcribes, house rules, the reader meter from api.newsroom.sgit.ai, a Stripe Payment Link; the writing pipeline as one package is not ready yet.
+What you need, what it costs and what is ready, from a public GitHub repository to a Stripe Payment Link.
 
 - **A GitHub account and one repository.** GitHub Pages is free, with one condition that matters: "If the account that owns the repository uses GitHub Free or GitHub Free for organizations, the repository must be public." [GitHub's limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits) are generous for a writing site: "Published GitHub Pages sites may be no larger than 1 GB", with "a *soft* bandwidth limit of 100 GB per month."
 - **A Claude plan with cloud sessions.** [Cloud sessions](https://code.claude.com/docs/en/claude-code-on-the-web) "are available on Pro, Max, and Team plans", and run from the browser at claude.ai/code or from the Code tab of the Claude app on a phone. They need GitHub connected; the Claude GitHub App gives them "Any public repository, and private repositories that the Claude GitHub App is installed on".

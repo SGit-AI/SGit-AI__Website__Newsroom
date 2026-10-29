@@ -10,13 +10,14 @@
 
 # Versions of: Start a company
 
-1 published version of [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](../start-a-company.md). The current one is **v1.0.0**.
+2 published versions of [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](../start-a-company.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-19 | published | 2,446 | first published | [`ee5725b18`](https://github.com/SGit-AI/SGit-AI__Website/commit/ee5725b1891d1151509c0e5323e02024c833f04d) | [current](../start-a-company.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,360 | +0 / −86 words; 1 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](start-a-company/v1.1.0.md) · [current](../start-a-company.md) |
+| **v1.0.0** | 2026-10-19 | published | 2,446 | first published | [`ee5725b18`](https://github.com/SGit-AI/SGit-AI__Website/commit/ee5725b1891d1151509c0e5323e02024c833f04d) |  |
 
 [← Back to the article](../start-a-company.md) · [All articles](../index.md)
 

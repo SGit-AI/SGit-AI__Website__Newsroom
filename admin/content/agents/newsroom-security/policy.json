@@ -1,0 +1,23 @@
+{
+ "id": "newsroom-security",
+ "handle": "@newsroom.security",
+ "status": "draft",
+ "agreed_by_editor": false,
+ "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+ "writes": [
+  "gate/**"
+ ],
+ "writes_except": [],
+ "appends": [],
+ "vaults_may_hold": [
+  "a reviewer vault's public read key",
+  "its own signing key, in its session only"
+ ],
+ "never_holds": [
+  "any vault key",
+  "SG_SEND_ACCESS_TOKEN",
+  "@newsroom.reviews's key",
+  "the editor's root key"
+ ],
+ "note": "Writes only to the review-gate branch, which holds nothing else."
+}

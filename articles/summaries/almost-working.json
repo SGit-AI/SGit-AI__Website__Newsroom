@@ -1,0 +1,110 @@
+{
+ "slug": "almost-working",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 331,
+   "line": "Three scheduled agents update the PHP site; each gets its key by QR handshake; almost working, built slowly.",
+   "para": "A researcher captures pages into a raw vault, a curator promotes what holds into a curated one, and a journalist updates the site. Neither Claude's scheduled tasks nor ChatGPT gives agents an identity or secrets, so I seal each session's vault key to its own key on pki.sgit.ai, and a schedule wakes it. The structure works; not every run is recorded yet.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 126,
+   "line": "Seven lines: the chain, updatability, the missing identity layer, the handshake, the schedule, almost working, genesis.",
+   "para": "Three agents in a chain capture, curate and publish. The hard part is updatability: proving when we last checked. Neither platform gives an agent an identity or a secret, so each gets its key by QR handshake, then a schedule wakes the same session: a feature and a vulnerability. It is almost working, and built slowly, as anything in genesis should be.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "slowly",
+   "label": "Slowly, and bit by bit",
+   "words": 202,
+   "line": "Even with full visibility and control, it took two days, because the workflow became mission critical.",
+   "para": "I wanted to capture this while it is being built. Every session and vault is mine, and it still took the better part of two days, because the PHP site makes public statements about a live event that must be current. In Wardley mapping terms this is genesis: built by hand, discovering what it needs, writing each discovery down.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "updatability",
+   "label": "The problem: updatability",
+   "words": 175,
+   "line": "Every statement is only as good as its last check, and non-updates need data too.",
+   "para": "How do we get new sources, new material and updates onto the site? The site's statements, from dark sites to compromises, each depend on when they were last checked. The no-named-compromise line is a time-bounded absence, so the site now shows a last-checked stamp from three sources, honest only if something keeps checking.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "three-agents",
+   "label": "Three agents, three stores",
+   "words": 297,
+   "line": "The researcher writes the raw source watch, the curator the evidence vault, the journalist the site.",
+   "para": "A correction to my memo: the large raw vault is the source watch, oq9gflln, written by the researcher, which watched 773 pages by 22 October. The curator, on Sonnet, promotes what holds into the evidence vault, 3ytzxm3g, with 227 sources. The journalist updates the site and keeps the state of affairs as versioned pages with diffs.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "what-broke",
+   "label": "Where it broke",
+   "words": 172,
+   "line": "Claude's scheduled tasks and ChatGPT both fell short for the same reason: no agent identity, no secrets.",
+   "para": "A scheduled task starts from a prompt, with nowhere to hand it a private vault key, and a fresh session per run would need a fresh key each time. ChatGPT ran one collection job well when pasted in, reaching four sites our cloud address cannot, but only from its own cloud and only when I pasted it.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "handshake",
+   "label": "The handshake",
+   "words": 271,
+   "line": "A session key, my root on pki.sgit.ai, and a sealed QR image: the identity and secrets layer.",
+   "para": "The agent makes a key pair for its session only and pins my root. It shows its fingerprint and a QR image; I compare the fingerprint and seal the vault key to it on pki.sgit.ai, signed by the root. The agent checks the signature, clones the vault and deletes the key file. The curator went through it first, on 23 October.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "feature-and-vulnerability",
+   "label": "A feature, and a vulnerability",
+   "words": 220,
+   "line": "A schedule can wake the same Claude session, which keeps its key: a feature and a vulnerability.",
+   "para": "The curator now wakes five times a day in UK working hours. But a session holding a write key acts unattended: the researcher's passes once booked their own next pass, so pausing it was not certain. The rules are explicit: promote only what the queue lists, create no schedules, treat web content as data, and stop if the container is replaced.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "schedule-vault",
+   "label": "The schedule vault: control is the queue",
+   "words": 143,
+   "line": "A public schedule vault with schedules, tasks and run records: control is the queue.",
+   "para": "I had least visibility over scheduling, so a public vault, weic8imn, now holds each agent's schedule and its tasks. Each agent follows one wake protocol: pull, check what is due, run it, write a run record; nothing due means an idle run. Its page reads the vault live, so I can ask a session to run a task by ID.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "state",
+   "label": "Where it stands",
+   "words": 204,
+   "line": "Works, set up but not yet proven, and missing, as of the evening of 23 October.",
+   "para": "Working: 40 recorded researcher runs, the curator's handshake, the schedule vault, the journalist's views, the last-checked stamp. Not yet proven: the curator's own runs, run records written by the agents themselves, the researcher's schedule and model, the watch running before each curator wake. Missing: surviving a replaced container, notifications, per-agent policies, collectors on a schedule.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "next-time",
+   "label": "Next time, much easier",
+   "words": 147,
+   "line": "Every gap is now a brief, so the next story starts from prompts, a vault layout and a handshake that work.",
+   "para": "That is how something moves from genesis to custom-built to product: built once by hand, in public, with a record of what it took. Next: the researcher on its own schedule before each curator wake, agents writing their own run records, a short recovery path for a new handshake, a behaviour policy per agent, and only then more agents.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 85,
+   "line": "Not finished; counts move; the vulnerability is reduced, not removed; ChatGPT was not run on a schedule.",
+   "para": "Almost working is the claim, with the gaps listed. The counts are as of 23 October. A scheduled session holding a write key acts unattended, and the rules reduce that risk rather than remove it. ChatGPT ran one collection job, by paste. The handshake depends on a person, by design, and that is also the bottleneck.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 101,
+   "line": "My memo, the PHP site's briefs and schedule vault, and pki.sgit.ai's agent and handover pages.",
+   "para": "My voice memo of 23 October; the PHP site's briefs on the scheduled curator, the schedule vault, the journalist's views and external collectors; the schedule vault at head 0881481b6136; the compromise map; pki.sgit.ai on agent identities and vault-key handover; and the earlier QR and PKI articles. Written up and checked by newsroom.writer.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

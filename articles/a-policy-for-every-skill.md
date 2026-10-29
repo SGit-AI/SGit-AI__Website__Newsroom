@@ -10,11 +10,11 @@
 
 # A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.2.0, 3 versions](versions/a-policy-for-every-skill.md) · [newsroom v0.12.36](https://newsroom.sgit.ai/admin/versions.html) · agent-skillsagent-behaviour-policynatural-language-policycipolicy-as-codesupply-chainprompt-injectionfractal-semantic-graphsgovernancearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.3.0, 4 versions](versions/a-policy-for-every-skill.md) · [newsroom v0.12.36](https://newsroom.sgit.ai/admin/versions.html) · agent-skillsagent-behaviour-policynatural-language-policycipolicy-as-codesupply-chainprompt-injectionfractal-semantic-graphsgovernancearticle
 
 ***Abstract:** I was with my friend Sean Turner this week, talking about agent behaviour policies, and he described something he built that I think is great. It is a natural-language control policy for agent skills, and a CI pipeline that checks every skill contributed to an organisation-wide repository against it before hundreds of developers pull it down to their machines. Is it safe, secure, well documented, usable, understandable by the model and understandable by people. And the part that makes it more than a linter: it reads the skill in its context. A skill that turns internal documentation into a LinkedIn post has no untrusted input to worry about; a skill that pulls content off the web is handling untrusted text, and should treat it as data, not obey it. It sits beside a security scan, not instead of one: the question is operational, is this the right way to give this skill to our workforce. That is an agent behaviour policy for a skill: the mandate is what the skill is for, the reach is everything it touches, and the gap is the risk. A control written in natural language is hope-based security, better than nothing and not enough on its own. Sean's next step is the one I keep coming back to: use an agent to write deterministic rules that follow the natural-language control, and keep the description, not the code, as the canonical version. Change the description, regenerate the code. Using models to need them less. And in a common ontology, a whole catalogue of skills becomes one graph, where the dangerous combinations are a query.*
 
-A policy for every skill. The natural-language control at the top is the canonical source; each contributed skill passes deterministic checks, a model that reads it in its context, rules an agent generated from the control, and a human review, before it reaches the organisation's repository and the developers who pull it.
+A policy for every skill: the control at the top and the checks each contributed skill passes.
 
 ## In short
 
@@ -47,7 +47,7 @@ The public tooling for reviewing skills is arriving too, and it shows where the 
 
 ## It is a behaviour policy for a skill
 
-Same check, different context, different verdict. Two illustrative skills described in the columns of an agent behaviour policy: one that turns internal documentation into a post, with trusted inputs and a person pressing publish; one that researches the web, with untrusted inputs and a barrier that must treat fetched text as data.
+Two illustrative skills in the columns of an agent behaviour policy, with the same check and different verdicts.
 
 When Sean described it, I recognised the columns. An [agent behaviour policy](footprint-and-blast-radius.md) describes one agent in one setting by its mandate, what it is for; its reach, everything it can actually touch; the gap between the two, which is the risk; and the barrier in front of each row of the gap. Describe a skill that way and the context question answers itself.
 

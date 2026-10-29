@@ -1,0 +1,162 @@
+{
+  "slug": "insuring-agents-the-whole-story",
+  "teaser": "The five articles on insuring agents in one place, and the three vaults where the ideas run: the simulation, the calculator and AIUC-1.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "An agent behaviour policy names rows, and a named row can be capped, priced by a formula anyone can check, split between the vendor and the customer, and backed by capital whose size follows from the limits sold; four articles develop that in turn and three vaults let anyone run it.",
+  "nodes": [
+    {
+      "id": "question",
+      "label": "Who could underwrite a behaviour policy?",
+      "kind": "question",
+      "summary": "The question the series started from."
+    },
+    {
+      "id": "rows",
+      "label": "A payout for every row",
+      "kind": "claim",
+      "summary": "A limit per named row, a lower premium per enforced control."
+    },
+    {
+      "id": "market",
+      "label": "Who carries the risk",
+      "kind": "example",
+      "summary": "Five companies sell agent cover; start as a managing agent."
+    },
+    {
+      "id": "vendor",
+      "label": "The vendor's layer",
+      "kind": "method",
+      "summary": "The vendor carries a share of the rows its product decides."
+    },
+    {
+      "id": "where",
+      "label": "Where to build it",
+      "kind": "method",
+      "summary": "London to underwrite and carry; the money buys cover."
+    },
+    {
+      "id": "lto",
+      "label": "Licence to Operate vault",
+      "kind": "artefact",
+      "summary": "A simulated policy: every reply priced against a live policy."
+    },
+    {
+      "id": "calc",
+      "label": "The underwriting calculator",
+      "kind": "artefact",
+      "summary": "The series' formula as data, with a calculator."
+    },
+    {
+      "id": "aiuc",
+      "label": "AIUC-1 as a graph",
+      "kind": "artefact",
+      "summary": "A standard with a conformance layer that asks what is insurable."
+    },
+    {
+      "id": "thread",
+      "label": "Capped rows make it arithmetic",
+      "kind": "claim",
+      "summary": "Priced, split and capitalised from named, capped rows."
+    },
+    {
+      "id": "next",
+      "label": "Insurers, vendors and investors",
+      "kind": "question",
+      "summary": "Who would make it real."
+    }
+  ],
+  "edges": [
+    {
+      "from": "question",
+      "to": "rows",
+      "rel": "leads-to"
+    },
+    {
+      "from": "rows",
+      "to": "market",
+      "rel": "leads-to"
+    },
+    {
+      "from": "market",
+      "to": "vendor",
+      "rel": "leads-to"
+    },
+    {
+      "from": "vendor",
+      "to": "where",
+      "rel": "leads-to"
+    },
+    {
+      "from": "lto",
+      "to": "rows",
+      "rel": "example-of"
+    },
+    {
+      "from": "calc",
+      "to": "vendor",
+      "rel": "example-of"
+    },
+    {
+      "from": "aiuc",
+      "to": "market",
+      "rel": "example-of"
+    },
+    {
+      "from": "where",
+      "to": "thread",
+      "rel": "produces"
+    },
+    {
+      "from": "thread",
+      "to": "next",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-payout-for-every-row",
+      "who-carries-the-risk",
+      "the-vendors-layer",
+      "where-to-build-the-agent-insurer"
+    ],
+    "pages": [],
+    "sites": [
+      "https://sgit.ai/demos/vaults/licence-to-operate/index.html",
+      "https://sgit.ai/demos/vaults/aiuc-1-conformance/index.html",
+      "https://dev.vault.sgraph.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The articles describe; the vaults run.",
+      "why": "Why the series shows its vaults."
+    },
+    {
+      "text": "A capped row can be priced, by a formula anyone can check.",
+      "why": "The thread through the five articles."
+    }
+  ],
+  "figures": [
+    {
+      "file": "is-series.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/is-series.webp",
+      "caption": "The four articles this one ties together, by their lead figures.",
+      "kind": "collage"
+    },
+    {
+      "file": "is-vaults.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/is-vaults.webp",
+      "caption": "Three vaults behind the series, running in the browser: the simulation, the calculator, the decks and AIUC-1.",
+      "kind": "collage"
+    },
+    {
+      "file": "is-lto-simulation.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/is-lto-simulation.webp",
+      "caption": "The Licence to Operate simulation mid-conversation: licence held, a reply's cost, the grant against the mandate.",
+      "kind": "screenshot"
+    }
+  ]
+}

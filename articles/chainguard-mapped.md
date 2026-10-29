@@ -10,11 +10,11 @@
 
 # Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.2.0, 3 versions](versions/chainguard-mapped.md) · [newsroom v0.12.47](https://newsroom.sgit.ai/admin/versions.html) · chainguardsupply-chaincontainersvulnerabilitiesvexosvcontextagent-behaviour-policysgitopen-sourceagentsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.3.0, 4 versions](versions/chainguard-mapped.md) · [newsroom v0.12.47](https://newsroom.sgit.ai/admin/versions.html) · chainguardsupply-chaincontainersvulnerabilitiesvexosvcontextagent-behaviour-policysgitopen-sourceagentsarticle
 
 ***Abstract:** Chainguard is one of the companies doing the most interesting work in software supply chain security, and much of it is open: the Wolfi distribution, public advisory feeds, Sigstore in its lineage, and a growing set of products for agents. So I mapped it: the company, what it builds from the operating system up to agents, what data it publishes that anyone can read, and how deep that data goes. I read the feeds and counted them. 12,480 advisories covering 12,125 distinct CVEs; in a sample, about seven in ten findings marked fixed and one in five marked as not applying. And in the archived Wolfi advisories, where the reasons were public, 2,850 determinations that a vulnerability did not apply, of which 177 gave a reason about context: the vulnerable code is not in the execution path, an attacker cannot control it, or it is mitigated. That is where the graph stops, and it is the question that matters to me. As with everything in security, it is about context. An image with many vulnerabilities is fine if the application on top never reaches them; one reachable flaw is not. Deciding which images are non-negotiable and which can ship today needs a graph from the user story, through the code and its dependencies, to the container. That context layer is where an open behaviour policy and an encrypted vault fit, next to the agent products Chainguard is now shipping, which already talk about policies. I make the case for each.*
 
-Chainguard, mapped. From the operating system to agents: what it builds, the public data a third party can read today, and where an open policy and an encrypted vault could add the context that decides whether an image can ship.
+Chainguard, mapped from the operating system to agents: what it builds, the public data, and where a policy could help.
 
 ## In short
 
@@ -61,7 +61,7 @@ The public records say what the status is. In the current feed, a "false positiv
 
 ## How deep the graph goes
 
-How far up the stack the context goes. Chainguard's data describes packages and the components inside them; the decision whether an image can ship today is about the application above: is the vulnerable code reachable from what is exposed? A context layer from the user story to the code would sort each finding into must fix, ship now with a reason, and ship now and watch.
+How far up the stack the context goes: from Chainguard's package data to the application above, with three outcomes.
 
 The archive holds 30,030 advisories across 1,616 packages, and 2,850 decisions that a vulnerability did not apply. Their reasons, counted:
 

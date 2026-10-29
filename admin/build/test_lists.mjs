@@ -144,6 +144,51 @@ try {
     await pg.goto(B + 'for/#r=99999'); await wait(1500)
     check(/nothing in this list/.test(await pg.evaluate(() => document.querySelector('#rl-mount').textContent)), 'a list with no article that exists says there is nothing to show')
 
+    // the list's views and what was read on it (card 086)
+    {
+        const lp = await ctxB.newPage()
+        lp.on('pageerror', e => errors.push(e.message))
+        const sa = ids.articles.find(e => e.n === a).slug, sb = ids.articles.find(e => e.n === b).slug
+        const summ = JSON.parse(fs.readFileSync(path.join(ROOT, `articles/summaries/${sa}.json`), 'utf8')).sections
+        // the reader has read the whole of the first article, by the strip's own record
+        await lp.goto(B + 'for/'); await lp.waitForTimeout(300)
+        await lp.evaluate(([slug, secs]) => {
+            localStorage.removeItem('sgit.notes.v1'); localStorage.removeItem('newsroom.list.view')
+            const pages = {}; pages[`/articles/${slug}.html`] = { visits: 1, sections: secs.map(s => ({ id: s.id, words: s.words, ms: s.words / 300 * 60000 + 1 })) }
+            localStorage.setItem('sgit.reading.v1', JSON.stringify({ v: 1, pages }))
+        }, [sa, summ])
+        await lp.goto(B + link); await lp.waitForTimeout(1800)
+        const pill = n => lp.evaluate(i => document.querySelectorAll('.lv-card')[i].querySelector('.lv-pill').textContent, n)
+        check((await pill(0)) === 'Read' && (await pill(1)) === 'Not read yet', 'a card says what was read, from the strip\'s records')
+        check(await lp.evaluate(() => document.querySelectorAll('.lv-card')[0].querySelectorAll('.lv-seg.done').length === document.querySelectorAll('.lv-card')[0].querySelectorAll('.lv-seg').length), 'every section of a read article is filled in its bar')
+        check(/Continue/.test(await lp.evaluate(() => document.querySelector('.lv-hero .rl-btn.primary').textContent)) && (await lp.evaluate(() => document.querySelector('.lv-hero .rl-btn.primary').getAttribute('href'))).includes(sb), 'Continue goes to the first article not yet read')
+        check(await lp.evaluate(() => document.querySelector('main.doc').classList.contains('lv-wide') && !!document.querySelector('.lv-side')), 'the list is the wide page, with the side that says what it is')
+        // Not for me is a note, and a second tap takes it back
+        await lp.evaluate(() => [...document.querySelectorAll('.lv-card')[1].querySelectorAll('.lv-d')].find(x => x.textContent === 'Not for me').click()); await lp.waitForTimeout(200)
+        const notes = await lp.evaluate(() => JSON.parse(localStorage.getItem('sgit.notes.v1') || '{"notes":[]}').notes)
+        check(notes.length === 1 && notes[0].kind === 'not-for-me' && notes[0].path === `/articles/${sb}.html` && notes[0].n === b && (await pill(1)) === 'Set aside', 'Not for me is kept as a note on that article, and the card is set aside')
+        await lp.evaluate(() => [...document.querySelectorAll('.lv-card')[1].querySelectorAll('.lv-d')].find(x => x.textContent === 'Not for me').click()); await lp.waitForTimeout(200)
+        check((await lp.evaluate(() => JSON.parse(localStorage.getItem('sgit.notes.v1')).notes.length)) === 0 && (await pill(1)) === 'Not read yet', 'a second tap takes the note back')
+        // reading in another tab shows here
+        const other = await ctxB.newPage(); await other.goto(B + 'for/')
+        await other.evaluate(slug => { const s = JSON.parse(localStorage.getItem('sgit.reading.v1')); s.pages[`/articles/${slug}.html`] = { visits: 1, read: 0.5, sections: [] }; localStorage.setItem('sgit.reading.v1', JSON.stringify(s)) }, sb)
+        await lp.waitForTimeout(400); await other.close()
+        check((await pill(1)) === '50% read', 'what another tab reads shows on the list without a reload')
+        // the five views, each with the articles in order
+        for (const v of ['Headlines', 'Sections', 'Pictures', 'Graph', 'Cards']) {
+            await lp.evaluate(v => [...document.querySelectorAll('.lv-tab')].find(x => x.textContent === v).click(), v); await lp.waitForTimeout(300)
+            const got = await lp.evaluate(() => [...document.querySelectorAll('.rl .rl-item .rl-t')].map(e => e.textContent))
+            const full = v === 'Headlines' || v === 'Pictures' ? want([a, b, c, d]).map(t => t.split(/:\s/)[0]) : want([a, b, c, d])
+            check(JSON.stringify(got) === JSON.stringify(full), `the ${v} view lists the articles in order`)
+        }
+        await lp.evaluate(() => [...document.querySelectorAll('.lv-tab')].find(x => x.textContent === 'Graph').click()); await lp.waitForTimeout(300)
+        check(await lp.evaluate(() => document.querySelectorAll('.lv-svg .lv-node').length === 4 && !!document.querySelector('.lv-svg .lv-node.s-read')), 'the graph draws each article, the read one filled')
+        await lp.reload(); await lp.waitForTimeout(1500)
+        check(await lp.evaluate(() => document.querySelector('.lv-tab[aria-selected=true]').textContent === 'Graph'), 'the view chosen is remembered')
+        await lp.evaluate(() => { localStorage.removeItem('newsroom.list.view'); localStorage.removeItem('sgit.reading.v1') })
+        await lp.close()
+    }
+
     // the article footer
     await pg.goto(B + 'articles/pay-after-you-read.html'); await wait(1200)
     const no = ids.articles.find(e => e.slug === 'pay-after-you-read').n

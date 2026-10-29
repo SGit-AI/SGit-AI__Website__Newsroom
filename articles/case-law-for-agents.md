@@ -10,11 +10,11 @@
 
 # Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.0.0](versions/case-law-for-agents.md) · [newsroom v0.12.97](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-decision-policycase-lawprecedentcommon-lawgovernancedecision-recordsmaturity-modelseriesarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.1.0, 2 versions](versions/case-law-for-agents.md) · [newsroom v0.12.97](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-decision-policycase-lawprecedentcommon-lawgovernancedecision-recordsmaturity-modelseriesarticle
 
 ***Abstract:** The third article in the series on agent decision policies is about the cases nobody predicted. A business will never write down every variation of its decisions, and it should not try. English law has lived with the same problem for centuries, and its answer fits agents well. Parliament writes statutes from principles and objectives; delegated rules must stay within the powers an Act gives them; courts apply both to the facts in front of them; decisions of higher courts bind lower ones; a case whose facts differ in a way that matters is distinguished; and the highest court can depart from its own past decisions when they turn out wrong. For agents, the same shape gives a working loop. Principles and envelopes come from the top. A case the decision policy does not settle goes to a person, who decides with the context to decide well, and the answer is recorded with its facts and reasons. The next case with the same material facts follows that precedent without asking again; one that differs is distinguished, and escalates. Precedents that keep holding are written into the policy, and then compiled into code. That is the maturity curve this site has described before, from a person deciding to a rule that runs without them, but driven by real cases instead of guessed in advance. It needs one thing most agent systems lack: a decision record good enough to serve as a law report.*
 
-How a decision earns its way into code. A case arrives at a branch point. If a rule settles it, or a recorded precedent with the same material facts matches, it is resolved and recorded. If not, or if the facts differ in a way that matters, it is distinguished and escalated to a person with the context to decide. The decision is recorded with its reasons and becomes a precedent that the next matching case follows. A precedent that holds case after case is written into the policy, then compiled into deterministic, tested code.
+How a decision earns its way into code: from a case at a branch point to a precedent, then to tested code.
 
 Agent decision policies: a series in four parts
 
@@ -140,6 +140,8 @@ Agents & policy[This article as a graph →](graphs.md#case-law-for-agents)
 
 ### Continued by
 
+- [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](the-delegation-record.md) RiskMandate's go-to-market plan: one workflow from an existing business rule to evidence that still holds after a change, starting with our own inbox.
+- [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](approved-business-mandates.md) Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.
 - [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](what-can-your-agent-reach.md) RiskMandate and the Agent Behaviour Policy in plain words: what it does, why it is not real time, which agents it covers, and how it gets into the room.
 - [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](inside-the-northstar-twin.md) A tour of the Northstar refund twin: thirteen synthetic refunds through four designs, every decision played step by step, replayed and compared.
 - [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](allowed-is-not-right.md) Ashish Rajan's Northstar refund: allowed to refund $200, owed $120, paid $150. His four questions mapped to three policies, and tested on a twin.

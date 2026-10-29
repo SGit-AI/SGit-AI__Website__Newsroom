@@ -10,7 +10,7 @@ tags: sgit, ci, github-actions, pipelines, vaults, append-lanes, pki, secrets, s
 status: published
 ---
 
-!shot vc-pipeline.webp | images/ | A pipeline whose stages talk through a vault. Each job clones only the folders it needs, with only the key it needs: build writes with the vault key, test shards append to write-only inboxes, the summary reads the lane, release and deploy read with the read key and their own key pairs, and anyone outside GitHub can clone the results with a read key. What leaves a runner is ciphertext. | architecture
+!shot vc-pipeline.webp | images/ | A pipeline whose stages talk through a vault, with each job holding only the key it needs. | architecture
 
 ## In short {#in-short}
 
@@ -65,7 +65,7 @@ But a scoped clone is not a wall. A job holding the full vault key can widen its
 
 ## The keys are the boundaries {#keys}
 
-!shot vc-keys.webp | images/ | Which job holds which key. Build and the summary hold the vault key, release, deploy and outside readers the read key, each test shard one append token, the summary the lane's enum key, and the jobs that sign or decrypt their own key pair. The server access token opens a private server's door for everyone; it is not a vault permission. | comparison
+!shot vc-keys.webp | images/ | Which job holds which key, and what the server access token does and does not do. | comparison
 
 sgit gives a pipeline four kinds of key, and the useful design question is which job holds which.
 
@@ -96,7 +96,7 @@ To give a job its identity, the key folder, about 5 KB once packed, and its pass
 
 ## No hosted server {#no-server}
 
-!shot vc-noserver.webp | images/ | No hosted server. The vault server runs as a container inside the job with its storage in a folder; the folder holds only ciphertext, so it can be saved to the Actions cache, an artifact, a release asset or a git branch, and the next run restores it and clones with its full history. Reading needs no server at all; pushing needs the server's API, which the sidecar provides. | architecture
+!shot vc-noserver.webp | images/ | No hosted server: the vault server runs as a container inside the job, and its ciphertext is saved between runs. | architecture
 
 Not every team wants its pipeline to depend on a vault server somewhere else. It does not have to.
 

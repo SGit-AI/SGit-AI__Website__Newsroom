@@ -10,11 +10,11 @@
 
 # Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.0.0](versions/knowledge-that-maintains-itself.md) · [newsroom v0.12.40](https://newsroom.sgit.ai/admin/versions.html) · knowledge-managementfractal-semantic-graphsontologiestaxonomiesbriefingagentstokensvectorssgitvaultspoliciesarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/knowledge-that-maintains-itself.md) · [newsroom v0.12.40](https://newsroom.sgit.ai/admin/versions.html) · knowledge-managementfractal-semantic-graphsontologiestaxonomiesbriefingagentstokensvectorssgitvaultspoliciesarticle
 
 ***Abstract:** In a conversation today I tried to put in a few sentences what all the graph work on this site is for, and it came out as knowledge management. Take an organisation's policies and internal information, and build a fractal semantic graph of it: an ontology and a taxonomy for every element, each part kept in its own vocabulary, with named edges between them. Then brief people and agents from the graph, not from the pile of documents. They get the slice they need and the diff since they last read it, so the context is there and the tokens are not wasted. It looks a bit like vector search, but vectors give you similarity, not a reason, and the answer can change with the model and the index; a graph gives the same answer to the same question and the path that led to it. The most important part is that the feedback loop maintains itself. You do not have to get the graph right first; you have to maintain it, and agents are very good at maintaining graphs. When something in the graph looks wrong, you ask why, and the answer is a fix at the right altitude. I measured the briefing on this site: the graphs of its 112 articles hold about an eighth of the articles' text. And the brief has to travel. That is what sgit is for: an encrypted git where I give an agent the key to a vault, it reads and writes there, I can scope it to one folder and encrypt to it with its own key, and the vault itself says, this is what you need to read now.*
 
-Knowledge that maintains itself. Sources kept in their own vocabularies; agents build and maintain the graph; people and agents are briefed from it; what looks odd is noticed and asked about; the fix lands at the right altitude; and each brief travels as a vault, scoped and encrypted to the one who needs it.
+Knowledge that maintains itself: sources, agents, graph, briefs and fixes, with each brief travelling as a vault.
 
 ## In short
 
@@ -36,7 +36,7 @@ Then you brief from the graph. A person joining a team, or an agent starting a t
 
 ## Briefing from the graph
 
-Briefing from the graph, measured on this site. The 112 articles in full are about 704,000 tokens; their graphs as JSON with all their structure about 199,000; the graphs' text alone, teaser, core idea, nodes and edges, about 87,000. Below, what a graph gives that similarity search does not: the same answer to the same question, the path behind it, a diff of what changed, and a maintainer.
+Briefing from the graph, measured on this site: the tokens in the articles, their graphs and the graphs' text alone.
 
 This site already works this way, so I measured it. Every article here has a graph, 8 to 18 nodes with typed edges, a teaser and a one-paragraph core idea, written with the article and checked by the validator on every release. Across the 112 articles there are 1,435 nodes and 1,538 edges. The articles' text, counted from their markdown, is about 704,000 tokens at four characters a token; the graphs as JSON, with every bracket and field name, about 199,000; the graphs' own words, teaser, core idea, node labels and summaries and the edges between them, about 87,000. That is 12.4% of the text, an eighth, and the median article's graph is 12.8% of the article.
 
@@ -107,6 +107,7 @@ Graphs & knowledgeVaults & method[This article as a graph →](graphs.md#knowled
 
 ### Continued by
 
+- [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](aws-from-the-vault.md) A proposed aws.twin.sgit.ai: an AWS twin on a vault first, then a temporary AWS session from the user's vault.
 - [Bringing my past work back: a daily worker that turns eighteen years of essays, talks, posts and tools into linkable articles, and why every team needs one](bringing-my-past-work-back.md) A daily worker that turns eighteen years of essays, talks, posts and tools into linkable articles: then and now, connected, two or three a day.
 - [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](who-will-fix-your-mess.md) HBR's deployment gap, answered from this site's articles: explorers, villagers and town planners, a record the agents keep, and open source.
 - [The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it](the-agents-write-too.md) The newsroom's agents get their own bylines: lessons every agent loads, debriefs as source material, a page for every agent, and a conductor.

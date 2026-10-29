@@ -30,13 +30,14 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
       <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
       <a class="sl" href="../about/index.html">Why this exists</a>
       <a class="sl" href="../desks/index.html">The five desks</a>
@@ -86,6 +87,8 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -153,17 +156,19 @@
   <script src="../assets/reader/strip.js" defer></script>
   <script src="../assets/reader/highlights.js" defer></script>
   <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
   <div class="theme-pick"></div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful</p>
  <h1>Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful</h1>
- <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-15 &middot; <a href="versions/your-own-newsroom.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.80</a> &middot; <span class="chip">newsroom</span><span class="chip">replicate</span><span class="chip">voice-memos</span><span class="chip">github-pages</span><span class="chip">github-actions</span><span class="chip">claude-code</span><span class="chip">founders</span><span class="chip">sg-meter</span><span class="chip">payments</span><span class="chip">client-side</span><span class="chip">how-to</span><span class="chip">article</span></p>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-15 &middot; <a href="versions/your-own-newsroom.html" title="Every published version of this article, and what changed">article v1.3.0, 4 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.80</a> &middot; <span class="chip">newsroom</span><span class="chip">replicate</span><span class="chip">voice-memos</span><span class="chip">github-pages</span><span class="chip">github-actions</span><span class="chip">claude-code</span><span class="chip">founders</span><span class="chip">sg-meter</span><span class="chip">payments</span><span class="chip">client-side</span><span class="chip">how-to</span><span class="chip">article</span></p>
  <p class="abstract"><em><b>Abstract:</b> The founders I most want to see succeed are the authentic ones, the people who come from the field they are building for. Their brand is themselves, and they need a medium for it: a place that keeps their history, what they do, their stories, their struggles, their ideas, their path and their milestones, so that they remember it and others can find it. This site is written that way. I record a voice memo, an agent session wired to GitHub researches it, checks every claim, writes it in my voice and publishes it to a static site, and readers pay a few pence a page if they find it useful. Everything needed to do the same exists today. This is the recipe, step by step: one public GitHub repository; GitHub Pages, published by GitHub Actions after a validation step; a Claude plan with cloud sessions and the Claude GitHub App, used from a browser or a phone; a house-rules file the agent reads first; the reader meter from api.newsroom.sgit.ai, pinned to a release, with a Stripe Payment Link you own; and the habits that make it trustworthy: corrections in the open, sources at the end, and nothing confidential in a public repository. It is simpler than this newsroom, and it does not need to be called a newsroom. It is also a good way to learn, in a native way, what publishing a pure client-side site actually means.</em></p>
-<figure class="shot" data-shot="yn-loop.webp" data-dir="images/" data-alt="The loop: speak a memo; an agent session connected to one repository researches, writes and checks it; it commits and pushes; GitHub Actions validates and publishes to GitHub Pages; readers read, rate and top up through a payment link you own; and the record grows." data-kind="architecture"><figcaption>The loop: speak a memo; an agent session connected to one repository researches, writes and checks it; it commits and pushes; GitHub Actions validates and publishes to GitHub Pages; readers read, rate and top up through a payment link you own; and the record grows.</figcaption></figure>
+<figure class="shot" data-shot="yn-loop.webp" data-dir="images/" data-alt="The loop: speak a memo, an agent researches and writes, GitHub Actions publishes, readers read, rate and top up." data-kind="architecture"><figcaption>The loop: speak a memo, an agent researches and writes, GitHub Actions publishes, readers read, rate and top up.</figcaption></figure>
 <h2 id="in-short">In short</h2>
 <ul>
 <li><b>An authentic founder's brand is their story.</b> It needs a medium that keeps it.</li>
@@ -181,7 +186,7 @@
 <p>That brand needs a medium. A founder has to remember their own history, and needs a way to capture what they do as they do it: the stories, the struggles, the ideas, the path, the milestones. Most of it is lost in calls and chats. A site written from voice memos keeps it, with dates, and because every claim is checked before it is published, it is a record that others can trust. I found out on this site that <a href="my-memory-checked.html">my own memory needs checking</a>; a founder's does too, and it is better to find out before an investor does.</p>
 <p>And there is a second reason. Building one teaches what a pure client-side site is: static files on a host, code that runs in the reader's browser, and no server that holds anyone's data. For a founder moving their own product in that direction, publishing their story this way is the most native way to learn it.</p>
 <h2 id="need">What you need</h2>
-<figure class="shot" data-shot="yn-need.webp" data-dir="images/" data-alt="What you need, what it costs, and what is ready: a public GitHub repository, GitHub Pages published by GitHub Actions, a Claude plan with cloud sessions and the Claude GitHub App, a recorder that transcribes, house rules, the reader meter from api.newsroom.sgit.ai, a Stripe Payment Link; the writing pipeline as one package is not ready yet." data-kind="comparison"><figcaption>What you need, what it costs, and what is ready: a public GitHub repository, GitHub Pages published by GitHub Actions, a Claude plan with cloud sessions and the Claude GitHub App, a recorder that transcribes, house rules, the reader meter from api.newsroom.sgit.ai, a Stripe Payment Link; the writing pipeline as one package is not ready yet.</figcaption></figure>
+<figure class="shot" data-shot="yn-need.webp" data-dir="images/" data-alt="What you need, what it costs and what is ready, from a public GitHub repository to a Stripe Payment Link." data-kind="comparison"><figcaption>What you need, what it costs and what is ready, from a public GitHub repository to a Stripe Payment Link.</figcaption></figure>
 <ul>
 <li><b>A GitHub account and one repository.</b> GitHub Pages is free, with one condition that matters: "If the account that owns the repository uses GitHub Free or GitHub Free for organizations, the repository must be public." <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits">GitHub's limits</a> are generous for a writing site: "Published GitHub Pages sites may be no larger than 1 GB", with "a <em>soft</em> bandwidth limit of 100 GB per month."</li>
 <li><b>A Claude plan with cloud sessions.</b> <a href="https://code.claude.com/docs/en/claude-code-on-the-web">Cloud sessions</a> "are available on Pro, Max, and Team plans", and run from the browser at claude.ai/code or from the Code tab of the Claude app on a phone. They need GitHub connected; the Claude GitHub App gives them "Any public repository, and private repositories that the Claude GitHub App is installed on".</li>
@@ -333,6 +338,7 @@ the live URL once it loads.
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo of mine on 15 October 2026, written by this site's agent in the voice of this site; the argument and the editorial responsibility are mine. The recipe is this site's own: its <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">repository</a>, its <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom/blob/dev/.github/workflows/deploy-pages.yml">deploy workflow</a> and its <a href="https://newsroom.sgit.ai/replicate/index.html">Replicate</a> page. <a href="https://api.newsroom.sgit.ai/">api.newsroom.sgit.ai</a>, its <a href="https://api.newsroom.sgit.ai/for-publishers/">page for publishers</a>, its <a href="https://api.newsroom.sgit.ai/for-developers/">developer quick start</a> and <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom__API">its source</a>, release v0.2.5; GitHub Docs, <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">Creating a GitHub Pages site</a> and <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits">GitHub Pages limits</a>; Claude Code Docs, <a href="https://code.claude.com/docs/en/claude-code-on-the-web">Use Claude Code in the cloud</a>. Read on 15 October 2026.</p>
 <sg-meter view="page" kind="article" date="2026-10-15" topics="site-and-engineering startups-and-strategy" title="Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Site &amp; engineering</span><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#your-own-newsroom">This article as a graph &rarr;</a></p>
@@ -368,7 +374,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="your-own-newsroom.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="your-own-newsroom.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -402,6 +408,8 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

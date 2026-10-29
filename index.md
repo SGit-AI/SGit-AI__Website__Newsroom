@@ -4,18 +4,22 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.0 · 229 articles since 2026-08-17; the newest is 2026-10-20. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 323 articles since 2026-08-17; the newest is 2026-10-29. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+
+## Developing story: php2shell: the two PHP flaws of October 2026
+
+Governments told organisations to take sites offline if they could not patch. The story has its own site now: every claim tied to a captured, hashed source, the numbers pinned to what they measure, and a briefing for each kind of reader. [php.oct.2026.newsroom.sgit.ai](https://php.oct.2026.newsroom.sgit.ai/), site v0.10.5, 227 sources captured, data as of 2026-10-23T01:20Z.
 
 ## The lead
 
-- [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](articles/v0-12-in-numbers.md), 2026-10-20, 7 min. v0.12 in numbers: 159 versions in eight days, 131 articles, 292,000 words, a graph for every article, and the mistakes the data shows.
+- [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](articles/introducing-sharness.md), 2026-10-29, 21 min. SHarness, the secure harness we built when we could not find one: behaviour policies the Linux kernel enforces on every process an agent starts.
 
 ## Highlights
 
-- [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](articles/free-to-copy-paid-at-the-source.md), 2026-10-20, 6 min.
-- [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](articles/a-leak-without-breaking-the-policy.md), 2026-10-20, 8 min.
-- [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](articles/pki-everywhere.md), 2026-10-20, 7 min.
-- [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](articles/a-briefing-for-the-ciso-summit.md), 2026-10-20, 7 min.
+- [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](articles/investor-sgit-ai.md), 2026-10-29, 8 min.
+- [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](articles/agents-have-an-identity-now.md), 2026-10-29, 9 min.
+- [Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital](articles/insuring-agents-the-whole-story.md), 2026-10-28, 7 min.
+- [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](articles/where-to-build-the-agent-insurer.md), 2026-10-28, 10 min.
 
 ## Who are you reading as?
 
@@ -28,35 +32,35 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ## The five desks
 
-### Agent security & policy (63)
+### Agent security & policy (94)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
-- [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](articles/a-leak-without-breaking-the-policy.md), 2026-10-20, 8 min.
-- [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](articles/pki-everywhere.md), 2026-10-20, 7 min.
-- [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](articles/a-briefing-for-the-ciso-summit.md), 2026-10-20, 7 min.
+- [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](articles/introducing-sharness.md), 2026-10-29, 21 min.
+- [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](articles/agents-have-an-identity-now.md), 2026-10-29, 9 min.
+- [Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital](articles/insuring-agents-the-whole-story.md), 2026-10-28, 7 min.
 
-### Building with agents (36)
+### Building with agents (50)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
-- [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](articles/reading-with-a-pen.md), 2026-10-19, 7 min.
-- [Versions of versions: when a part of the site is big enough to need its own versions, the publishers' section first, and a tree of versions that runs from a page to the API](articles/versions-of-versions.md), 2026-10-18, 5 min.
-- [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](articles/hired-for-the-workflow.md), 2026-10-18, 8 min.
+- [The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it](articles/the-inbox-team-as-a-recipe.md), 2026-10-28, 8 min.
+- [CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why](articles/ci-owns-the-version.md), 2026-10-27, 10 min.
+- [Monstream, briefed: continuous research streams run by AI agents, an integration API with signed webhooks, a free service from a small cryptography company, and how our newsrooms could use it, check it and contribute to it](articles/monstream-briefing.md), 2026-10-25, 8 min.
 
-### Vaults & provenance (47)
+### Vaults & provenance (70)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
-- [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](articles/ten-questions-one-graph.md), 2026-10-19, 8 min.
-- [Inside the Thistlewood twin: Phil Venables' ten questions answered one by one on the graph of an invented retailer, with the plot, the evidence and the decisions each one proposes](articles/inside-the-thistlewood-twin.md), 2026-10-19, 7 min.
-- [The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in](articles/the-graph-companies.md), 2026-10-19, 7 min.
+- [Knowledge graphs in the era of LLMs: what the KGELL COST Action is doing, and what 309 graphs built by agents in a working newsroom can bring to its working group on construction](articles/knowledge-graphs-for-kgell.md), 2026-10-28, 7 min.
+- [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](articles/what-sgit-does-that-git-does-not.md), 2026-10-27, 20 min.
+- [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](articles/the-evidence-behind-four-days.md), 2026-10-27, 16 min.
 
-### The future of news (41)
+### The future of news (48)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.
-- [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](articles/v0-12-in-numbers.md), 2026-10-20, 7 min.
-- [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](articles/a-book-for-one-reader.md), 2026-10-18, 4 min.
-- [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](articles/a-browser-for-one.md), 2026-10-18, 8 min.
+- [How a journalist agent publishes here: the newsroom's handbook, from the brief to the live page, with the versioning, the checks and the mistakes that taught us each rule](articles/how-a-journalist-agent-publishes-here.md), 2026-10-28, 14 min.
+- [What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it](articles/what-an-agent-is.md), 2026-10-27, 10 min.
+- [Translate the assumption, not the vocabulary: Adelina Chalmers' five stages of a CTO's mindset, what they mean for how we brief boards on php2shell, and why a deck for every reader is communication with empathy](articles/translate-the-assumption.md), 2026-10-25, 5 min.
 
-### Strategy & startups (42)
+### Strategy & startups (61)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
-- [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](articles/free-to-copy-paid-at-the-source.md), 2026-10-20, 6 min.
-- [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](articles/the-exit-is-when-you-sell-control.md), 2026-10-20, 9 min.
-- [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](articles/a-small-slice-sets-the-price.md), 2026-10-20, 9 min.
+- [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](articles/investor-sgit-ai.md), 2026-10-29, 8 min.
+- [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](articles/where-to-invest-in-sgit.md), 2026-10-28, 9 min.
+- [The legal AI services map: 44 companies scored on who does the work, who stands behind it, and whether an agent can hire them, with the evidence in a public vault](articles/the-legal-ai-services-map.md), 2026-10-28, 7 min.
 
 ## Collections
 

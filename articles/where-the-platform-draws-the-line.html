@@ -30,13 +30,14 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
       <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
       <a class="sl" href="../about/index.html">Why this exists</a>
       <a class="sl" href="../desks/index.html">The five desks</a>
@@ -86,6 +87,8 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -153,11 +156,13 @@
   <script src="../assets/reader/strip.js" defer></script>
   <script src="../assets/reader/highlights.js" defer></script>
   <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
   <div class="theme-pick"></div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it</p>
  <h1>Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it</h1>
@@ -302,6 +307,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo of mine, recorded after reading Microsoft's announcement. I asked an agent in a separate Claude session to check the memo against Microsoft's own material and this network's pages, and to draft this article with its figures and data; this site's agent then rewrote it in the voice of this site and added what we learned this week. The argument is mine, and so is the editorial responsibility. The briefing is built from Microsoft's <a href="https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/">announcement of 7 October 2026</a> (Windows Developer Blog), the <a href="https://github.com/microsoft/mxc">MXC repository</a> as of 11 October 2026 (README, configuration schema documentation, learning-mode documentation and the 1.0.0 contract fixtures, MIT licence), and Microsoft's <a href="https://commandline.microsoft.com/agent-control-specification-runtime-governance/">ACS announcement</a> of 2 June 2026 (Command Line) with the <a href="https://github.com/microsoft/agent-governance-toolkit">Agent Governance Toolkit</a>. Microsoft's material is paraphrased throughout and quoted twice. The JSON example uses the schema's field names with illustrative paths, and validates against the 1.0.0 schema. The eight scenarios are reasoned, not run. Also: AWS's <a href="https://aws.amazon.com/compliance/shared-responsibility-model/">Shared Responsibility Model</a>; on this site, <a href="the-same-argument-in-our-words.html">The same argument, in our words</a>, <a href="authority-outside-the-model.html">Authority outside the model</a>, <a href="the-behaviour-policy-is-the-business-logic.html">the business logic</a>, <a href="hope-or-enforcement.html">Hope or enforcement</a>, <a href="a-second-reader-the-agent-cannot-skip.html">A second reader the agent cannot skip</a>, <a href="connector-twin-before-you-deploy-an-agent.html">the connector twin</a>, <a href="footprint-and-blast-radius.html">Footprint and blast radius</a>, <a href="every-risk-is-already-accepted.html">Every risk is already accepted</a>, <a href="how-to-run-synthetic-users.html">How to run synthetic users</a> and <a href="riskmandate-ten-questions.html">Ten hard questions for RiskMandate, answered</a>; RiskMandate's <a href="https://riskmandate.ai/lab-connector-grants.html">Lab 01, the grant is user-shaped, not data-shaped</a>; and the vaults <a href="https://sgit.ai/demos/vaults/hope-or-enforcement/index.html">Hope or enforcement</a> and <a href="https://sgit.ai/demos/vaults/connector-twin/index.html">Connector Twin</a>.</p>
 <sg-meter view="page" kind="article" date="2026-10-11" topics="agents-and-policy" title="Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#where-the-platform-draws-the-line">This article as a graph &rarr;</a></p>
@@ -337,7 +343,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="where-the-platform-draws-the-line.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="where-the-platform-draws-the-line.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -371,6 +377,8 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

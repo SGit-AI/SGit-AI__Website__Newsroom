@@ -1,0 +1,76 @@
+{
+ "slug": "php-daily-2026-10-23",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "Update 2: the story held, the site watches its readers privately, agents run on a schedule, and decisions wait on me.",
+   "para": "As of 23:30 UTC on 23 October, no named organisation has said php2shell breached it, CISA lists neither flaw, and 109 of 751 products are fixed. The newsroom built private reader telemetry in a day and a half and found the front page leaks; a collaborator's ideas made the risk graph a tool; scheduled agents kept the evidence current.",
+   "hash": "0db7be37401e"
+  },
+  "in-short": {
+   "line": "Six lines: the story held, private telemetry, a reader's ideas as a tool, a guide, schedules, the bottleneck.",
+   "para": "No named breach, no CISA listing, 109 of 751 fixed. The site now watches its own readers without tracking anyone, and the front page leaks. A collaborator's five ideas turned the risk graph into a tool. A new agent answers readers. Scheduled agents added 33 captures. Fifteen of twenty agents waited on my decisions.",
+   "hash": "c06230abb92f"
+  },
+  "the-story": {
+   "line": "No named breach, no CISA listing, a 9.8 NVD score, 735 public repositories, 109 of 751 products fixed.",
+   "para": "The journalist's versioned state of affairs at 14:11 UTC: three cases open and one ruled out, neither flaw in CISA's exploited catalogue, NVD at 9.8 beside the project's 9.2, 735 repositories mentioning the flaws, and 109 of 751 products fixed. Version 2 followed after midnight. The absence of a named breach is time-bounded.",
+   "hash": "6db2bc1a4673"
+  },
+  "telemetry": {
+   "line": "Private reader telemetry built in a day and a half from commodity pieces, and the front page leaks.",
+   "para": "Each page sends one anonymous event, encrypted in the browser to a write-only lane on a private vault. Sessions fall into five groups; crawlers were 565 of 1,093 page views. Public counts and a private, filter-everything dashboard live in vaults. 81% of front-page readers read nothing else. Vaults, lanes, keys and vault apps made it fast.",
+   "hash": "c750a0f3416a"
+  },
+  "ci-002": {
+   "line": "An outside collaborator's ideas, CI-002, became a risk graph you can explore, with its gaps computed.",
+   "para": "The Sherpa turned a collaborator's message into ten items with the site's status, gaps and owners. Five went to the dev desk, and the same day the 713-node risk graph marked how each link is known, let readers explore from one node, and computed its gaps: no control joined to code or a test. A before-and-after followed; CI-003 exists.",
+   "hash": "35d62675e826"
+  },
+  "readers": {
+   "line": "A new agent, the Sherpa, answers readers' feedback, and a redesign with four mockups is out for review.",
+   "para": "The Sherpa answers feedback point by point, reproduced two interface bugs, keeps a friction log of what blocks readers and who can fix it, and compares collaborators' ideas with the site. The designer proposed two dials, who you are and how much you see, with four mockups from live data; no reader page has changed yet.",
+   "hash": "bbb539cdefe7"
+  },
+  "scheduled": {
+   "line": "Scheduled agents kept the evidence current: 33 captures promoted, the research pass on its own schedule.",
+   "para": "A curator agent, keyed by a QR handshake, woke five times and promoted 33 captures, taking the evidence to 260 sources with 28 new claims and 164 captures waiting. The research pass was scheduled too, surviving two container replacements. Almost working understated this, and now says so.",
+   "hash": "429dc53c9b38"
+  },
+  "security": {
+   "line": "The vault key is the whole boundary, and a stored cross-site scripting flaw was fixed about an hour later.",
+   "para": "Whoever holds a vault's key can read and drain it, so the vaults page lists the keys each agent holds, by ID and kind only. About an hour after the snapshot, a second security pass fixed a stored XSS in the Ask pane, where a captured page title could break out of a citation.",
+   "hash": "a97345c1a5e9"
+  },
+  "waits": {
+   "line": "Twenty agents, fifteen waiting on me, ten branches waiting, $588 spent: the decisions are the bottleneck.",
+   "para": "The status page counted 2 working, 2 blocked and 15 waiting on me, with 10 branches to release and $588 spent. Top decisions: publish the curator's new evidence, the redesign picks, two blocked agents, two security reviews and two sealed keys to open. The agents are fast; the decisions are mine.",
+   "hash": "1aca3ab9a640"
+  },
+  "vaults": {
+   "line": "The site is rebuilt from nineteen vaults; the biggest went from a 13-minute download to 95 seconds.",
+   "para": "A vault is an encrypted, versioned folder made with our open source tool, sgit, and the site is rebuilt from nineteen of them. The source watch reached 63,662 objects and 1.6 GB, and was failing. In sgit's new pack mode it downloaded in 95 seconds and pushed in 96; a tangent that shipped tells how.",
+   "hash": "cb2ca99a5a37"
+  },
+  "why-updates": {
+   "line": "Fixed snapshots rather than a running commentary, each taken when the data is consistent.",
+   "para": "A live incident moves faster than any article, so these updates are fixed snapshots anyone can compare. This one is taken at 23:30 UTC, when the conductor agent refreshed the team's status page from all twenty sessions, the repository and the scheduled tasks; later items are marked.",
+   "hash": "cbd278ea4114"
+  },
+  "the-updates": {
+   "line": "The updates so far: update 1 at 8pm on 22 October, and this one.",
+   "para": "Update 1 is PHP October 2026, at 8pm, the evening of 22 October, with a guided tour of the site. Update 2 is this article, as of 23:30 UTC on 23 October. Update 3 followed at 23:40 UTC on 24 October.",
+   "hash": "c701cecfbe8a"
+  },
+  "limits": {
+   "line": "A snapshot, version 1 numbers, telemetry as a floor, running costs, a time-bounded absence.",
+   "para": "Everything is as of 23:30 UTC on 23 October. The story's numbers are version 1. Telemetry counts are a floor: blockers send nothing, a session is a tab, and 168 reader sessions is a day and a half. Costs are running totals, and no named breach could end with one statement.",
+   "hash": "187a1d6c2e61"
+  },
+  "sources": {
+   "line": "The PHP site's 84 commits of 23 October and its pages on status, telemetry, CI-002, the risk graph and vaults.",
+   "para": "The PHP site's repository, read at v0.10.18 for the snapshot and up to v0.11.3 for the hour after; its pages on team status, the state of affairs, who reads the site, CI-002, the risk graph before and after, the vaults, pack mode and the Sherpa; and its screenshots, under Apache-2.0.",
+   "hash": "bd4d94e4e8f8"
+  }
+ }
+}

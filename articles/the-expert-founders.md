@@ -10,11 +10,11 @@
 
 # The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.1.0, 2 versions](versions/the-expert-founders.md) · [newsroom v0.12.67](https://newsroom.sgit.ai/admin/versions.html) · startupsfounderssubject-matter-expertsventure-capitaleuropeopen-sourcegenerative-aiwardley-mapsincumbentsfundingarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.2.0, 3 versions](versions/the-expert-founders.md) · [newsroom v0.12.67](https://newsroom.sgit.ai/admin/versions.html) · startupsfounderssubject-matter-expertsventure-capitaleuropeopen-sourcegenerative-aiwardley-mapsincumbentsfundingarticle
 
 ***Abstract:** For twenty years the winning technology startup was usually built by a clever, ambitious outsider: someone who found a pain point, often through a hundred conversations with people they could reach, raised money on belief, hired the subject-matter experts, and displaced incumbents that had the customers, the knowledge and sometimes the money. It is a very American playbook, many bets for a few large wins, and it changed whole industries. It also has a second act: the disruptors became the incumbents, and much of what they built is now the software everyone complains about. My argument is that generative AI changes who can start. When agents do most of the execution, the people who know the problem can build the product themselves, without the millions that used to come first. The data on experts was always on their side: the fastest-growing US startups are founded at a mean age of 45, and three or more years in the same industry doubles the rate of top-tier success. And this favours Europe: its investors want to see it working, value lower, and ask for more revenue at the raise, which is exactly the discipline an expert founder needs, because money too early is one of the most reliable ways to kill a startup. Three examples: me in security, a knee surgeon in knee health, and a transcriber in legal transcription.*
 
-Two playbooks: on the left, the outsider who finds a gap, raises first, hires the experts, displaces the incumbents and becomes one; on the right, the expert who lives the problem, builds it with agents, shows it working, raises for scale and stays close to the field.
+Two playbooks: the outsider who finds a gap, and the expert who lives the problem and builds it with agents.
 
 ## In short
 
@@ -54,7 +54,7 @@ The data is moving the same way. Carta reports that the share of new US startups
 
 ## The experts were always the better bet
 
-What the data says: the rate at which US founders build a 1-in-1,000 fastest-growing firm doubles with three or more years in the same industry; European startups raise at higher revenue, lower valuations and smaller targets than US ones; and premature scaling is the most common way high-growth startups fail.
+What the data says about founders with experience in an industry, European startups and premature scaling.
 
 The myth of the young outsider was never the whole story. The largest study I know, of 2.7 million US founders, found that "The mean age at founding for the 1-in-1,000 fastest growing new ventures is 45.0", and that ["successful entrepreneurs are middle-aged, not young."](https://www.aeaweb.org/articles?id=10.1257/aeri.20180582) More to the point: "Prior experience in the specific industry predicts much greater rates of entrepreneurial success." Founders with three or more years in the same industry reached top-tier growth at twice the rate of those with none.
 
@@ -62,7 +62,7 @@ What held the experts back was not knowledge. It was access: to capital, to engi
 
 ## Three expert founders
 
-Three subject-matter experts, building in their own field: what each comes from, what they build for, what exists, and why the expertise is the advantage.
+Three subject-matter experts, building in their own field: what each comes from and what they build for.
 
 **Me, in security.** I come from application security, much of it in OWASP, and from working as a CISO. I tried this before with [The Cyber Boardroom](https://thecyberboardroom.com), which [taught me what personas are worth and paused](not-a-straight-line.md) for want of a place to keep confidential data. [sgit.ai](https://sgit.ai/) and [RiskMandate](https://riskmandate.ai/) are much better examples of using my security knowledge to build a company: encrypted vaults whose server holds nothing, and [behaviour policies for agents](riskmandate-ten-questions.md) that a risk owner can sign. The agents write most of the code, and [SG/Send alone has 4,476 commits](from-send-to-sgit.md); the briefs, the buyers and the risk model are mine.
 
@@ -113,6 +113,7 @@ Startups & strategyNews & evidence[This article as a graph →](graphs.md#the-ex
 
 ### Continued by
 
+- [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](jobs-that-never-scaled.md) What never scaled is on-demand expertise: the before and after the meeting. Agents can now carry them, for any expert, anywhere.
 - [When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure](when-the-customer-becomes-the-commodity.md) Put your customer on your Wardley map. Google and Amazon moved theirs to commodity and lost trust; airports moved back. Local delivery should be infrastructure.
 - [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](fund-it-with-time.md) A startup needs time before money. Start from your own revenue, start while employed, ask for part time, and treat debt as buying time. Avoid regret.
 - [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](start-a-company.md) Start a company once there is revenue: the UK in an afternoon, Portugal's monthly accountant learned the hard way, and Lithuania's e-residency next.

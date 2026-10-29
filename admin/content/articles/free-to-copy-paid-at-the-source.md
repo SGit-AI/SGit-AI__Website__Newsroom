@@ -10,7 +10,7 @@ tags: business-models, open-source, agent-behaviour-policy, hooks, trust, articl
 status: published
 ---
 
-!shot of-source.webp | images/ | Free to copy, paid at the source. The policy and its hook are open; the official site adds who published it, who reviewed it, which version, and a signature; each use there draws down credit. | concept
+!shot of-source.webp | images/ | Free to copy, paid at the source: the policy and its hook are open; the official site adds provenance and a signature. | concept
 
 ## In short {#in-short}
 

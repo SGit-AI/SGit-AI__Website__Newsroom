@@ -10,11 +10,11 @@
 
 # Two years in, the opposite: an essay about burning out on AI that I could not buy, and why my two years of AI have been the most productive of my career
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/two-years-in-the-opposite.md) · [newsroom v0.12.120](https://newsroom.sgit.ai/admin/versions.html) · aicareerspaywallspublisherspay-as-you-readwardley-mapsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.2.0, 3 versions](versions/two-years-in-the-opposite.md) · [newsroom v0.12.120](https://newsroom.sgit.ai/admin/versions.html) · aicareerspaywallspublisherspay-as-you-readwardley-mapsarticle
 
 ***Abstract:** Business Insider published an essay this month by a former lawyer who moved his career towards AI two years ago and now, in the headline's words, has never felt more behind and tired of the topic. I wanted to read it. I could read three paragraphs, and then a box offered me a free trial that renews at $12.95 every four weeks, or a year for $49 that renews at $149. I do not want a subscription to an organisation I do not know yet; I wanted to pay a little for that one essay, and for its author to get some of it. Meanwhile the page had already shown me adverts in three places, so the publisher had made money from my visit before giving me almost anything. I could not read it, so I could not judge it either: not agree, not challenge it, not say whether the headline was fair. And my own story is the opposite. I have been doing AI for two years and a bit, and I have never felt more productive, more empowered or happier at work. I am building sgit, RiskMandate and this newsroom; for the first time my engineering and my creative side meet; I am in control of my inbox, which I never was. It is not easy, a startup never is, and progress is not linear. But Wardley maps let me see the game I am playing, and that gives me a kind of peace. There is an anti-AI mood right now, and burnout stories feed it. Stories like mine should be told too.*
 
-One visit, two models. On the left, what the visit to the essay gave: the headline, the byline, three paragraphs and adverts in three places, then a box offering a 14-day trial that renews at $12.95 every four weeks, or $49 for a year that renews at $149. On the right, what Dinis wanted: read the essay, pay a few pence for what he read, a share to the author, the option to challenge it or say the headline was unfair, and trust earned over many articles before any subscription.
+One visit, two models: what the visit to the essay gave, and what Dinis wanted instead.
 
 ## In short
 

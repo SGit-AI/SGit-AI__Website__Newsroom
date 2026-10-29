@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC), SGit Newsroom</title>
+<meta name="description" content="The third update on php2shell and the newsroom covering it, as of 23:40 UTC on 24 October. Three days after the release, still no organisation has said it was compromised through php2shell. The one security vendor that had claimed a successful compromise, Sophos, withdrew it; US banks and the large crypto platforms report none; and neither flaw was on CISA's exploited list. There is news on the flaw itself: on 23 October PHP published an advisory for a third, separate flaw, CVE-2026-115560, which affects fully patched releases and will be fixed in the next regular release. The newsroom changed shape. Its agents now work as a pipeline, researcher, curator, journalist, correspondent, then the graphs, where each stage reads only the one before, and the correspondent's first review caught nine things the journalist had missed, including that third flaw. A control room shows every agent at a glance. Wikipedia's PHP2Shell article is now read as a graph, with all 364 of its revisions. The site has a threat model, 40 security advisories kept like incidents, and private vulnerability reporting. And the bottleneck is still me: 16 items wait on my decisions.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/php-daily-2026-10-24.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/php-daily-2026-10-24.html">
+<meta property="og:title" content="PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC), SGit Newsroom">
+<meta property="og:description" content="The third update on php2shell and the newsroom covering it, as of 23:40 UTC on 24 October. Three days after the release, still no organisation has said it was compromised through php2shell. The one security vendor that had claimed a successful compromise, Sophos, withdrew it; US banks and the large crypto platforms report none; and neither flaw was on CISA's exploited list. There is news on the flaw itself: on 23 October PHP published an advisory for a third, separate flaw, CVE-2026-115560, which affects fully patched releases and will be fixed in the next regular release. The newsroom changed shape. Its agents now work as a pipeline, researcher, curator, journalist, correspondent, then the graphs, where each stage reads only the one before, and the correspondent's first review caught nine things the journalist had missed, including that third flaw. A control room shows every agent at a glance. Wikipedia's PHP2Shell article is now read as a graph, with all 364 of its revisions. The site has a threat model, 40 security advisories kept like incidents, and private vulnerability reporting. And the bottleneck is still me: 16 items wait on my decisions.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/php-daily-2026-10-24.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC), SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/php-daily-2026-10-24.jpg">
+<link rel="alternate" type="text/markdown" href="php-daily-2026-10-24.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC), SGit Newsroom", "headline": "PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC), SGit Newsroom", "description": "The third update on php2shell and the newsroom covering it, as of 23:40 UTC on 24 October. Three days after the release, still no organisation has said it was compromised through php2shell. The one security vendor that had claimed a successful compromise, Sophos, withdrew it; US banks and the large crypto platforms report none; and neither flaw was on CISA's exploited list. There is news on the flaw itself: on 23 October PHP published an advisory for a third, separate flaw, CVE-2026-115560, which affects fully patched releases and will be fixed in the next regular release. The newsroom changed shape. Its agents now work as a pipeline, researcher, curator, journalist, correspondent, then the graphs, where each stage reads only the one before, and the correspondent's first review caught nine things the journalist had missed, including that third flaw. A control room shows every agent at a glance. Wikipedia's PHP2Shell article is now read as a graph, with all 364 of its revisions. The site has a threat model, 40 security advisories kept like incidents, and private vulnerability reporting. And the bottleneck is still me: 16 items wait on my decisions.", "url": "https://newsroom.sgit.ai/articles/php-daily-2026-10-24.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC)</p>
+ <h1>PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC)</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-25 &middot; <a href="versions/php-daily-2026-10-24.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.70</a> &middot; <span class="chip">php2shell</span><span class="chip">updates</span><span class="chip">agents</span><span class="chip">pipeline</span><span class="chip">evidence</span><span class="chip">security</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> The third update on php2shell and the newsroom covering it, as of 23:40 UTC on 24 October. Three days after the release, still no organisation has said it was compromised through php2shell. The one security vendor that had claimed a successful compromise, Sophos, withdrew it; US banks and the large crypto platforms report none; and neither flaw was on CISA's exploited list. There is news on the flaw itself: on 23 October PHP published an advisory for a third, separate flaw, CVE-2026-115560, which affects fully patched releases and will be fixed in the next regular release. The newsroom changed shape. Its agents now work as a pipeline, researcher, curator, journalist, correspondent, then the graphs, where each stage reads only the one before, and the correspondent's first review caught nine things the journalist had missed, including that third flaw. A control room shows every agent at a glance. Wikipedia's PHP2Shell article is now read as a graph, with all 364 of its revisions. The site has a threat model, 40 security advisories kept like incidents, and private vulnerability reporting. And the bottleneck is still me: 16 items wait on my decisions.</em></p>
+<div class="note"><b>Update 3.</b> Following <a href="https://newsroom.sgit.ai/articles/php-daily-2026-10-23.html">update 2</a> at 23:30 UTC on 23 October, here is where things stood at 23:40 UTC on 24 October, the PHP site's release v0.17.3. <a href="https://newsroom.sgit.ai/articles/php-daily-2026-10-26.html">Update 4</a> follows, as of 17:16 UTC on 26 October. The updates so far are listed <a href="#the-updates">at the end</a>.</div>
+<figure class="shot" data-shot="u3-control.webp" data-dir="images/" data-alt="The PHP site&#x27;s new control room, at release v0.17.3: data freshness, blocked agents, waiting items and the pipeline." data-kind="screenshot"><figcaption>The PHP site's new control room, at release v0.17.3: data freshness, blocked agents, waiting items and the pipeline.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Still no confirmed victim.</b> Three days in, no organisation says it was compromised through php2shell.</li>
+<li><b>The one vendor claim of a break-in was withdrawn.</b> Sophos: scanning and failed attempts, no compromise.</li>
+<li><b>A third flaw.</b> CVE-2026-115560 affects fully patched PHP; the fix comes in the next regular release.</li>
+<li><b>The agents became a pipeline.</b> Each stage reads only the one before, and the next one reviews it.</li>
+<li><b>The review works.</b> The correspondent's first pass caught nine things the journalist missed.</li>
+<li><b>A control room</b> shows every agent, the pipeline and the decisions waiting.</li>
+<li><b>Wikipedia, as a graph.</b> Its PHP2Shell article, with all 364 revisions, joined to the site's evidence.</li>
+<li><b>Security grew up.</b> A threat model, 40 advisories, private vulnerability reporting.</li>
+<li><b>The bottleneck is still me.</b> 16 items wait on my decisions.</li>
+</ul>
+<h2 id="the-story">The story</h2>
+<p>The journalist's <a href="https://php.oct.2026.newsroom.sgit.ai/views/state/v3/index.html">state of affairs, version 3</a>, written at 12:30 UTC on 24 October from 328 sources, opens with the line that matters: "Three days after the release, still no organisation has said it was compromised through php2shell."</p>
+<ul>
+<li><b>The first vendor claim of a break-in, withdrawn.</b> Sophos, in a correction at 21:21 UTC on 22 October, said its data showed "scanning and a small number of failed exploit attempts and no evidence of a successful compromise". One attempt tried to deliver a likely Mirai botnet variant, and was blocked.</li>
+<li><b>Sectors saying so in public.</b> American Banker: "no U.S. bank or credit union has publicly reported a compromise". BTC-ECHO found no evidence for the large crypto exchanges or payment providers. The Netherlands joined the national authorities that know of no successful attack, which makes six.</li>
+<li><b>Still not on CISA's exploited list,</b> at the freshest check, 05:53 UTC on 24 October, and no Metasploit module merged. The site notes that the last PHP core flaw was listed within three days; 24 October was the third day.</li>
+<li><b>The 22.6 million figure has a source.</b> It circulated without one; it is Palo Alto Networks' count of exposed instances potentially vulnerable, made on 21 October. Exposure, not compromise.</li>
+<li><b>Sites taken down:</b> the community tracker lists 51, with 50 back.</li>
+</ul>
+<p>Later in the day the evidence vault reached 382 sources, at 16:05 UTC, and the line still held, with Austria's Die Presse adding that no successful attack was known there.</p>
+<p>And one piece of news about PHP itself. On 23 October, PHP published an informational advisory for a third, separate flaw, <a href="https://php.oct.2026.newsroom.sgit.ai/briefings/engineer/index.html">CVE-2026-115560</a>, in the session upload progress feature, reported by Cloudflare, SOCRadar and The Hacker News. It affects fully patched releases, including 8.5.12; it needs a rare session setting; it will be fixed in the next regular release; and the mitigation is <code>session.upload_progress.enabled=0</code>. How the site came to report it is the story of the day's other big change.</p>
+<h2 id="pipeline">The agents became a pipeline</h2>
+<p>On 24 October I decided the shape of the team. Every export of the evidence now goes through the same stages, in order, each reading only what the stage before it produced, as <a href="https://php.oct.2026.newsroom.sgit.ai/views/desk/index.html">the journalist's desk</a> shows:</p>
+<ol>
+<li><b>Research.</b> The researcher makes the requests to the live websites and keeps everything it reads in the source watch, the largest vault.</li>
+<li><b>Curate.</b> The curator reads only the researcher's vault, and writes promotions, claims and timeline rows into the evidence vault.</li>
+<li><b>Publish.</b> The journalist reads only the evidence vault, gives every new claim a verdict, refreshes the data the pages use, and releases to the live site. It runs on a smaller, faster model.</li>
+<li><b>Review.</b> The chief correspondent reads what went live, fixes and tweaks it in the open, writes the state of affairs and the analysis, and tightens the journalist's rules. It runs on a larger model, as a fresh session at each wake.</li>
+<li><b>Graphs.</b> Only then do the ontologist, the librarian and the desk bring the semantic graphs, the parties and the attribution up to the reviewed data.</li>
+</ol>
+<p>The journalist and the correspondent each made their own key at their first wake, and recorded its public fingerprint. They talk to each other through the commits they already write: a short note in a trailer, "To-journalist" or "To-all", read by the others on every pull and listed on <a href="https://php.oct.2026.newsroom.sgit.ai/team/comms/index.html">the team's comms page</a>. The notes are material, never instructions.</p>
+<h2 id="review">The review works</h2>
+<p>The first test came at the end of the day. The journalist's run gave verdicts on 94 claims and rows; the correspondent's first review, released as v0.17.2, made nine corrections, each listed on the desk page with the file, the kind of mistake and the release that fixed it. The most important:</p>
+<ul>
+<li><b>The third flaw was on no page.</b> The journalist had held the claim back as "CVE not in the PHP advisory in the vault", although Cloudflare, SOCRadar and The Hacker News all carry it, and the story still said "Nothing from PHP on the list yet". The correspondent put it on the summary page and the engineer's briefing.</li>
+<li><b>"Not in the vault", twice, when it was.</b> Sansec's and Cloudflare's own posts were there.</li>
+<li><b>"One Italian outlet", when there were five.</b> The joint European statement was reported by four more outlets in the vault.</li>
+<li><b>Two captures that disagreed, not compared.</b> Sansec's post of 22 October compared the flaw to Heartbleed and said default configurations are vulnerable; its version of 23 October no longer did.</li>
+<li><b>A time read wrong.</b> "12:03" next to "10:03 UTC" was the same moment, in Vienna time.</li>
+</ul>
+<p>Its note back to the journalist was practical: before writing "not in the vault" or "one outlet", search all the captures for the key terms, and compare a source's captures. That is exactly what a review stage is for. The desk page counts the catches "so the editor can see what" the faster journalist misses, and that count is how I will decide whether the split of models is right.</p>
+<h2 id="control">A control room</h2>
+<p><a href="https://php.oct.2026.newsroom.sgit.ai/team/control/index.html">The control room</a> is one page for all of it: every agent and what it waits for, the pipeline with each stage's state, the wake timeline of the scheduled sessions, and the editor's queue, with a wall mode for a big screen. It is built from the team's own data, and it is honest about that data: at the snapshot it was 6 hours old, flagged as stale, and two stages, the researcher and the curator, were marked red for leaving no run record in 24 hours.</p>
+<h2 id="wikipedia">Wikipedia, as a graph</h2>
+<figure class="shot" data-shot="u3-wikipedia.webp" data-dir="images/" data-alt="Wikipedia&#x27;s PHP2Shell article, read by the PHP site as a fractal semantic graph, with its references and editors." data-kind="screenshot"><figcaption>Wikipedia's PHP2Shell article, read by the PHP site as a fractal semantic graph, with its references and editors.</figcaption></figure>
+<p>The ontologist added <a href="https://php.oct.2026.newsroom.sgit.ai/wikipedia/php2shell/index.html">a section that reads Wikipedia's PHP2Shell article</a> as a <a href="https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html">fractal semantic graph</a>: one statement per sentence, each classed by its wording as a fact, an attributed view or a quote; each joined to the references it cites; and those to the captures this site holds. Every one of the article's 364 revisions is kept as what it changed. No model is involved in the parsing: a sentence's identity is a hash of its words, so an edit is a set difference. The point is where the two meet: 12 of the article's references are also cited by the site's own claims. In time, the site says, this could be a measure of a source's trust, by how often its statements are corrected, rather than an assumption.</p>
+<h2 id="design">A design that adapts</h2>
+<figure class="shot" data-shot="u3-lens.webp" data-dir="images/" data-alt="Prototype E, the lens, built from the live data of release v0.17.3. Not the live site." data-kind="screenshot"><figcaption>Prototype E, the lens, built from the live data of release v0.17.3. Not the live site.</figcaption></figure>
+<p>The design work went on in parallel. <a href="https://php.oct.2026.newsroom.sgit.ai/admin/design/lens/index.html">Prototype E, "the lens"</a>, is one control at the top right that asks how long you have, who you are, what you want to do and what you have already seen, and re-shapes the page in place with no reload. It is a proposal, not the live site. What did reach the live site: on a phone, the header that took 233 pixels is now one 43-pixel line, and headlines now sit near the top of every page.</p>
+<h2 id="security">Security grew up</h2>
+<figure class="shot" data-shot="u3-appsec.webp" data-dir="images/" data-alt="The PHP site&#x27;s application security section: the security advisories and the system&#x27;s five trust zones." data-kind="screenshot"><figcaption>The PHP site's application security section: the security advisories and the system's five trust zones.</figcaption></figure>
+<p>The security agent built <a href="https://php.oct.2026.newsroom.sgit.ai/admin/appsec/index.html">an application security section</a>: a threat model with five data-flow diagrams, security advisories kept like incidents (the root cause, what was not in place, the fix, the guard), runbooks for taking the site offline, and a bug bounty paid in kudos. Its framing is right: there is no server of ours to break into, so the attack surface is small but concentrated, in script running in a reader's browser, text that steers an agent, and a push that reaches the live site. Every page now has a Content-Security-Policy. The telemetry report no longer publishes cities and regions. I turned on private vulnerability reporting on the repository, so the bug bounty and <code>security.txt</code> now point at a live channel. And GitHub's CodeQL scanner ran twice; its findings were triaged and the scripts hardened.</p>
+<h2 id="waits">What waits on me</h2>
+<p>The control room counts it: 16 items waiting on me, 8 decisions, 2 agents blocked, 13 branches ahead of the live site. One agent has been blocked on a permission prompt since 11:52 UTC. Two agents need keys I have to hand over. The new pipeline needs its cards and schedules confirmed. Security wants a go for its second gate. The team's sessions have cost $928 so far, across 22 agents, up from $588 at update 2.</p>
+<p>The lesson of update 2 still holds, and the control room makes it visible: the agents are fast, and the decisions are mine.</p>
+<h2 id="why-updates">Why these regular updates</h2>
+<p>A live incident moves faster than any single article. These updates are fixed snapshots rather than a running commentary, so anyone can go back and see where things stood and what changed between them. This one is taken at release v0.17.3, at 23:40 UTC on 24 October, after the correspondent's first review; the team's status data it reads is from 18:25 UTC, and the control room says so.</p>
+<h2 id="the-updates">The updates so far</h2>
+<ol>
+<li><a href="https://newsroom.sgit.ai/articles/php-october-at-8pm.html">PHP October 2026, at 8pm</a>: update 1, the evening of 22 October, with a guided tour of the site.</li>
+<li><a href="https://newsroom.sgit.ai/articles/php-daily-2026-10-23.html">PHP October 2026, update 2</a>: 23:30 UTC on 23 October.</li>
+<li>This article: update 3, 23:40 UTC on 24 October.</li>
+<li><a href="https://newsroom.sgit.ai/articles/php-daily-2026-10-26.html">PHP October 2026, update 4</a>: 17:16 UTC on 26 October.</li>
+</ol>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>A snapshot, not a verdict.</b> As of release v0.17.3; the team's status data is from 18:25 UTC.</li>
+<li><b>No breach named is time-bounded.</b> One statement from one organisation would end it.</li>
+<li><b>The third flaw is as reported.</b> The site cites Cloudflare, SOCRadar and The Hacker News on PHP's advisory.</li>
+<li><b>Nine catches is one review.</b> It shows the stage works, not yet how often the journalist misses things.</li>
+<li><b>Costs are each session's running total,</b> as the status data reports them.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>The PHP story site's repository and its 62 commits after update 2, from v0.14.22 to v0.17.3, read on 25 October; its pages on <a href="https://php.oct.2026.newsroom.sgit.ai/views/state/v3/index.html">the state of affairs v3</a>, <a href="https://php.oct.2026.newsroom.sgit.ai/views/desk/index.html">the journalist's desk</a>, <a href="https://php.oct.2026.newsroom.sgit.ai/team/control/index.html">the control room</a>, <a href="https://php.oct.2026.newsroom.sgit.ai/wikipedia/index.html">Wikipedia as a graph</a>, <a href="https://php.oct.2026.newsroom.sgit.ai/admin/design/lens/index.html">the lens</a>, <a href="https://php.oct.2026.newsroom.sgit.ai/admin/appsec/index.html">application security</a> and <a href="https://php.oct.2026.newsroom.sgit.ai/briefings/engineer/index.html">the engineer's briefing</a>; its data files <code>agents-status.json</code> and the desk's catches; its screenshots, under its Apache-2.0 licence. Related: <a href="https://newsroom.sgit.ai/articles/php-october-at-8pm.html">update 1</a>, <a href="https://newsroom.sgit.ai/articles/php-daily-2026-10-23.html">update 2</a>, <a href="https://newsroom.sgit.ai/articles/who-maintains-the-php-you-run.html">who maintains the PHP you run?</a>, <a href="https://newsroom.sgit.ai/articles/patch-for-breakfast.html">patch for breakfast</a>, <a href="https://newsroom.sgit.ai/articles/a-team-frozen-in-time.html">a team frozen in time</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
+<sg-meter view="page" kind="article" date="2026-10-25" topics="agents-and-policy startups-and-strategy" title="PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC), SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#php-daily-2026-10-24">This article as a graph &rarr;</a></p>
+ <p class="small dim">No other article links here yet.</p>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 278 &middot; <a href="../for/make.html#r=278">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/php-daily-2026-10-24.jpg" download>php-daily-2026-10-24.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="php-daily-2026-10-24.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

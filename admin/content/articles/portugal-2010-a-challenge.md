@@ -10,7 +10,7 @@ tags: portugal, owasp, application-security, talks, history, regulation, europe,
 status: published
 ---
 
-!shot pt-2010-slides.webp | images/ | Twelve slides from the IBWAS 2010 keynote in Lisbon: the title, the five proposed focuses, the twelve proposed actions such as allowing ethical hacking, score cards, procurement requirements, rewriting computer laws and open-sourcing end-of-life applications, application security as health and safety, a country-wide fire drill, and Portugal as the Switzerland of hacking. | comparison
+!shot pt-2010-slides.webp | images/ | Twelve slides from the IBWAS 2010 keynote in Lisbon: the five focuses, the twelve actions and Portugal as Switzerland. | comparison
 
 ## In short {#in-short}
 

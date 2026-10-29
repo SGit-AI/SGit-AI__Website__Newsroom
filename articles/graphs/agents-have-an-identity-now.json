@@ -1,0 +1,177 @@
+{
+  "slug": "agents-have-an-identity-now",
+  "teaser": "A key pair made in every agent session, published with its role in a repository, so any agent can seal a secret to it; what the clouds could add.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "Agents now have a simple working identity: each session makes its own key pair, publishes the public half with its role in a repository where the push is the authorisation, runs on a schedule, and receives secrets other agents seal to it, with a person's root key vouching until a date; the cloud providers' agent identities authenticate agents inside a tenant but do not describe a key the agent holds, a public place to find it, or a way to encrypt to it, which is what they could give every agent.",
+  "nodes": [
+    {
+      "id": "coming",
+      "label": "It has been coming",
+      "kind": "claim",
+      "summary": "PKI everywhere, a directory of keys, a pen and a key, the push."
+    },
+    {
+      "id": "steps",
+      "label": "Five steps",
+      "kind": "method",
+      "summary": "Session, key pair, published role and key, schedule, sealed secrets."
+    },
+    {
+      "id": "push",
+      "label": "The push is the authorisation",
+      "kind": "concept",
+      "summary": "Publishing to the team's repository accepts a session's key."
+    },
+    {
+      "id": "night",
+      "label": "Ten agents, one night",
+      "kind": "example",
+      "summary": "The PHP newsroom's keys, 01:05 to 03:29 UTC on 28 October."
+    },
+    {
+      "id": "handover",
+      "label": "An agent seals to an agent",
+      "kind": "example",
+      "summary": "A vault key sealed to the vault registry after a trust check."
+    },
+    {
+      "id": "clouds",
+      "label": "The clouds' agent identities",
+      "kind": "concept",
+      "summary": "Tokens inside a tenant: Entra, AgentCore, Google Agent Identity."
+    },
+    {
+      "id": "missing",
+      "label": "What is missing",
+      "kind": "claim",
+      "summary": "A key the agent holds, a place to find it, a way to encrypt to it."
+    },
+    {
+      "id": "standards",
+      "label": "The IETF draft",
+      "kind": "example",
+      "summary": "Cryptographic binding required; no encryption to agents defined."
+    },
+    {
+      "id": "ask",
+      "label": "What to ask the providers",
+      "kind": "method",
+      "summary": "A key per session, published, sealable, with an end."
+    },
+    {
+      "id": "role",
+      "label": "The role makes it powerful",
+      "kind": "claim",
+      "summary": "A key tied to a defined role and a person's dated trust."
+    },
+    {
+      "id": "expiry",
+      "label": "Trust that ends",
+      "kind": "example",
+      "summary": "The registry's link ends on 30 October unless renewed."
+    }
+  ],
+  "edges": [
+    {
+      "from": "coming",
+      "to": "steps",
+      "rel": "leads-to"
+    },
+    {
+      "from": "push",
+      "to": "steps",
+      "rel": "extends"
+    },
+    {
+      "from": "steps",
+      "to": "night",
+      "rel": "produces"
+    },
+    {
+      "from": "steps",
+      "to": "handover",
+      "rel": "produces"
+    },
+    {
+      "from": "clouds",
+      "to": "missing",
+      "rel": "produces"
+    },
+    {
+      "from": "standards",
+      "to": "missing",
+      "rel": "example-of"
+    },
+    {
+      "from": "missing",
+      "to": "ask",
+      "rel": "leads-to"
+    },
+    {
+      "from": "steps",
+      "to": "clouds",
+      "rel": "contrasts"
+    },
+    {
+      "from": "role",
+      "to": "steps",
+      "rel": "extends"
+    },
+    {
+      "from": "expiry",
+      "to": "role",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "pki-everywhere",
+      "a-directory-of-people-and-keys",
+      "a-pen-and-a-key",
+      "the-push-is-the-authorisation",
+      "the-vendors-layer"
+    ],
+    "pages": [],
+    "sites": [
+      "https://learn.microsoft.com/en-us/entra/agent-id/what-are-agent-identities",
+      "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity.html",
+      "https://docs.cloud.google.com/iam/docs/agent-identity-overview",
+      "https://datatracker.ietf.org/doc/draft-ietf-wimse-aims/",
+      "https://pki.sgit.ai/directory/index.json",
+      "https://team.php.oct.2026.newsroom.sgit.ai/records/keys/conductor.json"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A key on its own is an address.",
+      "why": "Why the role matters more than the key."
+    },
+    {
+      "text": "Trust that ends unless someone renews it is how an agent's identity should work.",
+      "why": "Expiry as a feature of identity."
+    }
+  ],
+  "figures": [
+    {
+      "file": "id-steps.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/id-steps.webp",
+      "caption": "An agent's identity in five steps: a session, its own key pair, role and key published, a schedule, sealed secrets.",
+      "kind": "diagram"
+    },
+    {
+      "file": "id-keys.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/id-keys.webp",
+      "caption": "The PHP newsroom's ten agents and their public keys, published on 28 October 2026 with a QR image each.",
+      "kind": "collage"
+    },
+    {
+      "file": "id-clouds.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/id-clouds.webp",
+      "caption": "What Microsoft, AWS and Google give an agent, against what an agent needs to receive a secret.",
+      "kind": "comparison"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+ "slug": "investor-sgit-ai",
+ "teaser": "A brief for investor.sgit.ai: investors and founders using our tools, with news, contracts as graphs, deal rooms as vaults and sgit as the case study.",
+ "topics": [
+  "startups-and-strategy",
+  "vaults-and-method"
+ ],
+ "core_idea": "Because what we build has to be experienced to be understood, investor.sgit.ai would let investors and founders use it: news from investor circles as a graph, contracts as linked graphs, a founders' section, funding models, an evaluation framework for security startups, deal rooms as vaults, keys for investors, sgit as the case study and RiskMandate at work, run by a small agent team, built to sgit.ai's repository rules with CI owning the version, and shown to investors for their answer.",
+ "nodes": [
+  {
+   "id": "why",
+   "label": "Experience is the explanation",
+   "kind": "claim",
+   "summary": "What we build has to be used to be understood."
+  },
+  {
+   "id": "site",
+   "label": "investor.sgit.ai",
+   "kind": "artefact",
+   "summary": "One site for investors and founders, angel to Series A."
+  },
+  {
+   "id": "news",
+   "label": "The news as a graph",
+   "kind": "method",
+   "summary": "Angel and Series A from public sources."
+  },
+  {
+   "id": "contracts",
+   "label": "Contracts as graphs",
+   "kind": "method",
+   "summary": "Term sheets and cap tables linked clause to clause."
+  },
+  {
+   "id": "founders",
+   "label": "A section for founders",
+   "kind": "concept",
+   "summary": "Talking to investors, next steps, services, models."
+  },
+  {
+   "id": "framework",
+   "label": "The evaluation framework",
+   "kind": "artefact",
+   "summary": "Seven criteria and a meta-criterion, scored to 40."
+  },
+  {
+   "id": "vaults",
+   "label": "Deal rooms as vaults",
+   "kind": "example",
+   "summary": "Desks and a deal room, each a vault."
+  },
+  {
+   "id": "case",
+   "label": "sgit as the case study",
+   "kind": "example",
+   "summary": "Strategy and thinking published as it happens."
+  },
+  {
+   "id": "team",
+   "label": "Run by agents",
+   "kind": "method",
+   "summary": "A small scheduled team; feeds from the newsroom's wire."
+  },
+  {
+   "id": "rules",
+   "label": "Built to the house rules",
+   "kind": "method",
+   "summary": "A brief in full, a reality file, CI owns the version."
+  },
+  {
+   "id": "ask",
+   "label": "Ask investors",
+   "kind": "question",
+   "summary": "Is this useful, and what would help?"
+  }
+ ],
+ "edges": [
+  {
+   "from": "why",
+   "to": "site",
+   "rel": "leads-to"
+  },
+  {
+   "from": "site",
+   "to": "news",
+   "rel": "produces"
+  },
+  {
+   "from": "site",
+   "to": "contracts",
+   "rel": "produces"
+  },
+  {
+   "from": "site",
+   "to": "founders",
+   "rel": "produces"
+  },
+  {
+   "from": "framework",
+   "to": "site",
+   "rel": "extends"
+  },
+  {
+   "from": "vaults",
+   "to": "site",
+   "rel": "example-of"
+  },
+  {
+   "from": "case",
+   "to": "site",
+   "rel": "example-of"
+  },
+  {
+   "from": "team",
+   "to": "news",
+   "rel": "produces"
+  },
+  {
+   "from": "rules",
+   "to": "site",
+   "rel": "depends-on"
+  },
+  {
+   "from": "site",
+   "to": "ask",
+   "rel": "leads-to"
+  }
+ ],
+ "links": {
+  "articles": [
+   "where-to-invest-in-sgit",
+   "legal-on-demand-for-startups",
+   "insuring-agents-the-whole-story",
+   "sell-dont-issue",
+   "the-exit-is-when-you-sell-control",
+   "start-a-company",
+   "the-controllable-founder",
+   "open-source-so-you-keep-it",
+   "a-small-slice-sets-the-price",
+   "agents-have-an-identity-now",
+   "ci-owns-the-version"
+  ],
+  "pages": [],
+  "sites": [
+   "https://notebook-lm.sgit.ai/",
+   "https://php.oct.2026.newsroom.sgit.ai/",
+   "https://sgit.ai/docs/guidance/repositories.md",
+   "https://coding.sgit.ai/",
+   "https://nfrs.sgit.ai/",
+   "https://ux.sgit.ai/"
+  ]
+ },
+ "quotes": [
+  {
+   "text": "So I think the best way to talk to investors is to have them use our own technology, on the problems they actually have.",
+   "why": "The reason for the site."
+  },
+  {
+   "text": "My inclination is the first, because it shows the point of vaults: one team writes, another site reads, and the vault is the contract between them.",
+   "why": "The answer to who makes the feeds."
+  }
+ ]
+}

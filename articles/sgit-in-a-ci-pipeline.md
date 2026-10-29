@@ -10,11 +10,11 @@
 
 # sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/sgit-in-a-ci-pipeline.md) · [newsroom v0.12.34](https://newsroom.sgit.ai/admin/versions.html) · sgitcigithub-actionspipelinesvaultsappend-lanespkisecretsscoped-clonesupply-chainartifactsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.2.0, 3 versions](versions/sgit-in-a-ci-pipeline.md) · [newsroom v0.12.34](https://newsroom.sgit.ai/admin/versions.html) · sgitcigithub-actionspipelinesvaultsappend-lanespkisecretsscoped-clonesupply-chainartifactsarticle
 
 ***Abstract:** Getting data in and out of a CI pipeline is harder than it should be. GitHub Actions has artifacts, kept 90 days by default and deleted with their run; caches, 10 GB per repository and evicted after a week unused; and job outputs, at most 1 MB per job. Each is fine for its job, and none is a versioned, encrypted record that a person, an auditor or another pipeline can read from outside GitHub. This article maps how sgit vaults fill that gap, and every pattern in it was run for the article against a local vault server. A job pushes what it produced to a vault, and anything with the read key can clone it from anywhere, with history. Jobs pass data to each other through the same vault, each cloning only the folders it needs with --path, which is a large saving in time and in what lands on the runner, though it is a speed setting rather than a boundary. The boundaries are the keys: a read key clones and cannot commit; an append token, one per test shard, adds to its own write-only inbox and reads nothing; and each job can have its own key pair, so a deploy configuration encrypted to the deploy job fails to decrypt anywhere else, and a signed manifest fails verification once it is changed. Even done a little loosely, that turns wiring mistakes into loud failures. The keys come from secrets on stdin, and only the ciphertext half of a vault ever leaves the runner. And when you would rather not depend on a hosted server, the vault server runs as a sidecar whose storage folder holds only ciphertext: archive it into the Actions cache, an artifact or a git branch, and the next run restores it with its full history.*
 
-A pipeline whose stages talk through a vault. Each job clones only the folders it needs, with only the key it needs: build writes with the vault key, test shards append to write-only inboxes, the summary reads the lane, release and deploy read with the read key and their own key pairs, and anyone outside GitHub can clone the results with a read key. What leaves a runner is ciphertext.
+A pipeline whose stages talk through a vault, with each job holding only the key it needs.
 
 ## In short
 
@@ -73,7 +73,7 @@ But a scoped clone is not a wall. A job holding the full vault key can widen its
 
 ## The keys are the boundaries
 
-Which job holds which key. Build and the summary hold the vault key, release, deploy and outside readers the read key, each test shard one append token, the summary the lane's enum key, and the jobs that sign or decrypt their own key pair. The server access token opens a private server's door for everyone; it is not a vault permission.
+Which job holds which key, and what the server access token does and does not do.
 
 sgit gives a pipeline four kinds of key, and the useful design question is which job holds which.
 
@@ -104,7 +104,7 @@ To give a job its identity, the key folder, about 5 KB once packed, and its pass
 
 ## No hosted server
 
-No hosted server. The vault server runs as a container inside the job with its storage in a folder; the folder holds only ciphertext, so it can be saved to the Actions cache, an artifact, a release asset or a git branch, and the next run restores it and clones with its full history. Reading needs no server at all; pushing needs the server's API, which the sidecar provides.
+No hosted server: the vault server runs as a container inside the job, and its ciphertext is saved between runs.
 
 Not every team wants its pipeline to depend on a vault server somewhere else. It does not have to.
 

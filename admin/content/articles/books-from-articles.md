@@ -10,7 +10,7 @@ tags: books, publishing, writing, workflows, agents, feedback-loop, leverage, we
 status: published
 ---
 
-!shot bp-stall.webp | images/ | Why three books stopped and the articles keep moving: the August book workflow wrote three books in a day, waited on one big review, blocked on one person and was left behind; the October article workflow ships one finished, linked article per memo and gets feedback while it matters. | comparison
+!shot bp-stall.webp | images/ | Why three books stopped and the articles keep moving: the August book workflow against the October article workflow. | comparison
 
 ## In short {#in-short}
 
@@ -44,7 +44,7 @@ Books matter, and not only as a revenue stream. They are a great way to learn, t
 
 ## The material we already have {#material}
 
-!shot bp-plan.webp | images/ | From articles to books by Web Summit: four candidate books, agents with a mandate, graphs, Hacking Portugal and books from articles, with the articles each starts from, and six steps from mapping the books on 16 October to author copies in Lisbon on 9 to 12 November. | comparison
+!shot bp-plan.webp | images/ | From articles to books by Web Summit: four candidate books and six steps from 16 October to author copies in Lisbon. | comparison
 
 Counting the articles on this site and on sgit.ai, by hand and approximately:
 

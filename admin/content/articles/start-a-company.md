@@ -10,7 +10,7 @@ tags: startups, companies, europe, gen-z-book, article
 status: published
 ---
 
-!shot co-three.webp | images/ | Three ways to start a company, side by side. The UK, the one I know well: about £100 online, usually within a day, model articles by default, and little to do until there is real trade. Portugal, where I learned the hard way: just as quick to form, but a certified accountant is required by law from the first month, about €200 to €300 a month in my case, trading or not. Lithuania, where I would like to go next: e-residency for a digital identity and signature, a small partnership with no minimum capital, and a registered address still needed. | comparison
+!shot co-three.webp | images/ | Three ways to start a company, side by side: the UK, Portugal and Lithuania. | comparison
 
 ## In short {#in-short}
 

@@ -10,7 +10,7 @@ tags: ai-risk-management, frameworks, nist-ai-rmf, oecd, eu-ai-act, japan-ai-gui
 status: published
 ---
 
-!shot ff-map.webp | images/ | Four frameworks, as iason's paper reads them, against what runs here. For each: the question it asks of a system, how the paper summarises it, what answers it on this site and at RiskMandate, the article or vault where that can be checked, and whether it runs, is designed or is only argued. Green runs; amber is a design; grey is an argument. | comparison
+!shot ff-map.webp | images/ | Four frameworks, as iason's paper reads them, against what runs here, marked as running, designed or argued. | comparison
 
 ## In short {#in-short}
 
@@ -34,7 +34,7 @@ It is also honest about where companies are. Its list of what many still lack ha
 
 ## The unit: a system before deployment, or one agent in one deployment {#unit}
 
-!shot ff-unit.webp | images/ | Two units. On the left, the frameworks' unit: an AI system, described by its characteristics, context and impact, given a tier, and assigned obligations, before it is deployed. On the right, the unit here: one agent in one deployment, with its reach measured, its mandate written, the gap between them typed by what stands in the way, its footprint read afterwards, and a blast radius for every row. The arrows show where each of the four frameworks attaches. | architecture
+!shot ff-unit.webp | images/ | Two units: the frameworks' AI system, and the unit here, one agent in one deployment, and where each framework attaches. | architecture
 
 Before the mapping, the one disagreement, because it decides how the rest reads. All four instruments take the AI system as their unit: the thing a provider puts on the market, which a deployer puts into service. The OECD describes it, NIST maps it, the Act tiers it, and the work is done before deployment, with monitoring after. For a model behind a form, that is the right unit.
 
@@ -84,7 +84,7 @@ The guidelines also call their model "agile governance", oversight that is itera
 
 ## The EU AI Act: the tier, the undefined word, and the dates {#act}
 
-!shot ff-dates.webp | images/ | A status since, for the paper. Above the line, the dates as the paper gives them, as of November 2025: prohibitions in force from February 2025, and the rules applying in full by August 2026. Below the line, what this site's own articles recorded afterwards: the amending regulation in force from 27 July 2026, Annex III obligations from 2 December 2027, Annex I from 2 August 2028, and software a product under the EU's new liability rules from 9 December 2026. Neither row is wrong on its day. | timeline
+!shot ff-dates.webp | images/ | A status since the paper: its dates as of November 2025 above the line, and what this site recorded afterwards below. | timeline
 
 The Act is where the paper spends the most pages, and two things in it matter here. The first is the tier. The newsroom's own systems are low on the Act's scale: an article is not a decision about a person, and the limited-risk duty that applies to a chatbot, to say that it is one, is the disclosure this site already carries on machine-written text, for the reason [Who owns the words](/articles/who-owns-the-words.html) gives, that people should read machine-written words differently. The agent team is the same: it drafts, and a person sends. Proportionality is the right principle, and here it is applied per row of reach rather than per system, because a tier for the model would miss the send button.
 
@@ -94,7 +94,7 @@ Then the dates. The paper, as of November 2025, says the Act's rules "will come 
 
 ## The five principles on one small system {#principles}
 
-!shot ff-principles.webp | images/ | The paper's five shared principles, each against what answers it here, the evidence, and how far it goes: runs, in green; a published design with a demo behind it, in amber. Four of the five run, on one newsroom and one agent team; risk acceptance as a record is the design. | comparison
+!shot ff-principles.webp | images/ | The paper's five shared principles, each against what answers it here, the evidence, and how far it goes. | comparison
 
 So, the paper's five, each on the one system I can show, and how far each goes.
 

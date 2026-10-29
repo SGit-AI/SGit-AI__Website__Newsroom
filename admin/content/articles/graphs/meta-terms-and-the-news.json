@@ -1,0 +1,35 @@
+{
+ "slug": "meta-terms-and-the-news",
+ "teaser": "Meta's crawling clause, publisher pushback since mid-October, and why newsrooms should answer with machine-readable terms of their own.",
+ "topics": ["news-and-evidence", "startups-and-strategy"],
+ "core_idea": "Meta's updated Commercial Terms, effective 20 November 2026, let it crawl, cache and keep pulling the websites tied to any business using its products, which covers almost every news organisation; after objections Meta removed 'train' and delayed the date, but robots.txt is not in the contract and refusing means leaving Meta for business. Publishers' letters and regulators are needed, but they are defensive; newsrooms should also state machine-readable licence terms, price crawls, sign their content, own their channels, and show how a crawler can behave.",
+ "nodes": [
+  {"id": "clause", "label": "The crawling clause", "kind": "artefact", "summary": "Crawlers, test credentials, periodic pulls."},
+  {"id": "scope", "label": "Almost every news site", "kind": "claim", "summary": "Every Page links to a site."},
+  {"id": "timeline", "label": "Since mid-October", "kind": "example", "summary": "Train removed; date moved to 20 November."},
+  {"id": "asks", "label": "WAN-IFRA's five demands", "kind": "claim", "summary": "Exclusion, paywalls, robots.txt binding, licence, opt-out."},
+  {"id": "gap", "label": "A statement is not a term", "kind": "concept", "summary": "Meta's limits are not in the text."},
+  {"id": "terms", "label": "Machine-readable terms", "kind": "method", "summary": "RSL and a price per crawl."},
+  {"id": "own", "label": "Own the channel", "kind": "method", "summary": "The platform as one door, not the house."},
+  {"id": "crawler", "label": "How a crawler can behave", "kind": "example", "summary": "Tiers, hashes, opt-out."}
+ ],
+ "edges": [
+  {"from": "scope", "to": "clause", "rel": "depends-on"},
+  {"from": "timeline", "to": "clause", "rel": "extends"},
+  {"from": "asks", "to": "clause", "rel": "answers"},
+  {"from": "gap", "to": "asks", "rel": "depends-on"},
+  {"from": "terms", "to": "gap", "rel": "answers"},
+  {"from": "own", "to": "asks", "rel": "answers"},
+  {"from": "crawler", "to": "terms", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["the-evidence-behind-four-days", "who-creates-the-original", "sources-and-shadows", "one-researcher-for-every-newsroom", "signed-by-the-source", "free-to-copy-paid-at-the-source", "websites-you-own", "own-the-stack-and-the-trust", "on-the-record"],
+  "pages": [],
+  "sites": ["https://www.facebook.com/legal/commercial_terms/update", "https://rslstandard.org/", "https://blog.cloudflare.com/introducing-pay-per-crawl/"]
+ },
+ "quotes": [
+  {"text": "Journalism is not raw material to be collected as a condition of being present on a platform.", "why": "What publishers are asking for."},
+  {"text": "This postponement is a welcome step, but it does not address our concerns.", "why": "Since mid-October."},
+  {"text": "Robots.txt says \"please do not\"; a licence says \"here is the price\".", "why": "My view: do not only write letters."}
+ ]
+}

@@ -1,0 +1,142 @@
+{
+  "slug": "what-the-bitcoin-bounty-actually-proves",
+  "teaser": "What the bitcoin bounty actually proves: the real timeline, whether a firewall could have caught it, and hardening without the patch.",
+  "topics": [
+    "news-and-evidence",
+    "agents-and-policy"
+  ],
+  "core_idea": "A won bitcoin bounty is real, independent proof that php2shell gives full command execution, but the headline 19.28 hours mostly measures a target with no attackable page; the real build time was about three hours once one existed. Vendor WAF and IDS coverage exists but each vendor names its own gap, and every public hardening measure, tested seriously by GrapheneOS, is described as partial by its own authors; patching remains the only complete fix.",
+  "nodes": [
+    {
+      "id": "bounty",
+      "label": "The bounty, won",
+      "kind": "example",
+      "summary": "A real, checkable, independent win."
+    },
+    {
+      "id": "timeline",
+      "label": "19 hours vs 3",
+      "kind": "claim",
+      "summary": "Most of the time, nothing was attackable."
+    },
+    {
+      "id": "effort",
+      "label": "How hard, really",
+      "kind": "claim",
+      "summary": "Exact build, a race, 20 requests."
+    },
+    {
+      "id": "shell",
+      "label": "What kind of access",
+      "kind": "concept",
+      "summary": "Command execution, not a standing shell."
+    },
+    {
+      "id": "waf",
+      "label": "Could a WAF catch it",
+      "kind": "claim",
+      "summary": "Five vendors, five named gaps."
+    },
+    {
+      "id": "harden",
+      "label": "Hardening without patching",
+      "kind": "claim",
+      "summary": "Every measure is partial, by its own authors."
+    },
+    {
+      "id": "graphene",
+      "label": "GrapheneOS's own test",
+      "kind": "example",
+      "summary": "Tried three measures, went offline anyway."
+    },
+    {
+      "id": "logs",
+      "label": "What a defender would see",
+      "kind": "concept",
+      "summary": "A memory-exhaustion fatal, repeated."
+    }
+  ],
+  "edges": [
+    {
+      "from": "timeline",
+      "to": "bounty",
+      "rel": "depends-on"
+    },
+    {
+      "from": "effort",
+      "to": "bounty",
+      "rel": "depends-on"
+    },
+    {
+      "from": "shell",
+      "to": "bounty",
+      "rel": "depends-on"
+    },
+    {
+      "from": "waf",
+      "to": "bounty",
+      "rel": "answers"
+    },
+    {
+      "from": "harden",
+      "to": "bounty",
+      "rel": "answers"
+    },
+    {
+      "from": "graphene",
+      "to": "harden",
+      "rel": "example-of"
+    },
+    {
+      "from": "logs",
+      "to": "harden",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-side-stories-of-php2shell",
+      "php-daily-2026-10-26"
+    ],
+    "pages": [],
+    "sites": [
+      "https://stealmybitcoin.com/",
+      "https://github.com/KillaBoi/StealMyBitcoin-PoC",
+      "https://php.oct.2026.newsroom.sgit.ai/articles/steal-my-bitcoin/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "the only mitigation is patching / upgrading PHP. I sadly know too much.",
+      "why": "Hardening without patching: what actually holds."
+    },
+    {
+      "text": "the original server did not expose any page that executed PHP programs.",
+      "why": "The real timeline is three hours, not nineteen."
+    },
+    {
+      "text": "reduces the volume an exploit needs, but it doesn't stop a single successful request.",
+      "why": "Could a firewall have seen it coming."
+    }
+  ],
+  "figures": [
+    {
+      "file": "dt-timeline.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dt-timeline.webp",
+      "caption": "The real timeline of the challenge from 21 October to 26 October, against the \"19.28 hours\" the site's counter gave.",
+      "kind": "chart"
+    },
+    {
+      "file": "dt-waf.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dt-waf.webp",
+      "caption": "Detection coverage for php2shell from Cloudflare, AWS WAF, Azure Front Door, Emerging Threats and Sophos, and each gap.",
+      "kind": "chart"
+    },
+    {
+      "file": "dt-harden.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dt-harden.webp",
+      "caption": "Hardening without patching: four measures that their own authors call partial, and what GrapheneOS did instead.",
+      "kind": "chart"
+    }
+  ]
+}

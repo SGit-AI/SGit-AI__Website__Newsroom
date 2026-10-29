@@ -1,0 +1,122 @@
+{
+ "slug": "the-evidence-behind-four-days",
+ "teaser": "Jeremiah Grossman's php2shell post, checked claim by claim against public data and the PHP story site's evidence, with graphs.",
+ "topics": [
+  "news-and-evidence"
+ ],
+ "core_idea": "Four days after php2shell, Jeremiah Grossman argued the evidence shows no wave of breaches and that adversaries exploit a small set of bugs. Re-counted from NVD, CISA, EPSS, the CVE records and the PHP story site's captured evidence, most of the post holds: the timestamp is exact, NVD counts 1,394 CVEs in the window, none cites Exploit-DB or Metasploit, VulnCheck gave 25 old bugs IDs on 22 October, and, as of 27 October, no named organisation has said it was compromised. Since then CISA listed php2shell and EPSS went above 0.999; yearly, CVE publications more than doubled while CISA's catalogue grew by 30%, a description that cannot test AI's effect; Wiz's own account shows AI cutting the effort of building exploits.",
+ "nodes": [
+  {
+   "id": "post",
+   "label": "The post",
+   "kind": "artefact",
+   "summary": "Four days after disclosure."
+  },
+  {
+   "id": "window",
+   "label": "1,394 CVEs",
+   "kind": "claim",
+   "summary": "Almost none show exploitation."
+  },
+  {
+   "id": "record",
+   "label": "No confirmed victim",
+   "kind": "claim",
+   "summary": "53 rows, 8 named organisations."
+  },
+  {
+   "id": "specific",
+   "label": "Environment-specific exploits",
+   "kind": "claim",
+   "summary": "Tuned, raced or wrong."
+  },
+  {
+   "id": "changed",
+   "label": "CISA listing, EPSS jump",
+   "kind": "example",
+   "summary": "26 and 25 October."
+  },
+  {
+   "id": "attention",
+   "label": "Attention is not exploitation",
+   "kind": "concept",
+   "summary": "295 news items, evidence levels 1 and 4."
+  },
+  {
+   "id": "ratio",
+   "label": "Twice the CVEs, 30% more KEV",
+   "kind": "claim",
+   "summary": "0.62% down to 0.31%."
+  },
+  {
+   "id": "brief",
+   "label": "The data we asked for",
+   "kind": "artefact",
+   "summary": "VulnCheck, Censys, Metasploit, timing."
+  }
+ ],
+ "edges": [
+  {
+   "from": "window",
+   "to": "post",
+   "rel": "answers"
+  },
+  {
+   "from": "record",
+   "to": "post",
+   "rel": "answers"
+  },
+  {
+   "from": "specific",
+   "to": "post",
+   "rel": "answers"
+  },
+  {
+   "from": "changed",
+   "to": "record",
+   "rel": "extends"
+  },
+  {
+   "from": "attention",
+   "to": "post",
+   "rel": "answers"
+  },
+  {
+   "from": "ratio",
+   "to": "post",
+   "rel": "answers"
+  },
+  {
+   "from": "brief",
+   "to": "post",
+   "rel": "extends"
+  }
+ ],
+ "links": {
+  "articles": [
+   "what-the-bitcoin-bounty-actually-proves",
+   "php-daily-2026-10-26",
+   "the-side-stories-of-php2shell",
+   "patch-for-breakfast"
+  ],
+  "pages": [],
+  "sites": [
+   "https://php.oct.2026.newsroom.sgit.ai/compromise/index.html",
+   "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+  ]
+ },
+ "quotes": [
+  {
+   "text": "the evidence says otherwise",
+   "why": "The post."
+  },
+  {
+   "text": "No named organisation has said it was compromised through php2shell.",
+   "why": "No wave, and nothing confirmed."
+  },
+  {
+   "text": "what is exploited and what is talked about are different lists",
+   "why": "Attention is not exploitation."
+  }
+ ]
+}

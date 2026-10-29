@@ -1,0 +1,40 @@
+{
+ "slug": "the-open-security-summit-and-its-debt",
+ "teaser": "How technical debt stalled the Open Security Summit's website and follow-up, what the repositories show, and why agents make a restart worthwhile.",
+ "topics": ["site-and-engineering"],
+ "core_idea": "The Open Security Summit treated every participant as a presenter and its website was edited by its participants, but copying each year's site, adding exceptions and never refactoring froze the code, drove contributors away and left the follow-up unscaled; agents that map the data, personalise and follow up now make it worth restarting, in person, online and as a home for projects, if it is funded.",
+ "nodes": [
+  {"id": "model", "label": "Every participant a presenter", "kind": "concept", "summary": "Working sessions and outcomes."},
+  {"id": "website", "label": "The website as part of the summit", "kind": "example", "summary": "180 committers in 2018."},
+  {"id": "copy", "label": "Copy last year's site", "kind": "method", "summary": "171 of 186 template files reused."},
+  {"id": "growth", "label": "Templates grew", "kind": "example", "summary": "5,200 to 9,600 lines."},
+  {"id": "freeze", "label": "The code froze", "kind": "claim", "summary": "No change from 2022; content kept coming."},
+  {"id": "people", "label": "The people went", "kind": "example", "summary": "180 to 14 committers."},
+  {"id": "followup", "label": "Follow-up never scaled", "kind": "claim", "summary": "No personal path per participant."},
+  {"id": "material", "label": "The material", "kind": "artefact", "summary": "409 sessions, 194 recordings."},
+  {"id": "agents", "label": "Agents map and follow up", "kind": "method", "summary": "Map, analyse, personalise."},
+  {"id": "restart", "label": "The restart", "kind": "method", "summary": "London, online, hosted projects."},
+  {"id": "funding", "label": "Needs funding", "kind": "question", "summary": "Someone to fund it."}
+ ],
+ "edges": [
+  {"from": "model", "to": "website", "rel": "produces"},
+  {"from": "copy", "to": "growth", "rel": "produces"},
+  {"from": "growth", "to": "freeze", "rel": "leads-to"},
+  {"from": "freeze", "to": "people", "rel": "leads-to"},
+  {"from": "model", "to": "followup", "rel": "depends-on"},
+  {"from": "followup", "to": "material", "rel": "contrasts"},
+  {"from": "agents", "to": "followup", "rel": "answers"},
+  {"from": "agents", "to": "restart", "rel": "leads-to"},
+  {"from": "restart", "to": "funding", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["agent-behaviour-policies-move-to-the-open-security-summit", "jobs-that-never-scaled", "the-code-you-do-not-ship", "explorer-coding"],
+  "pages": [],
+  "sites": ["https://open-security-summit.org/", "https://diniscruz.ai/2025/06/07/history-and-analysis-of-owasp-in-person-summits.html"]
+ },
+ "quotes": [
+  {"text": "every participant was treated as a presenter.", "why": "The model."},
+  {"text": "Nobody had the time to change the structure, so everything new went into a structure that could not change.", "why": "The freeze."},
+  {"text": "Nothing broke all at once.", "why": "The lesson."}
+ ]
+}

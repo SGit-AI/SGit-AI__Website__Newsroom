@@ -1,0 +1,43 @@
+{
+ "slug": "aws-from-the-vault",
+ "teaser": "A proposed aws.twin.sgit.ai: an AWS twin on a vault first, then a temporary AWS session from the user's vault.",
+ "topics": ["vaults-and-method"],
+ "core_idea": "Client-side AWS tooling was missing a safe place for credentials and a home for its data; the user's vault supplies both, and aws.twin.sgit.ai is built twin first, an AWS-shaped interface on a vault with temporary IAM Identity Center credentials as a second backend, while the browser calls AWS with the JavaScript SDK and writes versioned results back for graphs and workflows, starting with multi-region, multi-account deployments.",
+ "nodes": [
+  {"id": "missing", "label": "Two missing pieces", "kind": "claim", "summary": "Where credentials and data go."},
+  {"id": "tools", "label": "OSBot-AWS and SG/Compute", "kind": "artefact", "summary": "Years of AWS tooling."},
+  {"id": "twin", "label": "A twin first", "kind": "method", "summary": "Interface on a vault; live account as a second backend."},
+  {"id": "portal", "label": "AWS access portal", "kind": "method", "summary": "Temporary credentials, one to twelve hours."},
+  {"id": "vault", "label": "The user's vault", "kind": "concept", "summary": "Holds the session and the data."},
+  {"id": "browser", "label": "The browser does the work", "kind": "method", "summary": "AWS SDK for JavaScript."},
+  {"id": "cors", "label": "CORS per service", "kind": "question", "summary": "S3 needs it; the rest to measure."},
+  {"id": "data", "label": "AWS data in the vault", "kind": "artefact", "summary": "Versioned snapshots."},
+  {"id": "graphs", "label": "Graphs of an account", "kind": "method", "summary": "What can reach what."},
+  {"id": "deploy", "label": "Multi-region deployment", "kind": "example", "summary": "One session per account."},
+  {"id": "pki", "label": "IAM Roles Anywhere", "kind": "question", "summary": "X.509 for temporary credentials."},
+  {"id": "careful", "label": "Narrow roles, short sessions", "kind": "claim", "summary": "The session can do what its role can."}
+ ],
+ "edges": [
+  {"from": "tools", "to": "missing", "rel": "leads-to"},
+  {"from": "vault", "to": "missing", "rel": "answers"},
+  {"from": "twin", "to": "vault", "rel": "depends-on"},
+  {"from": "portal", "to": "twin", "rel": "extends"},
+  {"from": "vault", "to": "browser", "rel": "leads-to"},
+  {"from": "cors", "to": "browser", "rel": "extends"},
+  {"from": "browser", "to": "data", "rel": "produces"},
+  {"from": "data", "to": "graphs", "rel": "leads-to"},
+  {"from": "deploy", "to": "twin", "rel": "example-of"},
+  {"from": "pki", "to": "portal", "rel": "compared-with"},
+  {"from": "careful", "to": "portal", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["plural-for-the-family-singular-for-the-site", "the-user-keeps-the-meter", "pki-everywhere", "agent-workflows-on-ephemeral-vaults", "what-can-your-agent-reach", "knowledge-that-maintains-itself"],
+  "pages": [],
+  "sites": ["https://twins.sgit.ai/"]
+ },
+ "quotes": [
+  {"text": "It was two missing pieces.", "why": "The diagnosis."},
+  {"text": "The name carries the design.", "why": "Twin first."},
+  {"text": "The vault becomes the record of the estate", "why": "Deployments."}
+ ]
+}

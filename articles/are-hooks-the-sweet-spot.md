@@ -10,11 +10,11 @@
 
 # Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.0.0](versions/are-hooks-the-sweet-spot.md) · [newsroom v0.12.43](https://newsroom.sgit.ai/admin/versions.html) · hooksagentsagent-behaviour-policyenforcementpolicy-as-codeclaude-codeguardrailsowaspsecurityarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/are-hooks-the-sweet-spot.md) · [newsroom v0.12.43](https://newsroom.sgit.ai/admin/versions.html) · hooksagentsagent-behaviour-policyenforcementpolicy-as-codeclaude-codeguardrailsowaspsecurityarticle
 
 ***Abstract:** Most of the rules we give agents today are hope-based security: written in the prompt, kept only if the model keeps them. The agent writing this site works under a behaviour policy of eleven rules, and only one of them is kept by something other than the agent. So I asked the question directly: in October 2026, are hooks the sweet spot? Can we move the rules out of the prompt and into small deterministic programs the agent's harness runs before and after every action, and keep them there until enforcement moves into a gateway or the platform itself? I took this session's own policy and tried, rule by rule, in a throwaway repository. Four rules moved into hooks fully, two mostly, three partly and two not at all, and the tests found a gap in the check I trust most. Hooks are the first layer that does not rely on the model and the last that still sees the action in the agent's own terms, which is why I think they are the right place to start, provided they are installed where the agent cannot edit them and set to fail closed. The open hook collections that exist block dangerous commands; the step that is missing is generating hooks from a written policy, and testing them, so the same rules can later be enforced by a gateway. We already need this for our own agents, so we can be among its heaviest users.*
 
-The eleven rules of this site's writing session, rule by rule. Today one rule is kept by a hook, one in part by a disabled push URL, and the rest by the agent's good behaviour. Moved into hooks and tested on fixed inputs in a throwaway repository: four fully, two mostly, three partly, two not at all.
+The eleven rules of this site's writing session, rule by rule, and how well hooks could keep each.
 
 ## In short
 
@@ -53,7 +53,7 @@ The rest moved partly or not at all. Never leaking a key is covered where it wou
 
 ## Where a hook sits
 
-Where a rule can be kept. From the prompt, which sees everything and enforces nothing, through agent hooks and the tools' own hooks, to the sandbox, a gateway off the machine, and the service itself. Each layer down is harder for the agent to change and sees less of what the agent meant to do.
+Where a rule can be kept, from the prompt down to the service itself, with each layer harder for the agent to change.
 
 That result is why I think hooks are the sweet spot for now. They are the first layer that does not depend on the model: the same input gets the same answer every time, at no model cost. And they are the last layer that still sees the action as the agent meant it: a tool call by name, a commit with its message, a pull request with its title. A sandbox sees files and hosts. A gateway sees requests. Further down, enforcement is stronger and the intent is harder to read.
 
@@ -111,6 +111,7 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#are-hoo
 
 ### Continued by
 
+- [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](introducing-sharness.md) SHarness, the secure harness we built when we could not find one: behaviour policies the Linux kernel enforces on every process an agent starts.
 - [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](a-leak-without-breaking-the-policy.md) A key can leak through an allowed action. Told, checked, never given: a hook tested on nine leaks, four experimental rules, and a real sweep.
 - [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](a-briefing-for-the-ciso-summit.md) A briefing for the WestCap CISO Summit: Agent Behaviour Policies and RiskMandate, said for six kinds of person in the room, with what to read next.
 - [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](governs-enforces-attests.md) An ABP governs and names the enforcer at three levels: prompt, hooks, or a third-party system. An attestation layer signs it so a third party can verify.

@@ -10,7 +10,7 @@ tags: portugal, europe, sovereignty, cloud, open-source, language, graphs, regul
 status: published
 ---
 
-!shot pt-timeline.webp | images/ | Sixteen years of talks about Portugal and what happened since: the IBWAS keynote in 2010, Hacking Portugal in 2016, GenAI in Portuguese in 2024, five essays on Europe in 2025; and since, the EU vulnerability database, Portugal's NIS2 law, Amália, the Cyber Resilience Act's reporting duties, the plan for a new Hacking Portugal at Web Summit, and software under product liability. | comparison
+!shot pt-timeline.webp | images/ | Sixteen years of talks about Portugal and what happened since, from the IBWAS keynote in 2010 to 2026. | comparison
 
 ## In short {#in-short}
 

@@ -10,11 +10,11 @@
 
 # The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.1.0, 2 versions](versions/the-human-in-the-loop.md) · [newsroom v0.12.19](https://newsroom.sgit.ai/admin/versions.html) · human-in-the-loopagentsagencyapproval-fatigueagent-behaviour-policyblast-radiusproductiontrustgovernanceroundtablearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.2.0, 3 versions](versions/the-human-in-the-loop.md) · [newsroom v0.12.19](https://newsroom.sgit.ai/admin/versions.html) · human-in-the-loopagentsagencyapproval-fatigueagent-behaviour-policyblast-radiusproductiontrustgovernanceroundtablearticle
 
 ***Abstract:** Someone shaping a roundtable in London asked me this week for my thoughts on a question that keeps coming up: is the human in the loop a safety net or a bottleneck? Plenty of companies have agent pilots that look great, and very few trust an agent to make a real decision without someone checking every output. My answer is that a person checking every output is both, and is mostly neither: it is a bottleneck because it does not scale, and it is a weak safety net because people approve almost everything they are shown, which Anthropic measured at 93% of permission prompts. The question is not whether there is a human in the loop. It is which outputs need one, what that person is given to decide with, and what moves the line over time. Put the person where an output cannot be undone and the blast radius is large, sending an email in my name, typing a password, spending money. Everywhere else, replace the human check with controls that do not get tired: a validator, a second reader the agent cannot skip, a policy whose rows are enforced outside the model, and a record read afterwards. Make the review a quality step that fixes the source, not a sign-off. And let the record move the line: trust is built from drafts nobody had to change. This is how far I have got in production. On the day I am writing this, the newsroom shipped fourteen releases, every commit made by an agent, with nobody approving each one before it went live, while the agents that run my correspondence draft every email and send none of them: I do.*
 
-Where the person belongs. Two questions place every output an agent produces: can it be undone, and how much would it cost if it went wrong. The person goes where the answers are no and a lot. Everywhere else, controls that do not get tired do the checking, and the person reads the record afterwards. Examples from the newsroom and from my own agent team.
+Where the person belongs: two questions place every output an agent produces, can it be undone, and what it would cost.
 
 **What came next.** [The human in the loop is a spectrum](how-cheap-is-it-to-undo.md) takes the last section further: why this newsroom ships on its own while my email waits for me, and how both of those can move.
 
@@ -52,7 +52,7 @@ Everywhere else, the person is the wrong control.
 
 ## Replace the other checks with controls that do not get tired
 
-How far I have got in production, as it ran on 13 October 2026. For each kind of output, who or what checks it before it counts, and what happens afterwards. Only two rows have a person before the fact.
+How far I have got in production, as it ran on 13 October 2026, with who or what checks each kind of output.
 
 An article on this site is a good example, because it can be undone: a correction is a new version, with a page that shows what changed. So nobody approves an article before it goes live. What stands in the way instead is a set of controls that never get tired: a validator that fails the build on a broken link, a quote that is not word for word in its source, a banned word or a missing figure; browser tests; a leak scan on every commit that refuses a key or a name on the private list. I read every article, but I read it after it is live, and what I find becomes a new version and, if it is about wording, a rule.
 

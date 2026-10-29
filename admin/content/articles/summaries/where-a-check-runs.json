@@ -1,0 +1,71 @@
+{
+ "slug": "where-a-check-runs",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "Where a check runs is part of the policy: tests as enforcers, and moving them out of the agent's environment, measured.",
+   "para": "Tests are deterministic enforcers of behaviour policies, but one the agent runs is a setting at best. Of 57 checks, 19 stop a deploy in CI today and 26 run only on the agent's side; moved, 49 would gate and 7 stay. By estimate, a third faster. Moving out helps only if the new place is a gate.",
+   "hash": "fcf91b2311ae"
+  },
+  "in-short": {
+   "line": "Seven lines: tests enforce policies, place decides strength, 19 today, 49 moved, a third faster, gates, context.",
+   "para": "Tests run or do not, pass or fail. In the agent's environment a test is a setting at best. Today 19 of 57 checks stop a deploy; moved, 49, with 7 left governing the agent. An estimated third off each release. A moved check must land in a gate. Enforceability depends on context.",
+   "hash": "53a898b9a7fc"
+  },
+  "idea": {
+   "line": "The idea: every test checks a behaviour, tests are deterministic, and the place a test runs decides what kind of control it is.",
+   "para": "Are checks at the right altitude, and in the best place? A test the agent runs can be skipped or changed; the same test outside the agent's control shrinks the grant. Knowing a check runs in the next layer gives the confidence not to run it in this one.",
+   "hash": "e30df0b35a4a"
+  },
+  "today": {
+   "line": "Today, measured: 435 seconds on the agent's machine, 324 in CI, and the session's own checks cost seconds.",
+   "para": "Generator 223, builders 33, validation 7, 18 test files 172; CI's median since 21 October 324. Summaries, wording, voice and graph checks take under two seconds together, page width about one per page. Felt time is longer because of the agent's own checks and rebuilds after failures.",
+   "hash": "0c7dc4885d3d"
+  },
+  "where": {
+   "line": "Where each check could run: CI as a gate for most, reporting for the live wire, and seven with the agent.",
+   "para": "The voice, summaries, graphs, borrowed reach checks, page width and pinned reader tests into CI; private lists as CI secrets; the live-vault wire test reporting; hooks, commit-before-stopping, repository scope, contact, research and an image clash with the agent. Gating checks go from 19 to 49.",
+   "hash": "3371a64fbf42"
+  },
+  "rule": {
+   "line": "The rule: moving a check out improves security only if the new place is a gate, and CI is a setting until protected.",
+   "para": "CI's browser tests do not stop the deploy, which went ahead 43 times; dropping them locally first would ship broken code. CI stays a setting while the agent can edit the workflow and validator; branch protection and reviews, set by the owner, make it a boundary.",
+   "hash": "563f8b3cc4d2"
+  },
+  "ready": {
+   "line": "What it takes: the voice and summaries pass already; wording and graphs need a clean-up; rebuild and live tests need work.",
+   "para": "No em-dash or banned word in 158 articles and no stale summary in 2,836 sections. Thirteen wording hits, mostly one phrase, need an allow-list entry; two graph quotes are stale. A rebuild changes ten files through dates, a timestamp and the release link. Two tests reach live services.",
+   "hash": "fd0f988895f8"
+  },
+  "estimate": {
+   "line": "The estimate: about 480 seconds a release instead of 760, and gating checks from 19 to 49.",
+   "para": "The agent's machine runs generator, builders, validator and cheap checks, about 266 seconds; CI runs browser tests in parallel, about 217. Cheap checks run in both places, expensive ones once. Agent-only expectations drop from 22 to three; with branch protection, the 49 become boundaries.",
+   "hash": "f1aa58ae7226"
+  },
+  "signing": {
+   "line": "Signing the test run: an attestation the agent signs and CI verifies makes skipping visible, not impossible.",
+   "para": "The commit, test-file hashes and results, signed with the agent's key. It proves which agent claims what on which commit, not honest execution; with CI re-running a sample, forgery becomes detectable. Defence in depth, labelled as such.",
+   "hash": "3b74a5b5f154"
+  },
+  "context": {
+   "line": "Enforceable is always specific: this works where work runs through a pipeline, not for a chat agent.",
+   "para": "For an agent answering customers there is no pipeline between action and world, and checks must sit in the systems it calls. We need many examples: this scenario, this check, here, with its effect on time and security, and the cases we cannot do yet.",
+   "hash": "136c1f9d2b12"
+  },
+  "next": {
+   "line": "The proposed steps, in order, for the owner to decide.",
+   "para": "Port the cheap checks into the validator and a CI job; clean up wording and graph quotes; pin live tests, parallelise and require them; only then stop local browser tests for content releases; make the build deterministic with a rebuild job; protect the branch; sign test runs when agents have keys.",
+   "hash": "252f6d8687d2"
+  },
+  "limits": {
+   "line": "After-move times are estimates; one timed release; a proposal; CI a setting until protected; a signed run is not a boundary.",
+   "para": "Measured parts rearranged, not a measured run. One machine on 22 October 2026. Nothing has moved yet. The boundary needs the owner's platform step. Signing makes skipping visible, not impossible.",
+   "hash": "76946d262ab0"
+  },
+  "sources": {
+   "line": "My memo, a timed rebuild, check timings and corpus runs, CI medians, and the policy map.",
+   "para": "The voice memo of 22 October 2026; a timed rebuild of v0.13.37; timings of the session's checks; wording, summaries, graph and voice runs across the corpus; GitHub Actions medians since v0.13.7; the policy map; and related articles on the checks, enforcement, the delegation record and keys.",
+   "hash": "5fc5b15638a1"
+  }
+ }
+}

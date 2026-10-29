@@ -10,11 +10,11 @@
 
 # When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.0.0](versions/when-the-customer-becomes-the-commodity.md) · [newsroom v0.12.132](https://newsroom.sgit.ai/admin/versions.html) · wardley-mapsstrategytruststartupsgen-z-bookarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.1.0, 2 versions](versions/when-the-customer-becomes-the-commodity.md) · [newsroom v0.12.132](https://newsroom.sgit.ai/admin/versions.html) · wardley-mapsstrategytruststartupsgen-z-bookarticle
 
 ***Abstract:** When you draw a Wardley map of your business, ask where your customer sits on it. Are they something you care about, close to custom built? A product you sell? Or a commodity you do not care about? Companies that win their market and start to behave like monopolies tend to move the customer to the right, and I agree with Cory Doctorow that judging monopolies by price misses it, because price is only one measure. Google lost my trust when ads became the purpose of its search results; I now use Perplexity, because an alternative only has to be about as good once trust is gone. Amazon still has my trust to deliver, but with sponsored results I no longer trust it to be on my side, so buying there has become a cognitive load. Airports show the way back: they treated passengers as a new batch every day, until they realised that better service made people spend more. And there is a bigger opportunity: local fulfilment and delivery should be infrastructure, like roads, so the shop on the high street can sell online without building its own logistics. When people use a company because they have to and not because they want to, it is open for disruption, which is good news for the next generation of founders.*
 
-Where does your customer sit on your map? Along the evolution axis of a Wardley map: custom built, a customer you know and care for; product, a customer you sell to; commodity, a customer you do not care about. Arrows show the drift, as I see it: search users and shoppers moved right as ads became the purpose, and so did social media users; airport passengers moved back left, once better service made them spend more.
+Where the customer sits on a Wardley map's evolution axis, with arrows showing the drift, as I see it.
 
 ## In short
 

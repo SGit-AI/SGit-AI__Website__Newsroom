@@ -30,13 +30,14 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
       <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
       <a class="sl" href="../about/index.html">Why this exists</a>
       <a class="sl" href="../desks/index.html">The five desks</a>
@@ -86,6 +87,8 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -153,17 +156,19 @@
   <script src="../assets/reader/strip.js" defer></script>
   <script src="../assets/reader/highlights.js" defer></script>
   <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
   <div class="theme-pick"></div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills</p>
  <h1>A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills</h1>
- <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/skill-behaviour-policy.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.51</a> &middot; <span class="chip">agent-skills</span><span class="chip">skill-behaviour-policy</span><span class="chip">agent-behaviour-policy</span><span class="chip">hooks</span><span class="chip">sandbox</span><span class="chip">lethal-trifecta</span><span class="chip">supply-chain</span><span class="chip">skillspector</span><span class="chip">mcp</span><span class="chip">article</span></p>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/skill-behaviour-policy.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.51</a> &middot; <span class="chip">agent-skills</span><span class="chip">skill-behaviour-policy</span><span class="chip">agent-behaviour-policy</span><span class="chip">hooks</span><span class="chip">sandbox</span><span class="chip">lethal-trifecta</span><span class="chip">supply-chain</span><span class="chip">skillspector</span><span class="chip">mcp</span><span class="chip">article</span></p>
  <p class="abstract"><em><b>Abstract:</b> I saw a video today that said "1 in 20 Claude skills are built to hack your computer". It is an overstatement of a real study, and the real finding is interesting enough: in one large study of public marketplaces, 5.2% of the skills analysed showed "high-severity patterns strongly suggesting malicious intent". It made me think about what an agent behaviour policy can do for skills. A skill behaviour policy looks at three things. The mandate the description promises; the mandate the skill actually has, from what its instructions and files can do, treated as features; and the grant, which depends on where it runs. The gap between the first two is the suspicious part; the gap between the last two is the reach nobody asked for. Then the policy becomes a control: a hook and a sandbox setting, generated from the described mandate, that bring the grant down to what you expected. I built a static calculator and ran it on 899 public skills from three sources: 812 can reach something beyond their own scripts, 782 of them through one third-party tool server, and 39 have a feature their description does not mention. None was obfuscated. The clearest case was honest: a skill that reads your Claude Code chat history, searches HackerNews and sends a report to Slack has the whole lethal trifecta, says so, and still needs a control. NVIDIA's scanner rated it safe, which is right for the question a scanner asks. A policy asks a different one.</em></p>
-<figure class="shot" data-shot="sb-three.webp" data-dir="images/" data-alt="A skill behaviour policy: three mandates, two gaps, one control. What the description says, what the skill&#x27;s files and instructions can do, and what the environment grants. Actual minus described is the suspicious part; grant minus actual is the reach nobody asked for; the control brings the grant down to the described mandate." data-kind="architecture"><figcaption>A skill behaviour policy: three mandates, two gaps, one control. What the description says, what the skill's files and instructions can do, and what the environment grants. Actual minus described is the suspicious part; grant minus actual is the reach nobody asked for; the control brings the grant down to the described mandate.</figcaption></figure>
+<figure class="shot" data-shot="sb-three.webp" data-dir="images/" data-alt="A skill behaviour policy: three mandates, two gaps and one control." data-kind="architecture"><figcaption>A skill behaviour policy: three mandates, two gaps and one control.</figcaption></figure>
 <h2 id="in-short">In short</h2>
 <ul>
 <li><b>The claim, corrected.</b> Not 1 in 20 Claude skills built to hack you: 5.2% of 31,132 marketplace skills in one study showed patterns "strongly suggesting malicious intent".</li>
@@ -190,7 +195,7 @@
 <h2 id="features">Features, not verdicts</h2>
 <p>The important design choice is that every finding is a feature, not a verdict. A skill that uploads a file to a URL could be stealing data, or logging you into an account to do what you asked. A skill that reads <code>~/.claude</code> could be harvesting your sessions, or analysing your work because you asked it to. Context decides, and the policy is where the context is written down: each feature becomes a row, with what it does, why the description needs it, and whether the description says so at all. A feature the description explains is a row with a reason. A feature it does not explain is a finding.</p>
 <h2 id="measured">899 skills, read statically</h2>
-<figure class="shot" data-shot="sb-measured.webp" data-dir="images/" data-alt="899 skills from three public sources, every file read as text and nothing run: what they can reach, and what their descriptions leave out. 812 can reach something beyond their own scripts, 782 of them through one third-party tool server; 39 have a feature their description does not mention; none was obfuscated, and none sets allowed-tools." data-kind="comparison"><figcaption>899 skills from three public sources, every file read as text and nothing run: what they can reach, and what their descriptions leave out. 812 can reach something beyond their own scripts, 782 of them through one third-party tool server; 39 have a feature their description does not mention; none was obfuscated, and none sets allowed-tools.</figcaption></figure>
+<figure class="shot" data-shot="sb-measured.webp" data-dir="images/" data-alt="899 skills from three public sources: what they can reach, and what their descriptions leave out." data-kind="comparison"><figcaption>899 skills from three public sources: what they can reach, and what their descriptions leave out.</figcaption></figure>
 <p>So I built the calculator's first half and ran it. It reads a skill folder as text, never runs anything, finds features by pattern in the instructions and every bundled file, finds the features the description declares by its words, and reports the difference. I ran it on three public sources, read on 14 October: Anthropic's own <a href="https://github.com/anthropics/skills">skills repository</a> (20 skills), a popular methodology collection, <a href="https://github.com/obra/superpowers">obra/superpowers</a> (15), and a large community catalogue, <a href="https://github.com/ComposioHQ/awesome-claude-skills">ComposioHQ/awesome-claude-skills</a> (864).</p>
 <ul>
 <li><b>812 of 899 can reach something beyond their own scripts.</b> Network, installs, credentials, files outside the workspace, or a remote tool server.</li>
@@ -200,7 +205,7 @@
 </ul>
 <p>These are curated public sources, not a marketplace sample, so the absence of obvious malice is what you would expect. What they show is the other thing: how often the description and the reach differ, even when everyone means well.</p>
 <h2 id="example">One skill, end to end</h2>
-<figure class="shot" data-shot="sb-example.webp" data-dir="images/" data-alt="One skill, end to end: developer-growth-analysis. An honest description and the whole lethal trifecta: it reads your Claude Code chat history, searches HackerNews, and sends a report to Slack through a third-party tool server. The policy states the minimal grant and the reach on Claude Code, and generates a hook, tested on nine fixed inputs, with what it cannot see and what stays an expectation." data-kind="architecture"><figcaption>One skill, end to end: developer-growth-analysis. An honest description and the whole lethal trifecta: it reads your Claude Code chat history, searches HackerNews, and sends a report to Slack through a third-party tool server. The policy states the minimal grant and the reach on Claude Code, and generates a hook, tested on nine fixed inputs, with what it cannot see and what stays an expectation.</figcaption></figure>
+<figure class="shot" data-shot="sb-example.webp" data-dir="images/" data-alt="One skill, end to end: developer-growth-analysis, its description, its policy and the hook generated from it." data-kind="architecture"><figcaption>One skill, end to end: developer-growth-analysis, its description, its policy and the hook generated from it.</figcaption></figure>
 <p>The clearest case in the set was an honest one. <code>developer-growth-analysis</code> describes itself as a skill that "Analyzes your recent Claude Code chat history to identify coding patterns, development gaps, and areas for improvement, curates relevant learning resources from HackerNews, and automatically sends a personalized growth report to your Slack DMs." Its instructions read <code>~/.claude/history.jsonl</code>, search HackerNews and post to Slack, all through a third-party tool server. That is <a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/">the lethal trifecta</a>, private data, untrusted content and a way out, in one skill, and the description says so. The only thing it leaves out is the server in the middle.</p>
 <p>Its skill behaviour policy is short. The minimal grant: read one file, run a search, send one message to yourself. The reach on Claude Code: the network of any program, every file you can read, including the rest of <code>~/.claude</code> and <code>~/.ssh</code>, and every account you have connected to the server. Four rows: read only the history file outside the workspace; ask before anything is sent; treat HackerNews text as data, not instructions; never touch shell startup files.</p>
 <p>From those rows I generated a hook and tested it on nine fixed inputs, the JSON the harness would send. It allowed reading the history file, the search, and a write in the workspace. It denied reading an SSH key, <code>cat .env</code>, any other file under <code>~/.claude</code>, and writes to <code>~/.bashrc</code> and <code>~/.zshrc</code>. And it asked before the tool server's execute call, because that is where a message leaves.</p>
@@ -228,6 +233,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo of mine on 14 October 2026, after a video and a fact-check thread, written by this site's agent in the voice of this site; the argument and the editorial responsibility are mine. The calculator, the policy and the hook were built for this article; the skills were downloaded into an isolated folder and read as text, never run. A research agent verified the study, the scanner and the documentation, and the quotes were checked on the pages themselves. Liu et al., <a href="https://arxiv.org/abs/2601.10338">Agent Skills in the Wild</a>, January 2026; NVIDIA, <a href="https://github.com/NVIDIA/SkillSpector">SkillSpector</a> and <a href="https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/">verified agent skills</a>; Anthropic, <a href="https://code.claude.com/docs/en/skills">Claude Code skills</a>, <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview">Agent Skills overview</a> and <a href="https://code.claude.com/docs/en/sandboxing">sandboxing</a>. All read on 14 October 2026.</p>
 <sg-meter view="page" kind="article" date="2026-10-14" topics="agents-and-policy" title="A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#skill-behaviour-policy">This article as a graph &rarr;</a></p>
@@ -263,7 +269,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="skill-behaviour-policy.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="skill-behaviour-policy.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -297,6 +303,8 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

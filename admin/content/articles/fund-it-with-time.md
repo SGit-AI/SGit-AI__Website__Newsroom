@@ -10,7 +10,7 @@ tags: startups, funding, founders, time, gen-z-book, article
 status: published
 ---
 
-!shot ft-time.webp | images/ | Where a founder's time comes from, from the least risky to the most. Time you already have: evenings, weekends, the hours that go to streaming. Time inside the job: work you already do, made more effective with the same technology. Time you negotiate: part time, with an employer who would rather have you half the time than not at all. Time you buy: savings, an exit, debt, which is paying someone to buy your time. Investment comes later, when the company is profitable. | concept
+!shot ft-time.webp | images/ | Where a founder's time comes from: time you have, time inside the job, time you negotiate and time you buy. | concept
 
 ## In short {#in-short}
 

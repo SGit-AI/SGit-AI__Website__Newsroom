@@ -1,30 +1,20 @@
-# Deploys newsroom.sgit.ai (this repo's working tree) to GitHub Pages, with the same
-# pipeline order as SGit-AI/SGit-AI__Website, SGit-AI/SGit-AI__Website__PKI,
-# SGit-AI/SGit-AI__Website__Graphs and SGit-AI/SGit-AI__Website__Issues-FS:
-# validate → tag → publish.
+# Deploys newsroom.sgit.ai (this repo's working tree) to GitHub Pages: gate -> release -> deploy.
 #
-#   1. validate     — the pre-release gate (structure, internal links, version
-#                     agreement, canonical/CNAME agreement, key-leak tripwire).
-#                     A failure stops the release: no tag, no publish. It also
-#                     runs on pull requests, so branch work is gated before it
-#                     ever reaches the release branch.
-#   2. tag-release  — every push to dev is a minor release and ends tagged
-#                     v{release}.{major}.{minor}. The version is owned by
-#                     admin/build/version.txt (bumped exactly once per release)
-#                     and must also appear in the release commit's subject
-#                     ("site vX.Y.Z: ..."). CI verifies the two agree and that
-#                     the bump is the next minor (or a deliberate major), then
-#                     tags the release commit — which is HEAD on a direct push and
-#                     HEAD's parent when a pull request lands as a merge commit. First run backfills tags for any historical release
-#                     from the commit subjects.
-#   3. deploy       — publishes the tagged commit. Runs on manual dispatch even
-#                     without a tag, but never when validation failed.
+#   1. validate, reader-tests — the gate, on the pushed commit and on pull requests: structure, links, version
+#                     agreement, canonical, the key-leak tripwire, and the reader's code in a browser.
+#   2. release      — CI owns the version (since v0.13.116; admin/notes/2026-10-27__ci-owns-the-version.md).
+#                     Work commits carry the pending version and no number in their subject. One release at a
+#                     time, this job picks the number from the tags (a push to dev bumps the last number, a push
+#                     to main the middle one), stamps it (admin/build/release_stamp.py), gates the result, commits
+#                     it as GitHub Actions ("site vX.Y.Z: <the pushed subject>"), tags it and pushes both.
+#   3. deploy       — publishes the commit the release job made, never the pushed one.
+#
+# Majors go to main by pull request from dev: the merge's push releases v{release}.{major+1}.0 on main, publishes
+# a GitHub Release from its notes, and fast-forwards dev to it, so dev's next release is v{release}.{major+1}.1.
 name: deploy-pages
 on:
   push:
-    # dev is the release branch: validate -> tag -> deploy. A push to main is
-    # deploy-only (tag-release skips), so main can serve as a deploy test or
-    # fallback while the github-pages environment still restricts dev.
+    # dev takes every release; main takes the majors, by pull request from dev.
     branches: [dev, main]
   pull_request:
     branches: [dev, main]
@@ -33,9 +23,13 @@ permissions:
   contents: read
   pages: write
   id-token: write
+# Pull requests get their own group, so their checks never cancel a release on dev
+# or main (v0.13.0's dev run was cancelled by its own pull request's checks). Pushes
+# queue rather than cancel: a cancelled release run would leave its tag unmade until
+# the next run's backfill.
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: ${{ github.event_name == 'pull_request' && format('pages-pr-{0}', github.event.pull_request.number) || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -53,7 +47,10 @@ jobs:
   # pass, without it, so the install is checked for too.
   reader-tests:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    # 25, not 12 (v0.13.46): on 22 October the runners' apt mirror served the 26 MB of system packages
+    # at about 43 kB/s, the install took 8 to 12 minutes, and the job hit its limit mid-test three times.
+    # The packages are cached below now; the limit leaves room for a cold cache on a slow mirror.
+    timeout-minutes: 25
     permissions:
       contents: read
     steps:
@@ -61,142 +58,208 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      # The .deb files Playwright's install-deps fetches, cached between runs (v0.13.46), so a slow mirror
+      # costs one run, not every run. A new key each run saves the latest set; restore-keys takes the newest.
+      - name: Cache the system packages Chromium needs
+        uses: actions/cache@v4
+        with:
+          path: ~/apt-debs
+          key: apt-debs-playwright-1.56.1-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: apt-debs-playwright-1.56.1-${{ runner.os }}-
+      - name: Hand the cached packages to apt, and keep what it downloads
+        run: |
+          mkdir -p ~/apt-debs
+          echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' | sudo tee /etc/apt/apt.conf.d/01keep-debs
+          echo 'Acquire::Retries "3";' | sudo tee /etc/apt/apt.conf.d/02retries
+          sudo cp ~/apt-debs/*.deb /var/cache/apt/archives/ 2>/dev/null || true
+          echo "$(ls ~/apt-debs | wc -l) cached packages"
+      # Chromium is cached between runs (v0.13.7): it is the same build for a given Playwright version, and
+      # downloading it was most of the 1m40s this step took. The system libraries still come from apt.
+      - name: Cache Playwright's Chromium
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-1.56.1-chromium-${{ runner.os }}
       - name: Install Playwright's Chromium
         run: |
           npm install --no-save --no-audit --no-fund playwright@1.56.1 jsqr@1.4.0
-          npx playwright install --with-deps chromium
+          if [ "${{ steps.pw-cache.outputs.cache-hit }}" = "true" ]; then
+            npx playwright install-deps chromium
+          else
+            npx playwright install --with-deps chromium
+          fi
+          cp /var/cache/apt/archives/*.deb ~/apt-debs/ 2>/dev/null || true
       - name: Install sgit-ai 0.21.0, for the vault test's CLI round trip
         run: python3 -m pip install --quiet 'sgit-ai==0.21.0' && sgit --version
-      - name: The meter, the reading lists, the review's findings, the passkey lab, the wire and the themes in Chromium, and the vault library in Node
-        run: |
-          set -euo pipefail
-          for t in test_meter.mjs test_lists.mjs test_review.mjs test_passkey.mjs test_wire.mjs test_graphs.mjs test_vault.mjs test_sync.mjs test_pane.mjs test_notes.mjs test_search.mjs test_ask.mjs test_themes.mjs test_inbox.mjs test_front.mjs test_reading.mjs test_vault_open.mjs; do
-            echo "== $t"
-            node admin/build/$t | tee /tmp/$t.log
-            if grep -q '^SKIP' /tmp/$t.log; then echo "::error::$t skipped: Playwright or Chromium missing on the runner"; exit 1; fi
-          done
+      # Every admin/build/test_*.mjs, four at a time (v0.13.7; one at a time they took six minutes). Each test
+      # serves on a port the system picks and drives its own browser. The two that measure timing run alone,
+      # after the rest; a test that prints SKIP fails the job. admin/build/run_tests.sh has the details.
+      # test_wire reads the real vault server, so a bad minute there is not a bug here: it runs in wire-live
+      # below, which reports and does not stop a release (v0.13.48). Everything else here must pass to deploy.
+      - name: The meter, the reading lists, the review's findings, the passkey lab and the themes in Chromium, and the vault library in Node
+        env:
+          LEAVE_OUT: test_wire.mjs
+        run: bash admin/build/run_tests.sh 4 /tmp/test-logs
 
-  tag-release:
+  # The wire pages in Chromium against their real vaults (admin/build/test_wire.mjs, whose brief says a test that
+  # needs a vault uses a vault). It reports: a failure shows on the run, and does not stop the deploy (v0.13.48).
+  wire-live:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 25
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Cache the system packages Chromium needs
+        uses: actions/cache@v4
+        with:
+          path: ~/apt-debs
+          key: apt-debs-playwright-1.56.1-${{ runner.os }}-wire-${{ github.run_id }}
+          restore-keys: apt-debs-playwright-1.56.1-${{ runner.os }}-
+      - name: Hand the cached packages to apt
+        run: |
+          mkdir -p ~/apt-debs
+          echo 'Acquire::Retries "3";' | sudo tee /etc/apt/apt.conf.d/02retries
+          sudo cp ~/apt-debs/*.deb /var/cache/apt/archives/ 2>/dev/null || true
+      - name: Cache Playwright's Chromium
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-1.56.1-chromium-${{ runner.os }}
+      - name: Install Playwright's Chromium
+        run: |
+          npm install --no-save --no-audit --no-fund playwright@1.56.1
+          if [ "${{ steps.pw-cache.outputs.cache-hit }}" = "true" ]; then
+            npx playwright install-deps chromium
+          else
+            npx playwright install --with-deps chromium
+          fi
+      - name: The wire pages, reading their real vaults
+        run: |
+          node admin/build/test_wire.mjs | tee /tmp/wire.log
+          ! grep -q '^SKIP' /tmp/wire.log
+
+  # CI owns the version (v0.13.116; admin/notes/2026-10-27__ci-owns-the-version.md, the scheme of OSBot-Utils
+  # and https://sharness.ai/articles/ci-owns-the-version.html). A work commit carries no number: its build stamps
+  # the pending version (admin/build/release_stamp.py --pending) and its subject names the agent and the work.
+  # This job, one at a time, picks the number from the tags (dev bumps the last number, main the middle one),
+  # stamps it over the pending version, writes version.txt, re-stamps the chrome, gates the result, commits it as
+  # GitHub Actions with "site vX.Y.Z: <the pushed subject>", tags that commit and pushes the branch, then the tag.
+  # A push that landed while this run waited is taken in and rides this release. The push uses GITHUB_TOKEN,
+  # which starts no new run, so deploy publishes the commit this job made, in this run.
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
     needs: [validate, reader-tests]
-    if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main')
     permissions:
       contents: write
+    outputs:
+      sha: ${{ steps.r.outputs.sha }}
+      version: ${{ steps.r.outputs.version }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Tag this release (and backfill any missing historical tags)
+          ref: ${{ github.ref_name }}
+      - name: Guard, number, stamp, gate, commit, tag, push
+        id: r
+        env:
+          BRANCH: ${{ github.ref_name }}
+          BEFORE: ${{ github.event.before }}
         run: |
           set -euo pipefail
-          git fetch --tags --quiet
+          PENDING=v999.0.0
           git config user.name  'GitHub Actions'
           git config user.email 'actions@github.com'
+          git fetch -q --tags --force origin
 
-          # Read the history ONCE, into a variable. Piping `git log` straight into
-          # an early-exiting reader (grep -m1, head) makes git log die of SIGPIPE,
-          # and under `pipefail` that exit status propagates out of the command
-          # substitution and kills the job — after the variable has been assigned,
-          # which makes it look like the next line failed. It is a race against the
-          # pipe buffer, so it passes on a short history and starts failing once the
-          # log outgrows it. Herestrings below read from a file: nothing upstream to
-          # signal.
-          LOG=$(git log --format='%H;%s')
+          # The guard: version.txt is CI's. A commit by anyone else may set it only to the pending version. On dev,
+          # where the work lands; main takes dev's commits, which passed it there.
+          if [ "$BRANCH" = dev ] && [ -n "$BEFORE" ] && [ "$BEFORE" != "0000000000000000000000000000000000000000" ] && git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+            for c in $(git rev-list --no-merges "$BEFORE..$GITHUB_SHA" -- admin/build/version.txt); do
+              [ "$(git log -1 --format=%an "$c")" = "GitHub Actions" ] && continue
+              v=$(git show "$c:admin/build/version.txt" | tr -d '[:space:]')
+              if [ "$v" != "$PENDING" ]; then
+                echo "::error::commit ${c:0:9} set admin/build/version.txt to $v. The number is CI's: run admin/build/release_stamp.py --pending before the build, and give the commit a subject with no number (admin/notes/2026-10-27__ci-owns-the-version.md)."
+                exit 1
+              fi
+            done
+          fi
 
-          # Backfill: every release commit carries its version in the subject
-          # ("site vR.M.N: ..."). Tag any that are missing — idempotent, so this
-          # is a no-op on every run after the first.
-          while IFS=';' read -r h s; do
-            v=$(printf '%s' "$s" | grep -oP '^site v\K[0-9]+\.[0-9]+\.[0-9]+(?=:)' || true)
-            if [ -n "$v" ] && ! git rev-parse -q --verify "refs/tags/v$v" >/dev/null; then
-              git tag "v$v" "$h"
-              echo "backfilled v$v -> ${h:0:9}"
+          for attempt in 1 2 3; do
+            git fetch -q --tags --force origin "$BRANCH"
+            git reset -q --hard "origin/$BRANCH"
+            git clean -qfd
+            LAST=$(git tag -l 'v[0-9]*.[0-9]*.[0-9]*' | sort -V | tail -1)
+            if [ -n "$(git tag --points-at HEAD -l 'v[0-9]*.[0-9]*.[0-9]*')" ]; then
+              V=$(git tag --points-at HEAD -l 'v[0-9]*.[0-9]*.[0-9]*' | sort -V | tail -1)
+              echo "the head is already released as $V"
+              echo "version=$V" >> "$GITHUB_OUTPUT"; echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+              exit 0
             fi
-          done <<< "$LOG"
-
-          # The version of THIS release, from the file that owns it.
-          VER=$(grep -oP '^v\K[0-9]+\.[0-9]+\.[0-9]+' admin/build/version.txt)
-          TAG="v$VER"
-          echo "version.txt says $TAG"
-
-          # The release commit is the one whose SUBJECT carries the version. It is
-          # usually HEAD, but when dev advances by a merge commit — which is how a
-          # pull request lands — HEAD is the merge and the release commit is its
-          # parent. So anchor every check to the newest release commit reachable
-          # from HEAD rather than to HEAD itself.
-          NEWEST=$(grep -oP '^[0-9a-f]+;site v\K[0-9]+\.[0-9]+\.[0-9]+(?=:)' <<< "$LOG" | head -1 || true)
-          if [ -z "$NEWEST" ]; then
-            echo "::error::no commit in this history carries a version in its subject (\"site vX.Y.Z: ...\")"
-            exit 1
-          fi
-          if [ "$NEWEST" != "$VER" ]; then
-            echo "::error::version.txt says $TAG but the newest release commit in this history is v$NEWEST — the two disagree"
-            exit 1
-          fi
-          REL=$(grep -m1 -F ";site v$VER:" <<< "$LOG" | cut -d';' -f1 || true)
-          echo "release commit is ${REL:0:9}"
-
-          # The backfill above tags it. If the tag exists on an EARLIER commit than
-          # this one, the version was reused rather than bumped.
-          if ! git rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
-            echo "::error::$TAG was not created — version.txt and the release commit disagree"
-            exit 1
-          fi
-          if [ "$(git rev-parse "refs/tags/$TAG^{commit}")" != "$REL" ]; then
-            echo "::error::$TAG already exists on an earlier commit — version.txt was not bumped for this release"
-            exit 1
-          fi
-
-          # Every push to dev is a minor: the new tag must be the next minor
-          # after the previous latest (or a deliberate major/release bump to .0).
-          # `|| true` catches the very first release, where grep -v empties the
-          # pipe and would otherwise kill the job under pipefail.
-          PREV=$(git tag --list 'v*' | grep -v "^$TAG$" | sort -V | tail -1 || true)
-          if [ -n "$PREV" ]; then
-            NEXT_MINOR=$(echo "$PREV" | awk -F. '{printf "%s.%s.%d", $1, $2, $3+1}')
-            NEXT_MAJOR=$(echo "$PREV" | awk -F. '{split($1,a,"v"); printf "v%s.%d.0", a[2], $2+1}')
-            if [ "$TAG" != "$NEXT_MINOR" ] && [ "$TAG" != "$NEXT_MAJOR" ]; then
-              echo "::error::latest tag is $PREV; expected $NEXT_MINOR (minor) or $NEXT_MAJOR (major), got $TAG"
-              exit 1
+            IFS=. read -r A B C <<< "${LAST#v}"
+            if [ "$BRANCH" = main ]; then NEW="v$A.$((B + 1)).0"; else NEW="v$A.$B.$((C + 1))"; fi
+            SUBJECT=$(git log -1 --no-merges --format=%s --perl-regexp --author='^(?!GitHub Actions)' "$LAST..HEAD" 2>/dev/null | sed -E 's/^site v[0-9]+\.[0-9]+\.[0-9]+: //' || true)
+            if [ "$BRANCH" = main ]; then SUBJECT="merged to main: dev's releases since the last on main"; fi
+            SUBJECT=${SUBJECT:-a release with no change of its own}
+            echo "releasing $NEW (after $LAST): $SUBJECT"
+            python3 admin/build/release_stamp.py "$NEW" --since "$LAST" --branch "$BRANCH"
+            node admin/build/validate.js
+            git add -A
+            git commit -q -m "site $NEW: $SUBJECT" -m "Numbered and stamped by CI's release job (admin/build/release_stamp.py)."
+            git tag "$NEW"
+            if git push -q origin "HEAD:$BRANCH"; then
+              git push -q origin "refs/tags/$NEW"
+              echo "released $NEW as $(git rev-parse --short HEAD)"
+              echo "version=$NEW" >> "$GITHUB_OUTPUT"; echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+              break
             fi
-          fi
-
-          # The load-bearing push: THIS release's tag, on the release commit.
-          git push origin "refs/tags/$TAG"
-          echo "tagged ${REL:0:9} as $TAG"
-
-          # Best-effort: the backfilled historical tags. GITHUB_TOKEN cannot
-          # push a ref to a commit whose tree carries a DIFFERENT
-          # .github/workflows blob, so releases predating a workflow change may
-          # be rejected. Push what is accepted, report what is not.
-          MISSED=0
-          for t in $(git tag --list 'v*'); do
-            [ "$t" = "$TAG" ] && continue
-            if git push origin "refs/tags/$t" >/dev/null 2>&1; then
-              echo "backfill ok: $t"
-            else
-              echo "::warning::could not push backfill tag $t (GITHUB_TOKEN workflow-file limit)"
-              MISSED=$((MISSED+1))
-            fi
+            git tag -d "$NEW" >/dev/null
+            echo "$BRANCH moved while $NEW was being made; taking it in (attempt $attempt of 3)"
+            if [ "$attempt" = 3 ]; then echo "::error::$BRANCH kept moving; nothing released. The next push releases everything."; exit 1; fi
+            sleep 5
           done
-          if [ "$MISSED" -gt 0 ]; then
-            echo "::notice::$MISSED historical tag(s) still need a human push: git push origin --tags"
+
+          # A major on main: dev follows it when it can (fast-forward only), so dev's next release is vX.Y.1.
+          if [ "$BRANCH" = main ]; then
+            if git push -q origin "HEAD:dev"; then echo "dev fast-forwarded to $NEW"; else echo "::warning::dev has commits of its own; merge main into dev by hand"; fi
           fi
-          true
+      - name: The GitHub Release, for a major on main
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.r.outputs.version }}
+        run: |
+          set -euo pipefail
+          git fetch -q --tags --force origin
+          git checkout -q "$TAG"
+          NOTES="admin/engineering/releases/$TAG.md"
+          awk 'BEGIN{n=0} /^---$/ && n<2 {n++; next} n>=2' "$NOTES" > /tmp/notes.md
+          TITLE=$(grep -m1 '^# ' /tmp/notes.md | sed 's/^# //')
+          if gh release view "$TAG" >/dev/null 2>&1; then echo "the GitHub Release $TAG already exists"
+          else gh release create "$TAG" --verify-tag --latest --title "${TITLE:-$TAG}" --notes-file /tmp/notes.md; fi
 
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs: [validate, tag-release]
-    # Publish even when tag-release is skipped (manual dispatch) — never when
-    # validation failed, and never from a pull request.
-    if: always() && github.event_name != 'pull_request' && needs.validate.result == 'success' && (needs.tag-release.result == 'success' || needs.tag-release.result == 'skipped')
+    needs: [validate, reader-tests, release]
+    # Publish the commit the release job made, never the pushed one: the pushed tree carries the pending
+    # version. Manual dispatch publishes the branch as it is. Never from a pull request, never after a failed gate.
+    if: always() && github.event_name != 'pull_request' && needs.validate.result == 'success' && needs.reader-tests.result == 'success' && (needs.release.result == 'success' || (github.event_name == 'workflow_dispatch' && needs.release.result == 'skipped'))
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.release.outputs.sha || github.sha }}
       - name: Assemble site artifact
         run: |
           mkdir -p /tmp/site

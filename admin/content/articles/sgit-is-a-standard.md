@@ -10,7 +10,7 @@ tags: sgit, standards, git, vaults, encryption, architecture, caching, static-ho
 status: published
 ---
 
-!shot sd-onehash.webp | images/ | Everything in a vault is one hash away: the vault key gives the read key, the read key gives the ref's name by an HMAC, and the ref, the commit, the trees on the path and the blob are plain GETs; reads come from any host that answers a GET, writes need a compare-and-swap, and caching is by name, not by header. | architecture
+!shot sd-onehash.webp | images/ | Everything in a vault is one hash away: from the vault key to the read key, the ref, the commit, the trees and the blob. | architecture
 
 ## In short {#in-short}
 
@@ -49,7 +49,7 @@ Two independent implementations speak this format: the CLI, and the browser vaul
 
 ## Any storage implements the read half {#storage}
 
-!shot sd-storage.webp | images/ | Deploying sgit is choosing where the objects live: a folder; a laptop running the hosted image; your own server; a static host such as GitHub Pages; or the hosted service, a Lambda in front of S3 behind CloudFront; from closer and faster to further and shared. | comparison
+!shot sd-storage.webp | images/ | Deploying sgit is choosing where the objects live, from a folder to the hosted service, closer to further. | comparison
 
 Because reading is plain GETs of fixed paths, any storage that answers a GET implements the read half of the convention: an S3 bucket, a CDN, GitHub Pages, a folder, Python's one-line file server. `sgit clone --transport static` reads from any of them, and `sgit publish` lays a vault out for one. This site [measured the difference](/articles/the-homepage-is-a-vault.html): 317 milliseconds a request through the vault API, against 44 for a small file from GitHub Pages.
 

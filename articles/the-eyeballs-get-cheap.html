@@ -30,13 +30,14 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
       <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
       <a class="sl" href="../about/index.html">Why this exists</a>
       <a class="sl" href="../desks/index.html">The five desks</a>
@@ -86,6 +87,8 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -153,17 +156,19 @@
   <script src="../assets/reader/strip.js" defer></script>
   <script src="../assets/reader/highlights.js" defer></script>
   <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
   <div class="theme-pick"></div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production</p>
  <h1>The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production</h1>
- <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/the-eyeballs-get-cheap.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.53</a> &middot; <span class="chip">open-source</span><span class="chip">security</span><span class="chip">ai-security-review</span><span class="chip">vulnerabilities</span><span class="chip">curl</span><span class="chip">sovereignty</span><span class="chip">business-models</span><span class="chip">wardley-maps</span><span class="chip">supply-chain</span><span class="chip">article</span></p>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/the-eyeballs-get-cheap.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.53</a> &middot; <span class="chip">open-source</span><span class="chip">security</span><span class="chip">ai-security-review</span><span class="chip">vulnerabilities</span><span class="chip">curl</span><span class="chip">sovereignty</span><span class="chip">business-models</span><span class="chip">wardley-maps</span><span class="chip">supply-chain</span><span class="chip">article</span></p>
  <p class="abstract"><em><b>Abstract:</b> For as long as I have worked in security there has been no clear winner between open source and proprietary software. Open source had the code in view, and fixes that sweep a bug's variants; it also had very few people and almost no budget for the slow, expensive reviews that find the hard bugs. Proprietary software had the budget, and the cover of being hidden, and got away with a lot. That balance just moved. Models can now run deep security reviews over and over, on every project, at a cost that used to buy one consultant for a day. The thing open source lacked was paid attention, and that is the thing that just became abundant. I thought Chainguard had started publishing the projects where its AI found nothing; I could not find that. What I found is better: the maintainer of curl writing about a year in which AI review first drowned his project in noise, then produced hundreds of real fixes, then a frontier scan that found a single low-severity bug, and then, today, deeper tools finding more. That is what a project getting harder to break looks like. Put it next to two things I have argued before, that sovereignty needs open code and open schemas, and that the business is maintaining the version each customer actually runs, and three forces meet at one place: the least amount of code in production.</em></p>
-<figure class="shot" data-shot="ox-balance.webp" data-dir="images/" data-alt="Open source against proprietary: the balance that just moved. Open source had the source in view and paid for few reviews; proprietary had the budget and the cover of being hidden. Cheap, deep, model-driven security review changes one side of that balance far more than the other." data-kind="comparison"><figcaption>Open source against proprietary: the balance that just moved. Open source had the source in view and paid for few reviews; proprietary had the budget and the cover of being hidden. Cheap, deep, model-driven security review changes one side of that balance far more than the other.</figcaption></figure>
+<figure class="shot" data-shot="ox-balance.webp" data-dir="images/" data-alt="Open source against proprietary: the balance that moved when model-driven security review became cheap and deep." data-kind="comparison"><figcaption>Open source against proprietary: the balance that moved when model-driven security review became cheap and deep.</figcaption></figure>
 <h2 id="in-short">In short</h2>
 <ul>
 <li><b>No clear winner, until now.</b> Open source had visibility and few reviewers; proprietary had budget and cover.</li>
@@ -183,7 +188,7 @@
 <p>The thing open source lacked was paid attention, and that is the thing that just became abundant. The thing proprietary software had, being hidden, is worth less every month, because the same reviews run on whatever ships, leaks or can be reverse engineered. That is the move: open source on steroids.</p>
 <p>The numbers are already large. Anthropic's update on its Project Glasswing in May reported scanning "more than 1,000 open-source projects" and estimated "6,202 high- or critical-severity vulnerabilities" among the findings; the bottleneck, it said, is now "how quickly we can verify, disclose, and patch", and "some have even asked us to slow down" the rate of disclosures. Chainguard's Athena coalition reported, at its launch in June, "2,000 patches across 500 projects", and its harness, which <a href="chainguard-mapped.html">Chainguard, mapped</a> described, has been run "against over 65 projects and validated over 680 findings". In DARPA's AI Cyber Challenge final in 2025, the systems "discovered 54 unique synthetic vulnerabilities" and also found "18 real, non-synthetic vulnerabilities".</p>
 <h2 id="curl">What it looks like from inside one project</h2>
-<figure class="shot" data-shot="ox-curl.webp" data-dir="images/" data-alt="One project, one year of machine eyeballs: curl, from its maintainer&#x27;s own posts. A bug bounty that found 87 vulnerabilities; a year of reports that were mostly noise; a first wave of AI-assisted reports that triggered hundreds of fixes; the end of the bounty; a frontier scan that found one bug; and, in October, deeper tools finding more." data-kind="comparison"><figcaption>One project, one year of machine eyeballs: curl, from its maintainer's own posts. A bug bounty that found 87 vulnerabilities; a year of reports that were mostly noise; a first wave of AI-assisted reports that triggered hundreds of fixes; the end of the bounty; a frontier scan that found one bug; and, in October, deeper tools finding more.</figcaption></figure>
+<figure class="shot" data-shot="ox-curl.webp" data-dir="images/" data-alt="One project, one year of machine eyeballs: curl, from its maintainer&#x27;s own posts." data-kind="comparison"><figcaption>One project, one year of machine eyeballs: curl, from its maintainer's own posts.</figcaption></figure>
 <p>I went looking for something I thought I had seen, Chainguard publishing the projects where its AI hunting found nothing, with curl among them. I could not find it, from Chainguard or anyone else. What I found tells the story better, in the words of curl's maintainer, Daniel Stenberg.</p>
 <p>First the noise. curl ended its bug bounty on 31 January 2026. Over its life it had found "87 confirmed vulnerabilities", but by 2025 "Not even one in twenty was real." Low-effort, machine-written reports were swamping a small team.</p>
 <p>Then the real wave. In the autumn of 2025, AI-assisted reports from careful researchers and tools started landing real bugs, and by May he counted that earlier tools had "triggered somewhere between two and three hundred bugfixes".</p>
@@ -194,7 +199,7 @@
 <p>So I expect the bar to rise everywhere. More findings, with more proof. Contributions held to a much higher standard, because the small fixes a newcomer used to send can now be done by anyone with a model, and should be. Fewer projects, and better ones. The long tail of tiny packages and single-purpose libraries, the dependency trees with hundreds of entries, will shrink, because a lot of very specific little APIs can now be written in place, better.</p>
 <p>What will not go away is security research by people motivated to find what the tools miss, domain experts who understand what a project is for, and maintainers who keep it working. And provenance will matter more: where a piece of code came from, who wrote it, who reviewed it. In Simon Wardley's terms, you do not want mission-critical code written at explorer speed; you want it industrialised. In <a href="https://blog.gardeviance.org/2015/03/on-pioneers-settlers-town-planners-and.html">his words</a>, "Town Planners are brilliant people. They are able to take something and industrialise it". Accountable code, reviewed up to the line, is what makes all of this scale, and it is the same graph from story to line that <a href="code-review-as-a-fractal-semantic-graph.html">code review as a fractal semantic graph</a> draws.</p>
 <h2 id="forces">Three forces, one place</h2>
-<figure class="shot" data-shot="ox-forces.webp" data-dir="images/" data-alt="Three forces meeting at the least code in production: open source becoming very secure, open source becoming required for sovereignty, and open source with commercial models that pay for maintenance. Where they meet is the customer running exactly the code they need, maintained by the people who know it best." data-kind="architecture"><figcaption>Three forces meeting at the least code in production: open source becoming very secure, open source becoming required for sovereignty, and open source with commercial models that pay for maintenance. Where they meet is the customer running exactly the code they need, maintained by the people who know it best.</figcaption></figure>
+<figure class="shot" data-shot="ox-forces.webp" data-dir="images/" data-alt="Three forces meeting at the least code in production: secure, sovereign and commercially maintained open source." data-kind="architecture"><figcaption>Three forces meeting at the least code in production: secure, sovereign and commercially maintained open source.</figcaption></figure>
 <p>Put this next to two things I have argued before, and they line up.</p>
 <p><b>Secure.</b> The eyeballs open source never had, at last, and a higher bar for everything that goes in.</p>
 <p><b>Sovereign.</b> You cannot have sovereignty without open source and open schemas. <a href="sovereignty-is-the-ability-to-move.html">Sovereignty is the ability to move</a>: move the data, the compute and the applications. You can only move what you can read and run elsewhere, and with competition on service rather than lock-in, the bigger companies should win because they serve better, not because the customer cannot leave.</p>
@@ -214,6 +219,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo of mine on 14 October 2026, written by this site's agent in the voice of this site; the argument and the editorial responsibility are mine. A research agent gathered the evidence and the quotes were checked on the primary pages. Daniel Stenberg's <a href="https://daniel.haxx.se/blog/">blog</a>, including <a href="https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/">the end of the curl bug bounty</a>, <a href="https://daniel.haxx.se/blog/2026/05/11/">the May scan</a>, <a href="https://daniel.haxx.se/blog/2026/10/14/a-uaf-turned-rce/">a UAF turned RCE</a> and <a href="https://daniel.haxx.se/blog/2026/10/14/a-curl-audit-by-aisle/">a curl audit by Aisle</a>, and curl's <a href="https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md">contribution rules</a>; Anthropic, <a href="https://www.anthropic.com/news/glasswing-initial-update">Project Glasswing: an initial update</a>; Chainguard, <a href="https://www.chainguard.dev/unchained/the-first-disclosure-from-our-mythos-harness">the first disclosure from its harness</a>; Help Net Security on <a href="https://helpnetsecurity.com/2026/06/17/chainguard-athena-coalition-fix-open-source-vulnerabilities/">the Athena coalition</a>; DARPA, <a href="https://www.darpa.mil/news/2025/aixcc-results">AIxCC results</a>; The Register on <a href="https://www.theregister.com/2024/09/18/open_source_maintainers_underpaid/">the Tidelift survey</a>; Eric S. Raymond, <a href="http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/ar01s04.html">The Cathedral and the Bazaar</a>. All read on 14 October 2026.</p>
 <sg-meter view="page" kind="article" date="2026-10-14" topics="startups-and-strategy news-and-evidence" title="The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Startups &amp; strategy</span><span class="tchip">News &amp; evidence</span> <a href="graphs.html#the-eyeballs-get-cheap">This article as a graph &rarr;</a></p>
@@ -249,7 +255,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-eyeballs-get-cheap.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-eyeballs-get-cheap.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -283,6 +289,8 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

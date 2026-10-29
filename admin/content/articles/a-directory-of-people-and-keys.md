@@ -10,7 +10,7 @@ tags: pki, public-keys, identity, web-of-trust, passkeys, sgit, brief, article
 status: published
 ---
 
-!shot pk-flow.webp | images/ | From a passkey to a message. A person registers a passkey on pki.sgit.ai, which opens their vault; makes or imports a key pair, with the private keys kept in the vault; publishes the public half; adds evidence (a website, GitHub, a DNS record); is verified by Dinis, who signs it, and confirms that from their side; and links with others, each link counting only when both confirm. Then anyone in the register can be sent a secret as a QR code that opens in their browser and is read with their vault. | architecture
+!shot pk-flow.webp | images/ | From a passkey to a message: registering, publishing a key, evidence, verification, links, and a secret sent by QR code. | architecture
 
 ## In short {#in-short}
 
@@ -66,7 +66,7 @@ Then the part that makes it spread: anyone who is verified can verify someone el
 
 It turns out that rule also answers the question the old web of trust left open. pki.sgit.ai's first rule is that only the owner writes to their own record. So my vouch for you is written in my record, and your confirmation in yours. Nobody can add anything to anybody else's record, which is exactly what the 2019 attack did. A vouch nobody confirmed is visible as a claim in the voucher's record, and adds nothing to the other person. A link exists only when both statements do. And each record has a limit on how many it can hold, so even your own record cannot be turned into a flood.
 
-!shot pk-two-way.webp | images/ | Two ways, or not at all. On the left, 2019: anyone could append a signature to anyone's key, and nothing could be deleted, so keys were flooded until they broke. On the right, the rule here: each person writes only to their own record. A vouches for B in A's record; B confirms in B's record; the link exists only when both do. A vouch that nobody confirms stays a claim in the voucher's own record, and each record has a size limit. | concept
+!shot pk-two-way.webp | images/ | Two ways, or not at all: the 2019 signing model on the left, and the rule here, each person writing to their own record. | concept
 
 ## Degrees of separation {#degrees}
 

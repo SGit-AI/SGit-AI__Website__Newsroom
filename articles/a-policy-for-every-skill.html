@@ -30,13 +30,14 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
       <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
       <a class="sl" href="../about/index.html">Why this exists</a>
       <a class="sl" href="../desks/index.html">The five desks</a>
@@ -86,6 +87,8 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -153,17 +156,19 @@
   <script src="../assets/reader/strip.js" defer></script>
   <script src="../assets/reader/highlights.js" defer></script>
   <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
   <div class="theme-pick"></div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less</p>
  <h1>A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less</h1>
- <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/a-policy-for-every-skill.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.36</a> &middot; <span class="chip">agent-skills</span><span class="chip">agent-behaviour-policy</span><span class="chip">natural-language-policy</span><span class="chip">ci</span><span class="chip">policy-as-code</span><span class="chip">supply-chain</span><span class="chip">prompt-injection</span><span class="chip">fractal-semantic-graphs</span><span class="chip">governance</span><span class="chip">article</span></p>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/a-policy-for-every-skill.html" title="Every published version of this article, and what changed">article v1.3.0, 4 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.36</a> &middot; <span class="chip">agent-skills</span><span class="chip">agent-behaviour-policy</span><span class="chip">natural-language-policy</span><span class="chip">ci</span><span class="chip">policy-as-code</span><span class="chip">supply-chain</span><span class="chip">prompt-injection</span><span class="chip">fractal-semantic-graphs</span><span class="chip">governance</span><span class="chip">article</span></p>
  <p class="abstract"><em><b>Abstract:</b> I was with my friend Sean Turner this week, talking about agent behaviour policies, and he described something he built that I think is great. It is a natural-language control policy for agent skills, and a CI pipeline that checks every skill contributed to an organisation-wide repository against it before hundreds of developers pull it down to their machines. Is it safe, secure, well documented, usable, understandable by the model and understandable by people. And the part that makes it more than a linter: it reads the skill in its context. A skill that turns internal documentation into a LinkedIn post has no untrusted input to worry about; a skill that pulls content off the web is handling untrusted text, and should treat it as data, not obey it. It sits beside a security scan, not instead of one: the question is operational, is this the right way to give this skill to our workforce. That is an agent behaviour policy for a skill: the mandate is what the skill is for, the reach is everything it touches, and the gap is the risk. A control written in natural language is hope-based security, better than nothing and not enough on its own. Sean's next step is the one I keep coming back to: use an agent to write deterministic rules that follow the natural-language control, and keep the description, not the code, as the canonical version. Change the description, regenerate the code. Using models to need them less. And in a common ontology, a whole catalogue of skills becomes one graph, where the dangerous combinations are a query.</em></p>
-<figure class="shot" data-shot="sk-pipeline.webp" data-dir="images/" data-alt="A policy for every skill. The natural-language control at the top is the canonical source; each contributed skill passes deterministic checks, a model that reads it in its context, rules an agent generated from the control, and a human review, before it reaches the organisation&#x27;s repository and the developers who pull it." data-kind="architecture"><figcaption>A policy for every skill. The natural-language control at the top is the canonical source; each contributed skill passes deterministic checks, a model that reads it in its context, rules an agent generated from the control, and a human review, before it reaches the organisation's repository and the developers who pull it.</figcaption></figure>
+<figure class="shot" data-shot="sk-pipeline.webp" data-dir="images/" data-alt="A policy for every skill: the control at the top and the checks each contributed skill passes." data-kind="architecture"><figcaption>A policy for every skill: the control at the top and the checks each contributed skill passes.</figcaption></figure>
 <h2 id="in-short">In short</h2>
 <ul>
 <li><b>Skills are the new dependency.</b> A skill is instructions an agent follows with a developer's reach, pulled by hundreds of people from one repository.</li>
@@ -185,7 +190,7 @@
 <p>This matters because a skill is code that nobody compiles. When an agent loads it, its instructions become part of what the agent does, with whatever the agent can reach: the developer's repositories, their mail, their cloud credentials. In <a href="attacks-rewritten-as-mandates.html">Attacks rewritten as mandates</a> the same shift showed up from the supply side: Chainguard now publishes hardened agent skills, each with a record of the upstream commit and what was changed. That makes a skill a trustworthy input. It does not say what an agent running it should be allowed to do.</p>
 <p>The public tooling for reviewing skills is arriving too, and it shows where the gap is. MongoDB's <a href="https://www.mongodb.com/docs/meta/tutorials/review-agent-skill/">guide to reviewing an agent skill</a> describes a structural validator that "runs in CI and produces pass/fail results", and a review skill that "optionally uses an LLM judge to score content quality across multiple dimensions": clarity, actionability, token efficiency, scope discipline, directive precision, novelty. That is a good quality bar, and none of those dimensions asks where the skill's inputs come from. The guide says as much about the hardest part: "No automated tool currently reasons across skill boundaries." Sean's control asks the question the quality bar leaves out, which is the one that decides whether a skill is dangerous.</p>
 <h2 id="abp">It is a behaviour policy for a skill</h2>
-<figure class="shot" data-shot="sk-context.webp" data-dir="images/" data-alt="Same check, different context, different verdict. Two illustrative skills described in the columns of an agent behaviour policy: one that turns internal documentation into a post, with trusted inputs and a person pressing publish; one that researches the web, with untrusted inputs and a barrier that must treat fetched text as data." data-kind="comparison"><figcaption>Same check, different context, different verdict. Two illustrative skills described in the columns of an agent behaviour policy: one that turns internal documentation into a post, with trusted inputs and a person pressing publish; one that researches the web, with untrusted inputs and a barrier that must treat fetched text as data.</figcaption></figure>
+<figure class="shot" data-shot="sk-context.webp" data-dir="images/" data-alt="Two illustrative skills in the columns of an agent behaviour policy, with the same check and different verdicts." data-kind="comparison"><figcaption>Two illustrative skills in the columns of an agent behaviour policy, with the same check and different verdicts.</figcaption></figure>
 <p>When Sean described it, I recognised the columns. An <a href="footprint-and-blast-radius.html">agent behaviour policy</a> describes one agent in one setting by its mandate, what it is for; its reach, everything it can actually touch; the gap between the two, which is the risk; and the barrier in front of each row of the gap. Describe a skill that way and the context question answers itself.</p>
 <p>The LinkedIn skill's mandate is to turn internal documentation into a post. Its reach is reading internal documents and posting to one account; its inputs are written by the organisation; the gap is posting anything other than the reviewed draft, and a person pressing publish is the barrier. The web research skill's mandate is to gather and summarise public sources. Its reach is fetching any address and writing into the workspace; its inputs can be written by anyone; the gap is following an instruction found inside a page, and the barrier has to be treating fetched text as data.</p>
 <p>Put that next to the rest of what the skill can reach and you have the most useful question in agent security. Simon Willison named <a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/">the lethal trifecta</a>: "Access to your private data", "Exposure to untrusted content", and "The ability to externally communicate in a way that could be used to steal your data". A skill with untrusted inputs is one leg. Whether the agent loading it has the other two is a property of where it runs, which is why <a href="the-policy-draws-the-liability-line.html">The policy draws the liability line</a> argued that anything with the trifecta should take a behaviour policy beside its prompt.</p>
@@ -214,6 +219,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A conversation with Sean Turner on 14 October 2026, recorded as a voice memo of mine, and written up by this site's agent in the voice of this site; the argument and the editorial responsibility are mine, and Sean's work is credited to him. Sean read the article on 14 October 2026 and agreed to be named. MongoDB, <a href="https://www.mongodb.com/docs/meta/tutorials/review-agent-skill/">How to Review an Agent Skill</a>; AWS, <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy.html">Policy in Amazon Bedrock AgentCore</a>; Simon Willison, <a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/">The lethal trifecta for AI agents</a>, 16 June 2025. All read on 14 October 2026.</p>
 <sg-meter view="page" kind="article" date="2026-10-14" topics="agents-and-policy graphs-and-knowledge" title="A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Graphs &amp; knowledge</span> <a href="graphs.html#a-policy-for-every-skill">This article as a graph &rarr;</a></p>
@@ -249,7 +255,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-policy-for-every-skill.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-policy-for-every-skill.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -283,6 +289,8 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

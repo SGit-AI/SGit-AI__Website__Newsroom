@@ -1,0 +1,62 @@
+{
+ "what": "The PHP flaws story on its own site, as last checked by php-flaws/build/track.py. Read by build.py and front.py.",
+ "site": "https://php.oct.2026.newsroom.sgit.ai/",
+ "repo": "https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP",
+ "checked_utc": "2026-10-23T15:04Z",
+ "version": "0.10.5",
+ "released": "2026-10-23",
+ "data_as_of": "2026-10-23T01:20Z",
+ "vault_commit": "f3c5db0d9873",
+ "counts": {
+  "sources": 227,
+  "captures": 222,
+  "claims": 70,
+  "claims_by_status": {
+   "confirmed": 21,
+   "reported": 34,
+   "disputed": 8,
+   "contradicted": 3,
+   "unverified": 4
+  },
+  "events": 68,
+  "agencies": 16,
+  "offline_reported": 10,
+  "compromises_confirmed": 0
+ },
+ "releases": 56,
+ "checks": [
+  {
+   "id": "live",
+   "label": "The site answers at its own domain",
+   "ok": true,
+   "detail": "HTTP 200"
+  },
+  {
+   "id": "status-json",
+   "label": "The site publishes /status.json for this newsroom to read",
+   "ok": true,
+   "detail": "HTTP 200"
+  },
+  {
+   "id": "sources",
+   "label": "Every source the section lists is on the site",
+   "ok": true,
+   "detail": "184 of 184"
+  },
+  {
+   "id": "front-page",
+   "label": "The newsroom's front page links to the site",
+   "ok": true,
+   "detail": "the Developing strip, from admin/content/front/developing.json"
+  },
+  {
+   "id": "pointer",
+   "label": "The section is replaced by a page that points to the site",
+   "ok": false,
+   "detail": "the last step, done here once the checks above pass"
+  }
+ ],
+ "passed": 4,
+ "total": 5,
+ "ready_to_retire": true
+}

@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Software is now a product: what the EU's new Product Liability Directive actually says about software, SaaS and updates, how it would apply to php2shell, and the questions it leaves open, SGit Newsroom</title>
+<meta name="description" content="Lauren Zabierek shared a card on LinkedIn about the EU's new Product Liability Directive, 2024/2853: the 1985 directive never named software, and the new one makes it a product, subject to strict, no-fault liability that a EULA cannot waive, for products placed on the market after 9 December 2026. I asked under the post how it applies to SaaS, so I read the directive itself. Software is a product "irrespective of the mode of its supply", and the recitals name SaaS. Updates matter: a manufacturer cannot escape liability by saying the defect came later if it is due to software, an update, or a lack of updates needed to maintain safety, while the product is in its control; and an attacker's exploit does not reduce its liability. But the directive is narrower than it sounds. Only natural persons can claim, and only for death or injury, property not used only for work, or data destroyed or corrupted that is not used for work. A data leak is not on the list, and a company cannot claim for its own losses. Applied to php2shell, the PHP project is out of scope; a vendor or SaaS that leaves a known, fixed flaw unpatched and lets attackers wipe consumers' files is likely in. Patching does not bring an old product into scope, but a new one that is not patched has no defence. Here is what the articles say, and the questions they leave.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/software-is-now-a-product.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/software-is-now-a-product.html">
+<meta property="og:title" content="Software is now a product: what the EU's new Product Liability Directive actually says about software, SaaS and updates, how it would apply to php2shell, and the questions it leaves open, SGit Newsroom">
+<meta property="og:description" content="Lauren Zabierek shared a card on LinkedIn about the EU's new Product Liability Directive, 2024/2853: the 1985 directive never named software, and the new one makes it a product, subject to strict, no-fault liability that a EULA cannot waive, for products placed on the market after 9 December 2026. I asked under the post how it applies to SaaS, so I read the directive itself. Software is a product "irrespective of the mode of its supply", and the recitals name SaaS. Updates matter: a manufacturer cannot escape liability by saying the defect came later if it is due to software, an update, or a lack of updates needed to maintain safety, while the product is in its control; and an attacker's exploit does not reduce its liability. But the directive is narrower than it sounds. Only natural persons can claim, and only for death or injury, property not used only for work, or data destroyed or corrupted that is not used for work. A data leak is not on the list, and a company cannot claim for its own losses. Applied to php2shell, the PHP project is out of scope; a vendor or SaaS that leaves a known, fixed flaw unpatched and lets attackers wipe consumers' files is likely in. Patching does not bring an old product into scope, but a new one that is not patched has no defence. Here is what the articles say, and the questions they leave.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/software-is-now-a-product.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Software is now a product: what the EU's new Product Liability Directive actually says about software, SaaS and updates, how it would apply to php2shell, and the questions it leaves open, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/software-is-now-a-product.jpg">
+<link rel="alternate" type="text/markdown" href="software-is-now-a-product.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Software is now a product: what the EU's new Product Liability Directive actually says about software, SaaS and updates, how it would apply to php2shell, and the questions it leaves open, SGit Newsroom", "headline": "Software is now a product: what the EU's new Product Liability Directive actually says about software, SaaS and updates, how it would apply to php2shell, and the questions it leaves open, SGit Newsroom", "description": "Lauren Zabierek shared a card on LinkedIn about the EU's new Product Liability Directive, 2024/2853: the 1985 directive never named software, and the new one makes it a product, subject to strict, no-fault liability that a EULA cannot waive, for products placed on the market after 9 December 2026. I asked under the post how it applies to SaaS, so I read the directive itself. Software is a product \"irrespective of the mode of its supply\", and the recitals name SaaS. Updates matter: a manufacturer cannot escape liability by saying the defect came later if it is due to software, an update, or a lack of updates needed to maintain safety, while the product is in its control; and an attacker's exploit does not reduce its liability. But the directive is narrower than it sounds. Only natural persons can claim, and only for death or injury, property not used only for work, or data destroyed or corrupted that is not used for work. A data leak is not on the list, and a company cannot claim for its own losses. Applied to php2shell, the PHP project is out of scope; a vendor or SaaS that leaves a known, fixed flaw unpatched and lets attackers wipe consumers' files is likely in. Patching does not bring an old product into scope, but a new one that is not patched has no defence. Here is what the articles say, and the questions they leave.", "url": "https://newsroom.sgit.ai/articles/software-is-now-a-product.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Software is now a product: what the EU's new Product Liability Directive actually says about software, SaaS and updates, how it would apply to php2shell, and the questions it leaves open</p>
+ <h1>Software is now a product: what the EU's new Product Liability Directive actually says about software, SaaS and updates, how it would apply to php2shell, and the questions it leaves open</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-25 &middot; <a href="versions/software-is-now-a-product.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.81</a> &middot; <span class="chip">regulation</span><span class="chip">liability</span><span class="chip">software</span><span class="chip">saas</span><span class="chip">cybersecurity</span><span class="chip">php2shell</span><span class="chip">briefing</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Lauren Zabierek shared a card on LinkedIn about the EU's new Product Liability Directive, 2024/2853: the 1985 directive never named software, and the new one makes it a product, subject to strict, no-fault liability that a EULA cannot waive, for products placed on the market after 9 December 2026. I asked under the post how it applies to SaaS, so I read the directive itself. Software is a product "irrespective of the mode of its supply", and the recitals name SaaS. Updates matter: a manufacturer cannot escape liability by saying the defect came later if it is due to software, an update, or a lack of updates needed to maintain safety, while the product is in its control; and an attacker's exploit does not reduce its liability. But the directive is narrower than it sounds. Only natural persons can claim, and only for death or injury, property not used only for work, or data destroyed or corrupted that is not used for work. A data leak is not on the list, and a company cannot claim for its own losses. Applied to php2shell, the PHP project is out of scope; a vendor or SaaS that leaves a known, fixed flaw unpatched and lets attackers wipe consumers' files is likely in. Patching does not bring an old product into scope, but a new one that is not patched has no defence. Here is what the articles say, and the questions they leave.</em></p>
+<figure class="shot shot--small" data-shot="lz-card.webp" data-dir="images/" data-alt="Lauren Zabierek&#x27;s LinkedIn post of 25 October 2026: card R-05 on the Product Liability Directive." data-kind="aside"><figcaption>Lauren Zabierek's LinkedIn post of 25 October 2026: card R-05 on the Product Liability Directive.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Software is now a product,</b> "irrespective of the mode of its supply", SaaS included.</li>
+<li><b>Updates count.</b> A lack of updates needed for safety is no defence, while the product is in the maker's control.</li>
+<li><b>An attacker's exploit does not reduce liability.</b> A EULA cannot exclude it.</li>
+<li><b>But only people can claim,</b> and only for injury, private property, and private data destroyed or corrupted.</li>
+<li><b>A data leak is not covered, and neither is a company's own loss.</b></li>
+<li><b>php2shell:</b> the PHP project is out; a vendor or SaaS that leaves the fixed flaw unpatched is likely in.</li>
+<li><b>Patching does not pull an old product into scope.</b> Not patching a new one has no defence.</li>
+</ul>
+<h2 id="why">Why I read it</h2>
+<p><a href="https://www.linkedin.com/posts/laurenz1010_share-7520128390050529280-M2XB/">Lauren Zabierek</a> shared a card on LinkedIn that summarises the new directive. Under the post I asked whether there was a mapping of how it applies to SaaS. Rather than wait, I read <a href="https://eur-lex.europa.eu/eli/dir/2024/2853/oj/eng">Directive (EU) 2024/2853</a> itself, articles and recitals, and tested it against the story we have been following on <a href="https://php.oct.2026.newsroom.sgit.ai/">the PHP site</a>. This is a briefing and a list of questions, from an engineer reading the text. It is not legal advice, and courts in 27 member states will decide what it means.</p>
+<p>The card is accurate. Two small precisions: the articles name software and digital manufacturing files as products, while SaaS and AI systems are named in the recitals that explain them; and the directive applies to products placed on the market "after", not from, 9 December 2026.</p>
+<h2 id="articles">What the articles say</h2>
+<figure class="shot" data-shot="lz-tests.webp" data-dir="images/" data-alt="Does the new Product Liability Directive bite? Six questions in order, then the defences and what is not a defence." data-kind="concept"><figcaption>Does the new Product Liability Directive bite? Six questions in order, then the defences and what is not a defence.</figcaption></figure>
+<p><b>Software is a product.</b> Article 4(1): "'product' means all movables … it includes electricity, digital manufacturing files, raw materials and software". Recital 13 removes any doubt about delivery: software is a product "irrespective of the mode of its supply or usage, and therefore irrespective of whether the software is stored on a device, accessed through a communication network or cloud technologies, or supplied through a software-as-a-service model". Two exclusions in the same recital: information is not a product, nor is "the mere source code of software". And recital 17: the directive "should not apply to services as such", though a digital service integrated into a product, a "related service", counts as a component of it.</p>
+<p><b>Only for new products.</b> Article 2(1): it applies "to products placed on the market or put into service after 9 December 2026". The 1985 directive keeps applying to anything placed earlier (Article 21). But a product "substantially modified", including "through a software update or upgrade", is treated as placed on the market again when the modification is made (recital 40).</p>
+<p><b>Open source, outside commerce, is out.</b> Article 2(2) excludes "free and open-source software that is developed or supplied outside the course of a commercial activity". When a manufacturer builds such software into a commercial product, that manufacturer can be liable for it, not the project (recital 15).</p>
+<p><b>Only people, and only some damage.</b> Article 5 gives the right to compensation to "any natural person". Article 6 lists the damage: death or personal injury, "including medically recognised damage to psychological health"; damage to property, except the product itself and property "used exclusively for professional purposes"; and "destruction or corruption of data that are not used for professional purposes". Recital 22 goes further: data used for professional purposes "even if not exclusively so" is excluded.</p>
+<p><b>Defective, with cybersecurity.</b> Article 7: a product is defective when it "does not provide the safety that a person is entitled to expect", judged with all circumstances, including "safety-relevant cybersecurity requirements" and, where the manufacturer keeps control, "the moment in time when the product left the control of the manufacturer". Recital 32: a product "can also be found to be defective on account of its cybersecurity vulnerability".</p>
+<p><b>Easier to prove.</b> The defendant can be ordered to disclose evidence (Article 9). Defectiveness is presumed if it fails to, if the product breaks mandatory safety rules, or if there is an obvious malfunction (Article 10(2)); and a court shall presume defectiveness or causation where technical complexity makes proof excessively difficult and the claimant shows it is likely (Article 10(4)).</p>
+<p><b>Updates, and the defences that are gone.</b> A manufacturer is normally not liable if it proves the defect probably did not exist when the product was placed on the market (Article 11(1)(c)). But Article 11(2) removes that defence where the defect is due to "software, including software updates or upgrades" or "a lack of software updates or upgrades necessary to maintain safety", provided it is within the manufacturer's control; and "control" includes having "the ability to supply software updates or upgrades" (Article 4(5)(b)). A third party exploiting the defect does not reduce liability (Article 13(1); recital 55 names "a third party exploiting a cybersecurity vulnerability"), while an injured person who negligently failed to install an update can see it reduced (Article 13(2)). No contract can limit or exclude it (Article 15). Claims expire 10 years after the product was placed on the market (Article 17).</p>
+<h2 id="php">php2shell, under the new rules</h2>
+<figure class="shot" data-shot="lz-php.webp" data-dir="images/" data-alt="php2shell under the new directive: who is likely liable and who is not, across the PHP project, vendors and SaaS." data-kind="concept"><figcaption>php2shell under the new directive: who is likely liable and who is not, across the PHP project, vendors and SaaS.</figcaption></figure>
+<p>The PHP story gives us real cases. The two flaws were fixed in PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12 on 21 October 2026; the end-of-life branches, 7.4 to 8.1, got backport branches but no release. The Dutch NCSC's list tracks <a href="https://github.com/NCSC-NL/php2shell">674 products</a> that ship or depend on PHP: 206 marked vulnerable, 418 still under investigation and 46 fixed, as the site recorded it. And, as of 25 October, no named organisation has said it was compromised.</p>
+<p>The directive would not apply to any of this today, because none of these products was placed on the market after 9 December 2026. But suppose the same flaw were found in 2027, in products placed on the market after that date. Our reading:</p>
+<ul>
+<li><b>The PHP project:</b> out of scope, as free and open-source software developed outside a commercial activity.</li>
+<li><b>A vendor whose product runs on PHP,</b> an appliance, a control panel or an app, that ships or leaves the flaw unpatched after the fix is public: likely liable to a consumer for injury, private property or private data destroyed. It cannot say the defect came later, because the lack of an update was within its control.</li>
+<li><b>A SaaS whose unpatched PHP lets attackers wipe or encrypt its consumer users' files:</b> likely liable. SaaS software is a product, corrupted personal data is a covered damage, and the attacker does not reduce its liability.</li>
+<li><b>The same SaaS, if attackers only steal the data:</b> not under this directive. A leak is not destruction or corruption; the GDPR and contract law apply instead, and the directive says it does not affect them (Article 2(4)).</li>
+<li><b>A business customer that loses its own data or systems:</b> no claim under this directive. It is not a natural person, and its data is professional. Contract and national law still apply.</li>
+<li><b>A product placed on the market on end-of-life PHP 7.4,</b> with no official release of the fix: hard to defend. The flaw is public, so the defence that the state of knowledge could not discover it (Article 11(1)(e)) is gone.</li>
+</ul>
+<p>So, the question I started with: would a company with evidence of exposure to php2shell, which did not patch and then got compromised, be liable? Under this directive, for a product placed on the market after 9 December 2026, to consumers, for the covered damages: likely, yes. To its business customers, or for a leak: not under this directive.</p>
+<h2 id="incentives">Will it stop companies updating?</h2>
+<p>The worry is a perverse incentive: if updating brings a product into scope, do not update, or shut it down. The text makes that weaker than it sounds.</p>
+<ul>
+<li><b>A security patch is unlikely to be a "substantial modification".</b> Article 4(18) defines one as a change to the product's "original performance, purpose or type" that was not foreseen in the manufacturer's risk assessment and that changes or increases the hazard. A patch that closes a flaw does the opposite. Updates that are not substantial "should not affect the expiry period" (recital 58).</li>
+<li><b>For new products, not updating is no defence.</b> Article 11(2)(c) makes the lack of a needed security update the manufacturer's problem, as long as it can still supply one.</li>
+<li><b>The directive does not oblige anyone to provide updates</b> (recital 51). The incentive comes from liability, not a duty.</li>
+<li><b>Shutting down limits future damage, not past.</b> Claims run for 10 years from when the product was placed on the market.</li>
+</ul>
+<h2 id="questions">The questions it leaves</h2>
+<ul>
+<li><b>When is a SaaS "placed on the market"?</b> At launch, or never fully, because it never leaves the manufacturer's control? A SaaS launched before 9 December 2026 and updated daily may stay under the old directive for years, unless some update is "substantial".</li>
+<li><b>Where does a product end and a service begin?</b> The directive covers SaaS software but not "services as such" (recital 17). Is a web application a product, and the hosting a service?</li>
+<li><b>Who is the manufacturer of a self-hosted WordPress site?</b> The open-source project is out; the agency that built and sells it, or the host that runs it, may be in.</li>
+<li><b>What about end of support?</b> One commenter under Lauren's post noted that a product's end of support under the Cyber Resilience Act does not end its liability under this directive. "Control" means the ability to supply updates; can a manufacturer end that ability, and with it the liability, before the 10 years are up?</li>
+<li><b>How does it line up with the Cyber Resilience Act?</b> The CRA's reporting duties already apply since 11 September 2026 and the rest from 11 December 2027 (<a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng">Regulation (EU) 2024/2847</a>, Article 71), and its "safety-relevant cybersecurity requirements" will help courts judge defectiveness. But the CRA leaves out websites and cloud services developed outside a product's manufacturer, including SaaS (its recital 12), which this directive includes.</li>
+<li><b>Will it reach business losses at all?</b> As written, no. The pressure on SaaS will come from consumers, insurers and the CRA, more than from companies suing each other.</li>
+</ul>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>This is a reading of the text, not legal advice.</b> Member states transpose it by 9 December 2026, and courts will interpret it.</li>
+<li><b>The php2shell cases are hypothetical:</b> today's products are under the old directive.</li>
+<li><b>Lauren Zabierek's post is quoted from the card in the screenshot;</b> the rest of the post needs a sign-in.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>Lauren Zabierek's <a href="https://www.linkedin.com/posts/laurenz1010_share-7520128390050529280-M2XB/">post on LinkedIn</a>, 25 October 2026, from a screenshot, and its public comments; my voice memo of the same day. <a href="https://eur-lex.europa.eu/eli/dir/2024/2853/oj/eng">Directive (EU) 2024/2853</a> on liability for defective products, Official Journal of 18 November 2024, and <a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng">Regulation (EU) 2024/2847</a>, the Cyber Resilience Act, both read on EUR-Lex on 25 October 2026. The PHP story site's data on affected versions, the NCSC-NL product list and compromises, at release v0.22.2. Related: <a href="https://newsroom.sgit.ai/articles/who-signs-for-this.html">who signs for this?</a>, <a href="https://newsroom.sgit.ai/articles/simplified-or-outsourced.html">simplified, or outsourced?</a>, <a href="https://newsroom.sgit.ai/articles/who-maintains-the-php-you-run.html">who maintains the PHP you run?</a>, <a href="https://newsroom.sgit.ai/articles/patch-for-breakfast.html">patch for breakfast</a>, <a href="https://newsroom.sgit.ai/articles/the-policy-draws-the-liability-line.html">the policy draws the liability line</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
+<sg-meter view="page" kind="article" date="2026-10-25" topics="agents-and-policy news-and-evidence" title="Software is now a product: what the EU's new Product Liability Directive actually says about software, SaaS and updates, how it would apply to php2shell, and the questions it leaves open, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">News &amp; evidence</span> <a href="graphs.html#software-is-now-a-product">This article as a graph &rarr;</a></p>
+ <p class="small dim">No other article links here yet.</p>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 291 &middot; <a href="../for/make.html#r=291">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/software-is-now-a-product.jpg" download>software-is-now-a-product.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="software-is-now-a-product.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

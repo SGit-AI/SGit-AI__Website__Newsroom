@@ -10,11 +10,11 @@
 
 # Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.0.0](versions/approve-at-altitude.md) · [newsroom v0.12.97](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-decision-policyagent-behaviour-policyrisk-appetitegovernancefractal-semantic-graphsdelegationscalingseriesarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.1.0, 2 versions](versions/approve-at-altitude.md) · [newsroom v0.12.97](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-decision-policyagent-behaviour-policyrisk-appetitegovernancefractal-semantic-graphsdelegationscalingseriesarticle
 
 ***Abstract:** The second article in the series on agent decision policies is about scale. Language models make it cheap to write decision policies, five, a hundred, two hundred of them, and no business owner can sign off two hundred. The answer is the fractal. Decisions and workflows exist at every altitude, strategic, business, product, technical and the single run, and each altitude bounds the one below. So you approve at altitude: the board signs off its risk appetite once, the head of a function signs off a budget and a licence to operate within it, a team signs off its workflow within that, and each level inherits everything above it. The scaling rule is one sentence: a lower level may narrow the level above it, never widen it. For that to be checkable, every policy declares an envelope: money, blast radius, the data and people in scope, reversibility, and how long it lasts. Where the envelope is numbers and lists, the check that a child fits inside its parent is mechanical and can run in CI; where it is words, a model can flag the likely conflicts for a person. This is how a business that cannot predict every decision can still find the ones far outside what it is willing to risk, and it is how English law already treats delegated powers: secondary legislation that goes beyond the Act that allows it is ultra vires, and a court can quash it.*
 
-One envelope, automatic refunds, followed down five altitudes: the board's risk appetite; the head of support's limits, 2,000 GBP a day and a person above 100 GBP an order; the product workflow, a team lead to 500 GBP and finance above; the refund tool's limits; and one agent's run, one customer and one refund. Each level sits inside the one above. A new VIP workflow with automatic refunds up to 1,000 GBP an order is wider than the business limit, so it is flagged as out of its powers before it runs.
+One envelope, automatic refunds, followed down five altitudes from the board's risk appetite to one agent's run.
 
 Agent decision policies: a series in four parts
 
@@ -146,6 +146,7 @@ Agents & policy[This article as a graph →](graphs.md#approve-at-altitude)
 
 ### Continued by
 
+- [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](approved-business-mandates.md) Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.
 - [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](what-can-your-agent-reach.md) RiskMandate and the Agent Behaviour Policy in plain words: what it does, why it is not real time, which agents it covers, and how it gets into the room.
 - [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](allowed-is-not-right.md) Ashish Rajan's Northstar refund: allowed to refund $200, owed $120, paid $150. His four questions mapped to three policies, and tested on a twin.
 - [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](three-policies-for-an-agent.md) Behaviour says what an agent may do, decision who chooses at a branch point, workflow in what order. Zoom into one ABP cell and it becomes both.

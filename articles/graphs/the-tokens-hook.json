@@ -174,19 +174,19 @@
     {
       "file": "tk-architecture.webp",
       "url": "https://newsroom.sgit.ai/articles/images/tk-architecture.webp",
-      "caption": "The tokens hook: a policy file says what to count, show and limit; the hook reads only the new lines of the session transcript each time, counts each response once, prices it by its model and keeps running totals. Its output goes to the user, to the model, to a block when the budget is spent, or to a collector. Dashed boxes are proposed.",
+      "caption": "The tokens hook: a policy file, a hook that counts and prices each response, and where its output goes.",
       "kind": "architecture"
     },
     {
       "file": "tk-prompt-vs-hook.webp",
       "url": "https://newsroom.sgit.ai/articles/images/tk-prompt-vs-hook.webp",
-      "caption": "The same two-turn conversation in headless Claude Code, once with a system prompt asking the model to report its tokens and cost, once with the tokens hook. With the prompt, the model said it could not see the numbers. With the hook, it reported them exactly, one turn behind.",
+      "caption": "The same two-turn conversation in headless Claude Code, once with a system prompt and once with the tokens hook.",
       "kind": "comparison"
     },
     {
       "file": "tk-where.webp",
       "url": "https://newsroom.sgit.ai/articles/images/tk-where.webp",
-      "caption": "Where the token numbers are, tool by tool: what a hook can see and what the user is shown in the coding agents and chat apps checked for this article, from each tool's documentation or source code.",
+      "caption": "Where the token numbers are, tool by tool: what a hook can see and what the user is shown.",
       "kind": "comparison"
     }
   ]

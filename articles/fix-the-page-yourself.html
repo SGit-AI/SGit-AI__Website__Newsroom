@@ -30,13 +30,14 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
       <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
       <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
       <a class="sl" href="../about/index.html">Why this exists</a>
       <a class="sl" href="../desks/index.html">The five desks</a>
@@ -86,6 +87,8 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -153,17 +156,19 @@
   <script src="../assets/reader/strip.js" defer></script>
   <script src="../assets/reader/highlights.js" defer></script>
   <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
   <div class="theme-pick"></div>
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom</p>
  <h1>Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom</h1>
- <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-17 &middot; <a href="versions/fix-the-page-yourself.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.93</a> &middot; <span class="chip">ux</span><span class="chip">customisation</span><span class="chip">bookmarklets</span><span class="chip">browser-extensions</span><span class="chip">javascript</span><span class="chip">accessibility</span><span class="chip">explorer-coding</span><span class="chip">agents</span><span class="chip">playwright</span><span class="chip">brief</span><span class="chip">article</span></p>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-17 &middot; <a href="versions/fix-the-page-yourself.html" title="Every published version of this article, and what changed">article v1.3.0, 4 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.93</a> &middot; <span class="chip">ux</span><span class="chip">customisation</span><span class="chip">bookmarklets</span><span class="chip">browser-extensions</span><span class="chip">javascript</span><span class="chip">accessibility</span><span class="chip">explorer-coding</span><span class="chip">agents</span><span class="chip">playwright</span><span class="chip">brief</span><span class="chip">article</span></p>
  <p class="abstract"><em><b>Abstract:</b> Years ago, during a security assessment, I packaged an exploit as a bookmarklet, a bookmark that runs a line of JavaScript on the page you are on, and gave it to the business owner to show that one user could see data they should never see. She was more excited about the interface I had wrapped it in than about the vulnerability, because my quick Bootstrap page was so much better than the application she used every day. That story still describes most of the web. Sites are built to show ads and hold attention, not to let me read; even the newest products have gaps their own users could fix in a line of code. My argument is that the next generation of user experience is the one the user customises, and that sites should encourage it: publish a small JavaScript API for the page, the primitives a fix needs, so that every fix is one line, the same API serves tests and agents, and the fixes people keep become a better brief than the site could write itself. It is also the cheapest route to accessibility, because each reader can build what they need on primitives the site provides. This newsroom now does it: a page API with six fixes, from reading mode to WCAG text spacing, as buttons, bookmarklets and code. The rest is a brief: a community library of fixes, per-site extensions that only touch the tab you click, and the same API on sgit.ai and ruv.sgit.ai.</em></p>
-<figure class="shot" data-shot="pz-before-after.webp" data-dir="images/" data-alt="One click on this newsroom: an article as published, and the same page after three fixes from its page API, reading mode, bigger text and an outline of the headings. Nothing on the site changed; it is CSS in the reader&#x27;s browser." data-kind="comparison"><figcaption>One click on this newsroom: an article as published, and the same page after three fixes from its page API, reading mode, bigger text and an outline of the headings. Nothing on the site changed; it is CSS in the reader's browser.</figcaption></figure>
+<figure class="shot" data-shot="pz-before-after.webp" data-dir="images/" data-alt="One click on this newsroom: an article as published, and the same page after three fixes from its page API." data-kind="comparison"><figcaption>One click on this newsroom: an article as published, and the same page after three fixes from its page API.</figcaption></figure>
 <h2 id="in-short">In short</h2>
 <ul>
 <li><b>A bookmarklet is a line of code you click.</b> I learnt to use them breaking into websites.</li>
@@ -189,7 +194,7 @@
 <h2 id="primitives">Sites should publish the primitives</h2>
 <p>The fix is for the site to take part. If a page publishes a small JavaScript API, the primitives a fix needs, then a fix is one line, it does not break when the markup changes, and it does not need to guess.</p>
 <p>We already have the convention. The SGraph tools put each tool's API on the page at <code>window.__tools</code>, announce it with a <code>tool:ready</code> event, and describe it in an <code>api.json</code>; the principle, in the architect's review, is "API is the tool, UI is a consumer". The same surface that a user's fix calls is the one Playwright tests call, and the one an agent driving a browser calls. A page with an API is a page that can be automated, tested and fixed with the least code, by people and by agents alike.</p>
-<figure class="shot" data-shot="pz-loop.webp" data-dir="images/" data-alt="The user&#x27;s fix is the best brief the site will get: the site publishes primitives; readers write fixes in a line or two; the site learns from the fixes people keep; popular ones are adopted as settings or themes, and personal ones are maintained for a fee." data-kind="architecture"><figcaption>The user's fix is the best brief the site will get: the site publishes primitives; readers write fixes in a line or two; the site learns from the fixes people keep; popular ones are adopted as settings or themes, and personal ones are maintained for a fee.</figcaption></figure>
+<figure class="shot" data-shot="pz-loop.webp" data-dir="images/" data-alt="How the user&#x27;s fix becomes a brief: the site publishes primitives, readers write fixes and the site adopts popular ones." data-kind="architecture"><figcaption>How the user's fix becomes a brief: the site publishes primitives, readers write fixes and the site adopts popular ones.</figcaption></figure>
 <p>And here is the part sites should want. A fix a user writes, and keeps, is a better brief than any the site could write itself: what a real person needed, in a form that runs. It is <a href="explorer-coding.html">explorer coding</a> applied to the page in front of you. The fixes many people keep should become settings, and then the script disappears, because the product does it. This newsroom has done exactly that once already: the first outside reaction to its Industry Wire was two words on WhatsApp, "Dark mode!", and <a href="dark-mode-and-four-more.html">five themes</a> shipped soon after. The personal fixes that stay personal are where the vendor becomes the villager and is paid to maintain them.</p>
 <h2 id="accessibility">It is the cheapest accessibility there is</h2>
 <p>There is a large accessibility angle here, and I think it is where the money is for companies. Every reader's needs are different: bigger text, more spacing, higher contrast, no motion, no clutter, a different order. A site that tries to build every variation itself never finishes. A site that publishes the primitives, and lets each reader build, or install, what they need, serves far more people for far less.</p>
@@ -240,6 +245,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo of mine on 17 October 2026, written by this site's agent in the voice of this site; the argument, the story and the editorial responsibility are mine. The fixes, the page API and the page were built and tested by this site's agent the same day: <a href="https://newsroom.sgit.ai/demos/fixes/index.html">Fix the page</a>, <a href="https://newsroom.sgit.ai/assets/page-fixes/v0/v0.1/v0.1.0/page-fixes.js">page-fixes.js</a> and its <a href="https://newsroom.sgit.ai/assets/page-fixes/v0/v0.1/v0.1.0/api.json">api.json</a>. The page API convention: the SGraph tools' JS API primitive, in <a href="https://github.com/the-cyber-boardroom/SGraph-AI__Tools">the-cyber-boardroom/SGraph-AI__Tools</a>, the architect's review of 9 April 2026 and the debrief on the JS API for agents. Chrome: <a href="https://developer.chrome.com/docs/extensions/develop/concepts/activeTab">the activeTab permission</a> and <a href="https://developer.chrome.com/docs/extensions/reference/api/userScripts">the userScripts API</a>. Accessibility: W3C, <a href="https://www.w3.org/TR/WCAG22/#text-spacing">WCAG 2.2, success criterion 1.4.12, Text Spacing</a>; the European Accessibility Act, Directive (EU) 2019/882. Context on this site: <a href="explorer-coding.html">Explorer coding</a>, <a href="software-vendors-as-villagers.html">Software vendors should become villagers and town planners</a>, <a href="a-custom-firefox-of-my-own.html">A custom Firefox of my own</a>, <a href="dark-mode-and-four-more.html">Dark mode, and four more</a>, <a href="custom-uis-are-not-the-exception.html">Custom UIs are not the exception</a> and <a href="a-model-in-the-tab.html">A model in the tab</a>.</p>
 <sg-meter view="page" kind="article" date="2026-10-17" topics="site-and-engineering startups-and-strategy" title="Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Site &amp; engineering</span><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#fix-the-page-yourself">This article as a graph &rarr;</a></p>
@@ -275,7 +281,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="fix-the-page-yourself.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="fix-the-page-yourself.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -309,6 +315,8 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

@@ -10,7 +10,7 @@ tags: graphs, strategy, startups, ontologies, gen-z-book, article
 status: published
 ---
 
-!shot gc-companies.webp | images/ | The graph companies. Market values on 19 October 2026, with the graph at the heart of each: Alphabet, $4.17 trillion, the link graph and the Knowledge Graph; Microsoft, $3.96 trillion, which owns LinkedIn's economic graph; Amazon, $2.84 trillion, the product graph and the logistics network; Meta, $1.79 trillion, the social graph; Visa, $755 billion, and Mastercard, $538 billion, payment networks; Palantir, $469 billion, an ontology of the organisation. Four of the ten most valuable companies in the world are on the list. | comparison
+!shot gc-companies.webp | images/ | The graph companies: market values on 19 October 2026, with the graph at the heart of each, from Alphabet to Palantir. | comparison
 
 ## In short {#in-short}
 
@@ -56,7 +56,7 @@ Law is a gigantic graph. Legal research has been a citation graph since Shepard'
 
 There is a very cool thing in design: once you have the right questions and the right information, the answer is obvious. It is the end of a whodunit. All the clues were there; what changes at the end is that the right connections are made, the irrelevant ones fall away, and only one answer is left.
 
-!shot gc-whodunit.webp | images/ | The answer becomes obvious. On the left, a graph with every node and edge: people, places, events, evidence, and no answer in sight. In the middle, the irrelevant nodes removed, the relevant connections kept. On the right, what is left: a short path from the question to the answer, which now looks obvious. The same move works for a supply chain, a contract, a regulation, or a search result. | concept
+!shot gc-whodunit.webp | images/ | The answer becomes obvious: a full graph, the irrelevant nodes removed, and the short path from question to answer. | concept
 
 That is what a graph does once it has the right connections. You remove the nodes that are not relevant, you focus on the ones that are, and the answer becomes obvious. It is why search worked, why a feed knows what to show you, and why a logistics company knows which van goes where.
 
@@ -64,7 +64,7 @@ That is what a graph does once it has the right connections. You remove the node
 
 So you can argue that graphs have already won. But they won for a few. For everyone else, they did not scale, and I think there are three reasons.
 
-!shot gc-lockin.webp | images/ | Why graphs never scaled, and how they can now. Before: building a graph took a lot of technology; whoever built it used it to lock in the customer and keep competitors out; there was no movement to share schemas or the code; so each graph stayed inside one company, and the advantage stayed with the few. Now: fractal semantic graphs, where each part keeps its own vocabulary and nobody has to share a schema; open source and open schemas; agents that build and maintain the graph; so graphs can be built by anyone, for any domain. | comparison
+!shot gc-lockin.webp | images/ | Why graphs never scaled, and how they can now: before, graphs locked in customers; now, fractal graphs built by agents. | comparison
 
 First, creating a graph never scaled. It required a lot of technology, and a lot of people to build and maintain it.
 

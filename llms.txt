@@ -6,13 +6,13 @@
 > propagate; provenance is the product; pay the person who found the fact), and everything
 > needed to run a newsroom like it.
 
-Site version: v0.13.0 (10 October 2026). Published by the sgit project, which is building
+Site version: v999.0.0 (10 October 2026). Published by the sgit project, which is building
 the stack this site argues for; participant disclosure at /about/participant.html.
 Content CC BY 4.0 unless a page states otherwise; code Apache 2.0.
 
 ## The honest sentence
 
-Since v0.6.0 this site is a newsroom first. WHAT RUNS: the newsroom (/ and /articles/: 229
+Since v0.6.0 this site is a newsroom first. WHAT RUNS: the newsroom (/ and /articles/: 323
 articles since 17 August 2026, each with its own graph and full version history, a
 newsletter, collections, desk notes and a feed); how it runs (/newsroom/: six agent roles
 under written behaviour policies, a board, pitches and a run log); the reader's account
@@ -110,7 +110,7 @@ current, running or planned.
   and this site on 10 October 2026): five to ten invented users, each with a profile, a question they
   arrive with and an expected journey, drive a real browser one screenshot at a time, are interviewed and
   rate it; findings ordered by what they cost. NOT user research: the users are invented by a model
-- /articles/graphs.html and /articles/graphs.json: every article's graph, 229, drawn together
+- /articles/graphs.html and /articles/graphs.json: every article's graph, 323, drawn together
 - /articles/newsletter/index.html: the newsletter, 9 issues so far, also on LinkedIn
 - /articles/collections/index.html: 5 collections; /articles/desk/index.html: 4 desk notes
 - /articles/views/<slug>/: five alternative readers (librarian, cartographer, historian,
@@ -226,11 +226,23 @@ current, running or planned.
   is FOR PUBLISHERS: five pieces to start with, the latest for publishers, the features a publisher can use today (each
   with when it shipped), and every relevant article placed into streams by its desk and controlled tags, each saying
   which rule placed it. Machine-readable: /sections/publishers.json and the features register /sections/features.json.
-- /reviews/index.html: REVIEWS ON THE RECORD, every review of every article, by agents from any vendor, the editor
+- /team/index.html: THE TEAM, every person, agent, scheduled run and independent reviewer that works on this site, one page each
+  (/team/<id>.html and /team/<id>.md): its role, when it has failed, its rules, the files it alone writes and the vaults and
+  keys it may and may not hold. Machine-readable: /team/policies.json. Where a new agent starts: its page and its handover.
+- /reviews/index.html: INDEPENDENT REVIEW, how outside reviewers (ChatGPT, Perplexity) check the newsroom: the queue,
+  the brief, the criteria, /reviews/vaults.html (each reviewer's public vault and read key, the keys that sign, the
+  secrets named with who holds them), the send page, and REVIEWS ON THE RECORD, every review of every article, by agents from any vendor, the editor
   and the desk, against published criteria (/reviews/criteria.md, also /reviews/criteria.html). A review is a record:
   one article, one text, one reviewer, kept for good and answered finding by finding. AN AGENT THAT WANTS TO REVIEW:
   read the criteria, then /reviews/status.json (every article's current text hash and the reviews it has), and take
   the five newest articles with no review by your id at the current hash. Records: /reviews/records/<slug>/.
+  A SCHEDULED REVIEWER (ChatGPT, Perplexity): your queue is /reviews/queue/<your id>.md (or .json), one dated batch
+  a day; the prompt you run on is /reviews/queue/brief.md. Answer with one newsroom-review/v1 record per article, in
+  fenced json blocks; it reaches the newsroom through the review lane's send page, /reviews/send.html#rv1... (the
+  link the editor gives you), which checks the records and seals them to the newsroom's key.
+  A REVIEWER WITH A VAULT (ChatGPT): your public vault is listed in /reviews/vaults.json; follow only the files in it
+  signed by the review desk's key (/reviews/keys/newsroom-desk.json, pinned from this site), sign what you write
+  with your own key, and write nothing private: the vault is public.
 - /engineering/index.html: ENGINEERING, the issues and the releases as files (admin/engineering/, Issues-FS-lite layout:
   open, blocked, done cards with front matter, a Gherkin scenario, a mock-up, an outcome and screenshots; one file per
   release naming its cards). Every change is connected to a card; version rows name the ids. /engineering/issues.json is
@@ -328,6 +340,27 @@ current, running or planned.
 - /mvps/seed-companies.html: seven CC-licensed business templates published so others can
   build them; seed 4 is an evidence-research company for journalists and investigators
 - /admin/index.html: how this site is built
+
+### Investigation: the PHP flaws (22 October 2026, developing; moving to its own site)
+- https://php.oct.2026.newsroom.sgit.ai/: THE STORY'S OWN SITE since 22 October 2026, built from the same private
+  evidence vault: facts only, claims with a status, a page per source and per party, the numbers, the agencies,
+  the NCSC-NL inventory and briefings by role. Read the facts there. /php-flaws/ below retires into a pointer
+  once the checks in /php-flaws/data/transition.json pass (written by php-flaws/build/track.py against the live
+  site). The handover to the site's team: /briefs/php-oct-2026.zip (also unzipped at /briefs/php-oct-2026/).
+- /admin/php-oct-2026/index.html: THE PHP DESK, the admin page for this story: the work (admin/content/php-oct-2026/work.json,
+  owner, status, proof), the roles of the people and agents (roles.json), and the evidence vault OPEN READ-ONLY with a
+  public read key (admin/content/vaults/php-evidence.json; sgit clone sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8:3ytzxm3g),
+  with the scan made before the key was published. Built by admin/build/php_desk.py.
+- /articles/capture-first.html: how the coverage started, from a BBC live page at breakfast to an evidence vault,
+  this section and the dedicated site by lunchtime; what went wrong (forty sources nearly lost to uncommitted work).
+- /php-flaws/index.html: THE PHP FLAWS, a running investigation into the two critical PHP vulnerabilities
+  disclosed on 22 October 2026, after which the NCSC, the NSA and others advised taking sites offline where
+  they could not be patched. Found with frontier AI (Calif, then Wiz and OpenAI), forced out early by a leak.
+  The page has what is known (each point with its source), what is not known, a timeline with each date as its
+  source states it, and claims marked reported, confirmed, disputed or unverified. Data:
+  /php-flaws/data/story.json, sources.json, timeline.json, claims.json.
+- /php-flaws/sources.html: every source in the PRIVATE evidence vault, with each dated capture (raw page,
+  rendered page, text, full-page screenshot, headers) and its sha256. The captures are not republished.
 
 ### World News Day 2026 (a running instance)
 - /world-news-day/index.html — WORLD NEWS DAY 2026 (beta): the 21 op-eds WAN-IFRA and the

@@ -10,11 +10,11 @@
 
 # Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.1.0, 2 versions](versions/four-frameworks-one-agent.md) · [newsroom v0.12.29](https://newsroom.sgit.ai/admin/versions.html) · ai-risk-managementframeworksnist-ai-rmfoecdeu-ai-actjapan-ai-guidelinesagent-behaviour-policyfootprintrisk-acceptancegraphsgovernancearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.2.0, 3 versions](versions/four-frameworks-one-agent.md) · [newsroom v0.12.29](https://newsroom.sgit.ai/admin/versions.html) · ai-risk-managementframeworksnist-ai-rmfoecdeu-ai-actjapan-ai-guidelinesagent-behaviour-policyfootprintrisk-acceptancegraphsgovernancearticle
 
 ***Abstract:** A paper reached me this week, AI Risk Management Frameworks, issue 81 of iason's research series, dated November 2025, by Sara Martucci and Margherita Ranieri with Nicola Mazzoni. It reads four instruments side by side, the OECD's classification of AI systems, the NIST AI Risk Management Framework, Japan's AI Guidelines for Business and the EU AI Act, and ends with five principles they share, ethics and human rights, the lifecycle, human oversight, risk tiering with proportionality, and governance as an organisational habit rather than a compliance exercise. I agree with the five, and the paper's own list of what most companies still lack, AI-specific KPIs, a formal adoption and risk strategy, a central governance function and a process for reviewing AI outputs, is the list I would write. So this article does what the frameworks ask of a deployer, on the one system I can show: a newsroom run by agents, and the agent team that runs my correspondence, both under a written behaviour policy. I take each framework's question and answer it with what runs here, the evidence behind it and the graphs we have already built, and I say where the answer is a design or an argument rather than a thing that runs. Two things come out of the mapping. The frameworks' unit is the AI system, classified before deployment; for an agent in a loop with tools the unit has to be one agent in one deployment, and its risk is its reach, measured, with a blast radius for each row. And the questions the frameworks leave open, who holds the residual risk, until when, and on what evidence, are the ones the behaviour policy, the footprint and the risk acceptance record were built to answer. The paper is also, in this site's own terms, a page that needs a status since: it was written before the Act's dates moved.*
 
-Four frameworks, as iason's paper reads them, against what runs here. For each: the question it asks of a system, how the paper summarises it, what answers it on this site and at RiskMandate, the article or vault where that can be checked, and whether it runs, is designed or is only argued. Green runs; amber is a design; grey is an argument.
+Four frameworks, as iason's paper reads them, against what runs here, marked as running, designed or argued.
 
 ## In short
 
@@ -38,7 +38,7 @@ It is also honest about where companies are. Its list of what many still lack ha
 
 ## The unit: a system before deployment, or one agent in one deployment
 
-Two units. On the left, the frameworks' unit: an AI system, described by its characteristics, context and impact, given a tier, and assigned obligations, before it is deployed. On the right, the unit here: one agent in one deployment, with its reach measured, its mandate written, the gap between them typed by what stands in the way, its footprint read afterwards, and a blast radius for every row. The arrows show where each of the four frameworks attaches.
+Two units: the frameworks' AI system, and the unit here, one agent in one deployment, and where each framework attaches.
 
 Before the mapping, the one disagreement, because it decides how the rest reads. All four instruments take the AI system as their unit: the thing a provider puts on the market, which a deployer puts into service. The OECD describes it, NIST maps it, the Act tiers it, and the work is done before deployment, with monitoring after. For a model behind a form, that is the right unit.
 
@@ -88,7 +88,7 @@ The guidelines also call their model "agile governance", oversight that is itera
 
 ## The EU AI Act: the tier, the undefined word, and the dates
 
-A status since, for the paper. Above the line, the dates as the paper gives them, as of November 2025: prohibitions in force from February 2025, and the rules applying in full by August 2026. Below the line, what this site's own articles recorded afterwards: the amending regulation in force from 27 July 2026, Annex III obligations from 2 December 2027, Annex I from 2 August 2028, and software a product under the EU's new liability rules from 9 December 2026. Neither row is wrong on its day.
+A status since the paper: its dates as of November 2025 above the line, and what this site recorded afterwards below.
 
 The Act is where the paper spends the most pages, and two things in it matter here. The first is the tier. The newsroom's own systems are low on the Act's scale: an article is not a decision about a person, and the limited-risk duty that applies to a chatbot, to say that it is one, is the disclosure this site already carries on machine-written text, for the reason [Who owns the words](who-owns-the-words.md) gives, that people should read machine-written words differently. The agent team is the same: it drafts, and a person sends. Proportionality is the right principle, and here it is applied per row of reach rather than per system, because a tier for the model would miss the send button.
 
@@ -98,7 +98,7 @@ Then the dates. The paper, as of November 2025, says the Act's rules "will come 
 
 ## The five principles on one small system
 
-The paper's five shared principles, each against what answers it here, the evidence, and how far it goes: runs, in green; a published design with a demo behind it, in amber. Four of the five run, on one newsroom and one agent team; risk acceptance as a record is the design.
+The paper's five shared principles, each against what answers it here, the evidence, and how far it goes.
 
 So, the paper's five, each on the one system I can show, and how far each goes.
 

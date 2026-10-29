@@ -10,11 +10,11 @@
 
 # The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.1.0, 2 versions](versions/the-graph-companies.md) · [newsroom v0.12.136](https://newsroom.sgit.ai/admin/versions.html) · graphsstrategystartupsontologiesgen-z-bookarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.2.0, 3 versions](versions/the-graph-companies.md) · [newsroom v0.12.136](https://newsroom.sgit.ai/admin/versions.html) · graphsstrategystartupsontologiesgen-z-bookarticle
 
 ***Abstract:** Something I have been looking at while reading my book: some of the biggest and most successful companies in the world are graph companies. Google started from a graph of links and built a Knowledge Graph of things, not strings. Facebook is a social graph, LinkedIn calls itself an economic graph, Amazon builds a product graph on top of a supply chain, and Visa and Mastercard are networks that move trillions. Four of the ten most valuable companies today are, at heart, graphs, worth about $12.8 trillion together. Around them are the companies and consultancies that sell ontologies and taxonomies, a digital twin of an organisation, and the old ones too: legal research has been a citation graph since 1873. Even a spreadsheet, a relational database and a language model are graphs. Once a graph has the right connections, and you remove the nodes that do not matter, the answer becomes obvious, like the end of a whodunit. So why did graphs not scale for everyone else? Because building one took a lot of technology, and whoever built it used it to lock the customer in and keep competitors out: no shared schemas, no shared code. Fractal semantic graphs, where nobody has to share a schema, and agents that maintain them, are how they can scale now.*
 
-The graph companies. Market values on 19 October 2026, with the graph at the heart of each: Alphabet, $4.17 trillion, the link graph and the Knowledge Graph; Microsoft, $3.96 trillion, which owns LinkedIn's economic graph; Amazon, $2.84 trillion, the product graph and the logistics network; Meta, $1.79 trillion, the social graph; Visa, $755 billion, and Mastercard, $538 billion, payment networks; Palantir, $469 billion, an ontology of the organisation. Four of the ten most valuable companies in the world are on the list.
+The graph companies: market values on 19 October 2026, with the graph at the heart of each, from Alphabet to Palantir.
 
 ## In short
 
@@ -60,7 +60,7 @@ Law is a gigantic graph. Legal research has been a citation graph since Shepard'
 
 There is a very cool thing in design: once you have the right questions and the right information, the answer is obvious. It is the end of a whodunit. All the clues were there; what changes at the end is that the right connections are made, the irrelevant ones fall away, and only one answer is left.
 
-The answer becomes obvious. On the left, a graph with every node and edge: people, places, events, evidence, and no answer in sight. In the middle, the irrelevant nodes removed, the relevant connections kept. On the right, what is left: a short path from the question to the answer, which now looks obvious. The same move works for a supply chain, a contract, a regulation, or a search result.
+The answer becomes obvious: a full graph, the irrelevant nodes removed, and the short path from question to answer.
 
 That is what a graph does once it has the right connections. You remove the nodes that are not relevant, you focus on the ones that are, and the answer becomes obvious. It is why search worked, why a feed knows what to show you, and why a logistics company knows which van goes where.
 
@@ -68,7 +68,7 @@ That is what a graph does once it has the right connections. You remove the node
 
 So you can argue that graphs have already won. But they won for a few. For everyone else, they did not scale, and I think there are three reasons.
 
-Why graphs never scaled, and how they can now. Before: building a graph took a lot of technology; whoever built it used it to lock in the customer and keep competitors out; there was no movement to share schemas or the code; so each graph stayed inside one company, and the advantage stayed with the few. Now: fractal semantic graphs, where each part keeps its own vocabulary and nobody has to share a schema; open source and open schemas; agents that build and maintain the graph; so graphs can be built by anyone, for any domain.
+Why graphs never scaled, and how they can now: before, graphs locked in customers; now, fractal graphs built by agents.
 
 First, creating a graph never scaled. It required a lot of technology, and a lot of people to build and maintain it.
 
@@ -108,6 +108,7 @@ Graphs & knowledgeStartups & strategy[This article as a graph →](graphs.md#the
 
 ### Continued by
 
+- [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](jobs-that-never-scaled.md) What never scaled is on-demand expertise: the before and after the meeting. Agents can now carry them, for any expert, anywhere.
 - [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](a-trusted-framework-for-agentic-finance.md) The FCA plans a framework for agentic finance. Our open behaviour policies cover its four elements; a vault shows six bank agents at play.
 - [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](ten-questions-one-graph.md) Phil Venables' ten questions for a CISO's tool are graph questions. Risk acceptance is half the answer; a twin in a vault answers all ten.
 - [Inside the Thistlewood twin: Phil Venables' ten questions answered one by one on the graph of an invented retailer, with the plot, the evidence and the decisions each one proposes](inside-the-thistlewood-twin.md) The ten answers on an invented retailer's graph: where £250k goes, what keeps recurring, who has the largest blast radius, and the 29 decisions to the board.

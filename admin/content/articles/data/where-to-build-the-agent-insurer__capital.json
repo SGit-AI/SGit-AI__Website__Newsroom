@@ -1,0 +1,141 @@
+{
+ "note": "Illustrative. Computed by admin/notes/2026-10-28__underwriting-abp/capital.py; every input is an assumption stated in it.",
+ "stage1_inputs": {
+  "months": 24,
+  "team": [
+   {
+    "year": 1,
+    "people": 8
+   },
+   {
+    "year": 2,
+    "people": 15
+   }
+  ],
+  "cost_per_person_gbp": 150000,
+  "regulatory_legal_actuarial_pi_gbp_per_year": 250000,
+  "technology_gbp_per_year": 200000
+ },
+ "stage2_inputs": {
+  "agents": [
+   500,
+   2000,
+   10000
+  ],
+  "limits_per_agent_gbp": 80000,
+  "shared_failure_share": [
+   0.05,
+   0.1
+  ],
+  "kept_after_reinsurance": 0.5,
+  "buffer": 1.2,
+  "floors_gbp": {
+   "UK general insurer (PRA MCR)": 2400000,
+   "EU non-life (Solvency II MCR)": 2350000
+  }
+ },
+ "raise_inputs": {
+  "raises_gbp": [
+   10000000,
+   50000000
+  ],
+  "premium_rate": 0.084
+ },
+ "stage1": {
+  "years": [
+   {
+    "year": 1,
+    "people": 8,
+    "cost": 1650000
+   },
+   {
+    "year": 2,
+    "people": 15,
+    "cost": 2700000
+   }
+  ],
+  "total": 4350000
+ },
+ "stage2": [
+  {
+   "agents": 500,
+   "total_limits": 40000000,
+   "shared_failure_share": 0.05,
+   "capital_from_limits": 1200000,
+   "capital_with_uk_floor": 2400000
+  },
+  {
+   "agents": 500,
+   "total_limits": 40000000,
+   "shared_failure_share": 0.1,
+   "capital_from_limits": 2400000,
+   "capital_with_uk_floor": 2400000
+  },
+  {
+   "agents": 2000,
+   "total_limits": 160000000,
+   "shared_failure_share": 0.05,
+   "capital_from_limits": 4800000,
+   "capital_with_uk_floor": 4800000
+  },
+  {
+   "agents": 2000,
+   "total_limits": 160000000,
+   "shared_failure_share": 0.1,
+   "capital_from_limits": 9600000,
+   "capital_with_uk_floor": 9600000
+  },
+  {
+   "agents": 10000,
+   "total_limits": 800000000,
+   "shared_failure_share": 0.05,
+   "capital_from_limits": 24000000,
+   "capital_with_uk_floor": 24000000
+  },
+  {
+   "agents": 10000,
+   "total_limits": 800000000,
+   "shared_failure_share": 0.1,
+   "capital_from_limits": 48000000,
+   "capital_with_uk_floor": 48000000
+  }
+ ],
+ "raises": [
+  {
+   "raise": 10000000,
+   "running_two_years": 4350000,
+   "capital": 5650000,
+   "shared_failure_share": 0.05,
+   "ceiling_of_limits": 188333333,
+   "agents_at_80k": 2354,
+   "premium_a_year_at_example_rate": 15820000
+  },
+  {
+   "raise": 10000000,
+   "running_two_years": 4350000,
+   "capital": 5650000,
+   "shared_failure_share": 0.1,
+   "ceiling_of_limits": 94166667,
+   "agents_at_80k": 1177,
+   "premium_a_year_at_example_rate": 7910000
+  },
+  {
+   "raise": 50000000,
+   "running_two_years": 4350000,
+   "capital": 45650000,
+   "shared_failure_share": 0.05,
+   "ceiling_of_limits": 1521666667,
+   "agents_at_80k": 19020,
+   "premium_a_year_at_example_rate": 127820000
+  },
+  {
+   "raise": 50000000,
+   "running_two_years": 4350000,
+   "capital": 45650000,
+   "shared_failure_share": 0.1,
+   "ceiling_of_limits": 760833333,
+   "agents_at_80k": 9510,
+   "premium_a_year_at_example_rate": 63910000
+  }
+ ]
+}

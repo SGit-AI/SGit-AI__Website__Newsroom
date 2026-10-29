@@ -1,0 +1,94 @@
+{
+ "slug": "the-attack-surface-you-do-not-have",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 206,
+   "line": "Every CVE makes me smile: moving to the client side took my servers out of the news, and gave me speed.",
+   "para": "My server-side attack surface is the SG/Send upload server, which stores only ciphertext. Today's PHP flaws and a month of exploited gateways, firewalls and WordPress passed me by. It came from a constraint, no database and no back end, and it gives speed: 45 static sites in eleven weeks. Internal apps are the next risk. Ask why anything needs the server.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 99,
+   "line": "Seven lines: the smile, the small surface, a month of flaws, the constraint, speed, internal apps, the question.",
+   "para": "Each CVE is one less worry. The one server left stores ciphertext. PHP today and a month of exploited server flaws needed nothing from me. No database and no back end made that happen, and it is speed, not a limit. Internal applications are where risk is going. Ask of every component why it is on the server.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "php",
+   "label": "Today, PHP",
+   "words": 142,
+   "line": "Today PHP shipped fixes for two unauthenticated remote code execution flaws in every supported branch.",
+   "para": "php.net's advisory names CVE-2026-109618 and CVE-2026-109619, fixed in 8.5.12, 8.4.27, 8.3.36 and 8.2.35, with no complete mitigation. My reply in a group that day: I have moved away not only from server-side databases but from server-side code, so what I must maintain keeps shrinking as the features grow.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "month",
+   "label": "A month I did not have to care about",
+   "words": 192,
+   "line": "A month of critical server flaws, from the advisories and CISA's exploited catalogue, none in my stack.",
+   "para": "PHP on 21 October; Plex and SiteGuard on 20 October; PAN-OS, Cisco's mail gateway and Ahsay on 14 October; an Ivanti zero-day on 13 October; FortiMail and Zammad at the start of October; ten Citrix NetScaler CVEs on 27 September; and a critical WordPress fix on 22 September. The best model is not having to worry at all.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "surface",
+   "label": "The attack surface you do not have",
+   "words": 203,
+   "line": "A typical product runs servers, runtimes, CMSs, databases and appliances; these sites run static files.",
+   "para": "Static files on GitHub Pages, the reader's browser for the meter, vault, search, graphs and payments, and one upload server holding encrypted objects it cannot read. Its code was about 9,300 lines of Python; the newsroom runs about 20,000 lines of JavaScript in the browser. An attacker looking for a server flaw has little to find.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "history",
+   "label": "A constraint I have been writing about",
+   "words": 120,
+   "line": "A constraint written about for months: no database, no back end, and now billing, messaging and AWS.",
+   "para": "No server, by design retired the database and then the back end; the no-server startup made it a blueprint and the studio built one; the code you do not ship argued for less code. This week the pattern reached billing, messaging and AWS management. The constraint gives security for free and forces simpler designs.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "speed",
+   "label": "The constraint is speed",
+   "words": 187,
+   "line": "The constraint is speed: nothing to provision or patch, so a new site is a repository and a session.",
+   "para": "45 live static sites in eleven weeks; a newsroom of over 1,300 pages with a meter and payments; 100+ users and customers across our vaults, sgit.ai and riskmandate.ai; pki.sgit.ai accelerating; users.sgit.ai and aws.twin.sgit.ai built today. Fewer moving parts make it leaner and easier to maintain, and it scales because readers bring their own compute.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "internal",
+   "label": "Where the risk is going",
+   "words": 132,
+   "line": "Internal applications are where the risk is going, because they are rarely tested like public ones.",
+   "para": "Admin tools, internal dashboards and forgotten scripts with database passwords will be where many future problems are, more so as agents build internal tools fast. Build them the same way: client side, with data in vaults and the server reduced to storage. It connects to the SaaS apocalypse, as people brief their own software.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "question",
+   "label": "The question to ask",
+   "words": 85,
+   "line": "The question for every design review: why does this need to be on the server?",
+   "para": "Sometimes there is a good answer: shared state, a secret that must stay off the device, an operation the user must not be trusted with. Most of the time, in my experience, the honest answer is habit, and each habit dropped is one less line on the list of things to patch.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 90,
+   "line": "Client-side has its own risks; servers remain underneath; the list is a month; sizes approximate.",
+   "para": "Cross-site scripting, the JavaScript supply chain and the browser carry risk; it moves, it does not vanish. GitHub Pages and browser vendors patch servers I depend on. SG/Send is still a server. The CVE list covers one month of critical and exploited flaws, and the SG/Send size is from a 9 September clone.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 99,
+   "line": "A voice memo, php.net, six CISA alerts, WordPress's release, and the sgit.ai repositories and sites.",
+   "para": "A voice memo of 21 October 2026 and my reply in a group that day; php.net's advisory; CISA's alerts of 27 September and 1, 2, 13, 14 and 20 October; WordPress's 22 September release; the sgit.ai repositories and live sites; and related articles on no-server design, less code, billing and threat tiers.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

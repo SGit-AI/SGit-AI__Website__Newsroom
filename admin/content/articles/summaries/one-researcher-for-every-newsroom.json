@@ -1,0 +1,56 @@
+{
+ "slug": "one-researcher-for-every-newsroom",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "A shared researcher at research.newsroom.sgit.ai: scheduled runs, a pack a day, published by licence tier, reused by every newsroom.",
+   "para": "Each newsroom runs its own slow researcher over overlapping sources. The proposal consolidates them: a watch list, parallel scheduled runs for the daily web, Wikipedia and focus requests, daily sgit packs carrying provenance, and a site that indexes and serves what may be shared. Open pages go out in full, the rest as records. It is a design for review.",
+   "hash": "4cdc7fcc17ed"
+  },
+  "in-short": {
+   "line": "Consolidate repeated, slow research into one shared, scheduled researcher publishing daily packs by licence tier.",
+   "para": "Newsrooms reread the same sources, and a full pass takes 16 to 27 minutes before pushing. One shared researcher would run three kinds of parallel runs, write one pack per day with its commits, and publish open pages in full and others as index, hashes and links. Teams then research only what it misses.",
+   "hash": "2762e1b7e62c"
+  },
+  "problem": {
+   "line": "The PHP source watch, the Industry Wire and the coming Web Summit newsroom each research the same sources, slowly.",
+   "para": "The source watch rereads about 900 pages from some 600 publishers in 34 languages, with 2,946 snapshots kept. The wires read their own sources and Web Summit will need a feed too. The watch stage alone takes 16 to 27 minutes for 630 to 860 pages, and old-format pushes took up to 30 minutes.",
+   "hash": "fb6c26c21feb"
+  },
+  "archive": {
+   "line": "A light, focused Internet Archive: find the files, see what each holds, download them, with structure and an index.",
+   "para": "The researcher already calls the source watch a small Wayback Machine for one story. research.newsroom.sgit.ai would focus on creating and publishing raw data as encrypted sgit vault files, publishing read keys for what may be shared. Its value is focus, a known schedule and a machine-readable index of changes, access and licence.",
+   "hash": "7efe92cd7d28"
+  },
+  "design": {
+   "line": "A watch list, parallel runs for the daily web, Wikipedia and focus requests, a pack a day, and daily asks.",
+   "para": "A registry records what to watch, who asked, how often, its tier and access, seeded from the PHP site's sources. Runs split into a tree so sessions work in parallel. Each day's captures become one pack with an index. Consuming agents request what is missing, and each team's researcher covers only the gaps.",
+   "hash": "cd325fa7c221"
+  },
+  "packs": {
+   "line": "sgit pack mode made it practical: clones, listings and pulls became many times faster on the source watch.",
+   "para": "Measured on a 29,861-file vault: a fresh clone fell from 827 to 95 seconds, a server listing from a 91-second timeout to 0.73 seconds, and an empty pull from 34 to 4 seconds. A dated pack per day, with its own index, is a natural unit to publish and fetch.",
+   "hash": "8b09fd748af8"
+  },
+  "tiers": {
+   "line": "Publish by the source watch's licence tiers: open pages in full, others as records, with an opt-out.",
+   "para": "Tier A pages, open or public sector, and Wikipedia under its licence, go out in full in public packs. Tiers B and C appear as links, access, hashes, change dates and, for B, up to 25 words, with full bytes kept privately. Publishers can opt out, and site terms and robots.txt are followed.",
+   "hash": "66f93265e799"
+  },
+  "next": {
+   "line": "Next: the watch list, the first scheduled runs, the research site, then moving the PHP researcher onto it.",
+   "para": "If the design holds: seed the watch list, schedule the daily web and Wikipedia runs as pack vaults, build the site with index and read keys, and move the PHP researcher, then the wires and Web Summit, onto the shared runs.",
+   "hash": "8ed82d57976f"
+  },
+  "limits": {
+   "line": "Not built; source counts vary by date; pack numbers come from one vault; the Internet Archive is far larger.",
+   "para": "research.newsroom.sgit.ai does not exist yet. Counts are 913 or 965 pages depending on date, and the memo's 800 was an estimate. The point is focus, structure and the index, not scale.",
+   "hash": "733a73b5610a"
+  },
+  "sources": {
+   "line": "A voice memo, the PHP site's source watch and pack-mode data, the researcher's proposal and sgit's spec.",
+   "para": "The editor's memo of 26 October 2026, the source watch data and measurements, the phased-pass proposal, the pack-mode specification and the wire's documentation, read that day, with related newsroom articles.",
+   "hash": "1b4ecb441fe8"
+  }
+ }
+}

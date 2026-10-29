@@ -144,19 +144,19 @@
     {
       "file": "rf-gap.webp",
       "url": "https://newsroom.sgit.ai/articles/images/rf-gap.webp",
-      "caption": "Two ways into the same memory: the adapter's tools pass the policy gate, a pinned copy of Ruflo's evaluator running the compiled ABP rules, on their way to SGit and the vault, in steps 4, 5, 6, 8 and 11; Ruflo's own command line reads and writes the memory file directly, in steps 3, 9 and 10, with no ABP check. The author states this limit in his README.",
+      "caption": "Two ways into the same memory: the adapter's tools through the policy gate, and Ruflo's own command line without one.",
       "kind": "architecture"
     },
     {
       "file": "rf-stage-03.webp",
       "url": "https://newsroom.sgit.ai/articles/images/rf-stage-03.webp",
-      "caption": "Step 3: the test script calls the ruflo command line's memory store, which loads its embedding model, stores no vectors, and writes two rows of plain text into the source workspace's memory.db; the ABP adapter and the vault are not on this path.",
+      "caption": "Step 3: the ruflo command line's memory store writes two rows of plain text; the ABP adapter and vault are not used.",
       "kind": "architecture"
     },
     {
       "file": "rf-stage-09.webp",
       "url": "https://newsroom.sgit.ai/articles/images/rf-stage-09.webp",
-      "caption": "Step 9: the ruflo command line's memory retrieve reads memory.sqlite in the fresh-runner workspace and returns both facts exactly; the vault and the ABP adapter are not on this path.",
+      "caption": "Step 9: the ruflo command line's memory retrieve reads memory.sqlite and returns both facts exactly.",
       "kind": "architecture"
     }
   ]

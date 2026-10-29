@@ -10,11 +10,11 @@
 
 # The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.2.0, 3 versions](versions/the-no-server-startup.md) · [newsroom v0.12.146](https://newsroom.sgit.ai/admin/versions.html) · startupsarchitectureclient-sideno-serveragentsbusiness-modelsblueprintarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.3.0, 4 versions](versions/the-no-server-startup.md) · [newsroom v0.12.146](https://newsroom.sgit.ai/admin/versions.html) · startupsarchitectureclient-sideno-serveragentsbusiness-modelsblueprintarticle
 
 ***Abstract:** This is a blueprint, for founders and for the agents that work with them, of a kind of product that a lot of what I have written here adds up to. Phase one has no server and no database of its own. The product is a folder of HTML, CSS and JavaScript, built from native web components with the few libraries it needs vendored inside it, so it runs offline and anywhere a web page can be served, from a laptop to GitHub Pages to a customer's isolated network. The user brings the expensive parts: their own AI key, capped and paid by them, called straight from the browser; their own storage, in the browser, in an encrypted vault or in their own cloud drive; and their own passkey, which can give the browser a secret that only their device can produce. You are not in the line of any request, so the product scales with its users, not with your servers. The pieces mostly exist today, OpenRouter's OAuth among them, which bills each user's requests to their own credit. The gaps are on the providers' side: a user's own key with a cap, and paying the app that brought them the customer, which none of the providers I checked offers. Then how to build it, with agent sessions, a dev and a main site and an explorer as the first hire; how to charge for it; a checklist an agent can work through; and an MVP of it, an infographic studio, mostly simulated, in a vault, with a business plan for somebody to build.*
 
-The usual SaaS and the no-server product. On the left, the company sits in the line of every request, with its servers, its database, its AI key and its bill. On the right, the product is a folder of files, and the user brings the AI key, the storage and the passkey.
+The usual SaaS beside the no-server product: the company in the line of every request, against a folder of files.
 
 The no-server startup
 
@@ -56,7 +56,7 @@ It needs a name. I would call it a **no-server product**, and a company built th
 8. **You are not in the line.** No request passes through you. The product scales with its users, not with your servers, and an outage of yours does not stop anyone.
 9. **Everything is in version control, and agents maintain it.** A dev site and a main site, every change a commit, every release a note, held to the [non-functional requirements](https://nfrs.sgit.ai/) from the first release.
 10. **Charge for value, not for servers.** For building it, for its users, and for the keys, even when the user brings their own.
-One folder, served from anywhere: a laptop with no network, a simple server, a container, GitHub Pages, Cloudflare or any cloud, a function that returns files, or a customer's isolated network.
+One folder, served from anywhere: a laptop, a simple server, a container, GitHub Pages, any cloud, a customer's network.
 
 ## A worked example: an infographic studio
 
@@ -66,7 +66,7 @@ The user opens the studio, which is a folder of static files, served from anywhe
 
 Nothing in that loop passes through the company that built the studio. It did the work once, in the product, and a sale can happen without anyone at the company doing anything.
 
-The infographic studio as eight steps, none through the company that built it. Six work today; a cap on the user's own key works with a catch; and getting paid for bringing the provider a customer is missing.
+The infographic studio as eight steps, none through the company that built it: six work today, one has a catch.
 
 Every AI feature should also work without a key, in a simulation mode that returns example results. It is how a prospect tries the product before paying anyone, how the synthetic users test it, and how a demo survives a bad network.
 
@@ -97,7 +97,7 @@ Add synthetic users early: personas that use every page on every release, and te
 
 The team grows in Simon Wardley's order, in the names this site uses: explorers, villagers, town planners. The founder's first hire is an explorer, one person who works with the agents in [explorer coding](explorer-coding.md) mode, from a chat or the command line, and changes the dev site fast. Villagers come next, to turn what works into a product: tests, versions, releases that do not break. Town planners come last, when it has to be a utility.
 
-How a founder builds it: agent sessions and synthetic users around one repository, a dev site and a main site, and the team hired in order, explorers, then villagers, then town planners.
+How a founder builds it: agent sessions and synthetic users around one repository, and the team hired in order.
 
 ## How to charge for it
 
@@ -126,7 +126,7 @@ The plan in the vault has who it is for, packages and prices as hypotheses, go-t
 
 The pitch is one line long: infographics from your own documents, in your browser, with your own AI credit, and nothing kept by us.
 
-The business plan in the vault: three businesses in one blueprint, packages and prices as hypotheses, go-to-market, ninety days, a calculator, risks as acceptances and open questions.
+The business plan in the vault: three businesses in one blueprint, with packages, prices, ninety days and risks.
 
 ## For agents: the next steps
 
@@ -175,6 +175,7 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#the
 
 ### Continued by
 
+- [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](the-attack-surface-you-do-not-have.md) Every CVE makes me smile: moving to the client side took my servers out of the news, and the constraint turned out to be speed.
 - [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](inside-the-no-server-studio.md) An infographic studio built to the no-server blueprint, mostly simulated, in a vault: what is real, the business plan, and a bug found live.
 
 [All articles](index.md) · [All graphs](graphs.md)

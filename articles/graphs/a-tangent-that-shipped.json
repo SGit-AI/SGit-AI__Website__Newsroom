@@ -1,0 +1,179 @@
+{
+  "slug": "a-tangent-that-shipped",
+  "teaser": "How a tangent about zips became sgit's pack mode in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds.",
+  "topics": [
+    "vaults-and-method",
+    "site-and-engineering"
+  ],
+  "core_idea": "A slow-clone bug and a tangent about running vaults from zip files, treated as research and reviewed before release, produced sgit's pack mode in ten days; the next day it took the PHP story's source watch from a 13-minute clone to 95 seconds, shipping without a web view because the vault that needed it did not need one.",
+  "nodes": [
+    {
+      "id": "bug",
+      "label": "A slow clone",
+      "kind": "example",
+      "summary": "59 seconds for 83 files; 3½ minutes for the comms vault."
+    },
+    {
+      "id": "tangent",
+      "label": "A vault in one zip",
+      "kind": "question",
+      "summary": "Can a vault live on Drive, Dropbox or a USB stick?"
+    },
+    {
+      "id": "research",
+      "label": "Research before code",
+      "kind": "method",
+      "summary": "Measured, designed, specified, reviewed."
+    },
+    {
+      "id": "pack",
+      "label": "A pack per push",
+      "kind": "method",
+      "summary": "One zip per push, a snapshot for the head."
+    },
+    {
+      "id": "reviews",
+      "label": "Four review rounds",
+      "kind": "method",
+      "summary": "A second agent with reproducing scripts."
+    },
+    {
+      "id": "release",
+      "label": "sgit-ai 0.24.0",
+      "kind": "artefact",
+      "summary": "Pack mode, opt-in, 22 October."
+    },
+    {
+      "id": "watch",
+      "label": "The source watch",
+      "kind": "example",
+      "summary": "63,662 objects, a listing that timed out."
+    },
+    {
+      "id": "numbers",
+      "label": "13 min 47 s to 95 s",
+      "kind": "claim",
+      "summary": "Clone, list, pull and push, measured."
+    },
+    {
+      "id": "gaps",
+      "label": "Not everything at once",
+      "kind": "claim",
+      "summary": "No web view yet; shipped anyway."
+    },
+    {
+      "id": "noserver",
+      "label": "No server to maintain",
+      "kind": "concept",
+      "summary": "A vault as one file, anywhere."
+    }
+  ],
+  "edges": [
+    {
+      "from": "bug",
+      "to": "tangent",
+      "rel": "leads-to"
+    },
+    {
+      "from": "tangent",
+      "to": "research",
+      "rel": "leads-to"
+    },
+    {
+      "from": "research",
+      "to": "pack",
+      "rel": "produces"
+    },
+    {
+      "from": "pack",
+      "to": "reviews",
+      "rel": "depends-on"
+    },
+    {
+      "from": "reviews",
+      "to": "release",
+      "rel": "leads-to"
+    },
+    {
+      "from": "release",
+      "to": "watch",
+      "rel": "answers"
+    },
+    {
+      "from": "watch",
+      "to": "numbers",
+      "rel": "produces"
+    },
+    {
+      "from": "gaps",
+      "to": "release",
+      "rel": "extends"
+    },
+    {
+      "from": "tangent",
+      "to": "noserver",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "scion-and-sgit",
+      "almost-working",
+      "php-daily-2026-10-23"
+    ],
+    "pages": [],
+    "sites": [
+      "https://php.oct.2026.newsroom.sgit.ai/admin/pack-mode/index.html",
+      "https://cli.sgit.ai/docs/update-to-0-24-0.html",
+      "https://cli.sgit.ai/articles/a-pack-per-push.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "That is not luck.",
+      "why": "Why the tangent mattered."
+    },
+    {
+      "text": "The limit we hit was not storage.",
+      "why": "The vault that needed it."
+    }
+  ],
+  "figures": [
+    {
+      "file": "zv-php-top.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/zv-php-top.webp",
+      "caption": "The PHP site's pack-mode page, 23 October 2026: a 95-second pack clone against 13 minutes 47 seconds as a normal vault.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "zv-path.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/zv-path.webp",
+      "caption": "Ten days from a slow clone to a vault that clones in 95 seconds, with the dates of each step.",
+      "kind": "timeline"
+    },
+    {
+      "file": "zv-php-push.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/zv-php-push.webp",
+      "caption": "One pass of the source watch pushed to the normal vault on 23 October: eleven failed attempts, then a twelfth.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "zv-php-side.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/zv-php-side.webp",
+      "caption": "The same operations side by side on the same vault: a fresh clone, listing the vault and a pull with nothing new.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "zv-why.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/zv-why.webp",
+      "caption": "One request per object, or one zip per push: the normal vault against the pack vault. The server did not change.",
+      "kind": "comparison"
+    },
+    {
+      "file": "zv-scope.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/zv-scope.webp",
+      "caption": "Not everything at once: what sgit-ai 0.24.0 shipped, and what it left for later.",
+      "kind": "comparison"
+    }
+  ]
+}

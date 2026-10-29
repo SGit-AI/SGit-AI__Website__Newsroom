@@ -10,11 +10,11 @@
 
 # Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/agent-hooks-october-2026.md) · [newsroom v0.12.41](https://newsroom.sgit.ai/admin/versions.html) · hooksagentsclaude-codecodexgemini-clicopilotcursorguardrailssecurityenforcementowasparticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.2.0, 3 versions](versions/agent-hooks-october-2026.md) · [newsroom v0.12.41](https://newsroom.sgit.ai/admin/versions.html) · hooksagentsclaude-codecodexgemini-clicopilotcursorguardrailssecurityenforcementowasparticle
 
 ***Abstract:** More and more of the technical people I talk to who are trying to control agents for real are reaching for the same tool: hooks, small programs the agent's harness runs at fixed points, before a tool call, after it, when a prompt is submitted, when the agent stops. This is the debrief I wanted to read: the lay of the land on 14 October 2026, from each vendor's own documentation. The short version is that the design has converged. Claude Code, OpenAI's Codex, Gemini CLI, GitHub Copilot, Cursor, Devin Desktop (formerly Windsurf), Grok Build, Factory, Augment and Kiro all offer a hook before a tool call that can block it, and most can ask the user or rewrite the call. They differ where it matters for security: whether an organisation can force its own hooks and switch everyone else's off, whether a failing hook blocks or lets the action through, whether hooks shipped in a repository need trust before they run, and whether anything can see the model's own output. ChatGPT offers admin controls rather than hooks, and Lovable gates publishing rather than agent actions. The vendors and the people who publish hook collections say the same thing about their limits: guardrails, not walls. Hooks see what the harness routes through them, run with the user's permissions, fail open by default on most tools, and have been an attack surface themselves. I ran a small test of my own in a throwaway repository, and the companion article asks what this means for agent behaviour policies.*
 
-Agent hooks in October 2026, from each vendor's documentation: whether a hook can block a tool call, rewrite its input, act at the model call, be forced by the organisation, fail closed, and whether hooks shipped in a repository need trust. The design has converged; the security properties have not.
+Agent hooks in October 2026, from each vendor's documentation, compared on blocking, rewriting and failing closed.
 
 **What came next.** [Are hooks the sweet spot?](are-hooks-the-sweet-spot.md) takes this site's own behaviour policy and moves it into hooks rule by rule, tested in a sandbox, and asks how long hooks are the right place to keep an agent's rules.
 
@@ -30,7 +30,7 @@ Agent hooks in October 2026, from each vendor's documentation: whether a hook ca
 
 ## What a hook is
 
-Where a hook sits: beside the agent, on the same machine, with the user's permissions. Hooks fire when a prompt is submitted, before and after a tool call, at the stop, and on one platform around the model call itself. They are good at deterministic checks at the moment of action, and cannot undo what ran or see what was not routed through them.
+Where a hook sits: beside the agent, on the same machine, with the user's permissions, firing at five moments.
 
 A hook is a program the agent's harness runs at a fixed point in its loop, with a description of the event on its input and a decision on its output. The harness is the program around the model: it sends the prompt, receives the model's request to use a tool, runs the tool and returns the result. Hooks plug into that loop. The one that matters most for security runs before a tool call: it sees the tool's name and its full input, the shell command, the file path, the MCP server and tool, and it can allow the call, deny it with a reason the model sees, ask the person, or on most platforms rewrite the input.
 

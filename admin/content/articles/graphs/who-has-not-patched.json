@@ -1,0 +1,35 @@
+{
+ "slug": "who-has-not-patched",
+ "teaser": "Before blaming business for not patching php2shell, ask how good the number is, and what makes a site actually vulnerable.",
+ "topics": ["news-and-evidence"],
+ "core_idea": "Every 'unpatched' figure for php2shell is a count of version strings, in different units, distorted by backports and hidden versions; Italy's 81.9% is of the readable half, 38.5% of all detected. A site is vulnerable only if it is reachable, unprotected at the edge, on a runtime the exploit fits, holds something worth taking and is unwatched. With no named victim six days in and 17 exploited flaws listed by CISA in the same fortnight, not patching is more likely a wrong count and rational prioritisation than negligence.",
+ "nodes": [
+  {"id": "headline", "label": "The 'not patched' headline", "kind": "claim", "summary": "It implies negligence."},
+  {"id": "count", "label": "Version counts", "kind": "artefact", "summary": "Different units, backports, hidden versions."},
+  {"id": "italy", "label": "Italy's 81.9%", "kind": "example", "summary": "Of the readable half: 38.5% of all."},
+  {"id": "layers", "label": "Five conditions for vulnerable", "kind": "concept", "summary": "Reachable, unprotected, runtime, value, unwatched."},
+  {"id": "edge", "label": "The edge moved first", "kind": "example", "summary": "Cloudflare rules nine hours before disclosure."},
+  {"id": "record", "label": "No named victim", "kind": "example", "summary": "Six days in."},
+  {"id": "priority", "label": "Prioritisation", "kind": "method", "summary": "17 KEV entries in the fortnight."},
+  {"id": "unreported", "label": "What can't be ruled out", "kind": "question", "summary": "Silent compromises."}
+ ],
+ "edges": [
+  {"from": "count", "to": "headline", "rel": "contrasts"},
+  {"from": "italy", "to": "count", "rel": "example-of"},
+  {"from": "layers", "to": "count", "rel": "extends"},
+  {"from": "edge", "to": "layers", "rel": "example-of"},
+  {"from": "record", "to": "headline", "rel": "contrasts"},
+  {"from": "priority", "to": "headline", "rel": "answers"},
+  {"from": "unreported", "to": "record", "rel": "contrasts"}
+ ],
+ "links": {
+  "articles": ["the-evidence-behind-four-days", "what-the-bitcoin-bounty-actually-proves", "patch-for-breakfast", "the-side-stories-of-php2shell", "translate-the-assumption"],
+  "pages": [],
+  "sites": ["https://php.oct.2026.newsroom.sgit.ai/compromise/", "https://php.oct.2026.newsroom.sgit.ai/patching/"]
+ },
+ "quotes": [
+  {"text": "a site that cannot be exploited is not vulnerable, whatever its version says", "why": "What makes a site vulnerable."},
+  {"text": "Choosing not to patch this server today usually means patching another one first. That is not negligence. It is the job.", "why": "The call the team had to answer."},
+  {"text": "A version count is a starting point, not a finding.", "why": "How good is the number?"}
+ ]
+}

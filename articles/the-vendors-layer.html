@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product, SGit Newsroom</title>
+<meta name="description" content="The first two articles of this series described insuring an agent row by row from its behaviour policy, and who could carry that risk. This one is about a party I think has to carry some of it: the vendor that sells the agent. When a company buys an agentic workflow, part of what can go wrong is the company's own doing, the access it granted and the data it connected, and part is the vendor's, the model's answer, the guardrail that let something through. Cloud providers settled the same question years ago with a shared responsibility model: AWS calls it security of the cloud and security in the cloud. Agent vendors' published terms put almost all of it on the customer: Anthropic's and Salesforce's both cap liability at the fees paid in the previous twelve months, indemnify intellectual property claims, and leave it to the customer to decide whether outputs are appropriate or use is safe. Some vendors already back their products with money, and the most useful shape is Microsoft's: cover, as long as the customer used the guardrails the product provides. Europe is moving the line from 9 December 2026, when software, AI systems included, becomes a product under the new product liability directive, with no contractual cap against an injured person. So I propose the vendor's layer: in each row of a behaviour policy, a share the vendor carries when its own conditions held. In the worked example, of a £6,720 premium for £80,000 of cover, the vendor carries £1,816, mostly on the rows its product decides; the row the customer decided by granting write access stays the customer's. The formula, the inputs and a calculator are in a vault anyone can open.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/the-vendors-layer.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/the-vendors-layer.html">
+<meta property="og:title" content="The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product, SGit Newsroom">
+<meta property="og:description" content="The first two articles of this series described insuring an agent row by row from its behaviour policy, and who could carry that risk. This one is about a party I think has to carry some of it: the vendor that sells the agent. When a company buys an agentic workflow, part of what can go wrong is the company's own doing, the access it granted and the data it connected, and part is the vendor's, the model's answer, the guardrail that let something through. Cloud providers settled the same question years ago with a shared responsibility model: AWS calls it security of the cloud and security in the cloud. Agent vendors' published terms put almost all of it on the customer: Anthropic's and Salesforce's both cap liability at the fees paid in the previous twelve months, indemnify intellectual property claims, and leave it to the customer to decide whether outputs are appropriate or use is safe. Some vendors already back their products with money, and the most useful shape is Microsoft's: cover, as long as the customer used the guardrails the product provides. Europe is moving the line from 9 December 2026, when software, AI systems included, becomes a product under the new product liability directive, with no contractual cap against an injured person. So I propose the vendor's layer: in each row of a behaviour policy, a share the vendor carries when its own conditions held. In the worked example, of a £6,720 premium for £80,000 of cover, the vendor carries £1,816, mostly on the rows its product decides; the row the customer decided by granting write access stays the customer's. The formula, the inputs and a calculator are in a vault anyone can open.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/the-vendors-layer.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/the-vendors-layer.jpg">
+<link rel="alternate" type="text/markdown" href="the-vendors-layer.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product, SGit Newsroom", "headline": "The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product, SGit Newsroom", "description": "The first two articles of this series described insuring an agent row by row from its behaviour policy, and who could carry that risk. This one is about a party I think has to carry some of it: the vendor that sells the agent. When a company buys an agentic workflow, part of what can go wrong is the company's own doing, the access it granted and the data it connected, and part is the vendor's, the model's answer, the guardrail that let something through. Cloud providers settled the same question years ago with a shared responsibility model: AWS calls it security of the cloud and security in the cloud. Agent vendors' published terms put almost all of it on the customer: Anthropic's and Salesforce's both cap liability at the fees paid in the previous twelve months, indemnify intellectual property claims, and leave it to the customer to decide whether outputs are appropriate or use is safe. Some vendors already back their products with money, and the most useful shape is Microsoft's: cover, as long as the customer used the guardrails the product provides. Europe is moving the line from 9 December 2026, when software, AI systems included, becomes a product under the new product liability directive, with no contractual cap against an injured person. So I propose the vendor's layer: in each row of a behaviour policy, a share the vendor carries when its own conditions held. In the worked example, of a £6,720 premium for £80,000 of cover, the vendor carries £1,816, mostly on the rows its product decides; the row the customer decided by granting write access stays the customer's. The formula, the inputs and a calculator are in a vault anyone can open.", "url": "https://newsroom.sgit.ai/articles/the-vendors-layer.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product</p>
+ <h1>The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-28 &middot; <a href="versions/the-vendors-layer.html" title="Every published version of this article, and what changed">article v1.3.0, 4 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.126</a> &middot; <span class="chip">insurance</span><span class="chip">underwriting</span><span class="chip">agent-behaviour-policy</span><span class="chip">riskmandate</span><span class="chip">vendors</span><span class="chip">liability</span><span class="chip">product-liability</span><span class="chip">shared-responsibility</span><span class="chip">vaults</span><span class="chip">insuring-agents</span><span class="chip">article</span></p>
+<nav class="aseries" aria-label="Series: Insuring agents"><a href="#series"><b>Insuring agents</b></a> <span class="dim">3 of 5</span> &middot; <a href="who-carries-the-risk.html" rel="prev">&larr; Who carries the risk</a> &middot; <a href="where-to-build-the-agent-insurer.html" rel="next">Where to build the agent insurer &rarr;</a></nav>
+ <p class="abstract"><em><b>Abstract:</b> The first two articles of this series described insuring an agent row by row from its behaviour policy, and who could carry that risk. This one is about a party I think has to carry some of it: the vendor that sells the agent. When a company buys an agentic workflow, part of what can go wrong is the company's own doing, the access it granted and the data it connected, and part is the vendor's, the model's answer, the guardrail that let something through. Cloud providers settled the same question years ago with a shared responsibility model: AWS calls it security of the cloud and security in the cloud. Agent vendors' published terms put almost all of it on the customer: Anthropic's and Salesforce's both cap liability at the fees paid in the previous twelve months, indemnify intellectual property claims, and leave it to the customer to decide whether outputs are appropriate or use is safe. Some vendors already back their products with money, and the most useful shape is Microsoft's: cover, as long as the customer used the guardrails the product provides. Europe is moving the line from 9 December 2026, when software, AI systems included, becomes a product under the new product liability directive, with no contractual cap against an injured person. So I propose the vendor's layer: in each row of a behaviour policy, a share the vendor carries when its own conditions held. In the worked example, of a £6,720 premium for £80,000 of cover, the vendor carries £1,816, mostly on the rows its product decides; the row the customer decided by granting write access stays the customer's. The formula, the inputs and a calculator are in a vault anyone can open.</em></p>
+<figure class="shot" data-shot="vl-split.webp" data-dir="images/" data-alt="Each row&#x27;s premium split between the agent&#x27;s vendor and the customer&#x27;s insurer. Illustrative, from the vault." data-kind="comparison"><figcaption>Each row's premium split between the agent's vendor and the customer's insurer. Illustrative, from the vault.</figcaption></figure>
+<div class="trail"><div class="trail-h">Insuring agents</div><p class="trail-n">Five articles and three vaults on one idea: an agent&#x27;s behaviour policy read as an insurance policy, priced row by row, split with the vendor, and backed by capital.</p><div class="trail-row"><a class="trail-c" href="a-payout-for-every-row.html"><span class="trail-img" data-trail-img="images/pr-rows.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">1 · The definition</span><span class="trail-t">A payout for every row</span><span class="trail-d">A limit per row of the behaviour policy, a lower premium per enforced control, and no cover for what it does not name.</span></span></a><a class="trail-c" href="who-carries-the-risk.html"><span class="trail-img" data-trail-img="images/ck-chain.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">2 · The market</span><span class="trail-t">Who carries the risk</span><span class="trail-d">Who sells AI agent cover today, the four parts of an insurer, and starting as a managing agent.</span></span></a><a class="trail-c here" href="the-vendors-layer.html"><span class="trail-here">you are here</span><span class="trail-img" data-trail-img="images/vl-split.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">3 · The split</span><span class="trail-t">The vendor&#x27;s layer</span><span class="trail-d">A share of each row the agent&#x27;s vendor carries, when its own conditions held.</span></span></a><a class="trail-c" href="where-to-build-the-agent-insurer.html"><span class="trail-img" data-trail-img="images/wh-route.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">4 · Where and how much</span><span class="trail-t">Where to build the agent insurer</span><span class="trail-d">London to underwrite and carry the risk, and what £10 million or £50 million buys in cover.</span></span></a><a class="trail-c" href="insuring-agents-the-whole-story.html"><span class="trail-img" data-trail-img="images/is-series.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">5 · The whole story</span><span class="trail-t">Insuring agents, the whole story</span><span class="trail-d">The four articles and the three vaults, in one place.</span></span></a><a class="trail-c" href="https://dev.vault.sgraph.ai/#sgit_public_read_d990a52efb9af32c8463e2962f3ca5ccf92b3b6e8ea788e55009073c29b4da29%3Aposrhzp3"><span class="trail-img" data-trail-img="images/is-lto-simulation.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">Vault · posrhzp3</span><span class="trail-t">Licence to Operate</span><span class="trail-d">One agent&#x27;s policy, simulated: every reply priced against a band, a ceiling, a pool and a premium.</span></span></a><a class="trail-c" href="https://dev.vault.sgraph.ai/#sgit_public_read_54a5d5d39863f124c6a304b20874e53436d77df42945ba15c74712a680b22991%3Am1wbrefr"><span class="trail-img" data-trail-img="images/is-calculator.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">Vault · m1wbrefr</span><span class="trail-t">The underwriting calculator</span><span class="trail-d">The series&#x27; formula as data, with a calculator and a script that reproduces every number.</span></span></a><a class="trail-c" href="https://dev.vault.sgraph.ai/#sgit_public_read_0f01d367b04f886f6c65038649b76504f4cd2ad06480d88a5e933a671e0db072%3A2wzct4k7"><span class="trail-img" data-trail-img="images/is-aiuc.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">Vault · 2wzct4k7</span><span class="trail-t">AIUC-1, as a graph you can cite</span><span class="trail-d">The standard as a graph, with a conformance layer that asks what would be insurable. Unofficial.</span></span></a></div></div>
+<div class="note"><b>What came next.</b> <a href="where-to-build-the-agent-insurer.html">Where to build the agent insurer</a> asks where such a company should be built, and what a raise of £10 million or £50 million buys in cover.</div>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Part of an agent's risk belongs to the vendor that sells it.</b> The model's answer and the guardrail that let something through are the vendor's product; the access granted and the data connected are the customer's.</li>
+<li><b>Cloud providers already split it.</b> AWS calls it security of the cloud and security in the cloud.</li>
+<li><b>Agent vendors' terms put most of it on the customer.</b> Two published contracts cap liability at a year's fees, indemnify IP claims, and leave outputs and safe use to the customer.</li>
+<li><b>The right shape already exists.</b> Microsoft covers copyright claims as long as the customer used the guardrails it built.</li>
+<li><b>Europe moves the line on 9 December 2026.</b> Software, AI systems included, becomes a product, with no contractual cap against an injured person.</li>
+<li><b>So each row gets a vendor's layer.</b> A share the vendor carries when its own conditions held.</li>
+<li><b>In the worked example, the vendor carries £1,816 of £6,720.</b> Mostly on the rows its product decides; the grant the customer gave stays the customer's.</li>
+<li><b>The formula is now a vault.</b> The inputs, a script that reproduces every number, and a calculator anyone can open.</li>
+</ul>
+<h2 id="two-parties">Two parties in every row</h2>
+<p>In <a href="a-payout-for-every-row.html">a payout for every row</a> I described an agent behaviour policy read as an insurance policy, each row with its own limit and premium, and in <a href="who-carries-the-risk.html">who carries the risk</a> who could carry it. Both articles treated the customer as the only party. That is not how it works when the agent is bought.</p>
+<p>Take the support agent from the worked example. If it corrupts customer records, the first question is who gave it write access to the CRM: that is the customer's decision, and the customer's row. If it tells a customer something wrong that the customer acts on, the answer came from the vendor's model, shaped by the vendor's guardrails. And if it leaks data through an output filter the vendor provides and the customer left switched on, part of that is the vendor's too. Every row has two parties in it, and I think the vendor should carry a share of the rows its product decides. In my memo the example was blunter: a vendor saying, if my agent attacks another company, I insure you up to this amount.</p>
+<h2 id="shared">The cloud settled this already</h2>
+<p>Cloud providers had the same question and answered it with a model everyone now knows. In AWS's words, "Security and Compliance is a shared responsibility between AWS and the customer", and "this differentiation of responsibility is commonly referred to as Security 'of' the Cloud versus Security 'in' the Cloud" (<a href="https://aws.amazon.com/compliance/shared-responsibility-model/">AWS</a>). AWS runs the hardware, software, networking and facilities; the customer configures what it builds on them.</p>
+<figure class="shot" data-shot="vl-shared.webp" data-dir="images/" data-alt="The cloud&#x27;s shared responsibility model, and the same split for an agent: of the agent, and in the agent." data-kind="diagram"><figcaption>The cloud's shared responsibility model, and the same split for an agent: of the agent, and in the agent.</figcaption></figure>
+<p>For an agent, the same split holds: the vendor is responsible for the agent itself, its model, guardrails, updates and security; the customer for what it does with it, the grant, the data, the controls around it and where it runs. The difference is where the line falls. In the cloud it runs between two lists of things. In an agent it runs through each row, and it moves with the controls, which is why I would like it written in the behaviour policy rather than in a diagram. It is the same thread as <a href="who-signs-for-this.html">who signs for this</a>: the parts somebody signs, and the gaps between them.</p>
+<h2 id="terms">What the contracts say today</h2>
+<p>I read two published contracts to see where the line falls now. Anthropic's commercial terms, effective 17 June 2025, limit liability to "Fees paid by Customer for the Services in the previous 12 months", exclude consequential damages, indemnify third-party intellectual property claims, and say "It is Customer's responsibility to evaluate whether Outputs are appropriate for Customer's use case, including where human review is appropriate" (<a href="https://www.anthropic.com/legal/commercial-terms">Anthropic</a>). Salesforce's main services agreement, updated 15 October 2026, caps each party's liability at the amount paid "IN THE TWELVE MONTHS PRECEDING THE FIRST INCIDENT OUT OF WHICH THE LIABILITY AROSE", and indemnifies intellectual property claims (<a href="https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/salesforce_MSA.pdf">Salesforce</a>); its AI acceptable use policy adds "Customer is responsible for determining if its use of these technologies is safe." We found no warranty, indemnity or insurance for what an Agentforce agent does.</p>
+<figure class="shot" data-shot="vl-terms.webp" data-dir="images/" data-alt="Two AI vendors&#x27; published terms beside the EU&#x27;s product liability directive and AI Act." data-kind="comparison"><figcaption>Two AI vendors' published terms beside the EU's product liability directive and AI Act.</figcaption></figure>
+<p>These are standard software terms, and they make sense for software that does what it is told. An agent decides some of what it does, and that is the part the terms leave with the customer. A year's fees is also small beside the limits in the worked example: a support agent priced at a few thousand pounds a year, against £80,000 of rows.</p>
+<h2 id="started">The vendors who have started</h2>
+<p>Some vendors already put money behind their products, and the conditions are the most useful part. Microsoft's commitment says "we will defend the customer and pay the amount of any adverse judgments or settlements", "as long as the customer used the guardrails and content filters we have built into our products" (<a href="https://blogs.microsoft.com/on-the-issues/2023/09/07/copilot-copyright-commitment-ai-legal-concerns/">Microsoft</a>, 7 September 2023). That is exactly the vendor's layer, for one row: the vendor carries the risk, on the condition that the customer kept the vendor's controls on. Google, Anthropic and OpenAI made similar commitments in 2023, and like Microsoft's they cover copyright claims.</p>
+<p>For what an agent does, the examples are about performance. Intercom offers "up to $1M of your money back" for its Fin agent, under stated conditions (<a href="https://intercom.help/fin4all/en/articles/11645601-what-is-the-fin-guarantee">Intercom</a>, 24 June 2025). Sierra and Zendesk charge for outcomes: at Zendesk "customers will only incur costs for issues that are resolved autonomously by AI" (<a href="https://www.zendesk.com/newsroom/articles/zendesk-outcome-based-pricing/">Zendesk</a>, 28 August 2024), which ties the price to the work, though it does not pay for a mistake. ElevenLabs is the one vendor we found with insurance backed by AIUC-1 for its agents, announced on 12 February 2026 (<a href="https://elevenlabs.io/blog/aiuc-announcement">ElevenLabs</a>); AIUC-1 has since certified Cursor, KPMG's aIQ Capture and Sierra, among others, and Munich Re offers vendors "performance warranties" that "enable you to indemnify your clients for their financial losses" (<a href="https://www.munichre.com/en/solutions/for-industry-clients/insure-ai.html">Munich Re</a>).</p>
+<h2 id="europe">Europe moves the line</h2>
+<p>The law is about to move part of this, at least in Europe. The new product liability directive, (EU) 2024/2853, says a product "includes electricity, digital manufacturing files, raw materials and software", and its recital adds that "A developer or producer of software, including AI system providers within the meaning of Regulation (EU) 2024/1689 ... should be treated as a manufacturer" (<a href="https://eur-lex.europa.eu/eli/dir/2024/2853/oj">EUR-Lex</a>). The maker cannot point to a defect that arose later when it comes from "software, including software updates or upgrades" or "a lack of software updates or upgrades necessary to maintain safety", "provided that it is within the manufacturer's control" (article 11), and "A product can also be found to be defective on account of its cybersecurity vulnerability" (recital 32). Article 15 is the one that meets the contracts above: liability "is not, in relation to the injured person, limited or excluded by a contractual provision or by national law." Member states must apply it by 9 December 2026, to products placed on the market after that date.</p>
+<p>It has limits worth stating. Only natural persons can claim under it, so a business customer's loss stays under its contract. But it sets a direction: the maker of software that keeps updating it, and keeps control of it, keeps responsibility for it. The AI Act already divides the work the same way: providers of high-risk systems must make them compliant (article 16), and deployers must use them "in accordance with the instructions for use" and "assign human oversight to natural persons who have the necessary competence, training and authority" (article 26) (<a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">EUR-Lex</a>). A deployer that makes "a substantial modification" becomes a provider itself (article 25). Those are the two parties of every row, in law.</p>
+<h2 id="layer">The vendor's layer</h2>
+<p>So here is the proposal, as one more step in <a href="a-payout-for-every-row.html#formula">the formula</a>: <b>each row of the behaviour policy carries a vendor's share, which the vendor pays when its own conditions held</b>. The vendor prices that layer into what it sells, and insures it if it likes; the customer's insurer prices the rest.</p>
+<p>In the worked example, I gave the three covered rows these shares:</p>
+<ul>
+<li><b>Customer records corrupted: 0%.</b> The agent could corrupt records because the customer gave it <code>crm:write</code>. The vendor's product did what it was allowed to do.</li>
+<li><b>Customer data leaked: 20%.</b> A leak through the vendor's own output filter, with the filter switched on, is partly the vendor's.</li>
+<li><b>A wrong answer acted on: 50%.</b> The answer is the vendor's product.</li>
+</ul>
+<p>With five enforced controls on a certified runtime, the premium is £6,720 for £80,000 of cover, and the vendor's layer is £1,816 of it: £816 on the leak row and £1,000 on the answer row. The customer's insurer prices £4,904. The vendor's condition is its guardrails and filters left on, the Microsoft condition: switch them off and the vendor carries nothing, and the customer's insurer carries every row. The shell row is excluded for both, because nobody named a limit for it.</p>
+<p>The shares are mine and illustrative; who carries what is the negotiation, and the point is that it becomes a negotiation about named rows, rather than a liability cap set against a year's fees.</p>
+<h2 id="vault">The formula, as a vault</h2>
+<p>The formula, its inputs and the worked example are now a vault, so they can be argued with in numbers rather than words.</p>
+<p>It is vault <code>m1wbrefr</code>, published with its read key so anyone can open it: <a href="https://dev.vault.sgraph.ai/#sgit_public_read_54a5d5d39863f124c6a304b20874e53436d77df42945ba15c74712a680b22991%3Am1wbrefr">open the calculator in the vault viewer</a>, or clone it with <code>sgit clone sgit_public_read_54a5d5d39863f124c6a304b20874e53436d77df42945ba15c74712a680b22991:m1wbrefr agent-underwriting</code> and run <code>python3 premium.py</code>.</p>
+<p>It holds <code>formula.md</code>, the seven steps in words; <code>policy.json</code>, every input, the four rows, the seven controls, the runtime factors, the vendor's share per row; <code>premium.py</code>, which reproduces every number in this series with Python's standard library; and a calculator. In the calculator you switch controls on and off, choose the runtime, change any row's limit or the vendor's share, and test a claim against a row with its conditions held or not. A control nothing enforces, such as a line in the prompt, can be ticked and moves nothing.</p>
+<h2 id="next">Where this leaves the series</h2>
+<p>Three articles in, the series has a definition, a market and a split. What I would like next is to take this to the people who would carry it:</p>
+<ol>
+<li><b>To vendors of agents:</b> which rows would you carry, at what share, and under which conditions?</li>
+<li><b>To insurers and managing agents:</b> would you price the customer's layer from these rows, and the vendor's layer as a separate book?</li>
+<li><b>To the people who write behaviour policies:</b> a field for the vendor's share and its conditions, beside each row.</li>
+</ol>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The shares and numbers are illustrative.</b> They are mine, chosen to show the shape; nobody has negotiated them.</li>
+<li><b>Two contracts are not the market.</b> Anthropic's and Salesforce's published terms were read; other vendors' terms differ, and enterprise contracts are often negotiated.</li>
+<li><b>This is not legal advice.</b> The directive's articles are quoted as written; how each member state applies them from December 2026 is open, and only natural persons can claim under it.</li>
+<li><b>"We found no" means what it says.</b> No Agentforce cover and no AIUC-1-backed insurance beyond ElevenLabs were found in public sources on 28 October 2026.</li>
+<li><b>The copyright commitments cover copyright.</b> They are cited for their shape, cover on a condition, not as cover for agent actions.</li>
+</ul>
+<p>If you sell an agent and would carry a share of its rows, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine on 28 October 2026, the first of this series, which asked for "the insurance that I also believe that the vendors have to start giving when they provide an agentic workflow", and the second, which imagined a provider insuring what its agent does; written by this site's agent in the voice of this site. The argument and the editorial responsibility are mine.</p>
+<p>Every outside source is linked where it is used. They were read on 28 October 2026 by research agents of this site, which fetched each page quoted. The EU texts were read through the EU Publications Office's copy of EUR-Lex. OpenAI's copyright commitment is described from press coverage of 6 November 2023, because its own page could not be fetched, and is not quoted. The research notes, with what could and could not be verified, are <code>admin/notes/2026-10-28__underwriting-abp/research-01.md</code> and <code>research-03.md</code> in this site's repository.</p>
+<p>The worked example and the vault: <code>premium.py</code> and <code>policy.json</code> in the vault, whose sources are also kept in this site's repository under <code>admin/notes/2026-10-28__underwriting-abp/vault-agent-underwriting/</code>; the numbers match <a href="a-payout-for-every-row.html">a payout for every row</a>, and the vendor's layer is new here. On this site: <a href="who-carries-the-risk.html">who carries the risk</a>, <a href="who-signs-for-this.html">who signs for this</a>.</p>
+<nav class="trail-end" aria-label="Continue the trail: Insuring agents"><div class="trail-end-h"><span class="trail-end-k">Continue the trail</span> Insuring agents</div><div class="trail-row"><a class="trail-c" href="a-payout-for-every-row.html"><span class="trail-img" data-trail-img="images/pr-rows.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">1 · The definition</span><span class="trail-t">A payout for every row</span></span></a><a class="trail-c" href="who-carries-the-risk.html"><span class="trail-img" data-trail-img="images/ck-chain.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">2 · The market</span><span class="trail-t">Who carries the risk</span></span></a><a class="trail-c here" href="the-vendors-layer.html"><span class="trail-here">you are here</span><span class="trail-img" data-trail-img="images/vl-split.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">3 · The split</span><span class="trail-t">The vendor&#x27;s layer</span></span></a><a class="trail-c next" href="where-to-build-the-agent-insurer.html"><span class="trail-here trail-next">next &rarr;</span><span class="trail-img" data-trail-img="images/wh-route.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">4 · Where and how much</span><span class="trail-t">Where to build the agent insurer</span></span></a><a class="trail-c" href="insuring-agents-the-whole-story.html"><span class="trail-img" data-trail-img="images/is-series.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">5 · The whole story</span><span class="trail-t">Insuring agents, the whole story</span></span></a><a class="trail-c" href="https://dev.vault.sgraph.ai/#sgit_public_read_d990a52efb9af32c8463e2962f3ca5ccf92b3b6e8ea788e55009073c29b4da29%3Aposrhzp3"><span class="trail-img" data-trail-img="images/is-lto-simulation.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">Vault · posrhzp3</span><span class="trail-t">Licence to Operate</span></span></a><a class="trail-c" href="https://dev.vault.sgraph.ai/#sgit_public_read_54a5d5d39863f124c6a304b20874e53436d77df42945ba15c74712a680b22991%3Am1wbrefr"><span class="trail-img" data-trail-img="images/is-calculator.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">Vault · m1wbrefr</span><span class="trail-t">The underwriting calculator</span></span></a><a class="trail-c" href="https://dev.vault.sgraph.ai/#sgit_public_read_0f01d367b04f886f6c65038649b76504f4cd2ad06480d88a5e933a671e0db072%3A2wzct4k7"><span class="trail-img" data-trail-img="images/is-aiuc.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">Vault · 2wzct4k7</span><span class="trail-t">AIUC-1, as a graph you can cite</span></span></a></div></nav>
+<sg-meter view="page" kind="article" date="2026-10-28" topics="agents-and-policy startups-and-strategy" title="The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#the-vendors-layer">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="where-to-build-the-agent-insurer.html">Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover</a> <span class="dim">Underwrite and carry the risk in London, sell into the US and EU, raise in one go: £10 million or £50 million, and the cover each buys.</span></li><li><a href="a-payout-for-every-row.html">A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered</a> <span class="dim">Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.</span></li><li><a href="who-carries-the-risk.html">Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital</a> <span class="dim">Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.</span></li><li><a href="who-signs-for-this.html">Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see</a> <span class="dim">Map every layer from the hardware to the business contract by who signs it; the lines nobody signs are the blind spots worth paying to see.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="agents-have-an-identity-now.html">Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add</a> <span class="dim">A key pair made in every agent session, published with its role in a repository, so any agent can seal a secret to it; what the clouds could add.</span></li><li><a href="insuring-agents-the-whole-story.html">Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital</a> <span class="dim">The five articles on insuring agents in one place, and the three vaults where the ideas run: the simulation, the calculator and AIUC-1.</span></li><li><a href="where-to-build-the-agent-insurer.html">Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover</a> <span class="dim">Underwrite and carry the risk in London, sell into the US and EU, raise in one go: £10 million or £50 million, and the cover each buys.</span></li><li><a href="who-carries-the-risk.html">Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital</a> <span class="dim">Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.</span></li><li><a href="a-payout-for-every-row.html">A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered</a> <span class="dim">Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 318 &middot; <a href="../for/make.html#r=318">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/the-vendors-layer.jpg" download>the-vendors-layer.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="aseries-all" id="series">
+ <h2>Insuring agents</h2>
+ <p class="dim">Five articles on underwriting agent behaviour policies: what would be insured, who could carry it, the vendor&#x27;s share, where to build the insurer, and the whole story with its vaults. Every article tagged <span class="chip">insuring-agents</span> joins this list, in the order it was published.</p>
+ <ol><li><span class="aseries-n">1</span> <a href="a-payout-for-every-row.html">A payout for every row</a><br><span class="dim">RiskMandate needs somebody to underwrite agent behaviour policies, and before asking who can, I would like to define what they would be underwriting.</span></li><li><span class="aseries-n">2</span> <a href="who-carries-the-risk.html">Who carries the risk</a><br><span class="dim">In the last article I described insuring an agent row by row, from its behaviour policy.</span></li><li class="here"><span class="aseries-n">3</span> <b>The vendor&#x27;s layer</b> <span class="dim">(you are here)</span><br><span class="dim">The first two articles of this series described insuring an agent row by row from its behaviour policy, and who could carry that risk.</span></li><li><span class="aseries-n">4</span> <a href="where-to-build-the-agent-insurer.html">Where to build the agent insurer</a><br><span class="dim">The last three articles described insuring an agent row by row from its behaviour policy, who could carry the risk, and the vendor&#x27;s share of it.</span></li><li><span class="aseries-n">5</span> <a href="insuring-agents-the-whole-story.html">Insuring agents, the whole story</a><br><span class="dim">Over one day I wrote four articles on a single question, who could underwrite an agent behaviour policy today, and this one tells the whole story and points…</span></li></ol>
+</section>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-vendors-layer.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

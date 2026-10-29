@@ -10,7 +10,7 @@ tags: open-source, security, ai-security-review, vulnerabilities, curl, sovereig
 status: published
 ---
 
-!shot ox-balance.webp | images/ | Open source against proprietary: the balance that just moved. Open source had the source in view and paid for few reviews; proprietary had the budget and the cover of being hidden. Cheap, deep, model-driven security review changes one side of that balance far more than the other. | comparison
+!shot ox-balance.webp | images/ | Open source against proprietary: the balance that moved when model-driven security review became cheap and deep. | comparison
 
 ## In short {#in-short}
 
@@ -40,7 +40,7 @@ The numbers are already large. Anthropic's update on its Project Glasswing in Ma
 
 ## What it looks like from inside one project {#curl}
 
-!shot ox-curl.webp | images/ | One project, one year of machine eyeballs: curl, from its maintainer's own posts. A bug bounty that found 87 vulnerabilities; a year of reports that were mostly noise; a first wave of AI-assisted reports that triggered hundreds of fixes; the end of the bounty; a frontier scan that found one bug; and, in October, deeper tools finding more. | comparison
+!shot ox-curl.webp | images/ | One project, one year of machine eyeballs: curl, from its maintainer's own posts. | comparison
 
 I went looking for something I thought I had seen, Chainguard publishing the projects where its AI hunting found nothing, with curl among them. I could not find it, from Chainguard or anyone else. What I found tells the story better, in the words of curl's maintainer, Daniel Stenberg.
 
@@ -62,7 +62,7 @@ What will not go away is security research by people motivated to find what the 
 
 ## Three forces, one place {#forces}
 
-!shot ox-forces.webp | images/ | Three forces meeting at the least code in production: open source becoming very secure, open source becoming required for sovereignty, and open source with commercial models that pay for maintenance. Where they meet is the customer running exactly the code they need, maintained by the people who know it best. | architecture
+!shot ox-forces.webp | images/ | Three forces meeting at the least code in production: secure, sovereign and commercially maintained open source. | architecture
 
 Put this next to two things I have argued before, and they line up.
 

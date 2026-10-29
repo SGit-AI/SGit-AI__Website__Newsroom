@@ -1,0 +1,38 @@
+{
+ "slug": "the-legal-ai-services-map",
+ "teaser": "44 legal companies scored on who does the work, who stands behind it, and whether an agent can hire them.",
+ "topics": ["startups-and-strategy", "news-and-evidence"],
+ "core_idea": "A map of companies selling legal work done with AI, built with a method fixed before scoring and a formula anyone can re-run, from public evidence only, with every score's URL and quote and the page captures in a public vault. Automation, accountability and agentic readiness are scored from fourteen indicators. Garfield.Law and Crosby combine AI doing the work with a lawyer standing behind it; Soxton, LegalZoom and Rocket Lawyer can be used by an agent; none has both, which is where the newsroom's proposal of legal on demand sits as a target.",
+ "nodes": [
+  {"id": "question", "label": "Who sells legal work done with AI", "kind": "question", "summary": "And can an agent hire them?"},
+  {"id": "method", "label": "A method fixed before scoring", "kind": "method", "summary": "Fourteen indicators, public evidence."},
+  {"id": "scores", "label": "Automation, accountability, agentic readiness", "kind": "concept", "summary": "Three scores out of 100."},
+  {"id": "signed", "label": "AI does the work, a lawyer signs", "kind": "example", "summary": "Garfield.Law and Crosby."},
+  {"id": "agentic", "label": "An agent can hire them", "kind": "example", "summary": "Soxton, LegalZoom, Rocket Lawyer."},
+  {"id": "regulation", "label": "Different rules in each country", "kind": "concept", "summary": "SRA ahead; US unlicensed-practice rules."},
+  {"id": "gap", "label": "Nobody has both", "kind": "claim", "summary": "The gap on the map."},
+  {"id": "north", "label": "Legal on demand", "kind": "claim", "summary": "Our proposal, a target, not ranked."},
+  {"id": "vault", "label": "The evidence vault", "kind": "artefact", "summary": "Captures, hashes, scores."}
+ ],
+ "edges": [
+  {"from": "method", "to": "scores", "rel": "produces"},
+  {"from": "scores", "to": "signed", "rel": "produces"},
+  {"from": "scores", "to": "agentic", "rel": "produces"},
+  {"from": "signed", "to": "gap", "rel": "contrasts"},
+  {"from": "agentic", "to": "gap", "rel": "contrasts"},
+  {"from": "regulation", "to": "signed", "rel": "depends-on"},
+  {"from": "north", "to": "gap", "rel": "answers"},
+  {"from": "vault", "to": "method", "rel": "depends-on"},
+  {"from": "question", "to": "scores", "rel": "answers"}
+ ],
+ "links": {
+  "articles": ["legal-on-demand-for-startups"],
+  "pages": [],
+  "sites": ["https://www.sra.org.uk/sra/news/press/garfield-ai-authorised/", "https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-finalizes-order-donotpay-prohibits-deceptive-ai-lawyer-claims-imposes-monetary-relief-requires"]
+ },
+ "quotes": [
+  {"text": "Nobody combines a regulated signature with an agent interface.", "why": "Walking back from the North Star."},
+  {"text": "No evidence means the lowest value, never a guess.", "why": "Why a map."},
+  {"text": "Prices per task are rare.", "why": "Walking back from the North Star."}
+ ]
+}

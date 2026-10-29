@@ -10,11 +10,11 @@
 
 # A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/a-browser-for-one.md) · [newsroom v0.12.111](https://newsroom.sgit.ai/admin/versions.html) · browsersioswebkitnewsroomexplorer-codingvillagersbriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.2.0, 3 versions](versions/a-browser-for-one.md) · [newsroom v0.12.111](https://newsroom.sgit.ai/admin/versions.html) · browsersioswebkitnewsroomexplorer-codingvillagersbriefarticle
 
 ***Abstract:** The browsers on my iPhone have frustrated me to the point where I would like to build one. Not a general browser: an app that only opens my newsroom, where I left it, knows what I have read, opens my vault, keeps my tabs, works offline, never reloads a page on its own, lets me build my own reading workflows, and receives what my agents send me. A year ago I would have put up with it. Now I can do something about it, and that changes how much bad interface I am willing to tolerate. This is the brief. The facts decide most of it. In the UK an iPhone app that browses the web must use WebKit; Firefox and Chrome on iOS are WebKit too. Passkeys inside an app and push notifications both need Apple's paid developer membership, and the app has to be built on a Mac, so not by a cloud session like the one that writes this site. The one real unknown is whether the passkey extension the vault depends on works inside an app's web view, so that is the first thing to test. And there is a second point, which matters more than the app. Once it works, it will be part of my day, and I will not want to maintain it. Not because I cannot; because it is not my focus. Being able to compile a Linux kernel does not mean I want to. Even power users will pay someone to keep the thing they built working, and this app is the first example I will live with.*
 
-A browser for one, sketched on an iPhone. It opens on the newsroom where it was left, with tabs in a strip that hides as you read, read and unread marked, the vault open, an inbox of what the agents sent, and reading workflows as runs of tabs. Underneath: a native Swift shell around WebKit, a small bridge to the page, an offline cache, and a push sender. The first step is a test: do passkeys with the PRF extension work inside the app.
+A browser for one, sketched on an iPhone: tabs, the vault, an inbox from the agents, and reading workflows.
 
 ## In short
 

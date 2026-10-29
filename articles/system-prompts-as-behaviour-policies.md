@@ -10,11 +10,11 @@
 
 # System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.0.0](versions/system-prompts-as-behaviour-policies.md) · [newsroom v0.12.45](https://newsroom.sgit.ai/admin/versions.html) · system-promptsagent-behaviour-policyclaudechatgptontologytaxonomypolicy-as-codejsonguardrailsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/system-prompts-as-behaviour-policies.md) · [newsroom v0.12.45](https://newsroom.sgit.ai/admin/versions.html) · system-promptsagent-behaviour-policyclaudechatgptontologytaxonomypolicy-as-codejsonguardrailsarticle
 
 ***Abstract:** I have said before that a system prompt is a light behaviour policy. So I tested it. The hypothesis: can an existing system prompt be represented as an agent behaviour policy, and if so, what should that look like as a JSON file that models can read and harnesses can enforce, with stronger controls in more places than the prompt itself? Anthropic publishes Claude's system prompts, so the test used the real one: Claude Haiku 5.5's, published on 7 October 2026. It holds 4,255 words and 82 rules. Sorted by kind, 36 of them, about tool use, conversation state, referrals, knowledge and input trust, could be held by the harness rather than by the model's good behaviour; 21 harm restrictions could be held in part by classifiers outside the model, which Anthropic already uses; and 25, about judgement and presentation, stay with the model. For contrast, a leaked ChatGPT prompt, unverified, is the opposite shape: about six words in seven sit under its tool sections. Between them they are the two halves of a behaviour policy, the rules and the reach. What neither has is a mandate, a statement of who may override whom that the harness can check, or a record of what keeps each rule. So I propose an ontology and a taxonomy for it, and a JSON shape. And I looked for anyone running a written agent behaviour policy for real: the formats are arriving, the published policies are not.*
 
-Claude Haiku 5.5's published system prompt as policy rows. 4,255 words, 181 sentences, 87 that read as rules and 82 once explanations are set aside, sorted into eight kinds, with where each kind could be kept other than in the model's good behaviour: 36 rules by the harness, 21 in part by classifiers, 25 by the model alone.
+Claude Haiku 5.5's published system prompt as policy rows, sorted into eight kinds by where each could be kept.
 
 ## In short
 
@@ -76,7 +76,7 @@ OpenAI has the best public answer to the authority question, in the Model Spec r
 
 ## A proposed ontology
 
-A system prompt as a policy file. A policy per layer, the vendor's, the deployer's and the user's, each with a mandate, a reach, its inputs and how far each is trusted, the state that changes the rules mid-conversation, and its rules: each with a kind, a trigger, a decision, a reason, an authority, a barrier, what enforces it, tests and the source text it came from.
+A system prompt as a policy file: a policy per layer, each with its mandate, inputs, state and rules.
 
 So here is the shape I propose, building on the columns this site's policies already use: mandate, reach, gap and barriers, as in [Footprint and blast radius](footprint-and-blast-radius.md).
 

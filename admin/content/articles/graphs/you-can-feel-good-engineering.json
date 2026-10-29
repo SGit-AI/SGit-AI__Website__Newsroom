@@ -1,0 +1,35 @@
+{
+ "slug": "you-can-feel-good-engineering",
+ "teaser": "Good engineering has a presence you can feel; agent teams make the gaps show, and pushing the limits shows where to fix.",
+ "topics": ["site-and-engineering", "agents-and-policy"],
+ "core_idea": "Good engineering has a presence: speed, quality, effectiveness, and bugs where you expect them. Many agent teams behave like many human teams, slowed by engineering gaps, but agents absorb the overhead quietly, so waste hides until you push the limits. The PHP newsroom pushed sgit to 228,000-file vaults through three releases in five days, and split one repository whose every release touched about 1,936 files into six where a change touches one to three; this site still touches about 1,588. Scheduled agents hold the quality level, and explorer coding gives way to villager refactoring when innovation slows.",
+ "nodes": [
+  {"id": "feel", "label": "The feel of good engineering", "kind": "concept", "summary": "Speed, quality, where bugs occur."},
+  {"id": "teams", "label": "Agent teams like human teams", "kind": "claim", "summary": "Engineering gaps slow them down."},
+  {"id": "hidden", "label": "The hidden overhead", "kind": "claim", "summary": "Agents absorb it; tokens hide it."},
+  {"id": "stamp", "label": "Every release touches every page", "kind": "example", "summary": "1,936 and 1,588 files."},
+  {"id": "sgit", "label": "sgit under load", "kind": "example", "summary": "Three releases in five days."},
+  {"id": "split", "label": "One repository into six", "kind": "example", "summary": "One to three files a change."},
+  {"id": "velocity", "label": "Constant velocity", "kind": "method", "summary": "Scheduled agents hold the level."},
+  {"id": "villager", "label": "Explorer, then villager", "kind": "method", "summary": "Refactor when innovation slows."}
+ ],
+ "edges": [
+  {"from": "teams", "to": "feel", "rel": "extends"},
+  {"from": "hidden", "to": "teams", "rel": "depends-on"},
+  {"from": "stamp", "to": "hidden", "rel": "example-of"},
+  {"from": "sgit", "to": "feel", "rel": "example-of"},
+  {"from": "split", "to": "stamp", "rel": "answers"},
+  {"from": "velocity", "to": "feel", "rel": "produces"},
+  {"from": "villager", "to": "split", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["explorer-coding", "a-team-frozen-in-time", "what-an-agent-is", "the-code-you-do-not-ship", "the-sidecar-repository"],
+  "pages": [],
+  "sites": ["https://team.php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__proposal__one-repository-into-six/", "https://cli.sgit.ai/docs/update-to-0-26-0.html"]
+ },
+ "quotes": [
+  {"text": "Good engineering has a kind of presence, a weight, a smoothness.", "why": "The feel of it."},
+  {"text": "None of these is a bug in an agent. Each is an engineering gap", "why": "Many agent teams behave like many human teams."},
+  {"text": "It is what happens when nobody is looking at the side effects", "why": "The overhead you don't see."}
+ ]
+}

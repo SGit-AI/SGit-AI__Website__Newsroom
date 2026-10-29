@@ -10,11 +10,11 @@
 
 # I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.2.0, 3 versions](versions/i-just-want-to-buy-the-article.md) · [newsroom v0.12.92](https://newsroom.sgit.ai/admin/versions.html) · newspublishingbusiness-modelsmicropaymentspaywallssubscriptionshbrreading-metergraphslicensingarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.3.0, 4 versions](versions/i-just-want-to-buy-the-article.md) · [newsroom v0.12.92](https://newsroom.sgit.ai/admin/versions.html) · newspublishingbusiness-modelsmicropaymentspaywallssubscriptionshbrreading-metergraphslicensingarticle
 
 ***Abstract:** I wanted to answer an article in Harvard Business Review. I read about it on LinkedIn, clicked the link in the comments, and was told that "If you only read HBR on Linkedin, you're only getting part of the story", then offered three subscriptions, from £11 a month to £105 a year. I do not want a subscription. I want to pay for the article, and I would happily pay HBR a fair price for it, because it is worth paying for. The arithmetic says what fair is: HBR.org's own feed lists 45 articles in September 2026, so a month of its digital plan works out at about 24p an article if I read them all, or 55p if I read twenty. What it asks of someone who wants one article is £11, or $11.95 for the article as a reprint, priced as a document for a team. That gap is why people like me do not pay. And the article is the least of what HBR could sell me. The graph of its argument, the vocabulary behind it, the evidence it rests on, a briefing for my board, a licence to quote it in my own work with a share of what my readers pay, and a check that I used it correctly: each of these is a billable unit, and most of them run today on this newsroom, with the reader's data kept by the reader and the code open for any publisher to use.*
 
-What it costs to read one HBR article, and what it could cost: £11 for a month of the digital plan, £105 billed yearly, against about 24p an article if £11 covers the 45 articles HBR.org published in September 2026, or 55p if I read twenty; and 10p for a new article on this newsroom. The reprint, $11.95, is noted separately.
+What it costs to read one HBR article, and what it could cost, against 10p for a new article on this newsroom.
 
 ## In short
 
@@ -32,11 +32,11 @@ On Saturday I saw Olivier Laplace's post on LinkedIn about [Turn Vibe-Coded Prot
 
 So I clicked the link in the comments. This is what I got.
 
-What a LinkedIn reader sees on arriving at the article: "If you only read HBR on Linkedin, you're only getting part of the story. Subscribe for unlimited access to every can't-miss core article on HBR.org." Screenshot of hbr.org, 17 October 2026.
+What a LinkedIn reader sees on arriving at the HBR article. Screenshot of hbr.org, 17 October 2026.
 
 "If you only read HBR on Linkedin, you're only getting part of the story." Then "Subscribe now", and three plans.
 
-HBR's subscription offer to a UK reader: Digital at £8.75 a month billed yearly or £11 monthly; Digital & Print at £10 or £13; Premium at £15 or £18. Screenshot of hbr.org, 17 October 2026.
+HBR's subscription offer to a UK reader: three plans, billed yearly or monthly. Screenshot of hbr.org, 17 October 2026.
 
 Digital at £8.75 a month billed yearly, or £11 monthly. Digital & Print at £10, or £13. Premium at £15, or £18. Every one of them is a subscription. None of them is the article.
 
@@ -54,17 +54,17 @@ So the price I would expect to pay for one article, read once, is somewhere betw
 
 ## How it works here
 
-The card at the foot of every article on newsroom.sgit.ai: what the page cost, the share read, the reading list, three ratings that set the price and the reader's picks, and "Something wrong with this page? Don't charge me".
+The card at the foot of every article on newsroom.sgit.ai: the page's cost, the share read, three ratings, a refund.
 
 This newsroom has run the other way since 11 October, with real payments. Every page has a price of a few pence, 10p for a new article and 5p for an older one, and you pay for the share of it you read, after you read it, from a balance kept in your own browser. You never hit a wall: the balance can go below zero and nothing is blocked. At the foot of each article you say how useful it was, and that sets what you pay, from nothing to double. If something was wrong with the page, you say so and you are not charged. It is all on [the page for publishers](https://newsroom.sgit.ai/publishers/index.html), and the argument is in [Pay after you read](pay-after-you-read.md) and [Paying after the value](paying-after-the-value.md).
 
-The reading account: every page has a price of a few pence and you pay for the share you read; your balance, history and receipts are kept in your browser; credit can go below zero and no page is blocked; top up £5.
+The reading account: a price of a few pence a page, a balance kept in your browser, and a top-up of £5.
 
 That is what I wanted on HBR. Read the article, pay for what I read, and say what I thought of it.
 
 ## The article is the least of what they could sell me
 
-Ten things a reader like me would buy from one article, each a billable unit: the article as read, my reading record, my vault, personas, the argument as a graph, the ontology and taxonomy, the evidence, other versions, a licence to quote, and a check of my use. Eight run on newsroom.sgit.ai today; two are proposed.
+Ten things a reader like me would buy from one article, each a billable unit: eight run today, two are proposed.
 
 Paying for one article is only the start. Think about who arrives at an HBR article from LinkedIn: very often, someone like me, an executive who wants to use it at work, quote it, follow it up, and take its advice back to a team. Everything that person needs next is something HBR could sell, and each is a billable unit.
 

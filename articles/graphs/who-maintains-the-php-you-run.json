@@ -1,0 +1,252 @@
+{
+  "slug": "who-maintains-the-php-you-run",
+  "teaser": "Versions signed off by their maintainers, buyers who require it, and money that flows down the chain, scaled by Gen AI.",
+  "topics": [
+    "startups-and-strategy",
+    "news-and-evidence"
+  ],
+  "core_idea": "The open source maintenance market fails both ways: organisations running PHP cannot buy maintenance of what they run, and PHP's own experts have no product to sell, so the security team's free fixes were resold within a day with no stated share flowing back; the OpenJS revenue-sharing model shows another way, and seven services, starting with bringing switched-off sites back, should exist now.",
+  "nodes": [
+    {
+      "id": "questions",
+      "label": "Two questions",
+      "kind": "question",
+      "summary": "Does it matter, and who pays to maintain it?"
+    },
+    {
+      "id": "both",
+      "label": "A market failing both ways",
+      "kind": "claim",
+      "summary": "No maintenance to buy or to sell."
+    },
+    {
+      "id": "sponsor",
+      "label": "Sponsorship tiers",
+      "kind": "example",
+      "summary": "Logos and an advisory seat, from $12,000."
+    },
+    {
+      "id": "free",
+      "label": "The fix written free",
+      "kind": "example",
+      "summary": "Source backports for 7.4, 8.0, 8.1."
+    },
+    {
+      "id": "resold",
+      "label": "Resold within a day",
+      "kind": "example",
+      "summary": "Zend, Ubuntu Pro, TuxCare, HeroDevs."
+    },
+    {
+      "id": "openjs",
+      "label": "The best that exists today",
+      "kind": "example",
+      "summary": "15% revenue share since 2024."
+    },
+    {
+      "id": "experts",
+      "label": "The experts",
+      "kind": "claim",
+      "summary": "No workflow to hire them for what you run."
+    },
+    {
+      "id": "services",
+      "label": "Seven services",
+      "kind": "method",
+      "summary": "Bring it back to the endorsed partner."
+    },
+    {
+      "id": "remove",
+      "label": "Remove what is not used",
+      "kind": "method",
+      "summary": "Why is that code there at all?"
+    },
+    {
+      "id": "register",
+      "label": "The dependency register",
+      "kind": "method",
+      "summary": "Dependency, usage, maintainability."
+    },
+    {
+      "id": "regulation",
+      "label": "Towards regulation",
+      "kind": "method",
+      "summary": "Procurement line items, the CRA."
+    },
+    {
+      "id": "beyond",
+      "label": "Not only PHP",
+      "kind": "concept",
+      "summary": "Node, Python and the rest."
+    },
+    {
+      "id": "signed",
+      "label": "The signed-off version",
+      "kind": "method",
+      "summary": "Maintainers sign the build they support; buyers require it."
+    },
+    {
+      "id": "planners",
+      "label": "The town planners",
+      "kind": "concept",
+      "summary": "Paid to read, maintain and sign off; insurance and licence to operate."
+    },
+    {
+      "id": "genai",
+      "label": "Gen AI scales the work",
+      "kind": "claim",
+      "summary": "Understanding and support, not writing the code."
+    },
+    {
+      "id": "case",
+      "label": "Smaller maintained versions",
+      "kind": "claim",
+      "summary": "A direct line from users to maintainers."
+    },
+    {
+      "id": "selling",
+      "label": "Map, engineer, maintain",
+      "kind": "method",
+      "summary": "RiskMandate's options, priced by criticality."
+    }
+  ],
+  "edges": [
+    {
+      "from": "questions",
+      "to": "both",
+      "rel": "leads-to"
+    },
+    {
+      "from": "sponsor",
+      "to": "both",
+      "rel": "example-of"
+    },
+    {
+      "from": "free",
+      "to": "resold",
+      "rel": "leads-to"
+    },
+    {
+      "from": "resold",
+      "to": "both",
+      "rel": "example-of"
+    },
+    {
+      "from": "openjs",
+      "to": "both",
+      "rel": "answers"
+    },
+    {
+      "from": "experts",
+      "to": "services",
+      "rel": "leads-to"
+    },
+    {
+      "from": "remove",
+      "to": "services",
+      "rel": "example-of"
+    },
+    {
+      "from": "register",
+      "to": "services",
+      "rel": "example-of"
+    },
+    {
+      "from": "services",
+      "to": "regulation",
+      "rel": "leads-to"
+    },
+    {
+      "from": "beyond",
+      "to": "both",
+      "rel": "extends"
+    },
+    {
+      "from": "case",
+      "to": "experts",
+      "rel": "leads-to"
+    },
+    {
+      "from": "selling",
+      "to": "services",
+      "rel": "answers"
+    },
+    {
+      "from": "signed",
+      "to": "both",
+      "rel": "answers"
+    },
+    {
+      "from": "genai",
+      "to": "signed",
+      "rel": "depends-on"
+    },
+    {
+      "from": "planners",
+      "to": "signed",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "explorer-coding",
+      "the-maintenance-deficit-with-evidence",
+      "application-behaviour-policies",
+      "the-code-you-do-not-ship",
+      "the-eyeballs-get-cheap"
+    ],
+    "pages": [],
+    "sites": [
+      "https://open-source.sgit.ai/views/open-core.html",
+      "https://riskmandate.ai",
+      "https://thephp.foundation/sponsor/",
+      "https://newsroom.sgit.ai/articles/open-source-is-not-free.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The money is not missing. The market is failing on both sides.",
+      "why": "A market failing both ways."
+    },
+    {
+      "text": "The cheapest patch is the code that is not there.",
+      "why": "Remove what is not used."
+    },
+    {
+      "text": "The patches were written by a small team, mostly funded by donations, and resold.",
+      "why": "What happened to the old versions."
+    }
+  ],
+  "figures": [
+    {
+      "file": "mk-both-ways.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mk-both-ways.webp",
+      "caption": "A market failing both ways: those who run open source, those in the middle, those who know the code, and a missing step.",
+      "kind": "concept"
+    },
+    {
+      "file": "mk-signed-chain.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mk-signed-chain.webp",
+      "caption": "The signature chain that makes the money flow: signed-off versions go up to maintainers, money comes down.",
+      "kind": "concept"
+    },
+    {
+      "file": "mk-vendors.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mk-vendors.webp",
+      "caption": "Who sold the fix for old PHP, and what flows back to the PHP Foundation, from the PHP security team to Freexian.",
+      "kind": "comparison"
+    },
+    {
+      "file": "mk-services.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mk-services.webp",
+      "caption": "The services that should exist now, from bringing it back to the endorsed partner, and the foundation's share.",
+      "kind": "comparison"
+    },
+    {
+      "file": "mk-options.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mk-options.webp",
+      "caption": "Ways to make money selling open source software, as RiskMandate is mapping them: from paid mapping to maintenance.",
+      "kind": "concept"
+    }
+  ]
+}

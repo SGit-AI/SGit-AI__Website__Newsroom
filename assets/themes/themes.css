@@ -257,6 +257,19 @@ main figure.shot.shot--small img{max-width:42%;margin:0 auto}
 main figure.shot.shot--narrow img{max-width:62%;margin:0 auto}
 main figure.shot.shot--medium img{max-width:78%;margin:0 auto}
 @media (max-width:720px){main figure.shot.shot--narrow img,main figure.shot.shot--medium img{max-width:100%}main figure.shot.shot--small img{max-width:80%}}
+/* A figure beside the text ("!shot … | aside"): floats to the right at 38% of the column with a smaller caption, and the
+   text runs beside it; the next section heading starts below it. Full width, in the flow, on a phone (v0.13.69). */
+main figure.shot[data-kind="aside"]{float:right;width:38%;max-width:38%;margin:.3rem 0 1rem 1.6rem}
+main figure.shot[data-kind="aside"] img{max-width:100%;width:100%}
+main figure.shot[data-kind="aside"] figcaption{font-size:.82em}
+main figure.shot[data-kind="aside"] ~ h2{clear:both}
+main figure.shot[data-kind="aside"] + h2{clear:none;margin-top:.2rem}
+main figure.shot[data-kind="aside"] ~ :is(blockquote,pre,.note,.callout,ul,ol){display:flow-root}
+/* A wider figure beside the text ("!shot … | medium | aside"): half the column, for a wide crop (v0.13.95). A full-width
+   figure after a figure beside the text starts below it. */
+@media (min-width:721px){main figure.shot.shot--medium[data-kind="aside"]{width:50%;max-width:50%}}
+main figure.shot[data-kind="aside"] ~ figure.shot:not([data-kind="aside"]){clear:both}
+@media (max-width:720px){main figure.shot[data-kind="aside"]{float:none;width:auto;max-width:100%;margin:1rem 0}}
 
 /* Who is speaking, on every article's byline (v0.12.109). An agent writing in its own voice links to its page under
    newsroom.sgit.ai/about/newsroom-*: it gets a small agent mark and the word "agent". Dinis's byline links to his
@@ -277,3 +290,23 @@ main section.aseries-all ol{list-style:none;padding:0;margin:.6rem 0 0}
 main section.aseries-all li{padding:.45rem 0;border-top:1px solid var(--line);overflow-wrap:anywhere}
 main section.aseries-all li.here{border-left:3px solid var(--accent);padding-left:.6rem}
 main section.aseries-all .aseries-n{display:inline-block;min-width:1.6em;font-weight:700;color:var(--accent-dk)}
+
+/* Bylines carry their tag chips with no whitespace between them, so a line of chips had no place to wrap and pushed
+   57 article pages past a phone's width. As a wrapping flex row, the byline breaks between items at any width. */
+p:has(> .chip){display:flex;flex-wrap:wrap;align-items:center;column-gap:.3em;row-gap:.25rem}
+p:has(> .chip) > .chip{margin-right:0}
+
+/* A trail of six cards: two rows of three, not four and two (v0.13.96). */
+@media (min-width:861px){.trail-row:has(> :nth-child(6):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* peer review: the line under an article's byline, the credit on its version pages (admin/build/reviews.py) */
+main p.rvstatus{font-size:.86rem;line-height:1.5;margin:1.6rem 0 .9rem;padding:.45rem .7rem;border:1px solid var(--line);border-left:3px solid var(--line2);border-radius:6px;background:var(--panel2);color:var(--dim)}
+main p.rvstatus b{color:var(--fg)}
+main p.rvstatus .rv-k{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;margin-right:.45rem;color:var(--dim)}
+main p.rvstatus.rv-both,main p.rvstatus.rv-people{border-left-color:var(--accent)}
+main p.rvstatus.rv-agents{border-left-color:var(--accent-dk)}
+main p.rvstatus.rv-open{border-left-color:#b45309}
+main p.rvstatus.rv-stale{border-left-color:#a16207}
+main .rvcredit{color:var(--dim);font-size:.9em}
+main p.rvcredit{padding:.45rem .7rem;border-left:3px solid var(--accent);background:var(--panel2);border-radius:4px;color:var(--fg)}
+/* long inline code (a read key, a command) wraps instead of widening the page on a phone */
+main p code,main li code{overflow-wrap:anywhere}
