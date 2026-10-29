@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback, SGit Newsroom</title>
+<meta name="description" content="For a long time we have said that an agent's rules need a secure harness that sits outside the agent's own environment, outside RiskMandate's and outside the hook. We looked for one and did not find it, so I sat down with a few Claude agents and we built it, and it is now released, at sharness.ai, with sharness-ai 0.2.0 on PyPI. SHarness is what our Agent Behaviour Policies become when they are executed rather than read. An Agent Behaviour Policy describes what an agent is mandated to do, what it can actually reach, the gap between the two, and what stands in the way of each capability. A Process Behaviour Policy applies the same model to every process the agent starts: what it may read, write, run, connect to and spend, written as a small policy, hashed to one name the person supplies from outside, and enforced by something the process does not include, the Linux kernel or a small separate service. A tricked agent cannot widen it, because the kernel was told before the process started. That turns Settings and Expectations into Boundaries, which is the only kind of control an insurer can price, and it puts the permission prompt last: yes to what the policy allows, silence for what it refuses, and a question only for what it cannot hold. The design is a launcher and five doors, files, network, keys, shell and model, each a small service with its own user and its own certificate, and the same policy can be written for bubblewrap, Docker, Kubernetes or Claude Code's sandbox, with the list of what each cannot hold. Today the kernel locks run, two doors run as early versions, and a real Linux kernel boots in a browser tab and refuses what the policy refuses; the launcher that binds the agent itself is still the design. It is open source, and what I would most like now is feedback.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/introducing-sharness.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/introducing-sharness.html">
+<meta property="og:title" content="SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback, SGit Newsroom">
+<meta property="og:description" content="For a long time we have said that an agent's rules need a secure harness that sits outside the agent's own environment, outside RiskMandate's and outside the hook. We looked for one and did not find it, so I sat down with a few Claude agents and we built it, and it is now released, at sharness.ai, with sharness-ai 0.2.0 on PyPI. SHarness is what our Agent Behaviour Policies become when they are executed rather than read. An Agent Behaviour Policy describes what an agent is mandated to do, what it can actually reach, the gap between the two, and what stands in the way of each capability. A Process Behaviour Policy applies the same model to every process the agent starts: what it may read, write, run, connect to and spend, written as a small policy, hashed to one name the person supplies from outside, and enforced by something the process does not include, the Linux kernel or a small separate service. A tricked agent cannot widen it, because the kernel was told before the process started. That turns Settings and Expectations into Boundaries, which is the only kind of control an insurer can price, and it puts the permission prompt last: yes to what the policy allows, silence for what it refuses, and a question only for what it cannot hold. The design is a launcher and five doors, files, network, keys, shell and model, each a small service with its own user and its own certificate, and the same policy can be written for bubblewrap, Docker, Kubernetes or Claude Code's sandbox, with the list of what each cannot hold. Today the kernel locks run, two doors run as early versions, and a real Linux kernel boots in a browser tab and refuses what the policy refuses; the launcher that binds the agent itself is still the design. It is open source, and what I would most like now is feedback.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/introducing-sharness.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/introducing-sharness.jpg">
+<link rel="alternate" type="text/markdown" href="introducing-sharness.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback, SGit Newsroom", "headline": "SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback, SGit Newsroom", "description": "For a long time we have said that an agent's rules need a secure harness that sits outside the agent's own environment, outside RiskMandate's and outside the hook. We looked for one and did not find it, so I sat down with a few Claude agents and we built it, and it is now released, at sharness.ai, with sharness-ai 0.2.0 on PyPI. SHarness is what our Agent Behaviour Policies become when they are executed rather than read. An Agent Behaviour Policy describes what an agent is mandated to do, what it can actually reach, the gap between the two, and what stands in the way of each capability. A Process Behaviour Policy applies the same model to every process the agent starts: what it may read, write, run, connect to and spend, written as a small policy, hashed to one name the person supplies from outside, and enforced by something the process does not include, the Linux kernel or a small separate service. A tricked agent cannot widen it, because the kernel was told before the process started. That turns Settings and Expectations into Boundaries, which is the only kind of control an insurer can price, and it puts the permission prompt last: yes to what the policy allows, silence for what it refuses, and a question only for what it cannot hold. The design is a launcher and five doors, files, network, keys, shell and model, each a small service with its own user and its own certificate, and the same policy can be written for bubblewrap, Docker, Kubernetes or Claude Code's sandbox, with the list of what each cannot hold. Today the kernel locks run, two doors run as early versions, and a real Linux kernel boots in a browser tab and refuses what the policy refuses; the launcher that binds the agent itself is still the design. It is open source, and what I would most like now is feedback.", "url": "https://newsroom.sgit.ai/articles/introducing-sharness.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback</p>
+ <h1>SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-29 &middot; <a href="versions/introducing-sharness.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v999.0.0</a> &middot; <span class="chip">sharness</span><span class="chip">behaviour-policies</span><span class="chip">agent-behaviour-policy</span><span class="chip">process-behaviour-policy</span><span class="chip">linux</span><span class="chip">landlock</span><span class="chip">security</span><span class="chip">agents</span><span class="chip">open-source</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> For a long time we have said that an agent's rules need a secure harness that sits outside the agent's own environment, outside RiskMandate's and outside the hook. We looked for one and did not find it, so I sat down with a few Claude agents and we built it, and it is now released, at sharness.ai, with sharness-ai 0.2.0 on PyPI. SHarness is what our Agent Behaviour Policies become when they are executed rather than read. An Agent Behaviour Policy describes what an agent is mandated to do, what it can actually reach, the gap between the two, and what stands in the way of each capability. A Process Behaviour Policy applies the same model to every process the agent starts: what it may read, write, run, connect to and spend, written as a small policy, hashed to one name the person supplies from outside, and enforced by something the process does not include, the Linux kernel or a small separate service. A tricked agent cannot widen it, because the kernel was told before the process started. That turns Settings and Expectations into Boundaries, which is the only kind of control an insurer can price, and it puts the permission prompt last: yes to what the policy allows, silence for what it refuses, and a question only for what it cannot hold. The design is a launcher and five doors, files, network, keys, shell and model, each a small service with its own user and its own certificate, and the same policy can be written for bubblewrap, Docker, Kubernetes or Claude Code's sandbox, with the list of what each cannot hold. Today the kernel locks run, two doors run as early versions, and a real Linux kernel boots in a browser tab and refuses what the policy refuses; the launcher that binds the agent itself is still the design. It is open source, and what I would most like now is feedback.</em></p>
+<figure class="shot" data-shot="shn-binding.webp" data-dir="images/" data-alt="From a policy the agent reads to a policy the kernel holds: four kinds of barrier, three things that bind." data-kind="diagram"><figcaption>From a policy the agent reads to a policy the kernel holds: four kinds of barrier, three things that bind.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>We needed a secure harness outside the agent, and could not find one.</b> So we built it: <a href="https://sharness.ai/">sharness.ai</a>, and <code>sharness-ai</code> 0.2.0 on <a href="https://pypi.org/project/sharness-ai/">PyPI</a>, released on 29 October 2026.</li>
+<li><b>It is our behaviour policies, executed.</b> An Agent Behaviour Policy describes an agent; a Process Behaviour Policy is enforced underneath it, on every process it starts.</li>
+<li><b>Three things make a policy binding.</b> The text, its hash supplied by the person from outside, and an enforcer the agent does not include.</li>
+<li><b>That is the business case.</b> Only an enforced control is a Boundary, and only a Boundary is something an insurer, an auditor or a board can count.</li>
+<li><b>The prompt goes last.</b> Yes to what the policy allows, silence for what it refuses, a question only for what it cannot hold.</li>
+<li><b>One policy, many enforcers.</b> The same file can be written for bubblewrap, Docker, Kubernetes or Claude Code's sandbox, with what each cannot hold.</li>
+<li><b>The architecture is a launcher and five doors.</b> Files, network, keys, shell and model, each a small service with its own user, policy and certificate.</li>
+<li><b>It runs today, in part.</b> The kernel locks, two doors, the levels, and a Linux kernel in a browser tab that held six of six.</li>
+<li><b>What does not run yet is said plainly.</b> The launcher that binds the agent itself is the design.</li>
+<li><b>We would like your feedback.</b> Run <code>hello</code>, read the design, tell us what is wrong.</li>
+</ul>
+<h2 id="why">Why we built it</h2>
+<p>For months, every time we talked about agent behaviour policies, the same point came back: a policy the agent reads is only as strong as the agent's willingness to keep it. We need a secure harness that sits outside the agent's environment, outside RiskMandate's environment and outside the hook. We have measured how far we are from that on our own agents. When this newsroom's writer took its own eleven rules and tried to move them into hooks, in <a href="are-hooks-the-sweet-spot.html">are hooks the sweet spot?</a>, only one was kept by something other than the agent. When it took apart the 57 checks its releases pass, in <a href="behaviour-policies-from-the-checks.html">behaviour policies from the checks</a>, 22 were expectations, 34 were settings and one was a boundary. And <a href="hooks-are-kernel-code.html">hooks are kernel code</a> put the last level of its maturity model "off the machine": the rule kept by something the agent's machine does not control.</p>
+<p>So we looked for that something. There is a lot of good work in this space, and sharness.ai's own <a href="https://sharness.ai/landscape/market/index.html">market analysis</a> surveys it: sandboxes and microVMs, shell sandboxes in the coding agents, MCP gateways, LLM gateways, secret brokers, guardrails, enterprise platforms. What we did not find was the piece we kept asking for: a policy written once, hashed, supplied by the person, and enforced on every process the agent starts by something the agent cannot switch off. The site's <a href="https://sharness.ai/landscape/enforceability/index.html">enforceability matrix</a> says it in one line: "The column no product fills is 'who enforces': in every shell sandbox the agent's own process reads the settings."</p>
+<p>After not finding one, I took the time, sat down with a couple of Claude agents for a really productive session, and we built one. It started on the morning of 24 October 2026 with a narrow problem in sgit, and five days later it is a website, a design, a security register, an open source CLI on PyPI and a team of agents that keeps all of it moving. I think it is a super powerful capability, and this article is its introduction: the strategy first, then what it does and the many ways it works, then the architecture, getting more technical as it goes.</p>
+<h2 id="what">What SHarness is, in one paragraph</h2>
+<p>SHarness runs an agent and its tools as small, single-purpose processes, each locked down by the kernel and talking to the others only over allowed, mutually authenticated connections. Each process runs under a Process Behaviour Policy: what it may read, write, run and connect to, named by one hash the person supplies and enforced by the Linux kernel. In the site's own words, "A tricked agent cannot widen it, because the kernel was told before the process started." A secret lives in one place, a key service that never hands out a clear key, and a tricked process can only do its one job. The name is the idea: a <b>s</b>ecure <b>harness</b>, the layer agents run inside so that they can run securely. (It is unrelated to Sharness, the shell testing library.)</p>
+<h2 id="policy">From Agent Behaviour Policies to Process Behaviour Policies</h2>
+<p>SHarness is the natural next step from the work we have done on <a href="https://riskmandate.ai/abp.html">Agent Behaviour Policies</a>. An Agent Behaviour Policy, an ABP, is a description in four objects: the <b>mandate</b> (what the business asked the agent to do), the <b>grant</b> (what it can actually reach), the <b>delta</b> (the reach nobody asked for) and the <b>barrier</b> on each capability (what stands in its way). The barrier comes in four kinds: <b>None</b>; an <b>Expectation</b>, which is prose the agent reads; a <b>Setting</b>, which the subject could flip; and a <b>Boundary</b>, enforced from above the subject. Most of what stands in the way of an agent today is the agent itself, reading its instructions and choosing to follow them.</p>
+<p>A <a href="https://sharness.ai/design/pbp/index.html">Process Behaviour Policy</a>, a PBP, is "the Agent Behaviour Policy model applied to one process": the same four objects, with the mandate written as rows for one process and the grant measured by probing what that process can do before any policy. The site's one-line distinction is the one I would keep: "An ABP <em>describes</em> an agent's behaviour; a PBP is that description <em>executed</em>, underneath the agent." This newsroom first built one in <a href="process-behaviour-policies.html">process behaviour policies</a>, the most locked-down process we could make inside Claude's own cloud container, and measured it; SHarness is that idea grown into a harness.</p>
+<p>Three things make a PBP binding, and if one is lost, it is an ABP again, a policy the subject reads:</p>
+<ol>
+<li><b>The text.</b> A small JSON object in canonical form (sorted keys, no whitespace, integers only), so the same policy hashes the same in every language. It was measured identical in Python, in the browser and in a Linux guest on 25 October 2026.</li>
+<li><b>The hash, from outside.</b> The person supplies <code>sha256:…</code>, and the enforcer refuses anything else. "A prompt-injected agent cannot widen what it cannot rename."</li>
+<li><b>An enforcer the subject does not include.</b> The kernel, or a separate process. "Who enforces decides the barrier kind": a policy a process applies to its own child is a Boundary for the child and only a Setting for the process.</li>
+</ol>
+<p>That last rule is the one SHarness never lets go of. Every result it prints says which kind of barrier it was, including the uncomfortable cases. It is why the site says, on every page that matters, that the launcher which binds the agent itself is still the design.</p>
+<h2 id="business">Why this matters to a business</h2>
+<p>Strategically, the point is not a better sandbox. It is that a behaviour policy can now be held, row by row, by something that is not the agent, and that changes what the policy is worth.</p>
+<p><b>Only an enforced control counts.</b> In the insuring agents series I argued, in <a href="a-payout-for-every-row.html">a payout for every row</a>, that an agent behaviour policy can be read as an insurance policy, and that "A line in the prompt earns nothing": only a control that something enforces lowers a row's premium. SHarness is how a row moves from Expectation to Boundary. A policy that says "this agent writes only to this workspace and talks only to these hosts", held by the kernel and a network door, is a row an underwriter can price, an auditor can check and a board can be told about.</p>
+<p><b>Two numbers in every summary.</b> The ABP's number is unbounded excess, the reach nobody asked for and nothing bounds. A PBP adds a second: unheld rows, the mandate rows no Boundary holds. A policy never claims a row is held when nothing holds it; the rows no door holds in a given deployment stay in the policy as Expectations, counted. The site puts it well: "The second number is the business case for the next door."</p>
+<p><b>The permission prompt goes last.</b> The prompts coding agents show today are, in ABP terms, Settings: the agent's own process asks the agent's own user, and the same account can turn them off. ux.sgit.ai's finding <a href="https://ux.sgit.ai/findings/UX-059.html">UX-059</a> shows they fail as decisions too, and that repeated prompts teach people to press Allow without reading. SHarness's <a href="https://sharness.ai/design/decision/index.html">decision at the door</a> moves the decision to launch, in the person's own nouns (this workspace, these sites, these secrets), made once and hashed. After that: "yes to what the policy allows, silence for what it refuses, and a question only for what it cannot hold." An approved question becomes a learned row, so the policy grows from the approvals people actually give.</p>
+<p><b>The enterprise story has no product in the request path.</b> A policy can be written at several levels, from a sentence down to the kernel (below). The vendor ships the profiles with its tool, the organisation runs the step that names its own proxies, databases and twins, and the laptop runs the step down to its kernel. Because levels compose by intersection, a developer cannot name a target the organisation does not offer. And it costs nothing per request: the expansion runs once, at launch.</p>
+<p><b>And the cloud providers could run it.</b> The real power comes when some of these components run as a service, outside the machine the agent is on. The design's last <a href="https://sharness.ai/design/architecture/index.html">deployment topology</a> is the platform providing the key service and the session identity, with no key in the container at all. It is the same ask as in <a href="agents-have-an-identity-now.html">agents have an identity now</a>: today no such service is known to exist, and it is a small thing for a provider to offer.</p>
+<h2 id="ways">The many ways it works</h2>
+<p>This is where SHarness differs most from a product. The site's <a href="https://sharness.ai/landscape/index.html">landscape</a> starts from one position: at the heart of all this are the behaviour policies, and SHarness is a <b>reference implementation</b> of Process Behaviour Policies, "small enough to read in one sitting". Any environment that can enforce the same rows is a valid enforcer, so the other products are "less competitors than integration points". The question to ask of each one is not whether it competes, but "which rows of a policy can it enforce, natively, and how do I translate the policy into its form?"</p>
+<p>That question is a command. <code>sharness-ai policy translate</code> writes the same policy as a bubblewrap command line, a <code>docker run</code>, a Claude Code sandbox <code>settings.json</code> fragment, or a Kubernetes Pod and NetworkPolicy, and ends every output with the list of what that target does not enforce. The matrix behind it is honest in both directions. Writes, no network, no new privileges and memory caps run almost anywhere. An execute allowlist, TCP port rules without a proxy, roles on the connections between processes, the secret in a process the agent cannot reach, and a hash checked above the subject are the rows only SHarness holds today, and they are the reason it exists.</p>
+<p>The second way it works is by levels, because the full policy schema is more than most people will ever write.</p>
+<figure class="shot" data-shot="shn-levels.webp" data-dir="images/" data-alt="The levels: one policy written as a sentence, a profile, plain rows, doors or mechanisms, each compiling into the next." data-kind="table"><figcaption>The levels: one policy written as a sentence, a profile, plain rows, doors or mechanisms, each compiling into the next.</figcaption></figure>
+<p>You write at the level you need. At the top, a sentence with blanks: "contain my agent to <em>this workspace</em>, <em>these sites</em>, <em>these secrets</em>". <code>sharness-ai contain --workspace . --sites github.com -- CMD</code> takes that sentence, compiles it down to the policy the kernel holds, prints what it became at each level with one hash, and runs the command under it. "A simpler level is never a weaker one": the person supplies the hash of what they wrote, and every expansion below it is recomputed. Each level reports in its own nouns, so at the top the report reads like "it can reach 14 things you did not ask for", and any row from a lower level can be written in when one row needs to go deeper.</p>
+<p>The third way is where you start. In a browser, with nothing installed, <a href="https://sharness.ai/code/playground/index.html">the playground</a> puts <code>pip install sharness-ai</code> in Pyodide next to a shell on a real Linux kernel. On Linux, <code>pip install sharness-ai</code> and <code>sharness-ai hello</code>. In a Claude Code session, a skill runs <code>probe</code> and <code>hello</code> inside the session, with the caveat stated: the session itself is not bound.</p>
+<h2 id="architecture">The architecture</h2>
+<p>The design is a launcher and a small set of single-purpose components. Its theme is "one role, one noun, one uid, one policy, one certificate."</p>
+<figure class="shot" data-shot="shn-moving-parts.webp" data-dir="images/" data-alt="SHarness&#x27;s moving parts as designed: a launcher outside every domain, the app, and five doors under mutual TLS." data-kind="architecture"><figcaption>SHarness's moving parts as designed: a launcher outside every domain, the app, and five doors under mutual TLS.</figcaption></figure>
+<p><b>The person</b> supplies one policy hash out of band. <b>The launcher</b>, outside every domain, refuses to start unless the manifest hashes to that value; it makes one Linux user per component, a session certificate authority and one certificate per role, then destroys the authority's private key, so the set of identities is closed. <b>The harnessed app</b>, which might be sgit's CLI, a Claude Code session or your own loop, sits on top and routes: it holds no keys, has no network and writes nothing itself. Around it are the doors:</p>
+<div class="tablewrap"><table>
+<tr><th>Door</th><th>Its one job (designed)</th></tr>
+<tr><td><code>sharness.fs</code></td><td>the only writer of protected folders; refuses anything that parses as a clear key, a private key or a token</td></tr>
+<tr><td><code>sharness.net</code></td><td>the only network client and the TLS client, with host, endpoint and id allowlists</td></tr>
+<tr><td><code>sharness.bash</code></td><td>each shell command in a fresh sandbox under a profile, output filtered</td></tr>
+<tr><td><code>sharness.llm</code></td><td>the only client of the model API; pins the tool list, filters secrets out of every tool result, adds the real key</td></tr>
+<tr><td><code>sharness.kms</code></td><td>holds the private keys in a <code>memfd_secret</code> page, frozen between calls; re-seals to one-time keys; never returns a clear key</td></tr>
+</table></div>
+<p>Every connection between them is mutual TLS 1.3 with the role in the certificate (as a SPIFFE ID), and both sides check that the pair is in the edge list, which denies by default. The app never talks to the key service; only the network and model doors do, and the key service never returns a clear key to either: it returns derived keys sealed to a one-time key made for that one request. The site measured what that costs on 24 October 2026: about 3.2 ms for a mutual TLS handshake between two local processes, about 10 ms for the three handshakes of an sgit command, against 146 ms the command already spends importing Python. A disposable user for a session was about 49 ms.</p>
+<p>It all started with what the site calls <a href="https://sharness.ai/design/why/index.html">the last metre</a>. Our <a href="https://pki.sgit.ai/handover.md">PKI handover</a> protects a vault key while it travels, sealed to the receiving agent's public key, and stops protecting it the moment it arrives: on disk, on the command line, and in the agent's transcript. "For an AI agent the worst leak is not the disk. It is the <b>transcript</b>." In the design, the sealed message itself becomes the file on disk, the key service opens it inside its own process, and the agent sees a command, ciphertext, fingerprints and a status line, never a key. Nothing in that fix turned out to be specific to sgit, and that generalisation is SHarness.</p>
+<p>The same components and the same protocol run in five topologies, and only the launcher changes: one machine with a user per component (what was measured), one container per component, one Kubernetes pod with identities from SPIRE and a NetworkPolicy that mirrors the edges, a remote key service in a cloud function in front of a hardware-backed key, and the platform providing it all.</p>
+<h2 id="doors">The doors, more technically</h2>
+<p>A Process Behaviour Policy has two kinds of row, and the rule that joins them is the most important technical idea in the design.</p>
+<p><b>Capability rows</b> bound what a process can reach: path prefixes to read, write and execute; TCP ports; no network; memory and process caps; no new privileges. The kernel holds them, with Landlock, namespaces, rlimits and cgroups. These are the v0 policy, and they run today.</p>
+<p><b>Behaviour rows</b> bound what the process does with a reach it has: append only to this file; this field within this range, never negative; connect only to this host, this endpoint, this vault; at most so many per interval; this operation only with fresh approval. A door holds them. And the rule: "A behaviour row is a Boundary only when the subject has no path to the resource except through the door that holds the row." So every behaviour row has preconditions made of capability rows. An append-only rule on a ledger, held by <code>sharness.fs</code>, is a Boundary only if the app's own write rows exclude that file and the app has an edge to the door. If the preconditions do not hold, the row is still well formed, and it gets the barrier kind Expectation, counted. That is "what can currently be controlled", derived from the policy rather than hoped.</p>
+<p>The language for those rows is deliberately closed: append only, a section, content by JSON Schema, a numeric range, count and rate, ordering, fresh approval. "A policy that can express arbitrary logic is code, and code in the policy is a rules engine in the trusted path." Anything more is a door of its own, under its own policy. A business that needs "transaction amount within range, daily total under X" writes that as a small door.</p>
+<p>The doors form a tree of names, <code>sharness.&lt;door&gt;.&lt;target&gt;</code>, where the door is the vocabulary and the target is where it sends. <code>sharness.fs.disk</code> writes to the local disk, <code>sharness.fs.s3</code> to S3, and <code>sharness.net.git</code> holds remote, branch, ref and push, "never force, never main". A target can be the real system, a relay, or a twin, and <code>.twin</code> on the end of any name means it is simulated: <code>sharness.db.postgres.twin</code> reads as a development world without decoding anything. Development and production are one policy tree with different targets, so a run's hash says which world it ran in. Each door declares what it accepts and what it emits, and a chain is valid only when each hop emits what the next accepts. That is why the network door, which accepts TCP and <code>CONNECT</code>, cannot hold a URL row, and an HTTP door below it can.</p>
+<p><code>sharness.net</code> shows why the doors are processes and not filters. The kernel only sees a connect to a port, so a relay that forwarded bytes would let the process inside choose the server name itself, which is domain fronting. So the network door is the TLS client: it sends the <code>CONNECT</code>, checks the name in the TLS hello against the host, and keeps one audit line per request. The process gets a policy whose only network row is the door's port, so a direct connect is refused by the kernel before a packet leaves.</p>
+<h2 id="today">What runs today</h2>
+<p>The site's <a href="https://sharness.ai/evidence/status/index.html">status page</a> keeps the honest column, and I will keep it here. As of 29 October 2026:</p>
+<ul>
+<li><b><code>sharness-ai</code> 0.2.0 on PyPI.</b> Python standard library only; 6,041 lines in the package and 243 tests, run in CI on Python 3.11 to 3.13.</li>
+<li><b>The kernel locks, on one process.</b> <code>sharness-ai run --policy FILE --expect-hash sha256:… -- CMD</code> applies Landlock file and execute rules (a writable path is never executable), TCP port rules, no network, memory and process caps, and refuses to run anything if the hash does not match.</li>
+<li><b>The acceptance test.</b> <code>sharness-ai hello</code> runs six probes under a deny-all policy. It held 6 of 6 in five places on 25 October: a cloud session, my browser, headless Chromium, Node and a chroot on the host kernel.</li>
+<li><b>The levels in the terminal.</b> <code>contain</code>, <code>profile</code> and <code>explain</code>.</li>
+<li><b>Two doors as early versions.</b> <code>sharness.fs</code>, the only writer, under mutual TLS with 18 conformance vectors; and <code>sharness.net</code>, an allowlisting proxy.</li>
+<li><b>The launcher's first slice.</b> <code>sharness-ai shell --workspace . --sites pypi.org</code> starts a shell as a fresh user, with its own network namespace holding only loopback, the network door as its only way out, and a live page of every refusal. It was checked on 29 October: pypi.org allowed through the door, example.com refused, a direct connect to 1.1.1.1 refused, a name lookup found nothing.</li>
+<li><b>A real Linux kernel in a browser tab.</b> I asked this site's agent to open the <a href="https://sharness.ai/code/browser/demo/index.html">E09 page</a> in a headless browser on 29 October. An Alpine guest with Linux 6.18 booted on an emulated CPU, and <code>hello</code> ran 111 seconds in:</li>
+</ul>
+<figure class="shot" data-shot="shn-hello.webp" data-dir="images/" data-alt="sharness-ai hello under a Linux kernel in a browser tab, 29 October 2026: six probes, six held." data-kind="screenshot"><figcaption>sharness-ai hello under a Linux kernel in a browser tab, 29 October 2026: six probes, six held.</figcaption></figure>
+<p>Read the last line of that output, because it is the project's character in one sentence: "applied by a process to its own child: a Boundary for the child, a Setting for the parent, who could have skipped it. The launcher that binds the agent too is the design, not code."</p>
+<p>What is not built: the key service, the shell door, the model door, the launcher's manifest, and the launcher above the agent. seccomp, per-component users for every door, and hostnames in the policy itself are still to come. Nothing yet binds the agent itself.</p>
+<h2 id="built">How it was built</h2>
+<p>SHarness is also a demonstration of how we now build. It is one person and a team of agents, each with a role, a behaviour policy in the ABP shape, a status file it keeps itself and, where it holds secrets, a key on pki.sgit.ai: a CLI agent that builds the package, a website agent that owns the site and its gate, a policy agent that holds the definition of the PBP, a security agent that keeps the register, a developer agent writing the policy standard in other languages, a conductor and a Sherpa. Their board, briefs, commit notes and runs are all <a href="https://sharness.ai/admin/index.html">public</a>.</p>
+<p>Two things in how it was built matter for whether you can trust it. First, the security register. The site's rule is that "nobody reviewing SHarness should find something it does not already say about itself." The first review, on 25 October, recorded 25 findings, five of them High, all five fixed with a test that fails if the hole opens again. The second, on 29 October, before the release, found two High issues in the shell (it could reach other hosts on the proxy's port, and a process of the shell could outlive it), fixed with tests before 0.2.0 went out. Second, standards with test vectors: the policy's canonical form and hash are a written standard with 28 vectors that the Python, JavaScript and Go implementations all pass, so a policy hashed in one language is the same policy in another.</p>
+<h2 id="feedback">What we would like feedback on</h2>
+<p>This is the part I care about most. SHarness is at the experiments stage, it is open source, and the fastest way for it to get better is for people who did not build it to push on it.</p>
+<ol>
+<li><b>Run <code>hello</code> on your machine.</b> <code>pip install sharness-ai</code>, then <code>sharness-ai hello --json</code>, and <a href="https://github.com/SHarness-AI/SHarness-AI__CLI/issues/new?template=hello-report.yml">report it</a>. Every machine becomes a row on <a href="https://sharness.ai/evidence/machines/index.html">hello on your machine</a>, and as the project says, "a refusal that did not happen is the most useful thing you can send."</li>
+<li><b>Try to break the shell.</b> <code>sharness-ai shell --sites</code> with one host, and see whether anything leaves on another. Report privately through <a href="https://github.com/SHarness-AI/SHarness-AI__CLI/security/advisories/new">GitHub's vulnerability reporting</a>.</li>
+<li><b>Tell us who should run the launcher.</b> The agent itself (every lock is then a Setting), a script above it on a laptop (a Boundary), or the platform (a Boundary all the way down). The design wants the third and starts with the second.</li>
+<li><b>If you build a sandbox, a gateway or an agent platform,</b> tell us which rows of a policy you hold natively, and whether the translation is right.</li>
+<li><b>If you run agents in a business,</b> write the sentence: which workspace, which sites, which secrets. What the levels make of it, and what is left unheld, is exactly what I would like to see.</li>
+</ol>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>Most of SHarness is designed, not built.</b> The kernel locks, the levels, two doors and the launcher's first slice run; the key service, the shell and model doors, and the launcher above the agent do not.</li>
+<li><b>Nothing binds the agent itself yet.</b> A policy applied by a process to its own child is a Boundary for the child and a Setting for the process.</li>
+<li><b>It does not protect against root or a compromised kernel.</b> The design trusts the kernel; anything with root can read a process's ordinary memory.</li>
+<li><b>The measurements are the project's own.</b> Each is from one environment on one date, with method on sharness.ai's <a href="https://sharness.ai/evidence/index.html">evidence</a> page. The one run here is the E09 page in a headless browser on 29 October 2026; the CLI was not run on this site's own machine.</li>
+<li><b>The translations have not been run against their targets.</b> Each matrix cell is what the target's documentation says.</li>
+<li><b>"Integration point" is not a partnership.</b> No vendor named on sharness.ai has agreed to anything.</li>
+<li><b>The security reviews were done by an agent of the project.</b> They are a register for an outside review to start from, not a replacement for one.</li>
+<li><b>The cloud service is a proposal.</b> No provider offers it, and nothing here describes any provider's plans.</li>
+</ul>
+<p>If you run agents that read untrusted data, build a sandbox or a platform, or would price the risk of one agent at a time, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>My request of 29 October 2026, kept word for word in this site's repository under <code>admin/notes/2026-10-29__sharness/</code>, written by this site's agent in the voice of this site. The argument and the editorial responsibility are mine.</p>
+<p>sharness.ai was read in full on 29 October 2026, at site v0.6.33, from its <a href="https://sharness.ai/llms.txt">llms.txt</a> and the markdown of every page: <a href="https://sharness.ai/design/index.html">the brief</a>, <a href="https://sharness.ai/design/why/index.html">Why: the last metre</a>, <a href="https://sharness.ai/design/architecture/index.html">Architecture</a>, <a href="https://sharness.ai/components/index.html">the components</a>, <a href="https://sharness.ai/design/pbp/index.html">the PBP on one page</a>, <a href="https://sharness.ai/design/levels/index.html">the levels</a>, <a href="https://sharness.ai/design/decision/index.html">the decision at the door</a>, <a href="https://sharness.ai/landscape/index.html">the landscape</a>, <a href="https://sharness.ai/landscape/enforceability/index.html">enforceability</a>, <a href="https://sharness.ai/security/index.html">Security</a>, <a href="https://sharness.ai/evidence/status/index.html">what exists today</a> and <a href="https://sharness.ai/admin/members/index.html">the members</a>; the quotes are from those pages, and the moving-parts figure is sharness.ai's own, re-rendered here with a narrower font (CC BY 4.0). The CLI was read at <a href="https://github.com/SHarness-AI/SHarness-AI__CLI">SHarness-AI__CLI</a>, <code>dev</code> at commit 7ea23c6, and its release dates from PyPI. The hello figure is the E09 page's own console output, captured by this site's agent in headless Chromium on 29 October 2026 and set as text. My first article on SHarness, of 24 October 2026, is <a href="https://sharness.ai/articles/secure-harness-for-agents.html">a secure harness for agents</a> on sharness.ai. On this site: <a href="process-behaviour-policies.html">process behaviour policies</a>, <a href="are-hooks-the-sweet-spot.html">are hooks the sweet spot?</a>, <a href="hooks-are-kernel-code.html">hooks are kernel code</a>, <a href="behaviour-policies-from-the-checks.html">behaviour policies from the checks</a>, <a href="a-payout-for-every-row.html">a payout for every row</a> and <a href="agents-have-an-identity-now.html">agents have an identity now</a>.</p>
+<sg-meter view="page" kind="article" date="2026-10-29" topics="agents-and-policy site-and-engineering" title="SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#introducing-sharness">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="are-hooks-the-sweet-spot.html">Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine</a> <span class="dim">One agent's eleven rules, moved from the prompt into hooks and tested: four fully, two mostly, three partly, two not at all, and a gap in the leak scan.</span></li><li><a href="behaviour-policies-from-the-checks.html">Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept</a> <span class="dim">57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept.</span></li><li><a href="hooks-are-kernel-code.html">Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run</a> <span class="dim">Hooks are small code with kernel reach: a maturity model, the first ten hooks mapped, and a brief for a hooks site where you pay for state, never to run.</span></li><li><a href="process-behaviour-policies.html">Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second</a> <span class="dim">The most locked-down Linux process we could build inside Claude's cloud container: a policy traced from one run, seven kernel walls, 0.1 s.</span></li><li><a href="a-payout-for-every-row.html">A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered</a> <span class="dim">Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.</span></li><li><a href="agents-have-an-identity-now.html">Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add</a> <span class="dim">A key pair made in every agent session, published with its role in a repository, so any agent can seal a secret to it; what the clouds could add.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 323 &middot; <a href="../for/make.html#r=323">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/introducing-sharness.jpg" download>introducing-sharness.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="introducing-sharness.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

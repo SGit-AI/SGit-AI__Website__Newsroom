@@ -134,7 +134,9 @@ My voice memo of 24 October 2026. The experiment, run that day in this newsroom'
 
 Agents & policyStartups & strategy[This article as a graph →](graphs.md#process-behaviour-policies)
 
-No other article links here yet.
+### Continued by
+
+- [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](introducing-sharness.md) SHarness, the secure harness we built when we could not find one: behaviour policies the Linux kernel enforces on every process an agent starts.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

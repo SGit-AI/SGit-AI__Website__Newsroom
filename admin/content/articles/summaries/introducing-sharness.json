@@ -1,0 +1,62 @@
+{
+ "slug": "introducing-sharness",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "A behaviour policy the kernel enforces, built and released",
+   "para": "We needed a secure harness outside the agent and found none, so we built SHarness: Agent Behaviour Policies executed as Process Behaviour Policies, hashed by the person and enforced by the kernel or a separate door. Part runs today; the launcher above the agent is the design; feedback wanted."
+  },
+  "in-short": {
+   "line": "Ten lines from the gap to the feedback we want",
+   "para": "No harness outside the agent existed, so we built one; it executes behaviour policies; three things bind; enforced controls are the business case; the prompt goes last; one policy, many enforcers; a launcher and five doors; part runs; the rest is said plainly; feedback wanted."
+  },
+  "why": {
+   "line": "Our own agents kept their rules mostly by hope",
+   "para": "One of eleven rules and one of 57 checks were held by something other than the agent. The market had sandboxes and gateways, but no enforcer above the agent reading a hashed policy, so with a few Claude agents we built one, from 24 to 29 October 2026."
+  },
+  "what": {
+   "line": "Small kernel-locked processes under one hashed policy",
+   "para": "SHarness runs an agent and its tools as small single-purpose processes, each under a Process Behaviour Policy the person names by hash and the kernel enforces, talking only over mutually authenticated connections; a secret lives in one key service that never hands out a clear key."
+  },
+  "policy": {
+   "line": "An ABP describes; a PBP is that description executed",
+   "para": "The ABP's four objects, mandate, grant, delta and barrier, applied to one process. A PBP binds only with three things: canonical text, a hash the person supplies, and an enforcer the subject does not include. Who enforces decides whether a row is a Boundary or a Setting."
+  },
+  "business": {
+   "line": "Boundaries are what an insurer and a board can count",
+   "para": "Only an enforced control lowers a row's premium. A PBP reports unbounded excess and unheld rows, puts the permission prompt last, lets an organisation run the level that names its own systems without a product in the request path, and could run as a cloud provider's service."
+  },
+  "ways": {
+   "line": "Translated to other enforcers, written at any level",
+   "para": "SHarness is a reference implementation: policy translate writes bubblewrap, Docker, Kubernetes and Claude Code forms with what each cannot hold. Levels let a person write a sentence that compiles down to the kernel under one hash. Start in a browser, on Linux, or in a Claude Code session."
+  },
+  "architecture": {
+   "line": "A launcher, an app with nothing, and five doors",
+   "para": "The launcher checks the hash, makes a user and certificate per role and destroys its CA key. The app holds no keys or network; fs, net, bash, llm and kms each do one job, over mutual TLS edges denied by default. It began with a vault key exposed on arrival."
+  },
+  "doors": {
+   "line": "Capability rows, behaviour rows, and the rule between",
+   "para": "The kernel holds capability rows; doors hold behaviour rows, which are Boundaries only when the door is the only path. The row language is closed. Doors are a tree of names with real, relay or twin targets, and the network door is the TLS client to stop domain fronting."
+  },
+  "today": {
+   "line": "0.2.0 on PyPI, six of six held, two doors running",
+   "para": "Kernel locks on one process, the hello acceptance test, the levels, the fs and net doors, and a shell whose only way out is the network door all run. A Linux kernel in a browser tab held six of six on 29 October 2026. The key service and the launcher above the agent do not."
+  },
+  "built": {
+   "line": "One person, a team of agents, a public register",
+   "para": "Each agent has a role, a behaviour policy and a status file, all public. Two security reviews by the project's agent found and fixed every High finding with tests before 0.2.0. The policy hash is a standard with 28 vectors passed in Python, JavaScript and Go."
+  },
+  "feedback": {
+   "line": "Five things we would like you to try or tell us",
+   "para": "Run hello and report it; try to break the shell; say who should run the launcher; if you build a sandbox or platform, say which rows you hold natively; if you run agents in a business, write the sentence and see what is left unheld."
+  },
+  "limits": {
+   "line": "Mostly designed, the agent not yet bound, root trusted",
+   "para": "Most components are not built and nothing binds the agent itself; root and the kernel are out of scope; measurements are the project's own; translations are not run against targets; no vendor agreed; the reviews are internal; the cloud service is a proposal."
+  },
+  "sources": {
+   "line": "The request, sharness.ai read in full, the CLI",
+   "para": "The request of 29 October 2026, sharness.ai v0.6.33 read from its llms files, the CLI at dev 7ea23c6 and PyPI's release dates; the moving-parts figure is sharness.ai's own; the hello output was captured from the E09 page in a headless browser on 29 October 2026."
+  }
+ }
+}

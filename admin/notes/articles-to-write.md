@@ -6,8 +6,13 @@
 
 ### A series on underwriting agent behaviour policies
 
-- **Added:** 28 October 2026. **Status:** articles 1 (a payout for every row) and 2 (who carries the risk) published in v0.13.124 (2 has a correction waiting for the next release); 3 (the vendor's layer) drafted in the notes, waiting for its vault to be pushed (needs SG_SEND_ACCESS_TOKEN); the vault's sources are in vault-agent-underwriting/.
+- **Added:** 28 October 2026. **Status:** all five released (v0.13.124 to v0.13.129), with the series cards and the vault m1wbrefr.
 - **Source:** Dinis's memo, `admin/notes/2026-10-28__underwriting-abp/memo-01.md`; worked example `premium.py`.
+
+### Introducing SHarness, the secure harness
+
+- **Added:** 29 October 2026. **Status:** written and released, 29 October 2026, as `introducing-sharness`.
+- **Source:** Dinis's request, word for word in `admin/notes/2026-10-29__sharness/memo-01.md`, and sharness.ai read in full.
 
 ### Agents have an identity now: a key per session, a role, and GitHub as the place they meet
 

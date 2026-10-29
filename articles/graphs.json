@@ -55,6 +55,237 @@
   ],
   "articles": [
     {
+      "slug": "introducing-sharness",
+      "title": "SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback",
+      "date": "2026-10-29",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/introducing-sharness.html",
+      "markdown": "https://newsroom.sgit.ai/articles/introducing-sharness.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/introducing-sharness.webp",
+      "teaser": "SHarness, the secure harness we built when we could not find one: behaviour policies the Linux kernel enforces on every process an agent starts.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sharness",
+        "behaviour-policies",
+        "agent-behaviour-policy",
+        "process-behaviour-policy",
+        "linux",
+        "landlock",
+        "security",
+        "agents",
+        "open-source",
+        "article"
+      ],
+      "links_out": [
+        "are-hooks-the-sweet-spot",
+        "behaviour-policies-from-the-checks",
+        "hooks-are-kernel-code",
+        "process-behaviour-policies",
+        "a-payout-for-every-row",
+        "agents-have-an-identity-now"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "shn-binding.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/shn-binding.webp",
+          "caption": "From a policy the agent reads to a policy the kernel holds: four kinds of barrier, three things that bind.",
+          "kind": "diagram"
+        },
+        {
+          "file": "shn-levels.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/shn-levels.webp",
+          "caption": "The levels: one policy written as a sentence, a profile, plain rows, doors or mechanisms, each compiling into the next.",
+          "kind": "table"
+        },
+        {
+          "file": "shn-moving-parts.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/shn-moving-parts.webp",
+          "caption": "SHarness's moving parts as designed: a launcher outside every domain, the app, and five doors under mutual TLS.",
+          "kind": "architecture"
+        },
+        {
+          "file": "shn-hello.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/shn-hello.webp",
+          "caption": "sharness-ai hello under a Linux kernel in a browser tab, 29 October 2026: six probes, six held.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "introducing-sharness",
+        "teaser": "SHarness, the secure harness we built when we could not find one: behaviour policies the Linux kernel enforces on every process an agent starts.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "An agent's rules need an enforcer outside the agent; SHarness executes Agent Behaviour Policies as Process Behaviour Policies, a small policy hashed to one name the person supplies and enforced by the kernel or a separate door, so Settings and Expectations become Boundaries an insurer can count, the prompt goes last, and one policy can be translated to many enforcers; today the kernel locks, the levels and two doors run, and the launcher above the agent is the design.",
+        "nodes": [
+          {
+            "id": "why",
+            "label": "The harness we could not find",
+            "kind": "claim",
+            "summary": "Our own counts: one rule in eleven, one boundary in 57 checks."
+          },
+          {
+            "id": "what",
+            "label": "SHarness in one paragraph",
+            "kind": "concept",
+            "summary": "Small kernel-locked processes under a policy the person hashes."
+          },
+          {
+            "id": "pbp",
+            "label": "Process Behaviour Policy",
+            "kind": "concept",
+            "summary": "The ABP model applied to one process, executed underneath."
+          },
+          {
+            "id": "binding",
+            "label": "Three things that bind",
+            "kind": "concept",
+            "summary": "The text, the hash from outside, an enforcer it does not include."
+          },
+          {
+            "id": "business",
+            "label": "Only enforced controls count",
+            "kind": "claim",
+            "summary": "Boundaries are what an insurer, auditor or board can count."
+          },
+          {
+            "id": "prompt",
+            "label": "The prompt goes last",
+            "kind": "claim",
+            "summary": "Allow, refuse silently, ask only what the policy cannot hold."
+          },
+          {
+            "id": "ways",
+            "label": "One policy, many enforcers",
+            "kind": "method",
+            "summary": "translate writes bwrap, Docker, Kubernetes, Claude Code forms."
+          },
+          {
+            "id": "levels",
+            "label": "The levels",
+            "kind": "method",
+            "summary": "A sentence compiled down to the kernel; simpler is never weaker."
+          },
+          {
+            "id": "architecture",
+            "label": "A launcher and five doors",
+            "kind": "method",
+            "summary": "One role, uid, policy and certificate each, mutual TLS edges."
+          },
+          {
+            "id": "rows",
+            "label": "Capability and behaviour rows",
+            "kind": "concept",
+            "summary": "A behaviour row is a Boundary only if its door is the only path."
+          },
+          {
+            "id": "today",
+            "label": "What runs today",
+            "kind": "example",
+            "summary": "0.2.0 on PyPI, hello 6 of 6, two doors, a kernel in a tab."
+          },
+          {
+            "id": "feedback",
+            "label": "Feedback wanted",
+            "kind": "claim",
+            "summary": "Run hello, break the shell, say who should run the launcher."
+          }
+        ],
+        "edges": [
+          {
+            "from": "why",
+            "to": "what",
+            "rel": "leads-to"
+          },
+          {
+            "from": "pbp",
+            "to": "binding",
+            "rel": "produces"
+          },
+          {
+            "from": "binding",
+            "to": "business",
+            "rel": "leads-to"
+          },
+          {
+            "from": "binding",
+            "to": "prompt",
+            "rel": "leads-to"
+          },
+          {
+            "from": "pbp",
+            "to": "ways",
+            "rel": "extends"
+          },
+          {
+            "from": "levels",
+            "to": "ways",
+            "rel": "extends"
+          },
+          {
+            "from": "architecture",
+            "to": "rows",
+            "rel": "produces"
+          },
+          {
+            "from": "today",
+            "to": "architecture",
+            "rel": "example-of"
+          },
+          {
+            "from": "business",
+            "to": "why",
+            "rel": "contrasts"
+          },
+          {
+            "from": "today",
+            "to": "feedback",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "process-behaviour-policies",
+            "are-hooks-the-sweet-spot",
+            "hooks-are-kernel-code",
+            "behaviour-policies-from-the-checks",
+            "a-payout-for-every-row",
+            "agents-have-an-identity-now"
+          ],
+          "pages": [],
+          "sites": [
+            "https://sharness.ai/",
+            "https://github.com/SHarness-AI/SHarness-AI__CLI",
+            "https://pypi.org/project/sharness-ai/",
+            "https://sharness.ai/design/pbp/index.html",
+            "https://sharness.ai/landscape/enforceability/index.html",
+            "https://sharness.ai/design/levels/index.html",
+            "https://sharness.ai/design/decision/index.html",
+            "https://riskmandate.ai/abp.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A tricked agent cannot widen it, because the kernel was told before the process started.",
+            "why": "The one property SHarness is built around."
+          },
+          {
+            "text": "An ABP describes an agent's behaviour; a PBP is that description executed, underneath the agent.",
+            "why": "The step from Agent to Process Behaviour Policies."
+          },
+          {
+            "text": "yes to what the policy allows, silence for what it refuses, and a question only for what it cannot hold.",
+            "why": "Where the permission prompt goes once a policy sits underneath."
+          }
+        ]
+      }
+    },
+    {
       "slug": "investor-sgit-ai",
       "title": "investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study",
       "date": "2026-10-29",
@@ -304,6 +535,7 @@
         "the-vendors-layer"
       ],
       "links_in": [
+        "introducing-sharness",
         "investor-sgit-ai"
       ],
       "figures": [
@@ -1616,6 +1848,7 @@
         "the-vendors-layer"
       ],
       "links_in": [
+        "introducing-sharness",
         "insuring-agents-the-whole-story",
         "where-to-build-the-agent-insurer",
         "the-vendors-layer",
@@ -8567,7 +8800,9 @@
         "article"
       ],
       "links_out": [],
-      "links_in": [],
+      "links_in": [
+        "introducing-sharness"
+      ],
       "figures": [
         {
           "file": "px-walls.webp",
@@ -14365,6 +14600,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "introducing-sharness",
         "the-sidecar-repository",
         "the-rules-of-the-game",
         "where-a-check-runs",
@@ -41246,6 +41482,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "introducing-sharness",
         "how-a-memo-becomes-a-release",
         "free-to-copy-paid-at-the-source",
         "governs-enforces-attests",
@@ -42554,6 +42791,7 @@
         "a-policy-for-every-skill"
       ],
       "links_in": [
+        "introducing-sharness",
         "a-leak-without-breaking-the-policy",
         "a-briefing-for-the-ciso-summit",
         "governs-enforces-attests",
