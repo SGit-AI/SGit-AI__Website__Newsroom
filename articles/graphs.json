@@ -55,6 +55,213 @@
   ],
   "articles": [
     {
+      "slug": "selling-less-code",
+      "title": "Selling less code: the economics of customised open source, where the customer pays for the features they use, the maker certifies what it ships, and the pipeline is finally tied to revenue",
+      "date": "2026-10-30",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/selling-less-code.html",
+      "markdown": "https://newsroom.sgit.ai/articles/selling-less-code.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/selling-less-code.webp",
+      "teaser": "The economics of customised open source: the customer pays for the features they use, the maker certifies it, and the pipeline is tied to revenue.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "open-source",
+        "business-model",
+        "complexity",
+        "attack-surface",
+        "riskmandate",
+        "sgit",
+        "sharness",
+        "licensing",
+        "article"
+      ],
+      "links_out": [
+        "the-code-you-do-not-ship",
+        "the-attack-surface-you-do-not-have",
+        "the-minimum-code-below",
+        "who-maintains-the-php-you-run",
+        "who-signs-for-this",
+        "ci-owns-the-version",
+        "free-to-copy-paid-at-the-source",
+        "a-payout-for-every-row",
+        "the-eyeballs-get-cheap"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "qx-less.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/qx-less.webp",
+          "caption": "One customer's use of an application: the features they use, and the rest they would otherwise run and maintain.",
+          "kind": "concept"
+        },
+        {
+          "file": "qx-shared.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/qx-shared.webp",
+          "caption": "One open base and three customers' versions: each runs only what it uses; the shared core stays maintained.",
+          "kind": "architecture"
+        },
+        {
+          "file": "qx-loop.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/qx-loop.webp",
+          "caption": "The loop: customisation is sold, its cost falls on the maker, so the maker invests in the pipeline.",
+          "kind": "process"
+        },
+        {
+          "file": "qx-stack.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/qx-stack.webp",
+          "caption": "A customised release in our stack: an open base, a hashed build, a signed licence, a smaller policy.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "selling-less-code",
+        "teaser": "The economics of customised open source: the customer pays for the features they use, the maker certifies it, and the pipeline is tied to revenue.",
+        "topics": [
+          "startups-and-strategy",
+          "agents-and-policy"
+        ],
+        "core_idea": "Selling customised versions of open source software is selling a reduction in complexity: the customer pays for the features they use and stops carrying the code, the debt, the cognitive load and the attack surface of the rest; open source makes it possible to map what is used and the maker is best placed to certify it; carrying the cost of customising ties the pipeline, the non-functional requirements and certification to revenue; and in our stack each customised build is a hashed release, licensed with our key, with a smaller behaviour policy and fewer rows to insure.",
+        "nodes": [
+          {
+            "id": "model",
+            "label": "Customised, relicensed versions",
+            "kind": "method",
+            "summary": "A version made for one customer and licensed to them."
+          },
+          {
+            "id": "less",
+            "label": "The product is less complexity",
+            "kind": "claim",
+            "summary": "The customer pays for the features they use, not for the debt of the rest."
+          },
+          {
+            "id": "cost",
+            "label": "Every feature has a cost",
+            "kind": "concept",
+            "summary": "Maintenance, cognitive load and attack surface, used or not."
+          },
+          {
+            "id": "open",
+            "label": "Open source makes it possible",
+            "kind": "claim",
+            "summary": "With the code, map what a customer uses; the maker certifies the result."
+          },
+          {
+            "id": "loop",
+            "label": "The pipeline gets paid for",
+            "kind": "concept",
+            "summary": "When customising is the maker's cost, CI and certification are the product."
+          },
+          {
+            "id": "maker",
+            "label": "The maker should customise",
+            "kind": "claim",
+            "summary": "Cheapest for the maker; pay others to customise theirs."
+          },
+          {
+            "id": "stack",
+            "label": "Our stack",
+            "kind": "artefact",
+            "summary": "sgit release, signed licence, smaller policy, SHarness, fewer rows to insure."
+          },
+          {
+            "id": "price",
+            "label": "More customisation costs more",
+            "kind": "method",
+            "summary": "Which rewards keeping as much as possible open and shared."
+          },
+          {
+            "id": "evidence",
+            "label": "90% use 30%",
+            "kind": "question",
+            "summary": "When usage is tied to revenue, why maintain the rest?"
+          }
+        ],
+        "edges": [
+          {
+            "from": "model",
+            "to": "less",
+            "rel": "produces"
+          },
+          {
+            "from": "cost",
+            "to": "less",
+            "rel": "answers"
+          },
+          {
+            "from": "open",
+            "to": "model",
+            "rel": "depends-on"
+          },
+          {
+            "from": "model",
+            "to": "loop",
+            "rel": "leads-to"
+          },
+          {
+            "from": "loop",
+            "to": "evidence",
+            "rel": "produces"
+          },
+          {
+            "from": "maker",
+            "to": "model",
+            "rel": "extends"
+          },
+          {
+            "from": "model",
+            "to": "stack",
+            "rel": "example-of"
+          },
+          {
+            "from": "price",
+            "to": "model",
+            "rel": "extends"
+          },
+          {
+            "from": "stack",
+            "to": "less",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-code-you-do-not-ship",
+            "the-attack-surface-you-do-not-have",
+            "the-minimum-code-below",
+            "the-eyeballs-get-cheap",
+            "who-maintains-the-php-you-run",
+            "who-signs-for-this",
+            "ci-owns-the-version",
+            "free-to-copy-paid-at-the-source",
+            "a-payout-for-every-row"
+          ],
+          "pages": [],
+          "sites": [
+            "https://sharness.ai/",
+            "https://pki.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "What we are really selling is a reduction in complexity.",
+            "why": "The model in one line."
+          },
+          {
+            "text": "in a business that sells customised releases, the release pipeline is the business",
+            "why": "Why the pipeline gets the investment."
+          },
+          {
+            "text": "There is no proprietary software in this model on our side.",
+            "why": "The principle."
+          }
+        ]
+      }
+    },
+    {
       "slug": "breaking-the-story-down-before-the-agents-do",
       "title": "Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it",
       "date": "2026-10-30",
@@ -3290,6 +3497,7 @@
         "the-vendors-layer"
       ],
       "links_in": [
+        "selling-less-code",
         "seven-iam-predictions-already-here",
         "introducing-sharness",
         "proven-controls-for-agents",
@@ -6207,6 +6415,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "selling-less-code",
         "investor-sgit-ai",
         "the-ultimate-insider-case-study",
         "how-a-journalist-agent-publishes-here"
@@ -10081,6 +10290,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "selling-less-code",
         "the-vendors-layer"
       ],
       "figures": [
@@ -12510,6 +12720,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "selling-less-code",
         "who-carries-the-risk"
       ],
       "figures": [
@@ -17017,6 +17228,7 @@
         "the-sgit-ai-sites-in-numbers"
       ],
       "links_in": [
+        "selling-less-code",
         "the-key-is-not-the-risk"
       ],
       "figures": [
@@ -19967,6 +20179,7 @@
         "pki-everywhere"
       ],
       "links_in": [
+        "selling-less-code",
         "the-user-keeps-the-meter",
         "agent-behaviour-policies-move-to-the-open-security-summit",
         "v0-12-in-numbers"
@@ -29023,6 +29236,7 @@
         "three-policies-for-an-agent"
       ],
       "links_in": [
+        "selling-less-code",
         "the-attack-surface-you-do-not-have",
         "the-open-security-summit-and-its-debt",
         "jobs-that-never-scaled",
@@ -41705,6 +41919,7 @@
         "the-minimum-code-below"
       ],
       "links_in": [
+        "selling-less-code",
         "the-code-you-do-not-ship",
         "the-expert-founders",
         "the-citizen-developer"
@@ -45013,6 +45228,7 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "selling-less-code",
         "the-attack-surface-you-do-not-have",
         "jobs-that-never-scaled",
         "the-code-you-do-not-ship",
