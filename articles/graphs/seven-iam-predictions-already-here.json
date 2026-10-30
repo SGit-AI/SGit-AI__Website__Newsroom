@@ -1,0 +1,163 @@
+{
+  "slug": "seven-iam-predictions-already-here",
+  "teaser": "Sunnykumar K.'s seven IAM predictions for 2027, checked against agent teams that run today: four already here, one agreed, two different bets.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "Most of the IAM future Sunnykumar K. predicts is how our agent teams already run: roles as names for written policies, many more agent identities than people, each with its own session key, sealed secrets instead of passwords, and evaluation at every wake with keys that expire; the board needs a count of controls enforced from above. Two bets differ: the policy should be open and read by many enforcers rather than consolidated in one platform, and access decisions should stay deterministic and outside the model.",
+  "nodes": [
+    {
+      "id": "post",
+      "label": "Seven predictions",
+      "kind": "example",
+      "summary": "Sunnykumar K.'s seven IAM predictions for 2027 to 2030."
+    },
+    {
+      "id": "roles",
+      "label": "Roles become policies",
+      "kind": "method",
+      "summary": "A role is the name of a written policy the gate checks as data."
+    },
+    {
+      "id": "nhi",
+      "label": "31 to 1 already",
+      "kind": "claim",
+      "summary": "Agent sessions with their own keys, for one person, in two days."
+    },
+    {
+      "id": "passwords",
+      "label": "No passwords for agents",
+      "kind": "method",
+      "summary": "Secrets sealed to session keys; the reader's vault opens with a passkey."
+    },
+    {
+      "id": "continuous",
+      "label": "Evaluation per wake",
+      "kind": "method",
+      "summary": "Five-step wakes, keys with end dates, a hold any agent can pull."
+    },
+    {
+      "id": "board",
+      "label": "Count the Boundaries",
+      "kind": "concept",
+      "summary": "Only controls enforced from above can be counted and insured."
+    },
+    {
+      "id": "open",
+      "label": "An open policy, many enforcers",
+      "kind": "claim",
+      "summary": "Against consolidation into one platform."
+    },
+    {
+      "id": "deterministic",
+      "label": "Models advise, boundaries decide",
+      "kind": "claim",
+      "summary": "Against handing access decisions to a model."
+    },
+    {
+      "id": "pentagon",
+      "label": "The contractor's agent",
+      "kind": "example",
+      "summary": "What happens when an agent borrows a person's identity."
+    }
+  ],
+  "edges": [
+    {
+      "from": "post",
+      "to": "roles",
+      "rel": "answers"
+    },
+    {
+      "from": "post",
+      "to": "nhi",
+      "rel": "answers"
+    },
+    {
+      "from": "post",
+      "to": "passwords",
+      "rel": "answers"
+    },
+    {
+      "from": "post",
+      "to": "continuous",
+      "rel": "answers"
+    },
+    {
+      "from": "post",
+      "to": "board",
+      "rel": "answers"
+    },
+    {
+      "from": "post",
+      "to": "open",
+      "rel": "contrasts"
+    },
+    {
+      "from": "post",
+      "to": "deterministic",
+      "rel": "contrasts"
+    },
+    {
+      "from": "pentagon",
+      "to": "nhi",
+      "rel": "example-of"
+    },
+    {
+      "from": "board",
+      "to": "deterministic",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-policy-beside-the-prompt",
+      "agents-have-an-identity-now",
+      "the-push-is-the-authorisation",
+      "the-contractors-agent-and-three-policies",
+      "a-secret-is-a-qr-code",
+      "handing-secrets-to-agents",
+      "a-payout-for-every-row",
+      "introducing-sharness",
+      "your-agents-logs-are-a-self-report"
+    ],
+    "pages": [],
+    "sites": [
+      "https://pki.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "In our teams it is already more than 30 to 1 in two days, for one person.",
+      "why": "The NHI prediction, measured."
+    },
+    {
+      "text": "Continuous access evaluation, for us, is every wake asking again whether it may proceed.",
+      "why": "What continuous means for an agent."
+    },
+    {
+      "text": "one policy, many enforcers",
+      "why": "The bet against consolidation."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ik-post.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ik-post.webp",
+      "caption": "Sunnykumar K.'s post: seven IAM predictions for 2027 to 2030.",
+      "kind": "aside"
+    },
+    {
+      "file": "ik-ratio.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ik-ratio.webp",
+      "caption": "Agent sessions with their own keys this week, against the one person who ran them.",
+      "kind": "chart"
+    },
+    {
+      "file": "ik-scorecard.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ik-scorecard.webp",
+      "caption": "The seven predictions against what our agent teams run today: already here, agreed, or a different bet.",
+      "kind": "comparison"
+    }
+  ]
+}

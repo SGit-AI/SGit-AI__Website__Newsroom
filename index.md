@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.4 · 328 articles since 2026-08-17; the newest is 2026-10-30. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 329 articles since 2026-08-17; the newest is 2026-10-30. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [The contractor's agent on a Pentagon network: how behaviour policies from the DOD, Accenture and the employee, and a key for every session, could have prevented it or caught it on day one](articles/the-contractors-agent-and-three-policies.md), 2026-10-30, 13 min. A contractor's agent on a DOD network for two months, as reported: how three behaviour policies and a key for every session would have stopped or seen it.
+- [Seven IAM predictions for 2027, checked against an agent team that runs today: where we already are, where we agree, and the two where I would bet the other way](articles/seven-iam-predictions-already-here.md), 2026-10-30, 7 min. Sunnykumar K.'s seven IAM predictions for 2027, checked against agent teams that run today: four already here, one agreed, two different bets.
 
 ## Highlights
 
+- [The contractor's agent on a Pentagon network: how behaviour policies from the DOD, Accenture and the employee, and a key for every session, could have prevented it or caught it on day one](articles/the-contractors-agent-and-three-policies.md), 2026-10-30, 13 min.
 - [A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page](articles/books-for-a-new-generation-of-publishing.md), 2026-10-30, 12 min.
 - [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](articles/the-book-of-the-talk-and-its-companion.md), 2026-10-30, 12 min.
 - [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](articles/introducing-sharness.md), 2026-10-29, 21 min.
-- [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](articles/investor-sgit-ai.md), 2026-10-29, 8 min.
 
 ## Who are you reading as?
 
@@ -32,11 +32,11 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The five desks
 
-### Agent security & policy (97)
+### Agent security & policy (98)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
+- [Seven IAM predictions for 2027, checked against an agent team that runs today: where we already are, where we agree, and the two where I would bet the other way](articles/seven-iam-predictions-already-here.md), 2026-10-30, 7 min.
 - [The contractor's agent on a Pentagon network: how behaviour policies from the DOD, Accenture and the employee, and a key for every session, could have prevented it or caught it on day one](articles/the-contractors-agent-and-three-policies.md), 2026-10-30, 13 min.
 - [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](articles/introducing-sharness.md), 2026-10-29, 21 min.
-- [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](articles/agents-have-an-identity-now.md), 2026-10-29, 9 min.
 
 ### Building with agents (50)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.

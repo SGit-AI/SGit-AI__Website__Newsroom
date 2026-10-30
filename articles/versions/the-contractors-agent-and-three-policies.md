@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-30 | published | 3,250 | first published | this release | [current](../the-contractors-agent-and-three-policies.md) |
+| **v1.0.0** | 2026-10-30 | published | 3,250 | first published | [`cc476b00a`](https://github.com/SGit-AI/SGit-AI__Website/commit/cc476b00aeb3d7049d2a868226ebbc4f53eb5c04) | [current](../the-contractors-agent-and-three-policies.md) |
 
 [← Back to the article](../the-contractors-agent-and-three-policies.md) · [All articles](../index.md)
 
