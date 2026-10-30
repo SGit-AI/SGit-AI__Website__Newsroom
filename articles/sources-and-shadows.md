@@ -102,7 +102,9 @@ My voice memo of 25 October 2026. The PHP story site at release v0.19.4, read on
 
 Agents & policyStartups & strategy[This article as a graph →](graphs.md#sources-and-shadows)
 
-No other article links here yet.
+### Continued by
+
+- [The contractor's agent on a Pentagon network: how behaviour policies from the DOD, Accenture and the employee, and a key for every session, could have prevented it or caught it on day one](the-contractors-agent-and-three-policies.md) A contractor's agent on a DOD network for two months, as reported: how three behaviour policies and a key for every session would have stopped or seen it.
 
 [All articles](index.md) · [All graphs](graphs.md)
 
