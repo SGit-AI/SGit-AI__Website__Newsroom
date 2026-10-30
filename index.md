@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.8 · 333 articles since 2026-08-17; the newest is 2026-10-30. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 333 articles since 2026-08-17; the newest is 2026-10-30. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -35,7 +35,7 @@ Governments told organisations to take sites offline if they could not patch. Th
 ### Agent security & policy (98)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
 - [Seven IAM predictions for 2027, checked against an agent team that runs today: where we already are, where we agree, and the two where I would bet the other way](articles/seven-iam-predictions-already-here.md), 2026-10-30, 7 min.
-- [The contractor's agent on a Pentagon network: how behaviour policies from the DOD, Accenture and the employee, and a key for every session, could have prevented it or caught it on day one](articles/the-contractors-agent-and-three-policies.md), 2026-10-30, 13 min.
+- [The contractor's agent on a Pentagon network: how behaviour policies from the DOD, Accenture and the employee, and a key for every session, could have prevented it or caught it on day one](articles/the-contractors-agent-and-three-policies.md), 2026-10-30, 14 min.
 - [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](articles/introducing-sharness.md), 2026-10-29, 21 min.
 
 ### Building with agents (51)
