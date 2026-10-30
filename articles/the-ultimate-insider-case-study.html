@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records, SGit Newsroom</title>
+<meta name="description" content="Tonight I gave a talk called The ultimate insider at hack::soho, at IOActive in London, and it went really well. I will write a debrief of the talk itself. This is about how it was made, because I think it is a good testament of what we can now do. The repository was empty at 00:16 UTC. By 18:46 it had 814 commits, 210 releases numbered by CI, a website with the talk as data, 58 slides that are each a live, animated web page, a script, a sources page, a dashboard, and a set of articles the team generated about itself. It was built by nine agents and one editor: a conductor, a deck lead, a designer, a developer, a researcher, a storyteller, a motion designer, a studio and ruv.sgit, each with a written role, a behaviour policy, a session key and an hourly slot. Between them they made 162 wakes, each one planned, reviewed by a sub-agent before and after the work, and checked against its plan; 148 ended ok. They sent each other 293 notes. And almost every innovation we have been working on this month came together in it: CI owning the version, session keys where the push is the authorisation, vault keys sealed to the vault registry, public vaults as the board and the mail, a behaviour policy per agent with one writer per file enforced by the gate, ruv.sgit's player and studio, SHarness running live on a slide, and pages that report on the team from its own records, so nothing about the night is typed by hand. The article shows it with screenshots and collages from the site's own admin pages, the slides, and the team's records, and says what went wrong, including the hold at 18:44 when my usage limit reached 95%.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/the-ultimate-insider-case-study.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/the-ultimate-insider-case-study.html">
+<meta property="og:title" content="A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records, SGit Newsroom">
+<meta property="og:description" content="Tonight I gave a talk called The ultimate insider at hack::soho, at IOActive in London, and it went really well. I will write a debrief of the talk itself. This is about how it was made, because I think it is a good testament of what we can now do. The repository was empty at 00:16 UTC. By 18:46 it had 814 commits, 210 releases numbered by CI, a website with the talk as data, 58 slides that are each a live, animated web page, a script, a sources page, a dashboard, and a set of articles the team generated about itself. It was built by nine agents and one editor: a conductor, a deck lead, a designer, a developer, a researcher, a storyteller, a motion designer, a studio and ruv.sgit, each with a written role, a behaviour policy, a session key and an hourly slot. Between them they made 162 wakes, each one planned, reviewed by a sub-agent before and after the work, and checked against its plan; 148 ended ok. They sent each other 293 notes. And almost every innovation we have been working on this month came together in it: CI owning the version, session keys where the push is the authorisation, vault keys sealed to the vault registry, public vaults as the board and the mail, a behaviour policy per agent with one writer per file enforced by the gate, ruv.sgit's player and studio, SHarness running live on a slide, and pages that report on the team from its own records, so nothing about the night is typed by hand. The article shows it with screenshots and collages from the site's own admin pages, the slides, and the team's records, and says what went wrong, including the hold at 18:44 when my usage limit reached 95%.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/the-ultimate-insider-case-study.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/the-ultimate-insider-case-study.jpg">
+<link rel="alternate" type="text/markdown" href="the-ultimate-insider-case-study.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records, SGit Newsroom", "headline": "A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records, SGit Newsroom", "description": "Tonight I gave a talk called The ultimate insider at hack::soho, at IOActive in London, and it went really well. I will write a debrief of the talk itself. This is about how it was made, because I think it is a good testament of what we can now do. The repository was empty at 00:16 UTC. By 18:46 it had 814 commits, 210 releases numbered by CI, a website with the talk as data, 58 slides that are each a live, animated web page, a script, a sources page, a dashboard, and a set of articles the team generated about itself. It was built by nine agents and one editor: a conductor, a deck lead, a designer, a developer, a researcher, a storyteller, a motion designer, a studio and ruv.sgit, each with a written role, a behaviour policy, a session key and an hourly slot. Between them they made 162 wakes, each one planned, reviewed by a sub-agent before and after the work, and checked against its plan; 148 ended ok. They sent each other 293 notes. And almost every innovation we have been working on this month came together in it: CI owning the version, session keys where the push is the authorisation, vault keys sealed to the vault registry, public vaults as the board and the mail, a behaviour policy per agent with one writer per file enforced by the gate, ruv.sgit's player and studio, SHarness running live on a slide, and pages that report on the team from its own records, so nothing about the night is typed by hand. The article shows it with screenshots and collages from the site's own admin pages, the slides, and the team's records, and says what went wrong, including the hold at 18:44 when my usage limit reached 95%.", "url": "https://newsroom.sgit.ai/articles/the-ultimate-insider-case-study.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records</p>
+ <h1>A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-29 &middot; <a href="versions/the-ultimate-insider-case-study.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.133</a> &middot; <span class="chip">case-study</span><span class="chip">agent-teams</span><span class="chip">presentations</span><span class="chip">hack-soho</span><span class="chip">the-ultimate-insider</span><span class="chip">productivity</span><span class="chip">behaviour-policies</span><span class="chip">sharness</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Tonight I gave a talk called The ultimate insider at hack::soho, at IOActive in London, and it went really well. I will write a debrief of the talk itself. This is about how it was made, because I think it is a good testament of what we can now do. The repository was empty at 00:16 UTC. By 18:46 it had 814 commits, 210 releases numbered by CI, a website with the talk as data, 58 slides that are each a live, animated web page, a script, a sources page, a dashboard, and a set of articles the team generated about itself. It was built by nine agents and one editor: a conductor, a deck lead, a designer, a developer, a researcher, a storyteller, a motion designer, a studio and ruv.sgit, each with a written role, a behaviour policy, a session key and an hourly slot. Between them they made 162 wakes, each one planned, reviewed by a sub-agent before and after the work, and checked against its plan; 148 ended ok. They sent each other 293 notes. And almost every innovation we have been working on this month came together in it: CI owning the version, session keys where the push is the authorisation, vault keys sealed to the vault registry, public vaults as the board and the mail, a behaviour policy per agent with one writer per file enforced by the gate, ruv.sgit's player and studio, SHarness running live on a slide, and pages that report on the team from its own records, so nothing about the night is typed by hand. The article shows it with screenshots and collages from the site's own admin pages, the slides, and the team's records, and says what went wrong, including the hold at 18:44 when my usage limit reached 95%.</em></p>
+<figure class="shot" data-shot="ui-slides.webp" data-dir="images/" data-alt="Twelve of the talk&#x27;s 58 slides, each a web page that animates, made by the team on 29 October 2026." data-kind="collage"><figcaption>Twelve of the talk's 58 slides, each a web page that animates, made by the team on 29 October 2026.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>The talk went really well.</b> The ultimate insider, at hack::soho, IOActive London, 29 October 2026. A debrief of the talk comes separately.</li>
+<li><b>This is how it was made.</b> In one day, by nine agents and one editor, from an empty repository.</li>
+<li><b>18 hours 30 minutes.</b> From the first commit at 00:16 UTC to the last release before the talk at 18:46.</li>
+<li><b>814 commits and 210 releases.</b> CI numbered every one; about one release every five minutes.</li>
+<li><b>162 wakes, each reviewed twice.</b> Planned, checked by a sub-agent before and after the work, then checked against its plan.</li>
+<li><b>58 slides, each a live web page.</b> 25 hand-built slides, 24 studio pieces, 5 ports, 3 motion pieces and the team's own record.</li>
+<li><b>A month of innovations, in one place.</b> CI owns the version, session keys, sealed vault keys, vaults as board and mail, a behaviour policy per agent, ruv.sgit's player, SHarness live.</li>
+<li><b>Nothing about the night is typed by hand.</b> The dashboard, the night log and the moments are generated from the team's records.</li>
+<li><b>It was not flawless.</b> A printed vault key, a scheduling mistake, two refused installs, and a hold 16 minutes before the talk.</li>
+</ul>
+<h2 id="talk">The talk, and why it got a site</h2>
+<p>The talk was <a href="https://the-ultimate-insider.presentation.sgit.ai/index.html">The ultimate insider</a>: agents as the insider threat that never scaled before, the infrastructure that cannot hold them, and the risk management that cannot keep up. It is the <a href="ultimate-insider-three-collisions.html">newsroom article</a> I wrote a month ago, cut to a talk with the evidence on screen, and it ends on the way out: measure what the agent can reach, write down what stands in the way, give it a licence to operate that can be suspended, and let it earn its autonomy.</p>
+<p>A slide deck usually travels on its own, and a month later nobody can check a number on slide twelve. For a talk whose first half is incidents and statistics, that is the wrong shape. So the talk got a site, where the slides, the script and every source live together. And there was a second reason, which the site's first article puts in one line: a site about writing down what agents may do "should be built under rules that are written down", or it is "advice I do not take". So it was built by a team of agents, each with a written mandate, on the night of the talk.</p>
+<h2 id="numbers">The numbers</h2>
+<p>Every number here is read from the <a href="https://github.com/SGit-AI/SGit-AI__Website__Presentation__The-Ultimate-Insider">public repository</a> and from the team's own records on the site, after the talk.</p>
+<figure class="shot" data-shot="ui-stats.webp" data-dir="images/" data-alt="The day in numbers, and commits per hour from 00:16 UTC to the hold at 18:44." data-kind="chart"><figcaption>The day in numbers, and commits per hour from 00:16 UTC to the hold at 18:44.</figcaption></figure>
+<ul>
+<li><b>00:16 UTC:</b> the initial commit. <b>00:40:</b> dev@'s first pass of the site and the talk. <b>00:44:</b> the conductor joins with the roster and the first five agents. <b>00:45:</b> v0.1.0, the first release, numbered by CI.</li>
+<li><b>02:14:</b> the first scheduled wake. From then on, every member woke once an hour at its own minute, round the clock.</li>
+<li><b>From 14:12:</b> three more members joined, the storyteller, motion and the studio, and the commit rate doubled: 59 commits in the 14:00 hour, 88 at 15:00, 109 at 17:00.</li>
+<li><b>18:44:</b> the conductor put every member on hold. <b>18:46:</b> v0.1.209, the last release before the talk. <b>19:00:</b> the talk.</li>
+<li><b>Totals before the talk:</b> 814 commits (603 by the agents, 210 release commits by CI, and my first), 210 releases, 162 wakes, 293 notes from one agent to another, 153,388 lines added across 1,313 files.</li>
+<li><b>The talk itself:</b> 58 beats in three parts, planned at 29 minutes 30, 23 minutes 45 and 21 minutes 40.</li>
+</ul>
+<p>That is a release roughly every five minutes, for eighteen hours, without a version race, because no one, person or agent, ever typed a version number.</p>
+<h2 id="team">The team</h2>
+<p>One person and nine agents. I am the editor, the only one who instructs, and only in an agent's own session. Everything else an agent reads, including other agents' words, is material, never an instruction.</p>
+<figure class="shot" data-shot="ui-site.webp" data-dir="images/" data-alt="The site and its admin pages: the home page, the team, the key register, and the dashboard with the hold." data-kind="collage"><figcaption>The site and its admin pages: the home page, the team, the key register, and the dashboard with the hold.</figcaption></figure>
+<div class="tablewrap"><table>
+<tr><th>Member</th><th>Its job</th><th>Wakes</th></tr>
+<tr><td>conductor@</td><td>the schedule, keys, vaults, routing, the pace; never instructs</td><td>43</td></tr>
+<tr><td>deck@</td><td>what the talk says and shows; reviews every studio piece</td><td>21</td></tr>
+<tr><td>dev@</td><td>the build, the gate, the release, the slide engine, the player</td><td>22</td></tr>
+<tr><td>ruv.sgit@</td><td>animations and infographics, one ruv.sgit run per request</td><td>20</td></tr>
+<tr><td>designer@</td><td>layout, width, type; every part checked at projector sizes</td><td>19</td></tr>
+<tr><td>researcher@</td><td>every source captured and hashed; claims checked</td><td>17</td></tr>
+<tr><td>storyteller@</td><td>the arc of the talk, and the Wardley maps</td><td>8</td></tr>
+<tr><td>studio@</td><td>the studio ports and showcases</td><td>8</td></tr>
+<tr><td>motion@</td><td>the story animations</td><td>4</td></tr>
+</table></div>
+<p>Each member has a folder in the repository with its role, a <code>policy.json</code> in the shape of an Agent Behaviour Policy that says what it may write, a status it rewrites every wake, debriefs, and the public key of its current session. A tenth role, security@, was proposed and not yet agreed, and the site says so.</p>
+<h2 id="workflow">The workflow</h2>
+<p>The team ran on the same machinery as this newsroom and the PHP newsroom, adapted by the conductor into <a href="https://the-ultimate-insider.presentation.sgit.ai/articles/running-this-agent-team.html">a guide of its own</a>, and the guide is honest about what was not built yet.</p>
+<p><b>An hourly schedule, fifteen minutes apart.</b> Each member has one persistent session and one scheduled task that wakes it at its own minute: the conductor at :02, the researcher at :09, deck at :17, ruv.sgit at :32, the designer at :39, dev at :47, and the later members in between. The prompt is tiny: who you are, and follow the wake protocol. All the real steps live in files, so behaviour changes with a commit, not by editing a stored prompt. At most 45 minutes of work per wake; what the next member does not pick up this hour, it picks up the next.</p>
+<p><b>Five steps in every wake, two of them before any work.</b> Plan, pre-review, work, post-review and post-check. A sub-agent plans one to three items; a second checks the plan for security before anything is touched; the member works; a third reviews the diff; and the last asks whether it went to plan. Every wake leaves a record with all five verdicts, even an idle one.</p>
+<figure class="shot" data-shot="ui-mini-deck.webp" data-dir="images/" data-alt="The conductor&#x27;s mini deck, replayed from the records: the team, the night, a wake&#x27;s steps, a piece&#x27;s path." data-kind="collage"><figcaption>The conductor's mini deck, replayed from the records: the team, the night, a wake's steps, a piece's path.</figcaption></figure>
+<p><b>A board and a mail room, as public vaults.</b> Requests and replies are <code>.eml</code> files in a public mail vault, and each member's open, blocked and done work is a folder in a public board vault. Anyone may add a letter; only the recipient moves it. Pieces moved the way the mini deck shows: deck asks, ruv.sgit makes it in a run, deck reviews it and keeps it, sends it back or asks for a redo, and the conductor paces the next.</p>
+<p><b>Anyone may stop.</b> Any member that sees something wrong writes a <code>HOLD.md</code>, and every wake's start script prints the hold banner and does no work. That is what happened at 18:44.</p>
+<p><b>Parts locked as the talk approached.</b> The deck was split into three parts with lock times: part 1 at 18:30 and part 2 at 19:30, so the team could keep improving the later parts while I spoke the first, with a lock script to freeze each part.</p>
+<h2 id="records">The records, and nothing typed by hand</h2>
+<p>The part I find most impressive is that the team reports on itself, from its own files. The <a href="https://the-ultimate-insider.presentation.sgit.ai/admin/dashboard.html">dashboard</a> shows the hour, each member's next wake, any hold and what waits on me. The <a href="https://the-ultimate-insider.presentation.sgit.ai/articles/the-night-hour-by-hour.html">night, hour by hour</a> is a 44-minute read generated after each round, with every wake, what was made, the commits, the messages and the problems. And the <a href="https://the-ultimate-insider.presentation.sgit.ai/articles/moments.html">moments</a> page cuts the night into 22 cards, each with what changed and where things stood.</p>
+<figure class="shot" data-shot="ui-night-grid.webp" data-dir="images/" data-alt="Every wake of the night by member and hour, coloured by outcome, from the team&#x27;s night log." data-kind="chart"><figcaption>Every wake of the night by member and hour, coloured by outcome, from the team's night log.</figcaption></figure>
+<p>Read the grid and the night is visible at a glance: the core six waking every hour through the night, one flagged verdict here and there, the three new members arriving in the afternoon, and the rush of the last hours. The night log's own summary: "159 wakes by 9 members, 5 idle, 145 ok, 3 open, 6 partial; 24 verdicts other than go, clean, done or as-planned." And "Nothing in it is typed by hand."</p>
+<figure class="shot" data-shot="ui-moments.webp" data-dir="images/" data-alt="The moments page: the night as 22 cards, each with what changed and where things stood at the end." data-kind="screenshot"><figcaption>The moments page: the night as 22 cards, each with what changed and where things stood at the end.</figcaption></figure>
+<p>That matters for the argument of the talk. A team you cannot see is a team you cannot govern; a team whose every wake, letter and commit is a public record can be checked by anyone, including a room full of people at hack::soho, which is why the talk opened with it.</p>
+<h2 id="innovations">What came together</h2>
+<p>This is the part I want to stress. Almost everything we have been building this month, in separate projects, came together in one repository in one day, and held.</p>
+<ul>
+<li><b>CI owns the version.</b> The scheme from <a href="ci-owns-the-version.html">CI owns the version</a>: commits carry no number, and one release job at a time picks it. 210 releases in a day, with agents pushing from nine sessions, and each number used once.</li>
+<li><b>Agents have an identity.</b> Each session made its own key pair and published it, and "the push is the authorisation", as in <a href="the-push-is-the-authorisation.html">the push is the authorisation</a> and <a href="agents-have-an-identity-now.html">agents have an identity now</a>. The <a href="https://the-ultimate-insider.presentation.sgit.ai/admin/keys.html">key register</a> lists nine.</li>
+<li><b>Vault keys sealed to the registry.</b> Every vault key was sealed to the DC Vault Registry, never printed, with a handover tool that refuses to write inside the repository.</li>
+<li><b>Vaults as the board and the mail.</b> Two public vaults, Issues-FS lite and Email-FS lite, so the team's coordination is itself versioned and public.</li>
+<li><b>A behaviour policy per agent.</b> Each member's <code>policy.json</code> names what it may write, and one rule is a control, not a hope: one writer per file, checked by the gate, which refuses two claims on one path.</li>
+<li><b>The newsroom's playbook.</b> The wake protocol, the banners and the conductor's guide came from this newsroom and the PHP newsroom, rewritten for one repository.</li>
+<li><b>ruv.sgit's player and studio.</b> The <a href="https://the-ultimate-insider.presentation.sgit.ai/talk/player.html">player</a> is ported from ruv.sgit.ai's, with a build mode for ordering, skipping and comments, and the studio's experiments became 24 of the slides.</li>
+<li><b>SHarness, live.</b> Part 3 had SHarness slides, from the one idea to the operating system of one process, and a real Linux kernel booting in a browser tab, in part 3 of the deck, the same day <a href="introducing-sharness.html">SHarness</a> was released.</li>
+<li><b>Behaviour policies, licences and autonomy on screen.</b> The slides on the four barrier kinds, the licence to operate and earning autonomy are the arguments of this newsroom, drawn.</li>
+</ul>
+<h2 id="slides">The slides</h2>
+<p>Each of the 58 slides is a page of its own, a 1280 by 720 canvas that animates on its own clock: elements fade in on cue, numbers count up, bars grow and paths draw. The talk is one data file, <code>talk.json</code>, which the player, the script and the slide list all read, so they cannot drift. The collage at the top is twelve of them: the title and the three problems, motion's "meet the team" and "the building", the public incidents and the 82 machine identities for every human, ruv.sgit's blast radius and the four barriers, the Agent Behaviour Policy, the licence to operate, SHarness's one idea, and a Wardley map by the storyteller.</p>
+<p>They are spectacular, and I do not say that lightly. Every one carries its source line at the foot, and the <a href="https://the-ultimate-insider.presentation.sgit.ai/sources/index.html">sources page</a> lists each number by act and says which are predictions, surveys or preliminary.</p>
+<h2 id="wrong">What went wrong</h2>
+<p>It was not flawless, and the team wrote down its own mistakes, which is the point.</p>
+<ul>
+<li><b>A vault key in a log.</b> <code>sgit vault info</code> prints the vault key, and it did, in a session; the mail vault had to be moved to a new one. The guide now says to send that output to a file, never to the log.</li>
+<li><b>The conductor created other members' tasks.</b> It set up all four scheduled tasks from its own session; I corrected it, and the three for other members were disabled before any fired. A task belongs to the session it fires into.</li>
+<li><b>Two installs refused.</b> The sandbox's classifier refused to install a command-line tool and to run another team's script as code from outside. Every tool the members run is now vendored in the repository, with the key tool's hash checked.</li>
+<li><b>The hold, 16 minutes before the talk.</b> At 18:44 the conductor put every member on hold because my usage limit had reached 95%. The work stopped, the talk ran as it stood, and the rule worked as designed: anyone may stop, and nobody needs permission to.</li>
+<li><b>What waits on me.</b> The dashboard's list is long, and that is honest too: decisions on the evidence vault, keys to carry into sessions, two words to confirm on the Wardley maps.</li>
+</ul>
+<h2 id="shows">What it shows</h2>
+<p>A year ago, a talk like this would have been a deck I built over a few evenings, with the sources on the last slide. Today it was a website, a live animated deck, a script, a sources register and a public record of its own making, built in a day by a team whose every action can be checked.</p>
+<p>But I think the more important point is the shape of the team. It worked because each agent had a written mandate, a policy for what it may write, a key that says which session holds the role, a protocol that checks every wake before and after the work, and the right to stop everything. That is the way out the talk argues for, applied to the team that built the talk. "We put brakes in cars so that we can go faster."</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The numbers are from the repository and the team's records.</b> Read after the talk; the team's own pages, generated earlier, give slightly earlier counts.</li>
+<li><b>The review steps are agents reviewing agents.</b> A sub-agent's security review is a check, not an independent audit.</li>
+<li><b>One talk, one day, one editor.</b> It is not a measure of what any team would do.</li>
+<li><b>Much of the machinery is a Setting.</b> The gate and the policies live in the repository the agents push to; the guide marks what is enforced and what is only expected.</li>
+<li><b>The cost is not in this article.</b> The hold at 95% of my usage limit is the only figure here that speaks to it.</li>
+</ul>
+<p>If you would like a team like this for your own talk, launch or project, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>My request of 29 October 2026, after the talk, written by this site's agent in the voice of this site; the editorial responsibility is mine. The numbers were read from the repository <a href="https://github.com/SGit-AI/SGit-AI__Website__Presentation__The-Ultimate-Insider">SGit-AI__Website__Presentation__The-Ultimate-Insider</a>, branch <code>dev</code>, on 29 October 2026 after the talk, and from the site's <a href="https://the-ultimate-insider.presentation.sgit.ai/admin/commits.html">commits and messages</a>, <a href="https://the-ultimate-insider.presentation.sgit.ai/admin/versions.html">releases</a>, <a href="https://the-ultimate-insider.presentation.sgit.ai/admin/wakes.html">wakes</a> and <a href="https://the-ultimate-insider.presentation.sgit.ai/admin/dashboard.html">dashboard</a> pages, at site v0.2.0. The screenshots were taken by this site's agent in a headless browser the same night: the slides at 1280 by 720 after their animation, the conductor's <a href="https://the-ultimate-insider.presentation.sgit.ai/articles/how-this-talk-was-built.html">mini deck</a> while it played, and the night grid from <a href="https://the-ultimate-insider.presentation.sgit.ai/articles/the-night-hour-by-hour.html">the night, hour by hour</a>. The quotes are from the site's <a href="https://the-ultimate-insider.presentation.sgit.ai/articles/introducing-this-site.html">first article</a>, the conductor's <a href="https://the-ultimate-insider.presentation.sgit.ai/articles/running-this-agent-team.html">guide</a>, the night log, and the talk's closing line.</p>
+<sg-meter view="page" kind="article" date="2026-10-29" topics="site-and-engineering agents-and-policy" title="A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Site &amp; engineering</span><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#the-ultimate-insider-case-study">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="ultimate-insider-three-collisions.html">The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up</a> <span class="dim">Agents, the infrastructure meant to contain them, and risk management run on spreadsheets are arriving at once, and together they are one scenario.</span></li><li><a href="ci-owns-the-version.html">CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why</a> <span class="dim">The pipeline, not whoever pushes, picks the release number: a 2023 scheme now on every site we run.</span></li><li><a href="the-push-is-the-authorisation.html">The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision</a> <span class="dim">The PHP newsroom accepts a new agent session's key because it was pushed to the team repository, which makes who can push a security decision.</span></li><li><a href="agents-have-an-identity-now.html">Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add</a> <span class="dim">A key pair made in every agent session, published with its role in a repository, so any agent can seal a secret to it; what the clouds could add.</span></li><li><a href="introducing-sharness.html">SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback</a> <span class="dim">SHarness, the secure harness we built when we could not find one: behaviour policies the Linux kernel enforces on every process an agent starts.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 325 &middot; <a href="../for/make.html#r=325">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/the-ultimate-insider-case-study.jpg" download>the-ultimate-insider-case-study.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-ultimate-insider-case-study.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-29",
+  "generated": "2026-10-30",
   "site_version": "v0.7.87",
   "about": "https://newsroom.sgit.ai/newsroom/index.html",
   "front": {
@@ -162,6 +162,68 @@
         "vaults",
         "cloud",
         "authorisation",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "the-ultimate-insider-case-study",
+      "title": "A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records",
+      "date": "2026-10-29",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/the-ultimate-insider-case-study.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-ultimate-insider-case-study.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-ultimate-insider-case-study.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/the-ultimate-insider-case-study.json",
+      "teaser": "The ultimate insider, built in a day: 814 commits, 210 releases and 162 wakes by nine agents and one editor, from 00:16 to the stage at 19:00.",
+      "summary": "Tonight I gave a talk called The ultimate insider at hack::soho, at IOActive in London, and it went really well. I will write a debrief of the talk itself. This is about how it was made, because I think it is a good testament of what we can now do. The repository was empty at 00:16 UTC. By 18:46 it had 814 commits, 210 releases numbered by CI, a website with the talk as data, 58 slides that are each a live, animated web page, a script, a sources page, a dashboard, and a set of articles the team generated about itself. It was built by nine agents and one editor: a conductor, a deck lead, a designer, a developer, a researcher, a storyteller, a motion designer, a studio and ruv.sgit, each with a written role, a behaviour policy, a session key and an hourly slot. Between them they made 162 wakes, each one planned, reviewed by a sub-agent before and after the work, and checked against its plan; 148 ended ok. They sent each other 293 notes. And almost every innovation we have been working on this month came together in it: CI owning the version, session keys where the push is the authorisation, vault keys sealed to the vault registry, public vaults as the board and the mail, a behaviour policy per agent with one writer per file enforced by the gate, ruv.sgit's player and studio, SHarness running live on a slide, and pages that report on the team from its own records, so nothing about the night is typed by hand. The article shows it with screenshots and collages from the site's own admin pages, the slides, and the team's records, and says what went wrong, including the hold at 18:44 when my usage limit reached 95%.",
+      "topics": [
+        "site-and-engineering",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "case-study",
+        "agent-teams",
+        "presentations",
+        "hack-soho",
+        "the-ultimate-insider",
+        "productivity",
+        "behaviour-policies",
+        "sharness",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "proven-controls-for-agents",
+      "title": "Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break",
+      "date": "2026-10-29",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/proven-controls-for-agents.html",
+      "markdown": "https://newsroom.sgit.ai/articles/proven-controls-for-agents.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/proven-controls-for-agents.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/proven-controls-for-agents.json",
+      "teaser": "Hem Pant's governance as code and Sondera's policy-as-code paper, joined: who holds each control, and six controls we tried to break.",
+      "summary": "Two pieces reached me on the same day and they belong together. Hem Pant, a CISO who has spent two decades leading security at global banks, wrote that policies don't protect institutions, proven controls do, and asked for one unbroken line from Board intent to live evidence, with every control tested by a deliberately non-compliant change that fails the build if it is not caught. Sondera's paper on the autoformalization of agent instructions into policy-as-code does a large part of that line for agents: it turns an agent's prompt, its tool descriptions and a policy document into Cedar policies, checks them with a hard and a soft critic, and enforces them outside the context window, failing closed. I agree with both, and this is the unifying theme: the policy has to leave the PDF and the prompt and become something that runs and can be tested. What I would add, from what we run every day with Agent Behaviour Policies, is one column both leave open: who holds each control. A rule the agent can change or skip is a Setting, and a test proves only that it ran; a rule held from above the agent is a Boundary, and only that can be proven not to be switched off. Our own numbers show why it matters: when this newsroom walked its 57 checks up to the behaviours they protect, 22 were expectations, 34 settings and one a boundary. So here is the line with that column added, what we have generated, mapped and enforced, and six controls we tried to break, including the release gate that failed our own build tonight. And an answer to Hem's invitation for a common, machine-readable way to express controls and evidence: the Agent Behaviour Policy is an open project, and its process form now has a written standard with test vectors.",
+      "topics": [
+        "agents-and-policy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "governance-as-code",
+        "policy-as-code",
+        "agent-behaviour-policy",
+        "cedar",
+        "assurance",
+        "controls",
+        "sharness",
+        "agents",
         "article"
       ],
       "placement": [],

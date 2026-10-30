@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-29",
+  "generated": "2026-10-30",
   "site_version": "v0.7.87",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
@@ -87,7 +87,10 @@
         "a-payout-for-every-row",
         "agents-have-an-identity-now"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-ultimate-insider-case-study",
+        "proven-controls-for-agents"
+      ],
       "figures": [
         {
           "file": "shn-binding.webp",
@@ -536,7 +539,8 @@
       ],
       "links_in": [
         "introducing-sharness",
-        "investor-sgit-ai"
+        "investor-sgit-ai",
+        "the-ultimate-insider-case-study"
       ],
       "figures": [
         {
@@ -712,6 +716,435 @@
           {
             "text": "Trust that ends unless someone renews it is how an agent's identity should work.",
             "why": "Expiry as a feature of identity."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-ultimate-insider-case-study",
+      "title": "A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records",
+      "date": "2026-10-29",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-ultimate-insider-case-study.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-ultimate-insider-case-study.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-ultimate-insider-case-study.webp",
+      "teaser": "The ultimate insider, built in a day: 814 commits, 210 releases and 162 wakes by nine agents and one editor, from 00:16 to the stage at 19:00.",
+      "topics": [
+        "site-and-engineering",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "case-study",
+        "agent-teams",
+        "presentations",
+        "hack-soho",
+        "the-ultimate-insider",
+        "productivity",
+        "behaviour-policies",
+        "sharness",
+        "article"
+      ],
+      "links_out": [
+        "ultimate-insider-three-collisions",
+        "ci-owns-the-version",
+        "the-push-is-the-authorisation",
+        "agents-have-an-identity-now",
+        "introducing-sharness"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ui-slides.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ui-slides.webp",
+          "caption": "Twelve of the talk's 58 slides, each a web page that animates, made by the team on 29 October 2026.",
+          "kind": "collage"
+        },
+        {
+          "file": "ui-stats.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ui-stats.webp",
+          "caption": "The day in numbers, and commits per hour from 00:16 UTC to the hold at 18:44.",
+          "kind": "chart"
+        },
+        {
+          "file": "ui-site.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ui-site.webp",
+          "caption": "The site and its admin pages: the home page, the team, the key register, and the dashboard with the hold.",
+          "kind": "collage"
+        },
+        {
+          "file": "ui-mini-deck.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ui-mini-deck.webp",
+          "caption": "The conductor's mini deck, replayed from the records: the team, the night, a wake's steps, a piece's path.",
+          "kind": "collage"
+        },
+        {
+          "file": "ui-night-grid.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ui-night-grid.webp",
+          "caption": "Every wake of the night by member and hour, coloured by outcome, from the team's night log.",
+          "kind": "chart"
+        },
+        {
+          "file": "ui-moments.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ui-moments.webp",
+          "caption": "The moments page: the night as 22 cards, each with what changed and where things stood at the end.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "the-ultimate-insider-case-study",
+        "teaser": "The ultimate insider, built in a day: 814 commits, 210 releases and 162 wakes by nine agents and one editor, from 00:16 to the stage at 19:00.",
+        "topics": [
+          "site-and-engineering",
+          "agents-and-policy"
+        ],
+        "core_idea": "A talk's site, deck and records were built in one day by nine agents and one editor, each agent with a written role, a behaviour policy, a session key and an hourly slot, every wake reviewed before and after; the month's innovations, CI owning the version, session keys, sealed vault keys, vaults as board and mail, ruv.sgit's player and SHarness, came together and held, and the team reported on itself from its own records.",
+        "nodes": [
+          {
+            "id": "talk",
+            "label": "The talk and its site",
+            "kind": "claim",
+            "summary": "Slides, script and sources together, built under written rules."
+          },
+          {
+            "id": "numbers",
+            "label": "The day in numbers",
+            "kind": "example",
+            "summary": "814 commits, 210 releases, 162 wakes, 293 notes, 58 slides."
+          },
+          {
+            "id": "team",
+            "label": "Nine agents and one editor",
+            "kind": "concept",
+            "summary": "Role, policy, key and slot each; only the editor instructs."
+          },
+          {
+            "id": "workflow",
+            "label": "The wake protocol",
+            "kind": "method",
+            "summary": "Hourly slots; plan, pre-review, work, post-review, post-check."
+          },
+          {
+            "id": "records",
+            "label": "Nothing typed by hand",
+            "kind": "method",
+            "summary": "Dashboard, night log and moments generated from records."
+          },
+          {
+            "id": "innovations",
+            "label": "A month, in one repository",
+            "kind": "claim",
+            "summary": "CI version, session keys, sealed keys, vaults, ruv.sgit, SHarness."
+          },
+          {
+            "id": "slides",
+            "label": "58 live slides",
+            "kind": "example",
+            "summary": "Each a page that animates; the talk is one data file."
+          },
+          {
+            "id": "wrong",
+            "label": "What went wrong",
+            "kind": "example",
+            "summary": "A printed key, misplaced tasks, refused installs, the 18:44 hold."
+          },
+          {
+            "id": "shows",
+            "label": "Brakes so you can go faster",
+            "kind": "claim",
+            "summary": "The way out the talk argues for, applied to its own team."
+          }
+        ],
+        "edges": [
+          {
+            "from": "talk",
+            "to": "team",
+            "rel": "leads-to"
+          },
+          {
+            "from": "team",
+            "to": "workflow",
+            "rel": "produces"
+          },
+          {
+            "from": "workflow",
+            "to": "numbers",
+            "rel": "produces"
+          },
+          {
+            "from": "workflow",
+            "to": "records",
+            "rel": "produces"
+          },
+          {
+            "from": "innovations",
+            "to": "team",
+            "rel": "extends"
+          },
+          {
+            "from": "slides",
+            "to": "talk",
+            "rel": "example-of"
+          },
+          {
+            "from": "wrong",
+            "to": "workflow",
+            "rel": "contrasts"
+          },
+          {
+            "from": "records",
+            "to": "shows",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "ci-owns-the-version",
+            "the-push-is-the-authorisation",
+            "agents-have-an-identity-now",
+            "introducing-sharness"
+          ],
+          "pages": [
+            "articles/ultimate-insider-three-collisions.html"
+          ],
+          "sites": [
+            "https://the-ultimate-insider.presentation.sgit.ai/index.html",
+            "https://github.com/SGit-AI/SGit-AI__Website__Presentation__The-Ultimate-Insider",
+            "https://the-ultimate-insider.presentation.sgit.ai/admin/dashboard.html",
+            "https://the-ultimate-insider.presentation.sgit.ai/articles/the-night-hour-by-hour.html",
+            "https://the-ultimate-insider.presentation.sgit.ai/articles/running-this-agent-team.html",
+            "https://the-ultimate-insider.presentation.sgit.ai/talk/player.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Nothing in it is typed by hand.",
+            "why": "The night log is generated from the team's records."
+          },
+          {
+            "text": "We put brakes in cars so that we can go faster.",
+            "why": "The talk's closing line, and the team's shape."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "proven-controls-for-agents",
+      "title": "Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break",
+      "date": "2026-10-29",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/proven-controls-for-agents.html",
+      "markdown": "https://newsroom.sgit.ai/articles/proven-controls-for-agents.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/proven-controls-for-agents.webp",
+      "teaser": "Hem Pant's governance as code and Sondera's policy-as-code paper, joined: who holds each control, and six controls we tried to break.",
+      "topics": [
+        "agents-and-policy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "governance-as-code",
+        "policy-as-code",
+        "agent-behaviour-policy",
+        "cedar",
+        "assurance",
+        "controls",
+        "sharness",
+        "agents",
+        "article"
+      ],
+      "links_out": [
+        "system-prompts-as-behaviour-policies",
+        "cedar-and-the-policy-vault",
+        "behaviour-policies-from-the-checks",
+        "policy-as-code-needs-a-policy-first",
+        "introducing-sharness",
+        "a-leak-without-breaking-the-policy",
+        "a-payout-for-every-row",
+        "approve-at-altitude",
+        "agent-behaviour-policies-move-to-the-open-security-summit"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "pv-hem-pant-post.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pv-hem-pant-post.webp",
+          "caption": "Hem Pant's LinkedIn article of 29 October 2026: Policy, Standard, Control, Evidence.",
+          "kind": "aside"
+        },
+        {
+          "file": "pv-sondera-paper.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pv-sondera-paper.webp",
+          "caption": "Sondera's paper on arXiv: agent instructions turned into Cedar policies by a generator-critic loop.",
+          "kind": "aside"
+        },
+        {
+          "file": "pv-line.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pv-line.webp",
+          "caption": "Hem Pant's line from Board intent to evidence, with Sondera's pipeline, our work, and who holds each rule.",
+          "kind": "diagram"
+        },
+        {
+          "file": "pv-receipts.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pv-receipts.webp",
+          "caption": "Six of our controls, each tested with a deliberate violation, and what happened, misses included.",
+          "kind": "table"
+        }
+      ],
+      "graph": {
+        "slug": "proven-controls-for-agents",
+        "teaser": "Hem Pant's governance as code and Sondera's policy-as-code paper, joined: who holds each control, and six controls we tried to break.",
+        "topics": [
+          "agents-and-policy",
+          "news-and-evidence"
+        ],
+        "core_idea": "Governance as code and autoformalized policy-as-code both move the policy from text to something that runs and can be tested; for agents one column has to be added, who holds each control, because only a control held from above the agent (a Boundary) can be proven not to be switched off, and proof means a deliberate violation refused, as six of our own controls show.",
+        "nodes": [
+          {
+            "id": "hem",
+            "label": "Hem Pant: proven controls",
+            "kind": "claim",
+            "summary": "Policy, standard, control, evidence; every control must catch a violation."
+          },
+          {
+            "id": "sondera",
+            "label": "Sondera: autoformalization",
+            "kind": "method",
+            "summary": "Prompt, tools and policy documents into Cedar, enforced outside the context."
+          },
+          {
+            "id": "theme",
+            "label": "The policy has to run",
+            "kind": "concept",
+            "summary": "Out of the PDF and the prompt, into something tested."
+          },
+          {
+            "id": "column",
+            "label": "Who holds each control",
+            "kind": "concept",
+            "summary": "Expectation, Setting or Boundary; only a Boundary proves it holds."
+          },
+          {
+            "id": "count",
+            "label": "Our 57 checks",
+            "kind": "example",
+            "summary": "22 expectations, 34 settings, one boundary."
+          },
+          {
+            "id": "process",
+            "label": "The second adversary",
+            "kind": "claim",
+            "summary": "The model is held by Cedar; the process needs the kernel."
+          },
+          {
+            "id": "receipts",
+            "label": "Six controls, tried and broken",
+            "kind": "example",
+            "summary": "Leak hook, Rego, Cedar, checks, hello, the release gate."
+          },
+          {
+            "id": "first",
+            "label": "The policy comes first",
+            "kind": "claim",
+            "summary": "The mandate says why, and what no engine can see."
+          },
+          {
+            "id": "altitude",
+            "label": "Humans approving every change",
+            "kind": "method",
+            "summary": "Approve at altitude; one hash the agent cannot change."
+          },
+          {
+            "id": "invitation",
+            "label": "A common format",
+            "kind": "claim",
+            "summary": "ABP as an open project; the PBP standard with test vectors."
+          }
+        ],
+        "edges": [
+          {
+            "from": "hem",
+            "to": "theme",
+            "rel": "leads-to"
+          },
+          {
+            "from": "sondera",
+            "to": "theme",
+            "rel": "leads-to"
+          },
+          {
+            "from": "theme",
+            "to": "column",
+            "rel": "extends"
+          },
+          {
+            "from": "count",
+            "to": "column",
+            "rel": "example-of"
+          },
+          {
+            "from": "column",
+            "to": "process",
+            "rel": "leads-to"
+          },
+          {
+            "from": "receipts",
+            "to": "hem",
+            "rel": "example-of"
+          },
+          {
+            "from": "first",
+            "to": "sondera",
+            "rel": "extends"
+          },
+          {
+            "from": "altitude",
+            "to": "hem",
+            "rel": "extends"
+          },
+          {
+            "from": "invitation",
+            "to": "hem",
+            "rel": "produces"
+          },
+          {
+            "from": "process",
+            "to": "sondera",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "introducing-sharness",
+            "behaviour-policies-from-the-checks",
+            "policy-as-code-needs-a-policy-first",
+            "cedar-and-the-policy-vault",
+            "system-prompts-as-behaviour-policies",
+            "a-leak-without-breaking-the-policy",
+            "a-payout-for-every-row",
+            "approve-at-altitude",
+            "agent-behaviour-policies-move-to-the-open-security-summit"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.linkedin.com/pulse/policies-dont-protect-institutions-proven-controls-do-hem-pant-9pjee",
+            "https://arxiv.org/abs/2606.26649",
+            "https://github.com/sondera-ai/sondera-harness-python",
+            "https://riskmandate.ai/abp.html",
+            "https://sharness.ai/design/decision/index.html",
+            "https://sharness.ai/code/standards/policy-v0/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Most organisations can show that a control exists. Far fewer can prove it works.",
+            "why": "Hem Pant's distinction between compliance and assurance."
+          },
+          {
+            "text": "Every control must catch a deliberately non-compliant change. If it doesn't, the build fails.",
+            "why": "The test applied to six of our controls."
+          },
+          {
+            "text": "A parser is not a sandbox.",
+            "why": "Why a rule about a command's text needs a kernel bound behind it."
           }
         ]
       }
@@ -1849,6 +2282,7 @@
       ],
       "links_in": [
         "introducing-sharness",
+        "proven-controls-for-agents",
         "insuring-agents-the-whole-story",
         "where-to-build-the-agent-insurer",
         "the-vendors-layer",
@@ -2096,7 +2530,8 @@
         "secrets-on-public-keys"
       ],
       "links_in": [
-        "agents-have-an-identity-now"
+        "agents-have-an-identity-now",
+        "the-ultimate-insider-case-study"
       ],
       "figures": [
         {
@@ -4761,6 +5196,7 @@
       "links_out": [],
       "links_in": [
         "investor-sgit-ai",
+        "the-ultimate-insider-case-study",
         "how-a-journalist-agent-publishes-here"
       ],
       "figures": [
@@ -14601,6 +15037,7 @@
       ],
       "links_in": [
         "introducing-sharness",
+        "proven-controls-for-agents",
         "the-sidecar-repository",
         "the-rules-of-the-game",
         "where-a-check-runs",
@@ -17974,6 +18411,7 @@
         "our-first-customers"
       ],
       "links_in": [
+        "proven-controls-for-agents",
         "the-open-security-summit-and-its-debt",
         "the-riskmandate-roadmap"
       ],
@@ -18677,6 +19115,7 @@
         "pki-everywhere"
       ],
       "links_in": [
+        "proven-controls-for-agents",
         "how-a-memo-becomes-a-release",
         "v0-12-in-numbers",
         "free-to-copy-paid-at-the-source"
@@ -30074,6 +30513,7 @@
         "code-review-as-a-fractal-semantic-graph"
       ],
       "links_in": [
+        "proven-controls-for-agents",
         "approved-business-mandates",
         "what-can-your-agent-reach",
         "allowed-is-not-right",
@@ -39513,6 +39953,7 @@
         "the-policy-draws-the-liability-line"
       ],
       "links_in": [
+        "proven-controls-for-agents",
         "an-analysts-blueprint-for-riskmandate",
         "governs-enforces-attests"
       ],
@@ -42266,6 +42707,7 @@
         "re-anchoring-agent-behaviour-policies"
       ],
       "links_in": [
+        "proven-controls-for-agents",
         "our-first-customers"
       ],
       "figures": [
@@ -44015,6 +44457,7 @@
         "the-human-in-the-loop"
       ],
       "links_in": [
+        "proven-controls-for-agents",
         "behaviour-policies-from-the-checks",
         "a-briefing-for-the-ciso-summit",
         "a-trusted-framework-for-agentic-finance",
@@ -67886,6 +68329,7 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "the-ultimate-insider-case-study",
         "a-policy-beside-the-prompt",
         "the-same-argument-in-our-words",
         "authority-outside-the-model",

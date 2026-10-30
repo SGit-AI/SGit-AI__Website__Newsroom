@@ -1,0 +1,185 @@
+{
+  "slug": "proven-controls-for-agents",
+  "teaser": "Hem Pant's governance as code and Sondera's policy-as-code paper, joined: who holds each control, and six controls we tried to break.",
+  "topics": [
+    "agents-and-policy",
+    "news-and-evidence"
+  ],
+  "core_idea": "Governance as code and autoformalized policy-as-code both move the policy from text to something that runs and can be tested; for agents one column has to be added, who holds each control, because only a control held from above the agent (a Boundary) can be proven not to be switched off, and proof means a deliberate violation refused, as six of our own controls show.",
+  "nodes": [
+    {
+      "id": "hem",
+      "label": "Hem Pant: proven controls",
+      "kind": "claim",
+      "summary": "Policy, standard, control, evidence; every control must catch a violation."
+    },
+    {
+      "id": "sondera",
+      "label": "Sondera: autoformalization",
+      "kind": "method",
+      "summary": "Prompt, tools and policy documents into Cedar, enforced outside the context."
+    },
+    {
+      "id": "theme",
+      "label": "The policy has to run",
+      "kind": "concept",
+      "summary": "Out of the PDF and the prompt, into something tested."
+    },
+    {
+      "id": "column",
+      "label": "Who holds each control",
+      "kind": "concept",
+      "summary": "Expectation, Setting or Boundary; only a Boundary proves it holds."
+    },
+    {
+      "id": "count",
+      "label": "Our 57 checks",
+      "kind": "example",
+      "summary": "22 expectations, 34 settings, one boundary."
+    },
+    {
+      "id": "process",
+      "label": "The second adversary",
+      "kind": "claim",
+      "summary": "The model is held by Cedar; the process needs the kernel."
+    },
+    {
+      "id": "receipts",
+      "label": "Six controls, tried and broken",
+      "kind": "example",
+      "summary": "Leak hook, Rego, Cedar, checks, hello, the release gate."
+    },
+    {
+      "id": "first",
+      "label": "The policy comes first",
+      "kind": "claim",
+      "summary": "The mandate says why, and what no engine can see."
+    },
+    {
+      "id": "altitude",
+      "label": "Humans approving every change",
+      "kind": "method",
+      "summary": "Approve at altitude; one hash the agent cannot change."
+    },
+    {
+      "id": "invitation",
+      "label": "A common format",
+      "kind": "claim",
+      "summary": "ABP as an open project; the PBP standard with test vectors."
+    }
+  ],
+  "edges": [
+    {
+      "from": "hem",
+      "to": "theme",
+      "rel": "leads-to"
+    },
+    {
+      "from": "sondera",
+      "to": "theme",
+      "rel": "leads-to"
+    },
+    {
+      "from": "theme",
+      "to": "column",
+      "rel": "extends"
+    },
+    {
+      "from": "count",
+      "to": "column",
+      "rel": "example-of"
+    },
+    {
+      "from": "column",
+      "to": "process",
+      "rel": "leads-to"
+    },
+    {
+      "from": "receipts",
+      "to": "hem",
+      "rel": "example-of"
+    },
+    {
+      "from": "first",
+      "to": "sondera",
+      "rel": "extends"
+    },
+    {
+      "from": "altitude",
+      "to": "hem",
+      "rel": "extends"
+    },
+    {
+      "from": "invitation",
+      "to": "hem",
+      "rel": "produces"
+    },
+    {
+      "from": "process",
+      "to": "sondera",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "introducing-sharness",
+      "behaviour-policies-from-the-checks",
+      "policy-as-code-needs-a-policy-first",
+      "cedar-and-the-policy-vault",
+      "system-prompts-as-behaviour-policies",
+      "a-leak-without-breaking-the-policy",
+      "a-payout-for-every-row",
+      "approve-at-altitude",
+      "agent-behaviour-policies-move-to-the-open-security-summit"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.linkedin.com/pulse/policies-dont-protect-institutions-proven-controls-do-hem-pant-9pjee",
+      "https://arxiv.org/abs/2606.26649",
+      "https://github.com/sondera-ai/sondera-harness-python",
+      "https://riskmandate.ai/abp.html",
+      "https://sharness.ai/design/decision/index.html",
+      "https://sharness.ai/code/standards/policy-v0/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Most organisations can show that a control exists. Far fewer can prove it works.",
+      "why": "Hem Pant's distinction between compliance and assurance."
+    },
+    {
+      "text": "Every control must catch a deliberately non-compliant change. If it doesn't, the build fails.",
+      "why": "The test applied to six of our controls."
+    },
+    {
+      "text": "A parser is not a sandbox.",
+      "why": "Why a rule about a command's text needs a kernel bound behind it."
+    }
+  ],
+  "figures": [
+    {
+      "file": "pv-hem-pant-post.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pv-hem-pant-post.webp",
+      "caption": "Hem Pant's LinkedIn article of 29 October 2026: Policy, Standard, Control, Evidence.",
+      "kind": "aside"
+    },
+    {
+      "file": "pv-sondera-paper.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pv-sondera-paper.webp",
+      "caption": "Sondera's paper on arXiv: agent instructions turned into Cedar policies by a generator-critic loop.",
+      "kind": "aside"
+    },
+    {
+      "file": "pv-line.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pv-line.webp",
+      "caption": "Hem Pant's line from Board intent to evidence, with Sondera's pipeline, our work, and who holds each rule.",
+      "kind": "diagram"
+    },
+    {
+      "file": "pv-receipts.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pv-receipts.webp",
+      "caption": "Six of our controls, each tested with a deliberate violation, and what happened, misses included.",
+      "kind": "table"
+    }
+  ]
+}
