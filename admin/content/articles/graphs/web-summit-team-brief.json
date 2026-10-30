@@ -1,0 +1,38 @@
+{
+ "slug": "web-summit-team-brief",
+ "teaser": "A brief for the Web Summit team: an event site run by an ephemeral agent team, from a proven template, with a map of every company to meet.",
+ "topics": ["startups-and-strategy", "agents-and-policy"],
+ "core_idea": "Seven of us go to Web Summit, and the three agent teams stood up this week give a template for an ephemeral team: a repository, a brief, a role and a policy per member, a key per session, hourly slots, five-step wakes, a hold, a board and a mailroom in git, and a gate; the event site consolidates the graph, the events, the materials and a countdown with observability, around a map of companies from public material, while email stays in each person's account with an agent that will sign what it drafts.",
+ "nodes": [
+  {"id": "seven", "label": "Seven people, one site", "kind": "example", "summary": "Web Summit, 9 to 12 November, run from one event site."},
+  {"id": "template", "label": "The template", "kind": "method", "summary": "Nine things every member of an ephemeral team gets from the first hour."},
+  {"id": "site", "label": "The event site", "kind": "artefact", "summary": "Graph, events, materials, a countdown and observability."},
+  {"id": "roles", "label": "The roles", "kind": "method", "summary": "Conductor, researcher, cartographer, writer, curator, analyst, designer, security."},
+  {"id": "map", "label": "The company map", "kind": "artefact", "summary": "Public facts, why it matters, the decision, an owner, the assets."},
+  {"id": "email", "label": "Email agents with keys", "kind": "method", "summary": "Each person's own account and agent, signing what it drafts."},
+  {"id": "design", "label": "The design track", "kind": "artefact", "summary": "Merchandise, a banner, cards and flyers, in their own brief."},
+  {"id": "schedule", "label": "To 12 November", "kind": "method", "summary": "Build, fill, Lisbon, follow up, then pause."},
+  {"id": "decide", "label": "What to decide", "kind": "question", "summary": "Name, owners, design budget, which email accounts first."}
+ ],
+ "edges": [
+  {"from": "template", "to": "site", "rel": "produces"},
+  {"from": "seven", "to": "site", "rel": "depends-on"},
+  {"from": "site", "to": "map", "rel": "produces"},
+  {"from": "roles", "to": "map", "rel": "produces"},
+  {"from": "email", "to": "map", "rel": "depends-on"},
+  {"from": "design", "to": "site", "rel": "extends"},
+  {"from": "schedule", "to": "site", "rel": "leads-to"},
+  {"from": "decide", "to": "site", "rel": "answers"},
+  {"from": "template", "to": "roles", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["web-summit-2026-the-plan", "the-ultimate-insider-case-study", "the-book-of-the-talk-and-its-companion", "the-inbox-team-as-a-recipe", "agents-have-an-identity-now"],
+  "pages": [],
+  "sites": ["https://github.com/SGit-AI/SGit-AI__Website__Cold-Read__The-Ultimate-Insider", "https://github.com/SGit-AI/SGit-AI__Website__Book__The-Ultimate-Insider"]
+ },
+ "quotes": [
+  {"text": "The heart of the site is the map of companies going to Web Summit.", "why": "The centre of the brief."},
+  {"text": "If we cannot see what is used, we cannot tell where we add value.", "why": "Why observability."},
+  {"text": "An event team is ephemeral", "why": "Done when."}
+ ]
+}

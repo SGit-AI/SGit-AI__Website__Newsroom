@@ -139,6 +139,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#the-book-o
 
 ### Continued by
 
+- [A brief for the Web Summit team: an event site run by an ephemeral agent team, built from this week's template, with a map of every company we should meet](web-summit-team-brief.md) A brief for the Web Summit team: an event site run by an ephemeral agent team, from a proven template, with a map of every company to meet.
 - [A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page](books-for-a-new-generation-of-publishing.md) What the best visual books, Leanpub's Markua, print-on-demand costs and the learning research teach, and what an agent team adds to a printed book.
 
 [All articles](index.md) · [All graphs](graphs.md)

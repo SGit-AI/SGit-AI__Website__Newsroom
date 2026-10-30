@@ -133,6 +133,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#the-inbox-
 
 ### Continued by
 
+- [A brief for the Web Summit team: an event site run by an ephemeral agent team, built from this week's template, with a map of every company we should meet](web-summit-team-brief.md) A brief for the Web Summit team: an event site run by an ephemeral agent team, from a proven template, with a map of every company to meet.
 - [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](where-to-invest-in-sgit.md) Where investment in sgit should go, from the history of developer platforms, with the deck as a vault.
 
 [All articles](index.md) · [All graphs](graphs.md)
