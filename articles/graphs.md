@@ -14,13 +14,40 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-325 of 325 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+326 of 326 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-325 articles, 1563 links between them (2378 mentions in all). 266 articles cite an earlier one; 82 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 36 articles not yet linked either way.
+326 articles, 1565 links between them (2380 mentions in all). 267 articles cite an earlier one; 82 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 36 articles not yet linked either way.
+
+## [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](the-book-of-the-talk-and-its-companion.md)
+
+2026-10-30 · Agents & policyVaults & method
+
+A book can now be made like a release: one team that knows everything builds the register, timeline and plan, a second team reads the same record cold, the book is drafted from the signed plan in an hour with every number tied to a register id, and a companion PDF turns every role's review into a card pinned to a sentence and a page, with boxes to tick, so one author with a pen can take every decision on a flight and the ticks become data.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 9 edges**
+
+- **Two teams on one record** (method) One team knows everything, a second knows only the record.
+- **The cold read** (artefact) Thirteen agents, one commit, every claim cited or marked unknown.
+- **Every number has an id** (method) RC1's numbers come from the claims register, C001 to C042.
+- **RC1** (artefact) 294 pages at 6 by 9 inches, built about an hour after the plan was signed.
+- **The companion** (artefact) 67 A4 pages, 98 cards, each pinned to a sentence and a page of RC1.
+- **A review as a form** (concept) Decisions with boxes, questions with lines: answered on paper, turned into data.
+- **Rebuilt to the pixel** (method) A second session rebuilt both PDFs and matched them page for page.
+- **Three findings, no secrets** (example) The values the reviews found were anonymous cookies and form tokens.
+- **A book is now a release** (claim) A version, a hash, a gate and a rerunnable build, between a signature and a flight.
+
+> The companion turns the pile into a form. The innovation in one sentence.
+
+> one team that knows everything, one that knows only the record, and the book written from where they meet. The method for books from now on.
+
+builds on [A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records](#the-ultimate-insider-case-study), [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](#reading-with-a-pen).
 
 ## [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](introducing-sharness.md)
 
@@ -135,7 +162,7 @@ A talk's site, deck and records were built in one day by nine agents and one edi
 
 > We put brakes in cars so that we can go faster. The talk's closing line, and the team's shape.
 
-builds on [The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up](#ultimate-insider-three-collisions), [CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why](#ci-owns-the-version), [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](#the-push-is-the-authorisation), [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](#agents-have-an-identity-now), [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](#introducing-sharness).
+builds on [The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up](#ultimate-insider-three-collisions), [CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why](#ci-owns-the-version), [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](#the-push-is-the-authorisation), [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](#agents-have-an-identity-now), [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](#introducing-sharness); continued by [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](#the-book-of-the-talk-and-its-companion).
 
 ## [Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break](proven-controls-for-agents.md)
 
@@ -3131,7 +3158,7 @@ Reading has three moments, read, mark and process, and because nobody did the pr
 
 > Do not worry about the third step. What to tell reviewers.
 
-builds on [The graphs books: three books written by agents in a day, the altitudes, the board and the book as a graph, what they got right, and why they stopped under review](#the-graphs-books), [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](#you-are-a-developer), [A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault](#a-pull-request-by-another-name); continued by [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](#a-pen-and-a-key), [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](#jobs-that-never-scaled), [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](#you-are-a-developer).
+builds on [The graphs books: three books written by agents in a day, the altitudes, the board and the book as a graph, what they got right, and why they stopped under review](#the-graphs-books), [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](#you-are-a-developer), [A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault](#a-pull-request-by-another-name); continued by [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](#the-book-of-the-talk-and-its-companion), [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](#a-pen-and-a-key), [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](#jobs-that-never-scaled), [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](#you-are-a-developer).
 
 ## [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](you-are-a-developer.md)
 

@@ -4,47 +4,58 @@
  "sections": {
   "top": {
    "line": "A key per session, published with its role, sealable",
-   "para": "A new agent session makes its own key pair, publishes the public half with its role in a repository, runs on a schedule, and receives secrets sealed to it. Ten agents did it in one night; the clouds' agent identities do not describe a key the agent holds that others can find and encrypt to."
+   "para": "A new agent session makes its own key pair, publishes the public half with its role in a repository, runs on a schedule, and receives secrets sealed to it. Ten agents did it in one night; the clouds' agent identities do not describe a key the agent holds that others can find and encrypt to.",
+   "hash": "82cd4894af57"
   },
   "in-short": {
    "line": "Eight lines from the five steps to the role",
-   "para": "Agents have a working identity; it is simpler than usual; the push authorises; ten agents did it in one night; agents already seal secrets to each other; clouds give token identities; ask them for sealable session keys; the role and dated trust make it powerful."
+   "para": "Agents have a working identity; it is simpler than usual; the push authorises; ten agents did it in one night; agents already seal secrets to each other; clouds give token identities; ask them for sealable session keys; the role and dated trust make it powerful.",
+   "hash": "e77b831dfb55"
   },
   "coming": {
    "line": "Four earlier steps led to a working identity",
-   "para": "PKI everywhere named the first key as the hard part; a directory of people and keys anchored the register; a pen and a key vouched for a browser; the push is the authorisation accepted session keys. Together they make an identity that is simple and works."
+   "para": "PKI everywhere named the first key as the hard part; a directory of people and keys anchored the register; a pen and a key vouched for a browser; the push is the authorisation accepted session keys. Together they make an identity that is simple and works.",
+   "hash": "e821808fb3ed"
   },
   "how": {
    "line": "Session, key pair, published key, schedule, sealing",
-   "para": "A session gets a repository and a card; makes a key pair whose private half stays; publishes its public key and QR to records/keys; runs on a schedule; and receives secrets others seal to its fingerprint. A person's root vouches with a dated link."
+   "para": "A session gets a repository and a card; makes a key pair whose private half stays; publishes its public key and QR to records/keys; runs on a schedule; and receives secrets others seal to its fingerprint. A person's root vouches with a dated link.",
+   "hash": "8d6efa8509a1"
   },
   "night": {
    "line": "Ten agents published ten keys in one night",
-   "para": "On 28 October the PHP newsroom's ten agents published their keys between 01:05 and 03:29 UTC. This site's agent decoded every QR image and compared it with its record: each fingerprint matched."
+   "para": "On 28 October the PHP newsroom's ten agents published their keys between 01:05 and 03:29 UTC. This site's agent decoded every QR image and compared it with its record: each fingerprint matched.",
+   "hash": "10292c65c6fc"
   },
   "handover": {
    "line": "An agent sealed a vault key to another agent",
-   "para": "This site's agent made a session key, pinned the root from the repository, read the vault registry's key from a QR, confirmed it chains to the root until 30 October, and sealed the vault key to it without printing it. The PHP conductor's vaultreq writes such requests."
+   "para": "This site's agent made a session key, pinned the root from the repository, read the vault registry's key from a QR, confirmed it chains to the root until 30 October, and sealed the vault key to it without printing it. The PHP conductor's vaultreq writes such requests.",
+   "hash": "7a271cc2272e"
   },
   "clouds": {
    "line": "The clouds' agent identities are for tokens",
-   "para": "Entra Agent ID issues tokens in one tenant and its identities hold no credentials; AgentCore uses AWS-signed workload tokens; Google provisions a 24-hour X.509 certificate. None documents a key the agent holds, a public lookup, encryption to the agent, or per-session identity. The IETF draft stops at authentication."
+   "para": "Entra Agent ID issues tokens in one tenant and its identities hold no credentials; AgentCore uses AWS-signed workload tokens; Google provisions a 24-hour X.509 certificate. None documents a key the agent holds, a public lookup, encryption to the agent, or per-session identity. The IETF draft stops at authentication.",
+   "hash": "0a4769794a93"
   },
   "ask": {
    "line": "A key per session, published, sealable, with an end",
-   "para": "Ask the providers for four things: a key pair per agent session usable only by it, a way to publish the public half with the role, a way to encrypt data to it, and an end when the session ends, keeping the role's history."
+   "para": "Ask the providers for four things: a key pair per agent session usable only by it, a way to publish the public half with the role, a way to encrypt data to it, and an end when the session ends, keeping the role's history.",
+   "hash": "ceaae247a56a"
   },
   "role": {
    "line": "The role and dated trust make a key powerful",
-   "para": "A key is an address; the role's written definition, card and behaviour policy, and a person's vouching until a date, make it an identity. The vault registry's link ends on 30 October unless renewed: trust that lapses by default."
+   "para": "A key is an address; the role's written definition, card and behaviour policy, and a person's vouching until a date, make it an identity. The vault registry's link ends on 30 October unless renewed: trust that lapses by default.",
+   "hash": "f2a2cbe18adf"
   },
   "limits": {
    "line": "What we read, one person's agents, known risks",
-   "para": "The comparison rests on the provider pages read; the cloud identities do their own job well; this is one person's agents; anyone with push access can publish a key; session keys die with their container by design."
+   "para": "The comparison rests on the provider pages read; the cloud identities do their own job well; this is one person's agents; anyone with push access can publish a key; session keys die with their container by design.",
+   "hash": "c69a39551e0c"
   },
   "sources": {
    "line": "A memo, the published keys, the register, the docs",
-   "para": "From Dinis's memo of 28 October; ten key records and QR images from the PHP team site, decoded and checked; pki.sgit.ai's directory; the writer's own handover; provider documentation and the IETF draft fetched by a research agent."
+   "para": "From Dinis's memo of 28 October; ten key records and QR images from the PHP team site, decoded and checked; pki.sgit.ai's directory; the writer's own handover; provider documentation and the IETF draft fetched by a research agent.",
+   "hash": "89d0badfd8bd"
   }
  }
 }

@@ -4,59 +4,73 @@
  "sections": {
   "top": {
    "line": "Governance as code and policy-as-code, for agents",
-   "para": "Hem Pant asks for controls proven by deliberate violations; Sondera turns agent instructions into enforced Cedar. Both move the policy from text to code. For agents, add who holds each control: only a Boundary can be proven not to be switched off. Six of our controls, tested."
+   "para": "Hem Pant asks for controls proven by deliberate violations; Sondera turns agent instructions into enforced Cedar. Both move the policy from text to code. For agents, add who holds each control: only a Boundary can be proven not to be switched off. Six of our controls, tested.",
+   "hash": "560a820a20d0"
   },
   "in-short": {
    "line": "Eight lines from two pieces to one answer",
-   "para": "Two pieces share a theme; Hem asks for proof not presence; Sondera enforces agent instructions as Cedar; agents need a column for who holds each control; the policy comes first; proven means broken on purpose; our gate proved itself tonight; there is an answer to Hem's invitation."
+   "para": "Two pieces share a theme; Hem asks for proof not presence; Sondera enforces agent instructions as Cedar; agents need a column for who holds each control; the policy comes first; proven means broken on purpose; our gate proved itself tonight; there is an answer to Hem's invitation.",
+   "hash": "1b7082cc971b"
   },
   "two": {
    "line": "A CISO's article and a paper, the same day",
-   "para": "Hem Pant's LinkedIn article on governance as code and Sondera's paper on autoformalizing agent instructions into policy-as-code arrived together. Both say a policy that runs can be checked, and one that is tested can be proven; this article adds what we learned doing it with agents."
+   "para": "Hem Pant's LinkedIn article on governance as code and Sondera's paper on autoformalizing agent instructions into policy-as-code arrived together. Both say a policy that runs can be checked, and one that is tested can be proven; this article adds what we learned doing it with agents.",
+   "hash": "e1b405d865c1"
   },
   "hem": {
    "line": "One unbroken line, and a test that fails the build",
-   "para": "Hem links Board intent to requirements, controls and automatic evidence, one control answering several frameworks. Most organisations can show a control exists, few can prove it works; every control must catch a deliberate violation. He invites a common machine-readable format."
+   "para": "Hem links Board intent to requirements, controls and automatic evidence, one control answering several frameworks. Most organisations can show a control exists, few can prove it works; every control must catch a deliberate violation. He invites a common machine-readable format.",
+   "hash": "afbda7438e4f"
   },
   "sondera": {
    "line": "Prompts and tools turned into Cedar, measured",
-   "para": "Sondera's Verification Sandwich generates a Cedar schema from tool definitions, candidate policies from a model, and checks them with Cedar's tooling and an LLM judge; a deterministic engine enforces them outside the context window, failing closed. On MedAgentBench it covered more of the policy than prior work."
+   "para": "Sondera's Verification Sandwich generates a Cedar schema from tool definitions, candidate policies from a model, and checks them with Cedar's tooling and an LLM judge; a deterministic engine enforces them outside the context window, failing closed. On MedAgentBench it covered more of the policy than prior work.",
+   "hash": "63383df4d809"
   },
   "line": {
    "line": "Hem's line, with who holds each control",
-   "para": "For an agent, policy is the mandate, standard the rows, control the barrier, evidence a refused violation. The missing column is who holds the control: an Expectation shows it exists, a Setting that it ran, only a Boundary that it holds. Our own 57 checks held one boundary."
+   "para": "For an agent, policy is the mandate, standard the rows, control the barrier, evidence a refused violation. The missing column is who holds the control: an Expectation shows it exists, a Setting that it ran, only a Boundary that it holds. Our own 57 checks held one boundary.",
+   "hash": "f1ed83449e57"
   },
   "where": {
    "line": "The model and the process are two adversaries",
-   "para": "Cedar outside the context window holds the model. A shell or a code-running tool needs a bound below it; a rule on a command's text, like the README's rm -rf pattern, can be routed around. SHarness holds the process; Cedar decides the calls. Cedar also skips a policy that errors."
+   "para": "Cedar outside the context window holds the model. A shell or a code-running tool needs a bound below it; a rule on a command's text, like the README's rm -rf pattern, can be routed around. SHarness holds the process; Cedar decides the calls. Cedar also skips a policy that errors.",
+   "hash": "4b03e47f6dbe"
   },
   "proven": {
    "line": "Six controls, each broken on purpose",
-   "para": "A leak hook missed three of nine leaks, then caught all nine; Rego decided seven requests; Cedar let an old-shape request through; 57 checks held one boundary; hello held six of six; and tonight the release gate failed the build on a real change, as designed, though it is only a Setting."
+   "para": "A leak hook missed three of nine leaks, then caught all nine; Rego decided seven requests; Cedar let an old-shape request through; 57 checks held one boundary; hello held six of six; and tonight the release gate failed the build on a real change, as designed, though it is only a Setting.",
+   "hash": "e7cee746b9b5"
   },
   "first": {
    "line": "Write the mandate, with its reasons, first",
-   "para": "Policy as code answers whether a request is allowed; boards, auditors and insurers ask what the agent can reach, why, where the gap is, what no engine sees, and who can change the code. A mandate with reasons lets the line run both ways and makes evidence worth paying for."
+   "para": "Policy as code answers whether a request is allowed; boards, auditors and insurers ask what the agent can reach, why, where the gap is, what no engine sees, and who can change the code. A mandate with reasons lets the line run both ways and makes evidence worth paying for.",
+   "hash": "eacb239caa87"
   },
   "humans": {
    "line": "Approval at the level a person can afford",
-   "para": "Agents can maintain the governance estate if people approve at altitude: each level narrows the one above. In SHarness a person approves one sentence's hash and every level below is compiled and checked against it, one value the agent cannot change."
+   "para": "Agents can maintain the governance estate if people approve at altitude: each level narrows the one above. In SHarness a person approves one sentence's hash and every level below is compiled and checked against it, one value the agent cannot change.",
+   "hash": "eab2c2670522"
   },
   "invitation": {
    "line": "An open format, a standard, and Cedar",
-   "para": "The Agent Behaviour Policy is moving to the Open Security Summit as an open project; the Process Behaviour Policy has a standard with 28 test vectors passed in three languages; Cedar is the rule language. The pieces of Hem's line exist for agents; the conversation joining them is next."
+   "para": "The Agent Behaviour Policy is moving to the Open Security Summit as an open project; the Process Behaviour Policy has a standard with 28 test vectors passed in three languages; Cedar is the rule language. The pieces of Hem's line exist for agents; the conversation joining them is next.",
+   "hash": "6c7fe4be8e34"
   },
   "challenge": {
    "line": "One policy, one live control, one breach",
-   "para": "Workspace and sites only, held by SHarness's shell: pypi.org allowed, example.com refused, a direct connect refused, no name lookup, on 29 October. The honest finding: it is a Boundary for the shell, not yet for the agent, because the launcher above the agent is still the design."
+   "para": "Workspace and sites only, held by SHarness's shell: pypi.org allowed, example.com refused, a direct connect refused, no name lookup, on 29 October. The honest finding: it is a Boundary for the shell, not yet for the agent, because the launcher above the agent is still the design.",
+   "hash": "90d91a60a75c"
   },
   "limits": {
    "line": "Their figures are theirs; ours are our own agents",
-   "para": "Hem's article and Sondera's paper are read as published; Sondera's numbers were not re-run; the rm -rf example illustrates a limit of text rules, not a measured weakness; our tests are on one newsroom; most of SHarness is designed; the open project needs its charter."
+   "para": "Hem's article and Sondera's paper are read as published; Sondera's numbers were not re-run; the rm -rf example illustrates a limit of text rules, not a measured weakness; our tests are on one newsroom; most of SHarness is designed; the open project needs its charter.",
+   "hash": "e75fddc00e54"
   },
   "sources": {
    "line": "The article, the paper, the README, and ours",
-   "para": "Hem Pant's LinkedIn article and Sondera's arXiv paper read in full on 29 October 2026, the Sondera Harness README, the editor's two screenshots cropped to content, and nine articles on this site; the release gate failure is pipeline runs 395 and 397, fixed in v0.13.132."
+   "para": "Hem Pant's LinkedIn article and Sondera's arXiv paper read in full on 29 October 2026, the Sondera Harness README, the editor's two screenshots cropped to content, and nine articles on this site; the release gate failure is pipeline runs 395 and 397, fixed in v0.13.132.",
+   "hash": "0c470d15ef2c"
   }
  }
 }

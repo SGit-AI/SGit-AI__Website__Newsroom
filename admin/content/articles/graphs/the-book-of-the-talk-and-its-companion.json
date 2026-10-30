@@ -1,0 +1,38 @@
+{
+ "slug": "the-book-of-the-talk-and-its-companion",
+ "teaser": "Two agent teams, one night: RC1 of the book of The Ultimate Insider, a cold read by a team that knew only the record, and a companion PDF of tick boxes.",
+ "topics": ["agents-and-policy", "vaults-and-method"],
+ "core_idea": "A book can now be made like a release: one team that knows everything builds the register, timeline and plan, a second team reads the same record cold, the book is drafted from the signed plan in an hour with every number tied to a register id, and a companion PDF turns every role's review into a card pinned to a sentence and a page, with boxes to tick, so one author with a pen can take every decision on a flight and the ticks become data.",
+ "nodes": [
+  {"id": "two-teams", "label": "Two teams on one record", "kind": "method", "summary": "One team knows everything, a second knows only the record."},
+  {"id": "cold-read", "label": "The cold read", "kind": "artefact", "summary": "Thirteen agents, one commit, every claim cited or marked unknown."},
+  {"id": "register", "label": "Every number has an id", "kind": "method", "summary": "RC1's numbers come from the claims register, C001 to C042."},
+  {"id": "rc1", "label": "RC1", "kind": "artefact", "summary": "294 pages at 6 by 9 inches, built about an hour after the plan was signed."},
+  {"id": "companion", "label": "The companion", "kind": "artefact", "summary": "67 A4 pages, 98 cards, each pinned to a sentence and a page of RC1."},
+  {"id": "tick", "label": "A review as a form", "kind": "concept", "summary": "Decisions with boxes, questions with lines: answered on paper, turned into data."},
+  {"id": "rebuild", "label": "Rebuilt to the pixel", "kind": "method", "summary": "A second session rebuilt both PDFs and matched them page for page."},
+  {"id": "false-positive", "label": "Three findings, no secrets", "kind": "example", "summary": "The values the reviews found were anonymous cookies and form tokens."},
+  {"id": "release", "label": "A book is now a release", "kind": "claim", "summary": "A version, a hash, a gate and a rerunnable build, between a signature and a flight."}
+ ],
+ "edges": [
+  {"from": "two-teams", "to": "cold-read", "rel": "produces"},
+  {"from": "two-teams", "to": "rc1", "rel": "produces"},
+  {"from": "register", "to": "rc1", "rel": "produces"},
+  {"from": "rc1", "to": "companion", "rel": "leads-to"},
+  {"from": "companion", "to": "tick", "rel": "example-of"},
+  {"from": "rc1", "to": "rebuild", "rel": "leads-to"},
+  {"from": "cold-read", "to": "false-positive", "rel": "compared-with"},
+  {"from": "rebuild", "to": "release", "rel": "example-of"},
+  {"from": "tick", "to": "release", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["the-ultimate-insider-case-study", "reading-with-a-pen"],
+  "pages": [],
+  "sites": ["https://the-ultimate-insider.book.sgit.ai/rc1/", "https://the-ultimate-insider.cold-read.sgit.ai/", "https://github.com/SGit-AI/SGit-AI__Website__Book__The-Ultimate-Insider", "https://github.com/SGit-AI/SGit-AI__Website__Cold-Read__The-Ultimate-Insider"]
+ },
+ "quotes": [
+  {"text": "The companion turns the pile into a form.", "why": "The innovation in one sentence."},
+  {"text": "one team that knows everything, one that knows only the record, and the book written from where they meet.", "why": "The method for books from now on."},
+  {"text": "A book is now a release.", "why": "What RC1 shows."}
+ ]
+}
