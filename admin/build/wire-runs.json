@@ -1814,6 +1814,108 @@
    "added": null,
    "updated": null,
    "note": "The refresh was committed locally but not pushed, because the same four wire-test date checks failed."
+  },
+  {
+   "id": "f062d7716651",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-10-30T05:47:26Z",
+   "finished_at": "2026-10-30T05:56:26Z",
+   "duration_s": 535.8,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.131207,
+     "input": 669884,
+     "output": 110175,
+     "cache_read": 133365,
+     "cache_write": 62380,
+     "thinking": 66049
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.594848,
+     "input": 90,
+     "output": 51749,
+     "cache_read": 2977111,
+     "cache_write": 262295,
+     "thinking": 3236
+    }
+   },
+   "cost_usd": 1.726055,
+   "turns": 31,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-30.1",
+   "added": 10,
+   "updated": 0,
+   "note": "Ten new stories, all new rather than updates, with Mistral Large 4 resolving an earlier open question."
+  },
+  {
+   "id": "f49742a024cc",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-10-30T06:09:32Z",
+   "finished_at": "2026-10-30T06:18:02Z",
+   "duration_s": 506.5,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.035193,
+     "input": 212432,
+     "output": 20122,
+     "cache_read": 49733,
+     "cache_write": 27131,
+     "thinking": 11763
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.695193,
+     "input": 74,
+     "output": 15341,
+     "cache_read": 999846,
+     "cache_write": 153409,
+     "thinking": 994
+    }
+   },
+   "cost_usd": 0.730386,
+   "turns": 20,
+   "subagents": 5,
+   "refused": 2,
+   "refused_kinds": [
+    "web fetch"
+   ],
+   "outcome": "published",
+   "release": "2026-10-30.1",
+   "added": 2,
+   "updated": 0,
+   "note": "Two new writing stories, with the releases, talks and community beats unchecked because fetches were refused."
+  },
+  {
+   "id": "525fee211ff2",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-10-30T06:57:06Z",
+   "finished_at": "2026-10-30T07:06:27Z",
+   "duration_s": 556.2,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.409219,
+     "input": 44,
+     "output": 8441,
+     "cache_read": 1344169,
+     "cache_write": 47576,
+     "thinking": 1968
+    }
+   },
+   "cost_usd": 0.409219,
+   "turns": 23,
+   "subagents": 0,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "The refresh was committed locally but not pushed, because the same four wire-test date checks failed."
   }
  ],
  "sessions": [
@@ -1837,15 +1939,15 @@
    "name": "@newsroom.accountant's session",
    "kind": "accountant",
    "from": "2026-10-16",
-   "as_of": "2026-10-29T07:42:23Z",
+   "as_of": "2026-10-30T07:43:02Z",
    "models": [
     "claude-sonnet-5-5"
    ],
-   "cost_usd": 19.190208,
-   "input": 190,
-   "output": 66799,
-   "cache_read": 31006631,
-   "cache_write": 3853664,
+   "cost_usd": 22.405845,
+   "input": 206,
+   "output": 71729,
+   "cache_read": 35624111,
+   "cache_write": 4529656,
    "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
   }
  ],
