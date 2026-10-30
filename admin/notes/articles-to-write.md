@@ -4,6 +4,18 @@
 
 ## Queued
 
+### The book of The Ultimate Insider: two repositories, a night's work and the first two PDFs
+
+- **Added:** 30 October 2026. **Status:** queued; material read in part.
+- **Source:** Dinis's memo, word for word in `admin/notes/2026-10-30__the-book/memo-01.md`.
+- **First:** the two repositories (`SGit-AI/SGit-AI__Website__Book__The-Ultimate-Insider` and `SGit-AI/SGit-AI__Website__Cold-Read__The-Ultimate-Insider`, both started 30 October 2026 at 00:35 and 00:37 UTC), their `REALITY.md` files, the RC1 page and its two PDFs (the 294-page RC1 and its companion), and the cold read's debrief PDF.
+
+### Books for a new generation of publishing: what the best do, and what an agent team can add
+
+- **Added:** 30 October 2026. **Status:** queued; research first.
+- **Source:** Dinis's memo, word for word in `admin/notes/2026-10-30__the-book/memo-02.md`.
+- **First:** research. The state of the art in markdown-based and print-on-demand books (Leanpub and Markua's limits, the best Leanpub books); books known for their figures and layout; what learning science says about pictures and words; then what the talk's own figures and animations (Ruflo, ruv.sgit.ai, the motion member) would become on a printed page.
+
 ### A series on underwriting agent behaviour policies
 
 - **Added:** 28 October 2026. **Status:** all five released (v0.13.124 to v0.13.129), with the series cards and the vault m1wbrefr.
