@@ -30,7 +30,7 @@ From the person to one email: the person's key vouches for the email agent, whic
 
 The agent behind agent@riskmandate.ai has been drafting my RiskMandate email since September, and since 28 October agent@diniscruz.ai runs the same workflow for my own, as [the inbox team as a recipe](the-inbox-team-as-a-recipe.md) describes. They read, research, draft and keep the records; I review and send. The [Web Summit team's brief](web-summit-team-brief.md), published today, gives each of its seven people an email agent too.
 
-That raises a question every recipient will soon ask: was this email written by the person, by their agent, or by someone pretending to be either? Today's [article on a contractor's agent at the Pentagon](the-contractors-agent-and-three-policies.md) shows what happens when an agent acts with a person's identity and nothing records which one acted. Email is the same problem, outward-facing. The answer is the same too: the agent gets its own identity, and the person vouches for it.
+That raises a question every recipient will soon ask: was this email written by the person, by their agent, or by someone pretending to be either? WIRED's report of 29 October, on a contractor's coding agent at the Pentagon, shows what happens when an agent acts with a person's identity and nothing records which one acted. Email is the same problem, outward-facing. The answer is the same too: the agent gets its own identity, and the person vouches for it.
 
 ## What email can prove today
 
@@ -97,7 +97,7 @@ What exists today and what the brief asks to build, piece by piece.
 
 - My voice memo of 30 October 2026, word for word in `admin/notes/2026-10-30__signed-email/memo-01.md`.
 - pki.sgit.ai's own description, [llms.txt](https://pki.sgit.ai/llms.txt), read on 30 October 2026: the register, signed statements, evidence, two-way links, sign-in delegations and sealed messages.
-- Related: [the inbox team as a recipe](the-inbox-team-as-a-recipe.md), [agents have an identity now](agents-have-an-identity-now.md), [a secret is a QR code](a-secret-is-a-qr-code.md), [PKI everywhere](pki-everywhere.md), [the contractor's agent](the-contractors-agent-and-three-policies.md).
+- Related: [the inbox team as a recipe](the-inbox-team-as-a-recipe.md), [agents have an identity now](agents-have-an-identity-now.md), [a secret is a QR code](a-secret-is-a-qr-code.md), [PKI everywhere](pki-everywhere.md).
 
 ## Threads
 
@@ -107,7 +107,6 @@ Vaults & methodAgents & policy[This article as a graph →](graphs.md#signed-ema
 
 - [The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it](the-inbox-team-as-a-recipe.md) The RiskMandate inbox team, written down by its own agent so a second team can copy it.
 - [A brief for the Web Summit team: an event site run by an ephemeral agent team, built from this week's template, with a map of every company we should meet](web-summit-team-brief.md) A brief for the Web Summit team: an event site run by an ephemeral agent team, from a proven template, with a map of every company to meet.
-- [The contractor's agent on a Pentagon network: how behaviour policies from the DOD, Accenture and the employee, and a key for every session, could have prevented it or caught it on day one](the-contractors-agent-and-three-policies.md) A contractor's agent on a DOD network for two months, as reported: how three behaviour policies and a key for every session would have stopped or seen it.
 - [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](agents-have-an-identity-now.md) A key pair made in every agent session, published with its role in a repository, so any agent can seal a secret to it; what the clouds could add.
 - [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](a-secret-is-a-qr-code.md) Send a QR code and a link to a public key: the workflow the QR experiment opens, who already does this, and a format to share.
 - [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](pki-everywhere.md) From now on every message, secret and handover is signed. The hard part is an agent's first key: two patterns, one built and one proposed.

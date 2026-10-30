@@ -26,7 +26,7 @@ status: published
 
 The agent behind agent@riskmandate.ai has been drafting my RiskMandate email since September, and since 28 October agent@diniscruz.ai runs the same workflow for my own, as [the inbox team as a recipe](/articles/the-inbox-team-as-a-recipe.html) describes. They read, research, draft and keep the records; I review and send. The [Web Summit team's brief](/articles/web-summit-team-brief.html), published today, gives each of its seven people an email agent too.
 
-That raises a question every recipient will soon ask: was this email written by the person, by their agent, or by someone pretending to be either? Today's [article on a contractor's agent at the Pentagon](/articles/the-contractors-agent-and-three-policies.html) shows what happens when an agent acts with a person's identity and nothing records which one acted. Email is the same problem, outward-facing. The answer is the same too: the agent gets its own identity, and the person vouches for it.
+That raises a question every recipient will soon ask: was this email written by the person, by their agent, or by someone pretending to be either? WIRED's report of 29 October, on a contractor's coding agent at the Pentagon, shows what happens when an agent acts with a person's identity and nothing records which one acted. Email is the same problem, outward-facing. The answer is the same too: the agent gets its own identity, and the person vouches for it.
 
 ## What email can prove today {#today}
 
@@ -93,4 +93,4 @@ Nothing has to be installed by the recipient. The check runs in their browser, f
 
 - My voice memo of 30 October 2026, word for word in `admin/notes/2026-10-30__signed-email/memo-01.md`.
 - pki.sgit.ai's own description, [llms.txt](https://pki.sgit.ai/llms.txt), read on 30 October 2026: the register, signed statements, evidence, two-way links, sign-in delegations and sealed messages.
-- Related: [the inbox team as a recipe](/articles/the-inbox-team-as-a-recipe.html), [agents have an identity now](/articles/agents-have-an-identity-now.html), [a secret is a QR code](/articles/a-secret-is-a-qr-code.html), [PKI everywhere](/articles/pki-everywhere.html), [the contractor's agent](/articles/the-contractors-agent-and-three-policies.html).
+- Related: [the inbox team as a recipe](/articles/the-inbox-team-as-a-recipe.html), [agents have an identity now](/articles/agents-have-an-identity-now.html), [a secret is a QR code](/articles/a-secret-is-a-qr-code.html), [PKI everywhere](/articles/pki-everywhere.html).

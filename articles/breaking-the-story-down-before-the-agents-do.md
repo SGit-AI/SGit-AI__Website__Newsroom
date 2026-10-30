@@ -63,7 +63,7 @@ Two pieces of what Ole Reissmann describes are where our work has gone furthest.
 
 This is where SPIEGEL is ahead, and where I would like to learn from it.
 
-We do the practice. In today's [article on the contractor's agent](the-contractors-agent-and-three-policies.md), the company's answer ("These allegations were thoroughly and independently investigated and found to be without merit", as quoted), the department's and the vendor's are next to the allegations, and the article says what it does not claim. [On the record](on-the-record.md) and [signed by the source](signed-by-the-source.md) go further, proposing that experts and sources sign their position on an article with their own keys, and can withdraw it.
+We do the practice: every article here puts a party's answer next to a claim about them when there is one, and says what it does not claim. [On the record](on-the-record.md) and [signed by the source](signed-by-the-source.md) go further, proposing that experts and sources sign their position on an article with their own keys, and can withdraw it.
 
 But we do not yet mark an allegation as a kind of thing in the graph. Our node kinds include claim; an allegation is a claim about a party, with a status: put to them or not, answered or not, and the answer itself. Made a field, it would let an agent that summarises the story carry the answer with the allegation, instead of dropping it. That is the one thing I would add to our graphs after reading Ole Reissmann's post, and I would rather align with what SPIEGEL has built than invent a second shape.
 
@@ -84,7 +84,7 @@ On MCP and publishers' own tools, our reader API is a start rather than an answe
 
 - Ole Reissmann's post on LinkedIn after the News Product Alliance Summit in Chicago, shared with me as screenshots on 30 October 2026; the quotations are copied from it.
 - This site's own files: `articles/graphs/` (327 graphs), `admin/content/articles/summaries/`, `llms.txt`, `newsroom-api/`, `admin/writer/tools/graph.py` and `admin/build/summaries.py`; the book's claims register in [SGit-AI/SGit-AI__Website__Book__The-Ultimate-Insider](https://github.com/SGit-AI/SGit-AI__Website__Book__The-Ultimate-Insider) (`claims/`).
-- Related: [the wire as a graph](the-wire-as-a-graph.md), [sources and their shadows](sources-and-shadows.md), [on the record](on-the-record.md), [signed by the source](signed-by-the-source.md), [the contractor's agent](the-contractors-agent-and-three-policies.md).
+- Related: [the wire as a graph](the-wire-as-a-graph.md), [sources and their shadows](sources-and-shadows.md), [on the record](on-the-record.md), [signed by the source](signed-by-the-source.md).
 
 ## Threads
 
@@ -94,7 +94,6 @@ News & evidenceGraphs & knowledge[This article as a graph →](graphs.md#breakin
 
 - [Sources and their shadows: the licence, the access, the links and the quotes of every reference, how a paywalled article can be seen through what others say about it, and paying the sources we use](sources-and-shadows.md) Each reference's licence, access, links and quotes, reading a paywalled article through its shadow, and paying the sources we use.
 - [The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks](the-wire-as-a-graph.md) Design the wire from what the reader sees: every name a link with a long-lived ID, every sentence a claim, stories of stories, folders by gravity.
-- [The contractor's agent on a Pentagon network: how behaviour policies from the DOD, Accenture and the employee, and a key for every session, could have prevented it or caught it on day one](the-contractors-agent-and-three-policies.md) A contractor's agent on a DOD network for two months, as reported: how three behaviour policies and a key for every session would have stopped or seen it.
 - [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](on-the-record.md) Experts go on the record with signed opinions, readers pay for the ones they value, and the people whose ideas an article uses get a share.
 - [Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too](signed-by-the-source.md) Ask the people and companies we quote to sign that we represent them fairly: one signature instead of every reader checking.
 

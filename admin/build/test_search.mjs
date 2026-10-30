@@ -26,7 +26,8 @@ const version = fs.readFileSync(path.join(ROOT, 'admin/build/version.txt'), 'utf
 const docs = docsFile.docs, arts = docs.filter(d => d.k === 'article')
 const ids = JSON.parse(fs.readFileSync(path.join(ROOT, 'articles/ids.json'), 'utf8'))
 check(docsFile.release === version && textFile.release === version, `the index is of this release (${docsFile.release})`)
-check(arts.length === ids.articles.length && arts.every(d => d.n && d.d && (d.tg || []).length && d.g && d.x), `every article is in it with its number, date, tags, graph and teaser (${arts.length})`)
+// withdrawn articles keep their number in ids.json (ids.py) but leave the site, so they are not in the index
+check(arts.length === ids.articles.filter(e => !e.withdrawn).length && arts.every(d => d.n && d.d && (d.tg || []).length && d.g && d.x), `every article is in it with its number, date, tags, graph and teaser (${arts.length})`)
 check(docs.filter(d => d.k === 'story').length >= 30 && docs.some(d => d.k === 'note') && docs.some(d => d.k === 'engineering'), 'the wire\'s stories, the notes and the engineering cards are in it')
 check(docs.every((d, i) => d.i === i && d.u && !d.u.startsWith('search/')) && docs.filter(d => !d.u.includes('#')).every(d => fs.existsSync(path.join(ROOT, d.u))), 'every entry points at a page that exists, and the search page is not in it')
 check(textFile.chunks.every(c => docs[c[0]] && typeof c[2] === 'string' && c[2].length), `every paragraph belongs to a page (${textFile.chunks.length})`)

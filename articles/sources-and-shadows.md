@@ -105,7 +105,6 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#source
 ### Continued by
 
 - [Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it](breaking-the-story-down-before-the-agents-do.md) A reply to Ole Reissmann's session on breaking stories down for agents: what this newsroom already ships beside every article, and the allegation field to add.
-- [The contractor's agent on a Pentagon network: how behaviour policies from the DOD, Accenture and the employee, and a key for every session, could have prevented it or caught it on day one](the-contractors-agent-and-three-policies.md) A contractor's agent on a DOD network for two months, as reported: how three behaviour policies and a key for every session would have stopped or seen it.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

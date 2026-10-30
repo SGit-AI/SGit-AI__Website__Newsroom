@@ -1,38 +1,140 @@
 {
  "slug": "signed-email-from-the-agent",
  "teaser": "A brief to give every email agent its own key, vouched for by its person, so each email carries a QR code that proves it is authentic.",
- "topics": ["vaults-and-method", "agents-and-policy"],
+ "topics": [
+  "vaults-and-method",
+  "agents-and-policy"
+ ],
  "core_idea": "Now that agents draft our email, each email agent should have its own key, vouched for by its person on pki.sgit.ai with a delegation that can expire or be withdrawn; every draft is signed and carries a link and a QR code to a page that checks, in the browser, who signed it, for whom, whether the delegation holds and whether the email changed, which DKIM, S/MIME and PGP do not give an ordinary reader; with one official email agent per person, anything sent on our behalf can be proved.",
  "nodes": [
-  {"id": "agents", "label": "Agents draft our email", "kind": "example", "summary": "Email agents read, research and draft; a person sends."},
-  {"id": "question", "label": "Who wrote this email?", "kind": "question", "summary": "The person, their agent, or someone pretending to be either."},
-  {"id": "today", "label": "What email proves today", "kind": "concept", "summary": "DKIM proves the domain; S/MIME and PGP need software and trust."},
-  {"id": "pieces", "label": "The pieces we have", "kind": "artefact", "summary": "Session keys, the register, withdrawable delegations, sealed messages."},
-  {"id": "chain", "label": "Person, agent, email", "kind": "method", "summary": "The person delegates to the agent's key; the agent signs each draft."},
-  {"id": "verify", "label": "The verification page", "kind": "artefact", "summary": "Who signed, for whom, whether it holds, whether it changed."},
-  {"id": "rules", "label": "One official agent", "kind": "claim", "summary": "One email agent per person and address; unsigned is a signal."},
-  {"id": "build", "label": "What to build", "kind": "method", "summary": "A delegation statement, signing in the agents, a verification page."},
-  {"id": "pentagon", "label": "The contractor's agent", "kind": "example", "summary": "An agent acting with a person's identity and no record of which acted."}
+  {
+   "id": "agents",
+   "label": "Agents draft our email",
+   "kind": "example",
+   "summary": "Email agents read, research and draft; a person sends."
+  },
+  {
+   "id": "question",
+   "label": "Who wrote this email?",
+   "kind": "question",
+   "summary": "The person, their agent, or someone pretending to be either."
+  },
+  {
+   "id": "today",
+   "label": "What email proves today",
+   "kind": "concept",
+   "summary": "DKIM proves the domain; S/MIME and PGP need software and trust."
+  },
+  {
+   "id": "pieces",
+   "label": "The pieces we have",
+   "kind": "artefact",
+   "summary": "Session keys, the register, withdrawable delegations, sealed messages."
+  },
+  {
+   "id": "chain",
+   "label": "Person, agent, email",
+   "kind": "method",
+   "summary": "The person delegates to the agent's key; the agent signs each draft."
+  },
+  {
+   "id": "verify",
+   "label": "The verification page",
+   "kind": "artefact",
+   "summary": "Who signed, for whom, whether it holds, whether it changed."
+  },
+  {
+   "id": "rules",
+   "label": "One official agent",
+   "kind": "claim",
+   "summary": "One email agent per person and address; unsigned is a signal."
+  },
+  {
+   "id": "build",
+   "label": "What to build",
+   "kind": "method",
+   "summary": "A delegation statement, signing in the agents, a verification page."
+  },
+  {
+   "id": "pentagon",
+   "label": "The contractor's agent",
+   "kind": "example",
+   "summary": "An agent acting with a person's identity and no record of which acted."
+  }
  ],
  "edges": [
-  {"from": "agents", "to": "question", "rel": "leads-to"},
-  {"from": "today", "to": "question", "rel": "answers"},
-  {"from": "pieces", "to": "chain", "rel": "produces"},
-  {"from": "chain", "to": "verify", "rel": "produces"},
-  {"from": "rules", "to": "chain", "rel": "extends"},
-  {"from": "build", "to": "verify", "rel": "produces"},
-  {"from": "pentagon", "to": "question", "rel": "example-of"},
-  {"from": "today", "to": "chain", "rel": "contrasts"},
-  {"from": "pieces", "to": "build", "rel": "leads-to"}
+  {
+   "from": "agents",
+   "to": "question",
+   "rel": "leads-to"
+  },
+  {
+   "from": "today",
+   "to": "question",
+   "rel": "answers"
+  },
+  {
+   "from": "pieces",
+   "to": "chain",
+   "rel": "produces"
+  },
+  {
+   "from": "chain",
+   "to": "verify",
+   "rel": "produces"
+  },
+  {
+   "from": "rules",
+   "to": "chain",
+   "rel": "extends"
+  },
+  {
+   "from": "build",
+   "to": "verify",
+   "rel": "produces"
+  },
+  {
+   "from": "pentagon",
+   "to": "question",
+   "rel": "example-of"
+  },
+  {
+   "from": "today",
+   "to": "chain",
+   "rel": "contrasts"
+  },
+  {
+   "from": "pieces",
+   "to": "build",
+   "rel": "leads-to"
+  }
  ],
  "links": {
-  "articles": ["the-inbox-team-as-a-recipe", "web-summit-team-brief", "the-contractors-agent-and-three-policies", "agents-have-an-identity-now", "a-secret-is-a-qr-code", "pki-everywhere"],
+  "articles": [
+   "the-inbox-team-as-a-recipe",
+   "web-summit-team-brief",
+   "agents-have-an-identity-now",
+   "a-secret-is-a-qr-code",
+   "pki-everywhere"
+  ],
   "pages": [],
-  "sites": ["https://pki.sgit.ai/llms.txt", "https://pki.sgit.ai/"]
+  "sites": [
+   "https://pki.sgit.ai/llms.txt",
+   "https://pki.sgit.ai/"
+  ]
  },
  "quotes": [
-  {"text": "the agent gets its own identity, and the person vouches for it", "why": "The answer."},
-  {"text": "Nothing has to be installed by the recipient.", "why": "Why a page and a QR code."},
-  {"text": "Unsigned is a signal.", "why": "What changes once signing is the default."}
+  {
+   "text": "the agent gets its own identity, and the person vouches for it",
+   "why": "The answer."
+  },
+  {
+   "text": "Nothing has to be installed by the recipient.",
+   "why": "Why a page and a QR code."
+  },
+  {
+   "text": "Unsigned is a signal.",
+   "why": "What changes once signing is the default."
+  }
  ]
 }
