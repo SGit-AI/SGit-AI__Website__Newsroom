@@ -4,7 +4,7 @@ date: 2026-10-30
 author: Dinis Cruz
 author_url: about/index.html
 summary: Each of us now has an agent that runs our email: it reads, researches, drafts and keeps the records, and a person sends. I just realised we can do something powerful with that. Give each email agent its own key pair, vouched for by its person's key on pki.sgit.ai, and every email it drafts can carry a signature and a QR code that lets the recipient check, in a browser, that the email is authentic: that it came from my one official email agent, acting for me, and has not been changed. We already have the pieces. Our agent sessions make their own keys and publish them. pki.sgit.ai is a register of people and their keys, verified both ways, with signed statements, evidence such as a DNS record or a website file, and delegations signed by a person's key that stop the moment the person withdraws them. Email has signatures today, but DKIM proves the domain's mail server sent the message, not which person or which agent wrote it, and S/MIME and PGP ask the reader to install and trust something. This brief maps out what to build: a key for each email agent and a delegation from its person; a signature over each email's content; a QR code and a link to a verification page that shows who signed it, for whom, and whether that delegation still holds; and the rules for the world we are entering, where agents act for us from our email accounts, one official agent each, so that anything sent on our behalf can be proved, and anything not signed can be questioned.
-version: v999.0.0
+version: v0.14.8
 license: https://creativecommons.org/licenses/by/4.0/
 tags: email, pki, provenance, agents, identity, signatures, article
 status: published
