@@ -96,10 +96,12 @@ def pending(line, by):
     # The front page's agent note names the version, and test_front re-runs front.py and fails when the committed
     # page differs, so the pending version reaches it here, not only when the committer remembers the full build
     # (runs 395 and 403 on dev, 397 and 405 on main, 29 and 30 October 2026). The rest are CI's own steps after a
-    # stamp: the pending note's page, the nav, the sitemap and llms-full.
-    for step in ("front", "engineering", "chrome", "gen_sitemap", "gen_llms_full"):
+    # stamp: the pending note's page, the nav, the sitemap and llms-full. The search index names its release too, and
+    # test_search fails when it is not version.txt's (run 410 on dev, 30 October 2026); it runs before chrome, which
+    # puts back the search page's nav.
+    for step in ("front", "engineering", "search_index", "chrome", "gen_sitemap", "gen_llms_full"):
         subprocess.run([sys.executable, f"admin/build/{step}.py"], cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
-    print(f"release_stamp: version.txt is the pending version; note {note_path(PENDING).relative_to(ROOT)} and its row written; front page, engineering, chrome, sitemap and llms-full rebuilt")
+    print(f"release_stamp: version.txt is the pending version; note {note_path(PENDING).relative_to(ROOT)} and its row written; front page, engineering, search index, chrome, sitemap and llms-full rebuilt")
 
 
 def served_files():
