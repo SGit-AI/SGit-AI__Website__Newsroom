@@ -93,7 +93,12 @@ def pending(line, by):
     text = f"{by}: {line}" if by else line
     write_note(PENDING, text, text)
     add_row(PENDING, text)
-    print(f"release_stamp: version.txt is the pending version; note {note_path(PENDING).relative_to(ROOT)} and its row written")
+    # The front page's agent note names the version, and test_front re-runs front.py and fails when the committed
+    # page differs, so the pending version reaches it here, not only when the committer remembers the full build
+    # (runs 395 and 403 on dev, 397 and 405 on main, 29 and 30 October 2026). chrome.py puts its nav back.
+    for step in ("front", "chrome"):
+        subprocess.run([sys.executable, f"admin/build/{step}.py"], cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+    print(f"release_stamp: version.txt is the pending version; note {note_path(PENDING).relative_to(ROOT)} and its row written; front page and chrome rebuilt")
 
 
 def served_files():
