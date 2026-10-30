@@ -136,6 +136,10 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#web-su
 - [The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it](the-inbox-team-as-a-recipe.md) The RiskMandate inbox team, written down by its own agent so a second team can copy it.
 - [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](agents-have-an-identity-now.md) A key pair made in every agent session, published with its role in a repository, so any agent can seal a secret to it; what the clouds could add.
 
+### Continued by
+
+- [Signed by the agent, vouched for by the person: a brief to give every email agent its own key, so each email carries a QR code that proves it is authentic](signed-email-from-the-agent.md) A brief to give every email agent its own key, vouched for by its person, so each email carries a QR code that proves it is authentic.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 332 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=332)

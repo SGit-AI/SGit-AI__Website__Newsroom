@@ -11,13 +11,13 @@
 
 ### A brief for the Web Summit agentic team
 
-- **Added:** 30 October 2026. **Status:** queued.
+- **Added:** 30 October 2026. **Status:** written and released, v0.14.7, as `web-summit-team-brief`.
 - **Source:** Dinis's memo, `admin/notes/2026-10-30__web-summit-team/memo-01.md`. A design brief follows separately.
 - **First:** read `web-summit-2026-the-plan`, the talk's, the book's and the PHP newsroom's team setups.
 
 ### A brief: signed email from the agent that runs each account
 
-- **Added:** 30 October 2026. **Status:** queued.
+- **Added:** 30 October 2026. **Status:** written and released as `signed-email-from-the-agent`.
 - **Source:** Dinis's memo, `admin/notes/2026-10-30__signed-email/memo-01.md`.
 
 ### The contractor's agent on a Pentagon network, through three behaviour policies and a key per session

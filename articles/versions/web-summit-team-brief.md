@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-30 | published | 1,978 | first published | this release | [current](../web-summit-team-brief.md) |
+| **v1.0.0** | 2026-10-30 | published | 1,978 | first published | [`82b2adeb4`](https://github.com/SGit-AI/SGit-AI__Website/commit/82b2adeb42b3c0ff0c568d9c6f3d0ef598a12284) | [current](../web-summit-team-brief.md) |
 
 [← Back to the article](../web-summit-team-brief.md) · [All articles](../index.md)
 
