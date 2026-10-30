@@ -14,13 +14,40 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-326 of 326 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+327 of 327 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-326 articles, 1565 links between them (2380 mentions in all). 267 articles cite an earlier one; 82 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 36 articles not yet linked either way.
+327 articles, 1567 links between them (2382 mentions in all). 268 articles cite an earlier one; 82 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 36 articles not yet linked either way.
+
+## [A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page](books-for-a-new-generation-of-publishing.md)
+
+2026-10-30 · Agents & policyNews & evidence
+
+A book made by an agent team should look like it: Markua and print on demand allow more than text and images, limited mostly by the cost of colour; the learning research says words and pictures together, placed together, without decoration, with a cast of concepts first and questions to remember by; the best visual books do this by hand, and an agent team can do it by machine, with every figure a spec that can be rerun, one grammar enforced, animations as filmstrips and every number tied to the register.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 9 edges**
+
+- **The look is the signal** (claim) A book made by agents that looks like any other contradicts its message.
+- **What Markua allows** (artefact) Sized, floated and full-bleed images, captions, SVG as text, seven typed boxes.
+- **Colour is the real limit** (claim) Standard colour about twice black ink per page, premium about five times.
+- **Words and pictures together** (concept) Mayer's principles: multimedia, contiguity, coherence, segmenting, pre-training.
+- **Questions to remember by** (method) Practice testing and spacing are rated the most useful study techniques.
+- **The best do it by hand** (example) Tufte, Head First, Wardley, Evans, Nystrom: one grammar, words on the drawing.
+- **Every figure a spec** (method) Like the talk's ruv.sgit runs: a request, sources, and a rerun on demand.
+- **Animations as filmstrips** (method) Stills at named seconds, the print form of a moving slide.
+- **Ten things the book will do** (artefact) Cast of concepts, one map grammar, filmstrips, boxes, greyscale, questions.
+
+> The look is the signal. Why the book cannot look like any other.
+
+> A change is a request, not a redraw. What agents change about figures.
+
+builds on [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](#the-book-of-the-talk-and-its-companion), [A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records](#the-ultimate-insider-case-study).
 
 ## [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](the-book-of-the-talk-and-its-companion.md)
 
@@ -47,7 +74,7 @@ A book can now be made like a release: one team that knows everything builds the
 
 > one team that knows everything, one that knows only the record, and the book written from where they meet. The method for books from now on.
 
-builds on [A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records](#the-ultimate-insider-case-study), [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](#reading-with-a-pen).
+builds on [A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records](#the-ultimate-insider-case-study), [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](#reading-with-a-pen); continued by [A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page](#books-for-a-new-generation-of-publishing).
 
 ## [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](introducing-sharness.md)
 
@@ -162,7 +189,7 @@ A talk's site, deck and records were built in one day by nine agents and one edi
 
 > We put brakes in cars so that we can go faster. The talk's closing line, and the team's shape.
 
-builds on [The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up](#ultimate-insider-three-collisions), [CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why](#ci-owns-the-version), [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](#the-push-is-the-authorisation), [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](#agents-have-an-identity-now), [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](#introducing-sharness); continued by [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](#the-book-of-the-talk-and-its-companion).
+builds on [The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up](#ultimate-insider-three-collisions), [CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why](#ci-owns-the-version), [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](#the-push-is-the-authorisation), [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](#agents-have-an-identity-now), [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](#introducing-sharness); continued by [A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page](#books-for-a-new-generation-of-publishing), [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](#the-book-of-the-talk-and-its-companion).
 
 ## [Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break](proven-controls-for-agents.md)
 

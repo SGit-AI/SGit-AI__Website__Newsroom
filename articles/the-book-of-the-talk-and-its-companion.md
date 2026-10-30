@@ -137,6 +137,10 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#the-book-o
 - [A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records](the-ultimate-insider-case-study.md) The ultimate insider, built in a day: 814 commits, 210 releases and 162 wakes by nine agents and one editor, from 00:16 to the stage at 19:00.
 - [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](reading-with-a-pen.md) Mark the printed page, photograph it, and an agent does the processing that always made me stop highlighting. The book's new name is in its margins.
 
+### Continued by
+
+- [A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page](books-for-a-new-generation-of-publishing.md) What the best visual books, Leanpub's Markua, print-on-demand costs and the learning research teach, and what an agent team adds to a printed book.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 326 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=326)

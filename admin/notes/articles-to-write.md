@@ -6,13 +6,13 @@
 
 ### The book of The Ultimate Insider: two repositories, a night's work and the first two PDFs
 
-- **Added:** 30 October 2026. **Status:** queued; material read in part.
+- **Added:** 30 October 2026. **Status:** written and released, v0.14.2, as `the-book-of-the-talk-and-its-companion`.
 - **Source:** Dinis's memo, word for word in `admin/notes/2026-10-30__the-book/memo-01.md`.
 - **First:** the two repositories (`SGit-AI/SGit-AI__Website__Book__The-Ultimate-Insider` and `SGit-AI/SGit-AI__Website__Cold-Read__The-Ultimate-Insider`, both started 30 October 2026 at 00:35 and 00:37 UTC), their `REALITY.md` files, the RC1 page and its two PDFs (the 294-page RC1 and its companion), and the cold read's debrief PDF.
 
 ### Books for a new generation of publishing: what the best do, and what an agent team can add
 
-- **Added:** 30 October 2026. **Status:** queued; research first.
+- **Added:** 30 October 2026. **Status:** written and released as `books-for-a-new-generation-of-publishing`.
 - **Source:** Dinis's memo, word for word in `admin/notes/2026-10-30__the-book/memo-02.md`.
 - **First:** research. The state of the art in markdown-based and print-on-demand books (Leanpub and Markua's limits, the best Leanpub books); books known for their figures and layout; what learning science says about pictures and words; then what the talk's own figures and animations (Ruflo, ruv.sgit.ai, the motion member) would become on a printed page.
 

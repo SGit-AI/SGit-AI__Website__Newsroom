@@ -4,15 +4,15 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 1113 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 763 | 3216 | links to sgit.ai's pages and the network sites (37 files this site writes itself) |
-| words | 1557 | 10742 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 1116 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 765 | 3219 | links to sgit.ai's pages and the network sites (37 files this site writes itself) |
+| words | 1560 | 10754 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 90 | 272 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 645 × `sgit.ai/about/index.html`
-- 321 × `sgit.ai/about/index.md`
+- 647 × `sgit.ai/about/index.html`
+- 322 × `sgit.ai/about/index.md`
 - 134 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 46 × `pki.sgit.ai/`
@@ -36,9 +36,9 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 - 19 × `sgit.ai/docs/guidance/index.html`
 - 19 × `sgit.ai/demos/vaults/bridge-simulation/index.html`
 - 18 × `sgit.ai/docs/append-lane-messaging.md`
-- 18 × `sgit.ai/demos/fractal-graphs/index.html`
 - 18 × `sgit.ai/docs/vault/index.html`
 - 18 × `sgit.ai/docs/briefs/index.html`
+- 18 × `sgit.ai/demos/fractal-graphs/index.html`
 - 18 × `sgit.ai/case-studies/index.html`
 - 18 × `sgit.ai/use-cases/index.html`
 - 18 × `sgit.ai/admin/index.html`
@@ -49,8 +49,8 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 - 16 × `graphs.sgit.ai/v2/books/index.html`
 - 16 × `sgit.ai/demos/vaults/regulation-graph/index.html`
 - 15 × `sgit.ai/docs/vault/vault-from-javascript.html`
-- 15 × `sgit.ai/demos/vaults/code-review-graphs/index.html`
 - 15 × `sgit.ai/docs/vault/vault-apps.html`
+- 15 × `sgit.ai/docs/vault/static-hosting.html`
 
 ## Network links in pages this site writes itself
 
@@ -140,6 +140,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `admin/notes/2026-10-28__investor-sgit-ai/research-01.md` (9)
 - `admin/notes/2026-10-29__brief__investor-sgit-ai.md` (9)
 - `assets/pen/identity.js` (9)
+- `desks/security.html` (9)
 - `engineering/releases/v0.13.64.html` (9)
 - `team/newsroom-reviews.html` (9)
 - `articles/summaries/a-pen-and-a-key.json` (8)
@@ -155,4 +156,3 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `about/index.html` (7)
 - `admin/index.html` (7)
 - `admin/notes/2026-10-13__design-lab-review.md` (7)
-- `admin/notes/2026-10-27__the-reviewers-vaults.md` (7)

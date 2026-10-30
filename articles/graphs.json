@@ -55,6 +55,206 @@
   ],
   "articles": [
     {
+      "slug": "books-for-a-new-generation-of-publishing",
+      "title": "A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page",
+      "date": "2026-10-30",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/books-for-a-new-generation-of-publishing.html",
+      "markdown": "https://newsroom.sgit.ai/articles/books-for-a-new-generation-of-publishing.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/books-for-a-new-generation-of-publishing.webp",
+      "teaser": "What the best visual books, Leanpub's Markua, print-on-demand costs and the learning research teach, and what an agent team adds to a printed book.",
+      "topics": [
+        "agents-and-policy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "books",
+        "publishing",
+        "leanpub",
+        "markua",
+        "infographics",
+        "learning",
+        "visual-explanation",
+        "agent-teams",
+        "the-ultimate-insider",
+        "article"
+      ],
+      "links_out": [
+        "the-book-of-the-talk-and-its-companion",
+        "the-ultimate-insider-case-study"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "nb-filmstrip.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nb-filmstrip.webp",
+          "caption": "An animation from the talk as three stills: what a moving slide becomes on a printed page.",
+          "kind": "process"
+        },
+        {
+          "file": "nb-markua.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nb-markua.webp",
+          "caption": "What Markua and print on demand allow, and what they do not, from the Markua spec and KDP's help pages.",
+          "kind": "comparison"
+        },
+        {
+          "file": "nb-ink.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nb-ink.webp",
+          "caption": "KDP's print cost per page by ink and trim, in US cents, from its help pages read on 30 October 2026.",
+          "kind": "chart"
+        },
+        {
+          "file": "nb-mayer.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nb-mayer.webp",
+          "caption": "Seven of Mayer's principles, with the median effect size in his studies, and what each means on a page.",
+          "kind": "chart"
+        }
+      ],
+      "graph": {
+        "slug": "books-for-a-new-generation-of-publishing",
+        "teaser": "What the best visual books, Leanpub's Markua, print-on-demand costs and the learning research teach, and what an agent team adds to a printed book.",
+        "topics": [
+          "agents-and-policy",
+          "news-and-evidence"
+        ],
+        "core_idea": "A book made by an agent team should look like it: Markua and print on demand allow more than text and images, limited mostly by the cost of colour; the learning research says words and pictures together, placed together, without decoration, with a cast of concepts first and questions to remember by; the best visual books do this by hand, and an agent team can do it by machine, with every figure a spec that can be rerun, one grammar enforced, animations as filmstrips and every number tied to the register.",
+        "nodes": [
+          {
+            "id": "signal",
+            "label": "The look is the signal",
+            "kind": "claim",
+            "summary": "A book made by agents that looks like any other contradicts its message."
+          },
+          {
+            "id": "markua",
+            "label": "What Markua allows",
+            "kind": "artefact",
+            "summary": "Sized, floated and full-bleed images, captions, SVG as text, seven typed boxes."
+          },
+          {
+            "id": "colour",
+            "label": "Colour is the real limit",
+            "kind": "claim",
+            "summary": "Standard colour about twice black ink per page, premium about five times."
+          },
+          {
+            "id": "mayer",
+            "label": "Words and pictures together",
+            "kind": "concept",
+            "summary": "Mayer's principles: multimedia, contiguity, coherence, segmenting, pre-training."
+          },
+          {
+            "id": "retrieval",
+            "label": "Questions to remember by",
+            "kind": "method",
+            "summary": "Practice testing and spacing are rated the most useful study techniques."
+          },
+          {
+            "id": "best",
+            "label": "The best do it by hand",
+            "kind": "example",
+            "summary": "Tufte, Head First, Wardley, Evans, Nystrom: one grammar, words on the drawing."
+          },
+          {
+            "id": "spec",
+            "label": "Every figure a spec",
+            "kind": "method",
+            "summary": "Like the talk's ruv.sgit runs: a request, sources, and a rerun on demand."
+          },
+          {
+            "id": "filmstrip",
+            "label": "Animations as filmstrips",
+            "kind": "method",
+            "summary": "Stills at named seconds, the print form of a moving slide."
+          },
+          {
+            "id": "plan",
+            "label": "Ten things the book will do",
+            "kind": "artefact",
+            "summary": "Cast of concepts, one map grammar, filmstrips, boxes, greyscale, questions."
+          }
+        ],
+        "edges": [
+          {
+            "from": "signal",
+            "to": "plan",
+            "rel": "leads-to"
+          },
+          {
+            "from": "markua",
+            "to": "colour",
+            "rel": "contrasts"
+          },
+          {
+            "from": "mayer",
+            "to": "best",
+            "rel": "example-of"
+          },
+          {
+            "from": "best",
+            "to": "spec",
+            "rel": "compared-with"
+          },
+          {
+            "from": "spec",
+            "to": "filmstrip",
+            "rel": "produces"
+          },
+          {
+            "from": "mayer",
+            "to": "plan",
+            "rel": "produces"
+          },
+          {
+            "from": "retrieval",
+            "to": "plan",
+            "rel": "produces"
+          },
+          {
+            "from": "markua",
+            "to": "plan",
+            "rel": "depends-on"
+          },
+          {
+            "from": "filmstrip",
+            "to": "plan",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-book-of-the-talk-and-its-companion",
+            "the-ultimate-insider-case-study"
+          ],
+          "pages": [],
+          "sites": [
+            "https://markua.com/",
+            "https://leanpub.com/blog/the-leanpub-author-update-for-december-2024/",
+            "https://kdp.amazon.com/en_US/help/topic/G201834340",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC5780548/",
+            "https://journal.stuffwithstuff.com/2020/04/05/crafting-crafting-interpreters/",
+            "https://wizardzines.com/about/",
+            "https://martinfowler.com/bliki/DuplexBook.html",
+            "https://numinous.productions/ttft/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The look is the signal.",
+            "why": "Why the book cannot look like any other."
+          },
+          {
+            "text": "A change is a request, not a redraw.",
+            "why": "What agents change about figures."
+          },
+          {
+            "text": "Those stills are the print form",
+            "why": "How an animation reaches the page."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-book-of-the-talk-and-its-companion",
       "title": "The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes",
       "date": "2026-10-30",
@@ -81,7 +281,9 @@
         "the-ultimate-insider-case-study",
         "reading-with-a-pen"
       ],
-      "links_in": [],
+      "links_in": [
+        "books-for-a-new-generation-of-publishing"
+      ],
       "figures": [
         {
           "file": "rk-lead.webp",
@@ -952,6 +1154,7 @@
         "introducing-sharness"
       ],
       "links_in": [
+        "books-for-a-new-generation-of-publishing",
         "the-book-of-the-talk-and-its-companion"
       ],
       "figures": [

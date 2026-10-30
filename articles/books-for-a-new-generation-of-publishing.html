@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page, SGit Newsroom</title>
+<meta name="description" content="The talk I gave at hack::soho looked like it was made by an agent team: a custom player, its own navigation, and animations everywhere, each one made to drive a point home. The book of the talk has to do the same, or the medium contradicts the message. But a book that goes to Leanpub and to print on demand has only text, images and a little layout. So before designing it I asked for research: what the best visual books do, what Markua (Leanpub's markdown) and Amazon's print service allow, and what the research on learning says about pictures and words. The findings are clear. Markua gives more than I expected: images sized as a share of the page, floated toward or away from the spine, or full bleed; numbered figures with captions; SVG and Mermaid diagrams kept as text; and seven kinds of typed box, for tips, warnings, questions and exercises. The limits are mostly cost and craft: no raw HTML, no text on both sides of an image, and colour printing that costs from about twice to more than five times as much per page as black ink. Richard Mayer's experiments rate pictures with words at an effect size of 1.39 and putting the words next to the picture at 1.09, and show that decoration hurts. Retrieval practice and spacing are rated the most useful study techniques. The best books, from Edward Tufte's to Julia Evans's zines, Simon Wardley's maps and Bob Nystrom's Crafting Interpreters, apply these by hand. An agent team can apply them by machine: one visual grammar across every figure, each figure a spec that can be rerun when I change my mind, animations turned into filmstrips, every number tied to the register, and questions to remember by. This article sets out what we found, and the plan for the book.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/books-for-a-new-generation-of-publishing.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/books-for-a-new-generation-of-publishing.html">
+<meta property="og:title" content="A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page, SGit Newsroom">
+<meta property="og:description" content="The talk I gave at hack::soho looked like it was made by an agent team: a custom player, its own navigation, and animations everywhere, each one made to drive a point home. The book of the talk has to do the same, or the medium contradicts the message. But a book that goes to Leanpub and to print on demand has only text, images and a little layout. So before designing it I asked for research: what the best visual books do, what Markua (Leanpub's markdown) and Amazon's print service allow, and what the research on learning says about pictures and words. The findings are clear. Markua gives more than I expected: images sized as a share of the page, floated toward or away from the spine, or full bleed; numbered figures with captions; SVG and Mermaid diagrams kept as text; and seven kinds of typed box, for tips, warnings, questions and exercises. The limits are mostly cost and craft: no raw HTML, no text on both sides of an image, and colour printing that costs from about twice to more than five times as much per page as black ink. Richard Mayer's experiments rate pictures with words at an effect size of 1.39 and putting the words next to the picture at 1.09, and show that decoration hurts. Retrieval practice and spacing are rated the most useful study techniques. The best books, from Edward Tufte's to Julia Evans's zines, Simon Wardley's maps and Bob Nystrom's Crafting Interpreters, apply these by hand. An agent team can apply them by machine: one visual grammar across every figure, each figure a spec that can be rerun when I change my mind, animations turned into filmstrips, every number tied to the register, and questions to remember by. This article sets out what we found, and the plan for the book.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/books-for-a-new-generation-of-publishing.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/books-for-a-new-generation-of-publishing.jpg">
+<link rel="alternate" type="text/markdown" href="books-for-a-new-generation-of-publishing.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page, SGit Newsroom", "headline": "A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page, SGit Newsroom", "description": "The talk I gave at hack::soho looked like it was made by an agent team: a custom player, its own navigation, and animations everywhere, each one made to drive a point home. The book of the talk has to do the same, or the medium contradicts the message. But a book that goes to Leanpub and to print on demand has only text, images and a little layout. So before designing it I asked for research: what the best visual books do, what Markua (Leanpub's markdown) and Amazon's print service allow, and what the research on learning says about pictures and words. The findings are clear. Markua gives more than I expected: images sized as a share of the page, floated toward or away from the spine, or full bleed; numbered figures with captions; SVG and Mermaid diagrams kept as text; and seven kinds of typed box, for tips, warnings, questions and exercises. The limits are mostly cost and craft: no raw HTML, no text on both sides of an image, and colour printing that costs from about twice to more than five times as much per page as black ink. Richard Mayer's experiments rate pictures with words at an effect size of 1.39 and putting the words next to the picture at 1.09, and show that decoration hurts. Retrieval practice and spacing are rated the most useful study techniques. The best books, from Edward Tufte's to Julia Evans's zines, Simon Wardley's maps and Bob Nystrom's Crafting Interpreters, apply these by hand. An agent team can apply them by machine: one visual grammar across every figure, each figure a spec that can be rerun when I change my mind, animations turned into filmstrips, every number tied to the register, and questions to remember by. This article sets out what we found, and the plan for the book.", "url": "https://newsroom.sgit.ai/articles/books-for-a-new-generation-of-publishing.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page</p>
+ <h1>A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-30 &middot; <a href="versions/books-for-a-new-generation-of-publishing.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v999.0.0</a> &middot; <span class="chip">books</span><span class="chip">publishing</span><span class="chip">leanpub</span><span class="chip">markua</span><span class="chip">infographics</span><span class="chip">learning</span><span class="chip">visual-explanation</span><span class="chip">agent-teams</span><span class="chip">the-ultimate-insider</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> The talk I gave at hack::soho looked like it was made by an agent team: a custom player, its own navigation, and animations everywhere, each one made to drive a point home. The book of the talk has to do the same, or the medium contradicts the message. But a book that goes to Leanpub and to print on demand has only text, images and a little layout. So before designing it I asked for research: what the best visual books do, what Markua (Leanpub's markdown) and Amazon's print service allow, and what the research on learning says about pictures and words. The findings are clear. Markua gives more than I expected: images sized as a share of the page, floated toward or away from the spine, or full bleed; numbered figures with captions; SVG and Mermaid diagrams kept as text; and seven kinds of typed box, for tips, warnings, questions and exercises. The limits are mostly cost and craft: no raw HTML, no text on both sides of an image, and colour printing that costs from about twice to more than five times as much per page as black ink. Richard Mayer's experiments rate pictures with words at an effect size of 1.39 and putting the words next to the picture at 1.09, and show that decoration hurts. Retrieval practice and spacing are rated the most useful study techniques. The best books, from Edward Tufte's to Julia Evans's zines, Simon Wardley's maps and Bob Nystrom's Crafting Interpreters, apply these by hand. An agent team can apply them by machine: one visual grammar across every figure, each figure a spec that can be rerun when I change my mind, animations turned into filmstrips, every number tied to the register, and questions to remember by. This article sets out what we found, and the plan for the book.</em></p>
+<figure class="shot" data-shot="nb-filmstrip.webp" data-dir="images/" data-alt="An animation from the talk as three stills: what a moving slide becomes on a printed page." data-kind="process"><figcaption>An animation from the talk as three stills: what a moving slide becomes on a printed page.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>The book has to look like the team that made it.</b> If a book made by agents looks like every book before it, the medium contradicts the message.</li>
+<li><b>The page gives us text, images and a little layout.</b> Markua and Amazon's print service allow more than that sounds like, and limit it mostly by cost.</li>
+<li><b>The learning research is clear on pictures.</b> Words with pictures, placed together, without decoration, teach better than words alone.</li>
+<li><b>The best visual books already do this by hand.</b> Tufte, Head First, Wardley, Evans, Nystrom: one grammar, words on the drawing, every figure earning its place.</li>
+<li><b>An agent team can do it by machine.</b> Every figure a spec, rerun on request, held to one grammar, its numbers tied to the register.</li>
+<li><b>An animation becomes a filmstrip.</b> The talk's motion pieces were already captured as stills at named seconds.</li>
+<li><b>The plan:</b> a cast of concepts up front, one map grammar, filmstrips, call-outs mapped to Markua's boxes, greyscale first, and questions to remember by.</li>
+</ul>
+<h2 id="signal">Why a book has to look like its workflow</h2>
+<p>The talk I gave on 29 October did not look like a normal presentation. It had its own player and navigation, and almost every slide was a live web page with its own animation, made by a team with a motion designer and a studio of Ruflo runs. I think that matters beyond taste. If I stand up and say a talk was made by an agent team, and it looks like every talk before it, maybe a bit better, the audience has no reason to believe that anything has changed. The look is the signal.</p>
+<p>The book is the same problem with fewer tools. A book is a teaching aid: its job is to move concepts from my head to a reader's, and most of what I am explaining is concepts and ideas, not procedures. So I did not want to start from the conventions of the last book I read. I wanted to start from what is known: what the best visual books do, what the platform allows, and what the research on learning says works. This article is that research, done by an agent at my request on 30 October, and what we will do with it.</p>
+<h2 id="page">What the page allows</h2>
+<p>The book will be written in Markua, the markdown that Leanpub uses, and sold on Leanpub as PDF and EPUB, then printed on demand through Amazon's Kindle Direct Publishing (KDP).</p>
+<figure class="shot" data-shot="nb-markua.webp" data-dir="images/" data-alt="What Markua and print on demand allow, and what they do not, from the Markua spec and KDP&#x27;s help pages." data-kind="comparison"><figcaption>What Markua and print on demand allow, and what they do not, from the Markua spec and KDP's help pages.</figcaption></figure>
+<p><b>Markua gives more than "text and images".</b> The specification, version 0.31.50 of 11 August 2026 (Leanpub's default is still Markua 0.30, in beta), lets an image be sized as a percentage of the page's content area, aligned, floated left or right, or floated "inside" toward the spine or "outside" away from it, or set full bleed, "the full size of the page, with no margins". An image's title becomes a numbered caption. A code block fenced as <code>svg</code> or <code>mermaid</code> "is rendered as an image by default", so a diagram can live in the manuscript as text that can be diffed and reviewed. There are asides that can run across pages and short boxes typed by letter: discussion, error, information, question, tip, warning and exercise, which Leanpub draws with an icon. Tables can come from CSV files, and code can be cropped from real files.</p>
+<p><b>And it says plainly what it does not do.</b> Raw HTML is "completely removed". A page break exists but "the use of this directive is discouraged. Authors should spend their time writing, not formatting." And: "Markua is not a good choice for the types of advanced layouts which flow text on both sides of an image. For that, you should use something like InDesign".</p>
+<p><b>Print adds its own rules.</b> KDP asks for images of at least 300 DPI and calls anything under 200 low resolution; transparent layers must be flattened. Bleed is all or nothing: "Even if just one page in your interior requires bleed, then your entire file should be set up with bleed." The inside margin grows with the page count, to half an inch for a book of 151 to 300 pages. RC1 is 6 by 9 inches, which KDP calls "the most common trim size for paperbacks in the U.S."; Leanpub moved its own default to 7 by 10 in December 2024.</p>
+<p><b>The real constraint is colour.</b> KDP's print cost is "Fixed cost + (page count * per page cost)". On a regular trim, black ink costs 1.2 cents a page, standard colour 2.55 cents and premium colour 6.5 cents, and the ink cannot be changed after publication. So the figures must work in greyscale, and colour is a choice we make once.</p>
+<figure class="shot" data-shot="nb-ink.webp" data-dir="images/" data-alt="KDP&#x27;s print cost per page by ink and trim, in US cents, from its help pages read on 30 October 2026." data-kind="chart"><figcaption>KDP's print cost per page by ink and trim, in US cents, from its help pages read on 30 October 2026.</figcaption></figure>
+<h2 id="best">What the best visual books do</h2>
+<p>The research looked for books known for how they explain with pictures, and asked of each technique whether it survives on a printed page.</p>
+<ul>
+<li><b>Edward Tufte</b>: small multiples (the same small chart repeated to compare), sparklines the size of a word, and no chart junk. Made for print.</li>
+<li><b>Head First</b>, the series Kathy Sierra and Bert Bates started in 2003: visual, conversational, words placed inside or next to the pictures, deliberately odd. It survives print but needs a designer's layout tool; Markua can only approach it.</li>
+<li><b>Simon Wardley's Wardley Maps</b>, on Leanpub under a Creative Commons licence: one map grammar, repeated until the reader reads it without thinking. RC1 already uses it, with sixteen maps.</li>
+<li><b>Simon Brown's C4 model</b>, also on Leanpub: a whole book about one diagram notation.</li>
+<li><b>Julia Evans's zines</b>: "Each of these zines is 20-28 pages. I spend hours on each page making sure that every single one explains one or two important ideas as succinctly and clearly as I possibly can."</li>
+<li><b>Randall Munroe's Thing Explainer</b>: hard subjects with only the thousand most common words, a constraint a machine can check.</li>
+<li><b>Scott McCloud's Understanding Comics</b>, a book about comics written as a comic: sequential panels, which suit a process like an agent's hand-off.</li>
+<li><b>Martin Fowler's duplex book</b>: a narrative part read cover to cover and a reference part "to be dipped into when needed", with his rule of thumb that "200 pages is the limit for a narrative cover-to-cover technical book."</li>
+<li><b>Bob Nystrom's Crafting Interpreters</b>: "The ultimate goal for me is a print book, so I stuck with black and white ink." He drew every illustration by hand against an x-height guide, with "a pair of registration marks a fixed distance apart", and his build tested every code sample in the book: "I could automatically verify that the code that I was showing readers did exactly what I expected."</li>
+<li><b>Quantum Country</b>, by Andy Matuschak and Michael Nielsen: "Embedded within the text of the essay are 112 questions", reviewed on a schedule, so that reading becomes remembering.</li>
+</ul>
+<p>The pattern is that the best of these do by hand, with great effort, what a pipeline does by default: one grammar, consistent drawings, tested examples. Nystrom's registration marks are a case in point: that is the work an agent team does not get tired of.</p>
+<h2 id="science">What the learning research says</h2>
+<p>Most of the research on pictures and words in teaching comes from Richard Mayer and his colleagues, summarised in <em>Multimedia Learning</em> (Cambridge University Press, second edition, 2009). Each principle was tested in experiments that compared a lesson with and without it.</p>
+<figure class="shot" data-shot="nb-mayer.webp" data-dir="images/" data-alt="Seven of Mayer&#x27;s principles, with the median effect size in his studies, and what each means on a page." data-kind="chart"><figcaption>Seven of Mayer's principles, with the median effect size in his studies, and what each means on a page.</figcaption></figure>
+<ul>
+<li><b>Multimedia:</b> "People learn better from words and pictures than from words alone." Eleven tests out of eleven, a median effect size of 1.39, and stronger for readers new to the subject.</li>
+<li><b>Spatial contiguity:</b> "Students learn better when corresponding words and pictures are presented near rather than far from each other on the page or screen." 1.09. On a page, this means labels on the drawing, not in a legend, and the figure beside the paragraph about it.</li>
+<li><b>Coherence:</b> "People learn better when extraneous material is excluded rather than included." 0.97. Other studies, of so-called seductive details, find that interesting but irrelevant pictures and asides lower what readers learn.</li>
+<li><b>Segmenting:</b> a message in pieces the reader paces, 0.98. On a page: one idea per figure, steps as panels.</li>
+<li><b>Pre-training:</b> "People learn more deeply from a multimedia message when they know the names and characteristics of the main concepts." 0.85. On a page: introduce the cast of concepts before the story uses them.</li>
+<li><b>Personalisation:</b> conversational words rather than formal ones, 1.11. That is the first-person voice the book's first companion card asks about.</li>
+</ul>
+<p>These effect sizes come from short lessons in Mayer's own studies, so they are an upper bound, not a promise. Two more findings matter. A review by Weinstein, Madan and Sumeracki (2018) explains that combining words and pictures works because pictures are more memorable than words, and that this is "distinct from the notion of 'learning styles'", which "is not supported by empirical findings". And Dunlosky and colleagues (2013), rating ten study techniques, found that "Practice testing and distributed practice received high utility assessments", while rereading and highlighting were rated low. A book that asks questions, and asks them again later, teaches more than one that is only read.</p>
+<h2 id="industry">Where the industry is</h2>
+<p>Publishing is already changing under agents, mostly at the edges. Leanpub sells AI tools to authors, among them one that "adds AI-generated alt text to every image in your Leanpub book" and an index generator. Amazon, in 2023, limited self-publishers to three new titles a day, according to the Authors Guild: "KDP confirmed this number with us". The flood that prompted it is the opposite of what I want: books made cheaper, not books made better.</p>
+<p>The other trend is older and more useful: books that version like software. Leanpub's readers "get free updates, regardless of when they bought the book or how much they paid". Pro Git is open source and takes corrections from its readers. Quarto, Bookdown, O'Reilly's Atlas and Pandoc all build a book from source files in a repository into several formats. RC1 is already one of these: a release with a version, a hash and a build that reproduces it to the pixel.</p>
+<h2 id="agents">What an agent team adds</h2>
+<p>None of the techniques above is new. What is new is that the cost of applying all of them, to every figure, every time, has fallen to almost nothing, and that a figure can be changed by asking.</p>
+<ul>
+<li><b>Every figure is a run with a spec.</b> In the talk, ruv.sgit made 25 runs on the day, each with a spec that quotes its request, an evidence file naming the source of every number, and a note for me. A book's figures can be made the same way, so that each one can be traced, checked and remade.</li>
+<li><b>A change is a request, not a redraw.</b> At 18:25 on the day of the talk I told the motion member that the gap between people and agents in its first animation was too exaggerated. At 18:29 the changed piece was on dev, with an explainer. A publisher could not have offered that; an illustrator would not have.</li>
+<li><b>The grammar is enforced, not hoped for.</b> RC1's infographics already follow a written visual language: one dark ink and one accent, nothing under about 9 point at the printed size, the claim id on the image, and a renderer that refuses text that runs off the canvas or overlaps. That is Nystrom's registration marks, done by a checker.</li>
+<li><b>An animation becomes a filmstrip.</b> The motion member checked every piece by capturing stills at named seconds, such as 22, 31 and 43 seconds into the first piece. Those stills are the print form: three frames in a row, read left to right, are a small multiple of the animation, and a QR code beside them can open the moving version.</li>
+<li><b>Reviews become decisions.</b> RC1's companion turned 98 review points into cards pinned to pages, with boxes to tick. The same pipeline can check every figure against the research: does it have words on it, is it next to its paragraph, does it teach or decorate?</li>
+</ul>
+<h2 id="plan">The plan for the book</h2>
+<p>This is what we will build into the book of The Ultimate Insider, and test in the next release candidate:</p>
+<ol>
+<li><b>A cast of concepts up front.</b> The ultimate insider, a mandate, a boundary, the five-step wake, a hold: each named and drawn once before the story uses it (pre-training).</li>
+<li><b>One map grammar.</b> The Wardley maps stay, simplest first, with the chapter on how to read one before them.</li>
+<li><b>Filmstrips from the talk.</b> Each animation that carries an argument appears as three to five stills in a row, with a short URL or QR code to the moving version on the talk's site.</li>
+<li><b>Words on the drawing.</b> Labels inside the figure, the figure next to its paragraph, captions that say what the image is (spatial contiguity).</li>
+<li><b>Call-outs mapped to Markua's boxes.</b> RC1's five kinds (concept, the number, take away, watch out, try this) become Markua's information, tip, warning and exercise boxes, so they survive into Leanpub's PDF and EPUB.</li>
+<li><b>Greyscale first.</b> Every figure checked in greyscale by the pipeline; meaning carried by shape, position and words, never by colour alone.</li>
+<li><b>No decoration.</b> A figure that does not teach something is removed (coherence).</li>
+<li><b>Questions to remember by.</b> A few questions at the end of each chapter, asked again later in the book, with an online deck for spaced review (retrieval practice).</li>
+<li><b>Every number with its id,</b> on the figure as in the text, so any reader can rerun it.</li>
+<li><b>Every figure a spec,</b> kept in the repository with its source and its renderer, so that changing my mind costs a sentence.</li>
+</ol>
+<p>And the book will be shared: the repository, the figures' specs and this research are public, so anyone writing a book can copy what works.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The research was done by an agent in one session,</b> from sources it could fetch. Edward Tufte's own site blocked it, so his techniques here come from secondary descriptions; the Head First principles come from a second-hand summary, so they are paraphrased, not quoted.</li>
+<li><b>Mayer's effect sizes</b> come from short lessons in his own laboratory and are upper bounds; a book chapter is not a five-minute lesson.</li>
+<li><b>The best Leanpub books</b> are an editorial choice: Leanpub publishes no ranked list we could check.</li>
+<li><b>The print costs</b> are KDP's rates for Amazon.com on 30 October 2026, before tax, and change.</li>
+<li><b>The plan is a plan.</b> None of it is in RC1 yet beyond the maps, the infographics and the call-outs; the next release candidate will show how much of it works.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>All read on 30 October 2026 by a research agent working for this newsroom; quotations are copied from the fetched pages.</p>
+<ul>
+<li>Markua specification, version 0.31.50 (2026-08-11): <a href="https://markua.com/">markua.com</a>. Leanpub: <a href="https://leanpub.com/blog/the-leanpub-author-update-for-december-2024/">the author update for December 2024</a>; <a href="https://leanpub.com/">Leanpub's home page</a> for royalties, free updates and the AI tools.</li>
+<li>Amazon KDP help: <a href="https://kdp.amazon.com/en_US/help/topic/GVBQ3CMEQW3W2VL6">trim size, bleed and margins</a>, <a href="https://kdp.amazon.com/en_US/help/topic/G202169030">images</a>, <a href="https://kdp.amazon.com/en_US/help/topic/G201834340">printing cost</a>, <a href="https://kdp.amazon.com/en_US/help/topic/GX56BFPW4BKNPGFW">colour ink</a>.</li>
+<li>Mayer, <em>Multimedia Learning</em>, 2nd edition, chapter abstracts on <a href="https://www.cambridge.org/core/books/multimedia-learning/">cambridge.org</a> (multimedia, coherence, spatial contiguity, segmenting, pre-training, personalisation).</li>
+<li>Weinstein, Madan and Sumeracki (2018), <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5780548/">Teaching the science of learning</a>, <em>Cognitive Research: Principles and Implications</em>. Dunlosky et al. (2013), <em>Psychological Science in the Public Interest</em> 14(1), 4 to 58.</li>
+<li>Julia Evans, <a href="https://wizardzines.com/about/">wizardzines.com/about</a>. Bob Nystrom, <a href="https://journal.stuffwithstuff.com/2020/04/05/crafting-crafting-interpreters/">Crafting "Crafting Interpreters"</a>. Martin Fowler, <a href="https://martinfowler.com/bliki/DuplexBook.html">Duplex Book</a>. Matuschak and Nielsen, <a href="https://numinous.productions/ttft/">How can we develop transformative tools for thought?</a>. Simon Wardley, <a href="https://leanpub.com/wardley-maps">Wardley Maps on Leanpub</a>. Simon Brown, <a href="https://leanpub.com/visualising-software-architecture">The C4 model on Leanpub</a>.</li>
+<li>Authors Guild, <a href="https://authorsguild.org/news/amazon-adds-to-kdp-generative-ai-policy-caps-daily-self-publishing-uploads/">Amazon caps daily self-publishing uploads</a>, 27 September 2023.</li>
+<li>The talk's repository, <a href="https://github.com/SGit-AI/SGit-AI__Website__Presentation__The-Ultimate-Insider">SGit-AI/SGit-AI__Website__Presentation__The-Ultimate-Insider</a>: <code>team/ruv-sgit/runs/</code> (25 specs), <code>team/motion/ROLE.md</code> and <code>team/motion/debriefs/</code> (the stills and the 18:25 change). The book's repository: <code>team/conductor/rc1/infographics/README.md</code>.</li>
+<li>Related: <a href="the-book-of-the-talk-and-its-companion.html">the book of the talk, RC1 and its companion</a>, <a href="the-ultimate-insider-case-study.html">the talk built in a day</a>.</li>
+</ul>
+<sg-meter view="page" kind="article" date="2026-10-30" topics="agents-and-policy news-and-evidence" title="A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">News &amp; evidence</span> <a href="graphs.html#books-for-a-new-generation-of-publishing">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="the-book-of-the-talk-and-its-companion.html">The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes</a> <span class="dim">Two agent teams, one night: RC1 of the book of The Ultimate Insider, a cold read by a team that knew only the record, and a companion PDF of tick boxes.</span></li><li><a href="the-ultimate-insider-case-study.html">A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records</a> <span class="dim">The ultimate insider, built in a day: 814 commits, 210 releases and 162 wakes by nine agents and one editor, from 00:16 to the stage at 19:00.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 327 &middot; <a href="../for/make.html#r=327">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/books-for-a-new-generation-of-publishing.jpg" download>books-for-a-new-generation-of-publishing.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="books-for-a-new-generation-of-publishing.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>
