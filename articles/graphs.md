@@ -14,13 +14,40 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-332 of 332 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+333 of 333 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-332 articles, 1599 links between them (2442 mentions in all). 273 articles cite an earlier one; 82 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 33 articles not yet linked either way.
+333 articles, 1600 links between them (2443 mentions in all). 274 articles cite an earlier one; 82 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 33 articles not yet linked either way.
+
+## [Becoming an official publication: the SGit Newsroom now has a publisher, an editor, standards, a corrections log, a withdrawal process and a complaints route, and is applying to a regulator](becoming-an-official-publication.md)
+
+2026-10-30 · News & evidenceSite & engineering
+
+In the UK no licence makes a journalist; a publication becomes accountable by saying who publishes it and who answers for it, publishing and keeping standards, correcting in the open, withdrawing only with a notice, taking complaints, and submitting to an independent regulator. The SGit Newsroom now has the imprint, standards, corrections log, withdrawal process and complaints route, says plainly that agents write under the editor's responsibility, and is applying to IMPRESS and for an ISSN.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**9 nodes, 9 edges**
+
+- **Why now** (example) A story read through secondary reports, a quote misattributed, corrected, then withdrawn.
+- **What makes a publication official** (concept) No licence; an imprint, standards, corrections, withdrawals, complaints and a regulator.
+- **Five pages today** (artefact) Imprint, standards, corrections, withdrawals, complaints.
+- **The right of reply** (method) An allegation is put to the party before it is published.
+- **Agents write, the editor answers** (claim) The imprint says agents write the articles and the editor answers for them.
+- **The first withdrawal** (example) Its notice, its kept number and its record.
+- **IMPRESS** (method) The recognised regulator, from about £50 a year for small publishers.
+- **An ISSN** (artefact) A free serial number from the British Library.
+- **SGit Newsroom** (question) A name that says where it comes from, with the interests on the page.
+
+> Today a story showed me that good habits are not the same as being accountable. Why now.
+
+> But it cannot answer for what it publishes. Why the editor answers.
+
+builds on [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](#reviews-on-the-record).
 
 ## [Signed by the agent, vouched for by the person: a brief to give every email agent its own key, so each email carries a QR code that proves it is authentic](signed-email-from-the-agent.md)
 
@@ -4056,7 +4083,7 @@ One model writes the articles and some things fall through, so every article get
 
 > The unit of work is the reviewer, the article and that hash. How it scales.
 
-builds on [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](#how-cheap-is-it-to-undo), [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](#the-human-in-the-loop), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent); continued by [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far), [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](#a-section-for-publishers), [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](#search-as-navigation), [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](#on-the-record).
+builds on [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me](#how-cheap-is-it-to-undo), [The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why](#the-human-in-the-loop), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent); continued by [Becoming an official publication: the SGit Newsroom now has a publisher, an editor, standards, a corrections log, a withdrawal process and a complaints route, and is applying to a regulator](#becoming-an-official-publication), [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far), [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](#a-section-for-publishers), [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](#search-as-navigation), [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](#on-the-record).
 
 ## [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](on-the-record.md)
 

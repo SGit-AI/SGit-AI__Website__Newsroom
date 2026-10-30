@@ -1,0 +1,158 @@
+{
+  "slug": "becoming-an-official-publication",
+  "teaser": "The SGit Newsroom becomes an official publication: a publisher and editor, standards, corrections, a withdrawal process, complaints, and a regulator next.",
+  "topics": [
+    "news-and-evidence",
+    "site-and-engineering"
+  ],
+  "core_idea": "In the UK no licence makes a journalist; a publication becomes accountable by saying who publishes it and who answers for it, publishing and keeping standards, correcting in the open, withdrawing only with a notice, taking complaints, and submitting to an independent regulator. The SGit Newsroom now has the imprint, standards, corrections log, withdrawal process and complaints route, says plainly that agents write under the editor's responsibility, and is applying to IMPRESS and for an ISSN.",
+  "nodes": [
+    {
+      "id": "why",
+      "label": "Why now",
+      "kind": "example",
+      "summary": "A story read through secondary reports, a quote misattributed, corrected, then withdrawn."
+    },
+    {
+      "id": "official",
+      "label": "What makes a publication official",
+      "kind": "concept",
+      "summary": "No licence; an imprint, standards, corrections, withdrawals, complaints and a regulator."
+    },
+    {
+      "id": "pages",
+      "label": "Five pages today",
+      "kind": "artefact",
+      "summary": "Imprint, standards, corrections, withdrawals, complaints."
+    },
+    {
+      "id": "reply",
+      "label": "The right of reply",
+      "kind": "method",
+      "summary": "An allegation is put to the party before it is published."
+    },
+    {
+      "id": "agents",
+      "label": "Agents write, the editor answers",
+      "kind": "claim",
+      "summary": "The imprint says agents write the articles and the editor answers for them."
+    },
+    {
+      "id": "withdrawal",
+      "label": "The first withdrawal",
+      "kind": "example",
+      "summary": "Its notice, its kept number and its record."
+    },
+    {
+      "id": "impress",
+      "label": "IMPRESS",
+      "kind": "method",
+      "summary": "The recognised regulator, from about £50 a year for small publishers."
+    },
+    {
+      "id": "issn",
+      "label": "An ISSN",
+      "kind": "artefact",
+      "summary": "A free serial number from the British Library."
+    },
+    {
+      "id": "name",
+      "label": "SGit Newsroom",
+      "kind": "question",
+      "summary": "A name that says where it comes from, with the interests on the page."
+    }
+  ],
+  "edges": [
+    {
+      "from": "why",
+      "to": "official",
+      "rel": "leads-to"
+    },
+    {
+      "from": "official",
+      "to": "pages",
+      "rel": "produces"
+    },
+    {
+      "from": "pages",
+      "to": "reply",
+      "rel": "produces"
+    },
+    {
+      "from": "pages",
+      "to": "withdrawal",
+      "rel": "produces"
+    },
+    {
+      "from": "agents",
+      "to": "pages",
+      "rel": "depends-on"
+    },
+    {
+      "from": "official",
+      "to": "impress",
+      "rel": "leads-to"
+    },
+    {
+      "from": "official",
+      "to": "issn",
+      "rel": "leads-to"
+    },
+    {
+      "from": "withdrawal",
+      "to": "why",
+      "rel": "answers"
+    },
+    {
+      "from": "name",
+      "to": "agents",
+      "rel": "compared-with"
+    }
+  ],
+  "links": {
+    "articles": [
+      "reviews-on-the-record"
+    ],
+    "pages": [
+      "about/imprint.html",
+      "about/standards.html",
+      "about/corrections.html",
+      "about/withdrawals.html",
+      "about/complaints.html"
+    ],
+    "sites": [
+      "https://www.impressorg.com/",
+      "https://www.issn.org/",
+      "https://rsf.org/en/journalism-trust-initiative",
+      "https://find-and-update.company-information.service.gov.uk/company/15623827"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Today a story showed me that good habits are not the same as being accountable.",
+      "why": "Why now."
+    },
+    {
+      "text": "But it cannot answer for what it publishes.",
+      "why": "Why the editor answers."
+    },
+    {
+      "text": "a withdrawal removes an article from the site, not from the record",
+      "why": "The withdrawal rule."
+    }
+  ],
+  "figures": [
+    {
+      "file": "op-steps.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/op-steps.webp",
+      "caption": "Four steps to an official publication, and where the SGit Newsroom stands on each, 30 October 2026.",
+      "kind": "process"
+    },
+    {
+      "file": "op-withdraw.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/op-withdraw.webp",
+      "caption": "The withdrawal process: the editor decides, the article leaves the site, its number is kept and a notice is published.",
+      "kind": "process"
+    }
+  ]
+}

@@ -125,6 +125,7 @@ Vaults & methodAgents & policy[This article as a graph →](graphs.md#reviews-on
 
 ### Continued by
 
+- [Becoming an official publication: the SGit Newsroom now has a publisher, an editor, standards, a corrections log, a withdrawal process and a complaints route, and is applying to a regulator](becoming-an-official-publication.md) The SGit Newsroom becomes an official publication: a publisher and editor, standards, corrections, a withdrawal process, complaints, and a regulator next.
 - [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](the-briefs-so-far.md) Sixty-five briefs this newsroom has asked of itself, audited from the code: 11 built, 21 partly, 32 not, each open one with a session brief.
 - [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](a-section-for-publishers.md) Where to send a publisher new to the newsroom: a section placed by rule, with features as they ship, that keeps itself current as the site changes.
 - [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](three-linkedin-pages.md) Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.

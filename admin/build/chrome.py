@@ -158,6 +158,13 @@ FOOTER = [
         ("Your personas", "account/personas.html"),
         ("Top up", "account/top-up.html"),
     ]),
+    ("The publication", [
+        ("Imprint", "about/imprint.html"),
+        ("Editorial standards", "about/standards.html"),
+        ("Corrections", "about/corrections.html"),
+        ("Withdrawals", "about/withdrawals.html"),
+        ("Complaints", "about/complaints.html"),
+    ]),
     ("How it runs", [
         ("How the newsroom runs", "newsroom/index.html"),
         ("Behaviour policies", "newsroom/policies.html"),

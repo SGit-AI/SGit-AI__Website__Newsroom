@@ -10,7 +10,7 @@ cd "$(git -C "$(dirname "$0")" rev-parse --show-toplevel)"
 export TMPDIR="$WRITER_TMP" PLAYWRIGHT_BROWSERS_PATH="${PLAYWRIGHT_BROWSERS_PATH:-/opt/pw-browsers}"
 rm -rf "$WRITER_TMP"/newsroom-publish-*
 python3 admin/build/publish.py --from "$WRITER_SITE" --node-modules "$WRITER_NODE"
-for n in find front desks sections publishers briefs deps ids hubs agents personas lists passkey_lab wire api_map archive engineering mesa_ranch_vault northstar_twin thistlewood_twin pellbridge_agents no_server_studio research_vault sgit_ruflo_video drafts page_fixes reviews series summaries gen_sitemap search_index chrome gen_sitemap gen_llms_full; do
+for n in publication find front desks sections publishers briefs deps ids hubs agents personas lists passkey_lab wire api_map archive engineering mesa_ranch_vault northstar_twin thistlewood_twin pellbridge_agents no_server_studio research_vault sgit_ruflo_video drafts page_fixes reviews series summaries gen_sitemap search_index chrome gen_sitemap gen_llms_full; do
   if [ -f admin/build/$n.py ]; then python3 admin/build/$n.py; else python3 admin/build/build_$n.py; fi
 done
 node admin/build/validate.js
