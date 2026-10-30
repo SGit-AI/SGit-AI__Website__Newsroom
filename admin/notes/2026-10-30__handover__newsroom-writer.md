@@ -60,7 +60,7 @@ pip install sgit-ai
 One article (or one revision) is one commit to `dev`. CI numbers it.
 
 1. **Sync.** `git fetch origin dev`, then put your branch on it: `git checkout -B <your-branch> origin/dev`, or merge it in. A revision is squashed onto `origin/dev` (`git reset --soft origin/dev`) before the build, because every commit that touches an article becomes a version page.
-2. **Mark it pending.** `python3 admin/build/release_stamp.py --pending "<one line>" --by @newsroom.writer`. Since v0.13.134 this also rebuilds the front page and the chrome. A new article's front matter carries `version: v999.0.0`. Never type a release number anywhere, including in commit subjects.
+2. **Mark it pending.** `python3 admin/build/release_stamp.py --pending "<one line>" --by @newsroom.writer`. Since v0.13.134 this also rebuilds the front page, and since the handover's release the engineering pages, the chrome, the sitemap and llms-full too, so the tree validates straight after it. A new article's front matter carries `version: v999.0.0`. Never type a release number anywhere, including in commit subjects.
 3. **Build and test** (25 to 40 minutes; run it in the background):
 
    ```bash
