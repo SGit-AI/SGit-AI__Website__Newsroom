@@ -94,7 +94,9 @@ My voice memo of 24 October 2026, corrected where the record differs; on [pki.sg
 
 Agents & policyStartups & strategy[This article as a graph →](graphs.md#signed-by-the-source)
 
-No other article links here yet.
+### Continued by
+
+- [Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it](breaking-the-story-down-before-the-agents-do.md) A reply to Ole Reissmann's session on breaking stories down for agents: what this newsroom already ships beside every article, and the allegation field to add.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

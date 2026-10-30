@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-30 | published | 1,769 | first published | this release | [current](../seven-iam-predictions-already-here.md) |
+| **v1.0.0** | 2026-10-30 | published | 1,769 | first published | [`a76899c75`](https://github.com/SGit-AI/SGit-AI__Website/commit/a76899c7584f006b88fec203c8c3554b5e5170a5) | [current](../seven-iam-predictions-already-here.md) |
 
 [← Back to the article](../seven-iam-predictions-already-here.md) · [All articles](../index.md)
 

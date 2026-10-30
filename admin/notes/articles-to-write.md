@@ -11,7 +11,7 @@
 
 ### Two follow-ups to LinkedIn posts: Sunnykumar K.'s seven IAM predictions, and Ole Reissmann's "Beyond the Article"
 
-- **Added:** 30 October 2026. **Status:** queued.
+- **Added:** 30 October 2026. **Status:** written and released as `seven-iam-predictions-already-here` and `breaking-the-story-down-before-the-agents-do`.
 - **Source:** Dinis's message, word for word in `admin/notes/2026-10-30__linkedin-followups/memo-01.md`, with four screenshots of the posts.
 - **First:** what we already do against each point: session keys and behaviour policies for non-human identities, passkeys, short-lived keys with end dates; and for SPIEGEL's breakdown, our per-article graphs, section summaries, claims registers and the shadow method. Show each post as a `| medium | aside` shot.
 

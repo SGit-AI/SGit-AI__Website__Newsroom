@@ -1,0 +1,156 @@
+{
+  "slug": "breaking-the-story-down-before-the-agents-do",
+  "teaser": "A reply to Ole Reissmann's session on breaking stories down for agents: what this newsroom already ships beside every article, and the allegation field to add.",
+  "topics": [
+    "news-and-evidence",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "Agents read journalism as fragments, so the newsroom should publish the breakdown itself, with the story: this newsroom ships every article with a markdown twin, a knowledge graph with verbatim quotes and a summary of every section, traces sources and claims, and puts the other side's answer next to an allegation; what SPIEGEL's workflow adds, and what we should copy, is the allegation and the right to respond as a field an agent carries with the claim.",
+  "nodes": [
+    {
+      "id": "post",
+      "label": "Beyond the Article",
+      "kind": "example",
+      "summary": "Ole Reissmann's session at the News Product Alliance Summit."
+    },
+    {
+      "id": "fragments",
+      "label": "Agents read fragments",
+      "kind": "claim",
+      "summary": "They stitch a confident summary that can miss the one thing that matters."
+    },
+    {
+      "id": "breakdown",
+      "label": "Break it down first",
+      "kind": "method",
+      "summary": "Actors, events, sources, claims and allegations, as structured data."
+    },
+    {
+      "id": "layers",
+      "label": "What every article ships",
+      "kind": "artefact",
+      "summary": "A markdown twin, a graph, section summaries and its sources."
+    },
+    {
+      "id": "counts",
+      "label": "The numbers",
+      "kind": "claim",
+      "summary": "327 graphs, 3,676 nodes, 819 quotes checked, 3,674 summarised sections."
+    },
+    {
+      "id": "claims",
+      "label": "Claims with ids",
+      "kind": "method",
+      "summary": "The book's register gives every number an id and a command to rerun it."
+    },
+    {
+      "id": "shadow",
+      "label": "Sources and shadows",
+      "kind": "method",
+      "summary": "Reading an article through what others say about it."
+    },
+    {
+      "id": "allegation",
+      "label": "The allegation as a field",
+      "kind": "question",
+      "summary": "A claim about a party, with whether it was put to them and their answer."
+    },
+    {
+      "id": "plugged",
+      "label": "One pipeline",
+      "kind": "concept",
+      "summary": "The breakdown released with the story, so it cannot drift."
+    }
+  ],
+  "edges": [
+    {
+      "from": "fragments",
+      "to": "breakdown",
+      "rel": "leads-to"
+    },
+    {
+      "from": "post",
+      "to": "breakdown",
+      "rel": "produces"
+    },
+    {
+      "from": "breakdown",
+      "to": "layers",
+      "rel": "compared-with"
+    },
+    {
+      "from": "layers",
+      "to": "counts",
+      "rel": "produces"
+    },
+    {
+      "from": "claims",
+      "to": "breakdown",
+      "rel": "example-of"
+    },
+    {
+      "from": "shadow",
+      "to": "claims",
+      "rel": "extends"
+    },
+    {
+      "from": "breakdown",
+      "to": "allegation",
+      "rel": "produces"
+    },
+    {
+      "from": "allegation",
+      "to": "layers",
+      "rel": "extends"
+    },
+    {
+      "from": "layers",
+      "to": "plugged",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-wire-as-a-graph",
+      "sources-and-shadows",
+      "on-the-record",
+      "signed-by-the-source",
+      "the-contractors-agent-and-three-policies"
+    ],
+    "pages": [
+      "llms.txt",
+      "newsroom-api/index.html"
+    ],
+    "sites": [
+      "https://github.com/SGit-AI/SGit-AI__Website__Book__The-Ultimate-Insider"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "So what if we did the breakdown ourselves? Before the machines get to it?",
+      "why": "Ole Reissmann's question."
+    },
+    {
+      "text": "the breakdown has to be released with the story, or it will drift from it",
+      "why": "Why one pipeline."
+    },
+    {
+      "text": "This is where SPIEGEL is ahead, and where I would like to learn from it.",
+      "why": "The allegation field."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ba-post.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ba-post.webp",
+      "caption": "Ole Reissmann's post after his session at the News Product Alliance Summit in Chicago.",
+      "kind": "aside"
+    },
+    {
+      "file": "ba-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ba-layers.webp",
+      "caption": "What every article here ships for the machines that read it, with the counts on 30 October 2026.",
+      "kind": "architecture"
+    }
+  ]
+}

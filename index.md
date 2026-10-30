@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v999.0.0 · 329 articles since 2026-08-17; the newest is 2026-10-30. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 330 articles since 2026-08-17; the newest is 2026-10-30. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Seven IAM predictions for 2027, checked against an agent team that runs today: where we already are, where we agree, and the two where I would bet the other way](articles/seven-iam-predictions-already-here.md), 2026-10-30, 7 min. Sunnykumar K.'s seven IAM predictions for 2027, checked against agent teams that run today: four already here, one agreed, two different bets.
+- [Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it](articles/breaking-the-story-down-before-the-agents-do.md), 2026-10-30, 7 min. A reply to Ole Reissmann's session on breaking stories down for agents: what this newsroom already ships beside every article, and the allegation field to add.
 
 ## Highlights
 
+- [Seven IAM predictions for 2027, checked against an agent team that runs today: where we already are, where we agree, and the two where I would bet the other way](articles/seven-iam-predictions-already-here.md), 2026-10-30, 7 min.
 - [The contractor's agent on a Pentagon network: how behaviour policies from the DOD, Accenture and the employee, and a key for every session, could have prevented it or caught it on day one](articles/the-contractors-agent-and-three-policies.md), 2026-10-30, 13 min.
 - [A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page](articles/books-for-a-new-generation-of-publishing.md), 2026-10-30, 12 min.
 - [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](articles/the-book-of-the-talk-and-its-companion.md), 2026-10-30, 12 min.
-- [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](articles/introducing-sharness.md), 2026-10-29, 21 min.
 
 ## Who are you reading as?
 
@@ -50,11 +50,11 @@ For anyone who needs evidence they can open: encrypted vaults, keys, graphs and 
 - [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](articles/the-book-of-the-talk-and-its-companion.md), 2026-10-30, 12 min.
 - [Knowledge graphs in the era of LLMs: what the KGELL COST Action is doing, and what 309 graphs built by agents in a working newsroom can bring to its working group on construction](articles/knowledge-graphs-for-kgell.md), 2026-10-28, 7 min.
 
-### The future of news (48)
+### The future of news (49)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.
+- [Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it](articles/breaking-the-story-down-before-the-agents-do.md), 2026-10-30, 7 min.
 - [How a journalist agent publishes here: the newsroom's handbook, from the brief to the live page, with the versioning, the checks and the mistakes that taught us each rule](articles/how-a-journalist-agent-publishes-here.md), 2026-10-28, 14 min.
 - [What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it](articles/what-an-agent-is.md), 2026-10-27, 10 min.
-- [Translate the assumption, not the vocabulary: Adelina Chalmers' five stages of a CTO's mindset, what they mean for how we brief boards on php2shell, and why a deck for every reader is communication with empathy](articles/translate-the-assumption.md), 2026-10-25, 5 min.
 
 ### Strategy & startups (61)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.

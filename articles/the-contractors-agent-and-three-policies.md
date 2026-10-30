@@ -142,6 +142,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#the-contra
 
 ### Continued by
 
+- [Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it](breaking-the-story-down-before-the-agents-do.md) A reply to Ole Reissmann's session on breaking stories down for agents: what this newsroom already ships beside every article, and the allegation field to add.
 - [Seven IAM predictions for 2027, checked against an agent team that runs today: where we already are, where we agree, and the two where I would bet the other way](seven-iam-predictions-already-here.md) Sunnykumar K.'s seven IAM predictions for 2027, checked against agent teams that run today: four already here, one agreed, two different bets.
 
 [All articles](index.md) · [All graphs](graphs.md)

@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it, SGit Newsroom</title>
+<meta name="description" content="Ole Reissmann, who works on AI and journalism at DER SPIEGEL, led a session at the News Product Alliance Summit in Chicago called "Beyond the Article: Breaking Down Stories So Agents Get Them Right". His diagnosis is one I share: agents read journalism as fragments, stitch a confident summary together, sometimes miss the one thing that matters, and the publisher has almost no say in what comes out. His answer is to do the breakdown ourselves, before the machines do: SPIEGEL built a workflow that pulls out the actors and events, traces sources and claims, and flags allegations the affected party should get to respond to, and tested it for summaries with no human in the loop. He also says that a lot of the layers already exist, they just are not plugged into each other. This is a reply from a newsroom built that way from the start. Every article here is published with a markdown twin, a knowledge graph and a one-line and one-paragraph summary of every section, and the release checks look for them. As of today there are 327 article graphs, with 3,676 nodes, 3,564 edges and 819 quotes, each checked to appear word for word in its article, and summaries for 3,674 sections. The site publishes llms.txt and llms-full.txt for agents, and every article ends with where it came from. The book we are writing keeps a claims register in which every number has an id and a command to rerun it. And today's article on a contractor's agent at the Pentagon put the answers of the company, the department and the vendor next to the allegations. Where SPIEGEL is ahead is the allegation itself as a field, and I would like to add it.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/breaking-the-story-down-before-the-agents-do.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/breaking-the-story-down-before-the-agents-do.html">
+<meta property="og:title" content="Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it, SGit Newsroom">
+<meta property="og:description" content="Ole Reissmann, who works on AI and journalism at DER SPIEGEL, led a session at the News Product Alliance Summit in Chicago called "Beyond the Article: Breaking Down Stories So Agents Get Them Right". His diagnosis is one I share: agents read journalism as fragments, stitch a confident summary together, sometimes miss the one thing that matters, and the publisher has almost no say in what comes out. His answer is to do the breakdown ourselves, before the machines do: SPIEGEL built a workflow that pulls out the actors and events, traces sources and claims, and flags allegations the affected party should get to respond to, and tested it for summaries with no human in the loop. He also says that a lot of the layers already exist, they just are not plugged into each other. This is a reply from a newsroom built that way from the start. Every article here is published with a markdown twin, a knowledge graph and a one-line and one-paragraph summary of every section, and the release checks look for them. As of today there are 327 article graphs, with 3,676 nodes, 3,564 edges and 819 quotes, each checked to appear word for word in its article, and summaries for 3,674 sections. The site publishes llms.txt and llms-full.txt for agents, and every article ends with where it came from. The book we are writing keeps a claims register in which every number has an id and a command to rerun it. And today's article on a contractor's agent at the Pentagon put the answers of the company, the department and the vendor next to the allegations. Where SPIEGEL is ahead is the allegation itself as a field, and I would like to add it.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/breaking-the-story-down-before-the-agents-do.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/breaking-the-story-down-before-the-agents-do.jpg">
+<link rel="alternate" type="text/markdown" href="breaking-the-story-down-before-the-agents-do.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it, SGit Newsroom", "headline": "Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it, SGit Newsroom", "description": "Ole Reissmann, who works on AI and journalism at DER SPIEGEL, led a session at the News Product Alliance Summit in Chicago called \"Beyond the Article: Breaking Down Stories So Agents Get Them Right\". His diagnosis is one I share: agents read journalism as fragments, stitch a confident summary together, sometimes miss the one thing that matters, and the publisher has almost no say in what comes out. His answer is to do the breakdown ourselves, before the machines do: SPIEGEL built a workflow that pulls out the actors and events, traces sources and claims, and flags allegations the affected party should get to respond to, and tested it for summaries with no human in the loop. He also says that a lot of the layers already exist, they just are not plugged into each other. This is a reply from a newsroom built that way from the start. Every article here is published with a markdown twin, a knowledge graph and a one-line and one-paragraph summary of every section, and the release checks look for them. As of today there are 327 article graphs, with 3,676 nodes, 3,564 edges and 819 quotes, each checked to appear word for word in its article, and summaries for 3,674 sections. The site publishes llms.txt and llms-full.txt for agents, and every article ends with where it came from. The book we are writing keeps a claims register in which every number has an id and a command to rerun it. And today's article on a contractor's agent at the Pentagon put the answers of the company, the department and the vendor next to the allegations. Where SPIEGEL is ahead is the allegation itself as a field, and I would like to add it.", "url": "https://newsroom.sgit.ai/articles/breaking-the-story-down-before-the-agents-do.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it</p>
+ <h1>Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-30 &middot; <a href="versions/breaking-the-story-down-before-the-agents-do.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v999.0.0</a> &middot; <span class="chip">news</span><span class="chip">agents</span><span class="chip">structured-journalism</span><span class="chip">knowledge-graphs</span><span class="chip">summaries</span><span class="chip">provenance</span><span class="chip">right-of-reply</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Ole Reissmann, who works on AI and journalism at DER SPIEGEL, led a session at the News Product Alliance Summit in Chicago called "Beyond the Article: Breaking Down Stories So Agents Get Them Right". His diagnosis is one I share: agents read journalism as fragments, stitch a confident summary together, sometimes miss the one thing that matters, and the publisher has almost no say in what comes out. His answer is to do the breakdown ourselves, before the machines do: SPIEGEL built a workflow that pulls out the actors and events, traces sources and claims, and flags allegations the affected party should get to respond to, and tested it for summaries with no human in the loop. He also says that a lot of the layers already exist, they just are not plugged into each other. This is a reply from a newsroom built that way from the start. Every article here is published with a markdown twin, a knowledge graph and a one-line and one-paragraph summary of every section, and the release checks look for them. As of today there are 327 article graphs, with 3,676 nodes, 3,564 edges and 819 quotes, each checked to appear word for word in its article, and summaries for 3,674 sections. The site publishes llms.txt and llms-full.txt for agents, and every article ends with where it came from. The book we are writing keeps a claims register in which every number has an id and a command to rerun it. And today's article on a contractor's agent at the Pentagon put the answers of the company, the department and the vendor next to the allegations. Where SPIEGEL is ahead is the allegation itself as a field, and I would like to add it.</em></p>
+<figure class="shot shot--medium" data-shot="ba-post.webp" data-dir="images/" data-alt="Ole Reissmann&#x27;s post after his session at the News Product Alliance Summit in Chicago." data-kind="aside"><figcaption>Ole Reissmann's post after his session at the News Product Alliance Summit in Chicago.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Ole Reissmann's diagnosis is right.</b> Agents read journalism as fragments and stitch together a confident summary that can miss the one thing that matters.</li>
+<li><b>His answer is right too:</b> break the story down ourselves, before the machines do, as structured data that keeps the reporting intact.</li>
+<li><b>This newsroom was built that way.</b> Every article ships with a markdown twin, a graph and a summary of every section, and the release checks look for them.</li>
+<li><b>The numbers today:</b> 327 graphs, 3,676 nodes, 3,564 edges, 819 quotes checked word for word, and 3,674 summarised sections.</li>
+<li><b>Sources and claims are traced:</b> every article ends with where it came from, and the book's claims register gives every number an id.</li>
+<li><b>The allegation is where SPIEGEL is ahead.</b> We put the other side's answer next to the claim; a field for it is what I would add.</li>
+<li><b>The layers can be plugged together</b> when one pipeline owns them: the article, the graph, the summaries and the sources are released as one thing.</li>
+</ul>
+<h2 id="problem">The problem, in his words</h2>
+<p>Ole Reissmann leads work on AI and journalism at DER SPIEGEL. After his session in Chicago he wrote: "AI agents are reading our journalism. They just aren't reading it the way we wrote it. They fire off a bunch of queries, grab a few fragments, and stitch together a summary that sounds confident. Sometimes they miss the one thing that actually matters. And we get basically zero say in what comes out the other end."</p>
+<p>That is the problem in four sentences, and it is why I started this newsroom the way I did. An article written for a person to read from top to bottom is a poor input for a machine that reads a fragment. The answer is not to stop writing articles. It is to publish, next to the article, the structure the article already has: who did what, what is claimed, on what evidence, and what each part says in one line.</p>
+<h2 id="answer">His answer: do the breakdown first</h2>
+<p>"So what if we did the breakdown ourselves? Before the machines get to it?" SPIEGEL built an LLM workflow that "pulls out the actors and events, traces sources and claims, and flags allegations the affected party should get to respond to. The output is structured data that keeps reporting intact." And it is not a whiteboard idea: "We tested it at SPIEGEL, for summaries, fully automated, no humans in the loop."</p>
+<p>I like three things about this. It starts with the newsroom's own judgement rather than the agent's. It treats sources and claims as first-class, which is where trust lives. And the allegation and the right to respond are in it from the start, which is the part of journalism an agent is most likely to flatten.</p>
+<h2 id="ships">What this newsroom already ships</h2>
+<p>Every article on this site is released with four things beside it, and the release checks look for them: an article without a graph and a teaser fails the search test, and a section without a summary is flagged before the commit.</p>
+<figure class="shot" data-shot="ba-layers.webp" data-dir="images/" data-alt="What every article here ships for the machines that read it, with the counts on 30 October 2026." data-kind="architecture"><figcaption>What every article here ships for the machines that read it, with the counts on 30 October 2026.</figcaption></figure>
+<ul>
+<li><b>A markdown twin.</b> Every page has its markdown, so an agent never has to scrape HTML; there are 329 article pages and 329 twins.</li>
+<li><b>A knowledge graph</b> of the article: a teaser, its core idea, nodes of six kinds (concept, claim, method, artefact, example, question), edges of eight relations, its links, and quotes that a script checks appear word for word in the article. Across 327 articles: 3,676 nodes, 3,564 edges and 819 quotes; 986 of the nodes are claims.</li>
+<li><b>A summary of every section,</b> in one line and in one paragraph, keyed by the section's anchor, so a reader or an agent can take any part at the depth it needs. 3,674 sections are summarised; a check marks a summary stale when its section changes after it was written.</li>
+<li><b>Where it came from:</b> every article ends with its sources, dated, and what it does not claim.</li>
+</ul>
+<p>And for agents as a whole, the site publishes <code>llms.txt</code> and <code>llms-full.txt</code>, a search index built at release time, and a reader API with a map of what it serves. The argument behind it is economic as well as editorial: a curated graph answers an agent's question for fewer tokens than the raw page, so serving the structure is cheaper for everyone than letting the agent guess.</p>
+<h2 id="claims">Actors, events, sources and claims</h2>
+<p>Two pieces of what Ole Reissmann describes are where our work has gone furthest.</p>
+<p><b>Sources and claims.</b> On the book we are writing, a researcher agent keeps a claims register: every number in the draft carries an id, and an appendix gives a command to rerun each one from the record. The draft's 294 pages cite claims C001 to C042. In <a href="sources-and-shadows.html">Sources and their shadows</a> we went further, recording for every reference its licence, its access, its links, its quotes and its history, and reading an article we cannot open through what others say about it. I did exactly that today with WIRED's story about a contractor's agent on a Pentagon network, and the shadow showed where the outlets disagreed.</p>
+<p><b>Actors and events.</b> <a href="the-wire-as-a-graph.html">The wire as a graph</a> is the design for the news itself: a story as a short narrative in which every name is a link to a person, a company, an event or a place with a long-lived id, and every sentence is a claim with its evidence, typed as a fact, an observation, a statement by a party, or our analysis. That is the same breakdown SPIEGEL describes, designed for a wire that runs on a schedule.</p>
+<h2 id="allegations">The allegation and the right to respond</h2>
+<p>This is where SPIEGEL is ahead, and where I would like to learn from it.</p>
+<p>We do the practice. In today's <a href="the-contractors-agent-and-three-policies.html">article on the contractor's agent</a>, the company's answer ("These allegations were thoroughly and independently investigated and found to be without merit", as quoted), the department's and the vendor's are next to the allegations, and the article says what it does not claim. <a href="on-the-record.html">On the record</a> and <a href="signed-by-the-source.html">signed by the source</a> go further, proposing that experts and sources sign their position on an article with their own keys, and can withdraw it.</p>
+<p>But we do not yet mark an allegation as a kind of thing in the graph. Our node kinds include claim; an allegation is a claim about a party, with a status: put to them or not, answered or not, and the answer itself. Made a field, it would let an agent that summarises the story carry the answer with the allegation, instead of dropping it. That is the one thing I would add to our graphs after reading Ole Reissmann's post, and I would rather align with what SPIEGEL has built than invent a second shape.</p>
+<h2 id="plugged">Plugging the layers together</h2>
+<p>"A lot of the layers already exist. They just aren't plugged into each other." I agree, and I think the reason is that they are usually separate projects: the CMS, the tagging, the summaries, the API, each owned by a different team. Here they are one pipeline. The article, its graph, its summaries and its sources are written by the same agent, checked by the same build and released as one commit. That is easier in a newsroom of one editor and a team of agents than in SPIEGEL's, but the principle carries: the breakdown has to be released with the story, or it will drift from it.</p>
+<p>On MCP and publishers' own tools, our reader API is a start rather than an answer. I would like to compare notes: what an agent asks for first, what it pays for, and how the right of reply travels with the fragment it takes away.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>I have not seen SPIEGEL's workflow.</b> Everything about it here is from Ole Reissmann's public post; I may be describing it too simply.</li>
+<li><b>Our counts are from this site's files on 30 October 2026,</b> taken before this article and the IAM reply were added.</li>
+<li><b>Our summaries and graphs are written by an agent</b> and checked by scripts for form, quotes and staleness, not for judgement; their judgement is reviewed when an article is reviewed.</li>
+<li><b>The allegation field is a proposal;</b> it is not in our graphs yet.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<ul>
+<li>Ole Reissmann's post on LinkedIn after the News Product Alliance Summit in Chicago, shared with me as screenshots on 30 October 2026; the quotations are copied from it.</li>
+<li>This site's own files: <code>articles/graphs/</code> (327 graphs), <code>admin/content/articles/summaries/</code>, <code>llms.txt</code>, <code>newsroom-api/</code>, <code>admin/writer/tools/graph.py</code> and <code>admin/build/summaries.py</code>; the book's claims register in <a href="https://github.com/SGit-AI/SGit-AI__Website__Book__The-Ultimate-Insider">SGit-AI/SGit-AI__Website__Book__The-Ultimate-Insider</a> (<code>claims/</code>).</li>
+<li>Related: <a href="the-wire-as-a-graph.html">the wire as a graph</a>, <a href="sources-and-shadows.html">sources and their shadows</a>, <a href="on-the-record.html">on the record</a>, <a href="signed-by-the-source.html">signed by the source</a>, <a href="the-contractors-agent-and-three-policies.html">the contractor's agent</a>.</li>
+</ul>
+<sg-meter view="page" kind="article" date="2026-10-30" topics="news-and-evidence graphs-and-knowledge" title="Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">News &amp; evidence</span><span class="tchip">Graphs &amp; knowledge</span> <a href="graphs.html#breaking-the-story-down-before-the-agents-do">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="sources-and-shadows.html">Sources and their shadows: the licence, the access, the links and the quotes of every reference, how a paywalled article can be seen through what others say about it, and paying the sources we use</a> <span class="dim">Each reference's licence, access, links and quotes, reading a paywalled article through its shadow, and paying the sources we use.</span></li><li><a href="the-wire-as-a-graph.html">The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks</a> <span class="dim">Design the wire from what the reader sees: every name a link with a long-lived ID, every sentence a claim, stories of stories, folders by gravity.</span></li><li><a href="the-contractors-agent-and-three-policies.html">The contractor's agent on a Pentagon network: how behaviour policies from the DOD, Accenture and the employee, and a key for every session, could have prevented it or caught it on day one</a> <span class="dim">A contractor's agent on a DOD network for two months, as reported: how three behaviour policies and a key for every session would have stopped or seen it.</span></li><li><a href="on-the-record.html">On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses</a> <span class="dim">Experts go on the record with signed opinions, readers pay for the ones they value, and the people whose ideas an article uses get a share.</span></li><li><a href="signed-by-the-source.html">Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too</a> <span class="dim">Ask the people and companies we quote to sign that we represent them fairly: one signature instead of every reader checking.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 330 &middot; <a href="../for/make.html#r=330">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/breaking-the-story-down-before-the-agents-do.jpg" download>breaking-the-story-down-before-the-agents-do.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="breaking-the-story-down-before-the-agents-do.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

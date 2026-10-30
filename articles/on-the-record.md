@@ -134,6 +134,7 @@ Vaults & methodStartups & strategy[This article as a graph →](graphs.md#on-the
 
 ### Continued by
 
+- [Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it](breaking-the-story-down-before-the-agents-do.md) A reply to Ole Reissmann's session on breaking stories down for agents: what this newsroom already ships beside every article, and the allegation field to add.
 - [Two years in, the opposite: an essay about burning out on AI that I could not buy, and why my two years of AI have been the most productive of my career](two-years-in-the-opposite.md) An essay about burning out on AI that I could not buy, three paragraphs and a subscription; and why my two years of AI were the opposite.
 - [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](a-directory-of-people-and-keys.md) pki.sgit.ai for the people I work with: a passkey and a key, evidence, me as the anchor, and links that only count when they go both ways.
 - [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](who-is-speaking.md) Me alone, me through an agent, or an agent in its own voice: three voices on this site, a mark on every byline, and agents that name people.
