@@ -1,0 +1,174 @@
+{
+  "slug": "the-ultimate-insider-case-study",
+  "teaser": "The ultimate insider, built in a day: 814 commits, 210 releases and 162 wakes by nine agents and one editor, from 00:16 to the stage at 19:00.",
+  "topics": [
+    "site-and-engineering",
+    "agents-and-policy"
+  ],
+  "core_idea": "A talk's site, deck and records were built in one day by nine agents and one editor, each agent with a written role, a behaviour policy, a session key and an hourly slot, every wake reviewed before and after; the month's innovations, CI owning the version, session keys, sealed vault keys, vaults as board and mail, ruv.sgit's player and SHarness, came together and held, and the team reported on itself from its own records.",
+  "nodes": [
+    {
+      "id": "talk",
+      "label": "The talk and its site",
+      "kind": "claim",
+      "summary": "Slides, script and sources together, built under written rules."
+    },
+    {
+      "id": "numbers",
+      "label": "The day in numbers",
+      "kind": "example",
+      "summary": "814 commits, 210 releases, 162 wakes, 293 notes, 58 slides."
+    },
+    {
+      "id": "team",
+      "label": "Nine agents and one editor",
+      "kind": "concept",
+      "summary": "Role, policy, key and slot each; only the editor instructs."
+    },
+    {
+      "id": "workflow",
+      "label": "The wake protocol",
+      "kind": "method",
+      "summary": "Hourly slots; plan, pre-review, work, post-review, post-check."
+    },
+    {
+      "id": "records",
+      "label": "Nothing typed by hand",
+      "kind": "method",
+      "summary": "Dashboard, night log and moments generated from records."
+    },
+    {
+      "id": "innovations",
+      "label": "A month, in one repository",
+      "kind": "claim",
+      "summary": "CI version, session keys, sealed keys, vaults, ruv.sgit, SHarness."
+    },
+    {
+      "id": "slides",
+      "label": "58 live slides",
+      "kind": "example",
+      "summary": "Each a page that animates; the talk is one data file."
+    },
+    {
+      "id": "wrong",
+      "label": "What went wrong",
+      "kind": "example",
+      "summary": "A printed key, misplaced tasks, refused installs, the 18:44 hold."
+    },
+    {
+      "id": "shows",
+      "label": "Brakes so you can go faster",
+      "kind": "claim",
+      "summary": "The way out the talk argues for, applied to its own team."
+    }
+  ],
+  "edges": [
+    {
+      "from": "talk",
+      "to": "team",
+      "rel": "leads-to"
+    },
+    {
+      "from": "team",
+      "to": "workflow",
+      "rel": "produces"
+    },
+    {
+      "from": "workflow",
+      "to": "numbers",
+      "rel": "produces"
+    },
+    {
+      "from": "workflow",
+      "to": "records",
+      "rel": "produces"
+    },
+    {
+      "from": "innovations",
+      "to": "team",
+      "rel": "extends"
+    },
+    {
+      "from": "slides",
+      "to": "talk",
+      "rel": "example-of"
+    },
+    {
+      "from": "wrong",
+      "to": "workflow",
+      "rel": "contrasts"
+    },
+    {
+      "from": "records",
+      "to": "shows",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "ci-owns-the-version",
+      "the-push-is-the-authorisation",
+      "agents-have-an-identity-now",
+      "introducing-sharness"
+    ],
+    "pages": [
+      "articles/ultimate-insider-three-collisions.html"
+    ],
+    "sites": [
+      "https://the-ultimate-insider.presentation.sgit.ai/index.html",
+      "https://github.com/SGit-AI/SGit-AI__Website__Presentation__The-Ultimate-Insider",
+      "https://the-ultimate-insider.presentation.sgit.ai/admin/dashboard.html",
+      "https://the-ultimate-insider.presentation.sgit.ai/articles/the-night-hour-by-hour.html",
+      "https://the-ultimate-insider.presentation.sgit.ai/articles/running-this-agent-team.html",
+      "https://the-ultimate-insider.presentation.sgit.ai/talk/player.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Nothing in it is typed by hand.",
+      "why": "The night log is generated from the team's records."
+    },
+    {
+      "text": "We put brakes in cars so that we can go faster.",
+      "why": "The talk's closing line, and the team's shape."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ui-slides.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ui-slides.webp",
+      "caption": "Twelve of the talk's 58 slides, each a web page that animates, made by the team on 29 October 2026.",
+      "kind": "collage"
+    },
+    {
+      "file": "ui-stats.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ui-stats.webp",
+      "caption": "The day in numbers, and commits per hour from 00:16 UTC to the hold at 18:44.",
+      "kind": "chart"
+    },
+    {
+      "file": "ui-site.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ui-site.webp",
+      "caption": "The site and its admin pages: the home page, the team, the key register, and the dashboard with the hold.",
+      "kind": "collage"
+    },
+    {
+      "file": "ui-mini-deck.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ui-mini-deck.webp",
+      "caption": "The conductor's mini deck, replayed from the records: the team, the night, a wake's steps, a piece's path.",
+      "kind": "collage"
+    },
+    {
+      "file": "ui-night-grid.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ui-night-grid.webp",
+      "caption": "Every wake of the night by member and hour, coloured by outcome, from the team's night log.",
+      "kind": "chart"
+    },
+    {
+      "file": "ui-moments.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ui-moments.webp",
+      "caption": "The moments page: the night as 22 cards, each with what changed and where things stood at the end.",
+      "kind": "screenshot"
+    }
+  ]
+}

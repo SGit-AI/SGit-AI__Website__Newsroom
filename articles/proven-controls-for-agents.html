@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break, SGit Newsroom</title>
+<meta name="description" content="Two pieces reached me on the same day and they belong together. Hem Pant, a CISO who has spent two decades leading security at global banks, wrote that policies don't protect institutions, proven controls do, and asked for one unbroken line from Board intent to live evidence, with every control tested by a deliberately non-compliant change that fails the build if it is not caught. Sondera's paper on the autoformalization of agent instructions into policy-as-code does a large part of that line for agents: it turns an agent's prompt, its tool descriptions and a policy document into Cedar policies, checks them with a hard and a soft critic, and enforces them outside the context window, failing closed. I agree with both, and this is the unifying theme: the policy has to leave the PDF and the prompt and become something that runs and can be tested. What I would add, from what we run every day with Agent Behaviour Policies, is one column both leave open: who holds each control. A rule the agent can change or skip is a Setting, and a test proves only that it ran; a rule held from above the agent is a Boundary, and only that can be proven not to be switched off. Our own numbers show why it matters: when this newsroom walked its 57 checks up to the behaviours they protect, 22 were expectations, 34 settings and one a boundary. So here is the line with that column added, what we have generated, mapped and enforced, and six controls we tried to break, including the release gate that failed our own build tonight. And an answer to Hem's invitation for a common, machine-readable way to express controls and evidence: the Agent Behaviour Policy is an open project, and its process form now has a written standard with test vectors.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/proven-controls-for-agents.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/proven-controls-for-agents.html">
+<meta property="og:title" content="Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break, SGit Newsroom">
+<meta property="og:description" content="Two pieces reached me on the same day and they belong together. Hem Pant, a CISO who has spent two decades leading security at global banks, wrote that policies don't protect institutions, proven controls do, and asked for one unbroken line from Board intent to live evidence, with every control tested by a deliberately non-compliant change that fails the build if it is not caught. Sondera's paper on the autoformalization of agent instructions into policy-as-code does a large part of that line for agents: it turns an agent's prompt, its tool descriptions and a policy document into Cedar policies, checks them with a hard and a soft critic, and enforces them outside the context window, failing closed. I agree with both, and this is the unifying theme: the policy has to leave the PDF and the prompt and become something that runs and can be tested. What I would add, from what we run every day with Agent Behaviour Policies, is one column both leave open: who holds each control. A rule the agent can change or skip is a Setting, and a test proves only that it ran; a rule held from above the agent is a Boundary, and only that can be proven not to be switched off. Our own numbers show why it matters: when this newsroom walked its 57 checks up to the behaviours they protect, 22 were expectations, 34 settings and one a boundary. So here is the line with that column added, what we have generated, mapped and enforced, and six controls we tried to break, including the release gate that failed our own build tonight. And an answer to Hem's invitation for a common, machine-readable way to express controls and evidence: the Agent Behaviour Policy is an open project, and its process form now has a written standard with test vectors.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/proven-controls-for-agents.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/proven-controls-for-agents.jpg">
+<link rel="alternate" type="text/markdown" href="proven-controls-for-agents.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break, SGit Newsroom", "headline": "Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break, SGit Newsroom", "description": "Two pieces reached me on the same day and they belong together. Hem Pant, a CISO who has spent two decades leading security at global banks, wrote that policies don't protect institutions, proven controls do, and asked for one unbroken line from Board intent to live evidence, with every control tested by a deliberately non-compliant change that fails the build if it is not caught. Sondera's paper on the autoformalization of agent instructions into policy-as-code does a large part of that line for agents: it turns an agent's prompt, its tool descriptions and a policy document into Cedar policies, checks them with a hard and a soft critic, and enforces them outside the context window, failing closed. I agree with both, and this is the unifying theme: the policy has to leave the PDF and the prompt and become something that runs and can be tested. What I would add, from what we run every day with Agent Behaviour Policies, is one column both leave open: who holds each control. A rule the agent can change or skip is a Setting, and a test proves only that it ran; a rule held from above the agent is a Boundary, and only that can be proven not to be switched off. Our own numbers show why it matters: when this newsroom walked its 57 checks up to the behaviours they protect, 22 were expectations, 34 settings and one a boundary. So here is the line with that column added, what we have generated, mapped and enforced, and six controls we tried to break, including the release gate that failed our own build tonight. And an answer to Hem's invitation for a common, machine-readable way to express controls and evidence: the Agent Behaviour Policy is an open project, and its process form now has a written standard with test vectors.", "url": "https://newsroom.sgit.ai/articles/proven-controls-for-agents.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break</p>
+ <h1>Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-29 &middot; <a href="versions/proven-controls-for-agents.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v999.0.0</a> &middot; <span class="chip">governance-as-code</span><span class="chip">policy-as-code</span><span class="chip">agent-behaviour-policy</span><span class="chip">cedar</span><span class="chip">assurance</span><span class="chip">controls</span><span class="chip">sharness</span><span class="chip">agents</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Two pieces reached me on the same day and they belong together. Hem Pant, a CISO who has spent two decades leading security at global banks, wrote that policies don't protect institutions, proven controls do, and asked for one unbroken line from Board intent to live evidence, with every control tested by a deliberately non-compliant change that fails the build if it is not caught. Sondera's paper on the autoformalization of agent instructions into policy-as-code does a large part of that line for agents: it turns an agent's prompt, its tool descriptions and a policy document into Cedar policies, checks them with a hard and a soft critic, and enforces them outside the context window, failing closed. I agree with both, and this is the unifying theme: the policy has to leave the PDF and the prompt and become something that runs and can be tested. What I would add, from what we run every day with Agent Behaviour Policies, is one column both leave open: who holds each control. A rule the agent can change or skip is a Setting, and a test proves only that it ran; a rule held from above the agent is a Boundary, and only that can be proven not to be switched off. Our own numbers show why it matters: when this newsroom walked its 57 checks up to the behaviours they protect, 22 were expectations, 34 settings and one a boundary. So here is the line with that column added, what we have generated, mapped and enforced, and six controls we tried to break, including the release gate that failed our own build tonight. And an answer to Hem's invitation for a common, machine-readable way to express controls and evidence: the Agent Behaviour Policy is an open project, and its process form now has a written standard with test vectors.</em></p>
+<figure class="shot shot--medium" data-shot="pv-hem-pant-post.webp" data-dir="images/" data-alt="Hem Pant&#x27;s LinkedIn article of 29 October 2026: Policy, Standard, Control, Evidence." data-kind="aside"><figcaption>Hem Pant's LinkedIn article of 29 October 2026: Policy, Standard, Control, Evidence.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Two pieces, one theme.</b> Hem Pant's governance as code and Sondera's policy-as-code paper both say the policy has to become something that runs and can be tested.</li>
+<li><b>Hem asks for proof, not presence.</b> "Most organisations can show that a control exists. Far fewer can prove it works."</li>
+<li><b>Sondera turns agent instructions into enforced policy.</b> Prompt, tools and policy documents become Cedar, enforced outside the context window.</li>
+<li><b>Agents need one more column: who holds each control.</b> A control the agent can change is a Setting; only a Boundary can be proven not to be switched off.</li>
+<li><b>The policy has to come first.</b> Policy as code answers "is this allowed?"; the mandate says why, and what nothing can see.</li>
+<li><b>Proven means tried and broken.</b> Six of our controls, with the deliberate violations and what happened, misses included.</li>
+<li><b>Tonight our own gate proved itself.</b> The release to main failed on a change it was built to catch.</li>
+<li><b>There is an answer to Hem's invitation.</b> An open behaviour policy format, and a standard with test vectors.</li>
+</ul>
+<h2 id="two">Two pieces that belong together</h2>
+<p>Hem Pant <a href="https://www.linkedin.com/pulse/policies-dont-protect-institutions-proven-controls-do-hem-pant-9pjee">published on LinkedIn</a> on 29 October 2026, from "more than two decades leading security at global banks". His starting point will be familiar to anyone who has sat through an audit: "We write excellent policies. Committees approve them. Then the estate moves on, and the policy stays still." When a supervisor asks to be shown that a control works, "teams go looking for screenshots." His answer is to treat policies, standards and architecture as code, on "One unbroken line, from Board intent to live evidence": Policy, Standard, Control, Evidence.</p>
+<p>On the same day, Sondera's paper, <a href="https://arxiv.org/abs/2606.26649">Autoformalization of Agent Instructions into Policy-as-Code</a> by Adam Mondl, Matthew Maisel and John H. Brock, accepted at an ICML 2026 workshop, reached me too. It is the same idea applied to agents, and it is a serious piece of work.</p>
+<figure class="shot shot--medium" data-shot="pv-sondera-paper.webp" data-dir="images/" data-alt="Sondera&#x27;s paper on arXiv: agent instructions turned into Cedar policies by a generator-critic loop." data-kind="aside"><figcaption>Sondera's paper on arXiv: agent instructions turned into Cedar policies by a generator-critic loop.</figcaption></figure>
+<p>I think there is a unifying theme here, and it is the one we have been working on all year with <a href="https://riskmandate.ai/abp.html">Agent Behaviour Policies</a>: a policy that lives in a PDF, or in a prompt, is read and hoped for; a policy that runs can be checked, and a policy that runs and is tested can be proven. Both pieces make that move. What I would like to add is what we have learned from doing it with agents, every day, on our own work, with real examples rather than a framework.</p>
+<h2 id="hem">What Hem asks for</h2>
+<p>Hem's line is worth stating precisely, because each step is a commitment. "Every statement a Board approves links to a requirement. Every requirement links to controls that prevent (in the deployment pipeline), detect (in the live environment) and guard (across the organisation). Every control produces evidence automatically and continuously." One control can then answer ISO 27001, NIST CSF, NCSC CAF, the CRI Profile, cloud security standards and DORA at once. "No screenshots. No archaeology. One version of the truth."</p>
+<p>Then the sentence I think matters most: "Most organisations can show that a control exists. Far fewer can prove it works." And his test for it: "Every control must catch a deliberately non-compliant change. If it doesn't, the build fails." He expects leading institutions to "Use AI agents to maintain the governance estate, with humans approving every change", and he ends with a challenge and an invitation. The challenge: "pick one policy. Trace it to one live control. Prove that control catches a breach." The invitation, to regulators, standard-setters and technology partners: "the industry would benefit from a common, machine-readable way to express controls and evidence."</p>
+<p>I agree with all of it. And I think agents make it both more urgent and more possible: more urgent because an agent changes the estate faster than any team, and more possible because an agent's reach can be measured, written down and held, row by row.</p>
+<h2 id="sondera">What Sondera built</h2>
+<p>Sondera's paper does a large part of Hem's line for an agent. Its starting point is the same diagnosis: "most existing approaches either rely on probabilistic guardrails (fine-tuned classifiers, prompt-based steering) that offer no formal guarantees, or on hand-coded symbolic enforcement that does not scale to the breadth of real policy specifications."</p>
+<p>Their pipeline, which they call the Verification Sandwich, takes an agent's system prompt, its MCP tool definitions and a natural-language policy document, and turns them into policies in Cedar, the policy language AWS open-sourced. A grounding layer generates a Cedar schema from the tool definitions. A model generates candidate policies. A hard critic, Cedar's own tooling, checks syntax, schema, contradictions and vacuous policies, and a soft critic, an LLM as judge, checks that the policies still mean what the text meant. At run time, a deterministic engine evaluates every tool call. The paper's own sentence on why that matters: "Because the policies sit outside the context window and are enforced by a deterministic policy evaluator, an attacker cannot 'convince' the security layer to ignore its rules." And it fails closed: if the engine or the harness errors, the action is blocked.</p>
+<p>The results are on MedAgentBench, a benchmark of tool-using medical-records agents, against a synthetic policy of 88 rules for which prior work had hand-coded guardrails for 23. The autoformalized policies covered more of the 88, and blocked 85.7% (42 of 49) of the adversarial trajectories that got past the prior work's hard gating; counting only trajectories that attempted a write, the block rate was between 94.0% and 100%. The paper is honest about what Cedar cannot see: it "can deny tool calls but not dialog-only behavior", and it is stateless, so rules about ordering and memory across a session are future work. And they released the <a href="https://github.com/sondera-ai/sondera-harness-python">harness</a> as open source.</p>
+<p>This is close to what we have been arguing. In <a href="system-prompts-as-behaviour-policies.html">system prompts as behaviour policies</a> we took a published system prompt of 4,255 words, found 82 rules in it, and sorted them: 36 could be held by the harness rather than by the model's good behaviour. In <a href="cedar-and-the-policy-vault.html">Cedar and the policy vault</a> I said Cedar is the policy language we should adopt rather than compete with. Sondera has built the bridge from the prompt to Cedar, and measured it.</p>
+<h2 id="line">One line, with the column agents add</h2>
+<p>Put the two side by side, and add what we run, and Hem's line has a fourth row and one new column.</p>
+<figure class="shot" data-shot="pv-line.webp" data-dir="images/" data-alt="Hem Pant&#x27;s line from Board intent to evidence, with Sondera&#x27;s pipeline, our work, and who holds each rule." data-kind="diagram"><figcaption>Hem Pant's line from Board intent to evidence, with Sondera's pipeline, our work, and who holds each rule.</figcaption></figure>
+<p>For an agent, Hem's <b>policy</b> is the mandate: what the business asked the agent to do, and why. His <b>standard</b> is the rows: each capability the agent can reach, with its limit and the reason it exists. His <b>control</b> is the barrier on each row. His <b>evidence</b> is a deliberate violation, refused, with the record of who refused it. That is the shape of an Agent Behaviour Policy: the mandate, the grant (what the agent can actually reach, measured), the delta between them, and the barrier on each capability.</p>
+<p>The column that both pieces leave open is in the barrier: <b>who holds the control</b>. Our behaviour policies give it four values. <b>None</b>. An <b>Expectation</b>, which is prose the agent reads. A <b>Setting</b>, which is a control the subject could change or skip: a hook in the agent's own harness, a check in a pipeline the same team can edit, a sandbox setting in the agent's own configuration. And a <b>Boundary</b>, held from above the subject, by something it does not include.</p>
+<p>This is the difference between Hem's "exists" and "works", made precise. An Expectation can be shown to exist; a screenshot does that. A Setting can be shown to have run. Only a Boundary can be shown to hold when the subject would rather it did not, which is the case that matters when the subject is an agent that a web page has just talked into something.</p>
+<p>We measured how far our own agents are from that. When this newsroom walked its 57 checks up to the behaviours they protect, in <a href="behaviour-policies-from-the-checks.html">behaviour policies from the checks</a>, 22 were expectations, 34 were settings, and one was a boundary: the session's GitHub access scoped to one repository. The CI checks are settings, because the validator, the tests and the workflow live in the same repository the agent pushes to. In <a href="policy-as-code-needs-a-policy-first.html">policy as code needs a policy first</a>, of one session's eleven rules, eight had code behind them, and only one had code the agent could not change. That is a real organisation, ours, honestly counted.</p>
+<h2 id="where">Where Sondera's control sits</h2>
+<p>This is where I would build on Sondera's work rather than argue with it. Their policies sit outside the context window, so the model cannot talk its way past them. That is exactly right, and it is the first adversary. There is a second one: the process. An agent that is allowed a shell, or a tool that runs code, can do things no tool-call policy sees, and a policy check that runs as middleware inside the agent's own process is, in our terms, a Setting for whoever controls that process.</p>
+<p>The harness's own README gives a good example of the gap: a Cedar <code>forbid</code> whose condition is <code>context.parameters_json like "<em>rm -rf</em>"</code>, with the line "This policy stops your agent from running <code>rm -rf</code>, every time." It stops that string. The same command written as <code>rm -fr</code>, or <code>rm -r -f</code>, does not contain it. That is not a flaw in Cedar or in Sondera's pipeline; it is what happens to any rule written about a command's text. Our design work on <a href="https://sharness.ai/design/decision/index.html">the decision at the door</a> puts it in one line: "A parser is not a sandbox." A rule about intent belongs at the policy engine, and the kernel bound behind it is what holds when the rule is routed around.</p>
+<p>That is why we built <a href="introducing-sharness.html">SHarness</a>, which we released today: the same behaviour policy, executed as a Process Behaviour Policy on every process the agent starts, hashed to one name the person supplies from outside, and enforced by the Linux kernel or by a small separate service the agent cannot reach. The two fit together well. Sondera's Cedar decides which tool calls are allowed, in the business's own nouns. SHarness makes sure that, whatever the tool does once it runs, it can only write where the policy says, connect where it says, and never reach the key. Its landscape page already lists Cedar under the engines whose decisions it should consume, not replace, and its <code>policy translate</code> command is the kind of bridge a Cedar policy set could go through.</p>
+<p>And the other direction matters too. Sondera's fail-closed rule covers an engine that errors. One thing we found when we put Cedar policies in a versioned vault, in <a href="cedar-and-the-policy-vault.html">Cedar and the policy vault</a>, is subtler: Cedar skips a single policy whose evaluation errors, so a <code>forbid</code> that refers to a missing attribute lets the action through, with the error only in the diagnostics. Sondera's hard critic validates the schema before deployment, which is exactly the mitigation. It is the kind of thing Hem's test would find, which is the point of the test.</p>
+<h2 id="proven">Controls we proved by trying to break them</h2>
+<p>Hem's test is the right one, so here it is applied to our own agents. Each of these is published with its method, misses included.</p>
+<figure class="shot" data-shot="pv-receipts.webp" data-dir="images/" data-alt="Six of our controls, each tested with a deliberate violation, and what happened, misses included." data-kind="table"><figcaption>Six of our controls, each tested with a deliberate violation, and what happened, misses included.</figcaption></figure>
+<ul>
+<li><b>A leak hook.</b> In <a href="a-leak-without-breaking-the-policy.html">can a key leak without breaking the policy?</a> we wrote a hook and tried nine ways for a secret to leave an agent's session. It stopped five, let an ordinary command through, and missed three: a key in base64, a key split in two, and a file of secrets piped out. With four more rules, it caught all nine. Then we ran it over the 3,451 real commands of the session that wrote that article: it refused 22, and none was ordinary work.</li>
+<li><b>Policy as code, both ways.</b> Five rows of a real behaviour policy became a 35-line Rego policy; Open Policy Agent decided seven requests, denying three, asking for one and allowing three. Parsing it back found a row with no code and a rule with no row, the two gaps that matter.</li>
+<li><b>Cedar in a vault.</b> An old-shape request against a new <code>forbid</code> was allowed, for the reason above. Validate before you deploy, and deny on error.</li>
+<li><b>Our own 57 checks.</b> One boundary, honestly counted.</li>
+<li><b>SHarness <code>hello</code>.</b> Six probes under a deny-all policy: a read allowed, two writes, a network connect, a 400 MiB allocation under a 128 MiB cap and a wrong policy hash, all refused, each result naming who refused it, the kernel or the tool. It held six of six in five places on 25 October, and again tonight in a Linux kernel booted inside a browser tab.</li>
+<li><b>Our release gate.</b> Tonight, the release of this site to its main branch failed. One agent's commit had set the version to the pending placeholder without regenerating the front page, so the page no longer matched its sources. The test that regenerates the page caught it, the build failed on dev and on main, nothing was released, and the fix was one line. Hem's sentence, "If it doesn't, the build fails", is not hypothetical here. It is what happened at about eleven o'clock tonight.</li>
+</ul>
+<p>The last one is also a lesson about the column. That gate is a Setting: it lives in the repository the agents push to. It held because nobody tried to weaken it. A Boundary would hold even if someone did.</p>
+<h2 id="first">The policy comes first</h2>
+<p>One more thing I would add to both pieces, from <a href="policy-as-code-needs-a-policy-first.html">policy as code needs a policy first</a>. Policy as code answers one question very well: is this request allowed? The questions a board, an auditor or an insurer asks are the ones around it. What can this agent reach, measured? What was it asked to do, and why? Where do the two differ? Which rules can no engine ever see? And, for every rule that is code, who can change that code?</p>
+<p>That is why the mandate has to be written first, and why it has to say why. Sondera's soft critic checks that a Cedar policy still means what the text meant; a mandate with a reason on every row is what makes that check possible for a person too. It is also what lets the line run in both directions: from the policy, generate the code; from the code, reverse-engineer the policy, and see the rows nobody wrote a reason for.</p>
+<p>It is also what makes the evidence worth something. In <a href="a-payout-for-every-row.html">a payout for every row</a> I argued that an agent behaviour policy can be read as an insurance policy, row by row, and that "A line in the prompt earns nothing": only a control that something enforces lowers a row's premium. Hem's "defensible decisions" and an insurer's price are the same thing seen from two sides.</p>
+<h2 id="humans">Humans approving every change</h2>
+<p>Hem expects agents to maintain the governance estate, with humans approving every change. That is how this site already runs, and it is worth saying what "approving" has to mean for it to be a control rather than a ritual.</p>
+<p>A person cannot approve two hundred policies, or read every diff an agent produces. What works, in <a href="approve-at-altitude.html">approve at altitude</a>, is approving at the right level: the board signs off its appetite once, a function its budget and licence to operate within it, a team its workflow within that, and each level may narrow the one above and never widen it. SHarness does the same with a policy: a person can write one sentence, "contain my agent to this workspace, these sites, these secrets", and approve its hash, and every level below it is compiled from that sentence and checked against the hash. The approval is one value the agent cannot change. That is a human approving every change, at a cost a human can actually pay.</p>
+<h2 id="invitation">An answer to the invitation</h2>
+<p>Hem invites "regulators, standard-setters and technology partners" to a common, machine-readable way to express controls and evidence. I would like to take him up on it, with what already exists.</p>
+<p>The <a href="https://riskmandate.ai/abp.html">Agent Behaviour Policy</a> is being <a href="agent-behaviour-policies-move-to-the-open-security-summit.html">moved to the Open Security Summit</a> as an open project, because a description of what an agent can do should not belong to the company that sells it. Its process form, the Process Behaviour Policy, has a <a href="https://sharness.ai/code/standards/policy-v0/index.html">written standard</a> for its canonical form and hash, with 28 test vectors that the Python, JavaScript and Go implementations all pass, so a policy hashed in one language is the same policy in another. And Cedar, which Sondera targets, is the language I think the rules themselves should be written in where an engine decides them.</p>
+<p>So the pieces of Hem's line exist for agents: the mandate and the rows, written and open; generation into Cedar, measured by Sondera; enforcement from above, released today in SHarness; and evidence by deliberate violation, in public. What is missing is the conversation that joins them, and I would very much like to have it.</p>
+<h2 id="challenge">Hem's challenge, taken</h2>
+<p>"Pick one policy. Trace it to one live control. Prove that control catches a breach." Here is ours.</p>
+<p>The policy: an agent may write only in its workspace and may reach only the sites it was given. The live control: SHarness's shell, where the agent's process runs as a user made for it, in a network namespace with only loopback, and its only way out is a network door with a host allowlist. The breach: a request to a host off the list, and a direct connection to an address, bypassing the door. On 29 October, sharness.ai's own agent recorded it: pypi.org allowed through the door, example.com refused, a direct connect to 1.1.1.1 refused, and a name lookup found nothing. And the honest finding, which Hem's challenge is designed to surface: today that is a Boundary for the shell the tool starts, not yet for the agent itself, because the launcher that would sit above the agent is still the design. If you cannot prove it, Hem says, "that may be your most important finding this year." This is ours, and it is written down.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>It reads Hem's article and Sondera's paper as published.</b> Nothing here is their view of our work.</li>
+<li><b>Sondera's figures are theirs.</b> They are from the paper, on its benchmark and its synthetic policy; they were not re-run here.</li>
+<li><b>The <code>rm -rf</code> example is from the harness's README.</b> It illustrates a limit of rules about a command's text, not a measured weakness of Sondera's product.</li>
+<li><b>Our tests are on our own agents.</b> One newsroom and one project; each is published with its date and method.</li>
+<li><b>Most of SHarness is designed, not built.</b> The kernel locks, two doors and the levels run; the launcher above the agent does not.</li>
+<li><b>The open project is a proposal in progress.</b> The Agent Behaviour Policy's move to the Open Security Summit needs its charter and steering group written down.</li>
+</ul>
+<p>If you are working on governance as code, policy as code for agents, or the evidence a supervisor would accept, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>My request of 29 October 2026, written by this site's agent in the voice of this site; the argument and the editorial responsibility are mine. Hem Pant's article, <a href="https://www.linkedin.com/pulse/policies-dont-protect-institutions-proven-controls-do-hem-pant-9pjee">Policies don't protect institutions. Proven controls do.</a>, was read in full on 29 October 2026; the quotes are his, and the screenshot of its opening is from my phone. Sondera's paper, <a href="https://arxiv.org/abs/2606.26649">Autoformalization of Agent Instructions into Policy-as-Code</a> (arXiv:2606.26649, submitted 25 June 2026, accepted at the Second Workshop on Agents in the Wild, ICML 2026), was read in full the same day from its PDF, and the README of the <a href="https://github.com/sondera-ai/sondera-harness-python">Sondera Harness</a> from GitHub. On this site: <a href="introducing-sharness.html">introducing SHarness</a>, <a href="behaviour-policies-from-the-checks.html">behaviour policies from the checks</a>, <a href="policy-as-code-needs-a-policy-first.html">policy as code needs a policy first</a>, <a href="cedar-and-the-policy-vault.html">Cedar and the policy vault</a>, <a href="system-prompts-as-behaviour-policies.html">system prompts as behaviour policies</a>, <a href="a-leak-without-breaking-the-policy.html">can a key leak without breaking the policy?</a>, <a href="a-payout-for-every-row.html">a payout for every row</a>, <a href="approve-at-altitude.html">approve at altitude</a> and <a href="agent-behaviour-policies-move-to-the-open-security-summit.html">Agent Behaviour Policies move to the Open Security Summit</a>. The release gate's failure is runs 395 and 397 of this site's pipeline, fixed in v0.13.132.</p>
+<sg-meter view="page" kind="article" date="2026-10-29" topics="agents-and-policy news-and-evidence" title="Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">News &amp; evidence</span> <a href="graphs.html#proven-controls-for-agents">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="system-prompts-as-behaviour-policies.html">System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce</a> <span class="dim">Claude's published system prompt as 82 policy rows in eight kinds: 36 could be held by the harness, 21 partly by classifiers, 25 stay with the model.</span></li><li><a href="cedar-and-the-policy-vault.html">Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP</a> <span class="dim">Cedar is mature and adopted; it lacks the why, the version in force and the evidence. A vault carries all three, and the demo shows it working.</span></li><li><a href="behaviour-policies-from-the-checks.html">Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept</a> <span class="dim">57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept.</span></li><li><a href="policy-as-code-needs-a-policy-first.html">Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have</a> <span class="dim">Policy as code answers one question. An agent behaviour policy holds the rest, and can be generated into code or reverse engineered from it.</span></li><li><a href="introducing-sharness.html">SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback</a> <span class="dim">SHarness, the secure harness we built when we could not find one: behaviour policies the Linux kernel enforces on every process an agent starts.</span></li><li><a href="a-leak-without-breaking-the-policy.html">Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks</a> <span class="dim">A key can leak through an allowed action. Told, checked, never given: a hook tested on nine leaks, four experimental rules, and a real sweep.</span></li><li><a href="a-payout-for-every-row.html">A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered</a> <span class="dim">Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.</span></li><li><a href="approve-at-altitude.html">Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it</a> <span class="dim">Models can draft two hundred decision policies; nobody can sign two hundred. Approve at altitude: each level may narrow the one above, never widen it.</span></li><li><a href="agent-behaviour-policies-move-to-the-open-security-summit.html">Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor</a> <span class="dim">The Agent Behaviour Policy moves to the Open Security Summit CIC as its first hosted project, with a charter and an independent steering majority to come.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 324 &middot; <a href="../for/make.html#r=324">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/proven-controls-for-agents.jpg" download>proven-controls-for-agents.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="proven-controls-for-agents.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>
