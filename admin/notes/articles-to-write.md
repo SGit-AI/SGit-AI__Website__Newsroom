@@ -11,12 +11,12 @@
 
 ### Proven controls, for agents: an answer to Hem Pant and Sondera
 
-- **Added:** 29 October 2026. **Status:** written, 29 October 2026, as `proven-controls-for-agents`; released after v0.14.0.
+- **Added:** 29 October 2026. **Status:** written and released, v0.13.133, as `proven-controls-for-agents`.
 - **Source:** Dinis's requests, word for word in `admin/notes/2026-10-29__proven-controls/memo-01.md`.
 
 ### A case study: the-ultimate-insider presentation
 
-- **Added:** 29 October 2026. **Status:** written, 29 October 2026, as `the-ultimate-insider-case-study`; released after v0.14.0.
+- **Added:** 29 October 2026. **Status:** written and released, v0.13.133, as `the-ultimate-insider-case-study`.
 - **Source:** Dinis's request in session: how the presentation, its site and its workflow were made in a day, with the statistics, screenshots and collages from its admin pages, agents and slides. https://the-ultimate-insider.presentation.sgit.ai/index.html
 
 ### Introducing SHarness, the secure harness
