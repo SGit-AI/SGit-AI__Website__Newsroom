@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-30 | published | 2,037 | first published | [`e1ea49636`](https://github.com/SGit-AI/SGit-AI__Website/commit/e1ea49636fbd77e99a0a12da7b9e4b483139ff1d) | [current](../selling-less-code.md) |
+| **v1.0.0** | 2026-10-30 | published | 2,037 | first published | [`f995b404d`](https://github.com/SGit-AI/SGit-AI__Website/commit/f995b404d113d5ffa231ce912e96aecd3fa35807) | [current](../selling-less-code.md) |
 
 [← Back to the article](../selling-less-code.md) · [All articles](../index.md)
 

@@ -16,8 +16,8 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.4.0** | 2026-10-28 | minor | 3,968 | +2 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`5e50fc15a`](https://github.com/SGit-AI/SGit-AI__Website/commit/5e50fc15a48c52ffd2cc00cb427b8c17b2c3a73c) | [what changed](a-payout-for-every-row/v1.4.0.md) · [current](../a-payout-for-every-row.md) |
-| **v1.3.0** | 2026-10-28 | minor | 3,966 | +8 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`9743a435c`](https://github.com/SGit-AI/SGit-AI__Website/commit/9743a435cc09efd5a5e2a73f3d6a77c37edbd086) | [what changed](a-payout-for-every-row/v1.3.0.md) |
+| **v1.4.0** | 2026-10-28 | minor | 3,968 | +2 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`721c7f313`](https://github.com/SGit-AI/SGit-AI__Website/commit/721c7f3137cc7e7258d174685394cf6ec209ef1b) | [what changed](a-payout-for-every-row/v1.4.0.md) · [current](../a-payout-for-every-row.md) |
+| **v1.3.0** | 2026-10-28 | minor | 3,966 | +8 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`a10c271c2`](https://github.com/SGit-AI/SGit-AI__Website/commit/a10c271c262b08f004ce9bcecd6dfb8f0b835d49) | [what changed](a-payout-for-every-row/v1.3.0.md) |
 | **v1.2.0** | 2026-10-28 | minor | 3,958 | +33 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`7b80e2576`](https://github.com/SGit-AI/SGit-AI__Website/commit/7b80e2576576cac52fbffe015dbb38300956e57f) | [what changed](a-payout-for-every-row/v1.2.0.md) |
 | **v1.1.0** | 2026-10-28 | minor | 3,925 | +180 / −0 words; 1 changed, 1 added, 0 removed paragraphs | [`6da043b74`](https://github.com/SGit-AI/SGit-AI__Website/commit/6da043b746f55467eb9f30200da16ccf4fe5f9bf) | [what changed](a-payout-for-every-row/v1.1.0.md) |
 | **v1.0.0** | 2026-10-28 | published | 3,745 | first published | [`4e1fc1720`](https://github.com/SGit-AI/SGit-AI__Website/commit/4e1fc1720e37a93a3debf4eb4a636693ac6d2174) |  |

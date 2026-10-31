@@ -16,9 +16,9 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-28 | minor | 2,602 | +25 / −0 words; 0 changed, 2 added, 0 removed paragraphs | [`5e50fc15a`](https://github.com/SGit-AI/SGit-AI__Website/commit/5e50fc15a48c52ffd2cc00cb427b8c17b2c3a73c) | [what changed](where-to-build-the-agent-insurer/v1.2.0.md) · [current](../where-to-build-the-agent-insurer.md) |
-| **v1.1.0** | 2026-10-28 | minor | 2,577 | +981 / −948 words; 8 changed, 18 added, 17 removed paragraphs | [`1b709edea`](https://github.com/SGit-AI/SGit-AI__Website/commit/1b709edea41a2e9f71570741a4f6ac391427166b) | [what changed](where-to-build-the-agent-insurer/v1.1.0.md) |
-| **v1.0.0** | 2026-10-28 | published | 2,543 | first published | [`a1b5e3bf2`](https://github.com/SGit-AI/SGit-AI__Website/commit/a1b5e3bf210c660b76b39345983e47449417443e) |  |
+| **v1.2.0** | 2026-10-28 | minor | 2,602 | +25 / −0 words; 0 changed, 2 added, 0 removed paragraphs | [`721c7f313`](https://github.com/SGit-AI/SGit-AI__Website/commit/721c7f3137cc7e7258d174685394cf6ec209ef1b) | [what changed](where-to-build-the-agent-insurer/v1.2.0.md) · [current](../where-to-build-the-agent-insurer.md) |
+| **v1.1.0** | 2026-10-28 | minor | 2,577 | +981 / −948 words; 8 changed, 18 added, 17 removed paragraphs | [`0f631ddc4`](https://github.com/SGit-AI/SGit-AI__Website/commit/0f631ddc4d9fd042276d014b18033bc50672d8a5) | [what changed](where-to-build-the-agent-insurer/v1.1.0.md) |
+| **v1.0.0** | 2026-10-28 | published | 2,543 | first published | [`4565ed6dc`](https://github.com/SGit-AI/SGit-AI__Website/commit/4565ed6dc4d11a13c6d1521897e8344c777a920e) |  |
 
 [← Back to the article](../where-to-build-the-agent-insurer.md) · [All articles](../index.md)
 

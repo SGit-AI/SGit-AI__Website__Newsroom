@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-30 | published | 1,636 | first published | [`f1b97b708`](https://github.com/SGit-AI/SGit-AI__Website/commit/f1b97b708a0841748a1902eeaaf49e8c94b55795) | [current](../signed-email-from-the-agent.md) |
+| **v1.0.0** | 2026-10-30 | published | 1,636 | first published | [`1fb2ebb68`](https://github.com/SGit-AI/SGit-AI__Website/commit/1fb2ebb6849be41ee849e625614f4ddfcd36ad35) | [current](../signed-email-from-the-agent.md) |
 
 [← Back to the article](../signed-email-from-the-agent.md) · [All articles](../index.md)
 

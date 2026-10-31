@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-30 | published | 3,093 | first published | [`1947b09eb`](https://github.com/SGit-AI/SGit-AI__Website/commit/1947b09eb371d91bd2927c00c1f003c19a13524b) | [current](../books-for-a-new-generation-of-publishing.md) |
+| **v1.0.0** | 2026-10-30 | published | 3,093 | first published | [`8009f081a`](https://github.com/SGit-AI/SGit-AI__Website/commit/8009f081a699e768dbeb6874e17d1a2c668407d6) | [current](../books-for-a-new-generation-of-publishing.md) |
 
 [← Back to the article](../books-for-a-new-generation-of-publishing.md) · [All articles](../index.md)
 

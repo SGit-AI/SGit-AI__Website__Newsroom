@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.4.0** | 2026-10-28 | minor | 2,186 | +21 / −0 words; 2 changed, 0 added, 0 removed paragraphs | [`1b709edea`](https://github.com/SGit-AI/SGit-AI__Website/commit/1b709edea41a2e9f71570741a4f6ac391427166b) | [what changed](scion-and-sgit/v1.4.0.md) · [current](../scion-and-sgit.md) |
+| **v1.4.0** | 2026-10-28 | minor | 2,186 | +21 / −0 words; 2 changed, 0 added, 0 removed paragraphs | [`0f631ddc4`](https://github.com/SGit-AI/SGit-AI__Website/commit/0f631ddc4d9fd042276d014b18033bc50672d8a5) | [what changed](scion-and-sgit/v1.4.0.md) · [current](../scion-and-sgit.md) |
 | **v1.3.0** | 2026-10-27 | minor | 2,165 | +0 / −99 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](scion-and-sgit/v1.3.0.md) |
 | **v1.2.0** | 2026-10-16 | minor | 2,264 | +101 / −368 words; 5 changed, 1 added, 7 removed paragraphs | [`62d7d61bb`](https://github.com/SGit-AI/SGit-AI__Website/commit/62d7d61bbe675fde217c65280275f5bf66ca5c92) | [what changed](scion-and-sgit/v1.2.0.md) |
 | **v1.1.0** | 2026-10-16 | minor | 2,531 | +1,493 / −1,061 words; 8 changed, 27 added, 18 removed paragraphs | [`ae3c7e836`](https://github.com/SGit-AI/SGit-AI__Website/commit/ae3c7e836736cca2090dd560d3666b75c20c7d0a) | [what changed](scion-and-sgit/v1.1.0.md) |

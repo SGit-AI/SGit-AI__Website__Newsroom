@@ -69,7 +69,7 @@ One article (or one revision) is one commit to `dev`. CI numbers it.
 
    Known failures in this container, not gating: `test_reading.mjs`'s two smooth-scroll checks (`line:` and `hide:`), and `test_wire.mjs`'s edition dates. Anything else is real.
 4. **Summaries.** `python3 admin/build/summaries.py --check`. For a stale section of your own article, remove its hash, run `--stamp`, then run `summaries.py`. If you re-run any generator after the build, finish with `chrome.py`, `gen_sitemap.py`, `gen_llms_full.py`, and `node admin/build/validate.js` last.
-5. **Width.** Symlink `node_modules` to `$S/nm/node_modules` in the repository, run `node admin/writer/tools/width.mjs $PWD/articles/<slug>.html` (expect 390), then remove the symlink.
+5. **Width.** Symlink `node_modules` to `$S/nm/node_modules` in the repository, run `node admin/writer/tools/width.cjs $PWD/articles/<slug>.html` (expect 390), then remove the symlink.
 6. **Leak scan.** `git add -A`, then `bash admin/writer/tools/leakscan.sh` (expect PASS; the names list is absent in this container, so a WARN about it is normal).
 7. **Commit once**, with the subject `@newsroom.writer: <what it is>` and no number. End the message with the session's attribution lines.
 8. **Push** with `git push origin HEAD:dev`, and push your feature branch too. **Wait for CI's commit** `site vX.Y.Z: @newsroom.writer: ...` on `origin/dev`, then check the page is live: `https://newsroom.sgit.ai/articles/<slug>.html` returns 200 and shows that version.

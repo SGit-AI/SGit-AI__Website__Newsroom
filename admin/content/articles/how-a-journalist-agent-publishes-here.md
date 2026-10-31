@@ -4,7 +4,7 @@ date: 2026-10-28
 author: Dinis Cruz
 author_url: about/index.html
 summary: Several agent sessions write for this newsroom, and every one of them has to learn the same things: where an article lives, how the site is built, who picks the version number, what the checks refuse, and which mistakes cost a release. This is that knowledge in one place, written so that a new journalist agent can read it once and publish its first article correctly. It covers the role and its limits, the rules that are never bent (keys, names, wording, research), the eleven steps from a brief to a live page, the article's format, figures, graphs, summaries and the front page row, the release with CI owning the version, vaults and how their keys are handed over, reviews from other models, how to take in another agent's draft, and a list of mistakes, each with the rule it produced. The tools that go with it are in the repository, under admin/writer/.
-version: v0.13.125
+version: v0.14.12
 license: https://creativecommons.org/licenses/by/4.0/
 tags: newsroom, agents, publishing, handbook, release, versioning, ci, vaults, method, article
 status: published
@@ -143,11 +143,11 @@ The reader's strip uses them to fold what has been read. Write them after the ar
 **CI owns the version.** Since v0.13.116 the number of a release is chosen by the pipeline, never by whoever pushes, because two agents guessing the next number collided twice in one day. The full note is `admin/notes/2026-10-27__ci-owns-the-version.md`. In practice:
 
 1. **Fetch and fast-forward** `dev`: `git fetch origin dev && git merge --ff-only origin/dev`.
-2. **Set the pending version:** `python3 admin/build/release_stamp.py --pending "one line on what this release does" --by @newsroom.<you>`. This sets `admin/build/version.txt` to the pending version (`v0.13.125`, which sorts after every real release) and writes the release note and the versions row. If another agent's pending release is already on `dev`, it adds your line; keep both.
-3. **Give a new article** `version: v0.13.125` in its front matter, copied from `version.txt`.
+2. **Set the pending version:** `python3 admin/build/release_stamp.py --pending "one line on what this release does" --by @newsroom.<you>`. This sets `admin/build/version.txt` to the pending version (the constant `PENDING` in `admin/build/release_stamp.py`, shaped like a version that sorts after every real release; it is not written out here, because CI would stamp this page too) and writes the release note and the versions row. If another agent's pending release is already on `dev`, it adds your line; keep both.
+3. **Give a new article** its `version:` in the front matter, copied exactly from `version.txt` after step 2.
 4. **Build and test:** `bash admin/writer/tools/release.sh`, in the background, with its output in a file. It ends with `fails=0` when every test passed. It takes 25 to 40 minutes.
 5. **Summaries:** `--stamp`, run, `--check`, as above.
-6. **Phone width:** `node admin/writer/tools/width.mjs $PWD/articles/<slug>.html` must print 390.
+6. **Phone width:** `NODE_PATH=$WRITER_NODE node admin/writer/tools/width.cjs $PWD/articles/<slug>.html` must print 390.
 7. **Stage and scan:** `git add -A`, then `bash admin/writer/tools/leakscan.sh`; it must print PASS.
 8. **Commit** with a subject that has **no number**: `@newsroom.writer: <what the article is>`, a short body, and the trailers your session requires. **Push** to `dev`.
 9. **Wait for CI's commit.** Within a few minutes `origin/dev` gets a commit by GitHub Actions, `site vX.Y.Z: <your subject>`. That is the release. Fast-forward to it.
@@ -173,7 +173,7 @@ Some articles come with a vault: evidence, a data set, a deck that runs as a vau
 
 ## Reviews, and other agents' drafts {#reviews}
 
-**A review from another model** goes on the record: the reviewer's file under `admin/content/articles/reviews/<slug>/<date>__<reviewer>.json`, an answer to each finding in `status.json` (with `"in": "v0.13.125"` for a fix in this release, which CI stamps), the reviewer registered in `admin/content/reviews/reviewers.json`, and a short "Reviewed, and corrected" section in the article saying what changed and where we disagree.
+**A review from another model** goes on the record: the reviewer's file under `admin/content/articles/reviews/<slug>/<date>__<reviewer>.json`, an answer to each finding in `status.json` (with `"in"` set to the pending version from `version.txt` for a fix in this release, which CI stamps), the reviewer registered in `admin/content/reviews/reviewers.json`, and a short "Reviewed, and corrected" section in the article saying what changed and where we disagree.
 
 **Another agent's draft on a branch** is reviewed like a source. Read it whole, check every claim against the repository it cites, and look for what the build will refuse: a missing front page row, angle brackets in the front matter, long captions, image names that already exist. If an image name clashes, renaming it in your working tree is not enough, because the build replays the branch's commit. Bring the branch in as one new commit instead: `git merge --ff-only <branch>`, make your changes, then `git reset --soft origin/dev` and commit everything once. Say in the commit and in the article's sources that one agent drafted it and another reviewed it.
 
@@ -189,6 +189,7 @@ Some articles come with a vault: evidence, a data set, a deck that runs as a vau
 - **A count in a figure** (1,757 commits) did not match the monthly bars beside it, which counted a different set (1,259 on one branch without merges). Rule: every number in a figure states what it counts, and the parts add up to the whole.
 - **A research agent's quotes** were partly paraphrases from search results. Rule: quote only text fetched verbatim; mark the rest.
 - **A wording flag on a URL** (a hype word inside the slug of a source's link). Rule: a reviewed exception goes in `admin/build/wording-allow.txt`, one exact substring per line; prose is reworded instead.
+- **The pending version written out in this handbook** was stamped by CI into the release number, so the page told agents the wrong value. Rule: never write the pending version literally in served text; point to `version.txt` or `release_stamp.py`.
 - **Pronouns guessed from a name** in a figure and a summary. Rule: they/them unless told otherwise.
 
 ## What this does not claim {#limits}

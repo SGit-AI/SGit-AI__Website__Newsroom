@@ -16,8 +16,8 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-31 | minor | 1,766 | +54 / −7 words; 5 changed, 0 added, 0 removed paragraphs | this release | [what changed](becoming-an-official-publication/v1.1.0.md) · [current](../becoming-an-official-publication.md) |
-| **v1.0.0** | 2026-10-30 | published | 1,719 | first published | [`e6575c69c`](https://github.com/SGit-AI/SGit-AI__Website/commit/e6575c69c07acf8fb6517fda13845b86ec6f8524) |  |
+| **v1.1.0** | 2026-10-31 | minor | 1,766 | +54 / −7 words; 5 changed, 0 added, 0 removed paragraphs | [`f2c21d334`](https://github.com/SGit-AI/SGit-AI__Website/commit/f2c21d33490530df40cdaffb4c74dea04ae4fc8b) | [what changed](becoming-an-official-publication/v1.1.0.md) · [current](../becoming-an-official-publication.md) |
+| **v1.0.0** | 2026-10-30 | published | 1,719 | first published | [`8f1cfaadb`](https://github.com/SGit-AI/SGit-AI__Website/commit/8f1cfaadbac145f11321170fb9673e7824c41a9f) |  |
 
 [← Back to the article](../becoming-an-official-publication.md) · [All articles](../index.md)
 

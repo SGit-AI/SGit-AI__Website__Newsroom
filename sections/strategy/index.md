@@ -1,0 +1,78 @@
+# Startups & strategy
+
+Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
+
+66 articles, newest first.
+
+## October 2026
+
+- [A brief for the Web Summit team: an event site run by an ephemeral agent team, built from this week's template, with a map of every company we should meet](../../articles/web-summit-team-brief.md), 2026-10-30, 7 min.
+- [Selling less code: the economics of customised open source, where the customer pays for the features they use, the maker certifies what it ships, and the pipeline is finally tied to revenue](../../articles/selling-less-code.md), 2026-10-30, 8 min.
+- [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](../../articles/investor-sgit-ai.md), 2026-10-29, 8 min.
+- [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](../../articles/where-to-invest-in-sgit.md), 2026-10-28, 9 min.
+- [The legal AI services map: 44 companies scored on who does the work, who stands behind it, and whether an agent can hire them, with the evidence in a public vault](../../articles/the-legal-ai-services-map.md), 2026-10-28, 7 min.
+- [Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room](../../articles/legal-on-demand-for-startups.md), 2026-10-27, 12 min.
+- [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](../../articles/websites-you-own.md), 2026-10-26, 9 min.
+- [Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it](../../articles/inside-kitewing-websites.md), 2026-10-26, 5 min.
+- [Web Summit 2026, the plan: a briefing for the team on usage first and the sale after, intelligence from public material, an asset, a page and a link for every person we want to reach, a newsroom of our own for the summit, and the two agentic workflows the team will learn on](../../articles/web-summit-2026-the-plan.md), 2026-10-26, 9 min.
+- [Translate the assumption, not the vocabulary: Adelina Chalmers' five stages of a CTO's mindset, what they mean for how we brief boards on php2shell, and why a deck for every reader is communication with empathy](../../articles/translate-the-assumption.md), 2026-10-25, 5 min.
+- [Simplified, or outsourced? A reply to Nadzeya Stalbouskaya on removing servers and databases: the risk is real, so map it, move only to real commodities, and ask who would certify what you now depend on](../../articles/simplified-or-outsourced.md), 2026-10-25, 6 min.
+- [The maintenance deficit, with evidence: a follow-up to Dion Wiggins on why open source's business model fails the people who maintain it, checked against the PHP story's own data](../../articles/the-maintenance-deficit-with-evidence.md), 2026-10-23, 9 min.
+- [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](../../articles/how-to-help.md), 2026-10-21, 6 min.
+- [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](../../articles/the-open-security-summit-and-its-debt.md), 2026-10-21, 7 min.
+- [Connect your dots backwards: a look-back interview with your LLM, for founders, to find the non-linear path, the doors that were not what they seemed, and where a startup may be hiding](../../articles/connect-your-dots-backwards.md), 2026-10-21, 7 min.
+- [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](../../articles/programming-taught-upside-down.md), 2026-10-21, 7 min.
+- [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](../../articles/jobs-that-never-scaled.md), 2026-10-21, 12 min.
+- [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](../../articles/free-to-copy-paid-at-the-source.md), 2026-10-20, 6 min.
+- [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](../../articles/the-exit-is-when-you-sell-control.md), 2026-10-20, 8 min.
+- [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](../../articles/a-small-slice-sets-the-price.md), 2026-10-20, 9 min.
+- [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](../../articles/inside-the-no-server-studio.md), 2026-10-20, 6 min.
+- [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](../../articles/the-no-server-startup.md), 2026-10-20, 13 min.
+- [When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure](../../articles/when-the-customer-becomes-the-commodity.md), 2026-10-19, 7 min.
+- [Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it](../../articles/open-source-so-you-keep-it.md), 2026-10-19, 6 min.
+- [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](../../articles/fund-it-with-time.md), 2026-10-19, 5 min.
+- [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](../../articles/you-are-a-developer.md), 2026-10-19, 9 min.
+- [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](../../articles/start-a-company.md), 2026-10-19, 10 min.
+- [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](../../articles/can-you-sell-it.md), 2026-10-19, 5 min.
+- [Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop](../../articles/short-punchy-and-co-written.md), 2026-10-18, 4 min.
+- [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](../../articles/generation-z-developers-again.md), 2026-10-18, 9 min.
+- [Act as the job you want: if you are looking for a job, you have time, so do the work in public, make it linkable, and let the people who want to help you help you](../../articles/act-as-the-job-you-want.md), 2026-10-18, 6 min.
+- [Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour](../../articles/ephemeral-town-planner-services.md), 2026-10-18, 9 min.
+- [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](../../articles/three-linkedin-pages.md), 2026-10-18, 12 min.
+- [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](../../articles/who-will-fix-your-mess.md), 2026-10-17, 9 min.
+- [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](../../articles/the-fork-next-door.md), 2026-10-16, 15 min.
+- [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](../../articles/the-controllable-founder.md), 2026-10-16, 13 min.
+- [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](../../articles/sell-dont-issue.md), 2026-10-16, 15 min.
+- [Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later](../../articles/portugal-and-europe-2025.md), 2026-10-16, 5 min.
+- [GenAI in Portuguese, 2024: my OWASP Global AppSec talk in Lisbon, the first public demo of The Cyber Boardroom, slide by slide, with what two years of agents have confirmed and changed](../../articles/portugal-2024-genai-in-portuguese.md), 2026-10-16, 5 min.
+- [Hacking Portugal, 2016: my BSidesLisbon keynote and the book that stopped at 95%, slide by slide, with what holds ten years later and what a new edition needs](../../articles/portugal-2016-hacking-portugal.md), 2026-10-16, 6 min.
+- [A web application security challenge to Portugal, 2010: my IBWAS keynote in Lisbon, slide by slide, with what came true, what I got wrong and what still stands](../../articles/portugal-2010-a-challenge.md), 2026-10-16, 5 min.
+- [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](../../articles/software-vendors-as-villagers.md), 2026-10-16, 8 min.
+- [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](../../articles/explorer-coding.md), 2026-10-16, 6 min.
+- [Agentics, ready to sell: what we showed at Agentic Engineering Live, who else is selling agentic services and at what price, the engagement path, and a marketplace for the consultants who deliver it](../../articles/agentics-ready-to-sell.md), 2026-10-16, 9 min.
+- [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](../../articles/the-expert-founders.md), 2026-10-15, 12 min.
+- [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](../../articles/the-citizen-developer.md), 2026-10-14, 6 min.
+- [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](../../articles/paying-after-the-value.md), 2026-10-14, 8 min.
+- [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](../../articles/the-eyeballs-get-cheap.md), 2026-10-14, 9 min.
+- [Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in](../../articles/chainguard-mapped.md), 2026-10-14, 9 min.
+- [Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use](../../articles/stop-the-bleeding-then-ask-for-it-back.md), 2026-10-13, 18 min.
+- [What open source is, and what it is not: six misconceptions, a little history, and why the point is that nobody can lock you in](../../articles/what-open-source-is-and-is-not.md), 2026-10-12, 10 min.
+- [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](../../articles/not-a-straight-line.md), 2026-10-12, 11 min.
+- [Sovereignty is the ability to move: play where the ball is going, take away the dot, and keep a twin that works](../../articles/sovereignty-is-the-ability-to-move.md), 2026-10-12, 12 min.
+- [Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch](../../articles/move-the-cloud-not-the-code.md), 2026-10-12, 13 min.
+- [Judo for small countries: where Portugal, Romania and Estonia can add the most value in AI, and why the race for GPUs is not it](../../articles/judo-for-small-countries.md), 2026-10-12, 18 min.
+- [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](../../articles/why-i-love-wardley-maps.md), 2026-10-12, 19 min.
+- [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](../../articles/places-of-highest-leverage.md), 2026-10-12, 11 min.
+- [Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering](../../articles/agentic-cost-is-an-engineering-problem.md), 2026-10-12, 10 min.
+- [The key is the billing system: VoiceDebrief, a product with no server, the one thing it cannot sell, and who could let it](../../articles/the-key-is-the-billing-system.md), 2026-10-12, 17 min.
+- [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](../../articles/i-miss-it.md), 2026-10-11, 10 min.
+- [Open source is not free: who pays to keep the long tail working?](../../articles/open-source-is-not-free.md), 2026-10-10, 18 min.
+- [A Mac of the agent's own: a business plan for agent desktops, what Apple's licence allows, and three behaviour policies](../../articles/a-mac-of-the-agents-own.md), 2026-10-09, 13 min.
+- [The deck I could not download: an author-first home for presentations, as a business plan somebody else can build](../../articles/the-deck-i-could-not-download.md), 2026-10-06, 17 min.
+- [Price it, then give it away: the early access programme as the next step after "do they miss it"](../../articles/price-it-then-give-it-away.md), 2026-10-02, 11 min.
+
+## September 2026
+
+- [For a startup, the most important question is whether they miss it](../../articles/the-question-is-whether-they-miss-it.md), 2026-09-21, 7 min.
+- [The SaaS apocalypse will be decided by inertia, not by AI](../../articles/saas-apocalypse-decided-by-inertia-not-by-ai.md), 2026-09-21, 14 min.
+

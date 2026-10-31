@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-30 | published | 3,041 | first published | [`e3b48b7c0`](https://github.com/SGit-AI/SGit-AI__Website/commit/e3b48b7c0fddaa99bad17341a3917544f6eec133) | [current](../the-book-of-the-talk-and-its-companion.md) |
+| **v1.0.0** | 2026-10-30 | published | 3,041 | first published | [`b4c77d431`](https://github.com/SGit-AI/SGit-AI__Website/commit/b4c77d4310a55c572534c3baa6a7e0a3022874f1) | [current](../the-book-of-the-talk-and-its-companion.md) |
 
 [← Back to the article](../the-book-of-the-talk-and-its-companion.md) · [All articles](../index.md)
 
