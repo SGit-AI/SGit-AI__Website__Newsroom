@@ -1,0 +1,37 @@
+{
+ "slug": "web-summit-humans-and-their-agents",
+ "teaser": "The Web Summit team, part two: seven people each with an agent, personal CRMs kept in sync, and every memo turned into a follow-up within the hour.",
+ "topics": ["startups-and-strategy", "agents-and-policy"],
+ "core_idea": "The Web Summit team is the first we run with many humans, each bringing their own agent, so it is agents collaborating through their humans; that needs written roles and owners, a personal CRM in each person's vault synchronised into a team view by shared ids, a rule that anything recorded becomes a record, a page and a drafted follow-up within the hour while a person sends every email, a way of briefing scarce experts like a designer in their own medium, and a plan worked backwards from the summit's printing deadlines.",
+ "nodes": [
+  {"id": "humans", "label": "Many humans, each with an agent", "kind": "concept", "summary": "The first team where the agents collaborate through their humans."},
+  {"id": "roles", "label": "Roles and owners", "kind": "method", "summary": "One owner per company, a published role per person, the conductor routes."},
+  {"id": "crm", "label": "A CRM for each of us", "kind": "artefact", "summary": "Personal CRMs in each vault, shared into a team view by shared ids."},
+  {"id": "hour", "label": "Within the hour", "kind": "method", "summary": "Recorded, picked up, updated, an asset, a drafted follow-up, a person sends."},
+  {"id": "send", "label": "A person sends every email", "kind": "claim", "summary": "Agents draft; nothing goes out on its own."},
+  {"id": "designer", "label": "A designer with little time", "kind": "example", "summary": "Brief in their medium, least context, agents do the rest around them."},
+  {"id": "backwards", "label": "Worked backwards", "kind": "method", "summary": "Order-by dates for printed items, each with a code to a page."},
+  {"id": "phases", "label": "Before, during, after", "kind": "method", "summary": "Algarve meetups, the summit, the follow-up as the product."},
+  {"id": "site", "label": "web-summit.sgit.ai", "kind": "artefact", "summary": "The event site, with six vaults for CRM, mail and issues."}
+ ],
+ "edges": [
+  {"from": "humans", "to": "roles", "rel": "depends-on"},
+  {"from": "roles", "to": "crm", "rel": "produces"},
+  {"from": "crm", "to": "site", "rel": "extends"},
+  {"from": "hour", "to": "crm", "rel": "produces"},
+  {"from": "send", "to": "hour", "rel": "depends-on"},
+  {"from": "designer", "to": "backwards", "rel": "leads-to"},
+  {"from": "backwards", "to": "phases", "rel": "leads-to"},
+  {"from": "hour", "to": "phases", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["web-summit-team-brief", "web-summit-2026-the-plan", "the-inbox-team-as-a-recipe", "agents-have-an-identity-now"],
+  "pages": [],
+  "sites": ["https://web-summit.sgit.ai/", "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit"]
+ },
+ "quotes": [
+  {"text": "It is a set of agents collaborating through their humans", "why": "The shape of the team."},
+  {"text": "No email goes out on its own; an email cannot be unsent.", "why": "The line the agents do not cross."},
+  {"text": "The follow-up is the product we are showing.", "why": "Why the hour matters."}
+ ]
+}

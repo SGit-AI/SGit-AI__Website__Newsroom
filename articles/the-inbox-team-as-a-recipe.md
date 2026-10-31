@@ -133,6 +133,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#the-inbox-
 
 ### Continued by
 
+- [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](web-summit-humans-and-their-agents.md) The Web Summit team, part two: seven people each with an agent, personal CRMs kept in sync, and every memo turned into a follow-up within the hour.
 - [Signed by the agent, vouched for by the person: a brief to give every email agent its own key, so each email carries a QR code that proves it is authentic](signed-email-from-the-agent.md) A brief to give every email agent its own key, vouched for by its person, so each email carries a QR code that proves it is authentic.
 - [A brief for the Web Summit team: an event site run by an ephemeral agent team, built from this week's template, with a map of every company we should meet](web-summit-team-brief.md) A brief for the Web Summit team: an event site run by an ephemeral agent team, from a proven template, with a map of every company to meet.
 - [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](where-to-invest-in-sgit.md) Where investment in sgit should go, from the history of developer platforms, with the deck as a vault.

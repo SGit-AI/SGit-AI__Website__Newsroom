@@ -10,7 +10,7 @@
 
 # A brief for the Web Summit team: an event site run by an ephemeral agent team, built from this week's template, with a map of every company we should meet
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-30 · [article v1.0.0](versions/web-summit-team-brief.md) · [newsroom v0.14.7](https://newsroom.sgit.ai/admin/versions.html) · web-summitagent-teamsbriefseventspkistartupsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-30 · [article v1.1.0, 2 versions](versions/web-summit-team-brief.md) · [newsroom v0.14.7](https://newsroom.sgit.ai/admin/versions.html) · web-summitagent-teamsbriefseventspkistartupsarticle
 
 ***Abstract:** Web Summit runs in Lisbon from 9 to 12 November, and seven of us are now going. The plan I published on 26 October called for a newsroom of our own for the summit. This is the brief to build it, now that we have a template that works. In the last two days three teams were stood up from nothing in a few hours each: the talk's, the cold read's and the book's. Each had a repository, a written brief, a role file and a behaviour policy per member, a key for every session, an hourly slot, a five-step wake, a hold any member can pull, a board and a mailroom in git, and a gate with CI owning the version. The Web Summit team gets the same, on an event site that consolidates everything about our participation: the graph of companies and people, the events and sessions, the materials, and a countdown with observability, so we can see what is used. Its centre is a map of the companies going, built from public material only: who they are, what they do, why they matter to us, and whether we should meet them, interview them or write about them, each with an owner on our team. Each person's email stays in their own account, run by their own email agent, and each of those agents gets a key, so that what it sends can be verified; that is a separate brief. The design track, T-shirts, hoodies, a banner, cards for everyone and flyers, gets its own brief and its own design member. This article sets out the site, the template, the roles, the company map, the schedule to 12 November, and what I need to decide.*
 
@@ -34,7 +34,7 @@ There are now seven of us going, not five. And in the last two days we found out
 
 ## The site
 
-The site is an event site for our participation in Web Summit. I would call it something like an sgit event site for Web Summit; the exact address is for the developers to settle with me. It consolidates what is now scattered:
+The site is an event site for our participation in Web Summit, and it already exists: [web-summit.sgit.ai](https://web-summit.sgit.ai/), live since 28 October 2026, with a team roster, its own agent and six vaults for the CRM, the mail and the task board, public and private. This brief is for what it becomes. It consolidates what is now scattered:
 
 - **The graph.** Companies, people, sessions and our own products, and the connections between them, each with its public source.
 - **The events and the materials.** The programme, the sessions we go to, the meetings we book, and every asset we make for someone, with its link.
@@ -106,14 +106,17 @@ With seven of us going, we should look like a team. I would like branded T-shirt
 
 ## What I need to decide
 
-- **The site's name and address,** and which repository it lives in.
 - **Who owns which agent** among the seven of us.
 - **The design budget,** and the designer we work with.
 - **Which email accounts** join first, and when each email agent gets its key.
 
+## Corrected
+
+The first version of this brief said that none of the site existed yet and that its address was still to be settled. That was wrong: [web-summit.sgit.ai](https://web-summit.sgit.ai/) had been live since 28 October 2026, two days before. The site section and the limits are corrected, the change is in the [version history](versions/web-summit-team-brief.md), and it is logged on the [corrections page](https://newsroom.sgit.ai/about/corrections.html).
+
 ## What this does not claim
 
-- **It is a brief.** None of the site exists yet; the template does, in three repositories that ran this week.
+- **It is a brief.** The site exists, with its vaults, but what this brief describes is still to build; the template ran this week in three repositories.
 - **The company map will be public material only,** and its judgements ours.
 - **The schedule is a plan,** written eleven days before the summit.
 
@@ -138,6 +141,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#web-su
 
 ### Continued by
 
+- [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](web-summit-humans-and-their-agents.md) The Web Summit team, part two: seven people each with an agent, personal CRMs kept in sync, and every memo turned into a follow-up within the hour.
 - [Signed by the agent, vouched for by the person: a brief to give every email agent its own key, so each email carries a QR code that proves it is authentic](signed-email-from-the-agent.md) A brief to give every email agent its own key, vouched for by its person, so each email carries a QR code that proves it is authentic.
 
 [All articles](index.md) · [All graphs](graphs.md)

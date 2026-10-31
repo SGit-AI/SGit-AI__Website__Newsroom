@@ -142,6 +142,7 @@ Site & engineeringNews & evidence[This article as a graph →](graphs.md#your-re
 
 ### Continued by
 
+- [The augmented book: one source in layers, projected to the web, the iPad and print, so the reader gets the right information at the right time, and what fifty years of attempts teach](the-augmented-book.md) The augmented book: one source in layers, projected to web, iPad and print, with the right information at the right time, and what precedents teach.
 - [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](a-newsroom-for-one.md) The reading list I send by email is the first page people see of this newsroom, so it now explains itself, shows what was read, and asks for an answer.
 - [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](v0-12-in-numbers.md) v0.12 in numbers: 159 versions in eight days, 131 articles, 292,000 words, a graph for every article, and the mistakes the data shows.
 - [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](a-browser-for-one.md) An iPhone app that only reads my newsroom: WebKit in the UK, a paid membership and a Mac to build it, one passkey test first, and someone else to maintain it.

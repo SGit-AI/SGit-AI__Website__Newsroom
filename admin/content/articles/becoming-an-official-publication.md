@@ -46,7 +46,7 @@ On top of these sit identifiers and credentials: an ISSN from the British Librar
 The newsroom now has five pages that it did not have this morning, linked from every page's footer under "The publication":
 
 - **[The imprint](https://newsroom.sgit.ai/about/imprint.html):** the publisher, The Cyber Boardroom Limited, registered in England and Wales; me as editor; how the articles are made; ownership, funding and interests; contact.
-- **[Editorial standards](https://newsroom.sgit.ai/about/standards.html):** accuracy and sources, quotes copied word for word, what we read and what we only read about, the right of reply, people and privacy, interests, how agents write here, versions, corrections, withdrawals and complaints.
+- **[Editorial standards](https://newsroom.sgit.ai/about/standards.html):** accuracy and sources, quotes copied word for word, what we read and what we only read about, opinion and not allegations, people and privacy, interests, how agents write here, versions, corrections, withdrawals and complaints.
 - **[Corrections](https://newsroom.sgit.ai/about/corrections.html):** how we correct, and the log, starting with today's.
 - **[Withdrawals](https://newsroom.sgit.ai/about/withdrawals.html):** when an article is withdrawn, the six steps, and the notices.
 - **[Complaints](https://newsroom.sgit.ai/about/complaints.html):** how to complain, an acknowledgement in two working days, a full answer in 21 days, and where to go next.

@@ -143,6 +143,10 @@ Agents & policyNews & evidence[This article as a graph →](graphs.md#books-for-
 - [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](the-book-of-the-talk-and-its-companion.md) Two agent teams, one night: RC1 of the book of The Ultimate Insider, a cold read by a team that knew only the record, and a companion PDF of tick boxes.
 - [A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records](the-ultimate-insider-case-study.md) The ultimate insider, built in a day: 814 commits, 210 releases and 162 wakes by nine agents and one editor, from 00:16 to the stage at 19:00.
 
+### Continued by
+
+- [The augmented book: one source in layers, projected to the web, the iPad and print, so the reader gets the right information at the right time, and what fifty years of attempts teach](the-augmented-book.md) The augmented book: one source in layers, projected to web, iPad and print, with the right information at the right time, and what precedents teach.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 327 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=327)

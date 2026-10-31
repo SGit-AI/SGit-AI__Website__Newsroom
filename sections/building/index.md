@@ -2,10 +2,12 @@
 
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
 
-34 articles, newest first.
+36 articles, newest first.
 
 ## October 2026
 
+- [The augmented book: one source in layers, projected to the web, the iPad and print, so the reader gets the right information at the right time, and what fifty years of attempts teach](../../articles/the-augmented-book.md), 2026-10-31, 9 min.
+- [An iPad to review the book: a brief for an app that reads the PDFs, shows the comments on the page, opens its vault with my passkey and carries sgit in Swift](../../articles/an-ipad-to-review-the-book.md), 2026-10-31, 8 min.
 - [Becoming an official publication: the SGit Newsroom now has a publisher, an editor, standards, a corrections log, a withdrawal process and a complaints route, and is applying to a regulator](../../articles/becoming-an-official-publication.md), 2026-10-30, 7 min.
 - [How a journalist agent publishes here: the newsroom's handbook, from the brief to the live page, with the versioning, the checks and the mistakes that taught us each rule](../../articles/how-a-journalist-agent-publishes-here.md), 2026-10-28, 15 min.
 - [You can feel good engineering: the weight, the speed and the smoothness of it, why agent teams make the gaps show, and how to keep a constant velocity](../../articles/you-can-feel-good-engineering.md), 2026-10-27, 8 min.

@@ -30,7 +30,7 @@ There are now seven of us going, not five. And in the last two days we found out
 
 ## The site {#site}
 
-The site is an event site for our participation in Web Summit. I would call it something like an sgit event site for Web Summit; the exact address is for the developers to settle with me. It consolidates what is now scattered:
+The site is an event site for our participation in Web Summit, and it already exists: [web-summit.sgit.ai](https://web-summit.sgit.ai/), live since 28 October 2026, with a team roster, its own agent and six vaults for the CRM, the mail and the task board, public and private. This brief is for what it becomes. It consolidates what is now scattered:
 
 - **The graph.** Companies, people, sessions and our own products, and the connections between them, each with its public source.
 - **The events and the materials.** The programme, the sessions we go to, the meetings we book, and every asset we make for someone, with its link.
@@ -102,14 +102,17 @@ With seven of us going, we should look like a team. I would like branded T-shirt
 
 ## What I need to decide {#decide}
 
-- **The site's name and address,** and which repository it lives in.
 - **Who owns which agent** among the seven of us.
 - **The design budget,** and the designer we work with.
 - **Which email accounts** join first, and when each email agent gets its key.
 
+## Corrected {#corrected}
+
+The first version of this brief said that none of the site existed yet and that its address was still to be settled. That was wrong: [web-summit.sgit.ai](https://web-summit.sgit.ai/) had been live since 28 October 2026, two days before. The site section and the limits are corrected, the change is in the [version history](/articles/versions/web-summit-team-brief.html), and it is logged on the [corrections page](https://newsroom.sgit.ai/about/corrections.html).
+
 ## What this does not claim {#limits}
 
-- **It is a brief.** None of the site exists yet; the template does, in three repositories that ran this week.
+- **It is a brief.** The site exists, with its vaults, but what this brief describes is still to build; the template ran this week in three repositories.
 - **The company map will be public material only,** and its judgements ours.
 - **The schedule is a plan,** written eleven days before the summit.
 

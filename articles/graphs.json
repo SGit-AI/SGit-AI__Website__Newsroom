@@ -55,6 +55,554 @@
   ],
   "articles": [
     {
+      "slug": "web-summit-humans-and-their-agents",
+      "title": "The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour",
+      "date": "2026-10-31",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html",
+      "markdown": "https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/web-summit-humans-and-their-agents.webp",
+      "teaser": "The Web Summit team, part two: seven people each with an agent, personal CRMs kept in sync, and every memo turned into a follow-up within the hour.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "web-summit",
+        "agent-teams",
+        "briefs",
+        "events",
+        "crm",
+        "design",
+        "collaboration",
+        "article"
+      ],
+      "links_out": [
+        "web-summit-team-brief",
+        "the-inbox-team-as-a-recipe",
+        "agents-have-an-identity-now",
+        "web-summit-2026-the-plan"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "hx-team.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hx-team.webp",
+          "caption": "Seven people, each with their own agent, and the team's agents between them, on one event site.",
+          "kind": "architecture"
+        },
+        {
+          "file": "hx-hour.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hx-hour.webp",
+          "caption": "Within the hour: a memo or a scanned card becomes a record, a page and a drafted follow-up that a person sends.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "web-summit-humans-and-their-agents",
+        "teaser": "The Web Summit team, part two: seven people each with an agent, personal CRMs kept in sync, and every memo turned into a follow-up within the hour.",
+        "topics": [
+          "startups-and-strategy",
+          "agents-and-policy"
+        ],
+        "core_idea": "The Web Summit team is the first we run with many humans, each bringing their own agent, so it is agents collaborating through their humans; that needs written roles and owners, a personal CRM in each person's vault synchronised into a team view by shared ids, a rule that anything recorded becomes a record, a page and a drafted follow-up within the hour while a person sends every email, a way of briefing scarce experts like a designer in their own medium, and a plan worked backwards from the summit's printing deadlines.",
+        "nodes": [
+          {
+            "id": "humans",
+            "label": "Many humans, each with an agent",
+            "kind": "concept",
+            "summary": "The first team where the agents collaborate through their humans."
+          },
+          {
+            "id": "roles",
+            "label": "Roles and owners",
+            "kind": "method",
+            "summary": "One owner per company, a published role per person, the conductor routes."
+          },
+          {
+            "id": "crm",
+            "label": "A CRM for each of us",
+            "kind": "artefact",
+            "summary": "Personal CRMs in each vault, shared into a team view by shared ids."
+          },
+          {
+            "id": "hour",
+            "label": "Within the hour",
+            "kind": "method",
+            "summary": "Recorded, picked up, updated, an asset, a drafted follow-up, a person sends."
+          },
+          {
+            "id": "send",
+            "label": "A person sends every email",
+            "kind": "claim",
+            "summary": "Agents draft; nothing goes out on its own."
+          },
+          {
+            "id": "designer",
+            "label": "A designer with little time",
+            "kind": "example",
+            "summary": "Brief in their medium, least context, agents do the rest around them."
+          },
+          {
+            "id": "backwards",
+            "label": "Worked backwards",
+            "kind": "method",
+            "summary": "Order-by dates for printed items, each with a code to a page."
+          },
+          {
+            "id": "phases",
+            "label": "Before, during, after",
+            "kind": "method",
+            "summary": "Algarve meetups, the summit, the follow-up as the product."
+          },
+          {
+            "id": "site",
+            "label": "web-summit.sgit.ai",
+            "kind": "artefact",
+            "summary": "The event site, with six vaults for CRM, mail and issues."
+          }
+        ],
+        "edges": [
+          {
+            "from": "humans",
+            "to": "roles",
+            "rel": "depends-on"
+          },
+          {
+            "from": "roles",
+            "to": "crm",
+            "rel": "produces"
+          },
+          {
+            "from": "crm",
+            "to": "site",
+            "rel": "extends"
+          },
+          {
+            "from": "hour",
+            "to": "crm",
+            "rel": "produces"
+          },
+          {
+            "from": "send",
+            "to": "hour",
+            "rel": "depends-on"
+          },
+          {
+            "from": "designer",
+            "to": "backwards",
+            "rel": "leads-to"
+          },
+          {
+            "from": "backwards",
+            "to": "phases",
+            "rel": "leads-to"
+          },
+          {
+            "from": "hour",
+            "to": "phases",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "web-summit-team-brief",
+            "web-summit-2026-the-plan",
+            "the-inbox-team-as-a-recipe",
+            "agents-have-an-identity-now"
+          ],
+          "pages": [],
+          "sites": [
+            "https://web-summit.sgit.ai/",
+            "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "It is a set of agents collaborating through their humans",
+            "why": "The shape of the team."
+          },
+          {
+            "text": "No email goes out on its own; an email cannot be unsent.",
+            "why": "The line the agents do not cross."
+          },
+          {
+            "text": "The follow-up is the product we are showing.",
+            "why": "Why the hour matters."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-augmented-book",
+      "title": "The augmented book: one source in layers, projected to the web, the iPad and print, so the reader gets the right information at the right time, and what fifty years of attempts teach",
+      "date": "2026-10-31",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-augmented-book.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-augmented-book.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-augmented-book.webp",
+      "teaser": "The augmented book: one source in layers, projected to web, iPad and print, with the right information at the right time, and what precedents teach.",
+      "topics": [
+        "graphs-and-knowledge",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "book",
+        "publishing",
+        "reading",
+        "attention",
+        "provenance",
+        "design",
+        "ipad",
+        "article"
+      ],
+      "links_out": [
+        "the-book-of-the-talk-and-its-companion",
+        "your-reading-your-controls",
+        "an-ipad-to-review-the-book",
+        "books-for-a-new-generation-of-publishing"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "au-layers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/au-layers.webp",
+          "caption": "The augmented book: one source in four layers, and three projections that each show what fits.",
+          "kind": "concept"
+        },
+        {
+          "file": "au-precedents.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/au-precedents.webp",
+          "caption": "Precedents for the augmented book, from stretchtext to iBooks Author: old mechanisms, platforms that ended.",
+          "kind": "timeline"
+        }
+      ],
+      "graph": {
+        "slug": "the-augmented-book",
+        "teaser": "The augmented book: one source in layers, projected to web, iPad and print, with the right information at the right time, and what precedents teach.",
+        "topics": [
+          "graphs-and-knowledge",
+          "site-and-engineering"
+        ],
+        "core_idea": "Provenance at the end of a chapter is the right information at the wrong time; the augmented book is one source in layers, the text, what opens on demand, the provenance and the record, projected differently to the web, the iPad and print with QR codes, under the reader's control; fifty years of precedents show the mechanisms are old and that what fails is single-platform engines and the cost of the layer, and cognitive load research favours notes next to the claim, few, typed and optional.",
+        "nodes": [
+          {
+            "id": "wrong",
+            "label": "The right information at the wrong time",
+            "kind": "claim",
+            "summary": "Where this comes from is too much at the end and too little on paper."
+          },
+          {
+            "id": "layers",
+            "label": "One source, in layers",
+            "kind": "concept",
+            "summary": "Text, on demand, provenance, the record."
+          },
+          {
+            "id": "web",
+            "label": "The web projection",
+            "kind": "artefact",
+            "summary": "Hyperlinked; the reader chooses how much shows."
+          },
+          {
+            "id": "ipad",
+            "label": "The iPad projection",
+            "kind": "artefact",
+            "summary": "Layers on the page, comments where they belong."
+          },
+          {
+            "id": "print",
+            "label": "Print with QR codes",
+            "kind": "method",
+            "summary": "A door next to the claim instead of a list at the end."
+          },
+          {
+            "id": "precedents",
+            "label": "Fifty years of precedents",
+            "kind": "example",
+            "summary": "Stretchtext, Expanded Books, MagicBook, X-Ray, page previews."
+          },
+          {
+            "id": "platform",
+            "label": "The platform is what fails",
+            "kind": "claim",
+            "summary": "Books built into one engine went with it."
+          },
+          {
+            "id": "attention",
+            "label": "Attention is the budget",
+            "kind": "concept",
+            "summary": "Next to the claim, few links, typed, under the reader's control."
+          },
+          {
+            "id": "try",
+            "label": "What we will try",
+            "kind": "method",
+            "summary": "Provenance in place, QR codes, iPad layers, typed links, a measure."
+          }
+        ],
+        "edges": [
+          {
+            "from": "wrong",
+            "to": "layers",
+            "rel": "leads-to"
+          },
+          {
+            "from": "layers",
+            "to": "web",
+            "rel": "produces"
+          },
+          {
+            "from": "layers",
+            "to": "ipad",
+            "rel": "produces"
+          },
+          {
+            "from": "layers",
+            "to": "print",
+            "rel": "produces"
+          },
+          {
+            "from": "precedents",
+            "to": "platform",
+            "rel": "produces"
+          },
+          {
+            "from": "platform",
+            "to": "layers",
+            "rel": "depends-on"
+          },
+          {
+            "from": "attention",
+            "to": "try",
+            "rel": "leads-to"
+          },
+          {
+            "from": "precedents",
+            "to": "attention",
+            "rel": "compared-with"
+          }
+        ],
+        "links": {
+          "articles": [
+            "an-ipad-to-review-the-book",
+            "the-book-of-the-talk-and-its-companion",
+            "books-for-a-new-generation-of-publishing",
+            "your-reading-your-controls"
+          ],
+          "pages": [],
+          "sites": [
+            "https://en.wikipedia.org/wiki/Stretchtext",
+            "https://phabricator.wikimedia.org/T182314"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The evidence for a claim is most useful at the moment the reader doubts the claim, next to it, and nowhere else.",
+            "why": "The problem in one line."
+          },
+          {
+            "text": "Provenance stops being a list at the end and becomes a door next to the claim.",
+            "why": "What print does."
+          },
+          {
+            "text": "the right information at the right time, and nothing else on the page.",
+            "why": "The rule."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "an-ipad-to-review-the-book",
+      "title": "An iPad to review the book: a brief for an app that reads the PDFs, shows the comments on the page, opens its vault with my passkey and carries sgit in Swift",
+      "date": "2026-10-31",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/an-ipad-to-review-the-book.html",
+      "markdown": "https://newsroom.sgit.ai/articles/an-ipad-to-review-the-book.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/an-ipad-to-review-the-book.webp",
+      "teaser": "A brief for an iPad app to review the book: PDFs, comments on the page, append lanes, a vault opened with my passkey, and sgit in Swift.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "ipad",
+        "apps",
+        "book",
+        "review",
+        "sgit",
+        "passkeys",
+        "briefs",
+        "publishing",
+        "article"
+      ],
+      "links_out": [
+        "the-book-of-the-talk-and-its-companion",
+        "agent-workflows-on-ephemeral-vaults",
+        "a-book-for-one-reader",
+        "a-browser-for-one",
+        "a-secret-is-a-qr-code",
+        "sgit-is-a-standard",
+        "paying-after-the-value",
+        "the-user-keeps-the-meter"
+      ],
+      "links_in": [
+        "the-augmented-book"
+      ],
+      "figures": [
+        {
+          "file": "tb-app.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tb-app.webp",
+          "caption": "A sketch of the brief: the library, the page with its comments, and the append lane beside it. Nothing is built yet.",
+          "kind": "concept"
+        },
+        {
+          "file": "tb-vault.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tb-vault.webp",
+          "caption": "The vault opens with the passkey: Face ID, the PRF secret, a key derived on the device, and the vault key unwrapped.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "an-ipad-to-review-the-book",
+        "teaser": "A brief for an iPad app to review the book: PDFs, comments on the page, append lanes, a vault opened with my passkey, and sgit in Swift.",
+        "topics": [
+          "vaults-and-method",
+          "site-and-engineering"
+        ],
+        "core_idea": "The iPad is where I review because it is like a book, but Preview and two separate PDFs make a review hard; an iPad app built to review the book would read the PDFs properly, show comments, cards and votes on the page, exchange JSON tied to the semantic graph through append lanes, keep its library in an sgit vault opened with a passkey's PRF secret, implement sgit natively in Swift as the format's third implementation, and meter use with a balance that can go negative, because the reader pays for use and is not the product; the March desktop app gives the account, signing and pipeline, but this app should be native.",
+        "nodes": [
+          {
+            "id": "ipad",
+            "label": "The iPad as a book",
+            "kind": "concept",
+            "summary": "No distractions; where I review."
+          },
+          {
+            "id": "desk",
+            "label": "A review desk",
+            "kind": "artefact",
+            "summary": "Library, PDF reader, comments on the page, highlights, votes, lanes."
+          },
+          {
+            "id": "json",
+            "label": "JSON tied to the graph",
+            "kind": "method",
+            "summary": "Comments point at the graph's node, not only the page."
+          },
+          {
+            "id": "projection",
+            "label": "The page as a projection",
+            "kind": "concept",
+            "summary": "PDF, website and app are views of one content."
+          },
+          {
+            "id": "vault",
+            "label": "A vault opened with my passkey",
+            "kind": "method",
+            "summary": "Face ID, PRF secret, derived key, vault key unwrapped."
+          },
+          {
+            "id": "swift",
+            "label": "sgit in Swift",
+            "kind": "claim",
+            "summary": "A third implementation makes the format more of a standard."
+          },
+          {
+            "id": "meter",
+            "label": "The meter",
+            "kind": "method",
+            "summary": "Pay per use, a balance that can go negative; the user is not the product."
+          },
+          {
+            "id": "march",
+            "label": "The March desktop app",
+            "kind": "example",
+            "summary": "Tauri, signed and notarised, Android launch, an iOS pipeline."
+          },
+          {
+            "id": "native",
+            "label": "Native this time",
+            "kind": "claim",
+            "summary": "PDFKit, AuthenticationServices and Swift: most of the app is native."
+          }
+        ],
+        "edges": [
+          {
+            "from": "ipad",
+            "to": "desk",
+            "rel": "leads-to"
+          },
+          {
+            "from": "desk",
+            "to": "json",
+            "rel": "depends-on"
+          },
+          {
+            "from": "desk",
+            "to": "projection",
+            "rel": "leads-to"
+          },
+          {
+            "from": "vault",
+            "to": "desk",
+            "rel": "extends"
+          },
+          {
+            "from": "swift",
+            "to": "vault",
+            "rel": "produces"
+          },
+          {
+            "from": "meter",
+            "to": "desk",
+            "rel": "extends"
+          },
+          {
+            "from": "march",
+            "to": "native",
+            "rel": "contrasts"
+          },
+          {
+            "from": "native",
+            "to": "swift",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-browser-for-one",
+            "the-book-of-the-talk-and-its-companion",
+            "sgit-is-a-standard",
+            "the-user-keeps-the-meter",
+            "paying-after-the-value",
+            "a-book-for-one-reader",
+            "a-secret-is-a-qr-code",
+            "agent-workflows-on-ephemeral-vaults"
+          ],
+          "pages": [],
+          "sites": [
+            "https://github.com/the-cyber-boardroom/SGraph-AI__Desktop",
+            "https://developer.apple.com/documentation/authenticationservices/asauthorizationpublickeycredentialprfassertioninput-swift.struct"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The reader is the customer, not the product.",
+            "why": "The idea the meter rests on."
+          },
+          {
+            "text": "A format with three implementations, in three languages, written by different teams, is far more of a standard than one with two.",
+            "why": "Why Swift."
+          },
+          {
+            "text": "once we control the medium the review does not have to be a second PDF",
+            "why": "The shift."
+          }
+        ]
+      }
+    },
+    {
       "slug": "becoming-an-official-publication",
       "title": "Becoming an official publication: the SGit Newsroom now has a publisher, an editor, standards, a corrections log, a withdrawal process and a complaints route, and is applying to a regulator",
       "date": "2026-10-30",
@@ -461,6 +1009,7 @@
         "agents-have-an-identity-now"
       ],
       "links_in": [
+        "web-summit-humans-and-their-agents",
         "signed-email-from-the-agent"
       ],
       "figures": [
@@ -1244,7 +1793,9 @@
         "the-book-of-the-talk-and-its-companion",
         "the-ultimate-insider-case-study"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-augmented-book"
+      ],
       "figures": [
         {
           "file": "nb-filmstrip.webp",
@@ -1443,6 +1994,8 @@
         "reading-with-a-pen"
       ],
       "links_in": [
+        "the-augmented-book",
+        "an-ipad-to-review-the-book",
         "web-summit-team-brief",
         "books-for-a-new-generation-of-publishing"
       ],
@@ -2103,6 +2656,7 @@
         "the-vendors-layer"
       ],
       "links_in": [
+        "web-summit-humans-and-their-agents",
         "signed-email-from-the-agent",
         "web-summit-team-brief",
         "seven-iam-predictions-already-here",
@@ -4759,6 +5313,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "web-summit-humans-and-their-agents",
         "signed-email-from-the-agent",
         "web-summit-team-brief",
         "where-to-invest-in-sgit"
@@ -7834,6 +8389,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "web-summit-humans-and-their-agents",
         "web-summit-team-brief"
       ],
       "figures": [
@@ -17201,6 +17757,7 @@
         "sixteen-notes-i-did-not-want-to-lose"
       ],
       "links_in": [
+        "an-ipad-to-review-the-book",
         "signed-email-from-the-agent",
         "seven-iam-predictions-already-here",
         "a-pen-and-a-key",
@@ -19589,6 +20146,7 @@
         "free-to-copy-paid-at-the-source"
       ],
       "links_in": [
+        "an-ipad-to-review-the-book",
         "the-reading-account-as-built",
         "the-attack-surface-you-do-not-have",
         "messaging-fs",
@@ -25783,6 +26341,7 @@
         "generation-z-developers-again"
       ],
       "links_in": [
+        "an-ipad-to-review-the-book",
         "v0-12-in-numbers",
         "discovering-the-book",
         "a-website-to-finish-the-book"
@@ -27769,7 +28328,9 @@
         "a-minimal-viable-browser",
         "explorer-coding"
       ],
-      "links_in": [],
+      "links_in": [
+        "an-ipad-to-review-the-book"
+      ],
       "figures": [
         {
           "file": "bo-app.webp",
@@ -31155,6 +31716,7 @@
         "a-meter-in-the-browser"
       ],
       "links_in": [
+        "the-augmented-book",
         "a-newsroom-for-one",
         "v0-12-in-numbers",
         "a-browser-for-one",
@@ -35247,6 +35809,7 @@
         "the-value-of-constraints"
       ],
       "links_in": [
+        "an-ipad-to-review-the-book",
         "three-linkedin-pages",
         "when-is-the-vault-actually-used",
         "research-delivered-as-a-vault",
@@ -42047,6 +42610,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "an-ipad-to-review-the-book",
         "the-reading-account-as-built",
         "the-user-keeps-the-meter",
         "free-to-copy-paid-at-the-source",
@@ -43276,6 +43840,7 @@
         "sgit-actions-side-by-side"
       ],
       "links_in": [
+        "an-ipad-to-review-the-book",
         "messaging-fs",
         "aws-from-the-vault",
         "the-editors-channel",

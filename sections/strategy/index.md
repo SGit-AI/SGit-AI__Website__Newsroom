@@ -2,11 +2,12 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-66 articles, newest first.
+67 articles, newest first.
 
 ## October 2026
 
-- [A brief for the Web Summit team: an event site run by an ephemeral agent team, built from this week's template, with a map of every company we should meet](../../articles/web-summit-team-brief.md), 2026-10-30, 7 min.
+- [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](../../articles/web-summit-humans-and-their-agents.md), 2026-10-31, 7 min.
+- [A brief for the Web Summit team: an event site run by an ephemeral agent team, built from this week's template, with a map of every company we should meet](../../articles/web-summit-team-brief.md), 2026-10-30, 8 min.
 - [Selling less code: the economics of customised open source, where the customer pays for the features they use, the maker certifies what it ships, and the pipeline is finally tied to revenue](../../articles/selling-less-code.md), 2026-10-30, 8 min.
 - [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](../../articles/investor-sgit-ai.md), 2026-10-29, 8 min.
 - [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](../../articles/where-to-invest-in-sgit.md), 2026-10-28, 9 min.

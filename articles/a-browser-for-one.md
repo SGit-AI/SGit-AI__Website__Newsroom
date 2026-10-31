@@ -112,6 +112,10 @@ Site & engineeringStartups & strategy[This article as a graph →](graphs.md#a-b
 - [A minimal viable browser: why Firefox is the one that can build it, and what it would take](a-minimal-viable-browser.md) A small kernel and components loaded when needed: a browser for one app, one agent or a reader. Mozilla can build it, and should sell it as speed.
 - [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](explorer-coding.md) Call it explorer coding, not vibe coding: the best thing since the spreadsheet, the best brief there is, and not ready to be in line until villagers take it.
 
+### Continued by
+
+- [An iPad to review the book: a brief for an app that reads the PDFs, shows the comments on the page, opens its vault with my passkey and carries sgit in Swift](an-ipad-to-review-the-book.md) A brief for an iPad app to review the book: PDFs, comments on the page, append lanes, a vault opened with my passkey, and sgit in Swift.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 190 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=190)

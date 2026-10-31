@@ -1,0 +1,152 @@
+{
+  "slug": "an-ipad-to-review-the-book",
+  "teaser": "A brief for an iPad app to review the book: PDFs, comments on the page, append lanes, a vault opened with my passkey, and sgit in Swift.",
+  "topics": [
+    "vaults-and-method",
+    "site-and-engineering"
+  ],
+  "core_idea": "The iPad is where I review because it is like a book, but Preview and two separate PDFs make a review hard; an iPad app built to review the book would read the PDFs properly, show comments, cards and votes on the page, exchange JSON tied to the semantic graph through append lanes, keep its library in an sgit vault opened with a passkey's PRF secret, implement sgit natively in Swift as the format's third implementation, and meter use with a balance that can go negative, because the reader pays for use and is not the product; the March desktop app gives the account, signing and pipeline, but this app should be native.",
+  "nodes": [
+    {
+      "id": "ipad",
+      "label": "The iPad as a book",
+      "kind": "concept",
+      "summary": "No distractions; where I review."
+    },
+    {
+      "id": "desk",
+      "label": "A review desk",
+      "kind": "artefact",
+      "summary": "Library, PDF reader, comments on the page, highlights, votes, lanes."
+    },
+    {
+      "id": "json",
+      "label": "JSON tied to the graph",
+      "kind": "method",
+      "summary": "Comments point at the graph's node, not only the page."
+    },
+    {
+      "id": "projection",
+      "label": "The page as a projection",
+      "kind": "concept",
+      "summary": "PDF, website and app are views of one content."
+    },
+    {
+      "id": "vault",
+      "label": "A vault opened with my passkey",
+      "kind": "method",
+      "summary": "Face ID, PRF secret, derived key, vault key unwrapped."
+    },
+    {
+      "id": "swift",
+      "label": "sgit in Swift",
+      "kind": "claim",
+      "summary": "A third implementation makes the format more of a standard."
+    },
+    {
+      "id": "meter",
+      "label": "The meter",
+      "kind": "method",
+      "summary": "Pay per use, a balance that can go negative; the user is not the product."
+    },
+    {
+      "id": "march",
+      "label": "The March desktop app",
+      "kind": "example",
+      "summary": "Tauri, signed and notarised, Android launch, an iOS pipeline."
+    },
+    {
+      "id": "native",
+      "label": "Native this time",
+      "kind": "claim",
+      "summary": "PDFKit, AuthenticationServices and Swift: most of the app is native."
+    }
+  ],
+  "edges": [
+    {
+      "from": "ipad",
+      "to": "desk",
+      "rel": "leads-to"
+    },
+    {
+      "from": "desk",
+      "to": "json",
+      "rel": "depends-on"
+    },
+    {
+      "from": "desk",
+      "to": "projection",
+      "rel": "leads-to"
+    },
+    {
+      "from": "vault",
+      "to": "desk",
+      "rel": "extends"
+    },
+    {
+      "from": "swift",
+      "to": "vault",
+      "rel": "produces"
+    },
+    {
+      "from": "meter",
+      "to": "desk",
+      "rel": "extends"
+    },
+    {
+      "from": "march",
+      "to": "native",
+      "rel": "contrasts"
+    },
+    {
+      "from": "native",
+      "to": "swift",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-browser-for-one",
+      "the-book-of-the-talk-and-its-companion",
+      "sgit-is-a-standard",
+      "the-user-keeps-the-meter",
+      "paying-after-the-value",
+      "a-book-for-one-reader",
+      "a-secret-is-a-qr-code",
+      "agent-workflows-on-ephemeral-vaults"
+    ],
+    "pages": [],
+    "sites": [
+      "https://github.com/the-cyber-boardroom/SGraph-AI__Desktop",
+      "https://developer.apple.com/documentation/authenticationservices/asauthorizationpublickeycredentialprfassertioninput-swift.struct"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The reader is the customer, not the product.",
+      "why": "The idea the meter rests on."
+    },
+    {
+      "text": "A format with three implementations, in three languages, written by different teams, is far more of a standard than one with two.",
+      "why": "Why Swift."
+    },
+    {
+      "text": "once we control the medium the review does not have to be a second PDF",
+      "why": "The shift."
+    }
+  ],
+  "figures": [
+    {
+      "file": "tb-app.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tb-app.webp",
+      "caption": "A sketch of the brief: the library, the page with its comments, and the append lane beside it. Nothing is built yet.",
+      "kind": "concept"
+    },
+    {
+      "file": "tb-vault.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tb-vault.webp",
+      "caption": "The vault opens with the passkey: Face ID, the PRF secret, a key derived on the device, and the vault key unwrapped.",
+      "kind": "process"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+ "slug": "the-augmented-book",
+ "teaser": "The augmented book: one source in layers, projected to web, iPad and print, with the right information at the right time, and what precedents teach.",
+ "topics": ["graphs-and-knowledge", "site-and-engineering"],
+ "core_idea": "Provenance at the end of a chapter is the right information at the wrong time; the augmented book is one source in layers, the text, what opens on demand, the provenance and the record, projected differently to the web, the iPad and print with QR codes, under the reader's control; fifty years of precedents show the mechanisms are old and that what fails is single-platform engines and the cost of the layer, and cognitive load research favours notes next to the claim, few, typed and optional.",
+ "nodes": [
+  {"id": "wrong", "label": "The right information at the wrong time", "kind": "claim", "summary": "Where this comes from is too much at the end and too little on paper."},
+  {"id": "layers", "label": "One source, in layers", "kind": "concept", "summary": "Text, on demand, provenance, the record."},
+  {"id": "web", "label": "The web projection", "kind": "artefact", "summary": "Hyperlinked; the reader chooses how much shows."},
+  {"id": "ipad", "label": "The iPad projection", "kind": "artefact", "summary": "Layers on the page, comments where they belong."},
+  {"id": "print", "label": "Print with QR codes", "kind": "method", "summary": "A door next to the claim instead of a list at the end."},
+  {"id": "precedents", "label": "Fifty years of precedents", "kind": "example", "summary": "Stretchtext, Expanded Books, MagicBook, X-Ray, page previews."},
+  {"id": "platform", "label": "The platform is what fails", "kind": "claim", "summary": "Books built into one engine went with it."},
+  {"id": "attention", "label": "Attention is the budget", "kind": "concept", "summary": "Next to the claim, few links, typed, under the reader's control."},
+  {"id": "try", "label": "What we will try", "kind": "method", "summary": "Provenance in place, QR codes, iPad layers, typed links, a measure."}
+ ],
+ "edges": [
+  {"from": "wrong", "to": "layers", "rel": "leads-to"},
+  {"from": "layers", "to": "web", "rel": "produces"},
+  {"from": "layers", "to": "ipad", "rel": "produces"},
+  {"from": "layers", "to": "print", "rel": "produces"},
+  {"from": "precedents", "to": "platform", "rel": "produces"},
+  {"from": "platform", "to": "layers", "rel": "depends-on"},
+  {"from": "attention", "to": "try", "rel": "leads-to"},
+  {"from": "precedents", "to": "attention", "rel": "compared-with"}
+ ],
+ "links": {
+  "articles": ["an-ipad-to-review-the-book", "the-book-of-the-talk-and-its-companion", "books-for-a-new-generation-of-publishing", "your-reading-your-controls"],
+  "pages": [],
+  "sites": ["https://en.wikipedia.org/wiki/Stretchtext", "https://phabricator.wikimedia.org/T182314"]
+ },
+ "quotes": [
+  {"text": "The evidence for a claim is most useful at the moment the reader doubts the claim, next to it, and nowhere else.", "why": "The problem in one line."},
+  {"text": "Provenance stops being a list at the end and becomes a door next to the claim.", "why": "What print does."},
+  {"text": "the right information at the right time, and nothing else on the page.", "why": "The rule."}
+ ]
+}
