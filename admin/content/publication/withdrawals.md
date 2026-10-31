@@ -11,7 +11,8 @@ Withdrawing an article is the exception. A correction comes first wherever a cor
 
 - it is wrong in a way a correction cannot fix;
 - it could cause harm, or there is a legal reason;
-- the editor decides the story must be handled differently, for example through the right of reply, before it is published again.
+- it repeats an allegation about a person or an organisation, which our [standards](standards.html) rule out;
+- the editor decides the story must be handled differently.
 
 ## The process
 
@@ -28,4 +29,4 @@ Withdrawing an article is the exception. A correction comes first wherever a cor
 
 - **Published:** 30 October 2026, v0.14.4. **Corrected:** 30 October 2026, v0.14.9 (see [corrections](corrections.html)). **Withdrawn:** 30 October 2026, v0.14.10.
 - **What it was:** an analysis of WIRED's report of 29 October 2026 about a defence contractor's AI coding agent on a Department of Defense system, and how behaviour policies and a key for every agent session could have prevented or detected it.
-- **Why it was withdrawn:** it was written from secondary reports of an article we could not read ourselves, and one of them misattributed a quote, which we copied and then corrected. The editor withdrew it so that the story is handled through a formal process: a map of every claim and its source, and questions put to the parties on the record before anything is published again.
+- **Why it was withdrawn:** it was written from secondary reports of an article we could not read ourselves, and one of them misattributed a quote, which we copied and then corrected. More fundamentally, it repeated allegations made by WIRED's unnamed sources about named organisations. The editor withdrew it, and the standards now say we neither make allegations nor repeat them.

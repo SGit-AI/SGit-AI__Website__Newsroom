@@ -1,9 +1,9 @@
 ---
 slug: standards
 title: Editorial standards: how the SGit Newsroom reports, sources, corrects and answers for what it publishes
-description: The rules every article here follows: accuracy and sources, quotes, what we read and what we only read about, the right of reply, people and privacy, interests, how agents write, corrections, withdrawals and complaints.
+description: The rules every article here follows: accuracy and sources, quotes, what we read and what we only read about, opinion and not allegations, people and privacy, interests, how agents write, corrections, withdrawals and complaints.
 eyebrow: The publication · standards
-agent: The editorial standards of newsroom.sgit.ai: primary sources dated; quotes verbatim; secondary reading labelled; right of reply before publishing an allegation; private people not named; interests disclosed; agents write under the editor's direction; corrections, withdrawals and complaints published.
+agent: The editorial standards of newsroom.sgit.ai: primary sources dated; quotes verbatim; secondary reading labelled; no allegations, made or repeated, only analysis and the editor's opinion with its basis; private people not named; interests disclosed; agents write under the editor's direction; corrections, withdrawals and complaints published.
 ---
 ## Accuracy and sources
 
@@ -21,11 +21,12 @@ agent: The editorial standards of newsroom.sgit.ai: primary sources dated; quote
 - When we cannot read a source ourselves, because it is paywalled or refuses our tools, we may report it through what others say about it. We say so in the article, name every outlet we relied on, and mark where they disagree.
 - A claim we have only read about is never presented as one we checked.
 
-## The right of reply
+## Opinion, not allegations
 
-- Before we publish an allegation about a person or an organisation, we put it to them, with the evidence, and give them a fair time to answer, normally two working days.
-- Their answer, or the fact that they did not answer, is published with the allegation.
-- Every request for comment and every answer is logged.
+- **We do not make allegations.** We do not accuse any person or organisation of wrongdoing.
+- **We publish analysis and opinion:** the editor's, said in the first person, with the facts it rests on cited, so a reader can see the basis and disagree.
+- **We do not repeat other people's allegations either.** In UK law, repeating an allegation is publishing it. Where a story turns on one, we do not publish it; we may report what is on the public record, such as an official statement or a court record, with the response of the party it concerns.
+- **When we criticise a named person or organisation,** we let them know and publish their response if they send one.
 
 ## People and privacy
 

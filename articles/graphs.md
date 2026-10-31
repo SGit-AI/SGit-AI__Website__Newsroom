@@ -26,7 +26,7 @@ The graphs are data first and pictures second. Take them as JSON: [all articles 
 
 2026-10-30 · News & evidenceSite & engineering
 
-In the UK no licence makes a journalist; a publication becomes accountable by saying who publishes it and who answers for it, publishing and keeping standards, correcting in the open, withdrawing only with a notice, taking complaints, and submitting to an independent regulator. The SGit Newsroom now has the imprint, standards, corrections log, withdrawal process and complaints route, says plainly that agents write under the editor's responsibility, and is applying to IMPRESS and for an ISSN.
+In the UK no licence makes a journalist; a publication becomes accountable by saying who publishes it and who answers for it, publishing and keeping standards (here: no allegations, made or repeated), correcting in the open, withdrawing only with a notice, taking complaints, and submitting to an independent regulator. The SGit Newsroom now has the imprint, standards, corrections log, withdrawal process and complaints route, says plainly that agents write under the editor's responsibility, and is applying to IMPRESS and for an ISSN.
 
 *[diagram]*
 **concept**claim**method**artefact**example**question
@@ -36,7 +36,7 @@ In the UK no licence makes a journalist; a publication becomes accountable by sa
 - **Why now** (example) A story read through secondary reports, a quote misattributed, corrected, then withdrawn.
 - **What makes a publication official** (concept) No licence; an imprint, standards, corrections, withdrawals, complaints and a regulator.
 - **Five pages today** (artefact) Imprint, standards, corrections, withdrawals, complaints.
-- **The right of reply** (method) An allegation is put to the party before it is published.
+- **Opinion, not allegations** (method) We neither make nor repeat allegations; we publish analysis and opinion with its basis.
 - **Agents write, the editor answers** (claim) The imprint says agents write the articles and the editor answers for them.
 - **The first withdrawal** (example) Its notice, its kept number and its record.
 - **IMPRESS** (method) The recognised regulator, from about £50 a year for small publishers.

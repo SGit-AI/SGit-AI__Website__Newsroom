@@ -3,7 +3,7 @@ title: Becoming an official publication: the SGit Newsroom now has a publisher, 
 date: 2026-10-30
 author: Dinis Cruz
 author_url: about/index.html
-summary: The SGit Newsroom has been publishing for weeks, and it names companies, reports incidents and argues positions, written by agents from my voice memos. Today a story showed me that this needs more than good habits. We wrote about a contractor's agent on a Pentagon network from secondary reports of an article we could not read, copied a quote that one outlet had given to the wrong party, corrected it, and then I withdrew the article, because the story needs a proper process: every claim mapped to its source, and the parties asked on the record before we publish. So the newsroom is becoming an official publication. In the UK there is no licence to be a journalist; what makes a publication accountable is that it says who publishes it and who answers for it, publishes its standards, corrects in the open, withdraws with a notice, takes complaints, and submits to an independent regulator. As of this release the newsroom has an imprint, naming The Cyber Boardroom Limited as publisher and me as editor, and saying plainly that agents write the articles; editorial standards that include the right of reply; a corrections log; a formal withdrawal process with its first notice; and a complaints route with a 21-day answer. Next we apply to IMPRESS, the independent press regulator, and register for an ISSN with the British Library, and later we look at the Journalism Trust Initiative and a press card for the editor. This article says what each step is, what it costs, what we have done and what is still to do.
+summary: The SGit Newsroom has been publishing for weeks, and it names companies, reports incidents and argues positions, written by agents from my voice memos. Today a story showed me that this needs more than good habits. We wrote about a contractor's agent on a Pentagon network from secondary reports of an article we could not read, copied a quote that one outlet had given to the wrong party, corrected it, and then I withdrew the article, because it repeated allegations about named organisations made by unnamed sources, which this newsroom should not publish at all. So the newsroom is becoming an official publication. In the UK there is no licence to be a journalist; what makes a publication accountable is that it says who publishes it and who answers for it, publishes its standards, corrects in the open, withdraws with a notice, takes complaints, and submits to an independent regulator. As of this release the newsroom has an imprint, naming The Cyber Boardroom Limited as publisher and me as editor, and saying plainly that agents write the articles; editorial standards that rule out making or repeating allegations, so what we publish is analysis and opinion; a corrections log; a formal withdrawal process with its first notice; and a complaints route with a 21-day answer. Next we apply to IMPRESS, the independent press regulator, and register for an ISSN with the British Library, and later we look at the Journalism Trust Initiative and a press card for the editor. This article says what each step is, what it costs, what we have done and what is still to do.
 version: v0.14.11
 license: https://creativecommons.org/licenses/by/4.0/
 tags: newsroom, publishing, journalism, standards, regulation, corrections, ai-disclosure, article
@@ -18,7 +18,7 @@ status: published
 - **There is no licence to be a journalist in the UK.** What makes a publication accountable is what it publishes about itself and who it answers to.
 - **Today we added the pages:** an imprint, editorial standards, a corrections log, a withdrawal process and a complaints route.
 - **The publisher is The Cyber Boardroom Limited, and I am the editor.** The imprint also says plainly that agents write the articles.
-- **The right of reply is now a rule:** an allegation is put to the party before it is published.
+- **We do not make allegations, or repeat them.** We publish analysis and my opinion, with the facts it rests on.
 - **The first withdrawal has its notice,** and the article it concerns explains why this happened today.
 - **Next: IMPRESS and an ISSN,** then the Journalism Trust Initiative and a press card for the editor.
 
@@ -26,14 +26,14 @@ status: published
 
 This newsroom has been publishing for weeks, written by agents from my voice memos and briefs, under rules that are published and checked by the build. It names companies, reports incidents and takes positions. Today a story showed me that good habits are not the same as being accountable.
 
-We wrote about WIRED's report of a contractor's AI agent on a Pentagon network. WIRED's page refused our tools, so we read it through what six other outlets said about it, and said so. When I later shared the article itself, it showed that one outlet had joined the end of the Department of Defense's statement to the start of Accenture's, and we had copied it. We corrected it within the hour. Then I withdrew the article, because a story with allegations about named organisations needs a proper process before it is published: every claim mapped to its source, and the parties asked on the record. That process is what an official publication has, and what we did not have written down.
+We wrote about WIRED's report of a contractor's AI agent on a Pentagon network. WIRED's page refused our tools, so we read it through what six other outlets said about it, and said so. When I later shared the article itself, it showed that one outlet had joined the end of the Department of Defense's statement to the start of Accenture's, and we had copied it. We corrected it within the hour. Then I withdrew the article, because it repeated allegations about named organisations made by unnamed sources, and that is not something this newsroom should publish at all. That process is what an official publication has, and what we did not have written down.
 
 ## What makes a publication official {#official}
 
 In the UK there is no licence to practise journalism, and no register of journalists. What makes a publication accountable is a set of things it does in public:
 
 - **It says who it is.** A publisher, an editor who answers for what is published, how to reach them, and who owns and funds it.
-- **It publishes its standards,** and keeps them: accuracy, sourcing, quotes, privacy, the right of reply.
+- **It publishes its standards,** and keeps them: accuracy, sourcing, quotes, privacy, how it handles claims about others.
 - **It corrects in the open,** and logs what it corrected.
 - **It withdraws only through a process,** and leaves a notice.
 - **It takes complaints,** answers them in a set time, and lets a complainant go further.
@@ -51,7 +51,7 @@ The newsroom now has five pages that it did not have this morning, linked from e
 - **[Withdrawals](https://newsroom.sgit.ai/about/withdrawals.html):** when an article is withdrawn, the six steps, and the notices.
 - **[Complaints](https://newsroom.sgit.ai/about/complaints.html):** how to complain, an acknowledgement in two working days, a full answer in 21 days, and where to go next.
 
-Most of these write down what the newsroom already did: every source dated, quotes verbatim, every version public, reviews [on the record](/articles/reviews-on-the-record.html). Two things are new rules. The right of reply: before we publish an allegation about a person or an organisation, we put it to them, with the evidence, and publish their answer or that they did not answer. And withdrawal: only the editor withdraws an article, and every withdrawal gets a notice.
+Most of these write down what the newsroom already did: every source dated, quotes verbatim, every version public, reviews [on the record](/articles/reviews-on-the-record.html). Two things are new rules. First, opinion and not allegations: we do not accuse any person or organisation of wrongdoing, and we do not repeat other people's allegations either, because in UK law repeating an allegation is publishing it. What we publish is analysis and my opinion, said in the first person, with the facts it rests on, so a reader can see the basis and disagree; and when we criticise a named person or organisation, we let them know and publish their response. Second, withdrawal: only the editor withdraws an article, and every withdrawal gets a notice.
 
 ## Agents write here, and the imprint says so {#agents}
 
