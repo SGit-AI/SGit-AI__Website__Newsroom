@@ -125,6 +125,10 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#web-su
 - [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](agents-have-an-identity-now.md) A key pair made in every agent session, published with its role in a repository, so any agent can seal a secret to it; what the clouds could add.
 - [Web Summit 2026, the plan: a briefing for the team on usage first and the sale after, intelligence from public material, an asset, a page and a link for every person we want to reach, a newsroom of our own for the summit, and the two agentic workflows the team will learn on](web-summit-2026-the-plan.md) Web Summit 2026, the plan: usage first, an asset, a page and a link for every person, a summit newsroom, and two agentic workflows.
 
+### Continued by
+
+- [Vibathon Algarve 2026: a sold-out day of building with AI at the University of the Algarve, and Algarve Evolution, the movement that wants the region to be an innovation hub](vibathon-algarve-2026.md) Vibathon Algarve 2026: a sold-out day of building with AI in Faro, and Algarve Evolution, the movement making the region an innovation hub.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 337 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=337)

@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-67 articles, newest first.
+68 articles, newest first.
 
 ## October 2026
 
+- [Vibathon Algarve 2026: a sold-out day of building with AI at the University of the Algarve, and Algarve Evolution, the movement that wants the region to be an innovation hub](../../articles/vibathon-algarve-2026.md), 2026-10-31, 6 min.
 - [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](../../articles/web-summit-humans-and-their-agents.md), 2026-10-31, 7 min.
 - [A brief for the Web Summit team: an event site run by an ephemeral agent team, built from this week's template, with a map of every company we should meet](../../articles/web-summit-team-brief.md), 2026-10-30, 8 min.
 - [Selling less code: the economics of customised open source, where the customer pays for the features they use, the maker certifies what it ships, and the pipeline is finally tied to revenue](../../articles/selling-less-code.md), 2026-10-30, 8 min.
