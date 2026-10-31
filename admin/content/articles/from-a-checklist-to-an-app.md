@@ -4,7 +4,7 @@ date: 2026-10-31
 author: Dinis Cruz
 author_url: about/index.html
 summary: At the Vibathon in Faro today, two participants showed me their system for closing up a second home before travelling back to another country: a document with a list of actions, the important ones in bold. This article is the advice I gave them, written so that next time someone shows me a list like that, I can send the link. The first point is that a list like that is already an information system. It holds years of experience, of getting it right, getting it wrong and forgetting things, and the bold is already its priority system. What it lacks is everything around it. It has no history, so nothing is learned from each time it is used; it relies on memory and on its owners to maintain it; and its interface is a flat list, when what you want is an app that shows the first three things, then, once they are done, the next five. The tree is already in its owners' heads. So the advice is not to design the final app. It is to build the smallest useful version in half an hour, with Lovable or any model, deploy it, use it on the next run, keep a small file of what happened each time, and calibrate: these five matter more, if this then that, a step to add. The flat list becomes a tree because using it shows you where the branches are. Start with no database, the browser's own storage or a shared account, and keep anything confidential out, no address, no PIN codes, so that the internet can be the way you share it. The loop is the product.
-version: v999.0.0
+version: v0.14.20
 license: https://creativecommons.org/licenses/by/4.0/
 tags: workflow, lovable, mvp, productivity, agents, advice, article
 status: published
