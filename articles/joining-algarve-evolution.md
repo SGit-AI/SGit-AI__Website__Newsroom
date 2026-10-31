@@ -104,6 +104,11 @@ Startups & strategyVaults & method[This article as a graph →](graphs.md#joinin
 - [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](websites-you-own.md) Websites you own: a reply to an infographic that rents AI-built websites by the month, and the one-off model I propose.
 - [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](web-summit-humans-and-their-agents.md) The Web Summit team, part two: seven people each with an agent, personal CRMs kept in sync, and every memo turned into a follow-up within the hour.
 
+### Continued by
+
+- [Sell to the companies that already have the problem: how Algarve Evolution can match businesses adopting AI with the region's service providers, starting when the business has built its own first app](sell-to-the-companies-that-already-have-the-problem.md) Sell to the companies that already have the problem: matching Algarve businesses that built their own AI apps with the region's providers.
+- [An Algarve talent map: how Algarve Evolution can turn its mapping of services, mentors and investors into a public matchmaking site, built by one Claude session, with consent first](an-algarve-talent-map.md) An Algarve talent map: Algarve Evolution's mapping of services, mentors and investors as a public matchmaking site, consent first.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 344 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=344)

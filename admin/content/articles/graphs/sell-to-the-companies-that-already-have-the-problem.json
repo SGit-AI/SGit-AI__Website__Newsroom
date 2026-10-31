@@ -1,0 +1,33 @@
+{
+ "slug": "sell-to-the-companies-that-already-have-the-problem",
+ "teaser": "Sell to the companies that already have the problem: matching Algarve businesses that built their own AI apps with the region's providers.",
+ "topics": ["startups-and-strategy"],
+ "core_idea": "To match companies adopting AI with service providers, start from the business problem and start when the company has built its own first app: encourage companies to turn spreadsheets into mini apps with a model they own; the apps will break, a crash course in non-functional requirements that primes them; at the handover moment, when the builder has a day job and others need the app, villager companies productise what was built, robust and secure with the model still the editor, selling to people who already have the problem.",
+ "nodes": [
+  {"id": "problem", "label": "Start with the business problem", "kind": "claim", "summary": "Not technology looking for a process."},
+  {"id": "brief", "label": "The brief is now an app", "kind": "concept", "summary": "A spreadsheet becomes an application: explorer coding."},
+  {"id": "mess", "label": "Encourage the mess", "kind": "method", "summary": "Events and teaching: build your own mini app, with a model you own."},
+  {"id": "crash", "label": "A crash course", "kind": "concept", "summary": "Breakage teaches backups, change control and security."},
+  {"id": "handover", "label": "The handover moment", "kind": "concept", "summary": "The builder has a day job; now 5, 10 or 50 people need it."},
+  {"id": "villagers", "label": "Villager companies", "kind": "method", "summary": "Productise what the company built; the model stays the editor."},
+  {"id": "primed", "label": "Primed buyers", "kind": "claim", "summary": "Sell to the people who already have the problem."}
+ ],
+ "edges": [
+  {"from": "problem", "to": "brief", "rel": "leads-to"},
+  {"from": "brief", "to": "mess", "rel": "produces"},
+  {"from": "mess", "to": "crash", "rel": "leads-to"},
+  {"from": "crash", "to": "handover", "rel": "leads-to"},
+  {"from": "handover", "to": "villagers", "rel": "depends-on"},
+  {"from": "primed", "to": "villagers", "rel": "answers"}
+ ],
+ "links": {
+  "articles": ["villager-services-for-explorer-coders", "explorer-coding", "from-a-checklist-to-an-app", "an-algarve-talent-map", "joining-algarve-evolution", "software-vendors-as-villagers"],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "the app is the specification", "why": "Why the brief is finished."},
+  {"text": "It is a crash course in non-functional requirements.", "why": "What the breakage teaches."},
+  {"text": "It is selling to the people who already have the problem", "why": "The market."}
+ ]
+}

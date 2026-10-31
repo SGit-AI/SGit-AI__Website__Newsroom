@@ -1,0 +1,33 @@
+{
+ "slug": "an-algarve-talent-map",
+ "teaser": "An Algarve talent map: Algarve Evolution's mapping of services, mentors and investors as a public matchmaking site, consent first.",
+ "topics": ["startups-and-strategy", "vaults-and-method"],
+ "core_idea": "Algarve Evolution has already mapped the region's people who provide services, mentor or invest; the missing piece is a public matchmaking site it can run with its credibility, built from four parts, the spreadsheet, a dedicated mailbox, a Claude session and GitHub Pages, with no server or database; consent comes first, each person approving their own listing before publication; listing is free and visitors pay per contact after the value; a prototype with invented people shows it.",
+ "nodes": [
+  {"id": "map", "label": "The mapping is done", "kind": "example", "summary": "Services, talent, mentors, investors, collected by Algarve Evolution."},
+  {"id": "luck", "label": "Matchmaking is luck", "kind": "claim", "summary": "Founders, investors and mentors need one place in the middle."},
+  {"id": "arch", "label": "Four parts", "kind": "artefact", "summary": "Spreadsheet, mailbox, Claude session, GitHub Pages."},
+  {"id": "consent", "label": "Consent first", "kind": "method", "summary": "Preview, approve, publish only approved, withdraw any time."},
+  {"id": "money", "label": "Pay per contact", "kind": "method", "summary": "Free to be listed; visitors pay after the value; no rent."},
+  {"id": "proto", "label": "The prototype", "kind": "artefact", "summary": "Fourteen invented people, needs, search, credit, consent screen."},
+  {"id": "build", "label": "The brief for their session", "kind": "method", "summary": "Set up, simulate, preview, publish approved, iterate."}
+ ],
+ "edges": [
+  {"from": "map", "to": "luck", "rel": "answers"},
+  {"from": "arch", "to": "proto", "rel": "produces"},
+  {"from": "consent", "to": "arch", "rel": "depends-on"},
+  {"from": "money", "to": "proto", "rel": "extends"},
+  {"from": "build", "to": "arch", "rel": "produces"},
+  {"from": "luck", "to": "arch", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["joining-algarve-evolution", "vibathon-algarve-2026", "from-a-checklist-to-an-app", "villager-services-for-explorer-coders", "paying-after-the-value"],
+  "pages": [],
+  "sites": ["https://www.algarveevolution.pt/"]
+ },
+ "quotes": [
+  {"text": "Nobody is published until they have approved their own listing", "why": "The rule."},
+  {"text": "the default is not listed, and that is the right default", "why": "Consent first."},
+  {"text": "The value is the introduction, so that is what is paid for.", "why": "The model."}
+ ]
+}

@@ -46,9 +46,9 @@ Edition of **2026-10-08**. Third edition. A day of articles on how agents decide
 
 Computed at every build from the files: placements that point at nothing, articles published since the edition, open pitches, articles without a graph or a card. The same list is what `python3 admin/build/desk.py` prints for the Editor.
 
-- Fix`front.json` the lead is 23 days older than the newest article and 294 newer article(s) are unplaced
-- To do`front.json` 294 article(s) published since the 2026-10-08 edition: joining-algarve-evolution, villager-services-for-explorer-coders, from-a-checklist-to-an-app, vibathon-algarve-2026, lovable-with-sharness, one-writer-one-key
-- To do`newsletter/` a newsletter issue is due: 139 articles since issue 9 (2026-10-18)
+- Fix`front.json` the lead is 23 days older than the newest article and 296 newer article(s) are unplaced
+- To do`front.json` 296 article(s) published since the 2026-10-08 edition: sell-to-the-companies-that-already-have-the-problem, an-algarve-talent-map, joining-algarve-evolution, villager-services-for-explorer-coders, from-a-checklist-to-an-app, vibathon-algarve-2026
+- To do`newsletter/` a newsletter issue is due: 141 articles since issue 9 (2026-10-18)
 - To do`newsroom/pitches/2026-10-11__where-the-platform-draws-the-line.md` open pitch from contributor: highlight for where-the-platform-draws-the-line
 - To do`newsroom/pitches/2026-10-11__the-same-argument-in-our-words.md` open pitch from contributor: lead for the-same-argument-in-our-words
 - To do`newsroom/pitches/2026-10-11__the-agent-is-the-reader.md` open pitch from contributor: lead for the-agent-is-the-reader
