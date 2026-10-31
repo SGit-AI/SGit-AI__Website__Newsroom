@@ -141,6 +141,7 @@ Vaults & methodSite & engineering[This article as a graph →](graphs.md#an-ipad
 
 ### Continued by
 
+- [An augmented PDF viewer: how hard is it to build one in the browser that renders any PDF and opens the provenance, the graph and the comments behind it? Less than I thought](an-augmented-pdf-viewer.md) An augmented PDF viewer in the browser: PDF.js draws the page, one more layer adds provenance and graph, and the PDF only carries clues.
 - [The augmented book: one source in layers, projected to the web, the iPad and print, so the reader gets the right information at the right time, and what fifty years of attempts teach](the-augmented-book.md) The augmented book: one source in layers, projected to web, iPad and print, with the right information at the right time, and what precedents teach.
 
 [All articles](index.md) · [All graphs](graphs.md)

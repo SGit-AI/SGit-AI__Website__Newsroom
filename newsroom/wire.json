@@ -73,6 +73,67 @@
   ],
   "articles": [
     {
+      "slug": "one-writer-one-key",
+      "title": "One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again",
+      "date": "2026-10-31",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/one-writer-one-key.html",
+      "markdown": "https://newsroom.sgit.ai/articles/one-writer-one-key.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/one-writer-one-key.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/one-writer-one-key.json",
+      "teaser": "One writer, one key: a register of writer agents, opened at the editor's word, every release signed, and a closed key never used again.",
+      "summary": "On the night of 30 October two of this newsroom's writer agents pushed to the same branch, and one release was rejected because the other had shipped first. Merging them meant reconciling 1,925 generated files. It was a small incident with a clear lesson: I wanted only one journalist agent at a time, and nothing enforced it. So this morning the newsroom started using the public-key infrastructure we have been writing about. There is now a register of writer agents. A registration is opened only at my word, and only when no other is open; the session makes a new key pair and keeps the private half. Every commit a writer makes carries a signature over exactly the files it commits, and the site's validator, locally and in CI, refuses a writer's commit that the open registration did not sign, refuses two open registrations, and refuses a key used twice. Decommissioning is the other half: a registration is closed by me, or in the commit that opens the next writer, its private key is deleted, and it is never reopened. The same Claude session may come back, but only as a new registration with a new key. The first signed commit became site v0.14.15. This article gives the exact steps, the six cases the gate refuses, the mistake made while testing it, and the weakness that remains: my approval is still a note in the same repository, so the next step is that I sign each registration with my own key.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "pki",
+        "agents",
+        "identity",
+        "signing",
+        "newsroom",
+        "behaviour-policy",
+        "process",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "an-augmented-pdf-viewer",
+      "title": "An augmented PDF viewer: how hard is it to build one in the browser that renders any PDF and opens the provenance, the graph and the comments behind it? Less than I thought",
+      "date": "2026-10-31",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/an-augmented-pdf-viewer.html",
+      "markdown": "https://newsroom.sgit.ai/articles/an-augmented-pdf-viewer.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/an-augmented-pdf-viewer.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/an-augmented-pdf-viewer.json",
+      "teaser": "An augmented PDF viewer in the browser: PDF.js draws the page, one more layer adds provenance and graph, and the PDF only carries clues.",
+      "summary": "The augmented book made me ask a question about PDF. It is a strange format: static, closed, made for a printed page, with nothing behind it. But a PDF is how most serious documents still travel, and the book will have one. So why not augment the PDF? I asked a research agent how feasible it would be to build a viewer in JavaScript, in the browser, that renders any PDF normally but also shows a layer the PDF cannot: the provenance of each claim, the nodes of the semantic graph, definitions, comments and review cards, on demand, beside the text. The answer is that most of it exists, as open source we can extend. Mozilla's PDF.js, under the Apache licence and committed to the day before we looked, already draws a page as a stack of layers, canvas, text and annotations, and announces each one as it renders, so a layer of our own fits on top. It can read a PDF's attachments, its metadata, its links and its fingerprint. And the augmented layer does not need to live in the PDF at all: the PDF only needs clues to find it, an attached file, an id in its metadata, a link, the file's own identifier, or a QR code that survives printing. Hypothesis already anchors annotations to PDFs this way, and e-invoices already carry machine-readable data inside human-readable PDFs. The hard part is not the PDF. It is the interface, anchoring claims to text reliably, and making sure the layer a viewer loads is signed by the people who made the document.",
+      "topics": [
+        "site-and-engineering",
+        "graphs-and-knowledge"
+      ],
+      "tags": [
+        "pdf",
+        "book",
+        "reading",
+        "provenance",
+        "open-source",
+        "javascript",
+        "research",
+        "brief",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "web-summit-humans-and-their-agents",
       "title": "The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour",
       "date": "2026-10-31",

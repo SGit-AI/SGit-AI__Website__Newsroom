@@ -1,0 +1,66 @@
+{
+ "slug": "an-augmented-pdf-viewer",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "An augmented PDF viewer",
+   "para": "Feasible on open source: PDF.js draws pages in layers and reads attachments, metadata, links and a fingerprint; our layer goes on top, found through clues the PDF carries; the hard parts are the interface, anchors and signing.",
+   "hash": "4f77f3159a25"
+  },
+  "in-short": {
+   "line": "Six lines on the viewer",
+   "para": "PDF is static; a viewer with an augmented layer; PDF.js exists; clues not contents; precedents; the hard part is not the PDF.",
+   "hash": "abb00f1b0cfe"
+  },
+  "why": {
+   "line": "Why augment a PDF",
+   "para": "PDF describes a printed page and has nothing behind it, but it is how documents travel; a viewer could show the layers of the augmented book behind any PDF.",
+   "hash": "66e4b546173c"
+  },
+  "pdfjs": {
+   "line": "A viewer that already exists",
+   "para": "PDF.js is Apache-licensed, released on 3 October and committed on 30 October, draws pages as canvas, text and annotation layers, and reads what we need; alternatives have licence or maintenance questions.",
+   "hash": "eda15117e239"
+  },
+  "clues": {
+   "line": "The PDF only needs clues",
+   "para": "An embedded JSON file, XMP metadata, a link, the file's id looked up on our server, and a QR code that survives printing, tried in order.",
+   "hash": "9eee45bfdfbd"
+  },
+  "precedents": {
+   "line": "It has been done, in parts",
+   "para": "Hypothesis anchors notes to PDFs by fingerprint and quote; the W3C model defines anchors; e-invoices carry XML in a PDF; C2PA embeds signed provenance.",
+   "hash": "09d985fcb080"
+  },
+  "javascript": {
+   "line": "What not to do",
+   "para": "PDF JavaScript is heavily attacked and often disabled, so the layer never depends on it; the viewer does the work.",
+   "hash": "6f4ba68cfb19"
+  },
+  "feasibility": {
+   "line": "How hard is it?",
+   "para": "PDF.js's viewer plus one layer, discovery through the clues, anchors by quote and page, clues written at build time, and a signed layer: weeks for a prototype.",
+   "hash": "0823e0d01627"
+  },
+  "risks": {
+   "line": "The risks",
+   "para": "Stripped clues, drifting anchors, faked layers, addresses found in documents, and licences outside PDF.js.",
+   "hash": "a937ead971f7"
+  },
+  "try": {
+   "line": "What I want to try",
+   "para": "The RC1 PDF with a signed layer, its id in metadata and QR codes, in a PDF.js viewer and then in the iPad app, still opening normally everywhere else.",
+   "hash": "8e297c5e5a7c"
+  },
+  "limits": {
+   "line": "What this does not claim",
+   "para": "A brief; code read, not run; some facts from search only; the weeks an estimate; my interest.",
+   "hash": "319ea5256aac"
+  },
+  "sources": {
+   "line": "Where this comes from",
+   "para": "My message of 31 October, the repositories cloned and read, and search results marked as such.",
+   "hash": "7f47c5770b77"
+  }
+ }
+}

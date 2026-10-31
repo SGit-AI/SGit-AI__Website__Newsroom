@@ -2,10 +2,11 @@
 
 What an agent may do, who carries the risk, and how a policy is enforced: RiskMandate, Agent Behaviour Policies, hooks, accountability, governance.
 
-84 articles, newest first.
+85 articles, newest first.
 
 ## October 2026
 
+- [One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again](../../articles/one-writer-one-key.md), 2026-10-31, 7 min.
 - [Seven IAM predictions for 2027, checked against an agent team that runs today: where we already are, where we agree, and the two where I would bet the other way](../../articles/seven-iam-predictions-already-here.md), 2026-10-30, 6 min.
 - [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](../../articles/introducing-sharness.md), 2026-10-29, 21 min.
 - [Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break](../../articles/proven-controls-for-agents.md), 2026-10-29, 15 min.

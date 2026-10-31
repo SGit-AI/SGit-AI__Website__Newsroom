@@ -1,0 +1,143 @@
+{
+  "slug": "one-writer-one-key",
+  "teaser": "One writer, one key: a register of writer agents, opened at the editor's word, every release signed, and a closed key never used again.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "After two writer agents collided, the newsroom applied its own PKI: a register where at most one writer registration is open, opened only at the editor's word with a new key made by the session, every writer's commit signed over its exact tree, a validator check locally and in CI that refuses anything else, and decommissioning that deletes the key so a closed registration is never reopened; the remaining weakness is that the editor's approval is a note, which the editor's own signature should replace.",
+  "nodes": [
+    {
+      "id": "collision",
+      "label": "Two writers, one night",
+      "kind": "example",
+      "summary": "A rejected push and 1,925 generated files to reconcile."
+    },
+    {
+      "id": "register",
+      "label": "The register",
+      "kind": "artefact",
+      "summary": "Every writer registration, at most one open."
+    },
+    {
+      "id": "open",
+      "label": "Open at the editor's word",
+      "kind": "method",
+      "summary": "A new ed25519 key; the private half stays with the session."
+    },
+    {
+      "id": "sign",
+      "label": "Sign every commit",
+      "kind": "method",
+      "summary": "A signature over the tree being committed."
+    },
+    {
+      "id": "gate",
+      "label": "The gate",
+      "kind": "method",
+      "summary": "Validator check 15, locally and in CI."
+    },
+    {
+      "id": "close",
+      "label": "Decommission",
+      "kind": "method",
+      "summary": "Closed by the editor or the next opening; the key deleted."
+    },
+    {
+      "id": "never",
+      "label": "Never again",
+      "kind": "claim",
+      "summary": "A closed registration is not reopened; its key never reused."
+    },
+    {
+      "id": "mistake",
+      "label": "The test that deleted a key",
+      "kind": "example",
+      "summary": "Keys live with the session, not the clone."
+    },
+    {
+      "id": "weak",
+      "label": "The editor's signature next",
+      "kind": "question",
+      "summary": "Approval is a note today; it should be signed."
+    }
+  ],
+  "edges": [
+    {
+      "from": "collision",
+      "to": "register",
+      "rel": "leads-to"
+    },
+    {
+      "from": "open",
+      "to": "register",
+      "rel": "produces"
+    },
+    {
+      "from": "sign",
+      "to": "gate",
+      "rel": "depends-on"
+    },
+    {
+      "from": "register",
+      "to": "gate",
+      "rel": "depends-on"
+    },
+    {
+      "from": "close",
+      "to": "never",
+      "rel": "produces"
+    },
+    {
+      "from": "mistake",
+      "to": "close",
+      "rel": "example-of"
+    },
+    {
+      "from": "weak",
+      "to": "open",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "pki-everywhere",
+      "the-push-is-the-authorisation",
+      "agents-have-an-identity-now",
+      "a-directory-of-people-and-keys",
+      "three-policies-for-an-agent"
+    ],
+    "pages": [],
+    "sites": [
+      "https://github.com/SGit-AI/SGit-AI__Website__Newsroom"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A key lives with the session, not with the files, and whatever touches it touches the real thing.",
+      "why": "The lesson of the mistake."
+    },
+    {
+      "text": "a session can come back, but only as a new registration with a new key",
+      "why": "The rule on returning."
+    },
+    {
+      "text": "The answer does not need a platform",
+      "why": "Why it generalises."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ow-life.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ow-life.webp",
+      "caption": "The life of a writer registration: my yes, a new key, signed commits, the gate, closing, and never again.",
+      "kind": "process"
+    },
+    {
+      "file": "ow-gate.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ow-gate.webp",
+      "caption": "What the gate refuses: six cases, each tried in a scratch clone before the first signed release.",
+      "kind": "table"
+    }
+  ]
+}

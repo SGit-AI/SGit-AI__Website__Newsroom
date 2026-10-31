@@ -55,6 +55,361 @@
   ],
   "articles": [
     {
+      "slug": "one-writer-one-key",
+      "title": "One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again",
+      "date": "2026-10-31",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/one-writer-one-key.html",
+      "markdown": "https://newsroom.sgit.ai/articles/one-writer-one-key.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/one-writer-one-key.webp",
+      "teaser": "One writer, one key: a register of writer agents, opened at the editor's word, every release signed, and a closed key never used again.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "pki",
+        "agents",
+        "identity",
+        "signing",
+        "newsroom",
+        "behaviour-policy",
+        "process",
+        "article"
+      ],
+      "links_out": [
+        "pki-everywhere",
+        "the-push-is-the-authorisation",
+        "agents-have-an-identity-now",
+        "a-directory-of-people-and-keys",
+        "three-policies-for-an-agent"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ow-life.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ow-life.webp",
+          "caption": "The life of a writer registration: my yes, a new key, signed commits, the gate, closing, and never again.",
+          "kind": "process"
+        },
+        {
+          "file": "ow-gate.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ow-gate.webp",
+          "caption": "What the gate refuses: six cases, each tried in a scratch clone before the first signed release.",
+          "kind": "table"
+        }
+      ],
+      "graph": {
+        "slug": "one-writer-one-key",
+        "teaser": "One writer, one key: a register of writer agents, opened at the editor's word, every release signed, and a closed key never used again.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "After two writer agents collided, the newsroom applied its own PKI: a register where at most one writer registration is open, opened only at the editor's word with a new key made by the session, every writer's commit signed over its exact tree, a validator check locally and in CI that refuses anything else, and decommissioning that deletes the key so a closed registration is never reopened; the remaining weakness is that the editor's approval is a note, which the editor's own signature should replace.",
+        "nodes": [
+          {
+            "id": "collision",
+            "label": "Two writers, one night",
+            "kind": "example",
+            "summary": "A rejected push and 1,925 generated files to reconcile."
+          },
+          {
+            "id": "register",
+            "label": "The register",
+            "kind": "artefact",
+            "summary": "Every writer registration, at most one open."
+          },
+          {
+            "id": "open",
+            "label": "Open at the editor's word",
+            "kind": "method",
+            "summary": "A new ed25519 key; the private half stays with the session."
+          },
+          {
+            "id": "sign",
+            "label": "Sign every commit",
+            "kind": "method",
+            "summary": "A signature over the tree being committed."
+          },
+          {
+            "id": "gate",
+            "label": "The gate",
+            "kind": "method",
+            "summary": "Validator check 15, locally and in CI."
+          },
+          {
+            "id": "close",
+            "label": "Decommission",
+            "kind": "method",
+            "summary": "Closed by the editor or the next opening; the key deleted."
+          },
+          {
+            "id": "never",
+            "label": "Never again",
+            "kind": "claim",
+            "summary": "A closed registration is not reopened; its key never reused."
+          },
+          {
+            "id": "mistake",
+            "label": "The test that deleted a key",
+            "kind": "example",
+            "summary": "Keys live with the session, not the clone."
+          },
+          {
+            "id": "weak",
+            "label": "The editor's signature next",
+            "kind": "question",
+            "summary": "Approval is a note today; it should be signed."
+          }
+        ],
+        "edges": [
+          {
+            "from": "collision",
+            "to": "register",
+            "rel": "leads-to"
+          },
+          {
+            "from": "open",
+            "to": "register",
+            "rel": "produces"
+          },
+          {
+            "from": "sign",
+            "to": "gate",
+            "rel": "depends-on"
+          },
+          {
+            "from": "register",
+            "to": "gate",
+            "rel": "depends-on"
+          },
+          {
+            "from": "close",
+            "to": "never",
+            "rel": "produces"
+          },
+          {
+            "from": "mistake",
+            "to": "close",
+            "rel": "example-of"
+          },
+          {
+            "from": "weak",
+            "to": "open",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "pki-everywhere",
+            "the-push-is-the-authorisation",
+            "agents-have-an-identity-now",
+            "a-directory-of-people-and-keys",
+            "three-policies-for-an-agent"
+          ],
+          "pages": [],
+          "sites": [
+            "https://github.com/SGit-AI/SGit-AI__Website__Newsroom"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A key lives with the session, not with the files, and whatever touches it touches the real thing.",
+            "why": "The lesson of the mistake."
+          },
+          {
+            "text": "a session can come back, but only as a new registration with a new key",
+            "why": "The rule on returning."
+          },
+          {
+            "text": "The answer does not need a platform",
+            "why": "Why it generalises."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "an-augmented-pdf-viewer",
+      "title": "An augmented PDF viewer: how hard is it to build one in the browser that renders any PDF and opens the provenance, the graph and the comments behind it? Less than I thought",
+      "date": "2026-10-31",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/an-augmented-pdf-viewer.html",
+      "markdown": "https://newsroom.sgit.ai/articles/an-augmented-pdf-viewer.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/an-augmented-pdf-viewer.webp",
+      "teaser": "An augmented PDF viewer in the browser: PDF.js draws the page, one more layer adds provenance and graph, and the PDF only carries clues.",
+      "topics": [
+        "site-and-engineering",
+        "graphs-and-knowledge"
+      ],
+      "tags": [
+        "pdf",
+        "book",
+        "reading",
+        "provenance",
+        "open-source",
+        "javascript",
+        "research",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "the-augmented-book",
+        "pki-everywhere",
+        "an-ipad-to-review-the-book",
+        "the-book-of-the-talk-and-its-companion"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ap-stack.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ap-stack.webp",
+          "caption": "The proposed stack: PDF.js draws the page in layers, and one more layer of ours carries what the PDF cannot.",
+          "kind": "architecture"
+        },
+        {
+          "file": "ap-clues.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ap-clues.webp",
+          "caption": "Five clues, tried in order, for finding a PDF's augmented layer, and which one survives what.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "an-augmented-pdf-viewer",
+        "teaser": "An augmented PDF viewer in the browser: PDF.js draws the page, one more layer adds provenance and graph, and the PDF only carries clues.",
+        "topics": [
+          "site-and-engineering",
+          "graphs-and-knowledge"
+        ],
+        "core_idea": "A browser viewer that renders any PDF and adds an augmented layer of provenance, graph, definitions and comments is feasible on open source: PDF.js, Apache-licensed and active, draws pages in layers and reads attachments, metadata, links and a fingerprint; the layer need not live in the PDF, which only carries clues tried in order, from an embedded file to a printed QR code; Hypothesis, e-invoices and C2PA are precedents; the hard parts are the interface, anchors that survive, and a signed layer, never JavaScript inside the PDF.",
+        "nodes": [
+          {
+            "id": "why",
+            "label": "Why augment a PDF",
+            "kind": "question",
+            "summary": "Static, but how serious documents travel."
+          },
+          {
+            "id": "pdfjs",
+            "label": "PDF.js",
+            "kind": "artefact",
+            "summary": "Apache-2.0, active, pages drawn as layers."
+          },
+          {
+            "id": "layer",
+            "label": "Our layer",
+            "kind": "method",
+            "summary": "Drawn on top when the text layer is ready."
+          },
+          {
+            "id": "clues",
+            "label": "Five clues",
+            "kind": "method",
+            "summary": "Embedded file, metadata, link, file id, QR code."
+          },
+          {
+            "id": "precedents",
+            "label": "Precedents",
+            "kind": "example",
+            "summary": "Hypothesis, Web Annotation, Factur-X, C2PA."
+          },
+          {
+            "id": "nojs",
+            "label": "Not PDF JavaScript",
+            "kind": "claim",
+            "summary": "Attacked, often disabled; the viewer does the work."
+          },
+          {
+            "id": "feasible",
+            "label": "Weeks for a prototype",
+            "kind": "claim",
+            "summary": "The work is in the interface and data."
+          },
+          {
+            "id": "risks",
+            "label": "The risks",
+            "kind": "concept",
+            "summary": "Stripped clues, drifting anchors, fake layers, untrusted fetches."
+          },
+          {
+            "id": "try",
+            "label": "The RC1 test",
+            "kind": "method",
+            "summary": "A signed layer on the book's PDF, in the viewer and the iPad app."
+          }
+        ],
+        "edges": [
+          {
+            "from": "why",
+            "to": "pdfjs",
+            "rel": "leads-to"
+          },
+          {
+            "from": "pdfjs",
+            "to": "layer",
+            "rel": "produces"
+          },
+          {
+            "from": "clues",
+            "to": "layer",
+            "rel": "produces"
+          },
+          {
+            "from": "precedents",
+            "to": "clues",
+            "rel": "example-of"
+          },
+          {
+            "from": "nojs",
+            "to": "clues",
+            "rel": "contrasts"
+          },
+          {
+            "from": "layer",
+            "to": "feasible",
+            "rel": "leads-to"
+          },
+          {
+            "from": "risks",
+            "to": "feasible",
+            "rel": "contrasts"
+          },
+          {
+            "from": "feasible",
+            "to": "try",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-augmented-book",
+            "an-ipad-to-review-the-book",
+            "the-book-of-the-talk-and-its-companion",
+            "pki-everywhere"
+          ],
+          "pages": [],
+          "sites": [
+            "https://github.com/mozilla/pdf.js",
+            "https://github.com/hypothesis/client"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The PDF just needs enough clues for the viewer to find it.",
+            "why": "The memo's insight."
+          },
+          {
+            "text": "The hard part is not the PDF.",
+            "why": "The verdict."
+          },
+          {
+            "text": "the PDF carries clues, and our viewer does the work",
+            "why": "Why not PDF JavaScript."
+          }
+        ]
+      }
+    },
+    {
       "slug": "web-summit-humans-and-their-agents",
       "title": "The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour",
       "date": "2026-10-31",
@@ -262,7 +617,9 @@
         "an-ipad-to-review-the-book",
         "books-for-a-new-generation-of-publishing"
       ],
-      "links_in": [],
+      "links_in": [
+        "an-augmented-pdf-viewer"
+      ],
       "figures": [
         {
           "file": "au-layers.webp",
@@ -447,6 +804,7 @@
         "the-user-keeps-the-meter"
       ],
       "links_in": [
+        "an-augmented-pdf-viewer",
         "the-augmented-book"
       ],
       "figures": [
@@ -1994,6 +2352,7 @@
         "reading-with-a-pen"
       ],
       "links_in": [
+        "an-augmented-pdf-viewer",
         "the-augmented-book",
         "an-ipad-to-review-the-book",
         "web-summit-team-brief",
@@ -2656,6 +3015,7 @@
         "the-vendors-layer"
       ],
       "links_in": [
+        "one-writer-one-key",
         "web-summit-humans-and-their-agents",
         "signed-email-from-the-agent",
         "web-summit-team-brief",
@@ -4658,6 +5018,7 @@
         "secrets-on-public-keys"
       ],
       "links_in": [
+        "one-writer-one-key",
         "seven-iam-predictions-already-here",
         "agents-have-an-identity-now",
         "the-ultimate-insider-case-study"
@@ -21454,6 +21815,8 @@
         "the-editors-channel"
       ],
       "links_in": [
+        "one-writer-one-key",
+        "an-augmented-pdf-viewer",
         "signed-email-from-the-agent",
         "seven-iam-predictions-already-here",
         "agents-have-an-identity-now",
@@ -27343,6 +27706,7 @@
         "the-man-behind-the-curtain"
       ],
       "links_in": [
+        "one-writer-one-key",
         "agents-have-an-identity-now",
         "the-push-is-the-authorisation",
         "a-pen-and-a-key",
@@ -32008,6 +32372,7 @@
         "agency-is-not-a-yes"
       ],
       "links_in": [
+        "one-writer-one-key",
         "approved-business-mandates",
         "the-riskmandate-roadmap",
         "a-briefing-for-the-ciso-summit",

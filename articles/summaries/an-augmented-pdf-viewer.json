@@ -1,0 +1,102 @@
+{
+ "slug": "an-augmented-pdf-viewer",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 265,
+   "line": "An augmented PDF viewer",
+   "para": "Feasible on open source: PDF.js draws pages in layers and reads attachments, metadata, links and a fingerprint; our layer goes on top, found through clues the PDF carries; the hard parts are the interface, anchors and signing.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 115,
+   "line": "Six lines on the viewer",
+   "para": "PDF is static; a viewer with an augmented layer; PDF.js exists; clues not contents; precedents; the hard part is not the PDF.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "why",
+   "label": "Why augment a PDF",
+   "words": 138,
+   "line": "Why augment a PDF",
+   "para": "PDF describes a printed page and has nothing behind it, but it is how documents travel; a viewer could show the layers of the augmented book behind any PDF.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "pdfjs",
+   "label": "A viewer that already exists",
+   "words": 262,
+   "line": "A viewer that already exists",
+   "para": "PDF.js is Apache-licensed, released on 3 October and committed on 30 October, draws pages as canvas, text and annotation layers, and reads what we need; alternatives have licence or maintenance questions.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "clues",
+   "label": "The PDF only needs clues",
+   "words": 205,
+   "line": "The PDF only needs clues",
+   "para": "An embedded JSON file, XMP metadata, a link, the file's id looked up on our server, and a QR code that survives printing, tried in order.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "precedents",
+   "label": "It has been done, in parts",
+   "words": 134,
+   "line": "It has been done, in parts",
+   "para": "Hypothesis anchors notes to PDFs by fingerprint and quote; the W3C model defines anchors; e-invoices carry XML in a PDF; C2PA embeds signed provenance.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "javascript",
+   "label": "What not to do: JavaScript inside the PDF",
+   "words": 105,
+   "line": "What not to do",
+   "para": "PDF JavaScript is heavily attacked and often disabled, so the layer never depends on it; the viewer does the work.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "feasibility",
+   "label": "How hard is it?",
+   "words": 158,
+   "line": "How hard is it?",
+   "para": "PDF.js's viewer plus one layer, discovery through the clues, anchors by quote and page, clues written at build time, and a signed layer: weeks for a prototype.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "risks",
+   "label": "The risks",
+   "words": 108,
+   "line": "The risks",
+   "para": "Stripped clues, drifting anchors, faked layers, addresses found in documents, and licences outside PDF.js.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "try",
+   "label": "What I want to try",
+   "words": 83,
+   "line": "What I want to try",
+   "para": "The RC1 PDF with a signed layer, its id in metadata and QR codes, in a PDF.js viewer and then in the iPad app, still opening normally everywhere else.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 95,
+   "line": "What this does not claim",
+   "para": "A brief; code read, not run; some facts from search only; the weeks an estimate; my interest.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 117,
+   "line": "Where this comes from",
+   "para": "My message of 31 October, the repositories cloned and read, and search results marked as such.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

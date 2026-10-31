@@ -127,6 +127,10 @@ Graphs & knowledgeSite & engineering[This article as a graph →](graphs.md#the-
 - [An iPad to review the book: a brief for an app that reads the PDFs, shows the comments on the page, opens its vault with my passkey and carries sgit in Swift](an-ipad-to-review-the-book.md) A brief for an iPad app to review the book: PDFs, comments on the page, append lanes, a vault opened with my passkey, and sgit in Swift.
 - [A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page](books-for-a-new-generation-of-publishing.md) What the best visual books, Leanpub's Markua, print-on-demand costs and the learning research teach, and what an agent team adds to a printed book.
 
+### Continued by
+
+- [An augmented PDF viewer: how hard is it to build one in the browser that renders any PDF and opens the provenance, the graph and the comments behind it? Less than I thought](an-augmented-pdf-viewer.md) An augmented PDF viewer in the browser: PDF.js draws the page, one more layer adds provenance and graph, and the PDF only carries clues.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 336 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=336)

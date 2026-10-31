@@ -11,3 +11,13 @@ Dinis's message to newsroom.writer, kept word for word. It answers the writer's 
 - A closed registration is never reopened, and its key is never used again. The same Claude session may be given a new registration, with a new key.
 - Every writer's commit carries `Writer-Registration` and `Writer-Signature` (`admin/writer/tools/sign.cjs`), a signature over the commit's tree; `admin/build/validate.js` check 15 refuses a writer's commit that the open registration did not sign, in CI and locally.
 - The register starts with the six Claude sessions whose commits carry `@newsroom.writer` before the register, each with its first and last such commit, closed when the register began and without keys; writer-06 is this session before the register. writer-07 is this same session's new registration, with a new key, opened at this message.
+
+## Memo 02, 31 October 2026: write it up
+
+The editor, asked whether the workflow deserved its own article, word for word:
+
+> Is it worth creating a new article about this workflow of the agents and the signing off and the exact steps that you take and the workflow that we have to decommission an agent? Or do we have that covered already in an article? Because I think we wrote one recently about this. But this is quite important, PKI and agentic workflow, especially because it's quite a specific one, and to also make sure there's only one agent at one time, because everything now starts to be starting. We need to start really, you know, using the PKI infrastructure that we have.
+
+And after the writer's answer (the three earlier articles cover a session's key and the push as authorisation, not the lock, the signed commits or decommissioning; and the approval is a note in the same repository, which the editor's own signature would fix):
+
+> Okay, great. Yes, write that. I agree. It's an important one in this series of PKI.

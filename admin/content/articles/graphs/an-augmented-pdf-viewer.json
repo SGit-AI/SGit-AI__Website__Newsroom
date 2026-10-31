@@ -1,0 +1,37 @@
+{
+ "slug": "an-augmented-pdf-viewer",
+ "teaser": "An augmented PDF viewer in the browser: PDF.js draws the page, one more layer adds provenance and graph, and the PDF only carries clues.",
+ "topics": ["site-and-engineering", "graphs-and-knowledge"],
+ "core_idea": "A browser viewer that renders any PDF and adds an augmented layer of provenance, graph, definitions and comments is feasible on open source: PDF.js, Apache-licensed and active, draws pages in layers and reads attachments, metadata, links and a fingerprint; the layer need not live in the PDF, which only carries clues tried in order, from an embedded file to a printed QR code; Hypothesis, e-invoices and C2PA are precedents; the hard parts are the interface, anchors that survive, and a signed layer, never JavaScript inside the PDF.",
+ "nodes": [
+  {"id": "why", "label": "Why augment a PDF", "kind": "question", "summary": "Static, but how serious documents travel."},
+  {"id": "pdfjs", "label": "PDF.js", "kind": "artefact", "summary": "Apache-2.0, active, pages drawn as layers."},
+  {"id": "layer", "label": "Our layer", "kind": "method", "summary": "Drawn on top when the text layer is ready."},
+  {"id": "clues", "label": "Five clues", "kind": "method", "summary": "Embedded file, metadata, link, file id, QR code."},
+  {"id": "precedents", "label": "Precedents", "kind": "example", "summary": "Hypothesis, Web Annotation, Factur-X, C2PA."},
+  {"id": "nojs", "label": "Not PDF JavaScript", "kind": "claim", "summary": "Attacked, often disabled; the viewer does the work."},
+  {"id": "feasible", "label": "Weeks for a prototype", "kind": "claim", "summary": "The work is in the interface and data."},
+  {"id": "risks", "label": "The risks", "kind": "concept", "summary": "Stripped clues, drifting anchors, fake layers, untrusted fetches."},
+  {"id": "try", "label": "The RC1 test", "kind": "method", "summary": "A signed layer on the book's PDF, in the viewer and the iPad app."}
+ ],
+ "edges": [
+  {"from": "why", "to": "pdfjs", "rel": "leads-to"},
+  {"from": "pdfjs", "to": "layer", "rel": "produces"},
+  {"from": "clues", "to": "layer", "rel": "produces"},
+  {"from": "precedents", "to": "clues", "rel": "example-of"},
+  {"from": "nojs", "to": "clues", "rel": "contrasts"},
+  {"from": "layer", "to": "feasible", "rel": "leads-to"},
+  {"from": "risks", "to": "feasible", "rel": "contrasts"},
+  {"from": "feasible", "to": "try", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["the-augmented-book", "an-ipad-to-review-the-book", "the-book-of-the-talk-and-its-companion", "pki-everywhere"],
+  "pages": [],
+  "sites": ["https://github.com/mozilla/pdf.js", "https://github.com/hypothesis/client"]
+ },
+ "quotes": [
+  {"text": "The PDF just needs enough clues for the viewer to find it.", "why": "The memo's insight."},
+  {"text": "The hard part is not the PDF.", "why": "The verdict."},
+  {"text": "the PDF carries clues, and our viewer does the work", "why": "Why not PDF JavaScript."}
+ ]
+}

@@ -4,6 +4,8 @@
 // open makes a new ed25519 key; the private half goes to ~/.newsroom-writer/<id>.pem and never into the
 // repository. close marks the registration closed and deletes the private half: the key is never used again.
 // Only open a registration at the editor's word, and only when no other is open.
+// A writer does not close itself: the editor closes it, or the commit that opens the next writer does
+// (close the old, open the new, sign with the new key), because a writer's commit must be signed while open.
 'use strict';
 const fs = require('fs'), path = require('path'), os = require('os'), crypto = require('crypto');
 const { fingerprint, REL } = require('../../build/writer_register');

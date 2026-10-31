@@ -2,10 +2,11 @@
 
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
 
-36 articles, newest first.
+37 articles, newest first.
 
 ## October 2026
 
+- [An augmented PDF viewer: how hard is it to build one in the browser that renders any PDF and opens the provenance, the graph and the comments behind it? Less than I thought](../../articles/an-augmented-pdf-viewer.md), 2026-10-31, 7 min.
 - [The augmented book: one source in layers, projected to the web, the iPad and print, so the reader gets the right information at the right time, and what fifty years of attempts teach](../../articles/the-augmented-book.md), 2026-10-31, 9 min.
 - [An iPad to review the book: a brief for an app that reads the PDFs, shows the comments on the page, opens its vault with my passkey and carries sgit in Swift](../../articles/an-ipad-to-review-the-book.md), 2026-10-31, 8 min.
 - [Becoming an official publication: the SGit Newsroom now has a publisher, an editor, standards, a corrections log, a withdrawal process and a complaints route, and is applying to a regulator](../../articles/becoming-an-official-publication.md), 2026-10-30, 7 min.

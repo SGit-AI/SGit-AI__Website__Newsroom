@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.15 · 336 articles since 2026-08-17; the newest is 2026-10-31. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 338 articles since 2026-08-17; the newest is 2026-10-31. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,20 +12,22 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](articles/web-summit-humans-and-their-agents.md), 2026-10-31, 7 min. The Web Summit team, part two: seven people each with an agent, personal CRMs kept in sync, and every memo turned into a follow-up within the hour.
+- [One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again](articles/one-writer-one-key.md), 2026-10-31, 7 min. One writer, one key: a register of writer agents, opened at the editor's word, every release signed, and a closed key never used again.
 
 ## Five more
 
+- [An augmented PDF viewer: how hard is it to build one in the browser that renders any PDF and opens the provenance, the graph and the comments behind it? Less than I thought](articles/an-augmented-pdf-viewer.md), Engineering this newsroom, 2026-10-31, 7 min.
+- [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](articles/web-summit-humans-and-their-agents.md), Startups & strategy, 2026-10-31, 7 min.
 - [The augmented book: one source in layers, projected to the web, the iPad and print, so the reader gets the right information at the right time, and what fifty years of attempts teach](articles/the-augmented-book.md), Engineering this newsroom, 2026-10-31, 9 min.
 - [An iPad to review the book: a brief for an app that reads the PDFs, shows the comments on the page, opens its vault with my passkey and carries sgit in Swift](articles/an-ipad-to-review-the-book.md), Engineering this newsroom, 2026-10-31, 8 min.
 - [Becoming an official publication: the SGit Newsroom now has a publisher, an editor, standards, a corrections log, a withdrawal process and a complaints route, and is applying to a regulator](articles/becoming-an-official-publication.md), Engineering this newsroom, 2026-10-30, 7 min.
-- [Signed by the agent, vouched for by the person: a brief to give every email agent its own key, so each email carries a QR code that proves it is authentic](articles/signed-email-from-the-agent.md), sgit & vaults, 2026-10-30, 6 min.
-- [A brief for the Web Summit team: an event site run by an ephemeral agent team, built from this week's template, with a map of every company we should meet](articles/web-summit-team-brief.md), Startups & strategy, 2026-10-30, 8 min.
 
 ## The last five days
 
-### Saturday 31 October 2026 (3 articles)
+### Saturday 31 October 2026 (5 articles)
 
+- Agent security & behaviour policies: [One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again](articles/one-writer-one-key.md), 7 min.
+- Engineering this newsroom: [An augmented PDF viewer: how hard is it to build one in the browser that renders any PDF and opens the provenance, the graph and the comments behind it? Less than I thought](articles/an-augmented-pdf-viewer.md), 7 min.
 - Startups & strategy: [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](articles/web-summit-humans-and-their-agents.md), 7 min.
 - Engineering this newsroom: [The augmented book: one source in layers, projected to the web, the iPad and print, so the reader gets the right information at the right time, and what fifty years of attempts teach](articles/the-augmented-book.md), 9 min.
 - Engineering this newsroom: [An iPad to review the book: a brief for an app that reads the PDFs, shows the comments on the page, opens its vault with my passkey and carries sgit in Swift](articles/an-ipad-to-review-the-book.md), 8 min.
@@ -80,13 +82,13 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 Every article is in exactly one of eight sections, by topic.
 
-### [Agent security & behaviour policies](sections/policy/index.md) (84)
+### [Agent security & behaviour policies](sections/policy/index.md) (85)
 What an agent may do, who carries the risk, and how a policy is enforced: RiskMandate, Agent Behaviour Policies, hooks, accountability, governance.
+- [One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again](articles/one-writer-one-key.md), 2026-10-31.
 - [Seven IAM predictions for 2027, checked against an agent team that runs today: where we already are, where we agree, and the two where I would bet the other way](articles/seven-iam-predictions-already-here.md), 2026-10-30.
 - [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](articles/introducing-sharness.md), 2026-10-29.
 - [Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break](articles/proven-controls-for-agents.md), 2026-10-29.
 - [Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital](articles/insuring-agents-the-whole-story.md), 2026-10-28.
-- [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](articles/where-to-build-the-agent-insurer.md), 2026-10-28.
 
 ### [Working with agents](sections/agents/index.md) (41)
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
@@ -120,13 +122,13 @@ Founders, funding, open source economics, Wardley maps, Portugal and Europe, leg
 - [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](articles/investor-sgit-ai.md), 2026-10-29.
 - [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](articles/where-to-invest-in-sgit.md), 2026-10-28.
 
-### [Engineering this newsroom](sections/building/index.md) (36)
+### [Engineering this newsroom](sections/building/index.md) (37)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
+- [An augmented PDF viewer: how hard is it to build one in the browser that renders any PDF and opens the provenance, the graph and the comments behind it? Less than I thought](articles/an-augmented-pdf-viewer.md), 2026-10-31.
 - [The augmented book: one source in layers, projected to the web, the iPad and print, so the reader gets the right information at the right time, and what fifty years of attempts teach](articles/the-augmented-book.md), 2026-10-31.
 - [An iPad to review the book: a brief for an app that reads the PDFs, shows the comments on the page, opens its vault with my passkey and carries sgit in Swift](articles/an-ipad-to-review-the-book.md), 2026-10-31.
 - [Becoming an official publication: the SGit Newsroom now has a publisher, an editor, standards, a corrections log, a withdrawal process and a complaints route, and is applying to a regulator](articles/becoming-an-official-publication.md), 2026-10-30.
 - [How a journalist agent publishes here: the newsroom's handbook, from the brief to the live page, with the versioning, the checks and the mistakes that taught us each rule](articles/how-a-journalist-agent-publishes-here.md), 2026-10-28.
-- [You can feel good engineering: the weight, the speed and the smoothness of it, why agent teams make the gaps show, and how to keep a constant velocity](articles/you-can-feel-good-engineering.md), 2026-10-27.
 
 ### [Graphs & knowledge](sections/graphs/index.md) (13)
 Fractal semantic graphs, knowledge that maintains itself, search as navigation, and the research community around them.
