@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-31 | published | 1,906 | first published | this release | [current](../an-augmented-pdf-viewer.md) |
+| **v1.0.0** | 2026-10-31 | published | 1,906 | first published | [`c006c4875`](https://github.com/SGit-AI/SGit-AI__Website/commit/c006c4875432910d6fe01f61e3cf750b32db3662) | [current](../an-augmented-pdf-viewer.md) |
 
 [← Back to the article](../an-augmented-pdf-viewer.md) · [All articles](../index.md)
 

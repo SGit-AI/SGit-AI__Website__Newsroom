@@ -55,6 +55,191 @@
   ],
   "articles": [
     {
+      "slug": "lovable-with-sharness",
+      "title": "Lovable with SHarness, and the trojanised Claude Code extension: how to keep an app builder's code and an editor's extensions inside a policy, and what SHarness can and cannot stop today",
+      "date": "2026-10-31",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/lovable-with-sharness.html",
+      "markdown": "https://newsroom.sgit.ai/articles/lovable-with-sharness.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/lovable-with-sharness.webp",
+      "teaser": "Lovable with SHarness, and the trojanised Claude Code extension: where a policy boundary has to sit, and what SHarness can stop today.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sharness",
+        "lovable",
+        "supply-chain",
+        "extensions",
+        "process-behaviour-policy",
+        "security",
+        "agents",
+        "article"
+      ],
+      "links_out": [
+        "introducing-sharness",
+        "selling-less-code",
+        "proven-controls-for-agents"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ls-post.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ls-post.webp",
+          "caption": "Colin Nwachukwu Ife's post about the trojanised Claude Code extension in Cursor's marketplace.",
+          "kind": "aside"
+        },
+        {
+          "file": "ls-steps.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ls-steps.webp",
+          "caption": "The tampered build's steps against the policy row that would refuse each, and what of SHarness runs today.",
+          "kind": "table"
+        },
+        {
+          "file": "ls-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ls-flow.webp",
+          "caption": "Lovable builds in its cloud; the local work happens in a SHarness shell that reaches only what it names.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "lovable-with-sharness",
+        "teaser": "Lovable with SHarness, and the trojanised Claude Code extension: where a policy boundary has to sit, and what SHarness can stop today.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "A tampered Claude Code extension in Cursor's marketplace ran on load with the editor's permissions, tried an SSH backdoor and persistence, and sent the machine's details out; the agent did not misbehave, the host was backdoored. A Process Behaviour Policy has a row refusing each step, and the file and network rows run today in SHarness, but only on Linux and not yet around an editor, so it would not have stopped this. Lovable builds in its cloud, beyond SHarness, but its two-way Git sync brings the local work into a SHarness shell that writes only the workspace and reaches only named sites, while production secrets stay in Lovable.",
+        "nodes": [
+          {
+            "id": "incident",
+            "label": "The trojanised extension",
+            "kind": "example",
+            "summary": "Cursor's marketplace, 29 October, about eleven hours."
+          },
+          {
+            "id": "host",
+            "label": "The extension host",
+            "kind": "concept",
+            "summary": "Same permissions as the editor; no per-extension model."
+          },
+          {
+            "id": "rows",
+            "label": "A row for every step",
+            "kind": "method",
+            "summary": "Files, persistence, network and keys, each refused by a policy row."
+          },
+          {
+            "id": "today",
+            "label": "What runs today",
+            "kind": "artefact",
+            "summary": "Landlock file rules and the shell with the network door, on Linux."
+          },
+          {
+            "id": "not",
+            "label": "Would not have stopped it",
+            "kind": "claim",
+            "summary": "Linux-only; the build targeted macOS and Windows; no launcher yet."
+          },
+          {
+            "id": "devc",
+            "label": "Dev containers",
+            "kind": "method",
+            "summary": "Workspace extensions in a container whose policy is translated."
+          },
+          {
+            "id": "lovable",
+            "label": "Lovable",
+            "kind": "artefact",
+            "summary": "Builds and hosts in its cloud, with scans and secrets there."
+          },
+          {
+            "id": "sync",
+            "label": "Git sync",
+            "kind": "method",
+            "summary": "Two-way, so the local half of the work is yours."
+          },
+          {
+            "id": "shell",
+            "label": "The SHarness shell",
+            "kind": "method",
+            "summary": "Workspace writable, only named sites reachable, your agent inside."
+          }
+        ],
+        "edges": [
+          {
+            "from": "incident",
+            "to": "host",
+            "rel": "depends-on"
+          },
+          {
+            "from": "host",
+            "to": "rows",
+            "rel": "leads-to"
+          },
+          {
+            "from": "rows",
+            "to": "today",
+            "rel": "produces"
+          },
+          {
+            "from": "today",
+            "to": "not",
+            "rel": "contrasts"
+          },
+          {
+            "from": "devc",
+            "to": "not",
+            "rel": "answers"
+          },
+          {
+            "from": "lovable",
+            "to": "sync",
+            "rel": "produces"
+          },
+          {
+            "from": "sync",
+            "to": "shell",
+            "rel": "leads-to"
+          },
+          {
+            "from": "shell",
+            "to": "rows",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "introducing-sharness",
+            "selling-less-code",
+            "proven-controls-for-agents"
+          ],
+          "pages": [],
+          "sites": [
+            "https://cursor.com/blog/claude-code-extension-security-notice",
+            "https://www.geordie.ai/resources/technical-advisory-trojanized-claude-code-vs-code-extension/",
+            "https://docs.lovable.dev/",
+            "https://sharness.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "So the honest answer is no, not today.",
+            "why": "The verdict on this incident."
+          },
+          {
+            "text": "The production secrets stay in Lovable",
+            "why": "Why the pairing helps."
+          },
+          {
+            "text": "A backdoor reads what the user can read.",
+            "why": "The lesson of the clean-up list."
+          }
+        ]
+      }
+    },
+    {
       "slug": "one-writer-one-key",
       "title": "One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again",
       "date": "2026-10-31",
@@ -1566,7 +1751,9 @@
         "a-payout-for-every-row",
         "the-eyeballs-get-cheap"
       ],
-      "links_in": [],
+      "links_in": [
+        "lovable-with-sharness"
+      ],
       "figures": [
         {
           "file": "qx-less.webp",
@@ -2564,6 +2751,7 @@
         "agents-have-an-identity-now"
       ],
       "links_in": [
+        "lovable-with-sharness",
         "seven-iam-predictions-already-here",
         "the-ultimate-insider-case-study",
         "proven-controls-for-agents"
@@ -3448,7 +3636,9 @@
         "approve-at-altitude",
         "agent-behaviour-policies-move-to-the-open-security-summit"
       ],
-      "links_in": [],
+      "links_in": [
+        "lovable-with-sharness"
+      ],
       "figures": [
         {
           "file": "pv-hem-pant-post.webp",

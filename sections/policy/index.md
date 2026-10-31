@@ -2,10 +2,11 @@
 
 What an agent may do, who carries the risk, and how a policy is enforced: RiskMandate, Agent Behaviour Policies, hooks, accountability, governance.
 
-85 articles, newest first.
+86 articles, newest first.
 
 ## October 2026
 
+- [Lovable with SHarness, and the trojanised Claude Code extension: how to keep an app builder's code and an editor's extensions inside a policy, and what SHarness can and cannot stop today](../../articles/lovable-with-sharness.md), 2026-10-31, 8 min.
 - [One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again](../../articles/one-writer-one-key.md), 2026-10-31, 7 min.
 - [Seven IAM predictions for 2027, checked against an agent team that runs today: where we already are, where we agree, and the two where I would bet the other way](../../articles/seven-iam-predictions-already-here.md), 2026-10-30, 6 min.
 - [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](../../articles/introducing-sharness.md), 2026-10-29, 21 min.

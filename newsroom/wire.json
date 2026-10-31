@@ -73,6 +73,36 @@
   ],
   "articles": [
     {
+      "slug": "lovable-with-sharness",
+      "title": "Lovable with SHarness, and the trojanised Claude Code extension: how to keep an app builder's code and an editor's extensions inside a policy, and what SHarness can and cannot stop today",
+      "date": "2026-10-31",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/lovable-with-sharness.html",
+      "markdown": "https://newsroom.sgit.ai/articles/lovable-with-sharness.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/lovable-with-sharness.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/lovable-with-sharness.json",
+      "teaser": "Lovable with SHarness, and the trojanised Claude Code extension: where a policy boundary has to sit, and what SHarness can stop today.",
+      "summary": "Colin Nwachukwu Ife of Geordie AI posted about a tampered copy of the Claude Code extension for VS Code, served through Cursor's extension marketplace on 29 October for about eleven hours. It ran as soon as the editor loaded it, tried to add an attacker's SSH key and open a reverse tunnel, set itself to start again, and sent details of the machine, including the names of its environment variables, to a server. Cursor's own notice says the versions were 2.1.312 and 2.1.313, that they were not developed by Anthropic, and that uninstalling may not be enough. The post's point is the right one: the agent did not misbehave, the extension hosting it was backdoored, and securing the agentic stack is an end-to-end problem. I was asked two things: how to use Lovable, the AI app builder, with SHarness, our secure harness, and whether SHarness could protect against this kind of exploit. The honest answers are these. Lovable builds and hosts in its own cloud, so SHarness cannot reach inside it; but Lovable syncs every project to GitHub in both directions, and the local half of the work, your clone, your coding agent and your package installs, can run in a SHarness shell that writes only the workspace and reaches only the sites it names. Against this exploit, the rows of a Process Behaviour Policy would refuse each step it took, and two of them run today. But SHarness runs only on Linux, the tampered build targeted macOS and Windows, and the launcher that would bind an editor or an agent is not built yet. So today it would not have stopped this. What it shows is where the boundary has to be.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sharness",
+        "lovable",
+        "supply-chain",
+        "extensions",
+        "process-behaviour-policy",
+        "security",
+        "agents",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "one-writer-one-key",
       "title": "One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again",
       "date": "2026-10-31",
