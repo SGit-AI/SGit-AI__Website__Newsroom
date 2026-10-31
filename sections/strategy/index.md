@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-69 articles, newest first.
+70 articles, newest first.
 
 ## October 2026
 
+- [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](../../articles/villager-services-for-explorer-coders.md), 2026-10-31, 7 min.
 - [From a checklist to an app you calibrate: your list is already an information system, so build its smallest version in half an hour, use it, log every run, and let it grow](../../articles/from-a-checklist-to-an-app.md), 2026-10-31, 5 min.
 - [Vibathon Algarve 2026: a sold-out day of building with AI at the University of the Algarve, and Algarve Evolution, the movement that wants the region to be an innovation hub](../../articles/vibathon-algarve-2026.md), 2026-10-31, 6 min.
 - [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](../../articles/web-summit-humans-and-their-agents.md), 2026-10-31, 7 min.

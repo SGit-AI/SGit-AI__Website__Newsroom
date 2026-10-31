@@ -138,6 +138,7 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#web
 
 ### Continued by
 
+- [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](villager-services-for-explorer-coders.md) Villager services for explorer coders: founders with ten years of checklists build the apps; we sell everything behind them in finite packs.
 - [From a checklist to an app you calibrate: your list is already an information system, so build its smallest version in half an hour, use it, log every run, and let it grow](from-a-checklist-to-an-app.md) From a checklist to an app you calibrate: build the smallest version in half an hour, use it tomorrow, log every run, and let it grow.
 
 [All articles](index.md) · [All graphs](graphs.md)

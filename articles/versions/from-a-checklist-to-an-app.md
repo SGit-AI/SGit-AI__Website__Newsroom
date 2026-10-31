@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-31 | minor | 1,495 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](from-a-checklist-to-an-app/v1.1.0.md) · [current](../from-a-checklist-to-an-app.md) |
+| **v1.1.0** | 2026-10-31 | minor | 1,495 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`6b2ebb205`](https://github.com/SGit-AI/SGit-AI__Website/commit/6b2ebb2050eb20de959e6c6c1f76452afe588433) | [what changed](from-a-checklist-to-an-app/v1.1.0.md) · [current](../from-a-checklist-to-an-app.md) |
 | **v1.0.0** | 2026-10-31 | published | 1,495 | first published | [`baba7458f`](https://github.com/SGit-AI/SGit-AI__Website/commit/baba7458fd42261e0daf158c4887f9683acba0fd) |  |
 
 [← Back to the article](../from-a-checklist-to-an-app.md) · [All articles](../index.md)

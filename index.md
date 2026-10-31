@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.21 · 341 articles since 2026-08-17; the newest is 2026-10-31. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 342 articles since 2026-08-17; the newest is 2026-10-31. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,20 +12,21 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [From a checklist to an app you calibrate: your list is already an information system, so build its smallest version in half an hour, use it, log every run, and let it grow](articles/from-a-checklist-to-an-app.md), 2026-10-31, 5 min. From a checklist to an app you calibrate: build the smallest version in half an hour, use it tomorrow, log every run, and let it grow.
+- [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](articles/villager-services-for-explorer-coders.md), 2026-10-31, 7 min. Villager services for explorer coders: founders with ten years of checklists build the apps; we sell everything behind them in finite packs.
 
 ## Five more
 
+- [From a checklist to an app you calibrate: your list is already an information system, so build its smallest version in half an hour, use it, log every run, and let it grow](articles/from-a-checklist-to-an-app.md), Startups & strategy, 2026-10-31, 5 min.
 - [Vibathon Algarve 2026: a sold-out day of building with AI at the University of the Algarve, and Algarve Evolution, the movement that wants the region to be an innovation hub](articles/vibathon-algarve-2026.md), Startups & strategy, 2026-10-31, 6 min.
 - [Lovable with SHarness, and the trojanised Claude Code extension: how to keep an app builder's code and an editor's extensions inside a policy, and what SHarness can and cannot stop today](articles/lovable-with-sharness.md), Agent security & behaviour policies, 2026-10-31, 8 min.
 - [One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again](articles/one-writer-one-key.md), Agent security & behaviour policies, 2026-10-31, 7 min.
 - [An augmented PDF viewer: how hard is it to build one in the browser that renders any PDF and opens the provenance, the graph and the comments behind it? Less than I thought](articles/an-augmented-pdf-viewer.md), Engineering this newsroom, 2026-10-31, 7 min.
-- [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](articles/web-summit-humans-and-their-agents.md), Startups & strategy, 2026-10-31, 7 min.
 
 ## The last five days
 
-### Saturday 31 October 2026 (8 articles)
+### Saturday 31 October 2026 (9 articles)
 
+- Startups & strategy: [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](articles/villager-services-for-explorer-coders.md), 7 min.
 - Startups & strategy: [From a checklist to an app you calibrate: your list is already an information system, so build its smallest version in half an hour, use it, log every run, and let it grow](articles/from-a-checklist-to-an-app.md), 5 min.
 - Startups & strategy: [Vibathon Algarve 2026: a sold-out day of building with AI at the University of the Algarve, and Algarve Evolution, the movement that wants the region to be an innovation hub](articles/vibathon-algarve-2026.md), 6 min.
 - Agent security & behaviour policies: [Lovable with SHarness, and the trojanised Claude Code extension: how to keep an app builder's code and an editor's extensions inside a policy, and what SHarness can and cannot stop today](articles/lovable-with-sharness.md), 8 min.
@@ -117,13 +118,13 @@ Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta
 - [Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters](articles/meta-terms-and-the-news.md), 2026-10-27.
 - [One researcher for every newsroom: a research site that works as a light, focused Internet Archive for the sources our stories rest on, captured on a schedule into a pack a day, published by licence tier, and shared by the PHP site, the wires and the Web Summit newsroom](articles/one-researcher-for-every-newsroom.md), 2026-10-26.
 
-### [Startups & strategy](sections/strategy/index.md) (69)
+### [Startups & strategy](sections/strategy/index.md) (70)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
+- [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](articles/villager-services-for-explorer-coders.md), 2026-10-31.
 - [From a checklist to an app you calibrate: your list is already an information system, so build its smallest version in half an hour, use it, log every run, and let it grow](articles/from-a-checklist-to-an-app.md), 2026-10-31.
 - [Vibathon Algarve 2026: a sold-out day of building with AI at the University of the Algarve, and Algarve Evolution, the movement that wants the region to be an innovation hub](articles/vibathon-algarve-2026.md), 2026-10-31.
 - [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](articles/web-summit-humans-and-their-agents.md), 2026-10-31.
 - [A brief for the Web Summit team: an event site run by an ephemeral agent team, built from this week's template, with a map of every company we should meet](articles/web-summit-team-brief.md), 2026-10-30.
-- [Selling less code: the economics of customised open source, where the customer pays for the features they use, the maker certifies what it ships, and the pipeline is finally tied to revenue](articles/selling-less-code.md), 2026-10-30.
 
 ### [Engineering this newsroom](sections/building/index.md) (37)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.

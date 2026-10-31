@@ -92,6 +92,10 @@ News & evidenceStartups & strategy[This article as a graph →](graphs.md#two-ye
 - [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](why-i-love-wardley-maps.md) The best of our Wardley maps with their context, why the technique matters, one map read as a story, and a map inside a map inside a map.
 - [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and an AI edition, dated October 2026, made first.
 
+### Continued by
+
+- [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](villager-services-for-explorer-coders.md) Villager services for explorer coders: founders with ten years of checklists build the apps; we sell everything behind them in finite packs.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 204 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=204)

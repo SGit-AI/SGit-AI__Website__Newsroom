@@ -97,6 +97,10 @@ Startups & strategyVaults & method[This article as a graph →](graphs.md#from-a
 - [Lovable with SHarness, and the trojanised Claude Code extension: how to keep an app builder's code and an editor's extensions inside a policy, and what SHarness can and cannot stop today](lovable-with-sharness.md) Lovable with SHarness, and the trojanised Claude Code extension: where a policy boundary has to sit, and what SHarness can stop today.
 - [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](websites-you-own.md) Websites you own: a reply to an infographic that rents AI-built websites by the month, and the one-off model I propose.
 
+### Continued by
+
+- [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](villager-services-for-explorer-coders.md) Villager services for explorer coders: founders with ten years of checklists build the apps; we sell everything behind them in finite packs.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 342 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=342)
