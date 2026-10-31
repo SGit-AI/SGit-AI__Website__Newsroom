@@ -113,6 +113,10 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#villag
 - [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](websites-you-own.md) Websites you own: a reply to an infographic that rents AI-built websites by the month, and the one-off model I propose.
 - [Vibathon Algarve 2026: a sold-out day of building with AI at the University of the Algarve, and Algarve Evolution, the movement that wants the region to be an innovation hub](vibathon-algarve-2026.md) Vibathon Algarve 2026: a sold-out day of building with AI in Faro, and Algarve Evolution, the movement making the region an innovation hub.
 
+### Continued by
+
+- [Joining Algarve Evolution: The Cyber Boardroom takes the startup membership, and what we can share with the region, our workflows and our technology, all of it open source](joining-algarve-evolution.md) Joining Algarve Evolution: The Cyber Boardroom takes the startup membership and shares its workflows and technology, all open source.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 343 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=343)

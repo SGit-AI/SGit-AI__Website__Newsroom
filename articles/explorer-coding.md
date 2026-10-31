@@ -92,6 +92,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#explor
 
 ### Continued by
 
+- [Joining Algarve Evolution: The Cyber Boardroom takes the startup membership, and what we can share with the region, our workflows and our technology, all of it open source](joining-algarve-evolution.md) Joining Algarve Evolution: The Cyber Boardroom takes the startup membership and shares its workflows and technology, all open source.
 - [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](villager-services-for-explorer-coders.md) Villager services for explorer coders: founders with ten years of checklists build the apps; we sell everything behind them in finite packs.
 - [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](the-open-security-summit-and-its-debt.md) How technical debt stalled the Open Security Summit's website and follow-up, what the repositories show, and why agents make a restart worthwhile.
 - [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](programming-taught-upside-down.md) We teach programming the way Lockhart says we teach maths: concepts first. Explorer coding starts where the hook is.

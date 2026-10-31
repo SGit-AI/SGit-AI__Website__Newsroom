@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-70 articles, newest first.
+71 articles, newest first.
 
 ## October 2026
 
+- [Joining Algarve Evolution: The Cyber Boardroom takes the startup membership, and what we can share with the region, our workflows and our technology, all of it open source](../../articles/joining-algarve-evolution.md), 2026-10-31, 5 min.
 - [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](../../articles/villager-services-for-explorer-coders.md), 2026-10-31, 7 min.
 - [From a checklist to an app you calibrate: your list is already an information system, so build its smallest version in half an hour, use it, log every run, and let it grow](../../articles/from-a-checklist-to-an-app.md), 2026-10-31, 5 min.
 - [Vibathon Algarve 2026: a sold-out day of building with AI at the University of the Algarve, and Algarve Evolution, the movement that wants the region to be an innovation hub](../../articles/vibathon-algarve-2026.md), 2026-10-31, 6 min.
