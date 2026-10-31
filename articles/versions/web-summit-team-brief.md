@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-31 | minor | 2,051 | +85 / −12 words; 2 changed, 2 added, 1 removed paragraphs | this release | [what changed](web-summit-team-brief/v1.1.0.md) · [current](../web-summit-team-brief.md) |
+| **v1.1.0** | 2026-10-31 | minor | 2,051 | +85 / −12 words; 2 changed, 2 added, 1 removed paragraphs | [`e7d5f3f0e`](https://github.com/SGit-AI/SGit-AI__Website/commit/e7d5f3f0ef18976be50b36278860b2c2f8ef3264) | [what changed](web-summit-team-brief/v1.1.0.md) · [current](../web-summit-team-brief.md) |
 | **v1.0.0** | 2026-10-30 | published | 1,978 | first published | [`3f336e316`](https://github.com/SGit-AI/SGit-AI__Website/commit/3f336e316626364f3bbf3219ffc8626f56ad34fa) |  |
 
 [← Back to the article](../web-summit-team-brief.md) · [All articles](../index.md)

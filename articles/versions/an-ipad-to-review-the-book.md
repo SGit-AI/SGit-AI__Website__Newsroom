@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-31 | published | 2,225 | first published | this release | [current](../an-ipad-to-review-the-book.md) |
+| **v1.0.0** | 2026-10-31 | published | 2,225 | first published | [`e7d5f3f0e`](https://github.com/SGit-AI/SGit-AI__Website/commit/e7d5f3f0ef18976be50b36278860b2c2f8ef3264) | [current](../an-ipad-to-review-the-book.md) |
 
 [← Back to the article](../an-ipad-to-review-the-book.md) · [All articles](../index.md)
 

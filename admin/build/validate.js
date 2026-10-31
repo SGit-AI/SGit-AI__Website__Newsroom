@@ -38,6 +38,9 @@
 //      or a draft is at most 120 characters: what the image is, not the data or the argument.
 //      Long captions overflowed the page beside a figure and could not be carried into a LinkedIn
 //      article or newsletter (the editor's rule, 27 October 2026; admin/build/captions.py lists them).
+//  15. one writer at a time — admin/writer/register.json has at most one open registration, keys are
+//      never reused, and a writer's commit is signed by the open registration's key over its tree
+//      (the editor's rule, 31 October 2026; admin/build/writer_register.js has the details).
 // Any failure exits 1: no tag, no publish.
 'use strict';
 const fs   = require('fs');
@@ -519,6 +522,9 @@ try {
   }
 }
 
+// --- 15. one writer at a time ---------------------------------------------
+require('./writer_register').check(ROOT, errors);
+
 // --- report ---------------------------------------------------------------
 if (errors.length) {
   console.error(`validate: ${errors.length} error(s)`);
@@ -528,4 +534,4 @@ if (errors.length) {
 console.log(`validate: OK — ${VERSION} on ${HOST}, ${htmlFiles.length} pages, ` +
             `${hubs.length} hubs in llms.txt, sitemap agrees, links resolve, blocks balanced, ` +
             `every page carries an agent block, provenance blocks sourced, no redacted material, ` +
-            `no key-shaped strings, the imported newsroom unedited, the article numbers hold, captions short`);
+            `no key-shaped strings, the imported newsroom unedited, the article numbers hold, captions short, one writer`);

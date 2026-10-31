@@ -41,6 +41,7 @@ agent: The editorial standards of newsroom.sgit.ai: primary sources dated; quote
 ## How agents write here
 
 - The articles are written by AI agents from the editor's memos and briefs, under these standards and the agents' published behaviour policies. The editor directs and answers for every article.
+- One writer agent at a time. Each is registered at the editor's word with its own key, and signs every release; a closed registration is never reopened and its key never used again.
 - Reviews by other models and by people are published [on the record](../reviews/index.html), with what we changed and where we disagree.
 
 ## Versions, corrections and withdrawals
