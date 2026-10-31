@@ -2,10 +2,11 @@
 
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
 
-38 articles, newest first.
+39 articles, newest first.
 
 ## October 2026
 
+- [A composer's agent: a plan to read a piano score from a PDF into Sibelius, then the composer's own handwriting, with MusicXML in the middle and a check by rendering back](../../articles/a-composers-agent.md), 2026-10-31, 5 min.
 - [From Lovable to your own newsroom: a brief for José Bota and his agent, to put every app on GitHub Pages under his own domain, and publish each one as an article](../../articles/from-lovable-to-your-own-newsroom.md), 2026-10-31, 5 min.
 - [An augmented PDF viewer: how hard is it to build one in the browser that renders any PDF and opens the provenance, the graph and the comments behind it? Less than I thought](../../articles/an-augmented-pdf-viewer.md), 2026-10-31, 7 min.
 - [The augmented book: one source in layers, projected to the web, the iPad and print, so the reader gets the right information at the right time, and what fifty years of attempts teach](../../articles/the-augmented-book.md), 2026-10-31, 9 min.

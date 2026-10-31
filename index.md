@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.27 · 350 articles since 2026-08-17; the newest is 2026-10-31. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 351 articles since 2026-08-17; the newest is 2026-10-31. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,20 +12,21 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](articles/agentic-readers.md), 2026-10-31, 6 min. Agentic risk, or agentic readers? A reply to DJB Strategies' publisher outlook, its framework answered by a newsroom already doing it.
+- [A composer's agent: a plan to read a piano score from a PDF into Sibelius, then the composer's own handwriting, with MusicXML in the middle and a check by rendering back](articles/a-composers-agent.md), 2026-10-31, 5 min. A composer's agent: a plan to read a piano PDF into Sibelius, then the composer's handwriting, with MusicXML in the middle and a check.
 
 ## Five more
 
+- [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](articles/agentic-readers.md), The future of news, 2026-10-31, 6 min.
 - [A presentation for every project: how the agentic workflow behind a talk built in a day can turn each project from a build day into a visual, dynamic presentation, and a service](articles/a-presentation-for-every-project.md), Startups & strategy, 2026-10-31, 4 min.
 - [Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens](articles/running-an-ai-build-event.md), Startups & strategy, 2026-10-31, 5 min.
 - [Spreadsheet to App: a session programme for Algarve Evolution, with five example spreadsheets, five prompts, a mock event and a public vault, so nobody arrives needing a problem to solve](articles/spreadsheet-to-app-sessions.md), Startups & strategy, 2026-10-31, 6 min.
 - [From Lovable to your own newsroom: a brief for José Bota and his agent, to put every app on GitHub Pages under his own domain, and publish each one as an article](articles/from-lovable-to-your-own-newsroom.md), Engineering this newsroom, 2026-10-31, 5 min.
-- [Sell to the companies that already have the problem: how Algarve Evolution can match businesses adopting AI with the region's service providers, starting when the business has built its own first app](articles/sell-to-the-companies-that-already-have-the-problem.md), Startups & strategy, 2026-10-31, 5 min.
 
 ## The last five days
 
-### Saturday 31 October 2026 (17 articles)
+### Saturday 31 October 2026 (18 articles)
 
+- Engineering this newsroom: [A composer's agent: a plan to read a piano score from a PDF into Sibelius, then the composer's own handwriting, with MusicXML in the middle and a check by rendering back](articles/a-composers-agent.md), 5 min.
 - The future of news: [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](articles/agentic-readers.md), 6 min.
 - Startups & strategy: [A presentation for every project: how the agentic workflow behind a talk built in a day can turn each project from a build day into a visual, dynamic presentation, and a service](articles/a-presentation-for-every-project.md), 4 min.
 - Startups & strategy: [Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens](articles/running-an-ai-build-event.md), 5 min.
@@ -134,13 +135,13 @@ Founders, funding, open source economics, Wardley maps, Portugal and Europe, leg
 - [Sell to the companies that already have the problem: how Algarve Evolution can match businesses adopting AI with the region's service providers, starting when the business has built its own first app](articles/sell-to-the-companies-that-already-have-the-problem.md), 2026-10-31.
 - [An Algarve talent map: how Algarve Evolution can turn its mapping of services, mentors and investors into a public matchmaking site, built by one Claude session, with consent first](articles/an-algarve-talent-map.md), 2026-10-31.
 
-### [Engineering this newsroom](sections/building/index.md) (38)
+### [Engineering this newsroom](sections/building/index.md) (39)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
+- [A composer's agent: a plan to read a piano score from a PDF into Sibelius, then the composer's own handwriting, with MusicXML in the middle and a check by rendering back](articles/a-composers-agent.md), 2026-10-31.
 - [From Lovable to your own newsroom: a brief for José Bota and his agent, to put every app on GitHub Pages under his own domain, and publish each one as an article](articles/from-lovable-to-your-own-newsroom.md), 2026-10-31.
 - [An augmented PDF viewer: how hard is it to build one in the browser that renders any PDF and opens the provenance, the graph and the comments behind it? Less than I thought](articles/an-augmented-pdf-viewer.md), 2026-10-31.
 - [The augmented book: one source in layers, projected to the web, the iPad and print, so the reader gets the right information at the right time, and what fifty years of attempts teach](articles/the-augmented-book.md), 2026-10-31.
 - [An iPad to review the book: a brief for an app that reads the PDFs, shows the comments on the page, opens its vault with my passkey and carries sgit in Swift](articles/an-ipad-to-review-the-book.md), 2026-10-31.
-- [Becoming an official publication: the SGit Newsroom now has a publisher, an editor, standards, a corrections log, a withdrawal process and a complaints route, and is applying to a regulator](articles/becoming-an-official-publication.md), 2026-10-30.
 
 ### [Graphs & knowledge](sections/graphs/index.md) (13)
 Fractal semantic graphs, knowledge that maintains itself, search as navigation, and the research community around them.

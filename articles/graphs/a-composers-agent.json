@@ -1,0 +1,130 @@
+{
+  "slug": "a-composers-agent",
+  "teaser": "A composer's agent: a plan to read a piano PDF into Sibelius, then the composer's handwriting, with MusicXML in the middle and a check.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "A composer wants an agent that reads a piano PDF into Sibelius and later their own handwriting; the plan keeps MusicXML in the middle, uses an OMR engine or the model to recognise the page, checks by rendering the MusicXML back and comparing with the page, then drives Sibelius only where it must, by plugin or Sibelius Connect before the screen; a scheduled Claude session connected by Remote Control does the work, keeping every page and correction in a vault so handwriting improves from the composer's own examples; four MVPs in order.",
+  "nodes": [
+    {
+      "id": "want",
+      "label": "What the composer wants",
+      "kind": "example",
+      "summary": "A PDF into Sibelius, then handwriting."
+    },
+    {
+      "id": "xml",
+      "label": "MusicXML in the middle",
+      "kind": "method",
+      "summary": "Recognise to an open format Sibelius imports."
+    },
+    {
+      "id": "omr",
+      "label": "Recognition engines",
+      "kind": "artefact",
+      "summary": "Audiveris (open source), PhotoScore (commercial), or the model."
+    },
+    {
+      "id": "check",
+      "label": "Check by rendering back",
+      "kind": "method",
+      "summary": "Draw the MusicXML, compare with the page, fix."
+    },
+    {
+      "id": "sib",
+      "label": "Driving Sibelius",
+      "kind": "method",
+      "summary": "Plugin, Sibelius Connect, the screen last."
+    },
+    {
+      "id": "stack",
+      "label": "The agent and its computer",
+      "kind": "method",
+      "summary": "A scheduled session, Remote Control, a policy, a vault."
+    },
+    {
+      "id": "hand",
+      "label": "Handwriting from examples",
+      "kind": "method",
+      "summary": "Past pages and corrections as examples, not training."
+    },
+    {
+      "id": "mvps",
+      "label": "Four MVPs",
+      "kind": "method",
+      "summary": "A page, the check loop, into Sibelius, a handwritten page."
+    }
+  ],
+  "edges": [
+    {
+      "from": "want",
+      "to": "xml",
+      "rel": "leads-to"
+    },
+    {
+      "from": "omr",
+      "to": "xml",
+      "rel": "produces"
+    },
+    {
+      "from": "xml",
+      "to": "check",
+      "rel": "leads-to"
+    },
+    {
+      "from": "check",
+      "to": "sib",
+      "rel": "leads-to"
+    },
+    {
+      "from": "stack",
+      "to": "check",
+      "rel": "depends-on"
+    },
+    {
+      "from": "hand",
+      "to": "omr",
+      "rel": "extends"
+    },
+    {
+      "from": "mvps",
+      "to": "check",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "from-a-checklist-to-an-app",
+      "reading-with-a-pen",
+      "lovable-with-sharness"
+    ],
+    "pages": [],
+    "sites": [
+      "https://github.com/Audiveris/audiveris",
+      "https://www.scoringnotes.com/news/sibelius-2024-3/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Put an open format in the middle.",
+      "why": "The first decision."
+    },
+    {
+      "text": "the agent's real job is the check",
+      "why": "Why rendering back."
+    },
+    {
+      "text": "It is to keep examples.",
+      "why": "How it learns a hand."
+    }
+  ],
+  "figures": [
+    {
+      "file": "cm-plan.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cm-plan.webp",
+      "caption": "A composer's agent in two phases: printed piano music into Sibelius first, then the composer's own handwriting.",
+      "kind": "process"
+    }
+  ]
+}
