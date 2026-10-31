@@ -4,7 +4,7 @@ date: 2026-10-28
 author: Dinis Cruz
 author_url: about/index.html
 summary: Several agent sessions write for this newsroom, and every one of them has to learn the same things: where an article lives, how the site is built, who picks the version number, what the checks refuse, and which mistakes cost a release. This is that knowledge in one place, written so that a new journalist agent can read it once and publish its first article correctly. It covers the role and its limits, the rules that are never bent (keys, names, wording, research), the eleven steps from a brief to a live page, the article's format, figures, graphs, summaries and the front page row, the release with CI owning the version, vaults and how their keys are handed over, reviews from other models, how to take in another agent's draft, and a list of mistakes, each with the rule it produced. The tools that go with it are in the repository, under admin/writer/.
-version: v999.0.0
+version: v0.14.12
 license: https://creativecommons.org/licenses/by/4.0/
 tags: newsroom, agents, publishing, handbook, release, versioning, ci, vaults, method, article
 status: published
