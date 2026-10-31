@@ -1,0 +1,35 @@
+{
+ "slug": "from-a-checklist-to-an-app",
+ "teaser": "From a checklist to an app you calibrate: build the smallest version in half an hour, use it tomorrow, log every run, and let it grow.",
+ "topics": ["startups-and-strategy", "vaults-and-method"],
+ "core_idea": "A list of actions with the important ones in bold is already an information system, but it has no history, relies on memory and has a flat interface; instead of designing a final app, build the smallest useful version through an LLM in half an hour, deploy it, use it, keep a small file per run as memory, and calibrate each time so priorities and conditions turn the flat list into a tree; start with no database and nothing confidential so the internet can be the way to share it.",
+ "nodes": [
+  {"id": "list", "label": "The list you have", "kind": "concept", "summary": "Years of experience; the bold is the priority system."},
+  {"id": "missing", "label": "What it lacks", "kind": "claim", "summary": "No history, memory or context; a flat interface."},
+  {"id": "mvp", "label": "The smallest useful version", "kind": "method", "summary": "Built through an LLM, deployed, usable, adding value."},
+  {"id": "bold", "label": "Just the bold first", "kind": "method", "summary": "Three things, then the next five."},
+  {"id": "loop", "label": "The loop is the product", "kind": "method", "summary": "Build, publish, use, log, calibrate."},
+  {"id": "tree", "label": "From flat to tree", "kind": "concept", "summary": "Priorities and if-this-then-that, found by use."},
+  {"id": "memory", "label": "A small file per run", "kind": "method", "summary": "What was used, skipped and what happened."},
+  {"id": "simple", "label": "No database, nothing confidential", "kind": "claim", "summary": "Browser storage, a shared account, the internet to share."}
+ ],
+ "edges": [
+  {"from": "list", "to": "missing", "rel": "leads-to"},
+  {"from": "missing", "to": "mvp", "rel": "answers"},
+  {"from": "mvp", "to": "bold", "rel": "produces"},
+  {"from": "bold", "to": "loop", "rel": "leads-to"},
+  {"from": "loop", "to": "tree", "rel": "produces"},
+  {"from": "memory", "to": "loop", "rel": "depends-on"},
+  {"from": "simple", "to": "mvp", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["vibathon-algarve-2026", "lovable-with-sharness", "websites-you-own"],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "the tree is already in your head", "why": "Why it is a perfect place to start."},
+  {"text": "The most important thing is not the app.", "why": "The point."},
+  {"text": "Those files are your memory", "why": "What learning means here."}
+ ]
+}

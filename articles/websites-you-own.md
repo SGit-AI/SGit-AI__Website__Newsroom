@@ -136,7 +136,9 @@ The infographic sent to me on 26 October 2026, and my voice memo of the same day
 
 Startups & strategySite & engineering[This article as a graph →](graphs.md#websites-you-own)
 
-No other article links here yet.
+### Continued by
+
+- [From a checklist to an app you calibrate: your list is already an information system, so build its smallest version in half an hour, use it, log every run, and let it grow](from-a-checklist-to-an-app.md) From a checklist to an app you calibrate: build the smallest version in half an hour, use it tomorrow, log every run, and let it grow.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

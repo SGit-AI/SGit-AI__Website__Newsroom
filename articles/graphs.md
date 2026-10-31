@@ -14,13 +14,39 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-340 of 340 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+341 of 341 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-340 articles, 1632 links between them (2495 mentions in all). 281 articles cite an earlier one; 82 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 33 articles not yet linked either way.
+341 articles, 1635 links between them (2498 mentions in all). 282 articles cite an earlier one; 82 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 32 articles not yet linked either way.
+
+## [From a checklist to an app you calibrate: your list is already an information system, so build its smallest version in half an hour, use it, log every run, and let it grow](from-a-checklist-to-an-app.md)
+
+2026-10-31 · Startups & strategyVaults & method
+
+A list of actions with the important ones in bold is already an information system, but it has no history, relies on memory and has a flat interface; instead of designing a final app, build the smallest useful version through an LLM in half an hour, deploy it, use it, keep a small file per run as memory, and calibrate each time so priorities and conditions turn the flat list into a tree; start with no database and nothing confidential so the internet can be the way to share it.
+
+*[diagram]*
+**concept**claim**method
+
+**8 nodes, 7 edges**
+
+- **The list you have** (concept) Years of experience; the bold is the priority system.
+- **What it lacks** (claim) No history, memory or context; a flat interface.
+- **The smallest useful version** (method) Built through an LLM, deployed, usable, adding value.
+- **Just the bold first** (method) Three things, then the next five.
+- **The loop is the product** (method) Build, publish, use, log, calibrate.
+- **From flat to tree** (concept) Priorities and if-this-then-that, found by use.
+- **A small file per run** (method) What was used, skipped and what happened.
+- **No database, nothing confidential** (claim) Browser storage, a shared account, the internet to share.
+
+> the tree is already in your head Why it is a perfect place to start.
+
+> The most important thing is not the app. The point.
+
+builds on [Vibathon Algarve 2026: a sold-out day of building with AI at the University of the Algarve, and Algarve Evolution, the movement that wants the region to be an innovation hub](#vibathon-algarve-2026), [Lovable with SHarness, and the trojanised Claude Code extension: how to keep an app builder's code and an editor's extensions inside a policy, and what SHarness can and cannot stop today](#lovable-with-sharness), [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](#websites-you-own).
 
 ## [Vibathon Algarve 2026: a sold-out day of building with AI at the University of the Algarve, and Algarve Evolution, the movement that wants the region to be an innovation hub](vibathon-algarve-2026.md)
 
@@ -46,7 +72,7 @@ Algarve Evolution, an association begun in 2018 by a small group of local entrep
 
 > That's it. That's literally the loop. The method.
 
-builds on [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](#web-summit-humans-and-their-agents), [Lovable with SHarness, and the trojanised Claude Code extension: how to keep an app builder's code and an editor's extensions inside a policy, and what SHarness can and cannot stop today](#lovable-with-sharness), [Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later](#portugal-and-europe-2025), [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](#the-open-security-summit-and-its-debt).
+builds on [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](#web-summit-humans-and-their-agents), [Lovable with SHarness, and the trojanised Claude Code extension: how to keep an app builder's code and an editor's extensions inside a policy, and what SHarness can and cannot stop today](#lovable-with-sharness), [Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later](#portugal-and-europe-2025), [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](#the-open-security-summit-and-its-debt); continued by [From a checklist to an app you calibrate: your list is already an information system, so build its smallest version in half an hour, use it, log every run, and let it grow](#from-a-checklist-to-an-app).
 
 ## [Lovable with SHarness, and the trojanised Claude Code extension: how to keep an app builder's code and an editor's extensions inside a policy, and what SHarness can and cannot stop today](lovable-with-sharness.md)
 
@@ -73,7 +99,7 @@ A tampered Claude Code extension in Cursor's marketplace ran on load with the ed
 
 > The production secrets stay in Lovable Why the pairing helps.
 
-builds on [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](#introducing-sharness), [Selling less code: the economics of customised open source, where the customer pays for the features they use, the maker certifies what it ships, and the pipeline is finally tied to revenue](#selling-less-code), [Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break](#proven-controls-for-agents); continued by [Vibathon Algarve 2026: a sold-out day of building with AI at the University of the Algarve, and Algarve Evolution, the movement that wants the region to be an innovation hub](#vibathon-algarve-2026).
+builds on [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](#introducing-sharness), [Selling less code: the economics of customised open source, where the customer pays for the features they use, the maker certifies what it ships, and the pipeline is finally tied to revenue](#selling-less-code), [Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break](#proven-controls-for-agents); continued by [From a checklist to an app you calibrate: your list is already an information system, so build its smallest version in half an hour, use it, log every run, and let it grow](#from-a-checklist-to-an-app), [Vibathon Algarve 2026: a sold-out day of building with AI at the University of the Algarve, and Algarve Evolution, the movement that wants the region to be an innovation hub](#vibathon-algarve-2026).
 
 ## [One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again](one-writer-one-key.md)
 
@@ -1207,6 +1233,8 @@ Selling AI-built websites by the month gets the economics wrong: rent pays most 
 > A cap of five pages is a pricing device, not a cost. 1. The price plans.
 
 > Every engagement is finite The model I propose.
+
+continued by [From a checklist to an app you calibrate: your list is already an information system, so build its smallest version in half an hour, use it, log every run, and let it grow](#from-a-checklist-to-an-app).
 
 ## [Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it](inside-kitewing-websites.md)
 
