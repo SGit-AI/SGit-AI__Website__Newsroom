@@ -39,7 +39,7 @@ From a design point of view, the problem is not the list. It is everything aroun
 - **It has little context.** Why a step is there, what depends on it, when it matters.
 - **Its interface is flat.** What you really want is a small app that says: here are the first three things. Done. Now here are the next five. Done.
 
-That is a tree, and the tree is already in your head: you compensate for the flat list every time you use it. Which makes it a perfect place to start, because you already know what the result should feel like.
+That is a tree, and the tree is already in your head: you compensate for the flat list every time you use it. Which makes it a great place to start, because you already know what the result should feel like.
 
 ## Do not aim for the final app {#mvp}
 

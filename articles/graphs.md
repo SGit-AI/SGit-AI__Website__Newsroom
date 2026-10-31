@@ -42,7 +42,7 @@ A list of actions with the important ones in bold is already an information syst
 - **A small file per run** (method) What was used, skipped and what happened.
 - **No database, nothing confidential** (claim) Browser storage, a shared account, the internet to share.
 
-> the tree is already in your head Why it is a perfect place to start.
+> the tree is already in your head Why it is a great place to start.
 
 > The most important thing is not the app. The point.
 
