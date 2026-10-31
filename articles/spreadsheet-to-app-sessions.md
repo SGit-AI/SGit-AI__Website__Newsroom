@@ -125,6 +125,10 @@ Startups & strategyVaults & method[This article as a graph →](graphs.md#spread
 - [Vibathon Algarve 2026: a sold-out day of building with AI at the University of the Algarve, and Algarve Evolution, the movement that wants the region to be an innovation hub](vibathon-algarve-2026.md) Vibathon Algarve 2026: a sold-out day of building with AI in Faro, and Algarve Evolution, the movement making the region an innovation hub.
 - [An Algarve talent map: how Algarve Evolution can turn its mapping of services, mentors and investors into a public matchmaking site, built by one Claude session, with consent first](an-algarve-talent-map.md) An Algarve talent map: Algarve Evolution's mapping of services, mentors and investors as a public matchmaking site, consent first.
 
+### Continued by
+
+- [Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens](running-an-ai-build-event.md) Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from browser-only to synthetic users.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 348 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=348)

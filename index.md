@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.25 · 347 articles since 2026-08-17; the newest is 2026-10-31. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 348 articles since 2026-08-17; the newest is 2026-10-31. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,20 +12,21 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Spreadsheet to App: a session programme for Algarve Evolution, with five example spreadsheets, five prompts, a mock event and a public vault, so nobody arrives needing a problem to solve](articles/spreadsheet-to-app-sessions.md), 2026-10-31, 6 min. Spreadsheet to App: a session programme for Algarve Evolution, with five examples, five prompts, a mock event and a public vault.
+- [Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens](articles/running-an-ai-build-event.md), 2026-10-31, 5 min. Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from browser-only to synthetic users.
 
 ## Five more
 
+- [Spreadsheet to App: a session programme for Algarve Evolution, with five example spreadsheets, five prompts, a mock event and a public vault, so nobody arrives needing a problem to solve](articles/spreadsheet-to-app-sessions.md), Startups & strategy, 2026-10-31, 6 min.
 - [From Lovable to your own newsroom: a brief for José Bota and his agent, to put every app on GitHub Pages under his own domain, and publish each one as an article](articles/from-lovable-to-your-own-newsroom.md), Engineering this newsroom, 2026-10-31, 5 min.
 - [Sell to the companies that already have the problem: how Algarve Evolution can match businesses adopting AI with the region's service providers, starting when the business has built its own first app](articles/sell-to-the-companies-that-already-have-the-problem.md), Startups & strategy, 2026-10-31, 5 min.
 - [An Algarve talent map: how Algarve Evolution can turn its mapping of services, mentors and investors into a public matchmaking site, built by one Claude session, with consent first](articles/an-algarve-talent-map.md), Startups & strategy, 2026-10-31, 6 min.
 - [Joining Algarve Evolution: The Cyber Boardroom takes the startup membership, and what we can share with the region, our workflows and our technology, all of it open source](articles/joining-algarve-evolution.md), Startups & strategy, 2026-10-31, 5 min.
-- [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](articles/villager-services-for-explorer-coders.md), Startups & strategy, 2026-10-31, 7 min.
 
 ## The last five days
 
-### Saturday 31 October 2026 (14 articles)
+### Saturday 31 October 2026 (15 articles)
 
+- Startups & strategy: [Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens](articles/running-an-ai-build-event.md), 5 min.
 - Startups & strategy: [Spreadsheet to App: a session programme for Algarve Evolution, with five example spreadsheets, five prompts, a mock event and a public vault, so nobody arrives needing a problem to solve](articles/spreadsheet-to-app-sessions.md), 6 min.
 - Engineering this newsroom: [From Lovable to your own newsroom: a brief for José Bota and his agent, to put every app on GitHub Pages under his own domain, and publish each one as an article](articles/from-lovable-to-your-own-newsroom.md), 5 min.
 - Startups & strategy: [Sell to the companies that already have the problem: how Algarve Evolution can match businesses adopting AI with the region's service providers, starting when the business has built its own first app](articles/sell-to-the-companies-that-already-have-the-problem.md), 5 min.
@@ -123,13 +124,13 @@ Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta
 - [Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters](articles/meta-terms-and-the-news.md), 2026-10-27.
 - [One researcher for every newsroom: a research site that works as a light, focused Internet Archive for the sources our stories rest on, captured on a schedule into a pack a day, published by licence tier, and shared by the PHP site, the wires and the Web Summit newsroom](articles/one-researcher-for-every-newsroom.md), 2026-10-26.
 
-### [Startups & strategy](sections/strategy/index.md) (74)
+### [Startups & strategy](sections/strategy/index.md) (75)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
+- [Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens](articles/running-an-ai-build-event.md), 2026-10-31.
 - [Spreadsheet to App: a session programme for Algarve Evolution, with five example spreadsheets, five prompts, a mock event and a public vault, so nobody arrives needing a problem to solve](articles/spreadsheet-to-app-sessions.md), 2026-10-31.
 - [Sell to the companies that already have the problem: how Algarve Evolution can match businesses adopting AI with the region's service providers, starting when the business has built its own first app](articles/sell-to-the-companies-that-already-have-the-problem.md), 2026-10-31.
 - [An Algarve talent map: how Algarve Evolution can turn its mapping of services, mentors and investors into a public matchmaking site, built by one Claude session, with consent first](articles/an-algarve-talent-map.md), 2026-10-31.
 - [Joining Algarve Evolution: The Cyber Boardroom takes the startup membership, and what we can share with the region, our workflows and our technology, all of it open source](articles/joining-algarve-evolution.md), 2026-10-31.
-- [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](articles/villager-services-for-explorer-coders.md), 2026-10-31.
 
 ### [Engineering this newsroom](sections/building/index.md) (38)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-31 | published | 1,601 | first published | this release | [current](../spreadsheet-to-app-sessions.md) |
+| **v1.0.0** | 2026-10-31 | published | 1,601 | first published | [`f42c04d60`](https://github.com/SGit-AI/SGit-AI__Website/commit/f42c04d60cd567722ec8625628947bcce0d817db) | [current](../spreadsheet-to-app-sessions.md) |
 
 [← Back to the article](../spreadsheet-to-app-sessions.md) · [All articles](../index.md)
 

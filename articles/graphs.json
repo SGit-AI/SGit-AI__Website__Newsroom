@@ -55,6 +55,184 @@
   ],
   "articles": [
     {
+      "slug": "running-an-ai-build-event",
+      "title": "Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens",
+      "date": "2026-10-31",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/running-an-ai-build-event.html",
+      "markdown": "https://newsroom.sgit.ai/articles/running-an-ai-build-event.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/running-an-ai-build-event.webp",
+      "teaser": "Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from browser-only to synthetic users.",
+      "topics": [
+        "startups-and-strategy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "events",
+        "ai-adoption",
+        "onboarding",
+        "github-pages",
+        "synthetic-users",
+        "education",
+        "guidance",
+        "article"
+      ],
+      "links_out": [
+        "the-open-security-summit-and-its-debt",
+        "spreadsheet-to-app-sessions",
+        "generation-z-developers-again",
+        "villager-services-for-explorer-coders",
+        "from-a-checklist-to-an-app"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ev-stages.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ev-stages.webp",
+          "caption": "Five stages from never having done this to something others use, and the primitives that carry people up them.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "running-an-ai-build-event",
+        "teaser": "Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from browser-only to synthetic users.",
+        "topics": [
+          "startups-and-strategy",
+          "site-and-engineering"
+        ],
+        "core_idea": "The best AI onboarding is a bring-your-own-problem build day, and its hardest goal is getting each person to ship something someone else can use; that takes primitives in place before the day: AI and agents running the event itself, a browser-only workspace with nothing to install and no payments, prepared cases and recipes, villagers and synthetic users in the room, a client-side architecture on GitHub Pages, five stages people can climb, and synthetic users testing the event beforehand, all so people feel the feedback loop.",
+        "nodes": [
+          {
+            "id": "format",
+            "label": "Bring a problem, build something",
+            "kind": "concept",
+            "summary": "The format that works."
+          },
+          {
+            "id": "ship",
+            "label": "Ship to someone else",
+            "kind": "claim",
+            "summary": "The hard part, and the point of the day."
+          },
+          {
+            "id": "ai",
+            "label": "AI runs the event",
+            "kind": "method",
+            "summary": "Know who is coming, prepare their materials, follow up."
+          },
+          {
+            "id": "browser",
+            "label": "Browser only",
+            "kind": "method",
+            "summary": "Nothing to install, no payments, no database."
+          },
+          {
+            "id": "cases",
+            "label": "Cases and recipes",
+            "kind": "method",
+            "summary": "Prepared examples mapped to apps, with prompts."
+          },
+          {
+            "id": "helpers",
+            "label": "Villagers and synthetic users",
+            "kind": "method",
+            "summary": "Help to publish, test, describe and present."
+          },
+          {
+            "id": "arch",
+            "label": "Client side on GitHub Pages",
+            "kind": "artefact",
+            "summary": "A page that says what it does, and the thing itself."
+          },
+          {
+            "id": "stages",
+            "label": "Five stages",
+            "kind": "concept",
+            "summary": "From typing to apps others use."
+          },
+          {
+            "id": "test",
+            "label": "Test the event first",
+            "kind": "method",
+            "summary": "Synthetic users go through the onboarding."
+          },
+          {
+            "id": "loop",
+            "label": "The feedback loop",
+            "kind": "claim",
+            "summary": "What people take home."
+          }
+        ],
+        "edges": [
+          {
+            "from": "format",
+            "to": "ship",
+            "rel": "leads-to"
+          },
+          {
+            "from": "ai",
+            "to": "cases",
+            "rel": "produces"
+          },
+          {
+            "from": "browser",
+            "to": "stages",
+            "rel": "depends-on"
+          },
+          {
+            "from": "cases",
+            "to": "stages",
+            "rel": "leads-to"
+          },
+          {
+            "from": "helpers",
+            "to": "ship",
+            "rel": "produces"
+          },
+          {
+            "from": "arch",
+            "to": "ship",
+            "rel": "depends-on"
+          },
+          {
+            "from": "test",
+            "to": "cases",
+            "rel": "answers"
+          },
+          {
+            "from": "stages",
+            "to": "loop",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "spreadsheet-to-app-sessions",
+            "from-a-checklist-to-an-app",
+            "villager-services-for-explorer-coders",
+            "the-open-security-summit-and-its-debt",
+            "generation-z-developers-again"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "The most challenging part of these days is not getting somebody to build something.",
+            "why": "The problem."
+          },
+          {
+            "text": "Otherwise you are talking about advanced technology without using it yourself.",
+            "why": "Why AI runs the event."
+          },
+          {
+            "text": "Nobody should face a blank page.",
+            "why": "Why cases."
+          }
+        ]
+      }
+    },
+    {
       "slug": "spreadsheet-to-app-sessions",
       "title": "Spreadsheet to App: a session programme for Algarve Evolution, with five example spreadsheets, five prompts, a mock event and a public vault, so nobody arrives needing a problem to solve",
       "date": "2026-10-31",
@@ -84,7 +262,9 @@
         "vibathon-algarve-2026",
         "an-algarve-talent-map"
       ],
-      "links_in": [],
+      "links_in": [
+        "running-an-ai-build-event"
+      ],
       "figures": [
         {
           "file": "sa-pack.webp",
@@ -902,6 +1082,7 @@
         "vibathon-algarve-2026"
       ],
       "links_in": [
+        "running-an-ai-build-event",
         "spreadsheet-to-app-sessions",
         "from-lovable-to-your-own-newsroom",
         "sell-to-the-companies-that-already-have-the-problem",
@@ -1088,6 +1269,7 @@
         "websites-you-own"
       ],
       "links_in": [
+        "running-an-ai-build-event",
         "spreadsheet-to-app-sessions",
         "sell-to-the-companies-that-already-have-the-problem",
         "an-algarve-talent-map",
@@ -20437,6 +20619,7 @@
         "explorer-coding"
       ],
       "links_in": [
+        "running-an-ai-build-event",
         "vibathon-algarve-2026"
       ],
       "figures": [
@@ -28701,6 +28884,7 @@
         "books-from-articles"
       ],
       "links_in": [
+        "running-an-ai-build-event",
         "you-are-a-developer",
         "a-pull-request-by-another-name",
         "discovering-the-book",

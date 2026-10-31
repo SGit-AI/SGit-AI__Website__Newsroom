@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-74 articles, newest first.
+75 articles, newest first.
 
 ## October 2026
 
+- [Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens](../../articles/running-an-ai-build-event.md), 2026-10-31, 5 min.
 - [Spreadsheet to App: a session programme for Algarve Evolution, with five example spreadsheets, five prompts, a mock event and a public vault, so nobody arrives needing a problem to solve](../../articles/spreadsheet-to-app-sessions.md), 2026-10-31, 6 min.
 - [Sell to the companies that already have the problem: how Algarve Evolution can match businesses adopting AI with the region's service providers, starting when the business has built its own first app](../../articles/sell-to-the-companies-that-already-have-the-problem.md), 2026-10-31, 5 min.
 - [An Algarve talent map: how Algarve Evolution can turn its mapping of services, mentors and investors into a public matchmaking site, built by one Claude session, with consent first](../../articles/an-algarve-talent-map.md), 2026-10-31, 6 min.

@@ -108,6 +108,7 @@ Site & engineering[This article as a graph →](graphs.md#the-open-security-summ
 
 ### Continued by
 
+- [Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens](running-an-ai-build-event.md) Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from browser-only to synthetic users.
 - [Vibathon Algarve 2026: a sold-out day of building with AI at the University of the Algarve, and Algarve Evolution, the movement that wants the region to be an innovation hub](vibathon-algarve-2026.md) Vibathon Algarve 2026: a sold-out day of building with AI in Faro, and Algarve Evolution, the movement making the region an innovation hub.
 
 [All articles](index.md) · [All graphs](graphs.md)
