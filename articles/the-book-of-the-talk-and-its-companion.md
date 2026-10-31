@@ -139,6 +139,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#the-book-o
 
 ### Continued by
 
+- [A presentation for every project: how the agentic workflow behind a talk built in a day can turn each project from a build day into a visual, dynamic presentation, and a service](a-presentation-for-every-project.md) A presentation for every project: the agentic workflow behind a talk built in a day, applied to each project from a build day, and a service.
 - [An augmented PDF viewer: how hard is it to build one in the browser that renders any PDF and opens the provenance, the graph and the comments behind it? Less than I thought](an-augmented-pdf-viewer.md) An augmented PDF viewer in the browser: PDF.js draws the page, one more layer adds provenance and graph, and the PDF only carries clues.
 - [The augmented book: one source in layers, projected to the web, the iPad and print, so the reader gets the right information at the right time, and what fifty years of attempts teach](the-augmented-book.md) The augmented book: one source in layers, projected to web, iPad and print, with the right information at the right time, and what precedents teach.
 - [An iPad to review the book: a brief for an app that reads the PDFs, shows the comments on the page, opens its vault with my passkey and carries sgit in Swift](an-ipad-to-review-the-book.md) A brief for an iPad app to review the book: PDFs, comments on the page, append lanes, a vault opened with my passkey, and sgit in Swift.

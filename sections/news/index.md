@@ -2,10 +2,11 @@
 
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
 
-46 articles, newest first.
+47 articles, newest first.
 
 ## October 2026
 
+- [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](../../articles/agentic-readers.md), 2026-10-31, 6 min.
 - [Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it](../../articles/breaking-the-story-down-before-the-agents-do.md), 2026-10-30, 7 min.
 - [A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page](../../articles/books-for-a-new-generation-of-publishing.md), 2026-10-30, 12 min.
 - [Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart](../../articles/take-it-or-leave-it.md), 2026-10-27, 15 min.

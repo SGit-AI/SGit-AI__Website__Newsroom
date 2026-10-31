@@ -97,6 +97,10 @@ News & evidenceGraphs & knowledge[This article as a graph →](graphs.md#breakin
 - [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](on-the-record.md) Experts go on the record with signed opinions, readers pay for the ones they value, and the people whose ideas an article uses get a share.
 - [Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too](signed-by-the-source.md) Ask the people and companies we quote to sign that we represent them fairly: one signature instead of every reader checking.
 
+### Continued by
+
+- [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](agentic-readers.md) Agentic risk, or agentic readers? A reply to DJB Strategies' publisher outlook, its framework answered by a newsroom already doing it.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 330 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=330)

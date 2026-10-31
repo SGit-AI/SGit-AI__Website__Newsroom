@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.26 · 348 articles since 2026-08-17; the newest is 2026-10-31. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 350 articles since 2026-08-17; the newest is 2026-10-31. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,20 +12,22 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens](articles/running-an-ai-build-event.md), 2026-10-31, 5 min. Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from browser-only to synthetic users.
+- [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](articles/agentic-readers.md), 2026-10-31, 6 min. Agentic risk, or agentic readers? A reply to DJB Strategies' publisher outlook, its framework answered by a newsroom already doing it.
 
 ## Five more
 
+- [A presentation for every project: how the agentic workflow behind a talk built in a day can turn each project from a build day into a visual, dynamic presentation, and a service](articles/a-presentation-for-every-project.md), Startups & strategy, 2026-10-31, 4 min.
+- [Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens](articles/running-an-ai-build-event.md), Startups & strategy, 2026-10-31, 5 min.
 - [Spreadsheet to App: a session programme for Algarve Evolution, with five example spreadsheets, five prompts, a mock event and a public vault, so nobody arrives needing a problem to solve](articles/spreadsheet-to-app-sessions.md), Startups & strategy, 2026-10-31, 6 min.
 - [From Lovable to your own newsroom: a brief for José Bota and his agent, to put every app on GitHub Pages under his own domain, and publish each one as an article](articles/from-lovable-to-your-own-newsroom.md), Engineering this newsroom, 2026-10-31, 5 min.
 - [Sell to the companies that already have the problem: how Algarve Evolution can match businesses adopting AI with the region's service providers, starting when the business has built its own first app](articles/sell-to-the-companies-that-already-have-the-problem.md), Startups & strategy, 2026-10-31, 5 min.
-- [An Algarve talent map: how Algarve Evolution can turn its mapping of services, mentors and investors into a public matchmaking site, built by one Claude session, with consent first](articles/an-algarve-talent-map.md), Startups & strategy, 2026-10-31, 6 min.
-- [Joining Algarve Evolution: The Cyber Boardroom takes the startup membership, and what we can share with the region, our workflows and our technology, all of it open source](articles/joining-algarve-evolution.md), Startups & strategy, 2026-10-31, 5 min.
 
 ## The last five days
 
-### Saturday 31 October 2026 (15 articles)
+### Saturday 31 October 2026 (17 articles)
 
+- The future of news: [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](articles/agentic-readers.md), 6 min.
+- Startups & strategy: [A presentation for every project: how the agentic workflow behind a talk built in a day can turn each project from a build day into a visual, dynamic presentation, and a service](articles/a-presentation-for-every-project.md), 4 min.
 - Startups & strategy: [Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens](articles/running-an-ai-build-event.md), 5 min.
 - Startups & strategy: [Spreadsheet to App: a session programme for Algarve Evolution, with five example spreadsheets, five prompts, a mock event and a public vault, so nobody arrives needing a problem to solve](articles/spreadsheet-to-app-sessions.md), 6 min.
 - Engineering this newsroom: [From Lovable to your own newsroom: a brief for José Bota and his agent, to put every app on GitHub Pages under his own domain, and publish each one as an article](articles/from-lovable-to-your-own-newsroom.md), 5 min.
@@ -116,21 +118,21 @@ Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vaul
 - [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](articles/the-human-is-the-network.md), 2026-10-21.
 - [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](articles/a-secret-is-a-qr-code.md), 2026-10-21.
 
-### [The future of news](sections/news/index.md) (46)
+### [The future of news](sections/news/index.md) (47)
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
+- [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](articles/agentic-readers.md), 2026-10-31.
 - [Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it](articles/breaking-the-story-down-before-the-agents-do.md), 2026-10-30.
 - [A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page](articles/books-for-a-new-generation-of-publishing.md), 2026-10-30.
 - [Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart](articles/take-it-or-leave-it.md), 2026-10-27.
 - [Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters](articles/meta-terms-and-the-news.md), 2026-10-27.
-- [One researcher for every newsroom: a research site that works as a light, focused Internet Archive for the sources our stories rest on, captured on a schedule into a pack a day, published by licence tier, and shared by the PHP site, the wires and the Web Summit newsroom](articles/one-researcher-for-every-newsroom.md), 2026-10-26.
 
-### [Startups & strategy](sections/strategy/index.md) (75)
+### [Startups & strategy](sections/strategy/index.md) (76)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
+- [A presentation for every project: how the agentic workflow behind a talk built in a day can turn each project from a build day into a visual, dynamic presentation, and a service](articles/a-presentation-for-every-project.md), 2026-10-31.
 - [Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens](articles/running-an-ai-build-event.md), 2026-10-31.
 - [Spreadsheet to App: a session programme for Algarve Evolution, with five example spreadsheets, five prompts, a mock event and a public vault, so nobody arrives needing a problem to solve](articles/spreadsheet-to-app-sessions.md), 2026-10-31.
 - [Sell to the companies that already have the problem: how Algarve Evolution can match businesses adopting AI with the region's service providers, starting when the business has built its own first app](articles/sell-to-the-companies-that-already-have-the-problem.md), 2026-10-31.
 - [An Algarve talent map: how Algarve Evolution can turn its mapping of services, mentors and investors into a public matchmaking site, built by one Claude session, with consent first](articles/an-algarve-talent-map.md), 2026-10-31.
-- [Joining Algarve Evolution: The Cyber Boardroom takes the startup membership, and what we can share with the region, our workflows and our technology, all of it open source](articles/joining-algarve-evolution.md), 2026-10-31.
 
 ### [Engineering this newsroom](sections/building/index.md) (38)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.

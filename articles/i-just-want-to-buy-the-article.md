@@ -140,6 +140,7 @@ News & evidenceStartups & strategy[This article as a graph →](graphs.md#i-just
 
 ### Continued by
 
+- [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](agentic-readers.md) Agentic risk, or agentic readers? A reply to DJB Strategies' publisher outlook, its framework answered by a newsroom already doing it.
 - [Two years in, the opposite: an essay about burning out on AI that I could not buy, and why my two years of AI have been the most productive of my career](two-years-in-the-opposite.md) An essay about burning out on AI that I could not buy, three paragraphs and a subscription; and why my two years of AI were the opposite.
 
 [All articles](index.md) · [All graphs](graphs.md)

@@ -116,6 +116,10 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#run
 - [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](villager-services-for-explorer-coders.md) Villager services for explorer coders: founders with ten years of checklists build the apps; we sell everything behind them in finite packs.
 - [From a checklist to an app you calibrate: your list is already an information system, so build its smallest version in half an hour, use it, log every run, and let it grow](from-a-checklist-to-an-app.md) From a checklist to an app you calibrate: build the smallest version in half an hour, use it tomorrow, log every run, and let it grow.
 
+### Continued by
+
+- [A presentation for every project: how the agentic workflow behind a talk built in a day can turn each project from a build day into a visual, dynamic presentation, and a service](a-presentation-for-every-project.md) A presentation for every project: the agentic workflow behind a talk built in a day, applied to each project from a build day, and a service.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 349 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=349)

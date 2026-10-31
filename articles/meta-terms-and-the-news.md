@@ -131,7 +131,9 @@ Tami Hoffman's [LinkedIn post and video](https://www.linkedin.com/posts/tami-hof
 
 News & evidenceStartups & strategy[This article as a graph →](graphs.md#meta-terms-and-the-news)
 
-No other article links here yet.
+### Continued by
+
+- [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](agentic-readers.md) Agentic risk, or agentic readers? A reply to DJB Strategies' publisher outlook, its framework answered by a newsroom already doing it.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

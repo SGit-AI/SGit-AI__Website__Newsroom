@@ -1,0 +1,33 @@
+{
+ "slug": "a-presentation-for-every-project",
+ "teaser": "A presentation for every project: the agentic workflow behind a talk built in a day, applied to each project from a build day, and a service.",
+ "topics": ["startups-and-strategy", "agents-and-policy"],
+ "core_idea": "A participant asked for a quick presentation of each build-day project; the workflow that built the ultimate insider talk in a day, a repository, an agent team with a researcher, designer and writer, a review and a site per talk, can present each project with its story, dynamic infographics, the app and sourced numbers; even one prompt makes strong infographics, as ChatGPT's two of today's articles show; the presentation demonstrates agentic workflows, is a finite service providers can sell, and fits the recommendation that everyone ships something and shows it.",
+ "nodes": [
+  {"id": "ask", "label": "A presentation per project", "kind": "example", "summary": "Asked for in the event's group chat."},
+  {"id": "talk", "label": "A talk built in a day", "kind": "example", "summary": "Nine agents and one editor, a site and moving infographics."},
+  {"id": "prompt", "label": "What one prompt does", "kind": "example", "summary": "ChatGPT's two infographics of today's articles."},
+  {"id": "workflow", "label": "The workflow", "kind": "method", "summary": "Project, repository, agent team, presentation, shared."},
+  {"id": "power", "label": "It demonstrates the workflow", "kind": "claim", "summary": "Participants see their work explained back to them."},
+  {"id": "service", "label": "A service", "kind": "concept", "summary": "Priced per project, finite, handed over."},
+  {"id": "recommend", "label": "How we recommend build days", "kind": "claim", "summary": "Ship something, then show it."}
+ ],
+ "edges": [
+  {"from": "ask", "to": "workflow", "rel": "leads-to"},
+  {"from": "talk", "to": "workflow", "rel": "produces"},
+  {"from": "prompt", "to": "workflow", "rel": "example-of"},
+  {"from": "workflow", "to": "power", "rel": "produces"},
+  {"from": "workflow", "to": "service", "rel": "leads-to"},
+  {"from": "recommend", "to": "workflow", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["the-ultimate-insider-case-study", "the-book-of-the-talk-and-its-companion", "running-an-ai-build-event", "villager-services-for-explorer-coders", "vibathon-algarve-2026"],
+  "pages": [],
+  "sites": ["https://the-ultimate-insider.presentation.sgit.ai/"]
+ },
+ "quotes": [
+  {"text": "we could do one of those presentations (with dynamic infographics) for each of those projects and MVPs delivered during the event", "why": "The editor's reply in the group."},
+  {"text": "A project from a build day is good material.", "why": "Why it works."},
+  {"text": "the presentation is one", "why": "Why it demonstrates agentic workflows."}
+ ]
+}

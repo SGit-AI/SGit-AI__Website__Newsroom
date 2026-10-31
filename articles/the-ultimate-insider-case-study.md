@@ -161,6 +161,7 @@ Site & engineeringAgents & policy[This article as a graph →](graphs.md#the-ult
 
 ### Continued by
 
+- [A presentation for every project: how the agentic workflow behind a talk built in a day can turn each project from a build day into a visual, dynamic presentation, and a service](a-presentation-for-every-project.md) A presentation for every project: the agentic workflow behind a talk built in a day, applied to each project from a build day, and a service.
 - [A brief for the Web Summit team: an event site run by an ephemeral agent team, built from this week's template, with a map of every company we should meet](web-summit-team-brief.md) A brief for the Web Summit team: an event site run by an ephemeral agent team, from a proven template, with a map of every company to meet.
 - [A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page](books-for-a-new-generation-of-publishing.md) What the best visual books, Leanpub's Markua, print-on-demand costs and the learning research teach, and what an agent team adds to a printed book.
 - [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](the-book-of-the-talk-and-its-companion.md) Two agent teams, one night: RC1 of the book of The Ultimate Insider, a cold read by a team that knew only the record, and a companion PDF of tick boxes.

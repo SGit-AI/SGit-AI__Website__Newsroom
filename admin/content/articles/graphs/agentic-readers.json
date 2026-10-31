@@ -1,0 +1,35 @@
+{
+ "slug": "agentic-readers",
+ "teaser": "Agentic risk, or agentic readers? A reply to DJB Strategies' publisher outlook, its framework answered by a newsroom already doing it.",
+ "topics": ["news-and-evidence", "startups-and-strategy"],
+ "core_idea": "The post sharing DJB Strategies' outlook frames publishers' shift from search risk to agentic risk; without reading the gated report, we use its framework of four inputs, five outputs and four choices as a template and answer it for this newsroom, agreeing on investing in what AI cannot replace and on direct channels, and going further: treat the agent as a reader, break the story down before it does with section summaries, graphs, versions, llms.txt and an API, and meter the read, for people now and agents at the source next.",
+ "nodes": [
+  {"id": "post", "label": "Search risk to agentic risk", "kind": "example", "summary": "The post's account of DJB Strategies' argument."},
+  {"id": "unread", "label": "The report behind a form", "kind": "claim", "summary": "We reply to the post and its framework, not the report."},
+  {"id": "framework", "label": "The framework as a template", "kind": "method", "summary": "Four inputs, five outputs, four choices."},
+  {"id": "answers", "label": "Our answers", "kind": "artefact", "summary": "Nine questions answered for this newsroom."},
+  {"id": "readers", "label": "Agentic readers", "kind": "concept", "summary": "The agent is the next reader, with particular needs."},
+  {"id": "breakdown", "label": "Break the story down", "kind": "method", "summary": "Section summaries, graphs, versions, llms.txt, an API."},
+  {"id": "meter", "label": "Meter the read", "kind": "method", "summary": "People pay per read now; agents at the source next."},
+  {"id": "agree", "label": "Where we agree", "kind": "claim", "summary": "Invest in what AI cannot replace; direct channels."}
+ ],
+ "edges": [
+  {"from": "post", "to": "framework", "rel": "produces"},
+  {"from": "unread", "to": "framework", "rel": "depends-on"},
+  {"from": "framework", "to": "answers", "rel": "produces"},
+  {"from": "post", "to": "readers", "rel": "contrasts"},
+  {"from": "readers", "to": "breakdown", "rel": "depends-on"},
+  {"from": "readers", "to": "meter", "rel": "leads-to"},
+  {"from": "agree", "to": "answers", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["breaking-the-story-down-before-the-agents-do", "the-reading-account-as-built", "paying-after-the-value", "i-just-want-to-buy-the-article", "free-to-copy-paid-at-the-source", "signed-by-the-source", "meta-terms-and-the-news", "how-the-newsletter-is-made", "one-writer-one-key"],
+  "pages": [],
+  "sites": ["https://api.newsroom.sgit.ai/"]
+ },
+ "quotes": [
+  {"text": "That cuts publishers out of the click", "why": "The post's finding."},
+  {"text": "I think it is also the next reader.", "why": "Our turn."},
+  {"text": "being the best source an agent can read, and the one that is easiest to pay, is a business", "why": "The answer."}
+ ]
+}
