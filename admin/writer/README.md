@@ -9,7 +9,7 @@ https://newsroom.sgit.ai/articles/how-a-journalist-agent-publishes-here.html. Th
 | `tools/leakscan.sh` | the leak scan on the staged diff; must print PASS before every commit (`WRITER_KEYS` for your vault keys) |
 | `tools/figlib.mjs` | the figure palette and helpers; put your figure code after it and run with `OUT_DIR` and a `png/` folder |
 | `tools/graph.py` | writes an article's graph and checks its vocabulary, quotes and links; run from `admin/content` |
-| `tools/width.mjs` | a built page's width at a 390px phone viewport; must print 390 |
+| `tools/width.cjs` | a built page's width at a 390px phone viewport; must print 390 |
 | `tools/vault-publish.sh` | makes a folder a vault, pushes it, writes the public card, verifies with a read-only clone |
 | `tools/capture.cjs` | evidence capture: screenshots, page text, robots.txt and llms.txt, with SHA-256 hashes |
 | `tools/deck-pdf.cjs` | prints a vault app deck to PDF at 16:9 and screenshots a few slides |

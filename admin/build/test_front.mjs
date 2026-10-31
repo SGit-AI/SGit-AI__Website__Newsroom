@@ -44,6 +44,38 @@ check(data.personas.length === 6 && data.personas[0].neutral && data.personas.ev
 const find = JSON.parse(read('articles/find.json'))
 check(find.desks.length === 5 && Object.keys(find.articles).length >= 120 && find.desks.every(d => fs.existsSync(path.join(ROOT, `desks/${d.id}.html`))), 'find.json: five desks, every article placed, a page per desk')
 check(read('admin/build/newsroom-sync.json').indexOf('"index.html"') < 0, 'the sync record no longer owns index.html')
+// ---------------------------------------------------------------- by day and by section (card 095)
+{
+  const secs = JSON.parse(read('admin/content/front/sections.json')), wire = JSON.parse(read('newsroom/wire.json'))
+  const bs = html.match(/<section class="view bs"[\s\S]*?<section class="view bf"/)[0]
+  const dates = [...new Set(wire.articles.map(a => a.date))].sort().reverse().slice(0, 5)
+  const want = wire.articles.filter(a => dates.includes(a.date)).map(a => a.slug).sort()
+  const days = bs.match(/<section class="days"[\s\S]*?<section class="secs"/)[0]
+  const got = [...days.matchAll(/<a class="day-h" href="articles\/([^"]+)\.html">/g)].map(m => m[1])
+  check(got.length === want.length && [...got].sort().join() === want.join() && new Set(got).size === got.length, `the last five days: every article of ${dates.join(', ')} once (${got.length} of ${want.length})`)
+  check((days.match(/<h3 class="day-d">/g) || []).length === 5, 'five day bands')
+  const ids = secs.sections.map(x => x.id)
+  let ok = true, why = []
+  for (const x of secs.sections) {
+    const n = Object.values(secs.articles).filter(v => v === x.id).length
+    const card = bs.match(new RegExp(`<section class="sec-card" id="sec-${x.id}"[\\s\\S]*?</section>`))
+    const top = card ? (card[0].match(/<ol class="sec-top">([\s\S]*?)<\/ol>/)[1].match(/<li>/g) || []).length : 0
+    if (!card || !card[0].includes(`<span class="sec-n">${n}</span>`) || top !== Math.min(5, n) || !fs.existsSync(path.join(ROOT, `sections/${x.id}/index.html`))) { ok = false; why.push(x.id) }
+    const page = fs.existsSync(path.join(ROOT, `sections/${x.id}/index.html`)) ? read(`sections/${x.id}/index.html`) : ''
+    if ((page.match(/<li><a href="\.\.\/\.\.\/articles\//g) || []).length !== n) { ok = false; why.push(x.id + ' page') }
+  }
+  check(ok && ids.length === 8, `eight section cards, each with its count, its five newest, and a page listing all of them${why.length ? ' (' + why.join(', ') + ')' : ''}`)
+  const jumps = [...bs.matchAll(/<nav class="sec-jump"[\s\S]*?<\/nav>/g)][0][0]
+  check(ids.every(id => jumps.includes(`href="#sec-${id}"`) && bs.includes(`id="sec-${id}"`)), 'the jump links land on the section cards')
+  check((bs.match(/<li class="five-i">/g) || []).length === 5 && (bs.match(/<li class="five-i"><a class="tile"/g) || []).length === 5, 'the lead and five more, each with its image')
+  check(wire.articles.every(a => ids.includes(secs.articles[a.slug])), 'every article has exactly one valid section')
+  const bak = read('admin/content/front/sections.json'), j = JSON.parse(bak), gone = wire.articles[0].slug
+  delete j.articles[gone]
+  let refused = ''
+  try { fs.writeFileSync(path.join(ROOT, 'admin/content/front/sections.json'), JSON.stringify(j)); execSync('python3 admin/build/front.py', { cwd: ROOT, stdio: 'pipe' }) } catch (e) { refused = String(e.stderr || e.message) }
+  finally { fs.writeFileSync(path.join(ROOT, 'admin/content/front/sections.json'), bak) }
+  check(refused.includes(gone), `an article with no section stops the build, naming it (${gone})`)
+}
 const before = fs.readFileSync(path.join(ROOT, 'index.html'))
 execSync('python3 admin/build/front.py', { cwd: ROOT, stdio: 'pipe' })
 check(Buffer.compare(before, fs.readFileSync(path.join(ROOT, 'index.html'))) === 0, 'front.py is idempotent (the chrome stays)')
@@ -156,6 +188,11 @@ const open = async (opts = {}) => {
   const w = await pg.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)
   check(w, 'Your desk at 360 does not scroll sideways')
   await ctx.close()
+  const [ctx3, pg3] = await open({ width: 390 })
+  check(await pg3.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), 'the Broadsheet, by day and by section, at 390 does not scroll sideways')
+  await pg3.click('.sec-jump a[href="#sec-graphs"]'); await pg3.waitForTimeout(1600)
+  check(await pg3.evaluate(() => { const r = document.getElementById('sec-graphs').getBoundingClientRect(); return r.top >= -2 && r.top < 200 }), 'a jump link scrolls its section card into view')
+  await ctx3.close()
 }
 
 { // the strip on an article page

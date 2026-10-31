@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.4.0** | 2026-10-28 | minor | 1,837 | +12 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`1b709edea`](https://github.com/SGit-AI/SGit-AI__Website/commit/1b709edea41a2e9f71570741a4f6ac391427166b) | [what changed](one-vault-ten-agents/v1.4.0.md) · [current](../one-vault-ten-agents.md) |
+| **v1.4.0** | 2026-10-28 | minor | 1,837 | +12 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`ecaf67144`](https://github.com/SGit-AI/SGit-AI__Website/commit/ecaf6714443523c9a43e5e99e14127727a6feb4d) | [what changed](one-vault-ten-agents/v1.4.0.md) · [current](../one-vault-ten-agents.md) |
 | **v1.3.0** | 2026-10-27 | minor | 1,825 | +0 / −122 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](one-vault-ten-agents/v1.3.0.md) |
 | **v1.2.0** | 2026-10-19 | minor | 1,947 | +3 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`d303ce0f1`](https://github.com/SGit-AI/SGit-AI__Website/commit/d303ce0f1704db6965e50ec5265bd99eaf0ec179) | [what changed](one-vault-ten-agents/v1.2.0.md) |
 | **v1.1.0** | 2026-10-16 | minor | 1,944 | +0 / −4 words; 1 changed, 0 added, 0 removed paragraphs | [`62d7d61bb`](https://github.com/SGit-AI/SGit-AI__Website/commit/62d7d61bbe675fde217c65280275f5bf66ca5c92) | [what changed](one-vault-ten-agents/v1.1.0.md) |

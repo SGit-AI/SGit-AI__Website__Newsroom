@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-30 | published | 1,799 | first published | [`63eba7b6b`](https://github.com/SGit-AI/SGit-AI__Website/commit/63eba7b6b7c8e48cf7bbadac8047703f9914d611) | [current](../breaking-the-story-down-before-the-agents-do.md) |
+| **v1.0.0** | 2026-10-30 | published | 1,799 | first published | [`da5d4a651`](https://github.com/SGit-AI/SGit-AI__Website/commit/da5d4a651ce72ba76e6ac6cd1d7319caecce65a6) | [current](../breaking-the-story-down-before-the-agents-do.md) |
 
 [← Back to the article](../breaking-the-story-down-before-the-agents-do.md) · [All articles](../index.md)
 

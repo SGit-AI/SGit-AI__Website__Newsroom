@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-30 | published | 1,719 | first published | this release | [current](../becoming-an-official-publication.md) |
+| **v1.0.0** | 2026-10-30 | published | 1,719 | first published | [`7049563d4`](https://github.com/SGit-AI/SGit-AI__Website/commit/7049563d42747a1d6b58af17b3a001df0c5e75ab) | [current](../becoming-an-official-publication.md) |
 
 [← Back to the article](../becoming-an-official-publication.md) · [All articles](../index.md)
 

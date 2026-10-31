@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-28 | published | 1,795 | first published | [`5e50fc15a`](https://github.com/SGit-AI/SGit-AI__Website/commit/5e50fc15a48c52ffd2cc00cb427b8c17b2c3a73c) | [current](../insuring-agents-the-whole-story.md) |
+| **v1.0.0** | 2026-10-28 | published | 1,795 | first published | [`d72adcf16`](https://github.com/SGit-AI/SGit-AI__Website/commit/d72adcf16c9f962cc5ee916cca797070e430a966) | [current](../insuring-agents-the-whole-story.md) |
 
 [← Back to the article](../insuring-agents-the-whole-story.md) · [All articles](../index.md)
 

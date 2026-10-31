@@ -21,6 +21,12 @@ it stopped on 8 October, when the newsroom moved here.
 The front page was imported from sgit.ai (articles/index.html written to the root) until v0.12.60.
 sync_newsroom.py no longer writes the root copy; articles/index.html stays, as Every article.
 
+The Broadsheet, since card 095 (28 October 2026): a compact masthead with the sections as jump links, the lead
+with its image beside the running story, five more with their images, the last five publishing days with every
+article under its day, and eight topic sections, each with its five newest and a page of its own,
+sections/<id>/index.html, listing every article by month. The section of every article is the editor's, in
+admin/content/front/sections.json; an article with no row, or a row naming no section, stops the build.
+
 Also writes about/index.html, "Why this exists", from admin/content/front/purpose.json, which the masthead
 links to on every view, and keeps articles/front.json, the compact data the views are built from, for the API.
 """
@@ -116,6 +122,19 @@ class Front:
                 "by_agent": a.get("author") in self.agents,
             })
         self.by = {a["slug"]: a for a in self.articles}
+        self.sec = load("admin/content/front/sections.json")
+        self.sections = self.sec["sections"]
+        self.sec_by = {x["id"]: x for x in self.sections}
+        bad = [f'{a["slug"]} (no row)' for a in self.articles if a["slug"] not in self.sec["articles"]]
+        bad += [f'{a["slug"]} (section "{self.sec["articles"][a["slug"]]}" does not exist)' for a in self.articles
+                if a["slug"] in self.sec["articles"] and self.sec["articles"][a["slug"]] not in self.sec_by]
+        if bad:
+            sys.exit("front: every article needs one row in admin/content/front/sections.json: " + "; ".join(bad))
+        audience = {p.stem for p in (ROOT / "admin/content/sections").glob("*.json")}
+        if audience & set(self.sec_by):
+            sys.exit(f"front: topic section ids clash with sections.py's pages: {sorted(audience & set(self.sec_by))}")
+        for a in self.articles:
+            a["section"] = self.sec["articles"][a["slug"]]
         self.desk_label = {d["id"]: d for d in self.find["desks"]}
         dates = sorted(a["date"] for a in self.articles)
         self.edition = {"date": dates[-1], "first": dates[0], "total": len(self.articles),
@@ -259,23 +278,93 @@ class Front:
                         f'<p class="dev-facts">{" &middot; ".join(f for f in facts if f)}</p><p class="dev-links">{" ".join(links)}</p></section>')
         return "\n".join(html)
 
+    # ---- the sections and the days (card 095) ----
+    def sec_label(self, a, cls="sec-k"):
+        x = self.sec_by[a["section"]]
+        return f'<a class="{cls}" href="sections/{x["id"]}/index.html" style="--sc:{esc(x["colour"])}">{esc(x["label"])}</a>'
+
+    def short_dek(self, a, n=150):
+        d = a["dek"] or a["teaser"]
+        return d if len(d) <= n else d[:n].rsplit(" ", 1)[0].rstrip(",;:.") + "…"
+
+    def in_section(self, sid):
+        return self.newest(10 ** 6, where=lambda a: a["section"] == sid, agents=True)
+
+    def days(self, n=5):
+        dates = sorted({a["date"] for a in self.articles}, reverse=True)[:n]
+        return [(d, self.newest(10 ** 6, where=lambda a, d=d: a["date"] == d, agents=True)) for d in dates]
+
+    def mix(self, arts):
+        c = {}
+        for a in arts:
+            c[a["section"]] = c.get(a["section"], 0) + 1
+        return " &middot; ".join(f'{k} {esc(self.sec_by[s]["label"])}' for s, k in sorted(c.items(), key=lambda x: -x[1]))
+
+    def five(self):
+        """The editor's highlights when front.json names them, otherwise the five newest after the lead."""
+        out = [h for h in self.highlights if self.front.get("highlights")]
+        for a in self.newest(10, [self.lead["slug"]], agents=True):
+            if len(out) >= 5:
+                break
+            if all(x["slug"] != a["slug"] for x in out):
+                out.append(a)
+        return out[:5]
+
+    def section_page(self, x):
+        arts = self.in_section(x["id"])
+        months = {}
+        for a in arts:
+            months.setdefault(a["date"][:7], []).append(a)
+        body = [f'<p class="lead">{esc(x["scope"])}</p>', f'<p class="dim">{plural(len(arts), "article")}, newest first. '
+                f'Every article on this site is in exactly one of <a href="../../index.html#sections">eight sections</a>.</p>']
+        md = [f"# {x['label']}", "", x["scope"], "", f"{plural(len(arts), 'article')}, newest first.", ""]
+        for ym, items in months.items():
+            y, mth = ym.split("-")
+            label = f"{MONTHS[int(mth) - 1]} {y}"
+            body.append(f'<h2 id="m{ym}">{label} <span class="dim">{len(items)}</span></h2><ul class="sec-list">')
+            md += [f"## {label}", ""]
+            for a in items:
+                body.append(f'<li><a href="../../{a["url"]}"><b>{esc(a["head"])}</b></a>'
+                            f'{(" &middot; " + esc(self.short_dek(a, 200))) if (a["dek"] or a["teaser"]) else ""}'
+                            f' <span class="dim">{day_short(a["date"])}{" &middot; " + mins(a["minutes"]) if a["minutes"] else ""}</span></li>')
+                md.append(f"- [{a['title']}](../../articles/{a['slug']}.md), {a['date']}{', ' + mins(a['minutes']) if a['minutes'] else ''}.")
+            body.append("</ul>")
+            md.append("")
+        agent = (f"Section '{x['label']}' of newsroom.sgit.ai: {x['scope']} {len(arts)} articles, newest first, grouped by month. "
+                 f"Every article is in exactly one of eight sections, set by the editor in admin/content/front/sections.json. "
+                 f"The front page: https://{HOST}/index.html#sections.")
+        html = newsroom_page(f"sections/{x['id']}/index.html", x["label"], x["scope"], "".join(body),
+                             eyebrow="Section", crumbs=(("Sections", "index.html#sections"),), agent=agent)
+        return html, "\n".join(md) + "\n"
+
     # ---- A · Broadsheet ----
     def broadsheet(self):
         e, m, lead = self.edition, self.mast, self.lead
-        latest = self.newest(6, [lead["slug"]], agents=True)  # the agents' own articles too: they are published here
         neutral = self.personas[0]
-        desks = self.desks(3, [lead["slug"]])
-        latest_li = "".join(
-            f'<li><span class="rail-date">{day_short(a["date"])}</span><a href="{a["url"]}">{esc(a["head"])}</a>'
-            f'<span class="rail-min">{mins(a["minutes"])} &middot; {esc(a["format"])}</span></li>' for a in latest)
-        desk_html = "".join(
-            f'<section class="desk" aria-label="{esc(dk["desk"]["label"])}">'
-            f'<h3 class="desk-h"><a href="desks/{dk["desk"]["id"]}.html">{esc(dk["desk"]["label"])}</a> <span class="desk-n">{dk["desk"]["count"]}</span></h3>'
-            f'<p class="desk-means">{esc(dk["desk"]["for_whom"])}</p><ol>'
-            + "".join(f'<li class="{"first" if i == 0 else ""}"><a href="{a["url"]}">{esc(a["head"])}</a>'
-                      + (f'<p class="teaser">{esc(a["teaser"])}</p>' if i == 0 else "")
-                      + f'<span class="meta">{day_short(a["date"])} &middot; {mins(a["minutes"])}</span></li>' for i, a in enumerate(dk["articles"]))
-            + '</ol></section>' for dk in desks)
+        jump = "".join(f'<a href="#sec-{x["id"]}" style="--sc:{esc(x["colour"])}">{esc(x["label"])}</a>' for x in self.sections)
+        five = "".join(
+            f'<li class="five-i">{self.card(a, "")}{self.sec_label(a)}'
+            f'<h3 class="five-h"><a href="{a["url"]}">{esc(a["head"])}</a></h3>'
+            f'<p class="five-dek">{esc(self.short_dek(a, 110))}</p>'
+            f'<p class="meta">{day_short(a["date"])}{" &middot; " + mins(a["minutes"]) if a["minutes"] else ""}</p></li>' for a in self.five())
+        days = []
+        for i, (d, arts) in enumerate(self.days()):
+            items = "".join(
+                f'<li class="day-i">{self.sec_label(a)}<span class="day-min">{mins(a["minutes"])}</span>'
+                f'<a class="day-h" href="{a["url"]}">{esc(a["head"])}</a>'
+                + (f'<p class="day-dek">{esc(self.short_dek(a))}</p>' if a["dek"] or a["teaser"] else "") + '</li>' for a in arts)
+            days.append(f'<section class="day{" day-first" if i == 0 else ""}" aria-label="{day_long(d)}">'
+                        f'<h3 class="day-d">{DAYS[dt.date.fromisoformat(d).weekday()]} {dt.date.fromisoformat(d).day} {MONTHS[int(d[5:7]) - 1]}'
+                        f' <span class="day-n">{plural(len(arts), "article")}</span></h3>'
+                        f'<p class="day-mix">{self.mix(arts)}</p><ul class="day-list">{items}</ul></section>')
+        secs = []
+        for x in self.sections:
+            arts = self.in_section(x["id"])
+            li = "".join(f'<li><a href="{a["url"]}">{esc(a["head"])}</a> <span class="meta">{day_short(a["date"])}</span></li>' for a in arts[:5])
+            secs.append(f'<section class="sec-card" id="sec-{x["id"]}" style="--sc:{esc(x["colour"])}" aria-labelledby="sec-{x["id"]}-h">'
+                        f'<h3 id="sec-{x["id"]}-h"><a href="sections/{x["id"]}/index.html">{esc(x["label"])}</a> <span class="sec-n">{len(arts)}</span></h3>'
+                        f'<p class="sec-scope">{esc(x["scope"])}</p><ol class="sec-top">{li}</ol>'
+                        f'<p class="sec-all"><a href="sections/{x["id"]}/index.html">All {len(arts)} &rarr;</a></p></section>')
         colls = "".join(
             f'<li><a href="articles/collections/{c["id"]}.html"><span class="coll-t">{esc(c["title"])}</span></a><p>{esc(c["dek"])}</p>'
             f'<span class="meta">{plural(len(c["articles"]), "article")} &middot; updated {day_short(c["updated"])}</span></li>' for c in self.wire["collections"])
@@ -283,39 +372,39 @@ class Front:
                         for i, a in enumerate(neutral["start"]))
         nl = self.wire["newsletter"][0]
         nl_url = urlparse(nl["url"]).path.lstrip("/")   # articles/newsletter/2026/10/13/006-....html
+        dev = self.developing()
         return f"""<section class="view bs" data-view="broadsheet" aria-label="Broadsheet">
 <header class="mast">
-  <p class="dateline"><span>{day_long(e["date"])}</span><span class="dl-mid">Edition of {day_mid(e["date"])}</span><span>{plural(e["total"], "article")} since {day_short(e["first"])} 2026</span></p>
-  <h1 class="mast-title">{esc(m["title"])}</h1>
+  <div class="mast-row"><h1 class="mast-title">{esc(m["title"])}</h1>
+  <p class="dateline">{day_long(e["date"])} &middot; {plural(e["total"], "article")} since {day_short(e["first"])}</p></div>
   <p class="mast-heart">{esc(m["heart"])}</p>
-  <p class="mast-line">{esc(m["line"])}</p>
-  <p class="mast-meta">{esc(m["heart_note"])} <a href="about/index.html">Why this exists</a></p>
+  <p class="mast-meta">{esc(m["line"])} <a href="about/index.html">Why this exists</a></p>
+  <nav class="sec-jump" aria-label="The eight sections">{jump}</nav>
 </header>
-{self.developing()}
-<div class="bs-top">
+<div class="bs-top{" has-dev" if dev else ""}">
   <article class="lead" aria-labelledby="bs-lead-h">
-    <p class="kicker">{esc(lead["kicker"])}</p>
+    {self.card(lead, "")}
+    <p class="kicker">{self.sec_label(lead, "lead-sec")} &middot; {"The editor&rsquo;s lead" if lead["by"] == "editor" else "The newest"}</p>
     <h2 class="lead-h" id="bs-lead-h"><a href="{lead["url"]}">{esc(lead["head"])}</a></h2>
     <p class="standfirst">{esc(lead["dek"] or lead["teaser"])}</p>
-    <p class="byline">By <b>{esc(lead["author"])}</b> &middot; {day_mid(lead["date"])} &middot; {mins(lead["minutes"])} read &middot; {esc(lead["format"])}</p>
-    {self.card(lead, self.desk_label[lead["desk"]]["short"] if lead["desk"] else "")}
-    <p class="why"><b>{"Why it leads." if lead["by"] == "editor" else "In short."}</b> {esc(lead["why"])}</p>
+    <p class="byline">By <b>{esc(lead["author"])}</b> &middot; {day_mid(lead["date"])} &middot; {mins(lead["minutes"])} read</p>
   </article>
-  <aside class="rail" aria-labelledby="bs-latest-h">
-    <h2 class="rail-h" id="bs-latest-h">Latest</h2>
-    <ol>{latest_li}</ol>
-    <p class="rail-all"><a href="articles/index.html#all">Every article &rarr;</a></p>
-  </aside>
+  {f'<aside class="bs-dev" aria-label="The running story">{dev}</aside>' if dev else ""}
 </div>
+<section class="five" aria-label="Five more"><ul class="five-list">{five}</ul></section>
+<section class="days" id="days" aria-labelledby="bs-days-h">
+  <div class="sec-rule"><h2 id="bs-days-h">The last five days</h2><span class="sec-side">Everything published, newest first, with its section &middot; <a href="articles/index.html#all">every article</a></span></div>
+  {"".join(days)}
+</section>
+<section class="secs" id="sections" aria-labelledby="bs-secs-h">
+  <div class="sec-rule"><h2 id="bs-secs-h">Sections</h2><span class="sec-side">Every article is in one of eight, by topic</span></div>
+  <div class="sec-grid">{"".join(secs)}</div>
+</section>
 <section class="doors" aria-labelledby="bs-doors-h">
   <div class="sec-rule"><h2 id="bs-doors-h">{esc(self.front["doors_title"])}</h2><span class="sec-side">Your newsroom starts in your browser; <a href="vault/index.html">a vault</a> carries it between devices</span></div>
   <p class="sec-dek">{esc(self.front["doors_dek"])}</p>
   <ul class="door-list">{self.doors("door")}</ul>
   <p class="door-neutral"><a href="persona/index.html"><b>{esc(self.front["door_lines"][NEUTRAL])}.</b> {esc(neutral["blurb"])}</a></p>
-</section>
-<section class="desks" aria-labelledby="bs-desks-h">
-  <div class="sec-rule"><h2 id="bs-desks-h">The five desks</h2><span class="sec-side">Three newest per desk &middot; <a href="desks/index.html">every desk</a></span></div>
-  <div class="desk-grid">{desk_html}</div>
 </section>
 {self.from_agents("bs")}
 <section class="colls" aria-labelledby="bs-colls-h">
@@ -545,16 +634,23 @@ class Front:
                f"> newsroom.sgit.ai · site {VERSION} · {plural(e['total'], 'article')} since {e['first']}; the newest is {e['date']}. Three views of this page: Broadsheet, Briefing, Your desk (https://{HOST}/).", "",
                *[l for d in self._dev_items() for l in (f"## {d['kicker']}: {d['title']}", "", f"{d['dek']} [{d['label']}]({d['url']})" + (f", site v{d['version']}, {d['sources']} sources captured, data as of {d['data_as_of']}." if d['version'] else "."), "")],
                f"## The lead", "", f"- [{self.lead['title']}](articles/{self.lead['slug']}.md), {self.lead['date']}, {mins(self.lead['minutes'])}. {self.lead['why']}", "",
-               "## Highlights", ""]
-        out += [f"- [{h['title']}](articles/{h['slug']}.md), {h['date']}, {mins(h['minutes'])}." for h in self.highlights]
+               "## Five more", ""]
+        out += [f"- [{h['title']}](articles/{h['slug']}.md), {self.sec_by[h['section']]['label']}, {h['date']}, {mins(h['minutes'])}." for h in self.five()]
+        out += ["", "## The last five days", ""]
+        for d, arts in self.days():
+            out += [f"### {day_long(d)} ({plural(len(arts), 'article')})", ""]
+            out += [f"- {self.sec_by[a['section']]['label']}: [{a['title']}](articles/{a['slug']}.md){', ' + mins(a['minutes']) if a['minutes'] else ''}." for a in arts]
+            out.append("")
+        out += ["## Sections", "", "Every article is in exactly one of eight sections, by topic.", ""]
+        for x in self.sections:
+            arts = self.in_section(x["id"])
+            out += [f"### [{x['label']}](sections/{x['id']}/index.md) ({len(arts)})", x["scope"]]
+            out += [f"- [{a['title']}](articles/{a['slug']}.md), {a['date']}." for a in arts[:5]]
+            out.append("")
         out += ["", "## Who are you reading as?", ""]
         out += [f"- {p['door']}: [{p['display']}]({p['url'].replace('index.html', 'index.md') if p['url'].endswith('index.html') else p['url']}), {plural(len(p['start']), 'piece')} to start." for p in self.personas if not p["neutral"]]
-        out += [f"- {self.front['door_publisher']['line']}: [{self.front['door_publisher']['who']}]({self.front['door_publisher']['url']})", "", "## The five desks", ""]
-        for dk in self.desks(3):
-            out.append(f"### {dk['desk']['label']} ({dk['desk']['count']})")
-            out.append(f"{dk['desk']['for_whom']}")
-            out += [f"- [{a['title']}](articles/{a['slug']}.md), {a['date']}, {mins(a['minutes'])}." for a in dk["articles"]]
-            out.append("")
+        out += [f"- {self.front['door_publisher']['line']}: [{self.front['door_publisher']['who']}]({self.front['door_publisher']['url']})", "",
+                "The five desks, by audience: [desks](desks/index.html).", ""]
         out += ["## Collections", ""] + [f"- [{c['title']}](articles/collections/{c['id']}.md): {c['dek']}" for c in self.wire["collections"]]
         out += ["", "## Start here", ""] + [f"{i + 1}. [{a['title']}](articles/{a['slug']}.md), {mins(a['minutes'])}." for i, a in enumerate(self.personas[0]["start"])]
         out += ["", f"Data: [the wire](newsroom/wire.json), [findability](articles/find.json), [personas](persona/links.json), [llms.txt](llms.txt). Written from Dinis Cruz's voice notes by a desk of named agents under published rules; content CC BY 4.0 unless a page states otherwise.", ""]
@@ -598,13 +694,22 @@ def main():
         changed.append("index.md")
     if write("about/index.html", f.purpose_page()):
         changed.append("about/index.html")
+    for x in f.sections:
+        html, md = f.section_page(x)
+        rel = f"sections/{x['id']}/index.html"
+        if write(rel, html):
+            changed.append(rel)
+        p = ROOT / f"sections/{x['id']}/index.md"
+        if not p.exists() or p.read_text(encoding="utf-8") != md:
+            p.write_text(md, encoding="utf-8")
+            changed.append(str(p.relative_to(ROOT)))
     data = json.dumps(f.data(), indent=1, ensure_ascii=False) + "\n"
     p = ROOT / "articles/front.json"
     if not p.exists() or p.read_text(encoding="utf-8") != data:
         p.write_text(data, encoding="utf-8")
         changed.append("articles/front.json")
     print(f"front: edition {f.edition['date']}, lead {f.lead['slug']} ({f.lead['by']}), {len(f.personas)} personas, "
-          f"{len(f.find['desks'])} desks; {len(changed)} written {changed}")
+          f"{len(f.sections)} sections; {len(changed)} written {changed}")
 
 
 if __name__ == "__main__":

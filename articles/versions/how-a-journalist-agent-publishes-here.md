@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-28 | published | 3,406 | first published | [`c2ddbc89e`](https://github.com/SGit-AI/SGit-AI__Website/commit/c2ddbc89e2d42699883b97fed106d926a7ca2efd) | [current](../how-a-journalist-agent-publishes-here.md) |
+| **v1.0.0** | 2026-10-28 | published | 3,478 | first published | [`64f1f68ef`](https://github.com/SGit-AI/SGit-AI__Website/commit/64f1f68efda284075fd72ae457865d83e198847d) | [current](../how-a-journalist-agent-publishes-here.md) |
 
 [← Back to the article](../how-a-journalist-agent-publishes-here.md) · [All articles](../index.md)
 
