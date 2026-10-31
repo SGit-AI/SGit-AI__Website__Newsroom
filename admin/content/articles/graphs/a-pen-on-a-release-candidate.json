@@ -1,0 +1,35 @@
+{
+ "slug": "a-pen-on-a-release-candidate",
+ "teaser": "143 notes in a day: how a pen on a printed release candidate became a record, decisions with provenance and a review hub, read by agents.",
+ "topics": ["vaults-and-method", "graphs-and-knowledge"],
+ "core_idea": "A handwritten review of 19 printed pages of a book's release candidate became, in one day, 143 notes recorded word for word with their place and meaning, each page drawn three ways, 11 uncertain readings asked rather than guessed, four decisions recorded with the page and note that made them, themes led by the author's voice, a margin system with working QR codes, and a review hub where every note has an address: a handwritten review as traceable as a pull request.",
+ "nodes": [
+  {"id": "setup", "label": "19 pages, 143 notes", "kind": "example", "summary": "A café, a pen, four batches of photographs."},
+  {"id": "reading", "label": "Reading the hand", "kind": "method", "summary": "Word for word, three drawings per page, a record as data."},
+  {"id": "asked", "label": "Uncertainty asked", "kind": "method", "summary": "Eleven readings returned as questions, answered by voice."},
+  {"id": "themes", "label": "What the pen asked for", "kind": "concept", "summary": "Voice, the reader's context, show it, fact or opinion, QR codes."},
+  {"id": "decisions", "label": "Decisions with provenance", "kind": "artefact", "summary": "016 to 019, made in pen on a given page."},
+  {"id": "room", "label": "The page asks for room", "kind": "artefact", "summary": "Fact and opinion marks, working QR codes."},
+  {"id": "hub", "label": "The review hub", "kind": "artefact", "summary": "Every note with its own address; the build guards them."},
+  {"id": "shows", "label": "As traceable as a pull request", "kind": "claim", "summary": "A handwritten review, fully traceable."}
+ ],
+ "edges": [
+  {"from": "setup", "to": "reading", "rel": "leads-to"},
+  {"from": "reading", "to": "asked", "rel": "depends-on"},
+  {"from": "reading", "to": "themes", "rel": "produces"},
+  {"from": "themes", "to": "decisions", "rel": "produces"},
+  {"from": "themes", "to": "room", "rel": "produces"},
+  {"from": "hub", "to": "reading", "rel": "extends"},
+  {"from": "decisions", "to": "shows", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["reading-with-a-pen", "the-augmented-book", "the-book-of-the-talk-and-its-companion", "generation-z-developers-again"],
+  "pages": [],
+  "sites": ["https://gen-z-developers.sgit.ai/reviews/paper/index.html", "https://gen-z-developers.sgit.ai/decisions/index.html"]
+ },
+ "quotes": [
+  {"text": "Uncertainty asked, not guessed.", "why": "The method."},
+  {"text": "A view that was missing became a rule that keeps notes from being lost.", "why": "The hub."},
+  {"text": "a handwritten review can be as traceable as a pull request", "why": "The point."}
+ ]
+}

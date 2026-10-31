@@ -1,0 +1,142 @@
+{
+  "slug": "jose-botas-two-agent-apps",
+  "teaser": "Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "José Bota built two apps at the Vibathon: Hack the Agent, a multiplayer prompt-injection game whose five levels add defences until the lesson is that any rule only the model enforces can be argued with; and ReachCheck, a browser-only review that compares an agent's configuration with its owner's mandate, honest about its limits but so cautious it missed obvious risks in an invented configuration; both are well made, and both point to turning lessons and mandates into behaviour policies.",
+  "nodes": [
+    {
+      "id": "apps",
+      "label": "Two apps, one question",
+      "kind": "example",
+      "summary": "What can an agent reach, and what stops it."
+    },
+    {
+      "id": "arena",
+      "label": "Hack the Agent",
+      "kind": "artefact",
+      "summary": "A multiplayer game, five levels, traces and lessons."
+    },
+    {
+      "id": "lesson",
+      "label": "Rules only the model enforces",
+      "kind": "claim",
+      "summary": "Any such rule is a rule an attacker can argue with."
+    },
+    {
+      "id": "reach",
+      "label": "ReachCheck",
+      "kind": "artefact",
+      "summary": "Configuration against mandate, red, yellow or green, in the browser."
+    },
+    {
+      "id": "cautious",
+      "label": "Careful to a fault",
+      "kind": "claim",
+      "summary": "Unverified tools rather than guessed matches; obvious risks missed."
+    },
+    {
+      "id": "next",
+      "label": "Next steps",
+      "kind": "method",
+      "summary": "Host recovery, reports, possible matches, wider injection checks, Pages."
+    },
+    {
+      "id": "policy",
+      "label": "A behaviour policy",
+      "kind": "concept",
+      "summary": "The shared next step for both."
+    }
+  ],
+  "edges": [
+    {
+      "from": "apps",
+      "to": "arena",
+      "rel": "produces"
+    },
+    {
+      "from": "apps",
+      "to": "reach",
+      "rel": "produces"
+    },
+    {
+      "from": "arena",
+      "to": "lesson",
+      "rel": "produces"
+    },
+    {
+      "from": "reach",
+      "to": "cautious",
+      "rel": "leads-to"
+    },
+    {
+      "from": "lesson",
+      "to": "policy",
+      "rel": "leads-to"
+    },
+    {
+      "from": "reach",
+      "to": "policy",
+      "rel": "leads-to"
+    },
+    {
+      "from": "next",
+      "to": "policy",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "what-can-your-agent-reach",
+      "three-policies-for-an-agent",
+      "from-lovable-to-your-own-newsroom",
+      "vibathon-algarve-2026"
+    ],
+    "pages": [],
+    "sites": [
+      "https://agent-defense-arena.lovable.app/",
+      "https://reach-check-agent.lovable.app/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Any rule only the model enforces is a rule an attacker can argue with.",
+      "why": "Hack the Agent's lesson."
+    },
+    {
+      "text": "It is the right instinct, taken one step too far.",
+      "why": "ReachCheck's caution."
+    },
+    {
+      "text": "write down what the agent may do, and enforce it outside the model",
+      "why": "The shared next step."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ja-arena-trace.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ja-arena-trace.webp",
+      "caption": "Hack the Agent, level 4: the refund agent is talked into a refund the policy forbids, and the trace shows why.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "ja-arena-host.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ja-arena-host.webp",
+      "caption": "Hack the Agent's host dashboard: the session code and QR, the live request budget and the audience's progress.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "ja-reach-red.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ja-reach-red.webp",
+      "caption": "ReachCheck's auto-sender demo: email sent against the owner's rule never to send, flagged red with evidence.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "ja-reach-yellow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ja-reach-yellow.webp",
+      "caption": "ReachCheck on our invented support-agent configuration: yellow, five tools unverified, no mismatches found.",
+      "kind": "screenshot"
+    }
+  ]
+}

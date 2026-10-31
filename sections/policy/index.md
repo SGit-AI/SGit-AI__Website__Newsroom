@@ -2,10 +2,11 @@
 
 What an agent may do, who carries the risk, and how a policy is enforced: RiskMandate, Agent Behaviour Policies, hooks, accountability, governance.
 
-86 articles, newest first.
+87 articles, newest first.
 
 ## October 2026
 
+- [Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed, with what each gets right and what to build next](../../articles/jose-botas-two-agent-apps.md), 2026-10-31, 7 min.
 - [Lovable with SHarness, and the trojanised Claude Code extension: how to keep an app builder's code and an editor's extensions inside a policy, and what SHarness can and cannot stop today](../../articles/lovable-with-sharness.md), 2026-10-31, 8 min.
 - [One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again](../../articles/one-writer-one-key.md), 2026-10-31, 7 min.
 - [Seven IAM predictions for 2027, checked against an agent team that runs today: where we already are, where we agree, and the two where I would bet the other way](../../articles/seven-iam-predictions-already-here.md), 2026-10-30, 6 min.

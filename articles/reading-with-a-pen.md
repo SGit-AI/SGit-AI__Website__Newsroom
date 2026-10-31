@@ -100,6 +100,7 @@ Vaults & methodGraphs & knowledge[This article as a graph →](graphs.md#reading
 
 ### Continued by
 
+- [143 notes in a day: how my pen on a printed release candidate became a record, decisions with their provenance, a review hub and a plan for the next candidate, read by agents](a-pen-on-a-release-candidate.md) 143 notes in a day: how a pen on a printed release candidate became a record, decisions with provenance and a review hub, read by agents.
 - [A composer's agent: a plan to read a piano score from a PDF into Sibelius, then the composer's own handwriting, with MusicXML in the middle and a check by rendering back](a-composers-agent.md) A composer's agent: a plan to read a piano PDF into Sibelius, then the composer's handwriting, with MusicXML in the middle and a check.
 - [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](the-book-of-the-talk-and-its-companion.md) Two agent teams, one night: RC1 of the book of The Ultimate Insider, a cold read by a team that knew only the record, and a companion PDF of tick boxes.
 - [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](a-pen-and-a-key.md) Every article now has a Pen to mark it, comment and tell the newsroom, and a browser key pki.sgit.ai vouches for signs each note as mine.

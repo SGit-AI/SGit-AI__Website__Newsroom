@@ -129,6 +129,7 @@ Graphs & knowledgeSite & engineering[This article as a graph →](graphs.md#the-
 
 ### Continued by
 
+- [143 notes in a day: how my pen on a printed release candidate became a record, decisions with their provenance, a review hub and a plan for the next candidate, read by agents](a-pen-on-a-release-candidate.md) 143 notes in a day: how a pen on a printed release candidate became a record, decisions with provenance and a review hub, read by agents.
 - [An augmented PDF viewer: how hard is it to build one in the browser that renders any PDF and opens the provenance, the graph and the comments behind it? Less than I thought](an-augmented-pdf-viewer.md) An augmented PDF viewer in the browser: PDF.js draws the page, one more layer adds provenance and graph, and the PDF only carries clues.
 
 [All articles](index.md) · [All graphs](graphs.md)

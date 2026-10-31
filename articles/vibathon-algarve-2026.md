@@ -101,6 +101,7 @@ Startups & strategy[This article as a graph →](graphs.md#vibathon-algarve-2026
 
 ### Continued by
 
+- [Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed, with what each gets right and what to build next](jose-botas-two-agent-apps.md) Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed.
 - [A presentation for every project: how the agentic workflow behind a talk built in a day can turn each project from a build day into a visual, dynamic presentation, and a service](a-presentation-for-every-project.md) A presentation for every project: the agentic workflow behind a talk built in a day, applied to each project from a build day, and a service.
 - [Spreadsheet to App: a session programme for Algarve Evolution, with five example spreadsheets, five prompts, a mock event and a public vault, so nobody arrives needing a problem to solve](spreadsheet-to-app-sessions.md) Spreadsheet to App: a session programme for Algarve Evolution, with five examples, five prompts, a mock event and a public vault.
 - [An Algarve talent map: how Algarve Evolution can turn its mapping of services, mentors and investors into a public matchmaking site, built by one Claude session, with consent first](an-algarve-talent-map.md) An Algarve talent map: Algarve Evolution's mapping of services, mentors and investors as a public matchmaking site, consent first.

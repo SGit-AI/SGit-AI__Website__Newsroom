@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-31 | published | 1,473 | first published | this release | [current](../a-composers-agent.md) |
+| **v1.0.0** | 2026-10-31 | published | 1,473 | first published | [`d846e54c7`](https://github.com/SGit-AI/SGit-AI__Website/commit/d846e54c700d16328b60e352376785ed9f45bec4) | [current](../a-composers-agent.md) |
 
 [← Back to the article](../a-composers-agent.md) · [All articles](../index.md)
 

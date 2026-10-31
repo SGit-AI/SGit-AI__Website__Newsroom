@@ -55,6 +55,358 @@
   ],
   "articles": [
     {
+      "slug": "jose-botas-two-agent-apps",
+      "title": "Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed, with what each gets right and what to build next",
+      "date": "2026-10-31",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/jose-botas-two-agent-apps.html",
+      "markdown": "https://newsroom.sgit.ai/articles/jose-botas-two-agent-apps.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/jose-botas-two-agent-apps.webp",
+      "teaser": "Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "prompt-injection",
+        "agent-reach",
+        "security",
+        "lovable",
+        "review",
+        "algarve",
+        "article"
+      ],
+      "links_out": [
+        "vibathon-algarve-2026",
+        "what-can-your-agent-reach",
+        "three-policies-for-an-agent",
+        "from-lovable-to-your-own-newsroom"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ja-arena-trace.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ja-arena-trace.webp",
+          "caption": "Hack the Agent, level 4: the refund agent is talked into a refund the policy forbids, and the trace shows why.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "ja-arena-host.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ja-arena-host.webp",
+          "caption": "Hack the Agent's host dashboard: the session code and QR, the live request budget and the audience's progress.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "ja-reach-red.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ja-reach-red.webp",
+          "caption": "ReachCheck's auto-sender demo: email sent against the owner's rule never to send, flagged red with evidence.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "ja-reach-yellow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ja-reach-yellow.webp",
+          "caption": "ReachCheck on our invented support-agent configuration: yellow, five tools unverified, no mismatches found.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "jose-botas-two-agent-apps",
+        "teaser": "Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "José Bota built two apps at the Vibathon: Hack the Agent, a multiplayer prompt-injection game whose five levels add defences until the lesson is that any rule only the model enforces can be argued with; and ReachCheck, a browser-only review that compares an agent's configuration with its owner's mandate, honest about its limits but so cautious it missed obvious risks in an invented configuration; both are well made, and both point to turning lessons and mandates into behaviour policies.",
+        "nodes": [
+          {
+            "id": "apps",
+            "label": "Two apps, one question",
+            "kind": "example",
+            "summary": "What can an agent reach, and what stops it."
+          },
+          {
+            "id": "arena",
+            "label": "Hack the Agent",
+            "kind": "artefact",
+            "summary": "A multiplayer game, five levels, traces and lessons."
+          },
+          {
+            "id": "lesson",
+            "label": "Rules only the model enforces",
+            "kind": "claim",
+            "summary": "Any such rule is a rule an attacker can argue with."
+          },
+          {
+            "id": "reach",
+            "label": "ReachCheck",
+            "kind": "artefact",
+            "summary": "Configuration against mandate, red, yellow or green, in the browser."
+          },
+          {
+            "id": "cautious",
+            "label": "Careful to a fault",
+            "kind": "claim",
+            "summary": "Unverified tools rather than guessed matches; obvious risks missed."
+          },
+          {
+            "id": "next",
+            "label": "Next steps",
+            "kind": "method",
+            "summary": "Host recovery, reports, possible matches, wider injection checks, Pages."
+          },
+          {
+            "id": "policy",
+            "label": "A behaviour policy",
+            "kind": "concept",
+            "summary": "The shared next step for both."
+          }
+        ],
+        "edges": [
+          {
+            "from": "apps",
+            "to": "arena",
+            "rel": "produces"
+          },
+          {
+            "from": "apps",
+            "to": "reach",
+            "rel": "produces"
+          },
+          {
+            "from": "arena",
+            "to": "lesson",
+            "rel": "produces"
+          },
+          {
+            "from": "reach",
+            "to": "cautious",
+            "rel": "leads-to"
+          },
+          {
+            "from": "lesson",
+            "to": "policy",
+            "rel": "leads-to"
+          },
+          {
+            "from": "reach",
+            "to": "policy",
+            "rel": "leads-to"
+          },
+          {
+            "from": "next",
+            "to": "policy",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "what-can-your-agent-reach",
+            "three-policies-for-an-agent",
+            "from-lovable-to-your-own-newsroom",
+            "vibathon-algarve-2026"
+          ],
+          "pages": [],
+          "sites": [
+            "https://agent-defense-arena.lovable.app/",
+            "https://reach-check-agent.lovable.app/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Any rule only the model enforces is a rule an attacker can argue with.",
+            "why": "Hack the Agent's lesson."
+          },
+          {
+            "text": "It is the right instinct, taken one step too far.",
+            "why": "ReachCheck's caution."
+          },
+          {
+            "text": "write down what the agent may do, and enforce it outside the model",
+            "why": "The shared next step."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-pen-on-a-release-candidate",
+      "title": "143 notes in a day: how my pen on a printed release candidate became a record, decisions with their provenance, a review hub and a plan for the next candidate, read by agents",
+      "date": "2026-10-31",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-pen-on-a-release-candidate.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-pen-on-a-release-candidate.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-pen-on-a-release-candidate.webp",
+      "teaser": "143 notes in a day: how a pen on a printed release candidate became a record, decisions with provenance and a review hub, read by agents.",
+      "topics": [
+        "vaults-and-method",
+        "graphs-and-knowledge"
+      ],
+      "tags": [
+        "gen-z-book",
+        "books",
+        "review",
+        "handwriting",
+        "paper",
+        "agents",
+        "provenance",
+        "article"
+      ],
+      "links_out": [
+        "reading-with-a-pen",
+        "the-augmented-book",
+        "the-book-of-the-talk-and-its-companion",
+        "generation-z-developers-again"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ink-page-9.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ink-page-9.webp",
+          "caption": "Page 9 of the printed release candidate: my notes, numbered, read word for word and explained beside the page.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "ink-desk.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ink-desk.webp",
+          "caption": "The printed release candidate on a café table, 19 October 2026, with the pen.",
+          "kind": "photo"
+        },
+        {
+          "file": "ink-page-15.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ink-page-15.webp",
+          "caption": "Page 15: the pen asks for Wardley maps before graphs, and for the case to be drawn, not told.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "ink-margins.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ink-margins.webp",
+          "caption": "The margin system the agents sketched from my notes: fact and opinion marks, and working QR codes.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "a-pen-on-a-release-candidate",
+        "teaser": "143 notes in a day: how a pen on a printed release candidate became a record, decisions with provenance and a review hub, read by agents.",
+        "topics": [
+          "vaults-and-method",
+          "graphs-and-knowledge"
+        ],
+        "core_idea": "A handwritten review of 19 printed pages of a book's release candidate became, in one day, 143 notes recorded word for word with their place and meaning, each page drawn three ways, 11 uncertain readings asked rather than guessed, four decisions recorded with the page and note that made them, themes led by the author's voice, a margin system with working QR codes, and a review hub where every note has an address: a handwritten review as traceable as a pull request.",
+        "nodes": [
+          {
+            "id": "setup",
+            "label": "19 pages, 143 notes",
+            "kind": "example",
+            "summary": "A café, a pen, four batches of photographs."
+          },
+          {
+            "id": "reading",
+            "label": "Reading the hand",
+            "kind": "method",
+            "summary": "Word for word, three drawings per page, a record as data."
+          },
+          {
+            "id": "asked",
+            "label": "Uncertainty asked",
+            "kind": "method",
+            "summary": "Eleven readings returned as questions, answered by voice."
+          },
+          {
+            "id": "themes",
+            "label": "What the pen asked for",
+            "kind": "concept",
+            "summary": "Voice, the reader's context, show it, fact or opinion, QR codes."
+          },
+          {
+            "id": "decisions",
+            "label": "Decisions with provenance",
+            "kind": "artefact",
+            "summary": "016 to 019, made in pen on a given page."
+          },
+          {
+            "id": "room",
+            "label": "The page asks for room",
+            "kind": "artefact",
+            "summary": "Fact and opinion marks, working QR codes."
+          },
+          {
+            "id": "hub",
+            "label": "The review hub",
+            "kind": "artefact",
+            "summary": "Every note with its own address; the build guards them."
+          },
+          {
+            "id": "shows",
+            "label": "As traceable as a pull request",
+            "kind": "claim",
+            "summary": "A handwritten review, fully traceable."
+          }
+        ],
+        "edges": [
+          {
+            "from": "setup",
+            "to": "reading",
+            "rel": "leads-to"
+          },
+          {
+            "from": "reading",
+            "to": "asked",
+            "rel": "depends-on"
+          },
+          {
+            "from": "reading",
+            "to": "themes",
+            "rel": "produces"
+          },
+          {
+            "from": "themes",
+            "to": "decisions",
+            "rel": "produces"
+          },
+          {
+            "from": "themes",
+            "to": "room",
+            "rel": "produces"
+          },
+          {
+            "from": "hub",
+            "to": "reading",
+            "rel": "extends"
+          },
+          {
+            "from": "decisions",
+            "to": "shows",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "reading-with-a-pen",
+            "the-augmented-book",
+            "the-book-of-the-talk-and-its-companion",
+            "generation-z-developers-again"
+          ],
+          "pages": [],
+          "sites": [
+            "https://gen-z-developers.sgit.ai/reviews/paper/index.html",
+            "https://gen-z-developers.sgit.ai/decisions/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Uncertainty asked, not guessed.",
+            "why": "The method."
+          },
+          {
+            "text": "A view that was missing became a rule that keeps notes from being lost.",
+            "why": "The hub."
+          },
+          {
+            "text": "a handwritten review can be as traceable as a pull request",
+            "why": "The point."
+          }
+        ]
+      }
+    },
+    {
       "slug": "a-composers-agent",
       "title": "A composer's agent: a plan to read a piano score from a PDF into Sibelius, then the composer's own handwriting, with MusicXML in the middle and a check by rendering back",
       "date": "2026-10-31",
@@ -946,7 +1298,9 @@
         "villager-services-for-explorer-coders",
         "lovable-with-sharness"
       ],
-      "links_in": [],
+      "links_in": [
+        "jose-botas-two-agent-apps"
+      ],
       "figures": [
         {
           "file": "jb-flow.webp",
@@ -1954,6 +2308,7 @@
         "the-open-security-summit-and-its-debt"
       ],
       "links_in": [
+        "jose-botas-two-agent-apps",
         "a-presentation-for-every-project",
         "spreadsheet-to-app-sessions",
         "an-algarve-talent-map",
@@ -2863,6 +3218,7 @@
         "books-for-a-new-generation-of-publishing"
       ],
       "links_in": [
+        "a-pen-on-a-release-candidate",
         "an-augmented-pdf-viewer"
       ],
       "figures": [
@@ -4601,6 +4957,7 @@
         "reading-with-a-pen"
       ],
       "links_in": [
+        "a-pen-on-a-release-candidate",
         "a-presentation-for-every-project",
         "an-augmented-pdf-viewer",
         "the-augmented-book",
@@ -27190,6 +27547,7 @@
         "a-pull-request-by-another-name"
       ],
       "links_in": [
+        "a-pen-on-a-release-candidate",
         "a-composers-agent",
         "the-book-of-the-talk-and-its-companion",
         "a-pen-and-a-key",
@@ -29415,6 +29773,7 @@
         "books-from-articles"
       ],
       "links_in": [
+        "a-pen-on-a-release-candidate",
         "running-an-ai-build-event",
         "you-are-a-developer",
         "a-pull-request-by-another-name",
@@ -33461,6 +33820,7 @@
         "hope-or-enforcement"
       ],
       "links_in": [
+        "jose-botas-two-agent-apps",
         "from-lovable-to-your-own-newsroom",
         "who-carries-the-risk",
         "a-payout-for-every-row",
@@ -34652,6 +35012,7 @@
         "agency-is-not-a-yes"
       ],
       "links_in": [
+        "jose-botas-two-agent-apps",
         "from-lovable-to-your-own-newsroom",
         "joining-algarve-evolution",
         "one-writer-one-key",

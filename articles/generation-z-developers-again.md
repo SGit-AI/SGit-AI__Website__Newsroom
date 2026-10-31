@@ -139,6 +139,7 @@ Vaults & methodStartups & strategy[This article as a graph →](graphs.md#genera
 
 ### Continued by
 
+- [143 notes in a day: how my pen on a printed release candidate became a record, decisions with their provenance, a review hub and a plan for the next candidate, read by agents](a-pen-on-a-release-candidate.md) 143 notes in a day: how a pen on a printed release candidate became a record, decisions with provenance and a review hub, read by agents.
 - [Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens](running-an-ai-build-event.md) Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from browser-only to synthetic users.
 - [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](you-are-a-developer.md) Every GenAI founder I know is a developer and does not think so. They never saw the sausage factory. So the book may be Generation ZX Founders.
 - [A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault](a-pull-request-by-another-name.md) The book reviewed chapter by chapter by six editors in parallel, thirteen principles behind the fixes, and seven patches delivered in a vault.
