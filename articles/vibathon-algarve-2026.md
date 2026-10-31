@@ -101,6 +101,7 @@ Startups & strategy[This article as a graph →](graphs.md#vibathon-algarve-2026
 
 ### Continued by
 
+- [Spreadsheet to App: a session programme for Algarve Evolution, with five example spreadsheets, five prompts, a mock event and a public vault, so nobody arrives needing a problem to solve](spreadsheet-to-app-sessions.md) Spreadsheet to App: a session programme for Algarve Evolution, with five examples, five prompts, a mock event and a public vault.
 - [An Algarve talent map: how Algarve Evolution can turn its mapping of services, mentors and investors into a public matchmaking site, built by one Claude session, with consent first](an-algarve-talent-map.md) An Algarve talent map: Algarve Evolution's mapping of services, mentors and investors as a public matchmaking site, consent first.
 - [Joining Algarve Evolution: The Cyber Boardroom takes the startup membership, and what we can share with the region, our workflows and our technology, all of it open source](joining-algarve-evolution.md) Joining Algarve Evolution: The Cyber Boardroom takes the startup membership and shares its workflows and technology, all open source.
 - [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](villager-services-for-explorer-coders.md) Villager services for explorer coders: founders with ten years of checklists build the apps; we sell everything behind them in finite packs.

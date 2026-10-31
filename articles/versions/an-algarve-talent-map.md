@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-31 | published | 1,692 | first published | this release | [current](../an-algarve-talent-map.md) |
+| **v1.0.0** | 2026-10-31 | published | 1,692 | first published | [`4fe72a72d`](https://github.com/SGit-AI/SGit-AI__Website/commit/4fe72a72d2b5f641e4693548ffcbbdea7b31c0d5) | [current](../an-algarve-talent-map.md) |
 
 [← Back to the article](../an-algarve-talent-map.md) · [All articles](../index.md)
 

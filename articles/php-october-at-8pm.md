@@ -134,7 +134,9 @@ The site [php.oct.2026.newsroom.sgit.ai](https://php.oct.2026.newsroom.sgit.ai/)
 
 News & evidenceVaults & method[This article as a graph →](graphs.md#php-october-at-8pm)
 
-No other article links here yet.
+### Continued by
+
+- [From Lovable to your own newsroom: a brief for José Bota and his agent, to put every app on GitHub Pages under his own domain, and publish each one as an article](from-lovable-to-your-own-newsroom.md) From Lovable to your own newsroom: a brief for José Bota and his agent, every app on GitHub Pages under his own domain, each an article.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

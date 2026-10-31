@@ -138,6 +138,7 @@ Agents & policy[This article as a graph →](graphs.md#what-can-your-agent-reach
 
 ### Continued by
 
+- [From Lovable to your own newsroom: a brief for José Bota and his agent, to put every app on GitHub Pages under his own domain, and publish each one as an article](from-lovable-to-your-own-newsroom.md) From Lovable to your own newsroom: a brief for José Bota and his agent, every app on GitHub Pages under his own domain, each an article.
 - [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](who-carries-the-risk.md) Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.
 - [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](a-payout-for-every-row.md) Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.
 - [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](approved-business-mandates.md) Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.

@@ -144,6 +144,7 @@ Agents & policy[This article as a graph →](graphs.md#three-policies-for-an-age
 
 ### Continued by
 
+- [From Lovable to your own newsroom: a brief for José Bota and his agent, to put every app on GitHub Pages under his own domain, and publish each one as an article](from-lovable-to-your-own-newsroom.md) From Lovable to your own newsroom: a brief for José Bota and his agent, every app on GitHub Pages under his own domain, each an article.
 - [Joining Algarve Evolution: The Cyber Boardroom takes the startup membership, and what we can share with the region, our workflows and our technology, all of it open source](joining-algarve-evolution.md) Joining Algarve Evolution: The Cyber Boardroom takes the startup membership and shares its workflows and technology, all open source.
 - [One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again](one-writer-one-key.md) One writer, one key: a register of writer agents, opened at the editor's word, every release signed, and a closed key never used again.
 - [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](approved-business-mandates.md) Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.

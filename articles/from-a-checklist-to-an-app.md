@@ -99,6 +99,7 @@ Startups & strategyVaults & method[This article as a graph →](graphs.md#from-a
 
 ### Continued by
 
+- [Spreadsheet to App: a session programme for Algarve Evolution, with five example spreadsheets, five prompts, a mock event and a public vault, so nobody arrives needing a problem to solve](spreadsheet-to-app-sessions.md) Spreadsheet to App: a session programme for Algarve Evolution, with five examples, five prompts, a mock event and a public vault.
 - [Sell to the companies that already have the problem: how Algarve Evolution can match businesses adopting AI with the region's service providers, starting when the business has built its own first app](sell-to-the-companies-that-already-have-the-problem.md) Sell to the companies that already have the problem: matching Algarve businesses that built their own AI apps with the region's providers.
 - [An Algarve talent map: how Algarve Evolution can turn its mapping of services, mentors and investors into a public matchmaking site, built by one Claude session, with consent first](an-algarve-talent-map.md) An Algarve talent map: Algarve Evolution's mapping of services, mentors and investors as a public matchmaking site, consent first.
 - [Joining Algarve Evolution: The Cyber Boardroom takes the startup membership, and what we can share with the region, our workflows and our technology, all of it open source](joining-algarve-evolution.md) Joining Algarve Evolution: The Cyber Boardroom takes the startup membership and shares its workflows and technology, all open source.

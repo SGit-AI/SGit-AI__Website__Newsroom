@@ -1,0 +1,34 @@
+{
+ "slug": "from-lovable-to-your-own-newsroom",
+ "teaser": "From Lovable to your own newsroom: a brief for José Bota and his agent, every app on GitHub Pages under his own domain, each an article.",
+ "topics": ["site-and-engineering", "agents-and-policy"],
+ "core_idea": "José Bota's Lovable tools that measure an agent's reach need a home: a brief his agent can follow moves each MVP to a GitHub repository published with Pages, puts it under a domain with his name bought in Route 53 with one subdomain per app, and adds a newsroom on the same domain using this newsroom's workflow, so every app becomes an article; success is two or three links; the business is helping companies see and protect their agents' reach, with public demos and private client repositories through the same workflow.",
+ "nodes": [
+  {"id": "tools", "label": "Agent-reach tools", "kind": "example", "summary": "Built in Lovable by José Bota; they need a home."},
+  {"id": "github", "label": "GitHub and Pages", "kind": "method", "summary": "Sync from Lovable, a build workflow, a link at every step."},
+  {"id": "domain", "label": "A domain with his name", "kind": "method", "summary": "Route 53; a main site; one subdomain per app."},
+  {"id": "newsroom", "label": "newsroom on his domain", "kind": "method", "summary": "The same workflow as this newsroom; an article per app."},
+  {"id": "done", "label": "Two or three links", "kind": "claim", "summary": "The measure of success, then amplified here and by RiskMandate."},
+  {"id": "business", "label": "Reach, then protection", "kind": "concept", "summary": "A business helping companies see and limit what agents reach."},
+  {"id": "private", "label": "Private versions", "kind": "method", "summary": "A private repository per client, the same workflow."},
+  {"id": "pack", "label": "The starter pack", "kind": "artefact", "summary": "Brief, Pages workflow, DNS, app list, house rules."}
+ ],
+ "edges": [
+  {"from": "tools", "to": "github", "rel": "leads-to"},
+  {"from": "github", "to": "domain", "rel": "leads-to"},
+  {"from": "domain", "to": "newsroom", "rel": "leads-to"},
+  {"from": "newsroom", "to": "done", "rel": "produces"},
+  {"from": "business", "to": "private", "rel": "produces"},
+  {"from": "pack", "to": "github", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["your-own-newsroom", "what-can-your-agent-reach", "villager-services-for-explorer-coders", "lovable-with-sharness", "three-policies-for-an-agent", "php-october-at-8pm"],
+  "pages": [],
+  "sites": ["https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html", "https://api.newsroom.sgit.ai/"]
+ },
+ "quotes": [
+  {"text": "everything José makes is visible and has a history", "why": "Why GitHub Pages."},
+  {"text": "the brand is him", "why": "Why his own domain."},
+  {"text": "exactly the same workflow", "why": "Public demos, private versions."}
+ ]
+}

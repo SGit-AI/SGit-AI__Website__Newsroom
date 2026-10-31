@@ -2,10 +2,11 @@
 
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
 
-37 articles, newest first.
+38 articles, newest first.
 
 ## October 2026
 
+- [From Lovable to your own newsroom: a brief for José Bota and his agent, to put every app on GitHub Pages under his own domain, and publish each one as an article](../../articles/from-lovable-to-your-own-newsroom.md), 2026-10-31, 5 min.
 - [An augmented PDF viewer: how hard is it to build one in the browser that renders any PDF and opens the provenance, the graph and the comments behind it? Less than I thought](../../articles/an-augmented-pdf-viewer.md), 2026-10-31, 7 min.
 - [The augmented book: one source in layers, projected to the web, the iPad and print, so the reader gets the right information at the right time, and what fifty years of attempts teach](../../articles/the-augmented-book.md), 2026-10-31, 9 min.
 - [An iPad to review the book: a brief for an app that reads the PDFs, shows the comments on the page, opens its vault with my passkey and carries sgit in Swift](../../articles/an-ipad-to-review-the-book.md), 2026-10-31, 8 min.

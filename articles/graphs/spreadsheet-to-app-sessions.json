@@ -1,0 +1,136 @@
+{
+  "slug": "spreadsheet-to-app-sessions",
+  "teaser": "Spreadsheet to App: a session programme for Algarve Evolution, with five examples, five prompts, a mock event and a public vault.",
+  "topics": [
+    "startups-and-strategy",
+    "vaults-and-method"
+  ],
+  "core_idea": "A session programme with one premise, turn your spreadsheet into an application, and two requirements, a model that can build an app and a spreadsheet with publishable dummy data; people arrive with the problem written down or pick one of five invented examples, five prompts take it from a searchable list to a published app, a mock day hands each app to someone else and teaches the handover, apps are published from each tool, a GitHub repository per participant, or moved by a team of providers; the apps that later break are the market.",
+  "nodes": [
+    {
+      "id": "premise",
+      "label": "Turn your spreadsheet into an app",
+      "kind": "concept",
+      "summary": "The one premise of the sessions."
+    },
+    {
+      "id": "req",
+      "label": "Two requirements",
+      "kind": "claim",
+      "summary": "A model account and a spreadsheet with dummy data."
+    },
+    {
+      "id": "examples",
+      "label": "Five examples",
+      "kind": "artefact",
+      "summary": "Checklist, restaurant stock, surf bookings, invoices, members."
+    },
+    {
+      "id": "prompts",
+      "label": "Five prompts",
+      "kind": "method",
+      "summary": "List, form, main view, history, publish."
+    },
+    {
+      "id": "app",
+      "label": "A worked example",
+      "kind": "artefact",
+      "summary": "The holiday home checklist as an app."
+    },
+    {
+      "id": "day",
+      "label": "The mock day",
+      "kind": "method",
+      "summary": "Demo, build, hand it over, the handover session."
+    },
+    {
+      "id": "publish",
+      "label": "Three ways to publish",
+      "kind": "method",
+      "summary": "Own tool, a repository per participant, or a team that moves them."
+    },
+    {
+      "id": "vault",
+      "label": "The pack in a vault",
+      "kind": "artefact",
+      "summary": "Examples, prompts, plan and app, public and read-only."
+    },
+    {
+      "id": "market",
+      "label": "The market",
+      "kind": "claim",
+      "summary": "Apps that break later need providers."
+    }
+  ],
+  "edges": [
+    {
+      "from": "premise",
+      "to": "req",
+      "rel": "depends-on"
+    },
+    {
+      "from": "examples",
+      "to": "prompts",
+      "rel": "leads-to"
+    },
+    {
+      "from": "prompts",
+      "to": "app",
+      "rel": "produces"
+    },
+    {
+      "from": "day",
+      "to": "publish",
+      "rel": "leads-to"
+    },
+    {
+      "from": "vault",
+      "to": "examples",
+      "rel": "extends"
+    },
+    {
+      "from": "publish",
+      "to": "market",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "from-a-checklist-to-an-app",
+      "sell-to-the-companies-that-already-have-the-problem",
+      "villager-services-for-explorer-coders",
+      "an-algarve-talent-map",
+      "vibathon-algarve-2026"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "let's turn your spreadsheet into an application",
+      "why": "The premise."
+    },
+    {
+      "text": "people arrive with the problem already written down",
+      "why": "Why there is no blank page."
+    },
+    {
+      "text": "That is the next prompt.",
+      "why": "The loop continues."
+    }
+  ],
+  "figures": [
+    {
+      "file": "sa-pack.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sa-pack.webp",
+      "caption": "Spreadsheet to App: five invented examples and five prompts, so nobody arrives needing a problem to solve.",
+      "kind": "concept"
+    },
+    {
+      "file": "sa-app.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sa-app.webp",
+      "caption": "The first example converted with the five prompts: the essentials first, by phase, with a history of runs.",
+      "kind": "screenshot"
+    }
+  ]
+}
