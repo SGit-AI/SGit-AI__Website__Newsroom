@@ -4,7 +4,7 @@ date: 2026-10-31
 author: Dinis Cruz
 author_url: about/index.html
 summary: On the night of 30 October two of this newsroom's writer agents pushed to the same branch, and one release was rejected because the other had shipped first. Merging them meant reconciling 1,925 generated files. It was a small incident with a clear lesson: I wanted only one journalist agent at a time, and nothing enforced it. So this morning the newsroom started using the public-key infrastructure we have been writing about. There is now a register of writer agents. A registration is opened only at my word, and only when no other is open; the session makes a new key pair and keeps the private half. Every commit a writer makes carries a signature over exactly the files it commits, and the site's validator, locally and in CI, refuses a writer's commit that the open registration did not sign, refuses two open registrations, and refuses a key used twice. Decommissioning is the other half: a registration is closed by me, or in the commit that opens the next writer, its private key is deleted, and it is never reopened. The same Claude session may come back, but only as a new registration with a new key. The first signed commit became site v0.14.15. This article gives the exact steps, the six cases the gate refuses, the mistake made while testing it, and the weakness that remains: my approval is still a note in the same repository, so the next step is that I sign each registration with my own key.
-version: v999.0.0
+version: v0.14.16
 license: https://creativecommons.org/licenses/by/4.0/
 tags: pki, agents, identity, signing, newsroom, behaviour-policy, process, article
 status: published

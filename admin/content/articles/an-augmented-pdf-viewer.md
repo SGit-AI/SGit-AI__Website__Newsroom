@@ -4,7 +4,7 @@ date: 2026-10-31
 author: Dinis Cruz
 author_url: about/index.html
 summary: The augmented book made me ask a question about PDF. It is a strange format: static, closed, made for a printed page, with nothing behind it. But a PDF is how most serious documents still travel, and the book will have one. So why not augment the PDF? I asked a research agent how feasible it would be to build a viewer in JavaScript, in the browser, that renders any PDF normally but also shows a layer the PDF cannot: the provenance of each claim, the nodes of the semantic graph, definitions, comments and review cards, on demand, beside the text. The answer is that most of it exists, as open source we can extend. Mozilla's PDF.js, under the Apache licence and committed to the day before we looked, already draws a page as a stack of layers, canvas, text and annotations, and announces each one as it renders, so a layer of our own fits on top. It can read a PDF's attachments, its metadata, its links and its fingerprint. And the augmented layer does not need to live in the PDF at all: the PDF only needs clues to find it, an attached file, an id in its metadata, a link, the file's own identifier, or a QR code that survives printing. Hypothesis already anchors annotations to PDFs this way, and e-invoices already carry machine-readable data inside human-readable PDFs. The hard part is not the PDF. It is the interface, anchoring claims to text reliably, and making sure the layer a viewer loads is signed by the people who made the document.
-version: v999.0.0
+version: v0.14.16
 license: https://creativecommons.org/licenses/by/4.0/
 tags: pdf, book, reading, provenance, open-source, javascript, research, brief, article
 status: published
