@@ -2018,6 +2018,100 @@
    "added": null,
    "updated": null,
    "note": "The refresh was rebuilt but left uncommitted, because the same four wire-test date checks failed."
+  },
+  {
+   "id": "5c3c38e32263",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-11-01T05:48:12Z",
+   "finished_at": "2026-11-01T05:57:12Z",
+   "duration_s": 537.0,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.135069,
+     "input": 588643,
+     "output": 121082,
+     "cache_read": 486648,
+     "cache_write": 86377,
+     "thinking": 85633
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.378744,
+     "input": 74,
+     "output": 37071,
+     "cache_read": 2369606,
+     "cache_write": 262917,
+     "thinking": 3218
+    }
+   },
+   "cost_usd": 1.513813,
+   "turns": 23,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-11-01.1",
+   "added": 3,
+   "updated": 3,
+   "note": "A thin Sunday edition: three new stories and three updates, with the Haiku verifier fixing five of six rows."
+  },
+  {
+   "id": "023596a9551f",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-11-01T06:09:33Z",
+   "finished_at": "2026-11-01T06:20:22Z",
+   "duration_s": 647.0,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.149703,
+     "input": 16,
+     "output": 2213,
+     "cache_read": 300128,
+     "cache_write": 24382,
+     "thinking": 317
+    }
+   },
+   "cost_usd": 0.149703,
+   "turns": 13,
+   "subagents": 0,
+   "refused": 3,
+   "refused_kinds": [
+    "web fetch"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": 0,
+   "updated": 0,
+   "note": "Web fetches of the desk brief and charter were refused, so the desk published nothing and asked for WebFetch approval."
+  },
+  {
+   "id": "33d9940c0ea0",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-11-01T06:56:22Z",
+   "finished_at": "2026-11-01T07:08:08Z",
+   "duration_s": 702.0,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.559507,
+     "input": 63,
+     "output": 12159,
+     "cache_read": 2100831,
+     "cache_write": 56927,
+     "thinking": 2957
+    }
+   },
+   "cost_usd": 0.559507,
+   "turns": 33,
+   "subagents": 0,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "blocked",
+   "release": null,
+   "added": 0,
+   "updated": 0,
+   "note": "The refresh was committed locally but not pushed because the date-comma check in test_wire still fails and the push token was invalid."
   }
  ],
  "sessions": [
@@ -2041,15 +2135,15 @@
    "name": "@newsroom.accountant's session",
    "kind": "accountant",
    "from": "2026-10-16",
-   "as_of": "2026-10-31T07:41:50Z",
+   "as_of": "2026-11-01T07:43:00Z",
    "models": [
     "claude-sonnet-5-5"
    ],
-   "cost_usd": 25.817625,
-   "input": 225,
-   "output": 77397,
-   "cache_read": 42034674,
-   "cache_write": 5207911,
+   "cost_usd": 29.75555462,
+   "input": 247,
+   "output": 83270,
+   "cache_read": 49683325,
+   "cache_write": 5986255,
    "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
   }
  ],
