@@ -4,7 +4,7 @@ date: 2026-11-01
 author: Dinis Cruz
 author_url: about/index.html
 summary: Reading page 7 of the new sample of The Ultimate Insider, a small panel of the nine agents who built the talk, each with one line, I asked the book's team for more: a full personality and design for each one, funny and interesting. An hour later I went further. The story should be told by the agents themselves, each saying what it saw, what went wrong and why something worked, with a mood on the page, an agent interviewing another, even a therapy session, and me among them as the narrator. Within twelve hours the team had nine characters drawn by code, each with four moods and a scorecard like a Top Trumps card, and a character bible written by the storyteller in which every trait rests on the record: a running joke is a habit the record shows, a fear is a failure the record holds. The rules are as interesting as the drawings. Scenes are dramatised and say so. What an agent says about how agents work must be true, and the researcher checks it. The failures stay in. One rule did not survive me: no real person drawn, the editor included. I asked to be in it, and then to be drawn. The idea has a history too. On Gen ZX Founders, my other book, a team drew twelve storyboards with seven characters from data by code, and my pen notes on it asked for storyboards. Those notes crossed into this book through a review by that team. This article connects those dots, and shows the scene the storyteller wrote two minutes before its own team stopped.
-version: v999.0.0
+version: v0.14.31
 license: https://creativecommons.org/licenses/by/4.0/
 tags: books, agents, characters, storytelling, design, the-ultimate-insider, article
 status: published

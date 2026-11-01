@@ -4,7 +4,7 @@ date: 2026-11-01
 author: Dinis Cruz
 author_url: about/index.html
 summary: On 30 October we wrote about the first release candidate of the book of The Ultimate Insider, written by a team of agents from the record of the talk. Since then the book's repository has taken 672 more commits and 184 site releases, and the book has changed more than in all the days before. Three things happened, and none of them in a straight line. The thesis turned: reading the printed draft, I decided this could not be a book about the insider agent, and that its centre is how to use agentic workflows in October 2026. The voice turned, from third person to first. And the look turned. I had asked the team to start a lab, to find out how the talk's animations could be told on paper. Thirty experiments later, I noticed that the pages the agents made to brief me looked much better than the book itself. We had a ridiculous workflow and a ridiculous presentation, clearly agentic, and a book that looked like a book from the 1980s with some screenshots. So I asked why the book could not look like that, and the lab's look became the book's, in under four hours. This article follows those lines, with their timings: an instruction, agents writing briefs, other agents picking them up, a lab, a turn. The companion article follows the line that turned most: the agents became characters.
-version: v999.0.0
+version: v0.14.31
 license: https://creativecommons.org/licenses/by/4.0/
 tags: books, agents, workflow, design, lab, the-ultimate-insider, article
 status: published
