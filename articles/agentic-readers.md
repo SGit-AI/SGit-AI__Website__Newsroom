@@ -117,6 +117,10 @@ News & evidenceStartups & strategy[This article as a graph →](graphs.md#agenti
 - [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](free-to-copy-paid-at-the-source.md) Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.
 - [Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters](meta-terms-and-the-news.md) Meta's crawling clause, publisher pushback since mid-October, and why newsrooms should answer with machine-readable terms of their own.
 
+### Continued by
+
+- [Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall, credit to start, and a meter that charges for what is read](every-link-a-gift-link.md) Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall and a meter for what is read.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 351 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=351)

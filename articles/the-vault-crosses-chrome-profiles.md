@@ -108,6 +108,7 @@ Vaults & methodGraphs & knowledge[This article as a graph →](graphs.md#the-vau
 
 ### Continued by
 
+- [Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall, credit to start, and a meter that charges for what is read](every-link-a-gift-link.md) Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall and a meter for what is read.
 - [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](the-no-server-startup.md) A blueprint for products with no server and no database of yours: static files, the user's own AI key and storage, and agents to build them.
 - [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](the-vault-opened.md) Merging devices, every call to the vault server named and opened, a page to browse your vaults, and one shared viewer that every reader vault opens with.
 - [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](dark-mode-and-four-more.md) Five themes behind one pill in the bar, kept in the reader's browser, built as a layer over a stylesheet this site cannot edit, with colour as a token and a test.

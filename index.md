@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.29 · 353 articles since 2026-08-17; the newest is 2026-10-31. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 354 articles since 2026-08-17; the newest is 2026-10-31. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -24,7 +24,7 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The last five days
 
-### Saturday 31 October 2026 (20 articles)
+### Saturday 31 October 2026 (21 articles)
 
 - Agent security & behaviour policies: [Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed, with what each gets right and what to build next](articles/jose-botas-two-agent-apps.md), 7 min.
 - Engineering this newsroom: [143 notes in a day: how my pen on a printed release candidate became a record, decisions with their provenance, a review hub and a plan for the next candidate, read by agents](articles/a-pen-on-a-release-candidate.md), 6 min.
@@ -46,6 +46,7 @@ Governments told organisations to take sites offline if they could not patch. Th
 - Startups & strategy: [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](articles/web-summit-humans-and-their-agents.md), 7 min.
 - Engineering this newsroom: [The augmented book: one source in layers, projected to the web, the iPad and print, so the reader gets the right information at the right time, and what fifty years of attempts teach](articles/the-augmented-book.md), 9 min.
 - Engineering this newsroom: [An iPad to review the book: a brief for an app that reads the PDFs, shows the comments on the page, opens its vault with my passkey and carries sgit in Swift](articles/an-ipad-to-review-the-book.md), 8 min.
+- The future of news: [Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall, credit to start, and a meter that charges for what is read](articles/every-link-a-gift-link.md), 5 min.
 
 ### Friday 30 October 2026 (8 articles)
 
@@ -121,13 +122,13 @@ Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vaul
 - [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](articles/the-human-is-the-network.md), 2026-10-21.
 - [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](articles/a-secret-is-a-qr-code.md), 2026-10-21.
 
-### [The future of news](sections/news/index.md) (47)
+### [The future of news](sections/news/index.md) (48)
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
 - [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](articles/agentic-readers.md), 2026-10-31.
+- [Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall, credit to start, and a meter that charges for what is read](articles/every-link-a-gift-link.md), 2026-10-31.
 - [Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it](articles/breaking-the-story-down-before-the-agents-do.md), 2026-10-30.
 - [A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page](articles/books-for-a-new-generation-of-publishing.md), 2026-10-30.
 - [Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart](articles/take-it-or-leave-it.md), 2026-10-27.
-- [Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters](articles/meta-terms-and-the-news.md), 2026-10-27.
 
 ### [Startups & strategy](sections/strategy/index.md) (76)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.

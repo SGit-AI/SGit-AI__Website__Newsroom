@@ -141,6 +141,7 @@ News & evidenceStartups & strategy[This article as a graph →](graphs.md#i-just
 ### Continued by
 
 - [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](agentic-readers.md) Agentic risk, or agentic readers? A reply to DJB Strategies' publisher outlook, its framework answered by a newsroom already doing it.
+- [Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall, credit to start, and a meter that charges for what is read](every-link-a-gift-link.md) Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall and a meter for what is read.
 - [Two years in, the opposite: an essay about burning out on AI that I could not buy, and why my two years of AI have been the most productive of my career](two-years-in-the-opposite.md) An essay about burning out on AI that I could not buy, three paragraphs and a subscription; and why my two years of AI were the opposite.
 
 [All articles](index.md) · [All graphs](graphs.md)

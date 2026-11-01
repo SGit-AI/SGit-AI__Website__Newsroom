@@ -1,0 +1,127 @@
+{
+  "slug": "every-link-a-gift-link",
+  "teaser": "Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall and a meter for what is read.",
+  "topics": [
+    "news-and-evidence",
+    "startups-and-strategy"
+  ],
+  "core_idea": "John Saroff asks whether a reader arriving through a trusted recommendation should be asked to pay at once or offered a relationship, as dark social grows and gift links spread; this newsroom answers in production with no paywall, £5 of credit and no account, a meter that charges for the share of each page actually read, a page not charged if it was not worth it, and no page ever blocked, so every link is a gift link, and the relationship grows on the reader's side, in their browser, shared only when they choose.",
+  "nodes": [
+    {
+      "id": "question",
+      "label": "Pay now, or a relationship?",
+      "kind": "question",
+      "summary": "John Saroff's question after hitting a paywall."
+    },
+    {
+      "id": "dark",
+      "label": "Dark social grows",
+      "kind": "example",
+      "summary": "7.1% to 11.3% of pageviews across Chartbeat's network."
+    },
+    {
+      "id": "meter",
+      "label": "A meter, not a wall",
+      "kind": "method",
+      "summary": "£5 to start, pay for what is read, decline what was not worth it."
+    },
+    {
+      "id": "gift",
+      "label": "Every link a gift link",
+      "kind": "claim",
+      "summary": "Without a paywall, every share opens the whole article."
+    },
+    {
+      "id": "reader",
+      "label": "The reader's side",
+      "kind": "method",
+      "summary": "A front page from their reading, kept in their browser; sent only by choice."
+    },
+    {
+      "id": "take",
+      "label": "What publishers could take",
+      "kind": "method",
+      "summary": "Free first visit, charge after, keep history with the reader."
+    }
+  ],
+  "edges": [
+    {
+      "from": "question",
+      "to": "meter",
+      "rel": "answers"
+    },
+    {
+      "from": "dark",
+      "to": "gift",
+      "rel": "leads-to"
+    },
+    {
+      "from": "meter",
+      "to": "gift",
+      "rel": "produces"
+    },
+    {
+      "from": "gift",
+      "to": "reader",
+      "rel": "leads-to"
+    },
+    {
+      "from": "reader",
+      "to": "take",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "paying-after-the-value",
+      "i-just-want-to-buy-the-article",
+      "the-reading-account-as-built",
+      "agentic-readers",
+      "the-vault-crosses-chrome-profiles"
+    ],
+    "pages": [],
+    "sites": [
+      "https://newsroom.sgit.ai/account/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "I clicked, hit a paywall, and felt disappointed.",
+      "why": "The moment."
+    },
+    {
+      "text": "A share can be more than a pageview.",
+      "why": "The post's conclusion."
+    },
+    {
+      "text": "Every link anyone shares, subscriber or not, is already a gift link",
+      "why": "Our answer."
+    }
+  ],
+  "figures": [
+    {
+      "file": "cb-post.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cb-post.webp",
+      "caption": "John Saroff's LinkedIn post on paywalls, dark social and gift links.",
+      "kind": "aside"
+    },
+    {
+      "file": "cb-card.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cb-card.webp",
+      "caption": "The card in John Saroff's post: dark social's share of pageviews across Chartbeat's network, 2024 and 2026.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "cb-arrive.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cb-arrive.webp",
+      "caption": "What a reader finds on the other side of a shared link here: no paywall, credit to start, a meter for what is read.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "cb-relationship.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cb-relationship.webp",
+      "caption": "What a reader finds next: a front page from their own reading, a way to ask for one designed, and a top-up.",
+      "kind": "screenshot"
+    }
+  ]
+}

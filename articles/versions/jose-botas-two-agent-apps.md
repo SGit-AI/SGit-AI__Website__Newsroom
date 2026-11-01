@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-31 | published | 1,832 | first published | this release | [current](../jose-botas-two-agent-apps.md) |
+| **v1.0.0** | 2026-10-31 | published | 1,832 | first published | [`59af869ad`](https://github.com/SGit-AI/SGit-AI__Website/commit/59af869ad3f5bf7dbc96d4e5519f7fa660c79e70) | [current](../jose-botas-two-agent-apps.md) |
 
 [← Back to the article](../jose-botas-two-agent-apps.md) · [All articles](../index.md)
 
