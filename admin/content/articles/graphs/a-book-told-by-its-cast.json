@@ -1,0 +1,35 @@
+{
+ "slug": "a-book-told-by-its-cast",
+ "teaser": "A book told by its cast: the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record.",
+ "topics": ["agents-and-policy", "vaults-and-method"],
+ "core_idea": "From a page-7 panel of the talk's nine agents, the editor asked for characters and then for the book to be told by them, with moods, interviews, therapy and himself as narrator; within twelve hours the team drew nine characters by code with four moods and a scorecard each, and wrote a character bible in which every trait rests on the record, scenes are dramatised and say so, claims about how agents work are checked, and failures stay in; the idea runs back through the Gen ZX storyboards and the editor's pen notes, carried across by a review, and the team held two minutes after writing a scene about a hold.",
+ "nodes": [
+  {"id": "panel", "label": "A panel on page 7", "kind": "example", "summary": "Nine small figures, one line each, in the lab's look."},
+  {"id": "told", "label": "Told by the agents", "kind": "concept", "summary": "Each agent tells what it saw, what failed and why something worked."},
+  {"id": "drawn", "label": "Drawn by code", "kind": "artefact", "summary": "Nine characters, four moods, a scorecard each from the register."},
+  {"id": "bible", "label": "A bible from the record", "kind": "method", "summary": "A joke is a habit the record shows; a fear a failure it holds."},
+  {"id": "rules", "label": "Dramatised, checked, failures in", "kind": "claim", "summary": "Feelings may be exaggerated, never the method."},
+  {"id": "hold", "label": "The scene and the hold", "kind": "example", "summary": "A therapy scene about a hold, then the team's own hold."},
+  {"id": "me", "label": "The editor as narrator", "kind": "example", "summary": "The rule against drawing him gave way at his word."},
+  {"id": "dots", "label": "Connecting the dots", "kind": "concept", "summary": "Gen ZX storyboards, pen notes and a review led to the cast."}
+ ],
+ "edges": [
+  {"from": "panel", "to": "told", "rel": "leads-to"},
+  {"from": "told", "to": "drawn", "rel": "produces"},
+  {"from": "told", "to": "bible", "rel": "produces"},
+  {"from": "bible", "to": "rules", "rel": "depends-on"},
+  {"from": "bible", "to": "hold", "rel": "produces"},
+  {"from": "told", "to": "me", "rel": "leads-to"},
+  {"from": "dots", "to": "told", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["the-lab-that-redesigned-the-book", "discovering-the-book", "a-pen-on-a-release-candidate", "the-ultimate-insider-case-study"],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "We tell the story through the agents.", "why": "The editor's direction."},
+  {"text": "Every trait rests on the record.", "why": "The bible's first rule."},
+  {"text": "Was the brake late? Or was it right on time? You can tell me.", "why": "The conductor, in therapy."}
+ ]
+}

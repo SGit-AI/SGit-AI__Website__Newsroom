@@ -1,0 +1,148 @@
+{
+  "slug": "the-lab-that-redesigned-the-book",
+  "teaser": "The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments and three days.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "Since RC1 of The Ultimate Insider, the book's team of agents has made 672 commits and 184 releases, and three lines turned without running straight: the thesis moved from the insider agent to agentic workflows in October 2026, the voice moved to the first person, and the look moved when the editor saw that the pages made to brief him looked better than the book, so the lab's look of thirty experiments became the book's within hours; the workflow of verbatim briefs, decisions, letters, scheduled five-step wakes and a claims register made each turn cheap, and the lab, a place to be wrong that is not the product, is where the best idea came from.",
+  "nodes": [
+    {
+      "id": "old-look",
+      "label": "A book from the 1980s",
+      "kind": "question",
+      "summary": "An agentic talk, and a book that looked old, with screenshots."
+    },
+    {
+      "id": "arcs",
+      "label": "Lines that do not run straight",
+      "kind": "concept",
+      "summary": "Instruction, briefs, others pick up, a lab, a turn."
+    },
+    {
+      "id": "thesis",
+      "label": "The thesis turned",
+      "kind": "claim",
+      "summary": "Not the insider agent: agentic workflows in October 2026."
+    },
+    {
+      "id": "voice",
+      "label": "The voice turned",
+      "kind": "example",
+      "summary": "The librarian found RC1 in the third person; RC2 in the first."
+    },
+    {
+      "id": "lab",
+      "label": "The lab",
+      "kind": "artefact",
+      "summary": "Thirty experiments, three rounds, an 82-page PDF."
+    },
+    {
+      "id": "look",
+      "label": "The look turned",
+      "kind": "example",
+      "summary": "The brief pages beat the book; their look became the book's."
+    },
+    {
+      "id": "workflow",
+      "label": "The workflow under it",
+      "kind": "method",
+      "summary": "Verbatim briefs, decisions, letters, five-step wakes, a claims register."
+    },
+    {
+      "id": "margins",
+      "label": "The best idea in the margins",
+      "kind": "claim",
+      "summary": "Give a team a place to experiment that is not the product."
+    }
+  ],
+  "edges": [
+    {
+      "from": "old-look",
+      "to": "look",
+      "rel": "leads-to"
+    },
+    {
+      "from": "arcs",
+      "to": "thesis",
+      "rel": "example-of"
+    },
+    {
+      "from": "arcs",
+      "to": "look",
+      "rel": "example-of"
+    },
+    {
+      "from": "thesis",
+      "to": "voice",
+      "rel": "leads-to"
+    },
+    {
+      "from": "lab",
+      "to": "look",
+      "rel": "produces"
+    },
+    {
+      "from": "workflow",
+      "to": "arcs",
+      "rel": "depends-on"
+    },
+    {
+      "from": "lab",
+      "to": "margins",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-book-of-the-talk-and-its-companion",
+      "the-ultimate-insider-case-study",
+      "the-augmented-book",
+      "a-book-told-by-its-cast"
+    ],
+    "pages": [],
+    "sites": [
+      "https://the-ultimate-insider.book.sgit.ai/lab/the-ultimate-insider-lab.pdf"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "a book that looks like a book from the 1980s",
+      "why": "The editor's verdict on the first look."
+    },
+    {
+      "text": "why can't the book look like that?",
+      "why": "The turn."
+    },
+    {
+      "text": "A lab is the cheapest place to be wrong.",
+      "why": "Why the look came from the lab."
+    }
+  ],
+  "figures": [
+    {
+      "file": "lw-after.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lw-after.webp",
+      "caption": "The ten-page sample in the lab's look, 31 October: an infographic-driven book, built by the team.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "lw-before.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lw-before.webp",
+      "caption": "The same ten pages before, in the book's first look: plain serif pages with screenshots.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "lw-arcs.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lw-arcs.webp",
+      "caption": "Three lines, with their times: the look, the thesis and the cast, from instruction to turn.",
+      "kind": "process"
+    },
+    {
+      "file": "lw-night.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lw-night.webp",
+      "caption": "One of the lab's charts: the team's wakes by member and hour through the night, with releases.",
+      "kind": "aside"
+    }
+  ]
+}

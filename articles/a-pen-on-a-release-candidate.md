@@ -112,6 +112,10 @@ Vaults & methodGraphs & knowledge[This article as a graph →](graphs.md#a-pen-o
 - [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](the-book-of-the-talk-and-its-companion.md) Two agent teams, one night: RC1 of the book of The Ultimate Insider, a cold read by a team that knew only the record, and a companion PDF of tick boxes.
 - [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and an AI edition, dated October 2026, made first.
 
+### Continued by
+
+- [A book told by its cast: how the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record, and the editor as narrator](a-book-told-by-its-cast.md) A book told by its cast: the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 353 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=353)

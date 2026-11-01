@@ -55,6 +55,364 @@
   ],
   "articles": [
     {
+      "slug": "the-lab-that-redesigned-the-book",
+      "title": "The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight",
+      "date": "2026-11-01",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-lab-that-redesigned-the-book.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-lab-that-redesigned-the-book.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-lab-that-redesigned-the-book.webp",
+      "teaser": "The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments and three days.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "books",
+        "agents",
+        "workflow",
+        "design",
+        "lab",
+        "the-ultimate-insider",
+        "article"
+      ],
+      "links_out": [
+        "the-book-of-the-talk-and-its-companion",
+        "the-ultimate-insider-case-study",
+        "the-augmented-book",
+        "a-book-told-by-its-cast"
+      ],
+      "links_in": [
+        "a-book-told-by-its-cast"
+      ],
+      "figures": [
+        {
+          "file": "lw-after.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lw-after.webp",
+          "caption": "The ten-page sample in the lab's look, 31 October: an infographic-driven book, built by the team.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "lw-before.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lw-before.webp",
+          "caption": "The same ten pages before, in the book's first look: plain serif pages with screenshots.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "lw-arcs.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lw-arcs.webp",
+          "caption": "Three lines, with their times: the look, the thesis and the cast, from instruction to turn.",
+          "kind": "process"
+        },
+        {
+          "file": "lw-night.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lw-night.webp",
+          "caption": "One of the lab's charts: the team's wakes by member and hour through the night, with releases.",
+          "kind": "aside"
+        }
+      ],
+      "graph": {
+        "slug": "the-lab-that-redesigned-the-book",
+        "teaser": "The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments and three days.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "Since RC1 of The Ultimate Insider, the book's team of agents has made 672 commits and 184 releases, and three lines turned without running straight: the thesis moved from the insider agent to agentic workflows in October 2026, the voice moved to the first person, and the look moved when the editor saw that the pages made to brief him looked better than the book, so the lab's look of thirty experiments became the book's within hours; the workflow of verbatim briefs, decisions, letters, scheduled five-step wakes and a claims register made each turn cheap, and the lab, a place to be wrong that is not the product, is where the best idea came from.",
+        "nodes": [
+          {
+            "id": "old-look",
+            "label": "A book from the 1980s",
+            "kind": "question",
+            "summary": "An agentic talk, and a book that looked old, with screenshots."
+          },
+          {
+            "id": "arcs",
+            "label": "Lines that do not run straight",
+            "kind": "concept",
+            "summary": "Instruction, briefs, others pick up, a lab, a turn."
+          },
+          {
+            "id": "thesis",
+            "label": "The thesis turned",
+            "kind": "claim",
+            "summary": "Not the insider agent: agentic workflows in October 2026."
+          },
+          {
+            "id": "voice",
+            "label": "The voice turned",
+            "kind": "example",
+            "summary": "The librarian found RC1 in the third person; RC2 in the first."
+          },
+          {
+            "id": "lab",
+            "label": "The lab",
+            "kind": "artefact",
+            "summary": "Thirty experiments, three rounds, an 82-page PDF."
+          },
+          {
+            "id": "look",
+            "label": "The look turned",
+            "kind": "example",
+            "summary": "The brief pages beat the book; their look became the book's."
+          },
+          {
+            "id": "workflow",
+            "label": "The workflow under it",
+            "kind": "method",
+            "summary": "Verbatim briefs, decisions, letters, five-step wakes, a claims register."
+          },
+          {
+            "id": "margins",
+            "label": "The best idea in the margins",
+            "kind": "claim",
+            "summary": "Give a team a place to experiment that is not the product."
+          }
+        ],
+        "edges": [
+          {
+            "from": "old-look",
+            "to": "look",
+            "rel": "leads-to"
+          },
+          {
+            "from": "arcs",
+            "to": "thesis",
+            "rel": "example-of"
+          },
+          {
+            "from": "arcs",
+            "to": "look",
+            "rel": "example-of"
+          },
+          {
+            "from": "thesis",
+            "to": "voice",
+            "rel": "leads-to"
+          },
+          {
+            "from": "lab",
+            "to": "look",
+            "rel": "produces"
+          },
+          {
+            "from": "workflow",
+            "to": "arcs",
+            "rel": "depends-on"
+          },
+          {
+            "from": "lab",
+            "to": "margins",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-book-of-the-talk-and-its-companion",
+            "the-ultimate-insider-case-study",
+            "the-augmented-book",
+            "a-book-told-by-its-cast"
+          ],
+          "pages": [],
+          "sites": [
+            "https://the-ultimate-insider.book.sgit.ai/lab/the-ultimate-insider-lab.pdf"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "a book that looks like a book from the 1980s",
+            "why": "The editor's verdict on the first look."
+          },
+          {
+            "text": "why can't the book look like that?",
+            "why": "The turn."
+          },
+          {
+            "text": "A lab is the cheapest place to be wrong.",
+            "why": "Why the look came from the lab."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-book-told-by-its-cast",
+      "title": "A book told by its cast: how the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record, and the editor as narrator",
+      "date": "2026-11-01",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-book-told-by-its-cast.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-book-told-by-its-cast.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-book-told-by-its-cast.webp",
+      "teaser": "A book told by its cast: the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "books",
+        "agents",
+        "characters",
+        "storytelling",
+        "design",
+        "the-ultimate-insider",
+        "article"
+      ],
+      "links_out": [
+        "the-lab-that-redesigned-the-book",
+        "the-ultimate-insider-case-study",
+        "discovering-the-book",
+        "a-pen-on-a-release-candidate"
+      ],
+      "links_in": [
+        "the-lab-that-redesigned-the-book"
+      ],
+      "figures": [
+        {
+          "file": "lw-cast.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lw-cast.webp",
+          "caption": "The nine agents of The Ultimate Insider as characters: one construction, a colour, a thing on the head and in the hand.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "lw-page-7.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lw-page-7.webp",
+          "caption": "Page 7 of the sample, the screenshot I sent: the nine, one line each, in the talk's own words.",
+          "kind": "aside"
+        },
+        {
+          "file": "lw-moods.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lw-moods.webp",
+          "caption": "Four moods each: happy, worried, stressed, unhappy. A mood is the book's reading of a scene, never a number.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "lw-dots.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lw-dots.webp",
+          "caption": "The line to the cast: the Gen ZX storyboards, my pen notes, the talk's team, the review that carried them across.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "a-book-told-by-its-cast",
+        "teaser": "A book told by its cast: the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "From a page-7 panel of the talk's nine agents, the editor asked for characters and then for the book to be told by them, with moods, interviews, therapy and himself as narrator; within twelve hours the team drew nine characters by code with four moods and a scorecard each, and wrote a character bible in which every trait rests on the record, scenes are dramatised and say so, claims about how agents work are checked, and failures stay in; the idea runs back through the Gen ZX storyboards and the editor's pen notes, carried across by a review, and the team held two minutes after writing a scene about a hold.",
+        "nodes": [
+          {
+            "id": "panel",
+            "label": "A panel on page 7",
+            "kind": "example",
+            "summary": "Nine small figures, one line each, in the lab's look."
+          },
+          {
+            "id": "told",
+            "label": "Told by the agents",
+            "kind": "concept",
+            "summary": "Each agent tells what it saw, what failed and why something worked."
+          },
+          {
+            "id": "drawn",
+            "label": "Drawn by code",
+            "kind": "artefact",
+            "summary": "Nine characters, four moods, a scorecard each from the register."
+          },
+          {
+            "id": "bible",
+            "label": "A bible from the record",
+            "kind": "method",
+            "summary": "A joke is a habit the record shows; a fear a failure it holds."
+          },
+          {
+            "id": "rules",
+            "label": "Dramatised, checked, failures in",
+            "kind": "claim",
+            "summary": "Feelings may be exaggerated, never the method."
+          },
+          {
+            "id": "hold",
+            "label": "The scene and the hold",
+            "kind": "example",
+            "summary": "A therapy scene about a hold, then the team's own hold."
+          },
+          {
+            "id": "me",
+            "label": "The editor as narrator",
+            "kind": "example",
+            "summary": "The rule against drawing him gave way at his word."
+          },
+          {
+            "id": "dots",
+            "label": "Connecting the dots",
+            "kind": "concept",
+            "summary": "Gen ZX storyboards, pen notes and a review led to the cast."
+          }
+        ],
+        "edges": [
+          {
+            "from": "panel",
+            "to": "told",
+            "rel": "leads-to"
+          },
+          {
+            "from": "told",
+            "to": "drawn",
+            "rel": "produces"
+          },
+          {
+            "from": "told",
+            "to": "bible",
+            "rel": "produces"
+          },
+          {
+            "from": "bible",
+            "to": "rules",
+            "rel": "depends-on"
+          },
+          {
+            "from": "bible",
+            "to": "hold",
+            "rel": "produces"
+          },
+          {
+            "from": "told",
+            "to": "me",
+            "rel": "leads-to"
+          },
+          {
+            "from": "dots",
+            "to": "told",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-lab-that-redesigned-the-book",
+            "discovering-the-book",
+            "a-pen-on-a-release-candidate",
+            "the-ultimate-insider-case-study"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "We tell the story through the agents.",
+            "why": "The editor's direction."
+          },
+          {
+            "text": "Every trait rests on the record.",
+            "why": "The bible's first rule."
+          },
+          {
+            "text": "Was the brake late? Or was it right on time? You can tell me.",
+            "why": "The conductor, in therapy."
+          }
+        ]
+      }
+    },
+    {
       "slug": "jose-botas-two-agent-apps",
       "title": "Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed, with what each gets right and what to build next",
       "date": "2026-10-31",
@@ -255,7 +613,9 @@
         "the-book-of-the-talk-and-its-companion",
         "generation-z-developers-again"
       ],
-      "links_in": [],
+      "links_in": [
+        "a-book-told-by-its-cast"
+      ],
       "figures": [
         {
           "file": "ink-page-9.webp",
@@ -3220,6 +3580,7 @@
         "books-for-a-new-generation-of-publishing"
       ],
       "links_in": [
+        "the-lab-that-redesigned-the-book",
         "a-pen-on-a-release-candidate",
         "an-augmented-pdf-viewer"
       ],
@@ -5117,6 +5478,7 @@
         "reading-with-a-pen"
       ],
       "links_in": [
+        "the-lab-that-redesigned-the-book",
         "a-pen-on-a-release-candidate",
         "a-presentation-for-every-project",
         "an-augmented-pdf-viewer",
@@ -6004,6 +6366,8 @@
         "introducing-sharness"
       ],
       "links_in": [
+        "the-lab-that-redesigned-the-book",
+        "a-book-told-by-its-cast",
         "a-presentation-for-every-project",
         "web-summit-team-brief",
         "books-for-a-new-generation-of-publishing",
@@ -28588,6 +28952,7 @@
         "the-graphs-books"
       ],
       "links_in": [
+        "a-book-told-by-its-cast",
         "a-pull-request-by-another-name",
         "generation-z-developers-again"
       ],

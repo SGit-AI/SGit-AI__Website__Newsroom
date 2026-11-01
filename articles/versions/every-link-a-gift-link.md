@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-01 | published | 1,444 | first published | this release | [current](../every-link-a-gift-link.md) |
+| **v1.0.0** | 2026-11-01 | published | 1,444 | first published | [`bc83f1f57`](https://github.com/SGit-AI/SGit-AI__Website/commit/bc83f1f57f42c58795b09bf8b780bde14411344b) | [current](../every-link-a-gift-link.md) |
 
 [← Back to the article](../every-link-a-gift-link.md) · [All articles](../index.md)
 

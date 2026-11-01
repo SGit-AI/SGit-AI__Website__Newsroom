@@ -2,7 +2,12 @@
 
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
 
-40 articles, newest first.
+42 articles, newest first.
+
+## November 2026
+
+- [The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight](../../articles/the-lab-that-redesigned-the-book.md), 2026-11-01, 6 min.
+- [A book told by its cast: how the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record, and the editor as narrator](../../articles/a-book-told-by-its-cast.md), 2026-11-01, 6 min.
 
 ## October 2026
 

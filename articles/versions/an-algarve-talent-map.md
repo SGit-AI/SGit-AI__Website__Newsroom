@@ -10,13 +10,14 @@
 
 # Versions of: An Algarve talent map
 
-1 published version of [An Algarve talent map: how Algarve Evolution can turn its mapping of services, mentors and investors into a public matchmaking site, built by one Claude session, with consent first](../an-algarve-talent-map.md). The current one is **v1.0.0**.
+2 published versions of [An Algarve talent map: how Algarve Evolution can turn its mapping of services, mentors and investors into a public matchmaking site, built by one Claude session, with consent first](../an-algarve-talent-map.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-31 | published | 1,692 | first published | [`4fe72a72d`](https://github.com/SGit-AI/SGit-AI__Website/commit/4fe72a72d2b5f641e4693548ffcbbdea7b31c0d5) | [current](../an-algarve-talent-map.md) |
+| **v1.1.0** | 2026-11-01 | minor | 1,719 | +27 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`6084ddede`](https://github.com/SGit-AI/SGit-AI__Website/commit/6084ddede2dd85c202c1434e697e8a517fd27ea9) | [what changed](an-algarve-talent-map/v1.1.0.md) · [current](../an-algarve-talent-map.md) |
+| **v1.0.0** | 2026-10-31 | published | 1,692 | first published | [`4fe72a72d`](https://github.com/SGit-AI/SGit-AI__Website/commit/4fe72a72d2b5f641e4693548ffcbbdea7b31c0d5) |  |
 
 [← Back to the article](../an-algarve-talent-map.md) · [All articles](../index.md)
 
