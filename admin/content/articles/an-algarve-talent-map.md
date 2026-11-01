@@ -75,7 +75,7 @@ The prices in the prototype are placeholders; what an introduction is worth is A
 
 !shot ta-person.webp | images/ | A profile in the prototype, after the visitor has paid €0.50 from their credit to see the contact. | screenshot
 
-There is a working prototype with fourteen invented people, mentors, investors and people offering services in towns across the Algarve, and four invented needs. It has search and filters, a page per person, a needs board, a form to post a need, the credit meter, and the consent screen each person would receive. It is one static page with the data inside it, which is the point: the real one is the same thing with Algarve Evolution's approved data.
+There is a working prototype with fourteen invented people, mentors, investors and people offering services in towns across the Algarve, and four invented needs. It has search and filters, a page per person, a needs board, a form to post a need, the credit meter, and the consent screen each person would receive. It is one static page with the data inside it, which is the point: the real one is the same thing with Algarve Evolution's approved data. It is published as a public, read-only vault that opens straight into the app: open it in the [vault browser](https://dev.vault.sgraph.ai/#sgit_public_read_a92e8d0554c12cc4bb0f15c7c3efddd33fe1f2e2d14e7515efdd0541f88a2229%3Acig07f79), or clone it with `sgit clone sgit_public_read_a92e8d0554c12cc4bb0f15c7c3efddd33fe1f2e2d14e7515efdd0541f88a2229:cig07f79`.
 
 ## How Algarve Evolution's team can build it {#build}
 
