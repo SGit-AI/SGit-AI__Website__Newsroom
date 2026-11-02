@@ -55,6 +55,188 @@
   ],
   "articles": [
     {
+      "slug": "false-positives-and-the-harness",
+      "title": "False positives and the harness: an answer to a question at hack::soho, why a behaviour policy that runs from the network up to the business logic should refuse less of what is right and more of what is wrong, and why a policy that changes with the code becomes a calibrator for bugs",
+      "date": "2026-11-02",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/false-positives-and-the-harness.html",
+      "markdown": "https://newsroom.sgit.ai/articles/false-positives-and-the-harness.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/false-positives-and-the-harness.webp",
+      "teaser": "An answer at hack::soho: why a behaviour policy layered from the network to the business logic should cut false positives, and how CI makes it a calibrator.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sharness",
+        "false-positives",
+        "process-behaviour-policies",
+        "behaviour-policies",
+        "type-safe",
+        "ci",
+        "databases",
+        "security",
+        "article"
+      ],
+      "links_out": [
+        "introducing-sharness",
+        "three-policies-for-an-agent"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "fph-layers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fph-layers.webp",
+          "caption": "One policy, layered: each door narrower than the one above, until the last one knows the business.",
+          "kind": "architecture"
+        },
+        {
+          "file": "fph-ci.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fph-ci.webp",
+          "caption": "Tie the policy to the code: CI derives it on every change, and a surprise in either direction is a bug.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "false-positives-and-the-harness",
+        "teaser": "An answer at hack::soho: why a behaviour policy layered from the network to the business logic should cut false positives, and how CI makes it a calibrator.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "There is no measured false positive rate for SHarness, most of which is a design. But false positives come from controls that do not know what the application is for. SHarness policies are layered doors, from the network to the database to one application's fields, each narrowing the one above, until the policy describes how the application behaves. Like Type_Safe checking values at the gate, that refuses less of what is right and catches more of what is wrong. Policies learn from gaps, and a CI pipeline that derives them on every change turns an unexpected policy change, or a missing one, into a bug signal. The closed row language marks where the application must take over.",
+        "nodes": [
+          {
+            "id": "question",
+            "label": "What is the false positive rate?",
+            "kind": "question",
+            "summary": "Asked at hack::soho."
+          },
+          {
+            "id": "honest",
+            "label": "No measured rate yet",
+            "kind": "claim",
+            "summary": "Most of SHarness is a design."
+          },
+          {
+            "id": "context",
+            "label": "False positives lack business context",
+            "kind": "claim",
+            "summary": "Benign triggers, legitimate behaviour."
+          },
+          {
+            "id": "layers",
+            "label": "A policy in layers",
+            "kind": "method",
+            "summary": "Network, database, tables, the business."
+          },
+          {
+            "id": "typesafe",
+            "label": "The Type_Safe move",
+            "kind": "example",
+            "summary": "Check at the gate, delete defensive code."
+          },
+          {
+            "id": "negatives",
+            "label": "False negatives too",
+            "kind": "claim",
+            "summary": "A row that knows the business catches more."
+          },
+          {
+            "id": "learn",
+            "label": "A policy that learns",
+            "kind": "method",
+            "summary": "A gap found is a row added."
+          },
+          {
+            "id": "calibrator",
+            "label": "The policy as a calibrator",
+            "kind": "method",
+            "summary": "CI diffs the footprint on every change."
+          },
+          {
+            "id": "line",
+            "label": "Where to draw the line",
+            "kind": "concept",
+            "summary": "The closed language marks it."
+          }
+        ],
+        "edges": [
+          {
+            "from": "honest",
+            "to": "question",
+            "rel": "answers"
+          },
+          {
+            "from": "context",
+            "to": "question",
+            "rel": "answers"
+          },
+          {
+            "from": "layers",
+            "to": "context",
+            "rel": "answers"
+          },
+          {
+            "from": "typesafe",
+            "to": "layers",
+            "rel": "compared-with"
+          },
+          {
+            "from": "negatives",
+            "to": "layers",
+            "rel": "produces"
+          },
+          {
+            "from": "learn",
+            "to": "layers",
+            "rel": "extends"
+          },
+          {
+            "from": "calibrator",
+            "to": "learn",
+            "rel": "extends"
+          },
+          {
+            "from": "line",
+            "to": "layers",
+            "rel": "depends-on"
+          },
+          {
+            "from": "calibrator",
+            "to": "negatives",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "introducing-sharness",
+            "three-policies-for-an-agent",
+            "process-behaviour-policies"
+          ],
+          "pages": [],
+          "sites": [
+            "https://sharness.ai/design/pbp/index.html",
+            "https://www.usenix.org/system/files/sec22-alahmadi.pdf"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The fix is not a smarter guess. It is giving the control the business context.",
+            "why": "Where false positives come from."
+          },
+          {
+            "text": "A refusal is nothing, not damage",
+            "why": "A policy that learns."
+          },
+          {
+            "text": "CI fails if footprint grows without a matching policy change",
+            "why": "The policy as a calibrator."
+          }
+        ]
+      }
+    },
+    {
       "slug": "web-summit-how-we-work",
       "title": "The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work",
       "date": "2026-11-02",
@@ -7222,6 +7404,7 @@
         "agents-have-an-identity-now"
       ],
       "links_in": [
+        "false-positives-and-the-harness",
         "joining-algarve-evolution",
         "villager-services-for-explorer-coders",
         "lovable-with-sharness",
@@ -37075,6 +37258,7 @@
         "agency-is-not-a-yes"
       ],
       "links_in": [
+        "false-positives-and-the-harness",
         "jose-botas-two-agent-apps",
         "from-lovable-to-your-own-newsroom",
         "joining-algarve-evolution",

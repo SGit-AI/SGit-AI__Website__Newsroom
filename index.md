@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.37 · 364 articles since 2026-08-17; the newest is 2026-11-02. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 365 articles since 2026-08-17; the newest is 2026-11-02. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,20 +12,21 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work](articles/web-summit-how-we-work.md), 2026-11-02, 9 min. How the Web Summit team works with agents: a session per agent, a conductor first, narrow roles, a folder, a key, and coordination as the work.
+- [False positives and the harness: an answer to a question at hack::soho, why a behaviour policy that runs from the network up to the business logic should refuse less of what is right and more of what is wrong, and why a policy that changes with the code becomes a calibrator for bugs](articles/false-positives-and-the-harness.md), 2026-11-02, 8 min. An answer at hack::soho: why a behaviour policy layered from the network to the business logic should cut false positives, and how CI makes it a calibrator.
 
 ## Five more
 
+- [The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work](articles/web-summit-how-we-work.md), Startups & strategy, 2026-11-02, 9 min.
 - [The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault](articles/sell-the-sleeve.md), Startups & strategy, 2026-11-02, 8 min.
 - [A solution, not a problem: a coach sent me a link to a product he could not sell me, what that moment teaches about business, security teams, bookshops and travel agents, and why RiskMandate has been making the same mistake](articles/a-solution-not-a-problem.md), Startups & strategy, 2026-11-02, 9 min.
 - [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](articles/the-grant-not-the-prompt.md), Agent security & behaviour policies, 2026-11-02, 6 min.
 - [Separate Ways, explained: what my brother's synth video shows, frame by frame, and why describing work at the moment you make it is the first step to publishing it](articles/separate-ways-explained.md), The future of news, 2026-11-02, 7 min.
-- [Sellable units: applying api.newsroom.sgit.ai to my brother's website, the reading meter on a composer's site that does not look like a newsroom, the pathways from a viewer to a buyer, and every lesson, score and master as something to sell](articles/sellable-units.md), Startups & strategy, 2026-11-02, 8 min.
 
 ## The last five days
 
-### Monday 2 November 2026 (7 articles)
+### Monday 2 November 2026 (8 articles)
 
+- Agent security & behaviour policies: [False positives and the harness: an answer to a question at hack::soho, why a behaviour policy that runs from the network up to the business logic should refuse less of what is right and more of what is wrong, and why a policy that changes with the code becomes a calibrator for bugs](articles/false-positives-and-the-harness.md), 8 min.
 - Startups & strategy: [The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work](articles/web-summit-how-we-work.md), 9 min.
 - Startups & strategy: [The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault](articles/sell-the-sleeve.md), 8 min.
 - Startups & strategy: [A solution, not a problem: a coach sent me a link to a product he could not sell me, what that moment teaches about business, security teams, bookshops and travel agents, and why RiskMandate has been making the same mistake](articles/a-solution-not-a-problem.md), 9 min.
@@ -87,13 +88,13 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 Every article is in exactly one of eight sections, by topic.
 
-### [Agent security & behaviour policies](sections/policy/index.md) (88)
+### [Agent security & behaviour policies](sections/policy/index.md) (89)
 What an agent may do, who carries the risk, and how a policy is enforced: RiskMandate, Agent Behaviour Policies, hooks, accountability, governance.
+- [False positives and the harness: an answer to a question at hack::soho, why a behaviour policy that runs from the network up to the business logic should refuse less of what is right and more of what is wrong, and why a policy that changes with the code becomes a calibrator for bugs](articles/false-positives-and-the-harness.md), 2026-11-02.
 - [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](articles/the-grant-not-the-prompt.md), 2026-11-02.
 - [Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed, with what each gets right and what to build next](articles/jose-botas-two-agent-apps.md), 2026-10-31.
 - [Lovable with SHarness, and the trojanised Claude Code extension: how to keep an app builder's code and an editor's extensions inside a policy, and what SHarness can and cannot stop today](articles/lovable-with-sharness.md), 2026-10-31.
 - [One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again](articles/one-writer-one-key.md), 2026-10-31.
-- [Seven IAM predictions for 2027, checked against an agent team that runs today: where we already are, where we agree, and the two where I would bet the other way](articles/seven-iam-predictions-already-here.md), 2026-10-30.
 
 ### [Working with agents](sections/agents/index.md) (42)
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.

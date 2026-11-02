@@ -1,0 +1,38 @@
+{
+ "slug": "false-positives-and-the-harness",
+ "teaser": "An answer at hack::soho: why a behaviour policy layered from the network to the business logic should cut false positives, and how CI makes it a calibrator.",
+ "topics": ["agents-and-policy", "site-and-engineering"],
+ "core_idea": "There is no measured false positive rate for SHarness, most of which is a design. But false positives come from controls that do not know what the application is for. SHarness policies are layered doors, from the network to the database to one application's fields, each narrowing the one above, until the policy describes how the application behaves. Like Type_Safe checking values at the gate, that refuses less of what is right and catches more of what is wrong. Policies learn from gaps, and a CI pipeline that derives them on every change turns an unexpected policy change, or a missing one, into a bug signal. The closed row language marks where the application must take over.",
+ "nodes": [
+  {"id": "question", "label": "What is the false positive rate?", "kind": "question", "summary": "Asked at hack::soho."},
+  {"id": "honest", "label": "No measured rate yet", "kind": "claim", "summary": "Most of SHarness is a design."},
+  {"id": "context", "label": "False positives lack business context", "kind": "claim", "summary": "Benign triggers, legitimate behaviour."},
+  {"id": "layers", "label": "A policy in layers", "kind": "method", "summary": "Network, database, tables, the business."},
+  {"id": "typesafe", "label": "The Type_Safe move", "kind": "example", "summary": "Check at the gate, delete defensive code."},
+  {"id": "negatives", "label": "False negatives too", "kind": "claim", "summary": "A row that knows the business catches more."},
+  {"id": "learn", "label": "A policy that learns", "kind": "method", "summary": "A gap found is a row added."},
+  {"id": "calibrator", "label": "The policy as a calibrator", "kind": "method", "summary": "CI diffs the footprint on every change."},
+  {"id": "line", "label": "Where to draw the line", "kind": "concept", "summary": "The closed language marks it."}
+ ],
+ "edges": [
+  {"from": "honest", "to": "question", "rel": "answers"},
+  {"from": "context", "to": "question", "rel": "answers"},
+  {"from": "layers", "to": "context", "rel": "answers"},
+  {"from": "typesafe", "to": "layers", "rel": "compared-with"},
+  {"from": "negatives", "to": "layers", "rel": "produces"},
+  {"from": "learn", "to": "layers", "rel": "extends"},
+  {"from": "calibrator", "to": "learn", "rel": "extends"},
+  {"from": "line", "to": "layers", "rel": "depends-on"},
+  {"from": "calibrator", "to": "negatives", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["introducing-sharness", "three-policies-for-an-agent", "process-behaviour-policies"],
+  "pages": [],
+  "sites": ["https://sharness.ai/design/pbp/index.html", "https://www.usenix.org/system/files/sec22-alahmadi.pdf"]
+ },
+ "quotes": [
+  {"text": "The fix is not a smarter guess. It is giving the control the business context.", "why": "Where false positives come from."},
+  {"text": "A refusal is nothing, not damage", "why": "A policy that learns."},
+  {"text": "CI fails if footprint grows without a matching policy change", "why": "The policy as a calibrator."}
+ ]
+}

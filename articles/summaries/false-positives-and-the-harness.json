@@ -1,0 +1,110 @@
+{
+ "slug": "false-positives-and-the-harness",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 223,
+   "line": "An answer at hack::soho: a policy layered up to the business logic should cut false positives.",
+   "para": "There is no measured false positive rate for SHarness, most of which is a design. False positives come from controls that do not know the business. Layered doors, from the network to the database to one application's fields, let the policy describe how the application behaves, like Type_Safe checking at the gate. Policies learn from gaps, and a CI pipeline that derives them on every change turns a surprise in the policy into a bug signal.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 125,
+   "line": "No rate yet; layer the policy to the business; let it learn; tie it to CI; know the line.",
+   "para": "The argument is from the design, and the limits say what is built.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "question",
+   "label": "The question",
+   "words": 131,
+   "line": "Low-level controls block what should be allowed: what is SHarness's false positive rate?",
+   "para": "There is none to give: the site says no SHarness component is built beyond the v0 policy, its hash and hello.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "where",
+   "label": "Where false positives come from",
+   "words": 175,
+   "line": "False positives come from controls that do not know what the application is for.",
+   "para": "Google's rule was under 10% effective false positives; a 2022 USENIX study found most reported false positives were benign triggers, legitimate behaviour the control could not see.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "layers",
+   "label": "A policy in layers",
+   "words": 272,
+   "line": "Each door narrows the one above: network, database, tables and operations, the business rules.",
+   "para": "Behaviour rows hold ranges, schemas, append only, rates and ordering. Doors never parse SQL: structured requests, or native enforcement such as row-level security and CHECK constraints.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "type-safe",
+   "label": "The same move as Type_Safe",
+   "words": 131,
+   "line": "Type_Safe checked values at the gate and let defensive code in the wrong places go.",
+   "para": "A behaviour policy does the same one level out: business checks written once, enforced by something the application cannot change.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "negatives",
+   "label": "False negatives too",
+   "words": 54,
+   "line": "A row that knows the business also catches more of what is wrong.",
+   "para": "A network rule cannot see a negative quantity or a skipped status; a business row can.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "learns",
+   "label": "A policy that learns",
+   "words": 179,
+   "line": "A gap found in testing or use becomes a row; a refusal is nothing, not damage.",
+   "para": "Learned policies can bake in bad behaviour, as audit2allow warns; a hand-trimmed SHarness policy once caused a false positive, so learned policies are never trimmed by hand.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "calibrator",
+   "label": "The policy as a calibrator",
+   "words": 192,
+   "line": "CI derives the policy on every change and fails when the footprint grows without a policy change.",
+   "para": "A policy that moves unexpectedly, or does not move when expected, means the code is not doing what you think.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "line",
+   "label": "Where to draw the line",
+   "words": 131,
+   "line": "The closed row language marks where the application takes over, and says so.",
+   "para": "A policy that can express arbitrary logic is code; levels report the rows they cannot hold.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "fits",
+   "label": "Where it sits",
+   "words": 72,
+   "line": "Process behaviour policies sit below agent behaviour policies, beside decision and workflow policies.",
+   "para": "From the kernel to the business, every layer can only narrow.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 74,
+   "line": "No measured rate; most of SHarness proposed; the example illustrative; Type_Safe's effect our own.",
+   "para": "Human review guards against learned policies baking in bad behaviour.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 77,
+   "line": "sharness.ai design pages, OSBot-Utils, Google's papers, USENIX 2022, PostgreSQL, SPO, audit2allow.",
+   "para": "All read 2 November 2026.",
+   "by": "newsroom.writer"
+  }
+ ]
+}
