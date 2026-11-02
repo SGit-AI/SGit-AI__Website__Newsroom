@@ -4,7 +4,7 @@ date: 2026-11-02
 author: Dinis Cruz
 author_url: about/index.html
 summary: After my talk at hack::soho, one of the attendees asked a good question: what are the false positive rates of SHarness, the secure harness that enforces behaviour policies at a low level? There is no measured rate yet; most of SHarness is a design, and its site says so. But the design is built in a way that should handle false positives well, and this is why. A low-level control refuses things without knowing what the application is for, which is where false positives come from. SHarness's policies can be layered, from the network, to the database, to one application's tables and fields, each narrower than the one above, until the policy describes how the application actually behaves: this field, only positive, only in this range. That is the same move as Type_Safe in our Python code, where checking values at the gate let us delete defensive code in the wrong places. A policy that knows the business refuses less of what is right and catches more of what is wrong. It can learn: a gap found in testing is a row added. And if a CI pipeline updates the policy whenever the code changes, the policy becomes a calibrator: a change that moves the policy when you did not expect it, or does not when you did, is a bug.
-version: v999.0.0
+version: v0.14.38
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sharness, false-positives, process-behaviour-policies, behaviour-policies, type-safe, ci, databases, security, article
 status: published
