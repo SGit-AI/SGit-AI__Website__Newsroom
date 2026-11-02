@@ -2,10 +2,12 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-77 articles, newest first.
+79 articles, newest first.
 
 ## November 2026
 
+- [The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault](../../articles/sell-the-sleeve.md), 2026-11-02, 8 min.
+- [A solution, not a problem: a coach sent me a link to a product he could not sell me, what that moment teaches about business, security teams, bookshops and travel agents, and why RiskMandate has been making the same mistake](../../articles/a-solution-not-a-problem.md), 2026-11-02, 9 min.
 - [Sellable units: applying api.newsroom.sgit.ai to my brother's website, the reading meter on a composer's site that does not look like a newsroom, the pathways from a viewer to a buyer, and every lesson, score and master as something to sell](../../articles/sellable-units.md), 2026-11-02, 8 min.
 
 ## October 2026

@@ -1,0 +1,159 @@
+{
+  "slug": "a-solution-not-a-problem",
+  "teaser": "A coach sent a link to a product he could not sell: why business, security teams and RiskMandate should give solutions, not problems.",
+  "topics": [
+    "startups-and-strategy",
+    "agents-and-policy"
+  ],
+  "core_idea": "When someone brings you a problem, give them a solution, not a list of next steps. A coach who recommended a sleeve but could not sell it handed the buyer a search. A solution has a price set by the time, waiting and effort it saves, and transparency about the markup widens the range where buying is a no-brainer. The same lesson runs through application security, where an engineer beats a list of vulnerabilities, through bookshops and travel agents, and through RiskMandate's outreach, which has been handing people tasks without a clear return.",
+  "nodes": [
+    {
+      "id": "moment",
+      "label": "A link, not a sale",
+      "kind": "example",
+      "summary": "The coach could not sell it."
+    },
+    {
+      "id": "principle",
+      "label": "Give solutions, not problems",
+      "kind": "claim",
+      "summary": "Do not pass the ball back."
+    },
+    {
+      "id": "price",
+      "label": "The price of a solution",
+      "kind": "concept",
+      "summary": "Time, waiting and effort saved."
+    },
+    {
+      "id": "transparency",
+      "label": "Show what you add",
+      "kind": "method",
+      "summary": "Widens the no-brainer range."
+    },
+    {
+      "id": "travel",
+      "label": "Travel agents",
+      "kind": "example",
+      "summary": "A commission invisible to the consumer."
+    },
+    {
+      "id": "wardley",
+      "label": "Custom built to commodity",
+      "kind": "concept",
+      "summary": "Friction is the gap."
+    },
+    {
+      "id": "security",
+      "label": "The engineer, not the list",
+      "kind": "example",
+      "summary": "Fix it, and leave it better."
+    },
+    {
+      "id": "riskmandate",
+      "label": "RiskMandate's outreach",
+      "kind": "example",
+      "summary": "Tasks without a clear return."
+    },
+    {
+      "id": "ai",
+      "label": "Solutions at scale with AI",
+      "kind": "claim",
+      "summary": "The flow can be automated."
+    }
+  ],
+  "edges": [
+    {
+      "from": "moment",
+      "to": "principle",
+      "rel": "example-of"
+    },
+    {
+      "from": "price",
+      "to": "principle",
+      "rel": "depends-on"
+    },
+    {
+      "from": "transparency",
+      "to": "price",
+      "rel": "extends"
+    },
+    {
+      "from": "travel",
+      "to": "transparency",
+      "rel": "contrasts"
+    },
+    {
+      "from": "wardley",
+      "to": "principle",
+      "rel": "answers"
+    },
+    {
+      "from": "security",
+      "to": "principle",
+      "rel": "example-of"
+    },
+    {
+      "from": "riskmandate",
+      "to": "principle",
+      "rel": "contrasts"
+    },
+    {
+      "from": "ai",
+      "to": "principle",
+      "rel": "extends"
+    },
+    {
+      "from": "security",
+      "to": "riskmandate",
+      "rel": "compared-with"
+    }
+  ],
+  "links": {
+    "articles": [
+      "sell-the-sleeve",
+      "approved-business-mandates",
+      "the-riskmandate-roadmap",
+      "sellable-units"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.gao.gov/products/gao-03-749",
+      "https://blog.gardeviance.org/2015/02/an-introduction-to-wardley-value-chain.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "he was standing in front of a customer who wanted to pay, and he handed the ball back over the net",
+      "why": "The moment."
+    },
+    {
+      "text": "the worse the vulnerability, the bigger the problem.",
+      "why": "The engineer, not the list."
+    },
+    {
+      "text": "We are passing the ball to the other side of the court and saying: now you figure it out.",
+      "why": "Where RiskMandate gets this wrong."
+    }
+  ],
+  "figures": [
+    {
+      "file": "sol-paths.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sol-paths.webp",
+      "caption": "The same question, two answers: a link that starts a search, or an offer that ends it.",
+      "kind": "comparison"
+    },
+    {
+      "file": "sol-steps.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sol-steps.webp",
+      "caption": "What the link left me to do, and what an offer would have done for me.",
+      "kind": "process"
+    },
+    {
+      "file": "sol-range.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sol-range.webp",
+      "caption": "The range where buying the solution is a no-brainer, and where people decide to do it themselves.",
+      "kind": "concept"
+    }
+  ]
+}

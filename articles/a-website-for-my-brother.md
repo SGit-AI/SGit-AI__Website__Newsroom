@@ -160,6 +160,7 @@ Agents & policyNews & evidence[This article as a graph →](graphs.md#a-website-
 
 ### Continued by
 
+- [The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault](sell-the-sleeve.md) The shop a padel coach could have had for one sleeve: the law, the platforms, what Claude can run, and a mock-up in a vault.
 - [Separate Ways, explained: what my brother's synth video shows, frame by frame, and why describing work at the moment you make it is the first step to publishing it](separate-ways-explained.md) A composer's synth video of Journey's Separate Ways, explained frame by frame, and why describing work as you make it matters.
 - [Sellable units: applying api.newsroom.sgit.ai to my brother's website, the reading meter on a composer's site that does not look like a newsroom, the pathways from a viewer to a buyer, and every lesson, score and master as something to sell](sellable-units.md) The newsroom's reading meter on a composer's site: sellable units, pathways to a buyer, and CC BY with a paid licence.
 

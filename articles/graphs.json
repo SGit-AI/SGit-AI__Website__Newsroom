@@ -55,6 +55,391 @@
   ],
   "articles": [
     {
+      "slug": "sell-the-sleeve",
+      "title": "The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault",
+      "date": "2026-11-02",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/sell-the-sleeve.html",
+      "markdown": "https://newsroom.sgit.ai/articles/sell-the-sleeve.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/sell-the-sleeve.webp",
+      "teaser": "The shop a padel coach could have had for one sleeve: the law, the platforms, what Claude can run, and a mock-up in a vault.",
+      "topics": [
+        "startups-and-strategy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "ecommerce",
+        "padel",
+        "portugal",
+        "small-business",
+        "tax",
+        "consumer-law",
+        "shopify",
+        "stripe",
+        "mb-way",
+        "vaults",
+        "claude",
+        "article"
+      ],
+      "links_out": [
+        "a-solution-not-a-problem",
+        "a-website-for-my-brother"
+      ],
+      "links_in": [
+        "a-solution-not-a-problem"
+      ],
+      "figures": [
+        {
+          "file": "sts-shop.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sts-shop.webp",
+          "caption": "The mock-up: one sleeve, two ways to get it, and what the coach adds, shown in euros.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "sts-checkout.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sts-checkout.webp",
+          "caption": "The checkout in the mock-up: payment and fulfilment are stubs, and say what the real shop would use.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "sts-setup.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sts-setup.webp",
+          "caption": "Setting it up: what the coach does once, and what Claude does or prepares.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "sell-the-sleeve",
+        "teaser": "The shop a padel coach could have had for one sleeve: the law, the platforms, what Claude can run, and a mock-up in a vault.",
+        "topics": [
+          "startups-and-strategy",
+          "site-and-engineering"
+        ],
+        "core_idea": "A coach in the Algarve recommended a padel arm sleeve he could not sell. Bought at €32.95 and sold at €39.90 with the margin shown, it is cheaper and faster than ordering one yourself. Portuguese law asks for a registered activity, an invoice per sale, tax on 15% of sales rather than profit, and consumer rules online; health claims are the trap. A Stripe link with MB WAY costs nothing a month, Shopify has an official Claude connector, and Claude can write and prepare most of it while accounts, refunds and the hand-over stay with the person.",
+        "nodes": [
+          {
+            "id": "offer",
+            "label": "€39.90 at the club",
+            "kind": "example",
+            "summary": "The margin shown."
+          },
+          {
+            "id": "law",
+            "label": "What the law asks",
+            "kind": "concept",
+            "summary": "Activity, invoices, tax on 15% of sales."
+          },
+          {
+            "id": "consumer",
+            "label": "Selling to consumers",
+            "kind": "concept",
+            "summary": "14 days, three years, complaints book."
+          },
+          {
+            "id": "claims",
+            "label": "Health claims",
+            "kind": "claim",
+            "summary": "The trap: sell it as sportswear."
+          },
+          {
+            "id": "platforms",
+            "label": "Platforms",
+            "kind": "concept",
+            "summary": "Stripe, Portuguese gateways, Shopify."
+          },
+          {
+            "id": "claude",
+            "label": "What Claude can run",
+            "kind": "method",
+            "summary": "Write, create, prepare, remind."
+          },
+          {
+            "id": "person",
+            "label": "What stays with the person",
+            "kind": "claim",
+            "summary": "Accounts, money, refunds, hand-over."
+          },
+          {
+            "id": "mockup",
+            "label": "The mock-up in a vault",
+            "kind": "artefact",
+            "summary": "Everything but payment and delivery."
+          },
+          {
+            "id": "dropship",
+            "label": "Dropshipping",
+            "kind": "concept",
+            "summary": "The seller stays responsible."
+          }
+        ],
+        "edges": [
+          {
+            "from": "law",
+            "to": "offer",
+            "rel": "depends-on"
+          },
+          {
+            "from": "consumer",
+            "to": "law",
+            "rel": "extends"
+          },
+          {
+            "from": "claims",
+            "to": "consumer",
+            "rel": "extends"
+          },
+          {
+            "from": "platforms",
+            "to": "offer",
+            "rel": "produces"
+          },
+          {
+            "from": "claude",
+            "to": "platforms",
+            "rel": "depends-on"
+          },
+          {
+            "from": "person",
+            "to": "claude",
+            "rel": "contrasts"
+          },
+          {
+            "from": "mockup",
+            "to": "offer",
+            "rel": "example-of"
+          },
+          {
+            "from": "dropship",
+            "to": "platforms",
+            "rel": "compared-with"
+          },
+          {
+            "from": "mockup",
+            "to": "claude",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-solution-not-a-problem",
+            "a-website-for-my-brother"
+          ],
+          "pages": [],
+          "sites": [
+            "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude",
+            "https://docs.stripe.com/mcp"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Income tax is on sales, not profit.",
+            "why": "What the law asks."
+          },
+          {
+            "text": "That split is right.",
+            "why": "What Claude can run."
+          },
+          {
+            "text": "A one-off sale is not the way round it.",
+            "why": "What the law asks."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-solution-not-a-problem",
+      "title": "A solution, not a problem: a coach sent me a link to a product he could not sell me, what that moment teaches about business, security teams, bookshops and travel agents, and why RiskMandate has been making the same mistake",
+      "date": "2026-11-02",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-solution-not-a-problem.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-solution-not-a-problem.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-solution-not-a-problem.webp",
+      "teaser": "A coach sent a link to a product he could not sell: why business, security teams and RiskMandate should give solutions, not problems.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "business",
+        "solutions",
+        "convenience",
+        "transparency",
+        "wardley-maps",
+        "application-security",
+        "riskmandate",
+        "ecommerce",
+        "article"
+      ],
+      "links_out": [
+        "sell-the-sleeve",
+        "approved-business-mandates",
+        "the-riskmandate-roadmap",
+        "sellable-units"
+      ],
+      "links_in": [
+        "sell-the-sleeve"
+      ],
+      "figures": [
+        {
+          "file": "sol-paths.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sol-paths.webp",
+          "caption": "The same question, two answers: a link that starts a search, or an offer that ends it.",
+          "kind": "comparison"
+        },
+        {
+          "file": "sol-steps.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sol-steps.webp",
+          "caption": "What the link left me to do, and what an offer would have done for me.",
+          "kind": "process"
+        },
+        {
+          "file": "sol-range.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sol-range.webp",
+          "caption": "The range where buying the solution is a no-brainer, and where people decide to do it themselves.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "a-solution-not-a-problem",
+        "teaser": "A coach sent a link to a product he could not sell: why business, security teams and RiskMandate should give solutions, not problems.",
+        "topics": [
+          "startups-and-strategy",
+          "agents-and-policy"
+        ],
+        "core_idea": "When someone brings you a problem, give them a solution, not a list of next steps. A coach who recommended a sleeve but could not sell it handed the buyer a search. A solution has a price set by the time, waiting and effort it saves, and transparency about the markup widens the range where buying is a no-brainer. The same lesson runs through application security, where an engineer beats a list of vulnerabilities, through bookshops and travel agents, and through RiskMandate's outreach, which has been handing people tasks without a clear return.",
+        "nodes": [
+          {
+            "id": "moment",
+            "label": "A link, not a sale",
+            "kind": "example",
+            "summary": "The coach could not sell it."
+          },
+          {
+            "id": "principle",
+            "label": "Give solutions, not problems",
+            "kind": "claim",
+            "summary": "Do not pass the ball back."
+          },
+          {
+            "id": "price",
+            "label": "The price of a solution",
+            "kind": "concept",
+            "summary": "Time, waiting and effort saved."
+          },
+          {
+            "id": "transparency",
+            "label": "Show what you add",
+            "kind": "method",
+            "summary": "Widens the no-brainer range."
+          },
+          {
+            "id": "travel",
+            "label": "Travel agents",
+            "kind": "example",
+            "summary": "A commission invisible to the consumer."
+          },
+          {
+            "id": "wardley",
+            "label": "Custom built to commodity",
+            "kind": "concept",
+            "summary": "Friction is the gap."
+          },
+          {
+            "id": "security",
+            "label": "The engineer, not the list",
+            "kind": "example",
+            "summary": "Fix it, and leave it better."
+          },
+          {
+            "id": "riskmandate",
+            "label": "RiskMandate's outreach",
+            "kind": "example",
+            "summary": "Tasks without a clear return."
+          },
+          {
+            "id": "ai",
+            "label": "Solutions at scale with AI",
+            "kind": "claim",
+            "summary": "The flow can be automated."
+          }
+        ],
+        "edges": [
+          {
+            "from": "moment",
+            "to": "principle",
+            "rel": "example-of"
+          },
+          {
+            "from": "price",
+            "to": "principle",
+            "rel": "depends-on"
+          },
+          {
+            "from": "transparency",
+            "to": "price",
+            "rel": "extends"
+          },
+          {
+            "from": "travel",
+            "to": "transparency",
+            "rel": "contrasts"
+          },
+          {
+            "from": "wardley",
+            "to": "principle",
+            "rel": "answers"
+          },
+          {
+            "from": "security",
+            "to": "principle",
+            "rel": "example-of"
+          },
+          {
+            "from": "riskmandate",
+            "to": "principle",
+            "rel": "contrasts"
+          },
+          {
+            "from": "ai",
+            "to": "principle",
+            "rel": "extends"
+          },
+          {
+            "from": "security",
+            "to": "riskmandate",
+            "rel": "compared-with"
+          }
+        ],
+        "links": {
+          "articles": [
+            "sell-the-sleeve",
+            "approved-business-mandates",
+            "the-riskmandate-roadmap",
+            "sellable-units"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.gao.gov/products/gao-03-749",
+            "https://blog.gardeviance.org/2015/02/an-introduction-to-wardley-value-chain.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "he was standing in front of a customer who wanted to pay, and he handed the ball back over the net",
+            "why": "The moment."
+          },
+          {
+            "text": "the worse the vulnerability, the bigger the problem.",
+            "why": "The engineer, not the list."
+          },
+          {
+            "text": "We are passing the ball to the other side of the court and saying: now you figure it out.",
+            "why": "Where RiskMandate gets this wrong."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-grant-not-the-prompt",
       "title": "The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close",
       "date": "2026-11-02",
@@ -449,7 +834,9 @@
         "four-iphones-and-an-ipad",
         "separate-ways-explained"
       ],
-      "links_in": [],
+      "links_in": [
+        "a-solution-not-a-problem"
+      ],
       "figures": [
         {
           "file": "sel-units.webp",
@@ -1169,6 +1556,7 @@
         "from-lovable-to-your-own-newsroom"
       ],
       "links_in": [
+        "sell-the-sleeve",
         "separate-ways-explained",
         "sellable-units"
       ],
@@ -20477,6 +20865,7 @@
         "our-first-customers"
       ],
       "links_in": [
+        "a-solution-not-a-problem",
         "a-payout-for-every-row",
         "the-delegation-record",
         "an-analysts-blueprint-for-riskmandate"
@@ -25188,6 +25577,7 @@
         "three-policies-for-an-agent"
       ],
       "links_in": [
+        "a-solution-not-a-problem",
         "a-payout-for-every-row",
         "approved-business-mandates",
         "an-analysts-blueprint-for-riskmandate",

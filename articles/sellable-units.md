@@ -139,6 +139,10 @@ Startups & strategyNews & evidence[This article as a graph →](graphs.md#sellab
 - [Four iPhones and an iPad: how my brother filmed a three-camera music video with old phones synced live to Final Cut Pro, a feature Apple shipped in 2024 that he found by accident](four-iphones-and-an-ipad.md) Three old iPhones and an iPad, synced live in Final Cut Pro: Apple's Live Multicam, found by accident.
 - [Separate Ways, explained: what my brother's synth video shows, frame by frame, and why describing work at the moment you make it is the first step to publishing it](separate-ways-explained.md) A composer's synth video of Journey's Separate Ways, explained frame by frame, and why describing work as you make it matters.
 
+### Continued by
+
+- [A solution, not a problem: a coach sent me a link to a product he could not sell me, what that moment teaches about business, security teams, bookshops and travel agents, and why RiskMandate has been making the same mistake](a-solution-not-a-problem.md) A coach sent a link to a product he could not sell: why business, security teams and RiskMandate should give solutions, not problems.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 360 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=360)

@@ -1,0 +1,38 @@
+{
+ "slug": "sell-the-sleeve",
+ "teaser": "The shop a padel coach could have had for one sleeve: the law, the platforms, what Claude can run, and a mock-up in a vault.",
+ "topics": ["startups-and-strategy", "site-and-engineering"],
+ "core_idea": "A coach in the Algarve recommended a padel arm sleeve he could not sell. Bought at €32.95 and sold at €39.90 with the margin shown, it is cheaper and faster than ordering one yourself. Portuguese law asks for a registered activity, an invoice per sale, tax on 15% of sales rather than profit, and consumer rules online; health claims are the trap. A Stripe link with MB WAY costs nothing a month, Shopify has an official Claude connector, and Claude can write and prepare most of it while accounts, refunds and the hand-over stay with the person.",
+ "nodes": [
+  {"id": "offer", "label": "€39.90 at the club", "kind": "example", "summary": "The margin shown."},
+  {"id": "law", "label": "What the law asks", "kind": "concept", "summary": "Activity, invoices, tax on 15% of sales."},
+  {"id": "consumer", "label": "Selling to consumers", "kind": "concept", "summary": "14 days, three years, complaints book."},
+  {"id": "claims", "label": "Health claims", "kind": "claim", "summary": "The trap: sell it as sportswear."},
+  {"id": "platforms", "label": "Platforms", "kind": "concept", "summary": "Stripe, Portuguese gateways, Shopify."},
+  {"id": "claude", "label": "What Claude can run", "kind": "method", "summary": "Write, create, prepare, remind."},
+  {"id": "person", "label": "What stays with the person", "kind": "claim", "summary": "Accounts, money, refunds, hand-over."},
+  {"id": "mockup", "label": "The mock-up in a vault", "kind": "artefact", "summary": "Everything but payment and delivery."},
+  {"id": "dropship", "label": "Dropshipping", "kind": "concept", "summary": "The seller stays responsible."}
+ ],
+ "edges": [
+  {"from": "law", "to": "offer", "rel": "depends-on"},
+  {"from": "consumer", "to": "law", "rel": "extends"},
+  {"from": "claims", "to": "consumer", "rel": "extends"},
+  {"from": "platforms", "to": "offer", "rel": "produces"},
+  {"from": "claude", "to": "platforms", "rel": "depends-on"},
+  {"from": "person", "to": "claude", "rel": "contrasts"},
+  {"from": "mockup", "to": "offer", "rel": "example-of"},
+  {"from": "dropship", "to": "platforms", "rel": "compared-with"},
+  {"from": "mockup", "to": "claude", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["a-solution-not-a-problem", "a-website-for-my-brother"],
+  "pages": [],
+  "sites": ["https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude", "https://docs.stripe.com/mcp"]
+ },
+ "quotes": [
+  {"text": "Income tax is on sales, not profit.", "why": "What the law asks."},
+  {"text": "That split is right.", "why": "What Claude can run."},
+  {"text": "A one-off sale is not the way round it.", "why": "What the law asks."}
+ ]
+}

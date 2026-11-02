@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-02 | published | 1,569 | first published | this release | [current](../the-grant-not-the-prompt.md) |
+| **v1.0.0** | 2026-11-02 | published | 1,569 | first published | [`a6a369247`](https://github.com/SGit-AI/SGit-AI__Website/commit/a6a3692478d8ad2dc6b95360e752c709c4f69ffb) | [current](../the-grant-not-the-prompt.md) |
 
 [← Back to the article](../the-grant-not-the-prompt.md) · [All articles](../index.md)
 

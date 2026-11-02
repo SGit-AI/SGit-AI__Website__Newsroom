@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-02 | published | 3,539 | first published | [`066f0b673`](https://github.com/SGit-AI/SGit-AI__Website/commit/066f0b673dd5e935a35fe928353b403e420cd3ee) | [current](../a-website-for-my-brother.md) |
+| **v1.0.0** | 2026-11-02 | published | 3,539 | first published | [`941c051af`](https://github.com/SGit-AI/SGit-AI__Website/commit/941c051afc2834905c5b0cb9daf61207ca071f25) | [current](../a-website-for-my-brother.md) |
 
 [← Back to the article](../a-website-for-my-brother.md) · [All articles](../index.md)
 

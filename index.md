@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.34 · 361 articles since 2026-08-17; the newest is 2026-11-02. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 363 articles since 2026-08-17; the newest is 2026-11-02. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,20 +12,22 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](articles/the-grant-not-the-prompt.md), 2026-11-02, 6 min. A technical user believed Claude read his email only when asked; an unrelated chat listed his inbox.
+- [The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault](articles/sell-the-sleeve.md), 2026-11-02, 8 min. The shop a padel coach could have had for one sleeve: the law, the platforms, what Claude can run, and a mock-up in a vault.
 
 ## Five more
 
+- [A solution, not a problem: a coach sent me a link to a product he could not sell me, what that moment teaches about business, security teams, bookshops and travel agents, and why RiskMandate has been making the same mistake](articles/a-solution-not-a-problem.md), Startups & strategy, 2026-11-02, 9 min.
+- [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](articles/the-grant-not-the-prompt.md), Agent security & behaviour policies, 2026-11-02, 6 min.
 - [Separate Ways, explained: what my brother's synth video shows, frame by frame, and why describing work at the moment you make it is the first step to publishing it](articles/separate-ways-explained.md), The future of news, 2026-11-02, 7 min.
 - [Sellable units: applying api.newsroom.sgit.ai to my brother's website, the reading meter on a composer's site that does not look like a newsroom, the pathways from a viewer to a buyer, and every lesson, score and master as something to sell](articles/sellable-units.md), Startups & strategy, 2026-11-02, 8 min.
 - [Four iPhones and an iPad: how my brother filmed a three-camera music video with old phones synced live to Final Cut Pro, a feature Apple shipped in 2024 that he found by accident](articles/four-iphones-and-an-ipad.md), The future of news, 2026-11-02, 4 min.
-- [The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight](articles/the-lab-that-redesigned-the-book.md), Engineering this newsroom, 2026-11-01, 6 min.
-- [A book told by its cast: how the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record, and the editor as narrator](articles/a-book-told-by-its-cast.md), Engineering this newsroom, 2026-11-01, 6 min.
 
 ## The last five days
 
-### Monday 2 November 2026 (4 articles)
+### Monday 2 November 2026 (6 articles)
 
+- Startups & strategy: [The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault](articles/sell-the-sleeve.md), 8 min.
+- Startups & strategy: [A solution, not a problem: a coach sent me a link to a product he could not sell me, what that moment teaches about business, security teams, bookshops and travel agents, and why RiskMandate has been making the same mistake](articles/a-solution-not-a-problem.md), 9 min.
 - Agent security & behaviour policies: [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](articles/the-grant-not-the-prompt.md), 6 min.
 - The future of news: [Separate Ways, explained: what my brother's synth video shows, frame by frame, and why describing work at the moment you make it is the first step to publishing it](articles/separate-ways-explained.md), 7 min.
 - Startups & strategy: [Sellable units: applying api.newsroom.sgit.ai to my brother's website, the reading meter on a composer's site that does not look like a newsroom, the pathways from a viewer to a buyer, and every lesson, score and master as something to sell](articles/sellable-units.md), 8 min.
@@ -116,13 +118,13 @@ Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta
 - [Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall, credit to start, and a meter that charges for what is read](articles/every-link-a-gift-link.md), 2026-10-31.
 - [Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it](articles/breaking-the-story-down-before-the-agents-do.md), 2026-10-30.
 
-### [Startups & strategy](sections/strategy/index.md) (77)
+### [Startups & strategy](sections/strategy/index.md) (79)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
+- [The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault](articles/sell-the-sleeve.md), 2026-11-02.
+- [A solution, not a problem: a coach sent me a link to a product he could not sell me, what that moment teaches about business, security teams, bookshops and travel agents, and why RiskMandate has been making the same mistake](articles/a-solution-not-a-problem.md), 2026-11-02.
 - [Sellable units: applying api.newsroom.sgit.ai to my brother's website, the reading meter on a composer's site that does not look like a newsroom, the pathways from a viewer to a buyer, and every lesson, score and master as something to sell](articles/sellable-units.md), 2026-11-02.
 - [A presentation for every project: how the agentic workflow behind a talk built in a day can turn each project from a build day into a visual, dynamic presentation, and a service](articles/a-presentation-for-every-project.md), 2026-10-31.
 - [Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens](articles/running-an-ai-build-event.md), 2026-10-31.
-- [Spreadsheet to App: a session programme for Algarve Evolution, with five example spreadsheets, five prompts, a mock event and a public vault, so nobody arrives needing a problem to solve](articles/spreadsheet-to-app-sessions.md), 2026-10-31.
-- [Sell to the companies that already have the problem: how Algarve Evolution can match businesses adopting AI with the region's service providers, starting when the business has built its own first app](articles/sell-to-the-companies-that-already-have-the-problem.md), 2026-10-31.
 
 ### [Engineering this newsroom](sections/building/index.md) (42)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
