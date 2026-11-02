@@ -4,7 +4,7 @@ date: 2026-11-02
 author: Dinis Cruz
 author_url: about/index.html
 summary: Two days after the brief for the Web Summit team, the team's site had gone from v0.1.25 to v0.1.94, with 75 releases on 2 November alone. Four of the nine people are connected, and there are 17 agents on the roster, each with its own Agent Behaviour Policy. At 16:52 the conductor's brief said only one of my nine team agents was on a schedule; at 20:30 it said nine of nine; and by the late evening the agents were working without anyone asking: the journalist wrote the day's newsletter, the vault agent made its first run, and the developer agent cut the build from 3.3 seconds to 0.45. A team member's procurement agent wrote to seven printers and is collecting quotes, asking each supplier before publishing anything they send. And the behaviour policies did their job on ourselves: the policy agent found the procurement agent writing outside its folder, and the conductor found a new session signing its commits under another agent's name. Five people have not started yet, the design votes have not come in, and some of what is on the site is still a plan.
-version: v999.0.0
+version: v0.14.39
 license: https://creativecommons.org/licenses/by/4.0/
 tags: web-summit, agents, conductor, behaviour-policies, riskmandate, procurement, teams, update, article
 status: published

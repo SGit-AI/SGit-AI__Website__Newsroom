@@ -4,7 +4,7 @@ date: 2026-11-02
 author: Dinis Cruz
 author_url: about/index.html
 summary: I run about a dozen agents across several projects, and I cannot watch them. What I read is the brief. The book team's conductor wrote 35 of them between 30 October and 2 November, then wrote a guide so other teams could do the same; at 04:32 UTC on 2 November the Web Summit team's conductor copied its tools, changed the heading and kept the rest, and by the end of the day it had sent me four briefs and turned the same machinery into a briefing for every person before every stand-up. A brief answers four questions in a fixed order: what needs me, with at most three decisions, each with options and a recommendation; what happened, punchline first; what I asked and what was done, in my own words; and what comes next, with sources. Every number is traced to the record, and the failures stay in. The method caught real mistakes on its first day: a brief that printed six pages because two fields were strings, a count of seven that the agenda files said was eleven, and a team where only one of nine agents was on a schedule. And it shows a gap in this newsroom, which still briefs me in a chat message.
-version: v999.0.0
+version: v0.14.39
 license: https://creativecommons.org/licenses/by/4.0/
 tags: briefs, agents, conductor, web-summit, the-ultimate-insider, teams, reporting, article
 status: published
