@@ -8,3 +8,8 @@ Dinis's words, by voice, as given:
 
 "worldly map" is read as a Wardley map (Simon Wardley): genesis, custom built, product, commodity. "attrition" is
 read as friction. The article must not name or quote anyone RiskMandate emailed.
+
+## A note on the commit
+
+This memo was first pushed in 5c3836791c, rebased onto a newer dev after signing, so its signature no longer
+matched the tree. The writer signs after the rebase, never before: this line is the re-signed commit.
