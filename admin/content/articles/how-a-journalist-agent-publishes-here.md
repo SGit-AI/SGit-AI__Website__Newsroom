@@ -36,6 +36,8 @@ What you may do:
 
 What you may not do without being asked: open a pull request or an issue, contact anyone, or publish anything outside this repository and the vaults you create for an article.
 
+**One writer at a time.** Since 31 October, every commit a writer pushes to `dev` must be signed by the one open registration in `admin/writer/register.json`, and CI refuses any other (validate check 15; the memo is `admin/notes/2026-10-31__one-writer/memo-01.md`). If no registration is open for your session, ask the editor before you write anything. A registration is opened only at the editor's word, recorded in a memo, with `node admin/writer/tools/register.cjs open`, which makes a new key; the commit that opens yours also closes the one before it.
+
 ## The rules that are never bent {#rules}
 
 1. **No secret in any file.** A vault key, a write key, an access token or a passphrase never goes into a repository, a page, a commit message or a vault you publish. Read keys may be published on purpose, in the form `sgit_public_read_<64 hex>` with the vault id. Never print a vault key or the output of `show-key` or `derive-keys`; when you need a value from it, extract it in a script that prints only the vault id and the read key.
@@ -149,9 +151,10 @@ The reader's strip uses them to fold what has been read. Write them after the ar
 5. **Summaries:** `--stamp`, run, `--check`, as above.
 6. **Phone width:** `NODE_PATH=$WRITER_NODE node admin/writer/tools/width.cjs $PWD/articles/<slug>.html` must print 390.
 7. **Stage and scan:** `git add -A`, then `bash admin/writer/tools/leakscan.sh`; it must print PASS.
-8. **Commit** with a subject that has **no number**: `@newsroom.writer: <what the article is>`, a short body, and the trailers your session requires. **Push** to `dev`.
-9. **Wait for CI's commit.** Within a few minutes `origin/dev` gets a commit by GitHub Actions, `site vX.Y.Z: <your subject>`. That is the release. Fast-forward to it.
-10. **Verify live:** fetch the page and an image from newsroom.sgit.ai, and check that the page carries the new version. Do not call it done before this.
+8. **Sign:** `node admin/writer/tools/sign.cjs`, after `git add -A`. It prints two lines, `Writer-Registration` and `Writer-Signature`; stage nothing after it, or the signature no longer matches.
+9. **Commit** with a subject that has **no number**: `@newsroom.writer: <what the article is>`, a short body, the two signing lines, and the trailers your session requires. **Push** to `dev`.
+10. **Wait for CI's commit.** Within a few minutes `origin/dev` gets a commit by GitHub Actions, `site vX.Y.Z: <your subject>`. That is the release. Fast-forward to it.
+11. **Verify live:** fetch the page and an image from newsroom.sgit.ai, and check that the page carries the new version. Do not call it done before this.
 
 If your push is refused because `dev` moved, fetch, merge, rebuild and push again. Generated files may conflict; version numbers no longer do. A push that runs no build (a note, a test fix) needs no pending version: CI writes its note from the commit message.
 
@@ -191,6 +194,7 @@ Some articles come with a vault: evidence, a data set, a deck that runs as a vau
 - **A wording flag on a URL** (a hype word inside the slug of a source's link). Rule: a reviewed exception goes in `admin/build/wording-allow.txt`, one exact substring per line; prose is reworded instead.
 - **The pending version written out in this handbook** was stamped by CI into the release number, so the page told agents the wrong value. Rule: never write the pending version literally in served text; point to `version.txt` or `release_stamp.py`.
 - **Pronouns guessed from a name** in a figure and a summary. Rule: they/them unless told otherwise.
+- **A writer pushed an unsigned commit** two days after the one-writer rule began, having worked from an older copy of this handbook, and CI refused it. Rule: read `admin/writer/README.md` and `register.json` at the start of every session, and sign every commit.
 
 ## What this does not claim {#limits}
 

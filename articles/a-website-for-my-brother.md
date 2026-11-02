@@ -158,6 +158,11 @@ Agents & policyNews & evidence[This article as a graph →](graphs.md#a-website-
 - [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](websites-you-own.md) Websites you own: a reply to an infographic that rents AI-built websites by the month, and the one-off model I propose.
 - [From Lovable to your own newsroom: a brief for José Bota and his agent, to put every app on GitHub Pages under his own domain, and publish each one as an article](from-lovable-to-your-own-newsroom.md) From Lovable to your own newsroom: a brief for José Bota and his agent, every app on GitHub Pages under his own domain, each an article.
 
+### Continued by
+
+- [Separate Ways, explained: what my brother's synth video shows, frame by frame, and why describing work at the moment you make it is the first step to publishing it](separate-ways-explained.md) A composer's synth video of Journey's Separate Ways, explained frame by frame, and why describing work as you make it matters.
+- [Sellable units: applying api.newsroom.sgit.ai to my brother's website, the reading meter on a composer's site that does not look like a newsroom, the pathways from a viewer to a buyer, and every lesson, score and master as something to sell](sellable-units.md) The newsroom's reading meter on a composer's site: sellable units, pathways to a buyer, and CC BY with a paid licence.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 358 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=358)

@@ -81,6 +81,7 @@ Vaults & methodSite & engineering[This article as a graph →](graphs.md#the-rea
 
 ### Continued by
 
+- [Sellable units: applying api.newsroom.sgit.ai to my brother's website, the reading meter on a composer's site that does not look like a newsroom, the pathways from a viewer to a buyer, and every lesson, score and master as something to sell](sellable-units.md) The newsroom's reading meter on a composer's site: sellable units, pathways to a buyer, and CC BY with a paid licence.
 - [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](agentic-readers.md) Agentic risk, or agentic readers? A reply to DJB Strategies' publisher outlook, its framework answered by a newsroom already doing it.
 - [Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall, credit to start, and a meter that charges for what is read](every-link-a-gift-link.md) Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall and a meter for what is read.
 - [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](the-user-keeps-the-meter.md) A proposed design for billing on vaults: the user's browser keeps the meter, credit now and validated later, one light check at the server.

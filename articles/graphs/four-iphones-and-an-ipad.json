@@ -1,0 +1,144 @@
+{
+  "slug": "four-iphones-and-an-ipad",
+  "teaser": "Three old iPhones and an iPad, synced live in Final Cut Pro: Apple's Live Multicam, found by accident.",
+  "topics": [
+    "news-and-evidence",
+    "site-and-engineering"
+  ],
+  "core_idea": "A producer filmed a three-camera music video with two second-hand iPhone 12s and an iPhone 13 connected to an iPad running Final Cut Pro. Apple's Live Multicam, released in June 2024 with the free Final Cut Camera app, records up to four angles in sync, transfers the full-quality files afterwards, and moves to Final Cut Pro on the Mac. He found it by accident, which suggests many who could use it do not know it exists.",
+  "nodes": [
+    {
+      "id": "setup",
+      "label": "Three old iPhones and an iPad",
+      "kind": "example",
+      "summary": "Second-hand phones as cameras."
+    },
+    {
+      "id": "multicam",
+      "label": "Live Multicam",
+      "kind": "concept",
+      "summary": "Up to four angles, in sync."
+    },
+    {
+      "id": "camera",
+      "label": "Final Cut Camera",
+      "kind": "artefact",
+      "summary": "Free app on each phone."
+    },
+    {
+      "id": "transfer",
+      "label": "Full-quality files transfer after",
+      "kind": "method",
+      "summary": "Previews live, originals later."
+    },
+    {
+      "id": "mac",
+      "label": "On to the Mac",
+      "kind": "method",
+      "summary": "Export the project, import, edit."
+    },
+    {
+      "id": "needs",
+      "label": "What it needs",
+      "kind": "concept",
+      "summary": "iPhone XS or later, a recent iPad."
+    },
+    {
+      "id": "uses",
+      "label": "What it is good for",
+      "kind": "example",
+      "summary": "Music, interviews, lessons, small shows."
+    },
+    {
+      "id": "accident",
+      "label": "Found by accident",
+      "kind": "claim",
+      "summary": "Thin coverage after launch."
+    },
+    {
+      "id": "publish",
+      "label": "Publish what you discover",
+      "kind": "claim",
+      "summary": "At the moment you find it."
+    }
+  ],
+  "edges": [
+    {
+      "from": "setup",
+      "to": "multicam",
+      "rel": "example-of"
+    },
+    {
+      "from": "camera",
+      "to": "multicam",
+      "rel": "depends-on"
+    },
+    {
+      "from": "transfer",
+      "to": "multicam",
+      "rel": "extends"
+    },
+    {
+      "from": "mac",
+      "to": "transfer",
+      "rel": "leads-to"
+    },
+    {
+      "from": "needs",
+      "to": "multicam",
+      "rel": "depends-on"
+    },
+    {
+      "from": "uses",
+      "to": "multicam",
+      "rel": "produces"
+    },
+    {
+      "from": "accident",
+      "to": "multicam",
+      "rel": "contrasts"
+    },
+    {
+      "from": "publish",
+      "to": "accident",
+      "rel": "answers"
+    },
+    {
+      "from": "setup",
+      "to": "uses",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "separate-ways-explained"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.apple.com/final-cut-pro-for-ipad/",
+      "https://support.apple.com/guide/final-cut-pro-ipad/dev619b965f2/ipados"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "I discovered by accident.",
+      "why": "How he found it."
+    },
+    {
+      "text": "Up to four angles,",
+      "why": "In short."
+    },
+    {
+      "text": "Each device records its own file at full quality.",
+      "why": "What it is."
+    }
+  ],
+  "figures": [
+    {
+      "file": "fcm-setup.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fcm-setup.webp",
+      "caption": "Gabriel's setup: three iPhones running Final Cut Camera, an iPad running Final Cut Pro, then the Mac.",
+      "kind": "architecture"
+    }
+  ]
+}

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-31 | published | 1,430 | first published | [`f42c04d60`](https://github.com/SGit-AI/SGit-AI__Website/commit/f42c04d60cd567722ec8625628947bcce0d817db) | [current](../from-lovable-to-your-own-newsroom.md) |
+| **v1.0.0** | 2026-10-31 | published | 1,430 | first published | [`cba4d6ba9`](https://github.com/SGit-AI/SGit-AI__Website/commit/cba4d6ba9af680620bab5a074e41e7493570557a) | [current](../from-lovable-to-your-own-newsroom.md) |
 
 [← Back to the article](../from-lovable-to-your-own-newsroom.md) · [All articles](../index.md)
 

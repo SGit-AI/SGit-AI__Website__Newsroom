@@ -16,9 +16,9 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-31 | minor | 1,766 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`e7d5f3f0e`](https://github.com/SGit-AI/SGit-AI__Website/commit/e7d5f3f0ef18976be50b36278860b2c2f8ef3264) | [what changed](becoming-an-official-publication/v1.2.0.md) · [current](../becoming-an-official-publication.md) |
-| **v1.1.0** | 2026-10-31 | minor | 1,766 | +54 / −7 words; 5 changed, 0 added, 0 removed paragraphs | [`46f9fbdb4`](https://github.com/SGit-AI/SGit-AI__Website/commit/46f9fbdb4200a2acc594655a3db57dd4bcba717b) | [what changed](becoming-an-official-publication/v1.1.0.md) |
-| **v1.0.0** | 2026-10-30 | published | 1,719 | first published | [`8f1cfaadb`](https://github.com/SGit-AI/SGit-AI__Website/commit/8f1cfaadbac145f11321170fb9673e7824c41a9f) |  |
+| **v1.2.0** | 2026-10-31 | minor | 1,766 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`2dbb12a46`](https://github.com/SGit-AI/SGit-AI__Website/commit/2dbb12a46d7128113bfbeadfcf128bef16898376) | [what changed](becoming-an-official-publication/v1.2.0.md) · [current](../becoming-an-official-publication.md) |
+| **v1.1.0** | 2026-10-31 | minor | 1,766 | +54 / −7 words; 5 changed, 0 added, 0 removed paragraphs | [`c2eb4ea59`](https://github.com/SGit-AI/SGit-AI__Website/commit/c2eb4ea594482f8969a3b91d9b02cf833ad65f27) | [what changed](becoming-an-official-publication/v1.1.0.md) |
+| **v1.0.0** | 2026-10-30 | published | 1,719 | first published | [`b0df1de4f`](https://github.com/SGit-AI/SGit-AI__Website/commit/b0df1de4f0fe4a2ee4f8f5e14f50ab349431de34) |  |
 
 [← Back to the article](../becoming-an-official-publication.md) · [All articles](../index.md)
 

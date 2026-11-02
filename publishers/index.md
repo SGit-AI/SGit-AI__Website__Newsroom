@@ -14,7 +14,7 @@ For publishers, journalists and anyone thinking about the future of news
 
 For the last two months I have been writing about where publishing could go: readers who pay for what they actually read, after they have read it; personas instead of profiles; stories kept as evidence; agents as readers, and as part of the newsroom. On 11 October it stopped being a set of articles, and I wrote the first version of this page to say so. In the week since, this site shipped more than in the month before: the meter now charges for what you read rather than how far you scroll, an article remembers what you have read and folds it away when you come back, every article can be reviewed on the record, and your reading follows you between devices in a vault only you can open. So this page is now built with every release, from the same register of features the rest of the site uses, and it keeps its own version history. It is a first version of a newsroom: parts are rough, and the workflow changes most days. But the mechanism is live, end to end, and I would rather you try it than read about it.
 
-*This page: **v2.0.0**, 18 Oct 2026, [every version and what changed](versions/index.html). Built with newsroom.sgit.ai v999.0.0: 358 articles, 20 features a publisher can use today, the newest article 1 Nov.*
+*This page: **v2.0.0**, 18 Oct 2026, [every version and what changed](versions/index.html). Built with newsroom.sgit.ai v999.0.0: 362 articles, 20 features a publisher can use today, the newest article 2 Nov.*
 
 [Open newsroom.sgit.ai](../index.html). No sign-up. You start with £5.00 of free credit, kept in your own browser.
 
@@ -83,7 +83,7 @@ The newest pieces on how news gets paid for, answers to the industry, and how re
 - [Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it](../articles/breaking-the-story-down-before-the-agents-do.html), 30 Oct. A reply to Ole Reissmann's session on breaking stories down for agents: what this newsroom already ships beside every article, and the allegation field to add.
 - [Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break](../articles/proven-controls-for-agents.html), 29 Oct. Hem Pant's governance as code and Sondera's policy-as-code paper, joined: who holds each control, and six controls we tried to break.
 
-And 10 in the last week on [how this newsroom runs](../sections/publishers/index.html#method), the newest [A website for my brother](../articles/a-website-for-my-brother.html).
+And 11 in the last week on [how this newsroom runs](../sections/publishers/index.html#method), the newest [Separate Ways, explained](../articles/separate-ways-explained.html).
 
 ## Why I think this is worth your time
 
@@ -126,7 +126,7 @@ Your reaction, more than anything. Use it for five minutes, or for a few days, a
 
 **Write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai)**, a monitored mailbox that reaches me, or see [who I am and how to reach me](https://sgit.ai/about/index.html). The page is written to be forwarded as it is.
 
-*As of 1 Nov 2026, newsroom.sgit.ai v999.0.0. The text is version v2.0.0 of this page, by newsroom.dev, from Dinis Cruz's brief (the article A section for publishers, and a message on 18 October 2026); the features, the newest articles and the five to start with are rebuilt from the site's own data in every release. The first version was written on sgit.ai on 11 October 2026 by agent@riskmandate.ai, from Dinis Cruz's brief. AI-generated, disclosed as Article 50 of the EU AI Act asks. Dinis Cruz has editorial responsibility.*
+*As of 2 Nov 2026, newsroom.sgit.ai v999.0.0. The text is version v2.0.0 of this page, by newsroom.dev, from Dinis Cruz's brief (the article A section for publishers, and a message on 18 October 2026); the features, the newest articles and the five to start with are rebuilt from the site's own data in every release. The first version was written on sgit.ai on 11 October 2026 by agent@riskmandate.ai, from Dinis Cruz's brief. AI-generated, disclosed as Article 50 of the EU AI Act asks. Dinis Cruz has editorial responsibility.*
 
 
 ---

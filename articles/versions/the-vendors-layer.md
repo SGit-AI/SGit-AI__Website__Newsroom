@@ -16,10 +16,10 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.3.0** | 2026-10-28 | minor | 2,530 | +2 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`721c7f313`](https://github.com/SGit-AI/SGit-AI__Website/commit/721c7f3137cc7e7258d174685394cf6ec209ef1b) | [what changed](the-vendors-layer/v1.3.0.md) · [current](../the-vendors-layer.md) |
-| **v1.2.0** | 2026-10-28 | minor | 2,528 | +0 / −6 words; 1 changed, 0 added, 0 removed paragraphs | [`0f631ddc4`](https://github.com/SGit-AI/SGit-AI__Website/commit/0f631ddc4d9fd042276d014b18033bc50672d8a5) | [what changed](the-vendors-layer/v1.2.0.md) |
-| **v1.1.0** | 2026-10-28 | minor | 2,534 | +37 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`4565ed6dc`](https://github.com/SGit-AI/SGit-AI__Website/commit/4565ed6dc4d11a13c6d1521897e8344c777a920e) | [what changed](the-vendors-layer/v1.1.0.md) |
-| **v1.0.0** | 2026-10-28 | published | 2,497 | first published | [`a10c271c2`](https://github.com/SGit-AI/SGit-AI__Website/commit/a10c271c262b08f004ce9bcecd6dfb8f0b835d49) |  |
+| **v1.3.0** | 2026-10-28 | minor | 2,530 | +2 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`39456fe18`](https://github.com/SGit-AI/SGit-AI__Website/commit/39456fe1866ffdbfd69df268870973982c3cf7e0) | [what changed](the-vendors-layer/v1.3.0.md) · [current](../the-vendors-layer.md) |
+| **v1.2.0** | 2026-10-28 | minor | 2,528 | +0 / −6 words; 1 changed, 0 added, 0 removed paragraphs | [`58a7dfe44`](https://github.com/SGit-AI/SGit-AI__Website/commit/58a7dfe446e85cefd895fa5b61f5ebec58ec67e2) | [what changed](the-vendors-layer/v1.2.0.md) |
+| **v1.1.0** | 2026-10-28 | minor | 2,534 | +37 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`20fd6bd33`](https://github.com/SGit-AI/SGit-AI__Website/commit/20fd6bd336836038c19ec6337ebfad3735dc692e) | [what changed](the-vendors-layer/v1.1.0.md) |
+| **v1.0.0** | 2026-10-28 | published | 2,497 | first published | [`eecacaa73`](https://github.com/SGit-AI/SGit-AI__Website/commit/eecacaa73a1c0486e5a6d71ed54f9b7882a0631d) |  |
 
 [← Back to the article](../the-vendors-layer.md) · [All articles](../index.md)
 

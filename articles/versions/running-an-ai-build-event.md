@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-31 | published | 1,492 | first published | [`47ce89c39`](https://github.com/SGit-AI/SGit-AI__Website/commit/47ce89c398d4b23c38356e0a3ceddb4ae7002b8b) | [current](../running-an-ai-build-event.md) |
+| **v1.0.0** | 2026-10-31 | published | 1,492 | first published | [`bfa1e7bf4`](https://github.com/SGit-AI/SGit-AI__Website/commit/bfa1e7bf40c16abc94d6f4f0114be71ba7b94e54) | [current](../running-an-ai-build-event.md) |
 
 [← Back to the article](../running-an-ai-build-event.md) · [All articles](../index.md)
 

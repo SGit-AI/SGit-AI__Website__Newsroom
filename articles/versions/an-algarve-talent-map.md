@@ -16,8 +16,8 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-01 | minor | 1,719 | +27 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`6084ddede`](https://github.com/SGit-AI/SGit-AI__Website/commit/6084ddede2dd85c202c1434e697e8a517fd27ea9) | [what changed](an-algarve-talent-map/v1.1.0.md) · [current](../an-algarve-talent-map.md) |
-| **v1.0.0** | 2026-10-31 | published | 1,692 | first published | [`4fe72a72d`](https://github.com/SGit-AI/SGit-AI__Website/commit/4fe72a72d2b5f641e4693548ffcbbdea7b31c0d5) |  |
+| **v1.1.0** | 2026-11-01 | minor | 1,719 | +27 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`8bb7fb7b6`](https://github.com/SGit-AI/SGit-AI__Website/commit/8bb7fb7b687a3d2049af09e5aa7938df30eedc08) | [what changed](an-algarve-talent-map/v1.1.0.md) · [current](../an-algarve-talent-map.md) |
+| **v1.0.0** | 2026-10-31 | published | 1,692 | first published | [`c81d6ce30`](https://github.com/SGit-AI/SGit-AI__Website/commit/c81d6ce30a05991570d3c68cabe01ae59e67808f) |  |
 
 [← Back to the article](../an-algarve-talent-map.md) · [All articles](../index.md)
 

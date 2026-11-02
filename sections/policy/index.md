@@ -2,7 +2,11 @@
 
 What an agent may do, who carries the risk, and how a policy is enforced: RiskMandate, Agent Behaviour Policies, hooks, accountability, governance.
 
-87 articles, newest first.
+88 articles, newest first.
+
+## November 2026
+
+- [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](../../articles/the-grant-not-the-prompt.md), 2026-11-02, 6 min.
 
 ## October 2026
 

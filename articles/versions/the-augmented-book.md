@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-31 | published | 2,211 | first published | [`e7d5f3f0e`](https://github.com/SGit-AI/SGit-AI__Website/commit/e7d5f3f0ef18976be50b36278860b2c2f8ef3264) | [current](../the-augmented-book.md) |
+| **v1.0.0** | 2026-10-31 | published | 2,211 | first published | [`2dbb12a46`](https://github.com/SGit-AI/SGit-AI__Website/commit/2dbb12a46d7128113bfbeadfcf128bef16898376) | [current](../the-augmented-book.md) |
 
 [← Back to the article](../the-augmented-book.md) · [All articles](../index.md)
 

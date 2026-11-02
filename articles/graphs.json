@@ -55,6 +55,733 @@
   ],
   "articles": [
     {
+      "slug": "the-grant-not-the-prompt",
+      "title": "The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close",
+      "date": "2026-11-02",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-grant-not-the-prompt.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-grant-not-the-prompt.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-grant-not-the-prompt.webp",
+      "teaser": "A technical user believed Claude read his email only when asked; an unrelated chat listed his inbox.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "riskmandate",
+        "agents",
+        "security",
+        "connectors",
+        "prompt-injection",
+        "mandate",
+        "gmail",
+        "cowork",
+        "article"
+      ],
+      "links_out": [
+        "what-can-your-agent-reach"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "grt-gap.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/grt-gap.webp",
+          "caption": "What a user expected his Claude could do, and what connecting Gmail had granted: the mandate and the reach.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "the-grant-not-the-prompt",
+        "teaser": "A technical user believed Claude read his email only when asked; an unrelated chat listed his inbox.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "A technical user expected Claude to read his email only in the one conversation where he asked, and his daily forum task never to touch it. In an unrelated chat, asked about his inbox, Claude listed it: a connected connector is available in every conversation and to scheduled tasks. The authority was granted at the connection, not the prompt. With private data, untrusted content and a way to send, the setup has the lethal trifecta. RiskMandate measures this gap between mandate and reach and closes it with enforced policy.",
+        "nodes": [
+          {
+            "id": "user",
+            "label": "A technical user",
+            "kind": "example",
+            "summary": "Chat, Cowork, a daily task."
+          },
+          {
+            "id": "mandate",
+            "label": "The mandate",
+            "kind": "concept",
+            "summary": "Email only when he asks."
+          },
+          {
+            "id": "reach",
+            "label": "The reach",
+            "kind": "concept",
+            "summary": "Every chat and task can read."
+          },
+          {
+            "id": "demo",
+            "label": "The demonstration",
+            "kind": "example",
+            "summary": "An unrelated chat lists the inbox."
+          },
+          {
+            "id": "grant",
+            "label": "Authorisation at the grant",
+            "kind": "claim",
+            "summary": "Not at the prompt."
+          },
+          {
+            "id": "injection",
+            "label": "Prompt injection",
+            "kind": "concept",
+            "summary": "Text that carries instructions."
+          },
+          {
+            "id": "trifecta",
+            "label": "The lethal trifecta",
+            "kind": "concept",
+            "summary": "Private data, untrusted content, a way out."
+          },
+          {
+            "id": "policy",
+            "label": "Policy that closes the gap",
+            "kind": "method",
+            "summary": "Prompt, hook, or no capability."
+          },
+          {
+            "id": "today",
+            "label": "What a user can do today",
+            "kind": "method",
+            "summary": "Turn off, block, separate."
+          }
+        ],
+        "edges": [
+          {
+            "from": "user",
+            "to": "mandate",
+            "rel": "produces"
+          },
+          {
+            "from": "demo",
+            "to": "reach",
+            "rel": "example-of"
+          },
+          {
+            "from": "reach",
+            "to": "mandate",
+            "rel": "contrasts"
+          },
+          {
+            "from": "grant",
+            "to": "reach",
+            "rel": "produces"
+          },
+          {
+            "from": "injection",
+            "to": "reach",
+            "rel": "depends-on"
+          },
+          {
+            "from": "trifecta",
+            "to": "injection",
+            "rel": "extends"
+          },
+          {
+            "from": "policy",
+            "to": "reach",
+            "rel": "answers"
+          },
+          {
+            "from": "today",
+            "to": "policy",
+            "rel": "example-of"
+          },
+          {
+            "from": "demo",
+            "to": "grant",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "what-can-your-agent-reach"
+          ],
+          "pages": [],
+          "sites": [
+            "https://support.claude.com/en/articles/13364135-use-claude-cowork-safely",
+            "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The order was a prompt; the authorisation was the grant he gave when he connected Gmail.",
+            "why": "The demonstration: the reach."
+          },
+          {
+            "text": "Safety by uselessness does not last.",
+            "why": "Why the prompt is not the control."
+          },
+          {
+            "text": "It did exactly what it was built to do.",
+            "why": "What RiskMandate does with this."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "separate-ways-explained",
+      "title": "Separate Ways, explained: what my brother's synth video shows, frame by frame, and why describing work at the moment you make it is the first step to publishing it",
+      "date": "2026-11-02",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/separate-ways-explained.html",
+      "markdown": "https://newsroom.sgit.ai/articles/separate-ways-explained.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/separate-ways-explained.webp",
+      "teaser": "A composer's synth video of Journey's Separate Ways, explained frame by frame, and why describing work as you make it matters.",
+      "topics": [
+        "news-and-evidence",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "music",
+        "synthesizers",
+        "journey",
+        "prophet",
+        "midi",
+        "bluetooth",
+        "video",
+        "publishing",
+        "creators",
+        "article"
+      ],
+      "links_out": [
+        "four-iphones-and-an-ipad",
+        "a-website-for-my-brother"
+      ],
+      "links_in": [
+        "sellable-units",
+        "four-iphones-and-an-ipad"
+      ],
+      "figures": [
+        {
+          "file": "sw-frames.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sw-frames.webp",
+          "caption": "Three moments of Gabriel's Separate Ways video, each from three cameras: beginning, middle and end.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "sw-chain.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sw-chain.webp",
+          "caption": "The signal chain in the video, and the trick at the end: decay turned down, so the delay repeats a short chord.",
+          "kind": "process"
+        },
+        {
+          "file": "sw-moment.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sw-moment.webp",
+          "caption": "One video, explained by voice the same evening, became two articles once an agent checked and packaged it.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "separate-ways-explained",
+        "teaser": "A composer's synth video of Journey's Separate Ways, explained frame by frame, and why describing work as you make it matters.",
+        "topics": [
+          "news-and-evidence",
+          "agents-and-policy"
+        ],
+        "core_idea": "A three-camera video of the Separate Ways synth part means little to most viewers. Explained by voice and checked by an agent, it becomes a page: a Bluetooth MIDI keyboard, a Behringer Pro-800 copying the Prophet-600, chorus and delay, and decay turned down live so the delay repeats a staccato chord. The checking corrected two remembered details, and a side remark became a second article. Capturing work at the moment of creation is the first step to publishing it.",
+        "nodes": [
+          {
+            "id": "video",
+            "label": "Three frames, one take",
+            "kind": "artefact",
+            "summary": "The synth part, from three cameras."
+          },
+          {
+            "id": "explain",
+            "label": "Explained by voice",
+            "kind": "method",
+            "summary": "The same evening."
+          },
+          {
+            "id": "chain",
+            "label": "The signal chain",
+            "kind": "concept",
+            "summary": "Bluetooth MIDI, Pro-800, chorus, delay."
+          },
+          {
+            "id": "trick",
+            "label": "Staccato into delay",
+            "kind": "example",
+            "summary": "Decay turned down live."
+          },
+          {
+            "id": "checked",
+            "label": "What the checking corrected",
+            "kind": "claim",
+            "summary": "Jupiter-8 on the record; a Prophet-600 copy."
+          },
+          {
+            "id": "side",
+            "label": "A side-quest",
+            "kind": "example",
+            "summary": "Four iPhones and an iPad."
+          },
+          {
+            "id": "market",
+            "label": "Producers and people hiring",
+            "kind": "concept",
+            "summary": "The viewers who want to know."
+          },
+          {
+            "id": "moment",
+            "label": "Capture at the moment of creation",
+            "kind": "claim",
+            "summary": "Or it never gets published."
+          },
+          {
+            "id": "loop",
+            "label": "Ideas compound",
+            "kind": "claim",
+            "summary": "Captured ideas help the next session."
+          }
+        ],
+        "edges": [
+          {
+            "from": "explain",
+            "to": "video",
+            "rel": "answers"
+          },
+          {
+            "from": "chain",
+            "to": "explain",
+            "rel": "example-of"
+          },
+          {
+            "from": "trick",
+            "to": "chain",
+            "rel": "extends"
+          },
+          {
+            "from": "checked",
+            "to": "explain",
+            "rel": "depends-on"
+          },
+          {
+            "from": "side",
+            "to": "explain",
+            "rel": "produces"
+          },
+          {
+            "from": "market",
+            "to": "video",
+            "rel": "depends-on"
+          },
+          {
+            "from": "moment",
+            "to": "explain",
+            "rel": "produces"
+          },
+          {
+            "from": "loop",
+            "to": "moment",
+            "rel": "extends"
+          },
+          {
+            "from": "checked",
+            "to": "chain",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "four-iphones-and-an-ipad",
+            "a-website-for-my-brother"
+          ],
+          "pages": [],
+          "sites": [
+            "https://midi.org/midi-over-bluetooth-low-energy-ble-midi",
+            "https://www.behringer.com/en/products/0718-ABF"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Describe, do not write.",
+            "why": "Why this is the first step."
+          },
+          {
+            "text": "The side-quests are the gold.",
+            "why": "Why this is the first step."
+          },
+          {
+            "text": "I put this video to show how it works.",
+            "why": "What he explained."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "sellable-units",
+      "title": "Sellable units: applying api.newsroom.sgit.ai to my brother's website, the reading meter on a composer's site that does not look like a newsroom, the pathways from a viewer to a buyer, and every lesson, score and master as something to sell",
+      "date": "2026-11-02",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/sellable-units.html",
+      "markdown": "https://newsroom.sgit.ai/articles/sellable-units.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/sellable-units.webp",
+      "teaser": "The newsroom's reading meter on a composer's site: sellable units, pathways to a buyer, and CC BY with a paid licence.",
+      "topics": [
+        "startups-and-strategy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "monetisation",
+        "meter",
+        "music",
+        "creators",
+        "creative-commons",
+        "licensing",
+        "newsroom-api",
+        "sellable-units",
+        "article"
+      ],
+      "links_out": [
+        "a-website-for-my-brother",
+        "the-reading-account-as-built",
+        "paying-after-the-value",
+        "four-iphones-and-an-ipad",
+        "separate-ways-explained"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "sel-units.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sel-units.webp",
+          "caption": "Sellable units: lessons, scores, analyses and masters as pages on his own site, each with the newsroom's meter.",
+          "kind": "architecture"
+        },
+        {
+          "file": "sel-pathways.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sel-pathways.webp",
+          "caption": "The pathways: found on a platform, a page on his site, more pages, a top-up, then a purchase.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "sellable-units",
+        "teaser": "The newsroom's reading meter on a composer's site: sellable units, pathways to a buyer, and CC BY with a paid licence.",
+        "topics": [
+          "startups-and-strategy",
+          "news-and-evidence"
+        ],
+        "core_idea": "A composer's site should look like a composer's site, with the newsroom's way to be paid added through api.newsroom.sgit.ai: a meter element on each page, £5 of starting credit, a few pence a page, a balance that can go negative and Stripe top-ups. Every lesson, score, analysis, how-to and master becomes a sellable unit, and pathways lead from a platform viewer to a page, more pages, a top-up and larger purchases. CC BY with a paid licence lets works travel, without selling exclusivity.",
+        "nodes": [
+          {
+            "id": "look",
+            "label": "Not a newsroom's look",
+            "kind": "claim",
+            "summary": "A composer's site, with a meter."
+          },
+          {
+            "id": "meter",
+            "label": "The meter",
+            "kind": "artefact",
+            "summary": "£5 credit, pence a page, top-ups."
+          },
+          {
+            "id": "api",
+            "label": "api.newsroom.sgit.ai",
+            "kind": "artefact",
+            "summary": "An element, a config, account pages."
+          },
+          {
+            "id": "units",
+            "label": "Sellable units",
+            "kind": "concept",
+            "summary": "Lessons, scores, analyses, masters."
+          },
+          {
+            "id": "pathways",
+            "label": "Pathways to a buyer",
+            "kind": "method",
+            "summary": "Found, page, more, top-up, buy."
+          },
+          {
+            "id": "lists",
+            "label": "Reading lists as syllabi",
+            "kind": "example",
+            "summary": "A link after each lesson."
+          },
+          {
+            "id": "licences",
+            "label": "CC BY and a paid licence",
+            "kind": "method",
+            "summary": "Other terms, not exclusivity."
+          },
+          {
+            "id": "market",
+            "label": "Musicians, producers, students",
+            "kind": "concept",
+            "summary": "Demanding and large."
+          },
+          {
+            "id": "habit",
+            "label": "A sellable unit a day",
+            "kind": "claim",
+            "summary": "The workflow is the product."
+          }
+        ],
+        "edges": [
+          {
+            "from": "api",
+            "to": "meter",
+            "rel": "produces"
+          },
+          {
+            "from": "meter",
+            "to": "look",
+            "rel": "depends-on"
+          },
+          {
+            "from": "units",
+            "to": "pathways",
+            "rel": "produces"
+          },
+          {
+            "from": "pathways",
+            "to": "meter",
+            "rel": "depends-on"
+          },
+          {
+            "from": "lists",
+            "to": "pathways",
+            "rel": "example-of"
+          },
+          {
+            "from": "licences",
+            "to": "units",
+            "rel": "extends"
+          },
+          {
+            "from": "market",
+            "to": "pathways",
+            "rel": "depends-on"
+          },
+          {
+            "from": "habit",
+            "to": "units",
+            "rel": "produces"
+          },
+          {
+            "from": "look",
+            "to": "api",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-reading-account-as-built",
+            "paying-after-the-value",
+            "a-website-for-my-brother",
+            "four-iphones-and-an-ipad",
+            "separate-ways-explained"
+          ],
+          "pages": [],
+          "sites": [
+            "https://api.newsroom.sgit.ai/",
+            "https://creativecommons.org/faq/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Money comes from a path, not a page.",
+            "why": "Pathways."
+          },
+          {
+            "text": "So the workflow is the product.",
+            "why": "The habit."
+          },
+          {
+            "text": "A song that nobody can use goes nowhere.",
+            "why": "Licences: CC BY, with a paid licence alongside."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "four-iphones-and-an-ipad",
+      "title": "Four iPhones and an iPad: how my brother filmed a three-camera music video with old phones synced live to Final Cut Pro, a feature Apple shipped in 2024 that he found by accident",
+      "date": "2026-11-02",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/four-iphones-and-an-ipad.html",
+      "markdown": "https://newsroom.sgit.ai/articles/four-iphones-and-an-ipad.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/four-iphones-and-an-ipad.webp",
+      "teaser": "Three old iPhones and an iPad, synced live in Final Cut Pro: Apple's Live Multicam, found by accident.",
+      "topics": [
+        "news-and-evidence",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "video",
+        "final-cut-pro",
+        "ipad",
+        "iphone",
+        "multicam",
+        "musicians",
+        "creators",
+        "apple",
+        "article"
+      ],
+      "links_out": [
+        "separate-ways-explained"
+      ],
+      "links_in": [
+        "separate-ways-explained",
+        "sellable-units"
+      ],
+      "figures": [
+        {
+          "file": "fcm-setup.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fcm-setup.webp",
+          "caption": "Gabriel's setup: three iPhones running Final Cut Camera, an iPad running Final Cut Pro, then the Mac.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "four-iphones-and-an-ipad",
+        "teaser": "Three old iPhones and an iPad, synced live in Final Cut Pro: Apple's Live Multicam, found by accident.",
+        "topics": [
+          "news-and-evidence",
+          "site-and-engineering"
+        ],
+        "core_idea": "A producer filmed a three-camera music video with two second-hand iPhone 12s and an iPhone 13 connected to an iPad running Final Cut Pro. Apple's Live Multicam, released in June 2024 with the free Final Cut Camera app, records up to four angles in sync, transfers the full-quality files afterwards, and moves to Final Cut Pro on the Mac. He found it by accident, which suggests many who could use it do not know it exists.",
+        "nodes": [
+          {
+            "id": "setup",
+            "label": "Three old iPhones and an iPad",
+            "kind": "example",
+            "summary": "Second-hand phones as cameras."
+          },
+          {
+            "id": "multicam",
+            "label": "Live Multicam",
+            "kind": "concept",
+            "summary": "Up to four angles, in sync."
+          },
+          {
+            "id": "camera",
+            "label": "Final Cut Camera",
+            "kind": "artefact",
+            "summary": "Free app on each phone."
+          },
+          {
+            "id": "transfer",
+            "label": "Full-quality files transfer after",
+            "kind": "method",
+            "summary": "Previews live, originals later."
+          },
+          {
+            "id": "mac",
+            "label": "On to the Mac",
+            "kind": "method",
+            "summary": "Export the project, import, edit."
+          },
+          {
+            "id": "needs",
+            "label": "What it needs",
+            "kind": "concept",
+            "summary": "iPhone XS or later, a recent iPad."
+          },
+          {
+            "id": "uses",
+            "label": "What it is good for",
+            "kind": "example",
+            "summary": "Music, interviews, lessons, small shows."
+          },
+          {
+            "id": "accident",
+            "label": "Found by accident",
+            "kind": "claim",
+            "summary": "Thin coverage after launch."
+          },
+          {
+            "id": "publish",
+            "label": "Publish what you discover",
+            "kind": "claim",
+            "summary": "At the moment you find it."
+          }
+        ],
+        "edges": [
+          {
+            "from": "setup",
+            "to": "multicam",
+            "rel": "example-of"
+          },
+          {
+            "from": "camera",
+            "to": "multicam",
+            "rel": "depends-on"
+          },
+          {
+            "from": "transfer",
+            "to": "multicam",
+            "rel": "extends"
+          },
+          {
+            "from": "mac",
+            "to": "transfer",
+            "rel": "leads-to"
+          },
+          {
+            "from": "needs",
+            "to": "multicam",
+            "rel": "depends-on"
+          },
+          {
+            "from": "uses",
+            "to": "multicam",
+            "rel": "produces"
+          },
+          {
+            "from": "accident",
+            "to": "multicam",
+            "rel": "contrasts"
+          },
+          {
+            "from": "publish",
+            "to": "accident",
+            "rel": "answers"
+          },
+          {
+            "from": "setup",
+            "to": "uses",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "separate-ways-explained"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.apple.com/final-cut-pro-for-ipad/",
+            "https://support.apple.com/guide/final-cut-pro-ipad/dev619b965f2/ipados"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "I discovered by accident.",
+            "why": "How he found it."
+          },
+          {
+            "text": "Up to four angles,",
+            "why": "In short."
+          },
+          {
+            "text": "Each device records its own file at full quality.",
+            "why": "What it is."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-lab-that-redesigned-the-book",
       "title": "The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight",
       "date": "2026-11-01",
@@ -441,7 +1168,10 @@
         "websites-you-own",
         "from-lovable-to-your-own-newsroom"
       ],
-      "links_in": [],
+      "links_in": [
+        "separate-ways-explained",
+        "sellable-units"
+      ],
       "figures": [
         {
           "file": "gd-before-after.webp",
@@ -20148,6 +20878,7 @@
         "sixteen-notes-i-did-not-want-to-lose"
       ],
       "links_in": [
+        "sellable-units",
         "agentic-readers",
         "every-link-a-gift-link",
         "the-user-keeps-the-meter"
@@ -34570,6 +35301,7 @@
         "hope-or-enforcement"
       ],
       "links_in": [
+        "the-grant-not-the-prompt",
         "jose-botas-two-agent-apps",
         "from-lovable-to-your-own-newsroom",
         "who-carries-the-risk",
@@ -46378,6 +47110,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "sellable-units",
         "agentic-readers",
         "an-algarve-talent-map",
         "villager-services-for-explorer-coders",

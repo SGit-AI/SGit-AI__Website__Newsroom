@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-31 | published | 1,678 | first published | [`08cd9f113`](https://github.com/SGit-AI/SGit-AI__Website/commit/08cd9f11310c02860f44dee08879f7092a8bf19d) | [current](../vibathon-algarve-2026.md) |
+| **v1.0.0** | 2026-10-31 | published | 1,678 | first published | [`ae07c9ccb`](https://github.com/SGit-AI/SGit-AI__Website/commit/ae07c9ccb0f6bc4248a9ed21a2ec91b23652b8f9) | [current](../vibathon-algarve-2026.md) |
 
 [← Back to the article](../vibathon-algarve-2026.md) · [All articles](../index.md)
 

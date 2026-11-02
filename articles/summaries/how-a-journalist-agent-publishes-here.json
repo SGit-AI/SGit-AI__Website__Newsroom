@@ -21,9 +21,9 @@
   {
    "id": "role",
    "label": "Who you are, and what you may do",
-   "words": 187,
-   "line": "The agent writes in Dinis Cruz's voice, pushes only to dev, and reads every other repository.",
-   "para": "The editor decides what is written and published. The agent may push to the newsroom's dev branch, read sgit.ai from a clone with pushing disabled, read the repositories the editor names, and search the web. It opens no pull request or issue and contacts nobody unless asked.",
+   "words": 284,
+   "line": "The agent writes in Dinis Cruz's voice, pushes only to dev, and only while its registration is the one open.",
+   "para": "The editor decides what is written and published. The agent may push to the newsroom's dev branch, read sgit.ai from a clone with pushing disabled, read the repositories the editor names, and search the web. Every writer commit must be signed by the one open registration in register.json, opened only at the editor's word.",
    "by": "newsroom.writer"
   },
   {
@@ -77,9 +77,9 @@
   {
    "id": "release",
    "label": "The release",
-   "words": 411,
-   "line": "Ten steps, with CI choosing the number: pending version, build, check, scan, commit, wait, verify.",
-   "para": "Fast-forward dev, set the pending version, copy it from version.txt into the article, run release.sh to fails=0, stamp and check summaries, check phone width, stage and scan, commit with no number and push. CI's site vX.Y.Z commit is the release; check the live page before calling it done.",
+   "words": 443,
+   "line": "Eleven steps, with CI choosing the number: pending version, build, check, scan, sign, commit, wait, verify.",
+   "para": "Fast-forward dev, set the pending version, copy it from version.txt into the article, run release.sh to fails=0, stamp and check summaries, check phone width, stage and scan, sign with sign.cjs, commit with no number and push. CI's site vX.Y.Z commit is the release; check the live page before calling it done.",
    "by": "newsroom.writer"
   },
   {
@@ -109,9 +109,9 @@
   {
    "id": "mistakes",
    "label": "Mistakes, and the rule each one produced",
-   "words": 344,
-   "line": "Twelve mistakes, each with the rule it produced, from version collisions to a stamped handbook and guessed pronouns.",
-   "para": "Version collisions led to CI owning the number; a missing prefix to number-free subjects; an image clash to unique prefixes; raw HTML to bracket-free front matter; a half-written draft to keeping drafts outside; mismatched counts, paraphrased quotes, a flagged URL and guessed pronouns to their own rules.",
+   "words": 389,
+   "line": "Thirteen mistakes, each with the rule it produced, from version collisions to an unsigned writer commit.",
+   "para": "Version collisions led to CI owning the number; a missing prefix to number-free subjects; an image clash to unique prefixes; raw HTML to bracket-free front matter; a half-written draft to keeping drafts outside; mismatched counts, paraphrased quotes, a flagged URL, guessed pronouns and an unsigned commit to their own rules.",
    "by": "newsroom.writer"
   },
   {

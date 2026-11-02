@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-31 | published | 1,986 | first published | [`1c6aad035`](https://github.com/SGit-AI/SGit-AI__Website/commit/1c6aad035d05d0c6e044ecb3d76008a10863b590) | [current](../lovable-with-sharness.md) |
+| **v1.0.0** | 2026-10-31 | published | 1,986 | first published | [`f4fc2d12a`](https://github.com/SGit-AI/SGit-AI__Website/commit/f4fc2d12ad4dd66d510427edb2c58fc4c31ee100) | [current](../lovable-with-sharness.md) |
 
 [← Back to the article](../lovable-with-sharness.md) · [All articles](../index.md)
 

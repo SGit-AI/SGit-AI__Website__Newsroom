@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-29 | published | 4,904 | first published | [`febec5354`](https://github.com/SGit-AI/SGit-AI__Website/commit/febec53548e69ee94b1606981c0313dd2fbf549b) | [current](../introducing-sharness.md) |
+| **v1.0.0** | 2026-10-29 | published | 4,904 | first published | [`2cff05d69`](https://github.com/SGit-AI/SGit-AI__Website/commit/2cff05d6938810561cb27bc6eed786e1f4763ce5) | [current](../introducing-sharness.md) |
 
 [← Back to the article](../introducing-sharness.md) · [All articles](../index.md)
 

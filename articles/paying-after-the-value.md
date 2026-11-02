@@ -101,6 +101,7 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#pay
 
 ### Continued by
 
+- [Sellable units: applying api.newsroom.sgit.ai to my brother's website, the reading meter on a composer's site that does not look like a newsroom, the pathways from a viewer to a buyer, and every lesson, score and master as something to sell](sellable-units.md) The newsroom's reading meter on a composer's site: sellable units, pathways to a buyer, and CC BY with a paid licence.
 - [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](agentic-readers.md) Agentic risk, or agentic readers? A reply to DJB Strategies' publisher outlook, its framework answered by a newsroom already doing it.
 - [An Algarve talent map: how Algarve Evolution can turn its mapping of services, mentors and investors into a public matchmaking site, built by one Claude session, with consent first](an-algarve-talent-map.md) An Algarve talent map: Algarve Evolution's mapping of services, mentors and investors as a public matchmaking site, consent first.
 - [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](villager-services-for-explorer-coders.md) Villager services for explorer coders: founders with ten years of checklists build the apps; we sell everything behind them in finite packs.

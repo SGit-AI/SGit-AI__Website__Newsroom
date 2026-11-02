@@ -2,7 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-76 articles, newest first.
+77 articles, newest first.
+
+## November 2026
+
+- [Sellable units: applying api.newsroom.sgit.ai to my brother's website, the reading meter on a composer's site that does not look like a newsroom, the pathways from a viewer to a buyer, and every lesson, score and master as something to sell](../../articles/sellable-units.md), 2026-11-02, 8 min.
 
 ## October 2026
 

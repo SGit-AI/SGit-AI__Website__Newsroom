@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-01 | published | 1,784 | first published | [`9e2de1878`](https://github.com/SGit-AI/SGit-AI__Website/commit/9e2de1878938d62bdff0ec00ac417a3c084381df) | [current](../a-book-told-by-its-cast.md) |
+| **v1.0.0** | 2026-11-01 | published | 1,784 | first published | [`f80dcac15`](https://github.com/SGit-AI/SGit-AI__Website/commit/f80dcac15ab4cf8ef070f47e5106f2ea021d4566) | [current](../a-book-told-by-its-cast.md) |
 
 [← Back to the article](../a-book-told-by-its-cast.md) · [All articles](../index.md)
 

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-31 | published | 1,576 | first published | [`4fa1c88f4`](https://github.com/SGit-AI/SGit-AI__Website/commit/4fa1c88f43ade8040470bf9dd7e5d61ded8d20e6) | [current](../agentic-readers.md) |
+| **v1.0.0** | 2026-10-31 | published | 1,576 | first published | [`d5697b8f8`](https://github.com/SGit-AI/SGit-AI__Website/commit/d5697b8f84d903c39c76e4994e125be0bc53cf46) | [current](../agentic-readers.md) |
 
 [← Back to the article](../agentic-readers.md) · [All articles](../index.md)
 

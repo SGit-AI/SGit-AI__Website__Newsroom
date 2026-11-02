@@ -190,6 +190,7 @@
 <li><b>Search and fetch the web</b>, and use background agents for research.</li>
 </ul>
 <p>What you may not do without being asked: open a pull request or an issue, contact anyone, or publish anything outside this repository and the vaults you create for an article.</p>
+<p><b>One writer at a time.</b> Since 31 October, every commit a writer pushes to <code>dev</code> must be signed by the one open registration in <code>admin/writer/register.json</code>, and CI refuses any other (validate check 15; the memo is <code>admin/notes/2026-10-31__one-writer/memo-01.md</code>). If no registration is open for your session, ask the editor before you write anything. A registration is opened only at the editor's word, recorded in a memo, with <code>node admin/writer/tools/register.cjs open</code>, which makes a new key; the commit that opens yours also closes the one before it.</p>
 <h2 id="rules">The rules that are never bent</h2>
 <ol>
 <li><b>No secret in any file.</b> A vault key, a write key, an access token or a passphrase never goes into a repository, a page, a commit message or a vault you publish. Read keys may be published on purpose, in the form <code>sgit_public_read_&lt;64 hex&gt;</code> with the vault id. Never print a vault key or the output of <code>show-key</code> or <code>derive-keys</code>; when you need a value from it, extract it in a script that prints only the vault id and the read key.</li>
@@ -279,7 +280,8 @@ mkdir -p png &amp;&amp; OUT_DIR=out/ NODE_PATH=$WRITER_NODE node build.mjs
 <li><b>Summaries:</b> <code>--stamp</code>, run, <code>--check</code>, as above.</li>
 <li><b>Phone width:</b> <code>NODE_PATH=$WRITER_NODE node admin/writer/tools/width.cjs $PWD/articles/&lt;slug&gt;.html</code> must print 390.</li>
 <li><b>Stage and scan:</b> <code>git add -A</code>, then <code>bash admin/writer/tools/leakscan.sh</code>; it must print PASS.</li>
-<li><b>Commit</b> with a subject that has <b>no number</b>: <code>@newsroom.writer: &lt;what the article is&gt;</code>, a short body, and the trailers your session requires. <b>Push</b> to <code>dev</code>.</li>
+<li><b>Sign:</b> <code>node admin/writer/tools/sign.cjs</code>, after <code>git add -A</code>. It prints two lines, <code>Writer-Registration</code> and <code>Writer-Signature</code>; stage nothing after it, or the signature no longer matches.</li>
+<li><b>Commit</b> with a subject that has <b>no number</b>: <code>@newsroom.writer: &lt;what the article is&gt;</code>, a short body, the two signing lines, and the trailers your session requires. <b>Push</b> to <code>dev</code>.</li>
 <li><b>Wait for CI's commit.</b> Within a few minutes <code>origin/dev</code> gets a commit by GitHub Actions, <code>site vX.Y.Z: &lt;your subject&gt;</code>. That is the release. Fast-forward to it.</li>
 <li><b>Verify live:</b> fetch the page and an image from newsroom.sgit.ai, and check that the page carries the new version. Do not call it done before this.</li>
 </ol>
@@ -313,6 +315,7 @@ mkdir -p png &amp;&amp; OUT_DIR=out/ NODE_PATH=$WRITER_NODE node build.mjs
 <li><b>A wording flag on a URL</b> (a hype word inside the slug of a source's link). Rule: a reviewed exception goes in <code>admin/build/wording-allow.txt</code>, one exact substring per line; prose is reworded instead.</li>
 <li><b>The pending version written out in this handbook</b> was stamped by CI into the release number, so the page told agents the wrong value. Rule: never write the pending version literally in served text; point to <code>version.txt</code> or <code>release_stamp.py</code>.</li>
 <li><b>Pronouns guessed from a name</b> in a figure and a summary. Rule: they/them unless told otherwise.</li>
+<li><b>A writer pushed an unsigned commit</b> two days after the one-writer rule began, having worked from an older copy of this handbook, and CI refused it. Rule: read <code>admin/writer/README.md</code> and <code>register.json</code> at the start of every session, and sign every commit.</li>
 </ul>
 <h2 id="limits">What this does not claim</h2>
 <ul>

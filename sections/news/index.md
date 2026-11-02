@@ -2,7 +2,12 @@
 
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
 
-48 articles, newest first.
+50 articles, newest first.
+
+## November 2026
+
+- [Separate Ways, explained: what my brother's synth video shows, frame by frame, and why describing work at the moment you make it is the first step to publishing it](../../articles/separate-ways-explained.md), 2026-11-02, 7 min.
+- [Four iPhones and an iPad: how my brother filmed a three-camera music video with old phones synced live to Final Cut Pro, a feature Apple shipped in 2024 that he found by accident](../../articles/four-iphones-and-an-ipad.md), 2026-11-02, 4 min.
 
 ## October 2026
 

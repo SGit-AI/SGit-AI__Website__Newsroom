@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-29 | published | 2,419 | first published | [`a4655eab3`](https://github.com/SGit-AI/SGit-AI__Website/commit/a4655eab3c26a10e0337e86a21bde33e02534b61) | [current](../agents-have-an-identity-now.md) |
+| **v1.0.0** | 2026-10-29 | published | 2,419 | first published | [`9ae69d479`](https://github.com/SGit-AI/SGit-AI__Website/commit/9ae69d4793a08bceba67469a8eb1e22ff8aba296) | [current](../agents-have-an-identity-now.md) |
 
 [← Back to the article](../agents-have-an-identity-now.md) · [All articles](../index.md)
 

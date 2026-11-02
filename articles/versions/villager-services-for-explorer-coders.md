@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-31 | published | 1,961 | first published | [`2a80e26d9`](https://github.com/SGit-AI/SGit-AI__Website/commit/2a80e26d903d9d850946c9b4fe09eff0fa7e0d31) | [current](../villager-services-for-explorer-coders.md) |
+| **v1.0.0** | 2026-10-31 | published | 1,961 | first published | [`99e843875`](https://github.com/SGit-AI/SGit-AI__Website/commit/99e8438756d1b7342f640475992ab890e6ab67a8) | [current](../villager-services-for-explorer-coders.md) |
 
 [← Back to the article](../villager-services-for-explorer-coders.md) · [All articles](../index.md)
 

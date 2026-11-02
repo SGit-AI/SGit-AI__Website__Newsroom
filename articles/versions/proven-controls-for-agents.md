@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-30 | published | 3,797 | first published | [`0bef448db`](https://github.com/SGit-AI/SGit-AI__Website/commit/0bef448db87b3f5962fa07f662e9fb6d700bb5df) | [current](../proven-controls-for-agents.md) |
+| **v1.0.0** | 2026-10-30 | published | 3,797 | first published | [`b41dd4318`](https://github.com/SGit-AI/SGit-AI__Website/commit/b41dd431887f6e94ec904b9c5af5ea1485daa255) | [current](../proven-controls-for-agents.md) |
 
 [← Back to the article](../proven-controls-for-agents.md) · [All articles](../index.md)
 

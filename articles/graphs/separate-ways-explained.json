@@ -1,0 +1,157 @@
+{
+  "slug": "separate-ways-explained",
+  "teaser": "A composer's synth video of Journey's Separate Ways, explained frame by frame, and why describing work as you make it matters.",
+  "topics": [
+    "news-and-evidence",
+    "agents-and-policy"
+  ],
+  "core_idea": "A three-camera video of the Separate Ways synth part means little to most viewers. Explained by voice and checked by an agent, it becomes a page: a Bluetooth MIDI keyboard, a Behringer Pro-800 copying the Prophet-600, chorus and delay, and decay turned down live so the delay repeats a staccato chord. The checking corrected two remembered details, and a side remark became a second article. Capturing work at the moment of creation is the first step to publishing it.",
+  "nodes": [
+    {
+      "id": "video",
+      "label": "Three frames, one take",
+      "kind": "artefact",
+      "summary": "The synth part, from three cameras."
+    },
+    {
+      "id": "explain",
+      "label": "Explained by voice",
+      "kind": "method",
+      "summary": "The same evening."
+    },
+    {
+      "id": "chain",
+      "label": "The signal chain",
+      "kind": "concept",
+      "summary": "Bluetooth MIDI, Pro-800, chorus, delay."
+    },
+    {
+      "id": "trick",
+      "label": "Staccato into delay",
+      "kind": "example",
+      "summary": "Decay turned down live."
+    },
+    {
+      "id": "checked",
+      "label": "What the checking corrected",
+      "kind": "claim",
+      "summary": "Jupiter-8 on the record; a Prophet-600 copy."
+    },
+    {
+      "id": "side",
+      "label": "A side-quest",
+      "kind": "example",
+      "summary": "Four iPhones and an iPad."
+    },
+    {
+      "id": "market",
+      "label": "Producers and people hiring",
+      "kind": "concept",
+      "summary": "The viewers who want to know."
+    },
+    {
+      "id": "moment",
+      "label": "Capture at the moment of creation",
+      "kind": "claim",
+      "summary": "Or it never gets published."
+    },
+    {
+      "id": "loop",
+      "label": "Ideas compound",
+      "kind": "claim",
+      "summary": "Captured ideas help the next session."
+    }
+  ],
+  "edges": [
+    {
+      "from": "explain",
+      "to": "video",
+      "rel": "answers"
+    },
+    {
+      "from": "chain",
+      "to": "explain",
+      "rel": "example-of"
+    },
+    {
+      "from": "trick",
+      "to": "chain",
+      "rel": "extends"
+    },
+    {
+      "from": "checked",
+      "to": "explain",
+      "rel": "depends-on"
+    },
+    {
+      "from": "side",
+      "to": "explain",
+      "rel": "produces"
+    },
+    {
+      "from": "market",
+      "to": "video",
+      "rel": "depends-on"
+    },
+    {
+      "from": "moment",
+      "to": "explain",
+      "rel": "produces"
+    },
+    {
+      "from": "loop",
+      "to": "moment",
+      "rel": "extends"
+    },
+    {
+      "from": "checked",
+      "to": "chain",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "four-iphones-and-an-ipad",
+      "a-website-for-my-brother"
+    ],
+    "pages": [],
+    "sites": [
+      "https://midi.org/midi-over-bluetooth-low-energy-ble-midi",
+      "https://www.behringer.com/en/products/0718-ABF"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Describe, do not write.",
+      "why": "Why this is the first step."
+    },
+    {
+      "text": "The side-quests are the gold.",
+      "why": "Why this is the first step."
+    },
+    {
+      "text": "I put this video to show how it works.",
+      "why": "What he explained."
+    }
+  ],
+  "figures": [
+    {
+      "file": "sw-frames.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sw-frames.webp",
+      "caption": "Three moments of Gabriel's Separate Ways video, each from three cameras: beginning, middle and end.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "sw-chain.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sw-chain.webp",
+      "caption": "The signal chain in the video, and the trick at the end: decay turned down, so the delay repeats a short chord.",
+      "kind": "process"
+    },
+    {
+      "file": "sw-moment.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sw-moment.webp",
+      "caption": "One video, explained by voice the same evening, became two articles once an agent checked and packaged it.",
+      "kind": "process"
+    }
+  ]
+}

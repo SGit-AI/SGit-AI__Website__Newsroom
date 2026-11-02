@@ -1,0 +1,154 @@
+{
+  "slug": "sellable-units",
+  "teaser": "The newsroom's reading meter on a composer's site: sellable units, pathways to a buyer, and CC BY with a paid licence.",
+  "topics": [
+    "startups-and-strategy",
+    "news-and-evidence"
+  ],
+  "core_idea": "A composer's site should look like a composer's site, with the newsroom's way to be paid added through api.newsroom.sgit.ai: a meter element on each page, £5 of starting credit, a few pence a page, a balance that can go negative and Stripe top-ups. Every lesson, score, analysis, how-to and master becomes a sellable unit, and pathways lead from a platform viewer to a page, more pages, a top-up and larger purchases. CC BY with a paid licence lets works travel, without selling exclusivity.",
+  "nodes": [
+    {
+      "id": "look",
+      "label": "Not a newsroom's look",
+      "kind": "claim",
+      "summary": "A composer's site, with a meter."
+    },
+    {
+      "id": "meter",
+      "label": "The meter",
+      "kind": "artefact",
+      "summary": "£5 credit, pence a page, top-ups."
+    },
+    {
+      "id": "api",
+      "label": "api.newsroom.sgit.ai",
+      "kind": "artefact",
+      "summary": "An element, a config, account pages."
+    },
+    {
+      "id": "units",
+      "label": "Sellable units",
+      "kind": "concept",
+      "summary": "Lessons, scores, analyses, masters."
+    },
+    {
+      "id": "pathways",
+      "label": "Pathways to a buyer",
+      "kind": "method",
+      "summary": "Found, page, more, top-up, buy."
+    },
+    {
+      "id": "lists",
+      "label": "Reading lists as syllabi",
+      "kind": "example",
+      "summary": "A link after each lesson."
+    },
+    {
+      "id": "licences",
+      "label": "CC BY and a paid licence",
+      "kind": "method",
+      "summary": "Other terms, not exclusivity."
+    },
+    {
+      "id": "market",
+      "label": "Musicians, producers, students",
+      "kind": "concept",
+      "summary": "Demanding and large."
+    },
+    {
+      "id": "habit",
+      "label": "A sellable unit a day",
+      "kind": "claim",
+      "summary": "The workflow is the product."
+    }
+  ],
+  "edges": [
+    {
+      "from": "api",
+      "to": "meter",
+      "rel": "produces"
+    },
+    {
+      "from": "meter",
+      "to": "look",
+      "rel": "depends-on"
+    },
+    {
+      "from": "units",
+      "to": "pathways",
+      "rel": "produces"
+    },
+    {
+      "from": "pathways",
+      "to": "meter",
+      "rel": "depends-on"
+    },
+    {
+      "from": "lists",
+      "to": "pathways",
+      "rel": "example-of"
+    },
+    {
+      "from": "licences",
+      "to": "units",
+      "rel": "extends"
+    },
+    {
+      "from": "market",
+      "to": "pathways",
+      "rel": "depends-on"
+    },
+    {
+      "from": "habit",
+      "to": "units",
+      "rel": "produces"
+    },
+    {
+      "from": "look",
+      "to": "api",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-reading-account-as-built",
+      "paying-after-the-value",
+      "a-website-for-my-brother",
+      "four-iphones-and-an-ipad",
+      "separate-ways-explained"
+    ],
+    "pages": [],
+    "sites": [
+      "https://api.newsroom.sgit.ai/",
+      "https://creativecommons.org/faq/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Money comes from a path, not a page.",
+      "why": "Pathways."
+    },
+    {
+      "text": "So the workflow is the product.",
+      "why": "The habit."
+    },
+    {
+      "text": "A song that nobody can use goes nowhere.",
+      "why": "Licences: CC BY, with a paid licence alongside."
+    }
+  ],
+  "figures": [
+    {
+      "file": "sel-units.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sel-units.webp",
+      "caption": "Sellable units: lessons, scores, analyses and masters as pages on his own site, each with the newsroom's meter.",
+      "kind": "architecture"
+    },
+    {
+      "file": "sel-pathways.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sel-pathways.webp",
+      "caption": "The pathways: found on a platform, a page on his site, more pages, a top-up, then a purchase.",
+      "kind": "process"
+    }
+  ]
+}

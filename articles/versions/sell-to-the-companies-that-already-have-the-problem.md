@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-31 | published | 1,357 | first published | [`4fe72a72d`](https://github.com/SGit-AI/SGit-AI__Website/commit/4fe72a72d2b5f641e4693548ffcbbdea7b31c0d5) | [current](../sell-to-the-companies-that-already-have-the-problem.md) |
+| **v1.0.0** | 2026-10-31 | published | 1,357 | first published | [`c81d6ce30`](https://github.com/SGit-AI/SGit-AI__Website/commit/c81d6ce30a05991570d3c68cabe01ae59e67808f) | [current](../sell-to-the-companies-that-already-have-the-problem.md) |
 
 [← Back to the article](../sell-to-the-companies-that-already-have-the-problem.md) · [All articles](../index.md)
 

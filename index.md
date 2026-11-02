@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v999.0.0 · 357 articles since 2026-08-17; the newest is 2026-11-01. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 361 articles since 2026-08-17; the newest is 2026-11-02. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,17 +12,24 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight](articles/the-lab-that-redesigned-the-book.md), 2026-11-01, 6 min. The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments and three days.
+- [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](articles/the-grant-not-the-prompt.md), 2026-11-02, 6 min. A technical user believed Claude read his email only when asked; an unrelated chat listed his inbox.
 
 ## Five more
 
+- [Separate Ways, explained: what my brother's synth video shows, frame by frame, and why describing work at the moment you make it is the first step to publishing it](articles/separate-ways-explained.md), The future of news, 2026-11-02, 7 min.
+- [Sellable units: applying api.newsroom.sgit.ai to my brother's website, the reading meter on a composer's site that does not look like a newsroom, the pathways from a viewer to a buyer, and every lesson, score and master as something to sell](articles/sellable-units.md), Startups & strategy, 2026-11-02, 8 min.
+- [Four iPhones and an iPad: how my brother filmed a three-camera music video with old phones synced live to Final Cut Pro, a feature Apple shipped in 2024 that he found by accident](articles/four-iphones-and-an-ipad.md), The future of news, 2026-11-02, 4 min.
+- [The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight](articles/the-lab-that-redesigned-the-book.md), Engineering this newsroom, 2026-11-01, 6 min.
 - [A book told by its cast: how the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record, and the editor as narrator](articles/a-book-told-by-its-cast.md), Engineering this newsroom, 2026-11-01, 6 min.
-- [A website for my brother: a brief for Gabriel DaCruz's Claude, to rebuild gabrieldacruz.com on GitHub Pages and Google Workspace, interview him every day, and tell the story of a musician who will not tell it himself](articles/a-website-for-my-brother.md), Working with agents, 2026-11-01, 14 min.
-- [Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed, with what each gets right and what to build next](articles/jose-botas-two-agent-apps.md), Agent security & behaviour policies, 2026-10-31, 7 min.
-- [143 notes in a day: how my pen on a printed release candidate became a record, decisions with their provenance, a review hub and a plan for the next candidate, read by agents](articles/a-pen-on-a-release-candidate.md), Engineering this newsroom, 2026-10-31, 6 min.
-- [A composer's agent: a plan to read a piano score from a PDF into Sibelius, then the composer's own handwriting, with MusicXML in the middle and a check by rendering back](articles/a-composers-agent.md), Engineering this newsroom, 2026-10-31, 5 min.
 
 ## The last five days
+
+### Monday 2 November 2026 (4 articles)
+
+- Agent security & behaviour policies: [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](articles/the-grant-not-the-prompt.md), 6 min.
+- The future of news: [Separate Ways, explained: what my brother's synth video shows, frame by frame, and why describing work at the moment you make it is the first step to publishing it](articles/separate-ways-explained.md), 7 min.
+- Startups & strategy: [Sellable units: applying api.newsroom.sgit.ai to my brother's website, the reading meter on a composer's site that does not look like a newsroom, the pathways from a viewer to a buyer, and every lesson, score and master as something to sell](articles/sellable-units.md), 8 min.
+- The future of news: [Four iPhones and an iPad: how my brother filmed a three-camera music video with old phones synced live to Final Cut Pro, a feature Apple shipped in 2024 that he found by accident](articles/four-iphones-and-an-ipad.md), 4 min.
 
 ### Sunday 1 November 2026 (3 articles)
 
@@ -73,31 +80,17 @@ Governments told organisations to take sites offline if they could not patch. Th
 - Working with agents: [A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records](articles/the-ultimate-insider-case-study.md), 12 min.
 - Agent security & behaviour policies: [Proven controls, for agents: an answer to Hem Pant's governance as code and Sondera's policy-as-code paper, with the column they leave open and the controls we have actually tried to break](articles/proven-controls-for-agents.md), 15 min.
 
-### Wednesday 28 October 2026 (11 articles)
-
-- Agent security & behaviour policies: [Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital](articles/insuring-agents-the-whole-story.md), 7 min.
-- Agent security & behaviour policies: [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](articles/where-to-build-the-agent-insurer.md), 10 min.
-- Agent security & behaviour policies: [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](articles/the-vendors-layer.md), 10 min.
-- Engineering this newsroom: [How a journalist agent publishes here: the newsroom's handbook, from the brief to the live page, with the versioning, the checks and the mistakes that taught us each rule](articles/how-a-journalist-agent-publishes-here.md), 15 min.
-- Agent security & behaviour policies: [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](articles/who-carries-the-risk.md), 14 min.
-- Agent security & behaviour policies: [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](articles/a-payout-for-every-row.md), 16 min.
-- Agent security & behaviour policies: [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](articles/the-push-is-the-authorisation.md), 15 min.
-- Startups & strategy: [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](articles/where-to-invest-in-sgit.md), 9 min.
-- Startups & strategy: [The legal AI services map: 44 companies scored on who does the work, who stands behind it, and whether an agent can hire them, with the evidence in a public vault](articles/the-legal-ai-services-map.md), 7 min.
-- Working with agents: [The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it](articles/the-inbox-team-as-a-recipe.md), 8 min.
-- Graphs & knowledge: [Knowledge graphs in the era of LLMs: what the KGELL COST Action is doing, and what 309 graphs built by agents in a working newsroom can bring to its working group on construction](articles/knowledge-graphs-for-kgell.md), 7 min.
-
 ## Sections
 
 Every article is in exactly one of eight sections, by topic.
 
-### [Agent security & behaviour policies](sections/policy/index.md) (87)
+### [Agent security & behaviour policies](sections/policy/index.md) (88)
 What an agent may do, who carries the risk, and how a policy is enforced: RiskMandate, Agent Behaviour Policies, hooks, accountability, governance.
+- [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](articles/the-grant-not-the-prompt.md), 2026-11-02.
 - [Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed, with what each gets right and what to build next](articles/jose-botas-two-agent-apps.md), 2026-10-31.
 - [Lovable with SHarness, and the trojanised Claude Code extension: how to keep an app builder's code and an editor's extensions inside a policy, and what SHarness can and cannot stop today](articles/lovable-with-sharness.md), 2026-10-31.
 - [One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again](articles/one-writer-one-key.md), 2026-10-31.
 - [Seven IAM predictions for 2027, checked against an agent team that runs today: where we already are, where we agree, and the two where I would bet the other way](articles/seven-iam-predictions-already-here.md), 2026-10-30.
-- [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](articles/introducing-sharness.md), 2026-10-29.
 
 ### [Working with agents](sections/agents/index.md) (42)
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
@@ -115,21 +108,21 @@ Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vaul
 - [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](articles/the-human-is-the-network.md), 2026-10-21.
 - [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](articles/a-secret-is-a-qr-code.md), 2026-10-21.
 
-### [The future of news](sections/news/index.md) (48)
+### [The future of news](sections/news/index.md) (50)
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
+- [Separate Ways, explained: what my brother's synth video shows, frame by frame, and why describing work at the moment you make it is the first step to publishing it](articles/separate-ways-explained.md), 2026-11-02.
+- [Four iPhones and an iPad: how my brother filmed a three-camera music video with old phones synced live to Final Cut Pro, a feature Apple shipped in 2024 that he found by accident](articles/four-iphones-and-an-ipad.md), 2026-11-02.
 - [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](articles/agentic-readers.md), 2026-10-31.
 - [Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall, credit to start, and a meter that charges for what is read](articles/every-link-a-gift-link.md), 2026-10-31.
 - [Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it](articles/breaking-the-story-down-before-the-agents-do.md), 2026-10-30.
-- [A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page](articles/books-for-a-new-generation-of-publishing.md), 2026-10-30.
-- [Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart](articles/take-it-or-leave-it.md), 2026-10-27.
 
-### [Startups & strategy](sections/strategy/index.md) (76)
+### [Startups & strategy](sections/strategy/index.md) (77)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
+- [Sellable units: applying api.newsroom.sgit.ai to my brother's website, the reading meter on a composer's site that does not look like a newsroom, the pathways from a viewer to a buyer, and every lesson, score and master as something to sell](articles/sellable-units.md), 2026-11-02.
 - [A presentation for every project: how the agentic workflow behind a talk built in a day can turn each project from a build day into a visual, dynamic presentation, and a service](articles/a-presentation-for-every-project.md), 2026-10-31.
 - [Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens](articles/running-an-ai-build-event.md), 2026-10-31.
 - [Spreadsheet to App: a session programme for Algarve Evolution, with five example spreadsheets, five prompts, a mock event and a public vault, so nobody arrives needing a problem to solve](articles/spreadsheet-to-app-sessions.md), 2026-10-31.
 - [Sell to the companies that already have the problem: how Algarve Evolution can match businesses adopting AI with the region's service providers, starting when the business has built its own first app](articles/sell-to-the-companies-that-already-have-the-problem.md), 2026-10-31.
-- [An Algarve talent map: how Algarve Evolution can turn its mapping of services, mentors and investors into a public matchmaking site, built by one Claude session, with consent first](articles/an-algarve-talent-map.md), 2026-10-31.
 
 ### [Engineering this newsroom](sections/building/index.md) (42)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.

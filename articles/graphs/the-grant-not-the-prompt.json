@@ -1,0 +1,144 @@
+{
+  "slug": "the-grant-not-the-prompt",
+  "teaser": "A technical user believed Claude read his email only when asked; an unrelated chat listed his inbox.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "A technical user expected Claude to read his email only in the one conversation where he asked, and his daily forum task never to touch it. In an unrelated chat, asked about his inbox, Claude listed it: a connected connector is available in every conversation and to scheduled tasks. The authority was granted at the connection, not the prompt. With private data, untrusted content and a way to send, the setup has the lethal trifecta. RiskMandate measures this gap between mandate and reach and closes it with enforced policy.",
+  "nodes": [
+    {
+      "id": "user",
+      "label": "A technical user",
+      "kind": "example",
+      "summary": "Chat, Cowork, a daily task."
+    },
+    {
+      "id": "mandate",
+      "label": "The mandate",
+      "kind": "concept",
+      "summary": "Email only when he asks."
+    },
+    {
+      "id": "reach",
+      "label": "The reach",
+      "kind": "concept",
+      "summary": "Every chat and task can read."
+    },
+    {
+      "id": "demo",
+      "label": "The demonstration",
+      "kind": "example",
+      "summary": "An unrelated chat lists the inbox."
+    },
+    {
+      "id": "grant",
+      "label": "Authorisation at the grant",
+      "kind": "claim",
+      "summary": "Not at the prompt."
+    },
+    {
+      "id": "injection",
+      "label": "Prompt injection",
+      "kind": "concept",
+      "summary": "Text that carries instructions."
+    },
+    {
+      "id": "trifecta",
+      "label": "The lethal trifecta",
+      "kind": "concept",
+      "summary": "Private data, untrusted content, a way out."
+    },
+    {
+      "id": "policy",
+      "label": "Policy that closes the gap",
+      "kind": "method",
+      "summary": "Prompt, hook, or no capability."
+    },
+    {
+      "id": "today",
+      "label": "What a user can do today",
+      "kind": "method",
+      "summary": "Turn off, block, separate."
+    }
+  ],
+  "edges": [
+    {
+      "from": "user",
+      "to": "mandate",
+      "rel": "produces"
+    },
+    {
+      "from": "demo",
+      "to": "reach",
+      "rel": "example-of"
+    },
+    {
+      "from": "reach",
+      "to": "mandate",
+      "rel": "contrasts"
+    },
+    {
+      "from": "grant",
+      "to": "reach",
+      "rel": "produces"
+    },
+    {
+      "from": "injection",
+      "to": "reach",
+      "rel": "depends-on"
+    },
+    {
+      "from": "trifecta",
+      "to": "injection",
+      "rel": "extends"
+    },
+    {
+      "from": "policy",
+      "to": "reach",
+      "rel": "answers"
+    },
+    {
+      "from": "today",
+      "to": "policy",
+      "rel": "example-of"
+    },
+    {
+      "from": "demo",
+      "to": "grant",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "what-can-your-agent-reach"
+    ],
+    "pages": [],
+    "sites": [
+      "https://support.claude.com/en/articles/13364135-use-claude-cowork-safely",
+      "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The order was a prompt; the authorisation was the grant he gave when he connected Gmail.",
+      "why": "The demonstration: the reach."
+    },
+    {
+      "text": "Safety by uselessness does not last.",
+      "why": "Why the prompt is not the control."
+    },
+    {
+      "text": "It did exactly what it was built to do.",
+      "why": "What RiskMandate does with this."
+    }
+  ],
+  "figures": [
+    {
+      "file": "grt-gap.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/grt-gap.webp",
+      "caption": "What a user expected his Claude could do, and what connecting Gmail had granted: the mandate and the reach.",
+      "kind": "comparison"
+    }
+  ]
+}
