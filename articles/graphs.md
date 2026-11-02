@@ -14,13 +14,13 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-356 of 356 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+357 of 357 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-356 articles, 1720 links between them (2648 mentions in all). 297 articles cite an earlier one; 84 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 30 articles not yet linked either way.
+357 articles, 1722 links between them (2650 mentions in all). 298 articles cite an earlier one; 84 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 30 articles not yet linked either way.
 
 ## [The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight](the-lab-that-redesigned-the-book.md)
 
@@ -73,6 +73,35 @@ From a page-7 panel of the talk's nine agents, the editor asked for characters a
 > Every trait rests on the record. The bible's first rule.
 
 builds on [The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight](#the-lab-that-redesigned-the-book), [A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records](#the-ultimate-insider-case-study), [Discovering the book: how a team of agents built gen-z-developers.sgit.ai in one evening, two release candidates, and a new positioning that only appeared after the first](#discovering-the-book), [143 notes in a day: how my pen on a printed release candidate became a record, decisions with their provenance, a review hub and a plan for the next candidate, read by agents](#a-pen-on-a-release-candidate); continued by [The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight](#the-lab-that-redesigned-the-book).
+
+## [A website for my brother: a brief for Gabriel DaCruz's Claude, to rebuild gabrieldacruz.com on GitHub Pages and Google Workspace, interview him every day, and tell the story of a musician who will not tell it himself](a-website-for-my-brother.md)
+
+2026-11-01 · Agents & policyNews & evidence
+
+A brilliant musician who does not promote himself has 10,200 Instagram followers and an album on Spotify with nowhere to send anyone, and a dead site. The brief gives his own Claude the newsroom's architecture: a GitHub repository he owns, GitHub Pages at his domain, Google Workspace with a mailbox for him and one for the agent, platforms through links and embeds, a daily interview by voice memo that becomes a newsroom, a life story written one conversation at a time with nothing published until he confirms it, and a weekly brief back to his brother.
+
+*[diagram]*
+**claim**method**artefact**example
+
+**11 nodes, 11 edges**
+
+- **A musician who undersells himself** (example) Composer, arranger, producer, conductor.
+- **What the web shows** (example) Instagram followers, a dead site, a Patreon.
+- **A repository he owns** (artefact) GitHub Pages at his domain.
+- **Google Workspace** (method) His mailbox and the agent's.
+- **The brief for his Claude** (artefact) Accounts, DNS, repository, connectors.
+- **Interviews by the specific** (method) Facts, not adjectives.
+- **Nothing unconfirmed published** (claim) TO CONFIRM stays off public pages.
+- **The daily loop and the newsroom** (method) A memo becomes a post.
+- **A weekly brief back** (artefact) For him and for his brother.
+- **Own the masters, project the rest** (claim) A page per work; platforms get copies.
+- **Everything online, now** (method) Lose every computer, lose nothing.
+
+> Ask for the specific, not the adjective Interviewing a man who undersells himself.
+
+> never upload anything straight to a platform Own the masters, project everything else.
+
+builds on [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](#websites-you-own), [From Lovable to your own newsroom: a brief for José Bota and his agent, to put every app on GitHub Pages under his own domain, and publish each one as an article](#from-lovable-to-your-own-newsroom).
 
 ## [Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed, with what each gets right and what to build next](jose-botas-two-agent-apps.md)
 
@@ -281,7 +310,7 @@ José Bota's Lovable tools that measure an agent's reach need a home: a brief hi
 
 > the brand is him Why his own domain.
 
-builds on [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [PHP October 2026, at 8pm: where the php2shell story stands, and a guided tour of the site that tracks it, built in one day by a team of agents from an evidence vault anyone can read](#php-october-at-8pm), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](#villager-services-for-explorer-coders), [Lovable with SHarness, and the trojanised Claude Code extension: how to keep an app builder's code and an editor's extensions inside a policy, and what SHarness can and cannot stop today](#lovable-with-sharness); continued by [Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed, with what each gets right and what to build next](#jose-botas-two-agent-apps).
+builds on [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [PHP October 2026, at 8pm: where the php2shell story stands, and a guided tour of the site that tracks it, built in one day by a team of agents from an evidence vault anyone can read](#php-october-at-8pm), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](#villager-services-for-explorer-coders), [Lovable with SHarness, and the trojanised Claude Code extension: how to keep an app builder's code and an editor's extensions inside a policy, and what SHarness can and cannot stop today](#lovable-with-sharness); continued by [A website for my brother: a brief for Gabriel DaCruz's Claude, to rebuild gabrieldacruz.com on GitHub Pages and Google Workspace, interview him every day, and tell the story of a musician who will not tell it himself](#a-website-for-my-brother), [Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed, with what each gets right and what to build next](#jose-botas-two-agent-apps).
 
 ## [Sell to the companies that already have the problem: how Algarve Evolution can match businesses adopting AI with the region's service providers, starting when the business has built its own first app](sell-to-the-companies-that-already-have-the-problem.md)
 
@@ -1622,7 +1651,7 @@ Selling AI-built websites by the month gets the economics wrong: rent pays most 
 
 > Every engagement is finite The model I propose.
 
-continued by [Joining Algarve Evolution: The Cyber Boardroom takes the startup membership, and what we can share with the region, our workflows and our technology, all of it open source](#joining-algarve-evolution), [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](#villager-services-for-explorer-coders), [From a checklist to an app you calibrate: your list is already an information system, so build its smallest version in half an hour, use it, log every run, and let it grow](#from-a-checklist-to-an-app).
+continued by [A website for my brother: a brief for Gabriel DaCruz's Claude, to rebuild gabrieldacruz.com on GitHub Pages and Google Workspace, interview him every day, and tell the story of a musician who will not tell it himself](#a-website-for-my-brother), [Joining Algarve Evolution: The Cyber Boardroom takes the startup membership, and what we can share with the region, our workflows and our technology, all of it open source](#joining-algarve-evolution), [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](#villager-services-for-explorer-coders), [From a checklist to an app you calibrate: your list is already an information system, so build its smallest version in half an hour, use it, log every run, and let it grow](#from-a-checklist-to-an-app).
 
 ## [Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it](inside-kitewing-websites.md)
 

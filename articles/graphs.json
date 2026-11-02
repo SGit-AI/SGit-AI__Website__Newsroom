@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-11-01",
+  "generated": "2026-11-02",
   "site_version": "v0.7.87",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
@@ -408,6 +408,228 @@
           {
             "text": "Was the brake late? Or was it right on time? You can tell me.",
             "why": "The conductor, in therapy."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-website-for-my-brother",
+      "title": "A website for my brother: a brief for Gabriel DaCruz's Claude, to rebuild gabrieldacruz.com on GitHub Pages and Google Workspace, interview him every day, and tell the story of a musician who will not tell it himself",
+      "date": "2026-11-01",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-website-for-my-brother.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-website-for-my-brother.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-website-for-my-brother.webp",
+      "teaser": "A brief for Gabriel DaCruz's Claude: his site on GitHub Pages, Google Workspace, daily interviews and a newsroom.",
+      "topics": [
+        "agents-and-policy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "music",
+        "musicians",
+        "agents",
+        "github-pages",
+        "google-workspace",
+        "newsroom",
+        "interviews",
+        "brief",
+        "vaults",
+        "article"
+      ],
+      "links_out": [
+        "websites-you-own",
+        "from-lovable-to-your-own-newsroom"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "gd-before-after.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/gd-before-after.webp",
+          "caption": "gabrieldacruz.com now, and the setup this brief gives his Claude: a site he owns, run with an agent.",
+          "kind": "architecture"
+        },
+        {
+          "file": "gd-platforms.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/gd-platforms.webp",
+          "caption": "What an agent can do on each platform, and what stays with him, from each platform's documentation.",
+          "kind": "comparison"
+        },
+        {
+          "file": "gd-projections.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/gd-projections.webp",
+          "caption": "The artist, the works, the masters he controls, a page per work, and a copy made for each platform.",
+          "kind": "architecture"
+        },
+        {
+          "file": "gd-site.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/gd-site.webp",
+          "caption": "The first pass of gabrieldacruz.com: the home page, the admin page with what waits for him, and a phone.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "gd-loop.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/gd-loop.webp",
+          "caption": "The daily loop: a voice memo, a transcript, a post he confirms, a check, and a weekly brief.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "a-website-for-my-brother",
+        "teaser": "A brief for Gabriel DaCruz's Claude: his site on GitHub Pages, Google Workspace, daily interviews and a newsroom.",
+        "topics": [
+          "agents-and-policy",
+          "news-and-evidence"
+        ],
+        "core_idea": "A brilliant musician who does not promote himself has 10,200 Instagram followers and an album on Spotify with nowhere to send anyone, and a dead site. The brief gives his own Claude the newsroom's architecture: a GitHub repository he owns, GitHub Pages at his domain, Google Workspace with a mailbox for him and one for the agent, platforms through links and embeds, a daily interview by voice memo that becomes a newsroom, a life story written one conversation at a time with nothing published until he confirms it, and a weekly brief back to his brother.",
+        "nodes": [
+          {
+            "id": "gabriel",
+            "label": "A musician who undersells himself",
+            "kind": "example",
+            "summary": "Composer, arranger, producer, conductor."
+          },
+          {
+            "id": "today",
+            "label": "What the web shows",
+            "kind": "example",
+            "summary": "Instagram followers, a dead site, a Patreon."
+          },
+          {
+            "id": "repo",
+            "label": "A repository he owns",
+            "kind": "artefact",
+            "summary": "GitHub Pages at his domain."
+          },
+          {
+            "id": "workspace",
+            "label": "Google Workspace",
+            "kind": "method",
+            "summary": "His mailbox and the agent's."
+          },
+          {
+            "id": "brief",
+            "label": "The brief for his Claude",
+            "kind": "artefact",
+            "summary": "Accounts, DNS, repository, connectors."
+          },
+          {
+            "id": "interviews",
+            "label": "Interviews by the specific",
+            "kind": "method",
+            "summary": "Facts, not adjectives."
+          },
+          {
+            "id": "confirm",
+            "label": "Nothing unconfirmed published",
+            "kind": "claim",
+            "summary": "TO CONFIRM stays off public pages."
+          },
+          {
+            "id": "loop",
+            "label": "The daily loop and the newsroom",
+            "kind": "method",
+            "summary": "A memo becomes a post."
+          },
+          {
+            "id": "report",
+            "label": "A weekly brief back",
+            "kind": "artefact",
+            "summary": "For him and for his brother."
+          },
+          {
+            "id": "masters",
+            "label": "Own the masters, project the rest",
+            "kind": "claim",
+            "summary": "A page per work; platforms get copies."
+          },
+          {
+            "id": "archive",
+            "label": "Everything online, now",
+            "kind": "method",
+            "summary": "Lose every computer, lose nothing."
+          }
+        ],
+        "edges": [
+          {
+            "from": "today",
+            "to": "gabriel",
+            "rel": "example-of"
+          },
+          {
+            "from": "brief",
+            "to": "repo",
+            "rel": "produces"
+          },
+          {
+            "from": "brief",
+            "to": "workspace",
+            "rel": "produces"
+          },
+          {
+            "from": "interviews",
+            "to": "loop",
+            "rel": "produces"
+          },
+          {
+            "from": "confirm",
+            "to": "loop",
+            "rel": "depends-on"
+          },
+          {
+            "from": "loop",
+            "to": "repo",
+            "rel": "depends-on"
+          },
+          {
+            "from": "report",
+            "to": "loop",
+            "rel": "depends-on"
+          },
+          {
+            "from": "repo",
+            "to": "today",
+            "rel": "contrasts"
+          },
+          {
+            "from": "interviews",
+            "to": "gabriel",
+            "rel": "answers"
+          },
+          {
+            "from": "masters",
+            "to": "repo",
+            "rel": "depends-on"
+          },
+          {
+            "from": "archive",
+            "to": "masters",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "websites-you-own",
+            "from-lovable-to-your-own-newsroom"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.patreon.com/GabrielDaCruz",
+            "https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Ask for the specific, not the adjective",
+            "why": "Interviewing a man who undersells himself."
+          },
+          {
+            "text": "never upload anything straight to a platform",
+            "why": "Own the masters, project everything else."
+          },
+          {
+            "text": "The work is real; the web just does not know.",
+            "why": "What the web shows today."
           }
         ]
       }
@@ -1661,6 +1883,7 @@
         "lovable-with-sharness"
       ],
       "links_in": [
+        "a-website-for-my-brother",
         "jose-botas-two-agent-apps"
       ],
       "figures": [
@@ -11367,6 +11590,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "a-website-for-my-brother",
         "joining-algarve-evolution",
         "villager-services-for-explorer-coders",
         "from-a-checklist-to-an-app"

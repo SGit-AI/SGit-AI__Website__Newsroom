@@ -2,7 +2,11 @@
 
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
 
-41 articles, newest first.
+42 articles, newest first.
+
+## November 2026
+
+- [A website for my brother: a brief for Gabriel DaCruz's Claude, to rebuild gabrieldacruz.com on GitHub Pages and Google Workspace, interview him every day, and tell the story of a musician who will not tell it himself](../../articles/a-website-for-my-brother.md), 2026-11-01, 14 min.
 
 ## October 2026
 

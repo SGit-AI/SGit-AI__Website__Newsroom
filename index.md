@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.31 · 356 articles since 2026-08-17; the newest is 2026-11-01. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 357 articles since 2026-08-17; the newest is 2026-11-01. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -17,17 +17,18 @@ Governments told organisations to take sites offline if they could not patch. Th
 ## Five more
 
 - [A book told by its cast: how the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record, and the editor as narrator](articles/a-book-told-by-its-cast.md), Engineering this newsroom, 2026-11-01, 6 min.
+- [A website for my brother: a brief for Gabriel DaCruz's Claude, to rebuild gabrieldacruz.com on GitHub Pages and Google Workspace, interview him every day, and tell the story of a musician who will not tell it himself](articles/a-website-for-my-brother.md), Working with agents, 2026-11-01, 14 min.
 - [Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed, with what each gets right and what to build next](articles/jose-botas-two-agent-apps.md), Agent security & behaviour policies, 2026-10-31, 7 min.
 - [143 notes in a day: how my pen on a printed release candidate became a record, decisions with their provenance, a review hub and a plan for the next candidate, read by agents](articles/a-pen-on-a-release-candidate.md), Engineering this newsroom, 2026-10-31, 6 min.
 - [A composer's agent: a plan to read a piano score from a PDF into Sibelius, then the composer's own handwriting, with MusicXML in the middle and a check by rendering back](articles/a-composers-agent.md), Engineering this newsroom, 2026-10-31, 5 min.
-- [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](articles/agentic-readers.md), The future of news, 2026-10-31, 6 min.
 
 ## The last five days
 
-### Sunday 1 November 2026 (2 articles)
+### Sunday 1 November 2026 (3 articles)
 
 - Engineering this newsroom: [The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight](articles/the-lab-that-redesigned-the-book.md), 6 min.
 - Engineering this newsroom: [A book told by its cast: how the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record, and the editor as narrator](articles/a-book-told-by-its-cast.md), 6 min.
+- Working with agents: [A website for my brother: a brief for Gabriel DaCruz's Claude, to rebuild gabrieldacruz.com on GitHub Pages and Google Workspace, interview him every day, and tell the story of a musician who will not tell it himself](articles/a-website-for-my-brother.md), 14 min.
 
 ### Saturday 31 October 2026 (21 articles)
 
@@ -98,13 +99,13 @@ What an agent may do, who carries the risk, and how a policy is enforced: RiskMa
 - [Seven IAM predictions for 2027, checked against an agent team that runs today: where we already are, where we agree, and the two where I would bet the other way](articles/seven-iam-predictions-already-here.md), 2026-10-30.
 - [SHarness: the secure harness we could not find, so we built it, a behaviour policy the Linux kernel enforces for every process an agent starts, and we would like your feedback](articles/introducing-sharness.md), 2026-10-29.
 
-### [Working with agents](sections/agents/index.md) (41)
+### [Working with agents](sections/agents/index.md) (42)
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
+- [A website for my brother: a brief for Gabriel DaCruz's Claude, to rebuild gabrieldacruz.com on GitHub Pages and Google Workspace, interview him every day, and tell the story of a musician who will not tell it himself](articles/a-website-for-my-brother.md), 2026-11-01.
 - [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](articles/the-book-of-the-talk-and-its-companion.md), 2026-10-30.
 - [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](articles/agents-have-an-identity-now.md), 2026-10-29.
 - [A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records](articles/the-ultimate-insider-case-study.md), 2026-10-29.
 - [The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it](articles/the-inbox-team-as-a-recipe.md), 2026-10-28.
-- [What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it](articles/what-an-agent-is.md), 2026-10-27.
 
 ### [sgit & vaults](sections/vaults/index.md) (35)
 Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vault, and what it does that Git does not.
