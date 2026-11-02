@@ -154,6 +154,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#the-push-i
 
 ### Continued by
 
+- [The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work](web-summit-how-we-work.md) How the Web Summit team works with agents: a session per agent, a conductor first, narrow roles, a folder, a key, and coordination as the work.
 - [One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again](one-writer-one-key.md) One writer, one key: a register of writer agents, opened at the editor's word, every release signed, and a closed key never used again.
 - [Seven IAM predictions for 2027, checked against an agent team that runs today: where we already are, where we agree, and the two where I would bet the other way](seven-iam-predictions-already-here.md) Sunnykumar K.'s seven IAM predictions for 2027, checked against agent teams that run today: four already here, one agreed, two different bets.
 - [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](agents-have-an-identity-now.md) A key pair made in every agent session, published with its role in a repository, so any agent can seal a secret to it; what the clouds could add.

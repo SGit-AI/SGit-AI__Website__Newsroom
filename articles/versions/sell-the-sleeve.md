@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-02 | published | 2,061 | first published | this release | [current](../sell-the-sleeve.md) |
+| **v1.0.0** | 2026-11-02 | published | 2,061 | first published | [`90d9bafe1`](https://github.com/SGit-AI/SGit-AI__Website/commit/90d9bafe1d221db598700e40efb820a30aa1f38b) | [current](../sell-the-sleeve.md) |
 
 [← Back to the article](../sell-the-sleeve.md) · [All articles](../index.md)
 

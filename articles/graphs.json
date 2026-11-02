@@ -55,6 +55,193 @@
   ],
   "articles": [
     {
+      "slug": "web-summit-how-we-work",
+      "title": "The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work",
+      "date": "2026-11-02",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/web-summit-how-we-work.html",
+      "markdown": "https://newsroom.sgit.ai/articles/web-summit-how-we-work.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/web-summit-how-we-work.webp",
+      "teaser": "How the Web Summit team works with agents: a session per agent, a conductor first, narrow roles, a folder, a key, and coordination as the work.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "web-summit",
+        "agents",
+        "claude-code",
+        "conductor",
+        "roles",
+        "identity",
+        "keys",
+        "behaviour-policy",
+        "teams",
+        "article"
+      ],
+      "links_out": [
+        "what-can-your-agent-reach",
+        "the-push-is-the-authorisation",
+        "one-writer-one-key",
+        "agents-have-an-identity-now"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "wst-layout.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wst-layout.webp",
+          "caption": "The team's repository: a folder per person, a folder per agent, and what each agent keeps there.",
+          "kind": "architecture"
+        },
+        {
+          "file": "wst-keys.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wst-keys.webp",
+          "caption": "How an agent is accepted, and how a secret reaches it: publish, seal, hand over, open.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "web-summit-how-we-work",
+        "teaser": "How the Web Summit team works with agents: a session per agent, a conductor first, narrow roles, a folder, a key, and coordination as the work.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "For a team of seven people and soon a hundred agents, an agent is a Claude Code session with a thread, files, a repository and a schedule. Everyone starts with a conductor that coordinates their other agents, and every agent gets the narrowest role that makes sense, a behaviour policy and a folder in the repository that holds its memory, so sessions are replaceable. Each agent publishes a public key by push, signs what it publishes, and receives secrets sealed to it as QR codes. Humans give direction and pruning, and because the team breaks every team-size rule, coordination is the work.",
+        "nodes": [
+          {
+            "id": "session",
+            "label": "An agent is a session",
+            "kind": "concept",
+            "summary": "Thread, files, repository, schedule."
+          },
+          {
+            "id": "schedule",
+            "label": "Woken on a schedule",
+            "kind": "concept",
+            "summary": "A chat becomes a team member."
+          },
+          {
+            "id": "conductor",
+            "label": "The conductor first",
+            "kind": "method",
+            "summary": "Coordinates your other agents."
+          },
+          {
+            "id": "roles",
+            "label": "One narrow role each",
+            "kind": "method",
+            "summary": "ROLE.md and a policy."
+          },
+          {
+            "id": "folder",
+            "label": "The folder is the memory",
+            "kind": "claim",
+            "summary": "Sessions are replaceable."
+          },
+          {
+            "id": "keys",
+            "label": "A key per agent",
+            "kind": "method",
+            "summary": "Publish by push, sign, seal."
+          },
+          {
+            "id": "humans",
+            "label": "What humans give",
+            "kind": "claim",
+            "summary": "Direction, judgement, pruning."
+          },
+          {
+            "id": "literal",
+            "label": "Agents are literal",
+            "kind": "example",
+            "summary": "The copied-everything rule."
+          },
+          {
+            "id": "coordination",
+            "label": "Coordination is the work",
+            "kind": "claim",
+            "summary": "Seven people, a hundred agents."
+          }
+        ],
+        "edges": [
+          {
+            "from": "schedule",
+            "to": "session",
+            "rel": "extends"
+          },
+          {
+            "from": "conductor",
+            "to": "session",
+            "rel": "example-of"
+          },
+          {
+            "from": "roles",
+            "to": "conductor",
+            "rel": "extends"
+          },
+          {
+            "from": "folder",
+            "to": "roles",
+            "rel": "depends-on"
+          },
+          {
+            "from": "keys",
+            "to": "session",
+            "rel": "extends"
+          },
+          {
+            "from": "humans",
+            "to": "roles",
+            "rel": "answers"
+          },
+          {
+            "from": "literal",
+            "to": "humans",
+            "rel": "example-of"
+          },
+          {
+            "from": "coordination",
+            "to": "folder",
+            "rel": "depends-on"
+          },
+          {
+            "from": "coordination",
+            "to": "humans",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "web-summit-humans-and-their-agents",
+            "the-push-is-the-authorisation",
+            "agents-have-an-identity-now",
+            "one-writer-one-key",
+            "what-can-your-agent-reach"
+          ],
+          "pages": [],
+          "sites": [
+            "https://code.claude.com/docs/en/claude-code-on-the-web",
+            "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The history matters less than you would think; the folder is the memory.",
+            "why": "Everything in the repository."
+          },
+          {
+            "text": "Each agent was following its rules.",
+            "why": "What humans give."
+          },
+          {
+            "text": "We work in the future, within the limits of the platforms we have now.",
+            "why": "A key for every agent."
+          }
+        ]
+      }
+    },
+    {
       "slug": "sell-the-sleeve",
       "title": "The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault",
       "date": "2026-11-02",
@@ -4383,6 +4570,7 @@
         "three-policies-for-an-agent"
       ],
       "links_in": [
+        "web-summit-how-we-work",
         "agentic-readers"
       ],
       "figures": [
@@ -7488,6 +7676,7 @@
         "the-vendors-layer"
       ],
       "links_in": [
+        "web-summit-how-we-work",
         "one-writer-one-key",
         "web-summit-humans-and-their-agents",
         "signed-email-from-the-agent",
@@ -9496,6 +9685,7 @@
         "secrets-on-public-keys"
       ],
       "links_in": [
+        "web-summit-how-we-work",
         "one-writer-one-key",
         "seven-iam-predictions-already-here",
         "agents-have-an-identity-now",
@@ -35691,6 +35881,7 @@
         "hope-or-enforcement"
       ],
       "links_in": [
+        "web-summit-how-we-work",
         "the-grant-not-the-prompt",
         "jose-botas-two-agent-apps",
         "from-lovable-to-your-own-newsroom",

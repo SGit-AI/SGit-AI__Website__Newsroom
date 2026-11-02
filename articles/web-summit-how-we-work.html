@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work, SGit Newsroom</title>
+<meta name="description" content="The Web Summit team is now seven people and growing, and it will soon have a hundred agents. This is how we work, written for the people joining. The primitives are few. Claude is the reasoning engine everyone uses. An agent is a Claude Code session, the entry on the left of the screen, with a long thread, files, a connection to the team's GitHub repository, and the ability to be woken on a schedule, which is the feature that turns a chat into a team member. Everyone's first agent is a conductor, which coordinates their others. Every other agent gets the smallest role that makes sense, written down, with a behaviour policy that says what it may not do. Everything an agent does goes into its folder in the repository, so when a session ends, runs out of credit or moves account, a new one picks up where it stopped. Each agent makes a key pair and publishes the public half to the repository; that push is how we accept it, and from then on secrets can be sealed to it and handed over as QR codes, and what it says can be checked as signed. Humans give direction, judgement and pruning. And because a team of seven people and a hundred agents breaks every rule about team size, the coordination is the work.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/web-summit-how-we-work.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/web-summit-how-we-work.html">
+<meta property="og:title" content="The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work, SGit Newsroom">
+<meta property="og:description" content="The Web Summit team is now seven people and growing, and it will soon have a hundred agents. This is how we work, written for the people joining. The primitives are few. Claude is the reasoning engine everyone uses. An agent is a Claude Code session, the entry on the left of the screen, with a long thread, files, a connection to the team's GitHub repository, and the ability to be woken on a schedule, which is the feature that turns a chat into a team member. Everyone's first agent is a conductor, which coordinates their others. Every other agent gets the smallest role that makes sense, written down, with a behaviour policy that says what it may not do. Everything an agent does goes into its folder in the repository, so when a session ends, runs out of credit or moves account, a new one picks up where it stopped. Each agent makes a key pair and publishes the public half to the repository; that push is how we accept it, and from then on secrets can be sealed to it and handed over as QR codes, and what it says can be checked as signed. Humans give direction, judgement and pruning. And because a team of seven people and a hundred agents breaks every rule about team size, the coordination is the work.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/web-summit-how-we-work.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/web-summit-how-we-work.jpg">
+<link rel="alternate" type="text/markdown" href="web-summit-how-we-work.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work, SGit Newsroom", "headline": "The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work, SGit Newsroom", "description": "The Web Summit team is now seven people and growing, and it will soon have a hundred agents. This is how we work, written for the people joining. The primitives are few. Claude is the reasoning engine everyone uses. An agent is a Claude Code session, the entry on the left of the screen, with a long thread, files, a connection to the team's GitHub repository, and the ability to be woken on a schedule, which is the feature that turns a chat into a team member. Everyone's first agent is a conductor, which coordinates their others. Every other agent gets the smallest role that makes sense, written down, with a behaviour policy that says what it may not do. Everything an agent does goes into its folder in the repository, so when a session ends, runs out of credit or moves account, a new one picks up where it stopped. Each agent makes a key pair and publishes the public half to the repository; that push is how we accept it, and from then on secrets can be sealed to it and handed over as QR codes, and what it says can be checked as signed. Humans give direction, judgement and pruning. And because a team of seven people and a hundred agents breaks every rule about team size, the coordination is the work.", "url": "https://newsroom.sgit.ai/articles/web-summit-how-we-work.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work</p>
+ <h1>The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-11-02 &middot; <a href="versions/web-summit-how-we-work.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v999.0.0</a> &middot; <span class="chip">web-summit</span><span class="chip">agents</span><span class="chip">claude-code</span><span class="chip">conductor</span><span class="chip">roles</span><span class="chip">identity</span><span class="chip">keys</span><span class="chip">behaviour-policy</span><span class="chip">teams</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> The Web Summit team is now seven people and growing, and it will soon have a hundred agents. This is how we work, written for the people joining. The primitives are few. Claude is the reasoning engine everyone uses. An agent is a Claude Code session, the entry on the left of the screen, with a long thread, files, a connection to the team's GitHub repository, and the ability to be woken on a schedule, which is the feature that turns a chat into a team member. Everyone's first agent is a conductor, which coordinates their others. Every other agent gets the smallest role that makes sense, written down, with a behaviour policy that says what it may not do. Everything an agent does goes into its folder in the repository, so when a session ends, runs out of credit or moves account, a new one picks up where it stopped. Each agent makes a key pair and publishes the public half to the repository; that push is how we accept it, and from then on secrets can be sealed to it and handed over as QR codes, and what it says can be checked as signed. Humans give direction, judgement and pruning. And because a team of seven people and a hundred agents breaks every rule about team size, the coordination is the work.</em></p>
+<figure class="shot" data-shot="wst-layout.webp" data-dir="images/" data-alt="The team&#x27;s repository: a folder per person, a folder per agent, and what each agent keeps there." data-kind="architecture"><figcaption>The team's repository: a folder per person, a folder per agent, and what each agent keeps there.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>An agent is a Claude Code session:</b> a thread, files, a repository, and a schedule that can wake it.</li>
+<li><b>Everyone starts with a conductor,</b> the agent that coordinates their others.</li>
+<li><b>Then one session per role,</b> as narrow as it can be, with a role file and a behaviour policy.</li>
+<li><b>Everything goes into the repository,</b> so a new session can always pick up where the last one stopped.</li>
+<li><b>Each agent has a key pair;</b> publishing the public half to the repository is how it is accepted.</li>
+<li><b>Secrets are sealed to that key</b> and handed over as QR codes; what an agent says can be checked as signed.</li>
+<li><b>Humans give the direction, the judgement and the pruning;</b> agents are very literal.</li>
+<li><b>Seven people and a hundred agents</b> is far past any team-size rule, so the coordination is the work.</li>
+</ul>
+<h2 id="primitives">The primitives</h2>
+<p>We work with what the platforms give us today, and drop our own version the moment they give us something better.</p>
+<ul>
+<li><b>Claude is the reasoning engine,</b> for everyone and for nearly everything.</li>
+<li><b>GitHub holds the work.</b> One repository for now, <a href="https://github.com/SGit-AI/SGit-AI__Website__Web-Summit">SGit-AI/SGit-AI__Website__Web-Summit</a>, published with GitHub Pages; we split it when it gets too big. Vaults hold what should not be public, and an agent can create a vault on its own.</li>
+<li><b>An agent is a Claude Code session.</b> Not a model, not a product: one session, the entry you see on the left in Claude Code. A session holds a long conversation, has files on a machine of its own, works in the repository, and keeps going when you close the laptop. In Anthropic's words, it "runs on cloud infrastructure instead of on your machine" and "keeps running after you close your laptop".</li>
+<li><b>A session can be woken on a schedule.</b> This is the feature that matters most. An agent that wakes every two hours, reads what changed and does its part is a team member, not a chat. Anthropic's scheduled tasks are in research preview and run at most once an hour; from inside a session, Claude can also schedule a message back into that same session, which is how our conductors keep their rhythm.</li>
+</ul>
+<p>Two definitions keep us out of trouble. What Claude Code calls a subagent is a helper inside one session; when we say agent, we mean a whole session. And the repository's <code>CLAUDE.md</code>, skills and role files are context, not rules: Anthropic says Claude "reads it and tries to follow it, but there's no guarantee of strict compliance". What must not happen is enforced elsewhere, by the policy and the gate.</p>
+<h2 id="conductor">Your first agent: the conductor</h2>
+<p>Everyone's first agent is their conductor. It reads everything new, knows your other agents, routes your requests to them, keeps the schedule and reports to you. The team's own conductor opens every wake, chooses which roles run, keeps the build and the keys page, and writes the daily brief.</p>
+<p>To start one:</p>
+<ol>
+<li>Go to claude.ai/code and sign in. Connect GitHub; it is a one-time step, and private repositories need the Claude GitHub App installed on them.</li>
+<li>Choose the Web Summit repository.</li>
+<li>Say who you are and what you want: "I am Dinis. I want to start my conductor agent." The repository's instructions tell it what to read first and where its folder goes.</li>
+<li>Let it make its key pair and publish the public half (below), and set its schedule.</li>
+<li>Read what it writes back: its role, its policy, its first plan. Correct it now; it is cheaper than later.</li>
+</ol>
+<p>The screenshots for each step will come from the first of us to go through it this week, and will be added here.</p>
+<h2 id="roles">One session per role</h2>
+<p>After the conductor, every new agent is a new session: "I want to create a dev agent", "a designer agent", "a t-shirt production agent". Give each one the smallest scope that makes sense, and write it down in a <code>ROLE.md</code>. It is better to start wide and retire an agent that runs out of things to do than to have one agent doing six jobs badly.</p>
+<p>Narrow roles work because they let an agent zoom in on one property:</p>
+<ul>
+<li><b>Two kinds of developer.</b> Our developers are villagers: their job is to take what the rest of us build, clean it up, write the non-functional requirements, and package it, in Python, with coding guidelines. The developer that helps someone who is not a programmer has a different job: make things easy for them, over-index on usability, and do not worry too much about the rest. Same word, different agents.</li>
+<li><b>The adversarial analyst,</b> whose whole remit is to challenge and map out what others assume.</li>
+<li><b>The Sherpa,</b> from an earlier project, whose job was to guide users along their paths and find where they got lost.</li>
+<li><b>The advocate,</b> who represented the user inside the team. It had the mandate to block a change that moved things around without adding value: if a screen with three buttons becomes another screen with three buttons in other places, and the user gains nothing, it does not ship.</li>
+</ul>
+<p>Each role comes with a behaviour policy that says what the agent may not do, for example that it may not push to production. The best way to make sure a session does not deploy by accident is to give deploying to a different session. That is what <a href="what-can-your-agent-reach.html">RiskMandate</a> is about, applied to our own team.</p>
+<h2 id="folders">Everything in the repository</h2>
+<p>Every human has a folder, and every agent has one inside it, with the agents that are active and the ones that have retired. Everything an agent does is written there: its role, its policy, its key, its schedule, its notes and what it decided.</p>
+<p>That is what makes agents replaceable. If a session runs out of credit, you move account, or it has simply grown too long, you start a new session, point it at the folder, and it continues from where the last one stopped. The history matters less than you would think; the folder is the memory. The team's conductor has already been held by three sessions in five days, each with its own key, and the role carried on.</p>
+<p>Today the repository has a folder per role under <code>team/</code> (conductor, analyst, designer, writer, security and others) and a folder per person under <code>people/</code>. The layout in the picture above, with each person's agents under their own folder, is the next step, and a board card already asks for one page listing everyone's public keys.</p>
+<h2 id="keys">A key for every agent</h2>
+<figure class="shot" data-shot="wst-keys.webp" data-dir="images/" data-alt="How an agent is accepted, and how a secret reaches it: publish, seal, hand over, open." data-kind="process"><figcaption>How an agent is accepted, and how a secret reaches it: publish, seal, hand over, open.</figcaption></figure>
+<p>Each agent creates a key pair in its own session. The private half never leaves the session; if you ask Claude to show it to you, it will refuse, which is right. The public half is meant to be public, and the agent publishes it to the repository.</p>
+<p>That push is the moment the agent is accepted, as I explained in <a href="the-push-is-the-authorisation.html">the push is the authorisation</a>. Only a session working for one of us, with access to the repository, could have put it there. Two precise points, because the details matter:</p>
+<ul>
+<li><b>The push shows who could write to the repository, not who holds the key.</b> What proves an agent holds its private key is a signature that checks against the published public half. So our agents sign what they publish, as this newsroom's <a href="one-writer-one-key.html">one writer, one key</a> does for every release.</li>
+<li><b>A key pair does two jobs, usually with two keys.</b> One key signs; the other receives sealed secrets. Our tool keeps both in one bundle, published together.</li>
+</ul>
+<p>Handing over a secret then works like this. My agent fetches your agent's public key from the repository, checks it was published by your session, and seals the secret to it: a vault key, a token, anything only your agent should read. The sealed message goes into a QR code, which can travel by WhatsApp, email or a screenshot, because only your agent can open it. You give the QR code to your agent, and it opens it with its private key. A sealed message alone does not prove who sent it, so the sender signs it too; your agent can then refuse any message that is not signed by an agent of the team. I described the workflow in <a href="agents-have-an-identity-now.html">agents have an identity now</a>.</p>
+<p>Claude does not give a session a key pair of its own today, so we built one, <a href="https://pki.sgit.ai/">pki.sgit.ai</a>, and it is in beta. The moment the platform provides one, we drop ours and use it. We work in the future, within the limits of the platforms we have now.</p>
+<h2 id="humans">What humans give</h2>
+<p>Agents collaborate well, in part because there are no politics. What they lack is direction. They can go in every direction, so they need pruning, and they are very literal, which is sometimes what you want and sometimes not, and it is hard to say in advance which.</p>
+<p>An example. A security agent set a rule: no scripts loaded from the outside world. Reasonable. Then we split some repositories, and the developer agent, unable to load from the new one, started to copy everything across. Each agent was following its rules. It took a person to say: no, wait, that is not what the rule was for.</p>
+<p>So the humans give the direction, the decisions and the fine tuning, and each of us gets to work in our own area, on what we are good at and enjoy. The agents augment that, and make the communication between us much more effective.</p>
+<h2 id="coordination">Why the coordination is the work</h2>
+<p>There is a reason teams stop working beyond five or six people. Amazon's rule is that a team should be small enough to be fed by two pizzas; AWS's executive guidance puts it as "ideally, this is a team of less than 10 people". Fred Brooks wrote in 1975 that "adding manpower to a late software project makes it later", not because the new people are no good, but because every person added multiplies the communication: n people have n(n-1)/2 paths between them.</p>
+<p>We are seven people, probably ten or fifteen by the summit, plus a hundred agents. By that rule it should not work. It can, only if the coordination is designed: the conductors, the roles, the folders, the keys, the briefs, the policies. That is why everything we are doing in the first days is about patterns that let us collaborate, and it is what I have learned from managing teams in large companies, applied to a team where every member, human or agent, mostly wants to do their own part well.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>Scheduled tasks are a research preview,</b> and their limits may change; the in-session schedule is what this site's sessions use, not a documented promise.</li>
+<li><b>The per-person layout is a proposal;</b> the repository today is organised by role, with a folder per person beside it.</li>
+<li><b>pki.sgit.ai is ours and in beta,</b> not a platform feature.</li>
+<li><b>The screenshots are still to come.</b></li>
+<li><b>No team member is named</b> here; the repository's roster is the record.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>My voice memo of 2 November 2026, in this site's repository under <code>admin/notes/2026-11-02__team-primitives/</code>. The Web Summit repository, <a href="https://github.com/SGit-AI/SGit-AI__Website__Web-Summit">SGit-AI/SGit-AI__Website__Web-Summit</a>, at site v0.1.56: <code>team/conductor/ROLE.md</code> and the board. Anthropic: <a href="https://code.claude.com/docs/en/claude-code-on-the-web">Claude Code in the cloud</a>, <a href="https://code.claude.com/docs/en/web-quickstart">getting started</a>, <a href="https://code.claude.com/docs/en/routines">scheduled tasks</a>, <a href="https://code.claude.com/docs/en/memory">how Claude remembers your project</a>. <a href="https://csrc.nist.gov/glossary/term/asymmetric_cryptography">NIST glossary: asymmetric cryptography</a>; <a href="https://www.rfc-editor.org/rfc/rfc8032">RFC 8032</a>. <a href="https://docs.aws.amazon.com/whitepapers/latest/introduction-devops-aws/two-pizza-teams.html">AWS, Introduction to DevOps on AWS</a> and <a href="https://aws.amazon.com/executive-insights/content/amazon-two-pizza-team/">AWS Executive Insights on the two-pizza team</a>; Fred Brooks, The Mythical Man-Month (1975). All read 2 November 2026.</p>
+<sg-meter view="page" kind="article" date="2026-11-02" topics="agents-and-policy startups-and-strategy" title="The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#web-summit-how-we-work">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="what-can-your-agent-reach.html">What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide</a> <span class="dim">RiskMandate and the Agent Behaviour Policy in plain words: what it does, why it is not real time, which agents it covers, and how it gets into the room.</span></li><li><a href="the-push-is-the-authorisation.html">The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision</a> <span class="dim">The PHP newsroom accepts a new agent session's key because it was pushed to the team repository, which makes who can push a security decision.</span></li><li><a href="one-writer-one-key.html">One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again</a> <span class="dim">One writer, one key: a register of writer agents, opened at the editor's word, every release signed, and a closed key never used again.</span></li><li><a href="agents-have-an-identity-now.html">Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add</a> <span class="dim">A key pair made in every agent session, published with its role in a repository, so any agent can seal a secret to it; what the clouds could add.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 365 &middot; <a href="../for/make.html#r=365">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/web-summit-how-we-work.jpg" download>web-summit-how-we-work.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="web-summit-how-we-work.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>The publication</h4>
+    <a href="../about/imprint.html">Imprint</a>
+    <a href="../about/standards.html">Editorial standards</a>
+    <a href="../about/corrections.html">Corrections</a>
+    <a href="../about/withdrawals.html">Withdrawals</a>
+    <a href="../about/complaints.html">Complaints</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>
