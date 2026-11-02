@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-02 | published | 1,960 | first published | this release | [current](../false-positives-and-the-harness.md) |
+| **v1.0.0** | 2026-11-02 | published | 1,960 | first published | [`5c08526cf`](https://github.com/SGit-AI/SGit-AI__Website/commit/5c08526cf8f9528619baa610d29ce703c5beff01) | [current](../false-positives-and-the-harness.md) |
 
 [← Back to the article](../false-positives-and-the-harness.md) · [All articles](../index.md)
 

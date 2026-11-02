@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-80 articles, newest first.
+81 articles, newest first.
 
 ## November 2026
 
+- [The Web Summit team, part four: the day the agents ran on their own, 75 releases, four people connected, a procurement agent writing to printers, and the behaviour policies catching our own agents out](../../articles/web-summit-part-four.md), 2026-11-02, 6 min.
 - [The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work](../../articles/web-summit-how-we-work.md), 2026-11-02, 9 min.
 - [The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault](../../articles/sell-the-sleeve.md), 2026-11-02, 8 min.
 - [A solution, not a problem: a coach sent me a link to a product he could not sell me, what that moment teaches about business, security teams, bookshops and travel agents, and why RiskMandate has been making the same mistake](../../articles/a-solution-not-a-problem.md), 2026-11-02, 9 min.

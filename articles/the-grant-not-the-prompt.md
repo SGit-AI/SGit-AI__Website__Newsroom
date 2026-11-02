@@ -99,6 +99,10 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#the-gra
 
 - [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](what-can-your-agent-reach.md) RiskMandate and the Agent Behaviour Policy in plain words: what it does, why it is not real time, which agents it covers, and how it gets into the room.
 
+### Continued by
+
+- [The Web Summit team, part four: the day the agents ran on their own, 75 releases, four people connected, a procurement agent writing to printers, and the behaviour policies catching our own agents out](web-summit-part-four.md) The Web Summit team's day of agents on schedules: 75 releases, four people connected, a procurement agent, and policies catching our own agents.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 362 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=362)

@@ -226,6 +226,10 @@ Site & engineeringAgents & policy[This article as a graph →](graphs.md#how-a-j
 
 - [CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why](ci-owns-the-version.md) The pipeline, not whoever pushes, picks the release number: a 2023 scheme now on every site we run.
 
+### Continued by
+
+- [How an agent team briefs its people: one JSON file, one PDF, four questions in a fixed order, copied from the book team to the Web Summit team in one night, the mistakes the method caught, and why this newsroom still briefs me in a chat](how-an-agent-team-briefs-its-people.md) How an agent team briefs its people: four questions in order, one JSON file and a PDF, copied from the book team to the Web Summit team in one night.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 317 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=317)

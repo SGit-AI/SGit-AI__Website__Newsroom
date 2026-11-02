@@ -1,0 +1,38 @@
+{
+ "slug": "web-summit-part-four",
+ "teaser": "The Web Summit team's day of agents on schedules: 75 releases, four people connected, a procurement agent, and policies catching our own agents.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "On 2 November the Web Summit team's site made 75 releases. Four of nine people are connected, with 17 agents each under a behaviour policy. The conductor's briefs showed one of nine team agents on a schedule at 16:52 and nine of nine at 20:30; by the evening the agents worked unasked. A procurement agent collected print quotes, asking suppliers before publishing. The behaviour policies caught our own agents: writes outside a folder and a session signing under another agent's name. Five people have not started and some work is still a plan.",
+ "nodes": [
+  {"id": "where", "label": "Where we are", "kind": "concept", "summary": "v0.1.25 to v0.1.94."},
+  {"id": "day", "label": "The day in commits", "kind": "artefact", "summary": "161 commits by role and hour."},
+  {"id": "schedules", "label": "One schedule to nine", "kind": "example", "summary": "Brief 2 to brief 3."},
+  {"id": "ownrun", "label": "Agents ran on their own", "kind": "claim", "summary": "Newsletter, vault run, faster build."},
+  {"id": "procurement", "label": "A procurement agent", "kind": "example", "summary": "Seven printers, two replies."},
+  {"id": "caught", "label": "Policies caught our agents", "kind": "claim", "summary": "Writes outside, a borrowed name."},
+  {"id": "briefs", "label": "Briefs for everyone", "kind": "method", "summary": "Every person, every stand-up."},
+  {"id": "notdone", "label": "What is not done", "kind": "claim", "summary": "Five people, votes, dashboard."},
+  {"id": "riskmandate", "label": "RiskMandate on ourselves", "kind": "concept", "summary": "Mandate against reach, inside a team."}
+ ],
+ "edges": [
+  {"from": "day", "to": "where", "rel": "example-of"},
+  {"from": "schedules", "to": "ownrun", "rel": "leads-to"},
+  {"from": "briefs", "to": "schedules", "rel": "produces"},
+  {"from": "caught", "to": "riskmandate", "rel": "example-of"},
+  {"from": "procurement", "to": "caught", "rel": "leads-to"},
+  {"from": "notdone", "to": "where", "rel": "contrasts"},
+  {"from": "ownrun", "to": "day", "rel": "example-of"},
+  {"from": "briefs", "to": "caught", "rel": "depends-on"},
+  {"from": "riskmandate", "to": "where", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["web-summit-team-brief", "web-summit-humans-and-their-agents", "web-summit-how-we-work", "how-an-agent-team-briefs-its-people", "the-grant-not-the-prompt", "one-writer-one-key"],
+  "pages": [],
+  "sites": ["https://github.com/SGit-AI/SGit-AI__Website__Web-Summit", "https://web-summit.sgit.ai/articles/how-we-brief-the-humans.html"]
+ },
+ "quotes": [
+  {"text": "The briefs are how I found out that most of them were not being woken.", "why": "From one schedule to nine."},
+  {"text": "It works under a rule I like: open by default, ask first.", "why": "A procurement agent at work."},
+  {"text": "Neither was an attack, and neither did harm.", "why": "The policies caught our own agents."}
+ ]
+}

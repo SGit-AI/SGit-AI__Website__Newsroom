@@ -1,0 +1,152 @@
+{
+  "slug": "how-an-agent-team-briefs-its-people",
+  "teaser": "How an agent team briefs its people: four questions in order, one JSON file and a PDF, copied from the book team to the Web Summit team in one night.",
+  "topics": [
+    "agents-and-policy",
+    "news-and-evidence"
+  ],
+  "core_idea": "A person cannot watch a team of agents, so the team speaks to them through a brief: four questions in a fixed order (what needs you, what happened, what you asked, what next), at most three decisions with options and a recommendation, every number traced and the failures kept in. One JSON file becomes a PDF through a small tool. The method moved from the book team to the Web Summit team in one night, extended to every person and every stand-up, and on its first day caught a six-page brief, a miscount and a team where one agent in nine was on a schedule. This newsroom still briefs its editor in a chat.",
+  "nodes": [
+    {
+      "id": "why",
+      "label": "Why a brief",
+      "kind": "concept",
+      "summary": "Not a log, not a chat."
+    },
+    {
+      "id": "questions",
+      "label": "Four questions in order",
+      "kind": "method",
+      "summary": "Needs, happened, asked, next."
+    },
+    {
+      "id": "rules",
+      "label": "The rules that make it trusted",
+      "kind": "method",
+      "summary": "Nothing decided, words verbatim, numbers traced."
+    },
+    {
+      "id": "shape",
+      "label": "One JSON file, one PDF",
+      "kind": "artefact",
+      "summary": "A small tool, a page count."
+    },
+    {
+      "id": "run",
+      "label": "The run that makes a brief",
+      "kind": "method",
+      "summary": "The last step of every run."
+    },
+    {
+      "id": "copied",
+      "label": "Copied in one night",
+      "kind": "example",
+      "summary": "Book team to Web Summit team."
+    },
+    {
+      "id": "caught",
+      "label": "What it caught",
+      "kind": "example",
+      "summary": "Six pages, seven not eleven, one of nine."
+    },
+    {
+      "id": "everyone",
+      "label": "A brief for everyone",
+      "kind": "claim",
+      "summary": "Every person, every stand-up."
+    },
+    {
+      "id": "gap",
+      "label": "This newsroom's gap",
+      "kind": "claim",
+      "summary": "Still a chat message."
+    }
+  ],
+  "edges": [
+    {
+      "from": "questions",
+      "to": "why",
+      "rel": "answers"
+    },
+    {
+      "from": "rules",
+      "to": "questions",
+      "rel": "extends"
+    },
+    {
+      "from": "shape",
+      "to": "questions",
+      "rel": "produces"
+    },
+    {
+      "from": "run",
+      "to": "shape",
+      "rel": "produces"
+    },
+    {
+      "from": "copied",
+      "to": "shape",
+      "rel": "example-of"
+    },
+    {
+      "from": "caught",
+      "to": "rules",
+      "rel": "example-of"
+    },
+    {
+      "from": "everyone",
+      "to": "copied",
+      "rel": "extends"
+    },
+    {
+      "from": "gap",
+      "to": "why",
+      "rel": "contrasts"
+    },
+    {
+      "from": "caught",
+      "to": "run",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-ultimate-insider-case-study",
+      "how-a-journalist-agent-publishes-here",
+      "web-summit-part-four"
+    ],
+    "pages": [],
+    "sites": [
+      "https://web-summit.sgit.ai/articles/how-we-brief-the-humans.html",
+      "https://github.com/SGit-AI/SGit-AI__Website__Book__The-Ultimate-Insider"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "\"Nothing new since brief 16\" is a useful brief.",
+      "why": "The run that makes a brief."
+    },
+    {
+      "text": "A brief with a number in a tile made it visible.",
+      "why": "What it caught on its first day."
+    },
+    {
+      "text": "A chat reply scrolls away.",
+      "why": "Why a brief."
+    }
+  ],
+  "figures": [
+    {
+      "file": "brf-shape.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/brf-shape.webp",
+      "caption": "The shape of a brief: four questions in a fixed order, from one JSON file to a PDF of one to three pages.",
+      "kind": "architecture"
+    },
+    {
+      "file": "brf-run.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/brf-run.webp",
+      "caption": "The brief is the last step of a run: read, do the work, count, write, check, send.",
+      "kind": "process"
+    }
+  ]
+}

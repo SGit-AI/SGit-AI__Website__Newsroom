@@ -2,10 +2,11 @@
 
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
 
-42 articles, newest first.
+43 articles, newest first.
 
 ## November 2026
 
+- [How an agent team briefs its people: one JSON file, one PDF, four questions in a fixed order, copied from the book team to the Web Summit team in one night, the mistakes the method caught, and why this newsroom still briefs me in a chat](../../articles/how-an-agent-team-briefs-its-people.md), 2026-11-02, 6 min.
 - [A website for my brother: a brief for Gabriel DaCruz's Claude, to rebuild gabrieldacruz.com on GitHub Pages and Google Workspace, interview him every day, and tell the story of a musician who will not tell it himself](../../articles/a-website-for-my-brother.md), 2026-11-01, 14 min.
 
 ## October 2026

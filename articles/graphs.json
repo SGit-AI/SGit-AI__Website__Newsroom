@@ -55,6 +55,372 @@
   ],
   "articles": [
     {
+      "slug": "web-summit-part-four",
+      "title": "The Web Summit team, part four: the day the agents ran on their own, 75 releases, four people connected, a procurement agent writing to printers, and the behaviour policies catching our own agents out",
+      "date": "2026-11-02",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/web-summit-part-four.html",
+      "markdown": "https://newsroom.sgit.ai/articles/web-summit-part-four.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/web-summit-part-four.webp",
+      "teaser": "The Web Summit team's day of agents on schedules: 75 releases, four people connected, a procurement agent, and policies catching our own agents.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "web-summit",
+        "agents",
+        "conductor",
+        "behaviour-policies",
+        "riskmandate",
+        "procurement",
+        "teams",
+        "update",
+        "article"
+      ],
+      "links_out": [
+        "web-summit-team-brief",
+        "web-summit-humans-and-their-agents",
+        "web-summit-how-we-work",
+        "the-grant-not-the-prompt",
+        "one-writer-one-key",
+        "how-an-agent-team-briefs-its-people"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ws4-hours.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ws4-hours.webp",
+          "caption": "2 November on the Web Summit repository: commits by role and hour, UTC, from the git log.",
+          "kind": "chart"
+        }
+      ],
+      "graph": {
+        "slug": "web-summit-part-four",
+        "teaser": "The Web Summit team's day of agents on schedules: 75 releases, four people connected, a procurement agent, and policies catching our own agents.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "On 2 November the Web Summit team's site made 75 releases. Four of nine people are connected, with 17 agents each under a behaviour policy. The conductor's briefs showed one of nine team agents on a schedule at 16:52 and nine of nine at 20:30; by the evening the agents worked unasked. A procurement agent collected print quotes, asking suppliers before publishing. The behaviour policies caught our own agents: writes outside a folder and a session signing under another agent's name. Five people have not started and some work is still a plan.",
+        "nodes": [
+          {
+            "id": "where",
+            "label": "Where we are",
+            "kind": "concept",
+            "summary": "v0.1.25 to v0.1.94."
+          },
+          {
+            "id": "day",
+            "label": "The day in commits",
+            "kind": "artefact",
+            "summary": "161 commits by role and hour."
+          },
+          {
+            "id": "schedules",
+            "label": "One schedule to nine",
+            "kind": "example",
+            "summary": "Brief 2 to brief 3."
+          },
+          {
+            "id": "ownrun",
+            "label": "Agents ran on their own",
+            "kind": "claim",
+            "summary": "Newsletter, vault run, faster build."
+          },
+          {
+            "id": "procurement",
+            "label": "A procurement agent",
+            "kind": "example",
+            "summary": "Seven printers, two replies."
+          },
+          {
+            "id": "caught",
+            "label": "Policies caught our agents",
+            "kind": "claim",
+            "summary": "Writes outside, a borrowed name."
+          },
+          {
+            "id": "briefs",
+            "label": "Briefs for everyone",
+            "kind": "method",
+            "summary": "Every person, every stand-up."
+          },
+          {
+            "id": "notdone",
+            "label": "What is not done",
+            "kind": "claim",
+            "summary": "Five people, votes, dashboard."
+          },
+          {
+            "id": "riskmandate",
+            "label": "RiskMandate on ourselves",
+            "kind": "concept",
+            "summary": "Mandate against reach, inside a team."
+          }
+        ],
+        "edges": [
+          {
+            "from": "day",
+            "to": "where",
+            "rel": "example-of"
+          },
+          {
+            "from": "schedules",
+            "to": "ownrun",
+            "rel": "leads-to"
+          },
+          {
+            "from": "briefs",
+            "to": "schedules",
+            "rel": "produces"
+          },
+          {
+            "from": "caught",
+            "to": "riskmandate",
+            "rel": "example-of"
+          },
+          {
+            "from": "procurement",
+            "to": "caught",
+            "rel": "leads-to"
+          },
+          {
+            "from": "notdone",
+            "to": "where",
+            "rel": "contrasts"
+          },
+          {
+            "from": "ownrun",
+            "to": "day",
+            "rel": "example-of"
+          },
+          {
+            "from": "briefs",
+            "to": "caught",
+            "rel": "depends-on"
+          },
+          {
+            "from": "riskmandate",
+            "to": "where",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "web-summit-team-brief",
+            "web-summit-humans-and-their-agents",
+            "web-summit-how-we-work",
+            "how-an-agent-team-briefs-its-people",
+            "the-grant-not-the-prompt",
+            "one-writer-one-key"
+          ],
+          "pages": [],
+          "sites": [
+            "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit",
+            "https://web-summit.sgit.ai/articles/how-we-brief-the-humans.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The briefs are how I found out that most of them were not being woken.",
+            "why": "From one schedule to nine."
+          },
+          {
+            "text": "It works under a rule I like: open by default, ask first.",
+            "why": "A procurement agent at work."
+          },
+          {
+            "text": "Neither was an attack, and neither did harm.",
+            "why": "The policies caught our own agents."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "how-an-agent-team-briefs-its-people",
+      "title": "How an agent team briefs its people: one JSON file, one PDF, four questions in a fixed order, copied from the book team to the Web Summit team in one night, the mistakes the method caught, and why this newsroom still briefs me in a chat",
+      "date": "2026-11-02",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/how-an-agent-team-briefs-its-people.html",
+      "markdown": "https://newsroom.sgit.ai/articles/how-an-agent-team-briefs-its-people.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/how-an-agent-team-briefs-its-people.webp",
+      "teaser": "How an agent team briefs its people: four questions in order, one JSON file and a PDF, copied from the book team to the Web Summit team in one night.",
+      "topics": [
+        "agents-and-policy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "briefs",
+        "agents",
+        "conductor",
+        "web-summit",
+        "the-ultimate-insider",
+        "teams",
+        "reporting",
+        "article"
+      ],
+      "links_out": [
+        "the-ultimate-insider-case-study",
+        "how-a-journalist-agent-publishes-here"
+      ],
+      "links_in": [
+        "web-summit-part-four"
+      ],
+      "figures": [
+        {
+          "file": "brf-shape.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/brf-shape.webp",
+          "caption": "The shape of a brief: four questions in a fixed order, from one JSON file to a PDF of one to three pages.",
+          "kind": "architecture"
+        },
+        {
+          "file": "brf-run.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/brf-run.webp",
+          "caption": "The brief is the last step of a run: read, do the work, count, write, check, send.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "how-an-agent-team-briefs-its-people",
+        "teaser": "How an agent team briefs its people: four questions in order, one JSON file and a PDF, copied from the book team to the Web Summit team in one night.",
+        "topics": [
+          "agents-and-policy",
+          "news-and-evidence"
+        ],
+        "core_idea": "A person cannot watch a team of agents, so the team speaks to them through a brief: four questions in a fixed order (what needs you, what happened, what you asked, what next), at most three decisions with options and a recommendation, every number traced and the failures kept in. One JSON file becomes a PDF through a small tool. The method moved from the book team to the Web Summit team in one night, extended to every person and every stand-up, and on its first day caught a six-page brief, a miscount and a team where one agent in nine was on a schedule. This newsroom still briefs its editor in a chat.",
+        "nodes": [
+          {
+            "id": "why",
+            "label": "Why a brief",
+            "kind": "concept",
+            "summary": "Not a log, not a chat."
+          },
+          {
+            "id": "questions",
+            "label": "Four questions in order",
+            "kind": "method",
+            "summary": "Needs, happened, asked, next."
+          },
+          {
+            "id": "rules",
+            "label": "The rules that make it trusted",
+            "kind": "method",
+            "summary": "Nothing decided, words verbatim, numbers traced."
+          },
+          {
+            "id": "shape",
+            "label": "One JSON file, one PDF",
+            "kind": "artefact",
+            "summary": "A small tool, a page count."
+          },
+          {
+            "id": "run",
+            "label": "The run that makes a brief",
+            "kind": "method",
+            "summary": "The last step of every run."
+          },
+          {
+            "id": "copied",
+            "label": "Copied in one night",
+            "kind": "example",
+            "summary": "Book team to Web Summit team."
+          },
+          {
+            "id": "caught",
+            "label": "What it caught",
+            "kind": "example",
+            "summary": "Six pages, seven not eleven, one of nine."
+          },
+          {
+            "id": "everyone",
+            "label": "A brief for everyone",
+            "kind": "claim",
+            "summary": "Every person, every stand-up."
+          },
+          {
+            "id": "gap",
+            "label": "This newsroom's gap",
+            "kind": "claim",
+            "summary": "Still a chat message."
+          }
+        ],
+        "edges": [
+          {
+            "from": "questions",
+            "to": "why",
+            "rel": "answers"
+          },
+          {
+            "from": "rules",
+            "to": "questions",
+            "rel": "extends"
+          },
+          {
+            "from": "shape",
+            "to": "questions",
+            "rel": "produces"
+          },
+          {
+            "from": "run",
+            "to": "shape",
+            "rel": "produces"
+          },
+          {
+            "from": "copied",
+            "to": "shape",
+            "rel": "example-of"
+          },
+          {
+            "from": "caught",
+            "to": "rules",
+            "rel": "example-of"
+          },
+          {
+            "from": "everyone",
+            "to": "copied",
+            "rel": "extends"
+          },
+          {
+            "from": "gap",
+            "to": "why",
+            "rel": "contrasts"
+          },
+          {
+            "from": "caught",
+            "to": "run",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-ultimate-insider-case-study",
+            "how-a-journalist-agent-publishes-here",
+            "web-summit-part-four"
+          ],
+          "pages": [],
+          "sites": [
+            "https://web-summit.sgit.ai/articles/how-we-brief-the-humans.html",
+            "https://github.com/SGit-AI/SGit-AI__Website__Book__The-Ultimate-Insider"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "\"Nothing new since brief 16\" is a useful brief.",
+            "why": "The run that makes a brief."
+          },
+          {
+            "text": "A brief with a number in a tile made it visible.",
+            "why": "What it caught on its first day."
+          },
+          {
+            "text": "A chat reply scrolls away.",
+            "why": "Why a brief."
+          }
+        ]
+      }
+    },
+    {
       "slug": "false-positives-and-the-harness",
       "title": "False positives and the harness: an answer to a question at hack::soho, why a behaviour policy that runs from the network up to the business logic should refuse less of what is right and more of what is wrong, and why a policy that changes with the code becomes a calibrator for bugs",
       "date": "2026-11-02",
@@ -267,7 +633,9 @@
         "one-writer-one-key",
         "agents-have-an-identity-now"
       ],
-      "links_in": [],
+      "links_in": [
+        "web-summit-part-four"
+      ],
       "figures": [
         {
           "file": "wst-layout.webp",
@@ -835,7 +1203,9 @@
       "links_out": [
         "what-can-your-agent-reach"
       ],
-      "links_in": [],
+      "links_in": [
+        "web-summit-part-four"
+      ],
       "figures": [
         {
           "file": "grt-gap.webp",
@@ -4752,6 +5122,7 @@
         "three-policies-for-an-agent"
       ],
       "links_in": [
+        "web-summit-part-four",
         "web-summit-how-we-work",
         "agentic-readers"
       ],
@@ -5109,6 +5480,7 @@
         "web-summit-2026-the-plan"
       ],
       "links_in": [
+        "web-summit-part-four",
         "joining-algarve-evolution",
         "vibathon-algarve-2026"
       ],
@@ -6200,6 +6572,7 @@
         "agents-have-an-identity-now"
       ],
       "links_in": [
+        "web-summit-part-four",
         "web-summit-humans-and-their-agents",
         "signed-email-from-the-agent"
       ],
@@ -8079,6 +8452,7 @@
         "introducing-sharness"
       ],
       "links_in": [
+        "how-an-agent-team-briefs-its-people",
         "the-lab-that-redesigned-the-book",
         "a-book-told-by-its-cast",
         "a-presentation-for-every-project",
@@ -9160,7 +9534,9 @@
       "links_out": [
         "ci-owns-the-version"
       ],
-      "links_in": [],
+      "links_in": [
+        "how-an-agent-team-briefs-its-people"
+      ],
       "figures": [
         {
           "file": "jh-pipeline.webp",
