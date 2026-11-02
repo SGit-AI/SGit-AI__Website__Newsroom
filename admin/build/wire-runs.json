@@ -2112,6 +2112,136 @@
    "added": 0,
    "updated": 0,
    "note": "The refresh was committed locally but not pushed because the date-comma check in test_wire still fails and the push token was invalid."
+  },
+  {
+   "id": "179b7c516140",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-11-02T05:47:44Z",
+   "finished_at": "2026-11-02T05:56:25Z",
+   "duration_s": 516.0,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.134624,
+     "input": 645999,
+     "output": 119200,
+     "cache_read": 243282,
+     "cache_write": 63928,
+     "thinking": 67887
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.921303,
+     "input": 124,
+     "output": 50268,
+     "cache_read": 3734595,
+     "cache_write": 369215,
+     "thinking": 3690
+    }
+   },
+   "cost_usd": 2.055927,
+   "turns": 27,
+   "subagents": 6,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-11-02.1",
+   "added": 7,
+   "updated": 0,
+   "note": "Seven new stories across four beats, each checked by the Haiku verifier, with five wording fixes applied."
+  },
+  {
+   "id": "16ebeca6288e",
+   "task": "owasp",
+   "trigger": "trig_01EMyAt2FWwi2mCmzVPnrzm8",
+   "fired_at": "2026-11-02T06:07:17Z",
+   "finished_at": "2026-11-02T06:13:31Z",
+   "duration_s": 371.0,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.121785,
+     "input": 845730,
+     "output": 61204,
+     "cache_read": 81011,
+     "cache_write": 46402,
+     "thinking": 38091
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.193788,
+     "input": 78,
+     "output": 30616,
+     "cache_read": 2459704,
+     "cache_write": 216538,
+     "thinking": 2479
+    }
+   },
+   "cost_usd": 1.315573,
+   "turns": 24,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-11-02.1",
+   "added": 2,
+   "updated": 5,
+   "note": "The Monday edition added two stories and updated five, with the verifier correcting four before release."
+  },
+  {
+   "id": "fff76eaf9f51",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-11-02T06:19:17Z",
+   "finished_at": "2026-11-02T06:35:15Z",
+   "duration_s": 953.0,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.131225,
+     "input": 16,
+     "output": 1829,
+     "cache_read": 295705,
+     "cache_write": 20833,
+     "thinking": 240
+    }
+   },
+   "cost_usd": 0.131225,
+   "turns": 11,
+   "subagents": 0,
+   "refused": 3,
+   "refused_kinds": [
+    "web fetch"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": 0,
+   "updated": 0,
+   "note": "Web fetches were refused again, so the desk could verify nothing and published nothing."
+  },
+  {
+   "id": "bb94dbdda9a1",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-11-02T06:58:59Z",
+   "finished_at": "2026-11-02T07:07:44Z",
+   "duration_s": 519.0,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.46237,
+     "input": 48,
+     "output": 9893,
+     "cache_read": 1572924,
+     "cache_write": 51513,
+     "thinking": 1653
+    }
+   },
+   "cost_usd": 0.46237,
+   "turns": 26,
+   "subagents": 0,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "blocked",
+   "release": null,
+   "added": 0,
+   "updated": 0,
+   "note": "The refresh was built but not committed or pushed because the date-comma check in test_wire still fails."
   }
  ],
  "sessions": [
@@ -2135,15 +2265,15 @@
    "name": "@newsroom.accountant's session",
    "kind": "accountant",
    "from": "2026-10-16",
-   "as_of": "2026-11-01T07:43:00Z",
+   "as_of": "2026-11-02T07:45:00Z",
    "models": [
     "claude-sonnet-5-5"
    ],
-   "cost_usd": 29.75555462,
-   "input": 247,
-   "output": 83270,
-   "cache_read": 49683325,
-   "cache_write": 5986255,
+   "cost_usd": 33.73503734,
+   "input": 5146,
+   "output": 95783,
+   "cache_read": 51943214,
+   "cache_write": 6890667,
    "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
   }
  ],
