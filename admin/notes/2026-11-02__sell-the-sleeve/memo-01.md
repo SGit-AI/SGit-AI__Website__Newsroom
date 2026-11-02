@@ -11,3 +11,7 @@ Dinis's words, by voice, as given (transcribed; "paddle" is read as padel, to co
 2. A mock-up of the shop, built with our vaults, everything but the payment and fulfilment.
 3. The product: he will give it.
 4. The article: the link the coach should have sent.
+
+## The product, and padel
+
+Dinis's words: "yes I mean padel and here it the product https://flokysocks.nl/en/products/no-strain-evolution-x-tapia"
