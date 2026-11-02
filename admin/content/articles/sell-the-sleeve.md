@@ -4,7 +4,7 @@ date: 2026-11-02
 author: Dinis Cruz
 author_url: about/index.html
 summary: After a padel lesson in the Algarve, a coach told me which arm sleeve to buy and could not sell me one. So we mapped the shop he could have had, for one product, Floky's NO STRAIN Evolution X Tapia sleeve, and built a mock-up of it in a vault, with everything but the payment and the delivery. The sleeve costs €32.95 from a padel retailer that ships to Portugal; at €39.90, with his margin shown, it is still cheaper than ordering one yourself with delivery. Selling is easy, but it is not quite "just register the profit": in Portugal the simplified regime taxes 15% of sales, not the margin, every sale needs an invoice, and online sales bring a 14-day right to cancel, a three-year guarantee and a complaints book. Health claims are the trap. For the payment, a Stripe link with MB WAY costs nothing a month; Shopify Basic is €19 a month and has an official Claude connector. Claude can write the shop, create the products and links, and prepare the paperwork; opening the accounts, refunds and handing over the sleeve stay with the person.
-version: v999.0.0
+version: v0.14.35
 license: https://creativecommons.org/licenses/by/4.0/
 tags: ecommerce, padel, portugal, small-business, tax, consumer-law, shopify, stripe, mb-way, vaults, claude, article
 status: published

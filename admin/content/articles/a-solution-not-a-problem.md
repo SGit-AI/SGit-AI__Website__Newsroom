@@ -4,7 +4,7 @@ date: 2026-11-02
 author: Dinis Cruz
 author_url: about/index.html
 summary: After a padel lesson in the Algarve I asked a coach about something in my arm. He told me which product to buy and sent me the link. I asked if I could buy it from him, or anywhere nearby. He said no. In that moment he gave me a problem instead of a solution, and it is the most useful business lesson I know. People who come to you with a problem do not want a list of next steps; they want it solved, and they will pay a fair price for that, a price set by how much time, effort and waiting it saves them. I learned it in application security, where a list of vulnerabilities is a problem handed to a team that has no time, and an engineer paid from my budget, who fixes them and leaves the team better than he found it, is a solution. Bookshops that say "we can get it for you" and travel agents that hid their commission show both sides of it. And it is what RiskMandate has been doing wrong: we offer people a way to control their agents, and then hand them a list of tasks, without a clear return. This article is the principle, the evidence, and what changes.
-version: v999.0.0
+version: v0.14.35
 license: https://creativecommons.org/licenses/by/4.0/
 tags: business, solutions, convenience, transparency, wardley-maps, application-security, riskmandate, ecommerce, article
 status: published
