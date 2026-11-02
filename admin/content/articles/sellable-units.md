@@ -4,7 +4,7 @@ date: 2026-11-02
 author: Dinis Cruz
 author_url: about/index.html
 summary: I showed my brother Gabriel the newsroom, including topping up my own reading credit, and his first question was the right one: his site should not look like a newsroom. It will not. What the newsroom's technology adds is not a look but a way to be paid: every reader starts with £5 of credit, each page uses a few pence by how much was read, a rating sets the price from nothing to double, the balance can go below zero, and a top-up through Stripe comes when the value is clear. All of it is published as an open API, api.newsroom.sgit.ai, that any page can add with a few lines. On a composer's site that looks like a composer's site, every page becomes a sellable unit: a lesson's materials, a score he owns, an analysis of what makes a song work, a how-to, a video explained, the WAVs of a piece like Amazónia. His readers are other musicians, producers and students, a demanding audience and a large one. The habit that makes it work is to create sellable units every day, at the moment of creation, and let an agent publish them. And for the works that should travel, Creative Commons Attribution with a paid licence alongside, with one honest correction: once a work is under CC BY, a buyer can get a licence on other terms, but not exclusivity.
-version: v999.0.0
+version: v0.14.32
 license: https://creativecommons.org/licenses/by/4.0/
 tags: monetisation, meter, music, creators, creative-commons, licensing, newsroom-api, sellable-units, article
 status: published

@@ -10,7 +10,7 @@
 
 # Four iPhones and an iPad: how my brother filmed a three-camera music video with old phones synced live to Final Cut Pro, a feature Apple shipped in 2024 that he found by accident
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-02 · [article v1.0.0](versions/four-iphones-and-an-ipad.md) · [newsroom v999.0.0](https://newsroom.sgit.ai/admin/versions.html) · videofinal-cut-proipadiphonemulticammusicianscreatorsapplearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-02 · [article v1.0.0](versions/four-iphones-and-an-ipad.md) · [newsroom v0.14.32](https://newsroom.sgit.ai/admin/versions.html) · videofinal-cut-proipadiphonemulticammusicianscreatorsapplearticle
 
 ***Abstract:** My brother Gabriel DaCruz filmed his Separate Ways synth video from three angles at once, with no camera crew: two second-hand iPhone 12s and an iPhone 13, bought because they were cheap and he only needed the cameras, connected wirelessly to an iPad running Final Cut Pro. The iPad shows every angle live, controls each camera and records them already in sync; then he moved the project to Final Cut Pro on his Mac to finish it. The feature is Live Multicam, which Apple released in June 2024 with Final Cut Pro for iPad 2.0 and a free Final Cut Camera app. It takes up to four angles, the iPad itself can be one of them, and Apple says it works with iPhones from the XS onwards. Gabriel, who knows this world well, found it by accident and was blown away. Coverage was heavy at launch and thin since. If a working producer had not heard of it, plenty of musicians, teachers and small venues have not either. This is the setup, what it needs, and what it is good for, from interviews to a live show.*
 

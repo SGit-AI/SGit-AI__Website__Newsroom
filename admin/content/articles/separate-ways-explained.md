@@ -4,7 +4,7 @@ date: 2026-11-02
 author: Dinis Cruz
 author_url: about/index.html
 summary: My brother Gabriel DaCruz posted a short video of Journey's Separate Ways, played on a synthesizer in his studio and filmed from three cameras at once. Most people who watch it will not know what they are seeing. So I asked him to explain it, recorded it, and gave it to this site's agent to check and package. The explanation: a Bluetooth MIDI keyboard with no cable, a Behringer Pro-800, which is a reproduction of the Sequential Prophet-600 from 1982, chorus and delay to match the 1983 record, and, at the end, the decay turned down live so each chord goes staccato and the delay repeats the short chord. The checking found two things he had flagged himself: the record's credits list a Roland Jupiter-8, not the Prophet-5 he remembered, and his synth copies the Prophet-600, not the Prophet-5. And on the way, he mentioned, almost in passing, that he had filmed it with three old iPhones synced live to an iPad, which became an article of its own. That is the point of this one. The people who hire someone like Gabriel are the people who want to know how it was done, and the only time anyone explains it is at the moment of creation, quickly, with an agent doing the rest.
-version: v999.0.0
+version: v0.14.32
 license: https://creativecommons.org/licenses/by/4.0/
 tags: music, synthesizers, journey, prophet, midi, bluetooth, video, publishing, creators, article
 status: published

@@ -4,7 +4,7 @@ date: 2026-11-02
 author: Dinis Cruz
 author_url: about/index.html
 summary: I spent an evening with a user who is technical, a composer with a serious studio, who uses Claude chat and Claude Cowork every day. He has a scheduled task that reads a composers' forum each morning and tells him about new posts, and he connected Gmail, Calendar and his notes, clicking yes to the permissions. His expectation was clear: Claude reads his email only when he asks, in the one conversation where he asks, and the forum task never touches it. So I asked him to open an unrelated project chat and type "what emails do I have in my inbox?". Claude listed them. Nothing went wrong; that is the point. Anthropic's own documentation says a connected connector is available in every conversation and that Claude can bring it in on its own, and scheduled tasks have the same connected tools. The authority was granted when he connected Gmail, not when he typed the question. His setup also has what Simon Willison calls the lethal trifecta: private data, untrusted content read every morning, and a way to send. This is the gap RiskMandate measures, the mandate (what the user expects) against the reach (what the agent can do), and the messaging we need to explain it to people who are not security specialists.
-version: v999.0.0
+version: v0.14.32
 license: https://creativecommons.org/licenses/by/4.0/
 tags: riskmandate, agents, security, connectors, prompt-injection, mandate, gmail, cowork, article
 status: published
