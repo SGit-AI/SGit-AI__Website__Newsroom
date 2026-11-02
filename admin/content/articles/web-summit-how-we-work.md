@@ -4,7 +4,7 @@ date: 2026-11-02
 author: Dinis Cruz
 author_url: about/index.html
 summary: The Web Summit team is now seven people and growing, and it will soon have a hundred agents. This is how we work, written for the people joining. The primitives are few. Claude is the reasoning engine everyone uses. An agent is a Claude Code session, the entry on the left of the screen, with a long thread, files, a connection to the team's GitHub repository, and the ability to be woken on a schedule, which is the feature that turns a chat into a team member. Everyone's first agent is a conductor, which coordinates their others. Every other agent gets the smallest role that makes sense, written down, with a behaviour policy that says what it may not do. Everything an agent does goes into its folder in the repository, so when a session ends, runs out of credit or moves account, a new one picks up where it stopped. Each agent makes a key pair and publishes the public half to the repository; that push is how we accept it, and from then on secrets can be sealed to it and handed over as QR codes, and what it says can be checked as signed. Humans give direction, judgement and pruning. And because a team of seven people and a hundred agents breaks every rule about team size, the coordination is the work.
-version: v999.0.0
+version: v0.14.36
 license: https://creativecommons.org/licenses/by/4.0/
 tags: web-summit, agents, claude-code, conductor, roles, identity, keys, behaviour-policy, teams, article
 status: published
