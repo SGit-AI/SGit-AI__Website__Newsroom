@@ -55,6 +55,187 @@
   ],
   "articles": [
     {
+      "slug": "would-you-pay-to-plug-this-newsroom-in",
+      "title": "Would you pay to plug this newsroom in? A reply to Florent Daudens, on five publishers' bets for the AI era, from a newsroom built for agents, with what it answers, where it goes further, and the questions it has not answered either",
+      "date": "2026-11-03",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/would-you-pay-to-plug-this-newsroom-in.html",
+      "markdown": "https://newsroom.sgit.ai/articles/would-you-pay-to-plug-this-newsroom-in.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/would-you-pay-to-plug-this-newsroom-in.webp",
+      "teaser": "A reply to Florent Daudens on five publishers' AI bets: open to agents, paid at the source, vaults as the unit, and what is still open.",
+      "topics": [
+        "news-and-evidence",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "news",
+        "publishers",
+        "ai-agents",
+        "business-models",
+        "mcp",
+        "provenance",
+        "vaults",
+        "meter",
+        "reply",
+        "article"
+      ],
+      "links_out": [
+        "breaking-the-story-down-before-the-agents-do",
+        "paying-after-the-value",
+        "inside-english-with-ines",
+        "how-a-vault-works",
+        "sgit-is-a-standard",
+        "how-a-journalist-agent-publishes-here",
+        "a-pen-and-a-key",
+        "free-to-copy-paid-at-the-source",
+        "agentic-readers"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "nw-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nw-map.webp",
+          "caption": "His questions, and where this newsroom stands on each: shipped, proposed, or still open.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "would-you-pay-to-plug-this-newsroom-in",
+        "teaser": "A reply to Florent Daudens on five publishers' AI bets: open to agents, paid at the source, vaults as the unit, and what is still open.",
+        "topics": [
+          "news-and-evidence",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Florent Daudens reviewed five publishers' bets for the AI era, from CNA's paid connector to State Affairs' questions inside the article, and concluded that a connector is not a business model: being accessible to agents differs from offering something people would pay for. This newsroom separates the two by design, with open CC BY structure for agents and a pay-after-you-read meter for people, and does both directions, to the assistant and into the page. It goes further with vaults that could carry a newsroom's identity, permissions and terms, and provenance that travels with the answer. Discovery and evidence of payment remain open.",
+        "nodes": [
+          {
+            "id": "question",
+            "label": "What will people pay for beyond the website?",
+            "kind": "question",
+            "summary": "His question."
+          },
+          {
+            "id": "notbm",
+            "label": "A connector is not a business model",
+            "kind": "claim",
+            "summary": "Access is not value."
+          },
+          {
+            "id": "open",
+            "label": "Open structure for agents",
+            "kind": "artefact",
+            "summary": "Twins, graphs, summaries, API."
+          },
+          {
+            "id": "meter",
+            "label": "Pay after you read",
+            "kind": "method",
+            "summary": "£5 credit, your price."
+          },
+          {
+            "id": "toassist",
+            "label": "To the assistant",
+            "kind": "concept",
+            "summary": "CNA, Spiegel, Axios."
+          },
+          {
+            "id": "intopage",
+            "label": "Into the page",
+            "kind": "concept",
+            "summary": "State Affairs, Every; a vault app with a policy."
+          },
+          {
+            "id": "vaultunit",
+            "label": "The vault as the unit",
+            "kind": "claim",
+            "summary": "Identity, permissions, terms."
+          },
+          {
+            "id": "provenance",
+            "label": "Provenance travels",
+            "kind": "method",
+            "summary": "Sources, checked quotes, signed commits."
+          },
+          {
+            "id": "discovery",
+            "label": "Discovery",
+            "kind": "question",
+            "summary": "Still open."
+          }
+        ],
+        "edges": [
+          {
+            "from": "notbm",
+            "to": "question",
+            "rel": "extends"
+          },
+          {
+            "from": "open",
+            "to": "notbm",
+            "rel": "depends-on"
+          },
+          {
+            "from": "meter",
+            "to": "notbm",
+            "rel": "depends-on"
+          },
+          {
+            "from": "toassist",
+            "to": "open",
+            "rel": "depends-on"
+          },
+          {
+            "from": "intopage",
+            "to": "meter",
+            "rel": "extends"
+          },
+          {
+            "from": "vaultunit",
+            "to": "toassist",
+            "rel": "extends"
+          },
+          {
+            "from": "provenance",
+            "to": "vaultunit",
+            "rel": "extends"
+          },
+          {
+            "from": "discovery",
+            "to": "question",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "breaking-the-story-down-before-the-agents-do",
+            "agentic-readers",
+            "paying-after-the-value",
+            "free-to-copy-paid-at-the-source",
+            "how-a-vault-works",
+            "inside-english-with-ines"
+          ],
+          "pages": [],
+          "sites": [
+            "https://fdaudens.substack.com/p/would-you-pay-to-plug-a-newsroom"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "This newsroom is built on that separation.",
+            "why": "Where we agree: access is not value."
+          },
+          {
+            "text": "I think the answer is not a shared platform but a shared format.",
+            "why": "The vault as the unit."
+          },
+          {
+            "text": "A behaviour policy is that decision, written down and enforced.",
+            "why": "Both directions, not one."
+          }
+        ]
+      }
+    },
+    {
       "slug": "no-tech-stack-to-maintain",
       "title": "No tech stack to maintain: it is not that there is no backend, it is that the only code you own is HTML, CSS and JavaScript, with every other primitive rented as a commodity or run in the user's browser over encrypted vaults",
       "date": "2026-11-03",
@@ -839,6 +1020,7 @@
         "inside-english-with-ines"
       ],
       "links_in": [
+        "would-you-pay-to-plug-this-newsroom-in",
         "no-tech-stack-to-maintain"
       ],
       "figures": [
@@ -1422,6 +1604,7 @@
         "a-teacher-and-agents-she-can-trust"
       ],
       "links_in": [
+        "would-you-pay-to-plug-this-newsroom-in",
         "how-a-vault-works",
         "a-teacher-and-agents-she-can-trust"
       ],
@@ -5140,6 +5323,7 @@
         "meta-terms-and-the-news"
       ],
       "links_in": [
+        "would-you-pay-to-plug-this-newsroom-in",
         "every-link-a-gift-link"
       ],
       "figures": [
@@ -9076,6 +9260,7 @@
         "signed-by-the-source"
       ],
       "links_in": [
+        "would-you-pay-to-plug-this-newsroom-in",
         "agentic-readers"
       ],
       "figures": [
@@ -11639,6 +11824,7 @@
         "ci-owns-the-version"
       ],
       "links_in": [
+        "would-you-pay-to-plug-this-newsroom-in",
         "how-an-agent-team-briefs-its-people"
       ],
       "figures": [
@@ -19956,6 +20142,7 @@
         "a-newsroom-for-one"
       ],
       "links_in": [
+        "would-you-pay-to-plug-this-newsroom-in",
         "no-tech-stack-to-maintain",
         "agents-have-an-identity-now",
         "a-newsroom-for-one"
@@ -28814,6 +29001,7 @@
         "pki-everywhere"
       ],
       "links_in": [
+        "would-you-pay-to-plug-this-newsroom-in",
         "agentic-readers",
         "selling-less-code",
         "the-user-keeps-the-meter",
@@ -43560,6 +43748,7 @@
         "the-value-of-constraints"
       ],
       "links_in": [
+        "would-you-pay-to-plug-this-newsroom-in",
         "how-a-vault-works",
         "an-ipad-to-review-the-book",
         "three-linkedin-pages",
@@ -50371,6 +50560,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "would-you-pay-to-plug-this-newsroom-in",
         "sellable-units",
         "agentic-readers",
         "an-algarve-talent-map",
