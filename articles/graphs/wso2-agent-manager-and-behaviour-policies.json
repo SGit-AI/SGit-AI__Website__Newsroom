@@ -1,0 +1,153 @@
+{
+  "slug": "wso2-agent-manager-and-behaviour-policies",
+  "teaser": "WSO2 Agent Manager reviewed as a partner: what is open source, how its layers fit, and an MVP plugging behaviour policies in.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "WSO2 Agent Manager is an open control plane for agents: an identity per agent, an Envoy gateway on every model and MCP call with guardrails, a Kubernetes runtime with isolation tiers, and OpenTelemetry traces. Its code is Apache 2.0 and free to run; the supported build, updates, support and SaaS are paid. In a company that has deployed it, Agent Behaviour Policies add the mandate at the gateway through its interceptor policy, Process Behaviour Policies add kernel enforcement as another runtime tier, and both decisions can be recorded in the same trace. A five-step MVP on WSO2's quick start would prove it.",
+  "nodes": [
+    {
+      "id": "post",
+      "label": "Speed with control",
+      "kind": "claim",
+      "summary": "A keel, not brakes."
+    },
+    {
+      "id": "what",
+      "label": "An open control plane",
+      "kind": "artefact",
+      "summary": "Identity, gateway, runtime, traces."
+    },
+    {
+      "id": "licence",
+      "label": "What is open source",
+      "kind": "concept",
+      "summary": "Apache 2.0 code; paid supported build."
+    },
+    {
+      "id": "gap",
+      "label": "The mandate is missing",
+      "kind": "claim",
+      "summary": "Guardrails catch harm, not purpose."
+    },
+    {
+      "id": "gateway",
+      "label": "ABP at the gateway",
+      "kind": "method",
+      "summary": "The interceptor-service policy."
+    },
+    {
+      "id": "runtime",
+      "label": "SHarness in the runtime",
+      "kind": "method",
+      "summary": "Another isolation tier."
+    },
+    {
+      "id": "trace",
+      "label": "One trace of evidence",
+      "kind": "method",
+      "summary": "Both decisions as spans."
+    },
+    {
+      "id": "mvp",
+      "label": "The MVP",
+      "kind": "artefact",
+      "summary": "Five steps on the quick start."
+    },
+    {
+      "id": "learn",
+      "label": "What we can learn",
+      "kind": "concept",
+      "summary": "Identity per environment, tiers, inline policies."
+    }
+  ],
+  "edges": [
+    {
+      "from": "what",
+      "to": "post",
+      "rel": "example-of"
+    },
+    {
+      "from": "licence",
+      "to": "what",
+      "rel": "extends"
+    },
+    {
+      "from": "gap",
+      "to": "what",
+      "rel": "contrasts"
+    },
+    {
+      "from": "gateway",
+      "to": "gap",
+      "rel": "answers"
+    },
+    {
+      "from": "runtime",
+      "to": "gap",
+      "rel": "answers"
+    },
+    {
+      "from": "trace",
+      "to": "gateway",
+      "rel": "depends-on"
+    },
+    {
+      "from": "trace",
+      "to": "runtime",
+      "rel": "depends-on"
+    },
+    {
+      "from": "mvp",
+      "to": "trace",
+      "rel": "produces"
+    },
+    {
+      "from": "learn",
+      "to": "what",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "introducing-sharness",
+      "what-can-your-agent-reach",
+      "the-grant-not-the-prompt",
+      "the-push-is-the-authorisation"
+    ],
+    "pages": [],
+    "sites": [
+      "https://wso2.com/about/news/wso2-agent-manager-sovereign-ai-governance/",
+      "https://github.com/wso2/agent-manager"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "You go faster because of it, not inspite of it.",
+      "why": "The post."
+    },
+    {
+      "text": "The mandate.",
+      "why": "A collaboration, not a competition."
+    },
+    {
+      "text": "an MVP can be built entirely on the Apache 2.0 code",
+      "why": "What is really open source."
+    }
+  ],
+  "figures": [
+    {
+      "file": "wam-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wam-layers.webp",
+      "caption": "Where Agent Manager's layers are, and where Agent and Process Behaviour Policies plug into each one.",
+      "kind": "architecture"
+    },
+    {
+      "file": "wam-mvp.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wam-mvp.webp",
+      "caption": "The MVP: a sample agent on WSO2's quick start, a policy at the gateway, SHarness in the runtime, one trace.",
+      "kind": "process"
+    }
+  ]
+}

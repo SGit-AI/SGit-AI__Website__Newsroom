@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-03 | published | 1,416 | first published | this release | [current](../inside-english-with-ines.md) |
+| **v1.0.0** | 2026-11-03 | published | 1,416 | first published | [`fcad25859`](https://github.com/SGit-AI/SGit-AI__Website/commit/fcad25859ce7c84bbfbaf6ad03960816586f1b58) | [current](../inside-english-with-ines.md) |
 
 [← Back to the article](../inside-english-with-ines.md) · [All articles](../index.md)
 
