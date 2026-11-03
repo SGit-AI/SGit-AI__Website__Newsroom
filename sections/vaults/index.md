@@ -2,7 +2,11 @@
 
 Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vault, and what it does that Git does not.
 
-35 articles, newest first.
+36 articles, newest first.
+
+## November 2026
+
+- [English with Inês, inside the vault: a teacher's site as a vault app, with an experiment for every lesson, cards that come back when you are about to forget, a tutor that answers about one lesson only, a concept map, and the back office with every agent's policy](../../articles/inside-english-with-ines.md), 2026-11-03, 5 min.
 
 ## October 2026
 

@@ -1,0 +1,153 @@
+{
+  "slug": "a-teacher-and-agents-she-can-trust",
+  "teaser": "A brief for an independent online English teacher: a loop around every lesson where agents draft and she decides, and a behaviour policy for every agent.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "An excellent independent English teacher runs everything around her lessons by hand. Agents could do most of it, but open-ended agents that email students or change her calendar would send her back to pen and paper. The brief gives her a site she owns, a loop around every lesson where agents draft and she decides, and an Agent Behaviour Policy for each of seven agents: no agent sends email, changes her calendar or refunds a payment. The plumbing is Workspace, Claude, GitHub, a private vault, Stripe and a reading meter. With it, she can publish every good explanation, build practice for each student on retrieval and spacing rather than learning styles, and map her teaching as a knowledge graph.",
+  "nodes": [
+    {
+      "id": "teacher",
+      "label": "A great teacher, an inefficient business",
+      "kind": "example",
+      "summary": "Spreadsheets, Meet, memory."
+    },
+    {
+      "id": "danger",
+      "label": "Open-ended agents fail her",
+      "kind": "claim",
+      "summary": "She goes back to pen and paper."
+    },
+    {
+      "id": "policies",
+      "label": "A policy per agent",
+      "kind": "method",
+      "summary": "Mandate, grant, delta, barrier."
+    },
+    {
+      "id": "loop",
+      "label": "The loop around every lesson",
+      "kind": "method",
+      "summary": "Agents draft, she decides."
+    },
+    {
+      "id": "setup",
+      "label": "The plumbing, once",
+      "kind": "method",
+      "summary": "Workspace, Claude, GitHub, vault, Stripe."
+    },
+    {
+      "id": "paid",
+      "label": "Paid three ways",
+      "kind": "concept",
+      "summary": "Packages, the meter, products."
+    },
+    {
+      "id": "creative",
+      "label": "Time to be creative",
+      "kind": "claim",
+      "summary": "Every explanation becomes a page."
+    },
+    {
+      "id": "research",
+      "label": "What research supports",
+      "kind": "concept",
+      "summary": "Retrieval and spacing, not styles."
+    },
+    {
+      "id": "graph",
+      "label": "A map of what she teaches",
+      "kind": "concept",
+      "summary": "A knowledge graph and projections."
+    }
+  ],
+  "edges": [
+    {
+      "from": "danger",
+      "to": "teacher",
+      "rel": "contrasts"
+    },
+    {
+      "from": "policies",
+      "to": "danger",
+      "rel": "answers"
+    },
+    {
+      "from": "loop",
+      "to": "policies",
+      "rel": "depends-on"
+    },
+    {
+      "from": "setup",
+      "to": "loop",
+      "rel": "produces"
+    },
+    {
+      "from": "paid",
+      "to": "setup",
+      "rel": "depends-on"
+    },
+    {
+      "from": "creative",
+      "to": "loop",
+      "rel": "produces"
+    },
+    {
+      "from": "research",
+      "to": "creative",
+      "rel": "extends"
+    },
+    {
+      "from": "graph",
+      "to": "creative",
+      "rel": "extends"
+    },
+    {
+      "from": "graph",
+      "to": "loop",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "inside-english-with-ines",
+      "a-website-for-my-brother",
+      "sellable-units",
+      "what-can-your-agent-reach"
+    ],
+    "pages": [],
+    "sites": [
+      "https://claude.com/docs/connectors/google/gmail",
+      "https://pubmed.ncbi.nlm.nih.gov/26162104/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The answer is not fewer agents.",
+      "why": "Why open-ended agents would fail her."
+    },
+    {
+      "text": "In every step where something reaches a student, a person is between the agent and the student.",
+      "why": "The loop around every lesson."
+    },
+    {
+      "text": "None of this takes the teacher out of the work.",
+      "why": "She is not replaced."
+    }
+  ],
+  "figures": [
+    {
+      "file": "tch-loop.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tch-loop.webp",
+      "caption": "The loop around every lesson: agents draft, the teacher decides, the student practises.",
+      "kind": "process"
+    },
+    {
+      "file": "ewi-agents.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ewi-agents.webp",
+      "caption": "Two of the seven policies in the worked example: what each agent may do, and what holds each line.",
+      "kind": "screenshot"
+    }
+  ]
+}

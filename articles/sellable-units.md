@@ -141,6 +141,7 @@ Startups & strategyNews & evidence[This article as a graph →](graphs.md#sellab
 
 ### Continued by
 
+- [A teacher and agents she can trust: a brief for an independent online English teacher's site, the workflows around every lesson, an Agent Behaviour Policy for every agent, the plumbing behind it, and content made for each student](a-teacher-and-agents-she-can-trust.md) A brief for an independent online English teacher: a loop around every lesson where agents draft and she decides, and a behaviour policy for every agent.
 - [A solution, not a problem: a coach sent me a link to a product he could not sell me, what that moment teaches about business, security teams, bookshops and travel agents, and why RiskMandate has been making the same mistake](a-solution-not-a-problem.md) A coach sent a link to a product he could not sell: why business, security teams and RiskMandate should give solutions, not problems.
 
 [All articles](index.md) · [All graphs](graphs.md)

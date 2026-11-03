@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-03 | published | 1,779 | first published | this release | [current](../meetscribe.md) |
+| **v1.0.0** | 2026-11-03 | published | 1,779 | first published | [`39a970594`](https://github.com/SGit-AI/SGit-AI__Website/commit/39a9705944e07d65e49c5c51506782a8f9a510e0) | [current](../meetscribe.md) |
 
 [← Back to the article](../meetscribe.md) · [All articles](../index.md)
 

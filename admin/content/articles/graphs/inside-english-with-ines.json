@@ -1,0 +1,38 @@
+{
+ "slug": "inside-english-with-ines",
+ "teaser": "English with Inês, a teacher's site as a vault app: experiments, spaced cards, a tutor bound to one lesson, a concept map and every agent's policy.",
+ "topics": ["vaults-and-method", "agents-and-policy"],
+ "core_idea": "The worked example for the teacher brief is a vault app for a fictional teacher and students. Each of four lessons has an experiment that explains by moving, exercises and cards on a spaced schedule, with progress saved per browser. A tutor answers only about the lesson on screen through the vault's AI key, which the page never sees, or runs as a labelled simulation. A thirteen-concept map draws each student's path. The back office shows the pipeline, students, the weekly brief, billing and seven agents with their policies. It is one HTML file and one JSON file anyone can clone and change.",
+ "nodes": [
+  {"id": "vault", "label": "A teacher's site as a vault app", "kind": "artefact", "summary": "One HTML file, one JSON file."},
+  {"id": "experiments", "label": "An experiment per lesson", "kind": "example", "summary": "Explains by moving."},
+  {"id": "practice", "label": "Exercises and spaced cards", "kind": "method", "summary": "1, 3, 7 and 14 days."},
+  {"id": "progress", "label": "Progress per browser", "kind": "concept", "summary": "Nothing leaves the device."},
+  {"id": "tutor", "label": "A tutor bound to one lesson", "kind": "method", "summary": "The vault's key, never seen."},
+  {"id": "map", "label": "Concept map and path", "kind": "artefact", "summary": "Thirteen concepts, three levels."},
+  {"id": "office", "label": "The back office", "kind": "artefact", "summary": "Pipeline, brief, billing, agents."},
+  {"id": "policies", "label": "Every agent's policy", "kind": "concept", "summary": "Boundary, Setting, Expectation."},
+  {"id": "yours", "label": "Make it yours", "kind": "method", "summary": "Clone it, change the JSON."}
+ ],
+ "edges": [
+  {"from": "experiments", "to": "vault", "rel": "example-of"},
+  {"from": "practice", "to": "experiments", "rel": "extends"},
+  {"from": "progress", "to": "practice", "rel": "depends-on"},
+  {"from": "tutor", "to": "vault", "rel": "extends"},
+  {"from": "map", "to": "progress", "rel": "depends-on"},
+  {"from": "office", "to": "vault", "rel": "extends"},
+  {"from": "policies", "to": "office", "rel": "example-of"},
+  {"from": "yours", "to": "vault", "rel": "depends-on"},
+  {"from": "tutor", "to": "policies", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["a-teacher-and-agents-she-can-trust"],
+  "pages": [],
+  "sites": ["https://dev.vault.sgraph.ai/"]
+ },
+ "quotes": [
+  {"text": "What is a Boundary is what it is sent: one lesson, nothing else, and no tool at all.", "why": "A tutor that knows its place."},
+  {"text": "Nothing is written into the vault, so nothing about a student leaves their device", "why": "Practice that is saved."},
+  {"text": "Everything the app shows is in", "why": "Make it yours."}
+ ]
+}
