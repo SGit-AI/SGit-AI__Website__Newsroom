@@ -4,7 +4,7 @@ date: 2026-11-03
 author: Dinis Cruz
 author_url: about/index.html
 summary: Florent Daudens asked, in a post and an essay today, what people will use and pay for once the article is only one way into a newsroom. He looks at five bets. CNA sells a connector to its archive for about six dollars a month; Der Spiegel lets people search a Nazi Party membership archive from Claude; Every makes articles you explore with your own assistant; Axios sells a feed to its subscribers' agents; State Affairs brings the questions into the article. His conclusion is the right one: a connector is not a business model, and being accessible to agents is a different thing from offering something people would pay to use. This newsroom was built around that difference. What is free is open: every article has a markdown twin, a graph and a summary of every section, under CC BY. What is paid is the experience at the source, through a meter you pay after you read. It also takes two of his questions further. A vault can carry a newsroom's identity, permissions and terms with its content, which is one answer to his idea of an Apple News for AI. And provenance can travel with the answer. Discovery, and whether anyone pays at scale, we have not answered either.
-version: v999.0.0
+version: v0.14.52
 license: https://creativecommons.org/licenses/by/4.0/
 tags: news, publishers, ai-agents, business-models, mcp, provenance, vaults, meter, reply, article
 status: published
