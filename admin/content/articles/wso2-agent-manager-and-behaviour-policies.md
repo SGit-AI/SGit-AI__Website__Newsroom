@@ -4,7 +4,7 @@ date: 2026-11-03
 author: Dinis Cruz
 author_url: about/index.html
 summary: WSO2 Agent Manager, generally available since 15 September 2026, is the closest thing I have seen to the platform our behaviour policies assume is already there. It is "an open control plane that governs AI agents across any framework, model, or deployment": an identity for every agent, an Envoy-based gateway that every model and MCP call goes through, a Kubernetes runtime with gVisor and Kata isolation tiers, OpenTelemetry traces, and more than forty built-in guardrails. The code is Apache 2.0 and can be run in production for free; what WSO2 sells is the supported build, updates, support and a managed service, which explains the licence page that confused me. So this is a collaboration analysis, not a competitive one: imagine a company that has deployed Agent Manager, and ask where Agent Behaviour Policies and Process Behaviour Policies add value. The answer is three places. At the gateway, a behaviour policy decision service fits an existing interceptor policy without rebuilding anything. In the runtime, SHarness fits as another isolation tier. And in the traces, both decisions can land in the same view. The MVP to prove it is five steps on WSO2's own quick start.
-version: v999.0.0
+version: v0.14.46
 license: https://creativecommons.org/licenses/by/4.0/
 tags: wso2, agent-manager, riskmandate, behaviour-policies, sharness, agents, governance, open-source, integration, article
 status: published
