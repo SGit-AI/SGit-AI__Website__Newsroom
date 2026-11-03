@@ -4,7 +4,7 @@ date: 2026-11-03
 author: Dinis Cruz
 author_url: about/index.html
 summary: The brief for an independent English teacher's site, in a teacher and agents she can trust, comes with a worked example you can open: English with Inês, a vault app for a fictional teacher and three fictional students. A student opens it with a link and practises between lessons: four lessons, each with an experiment that explains by moving (a window of time that slides past now, the four ideas the particle up adds, a minimal-pairs listening game, an email to put in order), exercises, cards that come back after one, three, seven and fourteen days, and a tutor that answers only about the lesson on the screen, through the vault's own AI key, which the page never sees. Their progress is saved in their browser, and their path is drawn from a map of thirteen concepts. Then the teacher's side: the pipeline from enquiry to renewal, the students, the weekly brief with three decisions, what is paid for and how, and the seven agents, each with its Agent Behaviour Policy and the barrier that holds each line. It is one HTML file and one JSON file, built and tested in this session.
-version: v999.0.0
+version: v0.14.42
 license: https://creativecommons.org/licenses/by/4.0/
 tags: vaults, education, teachers, agents, behaviour-policies, knowledge-graphs, vault-app, article
 status: published

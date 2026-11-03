@@ -4,7 +4,7 @@ date: 2026-11-03
 author: Dinis Cruz
 author_url: about/index.html
 summary: Think of an independent English teacher in Portugal who teaches adults online. She is very good at what she does: her lesson plans, her materials and her students' results are the business. Around the lessons, though, everything runs on spreadsheets, Meet and memory, and she has no time to find students, follow up, or turn a good explanation into something a student can use again. Agents can do most of that now. But give her open-ended agents that can email her students, change her calendar and invent a rule of grammar, and the first time one goes wrong she will go back to pen and paper, because at least she controls that. So this brief gives her the opposite: a site she owns, a loop around every lesson where agents draft and she decides, and an Agent Behaviour Policy for every agent, saying what it is for, what it can reach, and what holds each line. No agent can send an email; the ones that read her calendar and inbox cannot change them; every payment link comes from a key that cannot refund. Then the part that makes it worth doing: with the plumbing handled, she can be as creative as she likes, publishing every good explanation as a lesson page that earns, and building practice that fits each student's goal and level, guided by what learning research supports. A worked example, English with Inês, is in a vault.
-version: v999.0.0
+version: v0.14.42
 license: https://creativecommons.org/licenses/by/4.0/
 tags: education, teachers, agents, behaviour-policies, riskmandate, vaults, small-business, brief, article
 status: published
