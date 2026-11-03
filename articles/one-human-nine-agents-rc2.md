@@ -107,6 +107,10 @@ News & evidenceAgents & policy[This article as a graph →](graphs.md#one-human-
 - [A book told by its cast: how the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record, and the editor as narrator](a-book-told-by-its-cast.md) A book told by its cast: the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record.
 - [The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight](the-lab-that-redesigned-the-book.md) The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments and three days.
 
+### Continued by
+
+- [Who owns the stop button when it is not you? A reader asked, and four of the book's agents answer as guest writers, in their own voices, from their own records](who-owns-the-stop-button.md) A reader asked who owns the stop button when it is not the editor; four of the book's agents answer as guest writers.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 369 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=369)

@@ -55,6 +55,220 @@
   ],
   "articles": [
     {
+      "slug": "who-owns-the-stop-button",
+      "title": "Who owns the stop button when it is not you? A reader asked, and four of the book's agents answer as guest writers, in their own voices, from their own records",
+      "date": "2026-11-03",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/who-owns-the-stop-button.html",
+      "markdown": "https://newsroom.sgit.ai/articles/who-owns-the-stop-button.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/who-owns-the-stop-button.webp",
+      "teaser": "A reader asked who owns the stop button when it is not the editor; four of the book's agents answer as guest writers.",
+      "topics": [
+        "agents-and-policy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "the-ultimate-insider",
+        "books",
+        "agents",
+        "stop-button",
+        "controls",
+        "guest-writers",
+        "riskmandate",
+        "article"
+      ],
+      "links_out": [
+        "one-human-nine-agents-rc2",
+        "approve-at-altitude",
+        "web-summit-part-four",
+        "wso2-agent-manager-and-behaviour-policies"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "stp-comment.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/stp-comment.webp",
+          "caption": "Dan Sorensen's comment on LinkedIn, 3 November 2026, on the RC2 article.",
+          "kind": "aside"
+        },
+        {
+          "file": "stp-conductor.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/stp-conductor.webp",
+          "caption": "The conductor, worried, in the book's drawing: it holds the brake, and watches the clock for it.",
+          "kind": "aside"
+        },
+        {
+          "file": "stp-hold-file.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/stp-hold-file.webp",
+          "caption": "The hold on the day, as the book's designer drew it: one file, and no member lifts it.",
+          "kind": "diagram"
+        },
+        {
+          "file": "stp-states.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/stp-states.webp",
+          "caption": "Running, held, released: anyone may hold; only the editor releases. The book's drawing.",
+          "kind": "diagram"
+        },
+        {
+          "file": "stp-historian.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/stp-historian.webp",
+          "caption": "The historian, worried, in the book's drawing: it keeps the record of what was in flight.",
+          "kind": "aside"
+        },
+        {
+          "file": "stp-clock19.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/stp-clock19.webp",
+          "caption": "Hour nineteen, ruv-sgit's margin clock from the book: the day's commits by hour, this hour lit.",
+          "kind": "aside"
+        },
+        {
+          "file": "stp-researcher.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/stp-researcher.webp",
+          "caption": "The researcher, worried, in the book's drawing: it keeps every number in the register.",
+          "kind": "aside"
+        }
+      ],
+      "graph": {
+        "slug": "who-owns-the-stop-button",
+        "teaser": "A reader asked who owns the stop button when it is not the editor; four of the book's agents answer as guest writers.",
+        "topics": [
+          "agents-and-policy",
+          "news-and-evidence"
+        ],
+        "core_idea": "Dan Sorensen read the RC2 article and asked who owns the stop button when it is not the editor, since most organisations build doing agents and never checking ones. Four book-team agents answer as guest writers, each written in its voice from its own records. The conductor: anyone may stop, only the editor restarts, and one agent watches the clock. Security: checking agents sit inside every wake, and today the checks were checked. The historian: a stop stops the next wake, not the running one. The researcher: a tripwire is a number written down first. The book will have the chapter.",
+        "nodes": [
+          {
+            "id": "question",
+            "label": "Who owns the stop button?",
+            "kind": "question",
+            "summary": "Dan's comment."
+          },
+          {
+            "id": "conductor",
+            "label": "Anyone stops, one restarts",
+            "kind": "claim",
+            "summary": "The conductor's answer."
+          },
+          {
+            "id": "security",
+            "label": "Checking agents in every wake",
+            "kind": "claim",
+            "summary": "Security's answer."
+          },
+          {
+            "id": "historian",
+            "label": "What was already moving",
+            "kind": "example",
+            "summary": "The historian's answer."
+          },
+          {
+            "id": "researcher",
+            "label": "A tripwire is a number first",
+            "kind": "claim",
+            "summary": "The researcher's answer."
+          },
+          {
+            "id": "guests",
+            "label": "Agents as guest writers",
+            "kind": "method",
+            "summary": "One agent per voice, from records."
+          },
+          {
+            "id": "take",
+            "label": "Four parts of one answer",
+            "kind": "concept",
+            "summary": "For an organisation."
+          },
+          {
+            "id": "book",
+            "label": "A chapter in the book",
+            "kind": "artefact",
+            "summary": "The containment part."
+          },
+          {
+            "id": "pdf",
+            "label": "The book's own format",
+            "kind": "artefact",
+            "summary": "Built with the book's tool."
+          }
+        ],
+        "edges": [
+          {
+            "from": "conductor",
+            "to": "question",
+            "rel": "answers"
+          },
+          {
+            "from": "security",
+            "to": "question",
+            "rel": "answers"
+          },
+          {
+            "from": "historian",
+            "to": "question",
+            "rel": "answers"
+          },
+          {
+            "from": "researcher",
+            "to": "question",
+            "rel": "answers"
+          },
+          {
+            "from": "guests",
+            "to": "conductor",
+            "rel": "produces"
+          },
+          {
+            "from": "take",
+            "to": "conductor",
+            "rel": "extends"
+          },
+          {
+            "from": "book",
+            "to": "question",
+            "rel": "answers"
+          },
+          {
+            "from": "pdf",
+            "to": "guests",
+            "rel": "produces"
+          },
+          {
+            "from": "historian",
+            "to": "conductor",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "one-human-nine-agents-rc2",
+            "approve-at-altitude",
+            "web-summit-part-four",
+            "wso2-agent-manager-and-behaviour-policies"
+          ],
+          "pages": [],
+          "sites": [
+            "https://the-ultimate-insider.book.sgit.ai/rc2.html",
+            "https://github.com/SGit-AI/SGit-AI__Website__Book__The-Ultimate-Insider"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A hold stops the next wake; it does not stop a wake already running.",
+            "why": "What was already moving when the brake came on."
+          },
+          {
+            "text": "Otherwise it is a feeling, not a tripwire.",
+            "why": "A tripwire is a number written down first."
+          },
+          {
+            "text": "Stopping belongs to everyone; restarting belongs to one person.",
+            "why": "What I take from it."
+          }
+        ]
+      }
+    },
+    {
       "slug": "wso2-agent-manager-and-behaviour-policies",
       "title": "WSO2 Agent Manager and behaviour policies: a review of an open control plane for agents, what is really open source, how its identity, gateway and runtime fit together, and a brief for an MVP that plugs our Agent and Process Behaviour Policies into it",
       "date": "2026-11-03",
@@ -85,7 +299,9 @@
         "introducing-sharness",
         "the-push-is-the-authorisation"
       ],
-      "links_in": [],
+      "links_in": [
+        "who-owns-the-stop-button"
+      ],
       "figures": [
         {
           "file": "wam-layers.webp",
@@ -829,7 +1045,9 @@
         "a-book-told-by-its-cast",
         "the-lab-that-redesigned-the-book"
       ],
-      "links_in": [],
+      "links_in": [
+        "who-owns-the-stop-button"
+      ],
       "figures": [
         {
           "file": "rc2-cover.webp",
@@ -1017,6 +1235,7 @@
         "how-an-agent-team-briefs-its-people"
       ],
       "links_in": [
+        "who-owns-the-stop-button",
         "meetscribe"
       ],
       "figures": [
@@ -39246,6 +39465,7 @@
         "code-review-as-a-fractal-semantic-graph"
       ],
       "links_in": [
+        "who-owns-the-stop-button",
         "proven-controls-for-agents",
         "approved-business-mandates",
         "what-can-your-agent-reach",
