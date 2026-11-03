@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.53 · 379 articles since 2026-08-17; the newest is 2026-11-03. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 378 articles since 2026-08-17; the newest is 2026-11-03. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -18,19 +18,18 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 - [No tech stack to maintain: it is not that there is no backend, it is that the only code you own is HTML, CSS and JavaScript, with every other primitive rented as a commodity or run in the user's browser over encrypted vaults](articles/no-tech-stack-to-maintain.md), Engineering this newsroom, 2026-11-03, 7 min.
 - [The shop that sells time: the padel shop's path to market, sell one and fulfil it before anything else, start with the customers who already trust you, promise late and deliver early, a few products you vouch for, and no stock until the orders make you](articles/the-shop-that-sells-time.md), Startups & strategy, 2026-11-03, 8 min.
-- [The RiskMandate partner programme: why companies that already see agents at work need the one thing their logs cannot tell them, what each agent is for, and what a partner gives, gets, and how we go to market together](articles/the-riskmandate-partner-programme.md), Startups & strategy, 2026-11-03, 4 min.
-- [The cost of your agents: a first RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](articles/the-cost-of-your-agents.md), Agent security & behaviour policies, 2026-11-03, 6 min.
+- [The cost of your agents: a RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](articles/the-cost-of-your-agents.md), Agent security & behaviour policies, 2026-11-03, 6 min.
 - [How a vault works: an encrypted store that acts like a database, where a server that is fully compromised leaks nothing, one mutable file lets every other object be cached for ever, and a web page can open a file in four requests or run a whole app in a sandbox](articles/how-a-vault-works.md), sgit & vaults, 2026-11-03, 6 min.
+- [Who owns the stop button when it is not you? A reader asked, and four of the book's agents answer as guest writers, in their own voices, from their own records](articles/who-owns-the-stop-button.md), Working with agents, 2026-11-03, 14 min.
 
 ## The last five days
 
-### Tuesday 3 November 2026 (12 articles)
+### Tuesday 3 November 2026 (11 articles)
 
 - The future of news: [Would you pay to plug this newsroom in? A reply to Florent Daudens, on five publishers' bets for the AI era, from a newsroom built for agents, with what it answers, where it goes further, and the questions it has not answered either](articles/would-you-pay-to-plug-this-newsroom-in.md), 6 min.
 - Engineering this newsroom: [No tech stack to maintain: it is not that there is no backend, it is that the only code you own is HTML, CSS and JavaScript, with every other primitive rented as a commodity or run in the user's browser over encrypted vaults](articles/no-tech-stack-to-maintain.md), 7 min.
 - Startups & strategy: [The shop that sells time: the padel shop's path to market, sell one and fulfil it before anything else, start with the customers who already trust you, promise late and deliver early, a few products you vouch for, and no stock until the orders make you](articles/the-shop-that-sells-time.md), 8 min.
-- Startups & strategy: [The RiskMandate partner programme: why companies that already see agents at work need the one thing their logs cannot tell them, what each agent is for, and what a partner gives, gets, and how we go to market together](articles/the-riskmandate-partner-programme.md), 4 min.
-- Agent security & behaviour policies: [The cost of your agents: a first RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](articles/the-cost-of-your-agents.md), 6 min.
+- Agent security & behaviour policies: [The cost of your agents: a RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](articles/the-cost-of-your-agents.md), 6 min.
 - sgit & vaults: [How a vault works: an encrypted store that acts like a database, where a server that is fully compromised leaks nothing, one mutable file lets every other object be cached for ever, and a web page can open a file in four requests or run a whole app in a sandbox](articles/how-a-vault-works.md), 6 min.
 - Working with agents: [Who owns the stop button when it is not you? A reader asked, and four of the book's agents answer as guest writers, in their own voices, from their own records](articles/who-owns-the-stop-button.md), 14 min.
 - Agent security & behaviour policies: [WSO2 Agent Manager and behaviour policies: a review of an open control plane for agents, what is really open source, how its identity, gateway and runtime fit together, and a brief for an MVP that plugs our Agent and Process Behaviour Policies into it](articles/wso2-agent-manager-and-behaviour-policies.md), 8 min.
@@ -99,7 +98,7 @@ Every article is in exactly one of eight sections, by topic.
 
 ### [Agent security & behaviour policies](sections/policy/index.md) (91)
 What an agent may do, who carries the risk, and how a policy is enforced: RiskMandate, Agent Behaviour Policies, hooks, accountability, governance.
-- [The cost of your agents: a first RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](articles/the-cost-of-your-agents.md), 2026-11-03.
+- [The cost of your agents: a RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](articles/the-cost-of-your-agents.md), 2026-11-03.
 - [WSO2 Agent Manager and behaviour policies: a review of an open control plane for agents, what is really open source, how its identity, gateway and runtime fit together, and a brief for an MVP that plugs our Agent and Process Behaviour Policies into it](articles/wso2-agent-manager-and-behaviour-policies.md), 2026-11-03.
 - [False positives and the harness: an answer to a question at hack::soho, why a behaviour policy that runs from the network up to the business logic should refuse less of what is right and more of what is wrong, and why a policy that changes with the code becomes a calibrator for bugs](articles/false-positives-and-the-harness.md), 2026-11-02.
 - [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](articles/the-grant-not-the-prompt.md), 2026-11-02.
@@ -129,13 +128,13 @@ Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta
 - [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](articles/agentic-readers.md), 2026-10-31.
 - [Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall, credit to start, and a meter that charges for what is read](articles/every-link-a-gift-link.md), 2026-10-31.
 
-### [Startups & strategy](sections/strategy/index.md) (83)
+### [Startups & strategy](sections/strategy/index.md) (82)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 - [The shop that sells time: the padel shop's path to market, sell one and fulfil it before anything else, start with the customers who already trust you, promise late and deliver early, a few products you vouch for, and no stock until the orders make you](articles/the-shop-that-sells-time.md), 2026-11-03.
-- [The RiskMandate partner programme: why companies that already see agents at work need the one thing their logs cannot tell them, what each agent is for, and what a partner gives, gets, and how we go to market together](articles/the-riskmandate-partner-programme.md), 2026-11-03.
 - [The Web Summit team, part four: the day the agents ran on their own, 75 releases, four people connected, a procurement agent writing to printers, and the behaviour policies catching our own agents out](articles/web-summit-part-four.md), 2026-11-02.
 - [The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work](articles/web-summit-how-we-work.md), 2026-11-02.
 - [The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault](articles/sell-the-sleeve.md), 2026-11-02.
+- [A solution, not a problem: a coach sent me a link to a product he could not sell me, what that moment teaches about business, security teams, bookshops and travel agents, and why RiskMandate has been making the same mistake](articles/a-solution-not-a-problem.md), 2026-11-02.
 
 ### [Engineering this newsroom](sections/building/index.md) (45)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.

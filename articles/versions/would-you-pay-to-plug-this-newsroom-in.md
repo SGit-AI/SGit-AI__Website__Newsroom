@@ -16,8 +16,8 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-03 | minor | 1,532 | +62 / −0 words; 1 changed, 1 added, 0 removed paragraphs | this release | [what changed](would-you-pay-to-plug-this-newsroom-in/v1.1.0.md) · [current](../would-you-pay-to-plug-this-newsroom-in.md) |
-| **v1.0.0** | 2026-11-03 | published | 1,470 | first published | [`480fe6e2e`](https://github.com/SGit-AI/SGit-AI__Website/commit/480fe6e2e19a53795442fab1f302374f406badc6) |  |
+| **v1.1.0** | 2026-11-03 | minor | 1,532 | +62 / −0 words; 1 changed, 1 added, 0 removed paragraphs | [`1f2b57471`](https://github.com/SGit-AI/SGit-AI__Website/commit/1f2b57471574e9bb6aed5d70d0bcaae5b1331f90) | [what changed](would-you-pay-to-plug-this-newsroom-in/v1.1.0.md) · [current](../would-you-pay-to-plug-this-newsroom-in.md) |
+| **v1.0.0** | 2026-11-03 | published | 1,470 | first published | [`26d37bd37`](https://github.com/SGit-AI/SGit-AI__Website/commit/26d37bd379bc7560f45755da6fb12c573d3ab17a) |  |
 
 [← Back to the article](../would-you-pay-to-plug-this-newsroom-in.md) · [All articles](../index.md)
 

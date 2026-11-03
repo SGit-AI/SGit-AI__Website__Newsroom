@@ -10,13 +10,13 @@
 
 # Versions of: The cost of your agents
 
-1 published version of [The cost of your agents: a first RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](../the-cost-of-your-agents.md). The current one is **v1.0.0**.
+1 published version of [The cost of your agents: a RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](../the-cost-of-your-agents.md). The current one is **v1.0.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-03 | published | 1,616 | first published | [`b3cd0209b`](https://github.com/SGit-AI/SGit-AI__Website/commit/b3cd0209bcbbf3d77c6eedc969900eeb2261e1d0) | [current](../the-cost-of-your-agents.md) |
+| **v1.0.0** | 2026-11-03 | published | 1,594 | first published | [`d61f36739`](https://github.com/SGit-AI/SGit-AI__Website/commit/d61f36739ca72e9c4bd73364da4b426769d11aa2) | [current](../the-cost-of-your-agents.md) |
 
 [← Back to the article](../the-cost-of-your-agents.md) · [All articles](../index.md)
 
