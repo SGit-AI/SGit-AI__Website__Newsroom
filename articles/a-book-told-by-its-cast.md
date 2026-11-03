@@ -107,6 +107,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#a-book-tol
 
 ### Continued by
 
+- [One Human, Nine Agents, Nineteen Hours: the second draft of the book of the talk, written down the zoom from 3 pages to 70, every chapter checked five ways, the agents arguing with their own reviewers on the page, and a request for your feedback on the 27-page draft](one-human-nine-agents-rc2.md) RC2 of One Human, Nine Agents, Nineteen Hours: written down the zoom, every chapter checked five ways, and a request for your feedback.
 - [The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight](the-lab-that-redesigned-the-book.md) The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments and three days.
 
 [All articles](index.md) · [All graphs](graphs.md)

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-02 | published | 1,633 | first published | this release | [current](../how-an-agent-team-briefs-its-people.md) |
+| **v1.0.0** | 2026-11-02 | published | 1,633 | first published | [`b23626925`](https://github.com/SGit-AI/SGit-AI__Website/commit/b23626925a66abd4a911ef5d0fadd5c2b2b7e98c) | [current](../how-an-agent-team-briefs-its-people.md) |
 
 [← Back to the article](../how-an-agent-team-briefs-its-people.md) · [All articles](../index.md)
 

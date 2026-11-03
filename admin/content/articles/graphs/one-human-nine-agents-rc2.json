@@ -1,0 +1,38 @@
+{
+ "slug": "one-human-nine-agents-rc2",
+ "teaser": "RC2 of One Human, Nine Agents, Nineteen Hours: written down the zoom, every chapter checked five ways, and a request for your feedback.",
+ "topics": ["news-and-evidence", "agents-and-policy"],
+ "core_idea": "The book of the talk built by nine agents in a day now has a title and a 27-page second release candidate, published as a draft. It is written down the zoom, from 3 pages to 10 to 30, with 70 begun, and each chapter passes five checks: arc, test-reader personas, quotes, numbers and security. Its scenes are the factory's controls: a conductor caught by its own reviewer, a researcher winning an argument with its reviewer, an objection to the author's claim kept in the book, and a hold that stopped everything before the talk. It ends with five steps to build your own, and asks readers for feedback on LinkedIn or as issues on the book's repository.",
+ "nodes": [
+  {"id": "title", "label": "A title and RC2", "kind": "artefact", "summary": "27 pages, published as a draft."},
+  {"id": "zoom", "label": "Written down the zoom", "kind": "method", "summary": "3, 10, 30, then 70 pages."},
+  {"id": "checks", "label": "Five checks per chapter", "kind": "method", "summary": "Arc, personas, quotes, numbers, security."},
+  {"id": "caught", "label": "Caught by its own reviewer", "kind": "example", "summary": "A second reading, not a second identity."},
+  {"id": "argument", "label": "The argument with a reviewer", "kind": "example", "summary": "Objection withdrawn."},
+  {"id": "objection", "label": "The objection kept", "kind": "example", "summary": "The data says the opposite."},
+  {"id": "hold", "label": "The hold", "kind": "example", "summary": "Stopped sixteen minutes before."},
+  {"id": "yours", "label": "Five steps to build yours", "kind": "method", "summary": "One tool, one page of rules, one brief."},
+  {"id": "feedback", "label": "A request for feedback", "kind": "question", "summary": "Does it work, where did you stop, can you follow it?"}
+ ],
+ "edges": [
+  {"from": "zoom", "to": "title", "rel": "produces"},
+  {"from": "checks", "to": "title", "rel": "depends-on"},
+  {"from": "caught", "to": "checks", "rel": "example-of"},
+  {"from": "argument", "to": "caught", "rel": "extends"},
+  {"from": "objection", "to": "checks", "rel": "example-of"},
+  {"from": "hold", "to": "caught", "rel": "compared-with"},
+  {"from": "yours", "to": "hold", "rel": "leads-to"},
+  {"from": "feedback", "to": "title", "rel": "answers"},
+  {"from": "feedback", "to": "yours", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["the-ultimate-insider-case-study", "the-book-of-the-talk-and-its-companion", "a-book-told-by-its-cast", "the-lab-that-redesigned-the-book"],
+  "pages": [],
+  "sites": ["https://the-ultimate-insider.book.sgit.ai/rc2.html", "https://github.com/SGit-AI/SGit-AI__Website__Book__The-Ultimate-Insider/issues"]
+ },
+ "quotes": [
+  {"text": "a second reading, not a second identity.", "why": "The controls, on the page."},
+  {"text": "the controls are not an appendix. They are the scenes.", "why": "The controls, on the page."},
+  {"text": "Does the story work?", "why": "What I would like from you."}
+ ]
+}

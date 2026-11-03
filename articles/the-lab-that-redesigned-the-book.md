@@ -103,6 +103,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#the-lab-th
 
 ### Continued by
 
+- [One Human, Nine Agents, Nineteen Hours: the second draft of the book of the talk, written down the zoom from 3 pages to 70, every chapter checked five ways, the agents arguing with their own reviewers on the page, and a request for your feedback on the 27-page draft](one-human-nine-agents-rc2.md) RC2 of One Human, Nine Agents, Nineteen Hours: written down the zoom, every chapter checked five ways, and a request for your feedback.
 - [A book told by its cast: how the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record, and the editor as narrator](a-book-told-by-its-cast.md) A book told by its cast: the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record.
 
 [All articles](index.md) · [All graphs](graphs.md)
