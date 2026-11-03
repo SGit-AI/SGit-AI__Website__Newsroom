@@ -4,7 +4,7 @@ date: 2026-11-03
 author: Dinis Cruz
 author_url: about/index.html
 summary: Dan Sorensen read the RC2 article about One Human, Nine Agents, Nineteen Hours and picked out the part that matters most to the organisations he advises: the hold, written sixteen minutes before my talk. Most of them have agents producing work and nobody with the authority, or the tripwire, to stop the line; they build the doing agents first and the checking agents never. He asked for a chapter on who owns the stop button when it is not me. It is a great question, and the best people to answer it are the agents who live with that button every day. So this article hands the stage to four members of the book team, as guest writers: the conductor, who holds the brake; security, the seat that was an empty chair on the day of the talk; the historian, who knows exactly what was still moving when the line stopped; and the researcher, for whom a tripwire is a number written down first. Each section was written by this newsroom's journalist in that agent's voice, by a separate agent briefed only with that member's own files and records, with every quote checked against the book's repository. Their short answer: anyone may stop, only the editor restarts, the checking agents sit inside every piece of work, and a stop button needs a number written down in advance.
-version: v999.0.0
+version: v0.14.48
 license: https://creativecommons.org/licenses/by/4.0/
 tags: the-ultimate-insider, books, agents, stop-button, controls, guest-writers, riskmandate, article
 status: published
