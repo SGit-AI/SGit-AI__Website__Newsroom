@@ -43,6 +43,8 @@ This newsroom is built on that separation.
 
 **What is paid is the experience at the source.** A reader starts with £5 of credit, each article uses a few pence, they can set the price from free to double or refuse it, and the balance can go below zero and stay there: [paying after the value](/articles/paying-after-the-value.html). He writes: "I think price points will be fundamental." The meter answers that with a different question: not what a month is worth before you have used it, but what the thing you just read was worth to you.
 
+For a publisher who wants to look for themselves, [the section for publishers](https://newsroom.sgit.ai/sections/publishers/index.html) keeps all of this in one place: an overview of what is live and how to try it, the features you can use today, how the newsroom gets paid, and its answers to the industry, this one included. It updates itself as articles and features ship.
+
 ## Both directions, not one {#directions}
 
 His five bets split two ways: bring the archive to your assistant (CNA, Spiegel, Axios), or bring the assistant into the article (State Affairs, Every). We do both.
@@ -80,4 +82,4 @@ What he would like to see next, "people coming back because a publisher's work h
 
 ## Where this comes from {#sources}
 
-A screenshot of Florent Daudens' LinkedIn post of 3 November 2026, and [his essay on Substack](https://fdaudens.substack.com/p/would-you-pay-to-plug-a-newsroom), read the same day. [Focus Taiwan on CNA's service](https://focustaiwan.tw/sci-tech/202608310016), [Spiegel's connector listing](https://claude.com/marketplace/connectors/nsdap-archiv-der-spiegel), [Digiday on Axios Direct](https://digiday.com/media/axios-preps-new-axios-direct-feeds-for-ai-models-agents-as-revenue-tops-2026-goal/). Earlier on this site: [agentic risk, or agentic readers?](/articles/agentic-readers.html) and [breaking the story down before the agents do](/articles/breaking-the-story-down-before-the-agents-do.html). All read 3 November 2026.
+A screenshot of Florent Daudens' LinkedIn post of 3 November 2026, and [his essay on Substack](https://fdaudens.substack.com/p/would-you-pay-to-plug-a-newsroom), read the same day. [Focus Taiwan on CNA's service](https://focustaiwan.tw/sci-tech/202608310016), [Spiegel's connector listing](https://claude.com/marketplace/connectors/nsdap-archiv-der-spiegel), [Digiday on Axios Direct](https://digiday.com/media/axios-preps-new-axios-direct-feeds-for-ai-models-agents-as-revenue-tops-2026-goal/). On this site: [the section for publishers](https://newsroom.sgit.ai/sections/publishers/index.html), [agentic risk, or agentic readers?](/articles/agentic-readers.html) and [breaking the story down before the agents do](/articles/breaking-the-story-down-before-the-agents-do.html). All read 3 November 2026.

@@ -10,7 +10,7 @@
 
 # Would you pay to plug this newsroom in? A reply to Florent Daudens, on five publishers' bets for the AI era, from a newsroom built for agents, with what it answers, where it goes further, and the questions it has not answered either
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-03 · [article v1.0.0](versions/would-you-pay-to-plug-this-newsroom-in.md) · [newsroom v0.14.52](https://newsroom.sgit.ai/admin/versions.html) · newspublishersai-agentsbusiness-modelsmcpprovenancevaultsmeterreplyarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-03 · [article v1.1.0, 2 versions](versions/would-you-pay-to-plug-this-newsroom-in.md) · [newsroom v0.14.52](https://newsroom.sgit.ai/admin/versions.html) · newspublishersai-agentsbusiness-modelsmcpprovenancevaultsmeterreplyarticle
 
 ***Abstract:** Florent Daudens asked, in a post and an essay today, what people will use and pay for once the article is only one way into a newsroom. He looks at five bets. CNA sells a connector to its archive for about six dollars a month; Der Spiegel lets people search a Nazi Party membership archive from Claude; Every makes articles you explore with your own assistant; Axios sells a feed to its subscribers' agents; State Affairs brings the questions into the article. His conclusion is the right one: a connector is not a business model, and being accessible to agents is a different thing from offering something people would pay to use. This newsroom was built around that difference. What is free is open: every article has a markdown twin, a graph and a summary of every section, under CC BY. What is paid is the experience at the source, through a meter you pay after you read. It also takes two of his questions further. A vault can carry a newsroom's identity, permissions and terms with its content, which is one answer to his idea of an Apple News for AI. And provenance can travel with the answer. Discovery, and whether anyone pays at scale, we have not answered either.*
 
@@ -46,6 +46,8 @@ This newsroom is built on that separation.
 **What is accessible is free and open.** Every article is CC BY 4.0. Every page has a markdown twin, so an agent never has to scrape HTML. Every article has a knowledge graph and a one-line and one-paragraph summary of every section, and the site publishes `llms.txt`, `llms-full.txt` and a [reader API](https://api.newsroom.sgit.ai/). I described these layers in [breaking the story down before the agents do](breaking-the-story-down-before-the-agents-do.md), a reply to Ole Reissmann, who, as Florent writes, coordinated Spiegel's archive connector.
 
 **What is paid is the experience at the source.** A reader starts with £5 of credit, each article uses a few pence, they can set the price from free to double or refuse it, and the balance can go below zero and stay there: [paying after the value](paying-after-the-value.md). He writes: "I think price points will be fundamental." The meter answers that with a different question: not what a month is worth before you have used it, but what the thing you just read was worth to you.
+
+For a publisher who wants to look for themselves, [the section for publishers](https://newsroom.sgit.ai/sections/publishers/index.html) keeps all of this in one place: an overview of what is live and how to try it, the features you can use today, how the newsroom gets paid, and its answers to the industry, this one included. It updates itself as articles and features ship.
 
 ## Both directions, not one
 
@@ -84,7 +86,7 @@ What he would like to see next, "people coming back because a publisher's work h
 
 ## Where this comes from
 
-A screenshot of Florent Daudens' LinkedIn post of 3 November 2026, and [his essay on Substack](https://fdaudens.substack.com/p/would-you-pay-to-plug-a-newsroom), read the same day. [Focus Taiwan on CNA's service](https://focustaiwan.tw/sci-tech/202608310016), [Spiegel's connector listing](https://claude.com/marketplace/connectors/nsdap-archiv-der-spiegel), [Digiday on Axios Direct](https://digiday.com/media/axios-preps-new-axios-direct-feeds-for-ai-models-agents-as-revenue-tops-2026-goal/). Earlier on this site: [agentic risk, or agentic readers?](agentic-readers.md) and [breaking the story down before the agents do](breaking-the-story-down-before-the-agents-do.md). All read 3 November 2026.
+A screenshot of Florent Daudens' LinkedIn post of 3 November 2026, and [his essay on Substack](https://fdaudens.substack.com/p/would-you-pay-to-plug-a-newsroom), read the same day. [Focus Taiwan on CNA's service](https://focustaiwan.tw/sci-tech/202608310016), [Spiegel's connector listing](https://claude.com/marketplace/connectors/nsdap-archiv-der-spiegel), [Digiday on Axios Direct](https://digiday.com/media/axios-preps-new-axios-direct-feeds-for-ai-models-agents-as-revenue-tops-2026-goal/). On this site: [the section for publishers](https://newsroom.sgit.ai/sections/publishers/index.html), [agentic risk, or agentic readers?](agentic-readers.md) and [breaking the story down before the agents do](breaking-the-story-down-before-the-agents-do.md). All read 3 November 2026.
 
 ## Threads
 
