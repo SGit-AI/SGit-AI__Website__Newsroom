@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-03 | published | 1,552 | first published | this release | [current](../one-human-nine-agents-rc2.md) |
+| **v1.0.0** | 2026-11-03 | published | 1,552 | first published | [`98349f88c`](https://github.com/SGit-AI/SGit-AI__Website/commit/98349f88c50c8f8b1db254e9c61077816518ed85) | [current](../one-human-nine-agents-rc2.md) |
 
 [← Back to the article](../one-human-nine-agents-rc2.md) · [All articles](../index.md)
 

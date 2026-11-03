@@ -136,6 +136,7 @@ Site & engineeringStartups & strategy[This article as a graph →](graphs.md#fix
 
 ### Continued by
 
+- [MeetScribe: transcripts and a debrief of my Google Meet calls without upgrading every Workspace account, a Chrome extension built in about two hours from a brief that would have failed without an error, and a call for testers](meetscribe.md) MeetScribe: Meet transcripts and a debrief on your own OpenRouter key, built in two hours from a reviewed brief, and a call for testers.
 - [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](the-editors-channel.md) A key makes a browser an editor's: reads, sign-offs and fixes go to a vault, a daily pass acts and replies, and five lanes set what any reader sends.
 
 [All articles](index.md) · [All graphs](graphs.md)

@@ -1,0 +1,146 @@
+{
+  "slug": "meetscribe",
+  "teaser": "MeetScribe: Meet transcripts and a debrief on your own OpenRouter key, built in two hours from a reviewed brief, and a call for testers.",
+  "topics": [
+    "site-and-engineering",
+    "agents-and-policy"
+  ],
+  "core_idea": "Google Workspace Business Starter has no Meet recording or transcripts, and upgrading everyone doubles the bill. MeetScribe is a Chrome extension that transcribes the call you are in and writes a timed debrief, on your own OpenRouter key, with no bot, no Google recording and no server, for about 5 to 15 US cents an hour. It was built in about two hours from a ChatGPT brief that Claude reviewed first: 23 findings, four of which would have produced plausible but wrong transcripts. Consent is required in law in Portugal, so it asks users to tell everyone every meeting. It is a beta looking for testers.",
+  "nodes": [
+    {
+      "id": "problem",
+      "label": "No transcripts on Starter",
+      "kind": "concept",
+      "summary": "Upgrading everyone doubles the bill."
+    },
+    {
+      "id": "what",
+      "label": "What MeetScribe does",
+      "kind": "artefact",
+      "summary": "Transcript and timed debrief in Chrome."
+    },
+    {
+      "id": "owner",
+      "label": "Your own key",
+      "kind": "method",
+      "summary": "No bot, no Google recording, no server."
+    },
+    {
+      "id": "noguess",
+      "label": "It does not guess",
+      "kind": "claim",
+      "summary": "You and Meeting, echoes marked."
+    },
+    {
+      "id": "built",
+      "label": "Built in two hours",
+      "kind": "example",
+      "summary": "00:15 to 02:13 UTC."
+    },
+    {
+      "id": "review",
+      "label": "The brief that would have failed",
+      "kind": "example",
+      "summary": "23 findings, four silent failures."
+    },
+    {
+      "id": "consent",
+      "label": "Consent is yours to get",
+      "kind": "claim",
+      "summary": "A crime in Portugal without it."
+    },
+    {
+      "id": "try",
+      "label": "Try it",
+      "kind": "method",
+      "summary": "Five minutes, a test-report form."
+    },
+    {
+      "id": "cost",
+      "label": "Cents an hour",
+      "kind": "concept",
+      "summary": "Paid to OpenRouter directly."
+    }
+  ],
+  "edges": [
+    {
+      "from": "what",
+      "to": "problem",
+      "rel": "answers"
+    },
+    {
+      "from": "owner",
+      "to": "what",
+      "rel": "depends-on"
+    },
+    {
+      "from": "cost",
+      "to": "owner",
+      "rel": "produces"
+    },
+    {
+      "from": "noguess",
+      "to": "what",
+      "rel": "extends"
+    },
+    {
+      "from": "review",
+      "to": "built",
+      "rel": "depends-on"
+    },
+    {
+      "from": "built",
+      "to": "what",
+      "rel": "produces"
+    },
+    {
+      "from": "consent",
+      "to": "what",
+      "rel": "depends-on"
+    },
+    {
+      "from": "try",
+      "to": "what",
+      "rel": "example-of"
+    },
+    {
+      "from": "review",
+      "to": "noguess",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "fix-the-page-yourself",
+      "the-grant-not-the-prompt",
+      "web-summit-part-four"
+    ],
+    "pages": [],
+    "sites": [
+      "https://meetscribe.chrome-extension.voicedebrief.ai/",
+      "https://github.com/VoiceDebrief/VoiceDebrief__Chrome_Extension__MeetScribe"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "What I like most is that it does not guess",
+      "why": "What MeetScribe does."
+    },
+    {
+      "text": "They would have produced a transcript that looked fine and was wrong",
+      "why": "The brief that would have failed without an error."
+    },
+    {
+      "text": "Tell people, every time.",
+      "why": "Consent is yours to get."
+    }
+  ],
+  "figures": [
+    {
+      "file": "msc-meetings.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/msc-meetings.webp",
+      "caption": "MeetScribe's meetings page in a test: the debrief, timed points, the transcript, and the cost OpenRouter reported.",
+      "kind": "screenshot"
+    }
+  ]
+}

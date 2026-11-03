@@ -2,10 +2,11 @@
 
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
 
-43 articles, newest first.
+44 articles, newest first.
 
 ## November 2026
 
+- [MeetScribe: transcripts and a debrief of my Google Meet calls without upgrading every Workspace account, a Chrome extension built in about two hours from a brief that would have failed without an error, and a call for testers](../../articles/meetscribe.md), 2026-11-03, 7 min.
 - [One Human, Nine Agents, Nineteen Hours: the second draft of the book of the talk, written down the zoom from 3 pages to 70, every chapter checked five ways, the agents arguing with their own reviewers on the page, and a request for your feedback on the 27-page draft](../../articles/one-human-nine-agents-rc2.md), 2026-11-03, 6 min.
 - [The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight](../../articles/the-lab-that-redesigned-the-book.md), 2026-11-01, 6 min.
 - [A book told by its cast: how the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record, and the editor as narrator](../../articles/a-book-told-by-its-cast.md), 2026-11-01, 6 min.

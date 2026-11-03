@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.40 · 368 articles since 2026-08-17; the newest is 2026-11-03. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 369 articles since 2026-08-17; the newest is 2026-11-03. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,20 +12,21 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [One Human, Nine Agents, Nineteen Hours: the second draft of the book of the talk, written down the zoom from 3 pages to 70, every chapter checked five ways, the agents arguing with their own reviewers on the page, and a request for your feedback on the 27-page draft](articles/one-human-nine-agents-rc2.md), 2026-11-03, 6 min. RC2 of One Human, Nine Agents, Nineteen Hours: written down the zoom, every chapter checked five ways, and a request for your feedback.
+- [MeetScribe: transcripts and a debrief of my Google Meet calls without upgrading every Workspace account, a Chrome extension built in about two hours from a brief that would have failed without an error, and a call for testers](articles/meetscribe.md), 2026-11-03, 7 min. MeetScribe: Meet transcripts and a debrief on your own OpenRouter key, built in two hours from a reviewed brief, and a call for testers.
 
 ## Five more
 
+- [One Human, Nine Agents, Nineteen Hours: the second draft of the book of the talk, written down the zoom from 3 pages to 70, every chapter checked five ways, the agents arguing with their own reviewers on the page, and a request for your feedback on the 27-page draft](articles/one-human-nine-agents-rc2.md), Engineering this newsroom, 2026-11-03, 6 min.
 - [The Web Summit team, part four: the day the agents ran on their own, 75 releases, four people connected, a procurement agent writing to printers, and the behaviour policies catching our own agents out](articles/web-summit-part-four.md), Startups & strategy, 2026-11-02, 6 min.
 - [How an agent team briefs its people: one JSON file, one PDF, four questions in a fixed order, copied from the book team to the Web Summit team in one night, the mistakes the method caught, and why this newsroom still briefs me in a chat](articles/how-an-agent-team-briefs-its-people.md), Working with agents, 2026-11-02, 6 min.
 - [False positives and the harness: an answer to a question at hack::soho, why a behaviour policy that runs from the network up to the business logic should refuse less of what is right and more of what is wrong, and why a policy that changes with the code becomes a calibrator for bugs](articles/false-positives-and-the-harness.md), Agent security & behaviour policies, 2026-11-02, 8 min.
 - [The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work](articles/web-summit-how-we-work.md), Startups & strategy, 2026-11-02, 9 min.
-- [The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault](articles/sell-the-sleeve.md), Startups & strategy, 2026-11-02, 8 min.
 
 ## The last five days
 
-### Tuesday 3 November 2026 (1 article)
+### Tuesday 3 November 2026 (2 articles)
 
+- Engineering this newsroom: [MeetScribe: transcripts and a debrief of my Google Meet calls without upgrading every Workspace account, a Chrome extension built in about two hours from a brief that would have failed without an error, and a call for testers](articles/meetscribe.md), 7 min.
 - Engineering this newsroom: [One Human, Nine Agents, Nineteen Hours: the second draft of the book of the talk, written down the zoom from 3 pages to 70, every chapter checked five ways, the agents arguing with their own reviewers on the page, and a request for your feedback on the 27-page draft](articles/one-human-nine-agents-rc2.md), 6 min.
 
 ### Monday 2 November 2026 (10 articles)
@@ -126,13 +127,13 @@ Founders, funding, open source economics, Wardley maps, Portugal and Europe, leg
 - [A solution, not a problem: a coach sent me a link to a product he could not sell me, what that moment teaches about business, security teams, bookshops and travel agents, and why RiskMandate has been making the same mistake](articles/a-solution-not-a-problem.md), 2026-11-02.
 - [Sellable units: applying api.newsroom.sgit.ai to my brother's website, the reading meter on a composer's site that does not look like a newsroom, the pathways from a viewer to a buyer, and every lesson, score and master as something to sell](articles/sellable-units.md), 2026-11-02.
 
-### [Engineering this newsroom](sections/building/index.md) (43)
+### [Engineering this newsroom](sections/building/index.md) (44)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
+- [MeetScribe: transcripts and a debrief of my Google Meet calls without upgrading every Workspace account, a Chrome extension built in about two hours from a brief that would have failed without an error, and a call for testers](articles/meetscribe.md), 2026-11-03.
 - [One Human, Nine Agents, Nineteen Hours: the second draft of the book of the talk, written down the zoom from 3 pages to 70, every chapter checked five ways, the agents arguing with their own reviewers on the page, and a request for your feedback on the 27-page draft](articles/one-human-nine-agents-rc2.md), 2026-11-03.
 - [The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight](articles/the-lab-that-redesigned-the-book.md), 2026-11-01.
 - [A book told by its cast: how the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record, and the editor as narrator](articles/a-book-told-by-its-cast.md), 2026-11-01.
 - [143 notes in a day: how my pen on a printed release candidate became a record, decisions with their provenance, a review hub and a plan for the next candidate, read by agents](articles/a-pen-on-a-release-candidate.md), 2026-10-31.
-- [A composer's agent: a plan to read a piano score from a PDF into Sibelius, then the composer's own handwriting, with MusicXML in the middle and a check by rendering back](articles/a-composers-agent.md), 2026-10-31.
 
 ### [Graphs & knowledge](sections/graphs/index.md) (13)
 Fractal semantic graphs, knowledge that maintains itself, search as navigation, and the research community around them.

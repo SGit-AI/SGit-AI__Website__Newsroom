@@ -102,6 +102,10 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#web-su
 - [One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again](one-writer-one-key.md) One writer, one key: a register of writer agents, opened at the editor's word, every release signed, and a closed key never used again.
 - [How an agent team briefs its people: one JSON file, one PDF, four questions in a fixed order, copied from the book team to the Web Summit team in one night, the mistakes the method caught, and why this newsroom still briefs me in a chat](how-an-agent-team-briefs-its-people.md) How an agent team briefs its people: four questions in order, one JSON file and a PDF, copied from the book team to the Web Summit team in one night.
 
+### Continued by
+
+- [MeetScribe: transcripts and a debrief of my Google Meet calls without upgrading every Workspace account, a Chrome extension built in about two hours from a brief that would have failed without an error, and a call for testers](meetscribe.md) MeetScribe: Meet transcripts and a debrief on your own OpenRouter key, built in two hours from a reviewed brief, and a call for testers.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 368 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=368)

@@ -14,13 +14,40 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-368 of 368 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+369 of 369 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-368 articles, 1755 links between them (2685 mentions in all). 308 articles cite an earlier one; 87 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 30 articles not yet linked either way.
+369 articles, 1758 links between them (2688 mentions in all). 309 articles cite an earlier one; 87 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 30 articles not yet linked either way.
+
+## [MeetScribe: transcripts and a debrief of my Google Meet calls without upgrading every Workspace account, a Chrome extension built in about two hours from a brief that would have failed without an error, and a call for testers](meetscribe.md)
+
+2026-11-03 · Site & engineeringAgents & policy
+
+Google Workspace Business Starter has no Meet recording or transcripts, and upgrading everyone doubles the bill. MeetScribe is a Chrome extension that transcribes the call you are in and writes a timed debrief, on your own OpenRouter key, with no bot, no Google recording and no server, for about 5 to 15 US cents an hour. It was built in about two hours from a ChatGPT brief that Claude reviewed first: 23 findings, four of which would have produced plausible but wrong transcripts. Consent is required in law in Portugal, so it asks users to tell everyone every meeting. It is a beta looking for testers.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 9 edges**
+
+- **No transcripts on Starter** (concept) Upgrading everyone doubles the bill.
+- **What MeetScribe does** (artefact) Transcript and timed debrief in Chrome.
+- **Your own key** (method) No bot, no Google recording, no server.
+- **It does not guess** (claim) You and Meeting, echoes marked.
+- **Built in two hours** (example) 00:15 to 02:13 UTC.
+- **The brief that would have failed** (example) 23 findings, four silent failures.
+- **Consent is yours to get** (claim) A crime in Portugal without it.
+- **Try it** (method) Five minutes, a test-report form.
+- **Cents an hour** (concept) Paid to OpenRouter directly.
+
+> What I like most is that it does not guess What MeetScribe does.
+
+> They would have produced a transcript that looked fine and was wrong The brief that would have failed without an error.
+
+builds on [The Web Summit team, part four: the day the agents ran on their own, 75 releases, four people connected, a procurement agent writing to printers, and the behaviour policies catching our own agents out](#web-summit-part-four), [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](#the-grant-not-the-prompt), [Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom](#fix-the-page-yourself).
 
 ## [One Human, Nine Agents, Nineteen Hours: the second draft of the book of the talk, written down the zoom from 3 pages to 70, every chapter checked five ways, the agents arguing with their own reviewers on the page, and a request for your feedback on the 27-page draft](one-human-nine-agents-rc2.md)
 
@@ -74,7 +101,7 @@ On 2 November the Web Summit team's site made 75 releases. Four of nine people a
 
 > It works under a rule I like: open by default, ask first. A procurement agent at work.
 
-builds on [A brief for the Web Summit team: an event site run by an ephemeral agent team, built from this week's template, with a map of every company we should meet](#web-summit-team-brief), [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](#web-summit-humans-and-their-agents), [The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work](#web-summit-how-we-work), [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](#the-grant-not-the-prompt), [One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again](#one-writer-one-key), [How an agent team briefs its people: one JSON file, one PDF, four questions in a fixed order, copied from the book team to the Web Summit team in one night, the mistakes the method caught, and why this newsroom still briefs me in a chat](#how-an-agent-team-briefs-its-people).
+builds on [A brief for the Web Summit team: an event site run by an ephemeral agent team, built from this week's template, with a map of every company we should meet](#web-summit-team-brief), [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](#web-summit-humans-and-their-agents), [The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work](#web-summit-how-we-work), [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](#the-grant-not-the-prompt), [One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again](#one-writer-one-key), [How an agent team briefs its people: one JSON file, one PDF, four questions in a fixed order, copied from the book team to the Web Summit team in one night, the mistakes the method caught, and why this newsroom still briefs me in a chat](#how-an-agent-team-briefs-its-people); continued by [MeetScribe: transcripts and a debrief of my Google Meet calls without upgrading every Workspace account, a Chrome extension built in about two hours from a brief that would have failed without an error, and a call for testers](#meetscribe).
 
 ## [How an agent team briefs its people: one JSON file, one PDF, four questions in a fixed order, copied from the book team to the Web Summit team in one night, the mistakes the method caught, and why this newsroom still briefs me in a chat](how-an-agent-team-briefs-its-people.md)
 
@@ -236,7 +263,7 @@ A technical user expected Claude to read his email only in the one conversation 
 
 > Safety by uselessness does not last. Why the prompt is not the control.
 
-builds on [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach); continued by [The Web Summit team, part four: the day the agents ran on their own, 75 releases, four people connected, a procurement agent writing to printers, and the behaviour policies catching our own agents out](#web-summit-part-four).
+builds on [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach); continued by [MeetScribe: transcripts and a debrief of my Google Meet calls without upgrading every Workspace account, a Chrome extension built in about two hours from a brief that would have failed without an error, and a call for testers](#meetscribe), [The Web Summit team, part four: the day the agents ran on their own, 75 releases, four people connected, a procurement agent writing to printers, and the behaviour policies catching our own agents out](#web-summit-part-four).
 
 ## [Separate Ways, explained: what my brother's synth video shows, frame by frame, and why describing work at the moment you make it is the first step to publishing it](separate-ways-explained.md)
 
@@ -5496,7 +5523,7 @@ Most sites are built for ads and attention, and readers could fix them in a line
 
 > The next generation of user experience is the one the user customises The argument.
 
-builds on [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](#software-vendors-as-villagers), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](#dark-mode-and-four-more), [A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle](#a-model-in-the-tab), [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](#a-custom-firefox-of-my-own), [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](#custom-uis-are-not-the-exception); continued by [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel).
+builds on [Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't](#software-vendors-as-villagers), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [Dark mode, and four more: five themes for the newsroom, chosen once and kept in your browser](#dark-mode-and-four-more), [A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle](#a-model-in-the-tab), [A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working](#a-custom-firefox-of-my-own), [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](#custom-uis-are-not-the-exception); continued by [MeetScribe: transcripts and a debrief of my Google Meet calls without upgrading every Workspace account, a Chrome extension built in about two hours from a brief that would have failed without an error, and a call for testers](#meetscribe), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel).
 
 ## [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](i-just-want-to-buy-the-article.md)
 
