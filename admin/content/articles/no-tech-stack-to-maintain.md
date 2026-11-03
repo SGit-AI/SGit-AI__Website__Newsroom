@@ -4,7 +4,7 @@ date: 2026-11-03
 author: Dinis Cruz
 author_url: about/index.html
 summary: There is an engineering elegance in an application with no real backend, and sgit is what makes it possible, because what it gives you is an encrypted data store. The honest way to say it is not that there is no backend. You still need somewhere to serve the pages and somewhere to keep the encrypted files, and sometimes a model provider or an agent platform. But those are commodity services, each doing a few things, run by someone whose job it is. The only tech stack you maintain is an HTML application: the HTML, the CSS and the JavaScript. And you lose very little. Data files live on fast storage, and in a vault they are immutable, so they can be cached for ever. A query that needs a database runs on a database in the browser. A passkey identifies the user, so there is no user data on a server to protect. Append lanes carry messages, PKI encrypts between users, and models run in the browser or behind a host that holds the key. The missing piece is a clean way to give keys to the client. The constraint forces simpler designs, and the server holds nothing worth stealing.
-version: v999.0.0
+version: v0.14.51
 license: https://creativecommons.org/licenses/by/4.0/
 tags: architecture, no-backend, sgit, vaults, passkeys, pki, webassembly, static-hosting, simplicity, article
 status: published
