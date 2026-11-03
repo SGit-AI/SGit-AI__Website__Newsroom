@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-03 | published | 1,676 | first published | this release | [current](../how-a-vault-works.md) |
+| **v1.0.0** | 2026-11-03 | published | 1,676 | first published | [`b3cd0209b`](https://github.com/SGit-AI/SGit-AI__Website/commit/b3cd0209bcbbf3d77c6eedc969900eeb2261e1d0) | [current](../how-a-vault-works.md) |
 
 [← Back to the article](../how-a-vault-works.md) · [All articles](../index.md)
 

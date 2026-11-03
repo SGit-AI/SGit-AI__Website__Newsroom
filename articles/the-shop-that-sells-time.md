@@ -115,6 +115,10 @@ Startups & strategyNews & evidence[This article as a graph →](graphs.md#the-sh
 - [The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault](sell-the-sleeve.md) The shop a padel coach could have had for one sleeve: the law, the platforms, what Claude can run, and a mock-up in a vault.
 - [A teacher and agents she can trust: a brief for an independent online English teacher's site, the workflows around every lesson, an Agent Behaviour Policy for every agent, the plumbing behind it, and content made for each student](a-teacher-and-agents-she-can-trust.md) A brief for an independent online English teacher: a loop around every lesson where agents draft and she decides, and a behaviour policy for every agent.
 
+### Continued by
+
+- [No tech stack to maintain: it is not that there is no backend, it is that the only code you own is HTML, CSS and JavaScript, with every other primitive rented as a commodity or run in the user's browser over encrypted vaults](no-tech-stack-to-maintain.md) Not no backend: no tech stack of your own. Only HTML, CSS and JavaScript; every other primitive rented or run in the browser over vaults.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 378 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=378)

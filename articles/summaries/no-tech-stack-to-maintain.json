@@ -1,0 +1,86 @@
+{
+ "slug": "no-tech-stack-to-maintain",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 201,
+   "line": "Not no backend: no tech stack of your own, only the HTML, CSS and JavaScript.",
+   "para": "An application over sgit vaults rents its backend as commodities: a static host, an encrypted file store, and when needed a model provider or agent platform. The usual primitives remain, in the browser or rented: cached immutable data, a database in WebAssembly, passkeys, append lanes, PKI and models. The constraint makes designs simpler and leaves the server with ciphertext. The gap is giving keys to the client.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 107,
+   "line": "You own the front end, rent the rest, and run the database, identity and encryption in the browser.",
+   "para": "The constraint is a design tool; the gap is keys to the client; the result is fewer moving parts.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "framing",
+   "label": "Not no backend: no stack of your own",
+   "words": 171,
+   "line": "A backend still exists, but every part of it is a commodity someone else patches.",
+   "para": "No application server, framework, database server, password store or queue of your own. sgit makes it possible because it is an encrypted data store a static page can read and write.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "primitives",
+   "label": "You keep the primitives",
+   "words": 499,
+   "line": "Data, database, users, messages, sharing and models all remain without a server of yours.",
+   "para": "Immutable vault objects cache for ever (RFC 8246). SQLite, DuckDB-Wasm and PGlite run in the browser. Passkeys with the PRF extension give per-user keys with no user table. Append lanes carry messages, sgit's PKI (RSA-OAEP wrapping AES-256-GCM) shares between users, and models run in the browser or behind a host holding the key.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "agents",
+   "label": "Agents: rent the loop",
+   "words": 129,
+   "line": "For agent loops, rent a cloud agent platform, which also keeps the provenance.",
+   "para": "Use LLMs so as not to use LLMs: make as much as possible deterministic, and run on the client what can.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "design",
+   "label": "Fewer moving parts, better design",
+   "words": 145,
+   "line": "With no server-side data, the constraint pushes simpler designs and a server holding only ciphertext.",
+   "para": "Data shaped for reading and computed at build time, user state held by the user, and events as lane entries rather than calls to a service that must be up.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "distribution",
+   "label": "Vaults as distribution",
+   "words": 160,
+   "line": "The app itself can live in a vault, served by a static page; moving host is a copy.",
+   "para": "GitHub Pages suits free tools, demos and docs, but its terms rule out running an online business or commercial SaaS there; use Cloudflare Pages, Netlify or another static host to sell.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "missing",
+   "label": "What is still missing",
+   "words": 105,
+   "line": "The main gap is a clean way to give keys to the client.",
+   "para": "Anthropic's SDK disables browser use by default to protect keys. Today's answers: the user's own key, a host that holds it, or a sealed drop to one browser. It looks temporary.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 82,
+   "line": "The figure is illustrative, the backend is rented, and not every application fits.",
+   "para": "Heavy shared writes, cross-user joins and work with no browser open need more; PRF and on-device model support vary; the server still sees metadata.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 67,
+   "line": "The memo of 3 November 2026, standards and library pages, GitHub's limits and sgit 0.21.0's PKI code.",
+   "para": "All read 3 November 2026.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

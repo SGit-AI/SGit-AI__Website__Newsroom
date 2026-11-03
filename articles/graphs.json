@@ -55,6 +55,204 @@
   ],
   "articles": [
     {
+      "slug": "no-tech-stack-to-maintain",
+      "title": "No tech stack to maintain: it is not that there is no backend, it is that the only code you own is HTML, CSS and JavaScript, with every other primitive rented as a commodity or run in the user's browser over encrypted vaults",
+      "date": "2026-11-03",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/no-tech-stack-to-maintain.html",
+      "markdown": "https://newsroom.sgit.ai/articles/no-tech-stack-to-maintain.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/no-tech-stack-to-maintain.webp",
+      "teaser": "Not no backend: no tech stack of your own. Only HTML, CSS and JavaScript; every other primitive rented or run in the browser over vaults.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "architecture",
+        "no-backend",
+        "sgit",
+        "vaults",
+        "passkeys",
+        "pki",
+        "webassembly",
+        "static-hosting",
+        "simplicity",
+        "article"
+      ],
+      "links_out": [
+        "how-a-vault-works",
+        "the-passkey-opens-the-vault",
+        "agent-workflows-on-ephemeral-vaults",
+        "a-pen-and-a-key",
+        "the-attack-surface-you-do-not-have",
+        "the-shop-that-sells-time",
+        "handing-secrets-to-agents",
+        "the-no-server-startup"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "nts-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nts-map.webp",
+          "caption": "What a backend usually does, and where it goes instead: a commodity service, or the browser.",
+          "kind": "architecture"
+        },
+        {
+          "file": "nts-stacks.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nts-stacks.webp",
+          "caption": "Illustrative: the moving parts you own with a backend, and with a static app over vaults.",
+          "kind": "diagram"
+        }
+      ],
+      "graph": {
+        "slug": "no-tech-stack-to-maintain",
+        "teaser": "Not no backend: no tech stack of your own. Only HTML, CSS and JavaScript; every other primitive rented or run in the browser over vaults.",
+        "topics": [
+          "vaults-and-method",
+          "site-and-engineering"
+        ],
+        "core_idea": "An application over sgit vaults still has a backend, but every part of it is a commodity: a static host, an encrypted file store, and when needed a model provider or agent platform. The only code you maintain is the HTML, CSS and JavaScript. The usual primitives remain: immutable data cached for ever, a database compiled to WebAssembly in the browser, passkeys with the PRF extension for users with no server-side user data, append lanes for messages, PKI for sharing between users, and models in the browser or behind a host that holds the key. The constraint pushes simpler designs and leaves the server holding only ciphertext; the gap is a clean way to give keys to the client.",
+        "nodes": [
+          {
+            "id": "nostack",
+            "label": "No tech stack of your own",
+            "kind": "claim",
+            "summary": "Only HTML, CSS and JavaScript."
+          },
+          {
+            "id": "commodity",
+            "label": "Rented commodity services",
+            "kind": "concept",
+            "summary": "Static host, file store, model, agents."
+          },
+          {
+            "id": "data",
+            "label": "Immutable data, cached for ever",
+            "kind": "method",
+            "summary": "RFC 8246 immutable."
+          },
+          {
+            "id": "db",
+            "label": "A database in the browser",
+            "kind": "method",
+            "summary": "SQLite, DuckDB, PGlite in WebAssembly."
+          },
+          {
+            "id": "passkey",
+            "label": "Passkeys for users",
+            "kind": "method",
+            "summary": "PRF gives the keys; no user table."
+          },
+          {
+            "id": "lanes",
+            "label": "Append lanes for messages",
+            "kind": "method",
+            "summary": "An append-only inbox."
+          },
+          {
+            "id": "pki",
+            "label": "PKI between users",
+            "kind": "method",
+            "summary": "RSA-OAEP wrapping AES-256-GCM."
+          },
+          {
+            "id": "agents",
+            "label": "Rent the agent loop",
+            "kind": "method",
+            "summary": "Provenance from the platform."
+          },
+          {
+            "id": "design",
+            "label": "The constraint as a design tool",
+            "kind": "claim",
+            "summary": "Simpler solutions; ciphertext only."
+          },
+          {
+            "id": "keys",
+            "label": "Keys to the client",
+            "kind": "concept",
+            "summary": "The gap that remains."
+          }
+        ],
+        "edges": [
+          {
+            "from": "commodity",
+            "to": "nostack",
+            "rel": "depends-on"
+          },
+          {
+            "from": "data",
+            "to": "nostack",
+            "rel": "extends"
+          },
+          {
+            "from": "db",
+            "to": "data",
+            "rel": "depends-on"
+          },
+          {
+            "from": "passkey",
+            "to": "nostack",
+            "rel": "extends"
+          },
+          {
+            "from": "lanes",
+            "to": "nostack",
+            "rel": "extends"
+          },
+          {
+            "from": "pki",
+            "to": "passkey",
+            "rel": "extends"
+          },
+          {
+            "from": "agents",
+            "to": "commodity",
+            "rel": "extends"
+          },
+          {
+            "from": "design",
+            "to": "nostack",
+            "rel": "leads-to"
+          },
+          {
+            "from": "keys",
+            "to": "nostack",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "how-a-vault-works",
+            "the-no-server-startup",
+            "the-attack-surface-you-do-not-have",
+            "handing-secrets-to-agents",
+            "a-pen-and-a-key",
+            "agent-workflows-on-ephemeral-vaults"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.rfc-editor.org/rfc/rfc8246.html",
+            "https://www.w3.org/TR/webauthn-3/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The only code you maintain is an HTML application.",
+            "why": "Not no backend: no stack of your own."
+          },
+          {
+            "text": "It works better than people expect.",
+            "why": "You keep the primitives."
+          },
+          {
+            "text": "None of it is complicated on the client side.",
+            "why": "Fewer moving parts, better design."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-shop-that-sells-time",
       "title": "The shop that sells time: the padel shop's path to market, sell one and fulfil it before anything else, start with the customers who already trust you, promise late and deliver early, a few products you vouch for, and no stock until the orders make you",
       "date": "2026-11-03",
@@ -83,7 +281,9 @@
         "sell-the-sleeve",
         "a-teacher-and-agents-she-can-trust"
       ],
-      "links_in": [],
+      "links_in": [
+        "no-tech-stack-to-maintain"
+      ],
       "figures": [
         {
           "file": "ptm-todo.webp",
@@ -638,7 +838,9 @@
         "sgit-is-a-standard",
         "inside-english-with-ines"
       ],
-      "links_in": [],
+      "links_in": [
+        "no-tech-stack-to-maintain"
+      ],
       "figures": [
         {
           "file": "vw-walk.webp",
@@ -19754,6 +19956,7 @@
         "a-newsroom-for-one"
       ],
       "links_in": [
+        "no-tech-stack-to-maintain",
         "agents-have-an-identity-now",
         "a-newsroom-for-one"
       ],
@@ -25652,6 +25855,7 @@
         "the-sgit-ai-sites-in-numbers"
       ],
       "links_in": [
+        "no-tech-stack-to-maintain",
         "selling-less-code",
         "the-key-is-not-the-risk"
       ],
@@ -30050,6 +30254,7 @@
         "inside-the-no-server-studio"
       ],
       "links_in": [
+        "no-tech-stack-to-maintain",
         "the-attack-surface-you-do-not-have",
         "inside-the-no-server-studio"
       ],
@@ -48519,6 +48724,7 @@
         "the-tokens-hook"
       ],
       "links_in": [
+        "no-tech-stack-to-maintain",
         "seven-iam-predictions-already-here",
         "the-human-is-the-network",
         "a-secret-is-a-qr-code",
@@ -51400,6 +51606,7 @@
         "sgit-actions-side-by-side"
       ],
       "links_in": [
+        "no-tech-stack-to-maintain",
         "an-ipad-to-review-the-book",
         "messaging-fs",
         "aws-from-the-vault",
@@ -62527,6 +62734,7 @@
         "where-the-vault-keys-live"
       ],
       "links_in": [
+        "no-tech-stack-to-maintain",
         "the-no-server-startup",
         "on-the-record",
         "the-vault-opened",

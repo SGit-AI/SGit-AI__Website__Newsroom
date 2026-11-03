@@ -1,0 +1,39 @@
+{
+ "slug": "no-tech-stack-to-maintain",
+ "teaser": "Not no backend: no tech stack of your own. Only HTML, CSS and JavaScript; every other primitive rented or run in the browser over vaults.",
+ "topics": ["vaults-and-method", "site-and-engineering"],
+ "core_idea": "An application over sgit vaults still has a backend, but every part of it is a commodity: a static host, an encrypted file store, and when needed a model provider or agent platform. The only code you maintain is the HTML, CSS and JavaScript. The usual primitives remain: immutable data cached for ever, a database compiled to WebAssembly in the browser, passkeys with the PRF extension for users with no server-side user data, append lanes for messages, PKI for sharing between users, and models in the browser or behind a host that holds the key. The constraint pushes simpler designs and leaves the server holding only ciphertext; the gap is a clean way to give keys to the client.",
+ "nodes": [
+  {"id": "nostack", "label": "No tech stack of your own", "kind": "claim", "summary": "Only HTML, CSS and JavaScript."},
+  {"id": "commodity", "label": "Rented commodity services", "kind": "concept", "summary": "Static host, file store, model, agents."},
+  {"id": "data", "label": "Immutable data, cached for ever", "kind": "method", "summary": "RFC 8246 immutable."},
+  {"id": "db", "label": "A database in the browser", "kind": "method", "summary": "SQLite, DuckDB, PGlite in WebAssembly."},
+  {"id": "passkey", "label": "Passkeys for users", "kind": "method", "summary": "PRF gives the keys; no user table."},
+  {"id": "lanes", "label": "Append lanes for messages", "kind": "method", "summary": "An append-only inbox."},
+  {"id": "pki", "label": "PKI between users", "kind": "method", "summary": "RSA-OAEP wrapping AES-256-GCM."},
+  {"id": "agents", "label": "Rent the agent loop", "kind": "method", "summary": "Provenance from the platform."},
+  {"id": "design", "label": "The constraint as a design tool", "kind": "claim", "summary": "Simpler solutions; ciphertext only."},
+  {"id": "keys", "label": "Keys to the client", "kind": "concept", "summary": "The gap that remains."}
+ ],
+ "edges": [
+  {"from": "commodity", "to": "nostack", "rel": "depends-on"},
+  {"from": "data", "to": "nostack", "rel": "extends"},
+  {"from": "db", "to": "data", "rel": "depends-on"},
+  {"from": "passkey", "to": "nostack", "rel": "extends"},
+  {"from": "lanes", "to": "nostack", "rel": "extends"},
+  {"from": "pki", "to": "passkey", "rel": "extends"},
+  {"from": "agents", "to": "commodity", "rel": "extends"},
+  {"from": "design", "to": "nostack", "rel": "leads-to"},
+  {"from": "keys", "to": "nostack", "rel": "contrasts"}
+ ],
+ "links": {
+  "articles": ["how-a-vault-works", "the-no-server-startup", "the-attack-surface-you-do-not-have", "handing-secrets-to-agents", "a-pen-and-a-key", "agent-workflows-on-ephemeral-vaults"],
+  "pages": [],
+  "sites": ["https://www.rfc-editor.org/rfc/rfc8246.html", "https://www.w3.org/TR/webauthn-3/"]
+ },
+ "quotes": [
+  {"text": "The only code you maintain is an HTML application.", "why": "Not no backend: no stack of your own."},
+  {"text": "It works better than people expect.", "why": "You keep the primitives."},
+  {"text": "None of it is complicated on the client side.", "why": "Fewer moving parts, better design."}
+ ]
+}
