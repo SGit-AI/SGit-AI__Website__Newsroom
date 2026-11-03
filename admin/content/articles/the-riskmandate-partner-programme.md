@@ -4,7 +4,7 @@ date: 2026-11-03
 author: Dinis Cruz
 author_url: about/index.html
 summary: Our premise has always been that RiskMandate uses whatever is already on the other side. Many products already see agents at work: gateways that sit on every call, identity services that give agents credentials, observability tools that trace them, and cost tools that read their logs and token spend. What none of them can see from their own data is what each agent is for. That is what an Agent Behaviour Policy writes down, and it turns their measurements into judgements: within mandate, over it, or with no mandate at all. So RiskMandate is starting a partner programme, with three ways in: an integration partner, which reads mandates through an API and returns findings as evidence; a referral partner; and a co-sell partner for named accounts. RiskMandate gives the mandate API, policy templates for the partner's domain, co-branding and joint case studies; a partner gives evidence that turns written rows into measured ones, finds agents nobody wrote a policy for, and opens a route to its customers. The first case study is cost, with an invented partner and a working vault. The shares and prices in this article are proposals.
-version: v999.0.0
+version: v0.14.50
 license: https://creativecommons.org/licenses/by/4.0/
 tags: riskmandate, partners, behaviour-policies, go-to-market, agents, integration, article
 status: published

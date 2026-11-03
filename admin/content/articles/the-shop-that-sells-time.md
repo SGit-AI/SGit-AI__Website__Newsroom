@@ -4,7 +4,7 @@ date: 2026-11-03
 author: Dinis Cruz
 author_url: about/index.html
 summary: In the first article about the padel shop, we mapped what a coach in the Algarve needs to sell a sleeve: the law, the platforms, the mock-up. This one is about the path to market, and the advice I would give anyone building an early shop. It is very easy to start too big, with grand claims and a site that looks like a company. The only questions that matter at the start are: can you make a sale, and can you fulfil it? What you are really selling is time, knowledge and trust: the moment you take something off a person's to-do list, you have solved their problem, whether it arrives tomorrow or in a week. So the shop should be personal, run on best effort, and start with the customers who already trust you, because if you cannot sell to them, you will not sell to anyone else. Promise late and deliver early, because people are upset by expectations that are not met, not by waiting. Sell a few products you use and vouch for, and experiment around them. And above all, hold no stock until the orders force you to: the numbers show why. The first months are a university. Keep the site simple and cheap, on a host that allows a shop, and let agents do the rest.
-version: v999.0.0
+version: v0.14.50
 license: https://creativecommons.org/licenses/by/4.0/
 tags: ecommerce, small-business, padel, path-to-market, stock, trust, hosting, agents, article
 status: published

@@ -4,7 +4,7 @@ date: 2026-11-03
 author: Dinis Cruz
 author_url: about/index.html
 summary: This is the key idea behind sgit's vaults, for a technical reader. The design principle was simple to say and hard to keep: everything is encrypted before it reaches the server, so that if the server had a catastrophic failure and someone had all of it, no confidential data would leak. The challenge that followed was how to make an encrypted store act like a database, the way Git is a database of objects in a graph, when the server cannot read any of it. The insight was a deterministic file: from the read key, a client computes the name of the one file that holds the head of the branch, an HMAC of the key over a fixed domain and the vault id. That file is the only mutable one. Decrypt it and you have the head commit; the commit gives the tree; the tree gives the file. Every other object is named by the hash of its own ciphertext and never changes, so a reader can verify it without a key and cache it for ever, and refreshing a whole site means re-reading one small file. Commits chain to their parents, so a swapped object is caught. On a web page, that gives two modes: read a file directly, in four requests, decrypted in the browser; or run a vault app in a sandboxed frame that can only ask the host for what it is allowed, through a small sg bridge, which is where behaviour policies come next.
-version: v999.0.0
+version: v0.14.50
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sgit, vaults, encryption, architecture, caching, sandbox, behaviour-policies, technical, article
 status: published

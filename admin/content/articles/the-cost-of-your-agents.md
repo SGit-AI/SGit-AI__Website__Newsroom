@@ -4,7 +4,7 @@ date: 2026-11-03
 author: Dinis Cruz
 author_url: about/index.html
 summary: Imagine a company whose product reads an organisation's agent logs, conversations and token usage, and uses models to explain what the agents did and what it cost. It sees every token. What it cannot see is what each agent is for, so it cannot say whether a large bill is waste or the job. That is exactly what a behaviour policy holds. An agent that reads millions of tokens may be doing its research correctly; another that spends forty thousand tokens on a support ticket has an engineering problem. This is a case study for the first integration of the RiskMandate partner programme, with an invented partner, Tallyline, and the newsroom's invented bank, Pellbridge, whose six agents already have behaviour policies. Each policy gains a cost row; Tallyline reads a month of logs; every agent gets a verdict against its mandate. At Anthropic's published prices, Pellbridge's agents cost about $9,320 a month, and the findings that respect each mandate bring it to about $3,400. The most expensive agent per task stays expensive, because its mandate says so. The value proposition is one question: do you understand the cost of your agents? A working version is in a vault.
-version: v999.0.0
+version: v0.14.50
 license: https://creativecommons.org/licenses/by/4.0/
 tags: riskmandate, partners, token-costs, finops, behaviour-policies, agents, integration, vaults, article
 status: published
