@@ -92,7 +92,7 @@ We already run many of these capabilities in our own way, so it is useful to see
 
 ## The video {#video}
 
-The highlights video in the post appears to be the one on WSO2's YouTube channel, ["WSO2 Agent Manager is Live"](https://www.youtube.com/watch?v=bN0rwdr4ZF8), about a minute long, whose description opens "Agents are outpacing the infrastructure built to govern them". It is worth studying for how it explains a control plane in sixty seconds; I have not been able to confirm that it is the same file as the one in the post.
+The highlights video in the post is the one on WSO2's YouTube channel, ["WSO2 Agent Manager is Live"](https://www.youtube.com/watch?v=bN0rwdr4ZF8), about a minute long, whose description opens "Agents are outpacing the infrastructure built to govern them". It is worth studying for how it explains a control plane in sixty seconds. When this was first published I could not confirm it was the same video as the one in the post; I have since checked, and it is.
 
 ## What this does not claim {#limits}
 

@@ -10,7 +10,7 @@
 
 # WSO2 Agent Manager and behaviour policies: a review of an open control plane for agents, what is really open source, how its identity, gateway and runtime fit together, and a brief for an MVP that plugs our Agent and Process Behaviour Policies into it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-03 · [article v1.0.0](versions/wso2-agent-manager-and-behaviour-policies.md) · [newsroom v0.14.46](https://newsroom.sgit.ai/admin/versions.html) · wso2agent-managerriskmandatebehaviour-policiessharnessagentsgovernanceopen-sourceintegrationarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-03 · [article v1.1.0, 2 versions](versions/wso2-agent-manager-and-behaviour-policies.md) · [newsroom v0.14.46](https://newsroom.sgit.ai/admin/versions.html) · wso2agent-managerriskmandatebehaviour-policiessharnessagentsgovernanceopen-sourceintegrationarticle
 
 ***Abstract:** WSO2 Agent Manager, generally available since 15 September 2026, is the closest thing I have seen to the platform our behaviour policies assume is already there. It is "an open control plane that governs AI agents across any framework, model, or deployment": an identity for every agent, an Envoy-based gateway that every model and MCP call goes through, a Kubernetes runtime with gVisor and Kata isolation tiers, OpenTelemetry traces, and more than forty built-in guardrails. The code is Apache 2.0 and can be run in production for free; what WSO2 sells is the supported build, updates, support and a managed service, which explains the licence page that confused me. So this is a collaboration analysis, not a competitive one: imagine a company that has deployed Agent Manager, and ask where Agent Behaviour Policies and Process Behaviour Policies add value. The answer is three places. At the gateway, a behaviour policy decision service fits an existing interceptor policy without rebuilding anything. In the runtime, SHarness fits as another isolation tier. And in the traces, both decisions can land in the same view. The MVP to prove it is five steps on WSO2's own quick start.*
 
@@ -96,7 +96,7 @@ We already run many of these capabilities in our own way, so it is useful to see
 
 ## The video
 
-The highlights video in the post appears to be the one on WSO2's YouTube channel, ["WSO2 Agent Manager is Live"](https://www.youtube.com/watch?v=bN0rwdr4ZF8), about a minute long, whose description opens "Agents are outpacing the infrastructure built to govern them". It is worth studying for how it explains a control plane in sixty seconds; I have not been able to confirm that it is the same file as the one in the post.
+The highlights video in the post is the one on WSO2's YouTube channel, ["WSO2 Agent Manager is Live"](https://www.youtube.com/watch?v=bN0rwdr4ZF8), about a minute long, whose description opens "Agents are outpacing the infrastructure built to govern them". It is worth studying for how it explains a control plane in sixty seconds. When this was first published I could not confirm it was the same video as the one in the post; I have since checked, and it is.
 
 ## What this does not claim
 
