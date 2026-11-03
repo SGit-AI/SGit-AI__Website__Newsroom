@@ -4,7 +4,7 @@ date: 2026-11-03
 author: Dinis Cruz
 author_url: about/index.html
 summary: For the Web Summit work I added a lot of people to my Google Workspace, on Business Starter, which has no Meet recording and no transcripts. Upgrading everyone to Business Standard would double the bill, and the transcription services that join your calls as a bot cost about as much again. So I asked ChatGPT for a brief, gave it to Claude, and between 00:15 and 02:13 UTC on 3 November we built MeetScribe: a Chrome extension that transcribes the Meet call you are in and writes a debrief, with key points, decisions, actions and open questions, each timed. It runs on your own OpenRouter key, with no bot in the call, no Google recording and no server of ours; an hour of meeting costs roughly 5 to 15 US cents. The most interesting part is the review: ChatGPT's brief had its facts mostly right, but four of its choices would have failed without an error, producing text nobody said. Claude's review found 23 problems, wrote a second brief, and built from that, with 45 tests. It is a beta, its first real calls are being made now, and one thing is not optional: in Portugal, recording people's words without their consent is a crime, so MeetScribe asks you to tell everyone, every meeting. If you use Meet, I would like you to try it.
-version: v999.0.0
+version: v0.14.41
 license: https://creativecommons.org/licenses/by/4.0/
 tags: meetscribe, voicedebrief, chrome-extensions, google-meet, transcription, openrouter, agents, beta, article
 status: published
