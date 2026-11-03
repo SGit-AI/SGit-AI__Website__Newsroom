@@ -2,10 +2,11 @@
 
 Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vault, and what it does that Git does not.
 
-36 articles, newest first.
+37 articles, newest first.
 
 ## November 2026
 
+- [How a vault works: an encrypted store that acts like a database, where a server that is fully compromised leaks nothing, one mutable file lets every other object be cached for ever, and a web page can open a file in four requests or run a whole app in a sandbox](../../articles/how-a-vault-works.md), 2026-11-03, 6 min.
 - [English with Inês, inside the vault: a teacher's site as a vault app, with an experiment for every lesson, cards that come back when you are about to forget, a tutor that answers about one lesson only, a concept map, and the back office with every agent's policy](../../articles/inside-english-with-ines.md), 2026-11-03, 5 min.
 
 ## October 2026

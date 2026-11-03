@@ -126,6 +126,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#a-solu
 
 ### Continued by
 
+- [The shop that sells time: the padel shop's path to market, sell one and fulfil it before anything else, start with the customers who already trust you, promise late and deliver early, a few products you vouch for, and no stock until the orders make you](the-shop-that-sells-time.md) The padel shop's path to market: sell one and fulfil it, sell time and trust, promise late, few products, and no stock until orders force it.
 - [The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault](sell-the-sleeve.md) The shop a padel coach could have had for one sleeve: the law, the platforms, what Claude can run, and a mock-up in a vault.
 
 [All articles](index.md) · [All graphs](graphs.md)

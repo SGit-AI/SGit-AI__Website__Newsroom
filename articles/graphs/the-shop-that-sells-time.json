@@ -1,0 +1,152 @@
+{
+  "slug": "the-shop-that-sells-time",
+  "teaser": "The padel shop's path to market: sell one and fulfil it, sell time and trust, promise late, few products, and no stock until orders force it.",
+  "topics": [
+    "startups-and-strategy",
+    "news-and-evidence"
+  ],
+  "core_idea": "An early shop should answer two questions before anything else: can you make a sale and fulfil it. What it sells is time, knowledge and trust: an offer takes the problem off the buyer's to-do list whatever the delivery date. So it should be personal and best effort, start with customers who already trust you, promise late and deliver early because broken expectations upset people, offer a few products you vouch for, and hold no stock until orders force it, since stock ties up cash and pays off only after many sales. The first months are a university; host simply on a service that allows a shop.",
+  "nodes": [
+    {
+      "id": "sellone",
+      "label": "Sell one and fulfil it",
+      "kind": "claim",
+      "summary": "Nothing else matters first."
+    },
+    {
+      "id": "time",
+      "label": "You sell time, knowledge and trust",
+      "kind": "concept",
+      "summary": "Off the to-do list."
+    },
+    {
+      "id": "personal",
+      "label": "Personal and best effort",
+      "kind": "method",
+      "summary": "A margin of error a brand lacks."
+    },
+    {
+      "id": "start",
+      "label": "Start with your customers",
+      "kind": "method",
+      "summary": "Trust already there."
+    },
+    {
+      "id": "promise",
+      "label": "Promise late, deliver early",
+      "kind": "method",
+      "summary": "Expectations, not waiting."
+    },
+    {
+      "id": "products",
+      "label": "A few products you vouch for",
+      "kind": "method",
+      "summary": "Experiment around them."
+    },
+    {
+      "id": "nostock",
+      "label": "No stock",
+      "kind": "claim",
+      "summary": "Cash tied up; a bet; an expectation."
+    },
+    {
+      "id": "university",
+      "label": "The first months are a university",
+      "kind": "concept",
+      "summary": "Scale at an hour or two a day."
+    },
+    {
+      "id": "hosting",
+      "label": "A host that allows a shop",
+      "kind": "method",
+      "summary": "Not GitHub Pages or Vercel's free plan."
+    }
+  ],
+  "edges": [
+    {
+      "from": "time",
+      "to": "sellone",
+      "rel": "extends"
+    },
+    {
+      "from": "personal",
+      "to": "time",
+      "rel": "depends-on"
+    },
+    {
+      "from": "start",
+      "to": "personal",
+      "rel": "extends"
+    },
+    {
+      "from": "promise",
+      "to": "time",
+      "rel": "depends-on"
+    },
+    {
+      "from": "products",
+      "to": "start",
+      "rel": "extends"
+    },
+    {
+      "from": "nostock",
+      "to": "products",
+      "rel": "depends-on"
+    },
+    {
+      "from": "university",
+      "to": "nostock",
+      "rel": "extends"
+    },
+    {
+      "from": "hosting",
+      "to": "university",
+      "rel": "depends-on"
+    },
+    {
+      "from": "sellone",
+      "to": "university",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "sell-the-sleeve",
+      "a-solution-not-a-problem",
+      "a-teacher-and-agents-she-can-trust"
+    ],
+    "pages": [],
+    "sites": [
+      "https://paulgraham.com/ds.html",
+      "https://everythingpadel.co.uk/pages/about-us"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Once you hold stock, the whole economics change.",
+      "why": "No stock."
+    },
+    {
+      "text": "Say it will take five days, and deliver in two.",
+      "why": "Promise late, deliver early."
+    },
+    {
+      "text": "Sell one, sell five, sell ten.",
+      "why": "The first months are a university."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ptm-todo.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ptm-todo.webp",
+      "caption": "The recommendation, and the days it stayed a problem; an offer on day one would have ended it.",
+      "kind": "timeline"
+    },
+    {
+      "file": "ptm-stock.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ptm-stock.webp",
+      "caption": "Illustrative numbers: per-order buying never goes into debt; stock pays off only after 38 sales.",
+      "kind": "diagram"
+    }
+  ]
+}

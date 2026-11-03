@@ -2,10 +2,12 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-81 articles, newest first.
+83 articles, newest first.
 
 ## November 2026
 
+- [The shop that sells time: the padel shop's path to market, sell one and fulfil it before anything else, start with the customers who already trust you, promise late and deliver early, a few products you vouch for, and no stock until the orders make you](../../articles/the-shop-that-sells-time.md), 2026-11-03, 8 min.
+- [The RiskMandate partner programme: why companies that already see agents at work need the one thing their logs cannot tell them, what each agent is for, and what a partner gives, gets, and how we go to market together](../../articles/the-riskmandate-partner-programme.md), 2026-11-03, 4 min.
 - [The Web Summit team, part four: the day the agents ran on their own, 75 releases, four people connected, a procurement agent writing to printers, and the behaviour policies catching our own agents out](../../articles/web-summit-part-four.md), 2026-11-02, 6 min.
 - [The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work](../../articles/web-summit-how-we-work.md), 2026-11-02, 9 min.
 - [The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault](../../articles/sell-the-sleeve.md), 2026-11-02, 8 min.

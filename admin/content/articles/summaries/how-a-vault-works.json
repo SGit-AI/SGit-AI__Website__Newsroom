@@ -1,0 +1,66 @@
+{
+ "slug": "how-a-vault-works",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "How a vault acts like a database on a server that cannot read anything.",
+   "para": "Everything is encrypted on the client, so a fully compromised server leaks nothing confidential. A client computes the name of the one mutable file, the ref, from the read key; then commit, tree and file follow in about four requests. Every other object is named by its ciphertext's hash, verifiable without a key and cacheable for ever. Vaults go on web pages file by file, or as apps in a sandboxed frame with a narrow sg bridge.",
+   "hash": "d4992a1c8975"
+  },
+  "in-short": {
+   "line": "No leak on compromise, one key-derived mutable file, immutable objects, four requests, two web modes.",
+   "para": "Behaviour policies are the next layer for vault apps.",
+   "hash": "a04600f166e2"
+  },
+  "principle": {
+   "line": "If the server failed completely and someone had all of it, nothing confidential would leak.",
+   "para": "No contents, names or readable structure, and no way to link objects to files.",
+   "hash": "d1dc3d512835"
+  },
+  "database": {
+   "line": "Git is a database of objects; here the server can read neither objects nor pointers.",
+   "para": "One vault key decrypts everything; the read key reads but cannot write and can be published.",
+   "hash": "f21e71c67a50"
+  },
+  "deterministic": {
+   "line": "The ref's name is an HMAC of the read key over a fixed domain and the vault id.",
+   "para": "It is the only derived and mutable file, ref-pid-muw, updated by compare-and-swap, holding the head commit id.",
+   "hash": "ae7a77bb93b1"
+  },
+  "walk": {
+   "line": "Ref, commit, tree, file: three or four plain GETs, decrypted in the browser.",
+   "para": "Any storage that answers a GET can serve the read half.",
+   "hash": "d962227a4abf"
+  },
+  "immutable": {
+   "line": "Every other object is obj-cas-imm, named by the SHA-256 of its ciphertext.",
+   "para": "Verifiable with no key, cacheable for ever, and tamper-evident through the parent chain.",
+   "hash": "1291b5f9a731"
+  },
+  "refresh": {
+   "line": "Re-read one file, the ref; if unchanged, every cached object is still right.",
+   "para": "A documentation site can be built from a vault and updated by updating the vault.",
+   "hash": "01344bb517ae"
+  },
+  "modes": {
+   "line": "File by file, or an HTML app in a sandboxed frame that can only ask the host through sg.",
+   "para": "The host holds the key and checks each request against declared permissions, denied by default.",
+   "hash": "d588d6a32b1b"
+  },
+  "policies": {
+   "line": "The app permission model is already a small policy; writing it as a behaviour policy adds purpose.",
+   "para": "As the teacher's vault tutor is sent one lesson and nothing else.",
+   "hash": "82e51d573b7f"
+  },
+  "limits": {
+   "line": "From sgit-ai 0.21.0's code; ids 12 or 32 hex; metadata still visible to the server.",
+   "para": "The bridge API's reference is the SG/Send project's.",
+   "hash": "030f3813ced2"
+  },
+  "sources": {
+   "line": "The editor's explanation and the sgit-ai package's code.",
+   "para": "Read on 3 November 2026.",
+   "hash": "0a41079c9552"
+  }
+ }
+}

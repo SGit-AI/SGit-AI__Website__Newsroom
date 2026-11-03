@@ -1,0 +1,150 @@
+{
+  "slug": "how-a-vault-works",
+  "teaser": "How an sgit vault acts like a database on a server that cannot read: one key-derived mutable file, everything else immutable.",
+  "topics": [
+    "vaults-and-method",
+    "site-and-engineering"
+  ],
+  "core_idea": "Everything in a vault is encrypted on the client so a fully compromised server leaks nothing confidential. To act like a database anyway, a client computes the name of the one mutable file, the ref, from the read key with an HMAC; decrypting it gives the head commit, then the tree, then the file, in about four plain requests. Every other object is named by the hash of its ciphertext, so it can be verified without a key and cached for ever, and refreshing a site means re-reading one file. On the web, vaults are read file by file or run as apps in a sandboxed frame with a narrow sg bridge, where behaviour policies come next.",
+  "nodes": [
+    {
+      "id": "principle",
+      "label": "No leak on a full compromise",
+      "kind": "claim",
+      "summary": "Everything encrypted on the client."
+    },
+    {
+      "id": "database",
+      "label": "Act like a database",
+      "kind": "question",
+      "summary": "Find anything the server cannot read."
+    },
+    {
+      "id": "ref",
+      "label": "The deterministic file",
+      "kind": "method",
+      "summary": "HMAC of the read key names the ref."
+    },
+    {
+      "id": "walk",
+      "label": "The walk",
+      "kind": "method",
+      "summary": "Ref, commit, tree, file."
+    },
+    {
+      "id": "imm",
+      "label": "Immutable, named by content",
+      "kind": "concept",
+      "summary": "Verifiable without a key."
+    },
+    {
+      "id": "cache",
+      "label": "One file to refresh a site",
+      "kind": "claim",
+      "summary": "Cache everything else for ever."
+    },
+    {
+      "id": "file",
+      "label": "File by file",
+      "kind": "method",
+      "summary": "Decrypted in the browser."
+    },
+    {
+      "id": "app",
+      "label": "An app in a sandbox",
+      "kind": "method",
+      "summary": "A narrow sg bridge, deny by default."
+    },
+    {
+      "id": "policy",
+      "label": "Behaviour policies next",
+      "kind": "claim",
+      "summary": "What the app is for."
+    }
+  ],
+  "edges": [
+    {
+      "from": "database",
+      "to": "principle",
+      "rel": "depends-on"
+    },
+    {
+      "from": "ref",
+      "to": "database",
+      "rel": "answers"
+    },
+    {
+      "from": "walk",
+      "to": "ref",
+      "rel": "extends"
+    },
+    {
+      "from": "imm",
+      "to": "walk",
+      "rel": "extends"
+    },
+    {
+      "from": "cache",
+      "to": "imm",
+      "rel": "produces"
+    },
+    {
+      "from": "file",
+      "to": "walk",
+      "rel": "example-of"
+    },
+    {
+      "from": "app",
+      "to": "file",
+      "rel": "contrasts"
+    },
+    {
+      "from": "policy",
+      "to": "app",
+      "rel": "extends"
+    },
+    {
+      "from": "cache",
+      "to": "file",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "sgit-is-a-standard",
+      "inside-english-with-ines"
+    ],
+    "pages": [],
+    "sites": [
+      "https://pypi.org/project/sgit-ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The answer had to be: nothing confidential.",
+      "why": "The principle."
+    },
+    {
+      "text": "Three or four small requests, every one a plain GET of a fixed name",
+      "why": "The walk."
+    },
+    {
+      "text": "isolate the code, and give it one narrow, checked channel.",
+      "why": "Two ways onto a web page."
+    }
+  ],
+  "figures": [
+    {
+      "file": "vw-walk.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vw-walk.webp",
+      "caption": "From a key to a file: one mutable file, named from the key, then objects that never change.",
+      "kind": "architecture"
+    },
+    {
+      "file": "vw-modes.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vw-modes.webp",
+      "caption": "Two ways to put a vault on a page: read files directly, or run an app in a sandboxed frame.",
+      "kind": "architecture"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+ "slug": "the-riskmandate-partner-programme",
+ "teaser": "RiskMandate's partner programme: products that see agents at work get what their logs cannot tell them, what each agent is for.",
+ "topics": ["startups-and-strategy", "agents-and-policy"],
+ "core_idea": "Gateways, identity services, observability and cost tools already see agents at work, but none can see what each agent is for. An Agent Behaviour Policy writes that down and turns their measurements into judgements. RiskMandate's partner programme offers three ways in: integration partners that read mandates by API and return findings as evidence, referral partners, and co-sell partners. RiskMandate gives the mandate API, templates, co-branding and case studies; partners give evidence, agents with no policy and a route to customers. Shares and prices are proposals.",
+ "nodes": [
+  {"id": "see", "label": "Products that see agents", "kind": "concept", "summary": "Gateway, identity, observability, cost."},
+  {"id": "missing", "label": "What they cannot see", "kind": "claim", "summary": "What each agent is for."},
+  {"id": "abp", "label": "The behaviour policy", "kind": "concept", "summary": "Mandate, reach, barrier."},
+  {"id": "integration", "label": "Integration partner", "kind": "method", "summary": "Mandates in, evidence out."},
+  {"id": "referral", "label": "Referral partner", "kind": "method", "summary": "Introductions both ways."},
+  {"id": "cosell", "label": "Co-sell partner", "kind": "method", "summary": "A named account."},
+  {"id": "gives", "label": "What RiskMandate gives", "kind": "concept", "summary": "API, templates, co-branding."},
+  {"id": "gets", "label": "What a partner gives", "kind": "concept", "summary": "Evidence, unowned agents, a route."},
+  {"id": "first", "label": "The first case study", "kind": "example", "summary": "Cost, with an invented partner."}
+ ],
+ "edges": [
+  {"from": "missing", "to": "see", "rel": "contrasts"},
+  {"from": "abp", "to": "missing", "rel": "answers"},
+  {"from": "integration", "to": "abp", "rel": "depends-on"},
+  {"from": "referral", "to": "abp", "rel": "depends-on"},
+  {"from": "cosell", "to": "abp", "rel": "depends-on"},
+  {"from": "gives", "to": "integration", "rel": "produces"},
+  {"from": "gets", "to": "integration", "rel": "produces"},
+  {"from": "first", "to": "integration", "rel": "example-of"},
+  {"from": "gets", "to": "abp", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["the-cost-of-your-agents", "wso2-agent-manager-and-behaviour-policies", "what-can-your-agent-reach", "a-payout-for-every-row"],
+  "pages": [],
+  "sites": ["https://www.finops.org/introduction/what-is-finops/"]
+ },
+ "quotes": [
+  {"text": "We do not want to replace any of it. We add the piece it lacks.", "why": "Why a partner programme."},
+  {"text": "Without it, a large number is just a large number.", "why": "Why a partner programme."},
+  {"text": "Shares and prices here are proposals.", "why": "In short."}
+ ]
+}

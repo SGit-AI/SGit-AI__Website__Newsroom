@@ -101,6 +101,7 @@ Vaults & methodAgents & policy[This article as a graph →](graphs.md#inside-eng
 
 ### Continued by
 
+- [How a vault works: an encrypted store that acts like a database, where a server that is fully compromised leaks nothing, one mutable file lets every other object be cached for ever, and a web page can open a file in four requests or run a whole app in a sandbox](how-a-vault-works.md) How an sgit vault acts like a database on a server that cannot read: one key-derived mutable file, everything else immutable.
 - [A teacher and agents she can trust: a brief for an independent online English teacher's site, the workflows around every lesson, an Agent Behaviour Policy for every agent, the plumbing behind it, and content made for each student](a-teacher-and-agents-she-can-trust.md) A brief for an independent online English teacher: a loop around every lesson where agents draft and she decides, and a behaviour policy for every agent.
 
 [All articles](index.md) · [All graphs](graphs.md)

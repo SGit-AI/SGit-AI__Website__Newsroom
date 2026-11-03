@@ -130,6 +130,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#a-teac
 
 ### Continued by
 
+- [The shop that sells time: the padel shop's path to market, sell one and fulfil it before anything else, start with the customers who already trust you, promise late and deliver early, a few products you vouch for, and no stock until the orders make you](the-shop-that-sells-time.md) The padel shop's path to market: sell one and fulfil it, sell time and trust, promise late, few products, and no stock until orders force it.
 - [English with Inês, inside the vault: a teacher's site as a vault app, with an experiment for every lesson, cards that come back when you are about to forget, a tutor that answers about one lesson only, a concept map, and the back office with every agent's policy](inside-english-with-ines.md) English with Inês, a teacher's site as a vault app: experiments, spaced cards, a tutor bound to one lesson, a concept map and every agent's policy.
 
 [All articles](index.md) · [All graphs](graphs.md)

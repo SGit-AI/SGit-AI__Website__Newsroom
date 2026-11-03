@@ -123,6 +123,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#wso2-a
 
 ### Continued by
 
+- [The RiskMandate partner programme: why companies that already see agents at work need the one thing their logs cannot tell them, what each agent is for, and what a partner gives, gets, and how we go to market together](the-riskmandate-partner-programme.md) RiskMandate's partner programme: products that see agents at work get what their logs cannot tell them, what each agent is for.
 - [Who owns the stop button when it is not you? A reader asked, and four of the book's agents answer as guest writers, in their own voices, from their own records](who-owns-the-stop-button.md) A reader asked who owns the stop button when it is not the editor; four of the book's agents answer as guest writers.
 
 [All articles](index.md) · [All graphs](graphs.md)

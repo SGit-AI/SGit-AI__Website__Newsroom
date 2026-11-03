@@ -128,6 +128,7 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#the-tok
 
 ### Continued by
 
+- [The cost of your agents: a first RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](the-cost-of-your-agents.md) A cost tool sees what agents spent; a behaviour policy says what each is for. Together they say whether the spend is right.
 - [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](your-reading-your-controls.md) The meter now charges for what is read; the reader can pause, reset or mark it, and what was read folds away six ways, with a line and a paragraph per section.
 - [Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph](scrolled-is-not-read.md) The reading meter charged by scroll and called it read; now each section keeps scrolled and read, the chip holds still, and highlights take one tap.
 - [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](handing-secrets-to-agents.md) SG/Send's next focus: agents and browsers make their own key pair, owners encrypt to it, the drop is read once, and the secret never enters the chat.

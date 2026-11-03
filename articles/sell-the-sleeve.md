@@ -132,6 +132,7 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#sel
 
 ### Continued by
 
+- [The shop that sells time: the padel shop's path to market, sell one and fulfil it before anything else, start with the customers who already trust you, promise late and deliver early, a few products you vouch for, and no stock until the orders make you](the-shop-that-sells-time.md) The padel shop's path to market: sell one and fulfil it, sell time and trust, promise late, few products, and no stock until orders force it.
 - [A solution, not a problem: a coach sent me a link to a product he could not sell me, what that moment teaches about business, security teams, bookshops and travel agents, and why RiskMandate has been making the same mistake](a-solution-not-a-problem.md) A coach sent a link to a product he could not sell: why business, security teams and RiskMandate should give solutions, not problems.
 
 [All articles](index.md) · [All graphs](graphs.md)

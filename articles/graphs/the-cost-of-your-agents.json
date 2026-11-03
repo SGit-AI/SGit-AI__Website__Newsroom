@@ -1,0 +1,159 @@
+{
+  "slug": "the-cost-of-your-agents",
+  "teaser": "A cost tool sees what agents spent; a behaviour policy says what each is for. Together they say whether the spend is right.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "A company that reads agent logs and token spend sees every token but not what each agent is for, so it cannot tell waste from the job. A behaviour policy with cost rows supplies that business context. In a worked example with an invented partner, Tallyline, and the invented Pellbridge Bank, each agent is judged against its mandate at published prices: about $9,320 a month falls to about $3,400. The support agent is waste, the AML reviewer is expensive and right, transaction reporting should use batch, and an agent with no mandate needs an owner. Mandates go one way, findings the other, and the logs stay with the customer.",
+  "nodes": [
+    {
+      "id": "question",
+      "label": "Do you understand the cost of your agents?",
+      "kind": "question",
+      "summary": "The value proposition."
+    },
+    {
+      "id": "costtool",
+      "label": "What a cost tool sees",
+      "kind": "concept",
+      "summary": "Every token spent."
+    },
+    {
+      "id": "mandate",
+      "label": "What a mandate adds",
+      "kind": "concept",
+      "summary": "What each agent is for."
+    },
+    {
+      "id": "support",
+      "label": "The support agent",
+      "kind": "example",
+      "summary": "Five times its mandate."
+    },
+    {
+      "id": "aml",
+      "label": "The AML reviewer",
+      "kind": "example",
+      "summary": "Expensive and right."
+    },
+    {
+      "id": "shadow",
+      "label": "No mandate",
+      "kind": "example",
+      "summary": "An agent nobody owns."
+    },
+    {
+      "id": "fit",
+      "label": "How the products fit",
+      "kind": "method",
+      "summary": "Mandates in, findings out."
+    },
+    {
+      "id": "evidence",
+      "label": "Findings as evidence",
+      "kind": "claim",
+      "summary": "Expectations become measured rows."
+    },
+    {
+      "id": "gtm",
+      "label": "Going to market",
+      "kind": "method",
+      "summary": "Design partner, report, offer."
+    }
+  ],
+  "edges": [
+    {
+      "from": "costtool",
+      "to": "question",
+      "rel": "answers"
+    },
+    {
+      "from": "mandate",
+      "to": "costtool",
+      "rel": "extends"
+    },
+    {
+      "from": "support",
+      "to": "mandate",
+      "rel": "example-of"
+    },
+    {
+      "from": "aml",
+      "to": "mandate",
+      "rel": "example-of"
+    },
+    {
+      "from": "shadow",
+      "to": "mandate",
+      "rel": "contrasts"
+    },
+    {
+      "from": "fit",
+      "to": "mandate",
+      "rel": "depends-on"
+    },
+    {
+      "from": "evidence",
+      "to": "fit",
+      "rel": "produces"
+    },
+    {
+      "from": "gtm",
+      "to": "fit",
+      "rel": "depends-on"
+    },
+    {
+      "from": "aml",
+      "to": "support",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-riskmandate-partner-programme",
+      "the-tokens-hook",
+      "inside-the-pellbridge-agents",
+      "a-payout-for-every-row"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.finops.org/wg/finops-for-ai-overview/",
+      "https://platform.claude.com/docs/en/about-claude/pricing"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "You can only measure the use case if someone has written down what the use case is.",
+      "why": "What a cost tool cannot see."
+    },
+    {
+      "text": "The AML reviewer is expensive, and right.",
+      "why": "The worked example."
+    },
+    {
+      "text": "The handover is small on purpose",
+      "why": "How the two products fit."
+    }
+  ],
+  "figures": [
+    {
+      "file": "pmo-overview.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pmo-overview.webp",
+      "caption": "The worked example: every Pellbridge agent judged against its mandate, this month's cost and with the findings applied.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "pmo-support.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pmo-support.webp",
+      "caption": "The support agent: five times its mandate per ticket, and nothing in its purpose needs it.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "pmo-integration.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pmo-integration.webp",
+      "caption": "How it fits: mandates one way, findings the other, and the logs stay in the customer's environment.",
+      "kind": "screenshot"
+    }
+  ]
+}

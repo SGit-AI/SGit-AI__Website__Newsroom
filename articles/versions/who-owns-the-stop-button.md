@@ -16,8 +16,8 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-03 | minor | 3,276 | +46 / −0 words; 4 changed, 0 added, 0 removed paragraphs | this release | [what changed](who-owns-the-stop-button/v1.1.0.md) · [current](../who-owns-the-stop-button.md) |
-| **v1.0.0** | 2026-11-03 | published | 3,230 | first published | [`145f6c437`](https://github.com/SGit-AI/SGit-AI__Website/commit/145f6c4371664f6dec1e07468d286b8f1a83cfb1) |  |
+| **v1.1.0** | 2026-11-03 | minor | 3,276 | +46 / −0 words; 4 changed, 0 added, 0 removed paragraphs | [`708134483`](https://github.com/SGit-AI/SGit-AI__Website/commit/7081344833183295dc9b15858b96440949fddc1a) | [what changed](who-owns-the-stop-button/v1.1.0.md) · [current](../who-owns-the-stop-button.md) |
+| **v1.0.0** | 2026-11-03 | published | 3,230 | first published | [`0bab05ca9`](https://github.com/SGit-AI/SGit-AI__Website/commit/0bab05ca9cd7835a65cfb248554d16aa87380bb8) |  |
 
 [← Back to the article](../who-owns-the-stop-button.md) · [All articles](../index.md)
 

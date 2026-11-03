@@ -1,0 +1,102 @@
+{
+ "slug": "how-a-vault-works",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 250,
+   "line": "How a vault acts like a database on a server that cannot read anything.",
+   "para": "Everything is encrypted on the client, so a fully compromised server leaks nothing confidential. A client computes the name of the one mutable file, the ref, from the read key; then commit, tree and file follow in about four requests. Every other object is named by its ciphertext's hash, verifiable without a key and cacheable for ever. Vaults go on web pages file by file, or as apps in a sandboxed frame with a narrow sg bridge.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 107,
+   "line": "No leak on compromise, one key-derived mutable file, immutable objects, four requests, two web modes.",
+   "para": "Behaviour policies are the next layer for vault apps.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "principle",
+   "label": "The principle",
+   "words": 110,
+   "line": "If the server failed completely and someone had all of it, nothing confidential would leak.",
+   "para": "No contents, names or readable structure, and no way to link objects to files.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "database",
+   "label": "Making it act like a database",
+   "words": 99,
+   "line": "Git is a database of objects; here the server can read neither objects nor pointers.",
+   "para": "One vault key decrypts everything; the read key reads but cannot write and can be published.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "deterministic",
+   "label": "The deterministic file",
+   "words": 159,
+   "line": "The ref's name is an HMAC of the read key over a fixed domain and the vault id.",
+   "para": "It is the only derived and mutable file, ref-pid-muw, updated by compare-and-swap, holding the head commit id.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "walk",
+   "label": "The walk",
+   "words": 141,
+   "line": "Ref, commit, tree, file: three or four plain GETs, decrypted in the browser.",
+   "para": "Any storage that answers a GET can serve the read half.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "immutable",
+   "label": "Immutable, and named by its content",
+   "words": 182,
+   "line": "Every other object is obj-cas-imm, named by the SHA-256 of its ciphertext.",
+   "para": "Verifiable with no key, cacheable for ever, and tamper-evident through the parent chain.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "refresh",
+   "label": "One file to refresh a whole site",
+   "words": 127,
+   "line": "Re-read one file, the ref; if unchanged, every cached object is still right.",
+   "para": "A documentation site can be built from a vault and updated by updating the vault.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "modes",
+   "label": "Two ways onto a web page",
+   "words": 189,
+   "line": "File by file, or an HTML app in a sandboxed frame that can only ask the host through sg.",
+   "para": "The host holds the key and checks each request against declared permissions, denied by default.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "policies",
+   "label": "Next: behaviour policies for vault apps",
+   "words": 72,
+   "line": "The app permission model is already a small policy; writing it as a behaviour policy adds purpose.",
+   "para": "As the teacher's vault tutor is sent one lesson and nothing else.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 69,
+   "line": "From sgit-ai 0.21.0's code; ids 12 or 32 hex; metadata still visible to the server.",
+   "para": "The bridge API's reference is the SG/Send project's.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 61,
+   "line": "The editor's explanation and the sgit-ai package's code.",
+   "para": "Read on 3 November 2026.",
+   "by": "newsroom.writer"
+  }
+ ]
+}
