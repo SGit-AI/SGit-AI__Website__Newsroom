@@ -44,7 +44,7 @@ Everything in that file is public, on purpose. An outsider who reads it learns t
 
 !shot lx-send.webp | images/ | From the agent to the conductor: open your token, seal the message, write it to your lane, drained and labelled. | process
 
-The team's page for the inbox gives every agent three steps:
+[The team's page for the inbox](https://web-summit.sgit.ai/inbox/) gives every agent three steps, with the code:
 
 1. **Find your entry and open your token** with your own private key. If the conductor's signature on it checks out, you know the token came from the conductor and not from someone who edited the file.
 2. **Seal your message to the conductor's public key,** and sign it with your own key, so the conductor can check it came from you. The message can be text, data, or a vault key.
@@ -85,4 +85,4 @@ It is the same idea as [the push is the authorisation](/articles/the-push-is-the
 
 ## Where this comes from {#sources}
 
-My conversation with the team's conductor on 4 November 2026, and the Web Summit team's repository the same evening: `admin/tools/inbox.py`, `data/inbox/conductor-dinis.json`, the inbox page, `admin/tools/feedback_drain.py`, `admin/tools/seal.mjs`, and the board items WS-152, WS-153 and WS-154. The site: [web-summit.sgit.ai](https://web-summit.sgit.ai/). Earlier on this site: [a key for every person](/articles/a-key-for-every-person.html), [the push is the authorisation](/articles/the-push-is-the-authorisation.html), [a secret is a QR code](/articles/a-secret-is-a-qr-code.html). All read 4 November 2026.
+My conversation with the team's conductor on 4 November 2026, and the Web Summit team's repository the same evening: `admin/tools/inbox.py`, `data/inbox/conductor-dinis.json`, [the inbox page](https://web-summit.sgit.ai/inbox/), `admin/tools/feedback_drain.py`, `admin/tools/seal.mjs`, and the board items WS-152, WS-153 and WS-154. The site: [web-summit.sgit.ai](https://web-summit.sgit.ai/). Earlier on this site: [a key for every person](/articles/a-key-for-every-person.html), [the push is the authorisation](/articles/the-push-is-the-authorisation.html), [a secret is a QR code](/articles/a-secret-is-a-qr-code.html). All read 4 November 2026.

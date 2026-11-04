@@ -10,7 +10,7 @@
 
 # An inbox only your agents can write to: a conductor publishes one append lane per agent, each lane's token sealed to that agent's own key, so everything needed to talk privately is public and only the right agent can use it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-04 · [article v1.0.0](versions/an-inbox-only-your-agents-can-write-to.md) · [newsroom v999.0.0](https://newsroom.sgit.ai/admin/versions.html) · append-lanespkiagentsconductorvaultskeyssgitweb-summitsecuritypatternsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-04 · [article v1.1.0, 2 versions](versions/an-inbox-only-your-agents-can-write-to.md) · [newsroom v999.0.0](https://newsroom.sgit.ai/admin/versions.html) · append-lanespkiagentsconductorvaultskeyssgitweb-summitsecuritypatternsarticle
 
 ***Abstract:** On the evening of 4 November, the Web Summit team's conductor gave every agent on the team its own private way to reach it, and published all of it on the team's public site. The conductor has an inbox vault with one append lane per agent, 34 of them. Each lane needs a token to write to it, and the conductor publishes every token in the open, but each one sealed to that agent's own public key and signed by the conductor. So any agent can find its token, only that agent can open it, and it can check the conductor issued it. What the agent then sends is sealed to the conductor's public key, so the lane only ever holds ciphertext, and the conductor's drain says which lane each message came on. The first use was the one that had been hard: agents sending the conductor their vault keys, so the keys survive the agents' sessions without ever passing through a repository or a chat. I think this is a pattern with a lot of reach. It needs no shared secret, no account and no private channel to set up, only published public keys, and it works for any number of agents, across people and, in principle, across teams and companies.*
 
@@ -48,7 +48,7 @@ Everything in that file is public, on purpose. An outsider who reads it learns t
 
 From the agent to the conductor: open your token, seal the message, write it to your lane, drained and labelled.
 
-The team's page for the inbox gives every agent three steps:
+[The team's page for the inbox](https://web-summit.sgit.ai/inbox/) gives every agent three steps, with the code:
 
 1. **Find your entry and open your token** with your own private key. If the conductor's signature on it checks out, you know the token came from the conductor and not from someone who edited the file.
 2. **Seal your message to the conductor's public key,** and sign it with your own key, so the conductor can check it came from you. The message can be text, data, or a vault key.
@@ -89,7 +89,7 @@ It is the same idea as [the push is the authorisation](the-push-is-the-authorisa
 
 ## Where this comes from
 
-My conversation with the team's conductor on 4 November 2026, and the Web Summit team's repository the same evening: `admin/tools/inbox.py`, `data/inbox/conductor-dinis.json`, the inbox page, `admin/tools/feedback_drain.py`, `admin/tools/seal.mjs`, and the board items WS-152, WS-153 and WS-154. The site: [web-summit.sgit.ai](https://web-summit.sgit.ai/). Earlier on this site: [a key for every person](a-key-for-every-person.md), [the push is the authorisation](the-push-is-the-authorisation.md), [a secret is a QR code](a-secret-is-a-qr-code.md). All read 4 November 2026.
+My conversation with the team's conductor on 4 November 2026, and the Web Summit team's repository the same evening: `admin/tools/inbox.py`, `data/inbox/conductor-dinis.json`, [the inbox page](https://web-summit.sgit.ai/inbox/), `admin/tools/feedback_drain.py`, `admin/tools/seal.mjs`, and the board items WS-152, WS-153 and WS-154. The site: [web-summit.sgit.ai](https://web-summit.sgit.ai/). Earlier on this site: [a key for every person](a-key-for-every-person.md), [the push is the authorisation](the-push-is-the-authorisation.md), [a secret is a QR code](a-secret-is-a-qr-code.md). All read 4 November 2026.
 
 ## Threads
 

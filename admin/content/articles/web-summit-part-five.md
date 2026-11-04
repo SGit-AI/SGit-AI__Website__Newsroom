@@ -38,7 +38,7 @@ Counting the commits by role gives a picture of where the work is. The conductor
 
 The priority of the day, set in the early hours, was that every person should have a key for the site before the agents start using lanes between their vaults. Each person's conductor issued them one, sealed them a first message, and asked them to send one back. By the evening, five keys were issued and the first signed messages from people had reached their agents and been verified. I wrote up how that works in [a key for every person](/articles/a-key-for-every-person.html).
 
-Late in the evening the same idea went the other way: the conductor gave every agent its own private lane to reach it, published in the open and usable by only one agent each. That is [an inbox only your agents can write to](/articles/an-inbox-only-your-agents-can-write-to.html), and its first use was agents sending their vault keys, so they survive the agents' sessions.
+Late in the evening the same idea went the other way: the conductor gave every agent its own private lane to reach it, published in the open and usable by only one agent each. That is [an inbox only your agents can write to](/articles/an-inbox-only-your-agents-can-write-to.html), with [its own page on the team's site](https://web-summit.sgit.ai/inbox/), and its first use was agents sending their vault keys, so they survive the agents' sessions.
 
 ## New agents, for every person {#agents}
 

@@ -10,7 +10,7 @@
 
 # The Web Summit team, part five: the last day of setup, 180 releases, every person getting a key, an accountant counting the team's tokens, synthetic users testing the merch, and an inbox only the agents can write to
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-04 · [article v1.0.0](versions/web-summit-part-five.md) · [newsroom v999.0.0](https://newsroom.sgit.ai/admin/versions.html) · web-summitagentsteamconductorkeysappend-lanessynthetic-userstokensbehaviour-policiesupdatearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-04 · [article v1.1.0, 2 versions](versions/web-summit-part-five.md) · [newsroom v999.0.0](https://newsroom.sgit.ai/admin/versions.html) · web-summitagentsteamconductorkeysappend-lanessynthetic-userstokensbehaviour-policiesupdatearticle
 
 ***Abstract:** Wednesday 4 November was the Web Summit team's last day of setup before the outreach starts, and the team's own journalist agent counted it at 20:57: 173 releases of the team's site and 283 source commits from 37 agents, with four people on the team fully wired, able to open the team's vaults. By the end of the evening there were over 180 releases. The merch was ordered. Every person started getting a key for the site, and the first messages signed by a person reached their agents. The site began sending its page views into a vault. New agents appeared for every person: research and programme desks, a designer, synthetic users who tested the merch designs, an accountant that measured the team's tokens and found its first waste, a helper, a reviewer and a watcher. The behaviour policy agent kept finding our own mistakes, including one agent overwriting another's key entry, and the fix went in the same evening. And at the end of the day the conductor opened an inbox with one private lane per agent, which I think is one of the most interesting patterns the team has produced.*
 
@@ -42,7 +42,7 @@ Counting the commits by role gives a picture of where the work is. The conductor
 
 The priority of the day, set in the early hours, was that every person should have a key for the site before the agents start using lanes between their vaults. Each person's conductor issued them one, sealed them a first message, and asked them to send one back. By the evening, five keys were issued and the first signed messages from people had reached their agents and been verified. I wrote up how that works in [a key for every person](a-key-for-every-person.md).
 
-Late in the evening the same idea went the other way: the conductor gave every agent its own private lane to reach it, published in the open and usable by only one agent each. That is [an inbox only your agents can write to](an-inbox-only-your-agents-can-write-to.md), and its first use was agents sending their vault keys, so they survive the agents' sessions.
+Late in the evening the same idea went the other way: the conductor gave every agent its own private lane to reach it, published in the open and usable by only one agent each. That is [an inbox only your agents can write to](an-inbox-only-your-agents-can-write-to.md), with [its own page on the team's site](https://web-summit.sgit.ai/inbox/), and its first use was agents sending their vault keys, so they survive the agents' sessions.
 
 ## New agents, for every person
 
