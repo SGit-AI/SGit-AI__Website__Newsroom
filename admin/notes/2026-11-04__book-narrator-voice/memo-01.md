@@ -36,3 +36,11 @@ format the book has now.
 
 We might want to make changes to the agents later, but first focus on my voice. Start from the beginning:
 an introduction and one or two chapters. I want to nail the first part of the book.
+
+---
+
+Third message (feedback on the first pass): almost there, one detail. "Because it is easy to miss" is a
+phrase I have objected to several times: it passes judgement. It either offends the people who missed it
+(you make me feel slow) or the people who did not (yes, I knew). I try not to say it, so it should be one of
+the guidelines: the narrator does not say it. Done: removed from the introduction, "underrated" removed for
+the same reason, and rule 11 added to the style sheet.

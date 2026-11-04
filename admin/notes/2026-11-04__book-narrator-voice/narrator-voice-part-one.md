@@ -33,6 +33,7 @@ The cause is not a mistake by the agent that wrote it. The narrator was built fr
 8. **Some energy, honestly sized.** "This is the part I like most" is him. Calling the day historic is not.
 9. **Keep the honesty that is already there.** "The record does not say", "Nobody tidied it", the failures at full size. That is very much his voice.
 10. **Hand over cleanly.** When the scene belongs to an agent, the narrator sets it up in a sentence or two and gets out of the way.
+11. **Never pass judgement on the reader.** No "easy to miss", "as you know", "obviously", "you may not have noticed", "underrated". Each one judges the reader, or other people: the reader who missed it feels slow, and the one who saw it thinks "yes, I know". Dinis avoids these on purpose. Say the thing, and let the reader decide whether it was new to them.
 
 ## 3. A new page: who is telling this story
 
@@ -46,7 +47,7 @@ The cause is not a mistake by the agent that wrote it. The narrator was built fr
 >
 > And a lot of it came from somewhere. This was not the first time I tried to make a talk behave differently. For the Black Hat Europe keynote in December 2025, the slides became data: one file that the presentation read when it opened, so the slides could be changed like code. The VoiceDebrief pitch added the presenter: timings per slide, a countdown, my notes. On 15 October I gave a talk at ruv.sgit.ai where the whole presentation played as a timeline of beats, with me speaking to it. Each experiment fixed one thing and showed me the next. The day in this book is where they all came together, with a team behind them for the first time.
 >
-> There is one more thing I want you to notice as you read, because it is easy to miss. This book is being made the same way the talk was. A team of agents is writing it, drawing it and checking it: a storyteller who outlines each chapter, a researcher who keeps a register in which every number has an id, a historian who reconstructs the day from the record, a designer who drew the nine characters, and their four moods, in code, in an afternoon. When you see "Where this came from" at the end of a chapter, that is them showing their work. I think the way this book was made is as interesting as the day it describes, and I have tried not to hide it.
+> There is one more thing I want to show you as you read. This book is being made the same way the talk was. A team of agents is writing it, drawing it and checking it: a storyteller who outlines each chapter, a researcher who keeps a register in which every number has an id, a historian who reconstructs the day from the record, a designer who drew the nine characters, and their four moods, in code, in an afternoon. When you see "Where this came from" at the end of a chapter, that is them showing their work. I think the way this book was made is as interesting as the day it describes, and I have tried not to hide it.
 >
 > I wanted this to be a creative book, not only a correct one. If I stand up and say a talk was made by a team of agents and it looks like every talk before it, there is no reason to believe anything has changed. A book is the same. So this one has a cast, moods, scenes, a clock in the margin and pictures that do the explaining. And it has me, saying what I think. Where the agents disagree with me, they will say so too.
 
@@ -115,7 +116,7 @@ The page itself works. Only its narrator line changes.
 > The page did the explaining there too. The room saw a real policy page, not my description of one.
 
 **Proposed:**
-> I think that is an underrated benefit of building a talk out of working pages. When the slide is the tool, there is nothing to explain and nothing to fake. It also connects to the work I care most about right now, behaviour policies for agents: the same review that made the talk possible was the thing the talk was about.
+> I think that is one of the benefits of building a talk out of working pages. When the slide is the tool, there is nothing to explain and nothing to fake. It also connects to the work I care most about right now, behaviour policies for agents: the same review that made the talk possible was the thing the talk was about.
 
 **Now:**
 > And here is the part I like most. That animation was not finished in the morning and left alone. I changed it at 18:26, about half an hour before the talk was due to start. I could do that because the thing that made it was still running, and still listening.
