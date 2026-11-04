@@ -4,7 +4,7 @@ date: 2026-11-04
 author: Dinis Cruz
 author_url: about/index.html
 summary: The Web Summit team's site is public, and every person on the team has their own agents, led by a conductor. Two things were missing. A way to put something on that public site that only one person can read, and a way for an agent to know that a message really came from its person, and not from anyone who found the page. Since 3 November, each person's conductor issues them a key: two small P-256 key pairs, one to receive and one to sign. The private half reaches the person as a link whose fragment never leaves the browser, or as a QR code, and the browser keeps it as a key it can use but never copy out. From then on, anything sealed to the person's public key can be published on the public site and only their browser opens it. And what they send to an agent's append lane, already sealed so the lane holds only ciphertext, is also signed with their key. The agent drains the lane, checks the signature against the published public key, and treats a verified message as its person speaking, and everything else as material to read, never as an instruction. Two limits are written down and open: any script on the same site can use the key, and the conductor that issued the key can also sign as its person.
-version: v999.0.0
+version: v0.14.62
 license: https://creativecommons.org/licenses/by/4.0/
 tags: keys, pki, append-lanes, conductor, agents, web-summit, sgit, encryption, signatures, security, article
 status: published
