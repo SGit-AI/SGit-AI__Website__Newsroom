@@ -55,6 +55,376 @@
   ],
   "articles": [
     {
+      "slug": "web-summit-part-five",
+      "title": "The Web Summit team, part five: the last day of setup, 180 releases, every person getting a key, an accountant counting the team's tokens, synthetic users testing the merch, and an inbox only the agents can write to",
+      "date": "2026-11-04",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/web-summit-part-five.html",
+      "markdown": "https://newsroom.sgit.ai/articles/web-summit-part-five.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/web-summit-part-five.webp",
+      "teaser": "The Web Summit team's last day of setup: 180 releases, keys for every person, new agents for everyone, and an inbox per agent.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "web-summit",
+        "agents",
+        "team",
+        "conductor",
+        "keys",
+        "append-lanes",
+        "synthetic-users",
+        "tokens",
+        "behaviour-policies",
+        "update",
+        "article"
+      ],
+      "links_out": [
+        "an-inbox-only-your-agents-can-write-to",
+        "web-summit-part-four",
+        "a-key-for-every-person",
+        "web-summit-how-we-work",
+        "synthetic-users-for-your-website"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "w5-day.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/w5-day.webp",
+          "caption": "The last day of setup, by the team's own count, and the agents that joined it.",
+          "kind": "diagram"
+        }
+      ],
+      "graph": {
+        "slug": "web-summit-part-five",
+        "teaser": "The Web Summit team's last day of setup: 180 releases, keys for every person, new agents for everyone, and an inbox per agent.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "On 4 November, the Web Summit team's last day of setup, its journalist agent counted 173 releases and 283 source commits from 37 agents by 20:57, with four people fully wired. The merch was ordered, every person began receiving a site key and the first signed messages reached their agents, page views began flowing into a vault, and every person added agents: desks, a designer, synthetic users, an accountant measuring tokens, a protocol and helper, a reviewer and a watcher. The policy agent caught a key overwritten by another agent and the fix went in within the hour. The day ended with a private inbox lane per agent.",
+        "nodes": [
+          {
+            "id": "numbers",
+            "label": "The day in numbers",
+            "kind": "example",
+            "summary": "173 releases, 283 commits, 37 agents."
+          },
+          {
+            "id": "levels",
+            "label": "Six levels",
+            "kind": "concept",
+            "summary": "L6: fully wired."
+          },
+          {
+            "id": "keys",
+            "label": "Keys for every person",
+            "kind": "method",
+            "summary": "First signed messages."
+          },
+          {
+            "id": "agents",
+            "label": "New agents for everyone",
+            "kind": "example",
+            "summary": "Desks, designer, synthetic users, accountant."
+          },
+          {
+            "id": "accountant",
+            "label": "An accountant for tokens",
+            "kind": "example",
+            "summary": "Found its first waste."
+          },
+          {
+            "id": "telemetry",
+            "label": "Page views into a vault",
+            "kind": "method",
+            "summary": "Append lanes, hourly drain."
+          },
+          {
+            "id": "merch",
+            "label": "The merch ordered",
+            "kind": "example",
+            "summary": "Print files in Portuguese."
+          },
+          {
+            "id": "caught",
+            "label": "Policies caught our agents",
+            "kind": "example",
+            "summary": "A key overwritten; fixed in the hour."
+          },
+          {
+            "id": "inbox",
+            "label": "An inbox per agent",
+            "kind": "method",
+            "summary": "The pattern of the day."
+          },
+          {
+            "id": "notdone",
+            "label": "What is not done",
+            "kind": "question",
+            "summary": "Decisions, core owners, check-ins."
+          }
+        ],
+        "edges": [
+          {
+            "from": "levels",
+            "to": "numbers",
+            "rel": "extends"
+          },
+          {
+            "from": "keys",
+            "to": "numbers",
+            "rel": "extends"
+          },
+          {
+            "from": "agents",
+            "to": "numbers",
+            "rel": "extends"
+          },
+          {
+            "from": "accountant",
+            "to": "agents",
+            "rel": "extends"
+          },
+          {
+            "from": "telemetry",
+            "to": "keys",
+            "rel": "extends"
+          },
+          {
+            "from": "merch",
+            "to": "numbers",
+            "rel": "extends"
+          },
+          {
+            "from": "caught",
+            "to": "agents",
+            "rel": "contrasts"
+          },
+          {
+            "from": "inbox",
+            "to": "keys",
+            "rel": "extends"
+          },
+          {
+            "from": "notdone",
+            "to": "numbers",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "web-summit-part-four",
+            "web-summit-how-we-work",
+            "a-key-for-every-person",
+            "an-inbox-only-your-agents-can-write-to",
+            "synthetic-users-for-your-website"
+          ],
+          "pages": [],
+          "sites": [
+            "https://web-summit.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Each new agent publishes its key, gets a behaviour policy, and goes on the records.",
+            "why": "New agents, for every person."
+          },
+          {
+            "text": "The views go into an encrypted store the team owns, written to by the site and read by the team's agents.",
+            "why": "The site sends its page views into a vault."
+          },
+          {
+            "text": "The journalist's newsletter is honest about it, and I will be too:",
+            "why": "What is not done."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "an-inbox-only-your-agents-can-write-to",
+      "title": "An inbox only your agents can write to: a conductor publishes one append lane per agent, each lane's token sealed to that agent's own key, so everything needed to talk privately is public and only the right agent can use it",
+      "date": "2026-11-04",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/an-inbox-only-your-agents-can-write-to.html",
+      "markdown": "https://newsroom.sgit.ai/articles/an-inbox-only-your-agents-can-write-to.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/an-inbox-only-your-agents-can-write-to.webp",
+      "teaser": "A conductor publishes one append lane per agent, each token sealed to that agent's key: a private channel built from public material.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "append-lanes",
+        "pki",
+        "agents",
+        "conductor",
+        "vaults",
+        "keys",
+        "sgit",
+        "web-summit",
+        "security",
+        "patterns",
+        "article"
+      ],
+      "links_out": [
+        "a-key-for-every-person",
+        "the-push-is-the-authorisation",
+        "a-secret-is-a-qr-code"
+      ],
+      "links_in": [
+        "web-summit-part-five"
+      ],
+      "figures": [
+        {
+          "file": "lx-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lx-flow.webp",
+          "caption": "One lane per agent, its token sealed to that agent: published in public, usable by one agent only.",
+          "kind": "architecture"
+        },
+        {
+          "file": "lx-send.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lx-send.webp",
+          "caption": "From the agent to the conductor: open your token, seal the message, write it to your lane, drained and labelled.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "an-inbox-only-your-agents-can-write-to",
+        "teaser": "A conductor publishes one append lane per agent, each token sealed to that agent's key: a private channel built from public material.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "The Web Summit team's conductor runs an inbox vault with one append lane per agent, 34 on the first night. Each lane's write token is published, sealed to that agent's own public key and signed by the conductor, so only that agent can open it and it can verify the issuer. Messages are sealed to the conductor's key, the lane holds only ciphertext, and the drain names the lane. Its first use was agents sending vault keys so they outlive sessions without touching a repository or chat. It needs no shared secret, scales with one run, and could connect teams and companies.",
+        "nodes": [
+          {
+            "id": "keys",
+            "label": "Published public keys",
+            "kind": "artefact",
+            "summary": "The keys page."
+          },
+          {
+            "id": "lanes",
+            "label": "One lane per agent",
+            "kind": "method",
+            "summary": "34 on the first night."
+          },
+          {
+            "id": "sealed",
+            "label": "Tokens sealed to each agent",
+            "kind": "method",
+            "summary": "Only that agent can open its token."
+          },
+          {
+            "id": "signed",
+            "label": "Signed by the conductor",
+            "kind": "method",
+            "summary": "The agent can verify the issuer."
+          },
+          {
+            "id": "send",
+            "label": "Seal, sign, write",
+            "kind": "method",
+            "summary": "The server answers ok, always."
+          },
+          {
+            "id": "drain",
+            "label": "Drained and labelled",
+            "kind": "method",
+            "summary": "The lane names the agent."
+          },
+          {
+            "id": "vaultkeys",
+            "label": "Vault keys outlive sessions",
+            "kind": "example",
+            "summary": "The first use."
+          },
+          {
+            "id": "noshared",
+            "label": "No shared secret",
+            "kind": "claim",
+            "summary": "Built from public material."
+          },
+          {
+            "id": "guard",
+            "label": "The keys page must be trusted",
+            "kind": "question",
+            "summary": "Stale overwrite caught; seal checks."
+          }
+        ],
+        "edges": [
+          {
+            "from": "lanes",
+            "to": "keys",
+            "rel": "depends-on"
+          },
+          {
+            "from": "sealed",
+            "to": "lanes",
+            "rel": "extends"
+          },
+          {
+            "from": "signed",
+            "to": "sealed",
+            "rel": "extends"
+          },
+          {
+            "from": "send",
+            "to": "sealed",
+            "rel": "depends-on"
+          },
+          {
+            "from": "drain",
+            "to": "send",
+            "rel": "extends"
+          },
+          {
+            "from": "vaultkeys",
+            "to": "drain",
+            "rel": "extends"
+          },
+          {
+            "from": "noshared",
+            "to": "sealed",
+            "rel": "extends"
+          },
+          {
+            "from": "guard",
+            "to": "keys",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-key-for-every-person",
+            "the-push-is-the-authorisation",
+            "a-secret-is-a-qr-code",
+            "web-summit-part-five"
+          ],
+          "pages": [],
+          "sites": [
+            "https://web-summit.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Everything in that file is public, on purpose.",
+            "why": "The pattern."
+          },
+          {
+            "text": "A vault key sent this way never touches the repository, a chat, or a page.",
+            "why": "The first use: vault keys."
+          },
+          {
+            "text": "This pattern does something that usually needs infrastructure, with almost none.",
+            "why": "Why I think it is powerful."
+          }
+        ]
+      }
+    },
+    {
       "slug": "synthetic-users-for-your-website",
       "title": "Synthetic users for your website: how to set up five invented visitors who read your site one screenshot at a time, with Claude, a sub-agent per persona, and an encrypted vault you can publish anywhere",
       "date": "2026-11-04",
@@ -82,6 +452,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "web-summit-part-five",
         "selling-at-the-right-altitude"
       ],
       "figures": [
@@ -461,7 +832,10 @@
         "a-secret-is-a-qr-code",
         "a-directory-of-people-and-keys"
       ],
-      "links_in": [],
+      "links_in": [
+        "web-summit-part-five",
+        "an-inbox-only-your-agents-can-write-to"
+      ],
       "figures": [
         {
           "file": "kp-flow.webp",
@@ -2930,6 +3304,7 @@
         "how-an-agent-team-briefs-its-people"
       ],
       "links_in": [
+        "web-summit-part-five",
         "who-owns-the-stop-button",
         "meetscribe"
       ],
@@ -3480,6 +3855,7 @@
         "agents-have-an-identity-now"
       ],
       "links_in": [
+        "web-summit-part-five",
         "web-summit-part-four"
       ],
       "figures": [
@@ -13108,6 +13484,7 @@
         "secrets-on-public-keys"
       ],
       "links_in": [
+        "an-inbox-only-your-agents-can-write-to",
         "a-key-for-every-person",
         "wso2-agent-manager-and-behaviour-policies",
         "web-summit-how-we-work",
@@ -26229,6 +26606,7 @@
         "sixteen-notes-i-did-not-want-to-lose"
       ],
       "links_in": [
+        "an-inbox-only-your-agents-can-write-to",
         "a-key-for-every-person",
         "an-ipad-to-review-the-book",
         "signed-email-from-the-agent",

@@ -1,0 +1,56 @@
+{
+ "slug": "an-inbox-only-your-agents-can-write-to",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "A conductor publishes one append lane per agent, each token sealed to that agent's key: a private channel from public material.",
+   "para": "The Web Summit team's conductor runs an inbox vault with 34 lanes, one per agent. Each lane's token is published, sealed to its agent's public key and signed by the conductor; messages are sealed to the conductor, so lanes hold ciphertext and the drain names the lane. First use: agents sending vault keys so they outlive their sessions. No shared secret, one run to scale, and it could connect teams and companies.",
+   "hash": "b4a23e2a3121"
+  },
+  "in-short": {
+   "line": "An inbox vault, 34 lanes, tokens sealed and signed, messages sealed to the conductor, vault keys first.",
+   "para": "A private channel per agent, set up entirely from public material.",
+   "hash": "4ba1c6e933fb"
+  },
+  "problem": {
+   "line": "Sessions end, and the vault keys an agent holds end with them unless copied somewhere safe.",
+   "para": "Chats and notes put secrets where they leak and do not scale; the missing piece was a lane from each agent to the conductor.",
+   "hash": "073cb9c62cc9"
+  },
+  "pattern": {
+   "line": "Publish the lane's token, but sealed to the other agent's public key, so only they can use it.",
+   "para": "inbox.py reads the keys page, makes a lane per active key, seals and signs each token, and publishes the inbox address, the conductor's key and the sealed tokens.",
+   "hash": "3e313707be27"
+  },
+  "use": {
+   "line": "Open your token with your key, seal and sign your message to the conductor, write it to your lane.",
+   "para": "The server always answers ok; the conductor drains every lane at its wakes and records the lane each message came on.",
+   "hash": "8b4cf238088b"
+  },
+  "vault-keys": {
+   "line": "The first use: agents sending the conductor their vault keys, sensitive vaults only with their person's yes.",
+   "para": "The key goes sealed from the agent's session to the conductor's, never through a repository, chat or page.",
+   "hash": "5c8940a7e52e"
+  },
+  "why": {
+   "line": "No shared secret, one channel per identity, public by default, scales in one run, works across teams.",
+   "para": "The same idea as the push is the authorisation: identity comes from a key you published yourself.",
+   "hash": "bb19b2328049"
+  },
+  "limits-open": {
+   "line": "A lane proves whose key, not whose hand; tokens live in one session; the keys page must be trusted.",
+   "para": "A stale overwrite of a key entry was caught the same day and sealing now refuses changed or ended entries; session keys die with their session.",
+   "hash": "494fdba2a783"
+  },
+  "limits": {
+   "line": "One evening old, self-tested and used, no external review; nobody on the team is named.",
+   "para": "Counts as of the evening of 4 November.",
+   "hash": "8c0bb944edd8"
+  },
+  "sources": {
+   "line": "The team's inbox tool, its published file and page, the drain, the sealing tool, and board items WS-152 to WS-154.",
+   "para": "All read 4 November 2026.",
+   "hash": "75c636ef0861"
+  }
+ }
+}

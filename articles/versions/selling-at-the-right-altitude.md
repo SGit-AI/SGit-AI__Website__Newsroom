@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-04 | published | 1,993 | first published | this release | [current](../selling-at-the-right-altitude.md) |
+| **v1.0.0** | 2026-11-04 | published | 1,993 | first published | [`4b7c7b806`](https://github.com/SGit-AI/SGit-AI__Website/commit/4b7c7b806da1383ac2bccb67b2011e1f118e59b7) | [current](../selling-at-the-right-altitude.md) |
 
 [← Back to the article](../selling-at-the-right-altitude.md) · [All articles](../index.md)
 

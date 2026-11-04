@@ -1,0 +1,147 @@
+{
+  "slug": "an-inbox-only-your-agents-can-write-to",
+  "teaser": "A conductor publishes one append lane per agent, each token sealed to that agent's key: a private channel built from public material.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "The Web Summit team's conductor runs an inbox vault with one append lane per agent, 34 on the first night. Each lane's write token is published, sealed to that agent's own public key and signed by the conductor, so only that agent can open it and it can verify the issuer. Messages are sealed to the conductor's key, the lane holds only ciphertext, and the drain names the lane. Its first use was agents sending vault keys so they outlive sessions without touching a repository or chat. It needs no shared secret, scales with one run, and could connect teams and companies.",
+  "nodes": [
+    {
+      "id": "keys",
+      "label": "Published public keys",
+      "kind": "artefact",
+      "summary": "The keys page."
+    },
+    {
+      "id": "lanes",
+      "label": "One lane per agent",
+      "kind": "method",
+      "summary": "34 on the first night."
+    },
+    {
+      "id": "sealed",
+      "label": "Tokens sealed to each agent",
+      "kind": "method",
+      "summary": "Only that agent can open its token."
+    },
+    {
+      "id": "signed",
+      "label": "Signed by the conductor",
+      "kind": "method",
+      "summary": "The agent can verify the issuer."
+    },
+    {
+      "id": "send",
+      "label": "Seal, sign, write",
+      "kind": "method",
+      "summary": "The server answers ok, always."
+    },
+    {
+      "id": "drain",
+      "label": "Drained and labelled",
+      "kind": "method",
+      "summary": "The lane names the agent."
+    },
+    {
+      "id": "vaultkeys",
+      "label": "Vault keys outlive sessions",
+      "kind": "example",
+      "summary": "The first use."
+    },
+    {
+      "id": "noshared",
+      "label": "No shared secret",
+      "kind": "claim",
+      "summary": "Built from public material."
+    },
+    {
+      "id": "guard",
+      "label": "The keys page must be trusted",
+      "kind": "question",
+      "summary": "Stale overwrite caught; seal checks."
+    }
+  ],
+  "edges": [
+    {
+      "from": "lanes",
+      "to": "keys",
+      "rel": "depends-on"
+    },
+    {
+      "from": "sealed",
+      "to": "lanes",
+      "rel": "extends"
+    },
+    {
+      "from": "signed",
+      "to": "sealed",
+      "rel": "extends"
+    },
+    {
+      "from": "send",
+      "to": "sealed",
+      "rel": "depends-on"
+    },
+    {
+      "from": "drain",
+      "to": "send",
+      "rel": "extends"
+    },
+    {
+      "from": "vaultkeys",
+      "to": "drain",
+      "rel": "extends"
+    },
+    {
+      "from": "noshared",
+      "to": "sealed",
+      "rel": "extends"
+    },
+    {
+      "from": "guard",
+      "to": "keys",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-key-for-every-person",
+      "the-push-is-the-authorisation",
+      "a-secret-is-a-qr-code",
+      "web-summit-part-five"
+    ],
+    "pages": [],
+    "sites": [
+      "https://web-summit.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Everything in that file is public, on purpose.",
+      "why": "The pattern."
+    },
+    {
+      "text": "A vault key sent this way never touches the repository, a chat, or a page.",
+      "why": "The first use: vault keys."
+    },
+    {
+      "text": "This pattern does something that usually needs infrastructure, with almost none.",
+      "why": "Why I think it is powerful."
+    }
+  ],
+  "figures": [
+    {
+      "file": "lx-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lx-flow.webp",
+      "caption": "One lane per agent, its token sealed to that agent: published in public, usable by one agent only.",
+      "kind": "architecture"
+    },
+    {
+      "file": "lx-send.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lx-send.webp",
+      "caption": "From the agent to the conductor: open your token, seal the message, write it to your lane, drained and labelled.",
+      "kind": "process"
+    }
+  ]
+}

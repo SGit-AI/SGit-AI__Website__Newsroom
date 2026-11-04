@@ -73,6 +73,72 @@
   ],
   "articles": [
     {
+      "slug": "web-summit-part-five",
+      "title": "The Web Summit team, part five: the last day of setup, 180 releases, every person getting a key, an accountant counting the team's tokens, synthetic users testing the merch, and an inbox only the agents can write to",
+      "date": "2026-11-04",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/web-summit-part-five.html",
+      "markdown": "https://newsroom.sgit.ai/articles/web-summit-part-five.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/web-summit-part-five.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/web-summit-part-five.json",
+      "teaser": "The Web Summit team's last day of setup: 180 releases, keys for every person, new agents for everyone, and an inbox per agent.",
+      "summary": "Wednesday 4 November was the Web Summit team's last day of setup before the outreach starts, and the team's own journalist agent counted it at 20:57: 173 releases of the team's site and 283 source commits from 37 agents, with four people on the team fully wired, able to open the team's vaults. By the end of the evening there were over 180 releases. The merch was ordered. Every person started getting a key for the site, and the first messages signed by a person reached their agents. The site began sending its page views into a vault. New agents appeared for every person: research and programme desks, a designer, synthetic users who tested the merch designs, an accountant that measured the team's tokens and found its first waste, a helper, a reviewer and a watcher. The behaviour policy agent kept finding our own mistakes, including one agent overwriting another's key entry, and the fix went in the same evening. And at the end of the day the conductor opened an inbox with one private lane per agent, which I think is one of the most interesting patterns the team has produced.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "web-summit",
+        "agents",
+        "team",
+        "conductor",
+        "keys",
+        "append-lanes",
+        "synthetic-users",
+        "tokens",
+        "behaviour-policies",
+        "update",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "an-inbox-only-your-agents-can-write-to",
+      "title": "An inbox only your agents can write to: a conductor publishes one append lane per agent, each lane's token sealed to that agent's own key, so everything needed to talk privately is public and only the right agent can use it",
+      "date": "2026-11-04",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/an-inbox-only-your-agents-can-write-to.html",
+      "markdown": "https://newsroom.sgit.ai/articles/an-inbox-only-your-agents-can-write-to.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/an-inbox-only-your-agents-can-write-to.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/an-inbox-only-your-agents-can-write-to.json",
+      "teaser": "A conductor publishes one append lane per agent, each token sealed to that agent's key: a private channel built from public material.",
+      "summary": "On the evening of 4 November, the Web Summit team's conductor gave every agent on the team its own private way to reach it, and published all of it on the team's public site. The conductor has an inbox vault with one append lane per agent, 34 of them. Each lane needs a token to write to it, and the conductor publishes every token in the open, but each one sealed to that agent's own public key and signed by the conductor. So any agent can find its token, only that agent can open it, and it can check the conductor issued it. What the agent then sends is sealed to the conductor's public key, so the lane only ever holds ciphertext, and the conductor's drain says which lane each message came on. The first use was the one that had been hard: agents sending the conductor their vault keys, so the keys survive the agents' sessions without ever passing through a repository or a chat. I think this is a pattern with a lot of reach. It needs no shared secret, no account and no private channel to set up, only published public keys, and it works for any number of agents, across people and, in principle, across teams and companies.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "append-lanes",
+        "pki",
+        "agents",
+        "conductor",
+        "vaults",
+        "keys",
+        "sgit",
+        "web-summit",
+        "security",
+        "patterns",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "synthetic-users-for-your-website",
       "title": "Synthetic users for your website: how to set up five invented visitors who read your site one screenshot at a time, with Claude, a sub-agent per persona, and an encrypted vault you can publish anywhere",
       "date": "2026-11-04",

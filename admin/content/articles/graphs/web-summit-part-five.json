@@ -1,0 +1,39 @@
+{
+ "slug": "web-summit-part-five",
+ "teaser": "The Web Summit team's last day of setup: 180 releases, keys for every person, new agents for everyone, and an inbox per agent.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "On 4 November, the Web Summit team's last day of setup, its journalist agent counted 173 releases and 283 source commits from 37 agents by 20:57, with four people fully wired. The merch was ordered, every person began receiving a site key and the first signed messages reached their agents, page views began flowing into a vault, and every person added agents: desks, a designer, synthetic users, an accountant measuring tokens, a protocol and helper, a reviewer and a watcher. The policy agent caught a key overwritten by another agent and the fix went in within the hour. The day ended with a private inbox lane per agent.",
+ "nodes": [
+  {"id": "numbers", "label": "The day in numbers", "kind": "example", "summary": "173 releases, 283 commits, 37 agents."},
+  {"id": "levels", "label": "Six levels", "kind": "concept", "summary": "L6: fully wired."},
+  {"id": "keys", "label": "Keys for every person", "kind": "method", "summary": "First signed messages."},
+  {"id": "agents", "label": "New agents for everyone", "kind": "example", "summary": "Desks, designer, synthetic users, accountant."},
+  {"id": "accountant", "label": "An accountant for tokens", "kind": "example", "summary": "Found its first waste."},
+  {"id": "telemetry", "label": "Page views into a vault", "kind": "method", "summary": "Append lanes, hourly drain."},
+  {"id": "merch", "label": "The merch ordered", "kind": "example", "summary": "Print files in Portuguese."},
+  {"id": "caught", "label": "Policies caught our agents", "kind": "example", "summary": "A key overwritten; fixed in the hour."},
+  {"id": "inbox", "label": "An inbox per agent", "kind": "method", "summary": "The pattern of the day."},
+  {"id": "notdone", "label": "What is not done", "kind": "question", "summary": "Decisions, core owners, check-ins."}
+ ],
+ "edges": [
+  {"from": "levels", "to": "numbers", "rel": "extends"},
+  {"from": "keys", "to": "numbers", "rel": "extends"},
+  {"from": "agents", "to": "numbers", "rel": "extends"},
+  {"from": "accountant", "to": "agents", "rel": "extends"},
+  {"from": "telemetry", "to": "keys", "rel": "extends"},
+  {"from": "merch", "to": "numbers", "rel": "extends"},
+  {"from": "caught", "to": "agents", "rel": "contrasts"},
+  {"from": "inbox", "to": "keys", "rel": "extends"},
+  {"from": "notdone", "to": "numbers", "rel": "contrasts"}
+ ],
+ "links": {
+  "articles": ["web-summit-part-four", "web-summit-how-we-work", "a-key-for-every-person", "an-inbox-only-your-agents-can-write-to", "synthetic-users-for-your-website"],
+  "pages": [],
+  "sites": ["https://web-summit.sgit.ai/"]
+ },
+ "quotes": [
+  {"text": "Each new agent publishes its key, gets a behaviour policy, and goes on the records.", "why": "New agents, for every person."},
+  {"text": "The views go into an encrypted store the team owns, written to by the site and read by the team's agents.", "why": "The site sends its page views into a vault."},
+  {"text": "The journalist's newsletter is honest about it, and I will be too:", "why": "What is not done."}
+ ]
+}

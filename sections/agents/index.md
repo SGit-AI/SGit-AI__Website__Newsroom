@@ -2,10 +2,11 @@
 
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
 
-45 articles, newest first.
+46 articles, newest first.
 
 ## November 2026
 
+- [The Web Summit team, part five: the last day of setup, 180 releases, every person getting a key, an accountant counting the team's tokens, synthetic users testing the merch, and an inbox only the agents can write to](../../articles/web-summit-part-five.md), 2026-11-04, 5 min.
 - [Who owns the stop button when it is not you? A reader asked, and four of the book's agents answer as guest writers, in their own voices, from their own records](../../articles/who-owns-the-stop-button.md), 2026-11-03, 14 min.
 - [A teacher and agents she can trust: a brief for an independent online English teacher's site, the workflows around every lesson, an Agent Behaviour Policy for every agent, the plumbing behind it, and content made for each student](../../articles/a-teacher-and-agents-she-can-trust.md), 2026-11-03, 9 min.
 - [How an agent team briefs its people: one JSON file, one PDF, four questions in a fixed order, copied from the book team to the Web Summit team in one night, the mistakes the method caught, and why this newsroom still briefs me in a chat](../../articles/how-an-agent-team-briefs-its-people.md), 2026-11-02, 6 min.
