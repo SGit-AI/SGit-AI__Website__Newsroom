@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-03 | minor | 2,036 | +6 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](wso2-agent-manager-and-behaviour-policies/v1.1.0.md) · [current](../wso2-agent-manager-and-behaviour-policies.md) |
+| **v1.1.0** | 2026-11-03 | minor | 2,036 | +6 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`14eadc5b7`](https://github.com/SGit-AI/SGit-AI__Website/commit/14eadc5b75e6f0791c5f0528aec518f22a3bb9cb) | [what changed](wso2-agent-manager-and-behaviour-policies/v1.1.0.md) · [current](../wso2-agent-manager-and-behaviour-policies.md) |
 | **v1.0.0** | 2026-11-03 | published | 2,030 | first published | [`f5797ca56`](https://github.com/SGit-AI/SGit-AI__Website/commit/f5797ca5637951ddde54fcccdf32efd065b9ab07) |  |
 
 [← Back to the article](../wso2-agent-manager-and-behaviour-policies.md) · [All articles](../index.md)
