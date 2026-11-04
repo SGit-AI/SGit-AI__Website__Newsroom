@@ -155,6 +155,10 @@ Agents & policyNews & evidence[This article as a graph →](graphs.md#who-owns-t
 - [The Web Summit team, part four: the day the agents ran on their own, 75 releases, four people connected, a procurement agent writing to printers, and the behaviour policies catching our own agents out](web-summit-part-four.md) The Web Summit team's day of agents on schedules: 75 releases, four people connected, a procurement agent, and policies catching our own agents.
 - [WSO2 Agent Manager and behaviour policies: a review of an open control plane for agents, what is really open source, how its identity, gateway and runtime fit together, and a brief for an MVP that plugs our Agent and Process Behaviour Policies into it](wso2-agent-manager-and-behaviour-policies.md) WSO2 Agent Manager reviewed as a partner: what is open source, how its layers fit, and an MVP plugging behaviour policies in.
 
+### Continued by
+
+- [Resilience when the workforce includes agents: what Synergy Six Degrees rates with OCRR, recovers with NeuShield and protects with Actifile, and where RiskMandate, sgit and SHarness meet it](resilience-when-the-workforce-includes-agents.md) What Synergy Six Degrees rates with OCRR and sells with NeuShield and Actifile, and the agent rows RiskMandate, SHarness and sgit add.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 374 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=374)

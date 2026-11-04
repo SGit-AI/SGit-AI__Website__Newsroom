@@ -260,6 +260,7 @@
    "admin/content/articles/graphs/proven-controls-for-agents.json": "b4b4a14d20e86dcc779b6afa9cfda900e129c804bce066ef8ce5f43e9244b06a",
    "admin/content/articles/graphs/reading-with-a-pen.json": "9a8972c397c35696aab0e9ee6ca96981b87913b89c7443f0c4b2d8191a1d60a2",
    "admin/content/articles/graphs/research-delivered-as-a-vault.json": "f0332ced86995e91b173cb1117ecef32bc2ea5ec8dcd18b6da07e0d11e06a506",
+   "admin/content/articles/graphs/resilience-when-the-workforce-includes-agents.json": "b83cf709502afe1e78f095d55f462db7b742d253b33fb99ff3df4a2f1312d56e",
    "admin/content/articles/graphs/reviews-on-the-record.json": "c241bb45032b0ba92aa918f499881dd48c0a79e46aa5e9c65194ac36d0f9ef41",
    "admin/content/articles/graphs/running-an-ai-build-event.json": "27ce06acc20173c8b34f7f47409cd54619a32c01a7a1e3f8f6ba8f0405c2401a",
    "admin/content/articles/graphs/scion-and-sgit.json": "e0489bfbb0e928aa6da548a01c0912f40af17aabf7852a490bdb10c91fbb0a6f",
@@ -1077,6 +1078,7 @@
    "admin/content/articles/images/rq-rating.webp": "197b23634cb947a8bd03d9d6841e8a7df56dca84deed881788ab417b7873bf42",
    "admin/content/articles/images/rr-roadmap.webp": "d9daac8574c139b1199ea568ef03a83a7decb1c0946577cac7bc520246071489",
    "admin/content/articles/images/rv-loop.webp": "7b98b16630ff546e3fefab90a837dfa881371edc2e3775814df327f2922d5a84",
+   "admin/content/articles/images/rw-layers.webp": "c7fddc62578274051bdab65b787f5673b451d772abf7f1c40d5264ccc515b3d9",
    "admin/content/articles/images/rz-arch.webp": "dbc133c0ac628c9f37308cc7561be2b3dd01fc6b8b8cddfb23ac7925a0603508",
    "admin/content/articles/images/rz-pack.webp": "54b6a8645beaef8605fc7e0f862cbb8e08653ce1c08fcb3fa34b1dd3f1ac7627",
    "admin/content/articles/images/rz-tiers.webp": "049572b4dc86dff57d6baaad76e7b410cfd91faccecb6e9e37be681d8e0f8384",
@@ -1363,6 +1365,7 @@
    "admin/content/articles/proven-controls-for-agents.md": "000f6544d29efc2d42783a8030d1707bce19e28d564c47abb15099f49bd6bfdb",
    "admin/content/articles/reading-with-a-pen.md": "5709828767297d9a6fb6e9ebe8442f1ac9c2de47723926daf757568402a38467",
    "admin/content/articles/research-delivered-as-a-vault.md": "6c364b430e71d5298145c38fab792af55b6ef05e48cff6c99e5438df117fb314",
+   "admin/content/articles/resilience-when-the-workforce-includes-agents.md": "713739a3139512a1ff00f9690a8f4981f9581a69dc668fe91fbae6352025535e",
    "admin/content/articles/reviews-on-the-record.md": "083a2e10a40795b098b4b8045624b1d52eff75887aeca39a6f976898d424ea31",
    "admin/content/articles/reviews/a-minimal-viable-browser/2026-10-18__anthropic-fable.json": "43c0aee5c62bbb9faa152501483b5d7cabfa88094a53627a67d944c8eae99449",
    "admin/content/articles/reviews/a-minimal-viable-browser/status.json": "4a6d22338361b0810e189d8d81b211e7a7cccf4179b0d574778e99a9bccc08a6",
@@ -1616,6 +1619,7 @@
    "admin/content/articles/summaries/reading-with-a-pen.json": "2a78e0311e8de2d335bfa950612bf3692884cc616da4d51cdca113c7c8d90b24",
    "admin/content/articles/summaries/replicating-the-agentic-inbox.json": "b4ad18845b914836c995e3644687cb10643e813a1fe1c1c6947b5ecfb06ef696",
    "admin/content/articles/summaries/research-delivered-as-a-vault.json": "99594fe57b6f46eb6b0858372cdc964071d2d9e8de739e006c4d15f900a96927",
+   "admin/content/articles/summaries/resilience-when-the-workforce-includes-agents.json": "91e747546e8d3088d3426da24d02088589554bc87bfe68789f48b6fa293fef64",
    "admin/content/articles/summaries/reviews-on-the-record.json": "52105a43baa0354d964819557783b9328a4b6122c4e6ac25b099c490840b9c84",
    "admin/content/articles/summaries/rfc-0001-public-key-cryptography-for-sgit.json": "46ef630c8379be9df9c2215e0530c45071095e8982e96bd5522305f8291fb8b9",
    "admin/content/articles/summaries/riskmandate-ten-questions.json": "c0b2c48e83e733fc52c2126d7092eef18f3132fb0fcb0f0f499f15a9009358ea",
@@ -1987,10 +1991,10 @@
   }
  ],
  "counts": {
-  "files": 5767,
-  "pages": 1380,
-  "articles": 378,
-  "verbatim": 2628,
+  "files": 5776,
+  "pages": 1382,
+  "articles": 379,
+  "verbatim": 2632,
   "dependencies": 52,
   "text_overrides": 11,
   "unresolved_on_sgit_ai": 0
@@ -2713,8 +2717,8 @@
   },
   "articles/banners/.hashes.json": {
    "from": "articles/banners/.hashes.json",
-   "sha256_source": "299aa4cddacda795fc6445706a727d8f200c6d0fa4e5ce2c75c8486eb616bf4f",
-   "sha256": "299aa4cddacda795fc6445706a727d8f200c6d0fa4e5ce2c75c8486eb616bf4f"
+   "sha256_source": "0826d679f8e577f34366a120d65a5028daac896b30f54e3c6a8fd8feec2b9d8e",
+   "sha256": "0826d679f8e577f34366a120d65a5028daac896b30f54e3c6a8fd8feec2b9d8e"
   },
   "articles/banners/001-agents-doing-real-work.jpg": {
    "from": "articles/banners/001-agents-doing-real-work.jpg",
@@ -3618,8 +3622,8 @@
   },
   "articles/banners/manifest.json": {
    "from": "articles/banners/manifest.json",
-   "sha256_source": "0ab935c8062eaf99df90bb0108bafd3ee8f46520b3e64e16208b944bd2076356",
-   "sha256": "0ab935c8062eaf99df90bb0108bafd3ee8f46520b3e64e16208b944bd2076356"
+   "sha256_source": "0208cf8bf28b697fa5bcad13066fb2394093d63a1bde073414b8d9d84c73ce8e",
+   "sha256": "0208cf8bf28b697fa5bcad13066fb2394093d63a1bde073414b8d9d84c73ce8e"
   },
   "articles/banners/meetscribe.jpg": {
    "from": "articles/banners/meetscribe.jpg",
@@ -3866,6 +3870,11 @@
    "sha256_source": "9f7fce9d1d1da2656e4ffde2ae2715b4f9933e842955b55dc4e8f9ddc9f56bca",
    "sha256": "9f7fce9d1d1da2656e4ffde2ae2715b4f9933e842955b55dc4e8f9ddc9f56bca"
   },
+  "articles/banners/resilience-when-the-workforce-includes-agents.jpg": {
+   "from": "articles/banners/resilience-when-the-workforce-includes-agents.jpg",
+   "sha256_source": "33d9130a68b05bbd40a27c0fb2585d2b4cee6c7ff748934d1da0816b45a94a1d",
+   "sha256": "33d9130a68b05bbd40a27c0fb2585d2b4cee6c7ff748934d1da0816b45a94a1d"
+  },
   "articles/banners/reviews-on-the-record.jpg": {
    "from": "articles/banners/reviews-on-the-record.jpg",
    "sha256_source": "72fe57438bdad4f6a52494965674864aebdd86c5f7282dfd297006c72c017fd4",
@@ -4048,8 +4057,8 @@
   },
   "articles/banners/subscribe.jpg": {
    "from": "articles/banners/subscribe.jpg",
-   "sha256_source": "aeb40b21b21fc960d5be33c8368bb8e10c5a9de23564edeac31d9c942143fb5d",
-   "sha256": "aeb40b21b21fc960d5be33c8368bb8e10c5a9de23564edeac31d9c942143fb5d"
+   "sha256_source": "403cf6bdc19d59fe4194a2ab3e909cf8178980a34c91b6c824930d40517c256e",
+   "sha256": "403cf6bdc19d59fe4194a2ab3e909cf8178980a34c91b6c824930d40517c256e"
   },
   "articles/banners/supply-chain-of-vaults.jpg": {
    "from": "articles/banners/supply-chain-of-vaults.jpg",
@@ -5861,6 +5870,11 @@
    "sha256_source": "9c84d0a1d4335e584e21e54d2f4d895b9e25be650087e2c15af2825ffaba010a",
    "sha256": "9c84d0a1d4335e584e21e54d2f4d895b9e25be650087e2c15af2825ffaba010a"
   },
+  "articles/cards/resilience-when-the-workforce-includes-agents.webp": {
+   "from": "articles/cards/resilience-when-the-workforce-includes-agents.webp",
+   "sha256_source": "03c5f7ed1e66e218f7dbcb0d7abe8c4d3b627ef45f384c8abaedc369a8585d0c",
+   "sha256": "03c5f7ed1e66e218f7dbcb0d7abe8c4d3b627ef45f384c8abaedc369a8585d0c"
+  },
   "articles/cards/reviews-on-the-record.webp": {
    "from": "articles/cards/reviews-on-the-record.webp",
    "sha256_source": "d2d6c8402bca3f754656e71058cfdf33725d91a0bcc883d6d145badd292dae92",
@@ -6813,13 +6827,13 @@
   },
   "articles/collections/index.html": {
    "from": "articles/collections/index.html",
-   "sha256_source": "572a083b8bba42ae96bbfb13c4ef51bc32e60cd5fcbd412d92199e8644284e94",
-   "sha256": "2d3819d7f00105280b1b258af537775cf489ac588be8ce81621e14e8ad7d48e6"
+   "sha256_source": "dfd715a26cfcd51b6188d9ce8af224a41e421b12695b879586f3999fe3e498a7",
+   "sha256": "8d733cf18c87ea51debb8e090f80b3837b1261c5c6f851d83cfaa8573f32cb09"
   },
   "articles/collections/index.md": {
    "from": "articles/collections/index.md",
-   "sha256_source": "74e2f5b8a7e3d8d1c3b5ad664a219d12230cb55b7b7ac276c8d99f0c13e21dc7",
-   "sha256": "9e7a24241b5b6be08277c723411d02bf98e70aaa15bd496559eb7b28fcd94a26"
+   "sha256_source": "71c762cd227eede0c321c7b740511f3512d1f37eedfd2811d3b7707f54f9e8e2",
+   "sha256": "909c202ad63328264b9d191db20a23bf2466202f7eaa50fb29a3989f1dfd35dd"
   },
   "articles/collections/local-news-kept-as-evidence.html": {
    "from": "articles/collections/local-news-kept-as-evidence.html",
@@ -7013,13 +7027,13 @@
   },
   "articles/desk/index.html": {
    "from": "articles/desk/index.html",
-   "sha256_source": "114792699943fe3a793c78849c5481bb2681343478d46b29f74b708dd2683183",
-   "sha256": "8851bfa2400c70d45859a1eb207c5a1b557842fa243d5a6b66cb66f79a066283"
+   "sha256_source": "3e206432fc68dbe64d3ccdc2f319ad24c2f630cd2016cf3427c29fb1de42c011",
+   "sha256": "1c56a04d3a96012085e51ccf30fe1352a0cb5e6fc74b957f6db57461d3b120e0"
   },
   "articles/desk/index.md": {
    "from": "articles/desk/index.md",
-   "sha256_source": "25187d11fc1935d8e87c1c8c54ee8f78a38a4e18197f8b51b51bb22da73c0c9c",
-   "sha256": "826fbbcaaa866e10155a4fa42ca88038660d3691bc286f1775c848e51f8480eb"
+   "sha256_source": "cbe1fdae9d939c06186ab4af65705327264c07a21fc4bba29c332728e2338df1",
+   "sha256": "6ea360e744e068a2881a57d28bf0117ce2020be5b789ee7327b57563886df611"
   },
   "articles/desk/range-is-the-feature-so-the-stop-is-designed.html": {
    "from": "articles/desk/range-is-the-feature-so-the-stop-is-designed.html",
@@ -7163,8 +7177,8 @@
   },
   "articles/feed.xml": {
    "from": "articles/feed.xml",
-   "sha256_source": "f038a4415c4c0671b1e0dc4d89d03c47c4478f6fa29ee66b9cadbe6fa492a687",
-   "sha256": "ce604b7fbc997db2f43668c1ed6cade12d4c3d9757b7280bbb257d0e0285cbd0"
+   "sha256_source": "8aaebbd874fa582fd12a99d5a45e0692e39343675250e1a01e347be246fbed42",
+   "sha256": "d4bd2efd3f399609bb9303d85b161651ffd3b1fb1c2c5b3060814d69263da514"
   },
   "articles/feisty-duck-briefed.html": {
    "from": "articles/feisty-duck-briefed.html",
@@ -7348,18 +7362,18 @@
   },
   "articles/graphs.html": {
    "from": "articles/graphs.html",
-   "sha256_source": "d3477ee8872180b009e3fb39d63aef78c1ca55cc484e55a9fef08b669991e593",
-   "sha256": "5fe12890bc82aa174bddc55480a5d5944f02fbe9ce4414f1997af8489d2eaa69"
+   "sha256_source": "48364223ff2a85cdf2af7e097f9d965841614833a60c93a657755b06ee6caad8",
+   "sha256": "a29f413b0a8f5d0250a2e337c43facd0cfc2e6be655c91bea4052f851c1b8b99"
   },
   "articles/graphs.json": {
    "from": "articles/graphs.json",
-   "sha256_source": "8e746dac51ee08255018938b7bc11145faaf6952baaf2170411782098458b963",
-   "sha256": "d9f52c06d434b8fa3b2288250a49a85169584d66d8b30655df64328645f8b3f2"
+   "sha256_source": "dd3c64531ff99f2e115b911381c10461b26169a1c77a9e2bb61250eb131da6f9",
+   "sha256": "859c239785938d2d04d739e20e0bf83f5ec4cdf6a9b33cf43bbf017b09ac03e3"
   },
   "articles/graphs.md": {
    "from": "articles/graphs.md",
-   "sha256_source": "37f7277011579c254b0dc7067fb80b9457dacccb8d2a02188d88d19e947a55bd",
-   "sha256": "40a9174c90a3e1f701d0bfc34b25c0d005712fddb901ee82a1de290302277c0e"
+   "sha256_source": "242d70309fade1587e7a022e5240a2bf5597eb5f42f2ab00fcb9d4e8e39bfbdc",
+   "sha256": "9ed0f9ce6ed017c0d98f3720a32ab4531604b8acce01a6c75b5b656d3afd9aed"
   },
   "articles/graphs/a-book-for-one-reader.json": {
    "from": "articles/graphs/a-book-for-one-reader.json",
@@ -8396,6 +8410,11 @@
    "sha256_source": "5e5dcf858ecb0859df45d8367e8556d12ba4d8f84f2f4db4f4fee75a75bfd62b",
    "sha256": "b43091e08f34f7871bb07ca33d75c7ff6f4524561800cd4205510be17c526ba4"
   },
+  "articles/graphs/resilience-when-the-workforce-includes-agents.json": {
+   "from": "articles/graphs/resilience-when-the-workforce-includes-agents.json",
+   "sha256_source": "1f4a2390626042b4765ebf31d20d35a894fd8b5cc2ffec43efd467f6dab0916a",
+   "sha256": "8abc71215c53d9d93e90ac7d2ddfac78ae3af051f55aba438b376eefff140ed4"
+  },
   "articles/graphs/reviews-on-the-record.json": {
    "from": "articles/graphs/reviews-on-the-record.json",
    "sha256_source": "ea6a2500e80fcdba995d408839060ff5da836fb51b0c989eaf6b4eea2dc1b0be",
@@ -9323,13 +9342,13 @@
   },
   "articles/how-a-vault-works.html": {
    "from": "articles/how-a-vault-works.html",
-   "sha256_source": "0e1e7d2ba5bcd7cf3b0c41a0da1cc58eb290802c8f7aff5ac1f485d811eea8d9",
-   "sha256": "2034a0366cf0ed4f70daf299210087910534f4391a30df3a838da2ea3e3d2bd0"
+   "sha256_source": "5a8e8ada4e8cc42bb2e5436e1f63d9c729ddff84ea7aad44737ecbaef8346009",
+   "sha256": "287a2339dfdfa1b44a729b9dc0da73461127701c3558d73a7e53d53ebd3382f5"
   },
   "articles/how-a-vault-works.md": {
    "from": "articles/how-a-vault-works.md",
-   "sha256_source": "fb0a6ab754b581ae5ebee656a3ce1aef160ecdf65e7c65a442f7dd30f12d7f9e",
-   "sha256": "bb79fe0cb801365a01b706e3572b4c2934196d40af3419f9cada53712866d4dd"
+   "sha256_source": "d0dabec2b28e8f97906c44f199989323abb6e78f3d2b341da574119eb9b758eb",
+   "sha256": "e81615c0d2e5c45f741f6c42cbb8a4f21be3029da66be0b9f2c248cf38a78cf4"
   },
   "articles/how-an-agent-team-briefs-its-people.html": {
    "from": "articles/how-an-agent-team-briefs-its-people.html",
@@ -14491,6 +14510,11 @@
    "sha256_source": "7b98b16630ff546e3fefab90a837dfa881371edc2e3775814df327f2922d5a84",
    "sha256": "7b98b16630ff546e3fefab90a837dfa881371edc2e3775814df327f2922d5a84"
   },
+  "articles/images/rw-layers.webp": {
+   "from": "articles/images/rw-layers.webp",
+   "sha256_source": "c7fddc62578274051bdab65b787f5673b451d772abf7f1c40d5264ccc515b3d9",
+   "sha256": "c7fddc62578274051bdab65b787f5673b451d772abf7f1c40d5264ccc515b3d9"
+  },
   "articles/images/rz-arch.webp": {
    "from": "articles/images/rz-arch.webp",
    "sha256_source": "dbc133c0ac628c9f37308cc7561be2b3dd01fc6b8b8cddfb23ac7925a0603508",
@@ -15983,13 +16007,13 @@
   },
   "articles/index.html": {
    "from": "articles/index.html",
-   "sha256_source": "c5693c88d867cab3b8d144b41cd4122452f4b4a7ee7cb833a252a5cdcd1561cc",
-   "sha256": "f393b55d8fd190c8cfcf0c31c326b52244b00de1610600855307f448655e6484"
+   "sha256_source": "22cec8153b8e98f6f9653c72ea9b9f8dd958b0eac3df7c73009bb54b192b2448",
+   "sha256": "88dee83acf37b0da30e23f0981173d6c92c4d7c70cece2af485f79745c757989"
   },
   "articles/index.md": {
    "from": "articles/index.md",
-   "sha256_source": "8b77e514002f967a22befa238380ddb0653589f73e2f3d91b4c9582b6896ffbd",
-   "sha256": "e04dcea2e0be4326f91013274a95c790dea15b0aaa4c2e57089a63018fabf98c"
+   "sha256_source": "b786955017d7dae6f36f66b35919ecb1344292b026fe82403b0757c473cd182b",
+   "sha256": "1d610f1b1de47f5597bdcfe4b0b344fed47229a8dd36a312407a826ef60cc61b"
   },
   "articles/inside-english-with-ines.html": {
    "from": "articles/inside-english-with-ines.html",
@@ -16063,13 +16087,13 @@
   },
   "articles/insuring-agents-the-whole-story.html": {
    "from": "articles/insuring-agents-the-whole-story.html",
-   "sha256_source": "16b852f0b82b17d33591e8b8f41a2d9a93e26dfcd79087bd7b54795dce223fb8",
-   "sha256": "46e95fee6e3fcdedb3b52362e61f707c240013e54ff541d03aac3b33335e578a"
+   "sha256_source": "07a6f2c4be732a6049ae6ca8a1c54393e322a0becbc891955f7ef6896814d4b1",
+   "sha256": "f3dd1a2b266d6ea64e76a307c9738648e7cf5709697fc1743d3a1036af5a13d5"
   },
   "articles/insuring-agents-the-whole-story.md": {
    "from": "articles/insuring-agents-the-whole-story.md",
-   "sha256_source": "b0b9e5058e41f0ba774afb97749ccfcf5626fd048c9056a9c77865354a8ec7f0",
-   "sha256": "62f276287ae24162e46adf5ffb74566084cee505fb0d0f4e767615bd68dd403d"
+   "sha256_source": "5ec88c574b465a3f912370395faed7bc698ba892711805ddffad98b851e67529",
+   "sha256": "eedef3705b6a3f1cc9630513fe08a606becb15ae94775dbd21b559732fdff708"
   },
   "articles/introducing-fractal-semantic-graphs.html": {
    "from": "articles/introducing-fractal-semantic-graphs.html",
@@ -16083,13 +16107,13 @@
   },
   "articles/introducing-sharness.html": {
    "from": "articles/introducing-sharness.html",
-   "sha256_source": "9bc89cd5504152adde9e8e57a5eaf1e86020214e6ca6985b3ec75ef2d7de5871",
-   "sha256": "89f0070e2b8fa2083bef708b92b089f78b2f34e19c48c72bc072386a7ff79deb"
+   "sha256_source": "a460d0bb572a7cd43f646627375864231d5a873c82c71d19b8531b678790e2a8",
+   "sha256": "f96d56398855616b405db38f33ab457be750c4ac4d7578adbbda5d1c2da2c755"
   },
   "articles/introducing-sharness.md": {
    "from": "articles/introducing-sharness.md",
-   "sha256_source": "84b976d6f7328c556f7d0de33c9037fd269f8fecf36b40a54fbd6b8de6f1c98b",
-   "sha256": "aea6371b380af29d8c4b3b625961e2ea63b77472f54d83ec2d34a4981b4d18e5"
+   "sha256_source": "10987d8ef1b5b16a38d3af383694fb6717c3fed118c9ca2ccbde3938bb5d6240",
+   "sha256": "72960a3356862bcc5530fb9f1476e6ac64a727d4646b156c37fcdc54fd32335f"
   },
   "articles/investor-sgit-ai.html": {
    "from": "articles/investor-sgit-ai.html",
@@ -16383,13 +16407,13 @@
   },
   "articles/newsletter/index.html": {
    "from": "articles/newsletter/index.html",
-   "sha256_source": "394e7fb083f33995edf17965780e3040b8092c1901bf0433bcd7dd790bd45fdb",
-   "sha256": "d990a46b66bab133ab13e8e2221a7497abefe694a9e9caeba55bdfe2337fb31a"
+   "sha256_source": "76a239d4b00647f2e9a8c1c78200b33846ec032b91f1ae9a748a6cd6dc7163fb",
+   "sha256": "e8ce80dab1b52ea0d74d52981e75376dfa22831ae33b90ec68f4bdba04ec7e36"
   },
   "articles/newsletter/index.md": {
    "from": "articles/newsletter/index.md",
-   "sha256_source": "33f2b9babf1e1b60218863fed24aef2d95391df3332d441aa8b673a5dbdfb56e",
-   "sha256": "4fa35b638fd473e43296e2df07db914bdfda6c8d785f044a85bd71909b8e207a"
+   "sha256_source": "dcc9a60164d7cf974c1a03b890c78fbb74e9a92109a9d89669b1aca20f868f73",
+   "sha256": "5f584497c0d666e9847412bfe0f484e0cd46d38657fdf845e35d34871ed68107"
   },
   "articles/nineteen-sites.html": {
    "from": "articles/nineteen-sites.html",
@@ -16803,13 +16827,23 @@
   },
   "articles/research-delivered-as-a-vault.html": {
    "from": "articles/research-delivered-as-a-vault.html",
-   "sha256_source": "ffa6b1e47e704a102e62c795a5a6d646bd3404e75dddad0a57ae196e6d598d1e",
-   "sha256": "83c919d0de8162e6b792aee4d0c1644b7c49d065ee705c1e7c84112bab398189"
+   "sha256_source": "f0fd8205e0153093a4ea66045a204192d3c21c7dafe80869b8e4f3479ffd2962",
+   "sha256": "f5329689d830e1caa0b9a86fb915b4100eed02bae29ae1202e1640beeacfed9b"
   },
   "articles/research-delivered-as-a-vault.md": {
    "from": "articles/research-delivered-as-a-vault.md",
-   "sha256_source": "33b6fb18383fb6091945bef4105349f96e15403b222fe05bbbb1294ba6857074",
-   "sha256": "eb3ede062425ce1ec3f757817a454efbbaea2df251e22fb7a115f0bb0d0ed5da"
+   "sha256_source": "46fa3b3a1c79c7a7b782999540d5b495f9e91820d28b5fefb0613a297e1f49e8",
+   "sha256": "fc232c248685e9285f1d3b7241128adc491b392eb553ab5c7d986f47f0222584"
+  },
+  "articles/resilience-when-the-workforce-includes-agents.html": {
+   "from": "articles/resilience-when-the-workforce-includes-agents.html",
+   "sha256_source": "ec89696a6f0be591bae68d8554aac19fc7e07a5a7f8cd9b3ce6a775f0321f60c",
+   "sha256": "c8c008247deb948072a3c338f8dcd5b9e81452abf648cc23a2c10a68b0ced5d4"
+  },
+  "articles/resilience-when-the-workforce-includes-agents.md": {
+   "from": "articles/resilience-when-the-workforce-includes-agents.md",
+   "sha256_source": "df220f0e6e5a29dcbed13d7048ed7f46a650f32e794bf393a2308afee1dfa01f",
+   "sha256": "3295de4892057459544917a4475325c459b6cb22fbce16af66a48b7e3d1fddea"
   },
   "articles/reviews-on-the-record.html": {
    "from": "articles/reviews-on-the-record.html",
@@ -17373,13 +17407,13 @@
   },
   "articles/the-cost-of-your-agents.html": {
    "from": "articles/the-cost-of-your-agents.html",
-   "sha256_source": "3bba8623f33cf463e80d2dcb41d5d5403a49a2e9070369db8f1072f20c178051",
-   "sha256": "5cceb95a560b664dec0573aa5d5beab3d2af48cf6e60820eb0e5b707a96022ad"
+   "sha256_source": "153219775c0dbfcf7befed5721d32b9120d8ab5ba6efbbc76cbc6e3f55cb3fb2",
+   "sha256": "ee7b7f7c163d65b0e6ab29e2725fa43b79189e30d5835753329cf9cac87a6c75"
   },
   "articles/the-cost-of-your-agents.md": {
    "from": "articles/the-cost-of-your-agents.md",
-   "sha256_source": "a2050601f106733a71a909d704ec398ee2fbd9380e2fc36b0f3b3d4992391b31",
-   "sha256": "cec38c1c4e816a1a4ec7fa2717746fecc4e5a82fc999982cf4d1d82096fb6a17"
+   "sha256_source": "7ac608e293aafe3fdc56c93a23d1639f371e86cbe923dd7315f1a019f7e58c39",
+   "sha256": "13fce545b2f1442b9e9b0464f93d928e4f0bda29b427d4f3d5da5a998eb4fb57"
   },
   "articles/the-deck-i-could-not-download.html": {
    "from": "articles/the-deck-i-could-not-download.html",
@@ -23261,6 +23295,16 @@
    "sha256_source": "1809f9410171b754580a87386ae309d09ec59892433696681172d6a5a790d656",
    "sha256": "34c9695112201a643b47a3ae6e60318eef065ee4bf18d6f49e26e8a29c72e08c"
   },
+  "articles/versions/resilience-when-the-workforce-includes-agents.html": {
+   "from": "articles/versions/resilience-when-the-workforce-includes-agents.html",
+   "sha256_source": "c2a65163734ea0f009f1acf4f6ee84f7663fa224495ed2ebd5059d98badc2de8",
+   "sha256": "ed2bd80ce5eba650a5f020989cf1b6b9af929a65105ee7de1331ec565636c3d9"
+  },
+  "articles/versions/resilience-when-the-workforce-includes-agents.md": {
+   "from": "articles/versions/resilience-when-the-workforce-includes-agents.md",
+   "sha256_source": "574cc16615eabdd85ebe96f55efcb0ffb9d215a53404468fcad358bfe092e349",
+   "sha256": "bef1c07f79796a2bd646b4a8aef1818c8e33d6d191b4e47fee11dfdb23852545"
+  },
   "articles/versions/reviews-on-the-record.html": {
    "from": "articles/versions/reviews-on-the-record.html",
    "sha256_source": "a0de6968dc5977207aa1058441c4be9b918be1388ded3221edbcc030f2e2f26d",
@@ -27998,13 +28042,13 @@
   },
   "articles/what-can-your-agent-reach.html": {
    "from": "articles/what-can-your-agent-reach.html",
-   "sha256_source": "ad5b179130497669043b159b9264fcec5f015022bbf6531d5ee8f2a0fd701dbf",
-   "sha256": "35fe6e7f7bdaf75d9fdc0d7db98674f1ff331546d315790910a6af6f51dc9bde"
+   "sha256_source": "29e72e02f36d013eb19b758e0b4ae4b52127ea956073849e9a68e63c40752469",
+   "sha256": "1c80ca124c5c5422a27aba183711b0280f18445cffad0454d01079d494967a16"
   },
   "articles/what-can-your-agent-reach.md": {
    "from": "articles/what-can-your-agent-reach.md",
-   "sha256_source": "e501b9201a91f502e97759f25cdf407b99d0eb068f8ee473ace47ad90105d272",
-   "sha256": "74dc45218f287d77c9b386a651078824e4138b2df3903aac7b707d0af474e12a"
+   "sha256_source": "cf64a13a7c4bcb2a477746a5d2694af67d10579037861aad730f5535e07bd3d9",
+   "sha256": "7e1642610c6fe448b0eda698c31d632ada44cb7b915bbd216f1bebf6bd1662c0"
   },
   "articles/what-if-an-agent-loses-its-workspace.html": {
    "from": "articles/what-if-an-agent-loses-its-workspace.html",
@@ -28198,13 +28242,13 @@
   },
   "articles/who-owns-the-stop-button.html": {
    "from": "articles/who-owns-the-stop-button.html",
-   "sha256_source": "efc8e5f46995b75b40844d72037d546d6237dfd3d7748adc3380293ca1c1e6f6",
-   "sha256": "21397f9a7ee916882c5f9b8a07fec57d6a733e7ab7f6e75501323d9e5ee49e43"
+   "sha256_source": "ffbd963e5939e085763127f679c84287ecef93801b4283577591a258ebd83feb",
+   "sha256": "cff10274521fc793646da89e13718d2a0e8b0f8ea9d587c4d31ac45865892d19"
   },
   "articles/who-owns-the-stop-button.md": {
    "from": "articles/who-owns-the-stop-button.md",
-   "sha256_source": "c78836cbaae9aa1363cae777f83601b4648a8d33a90679c40f53dcfbf2c660fb",
-   "sha256": "7bc70251d4c2e06df14f60ee73d78513634d1fcfecfa3e24b244704293be38c5"
+   "sha256_source": "acf7473bacf2189713e69e0a99c33e6d3735a28b58ea3398d237a7a8b98657fd",
+   "sha256": "7cec82155e65cdf27b20729d3697c61498007873d8af4c38cb64b48e3fbbdb7a"
   },
   "articles/who-owns-the-words.html": {
    "from": "articles/who-owns-the-words.html",
@@ -28976,13 +29020,13 @@
   },
   "newsroom/index.html": {
    "from": "newsroom/index.html",
-   "sha256_source": "012e9022b0f793767f7554f8f70b66f8810fdfc7d2b774960771d90564df6dcc",
-   "sha256": "d87764ab2d006bd474c99d9afb327f08e866d8bf48e5e2155ff187d19f5a440c"
+   "sha256_source": "e7679b9091949a1e6712f32c0f3bfdd856a998d9a9dc9abe770162d753faf927",
+   "sha256": "94e8d5fd18c9b12c04bcd48e33dc18d7ffd3cf5539688f968656156b6ff4fdac"
   },
   "newsroom/index.md": {
    "from": "newsroom/index.md",
-   "sha256_source": "aa76fb591499af8c468ea2f63a131bba7e8b9220f1a8a141a276f6c9cd26efb9",
-   "sha256": "1e65099ce2affc7c7d602e5c2bc1e76b118ae5953b27145fb1f6ba9a0145c56f"
+   "sha256_source": "650b2d7fb25b7796fec39b1ba46cc8283331cd92efe8f3b42fed04941459135b",
+   "sha256": "80baac3b80dd94935d69218b91bce88ece54486366bb496f91bb9f08bcc785a0"
   },
   "newsroom/log.html": {
    "from": "newsroom/log.html",
@@ -29076,8 +29120,8 @@
   },
   "newsroom/wire.json": {
    "from": "newsroom/wire.json",
-   "sha256_source": "ecb5aa8ada8913b82142849e875a74bd6e3a0150305cfd11c793739d0e18033e",
-   "sha256": "bbb3c025b8272ae7dd1b12a9993e25d0df5cd23931453ddf0898009084ea0696"
+   "sha256_source": "1c35ed3b9cb9d6044eb64a7c3a4423e54db4631f3a8d3a1156cece3201af97b7",
+   "sha256": "dbcf388b8c10f849d04e3e35f95e2d84ba9aa08c6c983d40cf7b3ace07431ab1"
   },
   "og/a-book-for-one-reader.jpg": {
    "from": "og/a-book-for-one-reader.jpg",
@@ -30118,6 +30162,11 @@
    "from": "og/research-delivered-as-a-vault.jpg",
    "sha256_source": "f9ff95967229f2bfb08c7ffb17006d8df64213c415673ad67c1ab833cd666218",
    "sha256": "f9ff95967229f2bfb08c7ffb17006d8df64213c415673ad67c1ab833cd666218"
+  },
+  "og/resilience-when-the-workforce-includes-agents.jpg": {
+   "from": "og/resilience-when-the-workforce-includes-agents.jpg",
+   "sha256_source": "b040fc6c1de886a5f83cf74a73724e58747070a2edc2b50c07166febaed35a45",
+   "sha256": "b040fc6c1de886a5f83cf74a73724e58747070a2edc2b50c07166febaed35a45"
   },
   "og/reviews-on-the-record.jpg": {
    "from": "og/reviews-on-the-record.jpg",

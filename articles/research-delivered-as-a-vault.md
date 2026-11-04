@@ -118,6 +118,7 @@ Vaults & methodStartups & strategy[This article as a graph →](graphs.md#resear
 
 ### Continued by
 
+- [Resilience when the workforce includes agents: what Synergy Six Degrees rates with OCRR, recovers with NeuShield and protects with Actifile, and where RiskMandate, sgit and SHarness meet it](resilience-when-the-workforce-includes-agents.md) What Synergy Six Degrees rates with OCRR and sells with NeuShield and Actifile, and the agent rows RiskMandate, SHarness and sgit add.
 - [A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault](a-pull-request-by-another-name.md) The book reviewed chapter by chapter by six editors in parallel, thirteen principles behind the fixes, and seven patches delivered in a vault.
 - [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](the-man-behind-the-curtain.md) Emails from my agents are from me: the Wizard of Oz in reverse, an article behind every answer, and an email where every line buys the next.
 - [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](three-linkedin-pages.md) Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.

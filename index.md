@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.60 · 378 articles since 2026-08-17; the newest is 2026-11-03. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 379 articles since 2026-08-17; the newest is 2026-11-04. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,17 +12,21 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Would you pay to plug this newsroom in? A reply to Florent Daudens, on five publishers' bets for the AI era, from a newsroom built for agents, with what it answers, where it goes further, and the questions it has not answered either](articles/would-you-pay-to-plug-this-newsroom-in.md), 2026-11-03, 6 min. A reply to Florent Daudens on five publishers' AI bets: open to agents, paid at the source, vaults as the unit, and what is still open.
+- [Resilience when the workforce includes agents: what Synergy Six Degrees rates with OCRR, recovers with NeuShield and protects with Actifile, and where RiskMandate, sgit and SHarness meet it](articles/resilience-when-the-workforce-includes-agents.md), 2026-11-04, 7 min. What Synergy Six Degrees rates with OCRR and sells with NeuShield and Actifile, and the agent rows RiskMandate, SHarness and sgit add.
 
 ## Five more
 
+- [Would you pay to plug this newsroom in? A reply to Florent Daudens, on five publishers' bets for the AI era, from a newsroom built for agents, with what it answers, where it goes further, and the questions it has not answered either](articles/would-you-pay-to-plug-this-newsroom-in.md), The future of news, 2026-11-03, 6 min.
 - [No tech stack to maintain: it is not that there is no backend, it is that the only code you own is HTML, CSS and JavaScript, with every other primitive rented as a commodity or run in the user's browser over encrypted vaults](articles/no-tech-stack-to-maintain.md), Engineering this newsroom, 2026-11-03, 7 min.
 - [The shop that sells time: the padel shop's path to market, sell one and fulfil it before anything else, start with the customers who already trust you, promise late and deliver early, a few products you vouch for, and no stock until the orders make you](articles/the-shop-that-sells-time.md), Startups & strategy, 2026-11-03, 8 min.
 - [The cost of your agents: a RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](articles/the-cost-of-your-agents.md), Agent security & behaviour policies, 2026-11-03, 6 min.
 - [How a vault works: an encrypted store that acts like a database, where a server that is fully compromised leaks nothing, one mutable file lets every other object be cached for ever, and a web page can open a file in four requests or run a whole app in a sandbox](articles/how-a-vault-works.md), sgit & vaults, 2026-11-03, 6 min.
-- [Who owns the stop button when it is not you? A reader asked, and four of the book's agents answer as guest writers, in their own voices, from their own records](articles/who-owns-the-stop-button.md), Working with agents, 2026-11-03, 14 min.
 
 ## The last five days
+
+### Wednesday 4 November 2026 (1 article)
+
+- Agent security & behaviour policies: [Resilience when the workforce includes agents: what Synergy Six Degrees rates with OCRR, recovers with NeuShield and protects with Actifile, and where RiskMandate, sgit and SHarness meet it](articles/resilience-when-the-workforce-includes-agents.md), 7 min.
 
 ### Tuesday 3 November 2026 (11 articles)
 
@@ -81,28 +85,17 @@ Governments told organisations to take sites offline if they could not patch. Th
 - Engineering this newsroom: [An iPad to review the book: a brief for an app that reads the PDFs, shows the comments on the page, opens its vault with my passkey and carries sgit in Swift](articles/an-ipad-to-review-the-book.md), 8 min.
 - The future of news: [Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall, credit to start, and a meter that charges for what is read](articles/every-link-a-gift-link.md), 5 min.
 
-### Friday 30 October 2026 (8 articles)
-
-- Engineering this newsroom: [Becoming an official publication: the SGit Newsroom now has a publisher, an editor, standards, a corrections log, a withdrawal process and a complaints route, and is applying to a regulator](articles/becoming-an-official-publication.md), 7 min.
-- sgit & vaults: [Signed by the agent, vouched for by the person: a brief to give every email agent its own key, so each email carries a QR code that proves it is authentic](articles/signed-email-from-the-agent.md), 6 min.
-- Startups & strategy: [A brief for the Web Summit team: an event site run by an ephemeral agent team, built from this week's template, with a map of every company we should meet](articles/web-summit-team-brief.md), 8 min.
-- Startups & strategy: [Selling less code: the economics of customised open source, where the customer pays for the features they use, the maker certifies what it ships, and the pipeline is finally tied to revenue](articles/selling-less-code.md), 8 min.
-- The future of news: [Breaking the story down before the agents do: a reply to Ole Reissmann's session at the News Product Alliance Summit, and what this newsroom already ships to the machines that read it](articles/breaking-the-story-down-before-the-agents-do.md), 7 min.
-- Agent security & behaviour policies: [Seven IAM predictions for 2027, checked against an agent team that runs today: where we already are, where we agree, and the two where I would bet the other way](articles/seven-iam-predictions-already-here.md), 6 min.
-- The future of news: [A book that looks like the team that made it: what the best visual books, Leanpub's Markua and learning research teach, and what an agent team can put on a printed page](articles/books-for-a-new-generation-of-publishing.md), 12 min.
-- Working with agents: [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](articles/the-book-of-the-talk-and-its-companion.md), 12 min.
-
 ## Sections
 
 Every article is in exactly one of eight sections, by topic.
 
-### [Agent security & behaviour policies](sections/policy/index.md) (91)
+### [Agent security & behaviour policies](sections/policy/index.md) (92)
 What an agent may do, who carries the risk, and how a policy is enforced: RiskMandate, Agent Behaviour Policies, hooks, accountability, governance.
+- [Resilience when the workforce includes agents: what Synergy Six Degrees rates with OCRR, recovers with NeuShield and protects with Actifile, and where RiskMandate, sgit and SHarness meet it](articles/resilience-when-the-workforce-includes-agents.md), 2026-11-04.
 - [The cost of your agents: a RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](articles/the-cost-of-your-agents.md), 2026-11-03.
 - [WSO2 Agent Manager and behaviour policies: a review of an open control plane for agents, what is really open source, how its identity, gateway and runtime fit together, and a brief for an MVP that plugs our Agent and Process Behaviour Policies into it](articles/wso2-agent-manager-and-behaviour-policies.md), 2026-11-03.
 - [False positives and the harness: an answer to a question at hack::soho, why a behaviour policy that runs from the network up to the business logic should refuse less of what is right and more of what is wrong, and why a policy that changes with the code becomes a calibrator for bugs](articles/false-positives-and-the-harness.md), 2026-11-02.
 - [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](articles/the-grant-not-the-prompt.md), 2026-11-02.
-- [Two apps about what an agent can reach, built in a day: José Bota's Hack the Agent and ReachCheck, used, tested and reviewed, with what each gets right and what to build next](articles/jose-botas-two-agent-apps.md), 2026-10-31.
 
 ### [Working with agents](sections/agents/index.md) (45)
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.

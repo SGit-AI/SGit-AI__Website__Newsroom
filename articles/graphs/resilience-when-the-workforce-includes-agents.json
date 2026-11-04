@@ -1,0 +1,155 @@
+{
+  "slug": "resilience-when-the-workforce-includes-agents",
+  "teaser": "What Synergy Six Degrees rates with OCRR and sells with NeuShield and Actifile, and the agent rows RiskMandate, SHarness and sgit add.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Synergy Six Degrees, a London analyst firm, built OCRR, a consultant-delivered rating of cyber resilience across operational, data, financial and people disciplines, starting from a free summary built on industry defaults, and distributes NeuShield, which keeps original files intact so ransomware damage can be reverted, and Actifile, which finds, encrypts and prices sensitive data. The intersection is agents: part of the work is now done by them, and a resilience rating needs rows for what each is for, what contains it and what it costs, which behaviour policies, SHarness and sgit can supply.",
+  "nodes": [
+    {
+      "id": "ocrr",
+      "label": "OCRR",
+      "kind": "artefact",
+      "summary": "Four disciplines, one rating."
+    },
+    {
+      "id": "stages",
+      "label": "Three stages",
+      "kind": "method",
+      "summary": "Free defaults, guided, elevated options."
+    },
+    {
+      "id": "noai",
+      "label": "Consultant-delivered, no AI",
+      "kind": "claim",
+      "summary": "Nothing to deploy."
+    },
+    {
+      "id": "neushield",
+      "label": "NeuShield",
+      "kind": "artefact",
+      "summary": "Original kept intact."
+    },
+    {
+      "id": "actifile",
+      "label": "Actifile",
+      "kind": "artefact",
+      "summary": "Find, encrypt, price."
+    },
+    {
+      "id": "agents",
+      "label": "Agents are part of the workforce",
+      "kind": "claim",
+      "summary": "A new kind of insider."
+    },
+    {
+      "id": "mandate",
+      "label": "Behaviour policies",
+      "kind": "method",
+      "summary": "Purpose, reach, barriers."
+    },
+    {
+      "id": "contain",
+      "label": "SHarness",
+      "kind": "method",
+      "summary": "Kernel-enforced process policy."
+    },
+    {
+      "id": "vault",
+      "label": "sgit vaults",
+      "kind": "method",
+      "summary": "Immutable, encrypted, recoverable."
+    },
+    {
+      "id": "layers",
+      "label": "Five questions",
+      "kind": "concept",
+      "summary": "Rate, mandate, contain, recover, protect."
+    }
+  ],
+  "edges": [
+    {
+      "from": "stages",
+      "to": "ocrr",
+      "rel": "depends-on"
+    },
+    {
+      "from": "noai",
+      "to": "ocrr",
+      "rel": "extends"
+    },
+    {
+      "from": "neushield",
+      "to": "ocrr",
+      "rel": "extends"
+    },
+    {
+      "from": "actifile",
+      "to": "ocrr",
+      "rel": "extends"
+    },
+    {
+      "from": "agents",
+      "to": "ocrr",
+      "rel": "extends"
+    },
+    {
+      "from": "mandate",
+      "to": "agents",
+      "rel": "depends-on"
+    },
+    {
+      "from": "contain",
+      "to": "agents",
+      "rel": "depends-on"
+    },
+    {
+      "from": "vault",
+      "to": "neushield",
+      "rel": "contrasts"
+    },
+    {
+      "from": "layers",
+      "to": "ocrr",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "what-can-your-agent-reach",
+      "the-cost-of-your-agents",
+      "insuring-agents-the-whole-story",
+      "introducing-sharness",
+      "how-a-vault-works",
+      "who-owns-the-stop-button"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.synergysixd.com/ocrr",
+      "https://www.prweb.com/releases/2018/06/prweb15596796.htm"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A resilience rating that counts the people and not the agents is missing rows, and those rows are exactly what my work produces.",
+      "why": "Where my work meets it: the agents."
+    },
+    {
+      "text": "So the firm has a rating at the top, and products under two of its disciplines.",
+      "why": "NeuShield and Actifile: recover, and protect."
+    },
+    {
+      "text": "Put together, the pieces answer five different questions, and none of them answers all five:",
+      "why": "A layered picture."
+    }
+  ],
+  "figures": [
+    {
+      "file": "rw-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rw-layers.webp",
+      "caption": "Five questions about resilience, and where each piece answers one: rate, mandate, contain, recover, protect.",
+      "kind": "architecture"
+    }
+  ]
+}

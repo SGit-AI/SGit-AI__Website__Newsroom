@@ -2,10 +2,11 @@
 
 What an agent may do, who carries the risk, and how a policy is enforced: RiskMandate, Agent Behaviour Policies, hooks, accountability, governance.
 
-91 articles, newest first.
+92 articles, newest first.
 
 ## November 2026
 
+- [Resilience when the workforce includes agents: what Synergy Six Degrees rates with OCRR, recovers with NeuShield and protects with Actifile, and where RiskMandate, sgit and SHarness meet it](../../articles/resilience-when-the-workforce-includes-agents.md), 2026-11-04, 7 min.
 - [The cost of your agents: a RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](../../articles/the-cost-of-your-agents.md), 2026-11-03, 6 min.
 - [WSO2 Agent Manager and behaviour policies: a review of an open control plane for agents, what is really open source, how its identity, gateway and runtime fit together, and a brief for an MVP that plugs our Agent and Process Behaviour Policies into it](../../articles/wso2-agent-manager-and-behaviour-policies.md), 2026-11-03, 8 min.
 - [False positives and the harness: an answer to a question at hack::soho, why a behaviour policy that runs from the network up to the business logic should refuse less of what is right and more of what is wrong, and why a policy that changes with the code becomes a calibrator for bugs](../../articles/false-positives-and-the-harness.md), 2026-11-02, 8 min.
