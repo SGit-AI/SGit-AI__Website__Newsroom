@@ -1,0 +1,147 @@
+{
+  "slug": "synthetic-users-for-your-website",
+  "teaser": "Onboarding for synthetic users: invented personas, a sub-agent each, a real browser one screenshot at a time, all in a vault you publish.",
+  "topics": [
+    "vaults-and-method",
+    "startups-and-strategy"
+  ],
+  "core_idea": "To learn what a website looks like to each kind of buyer, a Claude session reads a vault describing invented personas, their role, personality, direction of travel and mission, starts one sub-agent per persona, and each drives a real browser one screenshot at a time without reading the page's code, recording questions, confusion and actions, then is interviewed; Claude maps the findings. It is not user research, but three runs found things no test had. To start: buy a key on sgraph.ai or ask, install sgit, create the vault, keep the vault key with a key keeper, and publish the read key on any site that embeds the vault.",
+  "nodes": [
+    {
+      "id": "question",
+      "label": "What does my site look like to each buyer?",
+      "kind": "question",
+      "summary": "An executive, a specialist, an owner, a founder."
+    },
+    {
+      "id": "honest",
+      "label": "Not user research",
+      "kind": "claim",
+      "summary": "Personas invented; the browser's record is evidence."
+    },
+    {
+      "id": "persona",
+      "label": "A persona definition",
+      "kind": "method",
+      "summary": "Role, personality, direction of travel, device, mission."
+    },
+    {
+      "id": "subagent",
+      "label": "One sub-agent per persona",
+      "kind": "method",
+      "summary": "Started by one Claude session."
+    },
+    {
+      "id": "screens",
+      "label": "Screenshots, not the DOM",
+      "kind": "claim",
+      "summary": "So it can get lost."
+    },
+    {
+      "id": "loop",
+      "label": "Seven-step loop",
+      "kind": "method",
+      "summary": "Observe, say, think, question, confusion, act, loop."
+    },
+    {
+      "id": "vault",
+      "label": "The study in a vault",
+      "kind": "artefact",
+      "summary": "Personas, protocol, runs, findings, app."
+    },
+    {
+      "id": "runs",
+      "label": "Three runs",
+      "kind": "example",
+      "summary": "store, riskmandate, newsroom."
+    },
+    {
+      "id": "publish",
+      "label": "Publish the read key",
+      "kind": "method",
+      "summary": "Embedded on any website."
+    }
+  ],
+  "edges": [
+    {
+      "from": "persona",
+      "to": "question",
+      "rel": "depends-on"
+    },
+    {
+      "from": "subagent",
+      "to": "persona",
+      "rel": "depends-on"
+    },
+    {
+      "from": "screens",
+      "to": "subagent",
+      "rel": "extends"
+    },
+    {
+      "from": "loop",
+      "to": "screens",
+      "rel": "extends"
+    },
+    {
+      "from": "vault",
+      "to": "persona",
+      "rel": "extends"
+    },
+    {
+      "from": "runs",
+      "to": "loop",
+      "rel": "extends"
+    },
+    {
+      "from": "publish",
+      "to": "vault",
+      "rel": "depends-on"
+    },
+    {
+      "from": "honest",
+      "to": "runs",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "how-a-vault-works",
+      "a-key-for-every-person"
+    ],
+    "pages": [],
+    "sites": [
+      "https://sgit.ai/demos/vaults/synthetic-users/index.html",
+      "https://newsroom.sgit.ai/demos/vaults/newsroom-synthetic-users/index.html",
+      "https://sgraph.ai/en-gb/pricing/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "You can ask real people, and you should.",
+      "why": "The question."
+    },
+    {
+      "text": "Putting the protocol in the vault is what makes a second run in a month comparable rather than merely later.",
+      "why": "What goes in the vault."
+    },
+    {
+      "text": "A run with no confusion anywhere is a run that was not done properly.",
+      "why": "What I would tell you before your first run."
+    }
+  ],
+  "figures": [
+    {
+      "file": "su-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/su-flow.webp",
+      "caption": "From a vault of personas to a published answer: one Claude session, one sub-agent per persona, a real browser.",
+      "kind": "process"
+    },
+    {
+      "file": "su-vault.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/su-vault.webp",
+      "caption": "One vault holds the whole study: who the personas are, how they run, every run, and the app that shows it.",
+      "kind": "diagram"
+    }
+  ]
+}

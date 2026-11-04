@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-04 | published | 2,351 | first published | this release | [current](../a-key-for-every-person.md) |
+| **v1.0.0** | 2026-11-04 | published | 2,351 | first published | [`df91137c0`](https://github.com/SGit-AI/SGit-AI__Website/commit/df91137c02cf3ee28152b4b2575dc01df0627e96) | [current](../a-key-for-every-person.md) |
 
 [← Back to the article](../a-key-for-every-person.md) · [All articles](../index.md)
 

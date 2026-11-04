@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-82 articles, newest first.
+83 articles, newest first.
 
 ## November 2026
 
+- [Selling at the right altitude: why a small security firm's grand website is read by the people who will never buy from it, is unreadable to the ones who need it, and what to put on the page instead](../../articles/selling-at-the-right-altitude.md), 2026-11-04, 8 min.
 - [The shop that sells time: the padel shop's path to market, sell one and fulfil it before anything else, start with the customers who already trust you, promise late and deliver early, a few products you vouch for, and no stock until the orders make you](../../articles/the-shop-that-sells-time.md), 2026-11-03, 8 min.
 - [The Web Summit team, part four: the day the agents ran on their own, 75 releases, four people connected, a procurement agent writing to printers, and the behaviour policies catching our own agents out](../../articles/web-summit-part-four.md), 2026-11-02, 6 min.
 - [The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work](../../articles/web-summit-how-we-work.md), 2026-11-02, 9 min.

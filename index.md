@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.62 · 380 articles since 2026-08-17; the newest is 2026-11-04. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 382 articles since 2026-08-17; the newest is 2026-11-04. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,20 +12,22 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [A key for every person: how each person's conductor issues them a key for the team's site, seals what is for them, and how a signed message turns the public web into a channel the agents can trust](articles/a-key-for-every-person.md), 2026-11-04, 9 min. How each person's conductor issues them a key for the team's site: sealed to you, signed by you, and a lane the agents can trust.
+- [Synthetic users for your website: how to set up five invented visitors who read your site one screenshot at a time, with Claude, a sub-agent per persona, and an encrypted vault you can publish anywhere](articles/synthetic-users-for-your-website.md), 2026-11-04, 8 min. Onboarding for synthetic users: invented personas, a sub-agent each, a real browser one screenshot at a time, all in a vault you publish.
 
 ## Five more
 
+- [Selling at the right altitude: why a small security firm's grand website is read by the people who will never buy from it, is unreadable to the ones who need it, and what to put on the page instead](articles/selling-at-the-right-altitude.md), Startups & strategy, 2026-11-04, 8 min.
+- [A key for every person: how each person's conductor issues them a key for the team's site, seals what is for them, and how a signed message turns the public web into a channel the agents can trust](articles/a-key-for-every-person.md), sgit & vaults, 2026-11-04, 9 min.
 - [Resilience when the workforce includes agents: what Synergy Six Degrees rates with OCRR, recovers with NeuShield and protects with Actifile, and where RiskMandate, sgit and SHarness meet it](articles/resilience-when-the-workforce-includes-agents.md), Agent security & behaviour policies, 2026-11-04, 7 min.
 - [Would you pay to plug this newsroom in? A reply to Florent Daudens, on five publishers' bets for the AI era, from a newsroom built for agents, with what it answers, where it goes further, and the questions it has not answered either](articles/would-you-pay-to-plug-this-newsroom-in.md), The future of news, 2026-11-03, 6 min.
 - [No tech stack to maintain: it is not that there is no backend, it is that the only code you own is HTML, CSS and JavaScript, with every other primitive rented as a commodity or run in the user's browser over encrypted vaults](articles/no-tech-stack-to-maintain.md), Engineering this newsroom, 2026-11-03, 7 min.
-- [The shop that sells time: the padel shop's path to market, sell one and fulfil it before anything else, start with the customers who already trust you, promise late and deliver early, a few products you vouch for, and no stock until the orders make you](articles/the-shop-that-sells-time.md), Startups & strategy, 2026-11-03, 8 min.
-- [The cost of your agents: a RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](articles/the-cost-of-your-agents.md), Agent security & behaviour policies, 2026-11-03, 6 min.
 
 ## The last five days
 
-### Wednesday 4 November 2026 (2 articles)
+### Wednesday 4 November 2026 (4 articles)
 
+- Engineering this newsroom: [Synthetic users for your website: how to set up five invented visitors who read your site one screenshot at a time, with Claude, a sub-agent per persona, and an encrypted vault you can publish anywhere](articles/synthetic-users-for-your-website.md), 8 min.
+- Startups & strategy: [Selling at the right altitude: why a small security firm's grand website is read by the people who will never buy from it, is unreadable to the ones who need it, and what to put on the page instead](articles/selling-at-the-right-altitude.md), 8 min.
 - sgit & vaults: [A key for every person: how each person's conductor issues them a key for the team's site, seals what is for them, and how a signed message turns the public web into a channel the agents can trust](articles/a-key-for-every-person.md), 9 min.
 - Agent security & behaviour policies: [Resilience when the workforce includes agents: what Synergy Six Degrees rates with OCRR, recovers with NeuShield and protects with Actifile, and where RiskMandate, sgit and SHarness meet it](articles/resilience-when-the-workforce-includes-agents.md), 7 min.
 
@@ -122,21 +124,21 @@ Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta
 - [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](articles/agentic-readers.md), 2026-10-31.
 - [Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall, credit to start, and a meter that charges for what is read](articles/every-link-a-gift-link.md), 2026-10-31.
 
-### [Startups & strategy](sections/strategy/index.md) (82)
+### [Startups & strategy](sections/strategy/index.md) (83)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
+- [Selling at the right altitude: why a small security firm's grand website is read by the people who will never buy from it, is unreadable to the ones who need it, and what to put on the page instead](articles/selling-at-the-right-altitude.md), 2026-11-04.
 - [The shop that sells time: the padel shop's path to market, sell one and fulfil it before anything else, start with the customers who already trust you, promise late and deliver early, a few products you vouch for, and no stock until the orders make you](articles/the-shop-that-sells-time.md), 2026-11-03.
 - [The Web Summit team, part four: the day the agents ran on their own, 75 releases, four people connected, a procurement agent writing to printers, and the behaviour policies catching our own agents out](articles/web-summit-part-four.md), 2026-11-02.
 - [The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work](articles/web-summit-how-we-work.md), 2026-11-02.
 - [The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault](articles/sell-the-sleeve.md), 2026-11-02.
-- [A solution, not a problem: a coach sent me a link to a product he could not sell me, what that moment teaches about business, security teams, bookshops and travel agents, and why RiskMandate has been making the same mistake](articles/a-solution-not-a-problem.md), 2026-11-02.
 
-### [Engineering this newsroom](sections/building/index.md) (45)
+### [Engineering this newsroom](sections/building/index.md) (46)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
+- [Synthetic users for your website: how to set up five invented visitors who read your site one screenshot at a time, with Claude, a sub-agent per persona, and an encrypted vault you can publish anywhere](articles/synthetic-users-for-your-website.md), 2026-11-04.
 - [No tech stack to maintain: it is not that there is no backend, it is that the only code you own is HTML, CSS and JavaScript, with every other primitive rented as a commodity or run in the user's browser over encrypted vaults](articles/no-tech-stack-to-maintain.md), 2026-11-03.
 - [MeetScribe: transcripts and a debrief of my Google Meet calls without upgrading every Workspace account, a Chrome extension built in about two hours from a brief that would have failed without an error, and a call for testers](articles/meetscribe.md), 2026-11-03.
 - [One Human, Nine Agents, Nineteen Hours: the second draft of the book of the talk, written down the zoom from 3 pages to 70, every chapter checked five ways, the agents arguing with their own reviewers on the page, and a request for your feedback on the 27-page draft](articles/one-human-nine-agents-rc2.md), 2026-11-03.
 - [The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight](articles/the-lab-that-redesigned-the-book.md), 2026-11-01.
-- [A book told by its cast: how the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record, and the editor as narrator](articles/a-book-told-by-its-cast.md), 2026-11-01.
 
 ### [Graphs & knowledge](sections/graphs/index.md) (13)
 Fractal semantic graphs, knowledge that maintains itself, search as navigation, and the research community around them.

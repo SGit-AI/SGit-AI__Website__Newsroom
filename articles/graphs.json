@@ -55,6 +55,381 @@
   ],
   "articles": [
     {
+      "slug": "synthetic-users-for-your-website",
+      "title": "Synthetic users for your website: how to set up five invented visitors who read your site one screenshot at a time, with Claude, a sub-agent per persona, and an encrypted vault you can publish anywhere",
+      "date": "2026-11-04",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/synthetic-users-for-your-website.html",
+      "markdown": "https://newsroom.sgit.ai/articles/synthetic-users-for-your-website.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/synthetic-users-for-your-website.webp",
+      "teaser": "Onboarding for synthetic users: invented personas, a sub-agent each, a real browser one screenshot at a time, all in a vault you publish.",
+      "topics": [
+        "vaults-and-method",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "synthetic-users",
+        "personas",
+        "ux",
+        "agents",
+        "sub-agents",
+        "playwright",
+        "sgit",
+        "vaults",
+        "onboarding",
+        "how-to",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [
+        "selling-at-the-right-altitude"
+      ],
+      "figures": [
+        {
+          "file": "su-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/su-flow.webp",
+          "caption": "From a vault of personas to a published answer: one Claude session, one sub-agent per persona, a real browser.",
+          "kind": "process"
+        },
+        {
+          "file": "su-vault.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/su-vault.webp",
+          "caption": "One vault holds the whole study: who the personas are, how they run, every run, and the app that shows it.",
+          "kind": "diagram"
+        }
+      ],
+      "graph": {
+        "slug": "synthetic-users-for-your-website",
+        "teaser": "Onboarding for synthetic users: invented personas, a sub-agent each, a real browser one screenshot at a time, all in a vault you publish.",
+        "topics": [
+          "vaults-and-method",
+          "startups-and-strategy"
+        ],
+        "core_idea": "To learn what a website looks like to each kind of buyer, a Claude session reads a vault describing invented personas, their role, personality, direction of travel and mission, starts one sub-agent per persona, and each drives a real browser one screenshot at a time without reading the page's code, recording questions, confusion and actions, then is interviewed; Claude maps the findings. It is not user research, but three runs found things no test had. To start: buy a key on sgraph.ai or ask, install sgit, create the vault, keep the vault key with a key keeper, and publish the read key on any site that embeds the vault.",
+        "nodes": [
+          {
+            "id": "question",
+            "label": "What does my site look like to each buyer?",
+            "kind": "question",
+            "summary": "An executive, a specialist, an owner, a founder."
+          },
+          {
+            "id": "honest",
+            "label": "Not user research",
+            "kind": "claim",
+            "summary": "Personas invented; the browser's record is evidence."
+          },
+          {
+            "id": "persona",
+            "label": "A persona definition",
+            "kind": "method",
+            "summary": "Role, personality, direction of travel, device, mission."
+          },
+          {
+            "id": "subagent",
+            "label": "One sub-agent per persona",
+            "kind": "method",
+            "summary": "Started by one Claude session."
+          },
+          {
+            "id": "screens",
+            "label": "Screenshots, not the DOM",
+            "kind": "claim",
+            "summary": "So it can get lost."
+          },
+          {
+            "id": "loop",
+            "label": "Seven-step loop",
+            "kind": "method",
+            "summary": "Observe, say, think, question, confusion, act, loop."
+          },
+          {
+            "id": "vault",
+            "label": "The study in a vault",
+            "kind": "artefact",
+            "summary": "Personas, protocol, runs, findings, app."
+          },
+          {
+            "id": "runs",
+            "label": "Three runs",
+            "kind": "example",
+            "summary": "store, riskmandate, newsroom."
+          },
+          {
+            "id": "publish",
+            "label": "Publish the read key",
+            "kind": "method",
+            "summary": "Embedded on any website."
+          }
+        ],
+        "edges": [
+          {
+            "from": "persona",
+            "to": "question",
+            "rel": "depends-on"
+          },
+          {
+            "from": "subagent",
+            "to": "persona",
+            "rel": "depends-on"
+          },
+          {
+            "from": "screens",
+            "to": "subagent",
+            "rel": "extends"
+          },
+          {
+            "from": "loop",
+            "to": "screens",
+            "rel": "extends"
+          },
+          {
+            "from": "vault",
+            "to": "persona",
+            "rel": "extends"
+          },
+          {
+            "from": "runs",
+            "to": "loop",
+            "rel": "extends"
+          },
+          {
+            "from": "publish",
+            "to": "vault",
+            "rel": "depends-on"
+          },
+          {
+            "from": "honest",
+            "to": "runs",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "how-a-vault-works",
+            "a-key-for-every-person"
+          ],
+          "pages": [],
+          "sites": [
+            "https://sgit.ai/demos/vaults/synthetic-users/index.html",
+            "https://newsroom.sgit.ai/demos/vaults/newsroom-synthetic-users/index.html",
+            "https://sgraph.ai/en-gb/pricing/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "You can ask real people, and you should.",
+            "why": "The question."
+          },
+          {
+            "text": "Putting the protocol in the vault is what makes a second run in a month comparable rather than merely later.",
+            "why": "What goes in the vault."
+          },
+          {
+            "text": "A run with no confusion anywhere is a run that was not done properly.",
+            "why": "What I would tell you before your first run."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "selling-at-the-right-altitude",
+      "title": "Selling at the right altitude: why a small security firm's grand website is read by the people who will never buy from it, is unreadable to the ones who need it, and what to put on the page instead",
+      "date": "2026-11-04",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/selling-at-the-right-altitude.html",
+      "markdown": "https://newsroom.sgit.ai/articles/selling-at-the-right-altitude.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/selling-at-the-right-altitude.webp",
+      "teaser": "Why a small security firm's grand website reaches the readers who won't buy and loses the ones who need it, and what to sell instead.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "sales",
+        "positioning",
+        "small-business",
+        "cybersecurity",
+        "websites",
+        "smes",
+        "synthetic-users",
+        "behaviour-policies",
+        "vaults",
+        "article"
+      ],
+      "links_out": [
+        "what-can-your-agent-reach",
+        "synthetic-users-for-your-website",
+        "resilience-when-the-workforce-includes-agents"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ra-symmetry.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ra-symmetry.webp",
+          "caption": "Illustrative: the more a buyer knows, the better they read the site, and the less they would hire a three-person firm.",
+          "kind": "graph"
+        },
+        {
+          "file": "ra-bad.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ra-bad.webp",
+          "caption": "The bad version: a three-person firm selling a 24/7 operations centre, XDR, red teaming and zero trust. Invented.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "ra-altitude.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ra-altitude.webp",
+          "caption": "The same work, said two ways: the services a specialist would name, and the outcomes an owner would buy.",
+          "kind": "diagram"
+        },
+        {
+          "file": "ra-good.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ra-good.webp",
+          "caption": "The good version: three named people in one town, five outcomes, a fixed price, and what they do not do. Invented.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "ra-test.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ra-test.webp",
+          "caption": "The test for each service on the page: sold it, can deliver it, and readable by the buyer who needs it.",
+          "kind": "diagram"
+        }
+      ],
+      "graph": {
+        "slug": "selling-at-the-right-altitude",
+        "teaser": "Why a small security firm's grand website reaches the readers who won't buy and loses the ones who need it, and what to sell instead.",
+        "topics": [
+          "startups-and-strategy",
+          "agents-and-policy"
+        ],
+        "core_idea": "A one-to-five person security firm with a grand website selling a SOC, XDR, red teaming and audits faces a tragic symmetry: the security experts who understand it buy from established providers, while the small businesses who need it cannot read it, since only 9% of UK micro businesses knew of Cyber Essentials in 2025. Selling at the right altitude means naming the people, the place and the price, and selling outcomes an owner understands: open after ransomware, nobody logging in as you, laptops looked after, client data handled, AI tools doing what you meant. Every service must pass three questions: sold it, can deliver it, readable by the buyer who needs it.",
+        "nodes": [
+          {
+            "id": "grand",
+            "label": "The grand website",
+            "kind": "concept",
+            "summary": "Sells everything, in experts' words."
+          },
+          {
+            "id": "symmetry",
+            "label": "The tragic symmetry",
+            "kind": "claim",
+            "summary": "Readers who understand won't buy; buyers who need can't read."
+          },
+          {
+            "id": "nine",
+            "label": "9% of micro businesses",
+            "kind": "example",
+            "summary": "Aware of Cyber Essentials, 2025."
+          },
+          {
+            "id": "altitude",
+            "label": "The right altitude",
+            "kind": "method",
+            "summary": "Outcomes, not services."
+          },
+          {
+            "id": "outcomes",
+            "label": "Five outcomes",
+            "kind": "method",
+            "summary": "Ransomware, sign-in, laptops, data, AI tools."
+          },
+          {
+            "id": "people",
+            "label": "Name the people",
+            "kind": "method",
+            "summary": "Who, where, how, how much."
+          },
+          {
+            "id": "test",
+            "label": "Three questions",
+            "kind": "method",
+            "summary": "Sold it, deliver it, readable."
+          },
+          {
+            "id": "vault",
+            "label": "Three versions in a vault",
+            "kind": "artefact",
+            "summary": "Bad, medium, good, invented."
+          },
+          {
+            "id": "synthetic",
+            "label": "Synthetic users",
+            "kind": "method",
+            "summary": "Read the page as the buyer does."
+          }
+        ],
+        "edges": [
+          {
+            "from": "symmetry",
+            "to": "grand",
+            "rel": "depends-on"
+          },
+          {
+            "from": "nine",
+            "to": "symmetry",
+            "rel": "extends"
+          },
+          {
+            "from": "altitude",
+            "to": "symmetry",
+            "rel": "contrasts"
+          },
+          {
+            "from": "outcomes",
+            "to": "altitude",
+            "rel": "extends"
+          },
+          {
+            "from": "people",
+            "to": "altitude",
+            "rel": "extends"
+          },
+          {
+            "from": "test",
+            "to": "grand",
+            "rel": "contrasts"
+          },
+          {
+            "from": "vault",
+            "to": "altitude",
+            "rel": "extends"
+          },
+          {
+            "from": "synthetic",
+            "to": "test",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "synthetic-users-for-your-website",
+            "what-can-your-agent-reach",
+            "resilience-when-the-workforce-includes-agents"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.gov.uk/government/statistics/cyber-security-breaches-survey-2025/cyber-security-breaches-survey-2025",
+            "https://www.ncsc.gov.uk/collection/small-business-guide"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "That is what I mean by selling at the wrong altitude.",
+            "why": "The tragic symmetry."
+          },
+          {
+            "text": "Trust us because you can see us.",
+            "why": "Name the people."
+          },
+          {
+            "text": "If any answer is no, the service is a claim, not a product.",
+            "why": "Three questions for every service."
+          }
+        ]
+      }
+    },
+    {
       "slug": "a-key-for-every-person",
       "title": "A key for every person: how each person's conductor issues them a key for the team's site, seals what is for them, and how a signed message turns the public web into a channel the agents can trust",
       "date": "2026-11-04",
@@ -269,7 +644,9 @@
         "how-a-vault-works",
         "research-delivered-as-a-vault"
       ],
-      "links_in": [],
+      "links_in": [
+        "selling-at-the-right-altitude"
+      ],
       "figures": [
         {
           "file": "rw-layers.webp",
@@ -38938,6 +39315,7 @@
         "hope-or-enforcement"
       ],
       "links_in": [
+        "selling-at-the-right-altitude",
         "resilience-when-the-workforce-includes-agents",
         "the-cost-of-your-agents",
         "wso2-agent-manager-and-behaviour-policies",

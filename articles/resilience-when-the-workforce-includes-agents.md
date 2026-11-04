@@ -119,6 +119,10 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#resili
 - [How a vault works: an encrypted store that acts like a database, where a server that is fully compromised leaks nothing, one mutable file lets every other object be cached for ever, and a web page can open a file in four requests or run a whole app in a sandbox](how-a-vault-works.md) How an sgit vault acts like a database on a server that cannot read: one key-derived mutable file, everything else immutable.
 - [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](research-delivered-as-a-vault.md) Companies that sell research could deliver it as a vault: evidence, a fractal graph, briefings per reader, behaviour policies for AI products, a lane back.
 
+### Continued by
+
+- [Selling at the right altitude: why a small security firm's grand website is read by the people who will never buy from it, is unreadable to the ones who need it, and what to put on the page instead](selling-at-the-right-altitude.md) Why a small security firm's grand website reaches the readers who won't buy and loses the ones who need it, and what to sell instead.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 381 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=381)
