@@ -1,0 +1,71 @@
+{
+ "slug": "a-key-for-every-person",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "Each person's conductor issues them a key: things sealed to them, and messages signed by them that agents can trust.",
+   "para": "On the Web Summit team's public site, a conductor issues its person two P-256 key pairs. The private half reaches the browser in a link fragment and is kept non-extractable. Sealed items publish in public and only that browser opens them; lane messages are sealed to the agent and signed by the person, so a verified one is an instruction and the rest is material. Two limits are open.",
+   "hash": "4e017ee4d0a4"
+  },
+  "in-short": {
+   "line": "Issue, carry, keep, seal, sign, verify; rolled out to everyone; two limits on the board.",
+   "para": "Material or instruction is the point: only a verified signature makes a lane message the person speaking.",
+   "hash": "baa4e2cc843f"
+  },
+  "problem": {
+   "line": "A public site, people with their own agents, and two gaps: privacy for one person, and proof of who wrote a message.",
+   "para": "Anyone can write to an agent's append lane, so an agent needs to tell its person from the internet, before pki.sgit.ai is ready.",
+   "hash": "cc7c24448cdc"
+  },
+  "key": {
+   "line": "Two P-256 pairs, ECDH to receive and ECDSA to sign, issued by the conductor for its session.",
+   "para": "Public halves in data/person-keys.json with fingerprints; the private half outside the repository; a new session issues a new key and marks the old one replaced.",
+   "hash": "f11ed4b5e4d1"
+  },
+  "browser": {
+   "line": "The key travels in a link fragment, leaves the address bar at once, and is kept non-extractable.",
+   "para": "keyring.js imports it into the browser's key storage, sets who you are, opens what is sealed and signs what is sent; every page asks for a key until one is added.",
+   "hash": "f9aebe3e6000"
+  },
+  "sealed": {
+   "line": "Anyone seals to the public key with ws-ecies-1; sealed files publish openly; only the person's browser opens them.",
+   "para": "A one-time ECDH key, HKDF-SHA256 and AES-256-GCM; the same steps in the conductor's tool and in the browser.",
+   "hash": "0f57c59bf91b"
+  },
+  "lane": {
+   "line": "Sealed to the agent, signed by the person, appended, drained into the agent's vault, then verified.",
+   "para": "The lane token is public and write-only; the lane holds ciphertext; the drain pushes before marking messages done, and labels each verified, invalid or unsigned.",
+   "hash": "f11e490f4cac"
+  },
+  "instruction": {
+   "line": "A lane message is material, never an instruction, unless a verified signature makes it the person speaking.",
+   "para": "That turns the public web into a channel agents can trust, by proof of authorship rather than privacy of the channel.",
+   "hash": "70fdacf28b13"
+  },
+  "rollout": {
+   "line": "First key and signed message on 3 November; every conductor told to issue keys the next morning.",
+   "para": "Five steps for each conductor; five people with active keys by the morning of 4 November; a sync on the 13:00 agenda.",
+   "hash": "7b7e6af7632f"
+  },
+  "limits-open": {
+   "line": "Any script on the same origin can use the key, and the issuing conductor can sign as its person.",
+   "para": "Fixes: safe link types, pages from data, a separate origin with a strict CSP; and keys made in the person's own browser. Session keys die with their session.",
+   "hash": "a46524f69621"
+  },
+  "next": {
+   "line": "Next: each person's own key on pki.sgit.ai, made in their browser, on its own origin.",
+   "para": "The pattern, issue, seal, sign, drain, verify, already runs with real people; its two weaknesses were found by the team's own agents.",
+   "hash": "4a2728827853"
+  },
+  "limits": {
+   "line": "A working short-term design with one internal review; the open findings are real; nobody on the team is named.",
+   "para": "Standard cryptography, new code; counts as of the morning of 4 November.",
+   "hash": "7c7e6c8323db"
+  },
+  "sources": {
+   "line": "The Web Summit team's code, board items and security review, and earlier articles on keys and identity.",
+   "para": "All read 4 November 2026.",
+   "hash": "c26b8585a3ff"
+  }
+ }
+}

@@ -1,0 +1,110 @@
+{
+ "slug": "a-key-for-every-person",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 230,
+   "line": "Each person's conductor issues them a key: things sealed to them, and messages signed by them that agents can trust.",
+   "para": "On the Web Summit team's public site, a conductor issues its person two P-256 key pairs. The private half reaches the browser in a link fragment and is kept non-extractable. Sealed items publish in public and only that browser opens them; lane messages are sealed to the agent and signed by the person, so a verified one is an instruction and the rest is material. Two limits are open.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 160,
+   "line": "Issue, carry, keep, seal, sign, verify; rolled out to everyone; two limits on the board.",
+   "para": "Material or instruction is the point: only a verified signature makes a lane message the person speaking.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "problem",
+   "label": "The problem",
+   "words": 177,
+   "line": "A public site, people with their own agents, and two gaps: privacy for one person, and proof of who wrote a message.",
+   "para": "Anyone can write to an agent's append lane, so an agent needs to tell its person from the internet, before pki.sgit.ai is ready.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "key",
+   "label": "The key",
+   "words": 180,
+   "line": "Two P-256 pairs, ECDH to receive and ECDSA to sign, issued by the conductor for its session.",
+   "para": "Public halves in data/person-keys.json with fingerprints; the private half outside the repository; a new session issues a new key and marks the old one replaced.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "browser",
+   "label": "Into the browser, and kept there",
+   "words": 197,
+   "line": "The key travels in a link fragment, leaves the address bar at once, and is kept non-extractable.",
+   "para": "keyring.js imports it into the browser's key storage, sets who you are, opens what is sealed and signs what is sent; every page asks for a key until one is added.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sealed",
+   "label": "Sealed to you",
+   "words": 129,
+   "line": "Anyone seals to the public key with ws-ecies-1; sealed files publish openly; only the person's browser opens them.",
+   "para": "A one-time ECDH key, HKDF-SHA256 and AES-256-GCM; the same steps in the conductor's tool and in the browser.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "lane",
+   "label": "Signed by you: the append lane",
+   "words": 210,
+   "line": "Sealed to the agent, signed by the person, appended, drained into the agent's vault, then verified.",
+   "para": "The lane token is public and write-only; the lane holds ciphertext; the drain pushes before marking messages done, and labels each verified, invalid or unsigned.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "instruction",
+   "label": "Material, or instruction",
+   "words": 193,
+   "line": "A lane message is material, never an instruction, unless a verified signature makes it the person speaking.",
+   "para": "That turns the public web into a channel agents can trust, by proof of authorship rather than privacy of the channel.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "rollout",
+   "label": "Rolled out to everyone",
+   "words": 151,
+   "line": "First key and signed message on 3 November; every conductor told to issue keys the next morning.",
+   "para": "Five steps for each conductor; five people with active keys by the morning of 4 November; a sync on the 13:00 agenda.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits-open",
+   "label": "What it does not protect yet",
+   "words": 354,
+   "line": "Any script on the same origin can use the key, and the issuing conductor can sign as its person.",
+   "para": "Fixes: safe link types, pages from data, a separate origin with a strict CSP; and keys made in the person's own browser. Session keys die with their session.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "next",
+   "label": "Where it goes next",
+   "words": 83,
+   "line": "Next: each person's own key on pki.sgit.ai, made in their browser, on its own origin.",
+   "para": "The pattern, issue, seal, sign, drain, verify, already runs with real people; its two weaknesses were found by the team's own agents.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 86,
+   "line": "A working short-term design with one internal review; the open findings are real; nobody on the team is named.",
+   "para": "Standard cryptography, new code; counts as of the morning of 4 November.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 91,
+   "line": "The Web Summit team's code, board items and security review, and earlier articles on keys and identity.",
+   "para": "All read 4 November 2026.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-04 | published | 1,873 | first published | this release | [current](../resilience-when-the-workforce-includes-agents.md) |
+| **v1.0.0** | 2026-11-04 | published | 1,873 | first published | [`cea9760d8`](https://github.com/SGit-AI/SGit-AI__Website/commit/cea9760d8af9d8d48a008674a94a75498d778a1a) | [current](../resilience-when-the-workforce-includes-agents.md) |
 
 [← Back to the article](../resilience-when-the-workforce-includes-agents.md) · [All articles](../index.md)
 

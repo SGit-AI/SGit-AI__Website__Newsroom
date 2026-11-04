@@ -1,0 +1,147 @@
+{
+  "slug": "a-key-for-every-person",
+  "teaser": "How each person's conductor issues them a key for the team's site: sealed to you, signed by you, and a lane the agents can trust.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "On the Web Summit team's public site, each person's conductor issues them two P-256 key pairs, one to receive and one to sign. The private half reaches the browser in a link fragment and is kept as non-extractable keys; anything sealed to the public key can be published and only that browser opens it; and messages sent to an agent's append lane are sealed to the agent and signed by the person, so the agent can tell a verified instruction from material. Two limits are open: any script on the same origin can use the key, and the issuing conductor can sign as its person.",
+  "nodes": [
+    {
+      "id": "issue",
+      "label": "The conductor issues a key",
+      "kind": "method",
+      "summary": "Two P-256 pairs."
+    },
+    {
+      "id": "link",
+      "label": "The key in a link fragment",
+      "kind": "method",
+      "summary": "Never sent to a server."
+    },
+    {
+      "id": "keyring",
+      "label": "Non-extractable in the browser",
+      "kind": "artefact",
+      "summary": "Usable, not copyable."
+    },
+    {
+      "id": "sealed",
+      "label": "Sealed to you",
+      "kind": "method",
+      "summary": "ws-ecies-1 on the public site."
+    },
+    {
+      "id": "lane",
+      "label": "The append lane",
+      "kind": "artefact",
+      "summary": "Write-only, ciphertext only."
+    },
+    {
+      "id": "signed",
+      "label": "Signed by you",
+      "kind": "method",
+      "summary": "ECDSA over the exact bytes."
+    },
+    {
+      "id": "material",
+      "label": "Material, not instructions",
+      "kind": "claim",
+      "summary": "Unless verified."
+    },
+    {
+      "id": "ws132",
+      "label": "One origin, many authors",
+      "kind": "question",
+      "summary": "Scripts can use the key."
+    },
+    {
+      "id": "ws138",
+      "label": "The conductor can sign too",
+      "kind": "question",
+      "summary": "Key made in the browser next."
+    }
+  ],
+  "edges": [
+    {
+      "from": "link",
+      "to": "issue",
+      "rel": "depends-on"
+    },
+    {
+      "from": "keyring",
+      "to": "link",
+      "rel": "depends-on"
+    },
+    {
+      "from": "sealed",
+      "to": "keyring",
+      "rel": "depends-on"
+    },
+    {
+      "from": "signed",
+      "to": "keyring",
+      "rel": "depends-on"
+    },
+    {
+      "from": "lane",
+      "to": "signed",
+      "rel": "extends"
+    },
+    {
+      "from": "material",
+      "to": "signed",
+      "rel": "contrasts"
+    },
+    {
+      "from": "ws132",
+      "to": "keyring",
+      "rel": "contrasts"
+    },
+    {
+      "from": "ws138",
+      "to": "issue",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-push-is-the-authorisation",
+      "a-secret-is-a-qr-code",
+      "a-directory-of-people-and-keys",
+      "a-pen-and-a-key"
+    ],
+    "pages": [],
+    "sites": [
+      "https://web-summit.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "This is the part I want the whole team to understand, because it is the point of all of it.",
+      "why": "Material, or instruction."
+    },
+    {
+      "text": "Non-extractable stops a script from copying the key. It does not stop a script from using it.",
+      "why": "One origin, many authors."
+    },
+    {
+      "text": "The key stays in that browser only.",
+      "why": "Into the browser, and kept there."
+    }
+  ],
+  "figures": [
+    {
+      "file": "kp-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/kp-flow.webp",
+      "caption": "One key, three jobs: the conductor issues it, the browser keeps it, sealed things open and signed messages verify.",
+      "kind": "architecture"
+    },
+    {
+      "file": "kp-lane.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/kp-lane.webp",
+      "caption": "A message's way from the person's browser to the agent: sealed, signed, appended, drained, verified.",
+      "kind": "process"
+    }
+  ]
+}

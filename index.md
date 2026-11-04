@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.61 · 379 articles since 2026-08-17; the newest is 2026-11-04. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 380 articles since 2026-08-17; the newest is 2026-11-04. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,20 +12,21 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Resilience when the workforce includes agents: what Synergy Six Degrees rates with OCRR, recovers with NeuShield and protects with Actifile, and where RiskMandate, sgit and SHarness meet it](articles/resilience-when-the-workforce-includes-agents.md), 2026-11-04, 7 min. What Synergy Six Degrees rates with OCRR and sells with NeuShield and Actifile, and the agent rows RiskMandate, SHarness and sgit add.
+- [A key for every person: how each person's conductor issues them a key for the team's site, seals what is for them, and how a signed message turns the public web into a channel the agents can trust](articles/a-key-for-every-person.md), 2026-11-04, 9 min. How each person's conductor issues them a key for the team's site: sealed to you, signed by you, and a lane the agents can trust.
 
 ## Five more
 
+- [Resilience when the workforce includes agents: what Synergy Six Degrees rates with OCRR, recovers with NeuShield and protects with Actifile, and where RiskMandate, sgit and SHarness meet it](articles/resilience-when-the-workforce-includes-agents.md), Agent security & behaviour policies, 2026-11-04, 7 min.
 - [Would you pay to plug this newsroom in? A reply to Florent Daudens, on five publishers' bets for the AI era, from a newsroom built for agents, with what it answers, where it goes further, and the questions it has not answered either](articles/would-you-pay-to-plug-this-newsroom-in.md), The future of news, 2026-11-03, 6 min.
 - [No tech stack to maintain: it is not that there is no backend, it is that the only code you own is HTML, CSS and JavaScript, with every other primitive rented as a commodity or run in the user's browser over encrypted vaults](articles/no-tech-stack-to-maintain.md), Engineering this newsroom, 2026-11-03, 7 min.
 - [The shop that sells time: the padel shop's path to market, sell one and fulfil it before anything else, start with the customers who already trust you, promise late and deliver early, a few products you vouch for, and no stock until the orders make you](articles/the-shop-that-sells-time.md), Startups & strategy, 2026-11-03, 8 min.
 - [The cost of your agents: a RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](articles/the-cost-of-your-agents.md), Agent security & behaviour policies, 2026-11-03, 6 min.
-- [How a vault works: an encrypted store that acts like a database, where a server that is fully compromised leaks nothing, one mutable file lets every other object be cached for ever, and a web page can open a file in four requests or run a whole app in a sandbox](articles/how-a-vault-works.md), sgit & vaults, 2026-11-03, 6 min.
 
 ## The last five days
 
-### Wednesday 4 November 2026 (1 article)
+### Wednesday 4 November 2026 (2 articles)
 
+- sgit & vaults: [A key for every person: how each person's conductor issues them a key for the team's site, seals what is for them, and how a signed message turns the public web into a channel the agents can trust](articles/a-key-for-every-person.md), 9 min.
 - Agent security & behaviour policies: [Resilience when the workforce includes agents: what Synergy Six Degrees rates with OCRR, recovers with NeuShield and protects with Actifile, and where RiskMandate, sgit and SHarness meet it](articles/resilience-when-the-workforce-includes-agents.md), 7 min.
 
 ### Tuesday 3 November 2026 (11 articles)
@@ -105,13 +106,13 @@ Agent teams in practice: how they run, what they remember, where they go wrong, 
 - [A website for my brother: a brief for Gabriel DaCruz's Claude, to rebuild gabrieldacruz.com on GitHub Pages and Google Workspace, interview him every day, and tell the story of a musician who will not tell it himself](articles/a-website-for-my-brother.md), 2026-11-01.
 - [The book of the talk by morning: RC1 of The Ultimate Insider, written from the record, read cold by a second team, with a companion PDF that turns reviews into tick boxes](articles/the-book-of-the-talk-and-its-companion.md), 2026-10-30.
 
-### [sgit & vaults](sections/vaults/index.md) (37)
+### [sgit & vaults](sections/vaults/index.md) (38)
 Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vault, and what it does that Git does not.
+- [A key for every person: how each person's conductor issues them a key for the team's site, seals what is for them, and how a signed message turns the public web into a channel the agents can trust](articles/a-key-for-every-person.md), 2026-11-04.
 - [How a vault works: an encrypted store that acts like a database, where a server that is fully compromised leaks nothing, one mutable file lets every other object be cached for ever, and a web page can open a file in four requests or run a whole app in a sandbox](articles/how-a-vault-works.md), 2026-11-03.
 - [English with Inês, inside the vault: a teacher's site as a vault app, with an experiment for every lesson, cards that come back when you are about to forget, a tutor that answers about one lesson only, a concept map, and the back office with every agent's policy](articles/inside-english-with-ines.md), 2026-11-03.
 - [Signed by the agent, vouched for by the person: a brief to give every email agent its own key, so each email carries a QR code that proves it is authentic](articles/signed-email-from-the-agent.md), 2026-10-30.
 - [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](articles/what-sgit-does-that-git-does-not.md), 2026-10-27.
-- [A tangent that shipped: how sgit's pack mode went from a slow clone to a release in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds the day after](articles/a-tangent-that-shipped.md), 2026-10-24.
 
 ### [The future of news](sections/news/index.md) (51)
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
