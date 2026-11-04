@@ -4,7 +4,7 @@ date: 2026-11-04
 author: Dinis Cruz
 author_url: about/index.html
 summary: Someone I know who runs Synergy Six Degrees, a London analyst firm in cyber security and data protection, shared a new assessment with me and asked what I thought. It is called OCRR, the Operational Cyber Resilience Rating, and I like its premise: recovery is not only an IT question, so it rates an organisation across four disciplines at once, operational, data, financial and people, in one executive conversation. It starts with a free five-page summary built from industry defaults, refines it with a guided assessment of about 500 fields that takes under two hours of the client's time, and then appraises proposed changes before money is spent. It is consultant-delivered, deploys nothing, and does not use AI. Beside it the firm distributes two products: NeuShield, whose Mirror Shielding keeps the original file intact so ransomware damage can be reverted without a backup, and Actifile, which finds sensitive data, encrypts it and puts a money figure on the exposure. The intersection with my work is the part of the workforce that OCRR's people discipline does not yet count: agents. RiskMandate's behaviour policies say what each agent is for and what it can reach; SHarness holds an agent's processes to a policy the kernel enforces; and sgit keeps data encrypted, immutable and recoverable. Together they could give a resilience rating the agent rows it is missing.
-version: v999.0.0
+version: v0.14.61
 license: https://creativecommons.org/licenses/by/4.0/
 tags: resilience, ocrr, ransomware, data-protection, riskmandate, sgit, sharness, agents, insurance, article
 status: published
