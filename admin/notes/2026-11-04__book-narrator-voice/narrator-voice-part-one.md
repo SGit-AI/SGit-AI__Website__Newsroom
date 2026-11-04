@@ -73,7 +73,7 @@ The page itself works. Only its narrator line changes.
 > For years my slides were a compromise. I had an idea to get across, and the slides could not move, so I spent the talk explaining what they could not show: this goes from here to there, this grows, this breaks. I talked over my own pictures.
 
 **Proposed:**
-> For years, my slides were a compromise, and I had stopped noticing. I usually read my talks, with the slides behind me as a backdrop. The ideas I care about most tend to be movements: how something spreads, where it stops, what changes when you add more of it. A slide cannot move, so I would stand there doing the moving myself: this goes from here to there, this grows, now this breaks. I was talking over my own pictures, and I think most speakers are.
+> My slides were always a compromise. I usually read my talks, with the slides behind me as a backdrop, and I knew they could not do what I needed. The ideas I care about most tend to be movements: how something spreads, where it stops, what changes when you add more of it. A slide cannot move, so I would stand there doing the moving myself: this goes from here to there, this grows, now this breaks. I was talking over my own pictures, and I think most speakers are.
 
 **Now (after the voice-note quote):**
 > That is the problem in one sentence. The idea was a movement. The slide was a still. I was the bit in between.
