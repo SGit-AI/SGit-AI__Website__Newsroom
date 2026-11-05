@@ -4,7 +4,7 @@ date: 2026-11-04
 author: Dinis Cruz
 author_url: about/index.html
 summary: You build a website that sells something, and the question that matters is what it looks like to the people you want to sell to: an executive, a security specialist, a business owner, a founder. One of the most useful workflows we have built answers that question with synthetic users. A Claude session reads a vault that describes each invented visitor, their role, personality, what they arrive wanting and what we want to learn from them, and starts one sub-agent per persona. Each sub-agent drives a real browser through the site one screenshot at a time, never reading the page's code, says what it sees and thinks, records every question the site did not answer and every place it got lost, and is interviewed at the end. Claude then analyses the runs and maps the findings. We have run it three times, on store.sgit.ai, riskmandate.ai and this newsroom, and each run found things no test had. This is the onboarding guide: get a key, install sgit, create the vault, run the personas, keep the vault key safe, and publish the result with a read key on any website that can embed the vault.
-version: v999.0.0
+version: v0.14.63
 license: https://creativecommons.org/licenses/by/4.0/
 tags: synthetic-users, personas, ux, agents, sub-agents, playwright, sgit, vaults, onboarding, how-to, article
 status: published

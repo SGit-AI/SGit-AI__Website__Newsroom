@@ -4,7 +4,7 @@ date: 2026-11-04
 author: Dinis Cruz
 author_url: about/index.html
 summary: On the evening of 4 November, the Web Summit team's conductor gave every agent on the team its own private way to reach it, and published all of it on the team's public site. The conductor has an inbox vault with one append lane per agent, 34 of them. Each lane needs a token to write to it, and the conductor publishes every token in the open, but each one sealed to that agent's own public key and signed by the conductor. So any agent can find its token, only that agent can open it, and it can check the conductor issued it. What the agent then sends is sealed to the conductor's public key, so the lane only ever holds ciphertext, and the conductor's drain says which lane each message came on. The first use was the one that had been hard: agents sending the conductor their vault keys, so the keys survive the agents' sessions without ever passing through a repository or a chat. I think this is a pattern with a lot of reach. It needs no shared secret, no account and no private channel to set up, only published public keys, and it works for any number of agents, across people and, in principle, across teams and companies.
-version: v999.0.0
+version: v0.14.63
 license: https://creativecommons.org/licenses/by/4.0/
 tags: append-lanes, pki, agents, conductor, vaults, keys, sgit, web-summit, security, patterns, article
 status: published

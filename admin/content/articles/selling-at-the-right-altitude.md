@@ -4,7 +4,7 @@ date: 2026-11-04
 author: Dinis Cruz
 author_url: about/index.html
 summary: Picture a cybersecurity firm of one to five people with a website that sells everything: a 24/7 security operations centre, managed detection and response, red teaming, PCI and ISO audits, zero trust, a virtual CISO. These days it is often the kind of site an AI helps you build in an afternoon, and it looks impressive. It also has a tragic symmetry. The readers who understand every word are security teams at larger companies, and they will buy that work from an established provider with a bigger team, not from three people. The readers who need a firm this size, small businesses, cannot read the page: in the UK in 2025, only 9% of micro businesses had heard of Cyber Essentials. So the firm is selling at the wrong altitude. I built a vault with three versions of the same invented firm's website, bad, medium and good, and infographics for the argument. The good one names the people, says where they are and how they work, and sells outcomes a small business understands: still open after ransomware, nobody logging in as you, laptops looked after, client data handled properly, AI tools doing what you meant. And every service on the page has to pass three questions: have we sold it, can we deliver it at this size, and would the buyer who needs it understand the words?
-version: v999.0.0
+version: v0.14.63
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sales, positioning, small-business, cybersecurity, websites, smes, synthetic-users, behaviour-policies, vaults, article
 status: published

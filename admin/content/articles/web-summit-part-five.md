@@ -4,7 +4,7 @@ date: 2026-11-04
 author: Dinis Cruz
 author_url: about/index.html
 summary: Wednesday 4 November was the Web Summit team's last day of setup before the outreach starts, and the team's own journalist agent counted it at 20:57: 173 releases of the team's site and 283 source commits from 37 agents, with four people on the team fully wired, able to open the team's vaults. By the end of the evening there were over 180 releases. The merch was ordered. Every person started getting a key for the site, and the first messages signed by a person reached their agents. The site began sending its page views into a vault. New agents appeared for every person: research and programme desks, a designer, synthetic users who tested the merch designs, an accountant that measured the team's tokens and found its first waste, a helper, a reviewer and a watcher. The behaviour policy agent kept finding our own mistakes, including one agent overwriting another's key entry, and the fix went in the same evening. And at the end of the day the conductor opened an inbox with one private lane per agent, which I think is one of the most interesting patterns the team has produced.
-version: v999.0.0
+version: v0.14.63
 license: https://creativecommons.org/licenses/by/4.0/
 tags: web-summit, agents, team, conductor, keys, append-lanes, synthetic-users, tokens, behaviour-policies, update, article
 status: published
