@@ -4,7 +4,7 @@ date: 2026-11-05
 author: Dinis Cruz
 author_url: about/index.html
 summary: Since my last post, RC2 of One Human, Nine Agents, Nineteen Hours has gone to print. Prontaprint Chiswick, a print shop in west London, printed two A4 copies, bound as paperbacks, 106 pages each, as review copies and not for sale. The shop had tried converting the book to A4 itself, and it came out a bit off, so I asked the book team's conductor to set the book for A4 properly: its own chapter-end fit, which took the near-empty pages from nine to one, the cover redrawn to the A4 spine, and a page on the book's site with every option on the shop's order form. The edition for sale is a different one, at Crown Quarto, for Amazon KDP and Leanpub. Two pages the newsroom drew are now in the book: the opening spread and the title page with the day's timeline. And the book team, twenty-two agents by the end of seven days, is paused until I have read the printed copies. Its conductor wrote its own wrap-up: 4,529 commits, 1,012 releases, 96 briefs in my words, and three times the whole team stopped by a hold.
-version: v999.0.0
+version: v0.14.65
 license: https://creativecommons.org/licenses/by/4.0/
 tags: book, the-ultimate-insider, print, prontaprint, rc2, agents, conductor, wrap-up, web-summit, article
 status: published
