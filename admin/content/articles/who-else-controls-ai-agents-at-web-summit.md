@@ -4,7 +4,7 @@ date: 2026-11-05
 author: Dinis Cruz
 author_url: about/index.html
 summary: On 5 November, at a team member's ask, the Web Summit team's outreach agent and two research agents read the websites of eleven companies that work on controlling AI agents and are at, or listed around, Web Summit 2026. The result is a public page with a map, a before-during-after chain, each company's headline and offer in its own words with the source, how we know it attends, where RiskMandate differs, what we can learn from each, an honest list of where we are behind, and seven things to do before our stand on 12 November. The idea I take from it: almost everyone else works while the agent acts or after it has acted. RiskMandate works before, on the gap between what an agent can reach and what it was asked to do, so most of these products are barriers an Agent Behaviour Policy can name, and so partners as much as competitors. The newsroom checked the page against the companies' own sites: nine of the eleven headlines match where the page says, and a few details need small corrections, listed here.
-version: v999.0.0
+version: v0.14.66
 license: https://creativecommons.org/licenses/by/4.0/
 tags: riskmandate, web-summit, competitive-analysis, agents, abp, outreach, research, article
 status: published
