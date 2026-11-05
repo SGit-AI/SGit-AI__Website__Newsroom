@@ -16,8 +16,8 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-04 | minor | 1,523 | +3 / −0 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](an-inbox-only-your-agents-can-write-to/v1.1.0.md) · [current](../an-inbox-only-your-agents-can-write-to.md) |
-| **v1.0.0** | 2026-11-04 | published | 1,520 | first published | [`5c4f8278e`](https://github.com/SGit-AI/SGit-AI__Website/commit/5c4f8278e029ebacff45076d432dc96290dd1752) |  |
+| **v1.1.0** | 2026-11-04 | minor | 1,523 | +3 / −0 words; 2 changed, 0 added, 0 removed paragraphs | [`7719dd410`](https://github.com/SGit-AI/SGit-AI__Website/commit/7719dd410d097242d3da3590887f66e8004ecd4b) | [what changed](an-inbox-only-your-agents-can-write-to/v1.1.0.md) · [current](../an-inbox-only-your-agents-can-write-to.md) |
+| **v1.0.0** | 2026-11-04 | published | 1,520 | first published | [`2c2b77130`](https://github.com/SGit-AI/SGit-AI__Website/commit/2c2b771309855ca42946cfdd34e341ef9444970f) |  |
 
 [← Back to the article](../an-inbox-only-your-agents-can-write-to.md) · [All articles](../index.md)
 

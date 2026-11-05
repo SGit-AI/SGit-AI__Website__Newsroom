@@ -1,0 +1,170 @@
+{
+  "slug": "rc2-goes-to-print",
+  "teaser": "RC2 is printed: two A4 review copies from Prontaprint Chiswick, two newsroom pages in the book, and the book team paused.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "RC2 of One Human, Nine Agents, Nineteen Hours was printed by Prontaprint Chiswick as two A4 paperback review copies of 106 pages, not for sale. After the shop's own conversion came out a bit off, the book team's conductor set the book for A4 itself, with its own chapter-end fit, a redrawn cover and a page listing every option the shop needed. The edition for sale is Crown Quarto, for Amazon KDP and Leanpub. The newsroom's opening spread and title page are in the book, and the twenty-two-agent team is paused until the printed copies are read.",
+  "nodes": [
+    {
+      "id": "printed",
+      "label": "Two A4 review copies",
+      "kind": "example",
+      "summary": "106 pages, from Prontaprint Chiswick."
+    },
+    {
+      "id": "notsale",
+      "label": "Not for sale",
+      "kind": "claim",
+      "summary": "To read on paper and bring advance buyers."
+    },
+    {
+      "id": "set",
+      "label": "Set for A4, not converted",
+      "kind": "method",
+      "summary": "Fit, fonts, cover, a page for the shop."
+    },
+    {
+      "id": "fit",
+      "label": "Near-empty pages, nine to one",
+      "kind": "method",
+      "summary": "Chapters set tighter in up to four steps."
+    },
+    {
+      "id": "forsale",
+      "label": "Crown Quarto for sale",
+      "kind": "artefact",
+      "summary": "Amazon KDP and Leanpub."
+    },
+    {
+      "id": "spread",
+      "label": "The opening spread",
+      "kind": "artefact",
+      "summary": "Drawn by the newsroom, placed facing."
+    },
+    {
+      "id": "title",
+      "label": "The title page timeline",
+      "kind": "artefact",
+      "summary": "Who arrived when on 29 October."
+    },
+    {
+      "id": "paused",
+      "label": "The team paused",
+      "kind": "example",
+      "summary": "Until the printed copies are read."
+    },
+    {
+      "id": "wrap",
+      "label": "The conductor's wrap-up",
+      "kind": "artefact",
+      "summary": "4,529 commits, 1,012 releases, three holds."
+    },
+    {
+      "id": "ws",
+      "label": "The Web Summit team",
+      "kind": "example",
+      "summary": "A token per agent; a newsroom plan."
+    }
+  ],
+  "edges": [
+    {
+      "from": "notsale",
+      "to": "printed",
+      "rel": "extends"
+    },
+    {
+      "from": "set",
+      "to": "printed",
+      "rel": "produces"
+    },
+    {
+      "from": "fit",
+      "to": "set",
+      "rel": "extends"
+    },
+    {
+      "from": "forsale",
+      "to": "printed",
+      "rel": "contrasts"
+    },
+    {
+      "from": "spread",
+      "to": "printed",
+      "rel": "example-of"
+    },
+    {
+      "from": "title",
+      "to": "printed",
+      "rel": "example-of"
+    },
+    {
+      "from": "paused",
+      "to": "printed",
+      "rel": "leads-to"
+    },
+    {
+      "from": "wrap",
+      "to": "paused",
+      "rel": "extends"
+    },
+    {
+      "from": "ws",
+      "to": "printed",
+      "rel": "compared-with"
+    }
+  ],
+  "links": {
+    "articles": [
+      "one-human-nine-agents-rc2",
+      "the-lab-that-redesigned-the-book",
+      "web-summit-part-five",
+      "an-inbox-only-your-agents-can-write-to"
+    ],
+    "pages": [],
+    "sites": [
+      "https://the-ultimate-insider.book.sgit.ai/publishers/prontaprint-chiswick.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "None of this is unusual work for a print designer.",
+      "why": "Why A4, and why the conductor set it."
+    },
+    {
+      "text": "Nothing was wrong; there was simply nothing left to do before I read the book on paper.",
+      "why": "The book team, paused."
+    },
+    {
+      "text": "That is a plan, due Friday 10:00 UTC, not a launch.",
+      "why": "Meanwhile, at the Web Summit team."
+    }
+  ],
+  "figures": [
+    {
+      "file": "r2p-day.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/r2p-day.webp",
+      "caption": "Thursday 5 November, from the newsroom's opening spread to a page for the print shop, in UTC.",
+      "kind": "timeline"
+    },
+    {
+      "file": "r2p-cover.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/r2p-cover.webp",
+      "caption": "The A4 full cover: back, spine and front, the same black cover redrawn for a 6.1 mm spine.",
+      "kind": "photo"
+    },
+    {
+      "file": "r2p-two.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/r2p-two.webp",
+      "caption": "One RC2, two editions: Crown Quarto for sale, A4 for two review copies.",
+      "kind": "comparison"
+    },
+    {
+      "file": "r2p-pages.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/r2p-pages.webp",
+      "caption": "The A4 interior's first eight pages: the title page with the day's timeline, then the opening spread on pages 2 and 3.",
+      "kind": "screenshot"
+    }
+  ]
+}
