@@ -102,6 +102,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#web-su
 
 ### Continued by
 
+- [Who else controls AI agents at Web Summit? An outreach agent mapped eleven companies in an afternoon, in their own words, and found that most of them are partners for RiskMandate as much as competitors](who-else-controls-ai-agents-at-web-summit.md) An outreach agent mapped eleven companies that control AI agents at Web Summit; most are partners for RiskMandate as much as competitors.
 - [The book is printed: RC2 of One Human, Nine Agents, Nineteen Hours as two A4 review copies from Prontaprint Chiswick, the newsroom's pages in the book, and the team that made it paused until I have read them](rc2-goes-to-print.md) RC2 is printed: two A4 review copies from Prontaprint Chiswick, two newsroom pages in the book, and the book team paused.
 
 [All articles](index.md) · [All graphs](graphs.md)

@@ -4,24 +4,24 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 1290 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 885 | 3484 | links to sgit.ai's pages and the network sites (37 files this site writes itself) |
-| words | 1783 | 11780 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 1293 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 887 | 3487 | links to sgit.ai's pages and the network sites (37 files this site writes itself) |
+| words | 1788 | 11802 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 108 | 314 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 764 × `sgit.ai/about/index.html`
-- 380 × `sgit.ai/about/index.md`
+- 766 × `sgit.ai/about/index.html`
+- 381 × `sgit.ai/about/index.md`
 - 138 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 54 × `pki.sgit.ai/`
 - 40 × `sgit.ai/`
 - 37 × `graphs.sgit.ai/`
 - 34 × `sgit.ai/api/append-lanes.html`
-- 32 × `sgit.ai/network/index.html`
 - 32 × `sgit.ai/why/index.html`
 - 32 × `sgit.ai/team/index.html`
+- 32 × `sgit.ai/network/index.html`
 - 30 × `sgit.ai/security/index.html`
 - 30 × `sgit.ai/demos/vaults/index.html`
 - 30 × `sgit.ai/demos/fractal-graphs/performance.html`

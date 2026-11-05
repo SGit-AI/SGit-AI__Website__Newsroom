@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-05 | published | 1,721 | first published | this release | [current](../rc2-goes-to-print.md) |
+| **v1.0.0** | 2026-11-05 | published | 1,721 | first published | [`0039b21d3`](https://github.com/SGit-AI/SGit-AI__Website/commit/0039b21d35fe5c153cb3a13e94b6995e58a2cfd0) | [current](../rc2-goes-to-print.md) |
 
 [← Back to the article](../rc2-goes-to-print.md) · [All articles](../index.md)
 

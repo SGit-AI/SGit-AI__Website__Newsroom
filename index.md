@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.65 · 385 articles since 2026-08-17; the newest is 2026-11-05. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 386 articles since 2026-08-17; the newest is 2026-11-05. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,20 +12,21 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [The book is printed: RC2 of One Human, Nine Agents, Nineteen Hours as two A4 review copies from Prontaprint Chiswick, the newsroom's pages in the book, and the team that made it paused until I have read them](articles/rc2-goes-to-print.md), 2026-11-05, 7 min. RC2 is printed: two A4 review copies from Prontaprint Chiswick, two newsroom pages in the book, and the book team paused.
+- [Who else controls AI agents at Web Summit? An outreach agent mapped eleven companies in an afternoon, in their own words, and found that most of them are partners for RiskMandate as much as competitors](articles/who-else-controls-ai-agents-at-web-summit.md), 2026-11-05, 8 min. An outreach agent mapped eleven companies that control AI agents at Web Summit; most are partners for RiskMandate as much as competitors.
 
 ## Five more
 
+- [The book is printed: RC2 of One Human, Nine Agents, Nineteen Hours as two A4 review copies from Prontaprint Chiswick, the newsroom's pages in the book, and the team that made it paused until I have read them](articles/rc2-goes-to-print.md), Working with agents, 2026-11-05, 7 min.
 - [The Web Summit team, part five: the last day of setup, 180 releases, every person getting a key, an accountant counting the team's tokens, synthetic users testing the merch, and an inbox only the agents can write to](articles/web-summit-part-five.md), Working with agents, 2026-11-04, 5 min.
 - [An inbox only your agents can write to: a conductor publishes one append lane per agent, each lane's token sealed to that agent's own key, so everything needed to talk privately is public and only the right agent can use it](articles/an-inbox-only-your-agents-can-write-to.md), sgit & vaults, 2026-11-04, 6 min.
 - [Synthetic users for your website: how to set up five invented visitors who read your site one screenshot at a time, with Claude, a sub-agent per persona, and an encrypted vault you can publish anywhere](articles/synthetic-users-for-your-website.md), Engineering this newsroom, 2026-11-04, 8 min.
 - [Selling at the right altitude: why a small security firm's grand website is read by the people who will never buy from it, is unreadable to the ones who need it, and what to put on the page instead](articles/selling-at-the-right-altitude.md), Startups & strategy, 2026-11-04, 8 min.
-- [A key for every person: how each person's conductor issues them a key for the team's site, seals what is for them, and how a signed message turns the public web into a channel the agents can trust](articles/a-key-for-every-person.md), sgit & vaults, 2026-11-04, 9 min.
 
 ## The last five days
 
-### Thursday 5 November 2026 (1 article)
+### Thursday 5 November 2026 (2 articles)
 
+- Startups & strategy: [Who else controls AI agents at Web Summit? An outreach agent mapped eleven companies in an afternoon, in their own words, and found that most of them are partners for RiskMandate as much as competitors](articles/who-else-controls-ai-agents-at-web-summit.md), 8 min.
 - Working with agents: [The book is printed: RC2 of One Human, Nine Agents, Nineteen Hours as two A4 review copies from Prontaprint Chiswick, the newsroom's pages in the book, and the team that made it paused until I have read them](articles/rc2-goes-to-print.md), 7 min.
 
 ### Wednesday 4 November 2026 (6 articles)
@@ -106,13 +107,13 @@ Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta
 - [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](articles/agentic-readers.md), 2026-10-31.
 - [Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall, credit to start, and a meter that charges for what is read](articles/every-link-a-gift-link.md), 2026-10-31.
 
-### [Startups & strategy](sections/strategy/index.md) (83)
+### [Startups & strategy](sections/strategy/index.md) (84)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
+- [Who else controls AI agents at Web Summit? An outreach agent mapped eleven companies in an afternoon, in their own words, and found that most of them are partners for RiskMandate as much as competitors](articles/who-else-controls-ai-agents-at-web-summit.md), 2026-11-05.
 - [Selling at the right altitude: why a small security firm's grand website is read by the people who will never buy from it, is unreadable to the ones who need it, and what to put on the page instead](articles/selling-at-the-right-altitude.md), 2026-11-04.
 - [The shop that sells time: the padel shop's path to market, sell one and fulfil it before anything else, start with the customers who already trust you, promise late and deliver early, a few products you vouch for, and no stock until the orders make you](articles/the-shop-that-sells-time.md), 2026-11-03.
 - [The Web Summit team, part four: the day the agents ran on their own, 75 releases, four people connected, a procurement agent writing to printers, and the behaviour policies catching our own agents out](articles/web-summit-part-four.md), 2026-11-02.
 - [The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work](articles/web-summit-how-we-work.md), 2026-11-02.
-- [The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault](articles/sell-the-sleeve.md), 2026-11-02.
 
 ### [Engineering this newsroom](sections/building/index.md) (46)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
