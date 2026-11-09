@@ -4,7 +4,7 @@ date: 2026-11-09
 author: Dinis Cruz
 author_url: about/index.html
 summary: Lovable's agent does more than write code. In Build mode it applies every change directly, it can change the database your published app uses, configure sign-up rules, call your connected systems, and publish, and with /goal it works for hours without stopping to ask. Lovable gives real controls for all of this: always, ask or never for each backend action; Plan mode; the SQL shown before a breaking migration; a security scan on every publish; workspace policies; a pre-prompt hook; audit logs. And it is certified to AIUC-1, the agent standard insurers read. This maps those controls onto RiskMandate's Agent Behaviour Policies, from Lovable's documentation, read on 9 November 2026. The pattern is the same as at Manus and Cloudflare, with one difference: the defaults. Nine of ten backend permissions default to "Always allow", including changing data and configuring auth, and they are set per user, for every workspace and project. The policy is the record of what each project's agent was asked to do, which of those settings should be "Ask each time" for it, and who signed that off.
-version: v999.0.0
+version: v0.14.72
 license: https://creativecommons.org/licenses/by/4.0/
 tags: riskmandate, abp, lovable, agents, vibe-coding, supabase, aiuc-1, controls, article
 status: published

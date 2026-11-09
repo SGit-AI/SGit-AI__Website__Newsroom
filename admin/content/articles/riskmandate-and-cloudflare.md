@@ -4,7 +4,7 @@ date: 2026-11-09
 author: Dinis Cruz
 author_url: about/index.html
 summary: Cloudflare is two things for agents. It is a place to build and run them (the Agents SDK, sandboxes, a headless browser, models, an AI Gateway, remote MCP servers), and a place to control them (Access in front of MCP servers, a new risk tier per tool called WriteGuard, data loss prevention on prompts, signed identities for agents on the web). This maps both onto RiskMandate's Agent Behaviour Policies, from Cloudflare's documentation and blog, read on 9 November 2026. Cloudflare already has controls at every layer, from what an agent reads to logs a third party can check, and its defaults are open: an MCP portal enables every tool, including new ones. Its own writing makes the case for the missing piece. In August it published an Agent Access Model, "Its default is deny", and said it is "not comfortable saying that multiplayer access control can be built end to end today". In November it wrote that a narrow scope "only says what the Agent was allowed to do. It doesn't say who answers when the Agent gets it wrong". That is the record an Agent Behaviour Policy is: what this agent was asked to do, the gap from what it can reach, the control holding each row, and who signed it off.
-version: v999.0.0
+version: v0.14.72
 license: https://creativecommons.org/licenses/by/4.0/
 tags: riskmandate, abp, cloudflare, agents, mcp, zero-trust, ai-gateway, controls, article
 status: published
