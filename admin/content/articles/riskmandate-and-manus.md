@@ -4,7 +4,7 @@ date: 2026-11-09
 author: Dinis Cruz
 author_url: about/index.html
 summary: Manus is a general AI agent that works in a cloud computer, on your own computer through Manus Studio, in your browser with your logged-in sessions, and across 416 connectors, on schedules and triggers when nobody is watching. It takes the stage at Web Summit's opening night tonight, independent again after China blocked Meta's purchase of it. This is a mapping, from Manus's own documentation, of how RiskMandate and Agent Behaviour Policies can work with it. The short version: Manus already gives you real controls, such as permission modes, session approval, approved senders and trigger conditions, and its documentation is candid about what they leave open, such as "approval modes limit changes, not reading". An Agent Behaviour Policy is the record that lists what a Manus deployment can reach, what the business asked it to do, the gap between the two, and which of those controls holds each row. It can live in four places in Manus: as words the agent reads (a Project instruction or a Skill), as settings, as a gate in front of internal systems (a custom MCP server), and as evidence signed off as a licence to operate. The first two exist in Manus today; the last two are proposals. Nothing here has been run on Manus yet.
-version: v999.0.0
+version: v0.14.71
 license: https://creativecommons.org/licenses/by/4.0/
 tags: riskmandate, abp, manus, agents, web-summit, mcp, browser-agents, controls, article
 status: published
