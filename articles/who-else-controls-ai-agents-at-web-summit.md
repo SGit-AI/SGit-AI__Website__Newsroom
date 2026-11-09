@@ -113,6 +113,10 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#who-el
 - [Selling at the right altitude: why a small security firm's grand website is read by the people who will never buy from it, is unreadable to the ones who need it, and what to put on the page instead](selling-at-the-right-altitude.md) Why a small security firm's grand website reaches the readers who won't buy and loses the ones who need it, and what to sell instead.
 - [The Web Summit team, part five: the last day of setup, 180 releases, every person getting a key, an accountant counting the team's tokens, synthetic users testing the merch, and an inbox only the agents can write to](web-summit-part-five.md) The Web Summit team's last day of setup: 180 releases, keys for every person, new agents for everyone, and an inbox per agent.
 
+### Continued by
+
+- [RiskMandate and Manus: mapping an Agent Behaviour Policy onto a general agent that can use your computer, your browser, your logins and 416 connectors, and the controls Manus already gives you](riskmandate-and-manus.md) How an Agent Behaviour Policy maps onto Manus: its reach, the controls it already gives you, and the gap between them.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 388 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=388)

@@ -1,0 +1,40 @@
+{
+ "slug": "riskmandate-and-manus",
+ "teaser": "How an Agent Behaviour Policy maps onto Manus: its reach, the controls it already gives you, and the gap between them.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "Manus is a general agent that can work in a cloud computer, on the user's own computer, in the user's browser with their logins, across 416 connectors and in unattended automations. Its documentation describes real controls (permission modes, session approval, approved senders, trigger conditions) and states what they leave open. An Agent Behaviour Policy records what a Manus deployment can reach, what it was asked to do, the gap and the control holding each row, and can live as words the agent reads, as settings, as a custom MCP gate and as attested evidence. The first two exist today; the last two are proposals, and nothing has been run on Manus.",
+ "nodes": [
+  {"id": "manus", "label": "Manus, a general agent", "kind": "artefact", "summary": "Cloud, computer, browser, connectors."},
+  {"id": "reach", "label": "Wide reach", "kind": "example", "summary": "416 connectors, logins, automations."},
+  {"id": "controls", "label": "Controls Manus gives you", "kind": "method", "summary": "Permission modes, approvals, senders."},
+  {"id": "gapline", "label": "Limits changes, not reading", "kind": "claim", "summary": "Manus's own statement of the gap."},
+  {"id": "abp", "label": "The policy as the record", "kind": "concept", "summary": "Reach, mandate, gap, barrier."},
+  {"id": "read", "label": "Read", "kind": "method", "summary": "Project instruction or Skill."},
+  {"id": "set", "label": "Set", "kind": "method", "summary": "Settings as barriers."},
+  {"id": "gate", "label": "Gate", "kind": "method", "summary": "A custom MCP server; proposed."},
+  {"id": "attest", "label": "Attest", "kind": "method", "summary": "Logs as evidence; proposed."},
+  {"id": "untested", "label": "Not run on Manus yet", "kind": "question", "summary": "A mapping from documentation."}
+ ],
+ "edges": [
+  {"from": "reach", "to": "manus", "rel": "extends"},
+  {"from": "controls", "to": "manus", "rel": "extends"},
+  {"from": "gapline", "to": "controls", "rel": "contrasts"},
+  {"from": "abp", "to": "reach", "rel": "depends-on"},
+  {"from": "abp", "to": "controls", "rel": "depends-on"},
+  {"from": "read", "to": "abp", "rel": "produces"},
+  {"from": "set", "to": "read", "rel": "leads-to"},
+  {"from": "gate", "to": "set", "rel": "leads-to"},
+  {"from": "attest", "to": "gate", "rel": "leads-to"},
+  {"from": "untested", "to": "gate", "rel": "contrasts"}
+ ],
+ "links": {
+  "articles": ["a-policy-beside-the-prompt", "governs-enforces-attests", "are-hooks-the-sweet-spot", "introducing-sharness", "who-else-controls-ai-agents-at-web-summit"],
+  "pages": [],
+  "sites": ["https://manus.im/", "https://riskmandate.ai/"]
+ },
+ "quotes": [
+  {"text": "This is the part I did not expect.", "why": "The controls Manus already gives you."},
+  {"text": "That last column is the useful one.", "why": "A policy for one Manus deployment."},
+  {"text": "Each step moves a rule further from what the model says and closer to what the system does", "why": "Four places the policy lives."}
+ ]
+}

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-05 | published | 1,878 | first published | this release | [current](../who-else-controls-ai-agents-at-web-summit.md) |
+| **v1.0.0** | 2026-11-05 | published | 1,878 | first published | [`f412115d7`](https://github.com/SGit-AI/SGit-AI__Website/commit/f412115d78a6a09191c5b149f04df390483221bb) | [current](../who-else-controls-ai-agents-at-web-summit.md) |
 
 [← Back to the article](../who-else-controls-ai-agents-at-web-summit.md) · [All articles](../index.md)
 
