@@ -1,0 +1,149 @@
+{
+  "slug": "riskmandate-and-lovable",
+  "teaser": "Lovable's agent can change production; its controls are real, its defaults open, and a policy says what each project's agent may do.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Lovable's agent applies code directly, changes the live database and auth, calls connected systems and publishes, and can run for hours on a goal. Lovable provides per-action permissions, Plan mode, migration approval, security scans, publish blocks, workspace policies, a pre-prompt hook, audit logs and AIUC-1 certification. Nine of ten backend permissions default to Always allow and are set per user across all workspaces. An Agent Behaviour Policy records each project's mandate and which settings should ask, beside the platform's certificate.",
+  "nodes": [
+    {
+      "id": "agent",
+      "label": "Lovable's agent",
+      "kind": "artefact",
+      "summary": "Build, Plan, Chat, /goal."
+    },
+    {
+      "id": "reach",
+      "label": "Reach into production",
+      "kind": "example",
+      "summary": "Live database, auth, connectors, publish."
+    },
+    {
+      "id": "defaults",
+      "label": "Nine of ten Always allow",
+      "kind": "claim",
+      "summary": "Per user, every workspace."
+    },
+    {
+      "id": "controls",
+      "label": "Controls Lovable gives",
+      "kind": "method",
+      "summary": "Plan mode, scans, policies, hook."
+    },
+    {
+      "id": "aiuc",
+      "label": "AIUC-1 for the platform",
+      "kind": "artefact",
+      "summary": "Certified July 2026."
+    },
+    {
+      "id": "incident",
+      "label": "April 2026 incident",
+      "kind": "example",
+      "summary": "Public projects exposed; fixed in two hours."
+    },
+    {
+      "id": "abp",
+      "label": "A policy per project",
+      "kind": "concept",
+      "summary": "Which settings should ask."
+    },
+    {
+      "id": "layers",
+      "label": "Read, set, gate, attest",
+      "kind": "method",
+      "summary": "Strong pieces on paid tiers."
+    }
+  ],
+  "edges": [
+    {
+      "from": "reach",
+      "to": "agent",
+      "rel": "extends"
+    },
+    {
+      "from": "defaults",
+      "to": "reach",
+      "rel": "depends-on"
+    },
+    {
+      "from": "controls",
+      "to": "defaults",
+      "rel": "contrasts"
+    },
+    {
+      "from": "aiuc",
+      "to": "controls",
+      "rel": "extends"
+    },
+    {
+      "from": "incident",
+      "to": "aiuc",
+      "rel": "contrasts"
+    },
+    {
+      "from": "abp",
+      "to": "aiuc",
+      "rel": "compared-with"
+    },
+    {
+      "from": "abp",
+      "to": "defaults",
+      "rel": "answers"
+    },
+    {
+      "from": "layers",
+      "to": "abp",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "lovable-with-sharness",
+      "from-lovable-to-your-own-newsroom",
+      "riskmandate-and-manus",
+      "riskmandate-and-cloudflare",
+      "underwriting-the-agent-economy-reviewed"
+    ],
+    "pages": [],
+    "sites": [
+      "https://docs.lovable.dev/",
+      "https://riskmandate.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "None of this is hidden.",
+      "why": "The defaults."
+    },
+    {
+      "text": "That is real, and it is about Lovable.",
+      "why": "The platform is certified; the project is not."
+    },
+    {
+      "text": "Many of those builders are not engineers",
+      "why": "Why Lovable."
+    }
+  ],
+  "figures": [
+    {
+      "file": "lvm-controls.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lvm-controls.webp",
+      "caption": "Eight of Lovable's controls for its agent, what each holds, and what stays open.",
+      "kind": "comparison"
+    },
+    {
+      "file": "lvm-defaults.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lvm-defaults.webp",
+      "caption": "Lovable Cloud's ten backend permissions and their defaults; three of them change production without asking.",
+      "kind": "chart"
+    },
+    {
+      "file": "lvm-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lvm-layers.webp",
+      "caption": "On Lovable, each layer has pieces; the strong ones are on paid tiers and the defaults are open.",
+      "kind": "architecture"
+    }
+  ]
+}

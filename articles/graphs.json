@@ -55,6 +55,365 @@
   ],
   "articles": [
     {
+      "slug": "riskmandate-and-lovable",
+      "title": "RiskMandate and Lovable: mapping an Agent Behaviour Policy onto an app builder whose agent writes the code, changes the live database, connects your other systems and publishes, with the controls Lovable already gives and their defaults",
+      "date": "2026-11-09",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/riskmandate-and-lovable.html",
+      "markdown": "https://newsroom.sgit.ai/articles/riskmandate-and-lovable.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/riskmandate-and-lovable.webp",
+      "teaser": "Lovable's agent can change production; its controls are real, its defaults open, and a policy says what each project's agent may do.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "riskmandate",
+        "abp",
+        "lovable",
+        "agents",
+        "vibe-coding",
+        "supabase",
+        "aiuc-1",
+        "controls",
+        "article"
+      ],
+      "links_out": [
+        "from-lovable-to-your-own-newsroom",
+        "lovable-with-sharness",
+        "underwriting-the-agent-economy-reviewed",
+        "riskmandate-and-manus",
+        "riskmandate-and-cloudflare"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "lvm-controls.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lvm-controls.webp",
+          "caption": "Eight of Lovable's controls for its agent, what each holds, and what stays open.",
+          "kind": "comparison"
+        },
+        {
+          "file": "lvm-defaults.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lvm-defaults.webp",
+          "caption": "Lovable Cloud's ten backend permissions and their defaults; three of them change production without asking.",
+          "kind": "chart"
+        },
+        {
+          "file": "lvm-layers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lvm-layers.webp",
+          "caption": "On Lovable, each layer has pieces; the strong ones are on paid tiers and the defaults are open.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "riskmandate-and-lovable",
+        "teaser": "Lovable's agent can change production; its controls are real, its defaults open, and a policy says what each project's agent may do.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Lovable's agent applies code directly, changes the live database and auth, calls connected systems and publishes, and can run for hours on a goal. Lovable provides per-action permissions, Plan mode, migration approval, security scans, publish blocks, workspace policies, a pre-prompt hook, audit logs and AIUC-1 certification. Nine of ten backend permissions default to Always allow and are set per user across all workspaces. An Agent Behaviour Policy records each project's mandate and which settings should ask, beside the platform's certificate.",
+        "nodes": [
+          {
+            "id": "agent",
+            "label": "Lovable's agent",
+            "kind": "artefact",
+            "summary": "Build, Plan, Chat, /goal."
+          },
+          {
+            "id": "reach",
+            "label": "Reach into production",
+            "kind": "example",
+            "summary": "Live database, auth, connectors, publish."
+          },
+          {
+            "id": "defaults",
+            "label": "Nine of ten Always allow",
+            "kind": "claim",
+            "summary": "Per user, every workspace."
+          },
+          {
+            "id": "controls",
+            "label": "Controls Lovable gives",
+            "kind": "method",
+            "summary": "Plan mode, scans, policies, hook."
+          },
+          {
+            "id": "aiuc",
+            "label": "AIUC-1 for the platform",
+            "kind": "artefact",
+            "summary": "Certified July 2026."
+          },
+          {
+            "id": "incident",
+            "label": "April 2026 incident",
+            "kind": "example",
+            "summary": "Public projects exposed; fixed in two hours."
+          },
+          {
+            "id": "abp",
+            "label": "A policy per project",
+            "kind": "concept",
+            "summary": "Which settings should ask."
+          },
+          {
+            "id": "layers",
+            "label": "Read, set, gate, attest",
+            "kind": "method",
+            "summary": "Strong pieces on paid tiers."
+          }
+        ],
+        "edges": [
+          {
+            "from": "reach",
+            "to": "agent",
+            "rel": "extends"
+          },
+          {
+            "from": "defaults",
+            "to": "reach",
+            "rel": "depends-on"
+          },
+          {
+            "from": "controls",
+            "to": "defaults",
+            "rel": "contrasts"
+          },
+          {
+            "from": "aiuc",
+            "to": "controls",
+            "rel": "extends"
+          },
+          {
+            "from": "incident",
+            "to": "aiuc",
+            "rel": "contrasts"
+          },
+          {
+            "from": "abp",
+            "to": "aiuc",
+            "rel": "compared-with"
+          },
+          {
+            "from": "abp",
+            "to": "defaults",
+            "rel": "answers"
+          },
+          {
+            "from": "layers",
+            "to": "abp",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "lovable-with-sharness",
+            "from-lovable-to-your-own-newsroom",
+            "riskmandate-and-manus",
+            "riskmandate-and-cloudflare",
+            "underwriting-the-agent-economy-reviewed"
+          ],
+          "pages": [],
+          "sites": [
+            "https://docs.lovable.dev/",
+            "https://riskmandate.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "None of this is hidden.",
+            "why": "The defaults."
+          },
+          {
+            "text": "That is real, and it is about Lovable.",
+            "why": "The platform is certified; the project is not."
+          },
+          {
+            "text": "Many of those builders are not engineers",
+            "why": "Why Lovable."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "riskmandate-and-cloudflare",
+      "title": "RiskMandate and Cloudflare: where agents run, where they are controlled, and why Cloudflare's own Agent Access Model leaves room for a signed record of what each agent was asked to do",
+      "date": "2026-11-09",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/riskmandate-and-cloudflare.html",
+      "markdown": "https://newsroom.sgit.ai/articles/riskmandate-and-cloudflare.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/riskmandate-and-cloudflare.webp",
+      "teaser": "Cloudflare runs agents and controls them; its own writing leaves room for a signed record of what each agent was asked to do.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "riskmandate",
+        "abp",
+        "cloudflare",
+        "agents",
+        "mcp",
+        "zero-trust",
+        "ai-gateway",
+        "controls",
+        "article"
+      ],
+      "links_out": [
+        "cloudflare-as-lego-blocks",
+        "riskmandate-and-manus",
+        "governs-enforces-attests",
+        "are-hooks-the-sweet-spot"
+      ],
+      "links_in": [
+        "riskmandate-and-lovable"
+      ],
+      "figures": [
+        {
+          "file": "cfm-controls.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cfm-controls.webp",
+          "caption": "Eight of Cloudflare's controls for agents, what each holds, and what stays open.",
+          "kind": "comparison"
+        },
+        {
+          "file": "cfm-joe.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cfm-joe.webp",
+          "caption": "Cloudflare's WriteGuard example: the agent acts with Joe's permissions, so its reach is Joe's reach.",
+          "kind": "concept"
+        },
+        {
+          "file": "cfm-layers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cfm-layers.webp",
+          "caption": "On Cloudflare, every layer has pieces already; the missing one is the record they are checked against.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "riskmandate-and-cloudflare",
+        "teaser": "Cloudflare runs agents and controls them; its own writing leaves room for a signed record of what each agent was asked to do.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Cloudflare is both where agents are built and run (Agents SDK, sandboxes, AI Gateway, remote MCP) and where they are controlled (Access for MCP portals, WriteGuard risk tiers, DLP, Web Bot Auth). It has controls at every layer, mostly with open defaults and some in beta. Its own Agent Access Model and trusted-delegation post argue that a scope says what an agent may do, not what it was asked to do or who answers for it. An Agent Behaviour Policy is that per-agent, signed record, and Cloudflare's logs are what it can be checked against.",
+        "nodes": [
+          {
+            "id": "run",
+            "label": "Where agents run",
+            "kind": "artefact",
+            "summary": "Agents SDK, Sandbox, AI Gateway."
+          },
+          {
+            "id": "control",
+            "label": "Where agents are controlled",
+            "kind": "artefact",
+            "summary": "Access, WriteGuard, DLP."
+          },
+          {
+            "id": "defaults",
+            "label": "Open defaults",
+            "kind": "claim",
+            "summary": "Every portal tool on, new ones too."
+          },
+          {
+            "id": "joe",
+            "label": "Joe's agent",
+            "kind": "example",
+            "summary": "Thousands of tickets with Joe's rights."
+          },
+          {
+            "id": "aam",
+            "label": "Agent Access Model",
+            "kind": "concept",
+            "summary": "Declared scope, default deny."
+          },
+          {
+            "id": "scope",
+            "label": "A scope is not a mandate",
+            "kind": "claim",
+            "summary": "Who answers when it gets it wrong?"
+          },
+          {
+            "id": "abp",
+            "label": "The policy as the record",
+            "kind": "concept",
+            "summary": "Mandate, gap, barrier, sign-off."
+          },
+          {
+            "id": "layers",
+            "label": "Read, set, gate, attest",
+            "kind": "method",
+            "summary": "Pieces at every layer."
+          }
+        ],
+        "edges": [
+          {
+            "from": "control",
+            "to": "run",
+            "rel": "compared-with"
+          },
+          {
+            "from": "defaults",
+            "to": "control",
+            "rel": "contrasts"
+          },
+          {
+            "from": "joe",
+            "to": "control",
+            "rel": "example-of"
+          },
+          {
+            "from": "aam",
+            "to": "joe",
+            "rel": "answers"
+          },
+          {
+            "from": "scope",
+            "to": "aam",
+            "rel": "extends"
+          },
+          {
+            "from": "abp",
+            "to": "scope",
+            "rel": "answers"
+          },
+          {
+            "from": "layers",
+            "to": "abp",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "cloudflare-as-lego-blocks",
+            "riskmandate-and-manus",
+            "governs-enforces-attests",
+            "are-hooks-the-sweet-spot"
+          ],
+          "pages": [],
+          "sites": [
+            "https://developers.cloudflare.com/agents/",
+            "https://riskmandate.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A business can build an agent on the first half and govern it with the second, which is rare.",
+            "why": "Two roles in one account."
+          },
+          {
+            "text": "The gap between the two is what closed thousands of tickets.",
+            "why": "Joe's agent."
+          },
+          {
+            "text": "it is the part that turns logs into a yes or a no",
+            "why": "Read, set, gate, attest."
+          }
+        ]
+      }
+    },
+    {
       "slug": "riskmandate-and-manus",
       "title": "RiskMandate and Manus: mapping an Agent Behaviour Policy onto a general agent that can use your computer, your browser, your logins and 416 connectors, and the controls Manus already gives you",
       "date": "2026-11-09",
@@ -85,7 +444,10 @@
         "governs-enforces-attests",
         "who-else-controls-ai-agents-at-web-summit"
       ],
-      "links_in": [],
+      "links_in": [
+        "riskmandate-and-lovable",
+        "riskmandate-and-cloudflare"
+      ],
       "figures": [
         {
           "file": "mns-surfaces.webp",
@@ -7563,6 +7925,7 @@
         "lovable-with-sharness"
       ],
       "links_in": [
+        "riskmandate-and-lovable",
         "a-website-for-my-brother",
         "jose-botas-two-agent-apps"
       ],
@@ -8753,6 +9116,7 @@
         "proven-controls-for-agents"
       ],
       "links_in": [
+        "riskmandate-and-lovable",
         "a-composers-agent",
         "from-lovable-to-your-own-newsroom",
         "from-a-checklist-to-an-app",
@@ -22173,6 +22537,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "riskmandate-and-lovable",
         "who-carries-the-risk",
         "a-payout-for-every-row"
       ],
@@ -33342,6 +33707,7 @@
         "cedar-and-the-policy-vault"
       ],
       "links_in": [
+        "riskmandate-and-cloudflare",
         "riskmandate-and-manus",
         "a-payout-for-every-row",
         "a-leak-without-breaking-the-policy",
@@ -39857,6 +40223,7 @@
         "the-value-of-constraints"
       ],
       "links_in": [
+        "riskmandate-and-cloudflare",
         "the-no-server-startup",
         "ephemeral-town-planner-services",
         "three-linkedin-pages",
@@ -54906,6 +55273,7 @@
         "a-policy-for-every-skill"
       ],
       "links_in": [
+        "riskmandate-and-cloudflare",
         "riskmandate-and-manus",
         "introducing-sharness",
         "a-leak-without-breaking-the-policy",

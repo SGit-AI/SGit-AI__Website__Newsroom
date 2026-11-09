@@ -1,0 +1,86 @@
+{
+ "slug": "riskmandate-and-cloudflare",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 213,
+   "line": "Cloudflare runs agents and controls them; its own Agent Access Model leaves room for a signed record of each agent's mandate.",
+   "para": "From Cloudflare's docs and blog: the Agents SDK, sandboxes, AI Gateway and remote MCP on one side; Access for MCP, WriteGuard, DLP and Web Bot Auth on the other. Controls exist at every layer but default open. Cloudflare's own posts say a scope only says what an agent was allowed to do, not who answers when it gets it wrong. An Agent Behaviour Policy is that record.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 128,
+   "line": "Two roles, controls at every layer, open defaults, Cloudflare naming the gap, the policy as the record.",
+   "para": "Six points; nothing run on Cloudflare yet.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "two-roles",
+   "label": "Two roles in one account",
+   "words": 223,
+   "line": "Where agents run, and where they are controlled, often in one account.",
+   "para": "Agents SDK, Workflows, Sandbox, Browser Run, AI Gateway, OAuth for MCP; Access, the AI security report, DLP, AI Security for Apps, Web Bot Auth.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "controls",
+   "label": "The controls, and what they leave open",
+   "words": 244,
+   "line": "Seven controls as barriers, each with its gap.",
+   "para": "Portal tools on by default, scopes advertised not enforced, approvals chosen by the developer, caps on how much not what, bindings without a why, inspection of routed traffic only, identity not mandate.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "joe",
+   "label": "Joe's agent",
+   "words": 174,
+   "line": "Joe's agent closes thousands of tickets with Joe's permissions.",
+   "para": "WriteGuard adds client context and risk tiers, but the agent's reach is its human's; only the policy writes down its narrower job.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "case",
+   "label": "Cloudflare's own case for a mandate",
+   "words": 199,
+   "line": "Cloudflare's Agent Access Model and trusted-delegation post make the case for a mandate.",
+   "para": "Declared task scope, default deny, and someone who answers: the mandate, barriers and sign-off of a policy.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "layers",
+   "label": "Read, set, gate, attest",
+   "words": 133,
+   "line": "Read, set, gate, attest: Cloudflare has pieces at every layer.",
+   "para": "The missing piece is the signed mandate the logs are checked against.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "offer",
+   "label": "What RiskMandate could offer Cloudflare users",
+   "words": 97,
+   "line": "A policy per agent read from real configuration, templates, a check of open defaults, a gate from the policy.",
+   "para": "The gate is proposed.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 74,
+   "line": "Not run on Cloudflare; status as each page states; Joe is Cloudflare's example, the mandate ours.",
+   "para": "No relationship beyond being a customer.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 69,
+   "line": "Cloudflare docs and three blog posts, riskmandate.ai and earlier articles.",
+   "para": "Read 9 November 2026.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

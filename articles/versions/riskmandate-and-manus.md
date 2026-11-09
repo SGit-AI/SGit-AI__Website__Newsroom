@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-09 | published | 1,701 | first published | this release | [current](../riskmandate-and-manus.md) |
+| **v1.0.0** | 2026-11-09 | published | 1,701 | first published | [`1c3ebe639`](https://github.com/SGit-AI/SGit-AI__Website/commit/1c3ebe63944a739eca10f6f4bef7b3d20d671be6) | [current](../riskmandate-and-manus.md) |
 
 [← Back to the article](../riskmandate-and-manus.md) · [All articles](../index.md)
 

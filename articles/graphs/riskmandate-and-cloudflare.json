@@ -1,0 +1,143 @@
+{
+  "slug": "riskmandate-and-cloudflare",
+  "teaser": "Cloudflare runs agents and controls them; its own writing leaves room for a signed record of what each agent was asked to do.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Cloudflare is both where agents are built and run (Agents SDK, sandboxes, AI Gateway, remote MCP) and where they are controlled (Access for MCP portals, WriteGuard risk tiers, DLP, Web Bot Auth). It has controls at every layer, mostly with open defaults and some in beta. Its own Agent Access Model and trusted-delegation post argue that a scope says what an agent may do, not what it was asked to do or who answers for it. An Agent Behaviour Policy is that per-agent, signed record, and Cloudflare's logs are what it can be checked against.",
+  "nodes": [
+    {
+      "id": "run",
+      "label": "Where agents run",
+      "kind": "artefact",
+      "summary": "Agents SDK, Sandbox, AI Gateway."
+    },
+    {
+      "id": "control",
+      "label": "Where agents are controlled",
+      "kind": "artefact",
+      "summary": "Access, WriteGuard, DLP."
+    },
+    {
+      "id": "defaults",
+      "label": "Open defaults",
+      "kind": "claim",
+      "summary": "Every portal tool on, new ones too."
+    },
+    {
+      "id": "joe",
+      "label": "Joe's agent",
+      "kind": "example",
+      "summary": "Thousands of tickets with Joe's rights."
+    },
+    {
+      "id": "aam",
+      "label": "Agent Access Model",
+      "kind": "concept",
+      "summary": "Declared scope, default deny."
+    },
+    {
+      "id": "scope",
+      "label": "A scope is not a mandate",
+      "kind": "claim",
+      "summary": "Who answers when it gets it wrong?"
+    },
+    {
+      "id": "abp",
+      "label": "The policy as the record",
+      "kind": "concept",
+      "summary": "Mandate, gap, barrier, sign-off."
+    },
+    {
+      "id": "layers",
+      "label": "Read, set, gate, attest",
+      "kind": "method",
+      "summary": "Pieces at every layer."
+    }
+  ],
+  "edges": [
+    {
+      "from": "control",
+      "to": "run",
+      "rel": "compared-with"
+    },
+    {
+      "from": "defaults",
+      "to": "control",
+      "rel": "contrasts"
+    },
+    {
+      "from": "joe",
+      "to": "control",
+      "rel": "example-of"
+    },
+    {
+      "from": "aam",
+      "to": "joe",
+      "rel": "answers"
+    },
+    {
+      "from": "scope",
+      "to": "aam",
+      "rel": "extends"
+    },
+    {
+      "from": "abp",
+      "to": "scope",
+      "rel": "answers"
+    },
+    {
+      "from": "layers",
+      "to": "abp",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "cloudflare-as-lego-blocks",
+      "riskmandate-and-manus",
+      "governs-enforces-attests",
+      "are-hooks-the-sweet-spot"
+    ],
+    "pages": [],
+    "sites": [
+      "https://developers.cloudflare.com/agents/",
+      "https://riskmandate.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A business can build an agent on the first half and govern it with the second, which is rare.",
+      "why": "Two roles in one account."
+    },
+    {
+      "text": "The gap between the two is what closed thousands of tickets.",
+      "why": "Joe's agent."
+    },
+    {
+      "text": "it is the part that turns logs into a yes or a no",
+      "why": "Read, set, gate, attest."
+    }
+  ],
+  "figures": [
+    {
+      "file": "cfm-controls.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cfm-controls.webp",
+      "caption": "Eight of Cloudflare's controls for agents, what each holds, and what stays open.",
+      "kind": "comparison"
+    },
+    {
+      "file": "cfm-joe.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cfm-joe.webp",
+      "caption": "Cloudflare's WriteGuard example: the agent acts with Joe's permissions, so its reach is Joe's reach.",
+      "kind": "concept"
+    },
+    {
+      "file": "cfm-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cfm-layers.webp",
+      "caption": "On Cloudflare, every layer has pieces already; the missing one is the record they are checked against.",
+      "kind": "architecture"
+    }
+  ]
+}

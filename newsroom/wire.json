@@ -73,6 +73,68 @@
   ],
   "articles": [
     {
+      "slug": "riskmandate-and-lovable",
+      "title": "RiskMandate and Lovable: mapping an Agent Behaviour Policy onto an app builder whose agent writes the code, changes the live database, connects your other systems and publishes, with the controls Lovable already gives and their defaults",
+      "date": "2026-11-09",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/riskmandate-and-lovable.html",
+      "markdown": "https://newsroom.sgit.ai/articles/riskmandate-and-lovable.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/riskmandate-and-lovable.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/riskmandate-and-lovable.json",
+      "teaser": "Lovable's agent can change production; its controls are real, its defaults open, and a policy says what each project's agent may do.",
+      "summary": "Lovable's agent does more than write code. In Build mode it applies every change directly, it can change the database your published app uses, configure sign-up rules, call your connected systems, and publish, and with /goal it works for hours without stopping to ask. Lovable gives real controls for all of this: always, ask or never for each backend action; Plan mode; the SQL shown before a breaking migration; a security scan on every publish; workspace policies; a pre-prompt hook; audit logs. And it is certified to AIUC-1, the agent standard insurers read. This maps those controls onto RiskMandate's Agent Behaviour Policies, from Lovable's documentation, read on 9 November 2026. The pattern is the same as at Manus and Cloudflare, with one difference: the defaults. Nine of ten backend permissions default to \"Always allow\", including changing data and configuring auth, and they are set per user, for every workspace and project. The policy is the record of what each project's agent was asked to do, which of those settings should be \"Ask each time\" for it, and who signed that off.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "riskmandate",
+        "abp",
+        "lovable",
+        "agents",
+        "vibe-coding",
+        "supabase",
+        "aiuc-1",
+        "controls",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "riskmandate-and-cloudflare",
+      "title": "RiskMandate and Cloudflare: where agents run, where they are controlled, and why Cloudflare's own Agent Access Model leaves room for a signed record of what each agent was asked to do",
+      "date": "2026-11-09",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/riskmandate-and-cloudflare.html",
+      "markdown": "https://newsroom.sgit.ai/articles/riskmandate-and-cloudflare.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/riskmandate-and-cloudflare.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/riskmandate-and-cloudflare.json",
+      "teaser": "Cloudflare runs agents and controls them; its own writing leaves room for a signed record of what each agent was asked to do.",
+      "summary": "Cloudflare is two things for agents. It is a place to build and run them (the Agents SDK, sandboxes, a headless browser, models, an AI Gateway, remote MCP servers), and a place to control them (Access in front of MCP servers, a new risk tier per tool called WriteGuard, data loss prevention on prompts, signed identities for agents on the web). This maps both onto RiskMandate's Agent Behaviour Policies, from Cloudflare's documentation and blog, read on 9 November 2026. Cloudflare already has controls at every layer, from what an agent reads to logs a third party can check, and its defaults are open: an MCP portal enables every tool, including new ones. Its own writing makes the case for the missing piece. In August it published an Agent Access Model, \"Its default is deny\", and said it is \"not comfortable saying that multiplayer access control can be built end to end today\". In November it wrote that a narrow scope \"only says what the Agent was allowed to do. It doesn't say who answers when the Agent gets it wrong\". That is the record an Agent Behaviour Policy is: what this agent was asked to do, the gap from what it can reach, the control holding each row, and who signed it off.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "riskmandate",
+        "abp",
+        "cloudflare",
+        "agents",
+        "mcp",
+        "zero-trust",
+        "ai-gateway",
+        "controls",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "riskmandate-and-manus",
       "title": "RiskMandate and Manus: mapping an Agent Behaviour Policy onto a general agent that can use your computer, your browser, your logins and 416 connectors, and the controls Manus already gives you",
       "date": "2026-11-09",
