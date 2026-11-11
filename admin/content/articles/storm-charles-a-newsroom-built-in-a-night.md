@@ -4,7 +4,7 @@ date: 2026-11-11
 author: Dinis Cruz
 author_url: about/index.html
 summary: When Storm Charles reached Lisbon during Web Summit, and the government's advice led Web Summit to call off its second day, I asked our agents for a new site about it, by voice, at about 21:00 UTC on 10 November. By morning storm-charles.promptugal.news had about 2,000 pages, built by about thirty Claude Code agents, each push live in about forty seconds. It has two faces. In front, a weather page anyone can read: what IPMA warns now, hour by hour, never a forecast of our own. Behind it, a data room: 34 JSON datasets in a catalogue with their hashes, a timeline with permanent row ids, every decision and who made it, every thing mentioned as a node in a graph, and every outside page captured and hashed in a vault. Every line is labelled fact, evidence or hypothesis. On top of the data there are labs that show the same storm a dozen ways (lead times from warning to decision, a replay of what was known when, warned against observed station by station), a graph you query with a question, SQLite running in your browser, other models measured as evals, animated explanations, and a journal that tells how the site was made, including its mistakes and what it cost. It is part of PrompTugal.news, our independent newsroom at Web Summit, and it shows what a newsroom run by agents, steered by a person, can already do.
-version: v999.0.0
+version: v0.14.75
 license: https://creativecommons.org/licenses/by/4.0/
 tags: storm-charles, promptugal, web-summit, agents, data, provenance, graphs, newsroom, journalism, article
 status: published
