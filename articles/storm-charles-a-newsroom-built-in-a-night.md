@@ -10,7 +10,7 @@
 
 # Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-11 · [article v1.0.0](versions/storm-charles-a-newsroom-built-in-a-night.md) · [newsroom v0.14.75](https://newsroom.sgit.ai/admin/versions.html) · storm-charlespromptugalweb-summitagentsdataprovenancegraphsnewsroomjournalismarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-11 · [article v1.1.0, 2 versions](versions/storm-charles-a-newsroom-built-in-a-night.md) · [newsroom v0.14.75](https://newsroom.sgit.ai/admin/versions.html) · storm-charlespromptugalweb-summitagentsdataprovenancegraphsnewsroomjournalismarticle
 
 ***Abstract:** When Storm Charles reached Lisbon during Web Summit, and the government's advice led Web Summit to call off its second day, I asked our agents for a new site about it, by voice, at about 21:00 UTC on 10 November. By morning storm-charles.promptugal.news had about 2,000 pages, built by about thirty Claude Code agents, each push live in about forty seconds. It has two faces. In front, a weather page anyone can read: what IPMA warns now, hour by hour, never a forecast of our own. Behind it, a data room: 34 JSON datasets in a catalogue with their hashes, a timeline with permanent row ids, every decision and who made it, every thing mentioned as a node in a graph, and every outside page captured and hashed in a vault. Every line is labelled fact, evidence or hypothesis. On top of the data there are labs that show the same storm a dozen ways (lead times from warning to decision, a replay of what was known when, warned against observed station by station), a graph you query with a question, SQLite running in your browser, other models measured as evals, animated explanations, and a journal that tells how the site was made, including its mistakes and what it cost. It is part of PrompTugal.news, our independent newsroom at Web Summit, and it shows what a newsroom run by agents, steered by a person, can already do.*
 
@@ -25,6 +25,27 @@ Twelve of the site's data-driven pages, each drawn from its own published JSON, 
 - **Many ways to see one storm:** labs for lead times, replays, lanes and stations; stories checked against the data on every build; animated explanations.
 - **It tells on itself:** a journal of how it was made, what went wrong, what waited on me, and what it cost.
 - **Not a warning service.** It says so on every page: follow IPMA, ANEPC and your local authorities.
+
+## The size of it
+
+Storm Charles in numbers at 10:18 UTC on 11 November, about thirteen hours after its first commit.
+
+Thirteen hours after the first commit, at 10:18 UTC on 11 November, the site's own pages counted:
+
+| What | How many |
+|---|---|
+| Pages on the site | 2,097 |
+| Agents | 35, 30 with an active key, 71 sessions |
+| Versions tagged | 517, from 744 pipeline runs |
+| Push to served | 36 seconds median, 90% within 51 |
+| JSON datasets | 34, each with size and sha256 |
+| Graph | 496 things, 705 links |
+| Entities | 215 nodes, 435 edges |
+| Board cards | 444 jobs, asks, questions and conflicts |
+| Model calls as evals | 1,291, 14 models, under one dollar |
+| Tokens in agent sessions | 2,069 million, 98.7% re-reading |
+
+The largest section is the evidence, 585 pages of captured outside pages, then the board with 447 and the entities with 230. The pipeline had failed 6 of its 744 runs; 203 were replaced by a newer push before they finished, which is what a busy team pushing small changes looks like.
 
 ## What happened
 

@@ -22,6 +22,27 @@ status: published
 - **It tells on itself:** a journal of how it was made, what went wrong, what waited on me, and what it cost.
 - **Not a warning service.** It says so on every page: follow IPMA, ANEPC and your local authorities.
 
+## The size of it {#numbers}
+
+!shot scl-stats.webp | images/ | Storm Charles in numbers at 10:18 UTC on 11 November, about thirteen hours after its first commit. | chart
+
+Thirteen hours after the first commit, at 10:18 UTC on 11 November, the site's own pages counted:
+
+| What | How many |
+|---|---|
+| Pages on the site | 2,097 |
+| Agents | 35, 30 with an active key, 71 sessions |
+| Versions tagged | 517, from 744 pipeline runs |
+| Push to served | 36 seconds median, 90% within 51 |
+| JSON datasets | 34, each with size and sha256 |
+| Graph | 496 things, 705 links |
+| Entities | 215 nodes, 435 edges |
+| Board cards | 444 jobs, asks, questions and conflicts |
+| Model calls as evals | 1,291, 14 models, under one dollar |
+| Tokens in agent sessions | 2,069 million, 98.7% re-reading |
+
+The largest section is the evidence, 585 pages of captured outside pages, then the board with 447 and the entities with 230. The pipeline had failed 6 of its 744 runs; 203 were replaced by a newer push before they finished, which is what a busy team pushing small changes looks like.
+
 ## What happened {#storm}
 
 Storm Charles was named by IPMA, Portugal's weather service, on 9 November. On 10 November IPMA issued a red wind warning for the Lisbon district for the next day, the government declared an alert situation for mainland Portugal, IPMA raised rain to red, and at 17:53 UTC the Prime Minister recommended suspending Web Summit on Wednesday. At 19:09 UTC Web Summit published its decision: Day 2 would not take place, and Day 3 "aims to proceed as planned".
