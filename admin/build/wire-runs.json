@@ -3070,6 +3070,108 @@
    "added": 0,
    "updated": 0,
    "note": "The refresh was left uncommitted and unpushed because the date-comma check in test_wire still fails."
+  },
+  {
+   "id": "013bddceba56",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-11-11T05:47:20Z",
+   "finished_at": "2026-11-11T05:55:27Z",
+   "duration_s": 483.0,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.12976,
+     "input": 682536,
+     "output": 94693,
+     "cache_read": 342768,
+     "cache_write": 85861,
+     "thinking": 57345
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.538726,
+     "input": 94,
+     "output": 49022,
+     "cache_read": 2771783,
+     "cache_write": 259910,
+     "thinking": 3513
+    }
+   },
+   "cost_usd": 1.668487,
+   "turns": 20,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-11-11.1",
+   "added": 10,
+   "updated": 0,
+   "note": "Ten new stories led by a CISA exploited-flaw batch, with the verifier requiring fixes on eight."
+  },
+  {
+   "id": "c90c80526818",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-11-11T06:08:51Z",
+   "finished_at": "2026-11-11T06:24:38Z",
+   "duration_s": 944.0,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.001488,
+     "input": 13594,
+     "output": 257,
+     "cache_read": 0,
+     "cache_write": 0,
+     "thinking": 206
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.15881,
+     "input": 18,
+     "output": 2628,
+     "cache_read": 353343,
+     "cache_write": 24290,
+     "thinking": 508
+    }
+   },
+   "cost_usd": 0.160298,
+   "turns": 14,
+   "subagents": 0,
+   "refused": 4,
+   "refused_kinds": [
+    "web fetch"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": 0,
+   "updated": 0,
+   "note": "Four web fetches were refused so the window could not be checked and nothing was published."
+  },
+  {
+   "id": "5ccbf3504bee",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-11-11T06:56:33Z",
+   "finished_at": "2026-11-11T07:10:19Z",
+   "duration_s": 822.0,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.511221,
+     "input": 61,
+     "output": 10521,
+     "cache_read": 1991692,
+     "cache_write": 51680,
+     "thinking": 2160
+    }
+   },
+   "cost_usd": 0.511221,
+   "turns": 32,
+   "subagents": 0,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "blocked",
+   "release": null,
+   "added": 0,
+   "updated": 0,
+   "note": "The refresh was committed locally but the push was refused again by the git proxy, which does not list the repository for this routine."
   }
  ],
  "sessions": [
@@ -3093,15 +3195,15 @@
    "name": "@newsroom.accountant's session",
    "kind": "accountant",
    "from": "2026-10-16",
-   "as_of": "2026-11-10T07:55:00Z",
+   "as_of": "2026-11-11T07:55:00Z",
    "models": [
     "claude-sonnet-5-5"
    ],
-   "cost_usd": 45.76640776,
-   "input": 5256,
-   "output": 132953,
-   "cache_read": 66988865,
-   "cache_write": 9427435,
+   "cost_usd": 48.1371916,
+   "input": 5269,
+   "output": 137392,
+   "cache_read": 69937535,
+   "cache_write": 9935105,
    "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
   }
  ],
