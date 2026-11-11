@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.74 · 389 articles since 2026-08-17; the newest is 2026-11-09. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 390 articles since 2026-08-17; the newest is 2026-11-11. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,17 +12,21 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [RiskMandate and Lovable: mapping an Agent Behaviour Policy onto an app builder whose agent writes the code, changes the live database, connects your other systems and publishes, with the controls Lovable already gives and their defaults](articles/riskmandate-and-lovable.md), 2026-11-09, 7 min. Lovable's agent can change production; its controls are real, its defaults open, and a policy says what each project's agent may do.
+- [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](articles/storm-charles-a-newsroom-built-in-a-night.md), 2026-11-11, 9 min. Storm Charles: about thirty agents built a weather face over a data room in a night, every figure sourced, timed and labelled.
 
 ## Five more
 
+- [RiskMandate and Lovable: mapping an Agent Behaviour Policy onto an app builder whose agent writes the code, changes the live database, connects your other systems and publishes, with the controls Lovable already gives and their defaults](articles/riskmandate-and-lovable.md), Startups & strategy, 2026-11-09, 7 min.
 - [RiskMandate and Cloudflare: where agents run, where they are controlled, and why Cloudflare's own Agent Access Model leaves room for a signed record of what each agent was asked to do](articles/riskmandate-and-cloudflare.md), Startups & strategy, 2026-11-09, 7 min.
 - [RiskMandate and Manus: mapping an Agent Behaviour Policy onto a general agent that can use your computer, your browser, your logins and 416 connectors, and the controls Manus already gives you](articles/riskmandate-and-manus.md), Startups & strategy, 2026-11-09, 7 min.
 - [Who else controls AI agents at Web Summit? An outreach agent mapped eleven companies in an afternoon, in their own words, and found that most of them are partners for RiskMandate as much as competitors](articles/who-else-controls-ai-agents-at-web-summit.md), Startups & strategy, 2026-11-05, 8 min.
 - [The book is printed: RC2 of One Human, Nine Agents, Nineteen Hours as two A4 review copies from Prontaprint Chiswick, the newsroom's pages in the book, and the team that made it paused until I have read them](articles/rc2-goes-to-print.md), Working with agents, 2026-11-05, 7 min.
-- [The Web Summit team, part five: the last day of setup, 180 releases, every person getting a key, an accountant counting the team's tokens, synthetic users testing the merch, and an inbox only the agents can write to](articles/web-summit-part-five.md), Working with agents, 2026-11-04, 5 min.
 
 ## The last five days
+
+### Wednesday 11 November 2026 (1 article)
+
+- The future of news: [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](articles/storm-charles-a-newsroom-built-in-a-night.md), 9 min.
 
 ### Monday 9 November 2026 (3 articles)
 
@@ -58,19 +62,6 @@ Governments told organisations to take sites offline if they could not patch. Th
 - Engineering this newsroom: [MeetScribe: transcripts and a debrief of my Google Meet calls without upgrading every Workspace account, a Chrome extension built in about two hours from a brief that would have failed without an error, and a call for testers](articles/meetscribe.md), 7 min.
 - Engineering this newsroom: [One Human, Nine Agents, Nineteen Hours: the second draft of the book of the talk, written down the zoom from 3 pages to 70, every chapter checked five ways, the agents arguing with their own reviewers on the page, and a request for your feedback on the 27-page draft](articles/one-human-nine-agents-rc2.md), 6 min.
 
-### Monday 2 November 2026 (10 articles)
-
-- Startups & strategy: [The Web Summit team, part four: the day the agents ran on their own, 75 releases, four people connected, a procurement agent writing to printers, and the behaviour policies catching our own agents out](articles/web-summit-part-four.md), 6 min.
-- Working with agents: [How an agent team briefs its people: one JSON file, one PDF, four questions in a fixed order, copied from the book team to the Web Summit team in one night, the mistakes the method caught, and why this newsroom still briefs me in a chat](articles/how-an-agent-team-briefs-its-people.md), 6 min.
-- Agent security & behaviour policies: [False positives and the harness: an answer to a question at hack::soho, why a behaviour policy that runs from the network up to the business logic should refuse less of what is right and more of what is wrong, and why a policy that changes with the code becomes a calibrator for bugs](articles/false-positives-and-the-harness.md), 8 min.
-- Startups & strategy: [The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work](articles/web-summit-how-we-work.md), 9 min.
-- Startups & strategy: [The link the coach should have sent: a shop for one padel sleeve in the Algarve, what Portuguese law really asks of a coach who sells, the platforms that take the payment, which of them Claude can run, and a working mock-up in a vault](articles/sell-the-sleeve.md), 8 min.
-- Startups & strategy: [A solution, not a problem: a coach sent me a link to a product he could not sell me, what that moment teaches about business, security teams, bookshops and travel agents, and why RiskMandate has been making the same mistake](articles/a-solution-not-a-problem.md), 9 min.
-- Agent security & behaviour policies: [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](articles/the-grant-not-the-prompt.md), 6 min.
-- The future of news: [Separate Ways, explained: what my brother's synth video shows, frame by frame, and why describing work at the moment you make it is the first step to publishing it](articles/separate-ways-explained.md), 7 min.
-- Startups & strategy: [Sellable units: applying api.newsroom.sgit.ai to my brother's website, the reading meter on a composer's site that does not look like a newsroom, the pathways from a viewer to a buyer, and every lesson, score and master as something to sell](articles/sellable-units.md), 8 min.
-- The future of news: [Four iPhones and an iPad: how my brother filmed a three-camera music video with old phones synced live to Final Cut Pro, a feature Apple shipped in 2024 that he found by accident](articles/four-iphones-and-an-ipad.md), 4 min.
-
 ## Sections
 
 Every article is in exactly one of eight sections, by topic.
@@ -99,13 +90,13 @@ Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vaul
 - [English with Inês, inside the vault: a teacher's site as a vault app, with an experiment for every lesson, cards that come back when you are about to forget, a tutor that answers about one lesson only, a concept map, and the back office with every agent's policy](articles/inside-english-with-ines.md), 2026-11-03.
 - [Signed by the agent, vouched for by the person: a brief to give every email agent its own key, so each email carries a QR code that proves it is authentic](articles/signed-email-from-the-agent.md), 2026-10-30.
 
-### [The future of news](sections/news/index.md) (51)
+### [The future of news](sections/news/index.md) (52)
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
+- [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](articles/storm-charles-a-newsroom-built-in-a-night.md), 2026-11-11.
 - [Would you pay to plug this newsroom in? A reply to Florent Daudens, on five publishers' bets for the AI era, from a newsroom built for agents, with what it answers, where it goes further, and the questions it has not answered either](articles/would-you-pay-to-plug-this-newsroom-in.md), 2026-11-03.
 - [Separate Ways, explained: what my brother's synth video shows, frame by frame, and why describing work at the moment you make it is the first step to publishing it](articles/separate-ways-explained.md), 2026-11-02.
 - [Four iPhones and an iPad: how my brother filmed a three-camera music video with old phones synced live to Final Cut Pro, a feature Apple shipped in 2024 that he found by accident](articles/four-iphones-and-an-ipad.md), 2026-11-02.
 - [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](articles/agentic-readers.md), 2026-10-31.
-- [Every link a gift link: a reply to John Saroff on paywalls and dark social, from a newsroom with no paywall, credit to start, and a meter that charges for what is read](articles/every-link-a-gift-link.md), 2026-10-31.
 
 ### [Startups & strategy](sections/strategy/index.md) (87)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.

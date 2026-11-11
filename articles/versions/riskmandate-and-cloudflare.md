@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-09 | published | 1,704 | first published | this release | [current](../riskmandate-and-cloudflare.md) |
+| **v1.0.0** | 2026-11-09 | published | 1,704 | first published | [`050f9b7e5`](https://github.com/SGit-AI/SGit-AI__Website/commit/050f9b7e59acd996d808b9b3ff6e229c6c27ab29) | [current](../riskmandate-and-cloudflare.md) |
 
 [← Back to the article](../riskmandate-and-cloudflare.md) · [All articles](../index.md)
 

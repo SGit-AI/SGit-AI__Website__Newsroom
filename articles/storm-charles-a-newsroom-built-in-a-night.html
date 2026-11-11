@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis, SGit Newsroom</title>
+<meta name="description" content="When Storm Charles reached Lisbon during Web Summit, and the government's advice led Web Summit to call off its second day, I asked our agents for a new site about it, by voice, at about 21:00 UTC on 10 November. By morning storm-charles.promptugal.news had about 2,000 pages, built by about thirty Claude Code agents, each push live in about forty seconds. It has two faces. In front, a weather page anyone can read: what IPMA warns now, hour by hour, never a forecast of our own. Behind it, a data room: 34 JSON datasets in a catalogue with their hashes, a timeline with permanent row ids, every decision and who made it, every thing mentioned as a node in a graph, and every outside page captured and hashed in a vault. Every line is labelled fact, evidence or hypothesis. On top of the data there are labs that show the same storm a dozen ways (lead times from warning to decision, a replay of what was known when, warned against observed station by station), a graph you query with a question, SQLite running in your browser, other models measured as evals, animated explanations, and a journal that tells how the site was made, including its mistakes and what it cost. It is part of PrompTugal.news, our independent newsroom at Web Summit, and it shows what a newsroom run by agents, steered by a person, can already do.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/storm-charles-a-newsroom-built-in-a-night.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/storm-charles-a-newsroom-built-in-a-night.html">
+<meta property="og:title" content="Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis, SGit Newsroom">
+<meta property="og:description" content="When Storm Charles reached Lisbon during Web Summit, and the government's advice led Web Summit to call off its second day, I asked our agents for a new site about it, by voice, at about 21:00 UTC on 10 November. By morning storm-charles.promptugal.news had about 2,000 pages, built by about thirty Claude Code agents, each push live in about forty seconds. It has two faces. In front, a weather page anyone can read: what IPMA warns now, hour by hour, never a forecast of our own. Behind it, a data room: 34 JSON datasets in a catalogue with their hashes, a timeline with permanent row ids, every decision and who made it, every thing mentioned as a node in a graph, and every outside page captured and hashed in a vault. Every line is labelled fact, evidence or hypothesis. On top of the data there are labs that show the same storm a dozen ways (lead times from warning to decision, a replay of what was known when, warned against observed station by station), a graph you query with a question, SQLite running in your browser, other models measured as evals, animated explanations, and a journal that tells how the site was made, including its mistakes and what it cost. It is part of PrompTugal.news, our independent newsroom at Web Summit, and it shows what a newsroom run by agents, steered by a person, can already do.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/storm-charles-a-newsroom-built-in-a-night.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/storm-charles-a-newsroom-built-in-a-night.jpg">
+<link rel="alternate" type="text/markdown" href="storm-charles-a-newsroom-built-in-a-night.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis, SGit Newsroom", "headline": "Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis, SGit Newsroom", "description": "When Storm Charles reached Lisbon during Web Summit, and the government's advice led Web Summit to call off its second day, I asked our agents for a new site about it, by voice, at about 21:00 UTC on 10 November. By morning storm-charles.promptugal.news had about 2,000 pages, built by about thirty Claude Code agents, each push live in about forty seconds. It has two faces. In front, a weather page anyone can read: what IPMA warns now, hour by hour, never a forecast of our own. Behind it, a data room: 34 JSON datasets in a catalogue with their hashes, a timeline with permanent row ids, every decision and who made it, every thing mentioned as a node in a graph, and every outside page captured and hashed in a vault. Every line is labelled fact, evidence or hypothesis. On top of the data there are labs that show the same storm a dozen ways (lead times from warning to decision, a replay of what was known when, warned against observed station by station), a graph you query with a question, SQLite running in your browser, other models measured as evals, animated explanations, and a journal that tells how the site was made, including its mistakes and what it cost. It is part of PrompTugal.news, our independent newsroom at Web Summit, and it shows what a newsroom run by agents, steered by a person, can already do.", "url": "https://newsroom.sgit.ai/articles/storm-charles-a-newsroom-built-in-a-night.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis</p>
+ <h1>Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-11-11 &middot; <a href="versions/storm-charles-a-newsroom-built-in-a-night.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v999.0.0</a> &middot; <span class="chip">storm-charles</span><span class="chip">promptugal</span><span class="chip">web-summit</span><span class="chip">agents</span><span class="chip">data</span><span class="chip">provenance</span><span class="chip">graphs</span><span class="chip">newsroom</span><span class="chip">journalism</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> When Storm Charles reached Lisbon during Web Summit, and the government's advice led Web Summit to call off its second day, I asked our agents for a new site about it, by voice, at about 21:00 UTC on 10 November. By morning storm-charles.promptugal.news had about 2,000 pages, built by about thirty Claude Code agents, each push live in about forty seconds. It has two faces. In front, a weather page anyone can read: what IPMA warns now, hour by hour, never a forecast of our own. Behind it, a data room: 34 JSON datasets in a catalogue with their hashes, a timeline with permanent row ids, every decision and who made it, every thing mentioned as a node in a graph, and every outside page captured and hashed in a vault. Every line is labelled fact, evidence or hypothesis. On top of the data there are labs that show the same storm a dozen ways (lead times from warning to decision, a replay of what was known when, warned against observed station by station), a graph you query with a question, SQLite running in your browser, other models measured as evals, animated explanations, and a journal that tells how the site was made, including its mistakes and what it cost. It is part of PrompTugal.news, our independent newsroom at Web Summit, and it shows what a newsroom run by agents, steered by a person, can already do.</em></p>
+<figure class="shot" data-shot="scl-data.webp" data-dir="images/" data-alt="Twelve of the site&#x27;s data-driven pages, each drawn from its own published JSON, on 11 November." data-kind="collage"><figcaption>Twelve of the site's data-driven pages, each drawn from its own published JSON, on 11 November.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>A storm, a summit and a site.</b> Storm Charles hit Lisbon during Web Summit; on the government's advice Web Summit called off its second day. That evening I asked our agents for a site about it.</li>
+<li><b>Built in a night:</b> about 2,000 pages by morning, about thirty agents, each push live in about forty seconds.</li>
+<li><b>Two faces:</b> a weather page anyone can read in front, and a data room behind it where every figure has a source, a time and a label.</li>
+<li><b>Data-driven all the way down:</b> 34 datasets with hashes, a timeline with permanent ids, a graph of 496 things and 705 links, SQLite in your browser, an API for agents.</li>
+<li><b>Many ways to see one storm:</b> labs for lead times, replays, lanes and stations; stories checked against the data on every build; animated explanations.</li>
+<li><b>It tells on itself:</b> a journal of how it was made, what went wrong, what waited on me, and what it cost.</li>
+<li><b>Not a warning service.</b> It says so on every page: follow IPMA, ANEPC and your local authorities.</li>
+</ul>
+<h2 id="storm">What happened</h2>
+<p>Storm Charles was named by IPMA, Portugal's weather service, on 9 November. On 10 November IPMA issued a red wind warning for the Lisbon district for the next day, the government declared an alert situation for mainland Portugal, IPMA raised rain to red, and at 17:53 UTC the Prime Minister recommended suspending Web Summit on Wednesday. At 19:09 UTC Web Summit published its decision: Day 2 would not take place, and Day 3 "aims to proceed as planned".</p>
+<p>Each of those lines is on the site with the source it was read from and the time it was read. That is the point of it.</p>
+<h2 id="start">How it started</h2>
+<p>The incident was first kept on another of the team's sites. At about 21:00 UTC I named a repository and a domain and said, in a voice memo, what I wanted: a separate repository that pushes "super fast", with its speed measured; "a data source for a lot of agencies and a lot of people about what is actually going on"; two things at once, a news site that should "look like CNN" and a site for agents with raw datasets and an API; everything a signal; and agents that run "until the storm is over".</p>
+<p>The conductor's first commit, at 21:14:33, was the whole first site. Then I came back six more times before 03:00, each time after looking at what was live: more agents and visibility into every one at 23:40; a Studio for animated explanations at 00:30; a Wikipedia agent at 01:28; at 02:10, two faces, every word linked, every outside page captured, a section per source; at 02:50, a model budget, an accountant, a reporter and a journalist on the project itself. All of it is in <a href="https://storm-charles.promptugal.news/BRIEF.html">the brief</a>, close to my words.</p>
+<figure class="shot" data-shot="scl-night.webp" data-dir="images/" data-alt="Commits per hour through the night, and when I gave direction, from the site&#x27;s own journal." data-kind="chart"><figcaption>Commits per hour through the night, and when I gave direction, from the site's own journal.</figcaption></figure>
+<p>The site's journal counts it: one agent until 23:35, eight by midnight, twenty-two by 02:36, and 193 commits in the hour I asked for two faces. By 02:36 there had been 318 commits and 187 tagged versions, and the gate built 1,078 pages in 2.9 seconds.</p>
+<h2 id="faces">Two faces over one data room</h2>
+<figure class="shot" data-shot="scl-faces.webp" data-dir="images/" data-alt="The weather face, the labs and the API all read from one data room, where every value has a source, a time and a label." data-kind="architecture"><figcaption>The weather face, the labs and the API all read from one data room, where every value has a source, a time and a label.</figcaption></figure>
+<p><b>The weather face</b> is the home page. It is meant to read like a weather channel, for anyone: the red warning in force in Lisbon now, what is also in force, IPMA's communiqué, and today hour by hour, with the government's and the schools' decisions in the same strip. It makes no forecast and gives no advice of its own.</p>
+<p><b>The data room</b> is everything behind it, and the front reads only from it. It holds:</p>
+<ul>
+<li><b>A catalogue of 34 datasets,</b> each with its size and sha256: IPMA's warnings and their changes, its forecasts and stations, MeteoAlarm's alert messages, the decisions of the airport, the bridges, the Metro, the ferries, schools, hospitals and Web Summit, and the public signals.</li>
+<li><b>A timeline</b> with a permanent id for every row, and <b>a decisions log</b> where each decision is written down before anyone acts.</li>
+<li><b>Entities:</b> every thing a page mentions is a node with an address, 215 nodes and 435 edges when I read it.</li>
+<li><b>Evidence:</b> every outside page the agents read is captured as it was served, hashed, and kept in an encrypted vault, then shown on our own page of it, decrypted in your browser, with a check that it matches the hash on record.</li>
+</ul>
+<p>And three labels, everywhere. <b>Fact:</b> read from the body that decides or warns, on its own channel. <b>Evidence:</b> reported by someone else, and it names who. <b>Hypothesis:</b> our analysis, with its reasons, "never a fact". A reader's panel colours any page by those labels, so you can see what a page is made of.</p>
+<h2 id="labs">Many ways to see one storm</h2>
+<p>The Labs are the part I enjoy most: small experiments, each on its own page, each reading only the site's published JSON, and each saying what it shows badly. Clicking any mark opens the row behind it, with its source and the time it was read.</p>
+<ul>
+<li><b>Lead times:</b> for every decision, how long after the warning it came, and how long before its effect. Shortest notice first.</li>
+<li><b>What was known when:</b> a replay. Press play and IPMA's warnings for Lisbon change as they did, with the decisions appearing at the minute they were made.</li>
+<li><b>Who spoke when, in lanes:</b> bodies that warn and decide, carriers of official data, Web Summit, the press, our team, and our analysis, each on its own line.</li>
+<li><b>Warned against observed:</b> each IPMA station's rain and wind against the warning in force for its district.</li>
+<li><b>What followed from a warning:</b> pick a warning and see the decisions that came after it, step by step.</li>
+</ul>
+<p>Beside them: <b>stories</b>, where every sentence carries its label and the timeline rows it rests on, and is checked against the data room on every build; <b>the graph</b>, where you start from a question ("who decided what, on whose warning?") and what you see is its answer; <b>an ontology</b> of eight kinds of thing and nine verbs, each with its inverse, with no generic "related to" edge; and <b>a query page</b> that starts SQLite in your browser over the graph's tables, ten tables and about two thousand rows, with nothing uploaded. It follows <a href="introducing-fractal-semantic-graphs.html">fractal semantic graphs</a>: any node opens into its own graph, down to the last source.</p>
+<h2 id="team">The team, the evidence and the record</h2>
+<figure class="shot" data-shot="scl-team.webp" data-dir="images/" data-alt="The team, the board, the accounts, a captured page, meteorology, stories, the journal, the design and the labels." data-kind="collage"><figcaption>The team, the board, the accounts, a captured page, meteorology, stories, the journal, the design and the labels.</figcaption></figure>
+<p>The site shows its own machinery as plainly as the storm:</p>
+<ul>
+<li><b>The team page</b> counts the last hour: 67 pushes, 55 deployed, a median of 40 seconds from push to served, 31 agents, and a list of what I can unblock, most blocking first.</li>
+<li><b>The board</b> has every job, ask, question and conflict, by agent, with the ones waiting on me counted.</li>
+<li><b>Meteorology</b> maps the whole field in five layers: what observes the atmosphere, the models, the open data, the warning services, and the sites people read, with 106 weather sites researched.</li>
+<li><b>Research</b> follows the media, Bluesky and Wikipedia in several languages, with each Wikipedia page captured as it stood.</li>
+<li><b>Models:</b> third-party and open-weight models are called through one wrapper as measured evals, 1,291 answered calls and 14 models on 11 November, every call costed, against a cap of 20 dollars a day.</li>
+<li><b>The Studio</b> explains with small animated characters: what compression is, in seven chapters and forty scenes; how a fact gets onto the site; one warning, opened three times.</li>
+<li><b>The design</b> has gone through dozens of rounds, each kept on the site, with one stylesheet and five themes.</li>
+</ul>
+<h2 id="journal">It tells on itself</h2>
+<p>The journal is written by one of the agents for "someone arriving cold: a journalist, an editor, an engineer, an investor". Its argument is the one I would make: "One person, speaking, was enough to steer about thirty agents through a night, because three things were fixed before the crowd arrived: every agent owns its own folders, every push is small and goes through one gate, and a push is on the live site in about half a minute." And it says what that did not fix: "the person". By 02:55, thirty-six cards on the board were waiting on me.</p>
+<p>It corrects itself in public: an early count of what waited on me was wrong, because every agent's address ends in ".dinis", and the page says so at the top. And <a href="https://storm-charles.promptugal.news/journal/what-it-cost.html">what it cost</a> is the plainest account of agent economics I have read: about one dollar in third-party model calls by 03:00, an empty provider account that stopped every call five minutes after I raised the cap, and 2,069 million tokens in the agents' own sessions, 98.7% of them an agent reading its own session again. "What an agent costs is set less by what it writes than by how long it has been remembering."</p>
+<h2 id="promptugal">Part of PrompTugal.news</h2>
+<p>Storm Charles is a section of <a href="https://promptugal.news/">PrompTugal.news</a>, the independent newsroom we are running at Web Summit Lisbon: what is on now and next, the news, the companies and the people, every fact sourced. When the storm turned into the summit's main story, it needed its own site, its own repository and its own agents, and it got them in an evening. The same team keeps both, and the same rules hold: sources on everything, labels on everything, and a person who sends every message that leaves the repositories.</p>
+<p>It also builds on what we have worked out here: a behaviour policy for every agent, vaults for evidence, and the graph thinking from this newsroom.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>It is not a warning service,</b> and neither is this article. For warnings, follow IPMA, ANEPC and your local authorities.</li>
+<li><b>The figures are the site's own,</b> as its pages and journal stated them when I read them on the morning of 11 November; they move by the minute.</li>
+<li><b>The site is a night old,</b> and says what does not exist yet: among other things, no agent signs with its own key, and I had no key of my own on the site.</li>
+<li><b>The people on the Web Summit team are not named here.</b></li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p><a href="https://storm-charles.promptugal.news/">storm-charles.promptugal.news</a>, read on 11 November 2026 between 09:30 and 10:00 UTC: the home page, <a href="https://storm-charles.promptugal.news/BRIEF.html">the brief</a>, the data room's dashboard, timeline, decisions, graph, ontology, query and entities, the labs, stories, research, models, studio, team, board, accounts, design and help pages, the journal's <a href="https://storm-charles.promptugal.news/journal/a-storm-one-person-one-night.html">a storm, one person, one night</a> and <a href="https://storm-charles.promptugal.news/journal/what-it-cost.html">what it cost</a>, <a href="https://storm-charles.promptugal.news/api/v1/index.json">the data catalogue</a> and <a href="https://storm-charles.promptugal.news/llms.txt">llms.txt</a>. <a href="https://promptugal.news/">PrompTugal.news</a>. Web Summit's <a href="https://websummit.com/blog/web-summit/important-event-update-2026/">event update</a>, as the site records it. Earlier on this site: <a href="introducing-fractal-semantic-graphs.html">introducing fractal semantic graphs</a>, <a href="web-summit-part-five.html">the Web Summit team, part five</a>, <a href="who-else-controls-ai-agents-at-web-summit.html">who else controls AI agents at Web Summit</a>.</p>
+<sg-meter view="page" kind="article" date="2026-11-11" topics="news-and-evidence agents-and-policy" title="Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">News &amp; evidence</span><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#storm-charles-a-newsroom-built-in-a-night">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="introducing-fractal-semantic-graphs.html">Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema</a> <span class="dim">A fractal semantic graph has no privileged level and no single schema: each world keeps its own vocabulary and connects to others through named edges.</span></li><li><a href="web-summit-part-five.html">The Web Summit team, part five: the last day of setup, 180 releases, every person getting a key, an accountant counting the team's tokens, synthetic users testing the merch, and an inbox only the agents can write to</a> <span class="dim">The Web Summit team's last day of setup: 180 releases, keys for every person, new agents for everyone, and an inbox per agent.</span></li><li><a href="who-else-controls-ai-agents-at-web-summit.html">Who else controls AI agents at Web Summit? An outreach agent mapped eleven companies in an afternoon, in their own words, and found that most of them are partners for RiskMandate as much as competitors</a> <span class="dim">An outreach agent mapped eleven companies that control AI agents at Web Summit; most are partners for RiskMandate as much as competitors.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 392 &middot; <a href="../for/make.html#r=392">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/storm-charles-a-newsroom-built-in-a-night.jpg" download>storm-charles-a-newsroom-built-in-a-night.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="storm-charles-a-newsroom-built-in-a-night.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>The publication</h4>
+    <a href="../about/imprint.html">Imprint</a>
+    <a href="../about/standards.html">Editorial standards</a>
+    <a href="../about/corrections.html">Corrections</a>
+    <a href="../about/withdrawals.html">Withdrawals</a>
+    <a href="../about/complaints.html">Complaints</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

@@ -115,6 +115,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#who-el
 
 ### Continued by
 
+- [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](storm-charles-a-newsroom-built-in-a-night.md) Storm Charles: about thirty agents built a weather face over a data room in a night, every figure sourced, timed and labelled.
 - [RiskMandate and Manus: mapping an Agent Behaviour Policy onto a general agent that can use your computer, your browser, your logins and 416 connectors, and the controls Manus already gives you](riskmandate-and-manus.md) How an Agent Behaviour Policy maps onto Manus: its reach, the controls it already gives you, and the gap between them.
 
 [All articles](index.md) · [All graphs](graphs.md)

@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-11-09",
+  "generated": "2026-11-11",
   "site_version": "v0.7.87",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
@@ -54,6 +54,208 @@
     "produces"
   ],
   "articles": [
+    {
+      "slug": "storm-charles-a-newsroom-built-in-a-night",
+      "title": "Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis",
+      "date": "2026-11-11",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/storm-charles-a-newsroom-built-in-a-night.html",
+      "markdown": "https://newsroom.sgit.ai/articles/storm-charles-a-newsroom-built-in-a-night.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/storm-charles-a-newsroom-built-in-a-night.webp",
+      "teaser": "Storm Charles: about thirty agents built a weather face over a data room in a night, every figure sourced, timed and labelled.",
+      "topics": [
+        "news-and-evidence",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "storm-charles",
+        "promptugal",
+        "web-summit",
+        "agents",
+        "data",
+        "provenance",
+        "graphs",
+        "newsroom",
+        "journalism",
+        "article"
+      ],
+      "links_out": [
+        "introducing-fractal-semantic-graphs",
+        "web-summit-part-five",
+        "who-else-controls-ai-agents-at-web-summit"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "scl-data.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/scl-data.webp",
+          "caption": "Twelve of the site's data-driven pages, each drawn from its own published JSON, on 11 November.",
+          "kind": "collage"
+        },
+        {
+          "file": "scl-night.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/scl-night.webp",
+          "caption": "Commits per hour through the night, and when I gave direction, from the site's own journal.",
+          "kind": "chart"
+        },
+        {
+          "file": "scl-faces.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/scl-faces.webp",
+          "caption": "The weather face, the labs and the API all read from one data room, where every value has a source, a time and a label.",
+          "kind": "architecture"
+        },
+        {
+          "file": "scl-team.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/scl-team.webp",
+          "caption": "The team, the board, the accounts, a captured page, meteorology, stories, the journal, the design and the labels.",
+          "kind": "collage"
+        }
+      ],
+      "graph": {
+        "slug": "storm-charles-a-newsroom-built-in-a-night",
+        "teaser": "Storm Charles: about thirty agents built a weather face over a data room in a night, every figure sourced, timed and labelled.",
+        "topics": [
+          "news-and-evidence",
+          "agents-and-policy"
+        ],
+        "core_idea": "When Storm Charles led Web Summit to call off its second day, one person steering about thirty Claude Code agents by voice built storm-charles.promptugal.news overnight. A weather face for anyone reads only from a data room of hashed datasets, a timeline, decisions, entities and captured evidence, every line labelled fact, evidence or hypothesis. Labs show the storm many ways, a graph and in-browser SQLite answer questions, models are measured as evals, and a journal records how the site was made, its mistakes and its cost. It is part of PrompTugal.news.",
+        "nodes": [
+          {
+            "id": "storm",
+            "label": "Storm Charles and Web Summit",
+            "kind": "example",
+            "summary": "Day 2 called off on the government's advice."
+          },
+          {
+            "id": "night",
+            "label": "Built in a night",
+            "kind": "example",
+            "summary": "About thirty agents, about 2,000 pages."
+          },
+          {
+            "id": "faces",
+            "label": "Two faces",
+            "kind": "concept",
+            "summary": "A weather page over a data room."
+          },
+          {
+            "id": "labels",
+            "label": "Fact, evidence, hypothesis",
+            "kind": "method",
+            "summary": "On every line."
+          },
+          {
+            "id": "dataroom",
+            "label": "The data room",
+            "kind": "artefact",
+            "summary": "34 hashed datasets, timeline, entities."
+          },
+          {
+            "id": "evidence",
+            "label": "Captured evidence",
+            "kind": "method",
+            "summary": "Pages hashed and kept in vaults."
+          },
+          {
+            "id": "labs",
+            "label": "Labs",
+            "kind": "artefact",
+            "summary": "Lead times, replays, lanes, stations."
+          },
+          {
+            "id": "graph",
+            "label": "Graph and SQL",
+            "kind": "artefact",
+            "summary": "Questions answered in the browser."
+          },
+          {
+            "id": "journal",
+            "label": "The journal",
+            "kind": "artefact",
+            "summary": "Mistakes and cost in the open."
+          },
+          {
+            "id": "pt",
+            "label": "PrompTugal.news",
+            "kind": "artefact",
+            "summary": "The newsroom it belongs to."
+          }
+        ],
+        "edges": [
+          {
+            "from": "night",
+            "to": "storm",
+            "rel": "answers"
+          },
+          {
+            "from": "faces",
+            "to": "night",
+            "rel": "produces"
+          },
+          {
+            "from": "dataroom",
+            "to": "faces",
+            "rel": "extends"
+          },
+          {
+            "from": "labels",
+            "to": "dataroom",
+            "rel": "extends"
+          },
+          {
+            "from": "evidence",
+            "to": "dataroom",
+            "rel": "extends"
+          },
+          {
+            "from": "labs",
+            "to": "dataroom",
+            "rel": "depends-on"
+          },
+          {
+            "from": "graph",
+            "to": "dataroom",
+            "rel": "depends-on"
+          },
+          {
+            "from": "journal",
+            "to": "night",
+            "rel": "extends"
+          },
+          {
+            "from": "night",
+            "to": "pt",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "web-summit-part-five",
+            "who-else-controls-ai-agents-at-web-summit"
+          ],
+          "pages": [],
+          "sites": [
+            "https://storm-charles.promptugal.news/",
+            "https://promptugal.news/",
+            "https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Each of those lines is on the site with the source it was read from and the time it was read.",
+            "why": "What happened."
+          },
+          {
+            "text": "The Labs are the part I enjoy most",
+            "why": "Many ways to see one storm."
+          },
+          {
+            "text": "The site shows its own machinery as plainly as the storm",
+            "why": "The team, the evidence and the record."
+          }
+        ]
+      }
+    },
     {
       "slug": "riskmandate-and-lovable",
       "title": "RiskMandate and Lovable: mapping an Agent Behaviour Policy onto an app builder whose agent writes the code, changes the live database, connects your other systems and publishes, with the controls Lovable already gives and their defaults",
@@ -649,6 +851,7 @@
         "web-summit-part-five"
       ],
       "links_in": [
+        "storm-charles-a-newsroom-built-in-a-night",
         "riskmandate-and-manus"
       ],
       "figures": [
@@ -1035,6 +1238,7 @@
         "synthetic-users-for-your-website"
       ],
       "links_in": [
+        "storm-charles-a-newsroom-built-in-a-night",
         "who-else-controls-ai-agents-at-web-summit",
         "rc2-goes-to-print"
       ],
@@ -83267,6 +83471,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "storm-charles-a-newsroom-built-in-a-night",
         "the-graph-companies",
         "i-just-want-to-buy-the-article",
         "research-delivered-as-a-vault",
