@@ -3,29 +3,29 @@
  "kept_by": "newsroom.accountant",
  "runs": {
   "total": {
-   "runs": 96,
-   "cost_usd": 95.101834,
-   "published": 41,
-   "blocked": 52,
-   "refused": 111
+   "runs": 99,
+   "cost_usd": 97.312394,
+   "published": 42,
+   "blocked": 54,
+   "refused": 115
   },
-  "per_edition_usd": 1.8831,
+  "per_edition_usd": 1.8758,
   "by_task": {
    "newsroom": {
-    "runs": 28,
-    "cost_usd": 11.883834,
+    "runs": 29,
+    "cost_usd": 12.33788,
     "published": 0,
-    "blocked": 28,
-    "output": 222983,
-    "duration_s": 14098.2
+    "blocked": 29,
+    "output": 232867,
+    "duration_s": 14986.2
    },
    "industry": {
-    "runs": 26,
-    "cost_usd": 59.937923,
-    "published": 26,
+    "runs": 27,
+    "cost_usd": 61.515255,
+    "published": 27,
     "blocked": 0,
-    "output": 5645436,
-    "duration_s": 17147.0
+    "output": 5807960,
+    "duration_s": 17688.0
    },
    "aws": {
     "runs": 6,
@@ -44,12 +44,12 @@
     "duration_s": 1073.1
    },
    "dinis": {
-    "runs": 26,
-    "cost_usd": 8.553479,
+    "runs": 27,
+    "cost_usd": 8.732661,
     "published": 6,
-    "blocked": 19,
-    "output": 502213,
-    "duration_s": 20124.8
+    "blocked": 20,
+    "output": 505046,
+    "duration_s": 21077.8
    },
    "owasp": {
     "runs": 4,
@@ -61,6 +61,14 @@
    }
   },
   "by_day": {
+   "2026-11-12": {
+    "runs": 3,
+    "cost_usd": 2.21056,
+    "published": 1,
+    "blocked": 2,
+    "output": 175241,
+    "duration_s": 2382.0
+   },
    "2026-11-11": {
     "runs": 3,
     "cost_usd": 2.340006,
@@ -288,12 +296,12 @@
   },
   "by_model": {
    "claude-sonnet-5-5": {
-    "cost_usd": 79.447449,
-    "input": 5859,
-    "output": 2180127,
-    "cache_read": 184545224,
-    "cache_write": 12677885,
-    "thinking": 229980
+    "cost_usd": 81.531837,
+    "input": 6024,
+    "output": 2239250,
+    "cache_read": 189154921,
+    "cache_write": 13000916,
+    "thinking": 236495
    },
    "claude-opus-5-5": {
     "cost_usd": 8.203007,
@@ -304,15 +312,109 @@
     "thinking": 19418
    },
    "claude-haiku-5-5": {
-    "cost_usd": 7.451381,
-    "input": 34608177,
-    "output": 5392228,
-    "cache_read": 17985819,
-    "cache_write": 3085910,
-    "thinking": 3434025
+    "cost_usd": 7.577553,
+    "input": 35165083,
+    "output": 5508346,
+    "cache_read": 18239411,
+    "cache_write": 3165005,
+    "thinking": 3511282
    }
   },
   "rows": [
+   {
+    "id": "e57094b1103e",
+    "task": "newsroom",
+    "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+    "fired_at": "2026-11-12T06:56:21Z",
+    "finished_at": "2026-11-12T07:11:13Z",
+    "duration_s": 888.0,
+    "models": {
+     "claude-sonnet-5-5": {
+      "cost_usd": 0.454046,
+      "input": 53,
+      "output": 9884,
+      "cache_read": 1664520,
+      "cache_write": 47162,
+      "thinking": 1595
+     }
+    },
+    "cost_usd": 0.454046,
+    "turns": 28,
+    "subagents": 0,
+    "refused": 0,
+    "refused_kinds": [],
+    "outcome": "blocked",
+    "release": null,
+    "added": 0,
+    "updated": 0,
+    "note": "The refresh was committed locally but the push was refused by the git proxy for the third time this week."
+   },
+   {
+    "id": "4782fce65b12",
+    "task": "dinis",
+    "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+    "fired_at": "2026-11-12T06:08:45Z",
+    "finished_at": "2026-11-12T06:24:41Z",
+    "duration_s": 953.0,
+    "models": {
+     "claude-sonnet-5-5": {
+      "cost_usd": 0.179182,
+      "input": 26,
+      "output": 2833,
+      "cache_read": 488555,
+      "cache_write": 25486,
+      "thinking": 514
+     }
+    },
+    "cost_usd": 0.179182,
+    "turns": 15,
+    "subagents": 0,
+    "refused": 4,
+    "refused_kinds": [
+     "web fetch"
+    ],
+    "outcome": "blocked",
+    "release": null,
+    "added": 0,
+    "updated": 0,
+    "note": "All four web fetches were refused, so one unverified candidate was left for a later run and nothing was published."
+   },
+   {
+    "id": "8a993b672d96",
+    "task": "industry",
+    "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+    "fired_at": "2026-11-12T05:47:07Z",
+    "finished_at": "2026-11-12T05:56:12Z",
+    "duration_s": 541.0,
+    "models": {
+     "claude-haiku-5-5": {
+      "cost_usd": 0.126172,
+      "input": 556906,
+      "output": 116118,
+      "cache_read": 253592,
+      "cache_write": 79095,
+      "thinking": 77257
+     },
+     "claude-sonnet-5-5": {
+      "cost_usd": 1.45116,
+      "input": 86,
+      "output": 46406,
+      "cache_read": 2456622,
+      "cache_write": 250383,
+      "thinking": 4406
+     }
+    },
+    "cost_usd": 1.577332,
+    "turns": 17,
+    "subagents": 4,
+    "refused": 0,
+    "refused_kinds": [],
+    "outcome": "published",
+    "release": "2026-11-12.1",
+    "added": 9,
+    "updated": 0,
+    "note": "Nine new stories, none in open source, with the verifier requiring fixes on seven."
+   },
    {
     "id": "5ccbf3504bee",
     "task": "newsroom",
@@ -3506,20 +3608,20 @@
     "name": "@newsroom.accountant's session",
     "kind": "accountant",
     "from": "2026-10-16",
-    "as_of": "2026-11-11T07:55:00Z",
+    "as_of": "2026-11-12T07:55:00Z",
     "models": [
      "claude-sonnet-5-5"
     ],
-    "cost_usd": 48.1371916,
-    "input": 5269,
-    "output": 137392,
-    "cache_read": 69937535,
-    "cache_write": 9935105,
+    "cost_usd": 50.68668624,
+    "input": 5282,
+    "output": 141856,
+    "cache_read": 73118968,
+    "cache_write": 10481564,
     "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
    }
   ]
  },
- "updated": "2026-11-11T10:42:29Z",
+ "updated": "2026-11-12T07:42:30Z",
  "what": "What the wires cost: every image the pipeline made (admin/build/infographics.py), with OpenRouter's own cost per image, summed by wire, edition, month, model and kind, and per piece of work; and every scheduled run of the desks and the newsroom (admin/build/wire-runs.json), with the platform's own cost and tokens per model.",
  "total": {
   "images": 71,
