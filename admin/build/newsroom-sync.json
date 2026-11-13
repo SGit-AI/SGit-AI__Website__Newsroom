@@ -77,6 +77,7 @@
    "admin/content/articles/chainguard-mapped.md": "886b38727bbd271116a9473d057c72fd29a201a8419b30f1aeef375a00f5a749",
    "admin/content/articles/ci-owns-the-version.md": "9954eb8078c0be3600d3f0633ab50c0d3da8cf6322248a7ffb805503a8a624ec",
    "admin/content/articles/cloudflare-as-lego-blocks.md": "4e6dd8577bf079dba32adb2d420950b780ca98c9aa747be57b4d8bf1b8e6c2a2",
+   "admin/content/articles/coding-standards-are-behaviour-policies.md": "2985220beaf29fb6658045727de29aefbd152b5bd07a3c6b30496bdf8076cce4",
    "admin/content/articles/commanders-intent-is-a-behaviour-policy.md": "f88a3cac46a0ae72fbd9a726b8524d4c5b15c9dddce6d9e6386914f2a9c9e43f",
    "admin/content/articles/connect-your-dots-backwards.md": "1fc6fd4e7ccdbcc39db1a8d54db101f96d4f23691b3efd7440d05b17833f23aa",
    "admin/content/articles/dark-mode-and-four-more.md": "b4b55bd473085d8d7e4d87e2bd5b643fbf624c56658a5459d50f38f6ccef064f",
@@ -177,6 +178,7 @@
    "admin/content/articles/graphs/chainguard-mapped.json": "7a1a24b7478961f99aef1bb1eaeb840a78ffe53bc29ab1653e32e963779e9a52",
    "admin/content/articles/graphs/ci-owns-the-version.json": "e7fb8a5beb6d0ca5699759327e0ecb3bd05d4e77b8ff65fdfa36d890f607111f",
    "admin/content/articles/graphs/cloudflare-as-lego-blocks.json": "191d93f3ea434551ccb01a18dababeed82fffe4618fb85903aecd1e2dd7c6556",
+   "admin/content/articles/graphs/coding-standards-are-behaviour-policies.json": "7cec5ae6839940aa80b7743f91bebb0b3d384d6cce6b384e0d538418664872b1",
    "admin/content/articles/graphs/commanders-intent-is-a-behaviour-policy.json": "1e51923665186d494c1be8e7915a12e3f3e99d0278f39f47cd98728b6892e8ca",
    "admin/content/articles/graphs/connect-your-dots-backwards.json": "a8cf5c90902d7efb4b199bea86f07d0532b1f11879afd587926412d01383d509",
    "admin/content/articles/graphs/dark-mode-and-four-more.json": "3c84f5f3a7362a7a2bc1f960ce8f1d0819aac5086cb2f8f7e0841f8ae6acf9a9",
@@ -482,6 +484,8 @@
    "admin/content/articles/images/cb-card.webp": "ccd42343f16e4044e082c993e83ac34377a14a703fdbe072e778833c8fa1d774",
    "admin/content/articles/images/cb-post.webp": "ee84dc85a97200840ca524f48a7b108e424896e756fbd29d8b52efe666f115f7",
    "admin/content/articles/images/cb-relationship.webp": "ccb74e48b1bd43e29fd85561c51532827db0f22cab8fb0886beddc5806bf6bf4",
+   "admin/content/articles/images/cbp-ladder.webp": "efdf41b21e9630d0d44c1ec9ada6d6422ef5aae27877cbf2e2d5f968325ec2b9",
+   "admin/content/articles/images/cbp-measured.webp": "5081202ad301b02650a521199137ee177cab5df30e1eddfa7f241f0222c64fd9",
    "admin/content/articles/images/cc-map.webp": "b0d3e7fc5e7f7418f4a3575ed62e7fe55176afab30c8f1fcb56e604b00cf8db8",
    "admin/content/articles/images/cd-crosswalk.webp": "fa0ff6c267090d1492cfbebf426ee28f40a1382eef90ebed0c2fd1de942edb88",
    "admin/content/articles/images/cd-doors.webp": "d08549b40cc9d5c89e6ba090fe2e4f886d1be6072893d7b42b45fddddb4ee5d9",
@@ -1547,6 +1551,7 @@
    "admin/content/articles/summaries/ci-owns-the-version.json": "1b17884b15ac755e07a1517b5d91a2378c34a3ef4974b20e5e9cc83ef8596f7a",
    "admin/content/articles/summaries/cloudflare-as-lego-blocks.json": "d6071d7ab0a3c4ad0d77861e24c78651c97b30f22b0bec3c579fb0d4ceab42bd",
    "admin/content/articles/summaries/code-review-as-a-fractal-semantic-graph.json": "4f944cd0e00c749e835a0689f29be9530ccc6c77f226ffdfa766a00d105e7a39",
+   "admin/content/articles/summaries/coding-standards-are-behaviour-policies.json": "5933839067276f87e08485f7e4efa9c636b3ab410bc8a8883d1e68b17b599d75",
    "admin/content/articles/summaries/commanders-intent-is-a-behaviour-policy.json": "011c476e307155ea3100bed6421d951a33bc2b086efff19abb314c4ae9ea074c",
    "admin/content/articles/summaries/connect-your-dots-backwards.json": "303350852e4663012488c1d25999de112284aab204a4efe7795cbb7d82615610",
    "admin/content/articles/summaries/connector-twin-before-you-deploy-an-agent.json": "4751c946f83486ce0e7494cf77a311f5de7344985b1b5c2513285cc8c68e455e",
@@ -2057,10 +2062,10 @@
   }
  ],
  "counts": {
-  "files": 5903,
-  "pages": 1407,
-  "articles": 390,
-  "verbatim": 2698,
+  "files": 5913,
+  "pages": 1409,
+  "articles": 391,
+  "verbatim": 2703,
   "dependencies": 52,
   "text_overrides": 11,
   "unresolved_on_sgit_ai": 0
@@ -2353,13 +2358,13 @@
   },
   "articles/a-policy-for-every-skill.html": {
    "from": "articles/a-policy-for-every-skill.html",
-   "sha256_source": "a9b50867a381ef0d70563bed080ae119bc2fd0a869a7aee2cdf3062bac0fafdc",
-   "sha256": "c17405c5fd19e1ecd615905e8908544a9040c35eddb2b4f994f31e25d48d5433"
+   "sha256_source": "ac3a955fdec49a764b644a34df7ed66076c887c143b5fa23ba06d02c526106ca",
+   "sha256": "968f7284ba7ae19179c7d882770920629be1f725d3555d7e58aa3a4301604be7"
   },
   "articles/a-policy-for-every-skill.md": {
    "from": "articles/a-policy-for-every-skill.md",
-   "sha256_source": "a08622e41b81def443398a7daa9d20238676a5649a6bb84b1405c9dff8504588",
-   "sha256": "e0fe0dee5742ab7ead92dee186d31c5b9ff05146d9dc075d6c07c83739602c77"
+   "sha256_source": "43319ae61b36f841b103ea2abb2c85a5619fe4618e765e511e142cd12861eb55",
+   "sha256": "897e88bb8c67678f92de7310a8025d982e473cd0257d4e470976455bfb6a4288"
   },
   "articles/a-presentation-for-every-project.html": {
    "from": "articles/a-presentation-for-every-project.html",
@@ -2803,8 +2808,8 @@
   },
   "articles/banners/.hashes.json": {
    "from": "articles/banners/.hashes.json",
-   "sha256_source": "fe80601dfea35c392e4d74755202a23a9896d28e9c778d058832903b3e83bfaa",
-   "sha256": "fe80601dfea35c392e4d74755202a23a9896d28e9c778d058832903b3e83bfaa"
+   "sha256_source": "31983cf8652cabbb698a726c743f03b880e58b7ce2d9ef3a2fbd1aebd1b30e0c",
+   "sha256": "31983cf8652cabbb698a726c743f03b880e58b7ce2d9ef3a2fbd1aebd1b30e0c"
   },
   "articles/banners/001-agents-doing-real-work.jpg": {
    "from": "articles/banners/001-agents-doing-real-work.jpg",
@@ -2848,8 +2853,8 @@
   },
   "articles/banners/009-the-newsroom-as-a-business.jpg": {
    "from": "articles/banners/009-the-newsroom-as-a-business.jpg",
-   "sha256_source": "e9d89e29517e362efedef5ca845c57a734cc0e60f85e24b0d2a9eb3ce7e81da5",
-   "sha256": "e9d89e29517e362efedef5ca845c57a734cc0e60f85e24b0d2a9eb3ce7e81da5"
+   "sha256_source": "69bf76e851d39aaddf07a2ea1003748d864c43022e8449d643b37841d4641560",
+   "sha256": "69bf76e851d39aaddf07a2ea1003748d864c43022e8449d643b37841d4641560"
   },
   "articles/banners/a-book-for-one-reader.jpg": {
    "from": "articles/banners/a-book-for-one-reader.jpg",
@@ -3265,6 +3270,11 @@
    "from": "articles/banners/code-review-as-a-fractal-semantic-graph.jpg",
    "sha256_source": "bb32def6719e7a2fe2c64a14dcd816f5ac4ece8f06f180e58d16568317229b40",
    "sha256": "bb32def6719e7a2fe2c64a14dcd816f5ac4ece8f06f180e58d16568317229b40"
+  },
+  "articles/banners/coding-standards-are-behaviour-policies.jpg": {
+   "from": "articles/banners/coding-standards-are-behaviour-policies.jpg",
+   "sha256_source": "6dcde8acb46dc42a6d741a88e7883928d9a270f4577feed7dd51d08897fc3423",
+   "sha256": "6dcde8acb46dc42a6d741a88e7883928d9a270f4577feed7dd51d08897fc3423"
   },
   "articles/banners/collages/002-2026-10-08-agency-vault.jpg": {
    "from": "articles/banners/collages/002-2026-10-08-agency-vault.jpg",
@@ -3718,8 +3728,8 @@
   },
   "articles/banners/manifest.json": {
    "from": "articles/banners/manifest.json",
-   "sha256_source": "f3050f39c321eb0a93b7a0ce4173ed70fb7f26f56409b053e68ab5e83b469a71",
-   "sha256": "f3050f39c321eb0a93b7a0ce4173ed70fb7f26f56409b053e68ab5e83b469a71"
+   "sha256_source": "c5c67776152d510bfb78435a13efaa4ca630f9992a28b21abfa26dc626675500",
+   "sha256": "c5c67776152d510bfb78435a13efaa4ca630f9992a28b21abfa26dc626675500"
   },
   "articles/banners/meetscribe.jpg": {
    "from": "articles/banners/meetscribe.jpg",
@@ -4183,8 +4193,8 @@
   },
   "articles/banners/subscribe.jpg": {
    "from": "articles/banners/subscribe.jpg",
-   "sha256_source": "32d798398728c474f6a4b82b14815655345ba1f02fa5d462c6f400c6244647a6",
-   "sha256": "32d798398728c474f6a4b82b14815655345ba1f02fa5d462c6f400c6244647a6"
+   "sha256_source": "b67bbc3d0cc324144bbd0ae1636e545778c05a2a1bebfd97b86b7173640fd702",
+   "sha256": "b67bbc3d0cc324144bbd0ae1636e545778c05a2a1bebfd97b86b7173640fd702"
   },
   "articles/banners/supply-chain-of-vaults.jpg": {
    "from": "articles/banners/supply-chain-of-vaults.jpg",
@@ -4893,13 +4903,13 @@
   },
   "articles/behaviour-policies-from-the-checks.html": {
    "from": "articles/behaviour-policies-from-the-checks.html",
-   "sha256_source": "bdcb7a638a8e6acd7c6d957bdc79223100f7d9f3965dd00af78bf4100b87c188",
-   "sha256": "ce6274904f2bceaae39bf2ca4aa2955bcdd72cc2e889fa2aa419c186e30626ad"
+   "sha256_source": "da24a7d4ae253e84b3278887f1a6d0fabac90a69a7b45230c1925f2309ecb945",
+   "sha256": "ef8b146afb98b55c282108a423f8e1e0dcbe59a58f24b65cb8b35ef42d8e941d"
   },
   "articles/behaviour-policies-from-the-checks.md": {
    "from": "articles/behaviour-policies-from-the-checks.md",
-   "sha256_source": "d8c0008fcc3e81b460c19003bcf3c5e0a061925a0c78fe506c9d19f9c3a4119a",
-   "sha256": "3623a50628735b5e780f8a040e0c66c677cc8e414bba0513eb33538b27d20db0"
+   "sha256_source": "e873e068f0f35d3c3505005e174e1b53c40ecd57e3e08adbe6b30aed5bcad2a5",
+   "sha256": "10e8ecb86611aca31031a664b5fa6e3c10ec77582e7769aa878a98eca3920126"
   },
   "articles/books-for-a-new-generation-of-publishing.html": {
    "from": "articles/books-for-a-new-generation-of-publishing.html",
@@ -5385,6 +5395,11 @@
    "from": "articles/cards/code-review-as-a-fractal-semantic-graph.webp",
    "sha256_source": "00e852d03b3ac987b1b91184115e17f442c9b1a473be2c1a636a71c9bfa56aed",
    "sha256": "00e852d03b3ac987b1b91184115e17f442c9b1a473be2c1a636a71c9bfa56aed"
+  },
+  "articles/cards/coding-standards-are-behaviour-policies.webp": {
+   "from": "articles/cards/coding-standards-are-behaviour-policies.webp",
+   "sha256_source": "886d68b776cca403922c403fb1d884e2b71fadac6a86cd329855bed2999fbad0",
+   "sha256": "886d68b776cca403922c403fb1d884e2b71fadac6a86cd329855bed2999fbad0"
   },
   "articles/cards/commanders-intent-is-a-behaviour-policy.webp": {
    "from": "articles/cards/commanders-intent-is-a-behaviour-policy.webp",
@@ -6993,13 +7008,23 @@
   },
   "articles/code-review-as-a-fractal-semantic-graph.html": {
    "from": "articles/code-review-as-a-fractal-semantic-graph.html",
-   "sha256_source": "14c5bfb6fbeee3e321efbdb83e1d6aeabbca089d4628ba4ba75658f266b3572a",
-   "sha256": "f8f15f8166c97d490b1690b837b901b590cda1909d79731169cc07fbfe5cf157"
+   "sha256_source": "a2984380d9af4a4ca4afc54dd79743a68d46d990cbac64126ed168d3b5bebd16",
+   "sha256": "faf5b9182cebf9978c2a867523800354a1accc08ac5b94d6e1b5a590aecd5ec0"
   },
   "articles/code-review-as-a-fractal-semantic-graph.md": {
    "from": "articles/code-review-as-a-fractal-semantic-graph.md",
-   "sha256_source": "68421c799bcda048f2fd5edb2cb4f99b07e0fe82a540ceeb89630d0e62be7b88",
-   "sha256": "7587383c67e1c8f552802aca98b79a4d4d1de861db4e60cdeaa1091bde2e57e9"
+   "sha256_source": "e048b1d756a71b5bcd30fe16e6a092c0ca46e6dd8a987001d31b88b81d8fdfa0",
+   "sha256": "781b69d72e9d0575e606924b8d9d23787987aa847396390668ca38898ea46edf"
+  },
+  "articles/coding-standards-are-behaviour-policies.html": {
+   "from": "articles/coding-standards-are-behaviour-policies.html",
+   "sha256_source": "1058cc6df4d38233d8e39ac43d253dfc18bc9b7219dab7432ef50b91aa9d8584",
+   "sha256": "459495713b7a6568940e2440631a92619e4e0e10cf1e36f8df1ca07818165aaa"
+  },
+  "articles/coding-standards-are-behaviour-policies.md": {
+   "from": "articles/coding-standards-are-behaviour-policies.md",
+   "sha256_source": "38380fcd6dd72ebee1ba5590d9076f152dca75f8e6dd582b1ccc480c332ea689",
+   "sha256": "4f67bfd52e108568a8ca7803ccc6259c33483c8afaf50cd44dd7f3b2a90d10db"
   },
   "articles/collections/behaviour-policy-in-practice.html": {
    "from": "articles/collections/behaviour-policy-in-practice.html",
@@ -7023,13 +7048,13 @@
   },
   "articles/collections/index.html": {
    "from": "articles/collections/index.html",
-   "sha256_source": "7bd73aa0ce27afea89398a5ad965671e0549da59aafa907110caf53909aa869c",
-   "sha256": "65999078fb1447db948039eb86ed8b193cb8cb756215bf8fd333c9b2849cdb8b"
+   "sha256_source": "905a0028cce365478e8fbae57087b1dd20f968b3cd4424e514b24876eba12ebe",
+   "sha256": "40e956f4276f4db8c783e1cfb11d5681173772b26e39f3bd5e2d7db5b83b4ade"
   },
   "articles/collections/index.md": {
    "from": "articles/collections/index.md",
-   "sha256_source": "7551e8ba42b1e4beca20a5cb0a58ec5fcc131d99e5e5c23d96b96aaa10ae5b22",
-   "sha256": "7f5ed5b733578d10967108e36440b1d311c1deabcfcd5d0c75a511d6b4969a62"
+   "sha256_source": "c1072857e46bb109931dbae352945380d169a2beffecdd23d2c2eb0d2e7130e2",
+   "sha256": "8c408171d1c4d7743f74d60c657c703fce5d1cad8a128f49a7f2752a84149d6c"
   },
   "articles/collections/local-news-kept-as-evidence.html": {
    "from": "articles/collections/local-news-kept-as-evidence.html",
@@ -7223,13 +7248,13 @@
   },
   "articles/desk/index.html": {
    "from": "articles/desk/index.html",
-   "sha256_source": "8101fba2c56de317668dac683e25cee6e5ab608f3812043014a1a661ba8c0958",
-   "sha256": "164c7161d830c7e6f32cab55be5f47d97d8f3ef21aa3495e84fb761c7e766475"
+   "sha256_source": "7226f44992d73bb31239fc7c58cd460c59e1c7ba81c49f6da1ff8c90af3d6349",
+   "sha256": "92ea5281f01591213631134dc1237b959cc5341addfed8471da70ce7df388c9a"
   },
   "articles/desk/index.md": {
    "from": "articles/desk/index.md",
-   "sha256_source": "9cfbfd94c0769685598750a624ff955d8a3a9fbd7b712b4113172b3fab1e73aa",
-   "sha256": "ca3eef0da970bdbb4b396c9271e7e62559a875479db93670fe095e896de0990c"
+   "sha256_source": "eec4225e3c07ac5fe632baa905bcf092d15a5c01fbedc6dc7c8776a7da780dd7",
+   "sha256": "456aa51d37d6c26941b39f40164d1969bc2a35875d4dfef71a67c1c6eafacb5b"
   },
   "articles/desk/range-is-the-feature-so-the-stop-is-designed.html": {
    "from": "articles/desk/range-is-the-feature-so-the-stop-is-designed.html",
@@ -7373,8 +7398,8 @@
   },
   "articles/feed.xml": {
    "from": "articles/feed.xml",
-   "sha256_source": "0a3d77781ad0febb1dc111df39501796cf6fb5f84b1d5566772f30f69ebe7db8",
-   "sha256": "6d12f51fa763b2b2ee7b748cc54b47a92a80a30c37da4f9b1341ba031b870ed4"
+   "sha256_source": "ac45f8bee68da36781306fa26f55b530523c368e6c42b07ab2623bd3649d4082",
+   "sha256": "9ce71871adf7bc89e24859c87ad683dd3317296c5863e68786b99cccab66d5e1"
   },
   "articles/feisty-duck-briefed.html": {
    "from": "articles/feisty-duck-briefed.html",
@@ -7548,28 +7573,28 @@
   },
   "articles/governs-enforces-attests.html": {
    "from": "articles/governs-enforces-attests.html",
-   "sha256_source": "9c9b86a9bee6b37774e4fce71d8fafa2046d4e3dcc18afa2e081e15c01b18019",
-   "sha256": "4c6bae5f912c6235a2f45e0657325be5eeae6ad0327b45bb9e9259735429b089"
+   "sha256_source": "bccad3161a2a7d635d0f1053af12392ed1764708be000bf2a2261c7d008e76ea",
+   "sha256": "aad08c805aa49b3d37a051959a142bcbdc1e296200fee85a8900ae1c391dad14"
   },
   "articles/governs-enforces-attests.md": {
    "from": "articles/governs-enforces-attests.md",
-   "sha256_source": "e3851f3eec606902029de5c612e28563a480993f5d1910e0cc12d44f9a8c2346",
-   "sha256": "23265d56ec2f169d7449e64d98141f366781bd432db0ebfe31ae48002bceaaf9"
+   "sha256_source": "f1e2fcf9824f5f7b72b48c433fad3bd3bff77e822d7b3bd9f06e1dc2bd839d0a",
+   "sha256": "6d2494cf3817f7cb5b23048e2928575e0d846a5d6217b294a075f66c2df359f8"
   },
   "articles/graphs.html": {
    "from": "articles/graphs.html",
-   "sha256_source": "cdfebc7a6229b0ddfc513ffe663d510293e3ad0a5a9ec90fdf4955ea110dc389",
-   "sha256": "3073b161fb1fb671862b31fc245669198054639b7884ee215c532de03bf36979"
+   "sha256_source": "e3e7bb1a73a0ef02385b4670296523265bc910d52cb3588f18f9ad6ac9e5d2d3",
+   "sha256": "6c4fb10dfc58c918a5cd45fffdcbf9eca6001d74ee5a2e368e168fefa0a0f8f0"
   },
   "articles/graphs.json": {
    "from": "articles/graphs.json",
-   "sha256_source": "9f7a71dbb35ee4bb9f35a00462274418adeb84111d7994811df86d8bc139fb6b",
-   "sha256": "59bc5bb1748f6c10ccdf99b2828b0d8874fb372d85bd990d0ef12b86f733e5e0"
+   "sha256_source": "3bb11b9100547a8aeae14a53930c1a50dffbef3cd464e566732de4eb15abea7e",
+   "sha256": "6350ad94cd40d7986bc976dc2d279a307d317ab9fbc5165852c16e3841090196"
   },
   "articles/graphs.md": {
    "from": "articles/graphs.md",
-   "sha256_source": "442dcc8590ef4359d5e6f19f323652ce8c39c2c2ed07a362ea67a7fb299a97ba",
-   "sha256": "9ab8b7c979418bcfed56e8946119aa7604d5be209b4413da2c6db5a78449bf3e"
+   "sha256_source": "f82fe54007d8681a1f17b0a8ed62a9a615d85a1d792d54a7879c6a027d1cde0e",
+   "sha256": "2fc96dade2b5074082e12bbba96c98224601998b469ad9752f3fe9b801ec9649"
   },
   "articles/graphs/a-book-for-one-reader.json": {
    "from": "articles/graphs/a-book-for-one-reader.json",
@@ -7985,6 +8010,11 @@
    "from": "articles/graphs/code-review-as-a-fractal-semantic-graph.json",
    "sha256_source": "8486de1377c0cdd5d3337a88a9043bef24dd04971c6cc52865a659636c5731a6",
    "sha256": "033d28c8781929eee3e30472ca53e81434d3c74416d5d517943d58625568109d"
+  },
+  "articles/graphs/coding-standards-are-behaviour-policies.json": {
+   "from": "articles/graphs/coding-standards-are-behaviour-policies.json",
+   "sha256_source": "39a44c45ad64760b96cc8d9a2bd33b0f475a2e8882a3d26cad7840a67887a3a8",
+   "sha256": "e772e933c7718ac1c18320e093e83e4f2d3773ac7e6427d78c19406189836bab"
   },
   "articles/graphs/commanders-intent-is-a-behaviour-policy.json": {
    "from": "articles/graphs/commanders-intent-is-a-behaviour-policy.json",
@@ -10330,6 +10360,16 @@
    "from": "articles/images/cb-relationship.webp",
    "sha256_source": "ccb74e48b1bd43e29fd85561c51532827db0f22cab8fb0886beddc5806bf6bf4",
    "sha256": "ccb74e48b1bd43e29fd85561c51532827db0f22cab8fb0886beddc5806bf6bf4"
+  },
+  "articles/images/cbp-ladder.webp": {
+   "from": "articles/images/cbp-ladder.webp",
+   "sha256_source": "efdf41b21e9630d0d44c1ec9ada6d6422ef5aae27877cbf2e2d5f968325ec2b9",
+   "sha256": "efdf41b21e9630d0d44c1ec9ada6d6422ef5aae27877cbf2e2d5f968325ec2b9"
+  },
+  "articles/images/cbp-measured.webp": {
+   "from": "articles/images/cbp-measured.webp",
+   "sha256_source": "5081202ad301b02650a521199137ee177cab5df30e1eddfa7f241f0222c64fd9",
+   "sha256": "5081202ad301b02650a521199137ee177cab5df30e1eddfa7f241f0222c64fd9"
   },
   "articles/images/cc-map.webp": {
    "from": "articles/images/cc-map.webp",
@@ -16423,13 +16463,13 @@
   },
   "articles/index.html": {
    "from": "articles/index.html",
-   "sha256_source": "b89f92a3a35d167d944b58625c8c7b74ac861a0992586f4611924010bd641fe6",
-   "sha256": "1e10b5c6b2b6eb3e3da8434e3f0d91988863947dc2613ec6430055e110406309"
+   "sha256_source": "238f7817123431073ec02206bce7660b6baf49bbfddfa5d9469de6555fc7b574",
+   "sha256": "360561d8be3bf4c78c3ce0e5534d533cd3f2129d572f45277296a9d16c672b28"
   },
   "articles/index.md": {
    "from": "articles/index.md",
-   "sha256_source": "e51024a618dd099b1c69ff4398cd397d4ee7f2cc6437d8a665a71a622e46b71d",
-   "sha256": "24a5c5da30ea972aa67586a7c7296bf29c39c06c38fbd0d0a9628bffde11e39e"
+   "sha256_source": "e4b42127c923a7499671e0ae57fc42b9c5e95e66b49fa0785491c86e90615440",
+   "sha256": "ab73621e44c38423637d8b60a5510897b6d8138296ec77b13e99550d7f471b51"
   },
   "articles/inside-english-with-ines.html": {
    "from": "articles/inside-english-with-ines.html",
@@ -16513,13 +16553,13 @@
   },
   "articles/introducing-fractal-semantic-graphs.html": {
    "from": "articles/introducing-fractal-semantic-graphs.html",
-   "sha256_source": "8ee68f68c61c392e09ae2af68a35a6814d0882bb24e80e3e243b6e0e1d6f3b14",
-   "sha256": "9dbcb734680e23f4ecae8778e87bed2d615b3388ed5af5976f60742aa02dd42d"
+   "sha256_source": "f56baf182cc913dd78bf73125a043faadb46a0ac712370b21ceb17b2df2dc749",
+   "sha256": "67276989f1de4c679e66c7d4905ac2fa0d8d5e810007c569dda084ebf2e1bfb8"
   },
   "articles/introducing-fractal-semantic-graphs.md": {
    "from": "articles/introducing-fractal-semantic-graphs.md",
-   "sha256_source": "57e92a3b61456f7216cb780420cf26aeb04ee12889bff6bc923c33e898e67dc9",
-   "sha256": "6af73236df0acce0a022d8c4e0e2cd3ea1b51aefd5786855b6116620e7d61268"
+   "sha256_source": "17bffe6fb962b79ea34383ee3ec91acde8092d5af4296c936cf1205a019a07de",
+   "sha256": "86310e0a69b865effb8d3a5b320eafef0a66b93c114fe878440584d6f0d733be"
   },
   "articles/introducing-sharness.html": {
    "from": "articles/introducing-sharness.html",
@@ -16823,13 +16863,13 @@
   },
   "articles/newsletter/index.html": {
    "from": "articles/newsletter/index.html",
-   "sha256_source": "ee8fada96ee64477a8e07ce13f14f736cdbf3de6251b9fc4bc704fd3e9e469f5",
-   "sha256": "af16e874161560ec1500a4c5a1cf7a209842026fa6d2f132c348dcabe1e8e82a"
+   "sha256_source": "598893939bea4be68da6a1346f29e5b33ac63450dc04b1357e5545c40e750bee",
+   "sha256": "39bc4c01d770445b91b1a8a0b24394786a460c734b82569fcb0cb12c2f655f76"
   },
   "articles/newsletter/index.md": {
    "from": "articles/newsletter/index.md",
-   "sha256_source": "27533d8d384f2a22a2e8a773a598f256eabb4a834779d9b4fbe2749c7848ffc7",
-   "sha256": "d70964e0a061482113b8d846d643919d5412df2e82cba268a20010ce9a3b0b3b"
+   "sha256_source": "0df80a921b2d68c0de36f93286536c46d0c2694331c574e8f63702d5561b8398",
+   "sha256": "6202bc0fcee3d3b26a75256752152ff767dd114142d7e48921a96cf9ccca2088"
   },
   "articles/nineteen-sites.html": {
    "from": "articles/nineteen-sites.html",
@@ -17303,13 +17343,13 @@
   },
   "articles/riskmandate-and-lovable.html": {
    "from": "articles/riskmandate-and-lovable.html",
-   "sha256_source": "da7385164cf85639e2f675d392fe254078113d2f21036f2fe4ff7dc29e3e5157",
-   "sha256": "ffba6b1cb057b0a99144c8b61cd57bfeb6e1b8ac35e003e5aaf9e49bf2dbe3c5"
+   "sha256_source": "59a00bc9afbcd8df0a3d73efd84b2419882e61e65b8c36024c9f65c0d2dc0341",
+   "sha256": "525345a89a43ac5674e510e1e66e476e97d72258e3bfec4ccdb98b99cef1b158"
   },
   "articles/riskmandate-and-lovable.md": {
    "from": "articles/riskmandate-and-lovable.md",
-   "sha256_source": "44d5bd7dce2cea7f2a03f4a44ba902e1c7c1d8e0e8a27bc7985addfa616fa5df",
-   "sha256": "5909615362b4ecccd3fa57246e127412d177f0b53cca4e72a3f53efec5f06795"
+   "sha256_source": "0746c5a60df5e8078473494f771e5995d07ad220ed579047cffac250c2373eb7",
+   "sha256": "b0ead40ebbc49224b8faad0a9bee01ffc7954e761225b2af0be7d9563c59157f"
   },
   "articles/riskmandate-and-manus.html": {
    "from": "articles/riskmandate-and-manus.html",
@@ -20650,6 +20690,16 @@
    "from": "articles/versions/code-review-as-a-fractal-semantic-graph/v1.3.1.md",
    "sha256_source": "e5dd0c1fc6f8a36f64cc6d22c10b0efb2d213e7c1521fb39aa10fe13d060cade",
    "sha256": "3f9913f139b8ccfa5dc25756dc7b1b0dabe76e1e9ae3883222f3d0209706c8a1"
+  },
+  "articles/versions/coding-standards-are-behaviour-policies.html": {
+   "from": "articles/versions/coding-standards-are-behaviour-policies.html",
+   "sha256_source": "62b2707849c30af71b85b43ae939263f0e0024a78b0e8515bb89a54bb1db57a8",
+   "sha256": "094266f1af90b603afa29d96b8cf5f4a282eda3391afcd40212071a2d981d211"
+  },
+  "articles/versions/coding-standards-are-behaviour-policies.md": {
+   "from": "articles/versions/coding-standards-are-behaviour-policies.md",
+   "sha256_source": "bca5a37f4c1713c48496a21abdac89c7d49a7d0bb2e321aca179b51641f2fdda",
+   "sha256": "fbd94cc51ce160d5a4d341a9cb3b891060d1ebadf2dfa0632b520f65f9e2cdd8"
   },
   "articles/versions/commanders-intent-is-a-behaviour-policy.html": {
    "from": "articles/versions/commanders-intent-is-a-behaviour-policy.html",
@@ -24773,23 +24823,23 @@
   },
   "articles/versions/storm-charles-a-newsroom-built-in-a-night.html": {
    "from": "articles/versions/storm-charles-a-newsroom-built-in-a-night.html",
-   "sha256_source": "b491b12bf908d6d2896eecde8c67853eb2071d8742ee3c5e860819e0dc7426fc",
-   "sha256": "5ef674d2513a7ac514cdc03997b1ddca4dc6c30826d7eb07eafabbbca197b3e2"
+   "sha256_source": "39279074fd926b87580238bc399cf42ac1425b3a77391b074976f6f8c333da50",
+   "sha256": "0cfe38e3deb6f89491dcc4cb7b160dc026d67a9674f61fcf2386e0ca1f88a061"
   },
   "articles/versions/storm-charles-a-newsroom-built-in-a-night.md": {
    "from": "articles/versions/storm-charles-a-newsroom-built-in-a-night.md",
-   "sha256_source": "99abb78d7997377af72a84d319106b05855f6593d6073c09d22f1fc2e63e21d0",
-   "sha256": "37f4f3e01637e5a1909f5c04a0876c6288aff1d743de1121a9bb0f3956652bbc"
+   "sha256_source": "83fc923c02cb2daa41e37b3e9a3c51d8cfad49047003c87d7ef7e2ba54b739ea",
+   "sha256": "b8ed4db7d64230bce3261b277282fce8524844e6cee318036bba0c720099c492"
   },
   "articles/versions/storm-charles-a-newsroom-built-in-a-night/v1.1.0.html": {
    "from": "articles/versions/storm-charles-a-newsroom-built-in-a-night/v1.1.0.html",
-   "sha256_source": "12910f387237e63df1bbce5fd78be67e65c51ec57ae2153c5a71658c7e5b7fe3",
-   "sha256": "3064a6f2188a1d6271fe02fe17c9a0cc727c9388b8f9ea7bfb408238171dfc2f"
+   "sha256_source": "63be26b53dee7d295a9f010ba6049f7187ebccc36a62576cdae22b6ee4bce736",
+   "sha256": "eb368ba51e914bfe83809ce656d8fff47970bad5ba0e399c9828259b8024fb1e"
   },
   "articles/versions/storm-charles-a-newsroom-built-in-a-night/v1.1.0.md": {
    "from": "articles/versions/storm-charles-a-newsroom-built-in-a-night/v1.1.0.md",
-   "sha256_source": "92ae46c972fa4fa96428275fb21a0e86e97701c2675e5b636870ec433f628d3e",
-   "sha256": "a584641cfa5db9c9688eca0ee90a48c4fb8bfa1857168d54797963cdcf3ebb21"
+   "sha256_source": "ce68bd38a9de42ee73c3bf3684c6796edd9f94caa714d862d71e8bf3dc528726",
+   "sha256": "2f12fd10db715c43b462eaa560a4ff0bf3bd399e2484c617eb444395184140c3"
   },
   "articles/versions/story-vault-meets-reader-skills.html": {
    "from": "articles/versions/story-vault-meets-reader-skills.html",
@@ -29666,13 +29716,13 @@
   },
   "newsroom/index.html": {
    "from": "newsroom/index.html",
-   "sha256_source": "95757e63633814e0c2eaa36c02886f4f3559488dd5822392529f27aca1863432",
-   "sha256": "65a1d98bb13fa29df01eb75e38aef6d4bda54629b74d677e2b7dab28a86037a2"
+   "sha256_source": "bf28dc9b2d5e843073c62da8d1517c11ff3719a280ac79519320dc46670bf9dd",
+   "sha256": "27d3cca9da6e75225bdfcae3fcdc4ab8e191b228ee8217b00d145535f52e7239"
   },
   "newsroom/index.md": {
    "from": "newsroom/index.md",
-   "sha256_source": "f874c5a7687f8589cfe05a74b914e53ef8c81d78a49a7ffcde32a7849e4ca245",
-   "sha256": "42d79e569d0560799888942bd68b56c9540fe15c1f56d56358fff81f4107bcaf"
+   "sha256_source": "c3f9cc5aba3a9e379708dd80a711cd1b3b09d8ddba7bf22ba1abbf93afebe5ee",
+   "sha256": "3e428b6139190aabee39072c512fbafa10d3c6ee1a1ad1fcc48862d9c06a23aa"
   },
   "newsroom/log.html": {
    "from": "newsroom/log.html",
@@ -29766,8 +29816,8 @@
   },
   "newsroom/wire.json": {
    "from": "newsroom/wire.json",
-   "sha256_source": "2b0bd80cc313cf0ed11e90041a650931238dcb9122bac7e6a439168426a12ed6",
-   "sha256": "8ea6879a379b1de260a81ef5d93ce2528fcea3b2fb89c288d1b1e9e580128dc7"
+   "sha256_source": "e0f9a29dfaa25500b0e4bbdb2c228ee7916b37eb5f6b94d46437d4db1d61ae7d",
+   "sha256": "ddf2b9c24beda2867d61ca3879396577cb0b5a7ff2fbb32ec85b643e4af3ede2"
   },
   "og/a-book-for-one-reader.jpg": {
    "from": "og/a-book-for-one-reader.jpg",
@@ -30183,6 +30233,11 @@
    "from": "og/code-review-as-a-fractal-semantic-graph.jpg",
    "sha256_source": "d495d43f27a044ef990370ecd81ad5ac5e62f1dacad0865ffd489b61a2ea0fb7",
    "sha256": "d495d43f27a044ef990370ecd81ad5ac5e62f1dacad0865ffd489b61a2ea0fb7"
+  },
+  "og/coding-standards-are-behaviour-policies.jpg": {
+   "from": "og/coding-standards-are-behaviour-policies.jpg",
+   "sha256_source": "1d962491f10769307dffa26e3086ce05275afb2e3bb3271e6fc0805337fb3a9c",
+   "sha256": "1d962491f10769307dffa26e3086ce05275afb2e3bb3271e6fc0805337fb3a9c"
   },
   "og/commanders-intent-is-a-behaviour-policy.jpg": {
    "from": "og/commanders-intent-is-a-behaviour-policy.jpg",

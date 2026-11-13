@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-11-11",
+  "generated": "2026-11-13",
   "site_version": "v0.7.87",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
@@ -54,6 +54,187 @@
     "produces"
   ],
   "articles": [
+    {
+      "slug": "coding-standards-are-behaviour-policies",
+      "title": "Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit",
+      "date": "2026-11-13",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/coding-standards-are-behaviour-policies.html",
+      "markdown": "https://newsroom.sgit.ai/articles/coding-standards-are-behaviour-policies.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/coding-standards-are-behaviour-policies.webp",
+      "teaser": "A coding standard is a behaviour policy: write it as intent, see what holds each rule, and map it across teams with a graph.",
+      "topics": [
+        "agents-and-policy",
+        "graphs-and-knowledge"
+      ],
+      "tags": [
+        "abp",
+        "coding-standards",
+        "fractal-semantic-graphs",
+        "agents",
+        "code-review",
+        "intent",
+        "riskmandate",
+        "article"
+      ],
+      "links_out": [
+        "code-review-as-a-fractal-semantic-graph",
+        "introducing-fractal-semantic-graphs",
+        "behaviour-policies-from-the-checks",
+        "a-policy-for-every-skill",
+        "governs-enforces-attests",
+        "riskmandate-and-lovable"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "cbp-ladder.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cbp-ladder.webp",
+          "caption": "One intent for the shopping cart, from the business down to each team's code, kept in every language.",
+          "kind": "concept"
+        },
+        {
+          "file": "cbp-measured.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cbp-measured.webp",
+          "caption": "Our own house rules, measured by coding.sgit.ai: 31 rules, kept well by habit, none held by a passing CI guard.",
+          "kind": "chart"
+        }
+      ],
+      "graph": {
+        "slug": "coding-standards-are-behaviour-policies",
+        "teaser": "A coding standard is a behaviour policy: write it as intent, see what holds each rule, and map it across teams with a graph.",
+        "topics": [
+          "agents-and-policy",
+          "graphs-and-knowledge"
+        ],
+        "core_idea": "Coding standards describe how an agent behaves when it writes code, so they are behaviour policies, and their strength is describing intent rather than tool settings. Our own standards, measured by coding.sgit.ai, are 31 rules kept mostly by habit with no passing CI guard: a mandate with no barrier. Fractal semantic graphs connect a codebase from intent to stories, features, classes and methods, so common intents can keep several teams and languages aligned on one feature, and language models make those mappings affordable while people and tests confirm them.",
+        "nodes": [
+          {
+            "id": "standard",
+            "label": "A coding standard",
+            "kind": "artefact",
+            "summary": "How an agent writes code."
+          },
+          {
+            "id": "policy",
+            "label": "A behaviour policy",
+            "kind": "concept",
+            "summary": "Reach, mandate, gap, barrier."
+          },
+          {
+            "id": "intent",
+            "label": "Intent, not settings",
+            "kind": "claim",
+            "summary": "Survives a change of tool."
+          },
+          {
+            "id": "measured",
+            "label": "Our rules measured",
+            "kind": "example",
+            "summary": "31 rules, no passing guard."
+          },
+          {
+            "id": "graph",
+            "label": "Fractal semantic graph",
+            "kind": "method",
+            "summary": "Intent down to methods."
+          },
+          {
+            "id": "climb",
+            "label": "One commit read upwards",
+            "kind": "example",
+            "summary": "Nine commands, six stories."
+          },
+          {
+            "id": "queries",
+            "label": "Rules as graph queries",
+            "kind": "method",
+            "summary": "A rule is a shape."
+          },
+          {
+            "id": "common",
+            "label": "Common intents across teams",
+            "kind": "concept",
+            "summary": "One intent, every language."
+          },
+          {
+            "id": "models",
+            "label": "Models make the mappings",
+            "kind": "claim",
+            "summary": "Confirmed by users, experts, tests."
+          }
+        ],
+        "edges": [
+          {
+            "from": "standard",
+            "to": "policy",
+            "rel": "example-of"
+          },
+          {
+            "from": "intent",
+            "to": "policy",
+            "rel": "extends"
+          },
+          {
+            "from": "measured",
+            "to": "standard",
+            "rel": "example-of"
+          },
+          {
+            "from": "graph",
+            "to": "common",
+            "rel": "depends-on"
+          },
+          {
+            "from": "climb",
+            "to": "graph",
+            "rel": "example-of"
+          },
+          {
+            "from": "queries",
+            "to": "graph",
+            "rel": "extends"
+          },
+          {
+            "from": "common",
+            "to": "intent",
+            "rel": "extends"
+          },
+          {
+            "from": "models",
+            "to": "graph",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "behaviour-policies-from-the-checks",
+            "a-policy-for-every-skill",
+            "governs-enforces-attests",
+            "riskmandate-and-lovable"
+          ],
+          "pages": [],
+          "sites": [
+            "https://coding.sgit.ai/",
+            "https://newsroom.sgit.ai/articles/code-review-as-a-fractal-semantic-graph.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "What makes both work is the same thing: you are describing the intent.",
+            "why": "The idea."
+          },
+          {
+            "text": "You found the common language, and it is the intent, not the syntax.",
+            "why": "Common intents across teams."
+          },
+          {
+            "text": "A rule becomes a shape, and a violation is a node where the shape is missing.",
+            "why": "From a method to the business requirement."
+          }
+        ]
+      }
+    },
     {
       "slug": "storm-charles-a-newsroom-built-in-a-night",
       "title": "Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis",
@@ -293,7 +474,9 @@
         "riskmandate-and-manus",
         "riskmandate-and-cloudflare"
       ],
-      "links_in": [],
+      "links_in": [
+        "coding-standards-are-behaviour-policies"
+      ],
       "figures": [
         {
           "file": "lvm-controls.webp",
@@ -27196,6 +27379,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "coding-standards-are-behaviour-policies",
         "introducing-sharness",
         "proven-controls-for-agents",
         "the-sidecar-repository",
@@ -33917,6 +34101,7 @@
         "cedar-and-the-policy-vault"
       ],
       "links_in": [
+        "coding-standards-are-behaviour-policies",
         "riskmandate-and-cloudflare",
         "riskmandate-and-manus",
         "a-payout-for-every-row",
@@ -56478,6 +56663,7 @@
         "riskmandate-ten-questions"
       ],
       "links_in": [
+        "coding-standards-are-behaviour-policies",
         "our-first-customers",
         "skill-behaviour-policy",
         "hooks-are-kernel-code",
@@ -78976,6 +79162,7 @@
         "if-somebody-built-a-company-on-code-review"
       ],
       "links_in": [
+        "coding-standards-are-behaviour-policies",
         "search-as-navigation",
         "the-code-you-do-not-ship",
         "three-policies-for-an-agent",
@@ -83477,6 +83664,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "coding-standards-are-behaviour-policies",
         "storm-charles-a-newsroom-built-in-a-night",
         "the-graph-companies",
         "i-just-want-to-buy-the-article",

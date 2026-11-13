@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-11 | minor | 2,369 | +210 / −0 words; 0 changed, 5 added, 0 removed paragraphs | this release | [what changed](storm-charles-a-newsroom-built-in-a-night/v1.1.0.md) · [current](../storm-charles-a-newsroom-built-in-a-night.md) |
+| **v1.1.0** | 2026-11-11 | minor | 2,369 | +210 / −0 words; 0 changed, 5 added, 0 removed paragraphs | [`5837d5c11`](https://github.com/SGit-AI/SGit-AI__Website/commit/5837d5c11cd3bc427067340b30b15150853c6866) | [what changed](storm-charles-a-newsroom-built-in-a-night/v1.1.0.md) · [current](../storm-charles-a-newsroom-built-in-a-night.md) |
 | **v1.0.0** | 2026-11-11 | published | 2,159 | first published | [`a8d1b018c`](https://github.com/SGit-AI/SGit-AI__Website/commit/a8d1b018c95127306e106f48d6a6bd3889cbb575) |  |
 
 [← Back to the article](../storm-charles-a-newsroom-built-in-a-night.md) · [All articles](../index.md)

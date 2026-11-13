@@ -1,0 +1,148 @@
+{
+  "slug": "coding-standards-are-behaviour-policies",
+  "teaser": "A coding standard is a behaviour policy: write it as intent, see what holds each rule, and map it across teams with a graph.",
+  "topics": [
+    "agents-and-policy",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "Coding standards describe how an agent behaves when it writes code, so they are behaviour policies, and their strength is describing intent rather than tool settings. Our own standards, measured by coding.sgit.ai, are 31 rules kept mostly by habit with no passing CI guard: a mandate with no barrier. Fractal semantic graphs connect a codebase from intent to stories, features, classes and methods, so common intents can keep several teams and languages aligned on one feature, and language models make those mappings affordable while people and tests confirm them.",
+  "nodes": [
+    {
+      "id": "standard",
+      "label": "A coding standard",
+      "kind": "artefact",
+      "summary": "How an agent writes code."
+    },
+    {
+      "id": "policy",
+      "label": "A behaviour policy",
+      "kind": "concept",
+      "summary": "Reach, mandate, gap, barrier."
+    },
+    {
+      "id": "intent",
+      "label": "Intent, not settings",
+      "kind": "claim",
+      "summary": "Survives a change of tool."
+    },
+    {
+      "id": "measured",
+      "label": "Our rules measured",
+      "kind": "example",
+      "summary": "31 rules, no passing guard."
+    },
+    {
+      "id": "graph",
+      "label": "Fractal semantic graph",
+      "kind": "method",
+      "summary": "Intent down to methods."
+    },
+    {
+      "id": "climb",
+      "label": "One commit read upwards",
+      "kind": "example",
+      "summary": "Nine commands, six stories."
+    },
+    {
+      "id": "queries",
+      "label": "Rules as graph queries",
+      "kind": "method",
+      "summary": "A rule is a shape."
+    },
+    {
+      "id": "common",
+      "label": "Common intents across teams",
+      "kind": "concept",
+      "summary": "One intent, every language."
+    },
+    {
+      "id": "models",
+      "label": "Models make the mappings",
+      "kind": "claim",
+      "summary": "Confirmed by users, experts, tests."
+    }
+  ],
+  "edges": [
+    {
+      "from": "standard",
+      "to": "policy",
+      "rel": "example-of"
+    },
+    {
+      "from": "intent",
+      "to": "policy",
+      "rel": "extends"
+    },
+    {
+      "from": "measured",
+      "to": "standard",
+      "rel": "example-of"
+    },
+    {
+      "from": "graph",
+      "to": "common",
+      "rel": "depends-on"
+    },
+    {
+      "from": "climb",
+      "to": "graph",
+      "rel": "example-of"
+    },
+    {
+      "from": "queries",
+      "to": "graph",
+      "rel": "extends"
+    },
+    {
+      "from": "common",
+      "to": "intent",
+      "rel": "extends"
+    },
+    {
+      "from": "models",
+      "to": "graph",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "behaviour-policies-from-the-checks",
+      "a-policy-for-every-skill",
+      "governs-enforces-attests",
+      "riskmandate-and-lovable"
+    ],
+    "pages": [],
+    "sites": [
+      "https://coding.sgit.ai/",
+      "https://newsroom.sgit.ai/articles/code-review-as-a-fractal-semantic-graph.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "What makes both work is the same thing: you are describing the intent.",
+      "why": "The idea."
+    },
+    {
+      "text": "You found the common language, and it is the intent, not the syntax.",
+      "why": "Common intents across teams."
+    },
+    {
+      "text": "A rule becomes a shape, and a violation is a node where the shape is missing.",
+      "why": "From a method to the business requirement."
+    }
+  ],
+  "figures": [
+    {
+      "file": "cbp-ladder.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cbp-ladder.webp",
+      "caption": "One intent for the shopping cart, from the business down to each team's code, kept in every language.",
+      "kind": "concept"
+    },
+    {
+      "file": "cbp-measured.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cbp-measured.webp",
+      "caption": "Our own house rules, measured by coding.sgit.ai: 31 rules, kept well by habit, none held by a passing CI guard.",
+      "kind": "chart"
+    }
+  ]
+}

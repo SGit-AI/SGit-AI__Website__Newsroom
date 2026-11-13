@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit, SGit Newsroom</title>
+<meta name="description" content="We use Agent Behaviour Policies to say what an agent may do: this database, this table, this field, a positive number. A conversation this week made a point I like: a coding standard is the same thing. "Here is how we write Python" describes a behaviour, and describing behaviour as intent is what makes a policy useful. We already keep detailed markdown standards for JavaScript, Python and the rest, and our sibling site coding.sgit.ai measured them: 31 documented rules, kept well by habit, with no linter in the estate and not one of the 31 held by a passing CI guard. Read as a behaviour policy, that is a mandate with no barrier, and the policy is what makes the gap visible. The bigger idea is what happens across teams. With fractal semantic graphs, a codebase becomes layers you can climb, from the business intent to the stories, the features, the classes and the methods; our worked example on the sgit command-line tool already reads one commit upwards to the stories it can reach. Do that across every language and every department, express the standards as common intents, and a feature that touches the back end, the front end and the data tier can be kept in step by the same intent at every layer. Building those mappings is what language models are good at.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/coding-standards-are-behaviour-policies.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/coding-standards-are-behaviour-policies.html">
+<meta property="og:title" content="Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit, SGit Newsroom">
+<meta property="og:description" content="We use Agent Behaviour Policies to say what an agent may do: this database, this table, this field, a positive number. A conversation this week made a point I like: a coding standard is the same thing. "Here is how we write Python" describes a behaviour, and describing behaviour as intent is what makes a policy useful. We already keep detailed markdown standards for JavaScript, Python and the rest, and our sibling site coding.sgit.ai measured them: 31 documented rules, kept well by habit, with no linter in the estate and not one of the 31 held by a passing CI guard. Read as a behaviour policy, that is a mandate with no barrier, and the policy is what makes the gap visible. The bigger idea is what happens across teams. With fractal semantic graphs, a codebase becomes layers you can climb, from the business intent to the stories, the features, the classes and the methods; our worked example on the sgit command-line tool already reads one commit upwards to the stories it can reach. Do that across every language and every department, express the standards as common intents, and a feature that touches the back end, the front end and the data tier can be kept in step by the same intent at every layer. Building those mappings is what language models are good at.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/coding-standards-are-behaviour-policies.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/coding-standards-are-behaviour-policies.jpg">
+<link rel="alternate" type="text/markdown" href="coding-standards-are-behaviour-policies.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit, SGit Newsroom", "headline": "Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit, SGit Newsroom", "description": "We use Agent Behaviour Policies to say what an agent may do: this database, this table, this field, a positive number. A conversation this week made a point I like: a coding standard is the same thing. \"Here is how we write Python\" describes a behaviour, and describing behaviour as intent is what makes a policy useful. We already keep detailed markdown standards for JavaScript, Python and the rest, and our sibling site coding.sgit.ai measured them: 31 documented rules, kept well by habit, with no linter in the estate and not one of the 31 held by a passing CI guard. Read as a behaviour policy, that is a mandate with no barrier, and the policy is what makes the gap visible. The bigger idea is what happens across teams. With fractal semantic graphs, a codebase becomes layers you can climb, from the business intent to the stories, the features, the classes and the methods; our worked example on the sgit command-line tool already reads one commit upwards to the stories it can reach. Do that across every language and every department, express the standards as common intents, and a feature that touches the back end, the front end and the data tier can be kept in step by the same intent at every layer. Building those mappings is what language models are good at.", "url": "https://newsroom.sgit.ai/articles/coding-standards-are-behaviour-policies.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit</p>
+ <h1>Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-11-13 &middot; <a href="versions/coding-standards-are-behaviour-policies.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v999.0.0</a> &middot; <span class="chip">abp</span><span class="chip">coding-standards</span><span class="chip">fractal-semantic-graphs</span><span class="chip">agents</span><span class="chip">code-review</span><span class="chip">intent</span><span class="chip">riskmandate</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> We use Agent Behaviour Policies to say what an agent may do: this database, this table, this field, a positive number. A conversation this week made a point I like: a coding standard is the same thing. "Here is how we write Python" describes a behaviour, and describing behaviour as intent is what makes a policy useful. We already keep detailed markdown standards for JavaScript, Python and the rest, and our sibling site coding.sgit.ai measured them: 31 documented rules, kept well by habit, with no linter in the estate and not one of the 31 held by a passing CI guard. Read as a behaviour policy, that is a mandate with no barrier, and the policy is what makes the gap visible. The bigger idea is what happens across teams. With fractal semantic graphs, a codebase becomes layers you can climb, from the business intent to the stories, the features, the classes and the methods; our worked example on the sgit command-line tool already reads one commit upwards to the stories it can reach. Do that across every language and every department, express the standards as common intents, and a feature that touches the back end, the front end and the data tier can be kept in step by the same intent at every layer. Building those mappings is what language models are good at.</em></p>
+<figure class="shot" data-shot="cbp-ladder.webp" data-dir="images/" data-alt="One intent for the shopping cart, from the business down to each team&#x27;s code, kept in every language." data-kind="concept"><figcaption>One intent for the shopping cart, from the business down to each team's code, kept in every language.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>A coding standard is a behaviour policy.</b> It describes how an agent should behave when it writes code, the same way a policy describes what it may touch.</li>
+<li><b>The power is that it describes intent,</b> not a tool's configuration, so the same intent can be kept in every language.</li>
+<li><b>We already have these:</b> detailed markdown standards per language, which our coding site measured: 31 rules, kept well by habit, none held by a passing CI guard.</li>
+<li><b>Read as a policy, that is a mandate with no barrier,</b> and the policy is the document that shows it.</li>
+<li><b>Across teams, fractal semantic graphs connect the layers:</b> intent, stories, features, classes, methods. Change a method and you know which business requirement it serves.</li>
+<li><b>Common intents keep teams in step:</b> a feature that touches the back end, the front end and the data tier carries the same intent into each.</li>
+<li><b>Language models make the mappings affordable;</b> people and tests confirm them.</li>
+</ul>
+<h2 id="idea">The idea</h2>
+<p>An Agent Behaviour Policy is how we write down what an agent is for: what it can reach, what the business authorised, the gap between the two, and what holds each row. The examples are usually about data. You may access this database, this table, this field, and only with a positive number.</p>
+<p>In a conversation this week someone made the point that a coding standard is the same kind of thing, and I agree. "If you write Python, this is how you write it" is a description of behaviour. It is the agent's behaviour when the job is writing code, instead of its behaviour when the job is reading a customer record.</p>
+<p>What makes both work is the same thing: you are describing the intent. Not "set this linter flag", but "money is never a raw number", "every input is validated where it enters", "a class does one thing and has its test". The flag is one way of keeping the intent, in one tool, for one language. The intent is what you actually want, and it survives a change of tool.</p>
+<h2 id="ours">We already write these</h2>
+<figure class="shot" data-shot="cbp-measured.webp" data-dir="images/" data-alt="Our own house rules, measured by coding.sgit.ai: 31 rules, kept well by habit, none held by a passing CI guard." data-kind="chart"><figcaption>Our own house rules, measured by coding.sgit.ai: 31 rules, kept well by habit, none held by a passing CI guard.</figcaption></figure>
+<p>For a long time we have kept detailed markdown files that say how we code: how a Python class is laid out, how a web component is built, what a test looks like, what never goes in a file. Agents read them before they write.</p>
+<p>Our sibling site <a href="https://coding.sgit.ai/">coding.sgit.ai</a> went further and measured them against the code, across 217,266 lines in five languages, deriving every convention by counting rather than from documentation. What it found reads exactly like a behaviour policy with its gap column filled in:</p>
+<ul>
+<li><b>31 documented rules,</b> plus 4 testing non-negotiables. That is the mandate.</li>
+<li><b>0 linters, formatters or type-checkers</b> anywhere in the estate.</li>
+<li><b>4 working CI guards,</b> and each one encodes an incident rather than a rule. A fifth guard has never worked: its pattern cannot match the real package name.</li>
+<li><b>None of the 31 rules carries a passing CI guard.</b> In the site's own words, "the written rule set and the tested rule set do not currently overlap at all."</li>
+</ul>
+<p>And yet the rules are mostly kept: banners on 100% of class-defining files, no docstrings on 99.7%, empty <code>__init__.py</code> on 99%, one class per file on 90%. They are kept by habit, by agents and people who read the standard, not by a barrier. The site also ships the configurations that would turn some of them into barriers (ruff, eslint, stylelint, a house-style test), with an honest table of what those tools cannot express.</p>
+<p>That is the value of reading a standard as a policy. A markdown standard tells you the mandate. A policy also asks, for every rule, what holds it, and shows the rows where the answer is "nothing yet".</p>
+<h2 id="graph">From a method to the business requirement</h2>
+<p>The second half of the idea is where it gets powerful. In <a href="code-review-as-a-fractal-semantic-graph.html">code review as a fractal semantic graph</a> I described source code as layers within layers, each a graph with its own vocabulary: what the user is trying to do, the features and flows, the components, the classes, the methods and their calls, the syntax tree.</p>
+<p>The worked example was the sgit command-line tool: 427 files, 377 classes, 1,111 methods, 2,592 resolved calls, 72 commands and eleven stories. One commit, a bug fix of 75 lines added and 7 removed, read upwards: one method in a transport class and six command handlers changed, and the climb through the call graph reaches nine of the 72 commands and six of the eleven stories. So when you change a function, you know which stories, and so which business requirements, sit above it.</p>
+<p>The same example ran ten of the project's house rules as queries over the graph. "No raw primitives as fields of typed classes": 19 exceptions in 755 fields. "A mirrored test file for every domain class": missing for 143 of 253. A rule becomes a shape, and a violation is a node where the shape is missing. That is a coding standard enforced as a graph query, which works the same way whatever language the graph was read from.</p>
+<h2 id="common">Common intents across teams</h2>
+<p>Now put the two together, across a company.</p>
+<p>Say several teams are adding a feature to the shopping cart: a returning customer can save a cart and come back to it. It needs changes in the back end, the front end and the data tier, each in its own language, each team with its own standard. Today those standards are separate documents that happen to agree, or not.</p>
+<p>If each team's standard is written as a behaviour policy, and the policies share common intents, the picture changes:</p>
+<ul>
+<li><b>The intent is written once:</b> money is never a raw number; every input is validated where it enters; no secrets in code; every class has its test.</li>
+<li><b>Each language keeps it its own way:</b> a constrained type in Python, a validated attribute in a web component, a check constraint in SQL.</li>
+<li><b>The graph connects the layers:</b> the feature, its stories, and the classes and methods each team changes, so a reviewer can see that the whole change serves the same intent at every layer, and which row in which language has no barrier yet.</li>
+</ul>
+<p>That is how you keep teams in step without asking them to use the same tools. You found the common language, and it is the intent, not the syntax.</p>
+<h2 id="models">Why language models change this</h2>
+<p>None of this was new as an idea. What made it expensive was the mapping: naming which story a method serves, which intent a rule protects, how "money is never a raw number" looks in four languages. Those were acts of human attention, and there were never enough of them.</p>
+<p>A language model can now propose those mappings, across languages and across teams, cheaply. The proposals will be partly wrong, which is why the graph keeps them marked as proposed until something confirms them: users confirm the stories, experts confirm their layer, and tests confirm execution. Every correction is a commit to the graph files. The standards stay in markdown, readable by people and agents; the policy says what holds each one; the graph says where each one applies.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The cart example is invented,</b> to show the shape of a shared intent; nothing here has been built for it.</li>
+<li><b>The figures for our own rules are coding.sgit.ai's,</b> from its measurement published on 25 August 2026, read on 12 November.</li>
+<li><b>The graph figures are from the worked example</b> in the code review article: one Python project, with hand-written stories.</li>
+<li><b>Mapping across many languages and teams is a proposal.</b> The single-project graph and the measured standards exist today.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>A conversation on 12 November 2026, in my words. <a href="https://coding.sgit.ai/">coding.sgit.ai</a> and <a href="https://coding.sgit.ai/llms.txt">its llms.txt</a>, read 12 November 2026. Earlier on this site: <a href="code-review-as-a-fractal-semantic-graph.html">code review as a fractal semantic graph</a>, <a href="introducing-fractal-semantic-graphs.html">introducing fractal semantic graphs</a>, <a href="behaviour-policies-from-the-checks.html">behaviour policies from the checks</a>, <a href="a-policy-for-every-skill.html">a policy for every skill</a>, <a href="governs-enforces-attests.html">governs, enforces, attests</a>, <a href="riskmandate-and-lovable.html">RiskMandate and Lovable</a>.</p>
+<sg-meter view="page" kind="article" date="2026-11-13" topics="agents-and-policy graphs-and-knowledge" title="Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Graphs &amp; knowledge</span> <a href="graphs.html#coding-standards-are-behaviour-policies">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="code-review-as-a-fractal-semantic-graph.html">Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it</a> <span class="dim">Source code is layers within layers, each a graph with its own vocabulary; code review should read a change at every one, and a vault shows it done on real code.</span></li><li><a href="introducing-fractal-semantic-graphs.html">Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema</a> <span class="dim">A fractal semantic graph has no privileged level and no single schema: each world keeps its own vocabulary and connects to others through named edges.</span></li><li><a href="behaviour-policies-from-the-checks.html">Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept</a> <span class="dim">57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept.</span></li><li><a href="a-policy-for-every-skill.html">A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less</a> <span class="dim">Sean Turner's natural-language control for agent skills, read as a behaviour policy, and why the description, not the code, stays canonical.</span></li><li><a href="governs-enforces-attests.html">Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs</a> <span class="dim">An ABP governs and names the enforcer at three levels: prompt, hooks, or a third-party system. An attestation layer signs it so a third party can verify.</span></li><li><a href="riskmandate-and-lovable.html">RiskMandate and Lovable: mapping an Agent Behaviour Policy onto an app builder whose agent writes the code, changes the live database, connects your other systems and publishes, with the controls Lovable already gives and their defaults</a> <span class="dim">Lovable's agent can change production; its controls are real, its defaults open, and a policy says what each project's agent may do.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 393 &middot; <a href="../for/make.html#r=393">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/coding-standards-are-behaviour-policies.jpg" download>coding-standards-are-behaviour-policies.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="coding-standards-are-behaviour-policies.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>The publication</h4>
+    <a href="../about/imprint.html">Imprint</a>
+    <a href="../about/standards.html">Editorial standards</a>
+    <a href="../about/corrections.html">Corrections</a>
+    <a href="../about/withdrawals.html">Withdrawals</a>
+    <a href="../about/complaints.html">Complaints</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>
