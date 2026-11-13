@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-13 | published | 1,646 | first published | this release | [current](../coding-standards-are-behaviour-policies.md) |
+| **v1.0.0** | 2026-11-13 | published | 1,646 | first published | [`5e31e6b95`](https://github.com/SGit-AI/SGit-AI__Website/commit/5e31e6b954a3fae08f12ef34e26f3a83e62f2b67) | [current](../coding-standards-are-behaviour-policies.md) |
 
 [← Back to the article](../coding-standards-are-behaviour-policies.md) · [All articles](../index.md)
 
