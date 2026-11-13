@@ -4,7 +4,7 @@ date: 2026-11-13
 author: Dinis Cruz
 author_url: about/index.html
 summary: We use Agent Behaviour Policies to say what an agent may do: this database, this table, this field, a positive number. A conversation this week made a point I like: a coding standard is the same thing. "Here is how we write Python" describes a behaviour, and describing behaviour as intent is what makes a policy useful. We already keep detailed markdown standards for JavaScript, Python and the rest, and our sibling site coding.sgit.ai measured them: 31 documented rules, kept well by habit, with no linter in the estate and not one of the 31 held by a passing CI guard. Read as a behaviour policy, that is a mandate with no barrier, and the policy is what makes the gap visible. The bigger idea is what happens across teams. With fractal semantic graphs, a codebase becomes layers you can climb, from the business intent to the stories, the features, the classes and the methods; our worked example on the sgit command-line tool already reads one commit upwards to the stories it can reach. Do that across every language and every department, express the standards as common intents, and a feature that touches the back end, the front end and the data tier can be kept in step by the same intent at every layer. Building those mappings is what language models are good at.
-version: v999.0.0
+version: v0.14.79
 license: https://creativecommons.org/licenses/by/4.0/
 tags: abp, coding-standards, fractal-semantic-graphs, agents, code-review, intent, riskmandate, article
 status: published
