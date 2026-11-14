@@ -10,7 +10,7 @@
 
 # Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-14 · [article v1.1.0, 2 versions](versions/ten-days-at-web-summit.md) · [newsroom v0.14.82](https://newsroom.sgit.ai/admin/versions.html) · web-summitagentspromptugalstorm-charlesteamseriescollagearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-14 · [article v1.2.0, 3 versions](versions/ten-days-at-web-summit.md) · [newsroom v0.14.82](https://newsroom.sgit.ai/admin/versions.html) · web-summitagentspromptugalstorm-charlesteamseriescollagearticle
 
 ***Abstract:** Between 3 and 13 November 2026, six of us, with our agents, built more than I can fit in one article. A team operating system, an independent newsroom for Web Summit Lisbon, a site about Storm Charles that grew to more than 2,600 pages in three days, a guide to the summit's fringe that went live two and a half hours after its brief, a draft standard that rated twenty companies, four iPhone and iPad apps, an Android tablet app, and the tools to run all of it. About 20,000 commits across fifteen repositories, 224 Claude Code sessions, around 250 named agents, and more than 60 sessions working at the same time at the peak. This article is the map: the team, the sequence of events, the numbers, a collage of what we made, and the list of articles that will tell each part. I will update it as each one goes live.*
 
@@ -72,7 +72,7 @@ A word on money. The dollar figures in these articles are API-equivalent: what t
 I will publish these one at a time, and link each one here as it goes live.
 
 1. **Ten days at Web Summit** (this article): the map.
-2. **The team's operating system:** web-summit.sgit.ai, with its board, briefs, keys, inbox lanes, vaults, company map and X-ray.
+2. [The team's operating system](the-teams-operating-system.md): web-summit.sgit.ai, with its board, briefs, keys, inbox lanes, vaults, company map and X-ray.
 3. **PrompTugal.news, the newsroom we ran at Web Summit:** the desks, the reviewers, the outreach drafts and the costs.
 4. **Native apps by agents:** four iOS apps from one workspace, an Android build on a tablet in four hours, the App Store and TestFlight.
 5. **The Mac bottleneck:** agents waiting three times longer than they ran.
@@ -104,6 +104,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#ten-da
 
 ### Builds on
 
+- [The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map](the-teams-operating-system.md) web-summit.sgit.ai: one site where six people and their agents ran Web Summit, in four layers built on git.
 - [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](storm-charles-a-newsroom-built-in-a-night.md) Storm Charles: about thirty agents built a weather face over a data room in a night, every figure sourced, timed and labelled.
 - [Who else controls AI agents at Web Summit? An outreach agent mapped eleven companies in an afternoon, in their own words, and found that most of them are partners for RiskMandate as much as competitors](who-else-controls-ai-agents-at-web-summit.md) An outreach agent mapped eleven companies that control AI agents at Web Summit; most are partners for RiskMandate as much as competitors.
 - [An inbox only your agents can write to: a conductor publishes one append lane per agent, each lane's token sealed to that agent's own key, so everything needed to talk privately is public and only the right agent can use it](an-inbox-only-your-agents-can-write-to.md) A conductor publishes one append lane per agent, each token sealed to that agent's key: a private channel built from public material.
@@ -113,6 +114,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#ten-da
 
 ### Continued by
 
+- [The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map](the-teams-operating-system.md) web-summit.sgit.ai: one site where six people and their agents ran Web Summit, in four layers built on git.
 - [One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes](the-book-is-on-leanpub.md) One Human, Nine Agents, Nineteen Hours is on Leanpub: free as a minimum, pay what you want, every update included.
 
 [All articles](index.md) · [All graphs](graphs.md)

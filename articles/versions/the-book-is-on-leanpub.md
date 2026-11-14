@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-14 | published | 810 | first published | this release | [current](../the-book-is-on-leanpub.md) |
+| **v1.0.0** | 2026-11-14 | published | 810 | first published | [`352580130`](https://github.com/SGit-AI/SGit-AI__Website/commit/352580130655b187e222242cd69f4c763ad99e5f) | [current](../the-book-is-on-leanpub.md) |
 
 [← Back to the article](../the-book-is-on-leanpub.md) · [All articles](../index.md)
 

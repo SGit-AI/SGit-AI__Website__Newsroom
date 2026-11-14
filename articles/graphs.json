@@ -55,6 +55,199 @@
   ],
   "articles": [
     {
+      "slug": "the-teams-operating-system",
+      "title": "The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map",
+      "date": "2026-11-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-teams-operating-system.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-teams-operating-system.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-teams-operating-system.webp",
+      "teaser": "web-summit.sgit.ai: one site where six people and their agents ran Web Summit, in four layers built on git.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "web-summit",
+        "team",
+        "agents",
+        "pki",
+        "vaults",
+        "command-centre",
+        "intranet",
+        "series",
+        "article"
+      ],
+      "links_out": [
+        "ten-days-at-web-summit",
+        "an-inbox-only-your-agents-can-write-to",
+        "a-key-for-every-person",
+        "web-summit-part-five"
+      ],
+      "links_in": [
+        "ten-days-at-web-summit"
+      ],
+      "figures": [
+        {
+          "file": "tos-collage.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tos-collage.webp",
+          "caption": "Fifteen pages of web-summit.sgit.ai, the site the team ran Web Summit from.",
+          "kind": "collage"
+        },
+        {
+          "file": "tos-layers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tos-layers.webp",
+          "caption": "The site's four layers: people, agents, work, and the world outside, with git underneath.",
+          "kind": "architecture"
+        },
+        {
+          "file": "tos-command-centre.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tos-command-centre.webp",
+          "caption": "A command centre: the team, its agents and their activity in one live view.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "tos-team-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tos-team-map.webp",
+          "caption": "The team as a picture: people, their agents, and who talks to whom.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "the-teams-operating-system",
+        "teaser": "web-summit.sgit.ai: one site where six people and their agents ran Web Summit, in four layers built on git.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "The Web Summit team ran its week from one site built from markdown and data in git: briefs, onboarding levels and a command centre for each person; keys, inbox lanes and sealed secrets for each agent; the board as 219 files; and the outside world as a company map, an X-ray and a CRM in public and private vaults. Files serve agents and people alike, and keys make private channels small steps.",
+        "nodes": [
+          {
+            "id": "site",
+            "label": "One site from files",
+            "kind": "artefact",
+            "summary": "6,096 commits."
+          },
+          {
+            "id": "people",
+            "label": "People",
+            "kind": "concept",
+            "summary": "Briefs, levels, command centres."
+          },
+          {
+            "id": "cc",
+            "label": "Command centres",
+            "kind": "artefact",
+            "summary": "One engine for everyone."
+          },
+          {
+            "id": "agents",
+            "label": "Agents",
+            "kind": "concept",
+            "summary": "Named for their person."
+          },
+          {
+            "id": "keys",
+            "label": "108 public keys",
+            "kind": "artefact",
+            "summary": "Each with a QR code."
+          },
+          {
+            "id": "inbox",
+            "label": "Inbox lanes",
+            "kind": "method",
+            "summary": "Tokens sealed to agents."
+          },
+          {
+            "id": "board",
+            "label": "The board as files",
+            "kind": "method",
+            "summary": "219 items."
+          },
+          {
+            "id": "outside",
+            "label": "The world outside",
+            "kind": "concept",
+            "summary": "Map, X-ray, CRM."
+          },
+          {
+            "id": "reality",
+            "label": "The reality file",
+            "kind": "claim",
+            "summary": "Fell behind in the busiest days."
+          }
+        ],
+        "edges": [
+          {
+            "from": "people",
+            "to": "site",
+            "rel": "extends"
+          },
+          {
+            "from": "cc",
+            "to": "people",
+            "rel": "extends"
+          },
+          {
+            "from": "agents",
+            "to": "site",
+            "rel": "extends"
+          },
+          {
+            "from": "keys",
+            "to": "agents",
+            "rel": "extends"
+          },
+          {
+            "from": "inbox",
+            "to": "keys",
+            "rel": "depends-on"
+          },
+          {
+            "from": "board",
+            "to": "site",
+            "rel": "extends"
+          },
+          {
+            "from": "outside",
+            "to": "site",
+            "rel": "extends"
+          },
+          {
+            "from": "reality",
+            "to": "site",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "ten-days-at-web-summit",
+            "an-inbox-only-your-agents-can-write-to",
+            "a-key-for-every-person",
+            "web-summit-part-five"
+          ],
+          "pages": [],
+          "sites": [
+            "https://web-summit.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Once every agent had a public key, private channels, secrets and signatures were all small steps.",
+            "why": "What it taught us."
+          },
+          {
+            "text": "An agent reads 219 board items faster than it can click through any tool.",
+            "why": "What it taught us."
+          },
+          {
+            "text": "a thing that is not written down in its REALITY file does not exist, whatever a brief says",
+            "why": "One site, built from files."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-book-is-on-leanpub",
       "title": "One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes",
       "date": "2026-11-14",
@@ -384,6 +577,7 @@
         "article"
       ],
       "links_out": [
+        "the-teams-operating-system",
         "storm-charles-a-newsroom-built-in-a-night",
         "who-else-controls-ai-agents-at-web-summit",
         "an-inbox-only-your-agents-can-write-to",
@@ -392,6 +586,7 @@
         "meetscribe"
       ],
       "links_in": [
+        "the-teams-operating-system",
         "the-book-is-on-leanpub"
       ],
       "figures": [
@@ -2110,6 +2305,7 @@
         "synthetic-users-for-your-website"
       ],
       "links_in": [
+        "the-teams-operating-system",
         "ten-days-at-web-summit",
         "storm-charles-a-newsroom-built-in-a-night",
         "who-else-controls-ai-agents-at-web-summit",
@@ -2301,6 +2497,7 @@
         "a-secret-is-a-qr-code"
       ],
       "links_in": [
+        "the-teams-operating-system",
         "ten-days-at-web-summit",
         "web-summit-part-five"
       ],
@@ -2863,6 +3060,7 @@
         "a-directory-of-people-and-keys"
       ],
       "links_in": [
+        "the-teams-operating-system",
         "ten-days-at-web-summit",
         "web-summit-part-five",
         "an-inbox-only-your-agents-can-write-to"

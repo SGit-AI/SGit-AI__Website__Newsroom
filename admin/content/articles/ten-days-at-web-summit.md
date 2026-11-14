@@ -68,7 +68,7 @@ A word on money. The dollar figures in these articles are API-equivalent: what t
 I will publish these one at a time, and link each one here as it goes live.
 
 1. **Ten days at Web Summit** (this article): the map.
-2. **The team's operating system:** web-summit.sgit.ai, with its board, briefs, keys, inbox lanes, vaults, company map and X-ray.
+2. [The team's operating system](/articles/the-teams-operating-system.html): web-summit.sgit.ai, with its board, briefs, keys, inbox lanes, vaults, company map and X-ray.
 3. **PrompTugal.news, the newsroom we ran at Web Summit:** the desks, the reviewers, the outreach drafts and the costs.
 4. **Native apps by agents:** four iOS apps from one workspace, an Android build on a tablet in four hours, the App Store and TestFlight.
 5. **The Mac bottleneck:** agents waiting three times longer than they ran.

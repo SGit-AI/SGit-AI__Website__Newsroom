@@ -4,24 +4,25 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.85 · 395 articles since 2026-08-17; the newest is 2026-11-14. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 396 articles since 2026-08-17; the newest is 2026-11-14. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes](articles/the-book-is-on-leanpub.md), 2026-11-14, 3 min. One Human, Nine Agents, Nineteen Hours is on Leanpub: free as a minimum, pay what you want, every update included.
+- [The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map](articles/the-teams-operating-system.md), 2026-11-14, 5 min. web-summit.sgit.ai: one site where six people and their agents ran Web Summit, in four layers built on git.
 
 ## Five more
 
+- [One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes](articles/the-book-is-on-leanpub.md), The future of news, 2026-11-14, 3 min.
 - [Town planners for mission-critical code: the US ground stop of 13 November is a case for teams that read, certify and test every line, and for using AI to make that work scale, not to skip it](articles/town-planners-for-mission-critical-code.md), Startups & strategy, 2026-11-14, 5 min.
 - [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](articles/ten-days-at-web-summit.md), Working with agents, 2026-11-14, 5 min.
 - [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](articles/a-film-studio-on-a-laptop.md), Engineering this newsroom, 2026-11-14, 6 min.
 - [Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit](articles/coding-standards-are-behaviour-policies.md), Working with agents, 2026-11-13, 6 min.
-- [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](articles/storm-charles-a-newsroom-built-in-a-night.md), The future of news, 2026-11-11, 9 min.
 
 ## The last five days
 
-### Saturday 14 November 2026 (4 articles)
+### Saturday 14 November 2026 (5 articles)
 
+- Working with agents: [The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map](articles/the-teams-operating-system.md), 5 min.
 - The future of news: [One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes](articles/the-book-is-on-leanpub.md), 3 min.
 - Startups & strategy: [Town planners for mission-critical code: the US ground stop of 13 November is a case for teams that read, certify and test every line, and for using AI to make that work scale, not to skip it](articles/town-planners-for-mission-critical-code.md), 5 min.
 - Working with agents: [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](articles/ten-days-at-web-summit.md), 5 min.
@@ -58,13 +59,13 @@ What an agent may do, who carries the risk, and how a policy is enforced: RiskMa
 - [False positives and the harness: an answer to a question at hack::soho, why a behaviour policy that runs from the network up to the business logic should refuse less of what is right and more of what is wrong, and why a policy that changes with the code becomes a calibrator for bugs](articles/false-positives-and-the-harness.md), 2026-11-02.
 - [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](articles/the-grant-not-the-prompt.md), 2026-11-02.
 
-### [Working with agents](sections/agents/index.md) (49)
+### [Working with agents](sections/agents/index.md) (50)
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
+- [The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map](articles/the-teams-operating-system.md), 2026-11-14.
 - [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](articles/ten-days-at-web-summit.md), 2026-11-14.
 - [Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit](articles/coding-standards-are-behaviour-policies.md), 2026-11-13.
 - [The book is printed: RC2 of One Human, Nine Agents, Nineteen Hours as two A4 review copies from Prontaprint Chiswick, the newsroom's pages in the book, and the team that made it paused until I have read them](articles/rc2-goes-to-print.md), 2026-11-05.
 - [The Web Summit team, part five: the last day of setup, 180 releases, every person getting a key, an accountant counting the team's tokens, synthetic users testing the merch, and an inbox only the agents can write to](articles/web-summit-part-five.md), 2026-11-04.
-- [Who owns the stop button when it is not you? A reader asked, and four of the book's agents answer as guest writers, in their own voices, from their own records](articles/who-owns-the-stop-button.md), 2026-11-03.
 
 ### [sgit & vaults](sections/vaults/index.md) (39)
 Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vault, and what it does that Git does not.

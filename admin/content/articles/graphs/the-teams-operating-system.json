@@ -1,0 +1,37 @@
+{
+ "slug": "the-teams-operating-system",
+ "teaser": "web-summit.sgit.ai: one site where six people and their agents ran Web Summit, in four layers built on git.",
+ "topics": ["agents-and-policy", "vaults-and-method"],
+ "core_idea": "The Web Summit team ran its week from one site built from markdown and data in git: briefs, onboarding levels and a command centre for each person; keys, inbox lanes and sealed secrets for each agent; the board as 219 files; and the outside world as a company map, an X-ray and a CRM in public and private vaults. Files serve agents and people alike, and keys make private channels small steps.",
+ "nodes": [
+  {"id": "site", "label": "One site from files", "kind": "artefact", "summary": "6,096 commits."},
+  {"id": "people", "label": "People", "kind": "concept", "summary": "Briefs, levels, command centres."},
+  {"id": "cc", "label": "Command centres", "kind": "artefact", "summary": "One engine for everyone."},
+  {"id": "agents", "label": "Agents", "kind": "concept", "summary": "Named for their person."},
+  {"id": "keys", "label": "108 public keys", "kind": "artefact", "summary": "Each with a QR code."},
+  {"id": "inbox", "label": "Inbox lanes", "kind": "method", "summary": "Tokens sealed to agents."},
+  {"id": "board", "label": "The board as files", "kind": "method", "summary": "219 items."},
+  {"id": "outside", "label": "The world outside", "kind": "concept", "summary": "Map, X-ray, CRM."},
+  {"id": "reality", "label": "The reality file", "kind": "claim", "summary": "Fell behind in the busiest days."}
+ ],
+ "edges": [
+  {"from": "people", "to": "site", "rel": "extends"},
+  {"from": "cc", "to": "people", "rel": "extends"},
+  {"from": "agents", "to": "site", "rel": "extends"},
+  {"from": "keys", "to": "agents", "rel": "extends"},
+  {"from": "inbox", "to": "keys", "rel": "depends-on"},
+  {"from": "board", "to": "site", "rel": "extends"},
+  {"from": "outside", "to": "site", "rel": "extends"},
+  {"from": "reality", "to": "site", "rel": "contrasts"}
+ ],
+ "links": {
+  "articles": ["ten-days-at-web-summit", "an-inbox-only-your-agents-can-write-to", "a-key-for-every-person", "web-summit-part-five"],
+  "pages": [],
+  "sites": ["https://web-summit.sgit.ai/"]
+ },
+ "quotes": [
+  {"text": "Once every agent had a public key, private channels, secrets and signatures were all small steps.", "why": "What it taught us."},
+  {"text": "An agent reads 219 board items faster than it can click through any tool.", "why": "What it taught us."},
+  {"text": "a thing that is not written down in its REALITY file does not exist, whatever a brief says", "why": "One site, built from files."}
+ ]
+}

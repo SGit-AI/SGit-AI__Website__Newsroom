@@ -12,8 +12,8 @@ Rules for every article: the team is six people, never seven (Dinis, 14 November
 | # | Status | Working title | Slug (planned) | Main sources |
 |---|---|---|---|---|
 | 1 | live | Ten days at Web Summit (the hub) | ten-days-at-web-summit | all |
-| 2 | next | The team's operating system | the-teams-operating-system | SGit-AI__Website__Web-Summit |
-| 3 | queued | PrompTugal.news, the newsroom we ran at Web Summit | promptugal-news-the-newsroom-we-ran | PrompTugal__News__Website |
+| 2 | live (14 Nov) | The team's operating system | the-teams-operating-system | SGit-AI__Website__Web-Summit |
+| 3 | next | PrompTugal.news, the newsroom we ran at Web Summit | promptugal-news-the-newsroom-we-ran | PrompTugal__News__Website |
 | 4 | queued | Native apps by agents | native-apps-by-agents | PrompTugal__App__iOS, PrompTugal__App__Android, PrompTugal__App__Mobile |
 | 5 | queued | The Mac bottleneck | the-mac-bottleneck | PrompTugal__App__iOS briefs/2026-11-10__ci-on-one-mac |
 | 6 | queued | Stopping a hundred agents | stopping-a-hundred-agents | Web-Summit team/conductor/the-big-stop, HOLD.md files across repos |

@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map, SGit Newsroom</title>
+<meta name="description" content="For Web Summit Lisbon, the six of us ran everything from one site: web-summit.sgit.ai. It is built from markdown and data in a git repository, and every push is a release: 6,096 commits since 28 October, 5,548 of them from 3 November. It has four layers. People: a brief and a prompt for each of us, onboarding levels from a Claude account to opening the team's vaults, and a command centre each, on a phone, an iPad or a computer. Agents: every one named for its person, 108 public keys, an inbox lane for each agent whose token only that agent can open, and secrets handed out sealed to keys. Work: the board as files, 219 items. And the outside world: 110 companies on a map, an X-ray of what a company's AI helpers can do, and a public and a private CRM in encrypted vaults. This is the second article in the Ten days series.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/the-teams-operating-system.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/the-teams-operating-system.html">
+<meta property="og:title" content="The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map, SGit Newsroom">
+<meta property="og:description" content="For Web Summit Lisbon, the six of us ran everything from one site: web-summit.sgit.ai. It is built from markdown and data in a git repository, and every push is a release: 6,096 commits since 28 October, 5,548 of them from 3 November. It has four layers. People: a brief and a prompt for each of us, onboarding levels from a Claude account to opening the team's vaults, and a command centre each, on a phone, an iPad or a computer. Agents: every one named for its person, 108 public keys, an inbox lane for each agent whose token only that agent can open, and secrets handed out sealed to keys. Work: the board as files, 219 items. And the outside world: 110 companies on a map, an X-ray of what a company's AI helpers can do, and a public and a private CRM in encrypted vaults. This is the second article in the Ten days series.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/the-teams-operating-system.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/the-teams-operating-system.jpg">
+<link rel="alternate" type="text/markdown" href="the-teams-operating-system.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map, SGit Newsroom", "headline": "The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map, SGit Newsroom", "description": "For Web Summit Lisbon, the six of us ran everything from one site: web-summit.sgit.ai. It is built from markdown and data in a git repository, and every push is a release: 6,096 commits since 28 October, 5,548 of them from 3 November. It has four layers. People: a brief and a prompt for each of us, onboarding levels from a Claude account to opening the team's vaults, and a command centre each, on a phone, an iPad or a computer. Agents: every one named for its person, 108 public keys, an inbox lane for each agent whose token only that agent can open, and secrets handed out sealed to keys. Work: the board as files, 219 items. And the outside world: 110 companies on a map, an X-ray of what a company's AI helpers can do, and a public and a private CRM in encrypted vaults. This is the second article in the Ten days series.", "url": "https://newsroom.sgit.ai/articles/the-teams-operating-system.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map</p>
+ <h1>The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-11-14 &middot; <a href="versions/the-teams-operating-system.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v999.0.0</a> &middot; <span class="chip">web-summit</span><span class="chip">team</span><span class="chip">agents</span><span class="chip">pki</span><span class="chip">vaults</span><span class="chip">command-centre</span><span class="chip">intranet</span><span class="chip">series</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> For Web Summit Lisbon, the six of us ran everything from one site: web-summit.sgit.ai. It is built from markdown and data in a git repository, and every push is a release: 6,096 commits since 28 October, 5,548 of them from 3 November. It has four layers. People: a brief and a prompt for each of us, onboarding levels from a Claude account to opening the team's vaults, and a command centre each, on a phone, an iPad or a computer. Agents: every one named for its person, 108 public keys, an inbox lane for each agent whose token only that agent can open, and secrets handed out sealed to keys. Work: the board as files, 219 items. And the outside world: 110 companies on a map, an X-ray of what a company's AI helpers can do, and a public and a private CRM in encrypted vaults. This is the second article in the Ten days series.</em></p>
+<figure class="shot" data-shot="tos-collage.webp" data-dir="images/" data-alt="Fifteen pages of web-summit.sgit.ai, the site the team ran Web Summit from." data-kind="collage"><figcaption>Fifteen pages of web-summit.sgit.ai, the site the team ran Web Summit from.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>One site ran the week:</b> web-summit.sgit.ai, built from markdown and data in git, every push a release.</li>
+<li><b>People:</b> a brief, a prompt and a command centre for each of us, and levels L0 to L6 for getting connected.</li>
+<li><b>Agents:</b> every agent named for its person, 108 public keys, an inbox lane per agent, secrets sealed to keys.</li>
+<li><b>Work:</b> the board as 219 files, from getting each person connected to the summit's last day.</li>
+<li><b>The world outside:</b> 110 companies on a map, the RiskMandate X-ray, and a CRM split into public and private vaults.</li>
+<li><b>Part of a series:</b> this is article two of <a href="ten-days-at-web-summit.html">Ten days at Web Summit</a>.</li>
+</ul>
+<h2 id="site">One site, built from files</h2>
+<p>The team was six people: Dinis Cruz, Angelo Leggio, Vicky Wang, Silvio Switha, José Bota and Indi Gupte, each with their own agents. We needed one place where all of that could be seen, by people and by agents, and changed by both. That place was a website built from a git repository: pages in markdown, data in JSON, a build that turns them into a site, and a gate that refuses a release that breaks a rule. Every push to the repository is tagged and deployed.</p>
+<p>By the end it held 6,096 commits since its first on 28 October, 5,548 of them from 3 November onwards. The site's own rule is the one I use everywhere now: a thing that is not written down in its REALITY file does not exist, whatever a brief says.</p>
+<figure class="shot" data-shot="tos-layers.webp" data-dir="images/" data-alt="The site&#x27;s four layers: people, agents, work, and the world outside, with git underneath." data-kind="architecture"><figcaption>The site's four layers: people, agents, work, and the world outside, with git underneath.</figcaption></figure>
+<h2 id="people">People</h2>
+<p>Each person has a page with their brief and the prompt to start their agents, and a row on the start page showing how far they have got. Getting connected has levels from L0 to L6: from signing in to the team's email and Claude account, to push access to the repository, to agents of your own with their own keys, and at the top, an agent that can open the team's vaults.</p>
+<p>Each person also has a <b>command centre</b>, at <code>/people/&lt;name&gt;/app/</code>: the page to open first, on a phone, an iPad or a computer. It is one engine for everyone, so a change reached all of them at once; on 7 November the team's request turned it into something calmer, with grouped menus, a "For me" bell, the team's photos and an event mode for the summit days.</p>
+<figure class="shot" data-shot="tos-command-centre.webp" data-dir="images/" data-alt="A command centre: the team, its agents and their activity in one live view." data-kind="screenshot"><figcaption>A command centre: the team, its agents and their activity in one live view.</figcaption></figure>
+<h2 id="agents">Agents</h2>
+<p>Every agent is named <code>role@project.person</code>, so every commit says whose agent made it. Every agent makes its own key pair in its own session and publishes only the public half: 108 keys on the keys page by the end, each with a QR code.</p>
+<p>On those keys we built the rest:</p>
+<ul>
+<li><b>Secrets sealed to keys.</b> A secret, such as a model API key, is sealed to exactly the agents that need it; only an agent holding the matching private key can open it. Started on 3 November as the team's "PKI push".</li>
+<li><b>An inbox per agent.</b> Since 4 November, the main conductor publishes one append lane per agent, each lane's token sealed to that agent's own key, so everything needed to talk privately is public, and only the right agent can use it (<a href="an-inbox-only-your-agents-can-write-to.html">an inbox only your agents can write to</a>).</li>
+<li><b>A key for every person.</b> Each person's conductor issues them a key for the site, so what they send to their agents is signed (<a href="a-key-for-every-person.html">a key for every person</a>).</li>
+</ul>
+<p>On 9 November I asked for more: a key for every device, installation, application and even version, keys exchanged in person by QR code and NFC, and signing as a graph. As I said then, "this is the kind of stuff that we need to build that eventually we will refactor out", and the point was to see which parts the team would actually use.</p>
+<h2 id="work">Work</h2>
+<p>The board is a folder of files, one per item, <code>WS-01</code> onwards. By the end there were 219: 34 done, 6 in progress, 54 picked up by an agent, 124 still open, and one waiting on a design. The first items were about getting connected; the later ones were about the summit itself, the apps, the CRM and the storm.</p>
+<p>Briefs are kept close to the words they came from, often a voice memo, and each one names the agents it is for. Because it is all files, an agent can read the whole state of the team in one clone, and a person can see it on the site.</p>
+<figure class="shot" data-shot="tos-team-map.webp" data-dir="images/" data-alt="The team as a picture: people, their agents, and who talks to whom." data-kind="screenshot"><figcaption>The team as a picture: people, their agents, and who talks to whom.</figcaption></figure>
+<h2 id="outside">The world outside</h2>
+<ul>
+<li><b>The company map:</b> 110 companies we expected to meet, each with a page, linked into clusters.</li>
+<li><b>The RiskMandate X-ray:</b> type a company and see what its AI helpers can do, what they were asked to do, and where the two do not match. A run sends the name to four search agents and keeps only facts whose sources were read. Eleven test searches on 7 November cost about 0.94 dollars, API-equivalent.</li>
+<li><b>The CRM:</b> a public vault for public facts, with its read key published, and a private vault for the team's records, each record sealed again to its audience.</li>
+<li><b>The rest:</b> a design sprint for shirts, hoodies and cards, the RiskMandate videos and their storyboards, and observability of who read what and what the agents did.</li>
+</ul>
+<h2 id="lessons">What it taught us</h2>
+<ul>
+<li><b>One site for people and agents works.</b> The same files are the agents' state and the people's intranet; nobody had to keep two systems in step.</li>
+<li><b>Keys first, everything else on top.</b> Once every agent had a public key, private channels, secrets and signatures were all small steps.</li>
+<li><b>Files beat dashboards for agents.</b> An agent reads 219 board items faster than it can click through any tool.</li>
+<li><b>Keep the reality file current.</b> The site's REALITY file is the source of truth, and it fell behind in the busiest days; the next version needs an agent whose job is to keep it current.</li>
+</ul>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>Figures are from the repository on 14 November 2026,</b> including work after the summit.</li>
+<li><b>Dollar figures are API-equivalent:</b> we ran on flat subscriptions.</li>
+<li><b>Some features were proposals:</b> keys for every device, NFC exchange and signing as a graph were asked for on 9 November and only partly built.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>The repository behind <a href="https://web-summit.sgit.ai/">web-summit.sgit.ai</a>, read 14 November 2026: its README and REALITY files, <code>data/keys.json</code>, <code>data/companies.json</code>, the board in <code>board/</code>, and the pages <a href="https://web-summit.sgit.ai/start/">start</a>, <a href="https://web-summit.sgit.ai/command-centre/">the command centre</a>, <a href="https://web-summit.sgit.ai/keys/">keys</a>, <a href="https://web-summit.sgit.ai/pki/">PKI</a>, <a href="https://web-summit.sgit.ai/inbox/">the inbox</a>, <a href="https://web-summit.sgit.ai/vaults/">vaults</a>, <a href="https://web-summit.sgit.ai/xray/">the X-ray</a>, <a href="https://web-summit.sgit.ai/crm/">the CRM</a> and <a href="https://web-summit.sgit.ai/how-we-work/">how we work</a>. Earlier on this site: <a href="ten-days-at-web-summit.html">ten days at Web Summit</a>, <a href="an-inbox-only-your-agents-can-write-to.html">an inbox only your agents can write to</a>, <a href="a-key-for-every-person.html">a key for every person</a>, <a href="web-summit-part-five.html">the Web Summit team, part five</a>.</p>
+<sg-meter view="page" kind="article" date="2026-11-14" topics="agents-and-policy vaults-and-method" title="The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Vaults &amp; method</span> <a href="graphs.html#the-teams-operating-system">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="ten-days-at-web-summit.html">Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part</a> <span class="dim">Six people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.</span></li><li><a href="an-inbox-only-your-agents-can-write-to.html">An inbox only your agents can write to: a conductor publishes one append lane per agent, each lane's token sealed to that agent's own key, so everything needed to talk privately is public and only the right agent can use it</a> <span class="dim">A conductor publishes one append lane per agent, each token sealed to that agent's key: a private channel built from public material.</span></li><li><a href="a-key-for-every-person.html">A key for every person: how each person's conductor issues them a key for the team's site, seals what is for them, and how a signed message turns the public web into a channel the agents can trust</a> <span class="dim">How each person's conductor issues them a key for the team's site: sealed to you, signed by you, and a lane the agents can trust.</span></li><li><a href="web-summit-part-five.html">The Web Summit team, part five: the last day of setup, 180 releases, every person getting a key, an accountant counting the team's tokens, synthetic users testing the merch, and an inbox only the agents can write to</a> <span class="dim">The Web Summit team's last day of setup: 180 releases, keys for every person, new agents for everyone, and an inbox per agent.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="ten-days-at-web-summit.html">Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part</a> <span class="dim">Six people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 398 &middot; <a href="../for/make.html#r=398">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/the-teams-operating-system.jpg" download>the-teams-operating-system.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-teams-operating-system.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>The publication</h4>
+    <a href="../about/imprint.html">Imprint</a>
+    <a href="../about/standards.html">Editorial standards</a>
+    <a href="../about/corrections.html">Corrections</a>
+    <a href="../about/withdrawals.html">Withdrawals</a>
+    <a href="../about/complaints.html">Complaints</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>
