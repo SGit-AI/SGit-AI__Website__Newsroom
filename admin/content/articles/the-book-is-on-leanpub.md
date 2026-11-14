@@ -4,7 +4,7 @@ date: 2026-11-14
 author: Dinis Cruz
 author_url: about/index.html
 summary: My book, One Human, Nine Agents, Nineteen Hours, is now on Leanpub. It tells the day of 29 October 2026, when I opened an empty project, wrote a brief and one page of rules, and nine AI agents and I built my talk The Ultimate Insider in nineteen hours. It follows that day as a factory: who did what and when, the five steps the team ran on every turn, the one short file that could stop everything, and what did not work. Then it is your turn: one agent, one page of rules in your own words, one brief, and one small, finished piece of work on the first day. The minimum price is free and the suggested price is 19 dollars; every reader gets every update, whatever they paid. It is 90% complete, which is the point of Leanpub: I would like your feedback while it can still change the book.
-version: v999.0.0
+version: v0.14.84
 license: https://creativecommons.org/licenses/by/4.0/
 tags: book, leanpub, the-ultimate-insider, agents, gen-zx-founders, announcement, article
 status: published
