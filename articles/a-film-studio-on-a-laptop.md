@@ -10,7 +10,7 @@
 
 # A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-14 · [article v1.0.0](versions/a-film-studio-on-a-laptop.md) · [newsroom v999.0.0](https://newsroom.sgit.ai/admin/versions.html) · unreal-enginevideoagentsmcpriskmandateclaudevaultsexperimentarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-14 · [article v1.0.0](versions/a-film-studio-on-a-laptop.md) · [newsroom v0.14.82](https://newsroom.sgit.ai/admin/versions.html) · unreal-enginevideoagentsmcpriskmandateclaudevaultsexperimentarticle
 
 ***Abstract:** I gave a MacBook Air to Claude and Unreal Engine 5.8, and in one session we went from an install that failed at 100% to a pipeline that turns a chat into a finished film. Claude designs a scene, builds it inside the editor through Unreal's new MCP plugin, animates it in Sequencer, renders it with Movie Render Queue and hands back a titled MP4, with nobody at the keyboard. The first production is a 26-second brand film for RiskMandate, about reach, mandate and gap, rendered at 2560 by 1440: 108 blocks rise around a glowing agent, the inner rings turn green, a barrier rises between them, and the camera cranes up into a seal. Two things made it work: Unreal 5.8's experimental Unreal MCP plugin, which exposes about fifty toolsets to an agent, and a small job runner in a folder for what no toolset could do yet, which is render to video. The films are in a new vault the newsroom will use for every video, with its read key published here, so you can watch them decrypted in your browser.*
 

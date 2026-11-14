@@ -10,7 +10,7 @@
 
 # Ten days at Web Summit: what seven people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-14 · [article v1.0.0](versions/ten-days-at-web-summit.md) · [newsroom v999.0.0](https://newsroom.sgit.ai/admin/versions.html) · web-summitagentspromptugalstorm-charlesteamseriescollagearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-14 · [article v1.0.0](versions/ten-days-at-web-summit.md) · [newsroom v0.14.82](https://newsroom.sgit.ai/admin/versions.html) · web-summitagentspromptugalstorm-charlesteamseriescollagearticle
 
 ***Abstract:** Between 3 and 13 November 2026, seven of us, with our agents, built more than I can fit in one article. A team operating system, an independent newsroom for Web Summit Lisbon, a site about Storm Charles that grew to more than 2,600 pages in three days, a guide to the summit's fringe that went live two and a half hours after its brief, a draft standard that rated twenty companies, four iPhone and iPad apps, an Android tablet app, and the tools to run all of it. About 20,000 commits across fifteen repositories, 224 Claude Code sessions, around 250 named agents, and more than 60 sessions working at the same time at the peak. This article is the map: the team, the sequence of events, the numbers, a collage of what we made, and the list of articles that will tell each part. I will update it as each one goes live.*
 
