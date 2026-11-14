@@ -55,14 +55,171 @@
   ],
   "articles": [
     {
+      "slug": "town-planners-for-mission-critical-code",
+      "title": "Town planners for mission-critical code: the US ground stop of 13 November is a case for teams that read, certify and test every line, and for using AI to make that work scale, not to skip it",
+      "date": "2026-11-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/town-planners-for-mission-critical-code.html",
+      "markdown": "https://newsroom.sgit.ai/articles/town-planners-for-mission-critical-code.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/town-planners-for-mission-critical-code.webp",
+      "teaser": "The US ground stop is a case for town planner teams that certify every line, and for AI that makes that work scale.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "wardley-maps",
+        "town-planners",
+        "resilience",
+        "aviation",
+        "ai-coding",
+        "nfrs",
+        "testing",
+        "reply",
+        "article"
+      ],
+      "links_out": [
+        "explorer-coding",
+        "code-review-as-a-fractal-semantic-graph",
+        "coding-standards-are-behaviour-policies",
+        "ephemeral-town-planner-services"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "tpm-spectrum.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tpm-spectrum.webp",
+          "caption": "Explorers, villagers and town planners, and where an air traffic communications network sits among them.",
+          "kind": "concept"
+        },
+        {
+          "file": "tpm-pipeline.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tpm-pipeline.webp",
+          "caption": "A town planner pipeline with AI in it: map the reach, check the rules, test hard, people certify, roll out in stages.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "town-planners-for-mission-critical-code",
+        "teaser": "The US ground stop is a case for town planner teams that certify every line, and for AI that makes that work scale.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "After a network update preceded a reboot, crash and five-hour US ground stop on 13 November 2026, a LinkedIn post blamed AI-written code. The evidence so far points to a software update and patches on an old network, with no evidence yet of AI involvement. Whatever wrote the change, such systems belong to town planners: every line read, certified and tested by an experienced multidisciplinary team. AI belongs around the shipped code, in understanding, connecting, aligning, testing and the non-functional requirements, where it raises quality and resilience.",
+        "nodes": [
+          {
+            "id": "stop",
+            "label": "The ground stop",
+            "kind": "example",
+            "summary": "About five hours, 13 November."
+          },
+          {
+            "id": "claim",
+            "label": "AI slop claimed",
+            "kind": "claim",
+            "summary": "A LinkedIn post."
+          },
+          {
+            "id": "evidence",
+            "label": "Evidence first",
+            "kind": "claim",
+            "summary": "An update and patches; no AI link yet."
+          },
+          {
+            "id": "tp",
+            "label": "Town planner mode",
+            "kind": "concept",
+            "summary": "Every line read and certified."
+          },
+          {
+            "id": "team",
+            "label": "A multidisciplinary team",
+            "kind": "method",
+            "summary": "Engineers to security."
+          },
+          {
+            "id": "ai",
+            "label": "AI around the code",
+            "kind": "method",
+            "summary": "Understand, connect, align, test."
+          },
+          {
+            "id": "nfrs",
+            "label": "The NFRs",
+            "kind": "concept",
+            "summary": "The scaffolding critical systems need."
+          }
+        ],
+        "edges": [
+          {
+            "from": "claim",
+            "to": "stop",
+            "rel": "answers"
+          },
+          {
+            "from": "evidence",
+            "to": "claim",
+            "rel": "contrasts"
+          },
+          {
+            "from": "tp",
+            "to": "stop",
+            "rel": "answers"
+          },
+          {
+            "from": "team",
+            "to": "tp",
+            "rel": "extends"
+          },
+          {
+            "from": "ai",
+            "to": "team",
+            "rel": "depends-on"
+          },
+          {
+            "from": "nfrs",
+            "to": "ai",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "explorer-coding",
+            "ephemeral-town-planner-services",
+            "coding-standards-are-behaviour-policies"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.cbsnews.com/news/faa-issues-nationwide-ground-stop/",
+            "https://shieldcap.com/episodes/l3harris"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "And \"read by a human\" is not enough.",
+            "why": "Town planner territory."
+          },
+          {
+            "text": "It gives that team more evidence than it has ever had, in time to use it.",
+            "why": "Where AI belongs in that pipeline."
+          },
+          {
+            "text": "the work around the code that ships, which is where teams always run out of time",
+            "why": "Where AI belongs in that pipeline."
+          }
+        ]
+      }
+    },
+    {
       "slug": "ten-days-at-web-summit",
-      "title": "Ten days at Web Summit: what seven people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part",
+      "title": "Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part",
       "date": "2026-11-14",
       "updated": "",
       "url": "https://newsroom.sgit.ai/articles/ten-days-at-web-summit.html",
       "markdown": "https://newsroom.sgit.ai/articles/ten-days-at-web-summit.md",
       "card": "https://newsroom.sgit.ai/articles/cards/ten-days-at-web-summit.webp",
-      "teaser": "Seven people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.",
+      "teaser": "Six people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.",
       "topics": [
         "agents-and-policy",
         "startups-and-strategy"
@@ -96,16 +253,16 @@
       ],
       "graph": {
         "slug": "ten-days-at-web-summit",
-        "teaser": "Seven people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.",
+        "teaser": "Six people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.",
         "topics": [
           "agents-and-policy",
           "startups-and-strategy"
         ],
-        "core_idea": "Between 3 and 13 November 2026, a team of seven people and around 250 named agents built a team operating system, an independent newsroom, a storm site, a fringe guide, a rating standard and native apps around Web Summit Lisbon: about 20,000 commits and 224 Claude Code sessions, more than 60 at once at the peak. This hub names the team, orders the events, gives the numbers and lists the articles that tell each part.",
+        "core_idea": "Between 3 and 13 November 2026, a team of six people and around 250 named agents built a team operating system, an independent newsroom, a storm site, a fringe guide, a rating standard and native apps around Web Summit Lisbon: about 20,000 commits and 224 Claude Code sessions, more than 60 at once at the peak. This hub names the team, orders the events, gives the numbers and lists the articles that tell each part.",
         "nodes": [
           {
             "id": "team",
-            "label": "Seven people",
+            "label": "Six people",
             "kind": "example",
             "summary": "Each with agents and a conductor."
           },
@@ -281,16 +438,16 @@
           "kind": "collage"
         },
         {
-          "file": "ufs-seal.webp",
-          "url": "https://newsroom.sgit.ai/articles/images/ufs-seal.webp",
-          "caption": "The film's closing composition: the agent, the green mandate, the barrier ring and the reach.",
-          "kind": "photo"
-        },
-        {
           "file": "ufs-loop.webp",
           "url": "https://newsroom.sgit.ai/articles/images/ufs-loop.webp",
           "caption": "The loop: Claude writes a job, Unreal runs it, Movie Render Queue renders, ffmpeg encodes, the MP4 comes back.",
           "kind": "process"
+        },
+        {
+          "file": "ufs-seal.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ufs-seal.webp",
+          "caption": "The film's closing composition: the agent, the green mandate, the barrier ring and the reach.",
+          "kind": "photo"
         },
         {
           "file": "ufs-versions.webp",
@@ -452,6 +609,7 @@
         "riskmandate-and-lovable"
       ],
       "links_in": [
+        "town-planners-for-mission-critical-code",
         "a-film-studio-on-a-laptop"
       ],
       "figures": [
@@ -38547,7 +38705,9 @@
         "the-code-you-do-not-ship",
         "explorer-coding"
       ],
-      "links_in": [],
+      "links_in": [
+        "town-planners-for-mission-critical-code"
+      ],
       "figures": [
         {
           "file": "es-scale.webp",
@@ -48471,6 +48631,7 @@
         "a-custom-firefox-of-my-own"
       ],
       "links_in": [
+        "town-planners-for-mission-critical-code",
         "sell-to-the-companies-that-already-have-the-problem",
         "joining-algarve-evolution",
         "villager-services-for-explorer-coders",
@@ -79539,6 +79700,7 @@
         "if-somebody-built-a-company-on-code-review"
       ],
       "links_in": [
+        "town-planners-for-mission-critical-code",
         "coding-standards-are-behaviour-policies",
         "search-as-navigation",
         "the-code-you-do-not-ship",

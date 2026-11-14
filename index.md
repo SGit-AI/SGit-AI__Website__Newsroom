@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.82 · 393 articles since 2026-08-17; the newest is 2026-11-14. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 394 articles since 2026-08-17; the newest is 2026-11-14. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,22 +12,23 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Ten days at Web Summit: what seven people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](articles/ten-days-at-web-summit.md), 2026-11-14, 5 min. Seven people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.
+- [Town planners for mission-critical code: the US ground stop of 13 November is a case for teams that read, certify and test every line, and for using AI to make that work scale, not to skip it](articles/town-planners-for-mission-critical-code.md), 2026-11-14, 5 min. The US ground stop is a case for town planner teams that certify every line, and for AI that makes that work scale.
 
 ## Five more
 
-- [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](articles/a-film-studio-on-a-laptop.md), Engineering this newsroom, 2026-11-14, 5 min.
+- [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](articles/ten-days-at-web-summit.md), Working with agents, 2026-11-14, 5 min.
+- [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](articles/a-film-studio-on-a-laptop.md), Engineering this newsroom, 2026-11-14, 6 min.
 - [Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit](articles/coding-standards-are-behaviour-policies.md), Working with agents, 2026-11-13, 6 min.
 - [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](articles/storm-charles-a-newsroom-built-in-a-night.md), The future of news, 2026-11-11, 9 min.
 - [RiskMandate and Lovable: mapping an Agent Behaviour Policy onto an app builder whose agent writes the code, changes the live database, connects your other systems and publishes, with the controls Lovable already gives and their defaults](articles/riskmandate-and-lovable.md), Startups & strategy, 2026-11-09, 7 min.
-- [RiskMandate and Cloudflare: where agents run, where they are controlled, and why Cloudflare's own Agent Access Model leaves room for a signed record of what each agent was asked to do](articles/riskmandate-and-cloudflare.md), Startups & strategy, 2026-11-09, 7 min.
 
 ## The last five days
 
-### Saturday 14 November 2026 (2 articles)
+### Saturday 14 November 2026 (3 articles)
 
-- Working with agents: [Ten days at Web Summit: what seven people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](articles/ten-days-at-web-summit.md), 5 min.
-- Engineering this newsroom: [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](articles/a-film-studio-on-a-laptop.md), 5 min.
+- Startups & strategy: [Town planners for mission-critical code: the US ground stop of 13 November is a case for teams that read, certify and test every line, and for using AI to make that work scale, not to skip it](articles/town-planners-for-mission-critical-code.md), 5 min.
+- Working with agents: [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](articles/ten-days-at-web-summit.md), 5 min.
+- Engineering this newsroom: [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](articles/a-film-studio-on-a-laptop.md), 6 min.
 
 ### Friday 13 November 2026 (1 article)
 
@@ -62,7 +63,7 @@ What an agent may do, who carries the risk, and how a policy is enforced: RiskMa
 
 ### [Working with agents](sections/agents/index.md) (49)
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
-- [Ten days at Web Summit: what seven people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](articles/ten-days-at-web-summit.md), 2026-11-14.
+- [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](articles/ten-days-at-web-summit.md), 2026-11-14.
 - [Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit](articles/coding-standards-are-behaviour-policies.md), 2026-11-13.
 - [The book is printed: RC2 of One Human, Nine Agents, Nineteen Hours as two A4 review copies from Prontaprint Chiswick, the newsroom's pages in the book, and the team that made it paused until I have read them](articles/rc2-goes-to-print.md), 2026-11-05.
 - [The Web Summit team, part five: the last day of setup, 180 releases, every person getting a key, an accountant counting the team's tokens, synthetic users testing the merch, and an inbox only the agents can write to](articles/web-summit-part-five.md), 2026-11-04.
@@ -84,13 +85,13 @@ Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta
 - [Four iPhones and an iPad: how my brother filmed a three-camera music video with old phones synced live to Final Cut Pro, a feature Apple shipped in 2024 that he found by accident](articles/four-iphones-and-an-ipad.md), 2026-11-02.
 - [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](articles/agentic-readers.md), 2026-10-31.
 
-### [Startups & strategy](sections/strategy/index.md) (87)
+### [Startups & strategy](sections/strategy/index.md) (88)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
+- [Town planners for mission-critical code: the US ground stop of 13 November is a case for teams that read, certify and test every line, and for using AI to make that work scale, not to skip it](articles/town-planners-for-mission-critical-code.md), 2026-11-14.
 - [RiskMandate and Lovable: mapping an Agent Behaviour Policy onto an app builder whose agent writes the code, changes the live database, connects your other systems and publishes, with the controls Lovable already gives and their defaults](articles/riskmandate-and-lovable.md), 2026-11-09.
 - [RiskMandate and Cloudflare: where agents run, where they are controlled, and why Cloudflare's own Agent Access Model leaves room for a signed record of what each agent was asked to do](articles/riskmandate-and-cloudflare.md), 2026-11-09.
 - [RiskMandate and Manus: mapping an Agent Behaviour Policy onto a general agent that can use your computer, your browser, your logins and 416 connectors, and the controls Manus already gives you](articles/riskmandate-and-manus.md), 2026-11-09.
 - [Who else controls AI agents at Web Summit? An outreach agent mapped eleven companies in an afternoon, in their own words, and found that most of them are partners for RiskMandate as much as competitors](articles/who-else-controls-ai-agents-at-web-summit.md), 2026-11-05.
-- [Selling at the right altitude: why a small security firm's grand website is read by the people who will never buy from it, is unreadable to the ones who need it, and what to put on the page instead](articles/selling-at-the-right-altitude.md), 2026-11-04.
 
 ### [Engineering this newsroom](sections/building/index.md) (47)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.

@@ -1,0 +1,11 @@
+/* The newsroom's vault video player (assets/vault-video/vault-video.js). */
+figure.vault-video { margin: 1.6rem 0; }
+figure.vault-video .vv-stage { position: relative; background: #000; border-radius: 8px; overflow: hidden; aspect-ratio: 16 / 9; }
+figure.vault-video video { width: 100%; height: 100%; display: block; object-fit: contain; background: #000; }
+figure.vault-video .vv-play { position: absolute; inset: 0; margin: auto; width: 76px; height: 76px; border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.75); background: rgba(0,0,0,.55); color: #fff; font-size: 30px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; }
+figure.vault-video .vv-play:hover, figure.vault-video .vv-play:focus-visible { background: rgba(26,127,90,.85); outline: none; }
+figure.vault-video .vv-status { font-size: .82rem; opacity: .75; margin: .4rem 0 0; }
+figure.vault-video figcaption { font-size: .92rem; margin-top: .35rem; }
+@media print { figure.vault-video .vv-play, figure.vault-video .vv-status { display: none; } }

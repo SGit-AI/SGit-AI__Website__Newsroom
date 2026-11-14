@@ -7,7 +7,7 @@ The hub is `ten-days-at-web-summit`. Each wake publishes the next article marked
 2. links it in the hub's series list (section #series) in place of its bold title,
 3. marks the following one `next`.
 
-Rules for every article: name the team (Dinis Cruz, Angelo Leggio, Vicky Wang, Silvio Switha, José Bota, Indi Gupte); dollars are API-equivalent (flat subscriptions); "around 250 agents", "more than 60 at once"; no licence-takedown story; nothing about the book or its sequel (Dinis is working on it); videos go in the newsroom media vault (admin/content/vaults/newsroom-media.json). Facts come from `catalogue.md` and from re-reading the repositories at writing time; screenshot the live sites at writing time.
+Rules for every article: the team is six people, never seven (Dinis, 14 November): name them (Dinis Cruz, Angelo Leggio, Vicky Wang, Silvio Switha, José Bota, Indi Gupte); dollars are API-equivalent (flat subscriptions); "around 250 agents", "more than 60 at once"; no licence-takedown story; nothing about the book or its sequel (Dinis is working on it); videos go in the newsroom media vault (admin/content/vaults/newsroom-media.json). Facts come from `catalogue.md` and from re-reading the repositories at writing time; screenshot the live sites at writing time.
 
 | # | Status | Working title | Slug (planned) | Main sources |
 |---|---|---|---|---|

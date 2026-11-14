@@ -92,6 +92,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#explor
 
 ### Continued by
 
+- [Town planners for mission-critical code: the US ground stop of 13 November is a case for teams that read, certify and test every line, and for using AI to make that work scale, not to skip it](town-planners-for-mission-critical-code.md) The US ground stop is a case for town planner teams that certify every line, and for AI that makes that work scale.
 - [Sell to the companies that already have the problem: how Algarve Evolution can match businesses adopting AI with the region's service providers, starting when the business has built its own first app](sell-to-the-companies-that-already-have-the-problem.md) Sell to the companies that already have the problem: matching Algarve businesses that built their own AI apps with the region's providers.
 - [Joining Algarve Evolution: The Cyber Boardroom takes the startup membership, and what we can share with the region, our workflows and our technology, all of it open source](joining-algarve-evolution.md) Joining Algarve Evolution: The Cyber Boardroom takes the startup membership and shares its workflows and technology, all open source.
 - [Villager services for explorer coders: the founders with ten years of checklists will build the apps, and the business is everything behind them, sold in finite packs, never as rent](villager-services-for-explorer-coders.md) Villager services for explorer coders: founders with ten years of checklists build the apps; we sell everything behind them in finite packs.

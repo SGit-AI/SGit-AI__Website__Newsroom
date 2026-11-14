@@ -121,6 +121,10 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#eph
 - [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](the-code-you-do-not-ship.md) Code is a liability, the worst bugs sit in features nobody needed, and models make removing it safe. The minimal viable code path, and who maintains it.
 - [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](explorer-coding.md) Call it explorer coding, not vibe coding: the best thing since the spreadsheet, the best brief there is, and not ready to be in line until villagers take it.
 
+### Continued by
+
+- [Town planners for mission-critical code: the US ground stop of 13 November is a case for teams that read, certify and test every line, and for using AI to make that work scale, not to skip it](town-planners-for-mission-critical-code.md) The US ground stop is a case for town planner teams that certify every line, and for AI that makes that work scale.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 192 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=192)

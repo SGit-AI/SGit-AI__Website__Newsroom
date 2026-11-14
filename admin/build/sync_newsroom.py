@@ -88,6 +88,9 @@ a record about an artefact does not live inside it.
 The sync never overwrites a file this site wrote itself. It replaces only what the last
 sync wrote, plus the pages named in REPLACES, each of which must already have a dated copy
 in archive/ (archive.py makes it). Anything else in the way stops the run.
+  14. An article's `!video <vault card> <folder> | <caption>` line, which sgit.ai's renderer leaves as a paragraph,
+     becomes the player for a video streamed from a vault (admin/build/vault_video.py), in the page and every
+     version of it, and a caption with a link in the markdown twins.
 """
 import argparse
 import hashlib
@@ -99,6 +102,9 @@ import subprocess
 import sys
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
+
+sys.path.insert(0, str(Path(__file__).parent))
+import vault_video  # noqa: E402  item 14: !video lines become players
 
 sys.path.insert(0, str(Path(__file__).parent))
 import ids  # noqa: E402
@@ -557,6 +563,8 @@ def transform(text, src_file, dest_file, kind):
         text = numbered(text, dest_file, "html")
         text = apply_text_overrides(text, dest_file, "html")
         text = issue_foot(text, dest_file, "html")
+        if dest_file.startswith("articles/"):
+            text = vault_video.html_text(text, dest_file)        # item 14
     elif kind == "md":
         text = MD_LINK.sub(lambda m: m.group(1) + rewrite_url(m.group(2), src_file, dest_file) + m.group(3), text)
         m_own = re.fullmatch(r"articles/([^/]+)\.md", dest_file)
@@ -572,6 +580,8 @@ def transform(text, src_file, dest_file, kind):
         text = numbered(text, dest_file, "md")
         text = apply_text_overrides(text, dest_file, "md")
         text = issue_foot(text, dest_file, "md")
+        if dest_file.startswith("articles/"):
+            text = vault_video.md_text(text)                       # item 14
     return text
 
 

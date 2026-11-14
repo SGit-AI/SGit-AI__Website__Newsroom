@@ -1,6 +1,6 @@
 # A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard, sgit.ai
 
-> I gave a MacBook Air to Claude and Unreal Engine 5.8, and in one session we went from an install that failed at 100% to a pipeline that turns a chat into a finished film. Claude designs a scene, builds it inside the editor through Unreal's new MCP plugin, animates it in Sequencer, renders it with Movie Render Queue and hands back a titled MP4, with nobody at the keyboard. The first production is a 26-second brand film for RiskMandate, about reach, mandate and gap, rendered at 2560 by 1440: 108 blocks rise around a glowing agent, the inner rings turn green, a barrier rises between them, and the camera cranes up into a seal. Two things made it work: Unreal 5.8's experimental Unreal MCP plugin, which exposes about fifty toolsets to an agent, and a small job runner in a folder for what no toolset could do yet, which is render to video. The films are in a new vault the newsroom will use for every video, with its read key published here, so you can watch them decrypted in your browser.
+> I gave a MacBook Air to Claude and Unreal Engine 5.8, and in one session we went from an install that failed at 100% to a pipeline that turns a chat into a finished film. Claude designs a scene, builds it inside the editor through Unreal's new MCP plugin, animates it in Sequencer, renders it with Movie Render Queue and hands back a titled MP4, with nobody at the keyboard. The first production is a 26-second brand film for RiskMandate, about reach, mandate and gap, rendered at 2560 by 1440: 108 blocks rise around a glowing agent, the inner rings turn green, a barrier rises between them, and the camera cranes up into a seal. Two things made it work: Unreal 5.8's experimental Unreal MCP plugin, which exposes about fifty toolsets to an agent, and a small job runner in a folder for what no toolset could do yet, which is render to video. The films play on this page, streamed piece by piece from a new vault the newsroom will use for every video, with its read key published here.
 
 *Source: <https://newsroom.sgit.ai/articles/a-film-studio-on-a-laptop.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
@@ -10,9 +10,9 @@
 
 # A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-14 · [article v1.0.0](versions/a-film-studio-on-a-laptop.md) · [newsroom v0.14.82](https://newsroom.sgit.ai/admin/versions.html) · unreal-enginevideoagentsmcpriskmandateclaudevaultsexperimentarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-14 · [article v1.1.0, 2 versions](versions/a-film-studio-on-a-laptop.md) · [newsroom v0.14.82](https://newsroom.sgit.ai/admin/versions.html) · unreal-enginevideoagentsmcpriskmandateclaudevaultsexperimentarticle
 
-***Abstract:** I gave a MacBook Air to Claude and Unreal Engine 5.8, and in one session we went from an install that failed at 100% to a pipeline that turns a chat into a finished film. Claude designs a scene, builds it inside the editor through Unreal's new MCP plugin, animates it in Sequencer, renders it with Movie Render Queue and hands back a titled MP4, with nobody at the keyboard. The first production is a 26-second brand film for RiskMandate, about reach, mandate and gap, rendered at 2560 by 1440: 108 blocks rise around a glowing agent, the inner rings turn green, a barrier rises between them, and the camera cranes up into a seal. Two things made it work: Unreal 5.8's experimental Unreal MCP plugin, which exposes about fifty toolsets to an agent, and a small job runner in a folder for what no toolset could do yet, which is render to video. The films are in a new vault the newsroom will use for every video, with its read key published here, so you can watch them decrypted in your browser.*
+***Abstract:** I gave a MacBook Air to Claude and Unreal Engine 5.8, and in one session we went from an install that failed at 100% to a pipeline that turns a chat into a finished film. Claude designs a scene, builds it inside the editor through Unreal's new MCP plugin, animates it in Sequencer, renders it with Movie Render Queue and hands back a titled MP4, with nobody at the keyboard. The first production is a 26-second brand film for RiskMandate, about reach, mandate and gap, rendered at 2560 by 1440: 108 blocks rise around a glowing agent, the inner rings turn green, a barrier rises between them, and the camera cranes up into a seal. Two things made it work: Unreal 5.8's experimental Unreal MCP plugin, which exposes about fifty toolsets to an agent, and a small job runner in a folder for what no toolset could do yet, which is render to video. The films play on this page, streamed piece by piece from a new vault the newsroom will use for every video, with its read key published here.*
 
 The six beats of the RiskMandate film, version 2, rendered in Unreal Engine 5.8 by Claude.
 
@@ -22,14 +22,20 @@ The six beats of the RiskMandate film, version 2, rendered in Unreal Engine 5.8 
 - **The first film:** 26 seconds for RiskMandate, reach, mandate and gap, rendered at 2560 by 1440.
 - **The key piece is Unreal's new MCP plugin,** which gives an agent about fifty toolsets inside the editor.
 - **What no toolset could do, a folder did:** a job runner that runs any Python dropped into an inbox, including the render.
-- **Watch both versions** in the newsroom's new media vault, decrypted in your browser.
+- **Watch all three videos** on this page: the render test and both versions of the film, streamed from the newsroom's media vault.
 - **It is one session old,** and the list of what to improve is long.
 
 ## Watch it
 
-The film's closing composition: the agent, the green mandate, the barrier ring and the reach.
+Three videos, in the order they were made. Each plays here, decrypted in your browser piece by piece from the newsroom's media vault, an encrypted vault whose read key is published on this site, so anyone can read it and nobody can change it.
 
-The films are in an encrypted vault that the newsroom will use for every video from now on. Its read key is published here, so anyone can open it and nobody can change it: [open the newsroom's films and videos](https://dev.vault.sgraph.ai/#sgit_public_read_be1ffbe6c61c72f8e74f4029a712b95ef2ca64057db1ba3652401ad95d3fc00f%3Ao6374rnl). Press play on version 2 for the film at 2560 by 1440, or on version 1 for the first cut. Each video is decrypted in your browser when you press play.
+*Video: The first render test, 1280 by 720, four seconds: the pipeline working before the film.* [Watch it in the vault](https://dev.vault.sgraph.ai/#sgit_public_read_be1ffbe6c61c72f8e74f4029a712b95ef2ca64057db1ba3652401ad95d3fc00f%3Ao6374rnl)
+
+*Video: The RiskMandate film, version 1, 1920 by 1080: the first cut, rendered in about three and a half minutes.* [Watch it in the vault](https://dev.vault.sgraph.ai/#sgit_public_read_be1ffbe6c61c72f8e74f4029a712b95ef2ca64057db1ba3652401ad95d3fc00f%3Ao6374rnl)
+
+*Video: The RiskMandate film, version 2, 2560 by 1440: bevels, new materials, softer light, about 26 minutes to render.* [Watch it in the vault](https://dev.vault.sgraph.ai/#sgit_public_read_be1ffbe6c61c72f8e74f4029a712b95ef2ca64057db1ba3652401ad95d3fc00f%3Ao6374rnl)
+
+The same vault also has the original files and a player of its own: [open the newsroom's films and videos](https://dev.vault.sgraph.ai/#sgit_public_read_be1ffbe6c61c72f8e74f4029a712b95ef2ca64057db1ba3652401ad95d3fc00f%3Ao6374rnl).
 
 ## From a failed install to a working editor
 
@@ -71,7 +77,7 @@ The brief came from riskmandate.ai and its brand page: **reach, mandate, gap**, 
 
 The scene is built in code: about 264 animated pieces, each with its own keys, staggered by ring and angle, and a camera path computed so it never spins the wrong way.
 
-Version 1 and version 2 of the film: resolution, render time, geometry, materials, lighting and samples.
+The film's closing composition: the agent, the green mandate, the barrier ring and the reach.Version 1 and version 2 of the film: resolution, render time, geometry, materials, lighting and samples.
 
 Version 2 added bevelled meshes with 4 cm rounded edges, new materials with an edge sheen, softer light with Lumen bounce, and four temporal samples per frame. Version 1 rendered in about three and a half minutes at 1080p; version 2 took about 26 minutes at 1440p.
 

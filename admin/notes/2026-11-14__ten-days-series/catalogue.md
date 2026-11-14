@@ -14,7 +14,7 @@ Prepared for Dinis by the newsroom journalist (writer-09), 13 November 2026, fro
 | Busiest day | 134 sessions created on 11 Nov | same |
 | Sessions active at once (upper bound) | 64 to 67, on 11 Nov about 14:04 UTC | created/last-activity spans |
 | Deepest conductor tree | 4 levels: conductor.3 › conductor@PrompTugal › conductor.android › Android workers | `parent_session_id` |
-| People on the Web Summit team | 7 (6 with agent accounts) | Web Summit repo, Fringe roster |
+| People on the Web Summit team | 6 | Web Summit repo, Fringe roster |
 | Storm Charles alone | 2,179 commits, 1,434 versions, 2,618 pages built, 3.84 billion tokens (98.7% cache reads), 147 session keys, 106 hand-overs | Storm Charles `accounts/books.json`, `data/agents/count.json` |
 | Native apps | 4 iOS apps from one workspace (48,000 lines of Swift from a 1,164-line start), 1 Android tablet app (33,000 lines of Kotlin), 1 iOS app started today | iOS, Android, VoiceDebrief repos |
 | Web Summit company map | 110 companies; 20 GAMMA-Ray reports; 13 X-ray companies | Web Summit, GAMMA-Ray repos |
@@ -30,7 +30,7 @@ You said 256 agents in total and about 100 at the same time. Neither number appe
 - **The team's own published counts:** "188 agents, 7 people" (Fringe's Kibana description); 178 on the RiskMandate team view; "over a hundred agents" on promptugal.news. Your own counts were 111 on 7 Nov and 120 in an interview.
 - **At once:** at most 64 to 67 sessions open on one account, on 11 Nov. At the Big Stop, one account held 100 sessions, but only 1 was running.
 
-**My recommendation:** say "over 180 named agents, from seven people" and "more than 60 sessions working at once". Or make the counting itself an article (see A14). If 256 comes from somewhere I haven't seen, such as Cowork or the other people's accounts, tell me where and I'll use it.
+**My recommendation:** say "over 180 named agents, from six people" and "more than 60 sessions working at once". Or make the counting itself an article (see A14). If 256 comes from somewhere I haven't seen, such as Cowork or the other people's accounts, tell me where and I'll use it.
 
 ---
 
@@ -69,7 +69,7 @@ Priority: **A** first wave, **B** second, **C** if wanted. "Needs" is what I nee
 
 | # | Working title | Angle | Key facts | Visuals | Pri | Needs |
 |---|---|---|---|---|---|---|
-| A1 | **Ten days: one human, seven people, and the agents** | The flagship overview: everything we built, in numbers and a giant collage | §1 table; the projects in P1 to P11 | Giant collage of 24 sites and apps; a timeline of the ten days; numbers board | A | Your call on the agent count wording |
+| A1 | **Ten days: one human, six people, and the agents** | The flagship overview: everything we built, in numbers and a giant collage | §1 table; the projects in P1 to P11 | Giant collage of 24 sites and apps; a timeline of the ten days; numbers board | A | Your call on the agent count wording |
 | A2 | **Stopping a hundred agents** | The Big Stop (9 Nov), the hand brake (12 Nov 15:15) and the final HOLD (18:12), and why they didn't fully stop | Delay = the wake cadence (5 to 33 minutes); 20 tasks paused; background pollers and observability kept going; the PHP wind-down that never finished | Before/after wake charts; HOLD pages; a "what kept running" table | A | None |
 | A3 | **Native apps by agents** | 4 iOS apps and an Android app in five days | 1,164 lines grown to 48,000; Fringe app brief to TestFlight in 10.5 h; Android signed build in 4 h 15; App Store rejection, approval and a queue that never cleared; VoiceDebrief to TestFlight in an hour | App screenshots (iPhone, iPad, tablet), build timeline | A | OK to mention the App Store submission was stood down? |
 | A4 | **The Mac bottleneck** | Agents waited three times longer than they worked | 6,980 Mac-minutes run vs 22,427 queued; 5 Macs busy 1,177 of 1,524 minutes; 821 jobs cancelled in the queue | Queue chart | B | None |

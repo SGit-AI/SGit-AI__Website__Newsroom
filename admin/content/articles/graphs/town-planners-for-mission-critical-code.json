@@ -1,0 +1,33 @@
+{
+ "slug": "town-planners-for-mission-critical-code",
+ "teaser": "The US ground stop is a case for town planner teams that certify every line, and for AI that makes that work scale.",
+ "topics": ["agents-and-policy", "site-and-engineering"],
+ "core_idea": "After a network update preceded a reboot, crash and five-hour US ground stop on 13 November 2026, a LinkedIn post blamed AI-written code. The evidence so far points to a software update and patches on an old network, with no evidence yet of AI involvement. Whatever wrote the change, such systems belong to town planners: every line read, certified and tested by an experienced multidisciplinary team. AI belongs around the shipped code, in understanding, connecting, aligning, testing and the non-functional requirements, where it raises quality and resilience.",
+ "nodes": [
+  {"id": "stop", "label": "The ground stop", "kind": "example", "summary": "About five hours, 13 November."},
+  {"id": "claim", "label": "AI slop claimed", "kind": "claim", "summary": "A LinkedIn post."},
+  {"id": "evidence", "label": "Evidence first", "kind": "claim", "summary": "An update and patches; no AI link yet."},
+  {"id": "tp", "label": "Town planner mode", "kind": "concept", "summary": "Every line read and certified."},
+  {"id": "team", "label": "A multidisciplinary team", "kind": "method", "summary": "Engineers to security."},
+  {"id": "ai", "label": "AI around the code", "kind": "method", "summary": "Understand, connect, align, test."},
+  {"id": "nfrs", "label": "The NFRs", "kind": "concept", "summary": "The scaffolding critical systems need."}
+ ],
+ "edges": [
+  {"from": "claim", "to": "stop", "rel": "answers"},
+  {"from": "evidence", "to": "claim", "rel": "contrasts"},
+  {"from": "tp", "to": "stop", "rel": "answers"},
+  {"from": "team", "to": "tp", "rel": "extends"},
+  {"from": "ai", "to": "team", "rel": "depends-on"},
+  {"from": "nfrs", "to": "ai", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["explorer-coding", "ephemeral-town-planner-services", "coding-standards-are-behaviour-policies"],
+  "pages": [],
+  "sites": ["https://www.cbsnews.com/news/faa-issues-nationwide-ground-stop/", "https://shieldcap.com/episodes/l3harris"]
+ },
+ "quotes": [
+  {"text": "And \"read by a human\" is not enough.", "why": "Town planner territory."},
+  {"text": "It gives that team more evidence than it has ever had, in time to use it.", "why": "Where AI belongs in that pipeline."},
+  {"text": "the work around the code that ships, which is where teams always run out of time", "why": "Where AI belongs in that pipeline."}
+ ]
+}

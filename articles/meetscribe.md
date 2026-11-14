@@ -114,7 +114,7 @@ Site & engineeringAgents & policy[This article as a graph →](graphs.md#meetscr
 
 ### Continued by
 
-- [Ten days at Web Summit: what seven people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](ten-days-at-web-summit.md) Seven people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.
+- [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](ten-days-at-web-summit.md) Six people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

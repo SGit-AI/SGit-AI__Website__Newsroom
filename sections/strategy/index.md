@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-87 articles, newest first.
+88 articles, newest first.
 
 ## November 2026
 
+- [Town planners for mission-critical code: the US ground stop of 13 November is a case for teams that read, certify and test every line, and for using AI to make that work scale, not to skip it](../../articles/town-planners-for-mission-critical-code.md), 2026-11-14, 5 min.
 - [RiskMandate and Lovable: mapping an Agent Behaviour Policy onto an app builder whose agent writes the code, changes the live database, connects your other systems and publishes, with the controls Lovable already gives and their defaults](../../articles/riskmandate-and-lovable.md), 2026-11-09, 7 min.
 - [RiskMandate and Cloudflare: where agents run, where they are controlled, and why Cloudflare's own Agent Access Model leaves room for a signed record of what each agent was asked to do](../../articles/riskmandate-and-cloudflare.md), 2026-11-09, 7 min.
 - [RiskMandate and Manus: mapping an Agent Behaviour Policy onto a general agent that can use your computer, your browser, your logins and 416 connectors, and the controls Manus already gives you](../../articles/riskmandate-and-manus.md), 2026-11-09, 7 min.

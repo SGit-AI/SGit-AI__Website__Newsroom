@@ -1,9 +1,9 @@
 ---
-title: Ten days at Web Summit: what seven people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part
+title: Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part
 date: 2026-11-14
 author: Dinis Cruz
 author_url: about/index.html
-summary: Between 3 and 13 November 2026, seven of us, with our agents, built more than I can fit in one article. A team operating system, an independent newsroom for Web Summit Lisbon, a site about Storm Charles that grew to more than 2,600 pages in three days, a guide to the summit's fringe that went live two and a half hours after its brief, a draft standard that rated twenty companies, four iPhone and iPad apps, an Android tablet app, and the tools to run all of it. About 20,000 commits across fifteen repositories, 224 Claude Code sessions, around 250 named agents, and more than 60 sessions working at the same time at the peak. This article is the map: the team, the sequence of events, the numbers, a collage of what we made, and the list of articles that will tell each part. I will update it as each one goes live.
+summary: Between 3 and 13 November 2026, six of us, with our agents, built more than I can fit in one article. A team operating system, an independent newsroom for Web Summit Lisbon, a site about Storm Charles that grew to more than 2,600 pages in three days, a guide to the summit's fringe that went live two and a half hours after its brief, a draft standard that rated twenty companies, four iPhone and iPad apps, an Android tablet app, and the tools to run all of it. About 20,000 commits across fifteen repositories, 224 Claude Code sessions, around 250 named agents, and more than 60 sessions working at the same time at the peak. This article is the map: the team, the sequence of events, the numbers, a collage of what we made, and the list of articles that will tell each part. I will update it as each one goes live.
 version: v0.14.82
 license: https://creativecommons.org/licenses/by/4.0/
 tags: web-summit, agents, promptugal, storm-charles, team, series, collage, article
@@ -14,14 +14,14 @@ status: published
 
 ## In short {#in-short}
 
-- **Seven people and around 250 agents,** in ten days around Web Summit Lisbon.
+- **Six people and around 250 agents,** in ten days around Web Summit Lisbon.
 - **What we built:** a team operating system, a newsroom, a storm site, a fringe guide, a rating standard, native apps on two platforms, and the tools to run and stop it all.
 - **The scale:** about 20,000 commits, 224 Claude Code sessions, more than 60 working at once at the peak.
 - **This is the map.** Each part gets its own article; the list below links them as they go live.
 
 ## The team {#team}
 
-Six of us ran agents, and a seventh joined for the fringe guide. Each person had their own agents, their own conductor and their own lane:
+There were six of us. Each person had their own agents, their own conductor and their own lane:
 
 - **Dinis Cruz,** head conductor.
 - **Angelo Leggio,** the graphs and live views.
