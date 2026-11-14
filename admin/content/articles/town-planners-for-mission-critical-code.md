@@ -4,7 +4,7 @@ date: 2026-11-14
 author: Dinis Cruz
 author_url: about/index.html
 summary: On 13 November a change to the private network that links US air traffic control was followed by a reboot, a crash and about five hours with no departures. Vincent Lextrait posted that it was "most likely" AI slop, pointing at L3Harris, which runs the network, and at its technology chief's enthusiasm for vibe coding. I agreed with the direction and added two caveats, and this expands them. First, we need evidence: so far the reports point to a software update and security patches that overwhelmed old routers, officials say the FAA's own AI systems played no role, and nothing yet ties the change to AI-written code. Aviation investigates well, so we should eventually know. Second, whatever wrote the change, systems like this belong to what Simon Wardley calls town planners: every line read, certified and fully tested, not by "a human" but by a team of experienced engineers, architects, designers, testers, and resilience and security specialists. Where AI belongs in that world is not the line of code that ships. It is everything around it: understanding a large old codebase, mapping what a change can reach, aligning every rule with the check that holds it, and testing far more than a team could by hand. Used there, AI raises quality and resilience instead of lowering them.
-version: v999.0.0
+version: v0.14.83
 license: https://creativecommons.org/licenses/by/4.0/
 tags: wardley-maps, town-planners, resilience, aviation, ai-coding, nfrs, testing, reply, article
 status: published
