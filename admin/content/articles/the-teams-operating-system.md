@@ -4,7 +4,7 @@ date: 2026-11-14
 author: Dinis Cruz
 author_url: about/index.html
 summary: For Web Summit Lisbon, the six of us ran everything from one site: web-summit.sgit.ai. It is built from markdown and data in a git repository, and every push is a release: 6,096 commits since 28 October, 5,548 of them from 3 November. It has four layers. People: a brief and a prompt for each of us, onboarding levels from a Claude account to opening the team's vaults, and a command centre each, on a phone, an iPad or a computer. Agents: every one named for its person, 108 public keys, an inbox lane for each agent whose token only that agent can open, and secrets handed out sealed to keys. Work: the board as files, 219 items. And the outside world: 110 companies on a map, an X-ray of what a company's AI helpers can do, and a public and a private CRM in encrypted vaults. This is the second article in the Ten days series.
-version: v999.0.0
+version: v0.14.86
 license: https://creativecommons.org/licenses/by/4.0/
 tags: web-summit, team, agents, pki, vaults, command-centre, intranet, series, article
 status: published
