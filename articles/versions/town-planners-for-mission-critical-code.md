@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-14 | published | 1,443 | first published | this release | [current](../town-planners-for-mission-critical-code.md) |
+| **v1.0.0** | 2026-11-14 | published | 1,443 | first published | [`0d3ad49d1`](https://github.com/SGit-AI/SGit-AI__Website/commit/0d3ad49d1486e10547b315a5efdd1269da59bfe7) | [current](../town-planners-for-mission-critical-code.md) |
 
 [← Back to the article](../town-planners-for-mission-critical-code.md) · [All articles](../index.md)
 

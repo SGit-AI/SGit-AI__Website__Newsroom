@@ -103,6 +103,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#the-lab-th
 
 ### Continued by
 
+- [One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes](the-book-is-on-leanpub.md) One Human, Nine Agents, Nineteen Hours is on Leanpub: free as a minimum, pay what you want, every update included.
 - [The book is printed: RC2 of One Human, Nine Agents, Nineteen Hours as two A4 review copies from Prontaprint Chiswick, the newsroom's pages in the book, and the team that made it paused until I have read them](rc2-goes-to-print.md) RC2 is printed: two A4 review copies from Prontaprint Chiswick, two newsroom pages in the book, and the book team paused.
 - [One Human, Nine Agents, Nineteen Hours: the second draft of the book of the talk, written down the zoom from 3 pages to 70, every chapter checked five ways, the agents arguing with their own reviewers on the page, and a request for your feedback on the 27-page draft](one-human-nine-agents-rc2.md) RC2 of One Human, Nine Agents, Nineteen Hours: written down the zoom, every chapter checked five ways, and a request for your feedback.
 - [A book told by its cast: how the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record, and the editor as narrator](a-book-told-by-its-cast.md) A book told by its cast: the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record.

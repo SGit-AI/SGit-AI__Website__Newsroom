@@ -111,6 +111,10 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#ten-da
 - [The Web Summit team, part five: the last day of setup, 180 releases, every person getting a key, an accountant counting the team's tokens, synthetic users testing the merch, and an inbox only the agents can write to](web-summit-part-five.md) The Web Summit team's last day of setup: 180 releases, keys for every person, new agents for everyone, and an inbox per agent.
 - [MeetScribe: transcripts and a debrief of my Google Meet calls without upgrading every Workspace account, a Chrome extension built in about two hours from a brief that would have failed without an error, and a call for testers](meetscribe.md) MeetScribe: Meet transcripts and a debrief on your own OpenRouter key, built in two hours from a reviewed brief, and a call for testers.
 
+### Continued by
+
+- [One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes](the-book-is-on-leanpub.md) One Human, Nine Agents, Nineteen Hours is on Leanpub: free as a minimum, pay what you want, every update included.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 395 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=395)

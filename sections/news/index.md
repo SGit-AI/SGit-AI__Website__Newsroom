@@ -2,10 +2,11 @@
 
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
 
-52 articles, newest first.
+53 articles, newest first.
 
 ## November 2026
 
+- [One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes](../../articles/the-book-is-on-leanpub.md), 2026-11-14, 3 min.
 - [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](../../articles/storm-charles-a-newsroom-built-in-a-night.md), 2026-11-11, 9 min.
 - [Would you pay to plug this newsroom in? A reply to Florent Daudens, on five publishers' bets for the AI era, from a newsroom built for agents, with what it answers, where it goes further, and the questions it has not answered either](../../articles/would-you-pay-to-plug-this-newsroom-in.md), 2026-11-03, 6 min.
 - [Separate Ways, explained: what my brother's synth video shows, frame by frame, and why describing work at the moment you make it is the first step to publishing it](../../articles/separate-ways-explained.md), 2026-11-02, 7 min.

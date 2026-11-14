@@ -139,6 +139,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#the-book-o
 
 ### Continued by
 
+- [One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes](the-book-is-on-leanpub.md) One Human, Nine Agents, Nineteen Hours is on Leanpub: free as a minimum, pay what you want, every update included.
 - [One Human, Nine Agents, Nineteen Hours: the second draft of the book of the talk, written down the zoom from 3 pages to 70, every chapter checked five ways, the agents arguing with their own reviewers on the page, and a request for your feedback on the 27-page draft](one-human-nine-agents-rc2.md) RC2 of One Human, Nine Agents, Nineteen Hours: written down the zoom, every chapter checked five ways, and a request for your feedback.
 - [The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight](the-lab-that-redesigned-the-book.md) The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments and three days.
 - [143 notes in a day: how my pen on a printed release candidate became a record, decisions with their provenance, a review hub and a plan for the next candidate, read by agents](a-pen-on-a-release-candidate.md) 143 notes in a day: how a pen on a printed release candidate became a record, decisions with provenance and a review hub, read by agents.

@@ -157,6 +157,7 @@ Agents & policyNews & evidence[This article as a graph →](graphs.md#who-owns-t
 
 ### Continued by
 
+- [One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes](the-book-is-on-leanpub.md) One Human, Nine Agents, Nineteen Hours is on Leanpub: free as a minimum, pay what you want, every update included.
 - [Resilience when the workforce includes agents: what Synergy Six Degrees rates with OCRR, recovers with NeuShield and protects with Actifile, and where RiskMandate, sgit and SHarness meet it](resilience-when-the-workforce-includes-agents.md) What Synergy Six Degrees rates with OCRR and sells with NeuShield and Actifile, and the agent rows RiskMandate, SHarness and sgit add.
 
 [All articles](index.md) · [All graphs](graphs.md)

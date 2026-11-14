@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.83 · 394 articles since 2026-08-17; the newest is 2026-11-14. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 395 articles since 2026-08-17; the newest is 2026-11-14. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,20 +12,21 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Town planners for mission-critical code: the US ground stop of 13 November is a case for teams that read, certify and test every line, and for using AI to make that work scale, not to skip it](articles/town-planners-for-mission-critical-code.md), 2026-11-14, 5 min. The US ground stop is a case for town planner teams that certify every line, and for AI that makes that work scale.
+- [One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes](articles/the-book-is-on-leanpub.md), 2026-11-14, 3 min. One Human, Nine Agents, Nineteen Hours is on Leanpub: free as a minimum, pay what you want, every update included.
 
 ## Five more
 
+- [Town planners for mission-critical code: the US ground stop of 13 November is a case for teams that read, certify and test every line, and for using AI to make that work scale, not to skip it](articles/town-planners-for-mission-critical-code.md), Startups & strategy, 2026-11-14, 5 min.
 - [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](articles/ten-days-at-web-summit.md), Working with agents, 2026-11-14, 5 min.
 - [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](articles/a-film-studio-on-a-laptop.md), Engineering this newsroom, 2026-11-14, 6 min.
 - [Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit](articles/coding-standards-are-behaviour-policies.md), Working with agents, 2026-11-13, 6 min.
 - [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](articles/storm-charles-a-newsroom-built-in-a-night.md), The future of news, 2026-11-11, 9 min.
-- [RiskMandate and Lovable: mapping an Agent Behaviour Policy onto an app builder whose agent writes the code, changes the live database, connects your other systems and publishes, with the controls Lovable already gives and their defaults](articles/riskmandate-and-lovable.md), Startups & strategy, 2026-11-09, 7 min.
 
 ## The last five days
 
-### Saturday 14 November 2026 (3 articles)
+### Saturday 14 November 2026 (4 articles)
 
+- The future of news: [One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes](articles/the-book-is-on-leanpub.md), 3 min.
 - Startups & strategy: [Town planners for mission-critical code: the US ground stop of 13 November is a case for teams that read, certify and test every line, and for using AI to make that work scale, not to skip it](articles/town-planners-for-mission-critical-code.md), 5 min.
 - Working with agents: [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](articles/ten-days-at-web-summit.md), 5 min.
 - Engineering this newsroom: [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](articles/a-film-studio-on-a-laptop.md), 6 min.
@@ -77,13 +78,13 @@ Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vaul
 - [English with Inês, inside the vault: a teacher's site as a vault app, with an experiment for every lesson, cards that come back when you are about to forget, a tutor that answers about one lesson only, a concept map, and the back office with every agent's policy](articles/inside-english-with-ines.md), 2026-11-03.
 - [Signed by the agent, vouched for by the person: a brief to give every email agent its own key, so each email carries a QR code that proves it is authentic](articles/signed-email-from-the-agent.md), 2026-10-30.
 
-### [The future of news](sections/news/index.md) (52)
+### [The future of news](sections/news/index.md) (53)
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
+- [One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes](articles/the-book-is-on-leanpub.md), 2026-11-14.
 - [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](articles/storm-charles-a-newsroom-built-in-a-night.md), 2026-11-11.
 - [Would you pay to plug this newsroom in? A reply to Florent Daudens, on five publishers' bets for the AI era, from a newsroom built for agents, with what it answers, where it goes further, and the questions it has not answered either](articles/would-you-pay-to-plug-this-newsroom-in.md), 2026-11-03.
 - [Separate Ways, explained: what my brother's synth video shows, frame by frame, and why describing work at the moment you make it is the first step to publishing it](articles/separate-ways-explained.md), 2026-11-02.
 - [Four iPhones and an iPad: how my brother filmed a three-camera music video with old phones synced live to Final Cut Pro, a feature Apple shipped in 2024 that he found by accident](articles/four-iphones-and-an-ipad.md), 2026-11-02.
-- [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](articles/agentic-readers.md), 2026-10-31.
 
 ### [Startups & strategy](sections/strategy/index.md) (88)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.

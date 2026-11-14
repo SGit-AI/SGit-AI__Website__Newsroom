@@ -1,0 +1,31 @@
+{
+ "slug": "the-book-is-on-leanpub",
+ "teaser": "One Human, Nine Agents, Nineteen Hours is on Leanpub: free as a minimum, pay what you want, every update included.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "Dinis Cruz's book One Human, Nine Agents, Nineteen Hours is on Leanpub from 14 November 2026: the day nine AI agents built his talk in nineteen hours, told as a factory with its five steps, its stop file and its failures, and then how a reader can start with one agent, one page of rules, one brief and one finished piece of work. Free minimum, 19 dollars suggested, 90% complete, updates free for every reader.",
+ "nodes": [
+  {"id": "book", "label": "The book", "kind": "artefact", "summary": "On Leanpub, 14 November."},
+  {"id": "day", "label": "29 October 2026", "kind": "example", "summary": "Nine agents, nineteen hours, a talk."},
+  {"id": "steps", "label": "Five steps", "kind": "method", "summary": "Plan, check, do, check, check."},
+  {"id": "stop", "label": "The stop file", "kind": "concept", "summary": "Anyone could stop; only he could lift."},
+  {"id": "yours", "label": "Your turn", "kind": "method", "summary": "One agent, one page of rules, one brief."},
+  {"id": "leanpub", "label": "Published early", "kind": "claim", "summary": "Every update free, feedback wanted."}
+ ],
+ "edges": [
+  {"from": "day", "to": "book", "rel": "example-of"},
+  {"from": "steps", "to": "day", "rel": "extends"},
+  {"from": "stop", "to": "day", "rel": "extends"},
+  {"from": "yours", "to": "book", "rel": "extends"},
+  {"from": "leanpub", "to": "book", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["the-book-of-the-talk-and-its-companion", "the-lab-that-redesigned-the-book", "one-human-nine-agents-rc2", "who-owns-the-stop-button", "rc2-goes-to-print", "ten-days-at-web-summit"],
+  "pages": [],
+  "sites": ["https://leanpub.com/one-human-nine-agents-nineteen-hours", "https://the-ultimate-insider.book.sgit.ai/"]
+ },
+ "quotes": [
+  {"text": "And what did not work, because that is in the book too.", "why": "What the book is about."},
+  {"text": "Alone or with others, you can start the same day.", "why": "What the book is about."},
+  {"text": "the last 10% is where your feedback matters most", "why": "Why Leanpub, and why now."}
+ ]
+}

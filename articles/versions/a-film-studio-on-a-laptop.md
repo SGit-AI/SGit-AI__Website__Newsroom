@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-14 | minor | 1,478 | +159 / −95 words; 2 changed, 6 added, 2 removed paragraphs | this release | [what changed](a-film-studio-on-a-laptop/v1.1.0.md) · [current](../a-film-studio-on-a-laptop.md) |
+| **v1.1.0** | 2026-11-14 | minor | 1,478 | +159 / −95 words; 2 changed, 6 added, 2 removed paragraphs | [`0d3ad49d1`](https://github.com/SGit-AI/SGit-AI__Website/commit/0d3ad49d1486e10547b315a5efdd1269da59bfe7) | [what changed](a-film-studio-on-a-laptop/v1.1.0.md) · [current](../a-film-studio-on-a-laptop.md) |
 | **v1.0.0** | 2026-11-14 | published | 1,414 | first published | [`3a6fb5807`](https://github.com/SGit-AI/SGit-AI__Website/commit/3a6fb5807d0d057514e0efdb54462118aef65398) |  |
 
 [← Back to the article](../a-film-studio-on-a-laptop.md) · [All articles](../index.md)
