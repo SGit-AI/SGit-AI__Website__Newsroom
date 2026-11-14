@@ -3368,6 +3368,108 @@
    "added": 0,
    "updated": 0,
    "note": "The refresh was left uncommitted and unpushed because the date-comma check in test_wire still fails."
+  },
+  {
+   "id": "5bc42f0f523d",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-11-14T05:47:32Z",
+   "finished_at": "2026-11-14T06:02:44Z",
+   "duration_s": 910.0,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.437937,
+     "input": 1384416,
+     "output": 229195,
+     "cache_read": 1606576,
+     "cache_write": 148904,
+     "thinking": 147662
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 2.089483,
+     "input": 150,
+     "output": 56724,
+     "cache_read": 5583663,
+     "cache_write": 333209,
+     "thinking": 7290
+    }
+   },
+   "cost_usd": 2.527419,
+   "turns": 26,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-11-14.1",
+   "added": 8,
+   "updated": 4,
+   "note": "The dearest Industry run yet, eight new stories and four updates, with one quote failing the verifier."
+  },
+  {
+   "id": "a19665c85b19",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-11-14T06:08:12Z",
+   "finished_at": "2026-11-14T06:25:00Z",
+   "duration_s": 1005.0,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.014739,
+     "input": 50975,
+     "output": 11725,
+     "cache_read": 50170,
+     "cache_write": 26217,
+     "thinking": 6706
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.267697,
+     "input": 32,
+     "output": 6707,
+     "cache_read": 631194,
+     "cache_write": 34361,
+     "thinking": 740
+    }
+   },
+   "cost_usd": 0.282436,
+   "turns": 23,
+   "subagents": 1,
+   "refused": 4,
+   "refused_kinds": [
+    "web fetch"
+   ],
+   "outcome": "published",
+   "release": "2026-11-14.1",
+   "added": 1,
+   "updated": 0,
+   "note": "One new story published from pages that fetched fine, while four other fetches were refused."
+  },
+  {
+   "id": "638ee75ab32d",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-11-14T06:56:05Z",
+   "finished_at": "2026-11-14T07:01:44Z",
+   "duration_s": 335.0,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.356792,
+     "input": 44,
+     "output": 6588,
+     "cache_read": 1264195,
+     "cache_write": 41101,
+     "thinking": 805
+    }
+   },
+   "cost_usd": 0.356792,
+   "turns": 23,
+   "subagents": 0,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "blocked",
+   "release": null,
+   "added": 0,
+   "updated": 0,
+   "note": "The refresh was committed locally but the push was refused by the git proxy, the fourth time this week."
   }
  ],
  "sessions": [
@@ -3391,15 +3493,15 @@
    "name": "@newsroom.accountant's session",
    "kind": "accountant",
    "from": "2026-10-16",
-   "as_of": "2026-11-13T07:55:00Z",
+   "as_of": "2026-11-14T07:55:00Z",
    "models": [
     "claude-sonnet-5-5"
    ],
-   "cost_usd": 53.41181518,
-   "input": 5295,
-   "output": 146397,
-   "cache_read": 76528671,
-   "cache_write": 11066030,
+   "cost_usd": 56.31552112,
+   "input": 5308,
+   "output": 151001,
+   "cache_read": 80170794,
+   "cache_write": 11689227,
    "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
   }
  ],
