@@ -1,0 +1,146 @@
+{
+  "slug": "a-film-studio-on-a-laptop",
+  "teaser": "Claude built, animated and rendered a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended laptop.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "On an unattended MacBook Air, Claude used Unreal Engine 5.8's experimental MCP plugin and a folder-based job runner to design, build, animate and render a 26-second RiskMandate film about reach, mandate and gap, delivering a titled MP4 with nobody at the keyboard. The films live in a shared newsroom media vault with a published read key.",
+  "nodes": [
+    {
+      "id": "laptop",
+      "label": "An unattended laptop",
+      "kind": "artefact",
+      "summary": "MacBook Air, non-admin."
+    },
+    {
+      "id": "mcp",
+      "label": "Unreal MCP plugin",
+      "kind": "artefact",
+      "summary": "About fifty toolsets."
+    },
+    {
+      "id": "runner",
+      "label": "A job runner in a folder",
+      "kind": "method",
+      "summary": "Runs any job, including the render."
+    },
+    {
+      "id": "skills",
+      "label": "Epic's Agent Skills",
+      "kind": "artefact",
+      "summary": "Lighting rules read through MCP."
+    },
+    {
+      "id": "film",
+      "label": "The RiskMandate film",
+      "kind": "example",
+      "summary": "Reach, mandate, gap in 26 seconds."
+    },
+    {
+      "id": "v2",
+      "label": "Version 2",
+      "kind": "example",
+      "summary": "Bevels, materials, light, 1440p."
+    },
+    {
+      "id": "vault",
+      "label": "The media vault",
+      "kind": "method",
+      "summary": "Read key published; videos decrypted in the browser."
+    },
+    {
+      "id": "next",
+      "label": "Proper tools next",
+      "kind": "question",
+      "summary": "Build, render, status."
+    }
+  ],
+  "edges": [
+    {
+      "from": "mcp",
+      "to": "laptop",
+      "rel": "depends-on"
+    },
+    {
+      "from": "runner",
+      "to": "mcp",
+      "rel": "extends"
+    },
+    {
+      "from": "skills",
+      "to": "mcp",
+      "rel": "extends"
+    },
+    {
+      "from": "film",
+      "to": "runner",
+      "rel": "produces"
+    },
+    {
+      "from": "v2",
+      "to": "film",
+      "rel": "extends"
+    },
+    {
+      "from": "vault",
+      "to": "film",
+      "rel": "extends"
+    },
+    {
+      "from": "next",
+      "to": "runner",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "riskmandate-and-manus",
+      "coding-standards-are-behaviour-policies"
+    ],
+    "pages": [],
+    "sites": [
+      "https://riskmandate.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "the oldest trick there is: a folder that a program watches",
+      "why": "Why this matters."
+    },
+    {
+      "text": "A tool reported success without doing the work.",
+      "why": "What went wrong."
+    },
+    {
+      "text": "The same loop makes a series as easily as one film",
+      "why": "Why this matters."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ufs-beats.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ufs-beats.webp",
+      "caption": "The six beats of the RiskMandate film, version 2, rendered in Unreal Engine 5.8 by Claude.",
+      "kind": "collage"
+    },
+    {
+      "file": "ufs-seal.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ufs-seal.webp",
+      "caption": "The film's closing composition: the agent, the green mandate, the barrier ring and the reach.",
+      "kind": "photo"
+    },
+    {
+      "file": "ufs-loop.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ufs-loop.webp",
+      "caption": "The loop: Claude writes a job, Unreal runs it, Movie Render Queue renders, ffmpeg encodes, the MP4 comes back.",
+      "kind": "process"
+    },
+    {
+      "file": "ufs-versions.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ufs-versions.webp",
+      "caption": "Version 1 and version 2 of the film: resolution, render time, geometry, materials, lighting and samples.",
+      "kind": "comparison"
+    }
+  ]
+}

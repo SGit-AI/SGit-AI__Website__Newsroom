@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-11-13",
+  "generated": "2026-11-14",
   "site_version": "v0.7.87",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
@@ -55,6 +55,372 @@
   ],
   "articles": [
     {
+      "slug": "ten-days-at-web-summit",
+      "title": "Ten days at Web Summit: what seven people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part",
+      "date": "2026-11-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/ten-days-at-web-summit.html",
+      "markdown": "https://newsroom.sgit.ai/articles/ten-days-at-web-summit.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/ten-days-at-web-summit.webp",
+      "teaser": "Seven people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "web-summit",
+        "agents",
+        "promptugal",
+        "storm-charles",
+        "team",
+        "series",
+        "collage",
+        "article"
+      ],
+      "links_out": [
+        "storm-charles-a-newsroom-built-in-a-night",
+        "who-else-controls-ai-agents-at-web-summit",
+        "an-inbox-only-your-agents-can-write-to",
+        "a-key-for-every-person",
+        "web-summit-part-five",
+        "meetscribe"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "tdw-collage.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tdw-collage.webp",
+          "caption": "Twenty-four of the sites and apps we built or ran between 3 and 13 November 2026.",
+          "kind": "collage"
+        }
+      ],
+      "graph": {
+        "slug": "ten-days-at-web-summit",
+        "teaser": "Seven people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Between 3 and 13 November 2026, a team of seven people and around 250 named agents built a team operating system, an independent newsroom, a storm site, a fringe guide, a rating standard and native apps around Web Summit Lisbon: about 20,000 commits and 224 Claude Code sessions, more than 60 at once at the peak. This hub names the team, orders the events, gives the numbers and lists the articles that tell each part.",
+        "nodes": [
+          {
+            "id": "team",
+            "label": "Seven people",
+            "kind": "example",
+            "summary": "Each with agents and a conductor."
+          },
+          {
+            "id": "agents",
+            "label": "Around 250 agents",
+            "kind": "claim",
+            "summary": "Distinct names in commits."
+          },
+          {
+            "id": "timeline",
+            "label": "Ten days in order",
+            "kind": "artefact",
+            "summary": "3 to 13 November."
+          },
+          {
+            "id": "os",
+            "label": "The team's operating system",
+            "kind": "artefact",
+            "summary": "web-summit.sgit.ai."
+          },
+          {
+            "id": "news",
+            "label": "PrompTugal.news",
+            "kind": "artefact",
+            "summary": "The newsroom."
+          },
+          {
+            "id": "storm",
+            "label": "Storm Charles",
+            "kind": "artefact",
+            "summary": "2,618 pages."
+          },
+          {
+            "id": "fringe",
+            "label": "Lisbon Tech Fringe",
+            "kind": "artefact",
+            "summary": "Live in 2.5 hours."
+          },
+          {
+            "id": "apps",
+            "label": "Native apps",
+            "kind": "artefact",
+            "summary": "Four iOS, one Android."
+          },
+          {
+            "id": "stop",
+            "label": "The Big Stop and the hold",
+            "kind": "example",
+            "summary": "Stopping the swarm."
+          },
+          {
+            "id": "series",
+            "label": "The series",
+            "kind": "artefact",
+            "summary": "Thirteen articles."
+          }
+        ],
+        "edges": [
+          {
+            "from": "agents",
+            "to": "team",
+            "rel": "depends-on"
+          },
+          {
+            "from": "timeline",
+            "to": "team",
+            "rel": "extends"
+          },
+          {
+            "from": "os",
+            "to": "timeline",
+            "rel": "example-of"
+          },
+          {
+            "from": "news",
+            "to": "timeline",
+            "rel": "example-of"
+          },
+          {
+            "from": "storm",
+            "to": "timeline",
+            "rel": "example-of"
+          },
+          {
+            "from": "fringe",
+            "to": "storm",
+            "rel": "leads-to"
+          },
+          {
+            "from": "apps",
+            "to": "timeline",
+            "rel": "example-of"
+          },
+          {
+            "from": "stop",
+            "to": "agents",
+            "rel": "contrasts"
+          },
+          {
+            "from": "series",
+            "to": "timeline",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "storm-charles-a-newsroom-built-in-a-night",
+            "who-else-controls-ai-agents-at-web-summit",
+            "an-inbox-only-your-agents-can-write-to",
+            "a-key-for-every-person",
+            "web-summit-part-five",
+            "meetscribe"
+          ],
+          "pages": [],
+          "sites": [
+            "https://web-summit.sgit.ai/",
+            "https://promptugal.news/",
+            "https://storm-charles.promptugal.news/",
+            "https://lisbontechfringe.com/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Each person had their own agents, their own conductor and their own lane",
+            "why": "The team."
+          },
+          {
+            "text": "so they are a measure of work, not money spent",
+            "why": "The numbers."
+          },
+          {
+            "text": "I will publish these one at a time, and link each one here as it goes live.",
+            "why": "The series."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-film-studio-on-a-laptop",
+      "title": "A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard",
+      "date": "2026-11-14",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-film-studio-on-a-laptop.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-film-studio-on-a-laptop.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-film-studio-on-a-laptop.webp",
+      "teaser": "Claude built, animated and rendered a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended laptop.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "unreal-engine",
+        "video",
+        "agents",
+        "mcp",
+        "riskmandate",
+        "claude",
+        "vaults",
+        "experiment",
+        "article"
+      ],
+      "links_out": [
+        "riskmandate-and-manus",
+        "coding-standards-are-behaviour-policies"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ufs-beats.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ufs-beats.webp",
+          "caption": "The six beats of the RiskMandate film, version 2, rendered in Unreal Engine 5.8 by Claude.",
+          "kind": "collage"
+        },
+        {
+          "file": "ufs-seal.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ufs-seal.webp",
+          "caption": "The film's closing composition: the agent, the green mandate, the barrier ring and the reach.",
+          "kind": "photo"
+        },
+        {
+          "file": "ufs-loop.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ufs-loop.webp",
+          "caption": "The loop: Claude writes a job, Unreal runs it, Movie Render Queue renders, ffmpeg encodes, the MP4 comes back.",
+          "kind": "process"
+        },
+        {
+          "file": "ufs-versions.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ufs-versions.webp",
+          "caption": "Version 1 and version 2 of the film: resolution, render time, geometry, materials, lighting and samples.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "a-film-studio-on-a-laptop",
+        "teaser": "Claude built, animated and rendered a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended laptop.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "On an unattended MacBook Air, Claude used Unreal Engine 5.8's experimental MCP plugin and a folder-based job runner to design, build, animate and render a 26-second RiskMandate film about reach, mandate and gap, delivering a titled MP4 with nobody at the keyboard. The films live in a shared newsroom media vault with a published read key.",
+        "nodes": [
+          {
+            "id": "laptop",
+            "label": "An unattended laptop",
+            "kind": "artefact",
+            "summary": "MacBook Air, non-admin."
+          },
+          {
+            "id": "mcp",
+            "label": "Unreal MCP plugin",
+            "kind": "artefact",
+            "summary": "About fifty toolsets."
+          },
+          {
+            "id": "runner",
+            "label": "A job runner in a folder",
+            "kind": "method",
+            "summary": "Runs any job, including the render."
+          },
+          {
+            "id": "skills",
+            "label": "Epic's Agent Skills",
+            "kind": "artefact",
+            "summary": "Lighting rules read through MCP."
+          },
+          {
+            "id": "film",
+            "label": "The RiskMandate film",
+            "kind": "example",
+            "summary": "Reach, mandate, gap in 26 seconds."
+          },
+          {
+            "id": "v2",
+            "label": "Version 2",
+            "kind": "example",
+            "summary": "Bevels, materials, light, 1440p."
+          },
+          {
+            "id": "vault",
+            "label": "The media vault",
+            "kind": "method",
+            "summary": "Read key published; videos decrypted in the browser."
+          },
+          {
+            "id": "next",
+            "label": "Proper tools next",
+            "kind": "question",
+            "summary": "Build, render, status."
+          }
+        ],
+        "edges": [
+          {
+            "from": "mcp",
+            "to": "laptop",
+            "rel": "depends-on"
+          },
+          {
+            "from": "runner",
+            "to": "mcp",
+            "rel": "extends"
+          },
+          {
+            "from": "skills",
+            "to": "mcp",
+            "rel": "extends"
+          },
+          {
+            "from": "film",
+            "to": "runner",
+            "rel": "produces"
+          },
+          {
+            "from": "v2",
+            "to": "film",
+            "rel": "extends"
+          },
+          {
+            "from": "vault",
+            "to": "film",
+            "rel": "extends"
+          },
+          {
+            "from": "next",
+            "to": "runner",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "riskmandate-and-manus",
+            "coding-standards-are-behaviour-policies"
+          ],
+          "pages": [],
+          "sites": [
+            "https://riskmandate.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "the oldest trick there is: a folder that a program watches",
+            "why": "Why this matters."
+          },
+          {
+            "text": "A tool reported success without doing the work.",
+            "why": "What went wrong."
+          },
+          {
+            "text": "The same loop makes a series as easily as one film",
+            "why": "Why this matters."
+          }
+        ]
+      }
+    },
+    {
       "slug": "coding-standards-are-behaviour-policies",
       "title": "Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit",
       "date": "2026-11-13",
@@ -85,7 +451,9 @@
         "governs-enforces-attests",
         "riskmandate-and-lovable"
       ],
-      "links_in": [],
+      "links_in": [
+        "a-film-studio-on-a-laptop"
+      ],
       "figures": [
         {
           "file": "cbp-ladder.webp",
@@ -265,7 +633,9 @@
         "web-summit-part-five",
         "who-else-controls-ai-agents-at-web-summit"
       ],
-      "links_in": [],
+      "links_in": [
+        "ten-days-at-web-summit"
+      ],
       "figures": [
         {
           "file": "scl-data.webp",
@@ -836,6 +1206,7 @@
         "who-else-controls-ai-agents-at-web-summit"
       ],
       "links_in": [
+        "a-film-studio-on-a-laptop",
         "riskmandate-and-lovable",
         "riskmandate-and-cloudflare"
       ],
@@ -1040,6 +1411,7 @@
         "web-summit-part-five"
       ],
       "links_in": [
+        "ten-days-at-web-summit",
         "storm-charles-a-newsroom-built-in-a-night",
         "riskmandate-and-manus"
       ],
@@ -1427,6 +1799,7 @@
         "synthetic-users-for-your-website"
       ],
       "links_in": [
+        "ten-days-at-web-summit",
         "storm-charles-a-newsroom-built-in-a-night",
         "who-else-controls-ai-agents-at-web-summit",
         "rc2-goes-to-print"
@@ -1617,6 +1990,7 @@
         "a-secret-is-a-qr-code"
       ],
       "links_in": [
+        "ten-days-at-web-summit",
         "web-summit-part-five"
       ],
       "figures": [
@@ -2178,6 +2552,7 @@
         "a-directory-of-people-and-keys"
       ],
       "links_in": [
+        "ten-days-at-web-summit",
         "web-summit-part-five",
         "an-inbox-only-your-agents-can-write-to"
       ],
@@ -4283,7 +4658,9 @@
         "the-grant-not-the-prompt",
         "fix-the-page-yourself"
       ],
-      "links_in": [],
+      "links_in": [
+        "ten-days-at-web-summit"
+      ],
       "figures": [
         {
           "file": "msc-meetings.webp",

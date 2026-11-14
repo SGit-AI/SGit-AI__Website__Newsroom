@@ -2,10 +2,11 @@
 
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
 
-48 articles, newest first.
+49 articles, newest first.
 
 ## November 2026
 
+- [Ten days at Web Summit: what seven people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](../../articles/ten-days-at-web-summit.md), 2026-11-14, 5 min.
 - [Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit](../../articles/coding-standards-are-behaviour-policies.md), 2026-11-13, 6 min.
 - [The book is printed: RC2 of One Human, Nine Agents, Nineteen Hours as two A4 review copies from Prontaprint Chiswick, the newsroom's pages in the book, and the team that made it paused until I have read them](../../articles/rc2-goes-to-print.md), 2026-11-05, 7 min.
 - [The Web Summit team, part five: the last day of setup, 180 releases, every person getting a key, an accountant counting the team's tokens, synthetic users testing the merch, and an inbox only the agents can write to](../../articles/web-summit-part-five.md), 2026-11-04, 5 min.

@@ -103,6 +103,10 @@ Agents & policyGraphs & knowledge[This article as a graph →](graphs.md#coding-
 - [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](governs-enforces-attests.md) An ABP governs and names the enforcer at three levels: prompt, hooks, or a third-party system. An attestation layer signs it so a third party can verify.
 - [RiskMandate and Lovable: mapping an Agent Behaviour Policy onto an app builder whose agent writes the code, changes the live database, connects your other systems and publishes, with the controls Lovable already gives and their defaults](riskmandate-and-lovable.md) Lovable's agent can change production; its controls are real, its defaults open, and a policy says what each project's agent may do.
 
+### Continued by
+
+- [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](a-film-studio-on-a-laptop.md) Claude built, animated and rendered a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended laptop.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 393 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=393)

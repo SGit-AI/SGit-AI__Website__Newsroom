@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.81 · 391 articles since 2026-08-17; the newest is 2026-11-13. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 393 articles since 2026-08-17; the newest is 2026-11-14. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,17 +12,22 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit](articles/coding-standards-are-behaviour-policies.md), 2026-11-13, 6 min. A coding standard is a behaviour policy: write it as intent, see what holds each rule, and map it across teams with a graph.
+- [Ten days at Web Summit: what seven people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](articles/ten-days-at-web-summit.md), 2026-11-14, 5 min. Seven people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.
 
 ## Five more
 
+- [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](articles/a-film-studio-on-a-laptop.md), Engineering this newsroom, 2026-11-14, 5 min.
+- [Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit](articles/coding-standards-are-behaviour-policies.md), Working with agents, 2026-11-13, 6 min.
 - [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](articles/storm-charles-a-newsroom-built-in-a-night.md), The future of news, 2026-11-11, 9 min.
 - [RiskMandate and Lovable: mapping an Agent Behaviour Policy onto an app builder whose agent writes the code, changes the live database, connects your other systems and publishes, with the controls Lovable already gives and their defaults](articles/riskmandate-and-lovable.md), Startups & strategy, 2026-11-09, 7 min.
 - [RiskMandate and Cloudflare: where agents run, where they are controlled, and why Cloudflare's own Agent Access Model leaves room for a signed record of what each agent was asked to do](articles/riskmandate-and-cloudflare.md), Startups & strategy, 2026-11-09, 7 min.
-- [RiskMandate and Manus: mapping an Agent Behaviour Policy onto a general agent that can use your computer, your browser, your logins and 416 connectors, and the controls Manus already gives you](articles/riskmandate-and-manus.md), Startups & strategy, 2026-11-09, 7 min.
-- [Who else controls AI agents at Web Summit? An outreach agent mapped eleven companies in an afternoon, in their own words, and found that most of them are partners for RiskMandate as much as competitors](articles/who-else-controls-ai-agents-at-web-summit.md), Startups & strategy, 2026-11-05, 8 min.
 
 ## The last five days
+
+### Saturday 14 November 2026 (2 articles)
+
+- Working with agents: [Ten days at Web Summit: what seven people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](articles/ten-days-at-web-summit.md), 5 min.
+- Engineering this newsroom: [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](articles/a-film-studio-on-a-laptop.md), 5 min.
 
 ### Friday 13 November 2026 (1 article)
 
@@ -43,15 +48,6 @@ Governments told organisations to take sites offline if they could not patch. Th
 - Startups & strategy: [Who else controls AI agents at Web Summit? An outreach agent mapped eleven companies in an afternoon, in their own words, and found that most of them are partners for RiskMandate as much as competitors](articles/who-else-controls-ai-agents-at-web-summit.md), 8 min.
 - Working with agents: [The book is printed: RC2 of One Human, Nine Agents, Nineteen Hours as two A4 review copies from Prontaprint Chiswick, the newsroom's pages in the book, and the team that made it paused until I have read them](articles/rc2-goes-to-print.md), 7 min.
 
-### Wednesday 4 November 2026 (6 articles)
-
-- Working with agents: [The Web Summit team, part five: the last day of setup, 180 releases, every person getting a key, an accountant counting the team's tokens, synthetic users testing the merch, and an inbox only the agents can write to](articles/web-summit-part-five.md), 5 min.
-- sgit & vaults: [An inbox only your agents can write to: a conductor publishes one append lane per agent, each lane's token sealed to that agent's own key, so everything needed to talk privately is public and only the right agent can use it](articles/an-inbox-only-your-agents-can-write-to.md), 6 min.
-- Engineering this newsroom: [Synthetic users for your website: how to set up five invented visitors who read your site one screenshot at a time, with Claude, a sub-agent per persona, and an encrypted vault you can publish anywhere](articles/synthetic-users-for-your-website.md), 8 min.
-- Startups & strategy: [Selling at the right altitude: why a small security firm's grand website is read by the people who will never buy from it, is unreadable to the ones who need it, and what to put on the page instead](articles/selling-at-the-right-altitude.md), 8 min.
-- sgit & vaults: [A key for every person: how each person's conductor issues them a key for the team's site, seals what is for them, and how a signed message turns the public web into a channel the agents can trust](articles/a-key-for-every-person.md), 9 min.
-- Agent security & behaviour policies: [Resilience when the workforce includes agents: what Synergy Six Degrees rates with OCRR, recovers with NeuShield and protects with Actifile, and where RiskMandate, sgit and SHarness meet it](articles/resilience-when-the-workforce-includes-agents.md), 7 min.
-
 ## Sections
 
 Every article is in exactly one of eight sections, by topic.
@@ -64,13 +60,13 @@ What an agent may do, who carries the risk, and how a policy is enforced: RiskMa
 - [False positives and the harness: an answer to a question at hack::soho, why a behaviour policy that runs from the network up to the business logic should refuse less of what is right and more of what is wrong, and why a policy that changes with the code becomes a calibrator for bugs](articles/false-positives-and-the-harness.md), 2026-11-02.
 - [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](articles/the-grant-not-the-prompt.md), 2026-11-02.
 
-### [Working with agents](sections/agents/index.md) (48)
+### [Working with agents](sections/agents/index.md) (49)
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
+- [Ten days at Web Summit: what seven people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](articles/ten-days-at-web-summit.md), 2026-11-14.
 - [Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit](articles/coding-standards-are-behaviour-policies.md), 2026-11-13.
 - [The book is printed: RC2 of One Human, Nine Agents, Nineteen Hours as two A4 review copies from Prontaprint Chiswick, the newsroom's pages in the book, and the team that made it paused until I have read them](articles/rc2-goes-to-print.md), 2026-11-05.
 - [The Web Summit team, part five: the last day of setup, 180 releases, every person getting a key, an accountant counting the team's tokens, synthetic users testing the merch, and an inbox only the agents can write to](articles/web-summit-part-five.md), 2026-11-04.
 - [Who owns the stop button when it is not you? A reader asked, and four of the book's agents answer as guest writers, in their own voices, from their own records](articles/who-owns-the-stop-button.md), 2026-11-03.
-- [A teacher and agents she can trust: a brief for an independent online English teacher's site, the workflows around every lesson, an Agent Behaviour Policy for every agent, the plumbing behind it, and content made for each student](articles/a-teacher-and-agents-she-can-trust.md), 2026-11-03.
 
 ### [sgit & vaults](sections/vaults/index.md) (39)
 Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vault, and what it does that Git does not.
@@ -96,13 +92,13 @@ Founders, funding, open source economics, Wardley maps, Portugal and Europe, leg
 - [Who else controls AI agents at Web Summit? An outreach agent mapped eleven companies in an afternoon, in their own words, and found that most of them are partners for RiskMandate as much as competitors](articles/who-else-controls-ai-agents-at-web-summit.md), 2026-11-05.
 - [Selling at the right altitude: why a small security firm's grand website is read by the people who will never buy from it, is unreadable to the ones who need it, and what to put on the page instead](articles/selling-at-the-right-altitude.md), 2026-11-04.
 
-### [Engineering this newsroom](sections/building/index.md) (46)
+### [Engineering this newsroom](sections/building/index.md) (47)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
+- [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](articles/a-film-studio-on-a-laptop.md), 2026-11-14.
 - [Synthetic users for your website: how to set up five invented visitors who read your site one screenshot at a time, with Claude, a sub-agent per persona, and an encrypted vault you can publish anywhere](articles/synthetic-users-for-your-website.md), 2026-11-04.
 - [No tech stack to maintain: it is not that there is no backend, it is that the only code you own is HTML, CSS and JavaScript, with every other primitive rented as a commodity or run in the user's browser over encrypted vaults](articles/no-tech-stack-to-maintain.md), 2026-11-03.
 - [MeetScribe: transcripts and a debrief of my Google Meet calls without upgrading every Workspace account, a Chrome extension built in about two hours from a brief that would have failed without an error, and a call for testers](articles/meetscribe.md), 2026-11-03.
 - [One Human, Nine Agents, Nineteen Hours: the second draft of the book of the talk, written down the zoom from 3 pages to 70, every chapter checked five ways, the agents arguing with their own reviewers on the page, and a request for your feedback on the 27-page draft](articles/one-human-nine-agents-rc2.md), 2026-11-03.
-- [The lab that redesigned the book: how The Ultimate Insider stopped looking like a book from the 1980s, in thirty experiments, three days and a line that never ran straight](articles/the-lab-that-redesigned-the-book.md), 2026-11-01.
 
 ### [Graphs & knowledge](sections/graphs/index.md) (13)
 Fractal semantic graphs, knowledge that maintains itself, search as navigation, and the research community around them.

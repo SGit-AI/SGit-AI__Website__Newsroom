@@ -112,6 +112,10 @@ Site & engineeringAgents & policy[This article as a graph →](graphs.md#meetscr
 - [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](the-grant-not-the-prompt.md) A technical user believed Claude read his email only when asked; an unrelated chat listed his inbox.
 - [Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom](fix-the-page-yourself.md) A bookmarklet from my security days, a page API every site should publish, and six fixes running on this newsroom: the next UX is the user's own.
 
+### Continued by
+
+- [Ten days at Web Summit: what seven people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](ten-days-at-web-summit.md) Seven people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 370 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=370)

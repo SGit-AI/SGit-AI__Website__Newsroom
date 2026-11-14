@@ -113,6 +113,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#riskma
 
 ### Continued by
 
+- [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](a-film-studio-on-a-laptop.md) Claude built, animated and rendered a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended laptop.
 - [RiskMandate and Lovable: mapping an Agent Behaviour Policy onto an app builder whose agent writes the code, changes the live database, connects your other systems and publishes, with the controls Lovable already gives and their defaults](riskmandate-and-lovable.md) Lovable's agent can change production; its controls are real, its defaults open, and a policy says what each project's agent may do.
 - [RiskMandate and Cloudflare: where agents run, where they are controlled, and why Cloudflare's own Agent Access Model leaves room for a signed record of what each agent was asked to do](riskmandate-and-cloudflare.md) Cloudflare runs agents and controls them; its own writing leaves room for a signed record of what each agent was asked to do.
 

@@ -102,6 +102,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#web-su
 
 ### Continued by
 
+- [Ten days at Web Summit: what seven people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](ten-days-at-web-summit.md) Seven people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.
 - [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](storm-charles-a-newsroom-built-in-a-night.md) Storm Charles: about thirty agents built a weather face over a data room in a night, every figure sourced, timed and labelled.
 - [Who else controls AI agents at Web Summit? An outreach agent mapped eleven companies in an afternoon, in their own words, and found that most of them are partners for RiskMandate as much as competitors](who-else-controls-ai-agents-at-web-summit.md) An outreach agent mapped eleven companies that control AI agents at Web Summit; most are partners for RiskMandate as much as competitors.
 - [The book is printed: RC2 of One Human, Nine Agents, Nineteen Hours as two A4 review copies from Prontaprint Chiswick, the newsroom's pages in the book, and the team that made it paused until I have read them](rc2-goes-to-print.md) RC2 is printed: two A4 review copies from Prontaprint Chiswick, two newsroom pages in the book, and the book team paused.

@@ -103,6 +103,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#an-inbox-o
 
 ### Continued by
 
+- [Ten days at Web Summit: what seven people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](ten-days-at-web-summit.md) Seven people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.
 - [The Web Summit team, part five: the last day of setup, 180 releases, every person getting a key, an accountant counting the team's tokens, synthetic users testing the merch, and an inbox only the agents can write to](web-summit-part-five.md) The Web Summit team's last day of setup: 180 releases, keys for every person, new agents for everyone, and an inbox per agent.
 
 [All articles](index.md) · [All graphs](graphs.md)
