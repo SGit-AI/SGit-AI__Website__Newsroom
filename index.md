@@ -4,11 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.84 · 395 articles since 2026-08-17; the newest is 2026-11-14. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
-
-## Developing story: php2shell: the two PHP flaws of October 2026
-
-Governments told organisations to take sites offline if they could not patch. The story has its own site now: every claim tied to a captured, hashed source, the numbers pinned to what they measure, and a briefing for each kind of reader. [php.oct.2026.newsroom.sgit.ai](https://php.oct.2026.newsroom.sgit.ai/), site v0.10.5, 227 sources captured, data as of 2026-10-23T01:20Z.
+> newsroom.sgit.ai · site v999.0.0 · 395 articles since 2026-08-17; the newest is 2026-11-14. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
