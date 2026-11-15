@@ -142,6 +142,10 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#always-on-
 - [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](a-film-studio-on-a-laptop.md) Claude built, animated and rendered a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended laptop.
 - [Every hour is twenty years: the human behind Know the Reach, and why making a song and its video with AI made them more Silvio Switha's, not less](every-hour-is-twenty-years.md) Know the Reach was made with AI and by a person: Silvio Switha, whose twenty years as a musician shaped every choice. AI changed the speed, not the vision.
 
+### Continued by
+
+- [PrompTugal.news, the newsroom we ran at Web Summit: desks of agents that captured, mapped, wrote and reviewed 73 signed articles in ten days, an accountant that counted every run, and fifty outreach drafts that no agent was allowed to send](promptugal-news-the-newsroom-we-ran.md) PrompTugal.news: 73 signed articles in ten days from desks of agents, a reviewer for every draft, and fifty outreach drafts no agent could send.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 401 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=401)

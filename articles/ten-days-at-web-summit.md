@@ -10,7 +10,7 @@
 
 # Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-14 · [article v1.2.0, 3 versions](versions/ten-days-at-web-summit.md) · [newsroom v0.14.82](https://newsroom.sgit.ai/admin/versions.html) · web-summitagentspromptugalstorm-charlesteamseriescollagearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-14 · [article v1.3.0, 4 versions](versions/ten-days-at-web-summit.md) · [newsroom v0.14.82](https://newsroom.sgit.ai/admin/versions.html) · web-summitagentspromptugalstorm-charlesteamseriescollagearticle
 
 ***Abstract:** Between 3 and 13 November 2026, six of us, with our agents, built more than I can fit in one article. A team operating system, an independent newsroom for Web Summit Lisbon, a site about Storm Charles that grew to more than 2,600 pages in three days, a guide to the summit's fringe that went live two and a half hours after its brief, a draft standard that rated twenty companies, four iPhone and iPad apps, an Android tablet app, and the tools to run all of it. About 20,000 commits across fifteen repositories, 224 Claude Code sessions, around 250 named agents, and more than 60 sessions working at the same time at the peak. This article is the map: the team, the sequence of events, the numbers, a collage of what we made, and the list of articles that will tell each part. I will update it as each one goes live.*
 
@@ -73,7 +73,7 @@ I will publish these one at a time, and link each one here as it goes live.
 
 1. **Ten days at Web Summit** (this article): the map.
 2. [The team's operating system](the-teams-operating-system.md): web-summit.sgit.ai, with its board, briefs, keys, inbox lanes, vaults, company map and X-ray.
-3. **PrompTugal.news, the newsroom we ran at Web Summit:** the desks, the reviewers, the outreach drafts and the costs.
+3. [PrompTugal.news, the newsroom we ran at Web Summit](promptugal-news-the-newsroom-we-ran.md): the desks, the reviewers, the outreach drafts and the costs.
 4. **Native apps by agents:** four iOS apps from one workspace, an Android build on a tablet in four hours, the App Store and TestFlight.
 5. **The Mac bottleneck:** agents waiting three times longer than they ran.
 6. **Stopping a hundred agents:** the Big Stop, the hand brake, the final hold, and what kept running anyway.
@@ -105,6 +105,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#ten-da
 ### Builds on
 
 - [The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map](the-teams-operating-system.md) web-summit.sgit.ai: one site where six people and their agents ran Web Summit, in four layers built on git.
+- [PrompTugal.news, the newsroom we ran at Web Summit: desks of agents that captured, mapped, wrote and reviewed 73 signed articles in ten days, an accountant that counted every run, and fifty outreach drafts that no agent was allowed to send](promptugal-news-the-newsroom-we-ran.md) PrompTugal.news: 73 signed articles in ten days from desks of agents, a reviewer for every draft, and fifty outreach drafts no agent could send.
 - [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](storm-charles-a-newsroom-built-in-a-night.md) Storm Charles: about thirty agents built a weather face over a data room in a night, every figure sourced, timed and labelled.
 - [Who else controls AI agents at Web Summit? An outreach agent mapped eleven companies in an afternoon, in their own words, and found that most of them are partners for RiskMandate as much as competitors](who-else-controls-ai-agents-at-web-summit.md) An outreach agent mapped eleven companies that control AI agents at Web Summit; most are partners for RiskMandate as much as competitors.
 - [An inbox only your agents can write to: a conductor publishes one append lane per agent, each lane's token sealed to that agent's own key, so everything needed to talk privately is public and only the right agent can use it](an-inbox-only-your-agents-can-write-to.md) A conductor publishes one append lane per agent, each token sealed to that agent's key: a private channel built from public material.
@@ -114,6 +115,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#ten-da
 
 ### Continued by
 
+- [PrompTugal.news, the newsroom we ran at Web Summit: desks of agents that captured, mapped, wrote and reviewed 73 signed articles in ten days, an accountant that counted every run, and fifty outreach drafts that no agent was allowed to send](promptugal-news-the-newsroom-we-ran.md) PrompTugal.news: 73 signed articles in ten days from desks of agents, a reviewer for every draft, and fifty outreach drafts no agent could send.
 - [Always-on agents at team scale: Anthropic's five primitives for an agent that sleeps and wakes, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many](always-on-agents-at-team-scale.md) Anthropic's five primitives for always-on agents, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many.
 - [Every hour is twenty years: the human behind Know the Reach, and why making a song and its video with AI made them more Silvio Switha's, not less](every-hour-is-twenty-years.md) Know the Reach was made with AI and by a person: Silvio Switha, whose twenty years as a musician shaped every choice. AI changed the speed, not the vision.
 - [Know the Reach: RiskMandate has a song on Spotify, and its music video is being made with AI, shot by shot, from about 2,300 words of human direction; this is how the first part was made](know-the-reach.md) RiskMandate's song Know the Reach is on Spotify; the first 53 seconds of its video were made with AI from about 2,300 words of direction.

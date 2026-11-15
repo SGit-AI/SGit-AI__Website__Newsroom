@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-15 | minor | 2,309 | +572 / −0 words; 7 changed, 18 added, 0 removed paragraphs | this release | [what changed](always-on-agents-at-team-scale/v1.1.0.md) · [current](../always-on-agents-at-team-scale.md) |
+| **v1.1.0** | 2026-11-15 | minor | 2,309 | +572 / −0 words; 7 changed, 18 added, 0 removed paragraphs | [`ba29cc8d7`](https://github.com/SGit-AI/SGit-AI__Website/commit/ba29cc8d788baf76bf21c18180c1ba38e998799c) | [what changed](always-on-agents-at-team-scale/v1.1.0.md) · [current](../always-on-agents-at-team-scale.md) |
 | **v1.0.0** | 2026-11-15 | published | 1,737 | first published | [`e042bde8f`](https://github.com/SGit-AI/SGit-AI__Website/commit/e042bde8f46525320780449e56005e24ab8f76be) |  |
 
 [← Back to the article](../always-on-agents-at-team-scale.md) · [All articles](../index.md)

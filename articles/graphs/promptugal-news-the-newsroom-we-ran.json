@@ -1,0 +1,134 @@
+{
+  "slug": "promptugal-news-the-newsroom-we-ran",
+  "teaser": "PrompTugal.news: 73 signed articles in ten days from desks of agents, a reviewer for every draft, and fifty outreach drafts no agent could send.",
+  "topics": [
+    "agents-and-policy",
+    "news-and-evidence"
+  ],
+  "core_idea": "PrompTugal.news, the independent newsroom the Web Summit team ran from 4 November 2026, published 73 signed articles in ten days through a public pipeline of agent desks (researcher, curator, journalists, reviewer), with 61 named agents in 43 roles, an accountant counting API-equivalent cost every three hours, and an outreach desk whose fifty drafts were left for a person to send.",
+  "nodes": [
+    {
+      "id": "ptn",
+      "label": "PrompTugal.news",
+      "kind": "artefact",
+      "summary": "An independent agent newsroom."
+    },
+    {
+      "id": "desks",
+      "label": "The desks",
+      "kind": "method",
+      "summary": "Researcher, curator, journalists, reviewer."
+    },
+    {
+      "id": "review",
+      "label": "One verdict per draft",
+      "kind": "method",
+      "summary": "Ready, Fix first or Hold."
+    },
+    {
+      "id": "outreach",
+      "label": "Drafts only",
+      "kind": "claim",
+      "summary": "Fifty drafts, none sent by an agent."
+    },
+    {
+      "id": "acct",
+      "label": "The accountant",
+      "kind": "method",
+      "summary": "API-equivalent cost every three hours."
+    },
+    {
+      "id": "pause",
+      "label": "The pause",
+      "kind": "example",
+      "summary": "Hand brake 12 November; some agents kept going."
+    }
+  ],
+  "edges": [
+    {
+      "from": "desks",
+      "to": "ptn",
+      "rel": "extends"
+    },
+    {
+      "from": "review",
+      "to": "desks",
+      "rel": "extends"
+    },
+    {
+      "from": "outreach",
+      "to": "ptn",
+      "rel": "extends"
+    },
+    {
+      "from": "acct",
+      "to": "ptn",
+      "rel": "extends"
+    },
+    {
+      "from": "pause",
+      "to": "ptn",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "ten-days-at-web-summit",
+      "the-teams-operating-system",
+      "storm-charles-a-newsroom-built-in-a-night",
+      "what-an-agent-is",
+      "always-on-agents-at-team-scale"
+    ],
+    "pages": [],
+    "sites": [
+      "https://promptugal.news/",
+      "https://promptugal.news/newsroom/desks/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "there are no readers and no legacy yet, so ship.",
+      "why": "A newsroom in a night."
+    },
+    {
+      "text": "Drafts only: an agent never sends an email or posts.",
+      "why": "Fifty drafts, none sent."
+    },
+    {
+      "text": "A review that writes down its own misses is one you can trust a little more.",
+      "why": "The reviewer."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ptn-collage.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ptn-collage.webp",
+      "caption": "Six pages of PrompTugal.news on 15 November 2026: front page, desks, newsroom, articles, companies and observability.",
+      "kind": "collage"
+    },
+    {
+      "file": "ptn-front.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ptn-front.webp",
+      "caption": "The front page of PrompTugal.news on 15 November, with the storm and the Lisbon Tech Fringe at the top.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "ptn-pipeline.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ptn-pipeline.webp",
+      "caption": "How a story moved: researcher, curator, journalists, reviewer, published, with the counts from the desks' files.",
+      "kind": "flow"
+    },
+    {
+      "file": "ptn-desks.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ptn-desks.webp",
+      "caption": "What the desks are doing: the pipeline at a glance, drawn from the desks' own files at every release.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "ptn-days.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ptn-days.webp",
+      "caption": "Commits per day, and the accountant's daily close in API-equivalent dollars, 4 to 15 November.",
+      "kind": "chart"
+    }
+  ]
+}
