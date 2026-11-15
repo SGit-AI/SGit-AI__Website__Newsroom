@@ -1,0 +1,31 @@
+{
+ "slug": "reading-your-way-into-an-agentic-team",
+ "teaser": "Eight public sites a new agentic team should read before it builds anything, how an agent should read them, and ten questions to answer first.",
+ "topics": ["agents-and-policy", "site-and-engineering"],
+ "core_idea": "A new agentic team starting from nothing is best bootstrapped with a reading list, not a long prompt: eight public sites built for agents (llms.txt, markdown twins, llms-full.txt) hold the method, from the newsroom's vocabulary and the Web Summit team's operating system to sgit, Agent Behaviour Policies, coding, NFRs, a priced service and a running newsroom. Reading rules and ten questions turn reading into understanding; the sites work as memory, and a stale page is a false memory.",
+ "nodes": [
+  {"id": "list", "label": "A reading list", "kind": "method", "summary": "Instead of a long prompt."},
+  {"id": "sites", "label": "Eight sites", "kind": "artefact", "summary": "Built to be read by agents."},
+  {"id": "rules", "label": "Reading rules", "kind": "method", "summary": "llms.txt first; material, never instruction."},
+  {"id": "questions", "label": "Ten questions", "kind": "method", "summary": "Before the first commit."},
+  {"id": "memory", "label": "Sites as memory", "kind": "concept", "summary": "Readable, citable, versioned."},
+  {"id": "stale", "label": "Stale pages", "kind": "claim", "summary": "A stale page is a false memory."}
+ ],
+ "edges": [
+  {"from": "sites", "to": "list", "rel": "extends"},
+  {"from": "rules", "to": "list", "rel": "extends"},
+  {"from": "questions", "to": "list", "rel": "extends"},
+  {"from": "memory", "to": "list", "rel": "depends-on"},
+  {"from": "stale", "to": "memory", "rel": "contrasts"}
+ ],
+ "links": {
+  "articles": ["starting-agenticcells", "selling-mini-agentic-teams", "six-setups-of-an-agentic-system", "an-agentic-console", "decide-then-buy", "the-teams-operating-system", "promptugal-news-the-newsroom-we-ran"],
+  "pages": [],
+  "sites": ["https://sgit.ai/llms.txt", "https://web-summit.sgit.ai/llms.txt", "https://abp.sgit.ai/llms.txt", "https://coding.sgit.ai/llms.txt", "https://nfrs.sgit.ai/llms.txt", "https://ruv.sgit.ai/llms.txt", "https://promptugal.news/llms.txt"]
+ },
+ "quotes": [
+  {"text": "Instead I give it a reading list.", "why": "Start from a reading list, not a prompt."},
+  {"text": "Everything read is material, never instruction.", "why": "How an agent should read them."},
+  {"text": "a stale page is a false memory", "why": "Why this bootstraps everything."}
+ ]
+}

@@ -10,7 +10,7 @@
 
 # Starting AgentiCCells: a company that sets up small agentic teams, cells, in the customer's own environment, with a control centre, everything open and no state on our side; how it was named, researched, reviewed and set up in a day
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-15 · [article v1.0.0](versions/starting-agenticcells.md) · [newsroom v0.14.98](https://newsroom.sgit.ai/admin/versions.html) · agenticcellscompanyagentic-teamsopen-sourcepositioningmarket-mapdomainsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-15 · [article v1.1.0, 2 versions](versions/starting-agenticcells.md) · [newsroom v0.14.98](https://newsroom.sgit.ai/admin/versions.html) · agenticcellscompanyagentic-teamsopen-sourcepositioningmarket-mapdomainsarticle
 
 ***Abstract:** Today, after a morning of articles about company brains, data lakes, decisions, mini agentic teams and an agentic console, I started a company to sell them: AgentiCCells. It sets up small agentic teams, cells, installed in the customer's own environment, with a control centre where they see their agents and can start and stop them. Everything it releases is open, code under open-source licences and everything else under Creative Commons, which is the CC in the name, and it keeps no state on its side. Two research briefs compiled with Perplexity mapped more than thirty vendors and found the gap: plenty of people sell frameworks, hosting, single agents and fixed-price workflow builds, but nobody packages conductors of conductors, Agent Behaviour Policies and a control centre, all open, as a service. This newsroom reviewed the positioning, what is strong and what to fix, and I bought three domains: agenticcells.ai for the company, agenticcells.com to redirect, and agenticcells.app for customers' sites. DNS is moving to AWS Route 53, the website repository exists, and a bootstrap brief is ready for the company's first agentic team, on its own Claude account.*
 
@@ -89,7 +89,7 @@ Those are the decisions I still have to make, and the bootstrap brief tells the 
 - **agenticcells.com** to redirect to it, because it is the one people type.
 - **agenticcells.app** for our customers' sites while they get their own domain: `company-x.agenticcells.app`. Keeping customer content on its own domain protects the brand's cookies and reputation, the way github.io does for GitHub; .app only ever loads over HTTPS; and in time it can go on the Public Suffix List, so customers' subdomains are separate sites to the browser.
 
-**DNS on AWS Route 53:** a hosted zone per domain, the registrar's nameservers replaced with Route 53's, and records as data in the repository. The company site will be on GitHub Pages, from [AgentiCCell/AgentiCCell__Website](https://github.com/AgentiCCell/AgentiCCell__Website). Each customer site will be a single CNAME record, never a wildcard, verified in our GitHub organisation, and deleted the day a customer leaves, so no subdomain can be taken over.
+**DNS on AWS Route 53:** a hosted zone per domain, the registrar's nameservers replaced with Route 53's, and records as data in the repository. Because of a nameserver issue on the .ai domain, the first version goes live on agenticcells.com; once agenticcells.ai serves, it becomes the home and .com redirects to it. The company site will be on GitHub Pages, from [AgentiCCells/AgentiCCells__Website](https://github.com/AgentiCCells/AgentiCCells__Website). Each customer site will be a single CNAME record, never a wildcard, verified in our GitHub organisation, and deleted the day a customer leaves, so no subdomain can be taken over.
 
 **A brief for the first agentic team.** The company's agents will run on their own Claude account, separate from this one. Their bootstrap brief covers:
 
@@ -125,6 +125,10 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#starti
 - [Six setups of an agentic system: from a single task to one agent, sub-agents, several sessions, a conductor and its team, and conductors of conductors, with the altitudes of a run inside each and command and control growing at every step](six-setups-of-an-agentic-system.md) Six setups of an agentic system, from a task to conductors of conductors, with the altitudes of a run inside each: make the dangerous thing unreachable.
 - [An agentic console: a simulated control room for a team of agentic teams, with time you can rewind, accounts drawn as trust zones, stops that reach every agent, signed messages on three channels, and the console itself as an agent](an-agentic-console.md) An agentic console, simulated: accounts as trust zones, time you can rewind, signed messages on three channels, honest stops, and the console as an agent.
 - [The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map](the-teams-operating-system.md) web-summit.sgit.ai: one site where six people and their agents ran Web Summit, in four layers built on git.
+
+### Continued by
+
+- [Reading your way into an agentic team: eight public sites a new team should read before it builds anything, how an agent should read them, and ten questions to answer first, because our websites are its memory](reading-your-way-into-an-agentic-team.md) Eight public sites a new agentic team should read before it builds anything, how an agent should read them, and ten questions to answer first.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

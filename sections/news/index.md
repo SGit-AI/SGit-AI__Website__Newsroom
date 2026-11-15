@@ -6,7 +6,7 @@ Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta
 
 ## November 2026
 
-- [Starting AgentiCCells: a company that sets up small agentic teams, cells, in the customer's own environment, with a control centre, everything open and no state on our side; how it was named, researched, reviewed and set up in a day](../../articles/starting-agenticcells.md), 2026-11-15, 6 min.
+- [Starting AgentiCCells: a company that sets up small agentic teams, cells, in the customer's own environment, with a control centre, everything open and no state on our side; how it was named, researched, reviewed and set up in a day](../../articles/starting-agenticcells.md), 2026-11-15, 7 min.
 - [Every hour is twenty years: the human behind Know the Reach, and why making a song and its video with AI made them more Silvio Switha's, not less](../../articles/every-hour-is-twenty-years.md), 2026-11-15, 6 min.
 - [Know the Reach: RiskMandate has a song on Spotify, and its music video is being made with AI, shot by shot, from about 2,300 words of human direction; this is how the first part was made](../../articles/know-the-reach.md), 2026-11-15, 4 min.
 - [One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes](../../articles/the-book-is-on-leanpub.md), 2026-11-14, 3 min.

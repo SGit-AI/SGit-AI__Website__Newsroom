@@ -2,10 +2,11 @@
 
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
 
-54 articles, newest first.
+55 articles, newest first.
 
 ## November 2026
 
+- [Reading your way into an agentic team: eight public sites a new team should read before it builds anything, how an agent should read them, and ten questions to answer first, because our websites are its memory](../../articles/reading-your-way-into-an-agentic-team.md), 2026-11-15, 5 min.
 - [An agentic console: a simulated control room for a team of agentic teams, with time you can rewind, accounts drawn as trust zones, stops that reach every agent, signed messages on three channels, and the console itself as an agent](../../articles/an-agentic-console.md), 2026-11-15, 7 min.
 - [Six setups of an agentic system: from a single task to one agent, sub-agents, several sessions, a conductor and its team, and conductors of conductors, with the altitudes of a run inside each and command and control growing at every step](../../articles/six-setups-of-an-agentic-system.md), 2026-11-15, 4 min.
 - [PrompTugal.news, the newsroom we ran at Web Summit: desks of agents that captured, mapped, wrote and reviewed 73 signed articles in ten days, an accountant that counted every run, and fifty outreach drafts that no agent was allowed to send](../../articles/promptugal-news-the-newsroom-we-ran.md), 2026-11-15, 6 min.

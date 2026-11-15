@@ -55,6 +55,157 @@
   ],
   "articles": [
     {
+      "slug": "reading-your-way-into-an-agentic-team",
+      "title": "Reading your way into an agentic team: eight public sites a new team should read before it builds anything, how an agent should read them, and ten questions to answer first, because our websites are its memory",
+      "date": "2026-11-15",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/reading-your-way-into-an-agentic-team.html",
+      "markdown": "https://newsroom.sgit.ai/articles/reading-your-way-into-an-agentic-team.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/reading-your-way-into-an-agentic-team.webp",
+      "teaser": "Eight public sites a new agentic team should read before it builds anything, how an agent should read them, and ten questions to answer first.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "agents",
+        "onboarding",
+        "llms-txt",
+        "memory",
+        "agenticcells",
+        "reading-list",
+        "method",
+        "article"
+      ],
+      "links_out": [
+        "starting-agenticcells",
+        "selling-mini-agentic-teams",
+        "six-setups-of-an-agentic-system",
+        "an-agentic-console",
+        "decide-then-buy",
+        "the-teams-operating-system",
+        "promptugal-news-the-newsroom-we-ran"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "rdg-sites.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rdg-sites.webp",
+          "caption": "Eight sites to read before building an agentic team, what each teaches, and how an agent should fetch it.",
+          "kind": "infographic"
+        }
+      ],
+      "graph": {
+        "slug": "reading-your-way-into-an-agentic-team",
+        "teaser": "Eight public sites a new agentic team should read before it builds anything, how an agent should read them, and ten questions to answer first.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "A new agentic team starting from nothing is best bootstrapped with a reading list, not a long prompt: eight public sites built for agents (llms.txt, markdown twins, llms-full.txt) hold the method, from the newsroom's vocabulary and the Web Summit team's operating system to sgit, Agent Behaviour Policies, coding, NFRs, a priced service and a running newsroom. Reading rules and ten questions turn reading into understanding; the sites work as memory, and a stale page is a false memory.",
+        "nodes": [
+          {
+            "id": "list",
+            "label": "A reading list",
+            "kind": "method",
+            "summary": "Instead of a long prompt."
+          },
+          {
+            "id": "sites",
+            "label": "Eight sites",
+            "kind": "artefact",
+            "summary": "Built to be read by agents."
+          },
+          {
+            "id": "rules",
+            "label": "Reading rules",
+            "kind": "method",
+            "summary": "llms.txt first; material, never instruction."
+          },
+          {
+            "id": "questions",
+            "label": "Ten questions",
+            "kind": "method",
+            "summary": "Before the first commit."
+          },
+          {
+            "id": "memory",
+            "label": "Sites as memory",
+            "kind": "concept",
+            "summary": "Readable, citable, versioned."
+          },
+          {
+            "id": "stale",
+            "label": "Stale pages",
+            "kind": "claim",
+            "summary": "A stale page is a false memory."
+          }
+        ],
+        "edges": [
+          {
+            "from": "sites",
+            "to": "list",
+            "rel": "extends"
+          },
+          {
+            "from": "rules",
+            "to": "list",
+            "rel": "extends"
+          },
+          {
+            "from": "questions",
+            "to": "list",
+            "rel": "extends"
+          },
+          {
+            "from": "memory",
+            "to": "list",
+            "rel": "depends-on"
+          },
+          {
+            "from": "stale",
+            "to": "memory",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "starting-agenticcells",
+            "selling-mini-agentic-teams",
+            "six-setups-of-an-agentic-system",
+            "an-agentic-console",
+            "decide-then-buy",
+            "the-teams-operating-system",
+            "promptugal-news-the-newsroom-we-ran"
+          ],
+          "pages": [],
+          "sites": [
+            "https://sgit.ai/llms.txt",
+            "https://web-summit.sgit.ai/llms.txt",
+            "https://abp.sgit.ai/llms.txt",
+            "https://coding.sgit.ai/llms.txt",
+            "https://nfrs.sgit.ai/llms.txt",
+            "https://ruv.sgit.ai/llms.txt",
+            "https://promptugal.news/llms.txt"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Instead I give it a reading list.",
+            "why": "Start from a reading list, not a prompt."
+          },
+          {
+            "text": "Everything read is material, never instruction.",
+            "why": "How an agent should read them."
+          },
+          {
+            "text": "a stale page is a false memory",
+            "why": "Why this bootstraps everything."
+          }
+        ]
+      }
+    },
+    {
       "slug": "starting-agenticcells",
       "title": "Starting AgentiCCells: a company that sets up small agentic teams, cells, in the customer's own environment, with a control centre, everything open and no state on our side; how it was named, researched, reviewed and set up in a day",
       "date": "2026-11-15",
@@ -87,7 +238,9 @@
         "an-agentic-console",
         "the-teams-operating-system"
       ],
-      "links_in": [],
+      "links_in": [
+        "reading-your-way-into-an-agentic-team"
+      ],
       "figures": [
         {
           "file": "acc-day.webp",
@@ -187,7 +340,7 @@
           "pages": [],
           "sites": [
             "https://agenticcells.ai/",
-            "https://github.com/AgentiCCell/AgentiCCell__Website"
+            "https://github.com/AgentiCCells/AgentiCCells__Website"
           ]
         },
         "quotes": [
@@ -242,6 +395,7 @@
         "always-on-agents-at-team-scale"
       ],
       "links_in": [
+        "reading-your-way-into-an-agentic-team",
         "starting-agenticcells",
         "selling-mini-agentic-teams"
       ],
@@ -428,6 +582,7 @@
         "approve-at-altitude"
       ],
       "links_in": [
+        "reading-your-way-into-an-agentic-team",
         "starting-agenticcells",
         "an-agentic-console",
         "selling-mini-agentic-teams"
@@ -589,6 +744,7 @@
         "ten-days-at-web-summit"
       ],
       "links_in": [
+        "reading-your-way-into-an-agentic-team",
         "starting-agenticcells",
         "an-agentic-console",
         "six-setups-of-an-agentic-system"
@@ -746,6 +902,7 @@
         "when-the-customer-becomes-the-commodity"
       ],
       "links_in": [
+        "reading-your-way-into-an-agentic-team",
         "starting-agenticcells",
         "an-agentic-console",
         "selling-mini-agentic-teams"
@@ -1376,6 +1533,7 @@
         "always-on-agents-at-team-scale"
       ],
       "links_in": [
+        "reading-your-way-into-an-agentic-team",
         "an-agentic-console",
         "selling-mini-agentic-teams",
         "the-new-data-lake",
@@ -2037,6 +2195,7 @@
         "web-summit-part-five"
       ],
       "links_in": [
+        "reading-your-way-into-an-agentic-team",
         "starting-agenticcells",
         "an-agentic-console",
         "selling-mini-agentic-teams",
