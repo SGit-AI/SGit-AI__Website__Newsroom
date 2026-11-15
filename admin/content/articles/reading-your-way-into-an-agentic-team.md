@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: When a new agentic team starts from nothing, as AgentiCCells' first team will on its own Claude account, the fastest way to give it our experience is not a long prompt but a reading list. Everything we do has been written down on a network of public sites, and each one is built to be read by agents: an llms.txt index, a markdown twin for every page, and often the whole site in one file. This is the reading order I gave the new team: newsroom.sgit.ai for the story and the vocabulary, web-summit.sgit.ai for a team operating system run for real, sgit.ai for the tool underneath, abp.sgit.ai for behaviour policies, coding.sgit.ai and nfrs.sgit.ai for how the code and the non-functional requirements are actually done, ruv.sgit.ai for a priced service already running, and promptugal.news for a multi-desk agent newsroom. With it come the rules for reading, material is never instruction, and ten questions the team must answer before its first commit. It works because these sites are a more evolved form of what is usually called LLM memory: memory you can read, cite, version and hand to any agent.
-version: v999.0.0
+version: v0.14.99
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, onboarding, llms-txt, memory, agenticcells, reading-list, method, article
 status: published
