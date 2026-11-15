@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: What we would sell is an agentic brain: a set of agentic teams that runs the work. But a customer cannot buy what they cannot see or control, so the thing that makes it sellable is a console: a control room for agents, the way a power station or a cloud has one. To show what I mean, this newsroom built a simulated console in a public vault, shaped on our Web Summit team. It draws the ten accounts the six of us used as trust zones, with a conductor and its agents inside each. It shows who is running, on which model, with how many commits, and messages on the three channels our agents use: files in the repository, commit messages and vault append lanes, each signed by its agent's key. It has time: a slider over the ten days and five scenarios to replay, including the Big Stop, because when everything is JSON and markdown you can go back to any moment. It has stop buttons that say when each agent will actually stop, a view for each person, and a talk box, because the console is an agent too. We have, in a sense, already delivered this brain several times: to ruv.sgit.ai, to the book, to Web Summit, with RiskMandate as a partner and PrompTugal.news as its first customer.
-version: v999.0.0
+version: v0.14.97
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agentic-console, control-room, agents, command-and-control, situation-awareness, vaults, demo, article
 status: published
