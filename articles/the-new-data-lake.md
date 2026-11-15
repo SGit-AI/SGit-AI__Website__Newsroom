@@ -10,7 +10,7 @@
 
 # The new data lake: many small append-only lanes instead of one big lake, a curator agent that turns their rows into a semantic graph, and a graph that draws its own infographics, as we ran it at Web Summit
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-15 · [article v1.0.0](versions/the-new-data-lake.md) · [newsroom v999.0.0](https://newsroom.sgit.ai/admin/versions.html) · data-intelligencedata-lakeknowledge-graphagentsappend-onlyinfographicsdemoarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-15 · [article v1.0.0](versions/the-new-data-lake.md) · [newsroom v0.14.94](https://newsroom.sgit.ai/admin/versions.html) · data-intelligencedata-lakeknowledge-graphagentsappend-onlyinfographicsdemoarticle
 
 ***Abstract:** The data lake promised one place for all of a company's data, and often delivered a swamp: a lot of data, little meaning, and nobody sure where a number came from. With agents, I think the next generation looks different. Instead of one big lake, many small lanes: each source appends signed rows and never edits the past. A curator agent reads the lanes and turns rows into a semantic graph of things and links, every one pointing back at the rows it came from. And the graph draws its own pictures: the charts, maps, flows and infographics that people actually read. This is data intelligence that you can audit, and it is how we ran PrompTugal.news and the Storm Charles site in November: a researcher capturing public pages four times a day, a curator mapping them into story candidates, a graph of 877 entities, and observability appended to lanes in a vault. A working demo shows the pattern with made-up data.*
 

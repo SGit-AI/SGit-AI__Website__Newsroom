@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: In 1970 George Akerlof described the market for lemons: when sellers know more than buyers, buyers cannot tell good from bad, and good sellers leave. A friend who has spent almost eleven years in crypto lives in one: by his count, about 61,000 new tokens appear every day, and many are traps, a contract that lets the owner take the money, a few wallets holding almost everything. His team audits tokens to warn people off the bad ones, and wants agents to do more of it. I think the opportunity is the opposite of a market for lemons, a market for sweets: give the buyer a semantic graph for one decision, every piece of evidence with its source, its age and which way it points, checked against their own rules. And I think the clever move is a judo move: do everything apart from the trade. Leave the trade to the platforms that already do it. You avoid holding money and keys, and becoming the single point of failure, and you compete with nobody. The person decides. A working demo shows two decisions: do I buy gold, and is this new token safe.
-version: v999.0.0
+version: v0.14.94
 license: https://creativecommons.org/licenses/by/4.0/
 tags: decisions, knowledge-graph, agents, finance, crypto, riskmandate, information-asymmetry, demo, article
 status: published

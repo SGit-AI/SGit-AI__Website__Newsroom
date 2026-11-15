@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: A friend who has spent almost eleven years in crypto described what he wants for his company: one place where everything is, so nobody wastes time asking what anyone did today, and where a question to an agent comes back with what the team, the market and the competitors did. That is a company brain, and I think the important word is not brain but company. It has to be made for one company, one sector, one division and even one team, and you do not start with it: you start with one person's brain, then a team's, then a division's, and you arrive at the organisation's. Each level has the same three parts, information, decisions and insights, and the same building blocks: agents with their own keys, append-only lanes, a semantic graph, encrypted vaults, and apps on the phone, the tablet and the computer. The six of us already ran one at Web Summit: I could ask my conductor what everybody was doing, and it would ask the other conductors. This article and a working demo show how.
-version: v999.0.0
+version: v0.14.94
 license: https://creativecommons.org/licenses/by/4.0/
 tags: company-brain, agents, knowledge-graph, vaults, organisation, fractal, demo, article
 status: published

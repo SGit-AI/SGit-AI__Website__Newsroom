@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: The data lake promised one place for all of a company's data, and often delivered a swamp: a lot of data, little meaning, and nobody sure where a number came from. With agents, I think the next generation looks different. Instead of one big lake, many small lanes: each source appends signed rows and never edits the past. A curator agent reads the lanes and turns rows into a semantic graph of things and links, every one pointing back at the rows it came from. And the graph draws its own pictures: the charts, maps, flows and infographics that people actually read. This is data intelligence that you can audit, and it is how we ran PrompTugal.news and the Storm Charles site in November: a researcher capturing public pages four times a day, a curator mapping them into story candidates, a graph of 877 entities, and observability appended to lanes in a vault. A working demo shows the pattern with made-up data.
-version: v999.0.0
+version: v0.14.94
 license: https://creativecommons.org/licenses/by/4.0/
 tags: data-intelligence, data-lake, knowledge-graph, agents, append-only, infographics, demo, article
 status: published
