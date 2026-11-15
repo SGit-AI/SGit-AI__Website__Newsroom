@@ -91,6 +91,10 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#town-pl
 - [Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit](coding-standards-are-behaviour-policies.md) A coding standard is a behaviour policy: write it as intent, see what holds each rule, and map it across teams with a graph.
 - [Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour](ephemeral-town-planner-services.md) Serverless meant scale to zero and pay per use; now it covers hourly bills. A better name: ephemeral town planner services, and a test for it.
 
+### Continued by
+
+- [Always-on agents at team scale: Anthropic's five primitives for an agent that sleeps and wakes, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many](always-on-agents-at-team-scale.md) Anthropic's five primitives for always-on agents, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 396 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=396)

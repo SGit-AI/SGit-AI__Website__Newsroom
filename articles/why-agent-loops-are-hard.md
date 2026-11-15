@@ -113,7 +113,9 @@ My two voice memos of 25 October 2026. The PHP story site's [schedule](https://p
 
 Agents & policyStartups & strategy[This article as a graph →](graphs.md#why-agent-loops-are-hard)
 
-No other article links here yet.
+### Continued by
+
+- [Always-on agents at team scale: Anthropic's five primitives for an agent that sleeps and wakes, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many](always-on-agents-at-team-scale.md) Anthropic's five primitives for always-on agents, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

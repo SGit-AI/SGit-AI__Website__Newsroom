@@ -4,11 +4,11 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.90 · 399 articles since 2026-08-17; the newest is 2026-11-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 399 articles since 2026-08-17; the newest is 2026-11-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Always-on agents at team scale: Anthropic's five primitives for an agent that sleeps and wakes, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many](articles/always-on-agents-at-team-scale.md), 2026-11-15, 7 min. Anthropic's five primitives for always-on agents, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many.
+- [Always-on agents at team scale: Anthropic's five primitives for an agent that sleeps and wakes, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many](articles/always-on-agents-at-team-scale.md), 2026-11-15, 9 min. Anthropic's five primitives for always-on agents, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many.
 
 ## Five more
 
@@ -22,7 +22,7 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ### Sunday 15 November 2026 (3 articles)
 
-- Working with agents: [Always-on agents at team scale: Anthropic's five primitives for an agent that sleeps and wakes, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many](articles/always-on-agents-at-team-scale.md), 7 min.
+- Working with agents: [Always-on agents at team scale: Anthropic's five primitives for an agent that sleeps and wakes, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many](articles/always-on-agents-at-team-scale.md), 9 min.
 - The future of news: [Every hour is twenty years: the human behind Know the Reach, and why making a song and its video with AI made them more Silvio Switha's, not less](articles/every-hour-is-twenty-years.md), 6 min.
 - The future of news: [Know the Reach: RiskMandate has a song on Spotify, and its music video is being made with AI, shot by shot, from about 2,300 words of human direction; this is how the first part was made](articles/know-the-reach.md), 4 min.
 

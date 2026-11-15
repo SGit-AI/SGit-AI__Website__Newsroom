@@ -10,13 +10,14 @@
 
 # Versions of: Always-on agents at team scale
 
-1 published version of [Always-on agents at team scale: Anthropic's five primitives for an agent that sleeps and wakes, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many](../always-on-agents-at-team-scale.md). The current one is **v1.0.0**.
+2 published versions of [Always-on agents at team scale: Anthropic's five primitives for an agent that sleeps and wakes, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many](../always-on-agents-at-team-scale.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-15 | published | 1,737 | first published | this release | [current](../always-on-agents-at-team-scale.md) |
+| **v1.1.0** | 2026-11-15 | minor | 2,309 | +572 / −0 words; 7 changed, 18 added, 0 removed paragraphs | this release | [what changed](always-on-agents-at-team-scale/v1.1.0.md) · [current](../always-on-agents-at-team-scale.md) |
+| **v1.0.0** | 2026-11-15 | published | 1,737 | first published | [`e042bde8f`](https://github.com/SGit-AI/SGit-AI__Website/commit/e042bde8f46525320780449e56005e24ab8f76be) |  |
 
 [← Back to the article](../always-on-agents-at-team-scale.md) · [All articles](../index.md)
 

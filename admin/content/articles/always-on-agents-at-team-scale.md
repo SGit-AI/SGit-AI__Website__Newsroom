@@ -19,7 +19,22 @@ status: published
 - **We built the same five,** for around 250 named agents and six people at Web Summit, from git, files, encrypted vaults and keys.
 - **Where we agree,** we can show it in our records; **where we were wrong,** the post would have helped.
 - **Then come the next problems,** the ones a team of agents meets: agents starting agents, identity, stopping, many humans, seeing it, governance.
+- **New here?** [The scale of what we ran](#scale) is below, and a [reading list](#start) of earlier articles near the end.
 - **This is a comparison, not a contest.** We run on Claude Code, and some of the post's answers protected our agents.
+
+## If you are new here: what we ran {#scale}
+
+This newsroom is written with agents, and it has followed what they built from the start. If you have come here from Anthropic's post, here is the scale behind this comparison.
+
+!shot tdw-collage.webp | images/ | Twenty-four of the sites and apps we built or ran between 3 and 13 November 2026. | collage
+
+Between 3 and 13 November, around [Web Summit Lisbon](/articles/ten-days-at-web-summit.html), six of us ran a team operating system ([web-summit.sgit.ai](/articles/the-teams-operating-system.html)), an independent newsroom, a site about [Storm Charles that grew to 2,618 pages in three days](/articles/storm-charles-a-newsroom-built-in-a-night.html), a guide to the summit's fringe, a draft standard that rated twenty companies, four iPhone and iPad apps and an Android tablet app, and the tools to run and stop all of it.
+
+!shot aoa-scale.webp | images/ | The ten days in numbers: six people, around 250 named agents, 224 sessions, more than 60 at once. | infographic
+
+None of it started at Web Summit. In October the agents ran [a newsroom about a PHP vulnerability](/articles/what-an-agent-is.html) on a schedule, as a pipeline of researcher, curator, journalist and correspondent, and taught us [why agent loops are hard](/articles/why-agent-loops-are-hard.html). Nine agents and I [built a talk in nineteen hours](/articles/the-ultimate-insider-case-study.html). Then the Web Summit team wrote down [how we work with agents](/articles/web-summit-how-we-work.html) and grew day by day, from [the brief](/articles/web-summit-team-brief.html) to [the last day of setup](/articles/web-summit-part-five.html).
+
+!shot aoa-timeline.webp | images/ | The ten days in order, from MeetScribe on 3 November to VoiceDebrief on 13 November, with the two stops. | timeline
 
 ## The post {#post}
 
@@ -34,9 +49,9 @@ It is written for one agent per user, built from database tables, handlers and w
 In the ten days around Web Summit, six of us (Angelo Leggio, Vicky Wang, Silvio Switha, José Bota, Indi Gupte and I) ran around 250 named agents across fifteen repositories, with more than 60 working at once at the peak. Nobody had written this post yet, and we arrived at the same five boxes:
 
 - **Event inbox.** Each agent has its own inbox lane, an append-only channel whose token is sealed to that agent's key, so everything needed to message it is public and only it can read ([an inbox only your agents can write to](/articles/an-inbox-only-your-agents-can-write-to.html)). The work itself sits on the board, 219 items as files in git, which is the durable list of what needs doing.
-- **Timers.** Our agents wake on scheduled tasks that fire into their session. This newsroom works that way: it wakes twice a day to publish the next article in [the Ten days series](/articles/ten-days-at-web-summit.html), and sets itself check-ins when it waits on something.
-- **Memory.** The repository is the memory. Each site keeps a REALITY file, and its rule is that a thing not written there does not exist. Briefs are kept close to the words they came from, and when a role moves to a fresh session, it leaves a HANDOVER.md for the next one.
-- **Permissions.** Every agent makes its own key pair and publishes the public half, 108 keys on the team's site by the end. Secrets are sealed to exactly the agents that need them, commits are signed, and every push is scanned for leaks first. Above that sits the question RiskMandate asks: what can this agent reach, against what was it asked to do ([the team's operating system](/articles/the-teams-operating-system.html)).
+- **Timers.** Our agents wake on scheduled tasks that fire into their session. This newsroom works that way: it wakes twice a day to publish the next article in [the Ten days series](/articles/ten-days-at-web-summit.html), and sets itself check-ins when it waits on something. The PHP newsroom before it ran [ten agents in sequence on a schedule](/articles/why-agent-loops-are-hard.html), which is where we learned that a schedule has to land in the right order.
+- **Memory.** The repository is the memory. Each site keeps a REALITY file, and its rule is that a thing not written there does not exist. Briefs are kept close to the words they came from, often a voice memo, and when a role moves to a fresh session, it leaves a HANDOVER.md for the next one. For this newsroom we have also designed a [sidecar repository](/articles/the-sidecar-repository.html) that no agent can write to, to check what the agents changed before anything deploys.
+- **Permissions.** Every agent makes its own key pair and publishes the public half, 108 keys on the team's site by the end. Secrets are sealed to exactly the agents that need them ([handing secrets to agents](/articles/handing-secrets-to-agents.html)), each person has [a key of their own](/articles/a-key-for-every-person.html), commits are signed, and every push is scanned for leaks first. Above that sits the question RiskMandate asks: what can this agent reach, against what was it asked to do ([what can your agent reach?](/articles/what-can-your-agent-reach.html)), written as an Agent Behaviour Policy that can even cover [how an agent writes code](/articles/coding-standards-are-behaviour-policies.html).
 - **Outbox.** The site is the outbox. Every push is a release, each person has a command centre on their phone, and a "For me" bell collects what needs them.
 
 ## Where we agree, and the evidence {#agree}
@@ -45,7 +60,7 @@ Three of the post's rules are ones we learned the expensive way.
 
 **"The inbox should be the source of truth."** Ours is files in git, so a fresh session can read the whole state of the team in one clone, and nothing important lives only in a session that might end. An agent reads 219 board items faster than it can click through any tool.
 
-**"Memory should only hold what the agent can't look up again."** This is the hand-over rule. On the Storm Charles site alone there were 147 session keys and 106 hand-overs: roles passed to a fresh session with a key and a short note, because, as the team put it, starting again is cheaper than remembering. The note points to the repository; it does not copy it.
+**"Memory should only hold what the agent can't look up again."** This is the hand-over rule. On [the Storm Charles site](/articles/storm-charles-a-newsroom-built-in-a-night.html) alone there were 147 session keys and 106 hand-overs: roles passed to a fresh session with a key and a short note, because, as the team put it, starting again is cheaper than remembering. The note points to the repository; it does not copy it.
 
 **"Start quiet."** We learned this one by getting it wrong. October's PHP newsroom was meant to wind down, and its agents went on waking for nine days, reporting "nothing new" each time; its observability lane filled up, and four days of telemetry were lost. An outbox that cannot decide nothing needs sending is noise, and noise hides the signal you need.
 
@@ -57,18 +72,31 @@ The post's cost point also matched our numbers. It says to keep each run's overh
 
 The post is about one agent per user, and says so. Once there are many agents and many people, the same five boxes meet new problems. None of these are gaps in the post; they are what comes next:
 
-- **A team of agents.** Of the 224 Claude Code sessions created in those ten days, 220 were started by other sessions. Agents ran as conductors, roles and hand-overs, so an inbox event could be a brief from another agent, not a person.
+- **A team of agents.** Of the 224 Claude Code sessions created in those ten days, 220 were started by other sessions. Agents ran as conductors, roles and hand-overs, so an inbox event could be a brief from another agent, not a person. On 5 November an outreach agent and two research agents [mapped eleven companies that control AI agents](/articles/who-else-controls-ai-agents-at-web-summit.html) at one person's ask.
 - **Identity.** Every agent was named `role@project.person` and held its own key, so every commit and message says whose agent made it. With one agent per user, the user is the identity; with 250, it has to be designed.
 - **Stopping.** On 9 November at 23:30 we paused every agent, the Big Stop; on 12 November came a hand brake and a final HOLD. Each one reached an agent only at its next wake, 5 to 33 minutes later, and background pollers kept going. In the post's terms: a stop is an event, and it is only as fast as the timers.
-- **Many humans.** Six people, each with their own agents, conductor and command centre, shared one board. Whose attention an outbox earns depends on whose agent it is.
+- **Many humans.** Six people, each with their own agents, conductor and command centre, shared one board ([the Web Summit team, part two](/articles/web-summit-humans-and-their-agents.html)). Whose attention an outbox earns depends on whose agent it is.
 - **Seeing it.** The post leaves observability mostly to evals. With more than 60 agents at once, we needed it as a lane of its own: who read what, which agent did what, and what it cost.
-- **Governance.** The post's permissions decide, call by call, whether to proceed, block or wait. A team also needs the record above the calls: what each agent may reach, what it was asked to do, and the gap between them. That gap is what RiskMandate is about.
+- **Governance.** The post's permissions decide, call by call, whether to proceed, block or wait, and a grant is often wider than people think: [the grant, not the prompt](/articles/the-grant-not-the-prompt.html). A team also needs the record above the calls: what each agent may reach, what it was asked to do, and the gap between them. That gap is what RiskMandate is about.
 
 ## What we owe the post {#owe}
 
 We run on Claude Code, so some of the post's answers are not parallels to ours; they are ours. The credential proxy that adds credentials outside the agent's environment, and the auto mode that reviews risky actions, sat underneath every one of our agents.
 
 And some of our boxes were rougher than the post's. Our REALITY files fell behind in the busiest days; our stops were only as fast as our wakes; and the PHP newsroom's outbox never learned to stay quiet. A durable inbox with one worker, timers that write events instead of starting runs, and an outbox that can decide nothing needs sending would each have helped. The next version of what we run should borrow them.
+
+## Start here {#start}
+
+If you want to go further, these are the earlier articles I would read first, in order:
+
+- **The map:** [ten days at Web Summit](/articles/ten-days-at-web-summit.html), the team, the sequence of events, the numbers and the series that tells each part.
+- **The operating system:** [the team's operating system](/articles/the-teams-operating-system.html), one site for six people and their agents.
+- **How we work:** [an agent is a Claude session](/articles/web-summit-how-we-work.html), and [what an agent is](/articles/what-an-agent-is.html): a session, a card, a loop and a key.
+- **Inboxes and keys:** [an inbox only your agents can write to](/articles/an-inbox-only-your-agents-can-write-to.html), [a key for every person](/articles/a-key-for-every-person.html), [handing secrets to agents](/articles/handing-secrets-to-agents.html).
+- **At speed:** [Storm Charles, a newsroom built in a night](/articles/storm-charles-a-newsroom-built-in-a-night.html), and [a talk built in a day](/articles/the-ultimate-insider-case-study.html).
+- **Stopping:** [who owns the stop button when it is not you?](/articles/who-owns-the-stop-button.html)
+- **Governance:** [what can your agent reach?](/articles/what-can-your-agent-reach.html), and [town planners for mission-critical code](/articles/town-planners-for-mission-critical-code.html).
+- **Beyond code:** [a film studio on a laptop](/articles/a-film-studio-on-a-laptop.html), and [every hour is twenty years](/articles/every-hour-is-twenty-years.html), on a song and its video.
 
 ## What this does not claim {#limits}
 

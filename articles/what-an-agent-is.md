@@ -116,7 +116,9 @@ The PHP October 2026 team site and repository, read on 27 October 2026: [the sch
 
 Agents & policyNews & evidence[This article as a graph →](graphs.md#what-an-agent-is)
 
-No other article links here yet.
+### Continued by
+
+- [Always-on agents at team scale: Anthropic's five primitives for an agent that sleeps and wakes, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many](always-on-agents-at-team-scale.md) Anthropic's five primitives for always-on agents, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many.
 
 [All articles](index.md) · [All graphs](graphs.md)
 
