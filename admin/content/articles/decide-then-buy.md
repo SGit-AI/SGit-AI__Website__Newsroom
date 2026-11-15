@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: When someone buys something, there are two distinct moments. The first is the decision: gathering information, checking it against what they care about, and arriving at "I want to buy X, on platform Y, quantity Z". The second is the purchase. I think these are two separate businesses, and mapping them shows why. Helping someone decide is explorer and villager work: custom interfaces, lots of new data seen in new ways, made personal to the user's culture, goals and values, and it gets unique very fast. Buying is town planner work: a commodity, standard, done at volume, where trust and execution matter more than imagination. Amazon joins the two; OpenRouter is the commodity half alone. My strategy, here and in open source, is to keep them apart and not lock the user in: give them the open path, every step mapped, from twenty-five steps down to one, and offer a service that does it for them. What that service sells is time, trust, execution, expertise with the platform, and the better prices that volume brings.
-version: v999.0.0
+version: v0.14.95
 license: https://creativecommons.org/licenses/by/4.0/
 tags: strategy, wardley-maps, open-source, decisions, commodity, town-planners, business-models, article
 status: published
