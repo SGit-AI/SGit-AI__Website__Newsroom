@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: Today, after a morning of articles about company brains, data lakes, decisions, mini agentic teams and an agentic console, I started a company to sell them: AgentiCCells. It sets up small agentic teams, cells, installed in the customer's own environment, with a control centre where they see their agents and can start and stop them. Everything it releases is open, code under open-source licences and everything else under Creative Commons, which is the CC in the name, and it keeps no state on its side. Two research briefs compiled with Perplexity mapped more than thirty vendors and found the gap: plenty of people sell frameworks, hosting, single agents and fixed-price workflow builds, but nobody packages conductors of conductors, Agent Behaviour Policies and a control centre, all open, as a service. This newsroom reviewed the positioning, what is strong and what to fix, and I bought three domains: agenticcells.ai for the company, agenticcells.com to redirect, and agenticcells.app for customers' sites. DNS is moving to AWS Route 53, the website repository exists, and a bootstrap brief is ready for the company's first agentic team, on its own Claude account.
-version: v999.0.0
+version: v0.14.98
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agenticcells, company, agentic-teams, open-source, positioning, market-map, domains, article
 status: published
