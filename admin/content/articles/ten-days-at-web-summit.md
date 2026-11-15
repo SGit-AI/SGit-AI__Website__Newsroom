@@ -70,7 +70,7 @@ I will publish these one at a time, and link each one here as it goes live.
 1. **Ten days at Web Summit** (this article): the map.
 2. [The team's operating system](/articles/the-teams-operating-system.html): web-summit.sgit.ai, with its board, briefs, keys, inbox lanes, vaults, company map and X-ray.
 3. [PrompTugal.news, the newsroom we ran at Web Summit](/articles/promptugal-news-the-newsroom-we-ran.html): the desks, the reviewers, the outreach drafts and the costs.
-4. **Native apps by agents:** four iOS apps from one workspace, an Android build on a tablet in four hours, the App Store and TestFlight.
+4. [Native apps by agents](/articles/native-apps-by-agents.html): four iOS apps from one workspace, an Android build on a tablet in four hours, the App Store and TestFlight.
 5. **The Mac bottleneck:** agents waiting three times longer than they ran.
 6. **Stopping a hundred agents:** the Big Stop, the hand brake, the final hold, and what kept running anyway.
 7. **Agents rating agents:** GAMMA-Ray, a draft standard and twenty company reports in thirty hours.

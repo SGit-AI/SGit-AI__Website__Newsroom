@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-15 | published | 1,026 | first published | this release | [current](../spend-fewer-tokens.md) |
+| **v1.0.0** | 2026-11-15 | published | 1,026 | first published | [`ec1238f3f`](https://github.com/SGit-AI/SGit-AI__Website/commit/ec1238f3fb5323df3ddf0404c9440fd30b4bb287) | [current](../spend-fewer-tokens.md) |
 
 [← Back to the article](../spend-fewer-tokens.md) · [All articles](../index.md)
 

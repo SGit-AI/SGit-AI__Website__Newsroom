@@ -1,0 +1,31 @@
+{
+ "slug": "native-apps-by-agents",
+ "teaser": "Agents built four iOS apps from one workspace and an Android tablet app in five days, with TestFlight on every push and a signed build in four hours.",
+ "topics": ["agents-and-policy", "site-and-engineering"],
+ "core_idea": "Around Web Summit, agents grew a 1,164-line iPhone app into four iOS apps sharing 13 packages and 48,230 lines of Swift in five days, with TestFlight on every push, and built an Android tablet app from nothing to a signed build in 4 h 11 (33,042 lines of Kotlin, on-device Gemma, stand mode), plus a fringe guide from brief to TestFlight in about 10.5 hours. The constraint moved to Macs and review queues.",
+ "nodes": [
+  {"id": "ios", "label": "Four iOS apps", "kind": "artefact", "summary": "One workspace, 48,230 lines."},
+  {"id": "tf", "label": "TestFlight on every push", "kind": "method", "summary": "Builds on phones the same day."},
+  {"id": "android", "label": "Android in four hours", "kind": "example", "summary": "Signed build 4 h 11 after the first commit."},
+  {"id": "fringe", "label": "Fringe guide in a day", "kind": "example", "summary": "Brief to TestFlight in about 10.5 hours."},
+  {"id": "sessions", "label": "Many sessions", "kind": "method", "summary": "Branches merged by a conductor."},
+  {"id": "bottleneck", "label": "Macs and stores", "kind": "claim", "summary": "Where the time went."}
+ ],
+ "edges": [
+  {"from": "tf", "to": "ios", "rel": "extends"},
+  {"from": "sessions", "to": "ios", "rel": "produces"},
+  {"from": "android", "to": "ios", "rel": "compared-with"},
+  {"from": "fringe", "to": "ios", "rel": "example-of"},
+  {"from": "ios", "to": "bottleneck", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["ten-days-at-web-summit", "the-teams-operating-system", "promptugal-news-the-newsroom-we-ran"],
+  "pages": [],
+  "sites": ["https://ios.app.promptugal.news/", "https://ios.app.voicedebrief.ai/", "https://lisbontechfringe.com/"]
+ },
+ "quotes": [
+  {"text": "Ship the pipeline first", "why": "What it taught us."},
+  {"text": "the agents spent far longer waiting for a Mac than building on one", "why": "TestFlight on every push."},
+  {"text": "four hours and eleven minutes later, a signed build was installed on my tablet", "why": "An Android app for the stand."}
+ ]
+}
