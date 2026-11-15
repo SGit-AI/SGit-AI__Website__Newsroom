@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: There is a business in setting up small agentic teams for companies: a brain for a team, a newsroom, a decision. Very few people know how to do it yet, and it took me months to learn; three months ago I would have bought it myself. We could sell what we run today, but a customer would not see it and could not control it, so the missing piece is a control centre: the place where they see their agents and start and stop them. PrompTugal.news is the natural first customer, because it already needs a network of teams of different sizes: an editor and coordinator, regional newsrooms, desks in each city, journalists and local news agencies. RiskMandate's Agent Behaviour Policies are the same offering on steroids: every policy needs a policy agent and a couple of others to help. The offer can be packaged by size, from £500 for one agent to £20,000 for a network, built from small open pieces: our workflow, Ruflo, sgit vaults, files in git instead of databases, and Claude, Codex or Cloudflare to run them.
-version: v999.0.0
+version: v0.14.96
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agentic-teams, business-model, control-centre, promptugal, riskmandate, abp, open-source, pricing, article
 status: published

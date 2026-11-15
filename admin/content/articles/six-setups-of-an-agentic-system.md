@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: When someone says "an agentic team", they could mean six very different things, and the difference decides what it costs, what it can reach and how you control it. At the bottom is a task: one action, one prompt. Then one agent that does the work and spawns nothing; an agent with sub-agents inside one runtime; several sessions, each in its own runtime; a conductor with its team of agents; and at the top, conductors of conductors, the swarm of swarms we ran at Web Summit, which can grow to thousands. The lower setups are a prompt; the higher ones are a setup, with keys, lanes, boards and policies. Inside every one of them sit the altitudes of a run we mapped in the Swarm demo of 12 November: the person, the swarm, the agent, the loop, the LLM call and the code, where the danger is the same privileges at every altitude, and the control is reach: don't hope the agent behaves, make the dangerous thing unreachable. The higher you go, the more you need visibility and command and control.
-version: v999.0.0
+version: v0.14.96
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agentic-teams, altitudes, swarm, conductors, command-and-control, reach, abp, article
 status: published
