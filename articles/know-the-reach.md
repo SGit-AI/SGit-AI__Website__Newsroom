@@ -10,7 +10,7 @@
 
 # Know the Reach: RiskMandate has a song on Spotify, and its music video is being made with AI, shot by shot, from about 2,300 words of human direction; this is how the first part was made
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-15 · [article v1.1.0, 2 versions](versions/know-the-reach.md) · [newsroom v0.14.87](https://newsroom.sgit.ai/admin/versions.html) · riskmandatemusicvideoai-videorunwayweb-summitproductionarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-15 · [article v1.2.0, 3 versions](versions/know-the-reach.md) · [newsroom v0.14.87](https://newsroom.sgit.ai/admin/versions.html) · riskmandatemusicvideoai-videorunwayweb-summitproductionarticle
 
 ***Abstract:** RiskMandate now has a song on Spotify, Know the Reach, and a music video to go with it. The first part, 53 seconds of a song about three and a half minutes long, was made by Silvio Switha with AI, and its production audit is unusually complete. In the available chats, about 2,300 words of human direction led to 43 generated images, 16 generated motion clips and 21 edited video exports: almost 25 minutes of versioned material, not 25 minutes of unique AI footage. The video tells one story, a night in Lisbon turning to morning, with a software agent shown as golden light, a human reviewer, and the three words RiskMandate is about: reach, mandate and the gap between them. Eight decisions shaped it, from keeping the song as the timing reference to testing four fonts for a phone screen, and paid generation was kept to 1,236 Runway credits by reusing images and testing one eight-second clip first.*
 
@@ -27,7 +27,7 @@ From about 2,300 words of direction to a 53-second first part: what the saved pr
 
 ## The song
 
-Know the Reach is RiskMandate's song, released in 2026 and [on Spotify now](https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6). RiskMandate is about three words: what an AI agent can **reach**, what it was asked to do, its **mandate**, and the **gap** between the two. The song puts those words to music, and the video puts them on a screen.
+Know the Reach is RiskMandate's song, released on 13 November 2026 and [on Spotify now](https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6), with artwork made with ChatGPT. A second song followed the next day: [Strangers in the Loop](https://open.spotify.com/track/5j5q25JQi47br4fPTo7wd1), produced by Indi Gupte. RiskMandate is about three words: what an AI agent can **reach**, what it was asked to do, its **mandate**, and the **gap** between the two. The song puts those words to music, and the video puts them on a screen.
 
 ## The first part of the video
 

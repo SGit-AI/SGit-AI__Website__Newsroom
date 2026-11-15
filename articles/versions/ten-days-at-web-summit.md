@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.4.0** | 2026-11-15 | minor | 1,270 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](ten-days-at-web-summit/v1.4.0.md) · [current](../ten-days-at-web-summit.md) |
+| **v1.4.0** | 2026-11-15 | minor | 1,270 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`768c269ca`](https://github.com/SGit-AI/SGit-AI__Website/commit/768c269ca62b2b13fe15df087ed9183f1d136ae8) | [what changed](ten-days-at-web-summit/v1.4.0.md) · [current](../ten-days-at-web-summit.md) |
 | **v1.3.0** | 2026-11-15 | minor | 1,270 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`4e3dd97a5`](https://github.com/SGit-AI/SGit-AI__Website/commit/4e3dd97a5c60531e98817081081f0e1ed62bf2e5) | [what changed](ten-days-at-web-summit/v1.3.0.md) |
 | **v1.2.0** | 2026-11-14 | minor | 1,270 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`c3d87c851`](https://github.com/SGit-AI/SGit-AI__Website/commit/c3d87c851726be5b48c8ea422dc2679c3990bc3c) | [what changed](ten-days-at-web-summit/v1.2.0.md) |
 | **v1.1.0** | 2026-11-14 | minor | 1,270 | +0 / −8 words; 4 changed, 0 added, 0 removed paragraphs | [`0d3ad49d1`](https://github.com/SGit-AI/SGit-AI__Website/commit/0d3ad49d1486e10547b315a5efdd1269da59bfe7) | [what changed](ten-days-at-web-summit/v1.1.0.md) |

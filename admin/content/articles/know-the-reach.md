@@ -23,7 +23,7 @@ status: published
 
 ## The song {#song}
 
-Know the Reach is RiskMandate's song, released in 2026 and [on Spotify now](https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6). RiskMandate is about three words: what an AI agent can **reach**, what it was asked to do, its **mandate**, and the **gap** between the two. The song puts those words to music, and the video puts them on a screen.
+Know the Reach is RiskMandate's song, released on 13 November 2026 and [on Spotify now](https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6), with artwork made with ChatGPT. A second song followed the next day: [Strangers in the Loop](https://open.spotify.com/track/5j5q25JQi47br4fPTo7wd1), produced by Indi Gupte. RiskMandate is about three words: what an AI agent can **reach**, what it was asked to do, its **mandate**, and the **gap** between the two. The song puts those words to music, and the video puts them on a screen.
 
 ## The first part of the video {#video}
 

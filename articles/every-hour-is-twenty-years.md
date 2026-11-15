@@ -10,7 +10,7 @@
 
 # Every hour is twenty years: the human behind Know the Reach, and why making a song and its video with AI made them more Silvio Switha's, not less
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-15 · [article v1.0.0](versions/every-hour-is-twenty-years.md) · [newsroom v0.14.88](https://newsroom.sgit.ai/admin/versions.html) · riskmandatemusiccreativityai-videoproductionartistsweb-summitarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-15 · [article v1.1.0, 2 versions](versions/every-hour-is-twenty-years.md) · [newsroom v0.14.88](https://newsroom.sgit.ai/admin/versions.html) · riskmandatemusiccreativityai-videoproductionartistsweb-summitarticle
 
 ***Abstract:** Know the Reach, RiskMandate's song, and the first part of its music video were made with AI, and the story that usually gets told about that is the wrong one. They were made by Silvio Switha, one of the best musicians I know, a singer and producer who runs one of the most successful wedding bands in the Algarve, over hours and hours of the usual creative process: trying, changing, listening, and trying again. The lyrics came from a session that held everything RiskMandate had done and his direction, and the chorus, the structure and the pacing are his decisions. What AI changed is not who had the vision, but how fast he could hear it: a producer with immediate feedback, doing what wealthy, well-produced projects have always done, at a budget a start-up has. Every hour he spent carried twenty years of experience. The numbers in the production audit are perhaps a fifth of what went into it, and among all the versions he could have made, this is the one he chose, which is why people will connect with it. The next step closes the loop: the same song, recorded by his band.*
 
@@ -71,7 +71,9 @@ I think this is what will happen to many artists who embrace these tools. They w
 
 And then there are the words. Know the Reach is about governance, about the board, about what agents can reach and what they were asked to do. When was the last time you heard that in a song you actually wanted to play again? For people who work in risk and cyber security, that is the connection: a song about our world, made by one of us.
 
-RiskMandate now has two songs on Spotify, and [Know the Reach is the one in the video](https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6).
+RiskMandate's two songs on Spotify: Know the Reach, by Silvio Switha, and Strangers in the Loop, produced by Indi Gupte.
+
+RiskMandate now has two songs on Spotify. [Know the Reach](https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6), released on 13 November, is the one in the video. [Strangers in the Loop](https://open.spotify.com/track/5j5q25JQi47br4fPTo7wd1), released the next day, was produced by Indi Gupte; I helped a little with the lyrics, but it is mainly his. The artwork was made with ChatGPT.
 
 ## What this does not claim
 
@@ -81,7 +83,7 @@ RiskMandate now has two songs on Spotify, and [Know the Reach is the one in the 
 
 ## Where this comes from
 
-My own account, 15 November 2026; the RiskMandate production audit of 14 November 2026, as reported in [Know the Reach](know-the-reach.md); [the song on Spotify](https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6) and [the first part of the video on YouTube](https://www.youtube.com/watch?v=BjN-K-C2fsw). Earlier on this site: [ten days at Web Summit](ten-days-at-web-summit.md), [a film studio on a laptop](a-film-studio-on-a-laptop.md).
+My own account, 15 November 2026; the RiskMandate production audit of 14 November 2026, as reported in [Know the Reach](know-the-reach.md); the songs on Spotify, [Know the Reach](https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6) and [Strangers in the Loop](https://open.spotify.com/track/5j5q25JQi47br4fPTo7wd1) and [the first part of the video on YouTube](https://www.youtube.com/watch?v=BjN-K-C2fsw). Earlier on this site: [ten days at Web Summit](ten-days-at-web-summit.md), [a film studio on a laptop](a-film-studio-on-a-laptop.md).
 
 ## Threads
 

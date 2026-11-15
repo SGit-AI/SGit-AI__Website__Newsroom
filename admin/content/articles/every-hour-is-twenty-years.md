@@ -67,7 +67,9 @@ I think this is what will happen to many artists who embrace these tools. They w
 
 And then there are the words. Know the Reach is about governance, about the board, about what agents can reach and what they were asked to do. When was the last time you heard that in a song you actually wanted to play again? For people who work in risk and cyber security, that is the connection: a song about our world, made by one of us.
 
-RiskMandate now has two songs on Spotify, and [Know the Reach is the one in the video](https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6).
+!shot ktr-songs.webp | images/ | RiskMandate's two songs on Spotify: Know the Reach, by Silvio Switha, and Strangers in the Loop, produced by Indi Gupte. | artwork
+
+RiskMandate now has two songs on Spotify. [Know the Reach](https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6), released on 13 November, is the one in the video. [Strangers in the Loop](https://open.spotify.com/track/5j5q25JQi47br4fPTo7wd1), released the next day, was produced by Indi Gupte; I helped a little with the lyrics, but it is mainly his. The artwork was made with ChatGPT.
 
 ## What this does not claim {#limits}
 
@@ -77,4 +79,4 @@ RiskMandate now has two songs on Spotify, and [Know the Reach is the one in the 
 
 ## Where this comes from {#sources}
 
-My own account, 15 November 2026; the RiskMandate production audit of 14 November 2026, as reported in [Know the Reach](/articles/know-the-reach.html); [the song on Spotify](https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6) and [the first part of the video on YouTube](https://www.youtube.com/watch?v=BjN-K-C2fsw). Earlier on this site: [ten days at Web Summit](/articles/ten-days-at-web-summit.html), [a film studio on a laptop](/articles/a-film-studio-on-a-laptop.html).
+My own account, 15 November 2026; the RiskMandate production audit of 14 November 2026, as reported in [Know the Reach](/articles/know-the-reach.html); the songs on Spotify, [Know the Reach](https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6) and [Strangers in the Loop](https://open.spotify.com/track/5j5q25JQi47br4fPTo7wd1) and [the first part of the video on YouTube](https://www.youtube.com/watch?v=BjN-K-C2fsw). Earlier on this site: [ten days at Web Summit](/articles/ten-days-at-web-summit.html), [a film studio on a laptop](/articles/a-film-studio-on-a-laptop.html).

@@ -13,3 +13,7 @@ Requested by Dinis, 14 November 2026: an article about the first part of the mus
 - Dinis asked (15 Nov, after the first article) for a second article on the human and artistic side, and for the video to play from YouTube on a click: no download, nothing loaded from Google until the reader presses play, a YouTube label on it.
 - admin/build/youtube_embed.py (sync_newsroom item 15), assets/youtube/youtube.{js,css}: `!youtube <id> <poster> | caption`. Poster is our own image (ktr-poster.webp, drawn here, to be replaced by the song's artwork). On click, a youtube-nocookie.com iframe with referrerpolicy strict-origin (origin only; YouTube's embeds refuse to play with no referrer).
 - Article: every-hour-is-twenty-years, from Dinis's account; figures eht-producer, eht-loop. Claims marked as his view: Silvio's band, "perhaps a fifth", the band recording as a challenge. The second Spotify song is not yet named.
+
+## Credits and artwork (15 Nov, evening)
+
+Dinis: the artwork was created by ChatGPT; the second song was produced by Indi (Dinis helped a little with the lyrics). Found on Spotify (artist 1jMUjB0KLoctQAWeeJQk0W): Strangers in the Loop, single, 14 Nov 2026 (track 5j5q25JQi47br4fPTo7wd1); Know the Reach, 13 Nov 2026. Poster ktr-poster.webp rebuilt from the Know the Reach cover (Spotify og:image); ktr-songs.webp shows both covers with credits.

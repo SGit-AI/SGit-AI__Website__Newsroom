@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-15 | published | 1,181 | first published | this release | [current](../native-apps-by-agents.md) |
+| **v1.0.0** | 2026-11-15 | published | 1,181 | first published | [`768c269ca`](https://github.com/SGit-AI/SGit-AI__Website/commit/768c269ca62b2b13fe15df087ed9183f1d136ae8) | [current](../native-apps-by-agents.md) |
 
 [← Back to the article](../native-apps-by-agents.md) · [All articles](../index.md)
 
