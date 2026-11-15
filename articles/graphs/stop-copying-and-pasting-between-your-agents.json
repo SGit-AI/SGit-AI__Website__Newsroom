@@ -1,0 +1,116 @@
+{
+  "slug": "stop-copying-and-pasting-between-your-agents",
+  "teaser": "If you copy and paste between AI sessions, you are the wire, and the bottleneck. Let agents talk through recorded channels; read outputs, not everything.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "People who copy and paste between AI sessions become the wire between their agents and the bottleneck, and reading everything does not scale. The fix is agents that talk to each other through signed, recorded channels (vault lanes, inboxes, repository files, commit messages) and structure that scales decisions (guidance, decision trees, graphs, a board, decision records), so a person reads outputs and works at two altitudes. That empowers agency, and it is what AgentiCCells sets up, with specialist agents on call.",
+  "nodes": [
+    {
+      "id": "trap",
+      "label": "The copy-and-paste trap",
+      "kind": "question",
+      "summary": "The human as the wire."
+    },
+    {
+      "id": "reading",
+      "label": "Reading everything",
+      "kind": "claim",
+      "summary": "Does not scale."
+    },
+    {
+      "id": "channels",
+      "label": "Recorded channels",
+      "kind": "method",
+      "summary": "Lanes, inboxes, files, commits, signed."
+    },
+    {
+      "id": "structure",
+      "label": "Structure",
+      "kind": "method",
+      "summary": "Guidance, trees, graphs, board, records."
+    },
+    {
+      "id": "altitudes",
+      "label": "Two altitudes",
+      "kind": "concept",
+      "summary": "Direction and depth."
+    },
+    {
+      "id": "sell",
+      "label": "What we sell",
+      "kind": "artefact",
+      "summary": "Teams, channels, workflows, specialists."
+    }
+  ],
+  "edges": [
+    {
+      "from": "channels",
+      "to": "trap",
+      "rel": "answers"
+    },
+    {
+      "from": "structure",
+      "to": "reading",
+      "rel": "answers"
+    },
+    {
+      "from": "altitudes",
+      "to": "structure",
+      "rel": "extends"
+    },
+    {
+      "from": "channels",
+      "to": "sell",
+      "rel": "leads-to"
+    },
+    {
+      "from": "structure",
+      "to": "sell",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-human-is-the-network",
+      "an-inbox-only-your-agents-can-write-to",
+      "signed-email-from-the-agent",
+      "approve-at-altitude",
+      "agents-need-direction",
+      "an-agentic-console",
+      "atomic-cells-end-to-end",
+      "dont-micromanage-your-agents"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "when the human is the network, the human is the limit",
+      "why": "The copy-and-paste trap."
+    },
+    {
+      "text": "So this is not about removing agency from people. It is about empowering it",
+      "why": "Two altitudes, and your expertise."
+    },
+    {
+      "text": "The first fix is to take yourself out of the wire.",
+      "why": "Let agents talk to each other."
+    }
+  ],
+  "figures": [
+    {
+      "file": "cpb-wire.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cpb-wire.webp",
+      "caption": "If you are the wire between your agents, you are the bottleneck; let them talk through channels that keep a record.",
+      "kind": "comparison"
+    },
+    {
+      "file": "cpb-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cpb-layers.webp",
+      "caption": "What scales a person's decisions: guidance, decision trees and graphs, a board, decision records and outputs.",
+      "kind": "concept"
+    }
+  ]
+}

@@ -82,7 +82,9 @@ My voice memo of 25 October 2026. The PHP story site at release v0.22.0, read on
 
 Agents & policySite & engineering[This article as a graph →](graphs.md#agents-need-direction)
 
-No other article links here yet.
+### Continued by
+
+- [Stop copying and pasting between your agents: if you are the wire between your AI sessions you are the bottleneck, and the fix is agents that talk to each other through channels that keep a record, structure that scales your decisions, and outputs you read instead of everything](stop-copying-and-pasting-between-your-agents.md) If you copy and paste between AI sessions, you are the wire, and the bottleneck. Let agents talk through recorded channels; read outputs, not everything.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

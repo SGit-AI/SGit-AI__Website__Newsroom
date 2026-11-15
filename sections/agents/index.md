@@ -2,10 +2,12 @@
 
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
 
-55 articles, newest first.
+57 articles, newest first.
 
 ## November 2026
 
+- [Stop copying and pasting between your agents: if you are the wire between your AI sessions you are the bottleneck, and the fix is agents that talk to each other through channels that keep a record, structure that scales your decisions, and outputs you read instead of everything](../../articles/stop-copying-and-pasting-between-your-agents.md), 2026-11-15, 5 min.
+- [Don't micromanage your agents: what changed for Vicky Wang when she stopped reading everything her agents did and started managing them, how her team was backed by agents from another team, and why every company will want specialist agents that support all its teams](../../articles/dont-micromanage-your-agents.md), 2026-11-15, 4 min.
 - [Reading your way into an agentic team: eight public sites a new team should read before it builds anything, how an agent should read them, and ten questions to answer first, because our websites are its memory](../../articles/reading-your-way-into-an-agentic-team.md), 2026-11-15, 5 min.
 - [An agentic console: a simulated control room for a team of agentic teams, with time you can rewind, accounts drawn as trust zones, stops that reach every agent, signed messages on three channels, and the console itself as an agent](../../articles/an-agentic-console.md), 2026-11-15, 7 min.
 - [Six setups of an agentic system: from a single task to one agent, sub-agents, several sessions, a conductor and its team, and conductors of conductors, with the altitudes of a run inside each and command and control growing at every step](../../articles/six-setups-of-an-agentic-system.md), 2026-11-15, 4 min.

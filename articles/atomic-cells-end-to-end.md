@@ -103,6 +103,10 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#atomic
 - [Selling mini agentic teams: a business that sets up small agentic teams for companies, sized from one agent to a network, with a control centre to see them and to start and stop them, PrompTugal as the first customer and Agent Behaviour Policies as the most demanding version](selling-mini-agentic-teams.md) A business that sets up small agentic teams for companies, with a control centre to start and stop them; PrompTugal first, ABPs on steroids.
 - [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](websites-you-own.md) Websites you own: a reply to an infographic that rents AI-built websites by the month, and the one-off model I propose.
 
+### Continued by
+
+- [Stop copying and pasting between your agents: if you are the wire between your AI sessions you are the bottleneck, and the fix is agents that talk to each other through channels that keep a record, structure that scales your decisions, and outputs you read instead of everything](stop-copying-and-pasting-between-your-agents.md) If you copy and paste between AI sessions, you are the wire, and the bottleneck. Let agents talk through recorded channels; read outputs, not everything.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 412 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=412)

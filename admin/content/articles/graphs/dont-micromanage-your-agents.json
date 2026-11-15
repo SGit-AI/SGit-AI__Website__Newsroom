@@ -1,0 +1,31 @@
+{
+ "slug": "dont-micromanage-your-agents",
+ "teaser": "Vicky Wang stopped reading everything her agents did and started managing them, backed by specialist agents from another team: a model for companies.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "At Web Summit, Vicky Wang's shift came when she stopped reading everything her agents did and started delegating with instructions, guidance, structure and workflows. She worked at two altitudes, and her agents were backed by specialist agents from another team that unblocked and approved. Companies will want specialist agents (security, legal, data, design, platform) supporting every team, with people giving the guidance only they can.",
+ "nodes": [
+  {"id": "vicky", "label": "Vicky's team", "kind": "example", "summary": "1,171 commits; most of PrompTugal's articles."},
+  {"id": "shift", "label": "From reading to managing", "kind": "claim", "summary": "Instructions, guidance, structure."},
+  {"id": "workflow", "label": "The publishing workflow", "kind": "method", "summary": "Capture to published."},
+  {"id": "altitudes", "label": "Two altitudes", "kind": "concept", "summary": "Direction outside expertise, depth within."},
+  {"id": "backup", "label": "Backed by specialists", "kind": "example", "summary": "Agents from another team unblock and approve."},
+  {"id": "company", "label": "Specialist agents for every team", "kind": "method", "summary": "As functions support people today."}
+ ],
+ "edges": [
+  {"from": "shift", "to": "vicky", "rel": "example-of"},
+  {"from": "workflow", "to": "shift", "rel": "produces"},
+  {"from": "altitudes", "to": "shift", "rel": "extends"},
+  {"from": "backup", "to": "vicky", "rel": "extends"},
+  {"from": "backup", "to": "company", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["promptugal-news-the-newsroom-we-ran", "ten-days-at-web-summit", "the-teams-operating-system", "approve-at-altitude", "starting-agenticcells", "stop-copying-and-pasting-between-your-agents"],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "don't micromanage your agents", "why": "The shift: from reading to managing."},
+  {"text": "Once you think in workflows, you are thinking like a manager.", "why": "The shift: from reading to managing."},
+  {"text": "There was a second line: specialist agents, and a person, who could unblock, approve and advise.", "why": "Her agents were not alone."}
+ ]
+}

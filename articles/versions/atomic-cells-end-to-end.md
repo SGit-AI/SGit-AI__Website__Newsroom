@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-15 | published | 1,514 | first published | this release | [current](../atomic-cells-end-to-end.md) |
+| **v1.0.0** | 2026-11-15 | published | 1,514 | first published | [`b774106d2`](https://github.com/SGit-AI/SGit-AI__Website/commit/b774106d2de3478135e8c85b0efcefcc48e89ec4) | [current](../atomic-cells-end-to-end.md) |
 
 [← Back to the article](../atomic-cells-end-to-end.md) · [All articles](../index.md)
 
