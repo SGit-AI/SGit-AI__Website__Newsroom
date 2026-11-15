@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: At Web Summit, Vicky Wang ran one of the largest agent teams we had: journalists, a reviewer, a curator, a developer, a designer and more, which wrote most of PrompTugal.news. She told me the big shift for her came when she stopped trying to read everything her agents were doing and started to delegate: to give good instructions, guidance and structure, and to think in workflows, like the publishing workflow we set up together. In other words, she became a manager, not a micromanager. Two things made that possible. First, she worked at two altitudes, setting direction for agents that worked well outside her own expertise and going deep where she knew best. Second, her agents were not alone: her developer and designer agents worked with agents on my side, and when one was stuck or needed an approval only my side could give, she would ask me to have my agents help. That is a model for companies: specialist agents, in security, legal, data or design, that support every team, the way those functions support people today. People stay in charge, giving the specific guidance only they can give.
-version: v999.0.0
+version: v0.14.101
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, management, delegation, web-summit, promptugal, specialist-agents, teams, article
 status: published

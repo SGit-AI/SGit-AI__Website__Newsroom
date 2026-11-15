@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: More and more people tell me the same thing: they spend a lot of their time copying and pasting between AI sessions. One session writes, another reviews, a third builds, and the person in the middle carries everything between them, and tries to read all of it. If that is you, you are not being efficient: you have become the wire between your agents, and the wire is the bottleneck. The fix is not working harder at reading. It is to let agents talk to each other directly, through channels that keep a record: append lanes in encrypted vaults, inboxes only the right agent can read, files in a repository and commit messages, every message signed. And it is to scale your decisions with structure, guidance pages, decision trees, semantic graphs, a board and decision records, so you read the outputs and the decisions, and step in where your expertise matters. That is not removing agency from people; it scales it. It is also, quite precisely, what AgentiCCells sells: the agentic team, the channels and the workflows, set up for you, with specialist agents on call when your team needs help.
-version: v999.0.0
+version: v0.14.101
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, workflows, delegation, vaults, inboxes, agenticcells, positioning, article
 status: published
