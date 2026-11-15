@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: Every new site we create needs the same three things: a GitHub repository, a DNS record, and an sgit vault. Today I make them by hand, with a lot of clicks. Scripts or a command-line tool would be faster, but they would still need a person with the keys. My hypothesis is that the right answer is a CI pipeline, a site factory: a control repository where each new site is a request, a folder with a small site file and a brief, added in a commit. On the pull request, the pipeline checks the request and posts a plan; on merge, it creates the repository from a template, turns on Pages, creates the DNS record, creates the vault and publishes its read key, commits a test page, waits for HTTPS, optionally runs a first pass with Claude Code to build the site from the brief, writes the result back into the request's folder and lists the site on the hub. The credentials can be good ones: a GitHub App for GitHub and OpenID Connect federation for AWS, so no long-lived keys sit in the pipeline. Because every site and its content are public, the factory and its record can be public too, with only the credentials kept private. And because it all starts with a commit, the agent I run in a loop only needs access to the control repository to create a site.
-version: v999.0.0
+version: v0.14.105
 license: https://creativecommons.org/licenses/by/4.0/
 tags: ci, automation, github-actions, aws, dns, sgit, agenticcells, architecture, article
 status: published
