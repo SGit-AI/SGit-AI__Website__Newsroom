@@ -1,0 +1,118 @@
+{
+  "slug": "where-assist-becomes-execute",
+  "teaser": "Where assist becomes execute: tier AI agents by reach and undo class, enforce each tier with a boundary, and learn from the rule that failed.",
+  "topics": [
+    "agents-and-policy",
+    "news-and-evidence"
+  ],
+  "core_idea": "Answering Khwaja Naveed: Agent Behaviour Policies tier by capability, not agent. Each capability (verb.object.reach) has an undo class (yes, with-effort, no), giving four tiers: assist (logged), change own work (signed, reviewable), change a system of record (plan then apply, enforced above the agent), irreversible to the world (drafts only or unreachable). Only a boundary enforced above the grant bounds anything; our conductor's rule against pushing to main failed once because branch protection was not set.",
+  "nodes": [
+    {
+      "id": "q",
+      "label": "Assist to execute",
+      "kind": "question",
+      "summary": "Khwaja Naveed's question."
+    },
+    {
+      "id": "cap",
+      "label": "Capability and undo",
+      "kind": "concept",
+      "summary": "verb.object.reach; yes, with-effort, no."
+    },
+    {
+      "id": "tiers",
+      "label": "Four tiers",
+      "kind": "method",
+      "summary": "Assist, own work, system of record, irreversible."
+    },
+    {
+      "id": "barrier",
+      "label": "Only a boundary bounds",
+      "kind": "claim",
+      "summary": "The enforcer test."
+    },
+    {
+      "id": "fail",
+      "label": "A rule that failed",
+      "kind": "example",
+      "summary": "Push to main, 2 November 23:06."
+    },
+    {
+      "id": "patterns",
+      "label": "Patterns that held",
+      "kind": "method",
+      "summary": "Drafts only, plan then apply, unreachable."
+    }
+  ],
+  "edges": [
+    {
+      "from": "tiers",
+      "to": "q",
+      "rel": "answers"
+    },
+    {
+      "from": "cap",
+      "to": "tiers",
+      "rel": "produces"
+    },
+    {
+      "from": "barrier",
+      "to": "tiers",
+      "rel": "depends-on"
+    },
+    {
+      "from": "fail",
+      "to": "barrier",
+      "rel": "example-of"
+    },
+    {
+      "from": "patterns",
+      "to": "tiers",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "what-can-your-agent-reach",
+      "approve-at-altitude",
+      "six-setups-of-an-agentic-system",
+      "promptugal-news-the-newsroom-we-ran",
+      "from-a-commit-to-a-live-website"
+    ],
+    "pages": [],
+    "sites": [
+      "https://abp.sgit.ai/model/capabilities/index.html",
+      "https://abp.sgit.ai/model/undo/index.html",
+      "https://abp.sgit.ai/model/barriers/index.html",
+      "https://web-summit.sgit.ai/abp/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "we tier by what an action can reach and whether it can be undone, rather than by how autonomous an agent is",
+      "why": "The question."
+    },
+    {
+      "text": "The lesson is the one the model predicts: move every execute capability into the fourth row.",
+      "why": "What actually stands in the way."
+    },
+    {
+      "text": "The approval moves from the action to the policy.",
+      "why": "Approve at altitude."
+    }
+  ],
+  "figures": [
+    {
+      "file": "wae-tiers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wae-tiers.webp",
+      "caption": "Where assist becomes execute: four tiers by reach and undo class, and the control that tightens at each.",
+      "kind": "concept"
+    },
+    {
+      "file": "wae-barriers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wae-barriers.webp",
+      "caption": "Only a boundary above the agent bounds anything; and a rule against pushing to main that failed, recorded.",
+      "kind": "concept"
+    }
+  ]
+}

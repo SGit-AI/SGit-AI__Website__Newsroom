@@ -4,24 +4,25 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.107 · 418 articles since 2026-08-17; the newest is 2026-11-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 419 articles since 2026-08-17; the newest is 2026-11-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Selling capabilities, not content: a reply to Florent Daudens' "We have the protocols. Where are the products?", from two newsrooms built for agents, PrompTugal.news going local and a storm site built in a night, and what we think the products are](articles/selling-capabilities-not-content.md), 2026-11-15, 5 min. A reply to Florent Daudens: sell capabilities, not content. A storm site built in a night and PrompTugal.news by place show what the products can be.
+- [Where assist becomes execute: tiering AI agents by what they can reach and whether it can be undone, how Agent Behaviour Policies drew that line for more than a hundred agents at Web Summit, and the rule that failed because it was only a rule](articles/where-assist-becomes-execute.md), 2026-11-15, 5 min. Where assist becomes execute: tier AI agents by reach and undo class, enforce each tier with a boundary, and learn from the rule that failed.
 
 ## Five more
 
+- [Selling capabilities, not content: a reply to Florent Daudens' "We have the protocols. Where are the products?", from two newsrooms built for agents, PrompTugal.news going local and a storm site built in a night, and what we think the products are](articles/selling-capabilities-not-content.md), The future of news, 2026-11-15, 5 min.
 - [PrompTugal.news by place: one publication for Portugal, the Algarve and every Algarve town, each place on its own subdomain from the start, each site a lens on one shared semantic graph, and one test for every story, does it connect to AI](articles/promptugal-news-by-place.md), The future of news, 2026-11-15, 5 min.
 - [From a commit to a live website: a site factory where a request file in a commit makes a CI pipeline create the GitHub repository, the DNS record and the sgit vault, seed a page, check HTTPS, run a first pass with Claude Code, and record it all, so an agent can create sites by committing](articles/from-a-commit-to-a-live-website.md), Startups & strategy, 2026-11-15, 6 min.
 - [Native apps by agents: four iPhone and iPad apps from one workspace and an Android tablet app in five days, from 1,164 lines of Swift to 48,230, a signed Android build four hours after the first commit, and a guide to the fringe on TestFlight ten and a half hours after its brief](articles/native-apps-by-agents.md), Working with agents, 2026-11-15, 4 min.
 - [Spend fewer tokens: an agentic team's token bill is mostly a design choice, and the levers are files as memory, caching what repeats, code instead of models where you can, the right model for each step, no copy and paste, static outputs, and counting it all](articles/spend-fewer-tokens.md), Working with agents, 2026-11-15, 4 min.
-- [A hub for agentic sites: every site AgentiCCells builds in a repository and an sgit vault, served at its own address, and listed on hub.agenticcells.site, where it can be found, promoted and copied as a template; with an orange grower as the first example](articles/a-hub-for-agentic-sites.md), Startups & strategy, 2026-11-15, 4 min.
 
 ## The last five days
 
-### Sunday 15 November 2026 (22 articles)
+### Sunday 15 November 2026 (23 articles)
 
+- Working with agents: [Where assist becomes execute: tiering AI agents by what they can reach and whether it can be undone, how Agent Behaviour Policies drew that line for more than a hundred agents at Web Summit, and the rule that failed because it was only a rule](articles/where-assist-becomes-execute.md), 5 min.
 - The future of news: [Selling capabilities, not content: a reply to Florent Daudens' "We have the protocols. Where are the products?", from two newsrooms built for agents, PrompTugal.news going local and a storm site built in a night, and what we think the products are](articles/selling-capabilities-not-content.md), 5 min.
 - The future of news: [PrompTugal.news by place: one publication for Portugal, the Algarve and every Algarve town, each place on its own subdomain from the start, each site a lens on one shared semantic graph, and one test for every story, does it connect to AI](articles/promptugal-news-by-place.md), 5 min.
 - Startups & strategy: [From a commit to a live website: a site factory where a request file in a commit makes a CI pipeline create the GitHub repository, the DNS record and the sgit vault, seed a page, check HTTPS, run a first pass with Claude Code, and record it all, so an agent can create sites by committing](articles/from-a-commit-to-a-live-website.md), 6 min.
@@ -79,13 +80,13 @@ What an agent may do, who carries the risk, and how a policy is enforced: RiskMa
 - [False positives and the harness: an answer to a question at hack::soho, why a behaviour policy that runs from the network up to the business logic should refuse less of what is right and more of what is wrong, and why a policy that changes with the code becomes a calibrator for bugs](articles/false-positives-and-the-harness.md), 2026-11-02.
 - [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](articles/the-grant-not-the-prompt.md), 2026-11-02.
 
-### [Working with agents](sections/agents/index.md) (59)
+### [Working with agents](sections/agents/index.md) (60)
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
+- [Where assist becomes execute: tiering AI agents by what they can reach and whether it can be undone, how Agent Behaviour Policies drew that line for more than a hundred agents at Web Summit, and the rule that failed because it was only a rule](articles/where-assist-becomes-execute.md), 2026-11-15.
 - [Native apps by agents: four iPhone and iPad apps from one workspace and an Android tablet app in five days, from 1,164 lines of Swift to 48,230, a signed Android build four hours after the first commit, and a guide to the fringe on TestFlight ten and a half hours after its brief](articles/native-apps-by-agents.md), 2026-11-15.
 - [Spend fewer tokens: an agentic team's token bill is mostly a design choice, and the levers are files as memory, caching what repeats, code instead of models where you can, the right model for each step, no copy and paste, static outputs, and counting it all](articles/spend-fewer-tokens.md), 2026-11-15.
 - [Stop copying and pasting between your agents: if you are the wire between your AI sessions you are the bottleneck, and the fix is agents that talk to each other through channels that keep a record, structure that scales your decisions, and outputs you read instead of everything](articles/stop-copying-and-pasting-between-your-agents.md), 2026-11-15.
 - [Don't micromanage your agents: what changed for Vicky Wang when she stopped reading everything her agents did and started managing them, how her team was backed by agents from another team, and why every company will want specialist agents that support all its teams](articles/dont-micromanage-your-agents.md), 2026-11-15.
-- [Reading your way into an agentic team: eight public sites a new team should read before it builds anything, how an agent should read them, and ten questions to answer first, because our websites are its memory](articles/reading-your-way-into-an-agentic-team.md), 2026-11-15.
 
 ### [sgit & vaults](sections/vaults/index.md) (39)
 Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vault, and what it does that Git does not.
