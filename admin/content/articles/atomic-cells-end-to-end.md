@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: AgentiCCells now has a first site live, and I think we are close to an offering that is easy to buy and easy to deliver. It starts with the simplest case: a public website, as an atomic cell, for a one-off price anchored at £500. The customer orders and picks a name on agenticcells.app or agenticcells.site; the order goes on a queue; an agentic team builds the site; and the customer steers it without any accounts of their own, by making a key in their browser and sending us its public half, so their requests reach the agents through a vault lane that an agent reads every hour. When they are ready, the repository moves to their GitHub and they have three months to bring their own domain. That is the no-touch mode. In the second mode, from £1,500, the customer has their own GitHub and Claude accounts, and we set the team up in them and step away. Every step is a primitive that a person or an agent can run from a queue, so it scales by capacity, not by my time, and the first implementers are people who have already done it: Angelo Leggio, Silvio Switha and José Bota, with Vicky Wang as project manager.
-version: v999.0.0
+version: v0.14.100
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agenticcells, offering, websites, atomic-cells, pki, vaults, workflow, article
 status: published
