@@ -4,24 +4,26 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.95 · 404 articles since 2026-08-17; the newest is 2026-11-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 406 articles since 2026-08-17; the newest is 2026-11-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in](articles/decide-then-buy.md), 2026-11-15, 4 min. Deciding what to buy and buying it are two businesses: custom explorer work and commodity town planner work. Give an open path and a better deal.
+- [Six setups of an agentic system: from a single task to one agent, sub-agents, several sessions, a conductor and its team, and conductors of conductors, with the altitudes of a run inside each and command and control growing at every step](articles/six-setups-of-an-agentic-system.md), 2026-11-15, 4 min. Six setups of an agentic system, from a task to conductors of conductors, with the altitudes of a run inside each: make the dangerous thing unreachable.
 
 ## Five more
 
+- [Selling mini agentic teams: a business that sets up small agentic teams for companies, sized from one agent to a network, with a control centre to see them and to start and stop them, PrompTugal as the first customer and Agent Behaviour Policies as the most demanding version](articles/selling-mini-agentic-teams.md), Startups & strategy, 2026-11-15, 5 min.
+- [Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in](articles/decide-then-buy.md), Startups & strategy, 2026-11-15, 4 min.
 - [The new data lake: many small append-only lanes instead of one big lake, a curator agent that turns their rows into a semantic graph, and a graph that draws its own infographics, as we ran it at Web Summit](articles/the-new-data-lake.md), Startups & strategy, 2026-11-15, 4 min.
 - [A market for sweets: the opposite of a market for lemons, a semantic graph for one financial decision that gives the buyer the evidence, an agent that gathers and weighs but never trades, and the judo move of leaving the trade to others](articles/a-market-for-sweets.md), Startups & strategy, 2026-11-15, 5 min.
 - [A brain you arrive at: a company brain for information, decisions and insights is built for one company, one division and one team, starting with one person's and growing, and the Web Summit team already ran one](articles/a-brain-you-arrive-at.md), Startups & strategy, 2026-11-15, 5 min.
-- [PrompTugal.news, the newsroom we ran at Web Summit: desks of agents that captured, mapped, wrote and reviewed 73 signed articles in ten days, an accountant that counted every run, and fifty outreach drafts that no agent was allowed to send](articles/promptugal-news-the-newsroom-we-ran.md), Working with agents, 2026-11-15, 6 min.
-- [Always-on agents at team scale: Anthropic's five primitives for an agent that sleeps and wakes, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many](articles/always-on-agents-at-team-scale.md), Working with agents, 2026-11-15, 9 min.
 
 ## The last five days
 
-### Sunday 15 November 2026 (8 articles)
+### Sunday 15 November 2026 (10 articles)
 
+- Working with agents: [Six setups of an agentic system: from a single task to one agent, sub-agents, several sessions, a conductor and its team, and conductors of conductors, with the altitudes of a run inside each and command and control growing at every step](articles/six-setups-of-an-agentic-system.md), 4 min.
+- Startups & strategy: [Selling mini agentic teams: a business that sets up small agentic teams for companies, sized from one agent to a network, with a control centre to see them and to start and stop them, PrompTugal as the first customer and Agent Behaviour Policies as the most demanding version](articles/selling-mini-agentic-teams.md), 5 min.
 - Startups & strategy: [Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in](articles/decide-then-buy.md), 4 min.
 - Startups & strategy: [The new data lake: many small append-only lanes instead of one big lake, a curator agent that turns their rows into a semantic graph, and a graph that draws its own infographics, as we ran it at Web Summit](articles/the-new-data-lake.md), 4 min.
 - Startups & strategy: [A market for sweets: the opposite of a market for lemons, a semantic graph for one financial decision that gives the buyer the evidence, an agent that gathers and weighs but never trades, and the judo move of leaving the trade to others](articles/a-market-for-sweets.md), 5 min.
@@ -65,13 +67,13 @@ What an agent may do, who carries the risk, and how a policy is enforced: RiskMa
 - [False positives and the harness: an answer to a question at hack::soho, why a behaviour policy that runs from the network up to the business logic should refuse less of what is right and more of what is wrong, and why a policy that changes with the code becomes a calibrator for bugs](articles/false-positives-and-the-harness.md), 2026-11-02.
 - [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](articles/the-grant-not-the-prompt.md), 2026-11-02.
 
-### [Working with agents](sections/agents/index.md) (52)
+### [Working with agents](sections/agents/index.md) (53)
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
+- [Six setups of an agentic system: from a single task to one agent, sub-agents, several sessions, a conductor and its team, and conductors of conductors, with the altitudes of a run inside each and command and control growing at every step](articles/six-setups-of-an-agentic-system.md), 2026-11-15.
 - [PrompTugal.news, the newsroom we ran at Web Summit: desks of agents that captured, mapped, wrote and reviewed 73 signed articles in ten days, an accountant that counted every run, and fifty outreach drafts that no agent was allowed to send](articles/promptugal-news-the-newsroom-we-ran.md), 2026-11-15.
 - [Always-on agents at team scale: Anthropic's five primitives for an agent that sleeps and wakes, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many](articles/always-on-agents-at-team-scale.md), 2026-11-15.
 - [The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map](articles/the-teams-operating-system.md), 2026-11-14.
 - [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](articles/ten-days-at-web-summit.md), 2026-11-14.
-- [Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit](articles/coding-standards-are-behaviour-policies.md), 2026-11-13.
 
 ### [sgit & vaults](sections/vaults/index.md) (39)
 Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vault, and what it does that Git does not.
@@ -89,13 +91,13 @@ Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta
 - [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](articles/storm-charles-a-newsroom-built-in-a-night.md), 2026-11-11.
 - [Would you pay to plug this newsroom in? A reply to Florent Daudens, on five publishers' bets for the AI era, from a newsroom built for agents, with what it answers, where it goes further, and the questions it has not answered either](articles/would-you-pay-to-plug-this-newsroom-in.md), 2026-11-03.
 
-### [Startups & strategy](sections/strategy/index.md) (92)
+### [Startups & strategy](sections/strategy/index.md) (93)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
+- [Selling mini agentic teams: a business that sets up small agentic teams for companies, sized from one agent to a network, with a control centre to see them and to start and stop them, PrompTugal as the first customer and Agent Behaviour Policies as the most demanding version](articles/selling-mini-agentic-teams.md), 2026-11-15.
 - [Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in](articles/decide-then-buy.md), 2026-11-15.
 - [The new data lake: many small append-only lanes instead of one big lake, a curator agent that turns their rows into a semantic graph, and a graph that draws its own infographics, as we ran it at Web Summit](articles/the-new-data-lake.md), 2026-11-15.
 - [A market for sweets: the opposite of a market for lemons, a semantic graph for one financial decision that gives the buyer the evidence, an agent that gathers and weighs but never trades, and the judo move of leaving the trade to others](articles/a-market-for-sweets.md), 2026-11-15.
 - [A brain you arrive at: a company brain for information, decisions and insights is built for one company, one division and one team, starting with one person's and growing, and the Web Summit team already ran one](articles/a-brain-you-arrive-at.md), 2026-11-15.
-- [Town planners for mission-critical code: the US ground stop of 13 November is a case for teams that read, certify and test every line, and for using AI to make that work scale, not to skip it](articles/town-planners-for-mission-critical-code.md), 2026-11-14.
 
 ### [Engineering this newsroom](sections/building/index.md) (47)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.

@@ -1,0 +1,31 @@
+{
+ "slug": "six-setups-of-an-agentic-system",
+ "teaser": "Six setups of an agentic system, from a task to conductors of conductors, with the altitudes of a run inside each: make the dangerous thing unreachable.",
+ "topics": ["agents-and-policy", "site-and-engineering"],
+ "core_idea": "An agentic system can be six setups: a task, one agent, an agent with sub-agents in one runtime, several sessions, a conductor and its team, and conductors of conductors. Inside each are the altitudes of a run (person, swarm, agent, loop, LLM call, code); the danger is the same privileges at every altitude and the control is reach. Higher setups need more command and control.",
+ "nodes": [
+  {"id": "setups", "label": "Six setups", "kind": "concept", "summary": "Task to conductors of conductors."},
+  {"id": "prompt", "label": "A prompt", "kind": "method", "summary": "The lower three setups."},
+  {"id": "setup", "label": "A setup", "kind": "method", "summary": "Keys, lanes, boards, policies."},
+  {"id": "alt", "label": "Altitudes of a run", "kind": "concept", "summary": "P, A4 to A0."},
+  {"id": "reach", "label": "Reach as control", "kind": "claim", "summary": "Make the dangerous thing unreachable."},
+  {"id": "cc", "label": "Command and control", "kind": "question", "summary": "The next memo."}
+ ],
+ "edges": [
+  {"from": "prompt", "to": "setups", "rel": "extends"},
+  {"from": "setup", "to": "setups", "rel": "extends"},
+  {"from": "alt", "to": "setups", "rel": "extends"},
+  {"from": "reach", "to": "alt", "rel": "answers"},
+  {"from": "setups", "to": "cc", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["ten-days-at-web-summit", "always-on-agents-at-team-scale", "approve-at-altitude", "what-can-your-agent-reach", "selling-mini-agentic-teams", "a-brain-you-arrive-at"],
+  "pages": [],
+  "sites": ["https://swarm.promptugal.news/"]
+ },
+ "quotes": [
+  {"text": "don't hope the agent behaves, make the dangerous thing unreachable", "why": "The danger, and the control."},
+  {"text": "So the control is not good behaviour; it is reach.", "why": "The danger, and the control."},
+  {"text": "The first three are a prompt, or a prompt and a project.", "why": "Six setups."}
+ ]
+}

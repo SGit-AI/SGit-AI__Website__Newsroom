@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-15 | published | 1,187 | first published | this release | [current](../decide-then-buy.md) |
+| **v1.0.0** | 2026-11-15 | published | 1,187 | first published | [`5655f0d26`](https://github.com/SGit-AI/SGit-AI__Website/commit/5655f0d26d76a2934125cd91a7e5c437d9610ce9) | [current](../decide-then-buy.md) |
 
 [← Back to the article](../decide-then-buy.md) · [All articles](../index.md)
 

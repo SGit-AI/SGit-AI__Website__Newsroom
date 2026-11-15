@@ -55,6 +55,314 @@
   ],
   "articles": [
     {
+      "slug": "six-setups-of-an-agentic-system",
+      "title": "Six setups of an agentic system: from a single task to one agent, sub-agents, several sessions, a conductor and its team, and conductors of conductors, with the altitudes of a run inside each and command and control growing at every step",
+      "date": "2026-11-15",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/six-setups-of-an-agentic-system.html",
+      "markdown": "https://newsroom.sgit.ai/articles/six-setups-of-an-agentic-system.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/six-setups-of-an-agentic-system.webp",
+      "teaser": "Six setups of an agentic system, from a task to conductors of conductors, with the altitudes of a run inside each: make the dangerous thing unreachable.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "agentic-teams",
+        "altitudes",
+        "swarm",
+        "conductors",
+        "command-and-control",
+        "reach",
+        "abp",
+        "article"
+      ],
+      "links_out": [
+        "selling-mini-agentic-teams",
+        "ten-days-at-web-summit",
+        "a-brain-you-arrive-at",
+        "what-can-your-agent-reach",
+        "always-on-agents-at-team-scale",
+        "approve-at-altitude"
+      ],
+      "links_in": [
+        "selling-mini-agentic-teams"
+      ],
+      "figures": [
+        {
+          "file": "ats-setups.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ats-setups.webp",
+          "caption": "Six setups of an agentic system, from a single task to conductors of conductors, and what each needs to set up.",
+          "kind": "concept"
+        },
+        {
+          "file": "ats-altitudes.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ats-altitudes.webp",
+          "caption": "The altitudes of a run, from the Swarm demo: person, swarm, agent, loop, LLM call, compute, and the control.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "six-setups-of-an-agentic-system",
+        "teaser": "Six setups of an agentic system, from a task to conductors of conductors, with the altitudes of a run inside each: make the dangerous thing unreachable.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "An agentic system can be six setups: a task, one agent, an agent with sub-agents in one runtime, several sessions, a conductor and its team, and conductors of conductors. Inside each are the altitudes of a run (person, swarm, agent, loop, LLM call, code); the danger is the same privileges at every altitude and the control is reach. Higher setups need more command and control.",
+        "nodes": [
+          {
+            "id": "setups",
+            "label": "Six setups",
+            "kind": "concept",
+            "summary": "Task to conductors of conductors."
+          },
+          {
+            "id": "prompt",
+            "label": "A prompt",
+            "kind": "method",
+            "summary": "The lower three setups."
+          },
+          {
+            "id": "setup",
+            "label": "A setup",
+            "kind": "method",
+            "summary": "Keys, lanes, boards, policies."
+          },
+          {
+            "id": "alt",
+            "label": "Altitudes of a run",
+            "kind": "concept",
+            "summary": "P, A4 to A0."
+          },
+          {
+            "id": "reach",
+            "label": "Reach as control",
+            "kind": "claim",
+            "summary": "Make the dangerous thing unreachable."
+          },
+          {
+            "id": "cc",
+            "label": "Command and control",
+            "kind": "question",
+            "summary": "The next memo."
+          }
+        ],
+        "edges": [
+          {
+            "from": "prompt",
+            "to": "setups",
+            "rel": "extends"
+          },
+          {
+            "from": "setup",
+            "to": "setups",
+            "rel": "extends"
+          },
+          {
+            "from": "alt",
+            "to": "setups",
+            "rel": "extends"
+          },
+          {
+            "from": "reach",
+            "to": "alt",
+            "rel": "answers"
+          },
+          {
+            "from": "setups",
+            "to": "cc",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "ten-days-at-web-summit",
+            "always-on-agents-at-team-scale",
+            "approve-at-altitude",
+            "what-can-your-agent-reach",
+            "selling-mini-agentic-teams",
+            "a-brain-you-arrive-at"
+          ],
+          "pages": [],
+          "sites": [
+            "https://swarm.promptugal.news/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "don't hope the agent behaves, make the dangerous thing unreachable",
+            "why": "The danger, and the control."
+          },
+          {
+            "text": "So the control is not good behaviour; it is reach.",
+            "why": "The danger, and the control."
+          },
+          {
+            "text": "The first three are a prompt, or a prompt and a project.",
+            "why": "Six setups."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "selling-mini-agentic-teams",
+      "title": "Selling mini agentic teams: a business that sets up small agentic teams for companies, sized from one agent to a network, with a control centre to see them and to start and stop them, PrompTugal as the first customer and Agent Behaviour Policies as the most demanding version",
+      "date": "2026-11-15",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/selling-mini-agentic-teams.html",
+      "markdown": "https://newsroom.sgit.ai/articles/selling-mini-agentic-teams.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/selling-mini-agentic-teams.webp",
+      "teaser": "A business that sets up small agentic teams for companies, with a control centre to start and stop them; PrompTugal first, ABPs on steroids.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agentic-teams",
+        "business-model",
+        "control-centre",
+        "promptugal",
+        "riskmandate",
+        "abp",
+        "open-source",
+        "pricing",
+        "article"
+      ],
+      "links_out": [
+        "the-ultimate-insider-case-study",
+        "a-brain-you-arrive-at",
+        "a-market-for-sweets",
+        "the-teams-operating-system",
+        "promptugal-news-the-newsroom-we-ran",
+        "six-setups-of-an-agentic-system",
+        "what-can-your-agent-reach",
+        "agentics-ready-to-sell",
+        "the-new-data-lake",
+        "villager-services-for-explorer-coders",
+        "decide-then-buy",
+        "ten-days-at-web-summit"
+      ],
+      "links_in": [
+        "six-setups-of-an-agentic-system"
+      ],
+      "figures": [
+        {
+          "file": "mat-ladder.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mat-ladder.webp",
+          "caption": "Four sizes of setup, priced by size, from one agent at £500 to a network at £20,000, each with a control centre.",
+          "kind": "pricing"
+        },
+        {
+          "file": "mat-network.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mat-network.webp",
+          "caption": "An illustration of PrompTugal.news as a network of agentic teams: an editor, regions, city desks, journalists, agencies.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "selling-mini-agentic-teams",
+        "teaser": "A business that sets up small agentic teams for companies, with a control centre to start and stop them; PrompTugal first, ABPs on steroids.",
+        "topics": [
+          "startups-and-strategy",
+          "agents-and-policy"
+        ],
+        "core_idea": "Setting up small agentic teams is a business few can do yet. The missing piece for customers is a control centre to see agents and start and stop them. PrompTugal.news, a network of teams of different sizes, is the first customer; Agent Behaviour Policies are the same offering focused on control. Packaged by size from £500 to £20,000, built from small open pieces with no databases.",
+        "nodes": [
+          {
+            "id": "biz",
+            "label": "Selling agentic teams",
+            "kind": "concept",
+            "summary": "Set up for companies."
+          },
+          {
+            "id": "control",
+            "label": "Control centre",
+            "kind": "method",
+            "summary": "See, start and stop the agents."
+          },
+          {
+            "id": "ptn",
+            "label": "PrompTugal network",
+            "kind": "example",
+            "summary": "Editor, regions, desks, journalists, agencies."
+          },
+          {
+            "id": "abp",
+            "label": "ABPs on steroids",
+            "kind": "claim",
+            "summary": "Every policy needs a policy agent."
+          },
+          {
+            "id": "pieces",
+            "label": "Small open pieces",
+            "kind": "method",
+            "summary": "Workflow, Ruflo, sgit, no databases."
+          },
+          {
+            "id": "ladder",
+            "label": "Priced by size",
+            "kind": "artefact",
+            "summary": "£500 to £20,000."
+          }
+        ],
+        "edges": [
+          {
+            "from": "control",
+            "to": "biz",
+            "rel": "depends-on"
+          },
+          {
+            "from": "ptn",
+            "to": "biz",
+            "rel": "example-of"
+          },
+          {
+            "from": "abp",
+            "to": "biz",
+            "rel": "extends"
+          },
+          {
+            "from": "pieces",
+            "to": "biz",
+            "rel": "produces"
+          },
+          {
+            "from": "ladder",
+            "to": "biz",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-teams-operating-system",
+            "promptugal-news-the-newsroom-we-ran",
+            "agentics-ready-to-sell",
+            "what-can-your-agent-reach",
+            "decide-then-buy",
+            "six-setups-of-an-agentic-system",
+            "a-brain-you-arrive-at"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "So the product is not the agents; it is the ability to control their execution.",
+            "why": "The missing piece: a control centre."
+          },
+          {
+            "text": "Three months ago I would have been very interested in buying exactly this",
+            "why": "A business in setting up agentic teams."
+          },
+          {
+            "text": "Every Agent Behaviour Policy needs an agent that looks after it",
+            "why": "Agent Behaviour Policies, on steroids."
+          }
+        ]
+      }
+    },
+    {
       "slug": "decide-then-buy",
       "title": "Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in",
       "date": "2026-11-15",
@@ -89,7 +397,9 @@
         "ephemeral-town-planner-services",
         "when-the-customer-becomes-the-commodity"
       ],
-      "links_in": [],
+      "links_in": [
+        "selling-mini-agentic-teams"
+      ],
       "figures": [
         {
           "file": "dtb-map.webp",
@@ -240,6 +550,7 @@
         "a-market-for-sweets"
       ],
       "links_in": [
+        "selling-mini-agentic-teams",
         "decide-then-buy",
         "a-market-for-sweets",
         "a-brain-you-arrive-at"
@@ -392,6 +703,7 @@
         "the-new-data-lake"
       ],
       "links_in": [
+        "selling-mini-agentic-teams",
         "decide-then-buy",
         "the-new-data-lake",
         "a-brain-you-arrive-at"
@@ -557,6 +869,8 @@
         "a-market-for-sweets"
       ],
       "links_in": [
+        "six-setups-of-an-agentic-system",
+        "selling-mini-agentic-teams",
         "decide-then-buy",
         "the-new-data-lake",
         "a-market-for-sweets"
@@ -708,6 +1022,7 @@
         "always-on-agents-at-team-scale"
       ],
       "links_in": [
+        "selling-mini-agentic-teams",
         "the-new-data-lake",
         "a-market-for-sweets",
         "ten-days-at-web-summit"
@@ -896,6 +1211,7 @@
         "every-hour-is-twenty-years"
       ],
       "links_in": [
+        "six-setups-of-an-agentic-system",
         "a-brain-you-arrive-at",
         "promptugal-news-the-newsroom-we-ran"
       ],
@@ -1365,6 +1681,7 @@
         "web-summit-part-five"
       ],
       "links_in": [
+        "selling-mini-agentic-teams",
         "the-new-data-lake",
         "a-brain-you-arrive-at",
         "promptugal-news-the-newsroom-we-ran",
@@ -1874,6 +2191,8 @@
         "meetscribe"
       ],
       "links_in": [
+        "six-setups-of-an-agentic-system",
+        "selling-mini-agentic-teams",
         "a-brain-you-arrive-at",
         "promptugal-news-the-newsroom-we-ran",
         "always-on-agents-at-team-scale",
@@ -11170,6 +11489,7 @@
         "vibathon-algarve-2026"
       ],
       "links_in": [
+        "selling-mini-agentic-teams",
         "decide-then-buy",
         "a-presentation-for-every-project",
         "running-an-ai-build-event",
@@ -15242,6 +15562,7 @@
         "introducing-sharness"
       ],
       "links_in": [
+        "selling-mini-agentic-teams",
         "always-on-agents-at-team-scale",
         "one-human-nine-agents-rc2",
         "how-an-agent-team-briefs-its-people",
@@ -43266,6 +43587,8 @@
         "hope-or-enforcement"
       ],
       "links_in": [
+        "six-setups-of-an-agentic-system",
+        "selling-mini-agentic-teams",
         "a-market-for-sweets",
         "a-brain-you-arrive-at",
         "always-on-agents-at-team-scale",
@@ -45136,6 +45459,7 @@
         "code-review-as-a-fractal-semantic-graph"
       ],
       "links_in": [
+        "six-setups-of-an-agentic-system",
         "who-owns-the-stop-button",
         "proven-controls-for-agents",
         "approved-business-mandates",
@@ -50779,6 +51103,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "selling-mini-agentic-teams",
         "hired-for-the-workflow",
         "our-first-pr-in-ruflo",
         "what-if-an-agent-loses-its-workspace",

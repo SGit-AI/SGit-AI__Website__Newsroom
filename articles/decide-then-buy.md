@@ -96,6 +96,10 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#decide
 - [Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour](ephemeral-town-planner-services.md) Serverless meant scale to zero and pay per use; now it covers hourly bills. A better name: ephemeral town planner services, and a test for it.
 - [When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure](when-the-customer-becomes-the-commodity.md) Put your customer on your Wardley map. Google and Amazon moved theirs to commodity and lost trust; airports moved back. Local delivery should be infrastructure.
 
+### Continued by
+
+- [Selling mini agentic teams: a business that sets up small agentic teams for companies, sized from one agent to a network, with a control centre to see them and to start and stop them, PrompTugal as the first customer and Agent Behaviour Policies as the most demanding version](selling-mini-agentic-teams.md) A business that sets up small agentic teams for companies, with a control centre to start and stop them; PrompTugal first, ABPs on steroids.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 406 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=406)
