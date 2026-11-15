@@ -1,0 +1,31 @@
+{
+ "slug": "promptugal-news-by-place",
+ "teaser": "PrompTugal.news goes local: Portugal, the Algarve and every Algarve town, each on its own subdomain, each a lens on one graph, every story tied to AI.",
+ "topics": ["news-and-evidence", "graphs-and-knowledge"],
+ "core_idea": "PrompTugal.news by place: one set of agents, stories tagged by place; promptugal.news (national and international), algarve.promptugal.news and a subdomain for every Algarve municipality and Quarteira from the start; each site a lens on one shared semantic graph; the brand is always PrompTugal.news; every story passes the PrompTugal test (it connects to AI within two or three steps); place decides prominence, AI decides inclusion; every town at once.",
+ "nodes": [
+  {"id": "place", "label": "By place", "kind": "concept", "summary": "Portugal, the Algarve, the towns."},
+  {"id": "sub", "label": "A subdomain per place", "kind": "method", "summary": "Made automatically, from the start."},
+  {"id": "lens", "label": "Each site a lens", "kind": "method", "summary": "One graph, a different centre."},
+  {"id": "test", "label": "The PrompTugal test", "kind": "claim", "summary": "Does it connect to AI?"},
+  {"id": "town", "label": "A town site", "kind": "artefact", "summary": "Mandate, centre of gravity, news, gaps."},
+  {"id": "wave", "label": "The first wave", "kind": "example", "summary": "All 17 places at once."}
+ ],
+ "edges": [
+  {"from": "sub", "to": "place", "rel": "extends"},
+  {"from": "lens", "to": "place", "rel": "extends"},
+  {"from": "test", "to": "lens", "rel": "depends-on"},
+  {"from": "town", "to": "lens", "rel": "produces"},
+  {"from": "wave", "to": "town", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["promptugal-news-the-newsroom-we-ran", "the-new-data-lake", "from-a-commit-to-a-live-website"],
+  "pages": [],
+  "sites": ["https://web-summit.sgit.ai/articles/promptugal-by-place.html", "https://web-summit.sgit.ai/people/vicky/local-sites/", "https://promptugal.news/"]
+ },
+ "quotes": [
+  {"text": "Place decides where a story shows and how big. AI decides whether it is ours at all.", "why": "The north star."},
+  {"text": "A town with no AI news is a finding in itself.", "why": "What every town site shows."},
+  {"text": "The brand is PrompTugal.news, always.", "why": "The north star."}
+ ]
+}

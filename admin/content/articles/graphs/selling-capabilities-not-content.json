@@ -1,0 +1,31 @@
+{
+ "slug": "selling-capabilities-not-content",
+ "teaser": "A reply to Florent Daudens: sell capabilities, not content. A storm site built in a night and PrompTugal.news by place show what the products can be.",
+ "topics": ["news-and-evidence", "startups-and-strategy"],
+ "core_idea": "Florent Daudens argues publishers have the protocols but need products: capabilities, not licensed content, such as subscriptions connected to personal agents. The Storm Charles site (2,618 pages in three days, every fact sourced and timed) and PrompTugal.news by place (a lens per town on one graph) are capabilities; keys people own, read keys, licences, a meter and agent-readable pages answer access, permissions and payment.",
+ "nodes": [
+  {"id": "question", "label": "Where are the products?", "kind": "question", "summary": "Florent Daudens, 15 November 2026."},
+  {"id": "caps", "label": "Capabilities, not content", "kind": "claim", "summary": "His answer, and ours."},
+  {"id": "storm", "label": "The storm site", "kind": "example", "summary": "A live, sourced picture."},
+  {"id": "place", "label": "PrompTugal.news by place", "kind": "example", "summary": "A lens per town."},
+  {"id": "answers", "label": "Access, permissions, payment", "kind": "method", "summary": "Keys, read keys, licences, a meter."},
+  {"id": "next", "label": "What to build next", "kind": "method", "summary": "Subscriptions as keys, lenses, decisions."}
+ ],
+ "edges": [
+  {"from": "caps", "to": "question", "rel": "answers"},
+  {"from": "storm", "to": "caps", "rel": "example-of"},
+  {"from": "place", "to": "caps", "rel": "example-of"},
+  {"from": "answers", "to": "question", "rel": "answers"},
+  {"from": "next", "to": "caps", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["would-you-pay-to-plug-this-newsroom-in", "storm-charles-a-newsroom-built-in-a-night", "promptugal-news-the-newsroom-we-ran", "promptugal-news-by-place", "a-key-for-every-person", "your-reading-your-controls", "a-market-for-sweets", "what-can-your-agent-reach", "reading-your-way-into-an-agentic-team"],
+  "pages": [],
+  "sites": ["https://fdaudens.substack.com/p/we-have-the-protocols-now-what-are", "https://lnkd.in/p/eduvEsh7"]
+ },
+ "quotes": [
+  {"text": "That is not content to license. It is a capability", "why": "A storm site is a capability."},
+  {"text": "so the paywall is a permission, not a login page", "why": "What I would build next."},
+  {"text": "An agent working for a business in Faro does not need our articles; it needs that lens", "why": "A newsroom by place is a product."}
+ ]
+}

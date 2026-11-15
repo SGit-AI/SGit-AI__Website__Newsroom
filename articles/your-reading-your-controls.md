@@ -142,6 +142,7 @@ Site & engineeringNews & evidence[This article as a graph →](graphs.md#your-re
 
 ### Continued by
 
+- [Selling capabilities, not content: a reply to Florent Daudens' "We have the protocols. Where are the products?", from two newsrooms built for agents, PrompTugal.news going local and a storm site built in a night, and what we think the products are](selling-capabilities-not-content.md) A reply to Florent Daudens: sell capabilities, not content. A storm site built in a night and PrompTugal.news by place show what the products can be.
 - [The augmented book: one source in layers, projected to the web, the iPad and print, so the reader gets the right information at the right time, and what fifty years of attempts teach](the-augmented-book.md) The augmented book: one source in layers, projected to web, iPad and print, with the right information at the right time, and what precedents teach.
 - [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](a-newsroom-for-one.md) The reading list I send by email is the first page people see of this newsroom, so it now explains itself, shows what was read, and asks for an answer.
 - [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](v0-12-in-numbers.md) v0.12 in numbers: 159 versions in eight days, 131 articles, 292,000 words, a graph for every article, and the mistakes the data shows.

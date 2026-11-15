@@ -104,6 +104,10 @@ News & evidenceStartups & strategy[This article as a graph →](graphs.md#would-
 - [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](free-to-copy-paid-at-the-source.md) Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.
 - [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](agentic-readers.md) Agentic risk, or agentic readers? A reply to DJB Strategies' publisher outlook, its framework answered by a newsroom already doing it.
 
+### Continued by
+
+- [Selling capabilities, not content: a reply to Florent Daudens' "We have the protocols. Where are the products?", from two newsrooms built for agents, PrompTugal.news going local and a storm site built in a night, and what we think the products are](selling-capabilities-not-content.md) A reply to Florent Daudens: sell capabilities, not content. A storm site built in a night and PrompTugal.news by place show what the products can be.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 380 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=380)

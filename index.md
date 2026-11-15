@@ -4,24 +4,26 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.105 · 416 articles since 2026-08-17; the newest is 2026-11-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 418 articles since 2026-08-17; the newest is 2026-11-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [From a commit to a live website: a site factory where a request file in a commit makes a CI pipeline create the GitHub repository, the DNS record and the sgit vault, seed a page, check HTTPS, run a first pass with Claude Code, and record it all, so an agent can create sites by committing](articles/from-a-commit-to-a-live-website.md), 2026-11-15, 6 min. A site factory: a request in a commit makes a CI pipeline create the repository, DNS record and vault, seed a page, check HTTPS and record it all.
+- [Selling capabilities, not content: a reply to Florent Daudens' "We have the protocols. Where are the products?", from two newsrooms built for agents, PrompTugal.news going local and a storm site built in a night, and what we think the products are](articles/selling-capabilities-not-content.md), 2026-11-15, 5 min. A reply to Florent Daudens: sell capabilities, not content. A storm site built in a night and PrompTugal.news by place show what the products can be.
 
 ## Five more
 
+- [PrompTugal.news by place: one publication for Portugal, the Algarve and every Algarve town, each place on its own subdomain from the start, each site a lens on one shared semantic graph, and one test for every story, does it connect to AI](articles/promptugal-news-by-place.md), The future of news, 2026-11-15, 5 min.
+- [From a commit to a live website: a site factory where a request file in a commit makes a CI pipeline create the GitHub repository, the DNS record and the sgit vault, seed a page, check HTTPS, run a first pass with Claude Code, and record it all, so an agent can create sites by committing](articles/from-a-commit-to-a-live-website.md), Startups & strategy, 2026-11-15, 6 min.
 - [Native apps by agents: four iPhone and iPad apps from one workspace and an Android tablet app in five days, from 1,164 lines of Swift to 48,230, a signed Android build four hours after the first commit, and a guide to the fringe on TestFlight ten and a half hours after its brief](articles/native-apps-by-agents.md), Working with agents, 2026-11-15, 4 min.
 - [Spend fewer tokens: an agentic team's token bill is mostly a design choice, and the levers are files as memory, caching what repeats, code instead of models where you can, the right model for each step, no copy and paste, static outputs, and counting it all](articles/spend-fewer-tokens.md), Working with agents, 2026-11-15, 4 min.
 - [A hub for agentic sites: every site AgentiCCells builds in a repository and an sgit vault, served at its own address, and listed on hub.agenticcells.site, where it can be found, promoted and copied as a template; with an orange grower as the first example](articles/a-hub-for-agentic-sites.md), Startups & strategy, 2026-11-15, 4 min.
-- [Stop copying and pasting between your agents: if you are the wire between your AI sessions you are the bottleneck, and the fix is agents that talk to each other through channels that keep a record, structure that scales your decisions, and outputs you read instead of everything](articles/stop-copying-and-pasting-between-your-agents.md), Working with agents, 2026-11-15, 5 min.
-- [Don't micromanage your agents: what changed for Vicky Wang when she stopped reading everything her agents did and started managing them, how her team was backed by agents from another team, and why every company will want specialist agents that support all its teams](articles/dont-micromanage-your-agents.md), Working with agents, 2026-11-15, 4 min.
 
 ## The last five days
 
-### Sunday 15 November 2026 (20 articles)
+### Sunday 15 November 2026 (22 articles)
 
+- The future of news: [Selling capabilities, not content: a reply to Florent Daudens' "We have the protocols. Where are the products?", from two newsrooms built for agents, PrompTugal.news going local and a storm site built in a night, and what we think the products are](articles/selling-capabilities-not-content.md), 5 min.
+- The future of news: [PrompTugal.news by place: one publication for Portugal, the Algarve and every Algarve town, each place on its own subdomain from the start, each site a lens on one shared semantic graph, and one test for every story, does it connect to AI](articles/promptugal-news-by-place.md), 5 min.
 - Startups & strategy: [From a commit to a live website: a site factory where a request file in a commit makes a CI pipeline create the GitHub repository, the DNS record and the sgit vault, seed a page, check HTTPS, run a first pass with Claude Code, and record it all, so an agent can create sites by committing](articles/from-a-commit-to-a-live-website.md), 6 min.
 - Working with agents: [Native apps by agents: four iPhone and iPad apps from one workspace and an Android tablet app in five days, from 1,164 lines of Swift to 48,230, a signed Android build four hours after the first commit, and a guide to the fringe on TestFlight ten and a half hours after its brief](articles/native-apps-by-agents.md), 4 min.
 - Working with agents: [Spend fewer tokens: an agentic team's token bill is mostly a design choice, and the levers are files as memory, caching what repeats, code instead of models where you can, the right model for each step, no copy and paste, static outputs, and counting it all](articles/spend-fewer-tokens.md), 4 min.
@@ -93,13 +95,13 @@ Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vaul
 - [English with Inês, inside the vault: a teacher's site as a vault app, with an experiment for every lesson, cards that come back when you are about to forget, a tutor that answers about one lesson only, a concept map, and the back office with every agent's policy](articles/inside-english-with-ines.md), 2026-11-03.
 - [Signed by the agent, vouched for by the person: a brief to give every email agent its own key, so each email carries a QR code that proves it is authentic](articles/signed-email-from-the-agent.md), 2026-10-30.
 
-### [The future of news](sections/news/index.md) (56)
+### [The future of news](sections/news/index.md) (58)
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
+- [Selling capabilities, not content: a reply to Florent Daudens' "We have the protocols. Where are the products?", from two newsrooms built for agents, PrompTugal.news going local and a storm site built in a night, and what we think the products are](articles/selling-capabilities-not-content.md), 2026-11-15.
+- [PrompTugal.news by place: one publication for Portugal, the Algarve and every Algarve town, each place on its own subdomain from the start, each site a lens on one shared semantic graph, and one test for every story, does it connect to AI](articles/promptugal-news-by-place.md), 2026-11-15.
 - [Starting AgentiCCells: a company that sets up small agentic teams, cells, in the customer's own environment, with a control centre, everything open and no state on our side; how it was named, researched, reviewed and set up in a day](articles/starting-agenticcells.md), 2026-11-15.
 - [Every hour is twenty years: the human behind Know the Reach, and why making a song and its video with AI made them more Silvio Switha's, not less](articles/every-hour-is-twenty-years.md), 2026-11-15.
 - [Know the Reach: RiskMandate has a song on Spotify, and its music video is being made with AI, shot by shot, from about 2,300 words of human direction; this is how the first part was made](articles/know-the-reach.md), 2026-11-15.
-- [One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes](articles/the-book-is-on-leanpub.md), 2026-11-14.
-- [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](articles/storm-charles-a-newsroom-built-in-a-night.md), 2026-11-11.
 
 ### [Startups & strategy](sections/strategy/index.md) (96)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
