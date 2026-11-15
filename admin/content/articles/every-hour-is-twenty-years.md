@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: Know the Reach, RiskMandate's song, and the first part of its music video were made with AI, and the story that usually gets told about that is the wrong one. They were made by Silvio Switha, one of the best musicians I know, a singer and producer who runs one of the most successful wedding bands in the Algarve, over hours and hours of the usual creative process: trying, changing, listening, and trying again. The lyrics came from a session that held everything RiskMandate had done and his direction, and the chorus, the structure and the pacing are his decisions. What AI changed is not who had the vision, but how fast he could hear it: a producer with immediate feedback, doing what wealthy, well-produced projects have always done, at a budget a start-up has. Every hour he spent carried twenty years of experience. The numbers in the production audit are perhaps a fifth of what went into it, and among all the versions he could have made, this is the one he chose, which is why people will connect with it. The next step closes the loop: the same song, recorded by his band.
-version: v999.0.0
+version: v0.14.88
 license: https://creativecommons.org/licenses/by/4.0/
 tags: riskmandate, music, creativity, ai-video, production, artists, web-summit, article
 status: published
