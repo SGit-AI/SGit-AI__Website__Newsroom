@@ -2,10 +2,11 @@
 
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
 
-50 articles, newest first.
+51 articles, newest first.
 
 ## November 2026
 
+- [Always-on agents at team scale: Anthropic's five primitives for an agent that sleeps and wakes, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many](../../articles/always-on-agents-at-team-scale.md), 2026-11-15, 7 min.
 - [The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map](../../articles/the-teams-operating-system.md), 2026-11-14, 5 min.
 - [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](../../articles/ten-days-at-web-summit.md), 2026-11-14, 5 min.
 - [Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit](../../articles/coding-standards-are-behaviour-policies.md), 2026-11-13, 6 min.

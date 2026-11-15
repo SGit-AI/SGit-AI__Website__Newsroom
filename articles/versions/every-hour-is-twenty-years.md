@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-15 | published | 1,499 | first published | this release | [current](../every-hour-is-twenty-years.md) |
+| **v1.0.0** | 2026-11-15 | published | 1,499 | first published | [`dec14fe21`](https://github.com/SGit-AI/SGit-AI__Website/commit/dec14fe210e0020084c4dd52c66f81a801e00445) | [current](../every-hour-is-twenty-years.md) |
 
 [← Back to the article](../every-hour-is-twenty-years.md) · [All articles](../index.md)
 

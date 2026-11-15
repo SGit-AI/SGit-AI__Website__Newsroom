@@ -1,0 +1,31 @@
+{
+ "slug": "always-on-agents-at-team-scale",
+ "teaser": "Anthropic's five primitives for always-on agents, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many.",
+ "topics": ["agents-and-policy", "vaults-and-method"],
+ "core_idea": "William Hu's Building always-on agents (Anthropic, 13 November 2026) rests on five primitives: event inbox, timers, memory, permissions and outbox. The Web Summit team built the same five for around 250 named agents from git, files, vaults and keys; the comparison shows where they agree, where the team got it wrong, and the next problems a team meets: agents starting agents, identity, stopping, many humans, observability and governance.",
+ "nodes": [
+  {"id": "post", "label": "Building always-on agents", "kind": "artefact", "summary": "Anthropic, 13 November 2026."},
+  {"id": "five", "label": "Five primitives", "kind": "concept", "summary": "Inbox, timers, memory, permissions, outbox."},
+  {"id": "ours", "label": "Our version", "kind": "example", "summary": "Git, files, vaults and keys, for 250 agents."},
+  {"id": "agree", "label": "Where we agree", "kind": "claim", "summary": "Source of truth, lean memory, start quiet."},
+  {"id": "next", "label": "The next problems", "kind": "question", "summary": "Teams, identity, stopping, humans, observability."},
+  {"id": "gov", "label": "Governance", "kind": "concept", "summary": "Reach against mandate, above each call."}
+ ],
+ "edges": [
+  {"from": "five", "to": "post", "rel": "extends"},
+  {"from": "ours", "to": "five", "rel": "compared-with"},
+  {"from": "agree", "to": "ours", "rel": "extends"},
+  {"from": "ours", "to": "next", "rel": "leads-to"},
+  {"from": "next", "to": "gov", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["ten-days-at-web-summit", "the-teams-operating-system", "an-inbox-only-your-agents-can-write-to", "a-key-for-every-person", "handing-secrets-to-agents", "who-owns-the-stop-button"],
+  "pages": [],
+  "sites": ["https://claude.com/resources/articles/building-always-on-agents"]
+ },
+ "quotes": [
+  {"text": "In the post's terms: a stop is an event, and it is only as fast as the timers.", "why": "The next problems, once there are many."},
+  {"text": "An outbox that cannot decide nothing needs sending is noise, and noise hides the signal you need.", "why": "Where we agree, and the evidence."},
+  {"text": "None of these are gaps in the post; they are what comes next", "why": "The next problems, once there are many."}
+ ]
+}

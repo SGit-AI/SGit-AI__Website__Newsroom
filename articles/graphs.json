@@ -55,6 +55,156 @@
   ],
   "articles": [
     {
+      "slug": "always-on-agents-at-team-scale",
+      "title": "Always-on agents at team scale: Anthropic's five primitives for an agent that sleeps and wakes, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many",
+      "date": "2026-11-15",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/always-on-agents-at-team-scale.html",
+      "markdown": "https://newsroom.sgit.ai/articles/always-on-agents-at-team-scale.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/always-on-agents-at-team-scale.webp",
+      "teaser": "Anthropic's five primitives for always-on agents, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "agents",
+        "always-on-agents",
+        "anthropic",
+        "claude",
+        "architecture",
+        "web-summit",
+        "governance",
+        "riskmandate",
+        "article"
+      ],
+      "links_out": [
+        "an-inbox-only-your-agents-can-write-to",
+        "ten-days-at-web-summit",
+        "the-teams-operating-system",
+        "a-key-for-every-person",
+        "handing-secrets-to-agents",
+        "who-owns-the-stop-button"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "aoa-primitives.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/aoa-primitives.webp",
+          "caption": "Anthropic's five primitives for an always-on agent, beside what we built for around 250 agents at Web Summit.",
+          "kind": "comparison"
+        },
+        {
+          "file": "aoa-next.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/aoa-next.webp",
+          "caption": "Six problems a team of always-on agents meets that one agent per user does not, from our ten days.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "always-on-agents-at-team-scale",
+        "teaser": "Anthropic's five primitives for always-on agents, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "William Hu's Building always-on agents (Anthropic, 13 November 2026) rests on five primitives: event inbox, timers, memory, permissions and outbox. The Web Summit team built the same five for around 250 named agents from git, files, vaults and keys; the comparison shows where they agree, where the team got it wrong, and the next problems a team meets: agents starting agents, identity, stopping, many humans, observability and governance.",
+        "nodes": [
+          {
+            "id": "post",
+            "label": "Building always-on agents",
+            "kind": "artefact",
+            "summary": "Anthropic, 13 November 2026."
+          },
+          {
+            "id": "five",
+            "label": "Five primitives",
+            "kind": "concept",
+            "summary": "Inbox, timers, memory, permissions, outbox."
+          },
+          {
+            "id": "ours",
+            "label": "Our version",
+            "kind": "example",
+            "summary": "Git, files, vaults and keys, for 250 agents."
+          },
+          {
+            "id": "agree",
+            "label": "Where we agree",
+            "kind": "claim",
+            "summary": "Source of truth, lean memory, start quiet."
+          },
+          {
+            "id": "next",
+            "label": "The next problems",
+            "kind": "question",
+            "summary": "Teams, identity, stopping, humans, observability."
+          },
+          {
+            "id": "gov",
+            "label": "Governance",
+            "kind": "concept",
+            "summary": "Reach against mandate, above each call."
+          }
+        ],
+        "edges": [
+          {
+            "from": "five",
+            "to": "post",
+            "rel": "extends"
+          },
+          {
+            "from": "ours",
+            "to": "five",
+            "rel": "compared-with"
+          },
+          {
+            "from": "agree",
+            "to": "ours",
+            "rel": "extends"
+          },
+          {
+            "from": "ours",
+            "to": "next",
+            "rel": "leads-to"
+          },
+          {
+            "from": "next",
+            "to": "gov",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "ten-days-at-web-summit",
+            "the-teams-operating-system",
+            "an-inbox-only-your-agents-can-write-to",
+            "a-key-for-every-person",
+            "handing-secrets-to-agents",
+            "who-owns-the-stop-button"
+          ],
+          "pages": [],
+          "sites": [
+            "https://claude.com/resources/articles/building-always-on-agents"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "In the post's terms: a stop is an event, and it is only as fast as the timers.",
+            "why": "The next problems, once there are many."
+          },
+          {
+            "text": "An outbox that cannot decide nothing needs sending is noise, and noise hides the signal you need.",
+            "why": "Where we agree, and the evidence."
+          },
+          {
+            "text": "None of these are gaps in the post; they are what comes next",
+            "why": "The next problems, once there are many."
+          }
+        ]
+      }
+    },
+    {
       "slug": "every-hour-is-twenty-years",
       "title": "Every hour is twenty years: the human behind Know the Reach, and why making a song and its video with AI made them more Silvio Switha's, not less",
       "date": "2026-11-15",
@@ -377,6 +527,7 @@
         "web-summit-part-five"
       ],
       "links_in": [
+        "always-on-agents-at-team-scale",
         "ten-days-at-web-summit"
       ],
       "figures": [
@@ -878,6 +1029,7 @@
         "meetscribe"
       ],
       "links_in": [
+        "always-on-agents-at-team-scale",
         "every-hour-is-twenty-years",
         "know-the-reach",
         "the-teams-operating-system",
@@ -2794,6 +2946,7 @@
         "a-secret-is-a-qr-code"
       ],
       "links_in": [
+        "always-on-agents-at-team-scale",
         "the-teams-operating-system",
         "ten-days-at-web-summit",
         "web-summit-part-five"
@@ -3357,6 +3510,7 @@
         "a-directory-of-people-and-keys"
       ],
       "links_in": [
+        "always-on-agents-at-team-scale",
         "the-teams-operating-system",
         "ten-days-at-web-summit",
         "web-summit-part-five",
@@ -4674,6 +4828,7 @@
         "wso2-agent-manager-and-behaviour-policies"
       ],
       "links_in": [
+        "always-on-agents-at-team-scale",
         "the-book-is-on-leanpub",
         "resilience-when-the-workforce-includes-agents"
       ],
@@ -52416,6 +52571,7 @@
         "the-tokens-hook"
       ],
       "links_in": [
+        "always-on-agents-at-team-scale",
         "no-tech-stack-to-maintain",
         "seven-iam-predictions-already-here",
         "the-human-is-the-network",

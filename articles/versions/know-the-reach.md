@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-15 | minor | 1,004 | +39 / −14 words; 0 changed, 2 added, 1 removed paragraphs | this release | [what changed](know-the-reach/v1.1.0.md) · [current](../know-the-reach.md) |
+| **v1.1.0** | 2026-11-15 | minor | 1,004 | +39 / −14 words; 0 changed, 2 added, 1 removed paragraphs | [`dec14fe21`](https://github.com/SGit-AI/SGit-AI__Website/commit/dec14fe210e0020084c4dd52c66f81a801e00445) | [what changed](know-the-reach/v1.1.0.md) · [current](../know-the-reach.md) |
 | **v1.0.0** | 2026-11-15 | published | 979 | first published | [`cbf6e8678`](https://github.com/SGit-AI/SGit-AI__Website/commit/cbf6e867813f19f6df15bf087eb922aae46019b7) |  |
 
 [← Back to the article](../know-the-reach.md) · [All articles](../index.md)
