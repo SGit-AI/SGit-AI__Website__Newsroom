@@ -29,7 +29,9 @@ Know the Reach is RiskMandate's song, released in 2026 and [on Spotify now](http
 
 The first part runs for 53.4 seconds, cut from 14 new clips to the original song. It follows one protagonist through Lisbon, from night to morning. The software agent is shown as golden light, working on a specific email, specific tasks and specific resources, and there is a human reviewer who is clearly a different person from the agent. The opening instrumental is used to explain the product in English, and small labels then name what is on screen without competing with the sung subtitles.
 
-[Watch the first part on YouTube](https://youtu.be/BjN-K-C2fsw), and listen to the whole song [on Spotify](https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6).
+!youtube BjN-K-C2fsw ktr-poster.webp | Know the Reach, by RiskMandate: the first part of the music video, made by Silvio Switha.
+
+The whole song is [on Spotify](https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6). A human view of how it was made: [every hour is twenty years](/articles/every-hour-is-twenty-years.html).
 
 ## How it was made {#made}
 

@@ -115,6 +115,7 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#a-film-
 
 ### Continued by
 
+- [Every hour is twenty years: the human behind Know the Reach, and why making a song and its video with AI made them more Silvio Switha's, not less](every-hour-is-twenty-years.md) Know the Reach was made with AI and by a person: Silvio Switha, whose twenty years as a musician shaped every choice. AI changed the speed, not the vision.
 - [Know the Reach: RiskMandate has a song on Spotify, and its music video is being made with AI, shot by shot, from about 2,300 words of human direction; this is how the first part was made](know-the-reach.md) RiskMandate's song Know the Reach is on Spotify; the first 53 seconds of its video were made with AI from about 2,300 words of direction.
 
 [All articles](index.md) · [All graphs](graphs.md)

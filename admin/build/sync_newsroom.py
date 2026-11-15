@@ -91,6 +91,9 @@ in archive/ (archive.py makes it). Anything else in the way stops the run.
   14. An article's `!video <vault card> <folder> | <caption>` line, which sgit.ai's renderer leaves as a paragraph,
      becomes the player for a video streamed from a vault (admin/build/vault_video.py), in the page and every
      version of it, and a caption with a link in the markdown twins.
+  15. An article's `!youtube <video id> <poster> | <caption>` line becomes a click-to-play figure
+     (admin/build/youtube_embed.py): our own poster and a play button, and nothing fetched from YouTube until the
+     reader presses play; in the markdown twins, a caption and a link.
 """
 import argparse
 import hashlib
@@ -105,6 +108,7 @@ from urllib.parse import urlsplit, urlunsplit
 
 sys.path.insert(0, str(Path(__file__).parent))
 import vault_video  # noqa: E402  item 14: !video lines become players
+import youtube_embed  # noqa: E402  item 15: !youtube lines become click-to-play figures
 
 sys.path.insert(0, str(Path(__file__).parent))
 import ids  # noqa: E402
@@ -565,6 +569,7 @@ def transform(text, src_file, dest_file, kind):
         text = issue_foot(text, dest_file, "html")
         if dest_file.startswith("articles/"):
             text = vault_video.html_text(text, dest_file)        # item 14
+            text = youtube_embed.html_text(text, dest_file)      # item 15
     elif kind == "md":
         text = MD_LINK.sub(lambda m: m.group(1) + rewrite_url(m.group(2), src_file, dest_file) + m.group(3), text)
         m_own = re.fullmatch(r"articles/([^/]+)\.md", dest_file)
@@ -582,6 +587,7 @@ def transform(text, src_file, dest_file, kind):
         text = issue_foot(text, dest_file, "md")
         if dest_file.startswith("articles/"):
             text = vault_video.md_text(text)                       # item 14
+            text = youtube_embed.md_text(text)                     # item 15
     return text
 
 

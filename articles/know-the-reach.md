@@ -10,7 +10,7 @@
 
 # Know the Reach: RiskMandate has a song on Spotify, and its music video is being made with AI, shot by shot, from about 2,300 words of human direction; this is how the first part was made
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-15 · [article v1.0.0](versions/know-the-reach.md) · [newsroom v0.14.87](https://newsroom.sgit.ai/admin/versions.html) · riskmandatemusicvideoai-videorunwayweb-summitproductionarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-15 · [article v1.1.0, 2 versions](versions/know-the-reach.md) · [newsroom v0.14.87](https://newsroom.sgit.ai/admin/versions.html) · riskmandatemusicvideoai-videorunwayweb-summitproductionarticle
 
 ***Abstract:** RiskMandate now has a song on Spotify, Know the Reach, and a music video to go with it. The first part, 53 seconds of a song about three and a half minutes long, was made by Silvio Switha with AI, and its production audit is unusually complete. In the available chats, about 2,300 words of human direction led to 43 generated images, 16 generated motion clips and 21 edited video exports: almost 25 minutes of versioned material, not 25 minutes of unique AI footage. The video tells one story, a night in Lisbon turning to morning, with a software agent shown as golden light, a human reviewer, and the three words RiskMandate is about: reach, mandate and the gap between them. Eight decisions shaped it, from keeping the song as the timing reference to testing four fonts for a phone screen, and paid generation was kept to 1,236 Runway credits by reusing images and testing one eight-second clip first.*
 
@@ -33,7 +33,9 @@ Know the Reach is RiskMandate's song, released in 2026 and [on Spotify now](http
 
 The first part runs for 53.4 seconds, cut from 14 new clips to the original song. It follows one protagonist through Lisbon, from night to morning. The software agent is shown as golden light, working on a specific email, specific tasks and specific resources, and there is a human reviewer who is clearly a different person from the agent. The opening instrumental is used to explain the product in English, and small labels then name what is on screen without competing with the sung subtitles.
 
-[Watch the first part on YouTube](https://youtu.be/BjN-K-C2fsw), and listen to the whole song [on Spotify](https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6).
+*Video: Know the Reach, by RiskMandate: the first part of the music video, made by Silvio Switha.* [Watch it on YouTube](https://www.youtube.com/watch?v=BjN-K-C2fsw)
+
+The whole song is [on Spotify](https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6). A human view of how it was made: [every hour is twenty years](every-hour-is-twenty-years.md).
 
 ## How it was made
 
@@ -73,8 +75,13 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#know-t
 
 ### Builds on
 
+- [Every hour is twenty years: the human behind Know the Reach, and why making a song and its video with AI made them more Silvio Switha's, not less](every-hour-is-twenty-years.md) Know the Reach was made with AI and by a person: Silvio Switha, whose twenty years as a musician shaped every choice. AI changed the speed, not the vision.
 - [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](a-film-studio-on-a-laptop.md) Claude built, animated and rendered a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended laptop.
 - [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](ten-days-at-web-summit.md) Six people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.
+
+### Continued by
+
+- [Every hour is twenty years: the human behind Know the Reach, and why making a song and its video with AI made them more Silvio Switha's, not less](every-hour-is-twenty-years.md) Know the Reach was made with AI and by a person: Silvio Switha, whose twenty years as a musician shaped every choice. AI changed the speed, not the vision.
 
 [All articles](index.md) · [All graphs](graphs.md)
 
