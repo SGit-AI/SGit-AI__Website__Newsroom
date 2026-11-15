@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: Florent Daudens asks a sharp question: publishers now have the protocols, connectors, collective licences and telemetry standards, so where are the products? His answer is that "we need to move beyond licensing content and start selling capabilities", and his bet is connecting the news subscriptions people already pay for to their personal agents. I agree, and our own newsrooms point at what those capabilities can be. The Storm Charles site went from a voice brief to 2,618 pages in three days, every fact with its source and the time it was read: not articles, but a live, sourced picture of a crisis that people and agents could use. PrompTugal.news ran a newsroom of agent desks for Web Summit and is now going local: a site for Portugal, one for the Algarve and one for every Algarve town, each a lens on one shared semantic graph, which is a product a town, a business or an agent can use, not a stream of articles. And for Florent's open questions on access, permissions and payment, we have been building answers with keys people own, vaults opened by read keys, licences on every page, a meter that charges for what you read, and pages written for agents. This is our second reply to him.
-version: v999.0.0
+version: v0.14.106
 license: https://creativecommons.org/licenses/by/4.0/
 tags: publishers, agents, ai, journalism, promptugal, storm-charles, reply, article
 status: published

@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: PrompTugal.news is going local. This is the updated strategy, my answer to Vicky Wang's plan for local sites and the brief for the PrompTugal team. One set of agents, stories tagged by place, no agent per town, and every place on its own subdomain from the start, because there will be many and they must be made automatically: promptugal.news is the national site and carries Europe and the world, algarve.promptugal.news is the region, and every one of the Algarve's sixteen municipalities, and the city of Quarteira, gets its own site, faro.promptugal.news, loule.promptugal.news and so on. Each site is a lens on one shared semantic graph: the same stories, read from a different centre, so a Loulé story leads on Loulé's site and is a small item on the national one. Four rules keep it from escalating: the brand is always PrompTugal.news; every story passes the PrompTugal test, it connects to AI, directly or within two or three steps; place decides where a story shows and how big, AI decides whether it is ours at all; and every site opens with its mandate. The first wave is every town in the Algarve at once.
-version: v999.0.0
+version: v0.14.106
 license: https://creativecommons.org/licenses/by/4.0/
 tags: promptugal, local-news, algarve, knowledge-graph, strategy, newsroom, article
 status: published
