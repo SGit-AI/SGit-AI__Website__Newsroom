@@ -105,6 +105,8 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#atomic
 
 ### Continued by
 
+- [Spend fewer tokens: an agentic team's token bill is mostly a design choice, and the levers are files as memory, caching what repeats, code instead of models where you can, the right model for each step, no copy and paste, static outputs, and counting it all](spend-fewer-tokens.md) An agentic team's token bill is mostly a design choice: files as memory, caching, code where you can, the right model per step, static outputs, counting.
+- [A hub for agentic sites: every site AgentiCCells builds in a repository and an sgit vault, served at its own address, and listed on hub.agenticcells.site, where it can be found, promoted and copied as a template; with an orange grower as the first example](a-hub-for-agentic-sites.md) hub.agenticcells.site: every agentic site in a repository and an sgit vault, served at its own address, found, promoted and copied as a template.
 - [Stop copying and pasting between your agents: if you are the wire between your AI sessions you are the bottleneck, and the fix is agents that talk to each other through channels that keep a record, structure that scales your decisions, and outputs you read instead of everything](stop-copying-and-pasting-between-your-agents.md) If you copy and paste between AI sessions, you are the wire, and the bottleneck. Let agents talk through recorded channels; read outputs, not everything.
 
 [All articles](index.md) · [All graphs](graphs.md)

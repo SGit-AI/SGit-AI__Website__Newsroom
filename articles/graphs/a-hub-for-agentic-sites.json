@@ -1,0 +1,108 @@
+{
+  "slug": "a-hub-for-agentic-sites",
+  "teaser": "hub.agenticcells.site: every agentic site in a repository and an sgit vault, served at its own address, found, promoted and copied as a template.",
+  "topics": [
+    "startups-and-strategy",
+    "vaults-and-method"
+  ],
+  "core_idea": "AgentiCCells will list every agentic site it builds on hub.agenticcells.site, a code host for agentic sites: each site in a public repository and an identical sgit vault (cloneable, runnable locally, a distribution medium), served at the customer's domain or our subdomain, with a page per site and templates to copy, listed by consent. A separate agentic team builds it; the first example is a made-up Algarve orange grower selling wholesale with delivery.",
+  "nodes": [
+    {
+      "id": "hub",
+      "label": "The hub",
+      "kind": "artefact",
+      "summary": "hub.agenticcells.site."
+    },
+    {
+      "id": "two",
+      "label": "Two places",
+      "kind": "method",
+      "summary": "A repository and an sgit vault."
+    },
+    {
+      "id": "page",
+      "label": "A page per site",
+      "kind": "method",
+      "summary": "Owner, team, address, versions."
+    },
+    {
+      "id": "template",
+      "label": "Templates",
+      "kind": "concept",
+      "summary": "Copy a working site."
+    },
+    {
+      "id": "consent",
+      "label": "Consent",
+      "kind": "claim",
+      "summary": "Listed only if the owner wants."
+    },
+    {
+      "id": "oranges",
+      "label": "The orange grower",
+      "kind": "example",
+      "summary": "A made-up first customer."
+    }
+  ],
+  "edges": [
+    {
+      "from": "two",
+      "to": "hub",
+      "rel": "extends"
+    },
+    {
+      "from": "page",
+      "to": "hub",
+      "rel": "extends"
+    },
+    {
+      "from": "template",
+      "to": "page",
+      "rel": "extends"
+    },
+    {
+      "from": "consent",
+      "to": "hub",
+      "rel": "depends-on"
+    },
+    {
+      "from": "oranges",
+      "to": "hub",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "atomic-cells-end-to-end",
+      "starting-agenticcells",
+      "the-new-data-lake",
+      "reading-your-way-into-an-agentic-team"
+    ],
+    "pages": [],
+    "sites": [
+      "https://agenticcells.com/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A template is only useful if people can find it, see it working, and copy it.",
+      "why": "Why a hub."
+    },
+    {
+      "text": "Because our sites are static, a vault is a complete site",
+      "why": "Every site in two places."
+    },
+    {
+      "text": "Nothing is listed without its owner's consent",
+      "why": "Consent and promotion."
+    }
+  ],
+  "figures": [
+    {
+      "file": "hub-arch.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hub-arch.webp",
+      "caption": "A hub for agentic sites: a repository and an sgit vault kept identical, the live site, and a page on the hub.",
+      "kind": "architecture"
+    }
+  ]
+}

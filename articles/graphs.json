@@ -55,6 +55,286 @@
   ],
   "articles": [
     {
+      "slug": "spend-fewer-tokens",
+      "title": "Spend fewer tokens: an agentic team's token bill is mostly a design choice, and the levers are files as memory, caching what repeats, code instead of models where you can, the right model for each step, no copy and paste, static outputs, and counting it all",
+      "date": "2026-11-15",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/spend-fewer-tokens.html",
+      "markdown": "https://newsroom.sgit.ai/articles/spend-fewer-tokens.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/spend-fewer-tokens.webp",
+      "teaser": "An agentic team's token bill is mostly a design choice: files as memory, caching, code where you can, the right model per step, static outputs, counting.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "agents",
+        "tokens",
+        "cost",
+        "workflows",
+        "caching",
+        "models",
+        "agenticcells",
+        "article"
+      ],
+      "links_out": [
+        "stop-copying-and-pasting-between-your-agents",
+        "storm-charles-a-newsroom-built-in-a-night",
+        "always-on-agents-at-team-scale",
+        "six-setups-of-an-agentic-system",
+        "promptugal-news-the-newsroom-we-ran",
+        "atomic-cells-end-to-end"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "tok-levers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tok-levers.webp",
+          "caption": "Where an agentic team's tokens go and how to spend fewer, each lever with the evidence from our own runs.",
+          "kind": "infographic"
+        }
+      ],
+      "graph": {
+        "slug": "spend-fewer-tokens",
+        "teaser": "An agentic team's token bill is mostly a design choice: files as memory, caching, code where you can, the right model per step, static outputs, counting.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Most of an agentic team's token cost is design. From our runs: files as memory with hand-overs (106 on Storm Charles), caching repeated rules (98.7% of 3.84 billion tokens were cache reads), code instead of models where possible, the right model per step ($0.068 on open models against $1.99 on Sonnet), no pasted context, static outputs, and an accountant agent counting cost per role.",
+        "nodes": [
+          {
+            "id": "bill",
+            "label": "The token bill",
+            "kind": "question",
+            "summary": "Mostly a design choice."
+          },
+          {
+            "id": "files",
+            "label": "Files as memory",
+            "kind": "method",
+            "summary": "Short reads, hand-overs."
+          },
+          {
+            "id": "cache",
+            "label": "Caching",
+            "kind": "method",
+            "summary": "98.7% cache reads."
+          },
+          {
+            "id": "code",
+            "label": "Code where you can",
+            "kind": "method",
+            "summary": "A model only for judgement."
+          },
+          {
+            "id": "models",
+            "label": "Model per step",
+            "kind": "method",
+            "summary": "$0.068 against $1.99."
+          },
+          {
+            "id": "count",
+            "label": "Count it",
+            "kind": "method",
+            "summary": "An accountant agent."
+          }
+        ],
+        "edges": [
+          {
+            "from": "files",
+            "to": "bill",
+            "rel": "answers"
+          },
+          {
+            "from": "cache",
+            "to": "bill",
+            "rel": "answers"
+          },
+          {
+            "from": "code",
+            "to": "bill",
+            "rel": "answers"
+          },
+          {
+            "from": "models",
+            "to": "bill",
+            "rel": "answers"
+          },
+          {
+            "from": "count",
+            "to": "bill",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "stop-copying-and-pasting-between-your-agents",
+            "six-setups-of-an-agentic-system",
+            "always-on-agents-at-team-scale",
+            "storm-charles-a-newsroom-built-in-a-night",
+            "promptugal-news-the-newsroom-we-ran",
+            "atomic-cells-end-to-end"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "Most of it is design.",
+            "why": "The bill is a design choice."
+          },
+          {
+            "text": "A long conversation is an expensive memory",
+            "why": "Files as memory."
+          },
+          {
+            "text": "What is not measured grows.",
+            "why": "Count it."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-hub-for-agentic-sites",
+      "title": "A hub for agentic sites: every site AgentiCCells builds in a repository and an sgit vault, served at its own address, and listed on hub.agenticcells.site, where it can be found, promoted and copied as a template; with an orange grower as the first example",
+      "date": "2026-11-15",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-hub-for-agentic-sites.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-hub-for-agentic-sites.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-hub-for-agentic-sites.webp",
+      "teaser": "hub.agenticcells.site: every agentic site in a repository and an sgit vault, served at its own address, found, promoted and copied as a template.",
+      "topics": [
+        "startups-and-strategy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "agenticcells",
+        "hub",
+        "sgit",
+        "vaults",
+        "templates",
+        "websites",
+        "example",
+        "article"
+      ],
+      "links_out": [
+        "atomic-cells-end-to-end",
+        "the-new-data-lake",
+        "starting-agenticcells",
+        "reading-your-way-into-an-agentic-team"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "hub-arch.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hub-arch.webp",
+          "caption": "A hub for agentic sites: a repository and an sgit vault kept identical, the live site, and a page on the hub.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "a-hub-for-agentic-sites",
+        "teaser": "hub.agenticcells.site: every agentic site in a repository and an sgit vault, served at its own address, found, promoted and copied as a template.",
+        "topics": [
+          "startups-and-strategy",
+          "vaults-and-method"
+        ],
+        "core_idea": "AgentiCCells will list every agentic site it builds on hub.agenticcells.site, a code host for agentic sites: each site in a public repository and an identical sgit vault (cloneable, runnable locally, a distribution medium), served at the customer's domain or our subdomain, with a page per site and templates to copy, listed by consent. A separate agentic team builds it; the first example is a made-up Algarve orange grower selling wholesale with delivery.",
+        "nodes": [
+          {
+            "id": "hub",
+            "label": "The hub",
+            "kind": "artefact",
+            "summary": "hub.agenticcells.site."
+          },
+          {
+            "id": "two",
+            "label": "Two places",
+            "kind": "method",
+            "summary": "A repository and an sgit vault."
+          },
+          {
+            "id": "page",
+            "label": "A page per site",
+            "kind": "method",
+            "summary": "Owner, team, address, versions."
+          },
+          {
+            "id": "template",
+            "label": "Templates",
+            "kind": "concept",
+            "summary": "Copy a working site."
+          },
+          {
+            "id": "consent",
+            "label": "Consent",
+            "kind": "claim",
+            "summary": "Listed only if the owner wants."
+          },
+          {
+            "id": "oranges",
+            "label": "The orange grower",
+            "kind": "example",
+            "summary": "A made-up first customer."
+          }
+        ],
+        "edges": [
+          {
+            "from": "two",
+            "to": "hub",
+            "rel": "extends"
+          },
+          {
+            "from": "page",
+            "to": "hub",
+            "rel": "extends"
+          },
+          {
+            "from": "template",
+            "to": "page",
+            "rel": "extends"
+          },
+          {
+            "from": "consent",
+            "to": "hub",
+            "rel": "depends-on"
+          },
+          {
+            "from": "oranges",
+            "to": "hub",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "atomic-cells-end-to-end",
+            "starting-agenticcells",
+            "the-new-data-lake",
+            "reading-your-way-into-an-agentic-team"
+          ],
+          "pages": [],
+          "sites": [
+            "https://agenticcells.com/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A template is only useful if people can find it, see it working, and copy it.",
+            "why": "Why a hub."
+          },
+          {
+            "text": "Because our sites are static, a vault is a complete site",
+            "why": "Every site in two places."
+          },
+          {
+            "text": "Nothing is listed without its owner's consent",
+            "why": "Consent and promotion."
+          }
+        ]
+      }
+    },
+    {
       "slug": "stop-copying-and-pasting-between-your-agents",
       "title": "Stop copying and pasting between your agents: if you are the wire between your AI sessions you are the bottleneck, and the fix is agents that talk to each other through channels that keep a record, structure that scales your decisions, and outputs you read instead of everything",
       "date": "2026-11-15",
@@ -89,6 +369,7 @@
         "atomic-cells-end-to-end"
       ],
       "links_in": [
+        "spend-fewer-tokens",
         "dont-micromanage-your-agents"
       ],
       "figures": [
@@ -385,6 +666,8 @@
         "websites-you-own"
       ],
       "links_in": [
+        "spend-fewer-tokens",
+        "a-hub-for-agentic-sites",
         "stop-copying-and-pasting-between-your-agents"
       ],
       "figures": [
@@ -543,7 +826,9 @@
         "the-teams-operating-system",
         "promptugal-news-the-newsroom-we-ran"
       ],
-      "links_in": [],
+      "links_in": [
+        "a-hub-for-agentic-sites"
+      ],
       "figures": [
         {
           "file": "rdg-sites.webp",
@@ -696,6 +981,7 @@
         "the-teams-operating-system"
       ],
       "links_in": [
+        "a-hub-for-agentic-sites",
         "stop-copying-and-pasting-between-your-agents",
         "dont-micromanage-your-agents",
         "atomic-cells-end-to-end",
@@ -1044,6 +1330,7 @@
         "approve-at-altitude"
       ],
       "links_in": [
+        "spend-fewer-tokens",
         "atomic-cells-end-to-end",
         "reading-your-way-into-an-agentic-team",
         "starting-agenticcells",
@@ -1521,6 +1808,7 @@
         "a-market-for-sweets"
       ],
       "links_in": [
+        "a-hub-for-agentic-sites",
         "starting-agenticcells",
         "selling-mini-agentic-teams",
         "decide-then-buy",
@@ -1997,6 +2285,7 @@
         "always-on-agents-at-team-scale"
       ],
       "links_in": [
+        "spend-fewer-tokens",
         "dont-micromanage-your-agents",
         "reading-your-way-into-an-agentic-team",
         "an-agentic-console",
@@ -2189,6 +2478,7 @@
         "every-hour-is-twenty-years"
       ],
       "links_in": [
+        "spend-fewer-tokens",
         "an-agentic-console",
         "six-setups-of-an-agentic-system",
         "a-brain-you-arrive-at",
@@ -3743,6 +4033,7 @@
         "who-else-controls-ai-agents-at-web-summit"
       ],
       "links_in": [
+        "spend-fewer-tokens",
         "the-new-data-lake",
         "promptugal-news-the-newsroom-we-ran",
         "always-on-agents-at-team-scale",

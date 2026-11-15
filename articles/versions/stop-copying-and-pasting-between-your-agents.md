@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-15 | published | 1,264 | first published | this release | [current](../stop-copying-and-pasting-between-your-agents.md) |
+| **v1.0.0** | 2026-11-15 | published | 1,264 | first published | [`d8ad40aa0`](https://github.com/SGit-AI/SGit-AI__Website/commit/d8ad40aa02c9ed54c68a4a212e3e8f2f7bc9fd9b) | [current](../stop-copying-and-pasting-between-your-agents.md) |
 
 [← Back to the article](../stop-copying-and-pasting-between-your-agents.md) · [All articles](../index.md)
 

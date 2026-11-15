@@ -4,24 +4,26 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.101 · 412 articles since 2026-08-17; the newest is 2026-11-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 414 articles since 2026-08-17; the newest is 2026-11-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Stop copying and pasting between your agents: if you are the wire between your AI sessions you are the bottleneck, and the fix is agents that talk to each other through channels that keep a record, structure that scales your decisions, and outputs you read instead of everything](articles/stop-copying-and-pasting-between-your-agents.md), 2026-11-15, 5 min. If you copy and paste between AI sessions, you are the wire, and the bottleneck. Let agents talk through recorded channels; read outputs, not everything.
+- [Spend fewer tokens: an agentic team's token bill is mostly a design choice, and the levers are files as memory, caching what repeats, code instead of models where you can, the right model for each step, no copy and paste, static outputs, and counting it all](articles/spend-fewer-tokens.md), 2026-11-15, 4 min. An agentic team's token bill is mostly a design choice: files as memory, caching, code where you can, the right model per step, static outputs, counting.
 
 ## Five more
 
+- [A hub for agentic sites: every site AgentiCCells builds in a repository and an sgit vault, served at its own address, and listed on hub.agenticcells.site, where it can be found, promoted and copied as a template; with an orange grower as the first example](articles/a-hub-for-agentic-sites.md), Startups & strategy, 2026-11-15, 4 min.
+- [Stop copying and pasting between your agents: if you are the wire between your AI sessions you are the bottleneck, and the fix is agents that talk to each other through channels that keep a record, structure that scales your decisions, and outputs you read instead of everything](articles/stop-copying-and-pasting-between-your-agents.md), Working with agents, 2026-11-15, 5 min.
 - [Don't micromanage your agents: what changed for Vicky Wang when she stopped reading everything her agents did and started managing them, how her team was backed by agents from another team, and why every company will want specialist agents that support all its teams](articles/dont-micromanage-your-agents.md), Working with agents, 2026-11-15, 4 min.
 - [Atomic cells, end to end: the £500 website as AgentiCCells' first offering, an order on a queue, an agentic team that builds a public site, a customer who steers it from their browser with a key, and a handover, with no daily work for the founder](articles/atomic-cells-end-to-end.md), Startups & strategy, 2026-11-15, 6 min.
 - [Reading your way into an agentic team: eight public sites a new team should read before it builds anything, how an agent should read them, and ten questions to answer first, because our websites are its memory](articles/reading-your-way-into-an-agentic-team.md), Working with agents, 2026-11-15, 5 min.
-- [Starting AgentiCCells: a company that sets up small agentic teams, cells, in the customer's own environment, with a control centre, everything open and no state on our side; how it was named, researched, reviewed and set up in a day](articles/starting-agenticcells.md), The future of news, 2026-11-15, 7 min.
-- [An agentic console: a simulated control room for a team of agentic teams, with time you can rewind, accounts drawn as trust zones, stops that reach every agent, signed messages on three channels, and the console itself as an agent](articles/an-agentic-console.md), Working with agents, 2026-11-15, 7 min.
 
 ## The last five days
 
-### Sunday 15 November 2026 (16 articles)
+### Sunday 15 November 2026 (18 articles)
 
+- Working with agents: [Spend fewer tokens: an agentic team's token bill is mostly a design choice, and the levers are files as memory, caching what repeats, code instead of models where you can, the right model for each step, no copy and paste, static outputs, and counting it all](articles/spend-fewer-tokens.md), 4 min.
+- Startups & strategy: [A hub for agentic sites: every site AgentiCCells builds in a repository and an sgit vault, served at its own address, and listed on hub.agenticcells.site, where it can be found, promoted and copied as a template; with an orange grower as the first example](articles/a-hub-for-agentic-sites.md), 4 min.
 - Working with agents: [Stop copying and pasting between your agents: if you are the wire between your AI sessions you are the bottleneck, and the fix is agents that talk to each other through channels that keep a record, structure that scales your decisions, and outputs you read instead of everything](articles/stop-copying-and-pasting-between-your-agents.md), 5 min.
 - Working with agents: [Don't micromanage your agents: what changed for Vicky Wang when she stopped reading everything her agents did and started managing them, how her team was backed by agents from another team, and why every company will want specialist agents that support all its teams](articles/dont-micromanage-your-agents.md), 4 min.
 - Startups & strategy: [Atomic cells, end to end: the £500 website as AgentiCCells' first offering, an order on a queue, an agentic team that builds a public site, a customer who steers it from their browser with a key, and a handover, with no daily work for the founder](articles/atomic-cells-end-to-end.md), 6 min.
@@ -73,13 +75,13 @@ What an agent may do, who carries the risk, and how a policy is enforced: RiskMa
 - [False positives and the harness: an answer to a question at hack::soho, why a behaviour policy that runs from the network up to the business logic should refuse less of what is right and more of what is wrong, and why a policy that changes with the code becomes a calibrator for bugs](articles/false-positives-and-the-harness.md), 2026-11-02.
 - [The grant, not the prompt: a technical user believed Claude could only read his email when he asked, and in an unrelated chat it listed his inbox, the gap between mandate and reach that RiskMandate is built to close](articles/the-grant-not-the-prompt.md), 2026-11-02.
 
-### [Working with agents](sections/agents/index.md) (57)
+### [Working with agents](sections/agents/index.md) (58)
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
+- [Spend fewer tokens: an agentic team's token bill is mostly a design choice, and the levers are files as memory, caching what repeats, code instead of models where you can, the right model for each step, no copy and paste, static outputs, and counting it all](articles/spend-fewer-tokens.md), 2026-11-15.
 - [Stop copying and pasting between your agents: if you are the wire between your AI sessions you are the bottleneck, and the fix is agents that talk to each other through channels that keep a record, structure that scales your decisions, and outputs you read instead of everything](articles/stop-copying-and-pasting-between-your-agents.md), 2026-11-15.
 - [Don't micromanage your agents: what changed for Vicky Wang when she stopped reading everything her agents did and started managing them, how her team was backed by agents from another team, and why every company will want specialist agents that support all its teams](articles/dont-micromanage-your-agents.md), 2026-11-15.
 - [Reading your way into an agentic team: eight public sites a new team should read before it builds anything, how an agent should read them, and ten questions to answer first, because our websites are its memory](articles/reading-your-way-into-an-agentic-team.md), 2026-11-15.
 - [An agentic console: a simulated control room for a team of agentic teams, with time you can rewind, accounts drawn as trust zones, stops that reach every agent, signed messages on three channels, and the console itself as an agent](articles/an-agentic-console.md), 2026-11-15.
-- [Six setups of an agentic system: from a single task to one agent, sub-agents, several sessions, a conductor and its team, and conductors of conductors, with the altitudes of a run inside each and command and control growing at every step](articles/six-setups-of-an-agentic-system.md), 2026-11-15.
 
 ### [sgit & vaults](sections/vaults/index.md) (39)
 Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vault, and what it does that Git does not.
@@ -97,13 +99,13 @@ Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta
 - [One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes](articles/the-book-is-on-leanpub.md), 2026-11-14.
 - [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](articles/storm-charles-a-newsroom-built-in-a-night.md), 2026-11-11.
 
-### [Startups & strategy](sections/strategy/index.md) (94)
+### [Startups & strategy](sections/strategy/index.md) (95)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
+- [A hub for agentic sites: every site AgentiCCells builds in a repository and an sgit vault, served at its own address, and listed on hub.agenticcells.site, where it can be found, promoted and copied as a template; with an orange grower as the first example](articles/a-hub-for-agentic-sites.md), 2026-11-15.
 - [Atomic cells, end to end: the £500 website as AgentiCCells' first offering, an order on a queue, an agentic team that builds a public site, a customer who steers it from their browser with a key, and a handover, with no daily work for the founder](articles/atomic-cells-end-to-end.md), 2026-11-15.
 - [Selling mini agentic teams: a business that sets up small agentic teams for companies, sized from one agent to a network, with a control centre to see them and to start and stop them, PrompTugal as the first customer and Agent Behaviour Policies as the most demanding version](articles/selling-mini-agentic-teams.md), 2026-11-15.
 - [Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in](articles/decide-then-buy.md), 2026-11-15.
 - [The new data lake: many small append-only lanes instead of one big lake, a curator agent that turns their rows into a semantic graph, and a graph that draws its own infographics, as we ran it at Web Summit](articles/the-new-data-lake.md), 2026-11-15.
-- [A market for sweets: the opposite of a market for lemons, a semantic graph for one financial decision that gives the buyer the evidence, an agent that gathers and weighs but never trades, and the judo move of leaving the trade to others](articles/a-market-for-sweets.md), 2026-11-15.
 
 ### [Engineering this newsroom](sections/building/index.md) (47)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.

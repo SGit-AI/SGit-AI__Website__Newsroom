@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-94 articles, newest first.
+95 articles, newest first.
 
 ## November 2026
 
+- [A hub for agentic sites: every site AgentiCCells builds in a repository and an sgit vault, served at its own address, and listed on hub.agenticcells.site, where it can be found, promoted and copied as a template; with an orange grower as the first example](../../articles/a-hub-for-agentic-sites.md), 2026-11-15, 4 min.
 - [Atomic cells, end to end: the £500 website as AgentiCCells' first offering, an order on a queue, an agentic team that builds a public site, a customer who steers it from their browser with a key, and a handover, with no daily work for the founder](../../articles/atomic-cells-end-to-end.md), 2026-11-15, 6 min.
 - [Selling mini agentic teams: a business that sets up small agentic teams for companies, sized from one agent to a network, with a control centre to see them and to start and stop them, PrompTugal as the first customer and Agent Behaviour Policies as the most demanding version](../../articles/selling-mini-agentic-teams.md), 2026-11-15, 6 min.
 - [Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in](../../articles/decide-then-buy.md), 2026-11-15, 4 min.

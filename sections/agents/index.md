@@ -2,10 +2,11 @@
 
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
 
-57 articles, newest first.
+58 articles, newest first.
 
 ## November 2026
 
+- [Spend fewer tokens: an agentic team's token bill is mostly a design choice, and the levers are files as memory, caching what repeats, code instead of models where you can, the right model for each step, no copy and paste, static outputs, and counting it all](../../articles/spend-fewer-tokens.md), 2026-11-15, 4 min.
 - [Stop copying and pasting between your agents: if you are the wire between your AI sessions you are the bottleneck, and the fix is agents that talk to each other through channels that keep a record, structure that scales your decisions, and outputs you read instead of everything](../../articles/stop-copying-and-pasting-between-your-agents.md), 2026-11-15, 5 min.
 - [Don't micromanage your agents: what changed for Vicky Wang when she stopped reading everything her agents did and started managing them, how her team was backed by agents from another team, and why every company will want specialist agents that support all its teams](../../articles/dont-micromanage-your-agents.md), 2026-11-15, 4 min.
 - [Reading your way into an agentic team: eight public sites a new team should read before it builds anything, how an agent should read them, and ten questions to answer first, because our websites are its memory](../../articles/reading-your-way-into-an-agentic-team.md), 2026-11-15, 5 min.

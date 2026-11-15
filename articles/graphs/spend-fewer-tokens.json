@@ -1,0 +1,108 @@
+{
+  "slug": "spend-fewer-tokens",
+  "teaser": "An agentic team's token bill is mostly a design choice: files as memory, caching, code where you can, the right model per step, static outputs, counting.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Most of an agentic team's token cost is design. From our runs: files as memory with hand-overs (106 on Storm Charles), caching repeated rules (98.7% of 3.84 billion tokens were cache reads), code instead of models where possible, the right model per step ($0.068 on open models against $1.99 on Sonnet), no pasted context, static outputs, and an accountant agent counting cost per role.",
+  "nodes": [
+    {
+      "id": "bill",
+      "label": "The token bill",
+      "kind": "question",
+      "summary": "Mostly a design choice."
+    },
+    {
+      "id": "files",
+      "label": "Files as memory",
+      "kind": "method",
+      "summary": "Short reads, hand-overs."
+    },
+    {
+      "id": "cache",
+      "label": "Caching",
+      "kind": "method",
+      "summary": "98.7% cache reads."
+    },
+    {
+      "id": "code",
+      "label": "Code where you can",
+      "kind": "method",
+      "summary": "A model only for judgement."
+    },
+    {
+      "id": "models",
+      "label": "Model per step",
+      "kind": "method",
+      "summary": "$0.068 against $1.99."
+    },
+    {
+      "id": "count",
+      "label": "Count it",
+      "kind": "method",
+      "summary": "An accountant agent."
+    }
+  ],
+  "edges": [
+    {
+      "from": "files",
+      "to": "bill",
+      "rel": "answers"
+    },
+    {
+      "from": "cache",
+      "to": "bill",
+      "rel": "answers"
+    },
+    {
+      "from": "code",
+      "to": "bill",
+      "rel": "answers"
+    },
+    {
+      "from": "models",
+      "to": "bill",
+      "rel": "answers"
+    },
+    {
+      "from": "count",
+      "to": "bill",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "stop-copying-and-pasting-between-your-agents",
+      "six-setups-of-an-agentic-system",
+      "always-on-agents-at-team-scale",
+      "storm-charles-a-newsroom-built-in-a-night",
+      "promptugal-news-the-newsroom-we-ran",
+      "atomic-cells-end-to-end"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "Most of it is design.",
+      "why": "The bill is a design choice."
+    },
+    {
+      "text": "A long conversation is an expensive memory",
+      "why": "Files as memory."
+    },
+    {
+      "text": "What is not measured grows.",
+      "why": "Count it."
+    }
+  ],
+  "figures": [
+    {
+      "file": "tok-levers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tok-levers.webp",
+      "caption": "Where an agentic team's tokens go and how to spend fewer, each lever with the evidence from our own runs.",
+      "kind": "infographic"
+    }
+  ]
+}
