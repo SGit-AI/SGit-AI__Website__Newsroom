@@ -1,0 +1,31 @@
+{
+ "slug": "the-new-data-lake",
+ "teaser": "The new data lake: append-only lanes instead of one lake, a curator agent that builds a semantic graph, and a graph that draws its own infographics.",
+ "topics": ["graphs-and-knowledge", "vaults-and-method"],
+ "core_idea": "The next data lake is many small append-only lanes of signed rows, a curator agent that turns them into a semantic graph whose every node points back at its rows, and a graph that draws its own pictures; insight is a claim with its evidence. PrompTugal.news and Storm Charles ran this way in November 2026.",
+ "nodes": [
+  {"id": "swamp", "label": "The swamp", "kind": "question", "summary": "Much data, little meaning."},
+  {"id": "lanes", "label": "Append-only lanes", "kind": "method", "summary": "Signed rows, the past never edited."},
+  {"id": "curator", "label": "Curator agent", "kind": "method", "summary": "Rows into a graph."},
+  {"id": "graph", "label": "Semantic graph", "kind": "concept", "summary": "Every node points at its rows."},
+  {"id": "pictures", "label": "Pictures", "kind": "artefact", "summary": "Charts and infographics from the graph."},
+  {"id": "ptn", "label": "PrompTugal.news", "kind": "example", "summary": "104 captures, 64 candidates, 877 entities."}
+ ],
+ "edges": [
+  {"from": "lanes", "to": "swamp", "rel": "answers"},
+  {"from": "lanes", "to": "curator", "rel": "leads-to"},
+  {"from": "curator", "to": "graph", "rel": "produces"},
+  {"from": "graph", "to": "pictures", "rel": "produces"},
+  {"from": "ptn", "to": "curator", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["promptugal-news-the-newsroom-we-ran", "storm-charles-a-newsroom-built-in-a-night", "the-teams-operating-system", "a-brain-you-arrive-at"],
+  "pages": [],
+  "sites": ["https://dev.vault.sgraph.ai/", "https://promptugal.news/newsroom/"]
+ },
+ "quotes": [
+  {"text": "A lane is a claim, not a fact, until something checks it.", "why": "Lanes, not a lake."},
+  {"text": "People do not read graphs; they read pictures.", "why": "A graph that draws its own pictures."},
+  {"text": "An insight is a claim with its evidence", "why": "Insight, with its evidence."}
+ ]
+}

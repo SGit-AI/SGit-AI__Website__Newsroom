@@ -1,0 +1,31 @@
+{
+ "slug": "a-brain-you-arrive-at",
+ "teaser": "A company brain is made for one company, division and team, and you arrive at it: start with a person's, then a team's. We already ran one.",
+ "topics": ["agents-and-policy", "graphs-and-knowledge"],
+ "core_idea": "A company brain for information, decisions and insights has to be made for one company, division and team, and is reached, not started: a person's brain, then a team's, a division's and the organisation's, each with the same three parts and the same building blocks (agents with keys, append-only lanes, a semantic graph, vaults, apps). The Web Summit team ran one, with conductors asking conductors.",
+ "nodes": [
+  {"id": "brain", "label": "Company brain", "kind": "concept", "summary": "Information, decisions, insights."},
+  {"id": "custom", "label": "Made for one company", "kind": "claim", "summary": "Sector, division and team specific."},
+  {"id": "arrive", "label": "You arrive at it", "kind": "method", "summary": "Person, team, division, organisation."},
+  {"id": "ws", "label": "Web Summit team", "kind": "example", "summary": "Conductors asking conductors."},
+  {"id": "blocks", "label": "Building blocks", "kind": "concept", "summary": "Agents, lanes, graph, vaults, apps."},
+  {"id": "demo", "label": "The demo", "kind": "artefact", "summary": "A public vault with made-up data."}
+ ],
+ "edges": [
+  {"from": "custom", "to": "brain", "rel": "extends"},
+  {"from": "arrive", "to": "brain", "rel": "extends"},
+  {"from": "ws", "to": "arrive", "rel": "example-of"},
+  {"from": "blocks", "to": "brain", "rel": "produces"},
+  {"from": "demo", "to": "brain", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["ten-days-at-web-summit", "the-teams-operating-system", "an-inbox-only-your-agents-can-write-to", "what-can-your-agent-reach", "always-on-agents-at-team-scale"],
+  "pages": [],
+  "sites": ["https://dev.vault.sgraph.ai/"]
+ },
+ "quotes": [
+  {"text": "A generic brain that fits everyone fits no one.", "why": "Made for one company, not bought for all."},
+  {"text": "You do not start with a brain for the whole organisation; you arrive at it.", "why": "You arrive at the brain."},
+  {"text": "a brain you have to go to a desk for is not used", "why": "The building blocks."}
+ ]
+}

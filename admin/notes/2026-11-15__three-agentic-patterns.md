@@ -1,0 +1,8 @@
+# Three agentic patterns: a brain you arrive at, the new data lake, a market for sweets
+
+Requested by Dinis, 15 November 2026, with a friend who has worked in crypto for almost eleven years (unnamed at Dinis's word that it be generic and non-confidential; his company, its platform and the people he mentioned are not named). Dinis: three articles (the company brain, made per company and arrived at from person to team to organisation; data intelligence, the new data lake; and a semantic graph for one decision, the opposite of a market for lemons, "everything apart from the trade"), plus a demo vault for all three, with financial decisions wider than crypto.
+
+- Demo vault: card admin/content/vaults/agentic-patterns.json (vault cib1n1ha, public read key); source folder in the writer's scratchpad (demo/agentic-patterns: index.html with content.json inlined, app.json, README.md); vault key in ~/.newsroom-writer/agentic-patterns.init.txt, never in a repository. Verified: read-only clone matches; the vault app opens it read-only and renders.
+- Facts used: Web Summit examples from the Ten days series and Dinis's account (conductor to conductors to collect contacts; answers through vaults); PrompTugal.news figures from its repository and live newsroom page (104 captures, 64 candidates, 73 articles, 877 entities, 1,026 edges); Storm Charles 2,618 pages. "61,000 new tokens a day" is the friend's figure, attributed and unchecked. Left out: platform revenue figures and a friend-of-a-friend trading anecdote (unverifiable).
+- Akerlof, The Market for "Lemons", QJE 1970.
+- Figures: abr-levels, ndl-flow, mfs-lemons, mfs-judo; screenshots dmo-brain, dmo-lake, dmo-sweets, dmo-token.

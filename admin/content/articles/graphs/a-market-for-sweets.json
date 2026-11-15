@@ -1,0 +1,31 @@
+{
+ "slug": "a-market-for-sweets",
+ "teaser": "The opposite of a market for lemons: a semantic graph for one financial decision, an agent that gathers but never trades, and the person decides.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "Akerlof's market for lemons, where sellers know more than buyers, is extreme in new token markets. A market for sweets gives the buyer a semantic graph for one decision, each piece of evidence with source, age and direction, checked against the person's own rules; the agent's reach and mandate exclude trading, and the business does everything apart from the trade, leaving execution to existing platforms.",
+ "nodes": [
+  {"id": "lemons", "label": "Market for lemons", "kind": "concept", "summary": "Sellers know more than buyers."},
+  {"id": "tokens", "label": "New tokens", "kind": "example", "summary": "About 61,000 a day, many traps."},
+  {"id": "sweets", "label": "Market for sweets", "kind": "concept", "summary": "The buyer gets the evidence."},
+  {"id": "graph", "label": "Decision graph", "kind": "method", "summary": "Evidence with source, age, direction."},
+  {"id": "mandate", "label": "No trading mandate", "kind": "claim", "summary": "The agent gathers and weighs."},
+  {"id": "judo", "label": "The judo move", "kind": "method", "summary": "Everything but the trade."}
+ ],
+ "edges": [
+  {"from": "tokens", "to": "lemons", "rel": "example-of"},
+  {"from": "sweets", "to": "lemons", "rel": "contrasts"},
+  {"from": "graph", "to": "sweets", "rel": "produces"},
+  {"from": "mandate", "to": "graph", "rel": "depends-on"},
+  {"from": "judo", "to": "sweets", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["promptugal-news-the-newsroom-we-ran", "what-can-your-agent-reach", "the-grant-not-the-prompt", "a-brain-you-arrive-at", "the-new-data-lake"],
+  "pages": [],
+  "sites": ["https://dev.vault.sgraph.ai/"]
+ },
+ "quotes": [
+  {"text": "Before the trade, you compete with nobody", "why": "The judo move: everything but the trade."},
+  {"text": "We do not make decisions for you; we give you enough evidence that you can", "why": "The judo move: everything but the trade."},
+  {"text": "I would call it a market for sweets.", "why": "A market for sweets."}
+ ]
+}
