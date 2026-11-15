@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: The companion to stop copying and pasting between your agents is about cost. People running agentic teams often find the token bill grows faster than the work, and most of it is a design choice, not a law of nature. From our own runs, the levers are clear. Keep state in files, so each run starts from a short read rather than a long conversation: the Storm Charles site handed roles to fresh sessions 106 times, because starting again is cheaper than remembering. Cache what repeats: 98.7% of that site's 3.84 billion tokens were cache reads. Use plain code where you can and a model only where judgement is needed: in our Swarm demo a code step took 398 milliseconds and a single model call cost a fiftieth of a cent. Use the right model for each step: a storm-scale Swarm run cost 0.068 dollars on open models against 1.99 dollars on Sonnet. Stop pasting long context between sessions. Build static outputs, which cost nothing to read. And count it: our newsroom's accountant agent read every role's cost every three hours. Setting up workflows like this is part of what AgentiCCells sells.
-version: v999.0.0
+version: v0.14.102
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, tokens, cost, workflows, caching, models, agenticcells, article
 status: published

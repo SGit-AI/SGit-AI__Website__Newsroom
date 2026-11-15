@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: I want to build many small agentic websites, several a day, for customers and for ourselves, and each one will also be a template someone else could copy. So they need a home: a hub, like a code host for agentic sites, at hub.agenticcells.site. Every site lives in two places, a public repository and an sgit vault holding the same files, which makes the hub our first real integration with sgit: a vault can be cloned, opened locally because the sites are static, and handed on, so in the beginning vaults can be the distribution medium. Each site has a page on the hub with its owner, the team that built it, its live address on the customer's own domain or our subdomain, its repository and vault, its licence and its versions, and a site marked as a template shows how to copy it. Customers are listed only if they want to be, and for most of the people I work with, a place on the hub is a benefit. A separate agentic team will build it, and the first example to list is an orange grower in the Algarve who sells wholesale with delivery, a made-up customer played by me.
-version: v999.0.0
+version: v0.14.102
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agenticcells, hub, sgit, vaults, templates, websites, example, article
 status: published
