@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: On 13 November, William Hu of Anthropic published Building always-on agents, the patterns Anthropic recommends for agents that sleep, wake on an event, do their work and go back to sleep. It rests on five primitives: an event inbox, timers, memory, permissions and an outbox. Reading it, I recognised every box, because in the ten days around Web Summit six of us ran around 250 named agents on the same shape, built from different material: git, files, encrypted vaults and keys instead of database tables and workers. This is a side-by-side comparison, not a claim that ours is better: where we agree, with evidence from our own records; where we got it wrong, such as a newsroom that kept running for nine days on "nothing new"; and the next problems the post's one-agent-per-user design does not need to answer yet, but a team does: agents starting agents, identity, stopping a hundred of them at once, many humans, seeing what happened, and governance. We run on Claude Code, so some of the post's answers are literally what protected our agents.
-version: v999.0.0
+version: v0.14.90
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, always-on-agents, anthropic, claude, architecture, web-summit, governance, riskmandate, article
 status: published
