@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: Around Web Summit, our agents built native apps, which I had not expected them to do so fast. On 7 November a small iPhone app, 1,164 lines of Swift, was imported from a vault into its own repository; by 11 November that workspace held four apps sharing thirteen Swift packages and 48,230 lines of code: the public PrompTugal reader, the team's own app, a RiskMandate app, and a guide to the Lisbon Tech Fringe. Every push to the development branch uploaded a build to TestFlight. Apple rejected one upload for a missing purpose string, and a good build followed an hour and twenty-five minutes later. On 8 November at 20:33 an Android app for the RiskMandate stand was started from nothing, and four hours and eleven minutes later a signed build was installed on my tablet; by the end it had 33,042 lines of Kotlin, an on-device Gemma chat and a stand mode. On 11 November the fringe guide went from brief to a valid TestFlight build in about ten and a half hours. This is the fourth article in the Ten days series.
-version: v999.0.0
+version: v0.14.103
 license: https://creativecommons.org/licenses/by/4.0/
 tags: ios, android, apps, agents, testflight, web-summit, promptugal, series, article
 status: published
