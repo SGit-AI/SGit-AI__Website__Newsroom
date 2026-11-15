@@ -6,7 +6,7 @@ Founders, funding, open source economics, Wardley maps, Portugal and Europe, leg
 
 ## November 2026
 
-- [Selling mini agentic teams: a business that sets up small agentic teams for companies, sized from one agent to a network, with a control centre to see them and to start and stop them, PrompTugal as the first customer and Agent Behaviour Policies as the most demanding version](../../articles/selling-mini-agentic-teams.md), 2026-11-15, 5 min.
+- [Selling mini agentic teams: a business that sets up small agentic teams for companies, sized from one agent to a network, with a control centre to see them and to start and stop them, PrompTugal as the first customer and Agent Behaviour Policies as the most demanding version](../../articles/selling-mini-agentic-teams.md), 2026-11-15, 6 min.
 - [Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in](../../articles/decide-then-buy.md), 2026-11-15, 4 min.
 - [The new data lake: many small append-only lanes instead of one big lake, a curator agent that turns their rows into a semantic graph, and a graph that draws its own infographics, as we ran it at Web Summit](../../articles/the-new-data-lake.md), 2026-11-15, 4 min.
 - [A market for sweets: the opposite of a market for lemons, a semantic graph for one financial decision that gives the buyer the evidence, an agent that gathers and weighs but never trades, and the judo move of leaving the trade to others](../../articles/a-market-for-sweets.md), 2026-11-15, 5 min.

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-15 | published | 1,117 | first published | this release | [current](../six-setups-of-an-agentic-system.md) |
+| **v1.0.0** | 2026-11-15 | published | 1,117 | first published | [`b4b8a7494`](https://github.com/SGit-AI/SGit-AI__Website/commit/b4b8a749454c1b81d55511c4a66d56a0f0cddab2) | [current](../six-setups-of-an-agentic-system.md) |
 
 [← Back to the article](../six-setups-of-an-agentic-system.md) · [All articles](../index.md)
 

@@ -1,0 +1,85 @@
+---
+title: An agentic console: a simulated control room for a team of agentic teams, with time you can rewind, accounts drawn as trust zones, stops that reach every agent, signed messages on three channels, and the console itself as an agent
+date: 2026-11-15
+author: Dinis Cruz
+author_url: about/index.html
+summary: What we would sell is an agentic brain: a set of agentic teams that runs the work. But a customer cannot buy what they cannot see or control, so the thing that makes it sellable is a console: a control room for agents, the way a power station or a cloud has one. To show what I mean, this newsroom built a simulated console in a public vault, shaped on our Web Summit team. It draws the ten accounts the six of us used as trust zones, with a conductor and its agents inside each. It shows who is running, on which model, with how many commits, and messages on the three channels our agents use: files in the repository, commit messages and vault append lanes, each signed by its agent's key. It has time: a slider over the ten days and five scenarios to replay, including the Big Stop, because when everything is JSON and markdown you can go back to any moment. It has stop buttons that say when each agent will actually stop, a view for each person, and a talk box, because the console is an agent too. We have, in a sense, already delivered this brain several times: to ruv.sgit.ai, to the book, to Web Summit, with RiskMandate as a partner and PrompTugal.news as its first customer.
+version: v999.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+tags: agentic-console, control-room, agents, command-and-control, situation-awareness, vaults, demo, article
+status: published
+---
+
+!shot acs-network.webp | images/ | The agentic console: ten accounts as trust zones, every agent as a dot, signed messages and a time slider. | screenshot
+
+## In short {#in-short}
+
+- **What we sell is an agentic brain;** what makes it sellable is a console to see it and control it.
+- **We built a simulated one,** [in a public vault](https://dev.vault.sgraph.ai/#sgit_public_read_9665e7ef2d7200078c312216d88e79111907a11dd05ecb83ce7b728a6a60779f%3Auqgr2se3), shaped on our Web Summit team.
+- **It has time:** rewind to any moment of the ten days, or replay five scenarios, including the Big Stop.
+- **It draws accounts as trust zones,** with a conductor and its agents inside each, and their models, state and commits.
+- **It shows the conversation:** messages on three channels, each signed by its agent's key, and stops that say when they land.
+- **The console is an agent too,** with its own key, and it can run on your own device.
+
+## A control room for agents {#why}
+
+I have always wanted a console like the ones in a power station, or the tablet that shows every room's temperature and lets you switch things on and off, but for a cloud: one place where I can see everything and start and stop it. With agents, it stops being a nice-to-have.
+
+What we would sell is an agentic brain: a set of agentic teams, made for one company, that runs its work ([a brain you arrive at](/articles/a-brain-you-arrive-at.html), [selling mini agentic teams](/articles/selling-mini-agentic-teams.html)). But a customer cannot buy a brain they cannot see or control. They need to know what is running, see what the agents are saying to each other, make decisions, and be able to stop it. That is the console, and I think it is the thing that sells.
+
+## Customers we already have {#customers}
+
+!shot acs-customers.webp | images/ | Read backwards: ruv.sgit.ai, the book, Web Summit, RiskMandate as a partner, PrompTugal.news as the first customer. | timeline
+
+Reading our own history backwards, we have already delivered this brain several times. The first was [ruv.sgit.ai](/articles/agentics-ready-to-sell.html), the first time I had an agentic team running on a loop. The second was the book: nine agents built my talk in nineteen hours, and [the book that tells it](/articles/the-book-is-on-leanpub.html) was written the same way. The third was [Web Summit](/articles/ten-days-at-web-summit.html), with around 250 named agents for six people.
+
+Then come two different kinds of relationship. RiskMandate used the open method for its Agent Behaviour Policies: it is more a partner than a customer. [PrompTugal.news](/articles/promptugal-news-the-newsroom-we-ran.html) is a customer: a newsroom that needs a network of agentic teams of different sizes. What all of them needed, and what we had to build piece by piece, is a way to see and control the agents.
+
+## The console, walked through {#console}
+
+I asked for a console that simulates what this would look like, using the people, accounts and agents we really had. Here is what [the vault](https://dev.vault.sgraph.ai/#sgit_public_read_9665e7ef2d7200078c312216d88e79111907a11dd05ecb83ce7b728a6a60779f%3Auqgr2se3) does.
+
+**The universe, as trust zones.** The six of us worked from ten accounts: three of mine, two each for Angelo Leggio and Vicky Wang, and one each for José Bota, Indi Gupte and Silvio Switha. Each account is drawn as a dashed box, a trust zone in threat-modelling terms, because everything inside it shares that account's access and credit. Each one has a conductor, `conductor.a@web-summit.dinis` and so on, and the agents it runs, with the names from the team site's public keys. At the top of the screen: how many accounts are active, how many agents are running out of how many, how many are stopped, commits so far, messages in the last hour, and which models are running.
+
+**Zoom.** Click an account and you see its conductor and agents in a table: model, state, how long each has been running, commits, its key, and a stop button. Below it, the account's board, as it stood at that moment. Click an agent and you see its identity, its runs across the ten days, and its latest messages. These are the altitudes from [six setups of an agentic system](/articles/six-setups-of-an-agentic-system.html): the network of conductors, a conductor and its agents, one agent.
+
+!shot acs-account.webp | images/ | One account zoomed in: the conductor and its agents, their models, state, commits and keys, and the board. | screenshot
+
+**The conversation.** Our agents talk in three ways: files they leave in a repository, messages in their commits, and append lanes in encrypted vaults. The console shows all three, filterable, each with the sender, the receiver and a signature checked against the sender's public key. The Flow view draws the last hour of messages between accounts, so you can see the work moving.
+
+!shot acs-flow.webp | images/ | The Flow view during "collect every contact": one request from the console fans out to every account. | screenshot
+
+**Time.** This is the part I care about most. Everything we do is JSON and markdown files, so any moment can be shown again. The console has a slider over the ten days and five scenarios to replay: a normal morning; collecting every contact, where one message to my conductor fans out to every other conductor and their agents and comes back sealed; the Big Stop; storm night, when the incident agents spun up; and the hand brake. Every view, the dots, the numbers, the boards, the messages, shows the state at the moment you choose.
+
+**Stops that tell the truth.** At 23:30 on 9 November we paused every agent, and each one stopped only at its next wake, 5 to 33 minutes later. The console shows that honestly: an agent goes into "stopping" with the time it will actually stop, then into "stopped". You can stop one agent, one account or everything in view, and allow them to wake again.
+
+!shot acs-bigstop.webp | images/ | The Big Stop replayed: every agent stopping or stopped, and the decision log showing when each stop lands. | screenshot
+
+**A view for each person.** Choose who you are and the console shows your own zones and dims the rest: I see all ten accounts, and Vicky sees her two. The same console, a different scope.
+
+**The console is an agent.** It is signed in as an agent, `console@web-summit.dinis`, with its own key. What you type in the talk box goes on a vault lane, signed, to the conductor you choose, and the answer comes back the same way. Operationally the console behaves like an agent, between the human and the flow, and it can run on the client: we already ran models on devices, Gemma on the Android tablet and Apple's on-device models in VoiceDebrief.
+
+!shot acs-vicky.webp | images/ | Vicky's view: her two accounts in focus, and a question to her conductor answered on a vault lane. | screenshot
+
+## Designed for situation awareness {#awareness}
+
+!shot acs-awareness.webp | images/ | Perceive, understand, project, act: what the console is for, designed like a control room, with colour for exceptions. | concept
+
+Control rooms have thought about this for decades. Mica Endsley's model of situation awareness has three levels: perceive what is there, understand what it means, and project what will happen next. The console adds a fourth, act. And it follows the idea behind high-performance control-room screens in the ISA-101 tradition: a calm grey display where colour only means something needs you. In the console, normal is grey, red is stopped or stopping, and amber is waiting on a person.
+
+## What we would sell, and how it scales {#sell}
+
+The console is the selling point, and it has to be simple. Around it, I think we should define what someone needs to replicate it: a set of skills, a set of principles, the data formats, and the small open source pieces, so that anyone can do it themselves. Then we sell the setup, as a service, and perhaps one day as a book: the method stays open, and what we sell is the time, the trust and the execution ([decide, then buy](/articles/decide-then-buy.html)).
+
+It is also how we find customers: by showing this, and asking who wants us to set it up for them.
+
+## What this does not claim {#limits}
+
+- **The console is a simulation:** the people, the accounts as trust zones, the agent names and the dates of the stops are real; the runs, messages, commit counts, boards, models and key fingerprints are made up.
+- **Nothing in it is live,** and its stop buttons stop nothing.
+- **The customer history is a way of reading our own work,** not contracts; RiskMandate and PrompTugal.news are our own ventures.
+- **The control-room principles are summarised from secondary sources;** the standard is ANSI/ISA-101.01-2015.
+
+## Where this comes from {#sources}
+
+My own thinking, 15 November 2026. The simulation's people, accounts and agent names: the Web Summit team's site and its public keys. Situation awareness: Mica Endsley, Toward a Theory of Situation Awareness in Dynamic Systems, Human Factors, 1995. Control-room screens: summaries of the high-performance HMI approach and ANSI/ISA-101.01-2015, such as [ISA's own blog](https://blog.isa.org/the-high-performance-hmi) and [ABB on operator effectiveness](https://new.abb.com/power-generation/in-control/01-2016/the-key-to-operator-effectiveness). Earlier on this site: [selling mini agentic teams](/articles/selling-mini-agentic-teams.html), [six setups of an agentic system](/articles/six-setups-of-an-agentic-system.html), [the team's operating system](/articles/the-teams-operating-system.html), [always-on agents at team scale](/articles/always-on-agents-at-team-scale.html), [a brain you arrive at](/articles/a-brain-you-arrive-at.html).

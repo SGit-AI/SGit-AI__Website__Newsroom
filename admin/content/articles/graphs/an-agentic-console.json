@@ -1,0 +1,31 @@
+{
+ "slug": "an-agentic-console",
+ "teaser": "An agentic console, simulated: accounts as trust zones, time you can rewind, signed messages on three channels, honest stops, and the console as an agent.",
+ "topics": ["agents-and-policy", "vaults-and-method"],
+ "core_idea": "What makes an agentic brain sellable is a console, a control room for agents. A simulated one, shaped on the Web Summit team, draws ten accounts as trust zones with conductors and agents, shows models, state, commits and signed messages on three channels (repository files, commit messages, vault lanes), replays any moment because the state is files, says when a stop will land, scopes the view per person, and is itself an agent with a key. It follows situation awareness (perceive, understand, project) and control-room design (colour for exceptions).",
+ "nodes": [
+  {"id": "brain", "label": "Agentic brain", "kind": "concept", "summary": "What is sold."},
+  {"id": "console", "label": "Agentic console", "kind": "artefact", "summary": "The control room for agents."},
+  {"id": "time", "label": "Time", "kind": "method", "summary": "Rewind and replay: the state is files."},
+  {"id": "zones", "label": "Trust zones", "kind": "concept", "summary": "Accounts with conductors and agents."},
+  {"id": "comms", "label": "Three channels", "kind": "method", "summary": "Files, commits, vault lanes, signed."},
+  {"id": "customers", "label": "Customers so far", "kind": "example", "summary": "ruv.sgit.ai, the book, Web Summit, PrompTugal."}
+ ],
+ "edges": [
+  {"from": "console", "to": "brain", "rel": "depends-on"},
+  {"from": "time", "to": "console", "rel": "extends"},
+  {"from": "zones", "to": "console", "rel": "extends"},
+  {"from": "comms", "to": "console", "rel": "extends"},
+  {"from": "customers", "to": "brain", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["selling-mini-agentic-teams", "six-setups-of-an-agentic-system", "the-teams-operating-system", "always-on-agents-at-team-scale", "a-brain-you-arrive-at", "agentics-ready-to-sell", "the-book-is-on-leanpub", "promptugal-news-the-newsroom-we-ran", "decide-then-buy"],
+  "pages": [],
+  "sites": ["https://dev.vault.sgraph.ai/", "https://blog.isa.org/the-high-performance-hmi"]
+ },
+ "quotes": [
+  {"text": "But a customer cannot buy a brain they cannot see or control.", "why": "A control room for agents."},
+  {"text": "Everything we do is JSON and markdown files, so any moment can be shown again.", "why": "The console, walked through."},
+  {"text": "a calm grey display where colour only means something needs you", "why": "Designed for situation awareness."}
+ ]
+}

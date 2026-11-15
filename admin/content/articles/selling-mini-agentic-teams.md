@@ -43,6 +43,10 @@ Picture it. I am the main editor and coordinator. Team members run regional news
 
 Every one of those needs a different agentic team, of a different size. A journalist might need one agent; a city desk a few sessions, one per role; a regional newsroom a conductor and its team; the editor a conductor of conductors ([six setups of an agentic system](/articles/six-setups-of-an-agentic-system.html)). And each team can run in a different place: a Claude session, Codex, something on Cloudflare, or a full workflow across several accounts. The work is then to map those teams, monetise them and run their environments.
 
+## Customers we already have {#customers}
+
+Read backwards, we have already delivered this several times. The first was ruv.sgit.ai, the first time I had an agentic team running on a loop; the second was the book, written by a team of agents the way the talk was built; the third was Web Summit. RiskMandate used the open method for its Agent Behaviour Policies, more a partner than a customer, and PrompTugal.news is the first customer ([an agentic console](/articles/an-agentic-console.html)).
+
 ## Agent Behaviour Policies, on steroids {#abp}
 
 RiskMandate's Agent Behaviour Policies are a variation of the same thing. Every Agent Behaviour Policy needs an agent that looks after it, and probably a couple of others to help: one to read what an agent can reach, one to check what it was asked to do, one to show the gap ([what can your agent reach?](/articles/what-can-your-agent-reach.html)).
