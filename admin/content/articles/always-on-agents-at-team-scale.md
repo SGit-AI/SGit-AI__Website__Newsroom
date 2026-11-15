@@ -38,6 +38,9 @@ None of it started at Web Summit. In October the agents ran [a newsroom about a 
 
 ## The post {#post}
 
+!shot aoa-question.webp | images/ | William Hu of Anthropic on LinkedIn, sharing his post on building always-on agents, November 2026. | screenshot
+
+
 The post's starting point is that "always on" describes what the user experiences, not what the agent does. The agent mostly sleeps. An event wakes it, it does the task, it saves what happened, and it goes back to sleep. In William's words, "Always-on agents are stateful and proactive", and they run on the same loop as any other agent, with a different architecture around it.
 
 That architecture has five primitives. An **event inbox** is the durable list of things that happened, with one worker at a time. **Timers** are follow-ups the agent sets itself and schedules on a known cadence, and they never start a run directly: a scheduler turns them into inbox events. **Memory** holds only "what the agent can't look up again", in files, and a later process it calls dreaming curates it. **Permissions** are where "always-on agents carry the most risk": credentials stay in a proxy outside the agent, classifiers review risky actions, and a deferred tool call ends the run until a person answers. The **outbox** delivers outcomes, not steps, and the advice is to "start quiet and then earn more of the user's attention over time".

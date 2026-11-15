@@ -4,3 +4,7 @@ Dinis, 15 November 2026: answer Khwaja Naveed's LinkedIn comment (on Dinis's pos
 
 - Sources: abp.sgit.ai model/capabilities (23 primitives, verb.object.reach, undo class), model/undo (yes, with-effort, no), model/barriers (four kinds; enforcer test quoted); web-summit.sgit.ai/abp/conductor-web-summit-dinis (push to main 2 Nov 23:06, rule kept by the agent, branch protection not set, explorer phase); about 98 ABP pages listed in the team site's llms.txt. Outreach 50 drafts, 0 sent (PrompTugal tracker). The four tiers are the newsroom's reading of the grammar, marked as such.
 - Figures wae-tiers, wae-barriers.
+
+## Rule (Dinis, 15 Nov): show the question
+
+Reply articles carry a screenshot of the post or comment they answer, with the person's name and photo, since it is public and it changes how the piece reads. Added: wae-question (Khwaja Naveed's comment), scc-question (Florent Daudens' post), aoa-question (William Hu's post). Do the same for every future reply.

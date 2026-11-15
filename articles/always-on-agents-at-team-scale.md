@@ -10,7 +10,7 @@
 
 # Always-on agents at team scale: Anthropic's five primitives for an agent that sleeps and wakes, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-15 · [article v1.1.0, 2 versions](versions/always-on-agents-at-team-scale.md) · [newsroom v0.14.90](https://newsroom.sgit.ai/admin/versions.html) · agentsalways-on-agentsanthropicclaudearchitectureweb-summitgovernanceriskmandatearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-15 · [article v1.2.0, 3 versions](versions/always-on-agents-at-team-scale.md) · [newsroom v0.14.90](https://newsroom.sgit.ai/admin/versions.html) · agentsalways-on-agentsanthropicclaudearchitectureweb-summitgovernanceriskmandatearticle
 
 ***Abstract:** On 13 November, William Hu of Anthropic published Building always-on agents, the patterns Anthropic recommends for agents that sleep, wake on an event, do their work and go back to sleep. It rests on five primitives: an event inbox, timers, memory, permissions and an outbox. Reading it, I recognised every box, because in the ten days around Web Summit six of us ran around 250 named agents on the same shape, built from different material: git, files, encrypted vaults and keys instead of database tables and workers. This is a side-by-side comparison, not a claim that ours is better: where we agree, with evidence from our own records; where we got it wrong, such as a newsroom that kept running for nine days on "nothing new"; and the next problems the post's one-agent-per-user design does not need to answer yet, but a team does: agents starting agents, identity, stopping a hundred of them at once, many humans, seeing what happened, and governance. We run on Claude Code, so some of the post's answers are literally what protected our agents.*
 
@@ -41,6 +41,8 @@ None of it started at Web Summit. In October the agents ran [a newsroom about a 
 The ten days in order, from MeetScribe on 3 November to VoiceDebrief on 13 November, with the two stops.
 
 ## The post
+
+William Hu of Anthropic on LinkedIn, sharing his post on building always-on agents, November 2026.
 
 The post's starting point is that "always on" describes what the user experiences, not what the agent does. The agent mostly sleeps. An event wakes it, it does the task, it saves what happened, and it goes back to sleep. In William's words, "Always-on agents are stateful and proactive", and they run on the same loop as any other agent, with a different architecture around it.
 

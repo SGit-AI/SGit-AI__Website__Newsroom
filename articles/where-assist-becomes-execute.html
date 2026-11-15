@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.14.108</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -162,11 +162,11 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.14.108</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Where assist becomes execute: tiering AI agents by what they can reach and whether it can be undone, how Agent Behaviour Policies drew that line for more than a hundred agents at Web Summit, and the rule that failed because it was only a rule</p>
  <h1>Where assist becomes execute: tiering AI agents by what they can reach and whether it can be undone, how Agent Behaviour Policies drew that line for more than a hundred agents at Web Summit, and the rule that failed because it was only a rule</h1>
- <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-11-15 &middot; <a href="versions/where-assist-becomes-execute.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.14.108</a> &middot; <span class="chip">abp</span><span class="chip">riskmandate</span><span class="chip">agents</span><span class="chip">governance</span><span class="chip">security</span><span class="chip">autonomy</span><span class="chip">web-summit</span><span class="chip">article</span></p>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-11-15 &middot; <a href="versions/where-assist-becomes-execute.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.14.108</a> &middot; <span class="chip">abp</span><span class="chip">riskmandate</span><span class="chip">agents</span><span class="chip">governance</span><span class="chip">security</span><span class="chip">autonomy</span><span class="chip">web-summit</span><span class="chip">article</span></p>
  <p class="abstract"><em><b>Abstract:</b> Khwaja Naveed, a cybersecurity and AI governance director, asked a precise question under my post about running more than 120 agents at once: how do our behaviour policies handle the line between assisting and executing, when an agent moves from summarising data to changing a system of record, and do we use different policy tiers by level of autonomy? Yes, but we tier by capability, not by agent. In an Agent Behaviour Policy every action is a capability in a small grammar, verb, object and reach, and each has an undo class: undone with no loss, recoverable with effort, or not at all. Assisting sits at the reversible end; executing in a system of record is recoverable only with effort, and sending, publishing and spending cannot be undone. The control tightens along that line: allowed and logged, then signed and reviewable, then plan-then-apply, then drafts only. What matters is what enforces each tier: only a boundary above the agent bounds anything. Our own conductor's policy records the proof: a rule against pushing to main, kept only by the agent, failed once, because the technical boundary was not yet set.</em></p>
 <figure class="shot" data-shot="wae-tiers.webp" data-dir="images/" data-alt="Where assist becomes execute: four tiers by reach and undo class, and the control that tightens at each." data-kind="concept"><figcaption>Where assist becomes execute: four tiers by reach and undo class, and the control that tightens at each.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -179,6 +179,7 @@
 <li><b>Our own evidence:</b> a rule against pushing to main failed once, and the policy recorded it.</li>
 </ul>
 <h2 id="question">The question</h2>
+<figure class="shot" data-shot="wae-question.webp" data-dir="images/" data-alt="Khwaja Naveed&#x27;s question on LinkedIn, 15 November 2026: the assist-to-execute line, and policy tiers." data-kind="screenshot"><figcaption>Khwaja Naveed's question on LinkedIn, 15 November 2026: the assist-to-execute line, and policy tiers.</figcaption></figure>
 <p>Under my post about the visualisations that let us run more than 120 agents at once without losing control of them, Khwaja Naveed, a director of cybersecurity governance, asked a question that goes straight to the heart of it: how do our behaviour policies handle the line from assist to execute, when an agent moves from summarising data to executing changes in a system of record, and do we use different policy tiers based on that level of autonomy?</p>
 <p>The short answer is yes. The longer answer is that we tier by what an action can reach and whether it can be undone, rather than by how autonomous an agent is, because the same agent can do both.</p>
 <h2 id="capability">Tier by capability, not by agent</h2>
@@ -251,7 +252,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.14.108</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="where-assist-becomes-execute.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="where-assist-becomes-execute.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
