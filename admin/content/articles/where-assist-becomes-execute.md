@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: Khwaja Naveed, a cybersecurity and AI governance director, asked a precise question under my post about running more than 120 agents at once: how do our behaviour policies handle the line between assisting and executing, when an agent moves from summarising data to changing a system of record, and do we use different policy tiers by level of autonomy? Yes, but we tier by capability, not by agent. In an Agent Behaviour Policy every action is a capability in a small grammar, verb, object and reach, and each has an undo class: undone with no loss, recoverable with effort, or not at all. Assisting sits at the reversible end; executing in a system of record is recoverable only with effort, and sending, publishing and spending cannot be undone. The control tightens along that line: allowed and logged, then signed and reviewable, then plan-then-apply, then drafts only. What matters is what enforces each tier: only a boundary above the agent bounds anything. Our own conductor's policy records the proof: a rule against pushing to main, kept only by the agent, failed once, because the technical boundary was not yet set.
-version: v999.0.0
+version: v0.14.108
 license: https://creativecommons.org/licenses/by/4.0/
 tags: abp, riskmandate, agents, governance, security, autonomy, web-summit, article
 status: published
