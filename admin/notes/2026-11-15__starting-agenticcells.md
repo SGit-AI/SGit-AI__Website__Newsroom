@@ -10,3 +10,7 @@ Dinis, 15 November 2026: positioning brief and vendor market map (compiled with 
 ## Reading guide and article (15 Nov)
 
 Dinis: the zip needs detailed instructions for the sites to read (sgit.ai, newsroom.sgit.ai, coding.sgit.ai, nfrs.sgit.ai, web-summit.sgit.ai), and an article on it. READING.md added to the bootstrap (eight sites, adding abp.sgit.ai, ruv.sgit.ai and promptugal.news; ten questions). Checked: every site has llms.txt; llms-full.txt on sgit.ai (about 7.3 MB), newsroom (320 KB), coding (114 KB), nfrs (56 KB), abp (1.6 MB); none on web-summit, ruv, promptugal. Article: reading-your-way-into-an-agentic-team, figure rdg-sites.
+
+## Atomic cells, end to end (15 Nov, evening)
+
+Dinis: agenticcells.com live; .site and .app bought; offering for a simple website as an atomic cell (£500 anchor, one-off; 3 months on our subdomain), two modes (no-touch: our accounts, customer browser key via QR, trusted keys, vault lane read hourly by an agent; their own: GitHub + Claude, handover by GitHub access), public websites only, queue and staff without the founder, implementers Angelo, Silvio, José and PM Vicky, organism analogy, our own mini sites. Also a proposal site for Algarve Evolution (meeting 16 Nov): kept out of the public article at his word ("don't put it there"); private brief in the team's briefs set 2 (vault app, labelled proposal, no branding). Article atomic-cells-end-to-end; figures ace-flow, ace-modes, ace-organisms. Briefs set 2 zip: ACC-010 to 015 and the private Algarve brief.

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-15 | published | 1,288 | first published | this release | [current](../reading-your-way-into-an-agentic-team.md) |
+| **v1.0.0** | 2026-11-15 | published | 1,288 | first published | [`d964d1b2a`](https://github.com/SGit-AI/SGit-AI__Website/commit/d964d1b2a6a6207e253c27ea1994c8953ec09719) | [current](../reading-your-way-into-an-agentic-team.md) |
 
 [← Back to the article](../reading-your-way-into-an-agentic-team.md) · [All articles](../index.md)
 

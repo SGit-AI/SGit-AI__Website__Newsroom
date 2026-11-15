@@ -1,0 +1,123 @@
+{
+  "slug": "atomic-cells-end-to-end",
+  "teaser": "AgentiCCells' first offering: a £500 website as an atomic cell, steered by the customer from their browser with a key, handed over to their GitHub.",
+  "topics": [
+    "startups-and-strategy",
+    "agents-and-policy"
+  ],
+  "core_idea": "AgentiCCells' first offering is a public website as an atomic cell for a one-off price anchored at £500: an order on a queue, an agentic team that builds, a preview on agenticcells.app or .site, the customer steering it with a browser key and signed requests on a vault lane read hourly, and a handover to their GitHub with three months to bring their own domain. A second mode sets the team up in the customer's own GitHub and Claude accounts. It scales by capacity, with Angelo Leggio, Silvio Switha and José Bota as implementers and Vicky Wang as project manager.",
+  "nodes": [
+    {
+      "id": "cell",
+      "label": "The £500 cell",
+      "kind": "artefact",
+      "summary": "A public website, one-off."
+    },
+    {
+      "id": "atomic",
+      "label": "Atomic cells",
+      "kind": "concept",
+      "summary": "One-off, owned, no state."
+    },
+    {
+      "id": "flow",
+      "label": "Seven steps",
+      "kind": "method",
+      "summary": "Order to handover."
+    },
+    {
+      "id": "lane",
+      "label": "Steer by key",
+      "kind": "method",
+      "summary": "Browser key, vault lane, hourly agent."
+    },
+    {
+      "id": "modes",
+      "label": "Two modes",
+      "kind": "method",
+      "summary": "We run it, or they do."
+    },
+    {
+      "id": "people",
+      "label": "The people",
+      "kind": "example",
+      "summary": "Three implementers and a PM."
+    }
+  ],
+  "edges": [
+    {
+      "from": "atomic",
+      "to": "cell",
+      "rel": "extends"
+    },
+    {
+      "from": "flow",
+      "to": "cell",
+      "rel": "produces"
+    },
+    {
+      "from": "lane",
+      "to": "flow",
+      "rel": "extends"
+    },
+    {
+      "from": "modes",
+      "to": "cell",
+      "rel": "extends"
+    },
+    {
+      "from": "people",
+      "to": "flow",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "starting-agenticcells",
+      "selling-mini-agentic-teams",
+      "six-setups-of-an-agentic-system",
+      "an-agentic-console",
+      "a-key-for-every-person",
+      "an-inbox-only-your-agents-can-write-to",
+      "websites-you-own"
+    ],
+    "pages": [],
+    "sites": [
+      "https://agenticcells.com/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Every offering is an atomic cell.",
+      "why": "Atomic cells."
+    },
+    {
+      "text": "The test of the design is that it runs without me.",
+      "why": "A queue, a staff, and the people."
+    },
+    {
+      "text": "what we are really selling is the ability to control the website through its agents",
+      "why": "Why the console matters here."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ace-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ace-flow.webp",
+      "caption": "The £500 cell end to end: order, queue, build, preview, key, steer, handover, with no daily work for the founder.",
+      "kind": "flow"
+    },
+    {
+      "file": "ace-organisms.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ace-organisms.webp",
+      "caption": "The ladder as organisms: a single cell at £500, a cell handed over at £1,500, a colony at £5,000, a network at £20,000.",
+      "kind": "concept"
+    },
+    {
+      "file": "ace-modes.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ace-modes.webp",
+      "caption": "Two modes: we run the agentic team on our account for them, or we set it up in their GitHub and Claude accounts.",
+      "kind": "comparison"
+    }
+  ]
+}

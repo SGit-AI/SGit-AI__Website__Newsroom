@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-15 | minor | 1,713 | +28 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](starting-agenticcells/v1.1.0.md) · [current](../starting-agenticcells.md) |
+| **v1.1.0** | 2026-11-15 | minor | 1,713 | +28 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`d964d1b2a`](https://github.com/SGit-AI/SGit-AI__Website/commit/d964d1b2a6a6207e253c27ea1994c8953ec09719) | [what changed](starting-agenticcells/v1.1.0.md) · [current](../starting-agenticcells.md) |
 | **v1.0.0** | 2026-11-15 | published | 1,685 | first published | [`64a07e6f6`](https://github.com/SGit-AI/SGit-AI__Website/commit/64a07e6f6497fde4302a949bf828e71b1de7c18f) |  |
 
 [← Back to the article](../starting-agenticcells.md) · [All articles](../index.md)

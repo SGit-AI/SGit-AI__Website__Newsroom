@@ -4,24 +4,25 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.99 · 409 articles since 2026-08-17; the newest is 2026-11-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 410 articles since 2026-08-17; the newest is 2026-11-15. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Reading your way into an agentic team: eight public sites a new team should read before it builds anything, how an agent should read them, and ten questions to answer first, because our websites are its memory](articles/reading-your-way-into-an-agentic-team.md), 2026-11-15, 5 min. Eight public sites a new agentic team should read before it builds anything, how an agent should read them, and ten questions to answer first.
+- [Atomic cells, end to end: the £500 website as AgentiCCells' first offering, an order on a queue, an agentic team that builds a public site, a customer who steers it from their browser with a key, and a handover, with no daily work for the founder](articles/atomic-cells-end-to-end.md), 2026-11-15, 6 min. AgentiCCells' first offering: a £500 website as an atomic cell, steered by the customer from their browser with a key, handed over to their GitHub.
 
 ## Five more
 
+- [Reading your way into an agentic team: eight public sites a new team should read before it builds anything, how an agent should read them, and ten questions to answer first, because our websites are its memory](articles/reading-your-way-into-an-agentic-team.md), Working with agents, 2026-11-15, 5 min.
 - [Starting AgentiCCells: a company that sets up small agentic teams, cells, in the customer's own environment, with a control centre, everything open and no state on our side; how it was named, researched, reviewed and set up in a day](articles/starting-agenticcells.md), The future of news, 2026-11-15, 7 min.
 - [An agentic console: a simulated control room for a team of agentic teams, with time you can rewind, accounts drawn as trust zones, stops that reach every agent, signed messages on three channels, and the console itself as an agent](articles/an-agentic-console.md), Working with agents, 2026-11-15, 7 min.
 - [Six setups of an agentic system: from a single task to one agent, sub-agents, several sessions, a conductor and its team, and conductors of conductors, with the altitudes of a run inside each and command and control growing at every step](articles/six-setups-of-an-agentic-system.md), Working with agents, 2026-11-15, 4 min.
 - [Selling mini agentic teams: a business that sets up small agentic teams for companies, sized from one agent to a network, with a control centre to see them and to start and stop them, PrompTugal as the first customer and Agent Behaviour Policies as the most demanding version](articles/selling-mini-agentic-teams.md), Startups & strategy, 2026-11-15, 6 min.
-- [Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in](articles/decide-then-buy.md), Startups & strategy, 2026-11-15, 4 min.
 
 ## The last five days
 
-### Sunday 15 November 2026 (13 articles)
+### Sunday 15 November 2026 (14 articles)
 
+- Startups & strategy: [Atomic cells, end to end: the £500 website as AgentiCCells' first offering, an order on a queue, an agentic team that builds a public site, a customer who steers it from their browser with a key, and a handover, with no daily work for the founder](articles/atomic-cells-end-to-end.md), 6 min.
 - Working with agents: [Reading your way into an agentic team: eight public sites a new team should read before it builds anything, how an agent should read them, and ten questions to answer first, because our websites are its memory](articles/reading-your-way-into-an-agentic-team.md), 5 min.
 - The future of news: [Starting AgentiCCells: a company that sets up small agentic teams, cells, in the customer's own environment, with a control centre, everything open and no state on our side; how it was named, researched, reviewed and set up in a day](articles/starting-agenticcells.md), 7 min.
 - Working with agents: [An agentic console: a simulated control room for a team of agentic teams, with time you can rewind, accounts drawn as trust zones, stops that reach every agent, signed messages on three channels, and the console itself as an agent](articles/an-agentic-console.md), 7 min.
@@ -94,13 +95,13 @@ Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta
 - [One Human, Nine Agents, Nineteen Hours is on Leanpub: the book of the day nine AI agents and I built a talk, free to download, pay what you want, and updated as it goes](articles/the-book-is-on-leanpub.md), 2026-11-14.
 - [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](articles/storm-charles-a-newsroom-built-in-a-night.md), 2026-11-11.
 
-### [Startups & strategy](sections/strategy/index.md) (93)
+### [Startups & strategy](sections/strategy/index.md) (94)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
+- [Atomic cells, end to end: the £500 website as AgentiCCells' first offering, an order on a queue, an agentic team that builds a public site, a customer who steers it from their browser with a key, and a handover, with no daily work for the founder](articles/atomic-cells-end-to-end.md), 2026-11-15.
 - [Selling mini agentic teams: a business that sets up small agentic teams for companies, sized from one agent to a network, with a control centre to see them and to start and stop them, PrompTugal as the first customer and Agent Behaviour Policies as the most demanding version](articles/selling-mini-agentic-teams.md), 2026-11-15.
 - [Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in](articles/decide-then-buy.md), 2026-11-15.
 - [The new data lake: many small append-only lanes instead of one big lake, a curator agent that turns their rows into a semantic graph, and a graph that draws its own infographics, as we ran it at Web Summit](articles/the-new-data-lake.md), 2026-11-15.
 - [A market for sweets: the opposite of a market for lemons, a semantic graph for one financial decision that gives the buyer the evidence, an agent that gathers and weighs but never trades, and the judo move of leaving the trade to others](articles/a-market-for-sweets.md), 2026-11-15.
-- [A brain you arrive at: a company brain for information, decisions and insights is built for one company, one division and one team, starting with one person's and growing, and the Web Summit team already ran one](articles/a-brain-you-arrive-at.md), 2026-11-15.
 
 ### [Engineering this newsroom](sections/building/index.md) (47)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
