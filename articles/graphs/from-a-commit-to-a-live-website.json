@@ -1,0 +1,113 @@
+{
+  "slug": "from-a-commit-to-a-live-website",
+  "teaser": "A site factory: a request in a commit makes a CI pipeline create the repository, DNS record and vault, seed a page, check HTTPS and record it all.",
+  "topics": [
+    "site-and-engineering",
+    "agents-and-policy"
+  ],
+  "core_idea": "Every new site needs a GitHub repository, a DNS record and an sgit vault. Instead of clicks or scripts, a public CI site factory takes a request folder committed to a control repository, posts a plan on the pull request with no secrets, and on merge creates the repository, record and vault, seeds and verifies the site, optionally runs a Claude Code first pass, and writes status back, using a GitHub App and AWS OpenID Connect so no long-lived keys are stored. An agent creates a site by committing a request.",
+  "nodes": [
+    {
+      "id": "three",
+      "label": "Three things per site",
+      "kind": "concept",
+      "summary": "Repo, record, vault."
+    },
+    {
+      "id": "request",
+      "label": "A request folder",
+      "kind": "method",
+      "summary": "site.json, brief.md, status.json."
+    },
+    {
+      "id": "plan",
+      "label": "Plan, then apply",
+      "kind": "method",
+      "summary": "PR plan without secrets; apply on merge."
+    },
+    {
+      "id": "creds",
+      "label": "Scoped credentials",
+      "kind": "method",
+      "summary": "GitHub App and AWS OIDC."
+    },
+    {
+      "id": "public",
+      "label": "Public by default",
+      "kind": "claim",
+      "summary": "Everything public but the credentials."
+    },
+    {
+      "id": "agents",
+      "label": "Agents commit sites",
+      "kind": "claim",
+      "summary": "Pull-request access is enough."
+    }
+  ],
+  "edges": [
+    {
+      "from": "request",
+      "to": "three",
+      "rel": "answers"
+    },
+    {
+      "from": "plan",
+      "to": "request",
+      "rel": "extends"
+    },
+    {
+      "from": "creds",
+      "to": "plan",
+      "rel": "depends-on"
+    },
+    {
+      "from": "public",
+      "to": "plan",
+      "rel": "extends"
+    },
+    {
+      "from": "agents",
+      "to": "request",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-hub-for-agentic-sites",
+      "atomic-cells-end-to-end",
+      "starting-agenticcells",
+      "what-can-your-agent-reach",
+      "six-setups-of-an-agentic-system"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "The factory turns creating infrastructure into writing a file",
+      "why": "Why this suits agents."
+    },
+    {
+      "text": "It can create; only the teardown pipeline can remove.",
+      "why": "A policy for the pipeline."
+    },
+    {
+      "text": "What stays private is only the credentials",
+      "why": "Public by default."
+    }
+  ],
+  "figures": [
+    {
+      "file": "csf-factory.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/csf-factory.webp",
+      "caption": "The site factory: a request in a commit, a plan on the pull request, and on merge a repo, a record, a vault and a site.",
+      "kind": "architecture"
+    },
+    {
+      "file": "csf-options.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/csf-options.webp",
+      "caption": "Three ways to create a site: by hand, with scripts or a command-line tool, or with a CI pipeline.",
+      "kind": "comparison"
+    }
+  ]
+}

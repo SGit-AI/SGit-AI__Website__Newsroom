@@ -78,6 +78,10 @@ Startups & strategyVaults & method[This article as a graph →](graphs.md#a-hub-
 - [Starting AgentiCCells: a company that sets up small agentic teams, cells, in the customer's own environment, with a control centre, everything open and no state on our side; how it was named, researched, reviewed and set up in a day](starting-agenticcells.md) AgentiCCells: a new company that sets up small agentic teams in the customer's environment, with a control centre, all open, no state on our side.
 - [Reading your way into an agentic team: eight public sites a new team should read before it builds anything, how an agent should read them, and ten questions to answer first, because our websites are its memory](reading-your-way-into-an-agentic-team.md) Eight public sites a new agentic team should read before it builds anything, how an agent should read them, and ten questions to answer first.
 
+### Continued by
+
+- [From a commit to a live website: a site factory where a request file in a commit makes a CI pipeline create the GitHub repository, the DNS record and the sgit vault, seed a page, check HTTPS, run a first pass with Claude Code, and record it all, so an agent can create sites by committing](from-a-commit-to-a-live-website.md) A site factory: a request in a commit makes a CI pipeline create the repository, DNS record and vault, seed a page, check HTTPS and record it all.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 415 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=415)

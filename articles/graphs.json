@@ -55,6 +55,152 @@
   ],
   "articles": [
     {
+      "slug": "from-a-commit-to-a-live-website",
+      "title": "From a commit to a live website: a site factory where a request file in a commit makes a CI pipeline create the GitHub repository, the DNS record and the sgit vault, seed a page, check HTTPS, run a first pass with Claude Code, and record it all, so an agent can create sites by committing",
+      "date": "2026-11-15",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/from-a-commit-to-a-live-website.html",
+      "markdown": "https://newsroom.sgit.ai/articles/from-a-commit-to-a-live-website.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/from-a-commit-to-a-live-website.webp",
+      "teaser": "A site factory: a request in a commit makes a CI pipeline create the repository, DNS record and vault, seed a page, check HTTPS and record it all.",
+      "topics": [
+        "site-and-engineering",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "ci",
+        "automation",
+        "github-actions",
+        "aws",
+        "dns",
+        "sgit",
+        "agenticcells",
+        "architecture",
+        "article"
+      ],
+      "links_out": [
+        "a-hub-for-agentic-sites",
+        "atomic-cells-end-to-end",
+        "what-can-your-agent-reach",
+        "six-setups-of-an-agentic-system",
+        "starting-agenticcells"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "csf-factory.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/csf-factory.webp",
+          "caption": "The site factory: a request in a commit, a plan on the pull request, and on merge a repo, a record, a vault and a site.",
+          "kind": "architecture"
+        },
+        {
+          "file": "csf-options.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/csf-options.webp",
+          "caption": "Three ways to create a site: by hand, with scripts or a command-line tool, or with a CI pipeline.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "from-a-commit-to-a-live-website",
+        "teaser": "A site factory: a request in a commit makes a CI pipeline create the repository, DNS record and vault, seed a page, check HTTPS and record it all.",
+        "topics": [
+          "site-and-engineering",
+          "agents-and-policy"
+        ],
+        "core_idea": "Every new site needs a GitHub repository, a DNS record and an sgit vault. Instead of clicks or scripts, a public CI site factory takes a request folder committed to a control repository, posts a plan on the pull request with no secrets, and on merge creates the repository, record and vault, seeds and verifies the site, optionally runs a Claude Code first pass, and writes status back, using a GitHub App and AWS OpenID Connect so no long-lived keys are stored. An agent creates a site by committing a request.",
+        "nodes": [
+          {
+            "id": "three",
+            "label": "Three things per site",
+            "kind": "concept",
+            "summary": "Repo, record, vault."
+          },
+          {
+            "id": "request",
+            "label": "A request folder",
+            "kind": "method",
+            "summary": "site.json, brief.md, status.json."
+          },
+          {
+            "id": "plan",
+            "label": "Plan, then apply",
+            "kind": "method",
+            "summary": "PR plan without secrets; apply on merge."
+          },
+          {
+            "id": "creds",
+            "label": "Scoped credentials",
+            "kind": "method",
+            "summary": "GitHub App and AWS OIDC."
+          },
+          {
+            "id": "public",
+            "label": "Public by default",
+            "kind": "claim",
+            "summary": "Everything public but the credentials."
+          },
+          {
+            "id": "agents",
+            "label": "Agents commit sites",
+            "kind": "claim",
+            "summary": "Pull-request access is enough."
+          }
+        ],
+        "edges": [
+          {
+            "from": "request",
+            "to": "three",
+            "rel": "answers"
+          },
+          {
+            "from": "plan",
+            "to": "request",
+            "rel": "extends"
+          },
+          {
+            "from": "creds",
+            "to": "plan",
+            "rel": "depends-on"
+          },
+          {
+            "from": "public",
+            "to": "plan",
+            "rel": "extends"
+          },
+          {
+            "from": "agents",
+            "to": "request",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-hub-for-agentic-sites",
+            "atomic-cells-end-to-end",
+            "starting-agenticcells",
+            "what-can-your-agent-reach",
+            "six-setups-of-an-agentic-system"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "The factory turns creating infrastructure into writing a file",
+            "why": "Why this suits agents."
+          },
+          {
+            "text": "It can create; only the teardown pipeline can remove.",
+            "why": "A policy for the pipeline."
+          },
+          {
+            "text": "What stays private is only the credentials",
+            "why": "Public by default."
+          }
+        ]
+      }
+    },
+    {
       "slug": "native-apps-by-agents",
       "title": "Native apps by agents: four iPhone and iPad apps from one workspace and an Android tablet app in five days, from 1,164 lines of Swift to 48,230, a signed Android build four hours after the first commit, and a guide to the fringe on TestFlight ten and a half hours after its brief",
       "date": "2026-11-15",
@@ -378,7 +524,9 @@
         "starting-agenticcells",
         "reading-your-way-into-an-agentic-team"
       ],
-      "links_in": [],
+      "links_in": [
+        "from-a-commit-to-a-live-website"
+      ],
       "figures": [
         {
           "file": "hub-arch.webp",
@@ -820,6 +968,7 @@
         "websites-you-own"
       ],
       "links_in": [
+        "from-a-commit-to-a-live-website",
         "spend-fewer-tokens",
         "a-hub-for-agentic-sites",
         "stop-copying-and-pasting-between-your-agents"
@@ -1135,6 +1284,7 @@
         "the-teams-operating-system"
       ],
       "links_in": [
+        "from-a-commit-to-a-live-website",
         "a-hub-for-agentic-sites",
         "stop-copying-and-pasting-between-your-agents",
         "dont-micromanage-your-agents",
@@ -1484,6 +1634,7 @@
         "approve-at-altitude"
       ],
       "links_in": [
+        "from-a-commit-to-a-live-website",
         "spend-fewer-tokens",
         "atomic-cells-end-to-end",
         "reading-your-way-into-an-agentic-team",
@@ -45040,6 +45191,7 @@
         "hope-or-enforcement"
       ],
       "links_in": [
+        "from-a-commit-to-a-live-website",
         "six-setups-of-an-agentic-system",
         "selling-mini-agentic-teams",
         "a-market-for-sweets",

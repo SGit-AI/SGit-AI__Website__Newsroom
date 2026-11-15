@@ -1,0 +1,66 @@
+{
+ "slug": "from-a-commit-to-a-live-website",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "A site factory: a request in a commit makes CI create the repository, the DNS record and the vault.",
+   "para": "Plan on the pull request, apply on merge, seed and verify, an optional Claude Code pass, and a record of it all.",
+   "hash": "cedef9b8e9f3"
+  },
+  "in-short": {
+   "line": "Three things per site, three options, a request folder, plan and apply, credentials, public by default, agents.",
+   "para": "Seven points.",
+   "hash": "209a8cf9c4f1"
+  },
+  "question": {
+   "line": "Every site needs a repository, a record and a vault, starting with the Web Summit team site.",
+   "para": "How to go from a commit to a live link.",
+   "hash": "2fb842681e9a"
+  },
+  "options": {
+   "line": "By hand, scripts or a CLI, or a CI pipeline.",
+   "para": "Only the pipeline needs no person with the keys.",
+   "hash": "5f5422fcb8b5"
+  },
+  "request": {
+   "line": "A folder per request: site.json, brief.md, and status.json written back by CI.",
+   "para": "Every site has its own history.",
+   "hash": "8236e1dee8dc"
+  },
+  "pipeline": {
+   "line": "Plan on the pull request; on merge, six steps from repository to record.",
+   "para": "Teardown is a second pipeline.",
+   "hash": "101c2b54c72e"
+  },
+  "credentials": {
+   "line": "A GitHub App, AWS through OpenID Connect, secrets only for sgit and Claude.",
+   "para": "No long-lived AWS keys at all.",
+   "hash": "3a9bea7d8afe"
+  },
+  "policy": {
+   "line": "The pipeline has its own policy: one org, two zones, labels by pattern, a daily limit.",
+   "para": "It can create; only teardown removes.",
+   "hash": "9cea84b96662"
+  },
+  "public": {
+   "line": "The factory and its record are public; only the credentials are not.",
+   "para": "The plan step runs with no secrets; apply only after a merge to main.",
+   "hash": "a046b35331c4"
+  },
+  "agents": {
+   "line": "An agent creates a site by opening a pull request on the control repository.",
+   "para": "Infrastructure becomes writing a file.",
+   "hash": "32f591f763ae"
+  },
+  "limits": {
+   "line": "A hypothesis; sgit's token model; an optional, costed Claude pass.",
+   "para": "Three points.",
+   "hash": "88b26a798611"
+  },
+  "sources": {
+   "line": "My own thinking and earlier articles.",
+   "para": "With links to the hub and atomic cells.",
+   "hash": "cab94c4075bc"
+  }
+ }
+}

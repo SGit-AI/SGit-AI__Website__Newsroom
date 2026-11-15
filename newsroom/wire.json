@@ -73,6 +73,37 @@
   ],
   "articles": [
     {
+      "slug": "from-a-commit-to-a-live-website",
+      "title": "From a commit to a live website: a site factory where a request file in a commit makes a CI pipeline create the GitHub repository, the DNS record and the sgit vault, seed a page, check HTTPS, run a first pass with Claude Code, and record it all, so an agent can create sites by committing",
+      "date": "2026-11-15",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/from-a-commit-to-a-live-website.html",
+      "markdown": "https://newsroom.sgit.ai/articles/from-a-commit-to-a-live-website.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/from-a-commit-to-a-live-website.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/from-a-commit-to-a-live-website.json",
+      "teaser": "A site factory: a request in a commit makes a CI pipeline create the repository, DNS record and vault, seed a page, check HTTPS and record it all.",
+      "summary": "Every new site we create needs the same three things: a GitHub repository, a DNS record, and an sgit vault. Today I make them by hand, with a lot of clicks. Scripts or a command-line tool would be faster, but they would still need a person with the keys. My hypothesis is that the right answer is a CI pipeline, a site factory: a control repository where each new site is a request, a folder with a small site file and a brief, added in a commit. On the pull request, the pipeline checks the request and posts a plan; on merge, it creates the repository from a template, turns on Pages, creates the DNS record, creates the vault and publishes its read key, commits a test page, waits for HTTPS, optionally runs a first pass with Claude Code to build the site from the brief, writes the result back into the request's folder and lists the site on the hub. The credentials can be good ones: a GitHub App for GitHub and OpenID Connect federation for AWS, so no long-lived keys sit in the pipeline. Because every site and its content are public, the factory and its record can be public too, with only the credentials kept private. And because it all starts with a commit, the agent I run in a loop only needs access to the control repository to create a site.",
+      "topics": [
+        "site-and-engineering",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "ci",
+        "automation",
+        "github-actions",
+        "aws",
+        "dns",
+        "sgit",
+        "agenticcells",
+        "architecture",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "native-apps-by-agents",
       "title": "Native apps by agents: four iPhone and iPad apps from one workspace and an Android tablet app in five days, from 1,164 lines of Swift to 48,230, a signed Android build four hours after the first commit, and a guide to the fringe on TestFlight ten and a half hours after its brief",
       "date": "2026-11-15",
