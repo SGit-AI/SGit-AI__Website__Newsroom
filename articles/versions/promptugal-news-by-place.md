@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-15 | published | 1,329 | first published | this release | [current](../promptugal-news-by-place.md) |
+| **v1.0.0** | 2026-11-15 | published | 1,329 | first published | [`ec16a9470`](https://github.com/SGit-AI/SGit-AI__Website/commit/ec16a9470f489f0e2e101d8ebc05e61f61988211) | [current](../promptugal-news-by-place.md) |
 
 [← Back to the article](../promptugal-news-by-place.md) · [All articles](../index.md)
 

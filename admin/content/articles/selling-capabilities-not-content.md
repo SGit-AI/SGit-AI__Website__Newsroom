@@ -3,7 +3,7 @@ title: Selling capabilities, not content: a reply to Florent Daudens' "We have t
 date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
-summary: Florent Daudens asks a sharp question: publishers now have the protocols, connectors, collective licences and telemetry standards, so where are the products? His answer is that "we need to move beyond licensing content and start selling capabilities", and his bet is connecting the news subscriptions people already pay for to their personal agents. I agree, and our own newsrooms point at what those capabilities can be. The Storm Charles site went from a voice brief to 2,618 pages in three days, every fact with its source and the time it was read: not articles, but a live, sourced picture of a crisis that people and agents could use. PrompTugal.news ran a newsroom of agent desks for Web Summit and is now going local: a site for Portugal, one for the Algarve and one for every Algarve town, each a lens on one shared semantic graph, which is a product a town, a business or an agent can use, not a stream of articles. And for Florent's open questions on access, permissions and payment, we have been building answers with keys people own, vaults opened by read keys, licences on every page, a meter that charges for what you read, and pages written for agents. This is our second reply to him.
+summary: Florent Daudens asks a sharp question: publishers now have the protocols, connectors, collective licences and telemetry standards, so where are the products? His answer is that "we need to move beyond licensing content and start selling capabilities", and his bet is connecting the news subscriptions people already pay for to their personal agents. I agree, and our own newsrooms point at what those capabilities can be. The Storm Charles site reached 2,618 pages in three days, every fact with its source and the time it was read: not articles, but a live, sourced picture of a crisis that people and agents could use, and it was possible only because of the method for running agents at scale that we had built over months before it. PrompTugal.news ran a newsroom of agent desks for Web Summit and is now going local: a site for Portugal, one for the Algarve and one for every Algarve town, each a lens on one shared semantic graph, which is a product a town, a business or an agent can use, not a stream of articles. And for Florent's open questions on access, permissions and payment, we have been building answers with keys people own, vaults opened by read keys, licences on every page, a meter that charges for what you read, and pages written for agents. This is our second reply to him.
 version: v0.14.106
 license: https://creativecommons.org/licenses/by/4.0/
 tags: publishers, agents, ai, journalism, promptugal, storm-charles, reply, article
@@ -16,7 +16,7 @@ status: published
 
 - **Florent Daudens asks where the products are,** now that publishers have the protocols.
 - **His answer, which I agree with:** sell capabilities, not content.
-- **The Storm Charles site was a capability:** 2,618 pages in three days, every fact sourced and timed.
+- **The Storm Charles site was a capability:** 2,618 pages in three days, every fact sourced and timed, made possible by months of work on how we run agents.
 - **PrompTugal.news going local is a product:** a site per town, each a lens on one shared graph.
 - **For access, permissions and payment,** we have answers: keys people own, read keys, licences, a meter, pages for agents.
 - **This is our second reply to Florent,** after [would you pay to plug this newsroom in?](/articles/would-you-pay-to-plug-this-newsroom-in.html)
@@ -29,9 +29,11 @@ I agree with all of it. The question is what a capability looks like, and we hav
 
 ## A storm site is a capability {#storm}
 
-When Storm Charles reached Lisbon during Web Summit, I asked our agents, by voice, for a site about it. Three days later it had 2,618 pages and 1,434 versions, with desks for the weather, flights, transport and the cloud, and every fact carried its source and the time it was read ([Storm Charles, a newsroom built in a night](/articles/storm-charles-a-newsroom-built-in-a-night.html)).
+When Storm Charles reached Lisbon during Web Summit and the summit called off its second day, we had a new site for it the same evening, and three days later it had 2,618 pages and 1,434 versions, with desks for the weather, flights, transport and the cloud, and every fact carried its source and the time it was read ([Storm Charles, a newsroom built in a night](/articles/storm-charles-a-newsroom-built-in-a-night.html)).
 
-That is not content to license. It is a capability: a live, sourced picture of a situation, kept current, that a person can read and an agent can query, with the provenance to trust it. The value is not in any one article; it is in having the whole picture, now, with its sources.
+It would be easy to tell that as one request to an AI, and it would be wrong. The site could be set up that quickly only because of the work that came before it: months of building the method our agents run on. Conductors that start and brief other agents, roles with written mandates, and hand-overs when a session gets long: the storm site alone passed roles to fresh sessions 106 times. State kept in files, not in conversations. A key and an inbox lane for every agent. Release gates that refuse a page that breaks a rule. And observability and visualisation, so we could see what more than a hundred sessions were doing that day and steer them. The speed was the dividend of that structure ([the team's operating system](/articles/the-teams-operating-system.html), [six setups of an agentic system](/articles/six-setups-of-an-agentic-system.html)).
+
+What it produced is not content to license. It is a capability: a live, sourced picture of a situation, kept current, that a person can read and an agent can query, with the provenance to trust it. The value is not in any one article; it is in having the whole picture, now, with its sources. And the capability behind it, a method that can stand up a sourced newsroom on any subject in hours, is the real product.
 
 ## A newsroom by place is a product {#place}
 
