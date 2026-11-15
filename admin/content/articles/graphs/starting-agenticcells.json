@@ -1,0 +1,31 @@
+{
+ "slug": "starting-agenticcells",
+ "teaser": "AgentiCCells: a new company that sets up small agentic teams in the customer's environment, with a control centre, all open, no state on our side.",
+ "topics": ["startups-and-strategy", "agents-and-policy"],
+ "core_idea": "AgentiCCells, started on 15 November 2026, sets up small agentic teams (cells) in the customer's own environment with a control centre, releases everything open (code open source, the rest Creative Commons) and keeps no state. Perplexity research mapped 30+ vendors and found the gap: nobody packages conductors of conductors, Agent Behaviour Policies and a control centre as an open service. The newsroom review kept the positioning and flagged pricing, commissions, console location and the RiskMandate split. Three domains, Route 53, a repository and a bootstrap brief for its first agentic team followed the same day.",
+ "nodes": [
+  {"id": "acc", "label": "AgentiCCells", "kind": "artefact", "summary": "A company started on 15 November."},
+  {"id": "cells", "label": "Cells", "kind": "concept", "summary": "Atomic teams in the customer's environment."},
+  {"id": "open", "label": "Open, no state", "kind": "claim", "summary": "Everything released open; nothing kept."},
+  {"id": "gap", "label": "The gap", "kind": "claim", "summary": "No one packages conductors, policies and a console."},
+  {"id": "review", "label": "The review", "kind": "method", "summary": "Strong points and four open decisions."},
+  {"id": "setup", "label": "Setup in a day", "kind": "example", "summary": "Domains, DNS, repository, team brief."}
+ ],
+ "edges": [
+  {"from": "cells", "to": "acc", "rel": "extends"},
+  {"from": "open", "to": "acc", "rel": "extends"},
+  {"from": "gap", "to": "acc", "rel": "leads-to"},
+  {"from": "review", "to": "acc", "rel": "extends"},
+  {"from": "setup", "to": "acc", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["selling-mini-agentic-teams", "six-setups-of-an-agentic-system", "an-agentic-console", "decide-then-buy", "a-brain-you-arrive-at", "the-teams-operating-system"],
+  "pages": [],
+  "sites": ["https://agenticcells.ai/", "https://github.com/AgentiCCell/AgentiCCell__Website"]
+ },
+ "quotes": [
+  {"text": "so what is worth paying for is the setup, the guidance and the trust", "why": "Where it came from."},
+  {"text": "AgentiCCells is, in a sense, its own first customer.", "why": "Setting it up."},
+  {"text": "finite packs, never rent", "why": "The review."}
+ ]
+}

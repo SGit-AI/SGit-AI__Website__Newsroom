@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-15 | published | 1,746 | first published | this release | [current](../an-agentic-console.md) |
+| **v1.0.0** | 2026-11-15 | published | 1,746 | first published | [`78dee25ee`](https://github.com/SGit-AI/SGit-AI__Website/commit/78dee25eedb6a4bf3664fb44db5faabd68549308) | [current](../an-agentic-console.md) |
 
 [← Back to the article](../an-agentic-console.md) · [All articles](../index.md)
 

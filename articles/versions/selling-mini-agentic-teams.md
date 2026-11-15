@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-15 | minor | 1,488 | +78 / −0 words; 0 changed, 2 added, 0 removed paragraphs | this release | [what changed](selling-mini-agentic-teams/v1.1.0.md) · [current](../selling-mini-agentic-teams.md) |
+| **v1.1.0** | 2026-11-15 | minor | 1,488 | +78 / −0 words; 0 changed, 2 added, 0 removed paragraphs | [`78dee25ee`](https://github.com/SGit-AI/SGit-AI__Website/commit/78dee25eedb6a4bf3664fb44db5faabd68549308) | [what changed](selling-mini-agentic-teams/v1.1.0.md) · [current](../selling-mini-agentic-teams.md) |
 | **v1.0.0** | 2026-11-15 | published | 1,410 | first published | [`b4b8a7494`](https://github.com/SGit-AI/SGit-AI__Website/commit/b4b8a749454c1b81d55511c4a66d56a0f0cddab2) |  |
 
 [← Back to the article](../selling-mini-agentic-teams.md) · [All articles](../index.md)
