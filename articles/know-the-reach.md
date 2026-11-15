@@ -10,7 +10,7 @@
 
 # Know the Reach: RiskMandate has a song on Spotify, and its music video is being made with AI, shot by shot, from about 2,300 words of human direction; this is how the first part was made
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-15 · [article v1.0.0](versions/know-the-reach.md) · [newsroom v999.0.0](https://newsroom.sgit.ai/admin/versions.html) · riskmandatemusicvideoai-videorunwayweb-summitproductionarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-15 · [article v1.0.0](versions/know-the-reach.md) · [newsroom v0.14.87](https://newsroom.sgit.ai/admin/versions.html) · riskmandatemusicvideoai-videorunwayweb-summitproductionarticle
 
 ***Abstract:** RiskMandate now has a song on Spotify, Know the Reach, and a music video to go with it. The first part, 53 seconds of a song about three and a half minutes long, was made by Silvio Switha with AI, and its production audit is unusually complete. In the available chats, about 2,300 words of human direction led to 43 generated images, 16 generated motion clips and 21 edited video exports: almost 25 minutes of versioned material, not 25 minutes of unique AI footage. The video tells one story, a night in Lisbon turning to morning, with a software agent shown as golden light, a human reviewer, and the three words RiskMandate is about: reach, mandate and the gap between them. Eight decisions shaped it, from keeping the song as the timing reference to testing four fonts for a phone screen, and paid generation was kept to 1,236 Runway credits by reusing images and testing one eight-second clip first.*
 
