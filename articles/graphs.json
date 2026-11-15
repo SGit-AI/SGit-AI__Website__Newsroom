@@ -55,6 +55,161 @@
   ],
   "articles": [
     {
+      "slug": "decide-then-buy",
+      "title": "Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in",
+      "date": "2026-11-15",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/decide-then-buy.html",
+      "markdown": "https://newsroom.sgit.ai/articles/decide-then-buy.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/decide-then-buy.webp",
+      "teaser": "Deciding what to buy and buying it are two businesses: custom explorer work and commodity town planner work. Give an open path and a better deal.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "strategy",
+        "wardley-maps",
+        "open-source",
+        "decisions",
+        "commodity",
+        "town-planners",
+        "business-models",
+        "article"
+      ],
+      "links_out": [
+        "a-market-for-sweets",
+        "the-new-data-lake",
+        "a-brain-you-arrive-at",
+        "town-planners-for-mission-critical-code",
+        "the-shop-that-sells-time",
+        "where-to-invest-in-sgit",
+        "villager-services-for-explorer-coders",
+        "explorer-coding",
+        "ephemeral-town-planner-services",
+        "when-the-customer-becomes-the-commodity"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "dtb-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dtb-map.webp",
+          "caption": "A Wardley map of a purchase: the decision on the custom side, the purchase on the commodity side, the record between.",
+          "kind": "wardley-map"
+        },
+        {
+          "file": "dtb-moments.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dtb-moments.webp",
+          "caption": "The two moments: deciding, which ends in a decision record, and buying, done by the person or by a service.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "decide-then-buy",
+        "teaser": "Deciding what to buy and buying it are two businesses: custom explorer work and commodity town planner work. Give an open path and a better deal.",
+        "topics": [
+          "startups-and-strategy",
+          "agents-and-policy"
+        ],
+        "core_idea": "A purchase has two moments, the decision (ending in a decision record: X, on Y, quantity Z) and the purchase. They are two businesses on a Wardley map: helping someone decide is custom, personal explorer and villager work, agnostic about where they buy; buying is a standard commodity for town planners. The strategy is no lock-in: map the do-it-yourself path from twenty-five steps to one, and sell a service that does it, for time, trust, execution, expertise and volume prices.",
+        "nodes": [
+          {
+            "id": "moments",
+            "label": "Two moments",
+            "kind": "concept",
+            "summary": "Deciding, then buying."
+          },
+          {
+            "id": "decide",
+            "label": "The decision business",
+            "kind": "method",
+            "summary": "Custom, personal, purchase-agnostic."
+          },
+          {
+            "id": "buy",
+            "label": "The purchase business",
+            "kind": "method",
+            "summary": "A commodity at volume."
+          },
+          {
+            "id": "record",
+            "label": "Decision record",
+            "kind": "artefact",
+            "summary": "X, on Y, quantity Z."
+          },
+          {
+            "id": "open",
+            "label": "The open path",
+            "kind": "claim",
+            "summary": "Every step mapped, no lock-in."
+          },
+          {
+            "id": "service",
+            "label": "We do it for you",
+            "kind": "method",
+            "summary": "Time, trust, execution, volume prices."
+          }
+        ],
+        "edges": [
+          {
+            "from": "decide",
+            "to": "moments",
+            "rel": "extends"
+          },
+          {
+            "from": "buy",
+            "to": "moments",
+            "rel": "extends"
+          },
+          {
+            "from": "decide",
+            "to": "record",
+            "rel": "produces"
+          },
+          {
+            "from": "record",
+            "to": "buy",
+            "rel": "leads-to"
+          },
+          {
+            "from": "open",
+            "to": "service",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-market-for-sweets",
+            "a-brain-you-arrive-at",
+            "the-new-data-lake",
+            "town-planners-for-mission-critical-code",
+            "villager-services-for-explorer-coders",
+            "the-shop-that-sells-time",
+            "where-to-invest-in-sgit",
+            "when-the-customer-becomes-the-commodity"
+          ],
+          "pages": [],
+          "sites": [
+            "https://blog.gardeviance.org/2015/03/on-pioneers-settlers-town-planners-and.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The key point is to separate the decision of what to buy from the operation of buying it.",
+            "why": "Keep them apart."
+          },
+          {
+            "text": "your service has to be the better deal, not the only way",
+            "why": "The open path, and a better deal."
+          },
+          {
+            "text": "It gets very unique, very fast.",
+            "why": "Two businesses."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-new-data-lake",
       "title": "The new data lake: many small append-only lanes instead of one big lake, a curator agent that turns their rows into a semantic graph, and a graph that draws its own infographics, as we ran it at Web Summit",
       "date": "2026-11-15",
@@ -85,6 +240,7 @@
         "a-market-for-sweets"
       ],
       "links_in": [
+        "decide-then-buy",
         "a-market-for-sweets",
         "a-brain-you-arrive-at"
       ],
@@ -236,6 +392,7 @@
         "the-new-data-lake"
       ],
       "links_in": [
+        "decide-then-buy",
         "the-new-data-lake",
         "a-brain-you-arrive-at"
       ],
@@ -400,6 +557,7 @@
         "a-market-for-sweets"
       ],
       "links_in": [
+        "decide-then-buy",
         "the-new-data-lake",
         "a-market-for-sweets"
       ],
@@ -1553,6 +1711,7 @@
         "ephemeral-town-planner-services"
       ],
       "links_in": [
+        "decide-then-buy",
         "always-on-agents-at-team-scale"
       ],
       "figures": [
@@ -4962,6 +5121,7 @@
         "a-teacher-and-agents-she-can-trust"
       ],
       "links_in": [
+        "decide-then-buy",
         "no-tech-stack-to-maintain"
       ],
       "figures": [
@@ -11010,6 +11170,7 @@
         "vibathon-algarve-2026"
       ],
       "links_in": [
+        "decide-then-buy",
         "a-presentation-for-every-project",
         "running-an-ai-build-event",
         "spreadsheet-to-app-sessions",
@@ -17135,6 +17296,7 @@
         "from-send-to-sgit"
       ],
       "links_in": [
+        "decide-then-buy",
         "investor-sgit-ai"
       ],
       "figures": [
@@ -36333,6 +36495,7 @@
         "saas-apocalypse-decided-by-inertia-not-by-ai"
       ],
       "links_in": [
+        "decide-then-buy",
         "the-graph-companies"
       ],
       "figures": [
@@ -40221,6 +40384,7 @@
         "explorer-coding"
       ],
       "links_in": [
+        "decide-then-buy",
         "town-planners-for-mission-critical-code"
       ],
       "figures": [
@@ -50149,6 +50313,7 @@
         "a-custom-firefox-of-my-own"
       ],
       "links_in": [
+        "decide-then-buy",
         "town-planners-for-mission-critical-code",
         "sell-to-the-companies-that-already-have-the-problem",
         "joining-algarve-evolution",

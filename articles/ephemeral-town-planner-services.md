@@ -123,6 +123,7 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#eph
 
 ### Continued by
 
+- [Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in](decide-then-buy.md) Deciding what to buy and buying it are two businesses: custom explorer work and commodity town planner work. Give an open path and a better deal.
 - [Town planners for mission-critical code: the US ground stop of 13 November is a case for teams that read, certify and test every line, and for using AI to make that work scale, not to skip it](town-planners-for-mission-critical-code.md) The US ground stop is a case for town planner teams that certify every line, and for AI that makes that work scale.
 
 [All articles](index.md) · [All graphs](graphs.md)

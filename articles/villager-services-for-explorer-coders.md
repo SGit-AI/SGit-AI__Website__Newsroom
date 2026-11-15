@@ -115,6 +115,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#villag
 
 ### Continued by
 
+- [Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in](decide-then-buy.md) Deciding what to buy and buying it are two businesses: custom explorer work and commodity town planner work. Give an open path and a better deal.
 - [A presentation for every project: how the agentic workflow behind a talk built in a day can turn each project from a build day into a visual, dynamic presentation, and a service](a-presentation-for-every-project.md) A presentation for every project: the agentic workflow behind a talk built in a day, applied to each project from a build day, and a service.
 - [Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from a browser-only workspace to synthetic users testing the day before it happens](running-an-ai-build-event.md) Running an AI build event where everyone ships something someone else can use: guidance on the primitives, from browser-only to synthetic users.
 - [Spreadsheet to App: a session programme for Algarve Evolution, with five example spreadsheets, five prompts, a mock event and a public vault, so nobody arrives needing a problem to solve](spreadsheet-to-app-sessions.md) Spreadsheet to App: a session programme for Algarve Evolution, with five examples, five prompts, a mock event and a public vault.

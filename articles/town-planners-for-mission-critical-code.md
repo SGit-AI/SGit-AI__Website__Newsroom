@@ -93,6 +93,7 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#town-pl
 
 ### Continued by
 
+- [Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in](decide-then-buy.md) Deciding what to buy and buying it are two businesses: custom explorer work and commodity town planner work. Give an open path and a better deal.
 - [Always-on agents at team scale: Anthropic's five primitives for an agent that sleeps and wakes, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many](always-on-agents-at-team-scale.md) Anthropic's five primitives for always-on agents, set beside the around 250 named agents six of us ran at Web Summit, and the next problems once there are many.
 
 [All articles](index.md) · [All graphs](graphs.md)

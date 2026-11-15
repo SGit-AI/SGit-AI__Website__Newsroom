@@ -92,6 +92,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#explor
 
 ### Continued by
 
+- [Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in](decide-then-buy.md) Deciding what to buy and buying it are two businesses: custom explorer work and commodity town planner work. Give an open path and a better deal.
 - [Town planners for mission-critical code: the US ground stop of 13 November is a case for teams that read, certify and test every line, and for using AI to make that work scale, not to skip it](town-planners-for-mission-critical-code.md) The US ground stop is a case for town planner teams that certify every line, and for AI that makes that work scale.
 - [Sell to the companies that already have the problem: how Algarve Evolution can match businesses adopting AI with the region's service providers, starting when the business has built its own first app](sell-to-the-companies-that-already-have-the-problem.md) Sell to the companies that already have the problem: matching Algarve businesses that built their own AI apps with the region's providers.
 - [Joining Algarve Evolution: The Cyber Boardroom takes the startup membership, and what we can share with the region, our workflows and our technology, all of it open source](joining-algarve-evolution.md) Joining Algarve Evolution: The Cyber Boardroom takes the startup membership and shares its workflows and technology, all open source.

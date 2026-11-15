@@ -117,6 +117,7 @@ Startups & strategyNews & evidence[This article as a graph →](graphs.md#the-sh
 
 ### Continued by
 
+- [Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in](decide-then-buy.md) Deciding what to buy and buying it are two businesses: custom explorer work and commodity town planner work. Give an open path and a better deal.
 - [No tech stack to maintain: it is not that there is no backend, it is that the only code you own is HTML, CSS and JavaScript, with every other primitive rented as a commodity or run in the user's browser over encrypted vaults](no-tech-stack-to-maintain.md) Not no backend: no tech stack of your own. Only HTML, CSS and JavaScript; every other primitive rented or run in the browser over vaults.
 
 [All articles](index.md) · [All graphs](graphs.md)

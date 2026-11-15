@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-15 | published | 1,325 | first published | this release | [current](../a-market-for-sweets.md) |
+| **v1.0.0** | 2026-11-15 | published | 1,325 | first published | [`90dbc4413`](https://github.com/SGit-AI/SGit-AI__Website/commit/90dbc44132fa7c9c43b8a07b7e440a7222aa446d) | [current](../a-market-for-sweets.md) |
 
 [← Back to the article](../a-market-for-sweets.md) · [All articles](../index.md)
 

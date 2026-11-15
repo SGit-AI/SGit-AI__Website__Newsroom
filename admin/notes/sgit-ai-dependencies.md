@@ -4,15 +4,15 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 1344 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 922 | 4050 | links to sgit.ai's pages and the network sites (38 files this site writes itself) |
-| words | 1862 | 12239 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 1347 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 924 | 4053 | links to sgit.ai's pages and the network sites (38 files this site writes itself) |
+| words | 1865 | 12264 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 116 | 339 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 807 × `sgit.ai/about/index.html`
-- 398 × `sgit.ai/about/index.md`
+- 809 × `sgit.ai/about/index.html`
+- 399 × `sgit.ai/about/index.md`
 - 166 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 54 × `pki.sgit.ai/`
@@ -104,10 +104,10 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `newsroom-api/index.html` (30)
 - `newsroom-api/map.json` (24)
 - `articles/ids.json` (23)
+- `desks/vaults.html` (22)
 - `admin/notes/2026-10-28__investor-sgit-ai/memo-01.md` (21)
 - `network/index.html` (21)
 - `engineering/index.html` (20)
-- `desks/vaults.html` (19)
 - `engineering/issues/067.html` (19)
 - `README.md` (18)
 - `engineering/issues/019.html` (18)

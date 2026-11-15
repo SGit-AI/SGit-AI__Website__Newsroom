@@ -1,0 +1,118 @@
+{
+  "slug": "decide-then-buy",
+  "teaser": "Deciding what to buy and buying it are two businesses: custom explorer work and commodity town planner work. Give an open path and a better deal.",
+  "topics": [
+    "startups-and-strategy",
+    "agents-and-policy"
+  ],
+  "core_idea": "A purchase has two moments, the decision (ending in a decision record: X, on Y, quantity Z) and the purchase. They are two businesses on a Wardley map: helping someone decide is custom, personal explorer and villager work, agnostic about where they buy; buying is a standard commodity for town planners. The strategy is no lock-in: map the do-it-yourself path from twenty-five steps to one, and sell a service that does it, for time, trust, execution, expertise and volume prices.",
+  "nodes": [
+    {
+      "id": "moments",
+      "label": "Two moments",
+      "kind": "concept",
+      "summary": "Deciding, then buying."
+    },
+    {
+      "id": "decide",
+      "label": "The decision business",
+      "kind": "method",
+      "summary": "Custom, personal, purchase-agnostic."
+    },
+    {
+      "id": "buy",
+      "label": "The purchase business",
+      "kind": "method",
+      "summary": "A commodity at volume."
+    },
+    {
+      "id": "record",
+      "label": "Decision record",
+      "kind": "artefact",
+      "summary": "X, on Y, quantity Z."
+    },
+    {
+      "id": "open",
+      "label": "The open path",
+      "kind": "claim",
+      "summary": "Every step mapped, no lock-in."
+    },
+    {
+      "id": "service",
+      "label": "We do it for you",
+      "kind": "method",
+      "summary": "Time, trust, execution, volume prices."
+    }
+  ],
+  "edges": [
+    {
+      "from": "decide",
+      "to": "moments",
+      "rel": "extends"
+    },
+    {
+      "from": "buy",
+      "to": "moments",
+      "rel": "extends"
+    },
+    {
+      "from": "decide",
+      "to": "record",
+      "rel": "produces"
+    },
+    {
+      "from": "record",
+      "to": "buy",
+      "rel": "leads-to"
+    },
+    {
+      "from": "open",
+      "to": "service",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-market-for-sweets",
+      "a-brain-you-arrive-at",
+      "the-new-data-lake",
+      "town-planners-for-mission-critical-code",
+      "villager-services-for-explorer-coders",
+      "the-shop-that-sells-time",
+      "where-to-invest-in-sgit",
+      "when-the-customer-becomes-the-commodity"
+    ],
+    "pages": [],
+    "sites": [
+      "https://blog.gardeviance.org/2015/03/on-pioneers-settlers-town-planners-and.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The key point is to separate the decision of what to buy from the operation of buying it.",
+      "why": "Keep them apart."
+    },
+    {
+      "text": "your service has to be the better deal, not the only way",
+      "why": "The open path, and a better deal."
+    },
+    {
+      "text": "It gets very unique, very fast.",
+      "why": "Two businesses."
+    }
+  ],
+  "figures": [
+    {
+      "file": "dtb-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dtb-map.webp",
+      "caption": "A Wardley map of a purchase: the decision on the custom side, the purchase on the commodity side, the record between.",
+      "kind": "wardley-map"
+    },
+    {
+      "file": "dtb-moments.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dtb-moments.webp",
+      "caption": "The two moments: deciding, which ends in a decision record, and buying, done by the person or by a service.",
+      "kind": "concept"
+    }
+  ]
+}

@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-91 articles, newest first.
+92 articles, newest first.
 
 ## November 2026
 
+- [Decide, then buy: deciding what to buy and buying it are two different businesses, one for explorers and villagers and one for town planners, and an open path with a better deal beats locking the customer in](../../articles/decide-then-buy.md), 2026-11-15, 4 min.
 - [The new data lake: many small append-only lanes instead of one big lake, a curator agent that turns their rows into a semantic graph, and a graph that draws its own infographics, as we ran it at Web Summit](../../articles/the-new-data-lake.md), 2026-11-15, 4 min.
 - [A market for sweets: the opposite of a market for lemons, a semantic graph for one financial decision that gives the buyer the evidence, an agent that gathers and weighs but never trades, and the judo move of leaving the trade to others](../../articles/a-market-for-sweets.md), 2026-11-15, 5 min.
 - [A brain you arrive at: a company brain for information, decisions and insights is built for one company, one division and one team, starting with one person's and growing, and the Web Summit team already ran one](../../articles/a-brain-you-arrive-at.md), 2026-11-15, 5 min.

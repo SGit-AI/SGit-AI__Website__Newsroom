@@ -6,3 +6,7 @@ Requested by Dinis, 15 November 2026, with a friend who has worked in crypto for
 - Facts used: Web Summit examples from the Ten days series and Dinis's account (conductor to conductors to collect contacts; answers through vaults); PrompTugal.news figures from its repository and live newsroom page (104 captures, 64 candidates, 73 articles, 877 entities, 1,026 edges); Storm Charles 2,618 pages. "61,000 new tokens a day" is the friend's figure, attributed and unchecked. Left out: platform revenue figures and a friend-of-a-friend trading anecdote (unverifiable).
 - Akerlof, The Market for "Lemons", QJE 1970.
 - Figures: abr-levels, ndl-flow, mfs-lemons, mfs-judo; screenshots dmo-brain, dmo-lake, dmo-sweets, dmo-token.
+
+## Fourth article: decide, then buy (15 Nov)
+
+Dinis, after the three: the decision and the purchase are two businesses (explorer/villager against town planner), mapped on a Wardley map; no lock-in, the open path mapped (25, 5 or 1 steps) or a service selling time, trust, execution, expertise and volume prices; Amazon joins both, OpenRouter is the commodity half; this is also his open source strategy. Routers' volume-price claim attributed and unchecked. Figures dtb-map, dtb-moments. Slug decide-then-buy.
