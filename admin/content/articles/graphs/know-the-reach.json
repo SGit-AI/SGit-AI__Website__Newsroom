@@ -1,0 +1,31 @@
+{
+ "slug": "know-the-reach",
+ "teaser": "RiskMandate's song Know the Reach is on Spotify; the first 53 seconds of its video were made with AI from about 2,300 words of direction.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "RiskMandate's song Know the Reach is on Spotify, and the first part of its music video, 53.4 seconds made by Silvio Switha with AI, has a complete production audit: about 2,300 words of human direction, 43 generated images, 16 motion clips, 21 edited exports of versioned material, eight decisions about story, accuracy, sound, type and spend, and 1,236 Runway credits.",
+ "nodes": [
+  {"id": "song", "label": "Know the Reach", "kind": "artefact", "summary": "RiskMandate's song, on Spotify."},
+  {"id": "video", "label": "Part one", "kind": "artefact", "summary": "53.4 seconds, 14 clips."},
+  {"id": "direction", "label": "Human direction", "kind": "concept", "summary": "About 2,300 words."},
+  {"id": "outputs", "label": "What was generated", "kind": "example", "summary": "43 images, 16 clips, 21 exports."},
+  {"id": "decisions", "label": "Eight decisions", "kind": "method", "summary": "Story, accuracy, sound, type, spend."},
+  {"id": "spend", "label": "Controlled spend", "kind": "claim", "summary": "1,236 Runway credits."}
+ ],
+ "edges": [
+  {"from": "video", "to": "song", "rel": "extends"},
+  {"from": "direction", "to": "video", "rel": "produces"},
+  {"from": "outputs", "to": "video", "rel": "example-of"},
+  {"from": "decisions", "to": "video", "rel": "extends"},
+  {"from": "spend", "to": "decisions", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["a-film-studio-on-a-laptop", "ten-days-at-web-summit"],
+  "pages": [],
+  "sites": ["https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6", "https://youtu.be/BjN-K-C2fsw"]
+ },
+ "quotes": [
+  {"text": "A product film that overclaims is worse than none.", "why": "Eight decisions."},
+  {"text": "What strikes me reading the audit is how much of the work was judgement, not generation.", "why": "Eight decisions."},
+  {"text": "The human part is the direction", "why": "In short."}
+ ]
+}

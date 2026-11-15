@@ -113,6 +113,10 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#a-film-
 - [RiskMandate and Manus: mapping an Agent Behaviour Policy onto a general agent that can use your computer, your browser, your logins and 416 connectors, and the controls Manus already gives you](riskmandate-and-manus.md) How an Agent Behaviour Policy maps onto Manus: its reach, the controls it already gives you, and the gap between them.
 - [Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit](coding-standards-are-behaviour-policies.md) A coding standard is a behaviour policy: write it as intent, see what holds each rule, and map it across teams with a graph.
 
+### Continued by
+
+- [Know the Reach: RiskMandate has a song on Spotify, and its music video is being made with AI, shot by shot, from about 2,300 words of human direction; this is how the first part was made](know-the-reach.md) RiskMandate's song Know the Reach is on Spotify; the first 53 seconds of its video were made with AI from about 2,300 words of direction.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 394 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=394)

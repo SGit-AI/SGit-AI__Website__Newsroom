@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-14 | published | 1,372 | first published | this release | [current](../the-teams-operating-system.md) |
+| **v1.0.0** | 2026-11-14 | published | 1,372 | first published | [`c3d87c851`](https://github.com/SGit-AI/SGit-AI__Website/commit/c3d87c851726be5b48c8ea422dc2679c3990bc3c) | [current](../the-teams-operating-system.md) |
 
 [← Back to the article](../the-teams-operating-system.md) · [All articles](../index.md)
 
