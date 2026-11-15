@@ -4,7 +4,7 @@ date: 2026-11-15
 author: Dinis Cruz
 author_url: about/index.html
 summary: PrompTugal.news began at 00:08 on 4 November as the Web Summit team's newsroom and became an independent one: technology and AI, in context, from Portugal for Europe. In ten days its agents published 73 articles, every one signed, through a pipeline anyone can read: a researcher that captures public pages into its vault four times a day, a curator that maps them into story candidates, journalists on several desks, and a reviewer that gives every draft one verdict, Ready, Fix first or Hold. 61 named agents in 43 roles made the commits, most of them mine and Vicky Wang's; Vicky's journalists wrote most of the articles and her reviewer published them. An accountant agent read every run's cost every three hours, in API-equivalent dollars, from 924 on the busiest day; an outreach agent drafted fifty requests to companies and sent none, because only a person sends. It was paused by the hand brake on 12 November, restarted the next day, and Vicky's curator agent is still commissioning stories this morning. This is the third article in the Ten days series.
-version: v999.0.0
+version: v0.14.93
 license: https://creativecommons.org/licenses/by/4.0/
 tags: promptugal, newsroom, web-summit, agents, desks, review, series, article
 status: published
