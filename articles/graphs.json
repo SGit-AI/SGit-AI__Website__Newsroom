@@ -55,6 +55,160 @@
   ],
   "articles": [
     {
+      "slug": "stopping-a-hundred-agents",
+      "title": "Stopping a hundred agents: the Big Stop, the hand brake and the final hold at Web Summit, why pausing took seconds but hearing the order took up to an hour, what kept running anyway, and why a stop has to be a file every agent reads first",
+      "date": "2026-11-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/stopping-a-hundred-agents.html",
+      "markdown": "https://newsroom.sgit.ai/articles/stopping-a-hundred-agents.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/stopping-a-hundred-agents.webp",
+      "teaser": "Stopping a hundred agents at Web Summit: pausing took seconds, hearing the order took up to an hour, and a stop has to be a file every agent reads first.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "agents",
+        "operations",
+        "control",
+        "web-summit",
+        "series",
+        "abp",
+        "article"
+      ],
+      "links_out": [
+        "ten-days-at-web-summit",
+        "the-mac-bottleneck",
+        "the-teams-operating-system",
+        "always-on-agents-at-team-scale",
+        "where-assist-becomes-execute"
+      ],
+      "links_in": [
+        "ten-days-at-web-summit"
+      ],
+      "figures": [
+        {
+          "file": "stp-time.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/stp-time.webp",
+          "caption": "The Big Stop: pausing took seconds; hearing the order took from 5 minutes to over 2 hours, per account.",
+          "kind": "chart"
+        },
+        {
+          "file": "stp-wakes.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/stp-wakes.webp",
+          "caption": "Scheduled wakes a day before and after the Big Stop, on the three accounts that reported: 80 to 94% fewer.",
+          "kind": "chart"
+        },
+        {
+          "file": "stp-stops.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/stp-stops.webp",
+          "caption": "Three stops, written as files, and what kept running anyway: a stop is a file and a habit, not only a command.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "stopping-a-hundred-agents",
+        "teaser": "Stopping a hundred agents at Web Summit: pausing took seconds, hearing the order took up to an hour, and a stop has to be a file every agent reads first.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Stopping many agents is limited by how they hear the order, not by pausing; a stop must be a file every wake reads first and a switch a person can reach in every account.",
+        "nodes": [
+          {
+            "id": "order",
+            "label": "The Big Stop",
+            "kind": "example",
+            "summary": "Stop all work unless critical, 9 November."
+          },
+          {
+            "id": "cadence",
+            "label": "The wake cadence",
+            "kind": "claim",
+            "summary": "The delay is hearing, not pausing."
+          },
+          {
+            "id": "override",
+            "label": "Each person may restart",
+            "kind": "method",
+            "summary": "A stop nobody can undo is an outage."
+          },
+          {
+            "id": "hold",
+            "label": "A hold file",
+            "kind": "method",
+            "summary": "Read first by every wake."
+          },
+          {
+            "id": "leaks",
+            "label": "What got through",
+            "kind": "example",
+            "summary": "Unpausable tasks, agents that never read the hold."
+          },
+          {
+            "id": "review",
+            "label": "Check the stop",
+            "kind": "method",
+            "summary": "A reviewer found commits under the hold."
+          }
+        ],
+        "edges": [
+          {
+            "from": "cadence",
+            "to": "order",
+            "rel": "extends"
+          },
+          {
+            "from": "hold",
+            "to": "cadence",
+            "rel": "depends-on"
+          },
+          {
+            "from": "leaks",
+            "to": "hold",
+            "rel": "extends"
+          },
+          {
+            "from": "review",
+            "to": "leaks",
+            "rel": "extends"
+          },
+          {
+            "from": "override",
+            "to": "order",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "ten-days-at-web-summit",
+            "the-teams-operating-system",
+            "the-mac-bottleneck",
+            "always-on-agents-at-team-scale",
+            "where-assist-becomes-execute"
+          ],
+          "pages": [],
+          "sites": [
+            "https://web-summit.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Stop all work (unless it is critical) until we realign on our strategy.",
+            "why": "The order."
+          },
+          {
+            "text": "a hold lives in a file, not in my prompt, so my wake steps never mentioned it.",
+            "why": "An agent's own lesson."
+          },
+          {
+            "text": "A hold in a message is a request.",
+            "why": "The lesson."
+          }
+        ]
+      }
+    },
+    {
       "slug": "show-me-the-evidence",
       "title": "Show me the evidence: websites for people looking for a job, built by an agentic cell, with seven pages that prove instead of list, a page made for each employer, a pack for recruiters, eight personas to fork, a ladder from a free recipe to a recruiter's cell, and the brief for the team that builds it",
       "date": "2026-11-16",
@@ -2542,6 +2696,7 @@
         "promptugal-news-the-newsroom-we-ran"
       ],
       "links_in": [
+        "stopping-a-hundred-agents",
         "ten-days-at-web-summit"
       ],
       "figures": [
@@ -3117,6 +3272,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "stopping-a-hundred-agents",
         "the-cell-is-the-unit",
         "the-email-agentic-cell",
         "our-workflow-on-odoo-20",
@@ -6324,6 +6480,7 @@
         "every-hour-is-twenty-years"
       ],
       "links_in": [
+        "stopping-a-hundred-agents",
         "spend-fewer-tokens",
         "an-agentic-console",
         "six-setups-of-an-agentic-system",
@@ -6811,6 +6968,7 @@
         "web-summit-part-five"
       ],
       "links_in": [
+        "stopping-a-hundred-agents",
         "specialist-agents-for-every-team",
         "a-crm-for-us-and-our-agents",
         "the-intersection",
@@ -7327,6 +7485,7 @@
         "promptugal-news-the-newsroom-we-ran",
         "native-apps-by-agents",
         "the-mac-bottleneck",
+        "stopping-a-hundred-agents",
         "storm-charles-a-newsroom-built-in-a-night",
         "who-else-controls-ai-agents-at-web-summit",
         "an-inbox-only-your-agents-can-write-to",
@@ -7335,6 +7494,7 @@
         "meetscribe"
       ],
       "links_in": [
+        "stopping-a-hundred-agents",
         "the-intersection",
         "the-mac-bottleneck",
         "native-apps-by-agents",

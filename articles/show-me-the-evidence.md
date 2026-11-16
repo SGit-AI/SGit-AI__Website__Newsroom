@@ -10,7 +10,7 @@
 
 # Show me the evidence: websites for people looking for a job, built by an agentic cell, with seven pages that prove instead of list, a page made for each employer, a pack for recruiters, eight personas to fork, a ladder from a free recipe to a recruiter's cell, and the brief for the team that builds it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-16 · [article v1.0.0](versions/show-me-the-evidence.md) · [newsroom v0.14.126](https://newsroom.sgit.ai/admin/versions.html) · careershiringagenticcellstemplatescellspersonasrecruitersarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-16 · [article v1.1.0, 2 versions](versions/show-me-the-evidence.md) · [newsroom v0.14.126](https://newsroom.sgit.ai/admin/versions.html) · careershiringagenticcellstemplatescellspersonasrecruitersarticle
 
 ***Abstract:** I want to help people I know get jobs, and the best thing I can give them is a website that shows the evidence. Now that anyone can generate a polished CV, hiring managers trust CVs less: in Robert Half's survey 65% said AI-generated applications make skills harder to verify, and in Greenhouse's 91% of recruiters had spotted deception. So the answer is not a better list; it is proof. Show me the work. Show me your thinking. Tell me what you do outside work, what makes you you, and what you think about my industry. And if you are meeting me, make a page for me. So this is the design of a job-seeker cell: a site of seven pages, home, evidence, thinking, me, a page for you, working with me and a recruiter pack, plus the files machines read; an agent team that interviews the person, finds the evidence, drafts in their words, designs a theme that looks like them, tailors a page per application and checks every fact, while the person approves and sends; eight synthetic personas, from a developer to a security engineer, a senior leader and a graduate, each a template anyone can fork onto GitHub Pages; a ladder from a free recipe to a recruiter's cell; and the brief for the team that builds it. The mock-ups are below. They are also the references our agentic sites have been missing.*
 
@@ -129,7 +129,7 @@ And there is a second reason. Our agentic sites have not looked good enough, bec
 
 This is the brief for the agents and people who build the cell. The mock-ups are a single HTML file the team has; build from them, and as the cell is built, compare it with this article and fix whichever is wrong.
 
-1. **The site template.** Seven pages and the machine files, from one content file per person: profile, proofs, case studies, posts, hobbies, manual, pack. Static, fast, accessible, perfect on a phone, deployable on GitHub Pages, and fork-ready ([fork it](fork-it.md)).
+1. **The site template.** Seven pages and the machine files, from one content file per person: profile, proofs, case studies, posts, hobbies, manual, pack. Static, fast, accessible, easy to read on a phone, deployable on GitHub Pages, and fork-ready ([fork it](fork-it.md)).
 2. **Eight themes, then many more.** The eight personas as forkable templates, each a full site with sample content clearly marked. Then a theme per job family: nurse, teacher, lawyer, chef, data scientist, sales, architect, researcher.
 3. **The look-back interview** as the front door: voice or text, one question at a time, each dot marked remembered or evidenced ([connect your dots backwards](connect-your-dots-backwards.md)).
 4. **The evidence-hunter:** finds and checks the person's public work, and asks before it uses anything about a former employer.

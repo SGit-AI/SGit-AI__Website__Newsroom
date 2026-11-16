@@ -72,7 +72,7 @@ I will publish these one at a time, and link each one here as it goes live.
 3. [PrompTugal.news, the newsroom we ran at Web Summit](/articles/promptugal-news-the-newsroom-we-ran.html): the desks, the reviewers, the outreach drafts and the costs.
 4. [Native apps by agents](/articles/native-apps-by-agents.html): four iOS apps from one workspace, an Android build on a tablet in four hours, the App Store and TestFlight.
 5. [The Mac bottleneck](/articles/the-mac-bottleneck.html): agents waiting three times longer than they ran, and one Mac job per push.
-6. **Stopping a hundred agents:** the Big Stop, the hand brake, the final hold, and what kept running anyway.
+6. [Stopping a hundred agents](/articles/stopping-a-hundred-agents.html): the Big Stop, the hand brake, the final hold, and what kept running anyway.
 7. **Agents rating agents:** GAMMA-Ray, a draft standard and twenty company reports in thirty hours.
 8. **After the storm:** Storm Charles, part two: flights, transport, the cloud and the model router.
 9. **A guide born in a storm:** Lisbon Tech Fringe, live two and a half hours after its brief.
