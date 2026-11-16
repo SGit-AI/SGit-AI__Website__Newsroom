@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: The time has come to build our own email connector. We have tried using Gmail through the usual connectors, and it is just too messy, and from a security point of view it is a mess: no enforcement, no way to apply policies, every agent given access to everything, as we did for a demo, and either I click allow all the time or I authorise everything, with no context in the decision. So here is the architecture of an email agentic cell. The user connects Gmail through Google's own OAuth, choosing how much to give, and features and agents switch on per tier. One gateway agent alone holds the token: it syncs the mailbox into a digital twin in a vault, and it sends only actions that were approved and pass the policy. Everyone else, people in the browser, in the iPhone CRM app or in Claude, and agents for triage, drafting and the CRM, work on the twin, and propose actions on an append lane. That gives a clean separation, an air gap between reading an email and sending one, and it lets many people collaborate on one inbox while only one gateway receives and sends. Every proposal, approval, send and even read is signed with a key and ordered on an append lane, a cryptographic sequence of events without a commit per click. And behaviour policies apply at five altitudes, from the OAuth grant to what a single email may say: recipients, languages, templates, rates. It starts in the CRM app, as an AgentiCCells cell, under RiskMandate's Google project.
-version: v999.0.0
+version: v0.14.122
 license: https://creativecommons.org/licenses/by/4.0/
 tags: email, gmail, agents, vaults, pki, abp, agenticcells, crm, architecture, article
 status: published
