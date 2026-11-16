@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: This is the full circle I have been working towards. Yiheng Wang, who ran one of the largest agent teams at Web Summit with no technical background, is looking for a role as a project or operations manager, and tonight she got a website that is genuinely her. It was made in three passes, in one evening. First, the AgentiCCells site factory: a request with a brief and pointers to her public work, and a CI pipeline created the repository, the DNS entry, GitHub Pages and HTTPS in 72 seconds, with Claude Code's first version pushed three and a half minutes after the request. Then a completely separate session, with the site's own instructions, read-write access and more of her photos and sources, which called in five design agents: in about eleven minutes of commits it built five designs of the same facts, The Profile, Mission Control, The Pass, The Brief and The Journey, with her 26 agents drawn as a constellation, a live network and a kitchen brigade, a prep list, a ticket, a five-course menu, an incident log, a recruiter's page that prints, and a page that tells a hiring manager how to ask their own AI about her. Then her own agent took over, working for her. None of it is made up. Every number names its public source, and every one is something she can talk about in an interview, because she did it. That is the power, and it is only possible because of everything around it: agents that have read our guidance, a factory, behaviour policies, and public, linkable work.
-version: v999.0.0
+version: v0.14.129
 license: https://creativecommons.org/licenses/by/4.0/
 tags: careers, agenticcells, site-factory, design, agents, web-summit, article
 status: published
