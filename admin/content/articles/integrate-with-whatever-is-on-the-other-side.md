@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: Today I showed an MVP of an AgentiCCells cell to an organisation that liked it, said it fits their explorer mode, and then said, fairly: we use Odoo. That is exactly the point. They are already committed to Odoo, their data and workflows already live in it, and many of those workflows are manual and can be improved. So our strategy is to integrate with whatever is on the other side. We do not start by asking a customer to move to our technology. We use what they have, Odoo 12 or Odoo 20, Salesforce, a spreadsheet, and build around it: agents, behaviour policies, signed approvals, a lasting record, better interfaces and prototypes. That is the open source model: leverage what exists, make it better, and when the underlying technology is upgraded, use the new features. It puts the burden of keeping pace on the underlying technology. Then one of two things happens. Most likely, their system gets better, ships what we built, and we retire our code, which means less to maintain. Or what we built becomes the better place, and the data and work move to it over time, until the old system is no longer needed, the way some web application firewalls once sat in front of the existing firewalls because they understood HTTP. You do not start with replacement. And because we build only on commodity parts, no database of our own, no servers, either way we carry very little code.
-version: v999.0.0
+version: v0.14.120
 license: https://creativecommons.org/licenses/by/4.0/
 tags: strategy, integration, open-source, odoo, agenticcells, wardley-maps, positioning, article
 status: published
