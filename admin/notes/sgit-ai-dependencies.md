@@ -4,53 +4,53 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 1425 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 978 | 4798 | links to sgit.ai's pages and the network sites (38 files this site writes itself) |
-| words | 1958 | 12840 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 1434 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 984 | 4734 | links to sgit.ai's pages and the network sites (38 files this site writes itself) |
+| words | 1965 | 12883 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 118 | 343 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 870 × `sgit.ai/about/index.html`
-- 425 × `sgit.ai/about/index.md`
-- 202 × `sgit.ai/admin/versions.html`
+- 875 × `sgit.ai/about/index.html`
+- 428 × `sgit.ai/about/index.md`
+- 198 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
-- 80 × `sgit.ai/why/index.html`
-- 80 × `sgit.ai/team/index.html`
-- 64 × `sgit.ai/network/index.html`
-- 62 × `sgit.ai/demos/vaults/index.html`
-- 62 × `sgit.ai/demos/fractal-graphs/performance.html`
-- 62 × `sgit.ai/security/index.html`
-- 56 × `sgit.ai/skills/index.html`
+- 77 × `sgit.ai/why/index.html`
+- 77 × `sgit.ai/team/index.html`
+- 62 × `sgit.ai/network/index.html`
+- 60 × `sgit.ai/demos/vaults/index.html`
+- 60 × `sgit.ai/demos/fractal-graphs/performance.html`
+- 60 × `sgit.ai/security/index.html`
 - 54 × `pki.sgit.ai/`
-- 54 × `sgit.ai/docs/index.html`
-- 54 × `sgit.ai/compare/index.html`
-- 53 × `sgit.ai/docs/guidance/index.html`
-- 52 × `sgit.ai/docs/vault/index.html`
-- 52 × `sgit.ai/docs/briefs/index.html`
-- 52 × `sgit.ai/case-studies/index.html`
-- 52 × `sgit.ai/use-cases/index.html`
-- 52 × `sgit.ai/admin/index.html`
+- 54 × `sgit.ai/skills/index.html`
+- 52 × `sgit.ai/docs/index.html`
+- 52 × `sgit.ai/compare/index.html`
+- 51 × `sgit.ai/docs/guidance/index.html`
+- 50 × `sgit.ai/docs/vault/index.html`
+- 50 × `sgit.ai/docs/briefs/index.html`
+- 50 × `sgit.ai/case-studies/index.html`
+- 50 × `sgit.ai/use-cases/index.html`
+- 50 × `sgit.ai/admin/index.html`
 - 46 × `sgit.ai/`
-- 45 × `sgit.ai/docs/credentials.html`
-- 40 × `sgit.ai/startups/business-plans.html`
-- 40 × `sgit.ai/updates/index.html`
+- 44 × `sgit.ai/docs/credentials.html`
+- 39 × `sgit.ai/startups/business-plans.html`
+- 39 × `sgit.ai/updates/index.html`
 - 37 × `graphs.sgit.ai/`
-- 35 × `sgit.ai/demos/fractal-graphs/index.html`
 - 34 × `sgit.ai/api/append-lanes.html`
-- 34 × `sgit.ai/docs/surfaces.html`
-- 33 × `sgit.ai/docs/vault/sub-vaults.html`
-- 33 × `sgit.ai/docs/limitations.html`
-- 32 × `sgit.ai/docs/vault/vault-from-javascript.html`
-- 32 × `sgit.ai/docs/vault/vault-apps.html`
-- 32 × `sgit.ai/docs/vault/static-hosting.html`
-- 30 × `sgit.ai/docs/quickstart.html`
-- 30 × `sgit.ai/docs/vault/sg-bridge.html`
-- 29 × `sgit.ai/docs/what-is-sgit.html`
-- 29 × `sgit.ai/docs/agents.html`
-- 28 × `sgit.ai/try/index.html`
-- 28 × `sgit.ai/catalogue/index.html`
-- 28 × `sgit.ai/network/graphs.html`
+- 34 × `sgit.ai/demos/fractal-graphs/index.html`
+- 33 × `sgit.ai/docs/surfaces.html`
+- 32 × `sgit.ai/docs/vault/sub-vaults.html`
+- 32 × `sgit.ai/docs/limitations.html`
+- 31 × `sgit.ai/docs/vault/vault-from-javascript.html`
+- 31 × `sgit.ai/docs/vault/vault-apps.html`
+- 31 × `sgit.ai/docs/vault/static-hosting.html`
+- 29 × `sgit.ai/docs/quickstart.html`
+- 29 × `sgit.ai/docs/vault/sg-bridge.html`
+- 28 × `sgit.ai/docs/what-is-sgit.html`
+- 28 × `sgit.ai/docs/agents.html`
+- 27 × `sgit.ai/try/index.html`
+- 27 × `sgit.ai/catalogue/index.html`
+- 27 × `sgit.ai/network/graphs.html`
 
 ## Network links in pages this site writes itself
 
@@ -155,5 +155,5 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/releases/v0.12.49.html` (8)
 - `engineering/releases/v0.12.60.html` (8)
 - `reviews/vaults.html` (8)
-- `sections/building/index.html` (8)
 - `about/index.html` (7)
+- `admin/index.html` (7)

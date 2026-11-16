@@ -10,7 +10,7 @@
 
 # Odoo's agents can now write to the system of record: how our stack fits around Odoo, from version 12 to 20, with behaviour policies for Odoo agents, an Odoo cell, plan-then-apply through a vault, an ephemeral proof of concept that went from nothing to customised in under a minute on four versions, and why we use whatever version is on the other side
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-16 · [article v1.1.0, 2 versions](versions/odoo-and-our-stack.md) · [newsroom v0.14.118](https://newsroom.sgit.ai/admin/versions.html) · odooerpabpriskmandateagenticcellssgitsharnessstrategyarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-16 · [article v1.2.0, 3 versions](versions/odoo-and-our-stack.md) · [newsroom v0.14.118](https://newsroom.sgit.ai/admin/versions.html) · odooerpabpriskmandateagenticcellssgitsharnessstrategyarticle
 
 ***Abstract:** Odoo is the open-source business system that a very large number of small and medium companies run their sales, accounts, stock and websites on, and in September Odoo 20 gave its AI agents the ability to create and update records, on their own, from automated and scheduled actions, and to be reached through a native MCP server. That is exactly the line I keep writing about, where an agent moves from assisting to executing in a system of record, and it is now arriving at small-business scale. An agent's power in Odoo comes from the tools it is given and the access of the user behind it; Odoo's documentation, as quoted by an integrator, says the AI does not enforce business rules; and agent conversations are kept for up to 30 days. So here is how our stack could integrate with Odoo. RiskMandate writes a behaviour policy for each Odoo agent, with the grant measured from Odoo itself, ideally by an Odoo module. AgentiCCells sells an Odoo cell on its usual ladder. SGit holds the plan, the approval and the result of every agent write, signed, for as long as the business needs it, with a small broker applying changes after a person approves. PKI gives each agent a key and each approval a signature. SHarness could get its first showcase bounding the Odoo server or the coding agent beside it. And VoiceDebrief can turn a meeting into a CRM note. And none of it waits for Odoo 20: in this session an agent brought up Odoo 12, 15, 18 and 19, each from nothing to customised in under a minute, used the same workflow on all four, and removed them. We use whatever version is on the other side.*
 
@@ -40,7 +40,7 @@ That is the line I described in [where assist becomes execute](where-assist-beco
 Three things stand out, from Odoo's own documentation and release notes and from integrators' summaries:
 
 - **An agent's power comes from its tools and the user behind it.** An API key carries the issuing user's permissions, so an integration user set up as an administrator gives an agent an administrator's reach. Odoo's documentation, as an integrator quotes it, says the AI "does not enforce business rules, modify records directly, or guarantee the correctness of the operation": the tools do the work.
-- **Approvals exist, but per agent and per tool.** Odoo 20 agents can ask for permission and stop at a tool-call limit; what a given agent may save without asking depends on how it was configured.
+- **Approvals exist in chat, not on triggers.** In a conversation, Odoo 20 agents can ask for permission and stop at a tool-call limit; but Odoo's documentation says agents triggered automatically "perform their tasks directly, without requesting user approval before creating or updating records". And an agent's tools are server actions, which can run any code.
 - **The record is short.** "Conversations with agents are now stored for up to 30 days after the last message was sent." For a business that has to explain a posted bill a year later, that is not an audit trail.
 
 None of this is a criticism of Odoo; it is the same gap every agent platform has, and the reason [Agent Behaviour Policies](https://abp.sgit.ai/) exist.
@@ -95,6 +95,10 @@ That is the shape of an MVP or a proof of concept with a customer: a throwaway c
 
 This is the message I care about most. Customers do not have to wait to be upgraded to use agents with Odoo. We can bring the future to whatever they have now: agents, policies, signed approvals, a lasting record and better interfaces on an Odoo 15, and, when they move to 20, we use its agents and MCP server too, and retire whatever of ours they replace. We go to where the customer already is ([integrate with whatever is on the other side](integrate-with-whatever-is-on-the-other-side.md)).
 
+## Built since
+
+A separate agent has since built the MVP on Odoo 20, with a keyless agent, a policy check, a signed approval, a narrow broker and a module that measures the grant from Odoo itself: [our workflow on Odoo 20](our-workflow-on-odoo-20.md).
+
 ## The plan
 
 1. **A demo:** done as a proof of concept, above; next, one agent on vendor bills on a copy of a real customer's Odoo, its behaviour policy published as RiskMandate's next example.
@@ -106,14 +110,14 @@ This is the message I care about most. Customers do not have to wait to be upgra
 
 - **Odoo moves fast:** agents, MCP and AI credits are its own. We are the governance layer around them, not a rival agent.
 - **Plan gates:** on Odoo Online, the external API is available only on custom plans, so the first customers are likely Odoo.sh or self-hosted.
-- **Old APIs are going:** the legacy XML-RPC and JSON-RPC are deprecated in favour of the JSON-2 API; sources disagree on the removal date. Use what each version has: XML-RPC on older versions, JSON-2 or MCP on newer ones.
+- **Old APIs are going:** the legacy XML-RPC and JSON-RPC are deprecated in favour of the JSON-2 API, and scheduled for removal in Odoo 22 (autumn 2028) and on Odoo Online in 21.1 (winter 2027). Use what each version has: XML-RPC on older versions, JSON-2 or MCP on newer ones.
 
 ## What this does not claim
 
 - **This is a strategy and a proof of concept,** not a product; nothing has been sold.
 - **The proof of concept used Odoo Community images,** with no demo data and an example partner; Odoo 20 and Enterprise features, including its agents, were not tested.
 - **The policy in the figure is an illustration,** not one measured from a real Odoo database.
-- **Pricing, credits and which editions include agents** come partly from integrators' summaries; I would confirm them, and the MCP server's access controls, on a real instance first.
+- **Corrected on 16 November, from a separate agent's build on Odoo 20:** Odoo's agents, MCP server and Documents are Enterprise-only; AI features need credits at a euro each; MCP control is per tool, not per model. See [our workflow on Odoo 20](our-workflow-on-odoo-20.md).
 - **Customer numbers for Odoo are third-party estimates.**
 
 ## Where this comes from
@@ -135,9 +139,11 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#odoo-a
 - [How a vault works: an encrypted store that acts like a database, where a server that is fully compromised leaks nothing, one mutable file lets every other object be cached for ever, and a web page can open a file in four requests or run a whole app in a sandbox](how-a-vault-works.md) How an sgit vault acts like a database on a server that cannot read: one key-derived mutable file, everything else immutable.
 - [Every story has an address: a design proposal for PrompTugal.news as a ground-up newsroom, where news is filed where it happens and climbs to the region and the country with its proof, mocked up from the live data of 19 local editions](every-story-has-an-address.md) A design proposal for PrompTugal.news as a ground-up newsroom: every story filed at an address, climbing with its proof. Mockups from live data.
 - [Integrate with whatever is on the other side: why we never start by asking a customer to move, how we build around the systems they already run, from Odoo 12 to Salesforce, and how, over time, either their system gets better and we retire our code, or ours becomes the better place](integrate-with-whatever-is-on-the-other-side.md) We never start by asking a customer to move. We integrate with what they run, build around it, and either retire our code or become the better place.
+- [Our workflow on Odoo 20, built and measured: a bills agent with no Odoo credential, a policy check that allowed two proposals and stopped three, a signed approval, a narrow broker, a grant measured from Odoo itself by a new module, and what Odoo's default user role quietly allows](our-workflow-on-odoo-20.md) Our workflow on Odoo 20, built in 98 seconds: a keyless agent, a policy check, a signed approval, a narrow broker and a grant measured from Odoo.
 
 ### Continued by
 
+- [Our workflow on Odoo 20, built and measured: a bills agent with no Odoo credential, a policy check that allowed two proposals and stopped three, a signed approval, a narrow broker, a grant measured from Odoo itself by a new module, and what Odoo's default user role quietly allows](our-workflow-on-odoo-20.md) Our workflow on Odoo 20, built in 98 seconds: a keyless agent, a policy check, a signed approval, a narrow broker and a grant measured from Odoo.
 - [Integrate with whatever is on the other side: why we never start by asking a customer to move, how we build around the systems they already run, from Odoo 12 to Salesforce, and how, over time, either their system gets better and we retire our code, or ours becomes the better place](integrate-with-whatever-is-on-the-other-side.md) We never start by asking a customer to move. We integrate with what they run, build around it, and either retire our code or become the better place.
 
 [All articles](index.md) · [All graphs](graphs.md)

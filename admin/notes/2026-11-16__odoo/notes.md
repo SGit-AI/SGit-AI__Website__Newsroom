@@ -12,3 +12,6 @@ the writer's scratchpad (odoo/poc: run.sh, agent.py, down.sh). Timings: 19 44.9 
 start to agent done; teardown under 0.5 s. Odoo 12 and 15 needed l10n_generic_coa for a purchase journal. JSON-2 with an
 API key tested on 19. Images removed afterwards for disk. Companion article: integrate-with-whatever-is-on-the-other-side
 (the organisation from today's MVP is not named, at Dinis's word that they want to review the content first).
+
+## The MVP on Odoo 20 (report from odoo@AgentiCCells.dinis, session_018yvwtR5QXpatuyNUw5q8jz)
+Built end to end on odoo:20.0 in 98 s; simulated approval; abp_grant module; findings and corrections applied to odoo-and-our-stack (Enterprise-only agents and MCP, automatic triggers without approval, RPC removal Odoo 22 and Online 21.1, credits EUR 1, ir.access). Article: our-workflow-on-odoo-20. Screenshots stayed in that session; figures drawn from its data.

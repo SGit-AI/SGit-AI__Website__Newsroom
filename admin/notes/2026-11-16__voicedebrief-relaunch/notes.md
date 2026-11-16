@@ -1,0 +1,3 @@
+# VoiceDebrief, relaunched (16 November 2026)
+
+Dinis's voice brief: debrief the VoiceDebrief team; relaunch a simpler version; move the agent-talk workflows to the CRM app (on the email and messaging protocols); list features with collages from the team's screenshots; go to market under a proper name with its own Apple Developer account, Apple ID, domains and accounts; usage and payments. Sources: VoiceDebrief__App__iOS v0.1.138 (website/built/index.md, credit, reviews/round-3 contact sheets cropped, section art, issues/open), voicedebrief.ai pricing line. iCloud: keys are in iCloud Keychain; iCloud Drive storage listed as to add.

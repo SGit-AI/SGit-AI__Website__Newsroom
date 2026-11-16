@@ -1,0 +1,31 @@
+{
+ "slug": "voicedebrief-relaunch",
+ "teaser": "VoiceDebrief is ready for market: record, transcribe and debrief on the device, save to a vault. A simpler relaunch, under its own name and accounts.",
+ "topics": ["startups-and-strategy", "vaults-and-method"],
+ "core_idea": "Relaunch VoiceDebrief around its working core, move the agent workflows to the CRM app, and launch it properly with its own accounts and real payments.",
+ "nodes": [
+  {"id": "vision", "label": "What it can become", "kind": "concept", "summary": "Fifteen features for the relaunch team."},
+  {"id": "core", "label": "The core works", "kind": "example", "summary": "Record, on-device transcript and debrief, vaults."},
+  {"id": "workbench", "label": "An agent workbench", "kind": "claim", "summary": "Talking to agents made the app complex."},
+  {"id": "move", "label": "Move it to the CRM", "kind": "method", "summary": "On top of the email twin and messaging."},
+  {"id": "add", "label": "Add for launch", "kind": "method", "summary": "Payments, account, share sheet, iCloud Drive."},
+  {"id": "market", "label": "Go to market properly", "kind": "method", "summary": "Own name, accounts, domains, payments."}
+ ],
+ "edges": [
+  {"from": "vision", "to": "core", "rel": "extends"},
+  {"from": "workbench", "to": "core", "rel": "extends"},
+  {"from": "move", "to": "workbench", "rel": "answers"},
+  {"from": "add", "to": "core", "rel": "extends"},
+  {"from": "market", "to": "add", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["native-apps-by-agents", "a-crm-for-us-and-our-agents", "the-email-agentic-cell", "how-a-vault-works", "a-key-for-every-person"],
+  "pages": [],
+  "sites": ["https://ios.app.voicedebrief.ai/", "https://voicedebrief.ai/"]
+ },
+ "quotes": [
+  {"text": "So the relaunch takes a step back.", "why": "The decision."},
+  {"text": "Recording is never charged and never interrupted.", "why": "The first rule."},
+  {"text": "Now that we have the gist, it is time to do it properly", "why": "Going to market."}
+ ]
+}

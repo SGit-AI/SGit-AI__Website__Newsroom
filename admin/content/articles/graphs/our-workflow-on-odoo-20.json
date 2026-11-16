@@ -1,0 +1,31 @@
+{
+ "slug": "our-workflow-on-odoo-20",
+ "teaser": "Our workflow on Odoo 20, built in 98 seconds: a keyless agent, a policy check, a signed approval, a narrow broker and a grant measured from Odoo.",
+ "topics": ["agents-and-policy", "site-and-engineering"],
+ "core_idea": "An agent with no Odoo credential, a policy check, a signed approval and a narrow broker make Odoo safe to automate; measuring the grant from Odoo shows where the remaining excess lives.",
+ "nodes": [
+  {"id": "keyless", "label": "A keyless agent", "kind": "method", "summary": "It writes plans; it cannot change Odoo."},
+  {"id": "check", "label": "The policy check", "kind": "method", "summary": "Allow, refuse, hold, escalate."},
+  {"id": "broker", "label": "A narrow broker", "kind": "method", "summary": "Applies only signed operations, as a narrow user."},
+  {"id": "excess", "label": "The default role's excess", "kind": "claim", "summary": "Email the supplier, read bank accounts, edit drafts."},
+  {"id": "module", "label": "abp_grant", "kind": "artefact", "summary": "Measures a user's grant from Odoo."},
+  {"id": "native", "label": "Odoo's own agents", "kind": "concept", "summary": "Enterprise-only; automatic triggers write without approval."}
+ ],
+ "edges": [
+  {"from": "check", "to": "keyless", "rel": "depends-on"},
+  {"from": "broker", "to": "check", "rel": "depends-on"},
+  {"from": "excess", "to": "broker", "rel": "extends"},
+  {"from": "module", "to": "excess", "rel": "answers"},
+  {"from": "native", "to": "keyless", "rel": "contrasts"}
+ ],
+ "links": {
+  "articles": ["odoo-and-our-stack", "integrate-with-whatever-is-on-the-other-side", "specialist-agents-for-every-team", "ci-behaviour-policies", "where-assist-becomes-execute", "a-key-for-every-person"],
+  "pages": [],
+  "sites": ["https://hub.docker.com/_/odoo", "https://www.odoo.com/odoo-20-release-notes"]
+ },
+ "quotes": [
+  {"text": "It holds no Odoo credential, so it cannot change anything in Odoo, whatever it is told.", "why": "The design."},
+  {"text": "A create-only grant is impossible.", "why": "Odoo's minimum."},
+  {"text": "On a production instance, that is a send to the world with no barrier at all.", "why": "The excess."}
+ ]
+}

@@ -2,10 +2,12 @@
 
 What an agent may do, who carries the risk, and how a policy is enforced: RiskMandate, Agent Behaviour Policies, hooks, accountability, governance.
 
-93 articles, newest first.
+95 articles, newest first.
 
 ## November 2026
 
+- [The email agentic cell: why connecting Gmail to agents the usual way is a security mess, and the architecture we will build instead, with one gateway agent that alone touches Gmail, a digital twin of the mailbox in a vault that people and agents work on together, signed proposals, approvals and even reads on append lanes, and behaviour policies at five altitudes](../../articles/the-email-agentic-cell.md), 2026-11-16, 9 min.
+- [Our workflow on Odoo 20, built and measured: a bills agent with no Odoo credential, a policy check that allowed two proposals and stopped three, a signed approval, a narrow broker, a grant measured from Odoo itself by a new module, and what Odoo's default user role quietly allows](../../articles/our-workflow-on-odoo-20.md), 2026-11-16, 7 min.
 - [CI behaviour policies: to create one repository and one DNS record per request, our site factory's pipeline holds the power to create, change or delete every repository in the organisation and to point any subdomain anywhere, and why pipelines now need the same behaviour policies as agents](../../articles/ci-behaviour-policies.md), 2026-11-16, 5 min.
 - [Resilience when the workforce includes agents: what Synergy Six Degrees rates with OCRR, recovers with NeuShield and protects with Actifile, and where RiskMandate, sgit and SHarness meet it](../../articles/resilience-when-the-workforce-includes-agents.md), 2026-11-04, 7 min.
 - [The cost of your agents: a RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](../../articles/the-cost-of-your-agents.md), 2026-11-03, 6 min.

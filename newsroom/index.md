@@ -46,9 +46,9 @@ Edition of **2026-10-08**. Third edition. A day of articles on how agents decide
 
 Computed at every build from the files: placements that point at nothing, articles published since the edition, open pitches, articles without a graph or a card. The same list is what `python3 admin/build/desk.py` prints for the Editor.
 
-- Fix`front.json` the lead is 39 days older than the newest article and 381 newer article(s) are unplaced
-- To do`front.json` 381 article(s) published since the 2026-10-08 edition: specialist-agents-for-every-team, promptugal-news-the-next-phase, a-crm-for-us-and-our-agents, integrate-with-whatever-is-on-the-other-side, odoo-and-our-stack, the-intersection
-- To do`newsletter/` a newsletter issue is due: 226 articles since issue 9 (2026-10-18)
+- Fix`front.json` the lead is 39 days older than the newest article and 384 newer article(s) are unplaced
+- To do`front.json` 384 article(s) published since the 2026-10-08 edition: voicedebrief-relaunch, the-email-agentic-cell, our-workflow-on-odoo-20, specialist-agents-for-every-team, promptugal-news-the-next-phase, a-crm-for-us-and-our-agents
+- To do`newsletter/` a newsletter issue is due: 229 articles since issue 9 (2026-10-18)
 - To do`newsroom/pitches/2026-10-11__where-the-platform-draws-the-line.md` open pitch from contributor: highlight for where-the-platform-draws-the-line
 - To do`newsroom/pitches/2026-10-11__the-same-argument-in-our-words.md` open pitch from contributor: lead for the-same-argument-in-our-words
 - To do`newsroom/pitches/2026-10-11__the-agent-is-the-reader.md` open pitch from contributor: lead for the-agent-is-the-reader

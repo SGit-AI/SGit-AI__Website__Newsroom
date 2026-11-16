@@ -113,6 +113,7 @@ Vaults & methodAgents & policy[This article as a graph →](graphs.md#signed-ema
 
 ### Continued by
 
+- [The email agentic cell: why connecting Gmail to agents the usual way is a security mess, and the architecture we will build instead, with one gateway agent that alone touches Gmail, a digital twin of the mailbox in a vault that people and agents work on together, signed proposals, approvals and even reads on append lanes, and behaviour policies at five altitudes](the-email-agentic-cell.md) Our own email connector: one gateway agent touches Gmail, everyone else works on a signed twin of the mailbox in a vault, with policies at five altitudes.
 - [Stop copying and pasting between your agents: if you are the wire between your AI sessions you are the bottleneck, and the fix is agents that talk to each other through channels that keep a record, structure that scales your decisions, and outputs you read instead of everything](stop-copying-and-pasting-between-your-agents.md) If you copy and paste between AI sessions, you are the wire, and the bottleneck. Let agents talk through recorded channels; read outputs, not everything.
 
 [All articles](index.md) · [All graphs](graphs.md)

@@ -1,0 +1,31 @@
+{
+ "slug": "the-email-agentic-cell",
+ "teaser": "Our own email connector: one gateway agent touches Gmail, everyone else works on a signed twin of the mailbox in a vault, with policies at five altitudes.",
+ "topics": ["agents-and-policy", "vaults-and-method"],
+ "core_idea": "Separate reading from sending: one gateway agent holds the Gmail token, the mailbox becomes a vault twin that people and agents work on through signed lanes, and policies apply at every altitude.",
+ "nodes": [
+  {"id": "mess", "label": "The usual connector", "kind": "claim", "summary": "No enforcement, no policies, no context."},
+  {"id": "gateway", "label": "One gateway agent", "kind": "method", "summary": "The only holder of the token."},
+  {"id": "twin", "label": "A twin in a vault", "kind": "concept", "summary": "The mailbox as signed, encrypted files."},
+  {"id": "lanes", "label": "Signed lanes", "kind": "method", "summary": "Proposals, approvals, reads, outbox."},
+  {"id": "altitudes", "label": "Five altitudes of policy", "kind": "concept", "summary": "From the OAuth grant to one email's content."},
+  {"id": "cell", "label": "An email agentic cell", "kind": "example", "summary": "Starting in the CRM app."}
+ ],
+ "edges": [
+  {"from": "gateway", "to": "mess", "rel": "answers"},
+  {"from": "twin", "to": "gateway", "rel": "depends-on"},
+  {"from": "lanes", "to": "twin", "rel": "extends"},
+  {"from": "altitudes", "to": "gateway", "rel": "depends-on"},
+  {"from": "cell", "to": "twin", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["who-owns-the-stop-button", "signed-email-from-the-agent", "messaging-fs", "the-inbox-team-as-a-recipe", "the-grant-not-the-prompt", "where-assist-becomes-execute", "an-inbox-only-your-agents-can-write-to", "how-a-vault-works", "a-crm-for-us-and-our-agents", "the-intersection"],
+  "pages": [],
+  "sites": ["https://developers.google.com/workspace/gmail/api/auth/scopes", "https://developers.google.com/gmail/api/guides/push"]
+ },
+ "quotes": [
+  {"text": "The design rests on one idea: only one agent ever touches Gmail.", "why": "The architecture."},
+  {"text": "That leaves a digital trail of attention, not only of action.", "why": "Signed reads."},
+  {"text": "The fourth altitude is the new one.", "why": "What the connectors cannot do."}
+ ]
+}

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-16 | published | 1,618 | first published | this release | [current](../specialist-agents-for-every-team.md) |
+| **v1.0.0** | 2026-11-16 | published | 1,618 | first published | [`3a4e8559d`](https://github.com/SGit-AI/SGit-AI__Website/commit/3a4e8559d3098f27f747682b7269c4ebe16baa53) | [current](../specialist-agents-for-every-team.md) |
 
 [← Back to the article](../specialist-agents-for-every-team.md) · [All articles](../index.md)
 

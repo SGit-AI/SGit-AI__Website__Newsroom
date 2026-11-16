@@ -36,7 +36,7 @@ That is the line I described in [where assist becomes execute](/articles/where-a
 Three things stand out, from Odoo's own documentation and release notes and from integrators' summaries:
 
 - **An agent's power comes from its tools and the user behind it.** An API key carries the issuing user's permissions, so an integration user set up as an administrator gives an agent an administrator's reach. Odoo's documentation, as an integrator quotes it, says the AI "does not enforce business rules, modify records directly, or guarantee the correctness of the operation": the tools do the work.
-- **Approvals exist, but per agent and per tool.** Odoo 20 agents can ask for permission and stop at a tool-call limit; what a given agent may save without asking depends on how it was configured.
+- **Approvals exist in chat, not on triggers.** In a conversation, Odoo 20 agents can ask for permission and stop at a tool-call limit; but Odoo's documentation says agents triggered automatically "perform their tasks directly, without requesting user approval before creating or updating records". And an agent's tools are server actions, which can run any code.
 - **The record is short.** "Conversations with agents are now stored for up to 30 days after the last message was sent." For a business that has to explain a posted bill a year later, that is not an audit trail.
 
 None of this is a criticism of Odoo; it is the same gap every agent platform has, and the reason [Agent Behaviour Policies](https://abp.sgit.ai/) exist.
@@ -91,6 +91,10 @@ That is the shape of an MVP or a proof of concept with a customer: a throwaway c
 
 This is the message I care about most. Customers do not have to wait to be upgraded to use agents with Odoo. We can bring the future to whatever they have now: agents, policies, signed approvals, a lasting record and better interfaces on an Odoo 15, and, when they move to 20, we use its agents and MCP server too, and retire whatever of ours they replace. We go to where the customer already is ([integrate with whatever is on the other side](/articles/integrate-with-whatever-is-on-the-other-side.html)).
 
+## Built since {#built-since}
+
+A separate agent has since built the MVP on Odoo 20, with a keyless agent, a policy check, a signed approval, a narrow broker and a module that measures the grant from Odoo itself: [our workflow on Odoo 20](/articles/our-workflow-on-odoo-20.html).
+
 ## The plan {#plan}
 
 1. **A demo:** done as a proof of concept, above; next, one agent on vendor bills on a copy of a real customer's Odoo, its behaviour policy published as RiskMandate's next example.
@@ -102,14 +106,14 @@ This is the message I care about most. Customers do not have to wait to be upgra
 
 - **Odoo moves fast:** agents, MCP and AI credits are its own. We are the governance layer around them, not a rival agent.
 - **Plan gates:** on Odoo Online, the external API is available only on custom plans, so the first customers are likely Odoo.sh or self-hosted.
-- **Old APIs are going:** the legacy XML-RPC and JSON-RPC are deprecated in favour of the JSON-2 API; sources disagree on the removal date. Use what each version has: XML-RPC on older versions, JSON-2 or MCP on newer ones.
+- **Old APIs are going:** the legacy XML-RPC and JSON-RPC are deprecated in favour of the JSON-2 API, and scheduled for removal in Odoo 22 (autumn 2028) and on Odoo Online in 21.1 (winter 2027). Use what each version has: XML-RPC on older versions, JSON-2 or MCP on newer ones.
 
 ## What this does not claim {#limits}
 
 - **This is a strategy and a proof of concept,** not a product; nothing has been sold.
 - **The proof of concept used Odoo Community images,** with no demo data and an example partner; Odoo 20 and Enterprise features, including its agents, were not tested.
 - **The policy in the figure is an illustration,** not one measured from a real Odoo database.
-- **Pricing, credits and which editions include agents** come partly from integrators' summaries; I would confirm them, and the MCP server's access controls, on a real instance first.
+- **Corrected on 16 November, from a separate agent's build on Odoo 20:** Odoo's agents, MCP server and Documents are Enterprise-only; AI features need credits at a euro each; MCP control is per tool, not per model. See [our workflow on Odoo 20](/articles/our-workflow-on-odoo-20.html).
 - **Customer numbers for Odoo are third-party estimates.**
 
 ## Where this comes from {#sources}
