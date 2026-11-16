@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-16 | published | 1,694 | first published | this release | [current](../odoo-and-our-stack.md) |
+| **v1.0.0** | 2026-11-16 | published | 1,694 | first published | [`695951e76`](https://github.com/SGit-AI/SGit-AI__Website/commit/695951e769287086fc556f14500504c3760b47b4) | [current](../odoo-and-our-stack.md) |
 
 [← Back to the article](../odoo-and-our-stack.md) · [All articles](../index.md)
 

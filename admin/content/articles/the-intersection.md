@@ -17,7 +17,7 @@ status: published
 - **A powerful workflow, across several companies:** SGit, SHarness and PKI underneath; Agent Behaviour Policies as the standard; RiskMandate and AgentiCCells on top.
 - **AgentiCCells is the missing first step:** a fixed-price cell, using RiskMandate's policies and SGit's vaults, is how a customer starts.
 - **The factory removed the last manual piece:** repositories, DNS and cloud changes are now a commit.
-- **Real usage, cross-referenced:** PrompTugal.news, the Web Summit team, the factory's sites, five apps, VoiceDebrief and this newsroom each use the layers below.
+- **Real usage, cross-referenced:** PrompTugal.news, the Web Summit team, the factory's sites, five apps, VoiceDebrief, OmKneeHealth and this newsroom each use the layers below.
 - **One ladder on every site:** £500, £1,500, £5,000 and £20,000, each company selling its own thing at each step.
 - **Next:** align every site to the same pattern, and give SHarness its first showcase.
 
@@ -29,7 +29,7 @@ What that shows is an intersection: a set of companies that each do one thing, a
 
 ## The foundations {#foundations}
 
-- **[SGit](https://sgit.ai/):** git for encrypted vaults. A vault is a unit of work, data, app, history and sources, versioned and handed over with a single read key; lanes in a vault are how our agents message each other with a record. It sits under almost everything here.
+- **[SGit](https://sgit.ai/):** git for encrypted vaults. A vault is a unit of work, data, app, history and sources, versioned and handed over with a single read key; lanes in a vault are how our agents message each other with a record. It sits under almost everything here, and its two public examples are the summit and the health scenario with OmKneeHealth.
 - **[SHarness](https://sharness.ai/):** a Process Behaviour Policy for every process an AI agent starts, what it may read, write, run and connect to, enforced by the Linux kernel. It is the boundary layer: the kind of control that holds because the agent cannot reach it.
 - **PKI:** a key for every person and every agent, made in the browser or the session, with the public half in a registry ([a key for every person](/articles/a-key-for-every-person.html)). It is how we know who did what, and who it was for ([identity for agents, layer by layer](/articles/identity-for-agents-layer-by-layer.html)).
 
@@ -56,6 +56,7 @@ What it was missing was a sale that is easy to start. A policy is valuable, but 
 - **The sites the factory makes,** starting with RiskMandate at Web Summit and my brother's site: AgentiCCells customers, in practice if not yet in money.
 - **Five apps:** the PrompTugal news app, the Team app, the RiskMandate app on iPad and an Android tablet, the Lisbon Tech Fringe guide, and VoiceDebrief ([native apps by agents](/articles/native-apps-by-agents.html)).
 - **VoiceDebrief** deserves its own line. With the new iPhone and iPad app, a voice note becomes a transcript and a debrief on the device, kept in a vault the user owns. It is now genuinely usable, and it adds a lot of value: a product of its own, built on SGit.
+- **OmKneeHealth:** [Chinmay Gupte](https://www.chinmaygupte.com), a consultant knee surgeon in London, is building [OmKneeHealth](https://www.omkneehealth.com), a clinically led platform for knee health, for patients and clinicians he already knows ([the expert founders](/articles/the-expert-founders.html)). I have been helping him. Health-related projects use vaults, and his is the public scenario: data that has to stay private, and still be handed over to the right person ([where to invest in sgit](/articles/where-to-invest-in-sgit.html)).
 - **This newsroom:** media and demo vaults, every release signed by a writer key, and more than 420 articles that explain every piece of this. Every site should use them.
 
 Money is not changing hands between these companies, but each uses the others for real, and that is evidence a customer can check.
