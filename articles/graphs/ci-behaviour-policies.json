@@ -1,0 +1,120 @@
+{
+  "slug": "ci-behaviour-policies",
+  "teaser": "Our site factory's pipeline needs one repository and one DNS record per request, yet holds power over the whole organisation. Pipelines need ABPs too.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "A pipeline driven by agents through pull requests is an agent: give it a behaviour policy with reach, undo, limits and boundaries outside its grant.",
+  "nodes": [
+    {
+      "id": "grant",
+      "label": "An organisation-wide grant",
+      "kind": "claim",
+      "summary": "Administration, contents and workflows on every repository, including delete."
+    },
+    {
+      "id": "scale",
+      "label": "No limits on scale",
+      "kind": "claim",
+      "summary": "Any number of repositories; any CNAME, pointing anywhere."
+    },
+    {
+      "id": "excuse",
+      "label": "Fixed code used to excuse it",
+      "kind": "concept",
+      "summary": "Locked pipelines relied on other primitives."
+    },
+    {
+      "id": "path",
+      "label": "A pull request can change the workflow",
+      "kind": "claim",
+      "summary": "The merged workflow inherits the whole grant."
+    },
+    {
+      "id": "policy",
+      "label": "A behaviour policy for a pipeline",
+      "kind": "method",
+      "summary": "Reach, undo, limit and an enforcing boundary per capability."
+    },
+    {
+      "id": "boundary",
+      "label": "Only boundaries bound",
+      "kind": "concept",
+      "summary": "A control must be enforced by something outside the grant."
+    }
+  ],
+  "edges": [
+    {
+      "from": "scale",
+      "to": "grant",
+      "rel": "extends"
+    },
+    {
+      "from": "path",
+      "to": "excuse",
+      "rel": "contrasts"
+    },
+    {
+      "from": "policy",
+      "to": "grant",
+      "rel": "answers"
+    },
+    {
+      "from": "policy",
+      "to": "boundary",
+      "rel": "depends-on"
+    },
+    {
+      "from": "path",
+      "to": "grant",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-site-factory-works",
+      "where-assist-becomes-execute",
+      "what-can-your-agent-reach",
+      "approve-at-altitude"
+    ],
+    "pages": [],
+    "sites": [
+      "https://abp.sgit.ai/model/barriers/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Why should a pipeline that makes one site per request be able to make five hundred repositories, or thousands of DNS entries?",
+      "why": "The question."
+    },
+    {
+      "text": "Here the code does change, by design.",
+      "why": "Why the old excuse fails."
+    },
+    {
+      "text": "Only boundaries bound anything.",
+      "why": "The rule."
+    }
+  ],
+  "figures": [
+    {
+      "file": "cbp-grant.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cbp-grant.webp",
+      "caption": "What the site factory's pipeline was granted, and what one request actually needs: three rows far too wide.",
+      "kind": "comparison"
+    },
+    {
+      "file": "cbp-path.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cbp-path.webp",
+      "caption": "The path: a merged change to the workflow inherits the whole grant; what stands in the way today.",
+      "kind": "process"
+    },
+    {
+      "file": "cbp-policy.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cbp-policy.webp",
+      "caption": "A behaviour policy for the pipeline: each capability with its reach, undo class, limit and what enforces it.",
+      "kind": "table"
+    }
+  ]
+}

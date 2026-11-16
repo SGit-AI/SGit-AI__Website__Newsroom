@@ -55,6 +55,323 @@
   ],
   "articles": [
     {
+      "slug": "the-site-factory-works",
+      "title": "The site factory works: three AgentiCCells sites made by hand, then one made by a commit in two minutes and thirty-nine seconds, live over https with a first version written by Claude Code, and the long list of what it took to make something that hard look easy",
+      "date": "2026-11-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-site-factory-works.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-site-factory-works.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-site-factory-works.webp",
+      "teaser": "Three AgentiCCells sites by hand, then one by a commit: live over https in 87 seconds, a first version by Claude Code at 159.",
+      "topics": [
+        "site-and-engineering",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "agenticcells",
+        "site-factory",
+        "ci",
+        "github",
+        "aws",
+        "wardley-maps",
+        "websites",
+        "article"
+      ],
+      "links_out": [
+        "starting-agenticcells",
+        "atomic-cells-end-to-end",
+        "from-a-commit-to-a-live-website",
+        "a-website-for-my-brother",
+        "know-the-reach",
+        "every-story-has-an-address",
+        "ci-behaviour-policies"
+      ],
+      "links_in": [
+        "ci-behaviour-policies"
+      ],
+      "figures": [
+        {
+          "file": "acf-sites.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/acf-sites.webp",
+          "caption": "Six sites on agenticcells.site on 16 November 2026: three made by the factory, two by hand, and the home page.",
+          "kind": "collage"
+        },
+        {
+          "file": "acf-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/acf-flow.webp",
+          "caption": "The RiskMandate at Web Summit request: live over https 87 seconds after the merge, first version at 159 seconds.",
+          "kind": "timeline"
+        },
+        {
+          "file": "acf-wardley.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/acf-wardley.webp",
+          "caption": "A Wardley map of a small website: every part is a product or a utility; the assembly was custom, and now it is a commit.",
+          "kind": "concept"
+        },
+        {
+          "file": "acf-setup.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/acf-setup.webp",
+          "caption": "Everything I did by hand before a commit could make a site: GitHub, the App, AWS, Anthropic, and what broke.",
+          "kind": "infographic"
+        }
+      ],
+      "graph": {
+        "slug": "the-site-factory-works",
+        "teaser": "Three AgentiCCells sites by hand, then one by a commit: live over https in 87 seconds, a first version by Claude Code at 159.",
+        "topics": [
+          "site-and-engineering",
+          "startups-and-strategy"
+        ],
+        "core_idea": "A website's many moving parts were already commodities; the factory turns assembling them into a commit, though the credentials were hard to set up.",
+        "nodes": [
+          {
+            "id": "factory",
+            "label": "The site factory",
+            "kind": "artefact",
+            "summary": "A request folder committed and merged makes a live site."
+          },
+          {
+            "id": "flow",
+            "label": "87 seconds to https",
+            "kind": "example",
+            "summary": "The RiskMandate at Web Summit site, first version at 159 seconds."
+          },
+          {
+            "id": "wardley",
+            "label": "Assembly becomes a commodity",
+            "kind": "concept",
+            "summary": "Every part existed; putting them together was the custom step."
+          },
+          {
+            "id": "setup",
+            "label": "What it took",
+            "kind": "claim",
+            "summary": "A GitHub App, AWS through OIDC, Claude through federation, six breakages."
+          },
+          {
+            "id": "immature",
+            "label": "Still immature",
+            "kind": "claim",
+            "summary": "Scoping a pipeline to one repository and one record should be easy."
+          },
+          {
+            "id": "cell",
+            "label": "The £500 cell",
+            "kind": "example",
+            "summary": "A site per customer, as a request folder."
+          }
+        ],
+        "edges": [
+          {
+            "from": "flow",
+            "to": "factory",
+            "rel": "example-of"
+          },
+          {
+            "from": "factory",
+            "to": "wardley",
+            "rel": "example-of"
+          },
+          {
+            "from": "setup",
+            "to": "factory",
+            "rel": "depends-on"
+          },
+          {
+            "from": "immature",
+            "to": "setup",
+            "rel": "extends"
+          },
+          {
+            "from": "factory",
+            "to": "cell",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "from-a-commit-to-a-live-website",
+            "starting-agenticcells",
+            "atomic-cells-end-to-end",
+            "a-website-for-my-brother",
+            "know-the-reach",
+            "ci-behaviour-policies"
+          ],
+          "pages": [],
+          "sites": [
+            "https://riskmandate-at-websummit.agenticcells.site/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Making a site is now a commit.",
+            "why": "The point in five words."
+          },
+          {
+            "text": "Making this easy was hard.",
+            "why": "The cost behind it."
+          },
+          {
+            "text": "That it was not, even with an agent doing most of the work, shows how immature this part of the technology still is.",
+            "why": "Why it should have been easier."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "ci-behaviour-policies",
+      "title": "CI behaviour policies: to create one repository and one DNS record per request, our site factory's pipeline holds the power to create, change or delete every repository in the organisation and to point any subdomain anywhere, and why pipelines now need the same behaviour policies as agents",
+      "date": "2026-11-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/ci-behaviour-policies.html",
+      "markdown": "https://newsroom.sgit.ai/articles/ci-behaviour-policies.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/ci-behaviour-policies.webp",
+      "teaser": "Our site factory's pipeline needs one repository and one DNS record per request, yet holds power over the whole organisation. Pipelines need ABPs too.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "abp",
+        "ci",
+        "github-actions",
+        "security",
+        "least-privilege",
+        "agenticcells",
+        "riskmandate",
+        "article"
+      ],
+      "links_out": [
+        "the-site-factory-works",
+        "where-assist-becomes-execute",
+        "approve-at-altitude",
+        "what-can-your-agent-reach"
+      ],
+      "links_in": [
+        "the-site-factory-works"
+      ],
+      "figures": [
+        {
+          "file": "cbp-grant.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cbp-grant.webp",
+          "caption": "What the site factory's pipeline was granted, and what one request actually needs: three rows far too wide.",
+          "kind": "comparison"
+        },
+        {
+          "file": "cbp-path.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cbp-path.webp",
+          "caption": "The path: a merged change to the workflow inherits the whole grant; what stands in the way today.",
+          "kind": "process"
+        },
+        {
+          "file": "cbp-policy.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cbp-policy.webp",
+          "caption": "A behaviour policy for the pipeline: each capability with its reach, undo class, limit and what enforces it.",
+          "kind": "table"
+        }
+      ],
+      "graph": {
+        "slug": "ci-behaviour-policies",
+        "teaser": "Our site factory's pipeline needs one repository and one DNS record per request, yet holds power over the whole organisation. Pipelines need ABPs too.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "A pipeline driven by agents through pull requests is an agent: give it a behaviour policy with reach, undo, limits and boundaries outside its grant.",
+        "nodes": [
+          {
+            "id": "grant",
+            "label": "An organisation-wide grant",
+            "kind": "claim",
+            "summary": "Administration, contents and workflows on every repository, including delete."
+          },
+          {
+            "id": "scale",
+            "label": "No limits on scale",
+            "kind": "claim",
+            "summary": "Any number of repositories; any CNAME, pointing anywhere."
+          },
+          {
+            "id": "excuse",
+            "label": "Fixed code used to excuse it",
+            "kind": "concept",
+            "summary": "Locked pipelines relied on other primitives."
+          },
+          {
+            "id": "path",
+            "label": "A pull request can change the workflow",
+            "kind": "claim",
+            "summary": "The merged workflow inherits the whole grant."
+          },
+          {
+            "id": "policy",
+            "label": "A behaviour policy for a pipeline",
+            "kind": "method",
+            "summary": "Reach, undo, limit and an enforcing boundary per capability."
+          },
+          {
+            "id": "boundary",
+            "label": "Only boundaries bound",
+            "kind": "concept",
+            "summary": "A control must be enforced by something outside the grant."
+          }
+        ],
+        "edges": [
+          {
+            "from": "scale",
+            "to": "grant",
+            "rel": "extends"
+          },
+          {
+            "from": "path",
+            "to": "excuse",
+            "rel": "contrasts"
+          },
+          {
+            "from": "policy",
+            "to": "grant",
+            "rel": "answers"
+          },
+          {
+            "from": "policy",
+            "to": "boundary",
+            "rel": "depends-on"
+          },
+          {
+            "from": "path",
+            "to": "grant",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-site-factory-works",
+            "where-assist-becomes-execute",
+            "what-can-your-agent-reach",
+            "approve-at-altitude"
+          ],
+          "pages": [],
+          "sites": [
+            "https://abp.sgit.ai/model/barriers/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Why should a pipeline that makes one site per request be able to make five hundred repositories, or thousands of DNS entries?",
+            "why": "The question."
+          },
+          {
+            "text": "Here the code does change, by design.",
+            "why": "Why the old excuse fails."
+          },
+          {
+            "text": "Only boundaries bound anything.",
+            "why": "The rule."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-mac-bottleneck",
       "title": "The Mac bottleneck: how our agents' iOS builds waited three times longer than they ran, 22,427 minutes queued against 6,980 run on a pool of five Macs, and how one Mac job per push and then one integrated build an hour brought push to TestFlight down to under half an hour",
       "date": "2026-11-16",
@@ -249,7 +566,9 @@
         "starting-agenticcells",
         "selling-capabilities-not-content"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-site-factory-works"
+      ],
       "figures": [
         {
           "file": "ptl-idea.webp",
@@ -653,6 +972,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "ci-behaviour-policies",
         "identity-for-agents-layer-by-layer"
       ],
       "figures": [
@@ -1119,6 +1439,7 @@
         "starting-agenticcells"
       ],
       "links_in": [
+        "the-site-factory-works",
         "where-assist-becomes-execute",
         "promptugal-news-by-place"
       ],
@@ -2005,6 +2326,7 @@
         "websites-you-own"
       ],
       "links_in": [
+        "the-site-factory-works",
         "from-a-commit-to-a-live-website",
         "spend-fewer-tokens",
         "a-hub-for-agentic-sites",
@@ -2322,6 +2644,7 @@
         "the-teams-operating-system"
       ],
       "links_in": [
+        "the-site-factory-works",
         "every-story-has-an-address",
         "from-a-commit-to-a-live-website",
         "a-hub-for-agentic-sites",
@@ -4169,6 +4492,7 @@
         "ten-days-at-web-summit"
       ],
       "links_in": [
+        "the-site-factory-works",
         "every-hour-is-twenty-years"
       ],
       "figures": [
@@ -12052,6 +12376,7 @@
         "from-lovable-to-your-own-newsroom"
       ],
       "links_in": [
+        "the-site-factory-works",
         "a-teacher-and-agents-she-can-trust",
         "sell-the-sleeve",
         "separate-ways-explained",
@@ -46261,6 +46586,7 @@
         "hope-or-enforcement"
       ],
       "links_in": [
+        "ci-behaviour-policies",
         "where-assist-becomes-execute",
         "selling-capabilities-not-content",
         "from-a-commit-to-a-live-website",
@@ -48137,6 +48463,7 @@
         "code-review-as-a-fractal-semantic-graph"
       ],
       "links_in": [
+        "ci-behaviour-policies",
         "identity-for-agents-layer-by-layer",
         "where-assist-becomes-execute",
         "stop-copying-and-pasting-between-your-agents",

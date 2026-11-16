@@ -1,0 +1,128 @@
+{
+  "slug": "the-site-factory-works",
+  "teaser": "Three AgentiCCells sites by hand, then one by a commit: live over https in 87 seconds, a first version by Claude Code at 159.",
+  "topics": [
+    "site-and-engineering",
+    "startups-and-strategy"
+  ],
+  "core_idea": "A website's many moving parts were already commodities; the factory turns assembling them into a commit, though the credentials were hard to set up.",
+  "nodes": [
+    {
+      "id": "factory",
+      "label": "The site factory",
+      "kind": "artefact",
+      "summary": "A request folder committed and merged makes a live site."
+    },
+    {
+      "id": "flow",
+      "label": "87 seconds to https",
+      "kind": "example",
+      "summary": "The RiskMandate at Web Summit site, first version at 159 seconds."
+    },
+    {
+      "id": "wardley",
+      "label": "Assembly becomes a commodity",
+      "kind": "concept",
+      "summary": "Every part existed; putting them together was the custom step."
+    },
+    {
+      "id": "setup",
+      "label": "What it took",
+      "kind": "claim",
+      "summary": "A GitHub App, AWS through OIDC, Claude through federation, six breakages."
+    },
+    {
+      "id": "immature",
+      "label": "Still immature",
+      "kind": "claim",
+      "summary": "Scoping a pipeline to one repository and one record should be easy."
+    },
+    {
+      "id": "cell",
+      "label": "The £500 cell",
+      "kind": "example",
+      "summary": "A site per customer, as a request folder."
+    }
+  ],
+  "edges": [
+    {
+      "from": "flow",
+      "to": "factory",
+      "rel": "example-of"
+    },
+    {
+      "from": "factory",
+      "to": "wardley",
+      "rel": "example-of"
+    },
+    {
+      "from": "setup",
+      "to": "factory",
+      "rel": "depends-on"
+    },
+    {
+      "from": "immature",
+      "to": "setup",
+      "rel": "extends"
+    },
+    {
+      "from": "factory",
+      "to": "cell",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "from-a-commit-to-a-live-website",
+      "starting-agenticcells",
+      "atomic-cells-end-to-end",
+      "a-website-for-my-brother",
+      "know-the-reach",
+      "ci-behaviour-policies"
+    ],
+    "pages": [],
+    "sites": [
+      "https://riskmandate-at-websummit.agenticcells.site/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Making a site is now a commit.",
+      "why": "The point in five words."
+    },
+    {
+      "text": "Making this easy was hard.",
+      "why": "The cost behind it."
+    },
+    {
+      "text": "That it was not, even with an agent doing most of the work, shows how immature this part of the technology still is.",
+      "why": "Why it should have been easier."
+    }
+  ],
+  "figures": [
+    {
+      "file": "acf-sites.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/acf-sites.webp",
+      "caption": "Six sites on agenticcells.site on 16 November 2026: three made by the factory, two by hand, and the home page.",
+      "kind": "collage"
+    },
+    {
+      "file": "acf-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/acf-flow.webp",
+      "caption": "The RiskMandate at Web Summit request: live over https 87 seconds after the merge, first version at 159 seconds.",
+      "kind": "timeline"
+    },
+    {
+      "file": "acf-wardley.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/acf-wardley.webp",
+      "caption": "A Wardley map of a small website: every part is a product or a utility; the assembly was custom, and now it is a commit.",
+      "kind": "concept"
+    },
+    {
+      "file": "acf-setup.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/acf-setup.webp",
+      "caption": "Everything I did by hand before a commit could make a site: GitHub, the App, AWS, Anthropic, and what broke.",
+      "kind": "infographic"
+    }
+  ]
+}

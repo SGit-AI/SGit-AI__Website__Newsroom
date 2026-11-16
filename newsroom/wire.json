@@ -73,6 +73,66 @@
   ],
   "articles": [
     {
+      "slug": "the-site-factory-works",
+      "title": "The site factory works: three AgentiCCells sites made by hand, then one made by a commit in two minutes and thirty-nine seconds, live over https with a first version written by Claude Code, and the long list of what it took to make something that hard look easy",
+      "date": "2026-11-16",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/the-site-factory-works.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-site-factory-works.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-site-factory-works.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/the-site-factory-works.json",
+      "teaser": "Three AgentiCCells sites by hand, then one by a commit: live over https in 87 seconds, a first version by Claude Code at 159.",
+      "summary": "Last night I made three websites on agenticcells.site by hand, and then one was made automatically, and that was freaking awesome. A request, a site file and a brief, committed to the AgentiCCells site factory and merged, made a CI pipeline create the GitHub repository, seed it from a template, set up Pages, write the DNS record in Route 53, wait for public DNS, set the custom domain, deploy, get the certificate and turn on HTTPS, and then run Claude Code to write the first version of the site. The RiskMandate at Web Summit site went from merge to live over https in 87 seconds, and had its first version 72 seconds later. That is a textbook Wardley map moment: a website has a ridiculous number of moving parts, each of them already a product or a utility, and what was still custom was putting them together. Now it is a commit. Getting there was not for the faint of heart: a GitHub App, an AWS role through OpenID Connect, Claude through workload identity federation, environments, trust policies, and a list of things that broke on the way. Claude did the heavy lifting, but it still felt like surgery, and it shows how immature this technology still is. And the pipeline ended up with far more power than its job needs, which is the subject of a companion article.",
+      "topics": [
+        "site-and-engineering",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "agenticcells",
+        "site-factory",
+        "ci",
+        "github",
+        "aws",
+        "wardley-maps",
+        "websites",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "ci-behaviour-policies",
+      "title": "CI behaviour policies: to create one repository and one DNS record per request, our site factory's pipeline holds the power to create, change or delete every repository in the organisation and to point any subdomain anywhere, and why pipelines now need the same behaviour policies as agents",
+      "date": "2026-11-16",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/ci-behaviour-policies.html",
+      "markdown": "https://newsroom.sgit.ai/articles/ci-behaviour-policies.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/ci-behaviour-policies.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/ci-behaviour-policies.json",
+      "teaser": "Our site factory's pipeline needs one repository and one DNS record per request, yet holds power over the whole organisation. Pipelines need ABPs too.",
+      "summary": "The AgentiCCells site factory turns a committed request into a live website in under three minutes, and it holds no long-lived key. But to do what is a simple thing, create one repository and make one DNS change, we ended up giving the pipeline far more power than it needs. Its GitHub App token covers the whole organisation, with write access to administration, contents and workflows on every repository, including the power to delete them; nothing limits how many repositories it can create. Its AWS role is well scoped by type and zone, but it may create, change or delete any CNAME under agenticcells.site and point it anywhere. Why should a pipeline that makes one site per request be able to make five hundred repositories, or thousands of DNS entries? In the past we got away with this because pipeline code did not change: you could lock it and use other security primitives around it. Here it does change. Requests arrive as pull requests, agents write them, and the workflow runs as it is in the merged commit, so a pull request that also edits the workflow would inherit the whole grant. This is the same problem Agent Behaviour Policies address for agents, and the same grammar fits: each capability with a reach, an undo class, a limit, and a boundary that enforces it from outside the grant. Here is that mapping, half seriously named CI behaviour policies.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "abp",
+        "ci",
+        "github-actions",
+        "security",
+        "least-privilege",
+        "agenticcells",
+        "riskmandate",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "the-mac-bottleneck",
       "title": "The Mac bottleneck: how our agents' iOS builds waited three times longer than they ran, 22,427 minutes queued against 6,980 run on a pool of five Macs, and how one Mac job per push and then one integrated build an hour brought push to TestFlight down to under half an hour",
       "date": "2026-11-16",

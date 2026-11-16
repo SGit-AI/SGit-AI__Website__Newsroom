@@ -2,10 +2,11 @@
 
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
 
-47 articles, newest first.
+48 articles, newest first.
 
 ## November 2026
 
+- [The site factory works: three AgentiCCells sites made by hand, then one made by a commit in two minutes and thirty-nine seconds, live over https with a first version written by Claude Code, and the long list of what it took to make something that hard look easy](../../articles/the-site-factory-works.md), 2026-11-16, 6 min.
 - [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](../../articles/a-film-studio-on-a-laptop.md), 2026-11-14, 6 min.
 - [Synthetic users for your website: how to set up five invented visitors who read your site one screenshot at a time, with Claude, a sub-agent per persona, and an encrypted vault you can publish anywhere](../../articles/synthetic-users-for-your-website.md), 2026-11-04, 8 min.
 - [No tech stack to maintain: it is not that there is no backend, it is that the only code you own is HTML, CSS and JavaScript, with every other primitive rented as a commodity or run in the user's browser over encrypted vaults](../../articles/no-tech-stack-to-maintain.md), 2026-11-03, 7 min.
