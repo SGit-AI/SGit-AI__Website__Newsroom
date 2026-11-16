@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-16 | published | 2,261 | first published | this release | [current](../the-email-agentic-cell.md) |
+| **v1.0.0** | 2026-11-16 | published | 2,261 | first published | [`a59d51108`](https://github.com/SGit-AI/SGit-AI__Website/commit/a59d51108391cf6137e2eabc527e329282135e18) | [current](../the-email-agentic-cell.md) |
 
 [← Back to the article](../the-email-agentic-cell.md) · [All articles](../index.md)
 

@@ -1,0 +1,126 @@
+{
+  "slug": "the-cell-is-the-unit",
+  "teaser": "The cell is the unit of AgentiCCells: one focused job with an objective, a deliverable and a behaviour policy, each with a page that sells it.",
+  "topics": [
+    "startups-and-strategy",
+    "agents-and-policy"
+  ],
+  "core_idea": "Sell and run agentic work as small, focused cells with a page each, a free recipe and paid help, growing the catalogue one need at a time, and use cells ourselves first.",
+  "nodes": [
+    {
+      "id": "cell",
+      "label": "The cell",
+      "kind": "concept",
+      "summary": "One job: objective, deliverable, behaviour policy."
+    },
+    {
+      "id": "parts",
+      "label": "Parts as needed",
+      "kind": "concept",
+      "summary": "Session, vault, repo, site, lanes, schedule, connector, person."
+    },
+    {
+      "id": "page",
+      "label": "A page per cell",
+      "kind": "method",
+      "summary": "Examples, use cases, policy, four ways to start."
+    },
+    {
+      "id": "free",
+      "label": "Free first",
+      "kind": "claim",
+      "summary": "The recipe drives usage."
+    },
+    {
+      "id": "catalogue",
+      "label": "A growing catalogue",
+      "kind": "method",
+      "summary": "One need at a time, by industry."
+    },
+    {
+      "id": "ourselves",
+      "label": "Live in cells",
+      "kind": "method",
+      "summary": "Our team and my own Claude work."
+    }
+  ],
+  "edges": [
+    {
+      "from": "parts",
+      "to": "cell",
+      "rel": "extends"
+    },
+    {
+      "from": "page",
+      "to": "cell",
+      "rel": "depends-on"
+    },
+    {
+      "from": "free",
+      "to": "page",
+      "rel": "extends"
+    },
+    {
+      "from": "catalogue",
+      "to": "page",
+      "rel": "produces"
+    },
+    {
+      "from": "ourselves",
+      "to": "catalogue",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-intersection",
+      "six-setups-of-an-agentic-system",
+      "atomic-cells-end-to-end",
+      "the-site-factory-works",
+      "specialist-agents-for-every-team",
+      "integrate-with-whatever-is-on-the-other-side",
+      "a-crm-for-us-and-our-agents",
+      "where-assist-becomes-execute",
+      "how-a-vault-works"
+    ],
+    "pages": [],
+    "sites": [
+      "https://agenticcells.ai/",
+      "https://agenticcells.ai/cells/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Every website is a cell.",
+      "why": "The simplest example."
+    },
+    {
+      "text": "That is the workflow now: find the use case, write the cell, give it a page.",
+      "why": "How the catalogue grows."
+    },
+    {
+      "text": "Every cell we run becomes a page, a recipe and a proof.",
+      "why": "Why live in cells."
+    }
+  ],
+  "figures": [
+    {
+      "file": "cel-catalogue.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cel-catalogue.webp",
+      "caption": "A catalogue of cells: each one focused job with its own page, growing one need at a time, by industry too.",
+      "kind": "concept"
+    },
+    {
+      "file": "cel-anatomy.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cel-anatomy.webp",
+      "caption": "The anatomy of a cell: an objective, a deliverable and a behaviour policy always; other parts as the job needs.",
+      "kind": "concept"
+    },
+    {
+      "file": "cel-page.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cel-page.webp",
+      "caption": "A page for every cell: what it does, what you get, examples, use cases, its policy, and four ways to start.",
+      "kind": "screenshot"
+    }
+  ]
+}

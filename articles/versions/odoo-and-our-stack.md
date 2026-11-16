@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-11-16 | minor | 2,522 | +89 / −0 words; 3 changed, 2 added, 0 removed paragraphs | this release | [what changed](odoo-and-our-stack/v1.2.0.md) · [current](../odoo-and-our-stack.md) |
+| **v1.2.0** | 2026-11-16 | minor | 2,522 | +89 / −0 words; 3 changed, 2 added, 0 removed paragraphs | [`a59d51108`](https://github.com/SGit-AI/SGit-AI__Website/commit/a59d51108391cf6137e2eabc527e329282135e18) | [what changed](odoo-and-our-stack/v1.2.0.md) · [current](../odoo-and-our-stack.md) |
 | **v1.1.0** | 2026-11-16 | minor | 2,433 | +776 / −16 words; 4 changed, 16 added, 1 removed paragraphs | [`f30b266e2`](https://github.com/SGit-AI/SGit-AI__Website/commit/f30b266e22d7dbb29d16179b1a7546e5b195924d) | [what changed](odoo-and-our-stack/v1.1.0.md) |
 | **v1.0.0** | 2026-11-16 | published | 1,694 | first published | [`695951e76`](https://github.com/SGit-AI/SGit-AI__Website/commit/695951e769287086fc556f14500504c3760b47b4) |  |
 
