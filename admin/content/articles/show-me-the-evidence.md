@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: I want to help people I know get jobs, and the best thing I can give them is a website that shows the evidence. Now that anyone can generate a polished CV, hiring managers trust CVs less: in Robert Half's survey 65% said AI-generated applications make skills harder to verify, and in Greenhouse's 91% of recruiters had spotted deception. So the answer is not a better list; it is proof. Show me the work. Show me your thinking. Tell me what you do outside work, what makes you you, and what you think about my industry. And if you are meeting me, make a page for me. So this is the design of a job-seeker cell: a site of seven pages, home, evidence, thinking, me, a page for you, working with me and a recruiter pack, plus the files machines read; an agent team that interviews the person, finds the evidence, drafts in their words, designs a theme that looks like them, tailors a page per application and checks every fact, while the person approves and sends; eight synthetic personas, from a developer to a security engineer, a senior leader and a graduate, each a template anyone can fork onto GitHub Pages; a ladder from a free recipe to a recruiter's cell; and the brief for the team that builds it. The mock-ups are below. They are also the references our agentic sites have been missing.
-version: v999.0.0
+version: v0.14.126
 license: https://creativecommons.org/licenses/by/4.0/
 tags: careers, hiring, agenticcells, templates, cells, personas, recruiters, article
 status: published
