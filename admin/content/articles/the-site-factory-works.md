@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: Last night I made three websites on agenticcells.site by hand, and then one was made automatically, and that was freaking awesome. A request, a site file and a brief, committed to the AgentiCCells site factory and merged, made a CI pipeline create the GitHub repository, seed it from a template, set up Pages, write the DNS record in Route 53, wait for public DNS, set the custom domain, deploy, get the certificate and turn on HTTPS, and then run Claude Code to write the first version of the site. The RiskMandate at Web Summit site went from merge to live over https in 87 seconds, and had its first version 72 seconds later. That is a textbook Wardley map moment: a website has a ridiculous number of moving parts, each of them already a product or a utility, and what was still custom was putting them together. Now it is a commit. Getting there was not for the faint of heart: a GitHub App, an AWS role through OpenID Connect, Claude through workload identity federation, environments, trust policies, and a list of things that broke on the way. Claude did the heavy lifting, but it still felt like surgery, and it shows how immature this technology still is. And the pipeline ended up with far more power than its job needs, which is the subject of a companion article.
-version: v999.0.0
+version: v0.14.116
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agenticcells, site-factory, ci, github, aws, wardley-maps, websites, article
 status: published

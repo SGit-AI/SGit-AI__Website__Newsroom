@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: The AgentiCCells site factory turns a committed request into a live website in under three minutes, and it holds no long-lived key. But to do what is a simple thing, create one repository and make one DNS change, we ended up giving the pipeline far more power than it needs. Its GitHub App token covers the whole organisation, with write access to administration, contents and workflows on every repository, including the power to delete them; nothing limits how many repositories it can create. Its AWS role is well scoped by type and zone, but it may create, change or delete any CNAME under agenticcells.site and point it anywhere. Why should a pipeline that makes one site per request be able to make five hundred repositories, or thousands of DNS entries? In the past we got away with this because pipeline code did not change: you could lock it and use other security primitives around it. Here it does change. Requests arrive as pull requests, agents write them, and the workflow runs as it is in the merged commit, so a pull request that also edits the workflow would inherit the whole grant. This is the same problem Agent Behaviour Policies address for agents, and the same grammar fits: each capability with a reach, an undo class, a limit, and a boundary that enforces it from outside the grant. Here is that mapping, half seriously named CI behaviour policies.
-version: v999.0.0
+version: v0.14.116
 license: https://creativecommons.org/licenses/by/4.0/
 tags: abp, ci, github-actions, security, least-privilege, agenticcells, riskmandate, article
 status: published
