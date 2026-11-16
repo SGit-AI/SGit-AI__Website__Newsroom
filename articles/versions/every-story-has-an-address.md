@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-16 | published | 1,859 | first published | this release | [current](../every-story-has-an-address.md) |
+| **v1.0.0** | 2026-11-16 | published | 1,859 | first published | [`622e6ac8b`](https://github.com/SGit-AI/SGit-AI__Website/commit/622e6ac8b015d9e07e77a191d6db673b322eb7ee) | [current](../every-story-has-an-address.md) |
 
 [← Back to the article](../every-story-has-an-address.md) · [All articles](../index.md)
 

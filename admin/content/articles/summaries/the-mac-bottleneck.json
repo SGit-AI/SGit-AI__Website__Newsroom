@@ -1,0 +1,66 @@
+{
+ "slug": "the-mac-bottleneck",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "Our iOS builds waited three times longer than they ran, on a pool of five Macs.",
+   "para": "One Mac job per push, then one integrated build an hour, brought push to TestFlight under half an hour.",
+   "hash": "1b0c9d07da0a"
+  },
+  "in-short": {
+   "line": "Macs not agents, ten Macs per push, measured and rebuilt, flooded again, where it stands.",
+   "para": "Five points.",
+   "hash": "3086cef7dc49"
+  },
+  "series": {
+   "line": "Part five of the Ten days series, after native apps by agents.",
+   "para": "Six people, around 250 agents.",
+   "hash": "7a74f12bdb74"
+  },
+  "diagnosis": {
+   "line": "On 10 November I saw that allocating Macs was the bottleneck and asked for fewer steps and publishing from dev.",
+   "para": "An agent was asked to measure it.",
+   "hash": "bb7a368a5893"
+  },
+  "measured": {
+   "line": "579 runs: 6,980 Mac-minutes run, 22,427 queued; the five-Mac pool full most of the time.",
+   "para": "A median of ten macOS jobs per dev push; 47.5 minutes to TestFlight.",
+   "hash": "4edafa080237"
+  },
+  "reasons": {
+   "line": "Separate Macs per step, cold starts, sequential stages, untested uploads, idle Macs, side branches.",
+   "para": "821 jobs cancelled before they got a Mac.",
+   "hash": "f1580c0ca4f9"
+  },
+  "one-mac": {
+   "line": "All Mac work in one job: build, test on iPhone and iPad, publish only when green.",
+   "para": "Build before booting simulators; a generic simulator destination; one shared build folder.",
+   "hash": "a12305d4fbc8"
+  },
+  "flood": {
+   "line": "On 15 November the runners flooded again; the fix was a rule: one integrated build an hour.",
+   "para": "Night builds from about 35 minutes to about 7.",
+   "hash": "b56db3c9e775"
+  },
+  "now": {
+   "line": "A live CI status page; push to processed in TestFlight in about 20 to 25 minutes.",
+   "para": "Seven news app builds overnight; larger runners still to decide.",
+   "hash": "1a8a1947d6a1"
+  },
+  "lessons": {
+   "line": "Shared machines do not scale with agents; measure first; fewer jobs; rules; show the number.",
+   "para": "Five lessons.",
+   "hash": "341c547f95b1"
+  },
+  "limits": {
+   "line": "The agent's measurements, two after runs, the conductor's approximate night notes, no pricing.",
+   "para": "Four limits.",
+   "hash": "80b37820d788"
+  },
+  "sources": {
+   "line": "The iOS repository's briefs, commits and workflows, and the live CI status page.",
+   "para": "Read on 16 November 2026.",
+   "hash": "1197188aca6a"
+  }
+ }
+}

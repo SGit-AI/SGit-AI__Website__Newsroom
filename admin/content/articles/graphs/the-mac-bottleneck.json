@@ -1,0 +1,33 @@
+{
+ "slug": "the-mac-bottleneck",
+ "teaser": "Our agents' iOS builds waited three times longer than they ran, on five Macs. One Mac job per push, then one build an hour, fixed it.",
+ "topics": ["site-and-engineering", "agents-and-policy"],
+ "core_idea": "When agents write apps, the scarce resource is the shared build machine: measure the queue, do fewer and longer jobs, and batch the team's work.",
+ "nodes": [
+  {"id": "queue", "label": "22,427 minutes queued", "kind": "claim", "summary": "Against 6,980 run, on a pool of five hosted Macs."},
+  {"id": "steps", "label": "A Mac per step", "kind": "concept", "summary": "Ten cold macOS jobs per push, each queuing for the same slots."},
+  {"id": "measure", "label": "The agent measured it", "kind": "method", "summary": "measure.py over 579 workflow runs, two days."},
+  {"id": "onemac", "label": "One Mac job per push", "kind": "method", "summary": "Build, test on iPhone and iPad, publish only when green."},
+  {"id": "flood", "label": "The night flood", "kind": "example", "summary": "About thirty runs an hour, most cancelled by the next push."},
+  {"id": "rule", "label": "One integrated build an hour", "kind": "method", "summary": "Workers push to branches without CI; the conductor builds once an hour."},
+  {"id": "status", "label": "A CI status page", "kind": "artefact", "summary": "Push to production times, on the site and in the app."}
+ ],
+ "edges": [
+  {"from": "steps", "to": "queue", "rel": "produces"},
+  {"from": "measure", "to": "queue", "rel": "answers"},
+  {"from": "onemac", "to": "steps", "rel": "answers"},
+  {"from": "flood", "to": "onemac", "rel": "contrasts"},
+  {"from": "rule", "to": "flood", "rel": "answers"},
+  {"from": "status", "to": "rule", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["ten-days-at-web-summit", "native-apps-by-agents", "the-teams-operating-system", "promptugal-news-the-newsroom-we-ran"],
+  "pages": [],
+  "sites": ["https://ios.app.promptugal.news/admin/status.html"]
+ },
+ "quotes": [
+  {"text": "the allocation of the Mac is where the bottlenecks are", "why": "The diagnosis."},
+  {"text": "builds must go fast, I need to test quickly", "why": "What I needed on the night."},
+  {"text": "Some fixes are rules, not code.", "why": "The lesson of the flood."}
+ ]
+}

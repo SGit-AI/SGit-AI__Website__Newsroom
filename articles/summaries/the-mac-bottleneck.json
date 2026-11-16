@@ -1,0 +1,102 @@
+{
+ "slug": "the-mac-bottleneck",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 218,
+   "line": "Our iOS builds waited three times longer than they ran, on a pool of five Macs.",
+   "para": "One Mac job per push, then one integrated build an hour, brought push to TestFlight under half an hour.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 107,
+   "line": "Macs not agents, ten Macs per push, measured and rebuilt, flooded again, where it stands.",
+   "para": "Five points.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "series",
+   "label": "Part five of ten days",
+   "words": 84,
+   "line": "Part five of the Ten days series, after native apps by agents.",
+   "para": "Six people, around 250 agents.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "diagnosis",
+   "label": "What I could see",
+   "words": 120,
+   "line": "On 10 November I saw that allocating Macs was the bottleneck and asked for fewer steps and publishing from dev.",
+   "para": "An agent was asked to measure it.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "measured",
+   "label": "What the agent measured",
+   "words": 206,
+   "line": "579 runs: 6,980 Mac-minutes run, 22,427 queued; the five-Mac pool full most of the time.",
+   "para": "A median of ten macOS jobs per dev push; 47.5 minutes to TestFlight.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "reasons",
+   "label": "Six reasons for the wait",
+   "words": 141,
+   "line": "Separate Macs per step, cold starts, sequential stages, untested uploads, idle Macs, side branches.",
+   "para": "821 jobs cancelled before they got a Mac.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "one-mac",
+   "label": "One Mac per push",
+   "words": 230,
+   "line": "All Mac work in one job: build, test on iPhone and iPad, publish only when green.",
+   "para": "Build before booting simulators; a generic simulator destination; one shared build folder.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "flood",
+   "label": "Then it flooded again",
+   "words": 179,
+   "line": "On 15 November the runners flooded again; the fix was a rule: one integrated build an hour.",
+   "para": "Night builds from about 35 minutes to about 7.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "now",
+   "label": "Where it stands",
+   "words": 93,
+   "line": "A live CI status page; push to processed in TestFlight in about 20 to 25 minutes.",
+   "para": "Seven news app builds overnight; larger runners still to decide.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "lessons",
+   "label": "What it taught us",
+   "words": 104,
+   "line": "Shared machines do not scale with agents; measure first; fewer jobs; rules; show the number.",
+   "para": "Five lessons.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 71,
+   "line": "The agent's measurements, two after runs, the conductor's approximate night notes, no pricing.",
+   "para": "Four limits.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 69,
+   "line": "The iOS repository's briefs, commits and workflows, and the live CI status page.",
+   "para": "Read on 16 November 2026.",
+   "by": "newsroom.writer"
+  }
+ ]
+}
