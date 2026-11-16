@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: The team that ran PrompTugal.news with us at Web Summit is still full of beans and wants to continue, and more people want to be involved. That is great news, and it needs a roadmap. PrompTugal.news now has a strong base: 36 places, each with its own agent, 90 articles, town and company pages, every fact sourced and dated, a contribute page, and every claim in an article re-checked by three models. The next phase is people: finding contributors, journalists and local news outlets, collaborating locally, and making people aware that this exists. That is outreach, and it is now a job for agentic teams: each person points their agents at specific tasks. First contacts go only to public contacts, a form or an email published on their own site: agents draft, from templates, "we just published this, can you take a look?", and a person sends, until we have our own email connector with images inline. The outreach desk already holds 50 drafted contact requests from Web Summit, filed and never sent: the machine starts there, and meets the companies we met at the summit. A subscribe box on every page goes into an agent's append lane, with a clear note that an agent processes it, and feeds a regular update per region and town. And a verification layer says who has checked each story: sourced, model-checked, read and signed by a person, confirmed by the source, certified. Here is the roadmap, with twelve task cards anyone can pick up.
-version: v999.0.0
+version: v0.14.121
 license: https://creativecommons.org/licenses/by/4.0/
 tags: promptugal, local-news, outreach, verification, contributors, agenticcells, roadmap, article
 status: published

@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: With the number of agents and sub-teams we now run, I keep seeing the same thing: when I spin up a new team, its developer does not follow our procedures, its designer does not start from our best designs, and its UX repeats mistakes we have already fixed. That makes sense: a new team starts from scratch and has not benefited from all the work before it. So I want a few central teams, made of long-lived sessions, each keeping one skill and the know-how behind it: design, UX, code, security, Agent Behaviour Policies, and writing. They act as consultants to every other team: they bootstrap new teams, review their work, comment on their pull requests, and keep the guidance up to date, and each has a person who owns the skill. Now that our agents can talk to each other through lanes, this works. An agent that has read everything is a compression of what we know, and it is far more efficient to start from it. The writing agent of this newsroom is the example: because it has read everything we have written and keeps the guidance on how to write, it reviewed the book and drafted its introduction. And there is a business model in it. Imagine hiring the specialist agent of a company you respect, with its logic and access to its people behind it, through a lane, and paying per review. That is the old idea of professions that never scaled, now with a team behind them: one person, anywhere, with deep expertise, steering an agent that does the volume.
-version: v999.0.0
+version: v0.14.121
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, specialist-agents, design, ux, security, abp, expertise, business-model, agenticcells, article
 status: published
