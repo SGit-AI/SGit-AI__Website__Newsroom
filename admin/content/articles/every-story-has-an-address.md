@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: PrompTugal.news now has an agent for every town in the Algarve, plus the region and the country, and between them they hold real data at every altitude: 116 sourced stories, 182 organisations, 23 events, 16 connections between places and 166 recorded gaps. That made me think about what the site should become. News should start local. National news almost always starts at a regional level, and a regional story starts in a town, so the natural shape of a newsroom is from the ground up: every story filed at an address, a parish, a town, a region, and climbing to the region and the country only through its connections, keeping the link to the source it started from at every step. Here is a design proposal for that, mocked up from the live by-place data rather than invented: the idea and the levels, how a real story climbs, a national front page with no national desk, a regional page with a map of the towns and their connections, a town edition, a story page with its address and proof, an organisation page, and the proof layer behind all of it. Plus three names and positioning directions, six design principles, and what is missing: a locality layer, so a thin town leans on its neighbours.
-version: v999.0.0
+version: v0.14.112
 license: https://creativecommons.org/licenses/by/4.0/
 tags: promptugal, local-news, design, provenance, by-place, agents, positioning, article
 status: published
