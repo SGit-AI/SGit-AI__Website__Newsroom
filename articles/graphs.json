@@ -55,6 +55,178 @@
   ],
   "articles": [
     {
+      "slug": "odoo-and-our-stack",
+      "title": "Odoo's agents can now write to the system of record: how our stack fits around Odoo 20, with behaviour policies for Odoo agents, an Odoo cell, plan-then-apply through a vault, a module that measures the grant, and a first showcase for SHarness",
+      "date": "2026-11-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/odoo-and-our-stack.html",
+      "markdown": "https://newsroom.sgit.ai/articles/odoo-and-our-stack.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/odoo-and-our-stack.webp",
+      "teaser": "Odoo 20 agents can create and update records on their own. How our stack fits around Odoo: policies per agent, an Odoo cell, and plan-then-apply.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "odoo",
+        "erp",
+        "abp",
+        "riskmandate",
+        "agenticcells",
+        "sgit",
+        "sharness",
+        "strategy",
+        "article"
+      ],
+      "links_out": [
+        "where-assist-becomes-execute",
+        "what-can-your-agent-reach",
+        "the-intersection",
+        "the-site-factory-works",
+        "ci-behaviour-policies",
+        "a-key-for-every-person",
+        "how-a-vault-works",
+        "every-story-has-an-address"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "odo-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/odo-map.webp",
+          "caption": "Our stack around Odoo: a policy per agent, an Odoo cell, a vault for the record, keys, kernel limits, debriefs.",
+          "kind": "architecture"
+        },
+        {
+          "file": "odo-abp.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/odo-abp.webp",
+          "caption": "An illustration: a behaviour policy for an Odoo vendor bills agent, with its grant, mandate, gap and barriers.",
+          "kind": "concept"
+        },
+        {
+          "file": "odo-apply.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/odo-apply.webp",
+          "caption": "Plan, then apply, for writes to Odoo: snapshot, plan, policy check, signed approval, broker, record.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "odoo-and-our-stack",
+        "teaser": "Odoo 20 agents can create and update records on their own. How our stack fits around Odoo: policies per agent, an Odoo cell, and plan-then-apply.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Odoo's agents now execute in the system of record; behaviour policies, signed approvals and a lasting record in a vault are what an Odoo business needs around them.",
+        "nodes": [
+          {
+            "id": "odoo",
+            "label": "Odoo 20 agents write",
+            "kind": "claim",
+            "summary": "Create and update records from automated and scheduled actions; an MCP server."
+          },
+          {
+            "id": "gap",
+            "label": "The gap",
+            "kind": "concept",
+            "summary": "Power from tools and users; approvals per agent; 30-day conversations."
+          },
+          {
+            "id": "abp",
+            "label": "A policy per Odoo agent",
+            "kind": "method",
+            "summary": "Grant measured from Odoo, mandate, gap, barrier."
+          },
+          {
+            "id": "module",
+            "label": "A module that measures the grant",
+            "kind": "method",
+            "summary": "Reads access groups, record rules, tools and API users."
+          },
+          {
+            "id": "cell",
+            "label": "An Odoo cell",
+            "kind": "method",
+            "summary": "AgentiCCells' ladder applied to Odoo workflows."
+          },
+          {
+            "id": "apply",
+            "label": "Plan, then apply",
+            "kind": "method",
+            "summary": "Vault, policy check, signed approval, broker, record."
+          },
+          {
+            "id": "sharness",
+            "label": "SHarness showcase",
+            "kind": "question",
+            "summary": "Kernel limits around the Odoo server or its coding agent."
+          }
+        ],
+        "edges": [
+          {
+            "from": "gap",
+            "to": "odoo",
+            "rel": "extends"
+          },
+          {
+            "from": "abp",
+            "to": "gap",
+            "rel": "answers"
+          },
+          {
+            "from": "module",
+            "to": "abp",
+            "rel": "produces"
+          },
+          {
+            "from": "cell",
+            "to": "abp",
+            "rel": "depends-on"
+          },
+          {
+            "from": "apply",
+            "to": "gap",
+            "rel": "answers"
+          },
+          {
+            "from": "sharness",
+            "to": "gap",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-intersection",
+            "where-assist-becomes-execute",
+            "ci-behaviour-policies",
+            "the-site-factory-works",
+            "what-can-your-agent-reach",
+            "a-key-for-every-person",
+            "how-a-vault-works",
+            "every-story-has-an-address"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.odoo.com/odoo-20-release-notes",
+            "https://www.odoo.com/odoo-19-release-notes"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "In other words, agents now execute in the system of record, on their own schedule.",
+            "why": "What changed."
+          },
+          {
+            "text": "That also answers the 30-day problem: the conversation can expire; the record does not.",
+            "why": "Why the vault."
+          },
+          {
+            "text": "We are the governance layer around them, not a rival agent.",
+            "why": "The positioning."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-intersection",
       "title": "The intersection: SGit, SHarness, Agent Behaviour Policies, RiskMandate and AgentiCCells as one stack of separate companies, now with real customers, real usage and real examples, one ladder of offers on every site, and a plan to align them all",
       "date": "2026-11-16",
@@ -93,7 +265,9 @@
         "the-teams-operating-system",
         "native-apps-by-agents"
       ],
-      "links_in": [],
+      "links_in": [
+        "odoo-and-our-stack"
+      ],
       "figures": [
         {
           "file": "int-stack.webp",
@@ -275,6 +449,7 @@
         "ci-behaviour-policies"
       ],
       "links_in": [
+        "odoo-and-our-stack",
         "the-intersection",
         "ci-behaviour-policies"
       ],
@@ -437,6 +612,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "odoo-and-our-stack",
         "the-intersection",
         "the-site-factory-works"
       ],
@@ -757,6 +933,7 @@
         "selling-capabilities-not-content"
       ],
       "links_in": [
+        "odoo-and-our-stack",
         "the-intersection",
         "the-site-factory-works"
       ],
@@ -1165,6 +1342,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "odoo-and-our-stack",
         "ci-behaviour-policies",
         "identity-for-agents-layer-by-layer"
       ],
@@ -7864,6 +8042,7 @@
         "a-directory-of-people-and-keys"
       ],
       "links_in": [
+        "odoo-and-our-stack",
         "the-intersection",
         "identity-for-agents-layer-by-layer",
         "selling-capabilities-not-content",
@@ -9004,6 +9183,7 @@
         "inside-english-with-ines"
       ],
       "links_in": [
+        "odoo-and-our-stack",
         "resilience-when-the-workforce-includes-agents",
         "would-you-pay-to-plug-this-newsroom-in",
         "no-tech-stack-to-maintain"
@@ -46787,6 +46967,7 @@
         "hope-or-enforcement"
       ],
       "links_in": [
+        "odoo-and-our-stack",
         "ci-behaviour-policies",
         "where-assist-becomes-execute",
         "selling-capabilities-not-content",

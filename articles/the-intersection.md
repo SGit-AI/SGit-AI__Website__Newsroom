@@ -124,6 +124,10 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#the-in
 - [The team's operating system: web-summit.sgit.ai, the one site where six people and their agents ran Web Summit, with a brief and a command centre for each person, a key and an inbox for each agent, the board as files, and the outside world on a map](the-teams-operating-system.md) web-summit.sgit.ai: one site where six people and their agents ran Web Summit, in four layers built on git.
 - [Native apps by agents: four iPhone and iPad apps from one workspace and an Android tablet app in five days, from 1,164 lines of Swift to 48,230, a signed Android build four hours after the first commit, and a guide to the fringe on TestFlight ten and a half hours after its brief](native-apps-by-agents.md) Agents built four iOS apps from one workspace and an Android tablet app in five days, with TestFlight on every push and a signed build in four hours.
 
+### Continued by
+
+- [Odoo's agents can now write to the system of record: how our stack fits around Odoo 20, with behaviour policies for Odoo agents, an Odoo cell, plan-then-apply through a vault, a module that measures the grant, and a first showcase for SHarness](odoo-and-our-stack.md) Odoo 20 agents can create and update records on their own. How our stack fits around Odoo: policies per agent, an Odoo cell, and plan-then-apply.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 427 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=427)

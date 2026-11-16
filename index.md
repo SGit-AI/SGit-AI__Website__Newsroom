@@ -4,24 +4,25 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.117 · 425 articles since 2026-08-17; the newest is 2026-11-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 426 articles since 2026-08-17; the newest is 2026-11-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [The intersection: SGit, SHarness, Agent Behaviour Policies, RiskMandate and AgentiCCells as one stack of separate companies, now with real customers, real usage and real examples, one ladder of offers on every site, and a plan to align them all](articles/the-intersection.md), 2026-11-16, 7 min. SGit, SHarness, ABP, RiskMandate and AgentiCCells as one stack of separate companies, with real usage and one ladder of offers on every site.
+- [Odoo's agents can now write to the system of record: how our stack fits around Odoo 20, with behaviour policies for Odoo agents, an Odoo cell, plan-then-apply through a vault, a module that measures the grant, and a first showcase for SHarness](articles/odoo-and-our-stack.md), 2026-11-16, 6 min. Odoo 20 agents can create and update records on their own. How our stack fits around Odoo: policies per agent, an Odoo cell, and plan-then-apply.
 
 ## Five more
 
+- [The intersection: SGit, SHarness, Agent Behaviour Policies, RiskMandate and AgentiCCells as one stack of separate companies, now with real customers, real usage and real examples, one ladder of offers on every site, and a plan to align them all](articles/the-intersection.md), Startups & strategy, 2026-11-16, 7 min.
 - [The site factory works: three AgentiCCells sites made by hand, then one made by a commit in two minutes and thirty-nine seconds, live over https with a first version written by Claude Code, and the long list of what it took to make something that hard look easy](articles/the-site-factory-works.md), Engineering this newsroom, 2026-11-16, 6 min.
 - [CI behaviour policies: to create one repository and one DNS record per request, our site factory's pipeline holds the power to create, change or delete every repository in the organisation and to point any subdomain anywhere, and why pipelines now need the same behaviour policies as agents](articles/ci-behaviour-policies.md), Agent security & behaviour policies, 2026-11-16, 5 min.
 - [The Mac bottleneck: how our agents' iOS builds waited three times longer than they ran, 22,427 minutes queued against 6,980 run on a pool of five Macs, and how one Mac job per push and then one integrated build an hour brought push to TestFlight down to under half an hour](articles/the-mac-bottleneck.md), Working with agents, 2026-11-16, 7 min.
 - [Every story has an address: a design proposal for PrompTugal.news as a ground-up newsroom, where news is filed where it happens and climbs to the region and the country with its proof, mocked up from the live data of 19 local editions](articles/every-story-has-an-address.md), The future of news, 2026-11-16, 7 min.
-- [Identity for AI agents, layer by layer: how our agent teams answer every row of Maya Dotan's map of 190 projects, with a key per agent, a name that says who it acts for, and a behaviour policy that sets its limits](articles/identity-for-agents-layer-by-layer.md), Working with agents, 2026-11-16, 6 min.
 
 ## The last five days
 
-### Monday 16 November 2026 (6 articles)
+### Monday 16 November 2026 (7 articles)
 
+- Startups & strategy: [Odoo's agents can now write to the system of record: how our stack fits around Odoo 20, with behaviour policies for Odoo agents, an Odoo cell, plan-then-apply through a vault, a module that measures the grant, and a first showcase for SHarness](articles/odoo-and-our-stack.md), 6 min.
 - Startups & strategy: [The intersection: SGit, SHarness, Agent Behaviour Policies, RiskMandate and AgentiCCells as one stack of separate companies, now with real customers, real usage and real examples, one ladder of offers on every site, and a plan to align them all](articles/the-intersection.md), 7 min.
 - Engineering this newsroom: [The site factory works: three AgentiCCells sites made by hand, then one made by a commit in two minutes and thirty-nine seconds, live over https with a first version written by Claude Code, and the long list of what it took to make something that hard look easy](articles/the-site-factory-works.md), 6 min.
 - Agent security & behaviour policies: [CI behaviour policies: to create one repository and one DNS record per request, our site factory's pipeline holds the power to create, change or delete every repository in the organisation and to point any subdomain anywhere, and why pipelines now need the same behaviour policies as agents](articles/ci-behaviour-policies.md), 5 min.
@@ -107,13 +108,13 @@ Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta
 - [Starting AgentiCCells: a company that sets up small agentic teams, cells, in the customer's own environment, with a control centre, everything open and no state on our side; how it was named, researched, reviewed and set up in a day](articles/starting-agenticcells.md), 2026-11-15.
 - [Every hour is twenty years: the human behind Know the Reach, and why making a song and its video with AI made them more Silvio Switha's, not less](articles/every-hour-is-twenty-years.md), 2026-11-15.
 
-### [Startups & strategy](sections/strategy/index.md) (97)
+### [Startups & strategy](sections/strategy/index.md) (98)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
+- [Odoo's agents can now write to the system of record: how our stack fits around Odoo 20, with behaviour policies for Odoo agents, an Odoo cell, plan-then-apply through a vault, a module that measures the grant, and a first showcase for SHarness](articles/odoo-and-our-stack.md), 2026-11-16.
 - [The intersection: SGit, SHarness, Agent Behaviour Policies, RiskMandate and AgentiCCells as one stack of separate companies, now with real customers, real usage and real examples, one ladder of offers on every site, and a plan to align them all](articles/the-intersection.md), 2026-11-16.
 - [From a commit to a live website: a site factory where a request file in a commit makes a CI pipeline create the GitHub repository, the DNS record and the sgit vault, seed a page, check HTTPS, run a first pass with Claude Code, and record it all, so an agent can create sites by committing](articles/from-a-commit-to-a-live-website.md), 2026-11-15.
 - [A hub for agentic sites: every site AgentiCCells builds in a repository and an sgit vault, served at its own address, and listed on hub.agenticcells.site, where it can be found, promoted and copied as a template; with an orange grower as the first example](articles/a-hub-for-agentic-sites.md), 2026-11-15.
 - [Atomic cells, end to end: the £500 website as AgentiCCells' first offering, an order on a queue, an agentic team that builds a public site, a customer who steers it from their browser with a key, and a handover, with no daily work for the founder](articles/atomic-cells-end-to-end.md), 2026-11-15.
-- [Selling mini agentic teams: a business that sets up small agentic teams for companies, sized from one agent to a network, with a control centre to see them and to start and stop them, PrompTugal as the first customer and Agent Behaviour Policies as the most demanding version](articles/selling-mini-agentic-teams.md), 2026-11-15.
 
 ### [Engineering this newsroom](sections/building/index.md) (48)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.

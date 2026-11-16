@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-16 | published | 1,776 | first published | this release | [current](../the-intersection.md) |
+| **v1.0.0** | 2026-11-16 | published | 1,776 | first published | [`a913f6fdf`](https://github.com/SGit-AI/SGit-AI__Website/commit/a913f6fdfb2673a3543a89ac7760f8afa497fb11) | [current](../the-intersection.md) |
 
 [← Back to the article](../the-intersection.md) · [All articles](../index.md)
 
