@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: Forking is one of the ideas that made GitHub so powerful, and I think it is the way people should adopt what we make. If I create a template site, a cell, and someone wants it, they should be able to fork it, point Claude at their copy, and have their own version, live, within minutes. That already works on GitHub today; our job is to make it as smooth as possible, for a stranger who has never met our tools. So every template on the AgentiCCells hub should offer five ways to make it yours: fork it on GitHub and let Pages host it; deploy it in one click to Netlify, Vercel or Cloudflare Pages; run it inside an assistant, locally with Claude Code or hosted as a page by the assistant itself; take it as a vault, with no account at all; or ask us, and the site factory makes it, on the paid ladder. And not only single repositories but paths: start with this repository, then fork that one, then add this cell. For that, our repositories must be fork-ready, not factory-ready: a README with the one prompt that makes it yours, a CLAUDE.md for any agent, one settings file, sample content clearly marked, its behaviour policy included, and upstream updates proposed to every fork. Then the business is simple: make dozens, hundreds of small templates, put them on the hub, and let forks and requests tell us which ones to invest in. Probably in a GitHub organisation of their own. Here is the pattern, and the brief for the team.
-version: v999.0.0
+version: v0.14.125
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agenticcells, forking, templates, github, hub, go-to-market, open-source, article
 status: published
