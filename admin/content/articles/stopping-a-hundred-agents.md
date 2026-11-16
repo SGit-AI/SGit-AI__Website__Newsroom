@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: On 9 November, at about 23:30 UTC, I told our agents to stop all work unless it was critical, until we realigned on strategy. It was also a test: could we actually stop a hundred agents across six people's accounts? The answer was yes, mostly, and slower than you would think. The pausing itself took seconds: one conductor paused 12 scheduled agents in four seconds. But each conductor only heard the order at its next wake, and one account cannot message another, so the time to stop was 5 minutes on my main account, 19 on the second, 33 for the iOS conductor, and 2 hours 36 minutes on Silvio's, waiting for his word. Scheduled wakes fell by 80 to 94% on the accounts that reported, and each person kept or restarted what they needed, as the rule allowed. Three days later came two more stops, a hand brake at 15:15 and a final hold at 18:12, written as files. Again, some things got through: tasks a session could not pause, agents whose wake steps never mentioned the hold, two small commits found later by another agent's review. The lesson is simple: a stop is not a message, it is a file every agent reads first, and a switch a person can reach in every account.
-version: v999.0.0
+version: v0.14.127
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, operations, control, web-summit, series, abp, article
 status: published
