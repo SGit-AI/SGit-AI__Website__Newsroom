@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: AgentiCCells needs a sharper idea at its centre, and I think it is the cell itself. A cell is the unit of what we sell: one focused job, with an objective, a deliverable and a behaviour policy, and as many parts as the job needs, a Claude session, a vault, a repository, a website, lanes and keys, a schedule, a connector, a person who owns it. A cell can be as simple as Claude replying to email, or as rich as a team keeping a website; every website is a cell. Now that the site factory creates repositories and changes AWS from a commit, we can put capabilities into cells that we never could before. So the selling has to be just as focused: every cell gets a page, with what it does, what you get, examples, use cases and its policy, and, on the side, four ways to start: the recipe for free, our agent helps you, we help you, or we set it up for you. The catalogue grows the simplest way: someone says "I need help with this", and we add a cell for it, often in the language of one industry, a clinic, a farm, a council. And we should live in cells ourselves: our team should think in cells, and I should move my own Claude work into cells, because that is the best test of whether they are easy to use, and the fastest way to find the next one.
-version: v999.0.0
+version: v0.14.123
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agenticcells, positioning, cells, product, go-to-market, abp, article
 status: published
