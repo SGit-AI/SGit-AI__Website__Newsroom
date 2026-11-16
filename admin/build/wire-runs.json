@@ -3572,6 +3572,144 @@
    "added": 0,
    "updated": 0,
    "note": "The refresh was committed locally but the push was refused by the git proxy, the fifth time in ten days."
+  },
+  {
+   "id": "602cd64abb84",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-11-16T05:47:52Z",
+   "finished_at": "2026-11-16T05:53:16Z",
+   "duration_s": 321.0,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.097644,
+     "input": 497023,
+     "output": 95884,
+     "cache_read": 0,
+     "cache_write": 0,
+     "thinking": 49816
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.579173,
+     "input": 116,
+     "output": 28590,
+     "cache_read": 2897025,
+     "cache_write": 364772,
+     "thinking": 3032
+    }
+   },
+   "cost_usd": 1.676817,
+   "turns": 16,
+   "subagents": 5,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "nothing new",
+   "release": null,
+   "added": 0,
+   "updated": 0,
+   "note": "A thin weekend window gave one tier-C candidate, so nothing was published for the second day running."
+  },
+  {
+   "id": "146025988f56",
+   "task": "owasp",
+   "trigger": "trig_01EMyAt2FWwi2mCmzVPnrzm8",
+   "fired_at": "2026-11-16T06:03:40Z",
+   "finished_at": "2026-11-16T06:09:00Z",
+   "duration_s": 317.0,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.112455,
+     "input": 691989,
+     "output": 71436,
+     "cache_read": 131845,
+     "cache_write": 49757,
+     "thinking": 44419
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.11898,
+     "input": 72,
+     "output": 25466,
+     "cache_read": 2261227,
+     "cache_write": 217023,
+     "thinking": 1379
+    }
+   },
+   "cost_usd": 1.231435,
+   "turns": 26,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-11-16.1",
+   "added": 2,
+   "updated": 2,
+   "note": "The Monday edition added two stories and updated two, led by election results whose vote counts do not reconcile."
+  },
+  {
+   "id": "8893cc369ccf",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-11-16T06:08:19Z",
+   "finished_at": "2026-11-16T06:36:28Z",
+   "duration_s": 1686.0,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.157535,
+     "input": 754641,
+     "output": 130834,
+     "cache_read": 629102,
+     "cache_write": 82902,
+     "thinking": 91676
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.177251,
+     "input": 118,
+     "output": 46683,
+     "cache_read": 2083383,
+     "cache_write": 165193,
+     "thinking": 1574
+    }
+   },
+   "cost_usd": 1.334786,
+   "turns": 26,
+   "subagents": 5,
+   "refused": 5,
+   "refused_kinds": [
+    "web fetch"
+   ],
+   "outcome": "published",
+   "release": "2026-11-16.1",
+   "added": 30,
+   "updated": 0,
+   "note": "The biggest Dinis edition yet, thirty new newsroom pieces, though five web fetches were refused."
+  },
+  {
+   "id": "afbf56125fba",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-11-16T06:56:44Z",
+   "finished_at": "2026-11-16T07:03:27Z",
+   "duration_s": 400.0,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.389087,
+     "input": 44,
+     "output": 7549,
+     "cache_read": 1319612,
+     "cache_write": 45387,
+     "thinking": 1173
+    }
+   },
+   "cost_usd": 0.389087,
+   "turns": 23,
+   "subagents": 0,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "blocked",
+   "release": null,
+   "added": 0,
+   "updated": 0,
+   "note": "The refresh was built and tested but the push was refused by the git proxy, the sixth time in eleven days."
   }
  ],
  "sessions": [
@@ -3595,15 +3733,15 @@
    "name": "@newsroom.accountant's session",
    "kind": "accountant",
    "from": "2026-10-16",
-   "as_of": "2026-11-15T07:55:00Z",
+   "as_of": "2026-11-16T07:55:00Z",
    "models": [
     "claude-sonnet-5-5"
    ],
-   "cost_usd": 59.39766486,
-   "input": 5321,
-   "output": 155762,
-   "cache_read": 84042513,
-   "cache_write": 12350874,
+   "cost_usd": 62.6507051,
+   "input": 5334,
+   "output": 160357,
+   "cache_read": 88139830,
+   "cache_write": 13050016,
    "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
   }
  ],
