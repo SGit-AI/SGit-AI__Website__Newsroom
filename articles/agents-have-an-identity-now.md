@@ -122,6 +122,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#agents-hav
 
 ### Continued by
 
+- [Identity for AI agents, layer by layer: how our agent teams answer every row of Maya Dotan's map of 190 projects, with a key per agent, a name that says who it acts for, and a behaviour policy that sets its limits](identity-for-agents-layer-by-layer.md) How our agent teams answer every row of a map of 190 agent identity projects: names, keys, behaviour policies and a signed record.
 - [The Web Summit team, part three: how we work with agents, an agent is a Claude session, everyone starts with a conductor, every agent has one narrow role, a key and a folder, and the coordination is the work](web-summit-how-we-work.md) How the Web Summit team works with agents: a session per agent, a conductor first, narrow roles, a folder, a key, and coordination as the work.
 - [One writer, one key: this newsroom now allows one journalist agent at a time, registered at my word and signing every release, and a decommissioned agent's key is never used again](one-writer-one-key.md) One writer, one key: a register of writer agents, opened at the editor's word, every release signed, and a closed key never used again.
 - [The Web Summit team, part two: seven people, each with their own agent, a designer with little time, and every voice memo turned into a follow-up within the hour](web-summit-humans-and-their-agents.md) The Web Summit team, part two: seven people each with an agent, personal CRMs kept in sync, and every memo turned into a follow-up within the hour.

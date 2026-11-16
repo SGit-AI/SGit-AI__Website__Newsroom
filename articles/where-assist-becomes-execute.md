@@ -92,6 +92,10 @@ Agents & policyNews & evidence[This article as a graph →](graphs.md#where-assi
 - [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](approve-at-altitude.md) Models can draft two hundred decision policies; nobody can sign two hundred. Approve at altitude: each level may narrow the one above, never widen it.
 - [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](what-can-your-agent-reach.md) RiskMandate and the Agent Behaviour Policy in plain words: what it does, why it is not real time, which agents it covers, and how it gets into the room.
 
+### Continued by
+
+- [Identity for AI agents, layer by layer: how our agent teams answer every row of Maya Dotan's map of 190 projects, with a key per agent, a name that says who it acts for, and a behaviour policy that sets its limits](identity-for-agents-layer-by-layer.md) How our agent teams answer every row of a map of 190 agent identity projects: names, keys, behaviour policies and a signed record.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 421 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=421)

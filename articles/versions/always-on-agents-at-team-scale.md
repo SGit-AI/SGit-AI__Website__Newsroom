@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.3.0** | 2026-11-16 | minor | 2,333 | +2 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](always-on-agents-at-team-scale/v1.3.0.md) · [current](../always-on-agents-at-team-scale.md) |
+| **v1.3.0** | 2026-11-16 | minor | 2,333 | +2 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`5f2efbd82`](https://github.com/SGit-AI/SGit-AI__Website/commit/5f2efbd82ac6bbada57d7ea5480de4eafefbd099) | [what changed](always-on-agents-at-team-scale/v1.3.0.md) · [current](../always-on-agents-at-team-scale.md) |
 | **v1.2.0** | 2026-11-15 | minor | 2,331 | +22 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`77e6cf4dd`](https://github.com/SGit-AI/SGit-AI__Website/commit/77e6cf4ddf2b7944833ae9c199af28d2e55682b6) | [what changed](always-on-agents-at-team-scale/v1.2.0.md) |
 | **v1.1.0** | 2026-11-15 | minor | 2,309 | +572 / −0 words; 7 changed, 18 added, 0 removed paragraphs | [`ba29cc8d7`](https://github.com/SGit-AI/SGit-AI__Website/commit/ba29cc8d788baf76bf21c18180c1ba38e998799c) | [what changed](always-on-agents-at-team-scale/v1.1.0.md) |
 | **v1.0.0** | 2026-11-15 | published | 1,737 | first published | [`e042bde8f`](https://github.com/SGit-AI/SGit-AI__Website/commit/e042bde8f46525320780449e56005e24ab8f76be) |  |

@@ -125,6 +125,7 @@ Vaults & methodAgents & policy[This article as a graph →](graphs.md#reviews-on
 
 ### Continued by
 
+- [Identity for AI agents, layer by layer: how our agent teams answer every row of Maya Dotan's map of 190 projects, with a key per agent, a name that says who it acts for, and a behaviour policy that sets its limits](identity-for-agents-layer-by-layer.md) How our agent teams answer every row of a map of 190 agent identity projects: names, keys, behaviour policies and a signed record.
 - [Becoming an official publication: the SGit Newsroom now has a publisher, an editor, standards, a corrections log, a withdrawal process and a complaints route, and is applying to a regulator](becoming-an-official-publication.md) The SGit Newsroom becomes an official publication: a publisher and editor, standards, corrections, a withdrawal process, complaints, and a regulator next.
 - [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](the-briefs-so-far.md) Sixty-five briefs this newsroom has asked of itself, audited from the code: 11 built, 21 partly, 32 not, each open one with a session brief.
 - [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](a-section-for-publishers.md) Where to send a publisher new to the newsroom: a section placed by rule, with features as they ship, that keeps itself current as the site changes.

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.3.0** | 2026-11-16 | minor | 1,445 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](selling-capabilities-not-content/v1.3.0.md) · [current](../selling-capabilities-not-content.md) |
+| **v1.3.0** | 2026-11-16 | minor | 1,445 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`5f2efbd82`](https://github.com/SGit-AI/SGit-AI__Website/commit/5f2efbd82ac6bbada57d7ea5480de4eafefbd099) | [what changed](selling-capabilities-not-content/v1.3.0.md) · [current](../selling-capabilities-not-content.md) |
 | **v1.2.0** | 2026-11-15 | minor | 1,445 | +23 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`77e6cf4dd`](https://github.com/SGit-AI/SGit-AI__Website/commit/77e6cf4ddf2b7944833ae9c199af28d2e55682b6) | [what changed](selling-capabilities-not-content/v1.2.0.md) |
 | **v1.1.0** | 2026-11-15 | minor | 1,422 | +312 / −113 words; 2 changed, 3 added, 2 removed paragraphs | [`8582b1793`](https://github.com/SGit-AI/SGit-AI__Website/commit/8582b17939ec51043e6eaf0fa3c0c6776e6f334c) | [what changed](selling-capabilities-not-content/v1.1.0.md) |
 | **v1.0.0** | 2026-11-15 | published | 1,223 | first published | [`ec16a9470`](https://github.com/SGit-AI/SGit-AI__Website/commit/ec16a9470f489f0e2e101d8ebc05e61f61988211) |  |

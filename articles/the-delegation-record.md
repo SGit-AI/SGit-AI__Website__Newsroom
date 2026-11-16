@@ -136,6 +136,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#the-de
 
 ### Continued by
 
+- [Identity for AI agents, layer by layer: how our agent teams answer every row of Maya Dotan's map of 190 projects, with a key per agent, a name that says who it acts for, and a behaviour policy that sets its limits](identity-for-agents-layer-by-layer.md) How our agent teams answer every row of a map of 190 agent identity projects: names, keys, behaviour policies and a signed record.
 - [The sidecar repository: a second repository the agent cannot write to, which checks every release against the policy, trusts signed checks instead of re-running them, and is the only thing that deploys, designed for an agent that is fully compromised](the-sidecar-repository.md) A second repository the agent cannot write to, which checks every release, trusts signed checks instead of re-running them, and is the only thing that deploys.
 - [The rules of the game: a policy for which files an agent may change, and the least GitHub can enforce today without a new tool](the-rules-of-the-game.md) A policy for which files an agent may change, and the least GitHub can enforce on a public repository today without a new tool.
 - [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](where-a-check-runs.md) Tests as enforcers of behaviour policies, and what moving them out of the agent's environment would gain, measured on this newsroom.

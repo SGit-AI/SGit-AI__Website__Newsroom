@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-11-16 | minor | 1,363 | +2 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](where-assist-becomes-execute/v1.2.0.md) · [current](../where-assist-becomes-execute.md) |
+| **v1.2.0** | 2026-11-16 | minor | 1,363 | +2 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`5f2efbd82`](https://github.com/SGit-AI/SGit-AI__Website/commit/5f2efbd82ac6bbada57d7ea5480de4eafefbd099) | [what changed](where-assist-becomes-execute/v1.2.0.md) · [current](../where-assist-becomes-execute.md) |
 | **v1.1.0** | 2026-11-15 | minor | 1,361 | +21 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`77e6cf4dd`](https://github.com/SGit-AI/SGit-AI__Website/commit/77e6cf4ddf2b7944833ae9c199af28d2e55682b6) | [what changed](where-assist-becomes-execute/v1.1.0.md) |
 | **v1.0.0** | 2026-11-15 | published | 1,340 | first published | [`b4f1c24f9`](https://github.com/SGit-AI/SGit-AI__Website/commit/b4f1c24f9fd18de39c3d83e6f815d48126a16e03) |  |
 

@@ -2,10 +2,11 @@
 
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
 
-60 articles, newest first.
+61 articles, newest first.
 
 ## November 2026
 
+- [Identity for AI agents, layer by layer: how our agent teams answer every row of Maya Dotan's map of 190 projects, with a key per agent, a name that says who it acts for, and a behaviour policy that sets its limits](../../articles/identity-for-agents-layer-by-layer.md), 2026-11-16, 6 min.
 - [Where assist becomes execute: tiering AI agents by what they can reach and whether it can be undone, how Agent Behaviour Policies drew that line for more than a hundred agents at Web Summit, and the rule that failed because it was only a rule](../../articles/where-assist-becomes-execute.md), 2026-11-15, 5 min.
 - [Native apps by agents: four iPhone and iPad apps from one workspace and an Android tablet app in five days, from 1,164 lines of Swift to 48,230, a signed Android build four hours after the first commit, and a guide to the fringe on TestFlight ten and a half hours after its brief](../../articles/native-apps-by-agents.md), 2026-11-15, 4 min.
 - [Spend fewer tokens: an agentic team's token bill is mostly a design choice, and the levers are files as memory, caching what repeats, code instead of models where you can, the right model for each step, no copy and paste, static outputs, and counting it all](../../articles/spend-fewer-tokens.md), 2026-11-15, 4 min.

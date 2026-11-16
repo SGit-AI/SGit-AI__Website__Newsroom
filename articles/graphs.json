@@ -55,6 +55,198 @@
   ],
   "articles": [
     {
+      "slug": "identity-for-agents-layer-by-layer",
+      "title": "Identity for AI agents, layer by layer: how our agent teams answer every row of Maya Dotan's map of 190 projects, with a key per agent, a name that says who it acts for, and a behaviour policy that sets its limits",
+      "date": "2026-11-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/identity-for-agents-layer-by-layer.html",
+      "markdown": "https://newsroom.sgit.ai/articles/identity-for-agents-layer-by-layer.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/identity-for-agents-layer-by-layer.webp",
+      "teaser": "How our agent teams answer every row of a map of 190 agent identity projects: names, keys, behaviour policies and a signed record.",
+      "topics": [
+        "agents-and-policy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "identity",
+        "pki",
+        "abp",
+        "agents",
+        "delegation",
+        "governance",
+        "promptugal",
+        "web-summit",
+        "article"
+      ],
+      "links_out": [
+        "a-directory-of-people-and-keys",
+        "agents-have-an-identity-now",
+        "a-key-for-every-person",
+        "signed-by-the-source",
+        "the-grant-not-the-prompt",
+        "where-assist-becomes-execute",
+        "approve-at-altitude",
+        "the-delegation-record",
+        "reviews-on-the-record",
+        "your-agents-logs-are-a-self-report"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "idl-layers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/idl-layers.webp",
+          "caption": "Maya Dotan's identity layers for AI agents, and what our agent teams use for each, with the evidence.",
+          "kind": "concept"
+        },
+        {
+          "file": "idl-question.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/idl-question.webp",
+          "caption": "Maya Dotan on LinkedIn, November 2026: who is building identity for AI agents, 190 projects by layer.",
+          "kind": "aside"
+        },
+        {
+          "file": "idl-chain.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/idl-chain.webp",
+          "caption": "One chain from a person to a signed action: person key, conductor, agent key, policy, hook, commit, run report.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "identity-for-agents-layer-by-layer",
+        "teaser": "How our agent teams answer every row of a map of 190 agent identity projects: names, keys, behaviour policies and a signed record.",
+        "topics": [
+          "agents-and-policy",
+          "news-and-evidence"
+        ],
+        "core_idea": "Agent identity can be plain keys and files: a name that says who it acts for, a key per session, a behaviour policy for limits, and a signed record as reputation.",
+        "nodes": [
+          {
+            "id": "map",
+            "label": "Maya Dotan's identity map",
+            "kind": "example",
+            "summary": "190 projects from 81 organisations, sorted by identity layer."
+          },
+          {
+            "id": "naming",
+            "label": "Dotted agent names",
+            "kind": "method",
+            "summary": "role.speciality@team.person says what, which team and for whom."
+          },
+          {
+            "id": "keys",
+            "label": "A key per agent session",
+            "kind": "method",
+            "summary": "P-256 keys, public halves in a registry, superseded with the time."
+          },
+          {
+            "id": "principal",
+            "label": "Who it acts for",
+            "kind": "concept",
+            "summary": "The person in the name and in every commit; only the person instructs."
+          },
+          {
+            "id": "abp",
+            "label": "Agent Behaviour Policy",
+            "kind": "method",
+            "summary": "A grant of paths, tools and hosts and a never list, kept by hooks."
+          },
+          {
+            "id": "approval",
+            "label": "Approval at altitude",
+            "kind": "method",
+            "summary": "Decisions as pages, drafts for irreversible acts, only the person merges."
+          },
+          {
+            "id": "reputation",
+            "label": "Reputation as a record",
+            "kind": "claim",
+            "summary": "Signed run reports and reviews make trust a matter of evidence."
+          },
+          {
+            "id": "enforcement",
+            "label": "Enforcement is the hard part",
+            "kind": "claim",
+            "summary": "A limit kept only by the agent is a rule, not a control."
+          }
+        ],
+        "edges": [
+          {
+            "from": "naming",
+            "to": "map",
+            "rel": "answers"
+          },
+          {
+            "from": "keys",
+            "to": "map",
+            "rel": "answers"
+          },
+          {
+            "from": "principal",
+            "to": "naming",
+            "rel": "depends-on"
+          },
+          {
+            "from": "abp",
+            "to": "map",
+            "rel": "answers"
+          },
+          {
+            "from": "abp",
+            "to": "keys",
+            "rel": "depends-on"
+          },
+          {
+            "from": "approval",
+            "to": "abp",
+            "rel": "extends"
+          },
+          {
+            "from": "reputation",
+            "to": "keys",
+            "rel": "depends-on"
+          },
+          {
+            "from": "enforcement",
+            "to": "abp",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "agents-have-an-identity-now",
+            "a-key-for-every-person",
+            "a-directory-of-people-and-keys",
+            "signed-by-the-source",
+            "the-grant-not-the-prompt",
+            "where-assist-becomes-execute",
+            "approve-at-altitude",
+            "the-delegation-record",
+            "reviews-on-the-record",
+            "your-agents-logs-are-a-self-report"
+          ],
+          "pages": [],
+          "sites": [
+            "https://abp.sgit.ai/",
+            "https://web-summit.sgit.ai/abp/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A good name answers three of her questions before any cryptography: which agent, which team, for whom.",
+            "why": "Naming as the cheapest layer."
+          },
+          {
+            "text": "Once every action is signed and recorded, reputation is the record",
+            "why": "Reputation without a score."
+          },
+          {
+            "text": "A limit kept only by the agent is a rule, not a control; the policy should say which is which.",
+            "why": "Where the hard part is."
+          }
+        ]
+      }
+    },
+    {
       "slug": "where-assist-becomes-execute",
       "title": "Where assist becomes execute: tiering AI agents by what they can reach and whether it can be undone, how Agent Behaviour Policies drew that line for more than a hundred agents at Web Summit, and the rule that failed because it was only a rule",
       "date": "2026-11-15",
@@ -84,7 +276,9 @@
         "approve-at-altitude",
         "what-can-your-agent-reach"
       ],
-      "links_in": [],
+      "links_in": [
+        "identity-for-agents-layer-by-layer"
+      ],
       "figures": [
         {
           "file": "wae-tiers.webp",
@@ -6760,6 +6954,7 @@
         "a-directory-of-people-and-keys"
       ],
       "links_in": [
+        "identity-for-agents-layer-by-layer",
         "selling-capabilities-not-content",
         "atomic-cells-end-to-end",
         "always-on-agents-at-team-scale",
@@ -10370,6 +10565,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "identity-for-agents-layer-by-layer",
         "a-market-for-sweets",
         "always-on-agents-at-team-scale",
         "wso2-agent-manager-and-behaviour-policies",
@@ -17424,6 +17620,7 @@
         "the-vendors-layer"
       ],
       "links_in": [
+        "identity-for-agents-layer-by-layer",
         "web-summit-how-we-work",
         "one-writer-one-key",
         "web-summit-humans-and-their-agents",
@@ -26356,6 +26553,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "identity-for-agents-layer-by-layer",
         "agentic-readers",
         "breaking-the-story-down-before-the-agents-do"
       ],
@@ -30625,6 +30823,7 @@
         "our-first-customers"
       ],
       "links_in": [
+        "identity-for-agents-layer-by-layer",
         "the-sidecar-repository",
         "the-rules-of-the-game",
         "where-a-check-runs"
@@ -42192,6 +42391,7 @@
         "the-man-behind-the-curtain"
       ],
       "links_in": [
+        "identity-for-agents-layer-by-layer",
         "a-key-for-every-person",
         "one-writer-one-key",
         "agents-have-an-identity-now",
@@ -44361,6 +44561,7 @@
         "three-policies-for-an-agent"
       ],
       "links_in": [
+        "identity-for-agents-layer-by-layer",
         "becoming-an-official-publication",
         "the-briefs-so-far",
         "a-section-for-publishers",
@@ -47549,6 +47750,7 @@
         "code-review-as-a-fractal-semantic-graph"
       ],
       "links_in": [
+        "identity-for-agents-layer-by-layer",
         "where-assist-becomes-execute",
         "stop-copying-and-pasting-between-your-agents",
         "dont-micromanage-your-agents",
@@ -53652,6 +53854,7 @@
         "a-policy-beside-the-prompt"
       ],
       "links_in": [
+        "identity-for-agents-layer-by-layer",
         "seven-iam-predictions-already-here",
         "a-briefing-for-the-ciso-summit",
         "three-decisions-mapped",

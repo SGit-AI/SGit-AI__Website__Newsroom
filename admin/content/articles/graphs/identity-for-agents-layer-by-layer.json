@@ -1,0 +1,36 @@
+{
+ "slug": "identity-for-agents-layer-by-layer",
+ "teaser": "How our agent teams answer every row of a map of 190 agent identity projects: names, keys, behaviour policies and a signed record.",
+ "topics": ["agents-and-policy", "news-and-evidence"],
+ "core_idea": "Agent identity can be plain keys and files: a name that says who it acts for, a key per session, a behaviour policy for limits, and a signed record as reputation.",
+ "nodes": [
+  {"id": "map", "label": "Maya Dotan's identity map", "kind": "example", "summary": "190 projects from 81 organisations, sorted by identity layer."},
+  {"id": "naming", "label": "Dotted agent names", "kind": "method", "summary": "role.speciality@team.person says what, which team and for whom."},
+  {"id": "keys", "label": "A key per agent session", "kind": "method", "summary": "P-256 keys, public halves in a registry, superseded with the time."},
+  {"id": "principal", "label": "Who it acts for", "kind": "concept", "summary": "The person in the name and in every commit; only the person instructs."},
+  {"id": "abp", "label": "Agent Behaviour Policy", "kind": "method", "summary": "A grant of paths, tools and hosts and a never list, kept by hooks."},
+  {"id": "approval", "label": "Approval at altitude", "kind": "method", "summary": "Decisions as pages, drafts for irreversible acts, only the person merges."},
+  {"id": "reputation", "label": "Reputation as a record", "kind": "claim", "summary": "Signed run reports and reviews make trust a matter of evidence."},
+  {"id": "enforcement", "label": "Enforcement is the hard part", "kind": "claim", "summary": "A limit kept only by the agent is a rule, not a control."}
+ ],
+ "edges": [
+  {"from": "naming", "to": "map", "rel": "answers"},
+  {"from": "keys", "to": "map", "rel": "answers"},
+  {"from": "principal", "to": "naming", "rel": "depends-on"},
+  {"from": "abp", "to": "map", "rel": "answers"},
+  {"from": "abp", "to": "keys", "rel": "depends-on"},
+  {"from": "approval", "to": "abp", "rel": "extends"},
+  {"from": "reputation", "to": "keys", "rel": "depends-on"},
+  {"from": "enforcement", "to": "abp", "rel": "contrasts"}
+ ],
+ "links": {
+  "articles": ["agents-have-an-identity-now", "a-key-for-every-person", "a-directory-of-people-and-keys", "signed-by-the-source", "the-grant-not-the-prompt", "where-assist-becomes-execute", "approve-at-altitude", "the-delegation-record", "reviews-on-the-record", "your-agents-logs-are-a-self-report"],
+  "pages": [],
+  "sites": ["https://abp.sgit.ai/", "https://web-summit.sgit.ai/abp/"]
+ },
+ "quotes": [
+  {"text": "A good name answers three of her questions before any cryptography: which agent, which team, for whom.", "why": "Naming as the cheapest layer."},
+  {"text": "Once every action is signed and recorded, reputation is the record", "why": "Reputation without a score."},
+  {"text": "A limit kept only by the agent is a rule, not a control; the policy should say which is which.", "why": "Where the hard part is."}
+ ]
+}
