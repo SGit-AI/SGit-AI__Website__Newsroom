@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-16 | minor | 1,910 | +14 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](our-workflow-on-odoo-20/v1.1.0.md) · [current](../our-workflow-on-odoo-20.md) |
+| **v1.1.0** | 2026-11-16 | minor | 1,910 | +14 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`23db0c45d`](https://github.com/SGit-AI/SGit-AI__Website/commit/23db0c45d58d5f621db4c86402b5421d2cd6d4b3) | [what changed](our-workflow-on-odoo-20/v1.1.0.md) · [current](../our-workflow-on-odoo-20.md) |
 | **v1.0.0** | 2026-11-16 | published | 1,896 | first published | [`a59d51108`](https://github.com/SGit-AI/SGit-AI__Website/commit/a59d51108391cf6137e2eabc527e329282135e18) |  |
 
 [← Back to the article](../our-workflow-on-odoo-20.md) · [All articles](../index.md)

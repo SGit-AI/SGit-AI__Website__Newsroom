@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-16 | published | 1,566 | first published | this release | [current](../the-cell-is-the-unit.md) |
+| **v1.0.0** | 2026-11-16 | published | 1,566 | first published | [`23db0c45d`](https://github.com/SGit-AI/SGit-AI__Website/commit/23db0c45d58d5f621db4c86402b5421d2cd6d4b3) | [current](../the-cell-is-the-unit.md) |
 
 [← Back to the article](../the-cell-is-the-unit.md) · [All articles](../index.md)
 
