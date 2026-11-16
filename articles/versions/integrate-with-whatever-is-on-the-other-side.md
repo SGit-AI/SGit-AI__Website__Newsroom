@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-16 | published | 1,349 | first published | this release | [current](../integrate-with-whatever-is-on-the-other-side.md) |
+| **v1.0.0** | 2026-11-16 | published | 1,349 | first published | [`f30b266e2`](https://github.com/SGit-AI/SGit-AI__Website/commit/f30b266e22d7dbb29d16179b1a7546e5b195924d) | [current](../integrate-with-whatever-is-on-the-other-side.md) |
 
 [← Back to the article](../integrate-with-whatever-is-on-the-other-side.md) · [All articles](../index.md)
 

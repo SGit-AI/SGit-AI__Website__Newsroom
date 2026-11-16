@@ -1,0 +1,3 @@
+# A CRM for us and for our agents (16 November 2026)
+
+Dinis's voice brief: double down on a CRM (fourth or fifth version), a CRM app and an iOS CRM app; vaults proven on iOS (images, Apple Intelligence, talk to developers: his words; PTTalk lane commits on 16 Nov in the iOS repo); research the best open-source and agentic CRMs; a team that builds and a team that uses. Research by a background research agent the same day (Twenty, Atomic CRM, Relaticle, EspoCRM, SuiteCRM, Odoo, Krayin, Monica, Frappe; Attio, folk, HubSpot Breeze, Agentforce, Day AI, Lightfield, Clay, Mesh, Dex). Vendor claims labelled.

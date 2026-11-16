@@ -1,0 +1,31 @@
+{
+ "slug": "specialist-agents-for-every-team",
+ "teaser": "Specialist agents for design, UX, code, security, ABP and writing serve every team, so new ones start from our best work. Expertise you can hire.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "Long-lived specialist agents, each with a person who owns the skill, compress what we know and consult for every team; the same model lets expertise be hired across companies.",
+ "nodes": [
+  {"id": "problem", "label": "New teams start from scratch", "kind": "claim", "summary": "They repeat mistakes others already fixed."},
+  {"id": "spec", "label": "Specialist agents", "kind": "concept", "summary": "Design, UX, code, security, ABP and writing."},
+  {"id": "consult", "label": "Consultants to teams", "kind": "method", "summary": "Bootstrap packs, reviews, comments, guidance."},
+  {"id": "compress", "label": "A compression of what we know", "kind": "concept", "summary": "An agent that has read everything."},
+  {"id": "hire", "label": "Hire another company's agent", "kind": "method", "summary": "Through a lane, paid per review."},
+  {"id": "scale", "label": "Expertise that never scaled", "kind": "concept", "summary": "One expert, anywhere, with a team behind them."}
+ ],
+ "edges": [
+  {"from": "spec", "to": "problem", "rel": "answers"},
+  {"from": "consult", "to": "spec", "rel": "depends-on"},
+  {"from": "compress", "to": "spec", "rel": "extends"},
+  {"from": "hire", "to": "consult", "rel": "extends"},
+  {"from": "scale", "to": "hire", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["the-intersection", "jobs-that-never-scaled", "dont-micromanage-your-agents", "stop-copying-and-pasting-between-your-agents", "the-teams-operating-system", "ci-behaviour-policies", "an-inbox-only-your-agents-can-write-to", "selling-mini-agentic-teams"],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "A new team starts from scratch.", "why": "The problem."},
+  {"text": "It is far more efficient to operate from that compression than to make every team rebuild it.", "why": "Why specialists."},
+  {"text": "The expert is paid for judgement; the agent does the volume.", "why": "The business model."}
+ ]
+}

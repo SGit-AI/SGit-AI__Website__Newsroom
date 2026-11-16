@@ -92,6 +92,7 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#int
 
 ### Continued by
 
+- [A CRM for us and for our agents: why the next stage is a CRM of our own, built on vaults with an iOS app, why we will build it by using it first for our own team and our own fleet of agents, how the open-source and agentic CRMs compare, and the two teams it needs, one that builds it and one that uses it](a-crm-for-us-and-our-agents.md) Our next stage is a CRM of our own, on vaults with an iOS app, for us and our agents. Twenty leads the field; agents propose, people send.
 - [Odoo's agents can now write to the system of record: how our stack fits around Odoo, from version 12 to 20, with behaviour policies for Odoo agents, an Odoo cell, plan-then-apply through a vault, an ephemeral proof of concept that went from nothing to customised in under a minute on four versions, and why we use whatever version is on the other side](odoo-and-our-stack.md) Odoo's agents can write to the system of record. Our stack fits every Odoo from 12 to 20: a proof of concept ran on four versions in under a minute each.
 
 [All articles](index.md) · [All graphs](graphs.md)

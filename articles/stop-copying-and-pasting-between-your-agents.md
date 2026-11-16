@@ -98,6 +98,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#stop-c
 
 ### Continued by
 
+- [Specialist agents for every team: long-lived agents that keep one skill, design, UX, code, security, behaviour policies or writing, with a person who owns it, so that new teams start from our best work instead of from scratch, and why that makes expertise that never scaled into something you can hire, even from another company](specialist-agents-for-every-team.md) Specialist agents for design, UX, code, security, ABP and writing serve every team, so new ones start from our best work. Expertise you can hire.
 - [Spend fewer tokens: an agentic team's token bill is mostly a design choice, and the levers are files as memory, caching what repeats, code instead of models where you can, the right model for each step, no copy and paste, static outputs, and counting it all](spend-fewer-tokens.md) An agentic team's token bill is mostly a design choice: files as memory, caching, code where you can, the right model per step, static outputs, counting.
 - [Don't micromanage your agents: what changed for Vicky Wang when she stopped reading everything her agents did and started managing them, how her team was backed by agents from another team, and why every company will want specialist agents that support all its teams](dont-micromanage-your-agents.md) Vicky Wang stopped reading everything her agents did and started managing them, backed by specialist agents from another team: a model for companies.
 

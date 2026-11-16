@@ -2,10 +2,11 @@
 
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
 
-62 articles, newest first.
+63 articles, newest first.
 
 ## November 2026
 
+- [Specialist agents for every team: long-lived agents that keep one skill, design, UX, code, security, behaviour policies or writing, with a person who owns it, so that new teams start from our best work instead of from scratch, and why that makes expertise that never scaled into something you can hire, even from another company](../../articles/specialist-agents-for-every-team.md), 2026-11-16, 6 min.
 - [The Mac bottleneck: how our agents' iOS builds waited three times longer than they ran, 22,427 minutes queued against 6,980 run on a pool of five Macs, and how one Mac job per push and then one integrated build an hour brought push to TestFlight down to under half an hour](../../articles/the-mac-bottleneck.md), 2026-11-16, 7 min.
 - [Identity for AI agents, layer by layer: how our agent teams answer every row of Maya Dotan's map of 190 projects, with a key per agent, a name that says who it acts for, and a behaviour policy that sets its limits](../../articles/identity-for-agents-layer-by-layer.md), 2026-11-16, 6 min.
 - [Where assist becomes execute: tiering AI agents by what they can reach and whether it can be undone, how Agent Behaviour Policies drew that line for more than a hundred agents at Web Summit, and the rule that failed because it was only a rule](../../articles/where-assist-becomes-execute.md), 2026-11-15, 5 min.

@@ -1,0 +1,142 @@
+{
+  "slug": "a-crm-for-us-and-our-agents",
+  "teaser": "Our next stage is a CRM of our own, on vaults with an iOS app, for us and our agents. Twenty leads the field; agents propose, people send.",
+  "topics": [
+    "startups-and-strategy",
+    "agents-and-policy"
+  ],
+  "core_idea": "Build the CRM record on vaults with first-class introductions and drafts, borrow the agentic CRMs' proposal and draft patterns, and run two teams: one builds, one uses.",
+  "nodes": [
+    {
+      "id": "fleet",
+      "label": "A fleet of agents is a CRM",
+      "kind": "concept",
+      "summary": "Agents as contacts, lanes as interactions, hand-overs as introductions."
+    },
+    {
+      "id": "need",
+      "label": "A CRM is critical now",
+      "kind": "claim",
+      "summary": "Follow-ups, messages and introductions after Web Summit."
+    },
+    {
+      "id": "pieces",
+      "label": "The pieces exist",
+      "kind": "example",
+      "summary": "Vaults in the iOS app, images, Apple Intelligence, lanes."
+    },
+    {
+      "id": "field",
+      "label": "The field",
+      "kind": "concept",
+      "summary": "Twenty leads open source; commercial agents propose and draft."
+    },
+    {
+      "id": "build",
+      "label": "Build the record",
+      "kind": "method",
+      "summary": "On vaults, with a key per agent and sources on values."
+    },
+    {
+      "id": "intro",
+      "label": "Introductions as records",
+      "kind": "concept",
+      "summary": "Who suggested it, between whom, why, status."
+    },
+    {
+      "id": "teams",
+      "label": "Two teams",
+      "kind": "method",
+      "summary": "One develops the CRM, one uses it; only a person sends."
+    }
+  ],
+  "edges": [
+    {
+      "from": "fleet",
+      "to": "build",
+      "rel": "leads-to"
+    },
+    {
+      "from": "pieces",
+      "to": "need",
+      "rel": "answers"
+    },
+    {
+      "from": "build",
+      "to": "field",
+      "rel": "contrasts"
+    },
+    {
+      "from": "intro",
+      "to": "build",
+      "rel": "extends"
+    },
+    {
+      "from": "teams",
+      "to": "build",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "an-agentic-console",
+      "synthetic-users-for-your-website",
+      "integrate-with-whatever-is-on-the-other-side",
+      "specialist-agents-for-every-team",
+      "native-apps-by-agents",
+      "the-teams-operating-system",
+      "a-key-for-every-person",
+      "how-a-vault-works",
+      "promptugal-news-the-newsroom-we-ran"
+    ],
+    "pages": [],
+    "sites": [
+      "https://github.com/twentyhq/twenty",
+      "https://docs.twenty.com/developers/extend/mcp"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "So I think a CRM is a product in itself, and it should have an iOS app of its own",
+      "why": "The product."
+    },
+    {
+      "text": "for us they are the heart of it",
+      "why": "Introductions."
+    },
+    {
+      "text": "Customer relationship management is really relationship management",
+      "why": "Why use it on ourselves."
+    },
+    {
+      "text": "and no agent ever sends an email or posts. A person does.",
+      "why": "The rule."
+    }
+  ],
+  "figures": [
+    {
+      "file": "crm-teams.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/crm-teams.webp",
+      "caption": "Two teams: one builds the CRM, one uses it, under behaviour policies where only a person sends.",
+      "kind": "architecture"
+    },
+    {
+      "file": "crm-fleet.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/crm-fleet.webp",
+      "caption": "Managing a fleet of agents is relationship management: the same records, almost one to one, and what we have.",
+      "kind": "table"
+    },
+    {
+      "file": "crm-landscape.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/crm-landscape.webp",
+      "caption": "The CRM landscape through an agent's eyes: licence, agents or MCP, writes as proposals, drafts rather than sends.",
+      "kind": "table"
+    },
+    {
+      "file": "crm-model.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/crm-model.webp",
+      "caption": "A small data model: people, organisations, interactions, introductions, follow-ups, drafts and plays.",
+      "kind": "architecture"
+    }
+  ]
+}

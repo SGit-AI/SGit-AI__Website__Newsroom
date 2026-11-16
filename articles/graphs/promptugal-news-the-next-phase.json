@@ -1,0 +1,138 @@
+{
+  "slug": "promptugal-news-the-next-phase",
+  "teaser": "The PrompTugal.news team wants to continue. A roadmap: outreach by agentic teams, local partners, a subscribe box, a verification layer, twelve cards.",
+  "topics": [
+    "news-and-evidence",
+    "startups-and-strategy"
+  ],
+  "core_idea": "PrompTugal.news has the material; the next phase is people, through agent-drafted, person-sent outreach, subscriptions and a verification layer that records who checked each story.",
+  "nodes": [
+    {
+      "id": "base",
+      "label": "A strong base",
+      "kind": "example",
+      "summary": "36 places, 90 articles, model-checked claims."
+    },
+    {
+      "id": "people",
+      "label": "The next phase is people",
+      "kind": "claim",
+      "summary": "Contributors, journalists, local news."
+    },
+    {
+      "id": "machine",
+      "label": "The outreach machine",
+      "kind": "method",
+      "summary": "Public contacts, agent drafts, a person sends, replies on a lane."
+    },
+    {
+      "id": "backlog",
+      "label": "50 filed contact requests",
+      "kind": "example",
+      "summary": "Drafted at Web Summit, never sent."
+    },
+    {
+      "id": "subscribe",
+      "label": "Subscribe into a lane",
+      "kind": "method",
+      "summary": "Regional updates approved by a person."
+    },
+    {
+      "id": "verify",
+      "label": "A verification layer",
+      "kind": "concept",
+      "summary": "Sourced, model-checked, signed, source-confirmed, certified."
+    },
+    {
+      "id": "cards",
+      "label": "Twelve task cards",
+      "kind": "method",
+      "summary": "Specific tasks for each person and their agents."
+    }
+  ],
+  "edges": [
+    {
+      "from": "people",
+      "to": "base",
+      "rel": "extends"
+    },
+    {
+      "from": "machine",
+      "to": "people",
+      "rel": "answers"
+    },
+    {
+      "from": "backlog",
+      "to": "machine",
+      "rel": "example-of"
+    },
+    {
+      "from": "subscribe",
+      "to": "machine",
+      "rel": "extends"
+    },
+    {
+      "from": "verify",
+      "to": "machine",
+      "rel": "depends-on"
+    },
+    {
+      "from": "cards",
+      "to": "machine",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "promptugal-news-the-newsroom-we-ran",
+      "promptugal-news-by-place",
+      "every-story-has-an-address",
+      "a-crm-for-us-and-our-agents",
+      "an-inbox-only-your-agents-can-write-to",
+      "a-key-for-every-person",
+      "selling-mini-agentic-teams",
+      "synthetic-users-for-your-website",
+      "dont-micromanage-your-agents"
+    ],
+    "pages": [],
+    "sites": [
+      "https://promptugal.news/",
+      "https://promptugal.news/contribute/",
+      "https://promptugal.news/newsroom/verification/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The worst thing we could do with that energy is leave it without specific things to do.",
+      "why": "Why cards."
+    },
+    {
+      "text": "An agent never sends an email or posts.",
+      "why": "The rule."
+    },
+    {
+      "text": "The outreach and the verification are the same work.",
+      "why": "Why they belong together."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ptr-cards.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ptr-cards.webp",
+      "caption": "Twelve task cards for the PrompTugal.news team: pick one, point your agentic team at it, report back.",
+      "kind": "concept"
+    },
+    {
+      "file": "ptr-machine.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ptr-machine.webp",
+      "caption": "The outreach machine: publish, find the public contact, draft, a person sends, replies on a lane, follow up.",
+      "kind": "process"
+    },
+    {
+      "file": "ptr-verify.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ptr-verify.webp",
+      "caption": "A verification layer: sourced, model-checked, read and signed, source-confirmed, certified.",
+      "kind": "concept"
+    }
+  ]
+}

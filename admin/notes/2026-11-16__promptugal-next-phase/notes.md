@@ -1,0 +1,3 @@
+# PrompTugal.news, the next phase (16 November 2026)
+
+Dinis's voice brief: a debrief and roadmap for the PrompTugal.news team (full of beans, wants to continue) and newcomers: outreach to contributors, journalists and local news; public contacts only; agent drafts, person sends; inline images and an email connector (a separate project; Dinis to write the Gmail and Calendar memo); a subscribe box into an append lane with an agent disclaimer; regional updates; a verification layer (who checked it, signed, certified); cards; email templates. Facts from the PrompTugal.news repository (desks/outreach: 50 targets, 50 drafts, tracker all 'filed'; 36 places; 90 articles; verification.md; contribute and claimed-profiles specs).

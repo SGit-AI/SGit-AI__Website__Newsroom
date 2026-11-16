@@ -2,10 +2,11 @@
 
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
 
-59 articles, newest first.
+60 articles, newest first.
 
 ## November 2026
 
+- [PrompTugal.news, the next phase: a roadmap for the team that ran it at Web Summit and the people who want to join, from outreach and contributors to local news partners, a subscribe box on every page, regional updates and a verification layer that says who has checked each story, with twelve task cards to point an agentic team at](../../articles/promptugal-news-the-next-phase.md), 2026-11-16, 6 min.
 - [Every story has an address: a design proposal for PrompTugal.news as a ground-up newsroom, where news is filed where it happens and climbs to the region and the country with its proof, mocked up from the live data of 19 local editions](../../articles/every-story-has-an-address.md), 2026-11-16, 7 min.
 - [Selling capabilities, not content: a reply to Florent Daudens' "We have the protocols. Where are the products?", from two newsrooms built for agents, PrompTugal.news going local and a storm site built in a night, and what we think the products are](../../articles/selling-capabilities-not-content.md), 2026-11-15, 5 min.
 - [PrompTugal.news by place: one publication for Portugal, the Algarve and every Algarve town, each place on its own subdomain from the start, each site a lens on one shared semantic graph, and one test for every story, does it connect to AI](../../articles/promptugal-news-by-place.md), 2026-11-15, 5 min.
