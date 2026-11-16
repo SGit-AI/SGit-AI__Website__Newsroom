@@ -1,0 +1,35 @@
+{
+ "slug": "every-story-has-an-address",
+ "teaser": "A design proposal for PrompTugal.news as a ground-up newsroom: every story filed at an address, climbing with its proof. Mockups from live data.",
+ "topics": ["news-and-evidence", "site-and-engineering"],
+ "core_idea": "News should start local: file every story at an address and let it climb to the region and the country through sourced connections, with the proof designed in.",
+ "nodes": [
+  {"id": "address", "label": "Every story has an address", "kind": "concept", "summary": "A story is filed where it happened: a parish, a town, a region."},
+  {"id": "climb", "label": "A story climbs", "kind": "method", "summary": "It reaches the region and the country only through sourced connections."},
+  {"id": "data", "label": "The by-place data", "kind": "artefact", "summary": "19 editions with 116 stories, 182 organisations and 166 gaps."},
+  {"id": "algar", "label": "ALGAR's AI tool", "kind": "example", "summary": "Filed in Almancil, climbing to Loulé, the pilots, the Algarve and Portugal."},
+  {"id": "front", "label": "A front page with no national desk", "kind": "claim", "summary": "The national page is assembled from the local files."},
+  {"id": "gaps", "label": "Gaps are journalism", "kind": "claim", "summary": "Each place says what it could not find."},
+  {"id": "names", "label": "Ground-up news", "kind": "concept", "summary": "The recommended name for the method, under the PrompTugal.news masthead."},
+  {"id": "locality", "label": "The locality layer", "kind": "question", "summary": "Parishes, municipalities and neighbours, so thin towns lean on others."}
+ ],
+ "edges": [
+  {"from": "climb", "to": "address", "rel": "depends-on"},
+  {"from": "algar", "to": "climb", "rel": "example-of"},
+  {"from": "front", "to": "climb", "rel": "produces"},
+  {"from": "data", "to": "front", "rel": "leads-to"},
+  {"from": "gaps", "to": "data", "rel": "extends"},
+  {"from": "names", "to": "address", "rel": "extends"},
+  {"from": "locality", "to": "climb", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["promptugal-news-the-newsroom-we-ran", "promptugal-news-by-place", "signed-by-the-source", "starting-agenticcells", "selling-capabilities-not-content"],
+  "pages": [],
+  "sites": ["https://promptugal.news/articles/algar-ai-recycling-points-almancil.html"]
+ },
+ "quotes": [
+  {"text": "Every story starts somewhere.", "why": "The thesis in three words."},
+  {"text": "The national front page has no national desk.", "why": "What ground-up means in practice."},
+  {"text": "Gaps are journalism: they tell the reader what we looked for and where we could not see", "why": "Why empty pages are not empty."}
+ ]
+}

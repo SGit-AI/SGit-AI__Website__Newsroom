@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-16 | published | 1,633 | first published | this release | [current](../identity-for-agents-layer-by-layer.md) |
+| **v1.0.0** | 2026-11-16 | published | 1,633 | first published | [`6d48ce7c6`](https://github.com/SGit-AI/SGit-AI__Website/commit/6d48ce7c69b919611da0a2b9a928891da13cc487) | [current](../identity-for-agents-layer-by-layer.md) |
 
 [← Back to the article](../identity-for-agents-layer-by-layer.md) · [All articles](../index.md)
 

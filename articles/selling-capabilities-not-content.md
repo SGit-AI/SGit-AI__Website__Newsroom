@@ -90,6 +90,10 @@ News & evidenceStartups & strategy[This article as a graph →](graphs.md#sellin
 - [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](your-reading-your-controls.md) The meter now charges for what is read; the reader can pause, reset or mark it, and what was read folds away six ways, with a line and a paragraph per section.
 - [A market for sweets: the opposite of a market for lemons, a semantic graph for one financial decision that gives the buyer the evidence, an agent that gathers and weighs but never trades, and the judo move of leaving the trade to others](a-market-for-sweets.md) The opposite of a market for lemons: a semantic graph for one financial decision, an agent that gathers but never trades, and the person decides.
 
+### Continued by
+
+- [Every story has an address: a design proposal for PrompTugal.news as a ground-up newsroom, where news is filed where it happens and climbs to the region and the country with its proof, mocked up from the live data of 19 local editions](every-story-has-an-address.md) A design proposal for PrompTugal.news as a ground-up newsroom: every story filed at an address, climbing with its proof. Mockups from live data.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 420 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=420)

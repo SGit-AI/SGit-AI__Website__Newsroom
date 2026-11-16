@@ -55,6 +55,217 @@
   ],
   "articles": [
     {
+      "slug": "every-story-has-an-address",
+      "title": "Every story has an address: a design proposal for PrompTugal.news as a ground-up newsroom, where news is filed where it happens and climbs to the region and the country with its proof, mocked up from the live data of 19 local editions",
+      "date": "2026-11-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/every-story-has-an-address.html",
+      "markdown": "https://newsroom.sgit.ai/articles/every-story-has-an-address.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/every-story-has-an-address.webp",
+      "teaser": "A design proposal for PrompTugal.news as a ground-up newsroom: every story filed at an address, climbing with its proof. Mockups from live data.",
+      "topics": [
+        "news-and-evidence",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "promptugal",
+        "local-news",
+        "design",
+        "provenance",
+        "by-place",
+        "agents",
+        "positioning",
+        "article"
+      ],
+      "links_out": [
+        "promptugal-news-the-newsroom-we-ran",
+        "promptugal-news-by-place",
+        "signed-by-the-source",
+        "starting-agenticcells",
+        "selling-capabilities-not-content"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ptl-idea.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ptl-idea.webp",
+          "caption": "The proposal: news starts local and climbs with its proof, from the parish to Europe, and what the data already holds.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "ptl-climb.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ptl-climb.webp",
+          "caption": "How a real story climbs: ALGAR's AI tool, from Almancil to Loulé, the pilot towns, the region and Portugal.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "ptl-front.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ptl-front.webp",
+          "caption": "Mockup of the national front page: a live strip, a lead with its address and climb, the region, country and towns.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "ptl-region.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ptl-region.webp",
+          "caption": "Mockup of the regional page: a map of the towns from their real positions, their borders, and the sourced connections.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "ptl-phone.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ptl-phone.webp",
+          "caption": "A story page on a phone: the address, the climb, the signature and the distance to the beat.",
+          "kind": "aside"
+        },
+        {
+          "file": "ptl-town.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ptl-town.webp",
+          "caption": "Mockup of a town edition, Faro: lede, live strip, stories, the town's map, useful facts and what we could not find.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "ptl-story.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ptl-story.webp",
+          "caption": "Mockup of a story page: the published text, and a rail with the address, how it climbed, and its sources.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "ptl-proof.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ptl-proof.webp",
+          "caption": "Mockup of the proof layer: the chain from a local source to the front page, who keeps each page, and the gaps.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "ptl-names.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ptl-names.webp",
+          "caption": "Three directions for the name: local first, proven up; PrompTugal Raiz; and The Address.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "every-story-has-an-address",
+        "teaser": "A design proposal for PrompTugal.news as a ground-up newsroom: every story filed at an address, climbing with its proof. Mockups from live data.",
+        "topics": [
+          "news-and-evidence",
+          "site-and-engineering"
+        ],
+        "core_idea": "News should start local: file every story at an address and let it climb to the region and the country through sourced connections, with the proof designed in.",
+        "nodes": [
+          {
+            "id": "address",
+            "label": "Every story has an address",
+            "kind": "concept",
+            "summary": "A story is filed where it happened: a parish, a town, a region."
+          },
+          {
+            "id": "climb",
+            "label": "A story climbs",
+            "kind": "method",
+            "summary": "It reaches the region and the country only through sourced connections."
+          },
+          {
+            "id": "data",
+            "label": "The by-place data",
+            "kind": "artefact",
+            "summary": "19 editions with 116 stories, 182 organisations and 166 gaps."
+          },
+          {
+            "id": "algar",
+            "label": "ALGAR's AI tool",
+            "kind": "example",
+            "summary": "Filed in Almancil, climbing to Loulé, the pilots, the Algarve and Portugal."
+          },
+          {
+            "id": "front",
+            "label": "A front page with no national desk",
+            "kind": "claim",
+            "summary": "The national page is assembled from the local files."
+          },
+          {
+            "id": "gaps",
+            "label": "Gaps are journalism",
+            "kind": "claim",
+            "summary": "Each place says what it could not find."
+          },
+          {
+            "id": "names",
+            "label": "Ground-up news",
+            "kind": "concept",
+            "summary": "The recommended name for the method, under the PrompTugal.news masthead."
+          },
+          {
+            "id": "locality",
+            "label": "The locality layer",
+            "kind": "question",
+            "summary": "Parishes, municipalities and neighbours, so thin towns lean on others."
+          }
+        ],
+        "edges": [
+          {
+            "from": "climb",
+            "to": "address",
+            "rel": "depends-on"
+          },
+          {
+            "from": "algar",
+            "to": "climb",
+            "rel": "example-of"
+          },
+          {
+            "from": "front",
+            "to": "climb",
+            "rel": "produces"
+          },
+          {
+            "from": "data",
+            "to": "front",
+            "rel": "leads-to"
+          },
+          {
+            "from": "gaps",
+            "to": "data",
+            "rel": "extends"
+          },
+          {
+            "from": "names",
+            "to": "address",
+            "rel": "extends"
+          },
+          {
+            "from": "locality",
+            "to": "climb",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "promptugal-news-the-newsroom-we-ran",
+            "promptugal-news-by-place",
+            "signed-by-the-source",
+            "starting-agenticcells",
+            "selling-capabilities-not-content"
+          ],
+          "pages": [],
+          "sites": [
+            "https://promptugal.news/articles/algar-ai-recycling-points-almancil.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Every story starts somewhere.",
+            "why": "The thesis in three words."
+          },
+          {
+            "text": "The national front page has no national desk.",
+            "why": "What ground-up means in practice."
+          },
+          {
+            "text": "Gaps are journalism: they tell the reader what we looked for and where we could not see",
+            "why": "Why empty pages are not empty."
+          }
+        ]
+      }
+    },
+    {
       "slug": "identity-for-agents-layer-by-layer",
       "title": "Identity for AI agents, layer by layer: how our agent teams answer every row of Maya Dotan's map of 190 projects, with a key per agent, a name that says who it acts for, and a behaviour policy that sets its limits",
       "date": "2026-11-16",
@@ -440,7 +651,9 @@
         "your-reading-your-controls",
         "a-market-for-sweets"
       ],
-      "links_in": [],
+      "links_in": [
+        "every-story-has-an-address"
+      ],
       "figures": [
         {
           "file": "scc-stack.webp",
@@ -590,6 +803,7 @@
         "from-a-commit-to-a-live-website"
       ],
       "links_in": [
+        "every-story-has-an-address",
         "selling-capabilities-not-content"
       ],
       "figures": [
@@ -1942,6 +2156,7 @@
         "the-teams-operating-system"
       ],
       "links_in": [
+        "every-story-has-an-address",
         "from-a-commit-to-a-live-website",
         "a-hub-for-agentic-sites",
         "stop-copying-and-pasting-between-your-agents",
@@ -3252,6 +3467,7 @@
         "always-on-agents-at-team-scale"
       ],
       "links_in": [
+        "every-story-has-an-address",
         "where-assist-becomes-execute",
         "selling-capabilities-not-content",
         "promptugal-news-by-place",
@@ -26553,6 +26769,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "every-story-has-an-address",
         "identity-for-agents-layer-by-layer",
         "agentic-readers",
         "breaking-the-story-down-before-the-agents-do"
