@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: Andy Goundry, CEO of Levantar, shared Anthropic's guide to building always-on agents on LinkedIn, with its five primitives, an event inbox, timers, memory, permissions and an outbox, and made a point I agree with completely: the model is one component, and the architecture around it is where the engineering, the cost and the risk live. He added that each primitive needs its own durable store, its own failure handling and its own tuning. That is where our experience differs, usefully. We run the same five primitives, and have since the ten days of Web Summit with around 250 agents, but they share one store: a versioned, signed, encrypted repository or vault. The inbox is append lanes, timers are scheduled wakes and a HOLD file read first, memory is REALITY.md, briefs and hand-overs, permissions are behaviour policies, keys and keyless agents behind a broker, and the outbox is drafts that a gateway or a person sends. One store gives durability, history, signatures and one audit trail for all five. I mapped them side by side with the guide yesterday; this is the reply, the mapping to AgentiCCells, where every cell is meant to ship with all five from the factory, and the levels we have added on top: many people, provenance, measured policies, a credential proxy built and measured, stopping as a file, a factory, and all of it open.
-version: v999.0.0
+version: v0.14.131
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, always-on-agents, anthropic, architecture, agenticcells, abp, open-source, article
 status: published
