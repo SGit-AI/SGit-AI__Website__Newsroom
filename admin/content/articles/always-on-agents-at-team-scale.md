@@ -38,8 +38,7 @@ None of it started at Web Summit. In October the agents ran [a newsroom about a 
 
 ## The post {#post}
 
-!shot aoa-question.webp | images/ | William Hu of Anthropic on LinkedIn, sharing his post on building always-on agents, November 2026. | screenshot
-
+!shot aoa-question.webp | images/ | William Hu of Anthropic on LinkedIn, sharing his post on building always-on agents, November 2026. | medium | aside
 
 The post's starting point is that "always on" describes what the user experiences, not what the agent does. The agent mostly sleeps. An event wakes it, it does the task, it saves what happened, and it goes back to sleep. In William's words, "Always-on agents are stateful and proactive", and they run on the same loop as any other agent, with a different architecture around it.
 

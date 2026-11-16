@@ -23,8 +23,7 @@ status: published
 
 ## The question {#question}
 
-!shot wae-question.webp | images/ | Khwaja Naveed's question on LinkedIn, 15 November 2026: the assist-to-execute line, and policy tiers. | screenshot
-
+!shot wae-question.webp | images/ | Khwaja Naveed's question on LinkedIn, 15 November 2026: the assist-to-execute line, and policy tiers. | narrow | screenshot
 
 Under my post about the visualisations that let us run more than 120 agents at once without losing control of them, Khwaja Naveed, a director of cybersecurity governance, asked a question that goes straight to the heart of it: how do our behaviour policies handle the line from assist to execute, when an agent moves from summarising data to executing changes in a system of record, and do we use different policy tiers based on that level of autonomy?
 

@@ -23,8 +23,7 @@ status: published
 
 ## His question {#question}
 
-!shot scc-question.webp | images/ | Florent Daudens on LinkedIn, 15 November 2026: we have the protocols, now where are the products? | screenshot
-
+!shot scc-question.webp | images/ | Florent Daudens on LinkedIn, 15 November 2026: we have the protocols, now where are the products? | aside
 
 In [We have the protocols. Where are the products?](https://fdaudens.substack.com/p/we-have-the-protocols-now-what-are) (and [on LinkedIn](https://lnkd.in/p/eduvEsh7)), Florent Daudens, co-founder of Mizal, lists what has arrived in a few months: Reuters and Getty with MCP services, university presses piloting access through ChatGPT Edu and a shared gateway, the Internet Licensing Collective's first customer, and a telemetry standard from a coalition of large publishers. His point is that protocols alone cannot create a market: "We need to move beyond licensing content and start selling capabilities." The opportunity he is most excited about is connecting the subscriptions people already pay for to their personal agents, because "people already pay for journalism. But their AI agents don't have access to the content they're paying for."
 

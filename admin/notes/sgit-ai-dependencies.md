@@ -6,7 +6,7 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 |---|---:|---:|---|
 | generator | 1392 | | pages imported from sgit.ai's build; goes when the generator is ported here |
 | network | 951 | 3080 | links to sgit.ai's pages and the network sites (38 files this site writes itself) |
-| words | 1920 | 12731 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| words | 1921 | 12735 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 118 | 343 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
