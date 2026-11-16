@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: When agents write native apps, the scarce thing is not the agents. It is the machines they build on. Over two days around Web Summit, our iOS builds used 6,980 minutes of Mac time and spent 22,427 minutes waiting for a Mac, on a pool of five hosted macOS runners that was full for 1,177 of the 1,524 minutes any Mac job ran. Each push to dev that changed app code took a median of ten separate macOS jobs, each starting cold, and 821 jobs on side branches were cancelled before they ever got a Mac. I could see that the allocation of the Mac was the bottleneck; an agent measured it, across 579 workflow runs, and changed the pipeline so that a push takes one Mac job: build everything, test on the iPhone and iPad simulators, and publish to TestFlight from dev only when every test passed. Six days later, with many agent sessions pushing through the night, the runners flooded again, and the fix was a rule rather than code: workers push to branches with no CI, and the conductor runs one integrated build an hour. Night builds went from about 35 minutes to about 7, and a push now reaches TestFlight in 19 to 44 minutes when a Mac is free.
-version: v999.0.0
+version: v0.14.114
 license: https://creativecommons.org/licenses/by/4.0/
 tags: ios, ci, github-actions, macos, testflight, agents, web-summit, series, article
 status: published
