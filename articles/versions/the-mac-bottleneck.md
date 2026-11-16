@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-16 | published | 1,762 | first published | this release | [current](../the-mac-bottleneck.md) |
+| **v1.0.0** | 2026-11-16 | published | 1,762 | first published | [`8d058ce43`](https://github.com/SGit-AI/SGit-AI__Website/commit/8d058ce4382b948885bb513d70c0a713e330337d) | [current](../the-mac-bottleneck.md) |
 
 [← Back to the article](../the-mac-bottleneck.md) · [All articles](../index.md)
 
