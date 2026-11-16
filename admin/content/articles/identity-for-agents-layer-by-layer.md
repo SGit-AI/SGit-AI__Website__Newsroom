@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: Maya Dotan's team at StarkWare mapped who is building identity for AI agents: 190 projects from 81 organisations, sorted by layer, from discovery and naming to authentication, agent identity, who an agent acts for, authority and limits, intent and approval, and reputation. Most of the work is on authority and delegation; reputation and naming have the least. Here is how the agent teams we ran at Web Summit and on PrompTugal.news answer each of those rows, with evidence from the repositories. A name that says what the agent is, which team and for whom: place.olhao@PrompTugal.dinis. A P-256 key made by each agent session, its public half in a registry in the repository: 147 entries, 98 active, 49 superseded. Commits that say which agent made them and for whom. An Agent Behaviour Policy that grants paths, tools and hosts and lists what is never allowed: 45 roles in one policy file, kept by hooks on every tool call. Decisions as pages, and irreversible acts as drafts. And reputation not as a score but as a signed record: 2,032 run reports. Two of her findings match ours exactly: naming turned out to be cheap and decisive, and reputation comes almost free once every action is signed and recorded. The hard part is not issuing identity; it is making sure the limits are enforced by something the agent cannot reach.
-version: v999.0.0
+version: v0.14.111
 license: https://creativecommons.org/licenses/by/4.0/
 tags: identity, pki, abp, agents, delegation, governance, promptugal, web-summit, article
 status: published
