@@ -1,9 +1,9 @@
 ---
-title: Odoo's agents can now write to the system of record: how our stack fits around Odoo 20, with behaviour policies for Odoo agents, an Odoo cell, plan-then-apply through a vault, a module that measures the grant, and a first showcase for SHarness
+title: Odoo's agents can now write to the system of record: how our stack fits around Odoo, from version 12 to 20, with behaviour policies for Odoo agents, an Odoo cell, plan-then-apply through a vault, an ephemeral proof of concept that went from nothing to customised in under a minute on four versions, and why we use whatever version is on the other side
 date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
-summary: Odoo is the open-source business system that a very large number of small and medium companies run their sales, accounts, stock and websites on, and in September Odoo 20 gave its AI agents the ability to create and update records, on their own, from automated and scheduled actions, and to be reached through a native MCP server. That is exactly the line I keep writing about, where an agent moves from assisting to executing in a system of record, and it is now arriving at small-business scale. An agent's power in Odoo comes from the tools it is given and the access of the user behind it; Odoo's documentation, as quoted by an integrator, says the AI does not enforce business rules; and agent conversations are kept for up to 30 days. So here is how our stack could integrate with Odoo. RiskMandate writes a behaviour policy for each Odoo agent, with the grant measured from Odoo itself, ideally by an Odoo module. AgentiCCells sells an Odoo cell on its usual ladder. SGit holds the plan, the approval and the result of every agent write, signed, for as long as the business needs it, with a small broker applying changes after a person approves. PKI gives each agent a key and each approval a signature. SHarness could get its first showcase bounding the Odoo server or the coding agent beside it. And VoiceDebrief can turn a meeting into a CRM note. The plan starts with a demo on a self-hosted Odoo.
+summary: Odoo is the open-source business system that a very large number of small and medium companies run their sales, accounts, stock and websites on, and in September Odoo 20 gave its AI agents the ability to create and update records, on their own, from automated and scheduled actions, and to be reached through a native MCP server. That is exactly the line I keep writing about, where an agent moves from assisting to executing in a system of record, and it is now arriving at small-business scale. An agent's power in Odoo comes from the tools it is given and the access of the user behind it; Odoo's documentation, as quoted by an integrator, says the AI does not enforce business rules; and agent conversations are kept for up to 30 days. So here is how our stack could integrate with Odoo. RiskMandate writes a behaviour policy for each Odoo agent, with the grant measured from Odoo itself, ideally by an Odoo module. AgentiCCells sells an Odoo cell on its usual ladder. SGit holds the plan, the approval and the result of every agent write, signed, for as long as the business needs it, with a small broker applying changes after a person approves. PKI gives each agent a key and each approval a signature. SHarness could get its first showcase bounding the Odoo server or the coding agent beside it. And VoiceDebrief can turn a meeting into a CRM note. And none of it waits for Odoo 20: in this session an agent brought up Odoo 12, 15, 18 and 19, each from nothing to customised in under a minute, used the same workflow on all four, and removed them. We use whatever version is on the other side.
 version: v0.14.118
 license: https://creativecommons.org/licenses/by/4.0/
 tags: odoo, erp, abp, riskmandate, agenticcells, sgit, sharness, strategy, article
@@ -20,6 +20,8 @@ status: published
 - **AgentiCCells:** an Odoo cell, from one agent on one workflow at £500 to a network at £20,000.
 - **SGit and PKI:** plan in a vault, a person signs, a broker applies, and the record lasts.
 - **SHarness and VoiceDebrief:** kernel limits around the Odoo server; meetings into the CRM.
+- **Every version, not just 20:** the same agent ran on Odoo 12, 15, 18 and 19, each from nothing to customised in under a minute.
+- **Use the future now:** we do not wait for the upgrade; we use whatever Odoo the customer has.
 
 ## Why Odoo, and why now {#why}
 
@@ -65,9 +67,33 @@ That also answers the 30-day problem: the conversation can expire; the record do
 - **VoiceDebrief:** a meeting becomes a transcript and a debrief, and then, through Odoo's API, a note and activities on the right CRM record, under a behaviour policy.
 - **PrompTugal.news:** the Algarve's businesses and Odoo's partners in Portugal are both readers and stories, and PrompTugal's own outreach could run on Odoo as a worked example ([every story has an address](/articles/every-story-has-an-address.html)).
 
+## Every version, not just 20 {#versions}
+
+!shot odp-versions.webp | images/ | What each Odoo version offers an integration, from 12 to 20, and where our agent ran. | table
+
+Most Odoo customers are not on the latest version. Someone I spoke to recently, whose company runs Odoo, put it simply: they are on 19, and will have to do some upgrades to get to 20. Others are on 18, 16, 15, or older. That does not change what we can do for them, because our workflow does not depend on Odoo's agents. It depends on Odoo being the place where the customer's data and workflows already live, and every version since at least 12 can be reached through its API: XML-RPC in all of them, API keys from 14, the JSON-2 API from 19, and MCP from 20.
+
+So the newest features are a bonus, not a requirement. An Odoo 15 with years of real data is a better data source than any fresh system, because the customer is already committed to it, and their workflows, including the manual ones that can be improved, are already in it.
+
+## A proof of concept, in under a minute {#poc}
+
+!shot odp-poc.webp | images/ | Odoo from nothing to customised in under a minute on versions 12, 15, 18 and 19, timed in this session. | chart
+
+To check that this is real and not a slide, the agent writing this article brought Odoo up in its own environment, ephemerally, four times. For each of Odoo 19, 18, 15 and 12, using the official Community images: start a fresh PostgreSQL, install CRM and Invoicing, start the server, then run a small agent over the API. It adds a custom field (the town each partner is in), creates a partner, a lead and a draft vendor bill, and reads them back. Then everything is removed. From nothing to customised took 44.9 seconds on Odoo 19, 47.1 on 18, 36.4 on 15 and 49.7 on 12. The agent itself took between one and three seconds; teardown took under half a second.
+
+!shot odp-screens.webp | images/ | The ephemeral Odoo 19 with the agent's Town field and draft bill, and the same field on Odoo 12. | screenshot
+
+The same agent ran on all four. Only its calls adapt: on Odoo 12 a vendor bill is an `account.invoice`, from 14 it is an `account.move` with a `move_type`; older versions needed the generic chart of accounts installed before a bill could be drafted. On Odoo 19 the agent also placed the new field on the partner form through the API, and read it back over the new JSON-2 API with an API key. And the bill stayed a draft: the agent was never asked to post it.
+
+That is the shape of an MVP or a proof of concept with a customer: a throwaway copy of their kind of Odoo, our workflow on top of it, a better interface or prototype where it helps, and nothing left behind. When it works, the same workflow points at their real instance, under a behaviour policy.
+
+## Use the future now {#future}
+
+This is the message I care about most. Customers do not have to wait to be upgraded to use agents with Odoo. We can bring the future to whatever they have now: agents, policies, signed approvals, a lasting record and better interfaces on an Odoo 15, and, when they move to 20, we use its agents and MCP server too, and retire whatever of ours they replace. We go to where the customer already is ([integrate with whatever is on the other side](/articles/integrate-with-whatever-is-on-the-other-side.html)).
+
 ## The plan {#plan}
 
-1. **A demo:** a self-hosted Odoo, one agent on vendor bills, its behaviour policy published as RiskMandate's next example, and an article here.
+1. **A demo:** done as a proof of concept, above; next, one agent on vendor bills on a copy of a real customer's Odoo, its behaviour policy published as RiskMandate's next example.
 2. **The pattern:** the vault-and-lane broker for Odoo writes, and the signed record.
 3. **The offer:** an Odoo cell on AgentiCCells' ladder; the measured grant in RiskMandate.
 4. **The channel:** Odoo partners, who implement Odoo for their customers and will need an answer for its agents; then the apps store.
@@ -76,11 +102,12 @@ That also answers the 30-day problem: the conversation can expire; the record do
 
 - **Odoo moves fast:** agents, MCP and AI credits are its own. We are the governance layer around them, not a rival agent.
 - **Plan gates:** on Odoo Online, the external API is available only on custom plans, so the first customers are likely Odoo.sh or self-hosted.
-- **Old APIs are going:** the legacy XML-RPC and JSON-RPC are deprecated in favour of the JSON-2 API; sources disagree on the removal date. Build on JSON-2 or MCP.
+- **Old APIs are going:** the legacy XML-RPC and JSON-RPC are deprecated in favour of the JSON-2 API; sources disagree on the removal date. Use what each version has: XML-RPC on older versions, JSON-2 or MCP on newer ones.
 
 ## What this does not claim {#limits}
 
-- **This is a strategy,** not an integration that exists; nothing has been built or sold.
+- **This is a strategy and a proof of concept,** not a product; nothing has been sold.
+- **The proof of concept used Odoo Community images,** with no demo data and an example partner; Odoo 20 and Enterprise features, including its agents, were not tested.
 - **The policy in the figure is an illustration,** not one measured from a real Odoo database.
 - **Pricing, credits and which editions include agents** come partly from integrators' summaries; I would confirm them, and the MCP server's access controls, on a real instance first.
 - **Customer numbers for Odoo are third-party estimates.**

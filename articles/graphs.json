@@ -55,14 +55,170 @@
   ],
   "articles": [
     {
+      "slug": "integrate-with-whatever-is-on-the-other-side",
+      "title": "Integrate with whatever is on the other side: why we never start by asking a customer to move, how we build around the systems they already run, from Odoo 12 to Salesforce, and how, over time, either their system gets better and we retire our code, or ours becomes the better place",
+      "date": "2026-11-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/integrate-with-whatever-is-on-the-other-side.html",
+      "markdown": "https://newsroom.sgit.ai/articles/integrate-with-whatever-is-on-the-other-side.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/integrate-with-whatever-is-on-the-other-side.webp",
+      "teaser": "We never start by asking a customer to move. We integrate with what they run, build around it, and either retire our code or become the better place.",
+      "topics": [
+        "startups-and-strategy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "strategy",
+        "integration",
+        "open-source",
+        "odoo",
+        "agenticcells",
+        "wardley-maps",
+        "positioning",
+        "article"
+      ],
+      "links_out": [
+        "the-intersection",
+        "explorer-coding",
+        "odoo-and-our-stack",
+        "open-source-so-you-keep-it",
+        "no-tech-stack-to-maintain",
+        "the-minimum-code-below",
+        "the-site-factory-works"
+      ],
+      "links_in": [
+        "odoo-and-our-stack"
+      ],
+      "figures": [
+        {
+          "file": "iwt-path.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/iwt-path.webp",
+          "caption": "Integrate, build around it, and let time decide: their system gets better, or ours becomes the better place.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "integrate-with-whatever-is-on-the-other-side",
+        "teaser": "We never start by asking a customer to move. We integrate with what they run, build around it, and either retire our code or become the better place.",
+        "topics": [
+          "startups-and-strategy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Go to where the customer is: integrate with their existing systems, build around them, ride their upgrades, and keep only commodity parts underneath.",
+        "nodes": [
+          {
+            "id": "today",
+            "label": "An MVP meets Odoo",
+            "kind": "example",
+            "summary": "The organisation liked it and said they use Odoo."
+          },
+          {
+            "id": "integrate",
+            "label": "Integrate with what is there",
+            "kind": "method",
+            "summary": "Odoo 12 or 20, Salesforce, a spreadsheet."
+          },
+          {
+            "id": "around",
+            "label": "Build around it",
+            "kind": "method",
+            "summary": "Agents, policies, records and better interfaces on top."
+          },
+          {
+            "id": "oss",
+            "label": "The open source model",
+            "kind": "concept",
+            "summary": "Leverage what exists and use its upgrades."
+          },
+          {
+            "id": "retire",
+            "label": "Their system gets better",
+            "kind": "claim",
+            "summary": "We retire our code."
+          },
+          {
+            "id": "replace",
+            "label": "Ours becomes the better place",
+            "kind": "claim",
+            "summary": "Data and work move over time."
+          },
+          {
+            "id": "commodity",
+            "label": "Only commodity parts",
+            "kind": "concept",
+            "summary": "No database or servers of our own."
+          }
+        ],
+        "edges": [
+          {
+            "from": "today",
+            "to": "integrate",
+            "rel": "example-of"
+          },
+          {
+            "from": "around",
+            "to": "integrate",
+            "rel": "depends-on"
+          },
+          {
+            "from": "oss",
+            "to": "around",
+            "rel": "extends"
+          },
+          {
+            "from": "retire",
+            "to": "around",
+            "rel": "leads-to"
+          },
+          {
+            "from": "replace",
+            "to": "around",
+            "rel": "leads-to"
+          },
+          {
+            "from": "commodity",
+            "to": "retire",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "odoo-and-our-stack",
+            "the-intersection",
+            "the-site-factory-works",
+            "explorer-coding",
+            "open-source-so-you-keep-it",
+            "no-tech-stack-to-maintain",
+            "the-minimum-code-below"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "That is not an objection. It is the point.",
+            "why": "The customer already uses Odoo."
+          },
+          {
+            "text": "There is a path where you replace the underlying technology, but you never start there.",
+            "why": "Replacement is not the start."
+          },
+          {
+            "text": "When the system underneath improves, we delete code.",
+            "why": "Why commodity parts."
+          }
+        ]
+      }
+    },
+    {
       "slug": "odoo-and-our-stack",
-      "title": "Odoo's agents can now write to the system of record: how our stack fits around Odoo 20, with behaviour policies for Odoo agents, an Odoo cell, plan-then-apply through a vault, a module that measures the grant, and a first showcase for SHarness",
+      "title": "Odoo's agents can now write to the system of record: how our stack fits around Odoo, from version 12 to 20, with behaviour policies for Odoo agents, an Odoo cell, plan-then-apply through a vault, an ephemeral proof of concept that went from nothing to customised in under a minute on four versions, and why we use whatever version is on the other side",
       "date": "2026-11-16",
       "updated": "",
       "url": "https://newsroom.sgit.ai/articles/odoo-and-our-stack.html",
       "markdown": "https://newsroom.sgit.ai/articles/odoo-and-our-stack.md",
       "card": "https://newsroom.sgit.ai/articles/cards/odoo-and-our-stack.webp",
-      "teaser": "Odoo 20 agents can create and update records on their own. How our stack fits around Odoo: policies per agent, an Odoo cell, and plan-then-apply.",
+      "teaser": "Odoo's agents can write to the system of record. Our stack fits every Odoo from 12 to 20: a proof of concept ran on four versions in under a minute each.",
       "topics": [
         "agents-and-policy",
         "startups-and-strategy"
@@ -86,9 +242,12 @@
         "ci-behaviour-policies",
         "a-key-for-every-person",
         "how-a-vault-works",
-        "every-story-has-an-address"
+        "every-story-has-an-address",
+        "integrate-with-whatever-is-on-the-other-side"
       ],
-      "links_in": [],
+      "links_in": [
+        "integrate-with-whatever-is-on-the-other-side"
+      ],
       "figures": [
         {
           "file": "odo-map.webp",
@@ -107,11 +266,29 @@
           "url": "https://newsroom.sgit.ai/articles/images/odo-apply.webp",
           "caption": "Plan, then apply, for writes to Odoo: snapshot, plan, policy check, signed approval, broker, record.",
           "kind": "process"
+        },
+        {
+          "file": "odp-versions.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/odp-versions.webp",
+          "caption": "What each Odoo version offers an integration, from 12 to 20, and where our agent ran.",
+          "kind": "table"
+        },
+        {
+          "file": "odp-poc.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/odp-poc.webp",
+          "caption": "Odoo from nothing to customised in under a minute on versions 12, 15, 18 and 19, timed in this session.",
+          "kind": "chart"
+        },
+        {
+          "file": "odp-screens.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/odp-screens.webp",
+          "caption": "The ephemeral Odoo 19 with the agent's Town field and draft bill, and the same field on Odoo 12.",
+          "kind": "screenshot"
         }
       ],
       "graph": {
         "slug": "odoo-and-our-stack",
-        "teaser": "Odoo 20 agents can create and update records on their own. How our stack fits around Odoo: policies per agent, an Odoo cell, and plan-then-apply.",
+        "teaser": "Odoo's agents can write to the system of record. Our stack fits every Odoo from 12 to 20: a proof of concept ran on four versions in under a minute each.",
         "topics": [
           "agents-and-policy",
           "startups-and-strategy"
@@ -159,6 +336,18 @@
             "label": "SHarness showcase",
             "kind": "question",
             "summary": "Kernel limits around the Odoo server or its coding agent."
+          },
+          {
+            "id": "versions",
+            "label": "Every version",
+            "kind": "claim",
+            "summary": "Odoo 12 to 20 all reachable through their API."
+          },
+          {
+            "id": "poc",
+            "label": "An ephemeral proof of concept",
+            "kind": "example",
+            "summary": "Nothing to customised in under a minute on 12, 15, 18 and 19."
           }
         ],
         "edges": [
@@ -191,6 +380,16 @@
             "from": "sharness",
             "to": "gap",
             "rel": "answers"
+          },
+          {
+            "from": "poc",
+            "to": "versions",
+            "rel": "example-of"
+          },
+          {
+            "from": "versions",
+            "to": "odoo",
+            "rel": "extends"
           }
         ],
         "links": {
@@ -202,7 +401,8 @@
             "what-can-your-agent-reach",
             "a-key-for-every-person",
             "how-a-vault-works",
-            "every-story-has-an-address"
+            "every-story-has-an-address",
+            "integrate-with-whatever-is-on-the-other-side"
           ],
           "pages": [],
           "sites": [
@@ -222,6 +422,10 @@
           {
             "text": "We are the governance layer around them, not a rival agent.",
             "why": "The positioning."
+          },
+          {
+            "text": "So the newest features are a bonus, not a requirement.",
+            "why": "Why versions do not matter."
           }
         ]
       }
@@ -268,6 +472,7 @@
         "where-to-invest-in-sgit"
       ],
       "links_in": [
+        "integrate-with-whatever-is-on-the-other-side",
         "odoo-and-our-stack"
       ],
       "figures": [
@@ -454,6 +659,7 @@
         "ci-behaviour-policies"
       ],
       "links_in": [
+        "integrate-with-whatever-is-on-the-other-side",
         "odoo-and-our-stack",
         "the-intersection",
         "ci-behaviour-policies"
@@ -8617,7 +8823,9 @@
         "handing-secrets-to-agents",
         "the-no-server-startup"
       ],
-      "links_in": [],
+      "links_in": [
+        "integrate-with-whatever-is-on-the-other-side"
+      ],
       "figures": [
         {
           "file": "nts-map.webp",
@@ -40365,6 +40573,7 @@
         "can-you-sell-it"
       ],
       "links_in": [
+        "integrate-with-whatever-is-on-the-other-side",
         "investor-sgit-ai",
         "where-to-invest-in-sgit",
         "the-exit-is-when-you-sell-control",
@@ -54034,6 +54243,7 @@
         "a-custom-firefox-of-my-own"
       ],
       "links_in": [
+        "integrate-with-whatever-is-on-the-other-side",
         "decide-then-buy",
         "town-planners-for-mission-critical-code",
         "sell-to-the-companies-that-already-have-the-problem",
@@ -62371,6 +62581,7 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "integrate-with-whatever-is-on-the-other-side",
         "selling-less-code",
         "the-attack-surface-you-do-not-have",
         "jobs-that-never-scaled",

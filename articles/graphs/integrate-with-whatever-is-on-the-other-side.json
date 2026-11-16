@@ -1,0 +1,120 @@
+{
+  "slug": "integrate-with-whatever-is-on-the-other-side",
+  "teaser": "We never start by asking a customer to move. We integrate with what they run, build around it, and either retire our code or become the better place.",
+  "topics": [
+    "startups-and-strategy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Go to where the customer is: integrate with their existing systems, build around them, ride their upgrades, and keep only commodity parts underneath.",
+  "nodes": [
+    {
+      "id": "today",
+      "label": "An MVP meets Odoo",
+      "kind": "example",
+      "summary": "The organisation liked it and said they use Odoo."
+    },
+    {
+      "id": "integrate",
+      "label": "Integrate with what is there",
+      "kind": "method",
+      "summary": "Odoo 12 or 20, Salesforce, a spreadsheet."
+    },
+    {
+      "id": "around",
+      "label": "Build around it",
+      "kind": "method",
+      "summary": "Agents, policies, records and better interfaces on top."
+    },
+    {
+      "id": "oss",
+      "label": "The open source model",
+      "kind": "concept",
+      "summary": "Leverage what exists and use its upgrades."
+    },
+    {
+      "id": "retire",
+      "label": "Their system gets better",
+      "kind": "claim",
+      "summary": "We retire our code."
+    },
+    {
+      "id": "replace",
+      "label": "Ours becomes the better place",
+      "kind": "claim",
+      "summary": "Data and work move over time."
+    },
+    {
+      "id": "commodity",
+      "label": "Only commodity parts",
+      "kind": "concept",
+      "summary": "No database or servers of our own."
+    }
+  ],
+  "edges": [
+    {
+      "from": "today",
+      "to": "integrate",
+      "rel": "example-of"
+    },
+    {
+      "from": "around",
+      "to": "integrate",
+      "rel": "depends-on"
+    },
+    {
+      "from": "oss",
+      "to": "around",
+      "rel": "extends"
+    },
+    {
+      "from": "retire",
+      "to": "around",
+      "rel": "leads-to"
+    },
+    {
+      "from": "replace",
+      "to": "around",
+      "rel": "leads-to"
+    },
+    {
+      "from": "commodity",
+      "to": "retire",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "odoo-and-our-stack",
+      "the-intersection",
+      "the-site-factory-works",
+      "explorer-coding",
+      "open-source-so-you-keep-it",
+      "no-tech-stack-to-maintain",
+      "the-minimum-code-below"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "That is not an objection. It is the point.",
+      "why": "The customer already uses Odoo."
+    },
+    {
+      "text": "There is a path where you replace the underlying technology, but you never start there.",
+      "why": "Replacement is not the start."
+    },
+    {
+      "text": "When the system underneath improves, we delete code.",
+      "why": "Why commodity parts."
+    }
+  ],
+  "figures": [
+    {
+      "file": "iwt-path.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/iwt-path.webp",
+      "caption": "Integrate, build around it, and let time decide: their system gets better, or ours becomes the better place.",
+      "kind": "concept"
+    }
+  ]
+}

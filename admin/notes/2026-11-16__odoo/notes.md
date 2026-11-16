@@ -4,3 +4,11 @@ Dinis asked for a strategy to integrate our workflows and stack with odoo.com, t
 Odoo's 19 and 20 release notes (read via WebFetch; the pages were long and partly read) and integrators' summaries
 (Carly, a vendor; Teqstars; Cybrosys; Apideck); claims from them are hedged in the text. Customer numbers are
 third-party estimates. The ABP figure is an illustration, not a measured policy. Nothing built or sold.
+
+## Update, later on 16 November
+Dinis asked to add Odoo 19, 18 and older, and to try an ephemeral deployment. Done in this session with Docker (dockerd
+started by hand) and the official odoo:12.0, 15.0, 18.0, 19.0 images and postgres:16 (postgres:12 for Odoo 12): scripts in
+the writer's scratchpad (odoo/poc: run.sh, agent.py, down.sh). Timings: 19 44.9 s, 18 47.1 s, 15 36.4 s, 12 49.7 s from
+start to agent done; teardown under 0.5 s. Odoo 12 and 15 needed l10n_generic_coa for a purchase journal. JSON-2 with an
+API key tested on 19. Images removed afterwards for disk. Companion article: integrate-with-whatever-is-on-the-other-side
+(the organisation from today's MVP is not named, at Dinis's word that they want to review the content first).

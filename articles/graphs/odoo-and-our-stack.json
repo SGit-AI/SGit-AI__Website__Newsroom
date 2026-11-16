@@ -1,6 +1,6 @@
 {
   "slug": "odoo-and-our-stack",
-  "teaser": "Odoo 20 agents can create and update records on their own. How our stack fits around Odoo: policies per agent, an Odoo cell, and plan-then-apply.",
+  "teaser": "Odoo's agents can write to the system of record. Our stack fits every Odoo from 12 to 20: a proof of concept ran on four versions in under a minute each.",
   "topics": [
     "agents-and-policy",
     "startups-and-strategy"
@@ -48,6 +48,18 @@
       "label": "SHarness showcase",
       "kind": "question",
       "summary": "Kernel limits around the Odoo server or its coding agent."
+    },
+    {
+      "id": "versions",
+      "label": "Every version",
+      "kind": "claim",
+      "summary": "Odoo 12 to 20 all reachable through their API."
+    },
+    {
+      "id": "poc",
+      "label": "An ephemeral proof of concept",
+      "kind": "example",
+      "summary": "Nothing to customised in under a minute on 12, 15, 18 and 19."
     }
   ],
   "edges": [
@@ -80,6 +92,16 @@
       "from": "sharness",
       "to": "gap",
       "rel": "answers"
+    },
+    {
+      "from": "poc",
+      "to": "versions",
+      "rel": "example-of"
+    },
+    {
+      "from": "versions",
+      "to": "odoo",
+      "rel": "extends"
     }
   ],
   "links": {
@@ -91,7 +113,8 @@
       "what-can-your-agent-reach",
       "a-key-for-every-person",
       "how-a-vault-works",
-      "every-story-has-an-address"
+      "every-story-has-an-address",
+      "integrate-with-whatever-is-on-the-other-side"
     ],
     "pages": [],
     "sites": [
@@ -111,6 +134,10 @@
     {
       "text": "We are the governance layer around them, not a rival agent.",
       "why": "The positioning."
+    },
+    {
+      "text": "So the newest features are a bonus, not a requirement.",
+      "why": "Why versions do not matter."
     }
   ],
   "figures": [
@@ -131,6 +158,24 @@
       "url": "https://newsroom.sgit.ai/articles/images/odo-apply.webp",
       "caption": "Plan, then apply, for writes to Odoo: snapshot, plan, policy check, signed approval, broker, record.",
       "kind": "process"
+    },
+    {
+      "file": "odp-versions.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/odp-versions.webp",
+      "caption": "What each Odoo version offers an integration, from 12 to 20, and where our agent ran.",
+      "kind": "table"
+    },
+    {
+      "file": "odp-poc.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/odp-poc.webp",
+      "caption": "Odoo from nothing to customised in under a minute on versions 12, 15, 18 and 19, timed in this session.",
+      "kind": "chart"
+    },
+    {
+      "file": "odp-screens.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/odp-screens.webp",
+      "caption": "The ephemeral Odoo 19 with the agent's Town field and draft bill, and the same field on Odoo 12.",
+      "kind": "screenshot"
     }
   ]
 }

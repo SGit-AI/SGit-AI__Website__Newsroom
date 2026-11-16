@@ -2,11 +2,12 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-98 articles, newest first.
+99 articles, newest first.
 
 ## November 2026
 
-- [Odoo's agents can now write to the system of record: how our stack fits around Odoo 20, with behaviour policies for Odoo agents, an Odoo cell, plan-then-apply through a vault, a module that measures the grant, and a first showcase for SHarness](../../articles/odoo-and-our-stack.md), 2026-11-16, 6 min.
+- [Integrate with whatever is on the other side: why we never start by asking a customer to move, how we build around the systems they already run, from Odoo 12 to Salesforce, and how, over time, either their system gets better and we retire our code, or ours becomes the better place](../../articles/integrate-with-whatever-is-on-the-other-side.md), 2026-11-16, 5 min.
+- [Odoo's agents can now write to the system of record: how our stack fits around Odoo, from version 12 to 20, with behaviour policies for Odoo agents, an Odoo cell, plan-then-apply through a vault, an ephemeral proof of concept that went from nothing to customised in under a minute on four versions, and why we use whatever version is on the other side](../../articles/odoo-and-our-stack.md), 2026-11-16, 9 min.
 - [The intersection: SGit, SHarness, Agent Behaviour Policies, RiskMandate and AgentiCCells as one stack of separate companies, now with real customers, real usage and real examples, one ladder of offers on every site, and a plan to align them all](../../articles/the-intersection.md), 2026-11-16, 7 min.
 - [From a commit to a live website: a site factory where a request file in a commit makes a CI pipeline create the GitHub repository, the DNS record and the sgit vault, seed a page, check HTTPS, run a first pass with Claude Code, and record it all, so an agent can create sites by committing](../../articles/from-a-commit-to-a-live-website.md), 2026-11-15, 6 min.
 - [A hub for agentic sites: every site AgentiCCells builds in a repository and an sgit vault, served at its own address, and listed on hub.agenticcells.site, where it can be found, promoted and copied as a template; with an orange grower as the first example](../../articles/a-hub-for-agentic-sites.md), 2026-11-15, 4 min.
