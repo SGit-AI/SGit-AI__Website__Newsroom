@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: The same evening as Yiheng Wang's site, the same flow made a site for Silvio Switha, and the result could not be more different, because the evidence is different. Silvio is an AI entrepreneur, a musician and a producer, and at Web Summit he did some of the most spectacular work of the ten days: the 3D universe command centre his team ran on, the Gravity visualisation library, the X-Ray, design work, and Know the Reach, RiskMandate's song and music video, made with AI. He is now looking for projects, as a professional and a consultant. So his site is a portfolio, and it leads with the film. The factory took the request to a live HTTPS site in 55 seconds and a first version in just over five minutes; then five design agents built five designs of the same facts in about eleven minutes of commits: Premiere, cinematic, with the film first; Universe, his agents in orbit as six rings; The Studio, a producer's desk with liner notes, a session timeline drawn like a DAW and his agents as a mixing desk; The Proposal, clean case studies and services for clients; and On Tour, a red and black gig poster. Every figure names its source, and every claim is something he built and can show.
-version: v999.0.0
+version: v0.14.130
 license: https://creativecommons.org/licenses/by/4.0/
 tags: careers, agenticcells, site-factory, design, music, agents, web-summit, article
 status: published
