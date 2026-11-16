@@ -4,7 +4,7 @@ date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
 summary: What we have now is a ridiculously powerful workflow, and it runs across what are really several companies. SGit, encrypted vaults and lanes, is one foundation; SHarness, kernel-enforced Process Behaviour Policies, is another; a key for every person and agent is the third. On top sit Agent Behaviour Policies, the standard that underpins all of it, housed at RiskMandate for now. RiskMandate sells those policies. And AgentiCCells sells agentic teams built on all of it, which is what was missing: RiskMandate had a strong idea and a hard first step, because people asked how to start, and a £500 cell is a way to start. With the site factory, the last manual piece, creating repositories and making DNS and AWS changes, is now a commit, so delivery can scale. Above them are the customers and uses: PrompTugal.news going local town by town, the Web Summit team, the sites the factory makes, five apps, VoiceDebrief, and this newsroom. Money is not changing hands between them, but each uses the others, and that is real usage I can point to. So every site should now sell something on the same ladder of one-off prices, £500, £1,500, £5,000 and £20,000, show its examples, link to the others and to the content here, and say where it sits in the stack. This is the map, and the plan to align them.
-version: v999.0.0
+version: v0.14.117
 license: https://creativecommons.org/licenses/by/4.0/
 tags: strategy, sgit, sharness, abp, riskmandate, agenticcells, promptugal, voicedebrief, positioning, article
 status: published
