@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-11-16 | minor | 3,642 | +639 / −21 words; 4 changed, 14 added, 1 removed paragraphs | this release | [what changed](show-me-the-evidence/v1.2.0.md) · [current](../show-me-the-evidence.md) |
+| **v1.2.0** | 2026-11-16 | minor | 3,642 | +639 / −21 words; 4 changed, 14 added, 1 removed paragraphs | [`c8b54457a`](https://github.com/SGit-AI/SGit-AI__Website/commit/c8b54457a9e09a5666010d467d7a2cc9f7afe890) | [what changed](show-me-the-evidence/v1.2.0.md) · [current](../show-me-the-evidence.md) |
 | **v1.1.0** | 2026-11-16 | minor | 3,024 | +2 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`9b1f8f2dc`](https://github.com/SGit-AI/SGit-AI__Website/commit/9b1f8f2dc986ad1757e4f56140ca251f81bcbafd) | [what changed](show-me-the-evidence/v1.1.0.md) |
 | **v1.0.0** | 2026-11-16 | published | 3,022 | first published | [`1dfdcd515`](https://github.com/SGit-AI/SGit-AI__Website/commit/1dfdcd515ef5fb63e66c672f7c8e2da612eac814) |  |
 
