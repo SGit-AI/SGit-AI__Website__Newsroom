@@ -133,6 +133,10 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#a-w
 - [The cell is the unit: positioning AgentiCCells around small, focused cells, each with an objective, a deliverable and a behaviour policy, each with a page that sells it, a free recipe and three ways to get help, a catalogue that grows one need at a time, in each industry's own words, and why we should run our own work in cells first](the-cell-is-the-unit.md) The cell is the unit of AgentiCCells: one focused job with an objective, a deliverable and a behaviour policy, each with a page that sells it.
 - [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](ten-days-at-web-summit.md) Six people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.
 
+### Continued by
+
+- [A portfolio with a film first: Silvio Switha's site, made in under an hour by the site factory and five design agents, with his music video in the first screen, his agents as a solar system and a mixing desk, a producer's studio, a proposal for clients and a gig poster, and every claim something he built](a-portfolio-with-a-film-first.md) Silvio Switha's portfolio site, made in under an hour by the factory and five design agents: his film first, his agents as a solar system and a mixing desk.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 440 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=440)

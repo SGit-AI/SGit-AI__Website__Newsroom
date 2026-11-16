@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-16 | published | 2,394 | first published | this release | [current](../a-website-that-is-her.md) |
+| **v1.0.0** | 2026-11-16 | published | 2,394 | first published | [`92278e46e`](https://github.com/SGit-AI/SGit-AI__Website/commit/92278e46e3017234817ab7e99362a6330c93c2b5) | [current](../a-website-that-is-her.md) |
 
 [← Back to the article](../a-website-that-is-her.md) · [All articles](../index.md)
 

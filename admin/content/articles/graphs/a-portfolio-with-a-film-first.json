@@ -1,0 +1,31 @@
+{
+ "slug": "a-portfolio-with-a-film-first",
+ "teaser": "Silvio Switha's portfolio site, made in under an hour by the factory and five design agents: his film first, his agents as a solar system and a mixing desk.",
+ "topics": ["startups-and-strategy", "site-and-engineering"],
+ "core_idea": "The same agentic site flow, given different real evidence, produces a completely different and truthful site: for a producer, a portfolio that leads with his film.",
+ "nodes": [
+  {"id": "film", "label": "The film first", "kind": "method", "summary": "Know the Reach in every first screen."},
+  {"id": "designs", "label": "Five designs", "kind": "artefact", "summary": "Premiere, Universe, Studio, Proposal, On Tour."},
+  {"id": "desk", "label": "The mixing desk", "kind": "artefact", "summary": "His agents as faders."},
+  {"id": "hire", "label": "How to hire him", "kind": "method", "summary": "Services to confirm, and your AI."},
+  {"id": "him", "label": "Nothing invented", "kind": "claim", "summary": "Everything is something he built."},
+  {"id": "two", "label": "Two sites, one method", "kind": "claim", "summary": "Different evidence, different sites."}
+ ],
+ "edges": [
+  {"from": "designs", "to": "film", "rel": "extends"},
+  {"from": "desk", "to": "designs", "rel": "extends"},
+  {"from": "hire", "to": "designs", "rel": "extends"},
+  {"from": "him", "to": "designs", "rel": "depends-on"},
+  {"from": "two", "to": "him", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["know-the-reach", "every-hour-is-twenty-years", "ten-days-at-web-summit", "a-website-that-is-her", "the-site-factory-works", "show-me-the-evidence"],
+  "pages": [],
+  "sites": ["https://silvio-switha.agenticcells.site/"]
+ },
+ "quotes": [
+  {"text": "the video has to be very high on the profile", "why": "My direction for the redesign."},
+  {"text": "agents with a mandate", "why": "Silvio's line from the summit."},
+  {"text": "they look nothing alike, because the evidence was different", "why": "Two sites, one evening."}
+ ]
+}
