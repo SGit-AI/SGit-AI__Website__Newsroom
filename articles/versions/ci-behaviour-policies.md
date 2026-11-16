@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-16 | published | 1,427 | first published | this release | [current](../ci-behaviour-policies.md) |
+| **v1.0.0** | 2026-11-16 | published | 1,427 | first published | [`2f1456a5b`](https://github.com/SGit-AI/SGit-AI__Website/commit/2f1456a5b5ae0c21d45921baf935435be9d2e2fa) | [current](../ci-behaviour-policies.md) |
 
 [← Back to the article](../ci-behaviour-policies.md) · [All articles](../index.md)
 

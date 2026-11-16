@@ -1,0 +1,147 @@
+{
+  "slug": "the-intersection",
+  "teaser": "SGit, SHarness, ABP, RiskMandate and AgentiCCells as one stack of separate companies, with real usage and one ladder of offers on every site.",
+  "topics": [
+    "startups-and-strategy",
+    "agents-and-policy"
+  ],
+  "core_idea": "The companies form one stack that goes end to end; each uses the others for real, and each site should sell on the same ladder and point to the rest.",
+  "nodes": [
+    {
+      "id": "stack",
+      "label": "One stack",
+      "kind": "concept",
+      "summary": "Foundations, the ABP standard, RiskMandate, AgentiCCells, customers."
+    },
+    {
+      "id": "found",
+      "label": "The foundations",
+      "kind": "concept",
+      "summary": "SGit vaults, SHarness process policies, PKI keys."
+    },
+    {
+      "id": "abp",
+      "label": "Agent Behaviour Policies",
+      "kind": "concept",
+      "summary": "The standard under everything, housed at RiskMandate for now."
+    },
+    {
+      "id": "first",
+      "label": "AgentiCCells as the first step",
+      "kind": "claim",
+      "summary": "A fixed-price cell is how a customer starts."
+    },
+    {
+      "id": "uses",
+      "label": "Real usage",
+      "kind": "example",
+      "summary": "PrompTugal.news, the team, the sites, the apps, VoiceDebrief."
+    },
+    {
+      "id": "ladder",
+      "label": "One ladder",
+      "kind": "method",
+      "summary": "£500, £1,500, £5,000 and £20,000 on every site."
+    },
+    {
+      "id": "plan",
+      "label": "Align every site",
+      "kind": "method",
+      "summary": "Stack, ladder, examples, links, articles, contact."
+    },
+    {
+      "id": "gap",
+      "label": "SHarness needs a showcase",
+      "kind": "question",
+      "summary": "The foundation with no user yet."
+    }
+  ],
+  "edges": [
+    {
+      "from": "abp",
+      "to": "found",
+      "rel": "depends-on"
+    },
+    {
+      "from": "first",
+      "to": "abp",
+      "rel": "depends-on"
+    },
+    {
+      "from": "uses",
+      "to": "first",
+      "rel": "example-of"
+    },
+    {
+      "from": "ladder",
+      "to": "stack",
+      "rel": "extends"
+    },
+    {
+      "from": "plan",
+      "to": "ladder",
+      "rel": "depends-on"
+    },
+    {
+      "from": "gap",
+      "to": "found",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "ten-days-at-web-summit",
+      "the-site-factory-works",
+      "ci-behaviour-policies",
+      "every-story-has-an-address",
+      "identity-for-agents-layer-by-layer",
+      "six-setups-of-an-agentic-system",
+      "atomic-cells-end-to-end",
+      "native-apps-by-agents",
+      "know-the-reach"
+    ],
+    "pages": [],
+    "sites": [
+      "https://sgit.ai/",
+      "https://sharness.ai/",
+      "https://riskmandate.ai/",
+      "https://agenticcells.ai/",
+      "https://promptugal.news/",
+      "https://voicedebrief.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "What that shows is an intersection: a set of companies that each do one thing, and that, together, go end to end.",
+      "why": "The thesis."
+    },
+    {
+      "text": "That is the gap AgentiCCells fills.",
+      "why": "Why the cells matter."
+    },
+    {
+      "text": "Every site should have something for sale, and the pattern is the same",
+      "why": "The ladder."
+    }
+  ],
+  "figures": [
+    {
+      "file": "int-stack.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/int-stack.webp",
+      "caption": "One stack, several companies: foundations, the ABP standard, RiskMandate, AgentiCCells, and the customers and uses.",
+      "kind": "architecture"
+    },
+    {
+      "file": "int-uses.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/int-uses.webp",
+      "caption": "Who uses whom, with evidence: each tick is something in a repository or on a live site.",
+      "kind": "table"
+    },
+    {
+      "file": "int-ladder.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/int-ladder.webp",
+      "caption": "One ladder on every site: £500, £1,500, £5,000 and £20,000, each company selling its own thing at each step.",
+      "kind": "comparison"
+    }
+  ]
+}

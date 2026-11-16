@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-16 | published | 1,559 | first published | this release | [current](../the-site-factory-works.md) |
+| **v1.0.0** | 2026-11-16 | published | 1,559 | first published | [`2f1456a5b`](https://github.com/SGit-AI/SGit-AI__Website/commit/2f1456a5b5ae0c21d45921baf935435be9d2e2fa) | [current](../the-site-factory-works.md) |
 
 [← Back to the article](../the-site-factory-works.md) · [All articles](../index.md)
 
