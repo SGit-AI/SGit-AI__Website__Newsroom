@@ -1,0 +1,3 @@
+# Fork it (16 November 2026)
+
+Dinis's voice brief: forking as the adoption path for template sites and cells, as on GitHub; point Claude at a fork; chains of repos; Netlify and other providers for one-click deploys; run locally in Claude, or hosted by assistants (Claude, ChatGPT); dozens or hundreds of examples on the hub; a separate GitHub organisation; map business, workflow and pattern; brief the team. Facts: hub.agenticcells.site live (lists by consent), AgentiCCells__Site__Template read (placeholders, CLAUDE.md, Agent trailer check). ChatGPT hosting kept general ("assistants can host small pages"), not verified per product.
