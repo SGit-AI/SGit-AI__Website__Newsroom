@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-16 | published | 1,780 | first published | this release | [current](../stopping-a-hundred-agents.md) |
+| **v1.0.0** | 2026-11-16 | published | 1,780 | first published | [`9b1f8f2dc`](https://github.com/SGit-AI/SGit-AI__Website/commit/9b1f8f2dc986ad1757e4f56140ca251f81bcbafd) | [current](../stopping-a-hundred-agents.md) |
 
 [← Back to the article](../stopping-a-hundred-agents.md) · [All articles](../index.md)
 

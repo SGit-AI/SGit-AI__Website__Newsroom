@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.127 · 437 articles since 2026-08-17; the newest is 2026-11-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 437 articles since 2026-08-17; the newest is 2026-11-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
@@ -12,7 +12,7 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ## Five more
 
-- [Show me the evidence: websites for people looking for a job, built by an agentic cell, with seven pages that prove instead of list, a page made for each employer, a pack for recruiters, eight personas to fork, a ladder from a free recipe to a recruiter's cell, and the brief for the team that builds it](articles/show-me-the-evidence.md), Startups & strategy, 2026-11-16, 12 min.
+- [Show me the evidence: websites for people looking for a job, built by an agentic cell, with seven pages that prove instead of list, a page made for each employer, a pack for recruiters, eight personas to fork, a ladder from a free recipe to a recruiter's cell, and the brief for the team that builds it](articles/show-me-the-evidence.md), Startups & strategy, 2026-11-16, 15 min.
 - [Fork it: making forking the way people adopt our cells and template sites, as GitHub made it the way people adopt code, with five ways to make a cell yours, what a fork-ready repository needs, paths from one repository to the next, a hub that lets usage decide what we build, and the brief for the team](articles/fork-it.md), Startups & strategy, 2026-11-16, 5 min.
 - [The cell is the unit: positioning AgentiCCells around small, focused cells, each with an objective, a deliverable and a behaviour policy, each with a page that sells it, a free recipe and three ways to get help, a catalogue that grows one need at a time, in each industry's own words, and why we should run our own work in cells first](articles/the-cell-is-the-unit.md), Startups & strategy, 2026-11-16, 6 min.
 - [VoiceDebrief, relaunched: what the iPhone and iPad app already does, from recording without loss to an on-device transcript, a debrief and an encrypted vault, why the agent workflows move to the CRM app, and the list that takes it to the App Store properly, under its own name and its own accounts](articles/voicedebrief-relaunch.md), Engineering this newsroom, 2026-11-16, 7 min.
@@ -23,7 +23,7 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 ### Monday 16 November 2026 (18 articles)
 
 - Working with agents: [Stopping a hundred agents: the Big Stop, the hand brake and the final hold at Web Summit, why pausing took seconds but hearing the order took up to an hour, what kept running anyway, and why a stop has to be a file every agent reads first](articles/stopping-a-hundred-agents.md), 7 min.
-- Startups & strategy: [Show me the evidence: websites for people looking for a job, built by an agentic cell, with seven pages that prove instead of list, a page made for each employer, a pack for recruiters, eight personas to fork, a ladder from a free recipe to a recruiter's cell, and the brief for the team that builds it](articles/show-me-the-evidence.md), 12 min.
+- Startups & strategy: [Show me the evidence: websites for people looking for a job, built by an agentic cell, with seven pages that prove instead of list, a page made for each employer, a pack for recruiters, eight personas to fork, a ladder from a free recipe to a recruiter's cell, and the brief for the team that builds it](articles/show-me-the-evidence.md), 15 min.
 - Startups & strategy: [Fork it: making forking the way people adopt our cells and template sites, as GitHub made it the way people adopt code, with five ways to make a cell yours, what a fork-ready repository needs, paths from one repository to the next, a hub that lets usage decide what we build, and the brief for the team](articles/fork-it.md), 5 min.
 - Startups & strategy: [The cell is the unit: positioning AgentiCCells around small, focused cells, each with an objective, a deliverable and a behaviour policy, each with a page that sells it, a free recipe and three ways to get help, a catalogue that grows one need at a time, in each industry's own words, and why we should run our own work in cells first](articles/the-cell-is-the-unit.md), 6 min.
 - Engineering this newsroom: [VoiceDebrief, relaunched: what the iPhone and iPad app already does, from recording without loss to an on-device transcript, a debrief and an encrypted vault, why the agent workflows move to the CRM app, and the list that takes it to the App Store properly, under its own name and its own accounts](articles/voicedebrief-relaunch.md), 7 min.

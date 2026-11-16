@@ -3,7 +3,7 @@ title: Show me the evidence: websites for people looking for a job, built by an 
 date: 2026-11-16
 author: Dinis Cruz
 author_url: about/index.html
-summary: I want to help people I know get jobs, and the best thing I can give them is a website that shows the evidence. Now that anyone can generate a polished CV, hiring managers trust CVs less: in Robert Half's survey 65% said AI-generated applications make skills harder to verify, and in Greenhouse's 91% of recruiters had spotted deception. So the answer is not a better list; it is proof. Show me the work. Show me your thinking. Tell me what you do outside work, what makes you you, and what you think about my industry. And if you are meeting me, make a page for me. So this is the design of a job-seeker cell: a site of seven pages, home, evidence, thinking, me, a page for you, working with me and a recruiter pack, plus the files machines read; an agent team that interviews the person, finds the evidence, drafts in their words, designs a theme that looks like them, tailors a page per application and checks every fact, while the person approves and sends; eight synthetic personas, from a developer to a security engineer, a senior leader and a graduate, each a template anyone can fork onto GitHub Pages; a ladder from a free recipe to a recruiter's cell; and the brief for the team that builds it. The mock-ups are below. They are also the references our agentic sites have been missing.
+summary: I want to help people I know get jobs, and the best thing I can give them is a website that shows the evidence. Now that anyone can generate a polished CV, hiring managers trust CVs less: in Robert Half's survey 65% said AI-generated applications make skills harder to verify, and in Greenhouse's 91% of recruiters had spotted deception. So the answer is not a better list; it is proof. Show me the work. Show me your thinking. Tell me what you do outside work, what makes you you, and what you think about my industry. And if you are meeting me, make a page for me. So this is the design of a job-seeker cell: a site of seven pages, home, evidence, thinking, me, a page for you, working with me and a recruiter pack, plus the files machines read; an agent team that interviews the person, finds the evidence, drafts in their words, designs a theme that looks like them, tailors a page per application and checks every fact, while the person approves and sends; eight synthetic personas, from a developer to a security engineer, a senior leader and a graduate, each a template anyone can fork onto GitHub Pages; a ladder from a free recipe to a recruiter's cell; and the brief for the team that builds it. The same cell serves virtual and fractional professionals too, a vCISO, a vCTO, a vDPO, a designer or an editor for hire, who sell their judgement and the agent team behind it. The mock-ups are below. They are also the references our agentic sites have been missing.
 version: v0.14.126
 license: https://creativecommons.org/licenses/by/4.0/
 tags: careers, hiring, agenticcells, templates, cells, personas, recruiters, article
@@ -20,7 +20,8 @@ status: published
 - **A pack for recruiters,** so the people who want to help can forward one link.
 - **Make it yours:** it should look like its owner, not like every other AI site.
 - **An agent team builds it;** the person approves and sends.
-- **Eight personas to fork,** a ladder from a free recipe to a recruiter's cell, and the brief for the team.
+- **Virtual professionals too:** a vCISO, vCTO, vDPO, designer or editor, selling their judgement and their agent team.
+- **Thirteen personas to fork,** a ladder from a free recipe to a recruiter's cell, and the brief for the team.
 
 ## Why now {#why}
 
@@ -48,7 +49,7 @@ And for machines: the same facts as a JSON Resume file, schema.org markup and a 
 
 The rules are the same on every page: city only, no address or date of birth; employers anonymised unless they agreed; the same dates and titles as LinkedIn, because recruiters cross-check; and every claim linked to something you can open.
 
-## Eight personas {#personas}
+## Eight people looking for a job {#personas}
 
 I made up eight people, each with a different job and a different story, so that we have references to build from. They are synthetic: invented names, invented facts, there to be forked.
 
@@ -88,6 +89,26 @@ Two rules. Public material only: Inês's page for a health company says it in th
 Recruiters are among the people who want to help, and they need something they can forward ([the man behind the curtain](/articles/the-man-behind-the-curtain.html)). So every site has a recruiter pack: role fit, availability, right to work, notice, languages, references, three links to send, the downloads, and a line saying the client may see it.
 
 And a recruiter can run a cell of their own: a shortlist page per role, made from the candidates' own pages, with the evidence each one sent, a note, an expiry date and consent recorded. In the mock-up, two candidates sent work about the client's own problem before the first call, and the third sent a PDF. Which two would you meet? Agency tools already make client-facing candidate presentations; what they lack is the candidate's own evidence, and that is what this adds.
+
+## Virtual professionals {#virtual}
+
+!shot jbs-virtual.webp | images/ | Five virtual professionals: a vCISO, a vCTO, a vDPO, a designer and an editor for hire, each with an agent team. | collage
+
+Many of the people I talk to are not looking for one job. They want to be a virtual CISO, a fractional CTO, an outsourced data protection officer, a designer or an editor for several organisations at once. That market already exists. What is new is what they can sell: not only their judgement, but the agentic team they run behind it. A vCISO with agents that keep the audit evidence and draft the questionnaire answers can serve five scale-ups properly instead of two badly. That is a better offer, and it also proves they can run agentic teams, which their clients will soon want to learn from them.
+
+So I added five more personas, synthetic like the others:
+
+- **Helena Brandt, virtual CISO,** for five scale-ups. Her agents collect audit evidence, draft questionnaire answers from an approved library, keep the policies current and draft a one-page board report; she signs every answer and presents every report.
+- **Rafael Costa, virtual CTO,** for non-technical founders. His agents review every pull request, watch dependencies and the cloud bill, and write a Friday digest; they never merge, deploy or spend.
+- **Priya Shah, virtual DPO,** appointed for eleven organisations. Her agents keep the records of processing current, triage access requests, draft impact assessments and start the 72-hour clock on a breach; she makes every judgement, and the agents see redacted copies by default.
+- **Joana Matos, fractional product designer,** a studio of one person and four agents: synthetic users who test every prototype, a prototyper, a keeper that holds the design system in step with the code, and a researcher.
+- **Elliot Grant, fractional editor and librarian,** a newsroom for hire: a researcher, a writer, a fact-checker, a librarian and a translator, and nothing published without his edit and the client's approval. He is for the organisations that want to hire a journalist, and get a desk.
+
+!shot jbs-virtual-model.webp | images/ | One professional, several clients, an agent team per client with its own policies; the person decides and signs. | concept
+
+Their sites have the same seven pages, with two changes. The home page shows the team behind the person: each agent, what it does, and the human check on it, with a line on what it can touch ([where assist becomes execute](/articles/where-assist-becomes-execute.html)). And the recruiter pack becomes an engagement pack: the model, how many clients at once, insurance, where the client's data stays, and the agents' written behaviour policies, shared before anything starts. The page for you works even better here: Helena's sketches the first ninety days of ISO 27001 for a health-tech company, Joana's runs fifty synthetic users through a prospect's public sign-up, Elliot's is a sample weekly briefing built from a prospect's members' public news.
+
+Each client gets its own cell, with its own vault, policies and digest ([the cell is the unit](/articles/the-cell-is-the-unit.html)). That is also how these professionals scale without cutting corners: the agents add capacity, the person stays accountable.
 
 ## The pipeline and the team {#pipeline}
 
@@ -138,11 +159,12 @@ This is the brief for the agents and people who build the cell. The mock-ups are
 10. **The ladder on the cell's page:** the recipe and the fork free, then set up, coached, a team, a recruiter's cell, with the side panel from [the cell is the unit](/articles/the-cell-is-the-unit.html).
 11. **A weekly debrief for the search:** applications, replies, what worked, what to tailor next, for the person and nobody else.
 12. **A hub of examples:** every template and every real site whose owner agrees, listed on the hub ([a hub for agentic sites](/articles/a-hub-for-agentic-sites.html)).
-13. **Ourselves first:** sites for me and for team members who want one, each reviewed by its owner before it goes live.
+13. **Virtual professionals:** the agent-team block and the engagement pack as options in the template; per-client cells with their own vault, policies and digest; themes for vCISO, vCTO, vDPO, designer and editor first, then legal, finance, HR and marketing.
+14. **Ourselves first:** sites for me and for team members who want one, each reviewed by its owner before it goes live.
 
 ## What this does not claim {#limits}
 
-- **The eight personas are invented,** with invented facts; any resemblance to a real person is accidental.
+- **The thirteen personas are invented,** with invented facts; any resemblance to a real person is accidental.
 - **The mock-ups are designs, not a product;** the cell, the templates and the recruiter view do not exist yet.
 - **The evidence for personal sites themselves is thin:** the surveys show that trust in CVs is falling, not that a site gets you hired.
 - **Prices follow the AgentiCCells ladder,** which its site calls first proposals.
