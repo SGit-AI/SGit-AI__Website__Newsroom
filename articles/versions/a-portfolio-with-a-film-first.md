@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-16 | published | 1,857 | first published | this release | [current](../a-portfolio-with-a-film-first.md) |
+| **v1.0.0** | 2026-11-16 | published | 1,857 | first published | [`7db1032f9`](https://github.com/SGit-AI/SGit-AI__Website/commit/7db1032f92a0c7b973ba4269903fafdae65199fe) | [current](../a-portfolio-with-a-film-first.md) |
 
 [← Back to the article](../a-portfolio-with-a-film-first.md) · [All articles](../index.md)
 

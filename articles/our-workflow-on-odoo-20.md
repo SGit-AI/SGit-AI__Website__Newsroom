@@ -115,6 +115,7 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#our-wor
 
 ### Continued by
 
+- [Five primitives, one store: a reply to Andy Goundry on Anthropic's always-on agents guide, why the inbox, timers, memory, permissions and outbox can share one versioned, signed store, how every AgentiCCells cell will ship with all five, and the levels we have added on top, all in public repositories](five-primitives-one-store.md) A reply to Andy Goundry: Anthropic's five always-on primitives can share one versioned, signed store, and every AgentiCCells cell ships with all five.
 - [Odoo's agents can now write to the system of record: how our stack fits around Odoo, from version 12 to 20, with behaviour policies for Odoo agents, an Odoo cell, plan-then-apply through a vault, an ephemeral proof of concept that went from nothing to customised in under a minute on four versions, and why we use whatever version is on the other side](odoo-and-our-stack.md) Odoo's agents can write to the system of record. Our stack fits every Odoo from 12 to 20: a proof of concept ran on four versions in under a minute each.
 
 [All articles](index.md) · [All graphs](graphs.md)

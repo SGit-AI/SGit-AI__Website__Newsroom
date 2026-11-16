@@ -73,6 +73,36 @@
   ],
   "articles": [
     {
+      "slug": "five-primitives-one-store",
+      "title": "Five primitives, one store: a reply to Andy Goundry on Anthropic's always-on agents guide, why the inbox, timers, memory, permissions and outbox can share one versioned, signed store, how every AgentiCCells cell will ship with all five, and the levels we have added on top, all in public repositories",
+      "date": "2026-11-16",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/five-primitives-one-store.html",
+      "markdown": "https://newsroom.sgit.ai/articles/five-primitives-one-store.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/five-primitives-one-store.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/five-primitives-one-store.json",
+      "teaser": "A reply to Andy Goundry: Anthropic's five always-on primitives can share one versioned, signed store, and every AgentiCCells cell ships with all five.",
+      "summary": "Andy Goundry, CEO of Levantar, shared Anthropic's guide to building always-on agents on LinkedIn, with its five primitives, an event inbox, timers, memory, permissions and an outbox, and made a point I agree with completely: the model is one component, and the architecture around it is where the engineering, the cost and the risk live. He added that each primitive needs its own durable store, its own failure handling and its own tuning. That is where our experience differs, usefully. We run the same five primitives, and have since the ten days of Web Summit with around 250 agents, but they share one store: a versioned, signed, encrypted repository or vault. The inbox is append lanes, timers are scheduled wakes and a HOLD file read first, memory is REALITY.md, briefs and hand-overs, permissions are behaviour policies, keys and keyless agents behind a broker, and the outbox is drafts that a gateway or a person sends. One store gives durability, history, signatures and one audit trail for all five. I mapped them side by side with the guide yesterday; this is the reply, the mapping to AgentiCCells, where every cell is meant to ship with all five from the factory, and the levels we have added on top: many people, provenance, measured policies, a credential proxy built and measured, stopping as a file, a factory, and all of it open.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "agents",
+        "always-on-agents",
+        "anthropic",
+        "architecture",
+        "agenticcells",
+        "abp",
+        "open-source",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "a-portfolio-with-a-film-first",
       "title": "A portfolio with a film first: Silvio Switha's site, made in under an hour by the site factory and five design agents, with his music video in the first screen, his agents as a solar system and a mixing desk, a producer's studio, a proposal for clients and a gig poster, and every claim something he built",
       "date": "2026-11-16",

@@ -55,6 +55,179 @@
   ],
   "articles": [
     {
+      "slug": "five-primitives-one-store",
+      "title": "Five primitives, one store: a reply to Andy Goundry on Anthropic's always-on agents guide, why the inbox, timers, memory, permissions and outbox can share one versioned, signed store, how every AgentiCCells cell will ship with all five, and the levels we have added on top, all in public repositories",
+      "date": "2026-11-16",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/five-primitives-one-store.html",
+      "markdown": "https://newsroom.sgit.ai/articles/five-primitives-one-store.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/five-primitives-one-store.webp",
+      "teaser": "A reply to Andy Goundry: Anthropic's five always-on primitives can share one versioned, signed store, and every AgentiCCells cell ships with all five.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "agents",
+        "always-on-agents",
+        "anthropic",
+        "architecture",
+        "agenticcells",
+        "abp",
+        "open-source",
+        "article"
+      ],
+      "links_out": [
+        "always-on-agents-at-team-scale",
+        "how-a-vault-works",
+        "an-inbox-only-your-agents-can-write-to",
+        "stopping-a-hundred-agents",
+        "where-assist-becomes-execute",
+        "the-email-agentic-cell",
+        "the-cell-is-the-unit",
+        "the-site-factory-works",
+        "a-website-that-is-her",
+        "ten-days-at-web-summit",
+        "a-key-for-every-person",
+        "our-workflow-on-odoo-20"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "lev-one-store.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lev-one-store.webp",
+          "caption": "Five primitives, one store: inbox, timers, memory, permissions and outbox as folders in one versioned, signed store.",
+          "kind": "concept"
+        },
+        {
+          "file": "lev-question.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lev-question.webp",
+          "caption": "Andy Goundry, CEO and co-founder of Levantar, on Anthropic's always-on agents guide, LinkedIn, November 2026.",
+          "kind": "aside"
+        },
+        {
+          "file": "lev-cell.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lev-cell.webp",
+          "caption": "Every AgentiCCells cell ships with the five primitives, plus the factory that creates it from one commit.",
+          "kind": "concept"
+        },
+        {
+          "file": "lev-levels.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lev-levels.webp",
+          "caption": "Beyond one agent per user: seven levels we have added, each running, in public repositories.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "five-primitives-one-store",
+        "teaser": "A reply to Andy Goundry: Anthropic's five always-on primitives can share one versioned, signed store, and every AgentiCCells cell ships with all five.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "The five primitives of always-on agents need durable stores, but they can share one versioned, signed, encrypted store, which pays for durability, history and audit once; cells package them.",
+        "nodes": [
+          {
+            "id": "five",
+            "label": "The five primitives",
+            "kind": "concept",
+            "summary": "Inbox, timers, memory, permissions, outbox."
+          },
+          {
+            "id": "store",
+            "label": "One store",
+            "kind": "claim",
+            "summary": "Versioned, signed, encrypted, replayable."
+          },
+          {
+            "id": "cell",
+            "label": "Cells ship all five",
+            "kind": "method",
+            "summary": "Plus the factory."
+          },
+          {
+            "id": "proxy",
+            "label": "Credential proxy, built",
+            "kind": "example",
+            "summary": "The keyless Odoo agent and broker."
+          },
+          {
+            "id": "stop",
+            "label": "Stop as a file",
+            "kind": "method",
+            "summary": "Read before the inbox."
+          },
+          {
+            "id": "open",
+            "label": "All open",
+            "kind": "claim",
+            "summary": "Public repositories."
+          }
+        ],
+        "edges": [
+          {
+            "from": "store",
+            "to": "five",
+            "rel": "extends"
+          },
+          {
+            "from": "cell",
+            "to": "five",
+            "rel": "depends-on"
+          },
+          {
+            "from": "proxy",
+            "to": "five",
+            "rel": "extends"
+          },
+          {
+            "from": "stop",
+            "to": "five",
+            "rel": "extends"
+          },
+          {
+            "from": "open",
+            "to": "cell",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "always-on-agents-at-team-scale",
+            "an-inbox-only-your-agents-can-write-to",
+            "stopping-a-hundred-agents",
+            "how-a-vault-works",
+            "where-assist-becomes-execute",
+            "the-email-agentic-cell",
+            "the-cell-is-the-unit",
+            "the-site-factory-works",
+            "a-website-that-is-her",
+            "ten-days-at-web-summit",
+            "a-key-for-every-person",
+            "our-workflow-on-odoo-20"
+          ],
+          "pages": [],
+          "sites": [
+            "https://claude.com/resources/articles/building-always-on-agents"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "the model itself is one component.",
+            "why": "Andy Goundry."
+          },
+          {
+            "text": "Ours are five folders in one store",
+            "why": "The answer."
+          },
+          {
+            "text": "Put the stop in a file the wake reads first",
+            "why": "The stop."
+          }
+        ]
+      }
+    },
+    {
       "slug": "a-portfolio-with-a-film-first",
       "title": "A portfolio with a film first: Silvio Switha's site, made in under an hour by the site factory and five design agents, with his music video in the first screen, his agents as a solar system and a mixing desk, a producer's studio, a proposal for clients and a gig poster, and every claim something he built",
       "date": "2026-11-16",
@@ -276,6 +449,7 @@
         "ten-days-at-web-summit"
       ],
       "links_in": [
+        "five-primitives-one-store",
         "a-portfolio-with-a-film-first"
       ],
       "figures": [
@@ -479,6 +653,7 @@
         "where-assist-becomes-execute"
       ],
       "links_in": [
+        "five-primitives-one-store",
         "ten-days-at-web-summit"
       ],
       "figures": [
@@ -1022,6 +1197,7 @@
         "a-crm-for-us-and-our-agents"
       ],
       "links_in": [
+        "five-primitives-one-store",
         "a-website-that-is-her",
         "show-me-the-evidence",
         "fork-it"
@@ -1357,6 +1533,7 @@
         "the-inbox-team-as-a-recipe"
       ],
       "links_in": [
+        "five-primitives-one-store",
         "voicedebrief-relaunch"
       ],
       "figures": [
@@ -1526,6 +1703,7 @@
         "a-key-for-every-person"
       ],
       "links_in": [
+        "five-primitives-one-store",
         "odoo-and-our-stack"
       ],
       "figures": [
@@ -2782,6 +2960,7 @@
         "ci-behaviour-policies"
       ],
       "links_in": [
+        "five-primitives-one-store",
         "a-portfolio-with-a-film-first",
         "a-website-that-is-her",
         "show-me-the-evidence",
@@ -3686,6 +3865,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "five-primitives-one-store",
         "stopping-a-hundred-agents",
         "show-me-the-evidence",
         "the-cell-is-the-unit",
@@ -6896,6 +7076,7 @@
         "every-hour-is-twenty-years"
       ],
       "links_in": [
+        "five-primitives-one-store",
         "stopping-a-hundred-agents",
         "spend-fewer-tokens",
         "an-agentic-console",
@@ -7912,6 +8093,7 @@
         "meetscribe"
       ],
       "links_in": [
+        "five-primitives-one-store",
         "a-portfolio-with-a-film-first",
         "a-website-that-is-her",
         "stopping-a-hundred-agents",
@@ -9851,6 +10033,7 @@
         "a-secret-is-a-qr-code"
       ],
       "links_in": [
+        "five-primitives-one-store",
         "the-email-agentic-cell",
         "specialist-agents-for-every-team",
         "promptugal-news-the-next-phase",
@@ -10425,6 +10608,7 @@
         "a-directory-of-people-and-keys"
       ],
       "links_in": [
+        "five-primitives-one-store",
         "voicedebrief-relaunch",
         "our-workflow-on-odoo-20",
         "promptugal-news-the-next-phase",
@@ -11572,6 +11756,7 @@
         "inside-english-with-ines"
       ],
       "links_in": [
+        "five-primitives-one-store",
         "fork-it",
         "the-cell-is-the-unit",
         "voicedebrief-relaunch",

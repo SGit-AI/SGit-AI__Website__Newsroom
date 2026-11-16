@@ -1,0 +1,134 @@
+{
+  "slug": "five-primitives-one-store",
+  "teaser": "A reply to Andy Goundry: Anthropic's five always-on primitives can share one versioned, signed store, and every AgentiCCells cell ships with all five.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "The five primitives of always-on agents need durable stores, but they can share one versioned, signed, encrypted store, which pays for durability, history and audit once; cells package them.",
+  "nodes": [
+    {
+      "id": "five",
+      "label": "The five primitives",
+      "kind": "concept",
+      "summary": "Inbox, timers, memory, permissions, outbox."
+    },
+    {
+      "id": "store",
+      "label": "One store",
+      "kind": "claim",
+      "summary": "Versioned, signed, encrypted, replayable."
+    },
+    {
+      "id": "cell",
+      "label": "Cells ship all five",
+      "kind": "method",
+      "summary": "Plus the factory."
+    },
+    {
+      "id": "proxy",
+      "label": "Credential proxy, built",
+      "kind": "example",
+      "summary": "The keyless Odoo agent and broker."
+    },
+    {
+      "id": "stop",
+      "label": "Stop as a file",
+      "kind": "method",
+      "summary": "Read before the inbox."
+    },
+    {
+      "id": "open",
+      "label": "All open",
+      "kind": "claim",
+      "summary": "Public repositories."
+    }
+  ],
+  "edges": [
+    {
+      "from": "store",
+      "to": "five",
+      "rel": "extends"
+    },
+    {
+      "from": "cell",
+      "to": "five",
+      "rel": "depends-on"
+    },
+    {
+      "from": "proxy",
+      "to": "five",
+      "rel": "extends"
+    },
+    {
+      "from": "stop",
+      "to": "five",
+      "rel": "extends"
+    },
+    {
+      "from": "open",
+      "to": "cell",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "always-on-agents-at-team-scale",
+      "an-inbox-only-your-agents-can-write-to",
+      "stopping-a-hundred-agents",
+      "how-a-vault-works",
+      "where-assist-becomes-execute",
+      "the-email-agentic-cell",
+      "the-cell-is-the-unit",
+      "the-site-factory-works",
+      "a-website-that-is-her",
+      "ten-days-at-web-summit",
+      "a-key-for-every-person",
+      "our-workflow-on-odoo-20"
+    ],
+    "pages": [],
+    "sites": [
+      "https://claude.com/resources/articles/building-always-on-agents"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "the model itself is one component.",
+      "why": "Andy Goundry."
+    },
+    {
+      "text": "Ours are five folders in one store",
+      "why": "The answer."
+    },
+    {
+      "text": "Put the stop in a file the wake reads first",
+      "why": "The stop."
+    }
+  ],
+  "figures": [
+    {
+      "file": "lev-one-store.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lev-one-store.webp",
+      "caption": "Five primitives, one store: inbox, timers, memory, permissions and outbox as folders in one versioned, signed store.",
+      "kind": "concept"
+    },
+    {
+      "file": "lev-question.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lev-question.webp",
+      "caption": "Andy Goundry, CEO and co-founder of Levantar, on Anthropic's always-on agents guide, LinkedIn, November 2026.",
+      "kind": "aside"
+    },
+    {
+      "file": "lev-cell.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lev-cell.webp",
+      "caption": "Every AgentiCCells cell ships with the five primitives, plus the factory that creates it from one commit.",
+      "kind": "concept"
+    },
+    {
+      "file": "lev-levels.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lev-levels.webp",
+      "caption": "Beyond one agent per user: seven levels we have added, each running, in public repositories.",
+      "kind": "concept"
+    }
+  ]
+}
