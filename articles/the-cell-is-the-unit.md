@@ -112,6 +112,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#the-ce
 
 ### Continued by
 
+- [Show me the evidence: websites for people looking for a job, built by an agentic cell, with seven pages that prove instead of list, a page made for each employer, a pack for recruiters, eight personas to fork, a ladder from a free recipe to a recruiter's cell, and the brief for the team that builds it](show-me-the-evidence.md) Websites for people looking for a job that show evidence instead of lists: seven pages, a page per employer, a recruiter pack, eight personas to fork.
 - [Fork it: making forking the way people adopt our cells and template sites, as GitHub made it the way people adopt code, with five ways to make a cell yours, what a fork-ready repository needs, paths from one repository to the next, a hub that lets usage decide what we build, and the brief for the team](fork-it.md) Forking as the way people adopt our cells: fork a template, point Claude at it, and it is yours. Five ways, fork-ready repositories, and a hub.
 
 [All articles](index.md) · [All graphs](graphs.md)

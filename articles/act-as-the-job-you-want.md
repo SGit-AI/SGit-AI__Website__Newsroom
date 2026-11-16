@@ -101,6 +101,7 @@ Startups & strategyVaults & method[This article as a graph →](graphs.md#act-as
 
 ### Continued by
 
+- [Show me the evidence: websites for people looking for a job, built by an agentic cell, with seven pages that prove instead of list, a page made for each employer, a pack for recruiters, eight personas to fork, a ladder from a free recipe to a recruiter's cell, and the brief for the team that builds it](show-me-the-evidence.md) Websites for people looking for a job that show evidence instead of lists: seven pages, a page per employer, a recruiter pack, eight personas to fork.
 - [A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault](a-pull-request-by-another-name.md) The book reviewed chapter by chapter by six editors in parallel, thirteen principles behind the fixes, and seven patches delivered in a vault.
 - [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and an AI edition, dated October 2026, made first.
 

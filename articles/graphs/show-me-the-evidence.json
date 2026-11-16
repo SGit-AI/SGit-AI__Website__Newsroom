@@ -1,0 +1,172 @@
+{
+  "slug": "show-me-the-evidence",
+  "teaser": "Websites for people looking for a job that show evidence instead of lists: seven pages, a page per employer, a recruiter pack, eight personas to fork.",
+  "topics": [
+    "startups-and-strategy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Now that CVs are easy to generate and trusted less, a job seeker should show evidence on a site that looks like them, with tailored pages per employer, built by an agentic cell where the person approves and sends.",
+  "nodes": [
+    {
+      "id": "pages",
+      "label": "Seven pages that prove",
+      "kind": "method",
+      "summary": "Each answers a hiring manager's question."
+    },
+    {
+      "id": "foryou",
+      "label": "A page for you",
+      "kind": "method",
+      "summary": "Unlisted, expiring, made for one employer."
+    },
+    {
+      "id": "pack",
+      "label": "Recruiter pack",
+      "kind": "method",
+      "summary": "One screen to forward."
+    },
+    {
+      "id": "yours",
+      "label": "Make it yours",
+      "kind": "claim",
+      "summary": "It should look like its owner."
+    },
+    {
+      "id": "team",
+      "label": "The agent team",
+      "kind": "method",
+      "summary": "Interview, evidence, write, design, tailor, QA."
+    },
+    {
+      "id": "ladder",
+      "label": "The cell ladder",
+      "kind": "method",
+      "summary": "From a free recipe to a recruiter's cell."
+    },
+    {
+      "id": "trust",
+      "label": "CVs trusted less",
+      "kind": "claim",
+      "summary": "AI makes skills harder to verify."
+    }
+  ],
+  "edges": [
+    {
+      "from": "pages",
+      "to": "trust",
+      "rel": "depends-on"
+    },
+    {
+      "from": "foryou",
+      "to": "pages",
+      "rel": "extends"
+    },
+    {
+      "from": "pack",
+      "to": "pages",
+      "rel": "extends"
+    },
+    {
+      "from": "yours",
+      "to": "pages",
+      "rel": "extends"
+    },
+    {
+      "from": "team",
+      "to": "pages",
+      "rel": "depends-on"
+    },
+    {
+      "from": "ladder",
+      "to": "team",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "act-as-the-job-you-want",
+      "hired-for-the-workflow",
+      "connect-your-dots-backwards",
+      "the-man-behind-the-curtain",
+      "the-cell-is-the-unit",
+      "fork-it",
+      "the-site-factory-works",
+      "synthetic-users-for-your-website",
+      "a-hub-for-agentic-sites"
+    ],
+    "pages": [],
+    "sites": [
+      "https://press.roberthalf.com/2026-03-10-Robert-Half-survey-67-of-HR-leaders-report-AI-generated-applications-are-slowing-hiring"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "So my message to anyone looking for a job is: show me the evidence.",
+      "why": "The core idea."
+    },
+    {
+      "text": "A job-seeker site should look like its owner.",
+      "why": "Make it yours."
+    },
+    {
+      "text": "Agents make it possible for every application.",
+      "why": "A page for you."
+    }
+  ],
+  "figures": [
+    {
+      "file": "jbs-personas.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jbs-personas.webp",
+      "caption": "Eight job-seeker sites, eight synthetic people: each one shows evidence, and each one looks like its owner.",
+      "kind": "collage"
+    },
+    {
+      "file": "jbs-sitemap.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jbs-sitemap.webp",
+      "caption": "Seven pages, each answering a question a hiring manager or recruiter actually asks, plus the files machines read.",
+      "kind": "concept"
+    },
+    {
+      "file": "jbs-evidence.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jbs-evidence.webp",
+      "caption": "Evidence, not claims: Inês's case studies with links, and Leila's recruiter pack with the files machines read.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "jbs-human.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jbs-human.webp",
+      "caption": "The human pages: Robert's user manual, and Marta's hobbies, side road and now, the parts no CV has room for.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "jbs-foryou.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jbs-foryou.webp",
+      "caption": "A page for one employer: Tomás's note and what he made for them, and the recruiter's shortlist built from such pages.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "jbs-pipeline.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jbs-pipeline.webp",
+      "caption": "The pipeline: interview, evidence, draft, make it yours, tailor, check, publish. The person approves and sends.",
+      "kind": "process"
+    },
+    {
+      "file": "jbs-team.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jbs-team.webp",
+      "caption": "The agent team: interviewer, evidence-hunter, writer, designer, tailor and QA, each with a brief and a policy.",
+      "kind": "concept"
+    },
+    {
+      "file": "jbs-ladder.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jbs-ladder.webp",
+      "caption": "The job-seeker cell at six sizes: two free, then the AgentiCCells ladder, from £500 to a recruiter's cell.",
+      "kind": "concept"
+    },
+    {
+      "file": "jbs-dinis.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jbs-dinis.webp",
+      "caption": "My own version, from public facts: the map of my work, the proofs, and a page for the founder I meet next.",
+      "kind": "screenshot"
+    }
+  ]
+}

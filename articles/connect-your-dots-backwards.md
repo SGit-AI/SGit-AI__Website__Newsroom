@@ -161,6 +161,10 @@ Startups & strategy[This article as a graph →](graphs.md#connect-your-dots-bac
 - [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](jobs-that-never-scaled.md) What never scaled is on-demand expertise: the before and after the meeting. Agents can now carry them, for any expert, anywhere.
 - [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](programming-taught-upside-down.md) We teach programming the way Lockhart says we teach maths: concepts first. Explorer coding starts where the hook is.
 
+### Continued by
+
+- [Show me the evidence: websites for people looking for a job, built by an agentic cell, with seven pages that prove instead of list, a page made for each employer, a pack for recruiters, eight personas to fork, a ladder from a free recipe to a recruiter's cell, and the brief for the team that builds it](show-me-the-evidence.md) Websites for people looking for a job that show evidence instead of lists: seven pages, a page per employer, a recruiter pack, eight personas to fork.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 240 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=240)

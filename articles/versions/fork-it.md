@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-16 | published | 1,521 | first published | this release | [current](../fork-it.md) |
+| **v1.0.0** | 2026-11-16 | published | 1,521 | first published | [`ee25d08c6`](https://github.com/SGit-AI/SGit-AI__Website/commit/ee25d08c6fd6c7235930b1d1cd4c42e00c53bc42) | [current](../fork-it.md) |
 
 [← Back to the article](../fork-it.md) · [All articles](../index.md)
 
