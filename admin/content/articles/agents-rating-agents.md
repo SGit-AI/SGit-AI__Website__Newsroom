@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: On the first night of Web Summit I said that PrompTugal had no centre of gravity, and asked for one: take the standards that already exist for mapping AI agents, join them with our graph technology, and use the result to map the companies at the summit and the ones we wanted to talk to. It had to be measurable from the outside, positive, and seen through RiskMandate's lens of reach and mandate. What came back, built by a team of eight agents in a few days, is GAMMA-Ray: a draft standard that rates an AI agent on two ladders, freedom from 1 to 5 and governance from 0 to 4, from evidence. Eight instruments, from the EU AI Act and NIST's AI risk framework to OWASP and the MCP authorisation spec, cut into 279 provisions, 73 observable indicators and 21 questions that reach three quarters of them. The part I am proudest of is the workflow: a studio agent drafts a scan from public evidence, a reviewer runs two rounds against every source, a third agent signs off, and none of them may approve its own work; the gate enforces it. About twenty company cards went through it. Then I made a decision: every third party's card lives at an unguessable direct link, unlisted, to be sent to the company first; only our own two cards are public. And every card says plainly that it is a Draft: found and checked by agents, signed by no human, confirmed by no company.
-version: v999.0.0
+version: v0.14.136
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, standards, governance, gamma-ray, riskmandate, web-summit, series, article
 status: published
