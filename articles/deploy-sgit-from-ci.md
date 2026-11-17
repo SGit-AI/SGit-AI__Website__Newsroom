@@ -151,6 +151,10 @@ Site & engineeringAgents & policy[This article as a graph →](graphs.md#deploy-
 - [The site factory works: three AgentiCCells sites made by hand, then one made by a commit in two minutes and thirty-nine seconds, live over https with a first version written by Claude Code, and the long list of what it took to make something that hard look easy](the-site-factory-works.md) Three AgentiCCells sites by hand, then one by a commit: live over https in 87 seconds, a first version by Claude Code at 159.
 - [CI behaviour policies: to create one repository and one DNS record per request, our site factory's pipeline holds the power to create, change or delete every repository in the organisation and to point any subdomain anywhere, and why pipelines now need the same behaviour policies as agents](ci-behaviour-policies.md) Our site factory's pipeline needs one repository and one DNS record per request, yet holds power over the whole organisation. Pipelines need ABPs too.
 
+### Continued by
+
+- [Patient vaults, answered point by point: the seven questions a healthcare team asked before putting any real patient data into sgit vaults, on the live date, the patient's address, the storage region, erasure, backing up the clinic's key, per-patient tokens and writing from another site, and why QR codes and public keys are how a clinic and its patients should pass keys and links](patient-vaults-answered.md) Seven questions a healthcare team asked before putting real patient data into sgit vaults, answered, and why QR codes should carry keys and links.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 445 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=445)

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-17 | published | 1,541 | first published | this release | [current](../agents-rating-agents.md) |
+| **v1.0.0** | 2026-11-17 | published | 1,541 | first published | [`072826392`](https://github.com/SGit-AI/SGit-AI__Website/commit/072826392c9b42f2c9bb4d17e2239f0d84cc310e) | [current](../agents-rating-agents.md) |
 
 [← Back to the article](../agents-rating-agents.md) · [All articles](../index.md)
 

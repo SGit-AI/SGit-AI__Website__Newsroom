@@ -114,6 +114,10 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#a-p
 - [The site factory works: three AgentiCCells sites made by hand, then one made by a commit in two minutes and thirty-nine seconds, live over https with a first version written by Claude Code, and the long list of what it took to make something that hard look easy](the-site-factory-works.md) Three AgentiCCells sites by hand, then one by a commit: live over https in 87 seconds, a first version by Claude Code at 159.
 - [Show me the evidence: websites for people looking for a job, built by an agentic cell, with seven pages that prove instead of list, a page made for each employer, a pack for recruiters, eight personas to fork, a ladder from a free recipe to a recruiter's cell, and the brief for the team that builds it](show-me-the-evidence.md) Websites for people looking for a job that show evidence instead of lists: seven pages, a page per employer, a recruiter pack, eight personas to fork.
 
+### Continued by
+
+- [Your own agentic cell, end to end: how a person asks for a site like the ones we made for Yiheng Wang and Silvio Switha, through a key pair in the browser, a vault they fill themselves and the site factory, with only three human gates, and then continues in their own Claude on their own repository](your-own-agentic-cell.md) How a person gets their own agentic cell: a key pair in the browser, a vault they fill themselves, the site factory, and then their own Claude.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 441 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=441)

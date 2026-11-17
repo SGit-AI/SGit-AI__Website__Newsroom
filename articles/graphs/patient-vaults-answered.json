@@ -1,0 +1,116 @@
+{
+  "slug": "patient-vaults-answered",
+  "teaser": "Seven questions a healthcare team asked before putting real patient data into sgit vaults, answered, and why QR codes should carry keys and links.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Patient vaults are safe to use when the clinic runs its own server in its chosen region, plans key custody, relies on deletion and key loss as erasure, and passes keys and links sealed to public keys via QR codes.",
+  "nodes": [
+    {
+      "id": "live",
+      "label": "Run your own",
+      "kind": "method",
+      "summary": "Your version, your date."
+    },
+    {
+      "id": "region",
+      "label": "Your region",
+      "kind": "claim",
+      "summary": "Ciphertext only, where you choose."
+    },
+    {
+      "id": "erase",
+      "label": "Erasure works",
+      "kind": "claim",
+      "summary": "Removed, and the id never reused."
+    },
+    {
+      "id": "custody",
+      "label": "Key custody",
+      "kind": "method",
+      "summary": "Custodians and an offline QR."
+    },
+    {
+      "id": "lanes",
+      "label": "Append lanes",
+      "kind": "method",
+      "summary": "Write-only, per sender."
+    },
+    {
+      "id": "qr",
+      "label": "QR codes",
+      "kind": "method",
+      "summary": "Keys and links sealed, never in clear."
+    }
+  ],
+  "edges": [
+    {
+      "from": "region",
+      "to": "live",
+      "rel": "depends-on"
+    },
+    {
+      "from": "custody",
+      "to": "erase",
+      "rel": "extends"
+    },
+    {
+      "from": "lanes",
+      "to": "qr",
+      "rel": "extends"
+    },
+    {
+      "from": "qr",
+      "to": "custody",
+      "rel": "extends"
+    },
+    {
+      "from": "live",
+      "to": "lanes",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "deploy-sgit-from-ci",
+      "pki-everywhere",
+      "a-secret-is-a-qr-code",
+      "an-inbox-only-your-agents-can-write-to",
+      "your-own-agentic-cell"
+    ],
+    "pages": [],
+    "sites": [
+      "https://pki.sgit.ai/",
+      "https://sgit.ai/docs/key-management.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Then your live date is yours.",
+      "why": "Live date."
+    },
+    {
+      "text": "That is the zero-knowledge deal",
+      "why": "Key loss."
+    },
+    {
+      "text": "No key ever travels in clear",
+      "why": "QR codes."
+    }
+  ],
+  "figures": [
+    {
+      "file": "hcq-answers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hcq-answers.webp",
+      "caption": "Seven questions from a healthcare team, answered: live date, address, region, erasure, keys, tokens, writing.",
+      "kind": "table"
+    },
+    {
+      "file": "hcq-qr.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hcq-qr.webp",
+      "caption": "QR codes carry keys and links: swap public keys, seal the vault link to the patient's key, back up the clinic key.",
+      "kind": "process"
+    }
+  ]
+}

@@ -2,10 +2,11 @@
 
 Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vault, and what it does that Git does not.
 
-40 articles, newest first.
+41 articles, newest first.
 
 ## November 2026
 
+- [Patient vaults, answered point by point: the seven questions a healthcare team asked before putting any real patient data into sgit vaults, on the live date, the patient's address, the storage region, erasure, backing up the clinic's key, per-patient tokens and writing from another site, and why QR codes and public keys are how a clinic and its patients should pass keys and links](../../articles/patient-vaults-answered.md), 2026-11-17, 6 min.
 - [Deploy sgit in your own environment, from a CI pipeline: one Docker image, ciphertext in your own S3 bucket in the region you choose, an access token only you hold, and the pipeline pattern we learned building the AgentiCCells site factory, a protected environment, AWS through OpenID Connect with no keys, a role that trusts one repository and one environment, check workflows before anything real, and a full cycle that deploys, tests and tears down](../../articles/deploy-sgit-from-ci.md), 2026-11-17, 7 min.
 - [An inbox only your agents can write to: a conductor publishes one append lane per agent, each lane's token sealed to that agent's own key, so everything needed to talk privately is public and only the right agent can use it](../../articles/an-inbox-only-your-agents-can-write-to.md), 2026-11-04, 6 min.
 - [A key for every person: how each person's conductor issues them a key for the team's site, seals what is for them, and how a signed message turns the public web into a channel the agents can trust](../../articles/a-key-for-every-person.md), 2026-11-04, 9 min.

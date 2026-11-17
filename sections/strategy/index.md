@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-105 articles, newest first.
+106 articles, newest first.
 
 ## November 2026
 
+- [Your own agentic cell, end to end: how a person asks for a site like the ones we made for Yiheng Wang and Silvio Switha, through a key pair in the browser, a vault they fill themselves and the site factory, with only three human gates, and then continues in their own Claude on their own repository](../../articles/your-own-agentic-cell.md), 2026-11-17, 5 min.
 - [A portfolio with a film first: Silvio Switha's site, made in under an hour by the site factory and five design agents, with his music video in the first screen, his agents as a solar system and a mixing desk, a producer's studio, a proposal for clients and a gig poster, and every claim something he built](../../articles/a-portfolio-with-a-film-first.md), 2026-11-16, 7 min.
 - [A website that is her: how Yiheng Wang's site was made in three passes in one evening, by the site factory, five design agents and then her own agent, with five designs, a kitchen brigade of 26 agents, a printable brief and a page for your AI, and why every claim on it is something she can talk about because she did it](../../articles/a-website-that-is-her.md), 2026-11-16, 9 min.
 - [Show me the evidence: websites for people looking for a job, built by an agentic cell, with seven pages that prove instead of list, a page made for each employer, a pack for recruiters, eight personas to fork, a ladder from a free recipe to a recruiter's cell, and the brief for the team that builds it](../../articles/show-me-the-evidence.md), 2026-11-16, 15 min.

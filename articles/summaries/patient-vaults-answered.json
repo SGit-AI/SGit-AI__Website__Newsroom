@@ -1,0 +1,110 @@
+{
+ "slug": "patient-vaults-answered",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 235,
+   "line": "Seven questions a healthcare team asked before real patient data went into sgit vaults, answered.",
+   "para": "And QR codes for passing keys and links.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 110,
+   "line": "Good questions; no live date; your region; erasure works; lose the key, lose the vault; tokens; QR codes.",
+   "para": "Seven points.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "context",
+   "label": "The questions",
+   "words": 115,
+   "line": "A team designing patient vaults with invented data asked before using any real data.",
+   "para": "The right order.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "live",
+   "label": "1. When will the doctor console be live?",
+   "words": 73,
+   "line": "No date: test on dev with invented data, and run your own server at the version you tested.",
+   "para": "Then the live date is yours.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "address",
+   "label": "2. Which address should patients use?",
+   "words": 88,
+   "line": "The patient's details live in their own vault, opened from a link the clinic gives them.",
+   "para": "Ideally sealed to their key, as a QR code.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "region",
+   "label": "3. Where are the vaults stored?",
+   "words": 83,
+   "line": "Whichever region you choose, in your own AWS account; the host holds ciphertext only.",
+   "para": "The DPIA answer.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "erasure",
+   "label": "4. How is a request to erase handled?",
+   "words": 133,
+   "line": "A deleted vault is removed and its id can never be uploaded again; without a key, copies are unreadable.",
+   "para": "Deletion stops future access, not past copies.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "backup",
+   "label": "5. What if the clinic's key is lost?",
+   "words": 128,
+   "line": "Lose the clinic key, lose the vaults: seal it to custodians, keep an offline QR copy, rotate on departures.",
+   "para": "The zero-knowledge deal.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "tokens",
+   "label": "6. Per-patient access tokens?",
+   "words": 92,
+   "line": "The server token only authorises uploads; changes need the vault key and identity.",
+   "para": "Per-patient writes use append lanes.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "append",
+   "label": "7. Writing to a vault from another site",
+   "words": 107,
+   "line": "Append lanes: write-only, per sender, sealed to the clinic's key, from any page.",
+   "para": "Dev-only routes when last documented.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "qr",
+   "label": "QR codes, and how this scales",
+   "words": 192,
+   "line": "Public keys swapped by QR code, vault links sealed to a patient's key, the clinic key backed up sealed.",
+   "para": "The same pattern scales.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 48,
+   "line": "No live date; not legal advice; lane routes on dev when documented; deletion is not retroactive.",
+   "para": "Four limits.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 61,
+   "line": "The team's questions, my answers, sgit.ai docs, the deploy guides and pki.sgit.ai.",
+   "para": "17 November 2026.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

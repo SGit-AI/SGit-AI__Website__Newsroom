@@ -55,6 +55,302 @@
   ],
   "articles": [
     {
+      "slug": "your-own-agentic-cell",
+      "title": "Your own agentic cell, end to end: how a person asks for a site like the ones we made for Yiheng Wang and Silvio Switha, through a key pair in the browser, a vault they fill themselves and the site factory, with only three human gates, and then continues in their own Claude on their own repository",
+      "date": "2026-11-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/your-own-agentic-cell.html",
+      "markdown": "https://newsroom.sgit.ai/articles/your-own-agentic-cell.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/your-own-agentic-cell.webp",
+      "teaser": "How a person gets their own agentic cell: a key pair in the browser, a vault they fill themselves, the site factory, and then their own Claude.",
+      "topics": [
+        "startups-and-strategy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "agenticcells",
+        "site-factory",
+        "onboarding",
+        "pki",
+        "vaults",
+        "product",
+        "article"
+      ],
+      "links_out": [
+        "a-website-that-is-her",
+        "a-portfolio-with-a-film-first",
+        "a-secret-is-a-qr-code",
+        "an-inbox-only-your-agents-can-write-to",
+        "how-a-vault-works",
+        "the-site-factory-works",
+        "patient-vaults-answered"
+      ],
+      "links_in": [
+        "patient-vaults-answered"
+      ],
+      "figures": [
+        {
+          "file": "onb-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/onb-flow.webp",
+          "caption": "Your own agentic cell: a key, a request, a vault, the factory, five designs, a hand-over; three human gates.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "your-own-agentic-cell",
+        "teaser": "How a person gets their own agentic cell: a key pair in the browser, a vault they fill themselves, the site factory, and then their own Claude.",
+        "topics": [
+          "startups-and-strategy",
+          "site-and-engineering"
+        ],
+        "core_idea": "The product is the workflow: a signed, encrypted intake through keys and vaults, the site factory and a hand-over, automated except for three human gates.",
+        "nodes": [
+          {
+            "id": "key",
+            "label": "A key in the browser",
+            "kind": "method",
+            "summary": "The person's identity."
+          },
+          {
+            "id": "request",
+            "label": "A signed request",
+            "kind": "method",
+            "summary": "On an append lane, no secrets."
+          },
+          {
+            "id": "vault",
+            "label": "Their own vault",
+            "kind": "method",
+            "summary": "Filled by them, sealed to the factory."
+          },
+          {
+            "id": "factory",
+            "label": "The site factory",
+            "kind": "artefact",
+            "summary": "Repo, address, site, five designs."
+          },
+          {
+            "id": "handover",
+            "label": "Their own Claude",
+            "kind": "method",
+            "summary": "A collaborator invite and a CLAUDE.md."
+          },
+          {
+            "id": "gates",
+            "label": "Three gates",
+            "kind": "claim",
+            "summary": "Approve, merge, invite."
+          }
+        ],
+        "edges": [
+          {
+            "from": "request",
+            "to": "key",
+            "rel": "depends-on"
+          },
+          {
+            "from": "vault",
+            "to": "request",
+            "rel": "extends"
+          },
+          {
+            "from": "factory",
+            "to": "vault",
+            "rel": "depends-on"
+          },
+          {
+            "from": "handover",
+            "to": "factory",
+            "rel": "extends"
+          },
+          {
+            "from": "gates",
+            "to": "factory",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-website-that-is-her",
+            "a-portfolio-with-a-film-first",
+            "the-site-factory-works",
+            "a-secret-is-a-qr-code",
+            "an-inbox-only-your-agents-can-write-to",
+            "how-a-vault-works",
+            "patient-vaults-answered"
+          ],
+          "pages": [],
+          "sites": [
+            "https://pki.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "So the thing to build is not the site; it is the workflow.",
+            "why": "Why."
+          },
+          {
+            "text": "the worst anyone can do is send a request",
+            "why": "The intake lane."
+          },
+          {
+            "text": "No key ever travels in clear.",
+            "why": "The welcome pack."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "patient-vaults-answered",
+      "title": "Patient vaults, answered point by point: the seven questions a healthcare team asked before putting any real patient data into sgit vaults, on the live date, the patient's address, the storage region, erasure, backing up the clinic's key, per-patient tokens and writing from another site, and why QR codes and public keys are how a clinic and its patients should pass keys and links",
+      "date": "2026-11-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/patient-vaults-answered.html",
+      "markdown": "https://newsroom.sgit.ai/articles/patient-vaults-answered.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/patient-vaults-answered.webp",
+      "teaser": "Seven questions a healthcare team asked before putting real patient data into sgit vaults, answered, and why QR codes should carry keys and links.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sgit",
+        "vaults",
+        "healthcare",
+        "privacy",
+        "gdpr",
+        "pki",
+        "qr-codes",
+        "article"
+      ],
+      "links_out": [
+        "deploy-sgit-from-ci",
+        "pki-everywhere",
+        "an-inbox-only-your-agents-can-write-to",
+        "a-secret-is-a-qr-code",
+        "your-own-agentic-cell"
+      ],
+      "links_in": [
+        "your-own-agentic-cell"
+      ],
+      "figures": [
+        {
+          "file": "hcq-answers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hcq-answers.webp",
+          "caption": "Seven questions from a healthcare team, answered: live date, address, region, erasure, keys, tokens, writing.",
+          "kind": "table"
+        },
+        {
+          "file": "hcq-qr.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hcq-qr.webp",
+          "caption": "QR codes carry keys and links: swap public keys, seal the vault link to the patient's key, back up the clinic key.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "patient-vaults-answered",
+        "teaser": "Seven questions a healthcare team asked before putting real patient data into sgit vaults, answered, and why QR codes should carry keys and links.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Patient vaults are safe to use when the clinic runs its own server in its chosen region, plans key custody, relies on deletion and key loss as erasure, and passes keys and links sealed to public keys via QR codes.",
+        "nodes": [
+          {
+            "id": "live",
+            "label": "Run your own",
+            "kind": "method",
+            "summary": "Your version, your date."
+          },
+          {
+            "id": "region",
+            "label": "Your region",
+            "kind": "claim",
+            "summary": "Ciphertext only, where you choose."
+          },
+          {
+            "id": "erase",
+            "label": "Erasure works",
+            "kind": "claim",
+            "summary": "Removed, and the id never reused."
+          },
+          {
+            "id": "custody",
+            "label": "Key custody",
+            "kind": "method",
+            "summary": "Custodians and an offline QR."
+          },
+          {
+            "id": "lanes",
+            "label": "Append lanes",
+            "kind": "method",
+            "summary": "Write-only, per sender."
+          },
+          {
+            "id": "qr",
+            "label": "QR codes",
+            "kind": "method",
+            "summary": "Keys and links sealed, never in clear."
+          }
+        ],
+        "edges": [
+          {
+            "from": "region",
+            "to": "live",
+            "rel": "depends-on"
+          },
+          {
+            "from": "custody",
+            "to": "erase",
+            "rel": "extends"
+          },
+          {
+            "from": "lanes",
+            "to": "qr",
+            "rel": "extends"
+          },
+          {
+            "from": "qr",
+            "to": "custody",
+            "rel": "extends"
+          },
+          {
+            "from": "live",
+            "to": "lanes",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "deploy-sgit-from-ci",
+            "pki-everywhere",
+            "a-secret-is-a-qr-code",
+            "an-inbox-only-your-agents-can-write-to",
+            "your-own-agentic-cell"
+          ],
+          "pages": [],
+          "sites": [
+            "https://pki.sgit.ai/",
+            "https://sgit.ai/docs/key-management.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Then your live date is yours.",
+            "why": "Live date."
+          },
+          {
+            "text": "That is the zero-knowledge deal",
+            "why": "Key loss."
+          },
+          {
+            "text": "No key ever travels in clear",
+            "why": "QR codes."
+          }
+        ]
+      }
+    },
+    {
       "slug": "agents-rating-agents",
       "title": "Agents rating agents: GAMMA-Ray, the draft standard eight agents built at Web Summit to rate an AI agent on its freedom and its governance from public evidence, joining eight instruments into 21 questions, with a review workflow where no agent marks its own work, twenty company cards kept at direct links, and every card honestly marked Draft",
       "date": "2026-11-17",
@@ -679,7 +975,9 @@
         "the-site-factory-works",
         "ci-behaviour-policies"
       ],
-      "links_in": [],
+      "links_in": [
+        "patient-vaults-answered"
+      ],
       "figures": [
         {
           "file": "dep-shape.webp",
@@ -1311,7 +1609,9 @@
         "the-site-factory-works",
         "show-me-the-evidence"
       ],
-      "links_in": [],
+      "links_in": [
+        "your-own-agentic-cell"
+      ],
       "figures": [
         {
           "file": "ssg-five.webp",
@@ -1502,6 +1802,7 @@
         "ten-days-at-web-summit"
       ],
       "links_in": [
+        "your-own-agentic-cell",
         "five-primitives-one-store",
         "a-portfolio-with-a-film-first"
       ],
@@ -4018,6 +4319,7 @@
         "ci-behaviour-policies"
       ],
       "links_in": [
+        "your-own-agentic-cell",
         "deploy-sgit-from-ci",
         "five-primitives-one-store",
         "a-portfolio-with-a-film-first",
@@ -11105,6 +11407,8 @@
         "a-secret-is-a-qr-code"
       ],
       "links_in": [
+        "your-own-agentic-cell",
+        "patient-vaults-answered",
         "memory-is-a-lifecycle",
         "five-primitives-one-store",
         "the-email-agentic-cell",
@@ -12830,6 +13134,7 @@
         "inside-english-with-ines"
       ],
       "links_in": [
+        "your-own-agentic-cell",
         "agents-rating-agents",
         "relate-debriefed",
         "five-primitives-one-store",
@@ -37532,6 +37837,8 @@
         "sixteen-notes-i-did-not-want-to-lose"
       ],
       "links_in": [
+        "your-own-agentic-cell",
+        "patient-vaults-answered",
         "an-inbox-only-your-agents-can-write-to",
         "a-key-for-every-person",
         "an-ipad-to-review-the-book",
@@ -41244,6 +41551,7 @@
         "the-editors-channel"
       ],
       "links_in": [
+        "patient-vaults-answered",
         "one-writer-one-key",
         "an-augmented-pdf-viewer",
         "signed-email-from-the-agent",

@@ -1,0 +1,111 @@
+{
+  "slug": "your-own-agentic-cell",
+  "teaser": "How a person gets their own agentic cell: a key pair in the browser, a vault they fill themselves, the site factory, and then their own Claude.",
+  "topics": [
+    "startups-and-strategy",
+    "site-and-engineering"
+  ],
+  "core_idea": "The product is the workflow: a signed, encrypted intake through keys and vaults, the site factory and a hand-over, automated except for three human gates.",
+  "nodes": [
+    {
+      "id": "key",
+      "label": "A key in the browser",
+      "kind": "method",
+      "summary": "The person's identity."
+    },
+    {
+      "id": "request",
+      "label": "A signed request",
+      "kind": "method",
+      "summary": "On an append lane, no secrets."
+    },
+    {
+      "id": "vault",
+      "label": "Their own vault",
+      "kind": "method",
+      "summary": "Filled by them, sealed to the factory."
+    },
+    {
+      "id": "factory",
+      "label": "The site factory",
+      "kind": "artefact",
+      "summary": "Repo, address, site, five designs."
+    },
+    {
+      "id": "handover",
+      "label": "Their own Claude",
+      "kind": "method",
+      "summary": "A collaborator invite and a CLAUDE.md."
+    },
+    {
+      "id": "gates",
+      "label": "Three gates",
+      "kind": "claim",
+      "summary": "Approve, merge, invite."
+    }
+  ],
+  "edges": [
+    {
+      "from": "request",
+      "to": "key",
+      "rel": "depends-on"
+    },
+    {
+      "from": "vault",
+      "to": "request",
+      "rel": "extends"
+    },
+    {
+      "from": "factory",
+      "to": "vault",
+      "rel": "depends-on"
+    },
+    {
+      "from": "handover",
+      "to": "factory",
+      "rel": "extends"
+    },
+    {
+      "from": "gates",
+      "to": "factory",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-website-that-is-her",
+      "a-portfolio-with-a-film-first",
+      "the-site-factory-works",
+      "a-secret-is-a-qr-code",
+      "an-inbox-only-your-agents-can-write-to",
+      "how-a-vault-works",
+      "patient-vaults-answered"
+    ],
+    "pages": [],
+    "sites": [
+      "https://pki.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "So the thing to build is not the site; it is the workflow.",
+      "why": "Why."
+    },
+    {
+      "text": "the worst anyone can do is send a request",
+      "why": "The intake lane."
+    },
+    {
+      "text": "No key ever travels in clear.",
+      "why": "The welcome pack."
+    }
+  ],
+  "figures": [
+    {
+      "file": "onb-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/onb-flow.webp",
+      "caption": "Your own agentic cell: a key, a request, a vault, the factory, five designs, a hand-over; three human gates.",
+      "kind": "process"
+    }
+  ]
+}

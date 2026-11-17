@@ -1,0 +1,3 @@
+# Patient vaults answered; your own agentic cell (17 November 2026)
+
+Patient vaults: questions from a healthcare team (person, clinic and their other site not named; no screenshot, a private message). Dinis's answers 17 Nov: live date unknown; patient details stay in the patient's vault; region their choice via own AWS deployment; deletion works on hosted, a marker stops re-upload; the only server token authorises uploads, changes need vault key and identity. Rest from sgit.ai docs (key management, append lanes) and pki.sgit.ai (qr/key/v1, m1). Onboarding: Dinis briefed it in the PrompTugal conductor session by mistake; source board/spec-agentic-cells-onboarding.md (commit 369d8d87), rewritten in Dinis's voice; Gabriel's site not named.
