@@ -1,0 +1,31 @@
+{
+ "slug": "heritage-tech-together",
+ "teaser": "How our open-source trust stack could plug into UAlgTec Heritage, the Algarve's new European centre for heritage science and technology.",
+ "topics": ["startups-and-strategy", "agents-and-policy"],
+ "core_idea": "An AI-first heritage platform needs proof underneath: evidence vaults per site, signed field records, append lanes for many teams, graphs linking claims to evidence and agents with written limits.",
+ "nodes": [
+  {"id": "uth", "label": "UAlgTec Heritage", "kind": "example", "summary": "A European HeritageTech centre."},
+  {"id": "vault", "label": "Site evidence vaults", "kind": "method", "summary": "Encrypted, versioned."},
+  {"id": "sign", "label": "Signed field records", "kind": "method", "summary": "Keys and QR codes on finds."},
+  {"id": "graph", "label": "Site graphs", "kind": "method", "summary": "Claims linked to evidence."},
+  {"id": "policy", "label": "Agent policies", "kind": "concept", "summary": "Written limits for AI agents."},
+  {"id": "pilot", "label": "A twelve-week pilot", "kind": "method", "summary": "One site, one season."}
+ ],
+ "edges": [
+  {"from": "vault", "to": "uth", "rel": "extends"},
+  {"from": "sign", "to": "vault", "rel": "depends-on"},
+  {"from": "graph", "to": "vault", "rel": "depends-on"},
+  {"from": "policy", "to": "uth", "rel": "extends"},
+  {"from": "pilot", "to": "graph", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["how-a-vault-works", "signed-by-the-source", "where-assist-becomes-execute", "a-secret-is-a-qr-code", "an-inbox-only-your-agents-can-write-to", "knowledge-graphs-for-kgell", "agents-rating-agents", "the-site-factory-works", "local-trust-certified-upwards", "build-on-voicedebrief", "deploy-sgit-from-ci"],
+  "pages": [],
+  "sites": ["https://tally.so/r/PR9lOV", "https://www.fct.pt/en/portugal-assegura-81-milhoes-de-euros-de-financiamento-europeu-para-criar-6-centros-de-investigacao/"]
+ },
+ "quotes": [
+  {"text": "Heritage is evidence.", "why": "Why this fits."},
+  {"text": "a European project keeps its data in Europe", "why": "Self-hosting."},
+  {"text": "Small, real and in the open.", "why": "The pilot."}
+ ]
+}

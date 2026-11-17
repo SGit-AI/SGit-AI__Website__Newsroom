@@ -91,6 +91,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#local-
 
 ### Continued by
 
+- [HeritageTech, together: how our open-source stack could plug into UAlgTec Heritage, the University of the Algarve's new European centre of excellence for heritage science and technology, mapped from the dig to the museum, with encrypted evidence vaults per site, signed finds, graphs of every excavation, agents with written policies, and what I would write in its "start a conversation" form](heritage-tech-together.md) How our open-source trust stack could plug into UAlgTec Heritage, the Algarve's new European centre for heritage science and technology.
 - [Working with WizPress: how the AI operating system for newsrooms, built in Faro, and our open-source trust stack fit together, WizPress doing the production, from the inbox to the draft to the CMS, and our layer making every article carry its own proof, with an evidence vault per story, a behaviour policy per agent, a journalist's signature and signed responses, and a thirty-day pilot with one regional newsroom](working-with-wizpress.md) How WizPress, the AI operating system for newsrooms built in Faro, and our open-source trust stack fit: production plus proof, and a pilot.
 
 [All articles](index.md) · [All graphs](graphs.md)

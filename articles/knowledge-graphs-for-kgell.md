@@ -109,6 +109,7 @@ Graphs & knowledgeNews & evidence[This article as a graph →](graphs.md#knowled
 
 ### Continued by
 
+- [HeritageTech, together: how our open-source stack could plug into UAlgTec Heritage, the University of the Algarve's new European centre of excellence for heritage science and technology, mapped from the dig to the museum, with encrypted evidence vaults per site, signed finds, graphs of every excavation, agents with written policies, and what I would write in its "start a conversation" form](heritage-tech-together.md) How our open-source trust stack could plug into UAlgTec Heritage, the Algarve's new European centre for heritage science and technology.
 - [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](where-to-invest-in-sgit.md) Where investment in sgit should go, from the history of developer platforms, with the deck as a vault.
 
 [All articles](index.md) · [All graphs](graphs.md)

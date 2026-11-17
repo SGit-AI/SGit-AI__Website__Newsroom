@@ -1,0 +1,31 @@
+{
+ "slug": "our-companies-and-uth",
+ "teaser": "Each of our companies, technologies and websites mapped to what UAlgTec Heritage needs to build a European HeritageTech sector.",
+ "topics": ["startups-and-strategy", "agents-and-policy"],
+ "core_idea": "A HeritageTech sector is made of small specialised companies on a shared open trust layer; ours, from SGit to PrompTugal.news, each map to a need of an AI-first heritage platform.",
+ "nodes": [
+  {"id": "uth", "label": "UAlgTec Heritage", "kind": "example", "summary": "A European HeritageTech centre."},
+  {"id": "found", "label": "Foundations", "kind": "concept", "summary": "SGit, SG/Send, pki.sgit.ai, SHarness."},
+  {"id": "pol", "label": "Policies and checks", "kind": "concept", "summary": "ABP, RiskMandate, GAMMA-Ray."},
+  {"id": "teams", "label": "Teams and sites", "kind": "method", "summary": "AgentiCCells and the site factory."},
+  {"id": "public", "label": "The public story", "kind": "method", "summary": "PrompTugal.news, apps, this newsroom."},
+  {"id": "sector", "label": "A sector shape", "kind": "concept", "summary": "Small companies on an open layer."}
+ ],
+ "edges": [
+  {"from": "found", "to": "uth", "rel": "extends"},
+  {"from": "pol", "to": "found", "rel": "depends-on"},
+  {"from": "teams", "to": "pol", "rel": "depends-on"},
+  {"from": "public", "to": "teams", "rel": "depends-on"},
+  {"from": "sector", "to": "found", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["heritage-tech-together", "the-intersection", "how-a-vault-works", "deploy-sgit-from-ci", "a-key-for-every-person", "introducing-sharness", "where-assist-becomes-execute", "know-the-reach", "the-cell-is-the-unit", "the-site-factory-works", "your-own-agentic-cell", "agents-rating-agents", "build-on-voicedebrief", "promptugal-news-by-place", "native-apps-by-agents"],
+  "pages": [],
+  "sites": ["https://sgit.ai/", "https://pki.sgit.ai/", "https://sharness.ai/", "https://abp.sgit.ai/", "https://riskmandate.ai/", "https://agenticcells.ai/", "https://gamma-ray.sgit.ai/", "https://voicedebrief.ai/", "https://promptugal.news/", "https://tally.so/r/PR9lOV"]
+ },
+ "quotes": [
+  {"text": "Sectors are made of companies", "why": "Why companies."},
+  {"text": "Take one find.", "why": "The flow."},
+  {"text": "a shared, open trust layer that none of them owns", "why": "The model."}
+ ]
+}
