@@ -73,6 +73,36 @@
   ],
   "articles": [
     {
+      "slug": "keys-after-payment",
+      "title": "Keys after payment: how to hand vault keys and access keys to customers once they have paid, what Stripe does and does not do after the money is taken, what FastSpring, Paddle, Lemon Squeezy, Polar, Gumroad and Square offer instead, and a design where the key is sealed to the buyer's own public key, keys are stock, and a payment provider can sell them without ever holding one",
+      "date": "2026-11-17",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/keys-after-payment.html",
+      "markdown": "https://newsroom.sgit.ai/articles/keys-after-payment.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/keys-after-payment.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/keys-after-payment.json",
+      "teaser": "How to hand vault and access keys to customers after payment: what Stripe and others do, and a design that seals each key to the buyer's own key.",
+      "summary": "We now have things people want to buy: secure sends, vaults, access keys to our servers, and agentic cells. What they are buying, in the end, is a key. So we need a good way to hand a key to someone who has just paid, and today we do not have one. Our Stripe integration is a payment link, a payment, and a redirect. My research shows the picture is a little better than I thought, and still not enough. Stripe takes the money and screens fraud very well, sends a signed webhook and can put the session id in the redirect; it has products and prices, but no stock, it does not generate keys, and it knows nothing about the buyer's keys; its Workflows can chain Stripe's own actions after a payment, in preview, with custom code still in private preview. Others go further on keys: FastSpring can sell from a pre-defined list of keys, which is stock, or call your server; Paddle Classic did the same with an uploaded list; Lemon Squeezy, Polar and Gumroad generate keys per sale; Square has none. Not one of them seals a key to the buyer's own public key. So here is the design I want: the buyer's browser makes a key pair before checkout; Stripe takes the money; one small serverless function takes a key from our stock, seals it to the buyer's key, signs it, and hands it back as a link and a QR code that only they can open. And for stock managed by someone else: give the provider claim codes, not keys.",
+      "topics": [
+        "startups-and-strategy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "payments",
+        "stripe",
+        "keys",
+        "pki",
+        "vaults",
+        "qr-codes",
+        "product",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "the-payment-desk",
       "title": "The payment desk that could not take payment: paying a utility bill took two clerks, a system that half worked and a desk that accepted only one kind of card, and why I think AI's real impact on business is in small failures like this one, finding them and driving the change to fix them, while the money itself stays in plain, auditable code",
       "date": "2026-11-17",

@@ -100,6 +100,7 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#you
 
 ### Continued by
 
+- [Keys after payment: how to hand vault keys and access keys to customers once they have paid, what Stripe does and does not do after the money is taken, what FastSpring, Paddle, Lemon Squeezy, Polar, Gumroad and Square offer instead, and a design where the key is sealed to the buyer's own public key, keys are stock, and a payment provider can sell them without ever holding one](keys-after-payment.md) How to hand vault and access keys to customers after payment: what Stripe and others do, and a design that seals each key to the buyer's own key.
 - [Patient vaults, answered point by point: the seven questions a healthcare team asked before putting any real patient data into sgit vaults, on the live date, the patient's address, the storage region, erasure, backing up the clinic's key, per-patient tokens and writing from another site, and why QR codes and public keys are how a clinic and its patients should pass keys and links](patient-vaults-answered.md) Seven questions a healthcare team asked before putting real patient data into sgit vaults, answered, and why QR codes should carry keys and links.
 
 [All articles](index.md) · [All graphs](graphs.md)

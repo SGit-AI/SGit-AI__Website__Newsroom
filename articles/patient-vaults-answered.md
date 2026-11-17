@@ -102,6 +102,7 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#patient
 
 ### Continued by
 
+- [Keys after payment: how to hand vault keys and access keys to customers once they have paid, what Stripe does and does not do after the money is taken, what FastSpring, Paddle, Lemon Squeezy, Polar, Gumroad and Square offer instead, and a design where the key is sealed to the buyer's own public key, keys are stock, and a payment provider can sell them without ever holding one](keys-after-payment.md) How to hand vault and access keys to customers after payment: what Stripe and others do, and a design that seals each key to the buyer's own key.
 - [Your own agentic cell, end to end: how a person asks for a site like the ones we made for Yiheng Wang and Silvio Switha, through a key pair in the browser, a vault they fill themselves and the site factory, with only three human gates, and then continues in their own Claude on their own repository](your-own-agentic-cell.md) How a person gets their own agentic cell: a key pair in the browser, a vault they fill themselves, the site factory, and then their own Claude.
 
 [All articles](index.md) · [All graphs](graphs.md)

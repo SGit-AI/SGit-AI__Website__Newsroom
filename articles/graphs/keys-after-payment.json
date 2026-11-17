@@ -1,0 +1,120 @@
+{
+  "slug": "keys-after-payment",
+  "teaser": "How to hand vault and access keys to customers after payment: what Stripe and others do, and a design that seals each key to the buyer's own key.",
+  "topics": [
+    "startups-and-strategy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Payment providers stop at the payment or hand keys over in clear; a small serverless function can seal each key to the buyer's own public key, and claim codes let a provider manage stock without holding keys.",
+  "nodes": [
+    {
+      "id": "stripe",
+      "label": "Stripe stops at payment",
+      "kind": "claim",
+      "summary": "No keys, stock or buyer keys."
+    },
+    {
+      "id": "list",
+      "label": "Keys as a list",
+      "kind": "example",
+      "summary": "FastSpring, Paddle Classic."
+    },
+    {
+      "id": "seal",
+      "label": "Sealed to the buyer",
+      "kind": "method",
+      "summary": "Their key pair before checkout."
+    },
+    {
+      "id": "fn",
+      "label": "One function",
+      "kind": "method",
+      "summary": "Webhook, check, stock, seal."
+    },
+    {
+      "id": "codes",
+      "label": "Claim codes",
+      "kind": "method",
+      "summary": "Stock without trusting the seller."
+    },
+    {
+      "id": "qr",
+      "label": "A QR code",
+      "kind": "method",
+      "summary": "Only the buyer can open it."
+    }
+  ],
+  "edges": [
+    {
+      "from": "fn",
+      "to": "stripe",
+      "rel": "extends"
+    },
+    {
+      "from": "seal",
+      "to": "fn",
+      "rel": "depends-on"
+    },
+    {
+      "from": "qr",
+      "to": "seal",
+      "rel": "extends"
+    },
+    {
+      "from": "codes",
+      "to": "list",
+      "rel": "extends"
+    },
+    {
+      "from": "codes",
+      "to": "seal",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "your-own-agentic-cell",
+      "a-secret-is-a-qr-code",
+      "patient-vaults-answered"
+    ],
+    "pages": [],
+    "sites": [
+      "https://docs.stripe.com/checkout/custom-checkout/fulfill-orders",
+      "https://developer.fastspring.com/docs/license-key-fulfillments"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "what they are buying, in the end, is a key",
+      "why": "The problem."
+    },
+    {
+      "text": "So the answer is claim codes.",
+      "why": "Keys as stock."
+    },
+    {
+      "text": "Stripe never sees a key",
+      "why": "The design."
+    }
+  ],
+  "figures": [
+    {
+      "file": "kds-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/kds-flow.webp",
+      "caption": "A key only the buyer can open: their key pair, Stripe for the money, our function seals the key, a QR code.",
+      "kind": "process"
+    },
+    {
+      "file": "kds-providers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/kds-providers.webp",
+      "caption": "Who can hand over a key after a payment: Stripe, FastSpring, Paddle, Lemon Squeezy, Polar, Gumroad, Square.",
+      "kind": "table"
+    },
+    {
+      "file": "kds-stock.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/kds-stock.webp",
+      "caption": "Keys as stock: give the provider claim codes, let it count them; the buyer claims, we seal the real key.",
+      "kind": "process"
+    }
+  ]
+}

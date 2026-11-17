@@ -4,15 +4,15 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 1488 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 1024 | 3727 | links to sgit.ai's pages and the network sites (38 files this site writes itself) |
-| words | 2025 | 13190 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 1491 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 1026 | 3730 | links to sgit.ai's pages and the network sites (38 files this site writes itself) |
+| words | 2028 | 13205 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 118 | 343 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 896 × `sgit.ai/about/index.html`
-- 446 × `sgit.ai/about/index.md`
+- 898 × `sgit.ai/about/index.html`
+- 447 × `sgit.ai/about/index.md`
 - 138 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 62 × `pki.sgit.ai/`
@@ -20,9 +20,9 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 - 39 × `graphs.sgit.ai/`
 - 36 × `sgit.ai/api/append-lanes.html`
 - 36 × `sgit.ai/demos/fractal-graphs/performance.html`
-- 32 × `sgit.ai/network/index.html`
 - 32 × `sgit.ai/why/index.html`
 - 32 × `sgit.ai/team/index.html`
+- 32 × `sgit.ai/network/index.html`
 - 30 × `sgit.ai/security/index.html`
 - 30 × `sgit.ai/demos/vaults/index.html`
 - 29 × `sgit.ai/docs/credentials.html`
@@ -30,9 +30,9 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 - 24 × `sgit.ai/skills/index.html`
 - 24 × `sgit.ai/updates/index.html`
 - 22 × `sgit.ai/demos/vaults/risk-acceptance/index.html`
-- 22 × `sgit.ai/docs/append-lane-messaging.html`
 - 22 × `sgit.ai/docs/index.html`
 - 22 × `sgit.ai/compare/index.html`
+- 22 × `sgit.ai/docs/append-lane-messaging.html`
 - 21 × `sgit.ai/docs/guidance/index.html`
 - 20 × `sgit.ai/docs/vault/index.html`
 - 20 × `sgit.ai/docs/briefs/index.html`
@@ -41,16 +41,16 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 - 20 × `sgit.ai/admin/index.html`
 - 19 × `sgit.ai/demos/fractal-graphs/index.html`
 - 19 × `sgit.ai/demos/vaults/bridge-simulation/index.html`
-- 18 × `sgit.ai/docs/append-lane-messaging.md`
 - 18 × `sgit.ai/docs/surfaces.html`
+- 18 × `sgit.ai/docs/append-lane-messaging.md`
 - 17 × `sgit.ai/docs/vault/sub-vaults.html`
 - 17 × `sgit.ai/docs/limitations.html`
 - 17 × `nhi.sgit.ai/`
 - 16 × `sgit.ai/docs/vault/vault-from-javascript.html`
-- 16 × `graphs.sgit.ai/v2/books/index.html`
-- 16 × `sgit.ai/demos/vaults/regulation-graph/index.html`
 - 16 × `sgit.ai/docs/vault/vault-apps.html`
 - 16 × `sgit.ai/docs/vault/static-hosting.html`
+- 16 × `graphs.sgit.ai/v2/books/index.html`
+- 16 × `sgit.ai/demos/vaults/regulation-graph/index.html`
 
 ## Network links in pages this site writes itself
 
@@ -138,6 +138,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `articles/find.json` (10)
 - `articles/summaries/aws-from-the-vault.json` (10)
 - `assets/pen/pen.js` (10)
+- `desks/security.html` (10)
 - `engineering/releases/v0.14.99.html` (10)
 - `admin/notes/2026-10-28__investor-sgit-ai/research-01.md` (9)
 - `admin/notes/2026-10-29__brief__investor-sgit-ai.md` (9)
@@ -156,4 +157,3 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/releases/v0.12.60.html` (8)
 - `reviews/vaults.html` (8)
 - `sections/building/index.html` (8)
-- `about/index.html` (7)

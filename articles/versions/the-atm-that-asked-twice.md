@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-17 | published | 1,394 | first published | this release | [current](../the-atm-that-asked-twice.md) |
+| **v1.0.0** | 2026-11-17 | published | 1,394 | first published | [`009eba783`](https://github.com/SGit-AI/SGit-AI__Website/commit/009eba7830bf3c356eff53e277362ebb0d31933f) | [current](../the-atm-that-asked-twice.md) |
 
 [← Back to the article](../the-atm-that-asked-twice.md) · [All articles](../index.md)
 

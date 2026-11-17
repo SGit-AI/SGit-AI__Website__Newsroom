@@ -1,0 +1,3 @@
+# Keys after payment (17 November 2026)
+
+Dinis: research the best way to distribute access and vault keys to customers after payment; Stripe today is a payment link and a redirect; can others (Square etc.) do logic, key batches as stock, PKI; ideal: buyer's public key, redirect carrying a secret sealed to the buyer. Research by web search the same day (Stripe docs and changelog, FastSpring, Paddle, Lemon Squeezy/Polar/Gumroad via API mirrors, Square community thread). Corrections to Dinis's view: Stripe keeps products and prices (no stock); Workflows in public preview, custom code private preview. Design: fingerprint as client_reference_id, Lambda, stock vault, sealed m1 message, QR; claim codes as stock.
