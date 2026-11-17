@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: This morning I went to a service desk to pay a utility bill. It took two clerks: the first could find the bill, but her system could not take the payment; the second one's system kind of worked; and the desk accepted only one domestic card network, no Visa, no Mastercard. None of this is about one company or one country; the same small failures happen in England and everywhere else. But it made something clear to me. When people talk about AI and business, they talk about replacing people and systems. I think the real gains are in the little things: the desk that fails, the hand-over nobody records, the card nobody can use. And there is a clean line in where AI belongs. The payment itself, read the invoice number and take the money, is the one job that must keep working with everything else on fire, and it should be plain, reliable, auditable code, not AI. AI belongs around it: noticing the desk fails every week, mapping who has to agree to fix it and what it costs, and following it up until it is done. And yes, we will give agents wallets, as soon as we trust them; a single-use card with a small budget would be more secure than what I carry today.
-version: v999.0.0
+version: v0.14.138
 license: https://creativecommons.org/licenses/by/4.0/
 tags: ai, business, payments, technical-debt, change, opinion, article
 status: published

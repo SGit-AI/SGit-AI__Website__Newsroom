@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: This morning I took 200 euros from a cash machine in Portugal with my UK card. The machine offered to charge me in pounds at a "fixed exchange rate guaranteed": 189.68 pounds. I said no, and it asked again on a second screen. I said no again, and my bank charged me 167.12 pounds. The machine's rate was 13.6% above the European Central Bank's reference rate; saying yes would have cost me 22.56 pounds more. This is dynamic currency conversion, and it is legal in the EU, on one condition: since April 2020, Regulation 2019/518 requires the mark-up to be shown as a percentage over the ECB rate before you confirm. Neither screen I photographed shows one. What struck me most was the design: certainty sold against a fear that barely exists, a flag and a familiar total, loaded words, the same question asked twice, a queue behind you, and a bank's name lending trust. And what struck me next is what changed: standing at the machine, nobody can check a rate against the ECB and read a regulation in thirty seconds, but with an AI agent afterwards, in a few minutes, I had the photographs, the rates, the law and the research side by side. That is how a consumer challenges a practice now.
-version: v999.0.0
+version: v0.14.138
 license: https://creativecommons.org/licenses/by/4.0/
 tags: consumers, banking, currency-conversion, regulation, portugal, evidence, ai, article
 status: published
