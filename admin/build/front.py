@@ -350,7 +350,10 @@ class Front:
         days = []
         for i, (d, arts) in enumerate(self.days()):
             items = "".join(
-                f'<li class="day-i">{self.sec_label(a)}<span class="day-min">{mins(a["minutes"])}</span>'
+                f'<li class="day-i{" day-th" if (ROOT / a["card"]).exists() else ""}">'
+                + (f'<a class="day-t" href="{a["url"]}" tabindex="-1" aria-hidden="true"><img loading="lazy" src="{a["card"]}" alt="" width="120" height="63"></a>'
+                   if (ROOT / a["card"]).exists() else '')
+                + f'{self.sec_label(a)}<span class="day-min">{mins(a["minutes"])}</span>'
                 f'<a class="day-h" href="{a["url"]}">{esc(a["head"])}</a>'
                 + (f'<p class="day-dek">{esc(self.short_dek(a))}</p>' if a["dek"] or a["teaser"] else "") + '</li>' for a in arts)
             days.append(f'<section class="day{" day-first" if i == 0 else ""}" aria-label="{day_long(d)}">'

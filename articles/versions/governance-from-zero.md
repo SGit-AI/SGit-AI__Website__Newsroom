@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-17 | published | 1,437 | first published | this release | [current](../governance-from-zero.md) |
+| **v1.0.0** | 2026-11-17 | published | 1,437 | first published | [`19450315e`](https://github.com/SGit-AI/SGit-AI__Website/commit/19450315ee22f6010b3b7e47e62288206dc2fd66) | [current](../governance-from-zero.md) |
 
 [← Back to the article](../governance-from-zero.md) · [All articles](../index.md)
 
