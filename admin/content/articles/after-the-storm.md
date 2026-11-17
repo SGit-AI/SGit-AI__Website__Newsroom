@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: The first night of Storm Charles built a newsroom: a weather page over a data room. This is what happened after, on 11 and 12 November, when I kept talking to the site and the agents kept building. At 10:25 I asked whether we were tracking flights and transport; within ten minutes a transport agent had its own key and its first reading, and by the evening it was reading ten operators, from the Lisbon bridges to CP's trains, and had stopped reading the Lisbon Metro at 12:08 because its terms forbid republishing without consent. At 22:00 I asked for the planes on a map, intersected with the wind; by 22:24 the flights desk had dropped its first feed over its licence, moved to adsb.lol, and fitted its polling inside 500 free requests a day. The same evening every collector moved onto open-weight models through one router, each call with a trace id, and an AWS agent mapped how the runners could move to the cloud, with no AWS account and nothing deployed. The accounts tell the rest: 3.84 billion tokens, 98.7% of them re-reading, against about 2.50 dollars a day of model calls on a 20 dollar cap, 43 agents, 147 sessions and 106 hand-overs. And the night the model account ran out of credit, 3,557 calls were refused and nothing else stopped.
-version: v999.0.0
+version: v0.14.145
 license: https://creativecommons.org/licenses/by/4.0/
 tags: storm-charles, promptugal, web-summit, agents, data, open-data, models, series, article
 status: published
