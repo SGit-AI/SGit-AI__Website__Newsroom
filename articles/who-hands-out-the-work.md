@@ -77,6 +77,10 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#who-ha
 - [Don't micromanage your agents: what changed for Vicky Wang when she stopped reading everything her agents did and started managing them, how her team was backed by agents from another team, and why every company will want specialist agents that support all its teams](dont-micromanage-your-agents.md) Vicky Wang stopped reading everything her agents did and started managing them, backed by specialist agents from another team: a model for companies.
 - [Stopping a hundred agents: the Big Stop, the hand brake and the final hold at Web Summit, why pausing took seconds but hearing the order took up to an hour, what kept running anyway, and why a stop has to be a file every agent reads first](stopping-a-hundred-agents.md) Stopping a hundred agents at Web Summit: pausing took seconds, hearing the order took up to an hour, and a stop has to be a file every agent reads first.
 
+### Continued by
+
+- [Partners sell, we build: the AgentiCCells partner programme in full, three kinds of partner, a freelancer, a small consultancy and a larger firm, what each one sells, the agent team behind even the smallest website cell, the rules of engagement, who owns what, who invoices, who gets paid and when, what stays with the partner, and why a partner who takes the open code and does it alone is still a win](partners-sell-we-build.md) The AgentiCCells partner programme: three kinds of partner, the agent team they resell, and the rules of engagement, 50/50.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 448 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=448)

@@ -1,0 +1,31 @@
+{
+ "slug": "partners-sell-we-build",
+ "teaser": "The AgentiCCells partner programme: three kinds of partner, the agent team they resell, and the rules of engagement, 50/50.",
+ "topics": ["startups-and-strategy", "agents-and-policy"],
+ "core_idea": "The go-to-market for the website cell is partners: freelancers, consultancies and larger firms sell the cell and its agent team, split 50/50 when we orchestrate, keep the customer relationship and subscriptions, while customers own their sites.",
+ "nodes": [
+  {"id": "types", "label": "Three kinds of partner", "kind": "concept", "summary": "Freelancer, consultancy, larger firm."},
+  {"id": "team", "label": "The agent team", "kind": "method", "summary": "Conductor, researcher, designer, developer, security."},
+  {"id": "flow", "label": "A deal", "kind": "method", "summary": "Six steps."},
+  {"id": "rules", "label": "Rules of engagement", "kind": "method", "summary": "50/50, invoicing, ownership."},
+  {"id": "alone", "label": "Going alone", "kind": "concept", "summary": "Still a win."},
+  {"id": "pkg", "label": "Product packages", "kind": "method", "summary": "A cell per product."}
+ ],
+ "edges": [
+  {"from": "team", "to": "types", "rel": "depends-on"},
+  {"from": "flow", "to": "team", "rel": "depends-on"},
+  {"from": "rules", "to": "flow", "rel": "extends"},
+  {"from": "alone", "to": "types", "rel": "extends"},
+  {"from": "pkg", "to": "flow", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["the-website-cell", "governance-from-zero", "any-data-with-any-data", "the-teams-operating-system", "who-hands-out-the-work", "six-setups-of-an-agentic-system", "the-intersection", "integrate-with-whatever-is-on-the-other-side"],
+  "pages": [],
+  "sites": ["https://agenticcells.ai/website-cell/"]
+ },
+ "quotes": [
+  {"text": "A partner who reads this and decides to take the open source and do it themselves is still using our technology", "why": "Going alone."},
+  {"text": "whoever has the customer", "why": "Who invoices."},
+  {"text": "The first partners will shape the rules with me.", "why": "The ask."}
+ ]
+}

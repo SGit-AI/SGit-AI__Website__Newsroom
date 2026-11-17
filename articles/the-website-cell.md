@@ -125,6 +125,10 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#the-we
 - [Keys after payment: how to hand vault keys and access keys to customers once they have paid, what Stripe does and does not do after the money is taken, what FastSpring, Paddle, Lemon Squeezy, Polar, Gumroad and Square offer instead, and a design where the key is sealed to the buyer's own public key, keys are stock, and a payment provider can sell them without ever holding one](keys-after-payment.md) How to hand vault and access keys to customers after payment: what Stripe and others do, and a design that seals each key to the buyer's own key.
 - [Governance from zero: Nina J. noticed that identity and behaviour policies come with our smallest £500 offer, not as a premium upgrade, because "we're only testing it" has never reassured a security review; my answer is that even the £0 offer has all of it, and here is why open source is what makes that possible, why security sold as an upgrade is a choice, and why a pilot with its governance built in is a pilot that can convert](governance-from-zero.md) A reply to Nina J.: identity and behaviour policies come with our smallest offer, even at £0, because everything is open source.
 
+### Continued by
+
+- [Partners sell, we build: the AgentiCCells partner programme in full, three kinds of partner, a freelancer, a small consultancy and a larger firm, what each one sells, the agent team behind even the smallest website cell, the rules of engagement, who owns what, who invoices, who gets paid and when, what stays with the partner, and why a partner who takes the open code and does it alone is still a win](partners-sell-we-build.md) The AgentiCCells partner programme: three kinds of partner, the agent team they resell, and the rules of engagement, 50/50.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 464 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=464)
