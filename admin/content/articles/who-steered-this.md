@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: When an LLM can write five versions of the same article in a minute, a reader needs to know who wrote it, who steered it, who checked it and who stands behind it. Today, with the conductor agent of PrompTugal.news, I mapped a model for that, the way we once adopted Wikipedia's review standard: a type label, from news to opinion; five axes, origin, research, claims, review and external voices, each recorded with who and when; and a ladder, from P0, a draft, through P1, published by an agent, P2, sourced, P3, verified by several models, P4, signed by a person, to P5, on the record, with signed responses from the people a story is about. Here I apply it to seven articles on this site, honestly. Most come out at P1 or P2: every release is signed, but by the writer agent's key, not mine, and nobody has been asked to respond. And rating them showed me what the model misses. The articles written here are not one-prompt pieces. They carry my brief, my photographs, my corrections and a long list of standing instructions, built up over months in one writer's session, with hundreds of earlier articles behind it. That is a big difference, and readers can feel it. So I propose two measures inside origin: steering, how much the author directed this piece, and background, how much context the writer carried. Different, not better; but it should be visible.
-version: v999.0.0
+version: v0.14.141
 license: https://creativecommons.org/licenses/by/4.0/
 tags: provenance, journalism, newsroom, review, signatures, ai, promptugal, standards, article
 status: published
