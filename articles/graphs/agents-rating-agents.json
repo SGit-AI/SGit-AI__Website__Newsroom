@@ -1,0 +1,120 @@
+{
+  "slug": "agents-rating-agents",
+  "teaser": "GAMMA-Ray: eight agents built a draft standard to rate AI agents on freedom and governance, with no agent marking its own work, and every card a Draft.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Agents can build and apply a rating standard in days if instruments are read at source, duties are separated and enforced by a gate, evidence is hashed into vaults, and every card states it is a draft.",
+  "nodes": [
+    {
+      "id": "ladders",
+      "label": "Two ladders",
+      "kind": "concept",
+      "summary": "Freedom 1 to 5, governance 0 to 4."
+    },
+    {
+      "id": "mashup",
+      "label": "The mashup",
+      "kind": "method",
+      "summary": "279 provisions to 21 questions."
+    },
+    {
+      "id": "duties",
+      "label": "No agent marks its own work",
+      "kind": "method",
+      "summary": "Draft, two reviews, sign-off."
+    },
+    {
+      "id": "vault",
+      "label": "Evidence in vaults",
+      "kind": "method",
+      "summary": "Hashed at capture."
+    },
+    {
+      "id": "links",
+      "label": "Direct links",
+      "kind": "method",
+      "summary": "The company sees its card first."
+    },
+    {
+      "id": "draft",
+      "label": "Draft",
+      "kind": "claim",
+      "summary": "Signed by no human yet."
+    }
+  ],
+  "edges": [
+    {
+      "from": "ladders",
+      "to": "mashup",
+      "rel": "depends-on"
+    },
+    {
+      "from": "duties",
+      "to": "ladders",
+      "rel": "extends"
+    },
+    {
+      "from": "vault",
+      "to": "duties",
+      "rel": "extends"
+    },
+    {
+      "from": "links",
+      "to": "duties",
+      "rel": "extends"
+    },
+    {
+      "from": "draft",
+      "to": "duties",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "ten-days-at-web-summit",
+      "stopping-a-hundred-agents",
+      "where-assist-becomes-execute",
+      "how-a-vault-works"
+    ],
+    "pages": [],
+    "sites": [
+      "https://gamma-ray.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "At the moment our website, PrompTugal, doesn't have a centre of gravity.",
+      "why": "The brief."
+    },
+    {
+      "text": "is the evidence an artefact, or an adjective?",
+      "why": "Round two."
+    },
+    {
+      "text": "A card about someone else's agent is a message to them before it is a page about them.",
+      "why": "Direct links."
+    }
+  ],
+  "figures": [
+    {
+      "file": "gmr-site.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gmr-site.webp",
+      "caption": "GAMMA-Ray: our own two cards, how a rating is made, the flow from a stand to a card, every card as a graph.",
+      "kind": "collage"
+    },
+    {
+      "file": "gmr-mashup.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gmr-mashup.webp",
+      "caption": "The mashup: 279 provisions in eight instruments, reached by 21 questions through 73 indicators, each a link.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "gmr-workflow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gmr-workflow.webp",
+      "caption": "Agents rating agents: drafted, reviewed twice, signed off by a third agent; none may approve its own work.",
+      "kind": "process"
+    }
+  ]
+}

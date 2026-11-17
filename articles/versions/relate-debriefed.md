@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-17 | published | 1,612 | first published | this release | [current](../relate-debriefed.md) |
+| **v1.0.0** | 2026-11-17 | published | 1,612 | first published | [`df9923a5b`](https://github.com/SGit-AI/SGit-AI__Website/commit/df9923a5be4bd4dced15eb0767158ddbdc90117b) | [current](../relate-debriefed.md) |
 
 [← Back to the article](../relate-debriefed.md) · [All articles](../index.md)
 

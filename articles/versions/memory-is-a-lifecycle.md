@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-17 | published | 1,206 | first published | this release | [current](../memory-is-a-lifecycle.md) |
+| **v1.0.0** | 2026-11-17 | published | 1,206 | first published | [`df9923a5b`](https://github.com/SGit-AI/SGit-AI__Website/commit/df9923a5be4bd4dced15eb0767158ddbdc90117b) | [current](../memory-is-a-lifecycle.md) |
 
 [← Back to the article](../memory-is-a-lifecycle.md) · [All articles](../index.md)
 
