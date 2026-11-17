@@ -2,7 +2,12 @@
 
 Fractal semantic graphs, knowledge that maintains itself, search as navigation, and the research community around them.
 
-13 articles, newest first.
+15 articles, newest first.
+
+## November 2026
+
+- [Relate, debriefed: what Neo4j's new agent-native graph database does, where its own documentation says it fits and where it does not, how it compares with the way we keep graphs, as plain JSON files in encrypted, versioned sgit vaults, and why the two could work together, with Relate as the throwaway engine inside our Load, Extract, Transform, Save cycle](../../articles/relate-debriefed.md), 2026-11-17, 6 min.
+- [Memory is a lifecycle: a reply to Francois Vanderseypen on Neo4j's Relate, agreeing that a graph database is not agent memory, and showing how we answer his four questions, what gets written, trusted, merged and forgotten, with append lanes, signed commits, git-like graph merges and new versions instead of edits, all in encrypted vaults rather than a database](../../articles/memory-is-a-lifecycle.md), 2026-11-17, 4 min.
 
 ## October 2026
 

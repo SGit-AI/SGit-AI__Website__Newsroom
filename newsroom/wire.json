@@ -73,6 +73,95 @@
   ],
   "articles": [
     {
+      "slug": "who-hands-out-the-work",
+      "title": "Who hands out the work? A reply to Markus Franz on Ippen's editorial team of agents, with our answer from six people and around 250 agents at Web Summit and from this newsroom, a person sets the work, one conductor agent hands it out, specialists and a reviewer do it, and a person decides what goes out, plus one thing we would add to one front door, a way to close it",
+      "date": "2026-11-17",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/who-hands-out-the-work.html",
+      "markdown": "https://newsroom.sgit.ai/articles/who-hands-out-the-work.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/who-hands-out-the-work.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/who-hands-out-the-work.json",
+      "teaser": "A reply to Markus Franz: who hands out the work to agents? A person sets it, one conductor hands it out, a person signs off, and the door can close.",
+      "summary": "Markus Franz, who leads the incubator lab at ippen.ai, described how Ippen Digital's editors now brief one Editorial Team in a chat, which works like a duty editor: it takes the request, decides which specialists are needed, hands out the work and brings back one answer, while a person still decides what goes out. Rules are easier to hold through one door, so they made the team the default way in, and the direct route to single specialists stayed, with the team's work coming on top. He ends with a question: if you run more than one agent, who hands out the work, a person or another agent? Our answer, from six of us running around 250 agents at Web Summit and from this newsroom, is both, at different moments. A person sets the work, in a voice note or a brief, and owns the outcome. One conductor agent hands it out: it is the one door, reads the board, briefs the specialists and collects their reports. Specialists do the work, each with a role and a behaviour policy, and a reviewer checks every claim. And a person decides what goes out; agents never send or post. We learned the same lesson Markus did, that one door is easier to govern, and the one who learned it fastest on our team had no technical background: start with one conductor and only talk to that one. And we would add one thing to a front door: a way to close it, a file every agent reads first.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "agents",
+        "newsrooms",
+        "orchestration",
+        "conductor",
+        "governance",
+        "web-summit",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "relate-debriefed",
+      "title": "Relate, debriefed: what Neo4j's new agent-native graph database does, where its own documentation says it fits and where it does not, how it compares with the way we keep graphs, as plain JSON files in encrypted, versioned sgit vaults, and why the two could work together, with Relate as the throwaway engine inside our Load, Extract, Transform, Save cycle",
+      "date": "2026-11-17",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/relate-debriefed.html",
+      "markdown": "https://newsroom.sgit.ai/articles/relate-debriefed.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/relate-debriefed.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/relate-debriefed.json",
+      "teaser": "A debrief of Neo4j's Relate, and how it compares with keeping graphs as JSON in encrypted, versioned sgit vaults, and why they fit together.",
+      "summary": "On 11 November Neo4j released Relate, \"the ultimate agent-native database\" in the words of its CPO: an open-source, embedded, in-memory graph database written in Rust, Apache 2.0, with openCypher, vector and full-text search in one statement, an MCP server, a CLI built for agents, Bolt and HTTP endpoints, a WebAssembly build and clients in seven languages. I wanted to understand it properly, so this is a debrief from its own documentation, which is unusually honest about where it fits: one application, one agent or one tool, on one machine, with the whole graph in memory and one writing process per store; no TLS, one shared credential, no users or roles. Then the comparison I find most interesting, with our own approach, which gives us much of the power of a graph database without running one. Our graphs are JSON files in sgit vaults: encrypted on the device, content addressed, versioned like git, read with one GET per file, written by many writers through append lanes, and queried by loading only the slice a question needs, then throwing a small engine at it. Relate wins where a graph database should: six hops over a big graph in memory, in under a millisecond. We win on encryption, history, many writers, no server between questions, and size bounded by the answer rather than the machine. And the two fit together: Relate is exactly the shape of the throwaway engine in the Transform step of our cycle.",
+      "topics": [
+        "site-and-engineering",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "graphs",
+        "databases",
+        "neo4j",
+        "agent-memory",
+        "sgit",
+        "vaults",
+        "knowledge-graphs",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "memory-is-a-lifecycle",
+      "title": "Memory is a lifecycle: a reply to Francois Vanderseypen on Neo4j's Relate, agreeing that a graph database is not agent memory, and showing how we answer his four questions, what gets written, trusted, merged and forgotten, with append lanes, signed commits, git-like graph merges and new versions instead of edits, all in encrypted vaults rather than a database",
+      "date": "2026-11-17",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/memory-is-a-lifecycle.html",
+      "markdown": "https://newsroom.sgit.ai/articles/memory-is-a-lifecycle.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/memory-is-a-lifecycle.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/memory-is-a-lifecycle.json",
+      "teaser": "A reply to Francois Vanderseypen: agent memory is a lifecycle, written, trusted, merged, forgotten, and how we answer each without a graph database.",
+      "summary": "Francois Vanderseypen, who consults on knowledge graphs, reviewed Neo4j's new Relate and made the point I think matters most in this whole space: the market treats \"graph database\" as a synonym for \"agent memory\", and both framings skip the hard part, which is the lifecycle, what gets written, what gets trusted, what gets merged and what should be forgotten. A database cannot answer that; a memory layer has to. I agree, and his list of what turns a graph store into a memory system, ontologies, bitemporal facts, reasoning and git-like graph commits, reads like a description of what we have been building, without a graph database. Our graphs are JSON files in encrypted, versioned sgit vaults. Written: append lanes, where a sender can add and learn nothing, and a curator agent that turns rows into graph, every node pointing back at its rows. Trusted: signed commits naming the agent and the person it works for, provenance on every claim, a reviewer before anything is published. Merged: git-like commits, branches and merges of graph files, and per-world ontologies joined by an edge instead of a migration. Forgotten: a new version instead of an edit, a reality file that lists only what is true now, and superseded facts kept, closed and left out of the briefing. Here is the map, and a nudge: the store can be versioned and private, and the engine can be thrown away after every question.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "graphs",
+        "agent-memory",
+        "knowledge-graphs",
+        "neo4j",
+        "sgit",
+        "vaults",
+        "ontologies",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "deploy-sgit-from-ci",
       "title": "Deploy sgit in your own environment, from a CI pipeline: one Docker image, ciphertext in your own S3 bucket in the region you choose, an access token only you hold, and the pipeline pattern we learned building the AgentiCCells site factory, a protected environment, AWS through OpenID Connect with no keys, a role that trusts one repository and one environment, check workflows before anything real, and a full cycle that deploys, tests and tears down",
       "date": "2026-11-17",

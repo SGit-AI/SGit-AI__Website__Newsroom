@@ -1,0 +1,31 @@
+{
+ "slug": "relate-debriefed",
+ "teaser": "A debrief of Neo4j's Relate, and how it compares with keeping graphs as JSON in encrypted, versioned sgit vaults, and why they fit together.",
+ "topics": ["site-and-engineering", "agents-and-policy"],
+ "core_idea": "Relate is an excellent single-process in-memory graph engine; graphs kept as JSON in sgit vaults trade traversal speed for encryption, history, many writers and no server, and Relate fits as their throwaway engine.",
+ "nodes": [
+  {"id": "relate", "label": "Relate", "kind": "artefact", "summary": "Neo4j's embedded graph database."},
+  {"id": "fit", "label": "Where it fits", "kind": "claim", "summary": "One app, one machine, in memory."},
+  {"id": "vault", "label": "Graph in a vault", "kind": "method", "summary": "JSON files, encrypted, versioned."},
+  {"id": "bills", "label": "Different bills", "kind": "claim", "summary": "Speed against privacy and scale."},
+  {"id": "lets", "label": "LETS", "kind": "method", "summary": "Load, Extract, Transform, Save."},
+  {"id": "together", "label": "Relate in Transform", "kind": "method", "summary": "A throwaway engine per question."}
+ ],
+ "edges": [
+  {"from": "fit", "to": "relate", "rel": "extends"},
+  {"from": "bills", "to": "vault", "rel": "extends"},
+  {"from": "bills", "to": "relate", "rel": "extends"},
+  {"from": "together", "to": "lets", "rel": "extends"},
+  {"from": "together", "to": "relate", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["how-a-vault-works", "knowledge-that-maintains-itself", "the-new-data-lake", "memory-is-a-lifecycle"],
+  "pages": [],
+  "sites": ["https://relatedb.ai/", "https://sgit.ai/demos/fractal-graphs/performance.html"]
+ },
+ "quotes": [
+  {"text": "The trick is the question, not the engine.", "why": "Our approach."},
+  {"text": "Relate is exactly the right shape for that Transform step", "why": "Together."},
+  {"text": "in a way we have the power of a graph database without running one", "why": "The position."}
+ ]
+}

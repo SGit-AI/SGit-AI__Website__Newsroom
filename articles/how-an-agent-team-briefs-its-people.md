@@ -112,6 +112,7 @@ Agents & policyNews & evidence[This article as a graph →](graphs.md#how-an-age
 
 ### Continued by
 
+- [Who hands out the work? A reply to Markus Franz on Ippen's editorial team of agents, with our answer from six people and around 250 agents at Web Summit and from this newsroom, a person sets the work, one conductor agent hands it out, specialists and a reviewer do it, and a person decides what goes out, plus one thing we would add to one front door, a way to close it](who-hands-out-the-work.md) A reply to Markus Franz: who hands out the work to agents? A person sets it, one conductor hands it out, a person signs off, and the door can close.
 - [The Web Summit team, part four: the day the agents ran on their own, 75 releases, four people connected, a procurement agent writing to printers, and the behaviour policies catching our own agents out](web-summit-part-four.md) The Web Summit team's day of agents on schedules: 75 releases, four people connected, a procurement agent, and policies catching our own agents.
 
 [All articles](index.md) · [All graphs](graphs.md)

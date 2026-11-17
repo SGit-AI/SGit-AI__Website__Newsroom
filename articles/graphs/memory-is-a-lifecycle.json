@@ -1,0 +1,116 @@
+{
+  "slug": "memory-is-a-lifecycle",
+  "teaser": "A reply to Francois Vanderseypen: agent memory is a lifecycle, written, trusted, merged, forgotten, and how we answer each without a graph database.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Agent memory is a lifecycle, not a database; append lanes, signed commits, git-like graph merges and new versions answer what is written, trusted, merged and forgotten.",
+  "nodes": [
+    {
+      "id": "life",
+      "label": "Memory is a lifecycle",
+      "kind": "claim",
+      "summary": "Write, trust, merge, forget."
+    },
+    {
+      "id": "write",
+      "label": "Written",
+      "kind": "method",
+      "summary": "Append lanes and a curator."
+    },
+    {
+      "id": "trust",
+      "label": "Trusted",
+      "kind": "method",
+      "summary": "Signatures, evidence, a reviewer."
+    },
+    {
+      "id": "merge",
+      "label": "Merged",
+      "kind": "method",
+      "summary": "Git-like graph commits."
+    },
+    {
+      "id": "forget",
+      "label": "Forgotten",
+      "kind": "method",
+      "summary": "A new version, not a delete."
+    },
+    {
+      "id": "engine",
+      "label": "A throwaway engine",
+      "kind": "method",
+      "summary": "Memory and engine separate."
+    }
+  ],
+  "edges": [
+    {
+      "from": "write",
+      "to": "life",
+      "rel": "extends"
+    },
+    {
+      "from": "trust",
+      "to": "life",
+      "rel": "extends"
+    },
+    {
+      "from": "merge",
+      "to": "life",
+      "rel": "extends"
+    },
+    {
+      "from": "forget",
+      "to": "life",
+      "rel": "extends"
+    },
+    {
+      "from": "engine",
+      "to": "life",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "relate-debriefed",
+      "an-inbox-only-your-agents-can-write-to",
+      "the-new-data-lake",
+      "a-key-for-every-person",
+      "the-wire-as-a-graph",
+      "knowledge-that-maintains-itself"
+    ],
+    "pages": [],
+    "sites": [
+      "https://relatedb.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A database can't answer that. A memory layer has to.",
+      "why": "Francois Vanderseypen."
+    },
+    {
+      "text": "I do not think you should delete; you should stop briefing",
+      "why": "Forgetting."
+    },
+    {
+      "text": "the memory and the engine can be separate things",
+      "why": "The nudge."
+    }
+  ],
+  "figures": [
+    {
+      "file": "fv-lifecycle.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fv-lifecycle.webp",
+      "caption": "Memory is a lifecycle: written, trusted, merged, forgotten, and where each lives in our stack.",
+      "kind": "concept"
+    },
+    {
+      "file": "fv-question.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fv-question.webp",
+      "caption": "Francois Vanderseypen, knowledge graph consulting, on Neo4j's Relate and agent memory, LinkedIn, November 2026.",
+      "kind": "aside"
+    }
+  ]
+}

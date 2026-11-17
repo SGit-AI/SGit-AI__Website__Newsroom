@@ -2,10 +2,11 @@
 
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
 
-65 articles, newest first.
+66 articles, newest first.
 
 ## November 2026
 
+- [Who hands out the work? A reply to Markus Franz on Ippen's editorial team of agents, with our answer from six people and around 250 agents at Web Summit and from this newsroom, a person sets the work, one conductor agent hands it out, specialists and a reviewer do it, and a person decides what goes out, plus one thing we would add to one front door, a way to close it](../../articles/who-hands-out-the-work.md), 2026-11-17, 3 min.
 - [Five primitives, one store: a reply to Andy Goundry on Anthropic's always-on agents guide, why the inbox, timers, memory, permissions and outbox can share one versioned, signed store, how every AgentiCCells cell will ship with all five, and the levels we have added on top, all in public repositories](../../articles/five-primitives-one-store.md), 2026-11-16, 6 min.
 - [Stopping a hundred agents: the Big Stop, the hand brake and the final hold at Web Summit, why pausing took seconds but hearing the order took up to an hour, what kept running anyway, and why a stop has to be a file every agent reads first](../../articles/stopping-a-hundred-agents.md), 2026-11-16, 7 min.
 - [Specialist agents for every team: long-lived agents that keep one skill, design, UX, code, security, behaviour policies or writing, with a person who owns it, so that new teams start from our best work instead of from scratch, and why that makes expertise that never scaled into something you can hire, even from another company](../../articles/specialist-agents-for-every-team.md), 2026-11-16, 6 min.

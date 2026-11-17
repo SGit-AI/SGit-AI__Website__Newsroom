@@ -1,0 +1,113 @@
+{
+  "slug": "who-hands-out-the-work",
+  "teaser": "A reply to Markus Franz: who hands out the work to agents? A person sets it, one conductor hands it out, a person signs off, and the door can close.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Work is handed out twice: a person sets it and one conductor agent distributes it to specialists, with a reviewer and a person signing off; one door eases governance and a HOLD file closes it.",
+  "nodes": [
+    {
+      "id": "desk",
+      "label": "A desk, not an agent",
+      "kind": "claim",
+      "summary": "Markus Franz's framing."
+    },
+    {
+      "id": "person",
+      "label": "A person sets the work",
+      "kind": "method",
+      "summary": "And owns the outcome."
+    },
+    {
+      "id": "conductor",
+      "label": "One conductor",
+      "kind": "method",
+      "summary": "The one door."
+    },
+    {
+      "id": "review",
+      "label": "A reviewer",
+      "kind": "method",
+      "summary": "Checks every claim."
+    },
+    {
+      "id": "send",
+      "label": "A person sends",
+      "kind": "method",
+      "summary": "Agents never send."
+    },
+    {
+      "id": "hold",
+      "label": "A door that closes",
+      "kind": "method",
+      "summary": "A HOLD file read first."
+    }
+  ],
+  "edges": [
+    {
+      "from": "conductor",
+      "to": "person",
+      "rel": "depends-on"
+    },
+    {
+      "from": "review",
+      "to": "conductor",
+      "rel": "extends"
+    },
+    {
+      "from": "send",
+      "to": "review",
+      "rel": "depends-on"
+    },
+    {
+      "from": "hold",
+      "to": "conductor",
+      "rel": "extends"
+    },
+    {
+      "from": "conductor",
+      "to": "desk",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "ten-days-at-web-summit",
+      "promptugal-news-the-newsroom-we-ran",
+      "how-an-agent-team-briefs-its-people",
+      "dont-micromanage-your-agents",
+      "stopping-a-hundred-agents"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "We didn't build an agent. We built a desk.",
+      "why": "Markus Franz."
+    },
+    {
+      "text": "start with one conductor and only talk to that one",
+      "why": "The rule."
+    },
+    {
+      "text": "a way to close it",
+      "why": "The addition."
+    }
+  ],
+  "figures": [
+    {
+      "file": "mf-door.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mf-door.webp",
+      "caption": "Who hands out the work: a person sets it, a conductor hands it out, specialists do it, a person signs off.",
+      "kind": "process"
+    },
+    {
+      "file": "mf-question.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mf-question.webp",
+      "caption": "Markus Franz of ippen.ai on Ippen Digital's editorial team of agents, LinkedIn, November 2026.",
+      "kind": "aside"
+    }
+  ]
+}

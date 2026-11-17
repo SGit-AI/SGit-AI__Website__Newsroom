@@ -55,6 +55,449 @@
   ],
   "articles": [
     {
+      "slug": "who-hands-out-the-work",
+      "title": "Who hands out the work? A reply to Markus Franz on Ippen's editorial team of agents, with our answer from six people and around 250 agents at Web Summit and from this newsroom, a person sets the work, one conductor agent hands it out, specialists and a reviewer do it, and a person decides what goes out, plus one thing we would add to one front door, a way to close it",
+      "date": "2026-11-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/who-hands-out-the-work.html",
+      "markdown": "https://newsroom.sgit.ai/articles/who-hands-out-the-work.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/who-hands-out-the-work.webp",
+      "teaser": "A reply to Markus Franz: who hands out the work to agents? A person sets it, one conductor hands it out, a person signs off, and the door can close.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "agents",
+        "newsrooms",
+        "orchestration",
+        "conductor",
+        "governance",
+        "web-summit",
+        "article"
+      ],
+      "links_out": [
+        "ten-days-at-web-summit",
+        "promptugal-news-the-newsroom-we-ran",
+        "how-an-agent-team-briefs-its-people",
+        "dont-micromanage-your-agents",
+        "stopping-a-hundred-agents"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "mf-door.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mf-door.webp",
+          "caption": "Who hands out the work: a person sets it, a conductor hands it out, specialists do it, a person signs off.",
+          "kind": "process"
+        },
+        {
+          "file": "mf-question.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mf-question.webp",
+          "caption": "Markus Franz of ippen.ai on Ippen Digital's editorial team of agents, LinkedIn, November 2026.",
+          "kind": "aside"
+        }
+      ],
+      "graph": {
+        "slug": "who-hands-out-the-work",
+        "teaser": "A reply to Markus Franz: who hands out the work to agents? A person sets it, one conductor hands it out, a person signs off, and the door can close.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Work is handed out twice: a person sets it and one conductor agent distributes it to specialists, with a reviewer and a person signing off; one door eases governance and a HOLD file closes it.",
+        "nodes": [
+          {
+            "id": "desk",
+            "label": "A desk, not an agent",
+            "kind": "claim",
+            "summary": "Markus Franz's framing."
+          },
+          {
+            "id": "person",
+            "label": "A person sets the work",
+            "kind": "method",
+            "summary": "And owns the outcome."
+          },
+          {
+            "id": "conductor",
+            "label": "One conductor",
+            "kind": "method",
+            "summary": "The one door."
+          },
+          {
+            "id": "review",
+            "label": "A reviewer",
+            "kind": "method",
+            "summary": "Checks every claim."
+          },
+          {
+            "id": "send",
+            "label": "A person sends",
+            "kind": "method",
+            "summary": "Agents never send."
+          },
+          {
+            "id": "hold",
+            "label": "A door that closes",
+            "kind": "method",
+            "summary": "A HOLD file read first."
+          }
+        ],
+        "edges": [
+          {
+            "from": "conductor",
+            "to": "person",
+            "rel": "depends-on"
+          },
+          {
+            "from": "review",
+            "to": "conductor",
+            "rel": "extends"
+          },
+          {
+            "from": "send",
+            "to": "review",
+            "rel": "depends-on"
+          },
+          {
+            "from": "hold",
+            "to": "conductor",
+            "rel": "extends"
+          },
+          {
+            "from": "conductor",
+            "to": "desk",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "ten-days-at-web-summit",
+            "promptugal-news-the-newsroom-we-ran",
+            "how-an-agent-team-briefs-its-people",
+            "dont-micromanage-your-agents",
+            "stopping-a-hundred-agents"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "We didn't build an agent. We built a desk.",
+            "why": "Markus Franz."
+          },
+          {
+            "text": "start with one conductor and only talk to that one",
+            "why": "The rule."
+          },
+          {
+            "text": "a way to close it",
+            "why": "The addition."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "relate-debriefed",
+      "title": "Relate, debriefed: what Neo4j's new agent-native graph database does, where its own documentation says it fits and where it does not, how it compares with the way we keep graphs, as plain JSON files in encrypted, versioned sgit vaults, and why the two could work together, with Relate as the throwaway engine inside our Load, Extract, Transform, Save cycle",
+      "date": "2026-11-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/relate-debriefed.html",
+      "markdown": "https://newsroom.sgit.ai/articles/relate-debriefed.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/relate-debriefed.webp",
+      "teaser": "A debrief of Neo4j's Relate, and how it compares with keeping graphs as JSON in encrypted, versioned sgit vaults, and why they fit together.",
+      "topics": [
+        "site-and-engineering",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "graphs",
+        "databases",
+        "neo4j",
+        "agent-memory",
+        "sgit",
+        "vaults",
+        "knowledge-graphs",
+        "article"
+      ],
+      "links_out": [
+        "memory-is-a-lifecycle",
+        "how-a-vault-works",
+        "knowledge-that-maintains-itself",
+        "the-new-data-lake"
+      ],
+      "links_in": [
+        "memory-is-a-lifecycle"
+      ],
+      "figures": [
+        {
+          "file": "rlt-compare.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rlt-compare.webp",
+          "caption": "Relate and our graph-in-a-vault, side by side: where each lives, writers, size, history, security.",
+          "kind": "table"
+        },
+        {
+          "file": "rlt-lets.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rlt-lets.webp",
+          "caption": "Relate as the throwaway engine in LETS: load a slice from the vault, transform it with Relate, save back.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "relate-debriefed",
+        "teaser": "A debrief of Neo4j's Relate, and how it compares with keeping graphs as JSON in encrypted, versioned sgit vaults, and why they fit together.",
+        "topics": [
+          "site-and-engineering",
+          "agents-and-policy"
+        ],
+        "core_idea": "Relate is an excellent single-process in-memory graph engine; graphs kept as JSON in sgit vaults trade traversal speed for encryption, history, many writers and no server, and Relate fits as their throwaway engine.",
+        "nodes": [
+          {
+            "id": "relate",
+            "label": "Relate",
+            "kind": "artefact",
+            "summary": "Neo4j's embedded graph database."
+          },
+          {
+            "id": "fit",
+            "label": "Where it fits",
+            "kind": "claim",
+            "summary": "One app, one machine, in memory."
+          },
+          {
+            "id": "vault",
+            "label": "Graph in a vault",
+            "kind": "method",
+            "summary": "JSON files, encrypted, versioned."
+          },
+          {
+            "id": "bills",
+            "label": "Different bills",
+            "kind": "claim",
+            "summary": "Speed against privacy and scale."
+          },
+          {
+            "id": "lets",
+            "label": "LETS",
+            "kind": "method",
+            "summary": "Load, Extract, Transform, Save."
+          },
+          {
+            "id": "together",
+            "label": "Relate in Transform",
+            "kind": "method",
+            "summary": "A throwaway engine per question."
+          }
+        ],
+        "edges": [
+          {
+            "from": "fit",
+            "to": "relate",
+            "rel": "extends"
+          },
+          {
+            "from": "bills",
+            "to": "vault",
+            "rel": "extends"
+          },
+          {
+            "from": "bills",
+            "to": "relate",
+            "rel": "extends"
+          },
+          {
+            "from": "together",
+            "to": "lets",
+            "rel": "extends"
+          },
+          {
+            "from": "together",
+            "to": "relate",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "how-a-vault-works",
+            "knowledge-that-maintains-itself",
+            "the-new-data-lake",
+            "memory-is-a-lifecycle"
+          ],
+          "pages": [],
+          "sites": [
+            "https://relatedb.ai/",
+            "https://sgit.ai/demos/fractal-graphs/performance.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The trick is the question, not the engine.",
+            "why": "Our approach."
+          },
+          {
+            "text": "Relate is exactly the right shape for that Transform step",
+            "why": "Together."
+          },
+          {
+            "text": "in a way we have the power of a graph database without running one",
+            "why": "The position."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "memory-is-a-lifecycle",
+      "title": "Memory is a lifecycle: a reply to Francois Vanderseypen on Neo4j's Relate, agreeing that a graph database is not agent memory, and showing how we answer his four questions, what gets written, trusted, merged and forgotten, with append lanes, signed commits, git-like graph merges and new versions instead of edits, all in encrypted vaults rather than a database",
+      "date": "2026-11-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/memory-is-a-lifecycle.html",
+      "markdown": "https://newsroom.sgit.ai/articles/memory-is-a-lifecycle.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/memory-is-a-lifecycle.webp",
+      "teaser": "A reply to Francois Vanderseypen: agent memory is a lifecycle, written, trusted, merged, forgotten, and how we answer each without a graph database.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "graphs",
+        "agent-memory",
+        "knowledge-graphs",
+        "neo4j",
+        "sgit",
+        "vaults",
+        "ontologies",
+        "article"
+      ],
+      "links_out": [
+        "relate-debriefed",
+        "an-inbox-only-your-agents-can-write-to",
+        "the-new-data-lake",
+        "a-key-for-every-person",
+        "the-wire-as-a-graph",
+        "knowledge-that-maintains-itself"
+      ],
+      "links_in": [
+        "relate-debriefed"
+      ],
+      "figures": [
+        {
+          "file": "fv-lifecycle.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fv-lifecycle.webp",
+          "caption": "Memory is a lifecycle: written, trusted, merged, forgotten, and where each lives in our stack.",
+          "kind": "concept"
+        },
+        {
+          "file": "fv-question.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fv-question.webp",
+          "caption": "Francois Vanderseypen, knowledge graph consulting, on Neo4j's Relate and agent memory, LinkedIn, November 2026.",
+          "kind": "aside"
+        }
+      ],
+      "graph": {
+        "slug": "memory-is-a-lifecycle",
+        "teaser": "A reply to Francois Vanderseypen: agent memory is a lifecycle, written, trusted, merged, forgotten, and how we answer each without a graph database.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Agent memory is a lifecycle, not a database; append lanes, signed commits, git-like graph merges and new versions answer what is written, trusted, merged and forgotten.",
+        "nodes": [
+          {
+            "id": "life",
+            "label": "Memory is a lifecycle",
+            "kind": "claim",
+            "summary": "Write, trust, merge, forget."
+          },
+          {
+            "id": "write",
+            "label": "Written",
+            "kind": "method",
+            "summary": "Append lanes and a curator."
+          },
+          {
+            "id": "trust",
+            "label": "Trusted",
+            "kind": "method",
+            "summary": "Signatures, evidence, a reviewer."
+          },
+          {
+            "id": "merge",
+            "label": "Merged",
+            "kind": "method",
+            "summary": "Git-like graph commits."
+          },
+          {
+            "id": "forget",
+            "label": "Forgotten",
+            "kind": "method",
+            "summary": "A new version, not a delete."
+          },
+          {
+            "id": "engine",
+            "label": "A throwaway engine",
+            "kind": "method",
+            "summary": "Memory and engine separate."
+          }
+        ],
+        "edges": [
+          {
+            "from": "write",
+            "to": "life",
+            "rel": "extends"
+          },
+          {
+            "from": "trust",
+            "to": "life",
+            "rel": "extends"
+          },
+          {
+            "from": "merge",
+            "to": "life",
+            "rel": "extends"
+          },
+          {
+            "from": "forget",
+            "to": "life",
+            "rel": "extends"
+          },
+          {
+            "from": "engine",
+            "to": "life",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "relate-debriefed",
+            "an-inbox-only-your-agents-can-write-to",
+            "the-new-data-lake",
+            "a-key-for-every-person",
+            "the-wire-as-a-graph",
+            "knowledge-that-maintains-itself"
+          ],
+          "pages": [],
+          "sites": [
+            "https://relatedb.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A database can't answer that. A memory layer has to.",
+            "why": "Francois Vanderseypen."
+          },
+          {
+            "text": "I do not think you should delete; you should stop briefing",
+            "why": "Forgetting."
+          },
+          {
+            "text": "the memory and the engine can be separate things",
+            "why": "The nudge."
+          }
+        ]
+      }
+    },
+    {
       "slug": "deploy-sgit-from-ci",
       "title": "Deploy sgit in your own environment, from a CI pipeline: one Docker image, ciphertext in your own S3 bucket in the region you choose, an access token only you hold, and the pipeline pattern we learned building the AgentiCCells site factory, a protected environment, AWS through OpenID Connect with no keys, a role that trusts one repository and one environment, check workflows before anything real, and a full cycle that deploys, tests and tears down",
       "date": "2026-11-17",
@@ -1110,6 +1553,7 @@
         "where-assist-becomes-execute"
       ],
       "links_in": [
+        "who-hands-out-the-work",
         "five-primitives-one-store",
         "ten-days-at-web-summit"
       ],
@@ -5555,6 +5999,7 @@
         "approve-at-altitude"
       ],
       "links_in": [
+        "who-hands-out-the-work",
         "a-website-that-is-her",
         "specialist-agents-for-every-team",
         "promptugal-news-the-next-phase",
@@ -6862,6 +7307,8 @@
         "a-market-for-sweets"
       ],
       "links_in": [
+        "relate-debriefed",
+        "memory-is-a-lifecycle",
         "promptugal-news-by-place",
         "a-hub-for-agentic-sites",
         "starting-agenticcells",
@@ -7341,6 +7788,7 @@
         "always-on-agents-at-team-scale"
       ],
       "links_in": [
+        "who-hands-out-the-work",
         "promptugal-news-the-next-phase",
         "a-crm-for-us-and-our-agents",
         "the-mac-bottleneck",
@@ -8559,6 +9007,7 @@
         "meetscribe"
       ],
       "links_in": [
+        "who-hands-out-the-work",
         "five-primitives-one-store",
         "a-portfolio-with-a-film-first",
         "a-website-that-is-her",
@@ -10499,6 +10948,7 @@
         "a-secret-is-a-qr-code"
       ],
       "links_in": [
+        "memory-is-a-lifecycle",
         "five-primitives-one-store",
         "the-email-agentic-cell",
         "specialist-agents-for-every-team",
@@ -11074,6 +11524,7 @@
         "a-directory-of-people-and-keys"
       ],
       "links_in": [
+        "memory-is-a-lifecycle",
         "five-primitives-one-store",
         "voicedebrief-relaunch",
         "our-workflow-on-odoo-20",
@@ -12222,6 +12673,7 @@
         "inside-english-with-ines"
       ],
       "links_in": [
+        "relate-debriefed",
         "five-primitives-one-store",
         "fork-it",
         "the-cell-is-the-unit",
@@ -13759,6 +14211,7 @@
         "how-a-journalist-agent-publishes-here"
       ],
       "links_in": [
+        "who-hands-out-the-work",
         "web-summit-part-four"
       ],
       "figures": [
@@ -63897,6 +64350,7 @@
         "the-site-is-an-inbox"
       ],
       "links_in": [
+        "memory-is-a-lifecycle",
         "breaking-the-story-down-before-the-agents-do",
         "search-as-navigation",
         "books-from-articles",
@@ -65205,6 +65659,8 @@
         "memory-is-not-a-spectator-sport"
       ],
       "links_in": [
+        "relate-debriefed",
+        "memory-is-a-lifecycle",
         "aws-from-the-vault",
         "bringing-my-past-work-back",
         "who-will-fix-your-mess",
