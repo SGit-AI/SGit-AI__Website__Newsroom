@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: I am with WizPress today, and I think we fit together unusually well. WizPress, built in Faro and led by Nuno Costa, a former journalist and newsroom manager, describes itself as the AI operating system for newsrooms: it monitors inboxes, the web and trends, captures and transcribes interviews, turns press releases and documents into drafts with a fact-checking agent and house style, and publishes to WordPress or any CMS, with the journalist deciding. It already works with local, national and specialist media in Europe and the Middle East. What we have been building is the layer underneath: how a reader can see who wrote an article, who checked it and who stands behind it. At PrompTugal.news we now describe every piece with five axes, origin, research, claims, review and external responses, and a ladder from "published by an agent" to "on the record". WizPress's four stages map onto those axes almost one to one. So here is how we could work together: a behaviour policy for every agent that reads a newsroom's inbox; an encrypted evidence vault per story for recordings, transcripts and documents; a provenance record exported with every draft; the journalist's signature on the version readers see, with any later change a signed difference; signed responses from the people a story is about; and a network of local newsrooms whose stories climb, with their proof, to the region and the country. And a first step: one regional newsroom, thirty days, in the open.
-version: v999.0.0
+version: v0.14.140
 license: https://creativecommons.org/licenses/by/4.0/
 tags: wizpress, newsrooms, journalism, provenance, pki, vaults, partnerships, portugal, article
 status: published

@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: Earlier today I mapped how our open-source stack could plug into UAlgTec Heritage, UTH, the University of the Algarve's new European centre of excellence for heritage science and technology. This is the other half of that map, company by company. UTH's aim is not only a platform: it is a HeritageTech sector, the way FinTech and HealthTech became sectors, and a sector is made of companies. We have spent this year building a set of small companies that each do one thing and together go end to end. SGit and SG/Send keep evidence encrypted and versioned; pki.sgit.ai gives every person and agent a key; SHarness puts a kernel-enforced boundary round every process an agent starts; Agent Behaviour Policies, sold by RiskMandate, say what each agent may do; AgentiCCells sets up small agentic teams and, through its site factory, a website per project; GAMMA-Ray rates agents against named standards; VoiceDebrief turns voice notes into records on the phone; PrompTugal.news files news by place; and this newsroom explains all of it. Here is what each could do for a heritage team, with its website, the layer it sits in, and a first use; and why companies like these are what a sector is made of.
-version: v999.0.0
+version: v0.14.140
 license: https://creativecommons.org/licenses/by/4.0/
 tags: heritage, archaeology, algarve, strategy, sgit, sharness, abp, riskmandate, agenticcells, promptugal, voicedebrief, partnerships, article
 status: published

@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: Today I saw a screen with an invitation: "Help build what comes next. Bring a problem. Bring a technology. Bring an idea." It is from UAlgTec Heritage, UTH, the University of the Algarve's new centre of excellence, coordinated through its ICArEHB research centre and led by João Cascalheira. It won about 31.5 million euros, 15 million of it from Horizon Europe's Teaming for Excellence, the first such award in archaeology in Europe, with Kiel University, ERA Arqueologia and Zartis as partners, and it plans to start in January 2027. Its aim is a European HeritageTech sector, like FinTech or HealthTech, built on an AI-first platform for archaeological heritage. That is very close to what we have been building. An AI-first platform for heritage needs what every AI-first platform needs: evidence that cannot be quietly changed, records signed by the person who made them, data from many teams that does not collide, agents that only do what they are allowed to, and claims a reader can trace back to the find. So here is the mapping, stage by stage, from the field to the archive to the public; what UTH brings and what we bring; a first pilot on one site; and the answer I would give in its form.
-version: v999.0.0
+version: v0.14.140
 license: https://creativecommons.org/licenses/by/4.0/
 tags: heritage, archaeology, algarve, research, provenance, vaults, graphs, partnerships, article
 status: published
