@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-17 | published | 1,684 | first published | this release | [current](../keys-after-payment.md) |
+| **v1.0.0** | 2026-11-17 | published | 1,684 | first published | [`251b25ba9`](https://github.com/SGit-AI/SGit-AI__Website/commit/251b25ba90c8e50580f5d68401c1be15d1a774bd) | [current](../keys-after-payment.md) |
 
 [← Back to the article](../keys-after-payment.md) · [All articles](../index.md)
 

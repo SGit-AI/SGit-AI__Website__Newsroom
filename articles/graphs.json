@@ -55,6 +55,159 @@
   ],
   "articles": [
     {
+      "slug": "working-with-wizpress",
+      "title": "Working with WizPress: how the AI operating system for newsrooms, built in Faro, and our open-source trust stack fit together, WizPress doing the production, from the inbox to the draft to the CMS, and our layer making every article carry its own proof, with an evidence vault per story, a behaviour policy per agent, a journalist's signature and signed responses, and a thirty-day pilot with one regional newsroom",
+      "date": "2026-11-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/working-with-wizpress.html",
+      "markdown": "https://newsroom.sgit.ai/articles/working-with-wizpress.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/working-with-wizpress.webp",
+      "teaser": "How WizPress, the AI operating system for newsrooms built in Faro, and our open-source trust stack fit: production plus proof, and a pilot.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "wizpress",
+        "newsrooms",
+        "journalism",
+        "provenance",
+        "pki",
+        "vaults",
+        "partnerships",
+        "portugal",
+        "article"
+      ],
+      "links_out": [
+        "how-a-vault-works",
+        "a-secret-is-a-qr-code",
+        "where-assist-becomes-execute",
+        "the-email-agentic-cell",
+        "every-story-has-an-address",
+        "signed-by-the-source",
+        "local-trust-certified-upwards"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "wiz-layer.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wiz-layer.webp",
+          "caption": "WizPress does the production; we add the trust underneath: a policy, a vault, the claims, a signature.",
+          "kind": "concept"
+        },
+        {
+          "file": "wiz-pilot.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wiz-pilot.webp",
+          "caption": "A first pilot: one regional newsroom, thirty days, keys, vaults, provenance, signatures, responses.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "working-with-wizpress",
+        "teaser": "How WizPress, the AI operating system for newsrooms built in Faro, and our open-source trust stack fit: production plus proof, and a pilot.",
+        "topics": [
+          "startups-and-strategy",
+          "agents-and-policy"
+        ],
+        "core_idea": "WizPress automates newsroom production with the journalist in charge; an open trust layer of policies, evidence vaults, provenance records and signatures lets readers see who wrote, checked and stands behind each article.",
+        "nodes": [
+          {
+            "id": "wiz",
+            "label": "WizPress",
+            "kind": "example",
+            "summary": "Monitor, capture, draft, publish."
+          },
+          {
+            "id": "axes",
+            "label": "Five axes",
+            "kind": "concept",
+            "summary": "Origin, research, claims, review, external."
+          },
+          {
+            "id": "vault",
+            "label": "Evidence vaults",
+            "kind": "method",
+            "summary": "One per story."
+          },
+          {
+            "id": "sign",
+            "label": "Signatures",
+            "kind": "method",
+            "summary": "The journalist signs the version read."
+          },
+          {
+            "id": "network",
+            "label": "Local news network",
+            "kind": "method",
+            "summary": "Stories climb with their proof."
+          },
+          {
+            "id": "pilot",
+            "label": "A thirty-day pilot",
+            "kind": "method",
+            "summary": "One regional newsroom."
+          }
+        ],
+        "edges": [
+          {
+            "from": "axes",
+            "to": "wiz",
+            "rel": "extends"
+          },
+          {
+            "from": "vault",
+            "to": "axes",
+            "rel": "extends"
+          },
+          {
+            "from": "sign",
+            "to": "axes",
+            "rel": "extends"
+          },
+          {
+            "from": "network",
+            "to": "wiz",
+            "rel": "extends"
+          },
+          {
+            "from": "pilot",
+            "to": "sign",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "how-a-vault-works",
+            "a-secret-is-a-qr-code",
+            "where-assist-becomes-execute",
+            "the-email-agentic-cell",
+            "every-story-has-an-address",
+            "signed-by-the-source",
+            "local-trust-certified-upwards"
+          ],
+          "pages": [],
+          "sites": [
+            "https://wizpress.io/",
+            "https://promptugal.news/articles/who-wrote-this-who-checked-it-who-signs-it.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The decision is always the journalist's.",
+            "why": "WizPress."
+          },
+          {
+            "text": "our layer lets the reader see it",
+            "why": "The fit."
+          },
+          {
+            "text": "On the record, not in the comments.",
+            "why": "Signed responses."
+          }
+        ]
+      }
+    },
+    {
       "slug": "keys-after-payment",
       "title": "Keys after payment: how to hand vault keys and access keys to customers once they have paid, what Stripe does and does not do after the money is taken, what FastSpring, Paddle, Lemon Squeezy, Polar, Gumroad and Square offer instead, and a design where the key is sealed to the buyer's own public key, keys are stock, and a payment provider can sell them without ever holding one",
       "date": "2026-11-17",
@@ -3309,6 +3462,7 @@
         "the-inbox-team-as-a-recipe"
       ],
       "links_in": [
+        "working-with-wizpress",
         "five-primitives-one-store",
         "voicedebrief-relaunch"
       ],
@@ -5236,6 +5390,7 @@
         "selling-capabilities-not-content"
       ],
       "links_in": [
+        "working-with-wizpress",
         "promptugal-news-the-next-phase",
         "odoo-and-our-stack",
         "the-intersection",
@@ -5646,6 +5801,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "working-with-wizpress",
         "the-payment-desk",
         "agents-rating-agents",
         "five-primitives-one-store",
@@ -13552,6 +13708,7 @@
         "inside-english-with-ines"
       ],
       "links_in": [
+        "working-with-wizpress",
         "your-own-agentic-cell",
         "agents-rating-agents",
         "relate-debriefed",
@@ -30664,7 +30821,9 @@
         "article"
       ],
       "links_out": [],
-      "links_in": [],
+      "links_in": [
+        "working-with-wizpress"
+      ],
       "figures": [
         {
           "file": "lt-flows.webp",
@@ -32030,6 +32189,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "working-with-wizpress",
         "every-story-has-an-address",
         "identity-for-agents-layer-by-layer",
         "agentic-readers",
@@ -38255,6 +38415,7 @@
         "sixteen-notes-i-did-not-want-to-lose"
       ],
       "links_in": [
+        "working-with-wizpress",
         "keys-after-payment",
         "your-own-agentic-cell",
         "patient-vaults-answered",
