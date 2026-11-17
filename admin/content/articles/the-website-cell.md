@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: Everyone I show our sites to asks for one. So this is the offer, mapped. A website cell is one unit: a GitHub repository fully configured, with a live site on GitHub Pages at its own address, HTTPS, CI checks, a CLAUDE.md written for its owner and an agent behaviour policy, all set up automatically by our site factory. Then a team of agents, a designer, a developer and the rest, works from the person's photos, videos and words and makes five designs to choose from, the way we did for Yiheng Wang, Silvio Switha and Gabriel. Then it is handed over, and the person changes it with their own Claude: Yiheng gave Claude her CV as a PDF, and it read it and added her latest experience to the site. That combination, a site that looks professional, five designs, and full control by its owner with guard rails, is to me the best embodiment of what Claude can do now. The anchor price is £500, one-off, with a launch price still to decide. Against it: AI builders at £9 to £30 a month that lock the site in; vibe-coding tools at £20 to £30 a month plus credits; a freelancer at £800 to £3,000 for a small site. Nobody else hands over a repository with its own agent rules. And the real reason I want to sell many: every website cell is an agent behaviour policy working in the world.
-version: v999.0.0
+version: v0.14.146
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agenticcells, websites, site-factory, pricing, market, partners, behaviour-policies, product, article
 status: published
