@@ -3710,6 +3710,108 @@
    "added": 0,
    "updated": 0,
    "note": "The refresh was built and tested but the push was refused by the git proxy, the sixth time in eleven days."
+  },
+  {
+   "id": "b51c42259afc",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-11-17T05:47:41Z",
+   "finished_at": "2026-11-17T06:02:27Z",
+   "duration_s": 882.0,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.459141,
+     "input": 1389872,
+     "output": 244497,
+     "cache_read": 2183576,
+     "cache_write": 150370,
+     "thinking": 148949
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 2.18772,
+     "input": 146,
+     "output": 67362,
+     "cache_read": 5032048,
+     "cache_write": 352837,
+     "thinking": 6561
+    }
+   },
+   "cost_usd": 2.646861,
+   "turns": 28,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-11-17.1",
+   "added": 13,
+   "updated": 5,
+   "note": "A full edition with a correction recorded; the verifier sent most stories back for fixes."
+  },
+  {
+   "id": "f4e0f4ba6fa0",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-11-17T06:08:26Z",
+   "finished_at": "2026-11-17T06:24:05Z",
+   "duration_s": 936.6,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.108198,
+     "input": 596549,
+     "output": 84443,
+     "cache_read": 128337,
+     "cache_write": 40309,
+     "thinking": 57590
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.907811,
+     "input": 84,
+     "output": 30677,
+     "cache_read": 1420803,
+     "cache_write": 150615,
+     "thinking": 1609
+    }
+   },
+   "cost_usd": 1.01601,
+   "turns": 27,
+   "subagents": 4,
+   "refused": 4,
+   "refused_kinds": [
+    "web fetch"
+   ],
+   "outcome": "published",
+   "release": "2026-11-17.1",
+   "added": 19,
+   "updated": 0,
+   "note": "Nineteen stories published, but four page fetches were refused again so the brief was not applied from live pages."
+  },
+  {
+   "id": "9e2c2cce4f44",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-11-17T06:56:58Z",
+   "finished_at": "2026-11-17T07:05:35Z",
+   "duration_s": 512.5,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.355794,
+     "input": 44,
+     "output": 6498,
+     "cache_read": 1269741,
+     "cache_write": 40938,
+     "thinking": 507
+    }
+   },
+   "cost_usd": 0.355794,
+   "turns": 24,
+   "subagents": 0,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "blocked",
+   "release": null,
+   "added": 0,
+   "updated": 0,
+   "note": "The release was built locally but the push was refused by the git proxy again."
   }
  ],
  "sessions": [
@@ -3733,15 +3835,15 @@
    "name": "@newsroom.accountant's session",
    "kind": "accountant",
    "from": "2026-10-16",
-   "as_of": "2026-11-16T07:55:00Z",
+   "as_of": "2026-11-17T07:55:00Z",
    "models": [
     "claude-sonnet-5-5"
    ],
-   "cost_usd": 62.6507051,
-   "input": 5334,
-   "output": 160357,
-   "cache_read": 88139830,
-   "cache_write": 13050016,
+   "cost_usd": 66.12278514,
+   "input": 5347,
+   "output": 165979,
+   "cache_read": 92489461,
+   "cache_write": 13795005,
    "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
   }
  ],
