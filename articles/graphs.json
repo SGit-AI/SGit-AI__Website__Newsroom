@@ -55,6 +55,271 @@
   ],
   "articles": [
     {
+      "slug": "the-payment-desk",
+      "title": "The payment desk that could not take payment: paying a utility bill took two clerks, a system that half worked and a desk that accepted only one kind of card, and why I think AI's real impact on business is in small failures like this one, finding them and driving the change to fix them, while the money itself stays in plain, auditable code",
+      "date": "2026-11-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-payment-desk.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-payment-desk.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-payment-desk.webp",
+      "teaser": "A payment desk that could not take payment, and why AI's real impact is in small failures like it, with plain, auditable code for the money.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "ai",
+        "business",
+        "payments",
+        "technical-debt",
+        "change",
+        "opinion",
+        "article"
+      ],
+      "links_out": [
+        "who-will-fix-your-mess",
+        "where-assist-becomes-execute"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "pdk-desk.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pdk-desk.webp",
+          "caption": "Paying one bill in four small failures, and the one job that must always work: code for the payment, AI around it.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "the-payment-desk",
+        "teaser": "A payment desk that could not take payment, and why AI's real impact is in small failures like it, with plain, auditable code for the money.",
+        "topics": [
+          "startups-and-strategy",
+          "agents-and-policy"
+        ],
+        "core_idea": "Businesses gain most from AI in finding and fixing small operational failures, while mission-critical steps like taking a payment stay in reliable, auditable code.",
+        "nodes": [
+          {
+            "id": "desk",
+            "label": "The desk",
+            "kind": "example",
+            "summary": "Two clerks, one card network."
+          },
+          {
+            "id": "mvd",
+            "label": "The one job",
+            "kind": "method",
+            "summary": "Take the money, always."
+          },
+          {
+            "id": "code",
+            "label": "Code for the money",
+            "kind": "claim",
+            "summary": "Reliable, auditable."
+          },
+          {
+            "id": "change",
+            "label": "AI for the change",
+            "kind": "claim",
+            "summary": "Find and fix failures."
+          },
+          {
+            "id": "wallets",
+            "label": "Agents with wallets",
+            "kind": "claim",
+            "summary": "Small budgets, single-use cards."
+          }
+        ],
+        "edges": [
+          {
+            "from": "mvd",
+            "to": "desk",
+            "rel": "extends"
+          },
+          {
+            "from": "code",
+            "to": "mvd",
+            "rel": "depends-on"
+          },
+          {
+            "from": "change",
+            "to": "desk",
+            "rel": "extends"
+          },
+          {
+            "from": "wallets",
+            "to": "code",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "who-will-fix-your-mess",
+            "where-assist-becomes-execute"
+          ],
+          "pages": [],
+          "sites": [
+            "https://promptugal.news/articles/the-payment-desk-that-could-not-take-payment.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "who is recording this?",
+            "why": "The second clerk."
+          },
+          {
+            "text": "You should not be using AI for that.",
+            "why": "Code for the money."
+          },
+          {
+            "text": "as soon as we trust them",
+            "why": "Agents with wallets."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-atm-that-asked-twice",
+      "title": "The ATM that asked twice: a Portuguese cash machine offered me a 13.6% mark-up on 200 euros, twice, with a Union Jack beside it, the EU rule that says the mark-up must be shown as a percentage before I confirm, the six levers on two screens, and why an AI agent now lets anyone gather the evidence and challenge it",
+      "date": "2026-11-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-atm-that-asked-twice.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-atm-that-asked-twice.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-atm-that-asked-twice.webp",
+      "teaser": "A Portuguese ATM offered me a 13.6% mark-up on 200 euros, twice, with a flag; the EU rule it seems to miss; and AI as the consumer's evidence.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "consumers",
+        "banking",
+        "currency-conversion",
+        "regulation",
+        "portugal",
+        "evidence",
+        "ai",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "atm-cost.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/atm-cost.webp",
+          "caption": "The same 200 euros, three prices: the ECB rate gives £166.90, my bank charged £167.12, the ATM offered £189.68.",
+          "kind": "chart"
+        },
+        {
+          "file": "atm-screen-1.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/atm-screen-1.webp",
+          "caption": "The first screen: 200 euros at 0.94840, 189.68 pounds, accept without or with conversion, beside a Union Jack.",
+          "kind": "photo"
+        },
+        {
+          "file": "atm-screen-2.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/atm-screen-2.webp",
+          "caption": "The second screen asked again: exchange rate determined by your bank, or a fixed exchange rate guaranteed.",
+          "kind": "photo"
+        },
+        {
+          "file": "atm-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/atm-flow.webp",
+          "caption": "Two paths: accept, and the ATM's service keeps the mark-up; decline, and my bank converts near the ECB rate.",
+          "kind": "process"
+        },
+        {
+          "file": "atm-levers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/atm-levers.webp",
+          "caption": "Six levers on two screens: certainty, a home anchor, loaded words, asking twice, the setting, borrowed trust.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "the-atm-that-asked-twice",
+        "teaser": "A Portuguese ATM offered me a 13.6% mark-up on 200 euros, twice, with a flag; the EU rule it seems to miss; and AI as the consumer's evidence.",
+        "topics": [
+          "startups-and-strategy",
+          "agents-and-policy"
+        ],
+        "core_idea": "Dynamic currency conversion at ATMs costs travellers heavily through persuasive design, and AI now lets a consumer assemble the evidence to challenge a display that seems to miss the EU's transparency rule.",
+        "nodes": [
+          {
+            "id": "prices",
+            "label": "Three prices",
+            "kind": "example",
+            "summary": "£166.90, £167.12, £189.68."
+          },
+          {
+            "id": "law",
+            "label": "Article 3a",
+            "kind": "claim",
+            "summary": "Show the percentage mark-up first."
+          },
+          {
+            "id": "levers",
+            "label": "Six levers",
+            "kind": "concept",
+            "summary": "Persuasion on two screens."
+          },
+          {
+            "id": "ai",
+            "label": "AI as evidence",
+            "kind": "claim",
+            "summary": "Minutes to challenge."
+          },
+          {
+            "id": "local",
+            "label": "Local currency",
+            "kind": "method",
+            "summary": "The answer that pays."
+          }
+        ],
+        "edges": [
+          {
+            "from": "law",
+            "to": "prices",
+            "rel": "extends"
+          },
+          {
+            "from": "levers",
+            "to": "prices",
+            "rel": "extends"
+          },
+          {
+            "from": "ai",
+            "to": "law",
+            "rel": "extends"
+          },
+          {
+            "from": "local",
+            "to": "levers",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [],
+          "pages": [],
+          "sites": [
+            "https://promptugal.news/articles/atm-currency-conversion-portugal-mark-up.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The whole cost sits in the machine's offer.",
+            "why": "The prices."
+          },
+          {
+            "text": "Nobody can.",
+            "why": "At the machine."
+          },
+          {
+            "text": "Always choose the local currency",
+            "why": "What to do."
+          }
+        ]
+      }
+    },
+    {
       "slug": "your-own-agentic-cell",
       "title": "Your own agentic cell, end to end: how a person asks for a site like the ones we made for Yiheng Wang and Silvio Switha, through a key pair in the browser, a vault they fill themselves and the site factory, with only three human gates, and then continues in their own Claude on their own repository",
       "date": "2026-11-17",
@@ -5229,6 +5494,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "the-payment-desk",
         "agents-rating-agents",
         "five-primitives-one-store",
         "stopping-a-hundred-agents",
@@ -53783,6 +54049,7 @@
         "saas-apocalypse-decided-by-inertia-not-by-ai"
       ],
       "links_in": [
+        "the-payment-desk",
         "villager-services-for-explorer-coders",
         "you-are-a-developer",
         "a-browser-for-one",

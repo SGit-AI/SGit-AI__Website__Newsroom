@@ -1,0 +1,29 @@
+{
+ "slug": "the-payment-desk",
+ "teaser": "A payment desk that could not take payment, and why AI's real impact is in small failures like it, with plain, auditable code for the money.",
+ "topics": ["startups-and-strategy", "agents-and-policy"],
+ "core_idea": "Businesses gain most from AI in finding and fixing small operational failures, while mission-critical steps like taking a payment stay in reliable, auditable code.",
+ "nodes": [
+  {"id": "desk", "label": "The desk", "kind": "example", "summary": "Two clerks, one card network."},
+  {"id": "mvd", "label": "The one job", "kind": "method", "summary": "Take the money, always."},
+  {"id": "code", "label": "Code for the money", "kind": "claim", "summary": "Reliable, auditable."},
+  {"id": "change", "label": "AI for the change", "kind": "claim", "summary": "Find and fix failures."},
+  {"id": "wallets", "label": "Agents with wallets", "kind": "claim", "summary": "Small budgets, single-use cards."}
+ ],
+ "edges": [
+  {"from": "mvd", "to": "desk", "rel": "extends"},
+  {"from": "code", "to": "mvd", "rel": "depends-on"},
+  {"from": "change", "to": "desk", "rel": "extends"},
+  {"from": "wallets", "to": "code", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["who-will-fix-your-mess", "where-assist-becomes-execute"],
+  "pages": [],
+  "sites": ["https://promptugal.news/articles/the-payment-desk-that-could-not-take-payment.html"]
+ },
+ "quotes": [
+  {"text": "who is recording this?", "why": "The second clerk."},
+  {"text": "You should not be using AI for that.", "why": "Code for the money."},
+  {"text": "as soon as we trust them", "why": "Agents with wallets."}
+ ]
+}

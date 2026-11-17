@@ -2,10 +2,12 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-106 articles, newest first.
+108 articles, newest first.
 
 ## November 2026
 
+- [The payment desk that could not take payment: paying a utility bill took two clerks, a system that half worked and a desk that accepted only one kind of card, and why I think AI's real impact on business is in small failures like this one, finding them and driving the change to fix them, while the money itself stays in plain, auditable code](../../articles/the-payment-desk.md), 2026-11-17, 3 min.
+- [The ATM that asked twice: a Portuguese cash machine offered me a 13.6% mark-up on 200 euros, twice, with a Union Jack beside it, the EU rule that says the mark-up must be shown as a percentage before I confirm, the six levers on two screens, and why an AI agent now lets anyone gather the evidence and challenge it](../../articles/the-atm-that-asked-twice.md), 2026-11-17, 5 min.
 - [Your own agentic cell, end to end: how a person asks for a site like the ones we made for Yiheng Wang and Silvio Switha, through a key pair in the browser, a vault they fill themselves and the site factory, with only three human gates, and then continues in their own Claude on their own repository](../../articles/your-own-agentic-cell.md), 2026-11-17, 5 min.
 - [A portfolio with a film first: Silvio Switha's site, made in under an hour by the site factory and five design agents, with his music video in the first screen, his agents as a solar system and a mixing desk, a producer's studio, a proposal for clients and a gig poster, and every claim something he built](../../articles/a-portfolio-with-a-film-first.md), 2026-11-16, 7 min.
 - [A website that is her: how Yiheng Wang's site was made in three passes in one evening, by the site factory, five design agents and then her own agent, with five designs, a kitchen brigade of 26 agents, a printable brief and a page for your AI, and why every claim on it is something she can talk about because she did it](../../articles/a-website-that-is-her.md), 2026-11-16, 9 min.

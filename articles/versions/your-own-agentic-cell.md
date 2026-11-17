@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-17 | published | 1,388 | first published | this release | [current](../your-own-agentic-cell.md) |
+| **v1.0.0** | 2026-11-17 | published | 1,388 | first published | [`6b59476d6`](https://github.com/SGit-AI/SGit-AI__Website/commit/6b59476d6b59a4847b36131c0ec782ae2440b1db) | [current](../your-own-agentic-cell.md) |
 
 [← Back to the article](../your-own-agentic-cell.md) · [All articles](../index.md)
 
