@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: I agree with Nuno Costa of WizPress: journalism is a business, and right now it is not a good one. In the UK, around 300 local titles have closed since 2005 and the sector's revenue is a quarter of what it was in 2007, after inflation; 37 districts, home to 4.4 million people, have no dedicated local news. In Portugal, 171 of 308 municipalities are news deserts, semi-deserts or at risk. Only 10% of people in the UK and 8% in Portugal pay for online news, and most of the rest say they never will. Local journalism is the heart of it, and it is the part most at risk. Subscriptions are not going to fix that, and the micropayment experiments mostly failed, Blendle above all. But I think the reasons they failed are now fixable, and we have a model that I believe can work. Every reader starts with credit; every page costs a few pence; the reader pays for the share of it they actually read, measured in their own browser; nothing is ever blocked. It runs in this newsroom today, it needs no server and no database, and the code is free for any publisher. On top, a revenue share: when PrompTugal.news carries a newsroom's story, natively and with its source tracked, the newsroom gets its share of what readers pay. What we do not have yet is proof: our revenue is small, because our traffic is small. So this is a proposal to editors with readers, and to the associations that represent them: let us try it together, and see who pays.
-version: v999.0.0
+version: v0.14.143
 license: https://creativecommons.org/licenses/by/4.0/
 tags: journalism, monetisation, micropayments, local-news, newsrooms, promptugal, wizpress, partnerships, article
 status: published

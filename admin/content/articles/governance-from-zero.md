@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: Nina J., who tells deep tech founders why their pilots did not convert, left a comment on my post about our stack of companies that I want to answer properly. She noticed that at our £500 entry point governance is not a premium upgrade: identity and behaviour policies are part of the smallest deployment, not something a customer discovers after the pilot. A small experiment does not mean a small risk, she wrote; someone still needs to know what the agent can reach, what it is allowed to do and who can stop it. And "we're only testing it" has never been a reassuring answer to a security review. She is right, and my reply was that it goes further: even the £0 offer has all of it. That is the power of open source. When the code, the policies and the schemas are all public, there is no commercial reason and no strategic pressure to hold any of it back for a higher tier. We sell time, setup, judgement and a signature; we do not sell the governance. Here is why that matters: what the industry does instead, with single sign-on and audit logs priced as luxuries; what our £0 really contains; what each paid step adds; and why I think a pilot that already passes its security review is the pilot that converts.
-version: v999.0.0
+version: v0.14.143
 license: https://creativecommons.org/licenses/by/4.0/
 tags: governance, open-source, security, agents, pricing, pilots, riskmandate, agenticcells, reply, article
 status: published

@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: When I show people PrompTugal.news, the thing they like most is not the stories. It is the live data: the weather warnings, the fire risk, the flights over Faro, each value with where it came from and when it was read. The Storm Charles site went further, with 34 public datasets in a catalogue, each with its hash, every line labelled fact, evidence or hypothesis. That data is valuable, and today it is spread across sites and repositories. So the next step is to consolidate it: one data site, with a vault per public source, a collector written as code, an API described in OpenAPI, the provenance of every value, and a record of how much of each dataset is code and how much is agents, and what it costs in tokens. Then the interesting part: small, focused newsrooms on top of it, each about one subject, each run by an agentic team, each a possible small company. Agriculture, with weather, fire risk and water. Investors. The sea. Fire and civil protection. Tourism and travel. AI. Research like this is thin today, because journalism has lost the money to do it. I think this is exactly where journalism comes back in.
-version: v999.0.0
+version: v0.14.143
 license: https://creativecommons.org/licenses/by/4.0/
 tags: data, open-data, promptugal, newsrooms, journalism, agenticcells, startups, portugal, article
 status: published
