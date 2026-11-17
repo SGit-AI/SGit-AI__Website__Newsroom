@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: More teams now want to use sgit vaults for sensitive data, health data included, and the first real question they ask is where the data lives and who runs the server. The answer can be: you do, in your own cloud account, in the region your data protection assessment needs. sgit's server is one Docker image, configured only by environment variables, that stores ciphertext it cannot read, in memory, on a disk or in Amazon S3; on AWS the bucket is named after your account and your region, and a single access token, kept in your CI's secret store, gates every route. The keys never reach it. CloudFormation templates for Lambda, ECS Fargate and EC2 are written, in beta, in a public repository. What makes it repeatable is the pipeline, and that is what we learned the hard way building the AgentiCCells site factory: deploy jobs that run only in a protected GitHub environment with a person's approval; AWS reached through OpenID Connect, so no AWS key is stored anywhere; a role that trusts one repository and one environment, not any branch; permissions limited to its own stacks; check workflows that prove the setup before anything real runs; and a full cycle that deploys, smoke-tests and destroys. There are a lot of moving parts, and the pain is worth it, because once it works the whole thing is automated. Here is how it works, step by step, a proposal to package it as a GitHub Action and a skill, and a prompt for your own Claude. I am deploying it in my own account first, to prove the steps.
-version: v999.0.0
+version: v0.14.134
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sgit, vaults, deployment, aws, github-actions, oidc, ci, healthcare, article
 status: published
