@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: Today I showed someone PrompTugal.news, our encrypted vaults and how our agents talk to each other, and the thing they picked up on was not any of it. It was a problem: the disconnect, in Portugal, between areas, between entities and between data sources. Each holds part of a picture and none can see the whole. I think we can now fix that, and I am comfortable saying it plainly: we can connect any data with any data. The method is not magic and that is the point. Access the source; parse it; transform it; put it in a vault; move the vault to the other side; share the key with that side's public key; on the other side, open it, parse it and map it to their data; and produce the output. Every step signed and recorded, the parsers written once as code, and a person approving every key that crosses from one owner to another. We do more complex things than this every day: the Storm Charles site put 34 public datasets behind one weather page in a night. So here is the method, what it means for the owners, the human gates, four example connections, and why it belongs on the shelf of an agentic cell: do you want to connect two datasets, five, fifty, a hundred?
-version: v999.0.0
+version: v0.14.142
 license: https://creativecommons.org/licenses/by/4.0/
 tags: data, integration, vaults, pki, agenticcells, portugal, public-sector, article
 status: published
