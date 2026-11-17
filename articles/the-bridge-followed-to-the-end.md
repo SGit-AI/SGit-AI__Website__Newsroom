@@ -152,6 +152,7 @@ News & evidenceGraphs & knowledge[This article as a graph →](graphs.md#the-bri
 
 ### Continued by
 
+- [Paid by the read: a proposal to news editors who want more revenue from the journalism they already make, without another subscription, the evidence on micropayments and why it mostly failed, the meter that charges by how much of a page was read and runs in the reader's browser, free for any publisher, a revenue share when PrompTugal.news carries a newsroom's stories with their source, and the associations we should be talking to in the UK and Portugal](paid-by-the-read.md) A proposal to news editors: earn from the read, not the subscription, with free client-side code, a revenue share and the associations.
 - [The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying](the-agent-is-the-reader.md) Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.
 - [A meter in the browser: a penny a page, a history you keep, and a site that picks for you](a-meter-in-the-browser.md) Every page now costs a few pence from £5 of credit kept in your browser, and the reading history it keeps is what personalises the site.
 - [The waiting room knew first: a live local story, and the gap where local information used to be](the-waiting-room-knew-first.md) Staff at two London hospitals said the IT was down; nothing a local could check showed it. A live local story about where local information comes from now.

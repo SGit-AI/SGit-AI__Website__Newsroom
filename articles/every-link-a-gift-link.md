@@ -101,6 +101,10 @@ News & evidenceStartups & strategy[This article as a graph →](graphs.md#every-
 - [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](the-vault-crosses-chrome-profiles.md) The reader's vault carries the newsroom between Chrome profiles as it does between devices, a way to share state across browser sessions nobody built.
 - [Agentic risk, or agentic readers? A reply to the publisher outlook Vincent Peyrègne shared, using its framework as a template and answering it with a newsroom that already does it](agentic-readers.md) Agentic risk, or agentic readers? A reply to DJB Strategies' publisher outlook, its framework answered by a newsroom already doing it.
 
+### Continued by
+
+- [Paid by the read: a proposal to news editors who want more revenue from the journalism they already make, without another subscription, the evidence on micropayments and why it mostly failed, the meter that charges by how much of a page was read and runs in the reader's browser, free for any publisher, a revenue share when PrompTugal.news carries a newsroom's stories with their source, and the associations we should be talking to in the UK and Portugal](paid-by-the-read.md) A proposal to news editors: earn from the read, not the subscription, with free client-side code, a revenue share and the associations.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 355 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=355)

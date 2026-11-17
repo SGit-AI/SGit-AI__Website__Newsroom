@@ -1,0 +1,130 @@
+{
+  "slug": "paid-by-the-read",
+  "teaser": "A proposal to news editors: earn from the read, not the subscription, with free client-side code, a revenue share and the associations.",
+  "topics": [
+    "startups-and-strategy"
+  ],
+  "core_idea": "Local journalism needs revenue that subscriptions cannot reach; a meter that charges by the share read, client side and free for publishers, plus a provenance-based revenue share, is a model to test with partners that have traffic.",
+  "nodes": [
+    {
+      "id": "decline",
+      "label": "Local news decline",
+      "kind": "concept",
+      "summary": "Closures and news deserts."
+    },
+    {
+      "id": "ceiling",
+      "label": "The subscription ceiling",
+      "kind": "concept",
+      "summary": "About one in ten pay."
+    },
+    {
+      "id": "meter",
+      "label": "The meter",
+      "kind": "method",
+      "summary": "Pay by the share read."
+    },
+    {
+      "id": "share",
+      "label": "A revenue share",
+      "kind": "method",
+      "summary": "Provenance says whose story."
+    },
+    {
+      "id": "agents",
+      "label": "Agents pay",
+      "kind": "concept",
+      "summary": "Per use at the source."
+    },
+    {
+      "id": "assoc",
+      "label": "Associations",
+      "kind": "example",
+      "summary": "Who represents newsrooms."
+    }
+  ],
+  "edges": [
+    {
+      "from": "ceiling",
+      "to": "decline",
+      "rel": "extends"
+    },
+    {
+      "from": "meter",
+      "to": "ceiling",
+      "rel": "answers"
+    },
+    {
+      "from": "share",
+      "to": "meter",
+      "rel": "extends"
+    },
+    {
+      "from": "agents",
+      "to": "meter",
+      "rel": "extends"
+    },
+    {
+      "from": "assoc",
+      "to": "share",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-reading-account-as-built",
+      "every-link-a-gift-link",
+      "i-just-want-to-buy-the-article",
+      "free-to-copy-paid-at-the-source",
+      "local-trust-certified-upwards",
+      "working-with-wizpress",
+      "who-steered-this"
+    ],
+    "pages": [],
+    "sites": [
+      "https://labcom.ubi.pt/wp-content/uploads/2025/10/DNE_relatorio-2025.pdf",
+      "https://www.publicinterestnews.org.uk/blog/local-news-launches-closures-and-the-state-of-play-in-2025/",
+      "https://newsmediauk.org"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "at the end of the day, journalism is a business",
+      "why": "Nuno Costa's point."
+    },
+    {
+      "text": "Nothing is ever blocked",
+      "why": "The meter."
+    },
+    {
+      "text": "this is not proven",
+      "why": "The honest part."
+    }
+  ],
+  "figures": [
+    {
+      "file": "mon-models.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mon-models.webp",
+      "caption": "Four ways a newsroom earns from the read, not the subscription: the meter, a revenue share, licences, agents.",
+      "kind": "concept"
+    },
+    {
+      "file": "mon-meter.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mon-meter.webp",
+      "caption": "The meter: £5 of credit, a few pence a page, charged by the share read, in the reader's browser, nothing blocked.",
+      "kind": "process"
+    },
+    {
+      "file": "mon-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mon-flow.webp",
+      "caption": "A newsroom's story, read on its own site and on PrompTugal.news, with the source tracked and a share paid back.",
+      "kind": "process"
+    },
+    {
+      "file": "mon-who.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mon-who.webp",
+      "caption": "Who to talk to: the associations representing publishers in the UK, Portugal and Europe.",
+      "kind": "table"
+    }
+  ]
+}

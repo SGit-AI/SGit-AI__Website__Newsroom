@@ -1,0 +1,124 @@
+{
+  "slug": "newsrooms-on-open-data",
+  "teaser": "Turning PrompTugal.news's public data feeds into one data site, then small focused newsrooms on top, each run by an agentic team.",
+  "topics": [
+    "startups-and-strategy",
+    "agents-and-policy"
+  ],
+  "core_idea": "Public data with provenance, consolidated into a vault and an API per source, lets small focused newsrooms, each run by an agentic team, turn raw data into information people use, cheaply because code does the repeating work.",
+  "nodes": [
+    {
+      "id": "feeds",
+      "label": "Public data feeds",
+      "kind": "example",
+      "summary": "IPMA, flights, place files."
+    },
+    {
+      "id": "site",
+      "label": "The data site",
+      "kind": "method",
+      "summary": "A vault and an API per source."
+    },
+    {
+      "id": "split",
+      "label": "Code, agents, tokens",
+      "kind": "concept",
+      "summary": "What each dataset costs."
+    },
+    {
+      "id": "vert",
+      "label": "Focused newsrooms",
+      "kind": "method",
+      "summary": "One subject each."
+    },
+    {
+      "id": "team",
+      "label": "Agentic teams",
+      "kind": "concept",
+      "summary": "A small team per newsroom."
+    },
+    {
+      "id": "jour",
+      "label": "Journalism",
+      "kind": "concept",
+      "summary": "Data into information."
+    }
+  ],
+  "edges": [
+    {
+      "from": "site",
+      "to": "feeds",
+      "rel": "depends-on"
+    },
+    {
+      "from": "split",
+      "to": "site",
+      "rel": "extends"
+    },
+    {
+      "from": "vert",
+      "to": "site",
+      "rel": "depends-on"
+    },
+    {
+      "from": "team",
+      "to": "vert",
+      "rel": "produces"
+    },
+    {
+      "from": "jour",
+      "to": "vert",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "storm-charles-a-newsroom-built-in-a-night",
+      "promptugal-news-by-place",
+      "how-a-vault-works",
+      "who-steered-this",
+      "spend-fewer-tokens",
+      "the-cell-is-the-unit",
+      "agents-rating-agents",
+      "paid-by-the-read"
+    ],
+    "pages": [],
+    "sites": [
+      "https://api.ipma.pt/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Only public sources, always.",
+      "why": "The data site."
+    },
+    {
+      "text": "A farmer does not read IPMA's fire-risk JSON",
+      "why": "Why journalism."
+    },
+    {
+      "text": "That is where journalism comes back in.",
+      "why": "The argument."
+    }
+  ],
+  "figures": [
+    {
+      "file": "vrt-stack.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vrt-stack.webp",
+      "caption": "Public sources, a vault and an API per source, then focused newsrooms on top, each run by an agentic team.",
+      "kind": "architecture"
+    },
+    {
+      "file": "vrt-source.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vrt-source.webp",
+      "caption": "One public source, done properly: collector as code, a vault, an API, provenance, and who and what made it.",
+      "kind": "process"
+    },
+    {
+      "file": "vrt-verticals.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vrt-verticals.webp",
+      "caption": "Six focused newsrooms on the same data: who reads them, what they join, what they could sell.",
+      "kind": "table"
+    }
+  ]
+}

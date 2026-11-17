@@ -91,6 +91,10 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#workin
 - [Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too](signed-by-the-source.md) Ask the people and companies we quote to sign that we represent them fairly: one signature instead of every reader checking.
 - [Local trust, certified upwards: why local and niche publishers should take everything that has become commodity, certify the big outlets' stories about their patch and be paid for it, and why stories, like software, need someone to maintain them](local-trust-certified-upwards.md) Local and niche publishers own the trust: take in commodity, certify the big outlets' local stories for pay, and keep stories maintained.
 
+### Continued by
+
+- [Paid by the read: a proposal to news editors who want more revenue from the journalism they already make, without another subscription, the evidence on micropayments and why it mostly failed, the meter that charges by how much of a page was read and runs in the reader's browser, free for any publisher, a revenue share when PrompTugal.news carries a newsroom's stories with their source, and the associations we should be talking to in the UK and Portugal](paid-by-the-read.md) A proposal to news editors: earn from the read, not the subscription, with free client-side code, a revenue share and the associations.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 455 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=455)

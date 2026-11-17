@@ -1,0 +1,31 @@
+{
+ "slug": "governance-from-zero",
+ "teaser": "A reply to Nina J.: identity and behaviour policies come with our smallest offer, even at £0, because everything is open source.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "When code, policies and schemas are all open source there is no reason to gate governance, so even the free tier has keys, policies, records and a stop, and a pilot built that way can pass its security review and convert.",
+ "nodes": [
+  {"id": "nina", "label": "Nina J.'s comment", "kind": "example", "summary": "Governance is not a premium upgrade."},
+  {"id": "risk", "label": "Small pilot, real risk", "kind": "concept", "summary": "Reach, mandate, stop."},
+  {"id": "open", "label": "Open source", "kind": "concept", "summary": "Nothing proprietary to gate."},
+  {"id": "tax", "label": "Security as an upgrade", "kind": "concept", "summary": "The SSO tax."},
+  {"id": "ladder", "label": "The ladder", "kind": "method", "summary": "Same controls from £0 to £20,000."},
+  {"id": "convert", "label": "Pilots that convert", "kind": "concept", "summary": "Passing the security review."}
+ ],
+ "edges": [
+  {"from": "risk", "to": "nina", "rel": "extends"},
+  {"from": "open", "to": "nina", "rel": "answers"},
+  {"from": "tax", "to": "open", "rel": "contrasts"},
+  {"from": "ladder", "to": "open", "rel": "depends-on"},
+  {"from": "convert", "to": "ladder", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["the-intersection", "what-can-your-agent-reach", "stopping-a-hundred-agents", "a-key-for-every-person", "introducing-sharness"],
+  "pages": [],
+  "sites": ["https://open-source.sgit.ai/", "https://open-source.sgit.ai/views/open-core.html", "https://sso.tax/", "https://abp.sgit.ai/"]
+ },
+ "quotes": [
+  {"text": "A small experiment doesn't automatically mean a small risk.", "why": "Nina J."},
+  {"text": "there should be nothing proprietary", "why": "Open source."},
+  {"text": "We sell time, setup, judgement and a signature", "why": "The ladder."}
+ ]
+}

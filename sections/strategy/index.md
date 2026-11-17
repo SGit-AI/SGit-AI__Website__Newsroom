@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-111 articles, newest first.
+112 articles, newest first.
 
 ## November 2026
 
+- [Governance from zero: Nina J. noticed that identity and behaviour policies come with our smallest £500 offer, not as a premium upgrade, because "we're only testing it" has never reassured a security review; my answer is that even the £0 offer has all of it, and here is why open source is what makes that possible, why security sold as an upgrade is a choice, and why a pilot with its governance built in is a pilot that can convert](../../articles/governance-from-zero.md), 2026-11-17, 5 min.
 - [Any data, with any data: why I am now comfortable saying we can connect any data source with any other, the nine steps from access to a vault, a key and a map on the other side, how each owner keeps control, where the person stays in charge, and why connecting two, five, fifty or a hundred datasets should be something an agentic cell sells](../../articles/any-data-with-any-data.md), 2026-11-17, 5 min.
 - [Our companies and UTH: each company, technology and website we have built, mapped to what UAlgTec Heritage needs to build a European HeritageTech sector, from SGit's vaults and pki.sgit.ai's keys to SHarness, Agent Behaviour Policies, RiskMandate, AgentiCCells and its site factory, GAMMA-Ray, VoiceDebrief and PrompTugal.news, with what each could do for a heritage team, and why a sector needs companies like these](../../articles/our-companies-and-uth.md), 2026-11-17, 6 min.
 - [Keys after payment: how to hand vault keys and access keys to customers once they have paid, what Stripe does and does not do after the money is taken, what FastSpring, Paddle, Lemon Squeezy, Polar, Gumroad and Square offer instead, and a design where the key is sealed to the buyer's own public key, keys are stock, and a payment provider can sell them without ever holding one](../../articles/keys-after-payment.md), 2026-11-17, 6 min.
