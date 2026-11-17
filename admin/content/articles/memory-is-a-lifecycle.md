@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: Francois Vanderseypen, who consults on knowledge graphs, reviewed Neo4j's new Relate and made the point I think matters most in this whole space: the market treats "graph database" as a synonym for "agent memory", and both framings skip the hard part, which is the lifecycle, what gets written, what gets trusted, what gets merged and what should be forgotten. A database cannot answer that; a memory layer has to. I agree, and his list of what turns a graph store into a memory system, ontologies, bitemporal facts, reasoning and git-like graph commits, reads like a description of what we have been building, without a graph database. Our graphs are JSON files in encrypted, versioned sgit vaults. Written: append lanes, where a sender can add and learn nothing, and a curator agent that turns rows into graph, every node pointing back at its rows. Trusted: signed commits naming the agent and the person it works for, provenance on every claim, a reviewer before anything is published. Merged: git-like commits, branches and merges of graph files, and per-world ontologies joined by an edge instead of a migration. Forgotten: a new version instead of an edit, a reality file that lists only what is true now, and superseded facts kept, closed and left out of the briefing. Here is the map, and a nudge: the store can be versioned and private, and the engine can be thrown away after every question.
-version: v999.0.0
+version: v0.14.135
 license: https://creativecommons.org/licenses/by/4.0/
 tags: graphs, agent-memory, knowledge-graphs, neo4j, sgit, vaults, ontologies, article
 status: published

@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: On 11 November Neo4j released Relate, "the ultimate agent-native database" in the words of its CPO: an open-source, embedded, in-memory graph database written in Rust, Apache 2.0, with openCypher, vector and full-text search in one statement, an MCP server, a CLI built for agents, Bolt and HTTP endpoints, a WebAssembly build and clients in seven languages. I wanted to understand it properly, so this is a debrief from its own documentation, which is unusually honest about where it fits: one application, one agent or one tool, on one machine, with the whole graph in memory and one writing process per store; no TLS, one shared credential, no users or roles. Then the comparison I find most interesting, with our own approach, which gives us much of the power of a graph database without running one. Our graphs are JSON files in sgit vaults: encrypted on the device, content addressed, versioned like git, read with one GET per file, written by many writers through append lanes, and queried by loading only the slice a question needs, then throwing a small engine at it. Relate wins where a graph database should: six hops over a big graph in memory, in under a millisecond. We win on encryption, history, many writers, no server between questions, and size bounded by the answer rather than the machine. And the two fit together: Relate is exactly the shape of the throwaway engine in the Transform step of our cycle.
-version: v999.0.0
+version: v0.14.135
 license: https://creativecommons.org/licenses/by/4.0/
 tags: graphs, databases, neo4j, agent-memory, sgit, vaults, knowledge-graphs, article
 status: published
