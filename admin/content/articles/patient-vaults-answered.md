@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: A healthcare team building encrypted patient vaults with their own agents, pointed at our public repositories, sent me seven careful questions before putting any real patient data in. Everything so far had been design work with invented data, which is exactly right. Their questions are the ones every health organisation should ask, so here are the answers, point by point. There is no live date for the doctor console yet; test on our development service with invented data, and for real data run your own server, at the version you tested. A patient's details live in the patient's own vault, opened from a link the clinic gives them. The storage region is whichever you choose, once you deploy into your own AWS account. Erasure works: a deleted vault is removed from the server and a marker stops that vault id ever being uploaded again, and without its key any copy is unreadable anyway. If the clinic's key is lost, the vault is lost, which is the zero-knowledge deal, so seal it to two or more custodians and keep an offline copy. The server's token only authorises uploads; making changes needs the vault key and its identity, and per-patient writing is what append lanes are for, including from another website. And underneath it all, QR codes: public keys swapped as QR codes, and links sealed to a patient's key, so no key ever travels in clear.
-version: v999.0.0
+version: v0.14.137
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sgit, vaults, healthcare, privacy, gdpr, pki, qr-codes, article
 status: published

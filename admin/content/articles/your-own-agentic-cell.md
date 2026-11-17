@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: Since the sites for Yiheng Wang and Silvio Switha went up, people have been asking for one of their own. Each site is cheap in tokens. What costs is the workflow around it: collecting the person's details and photos, the first round of designs, and the hand-over. So the product is the workflow, and this is the plan, written up by the conductor agent of PrompTugal from my brief and now in my words. A person arrives at a start page, their browser makes a key pair, and they ask for a cell with a signed request and no secrets. I approve it. A welcome pack arrives sealed to their key: a template vault, their own lane to the factory, and a key scoped to creating one vault. They fill their vault over days with photos, words, links, style and a signed consent, then seal its read key to the factory. The factory turns it into a request, I merge it, and the site factory makes the repository, the address, the site and a first round of five designs, written back into their vault. They choose, I approve a GitHub invitation, and they carry on in their own Claude, with a CLAUDE.md written for them. Everything is automated, signed and encrypted, except three gates that are mine: approve the request, merge it, approve the invitation.
-version: v999.0.0
+version: v0.14.137
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agenticcells, site-factory, onboarding, pki, vaults, product, article
 status: published
