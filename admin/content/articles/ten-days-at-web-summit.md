@@ -74,7 +74,7 @@ I will publish these one at a time, and link each one here as it goes live.
 5. [The Mac bottleneck](/articles/the-mac-bottleneck.html): agents waiting three times longer than they ran, and one Mac job per push.
 6. [Stopping a hundred agents](/articles/stopping-a-hundred-agents.html): the Big Stop, the hand brake, the final hold, and what kept running anyway.
 7. [Agents rating agents](/articles/agents-rating-agents.html): GAMMA-Ray, a draft standard and twenty company reports in thirty hours.
-8. **After the storm:** Storm Charles, part two: flights, transport, the cloud and the model router.
+8. [After the storm](/articles/after-the-storm.html): Storm Charles, part two: flights, transport, the cloud and the model router.
 9. **A guide born in a storm:** Lisbon Tech Fringe, live two and a half hours after its brief.
 10. **Pennies against dollars:** open-weight swarms against frontier models, and the cost of memory.
 11. **Agents that retire themselves:** 147 sessions and 106 hand-overs.

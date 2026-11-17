@@ -1,0 +1,31 @@
+{
+ "slug": "after-the-storm",
+ "teaser": "Storm Charles, part two: transport, flights against the wind, one model router, an AWS plan with no account, and what it all cost.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "A site built in a night kept growing by spoken briefs, each picked up by an agent with its own key within minutes, stopping where sources' terms said stop, and running mostly on cache reads and code.",
+ "nodes": [
+  {"id": "briefs", "label": "Spoken briefs", "kind": "method", "summary": "Recorded with their times."},
+  {"id": "transport", "label": "The transport desk", "kind": "example", "summary": "Ten operators, one stopped."},
+  {"id": "flights", "label": "Flights and wind", "kind": "example", "summary": "Within 500 requests a day."},
+  {"id": "router", "label": "The model router", "kind": "method", "summary": "Open-weight models, traced."},
+  {"id": "aws", "label": "An AWS plan", "kind": "example", "summary": "No account, nothing deployed."},
+  {"id": "cost", "label": "The accounts", "kind": "concept", "summary": "98.7% re-reading."}
+ ],
+ "edges": [
+  {"from": "transport", "to": "briefs", "rel": "depends-on"},
+  {"from": "flights", "to": "briefs", "rel": "depends-on"},
+  {"from": "router", "to": "briefs", "rel": "depends-on"},
+  {"from": "aws", "to": "briefs", "rel": "depends-on"},
+  {"from": "cost", "to": "router", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["ten-days-at-web-summit", "storm-charles-a-newsroom-built-in-a-night", "agents-rating-agents", "stopping-a-hundred-agents"],
+  "pages": [],
+  "sites": ["https://storm-charles.promptugal.news/", "https://storm-charles.promptugal.news/flights/", "https://storm-charles.promptugal.news/accounts/"]
+ },
+ "quotes": [
+  {"text": "what blocks us is said", "why": "The transport rule."},
+  {"text": "an empty Madeira map means unknown, not zero", "why": "The flights page."},
+  {"text": "An empty account stopped the models, and only the models.", "why": "The journal."}
+ ]
+}

@@ -2,10 +2,11 @@
 
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
 
-64 articles, newest first.
+65 articles, newest first.
 
 ## November 2026
 
+- [After the storm: Storm Charles, part two, how a site built in a night kept growing the next day by spoken briefs, a transport desk that stopped where an operator's terms said stop, flights drawn against the wind within a free feed's daily limit, every collector moved onto open-weight models through one router, an AWS plan with no AWS account, and the night the model account ran empty and only the models stopped](../../articles/after-the-storm.md), 2026-11-17, 7 min.
 - [Paid by the read: a proposal to news editors who want more revenue from the journalism they already make, without another subscription, the evidence on micropayments and why it mostly failed, the meter that charges by how much of a page was read and runs in the reader's browser, free for any publisher, a revenue share when PrompTugal.news carries a newsroom's stories with their source, and the associations we should be talking to in the UK and Portugal](../../articles/paid-by-the-read.md), 2026-11-17, 8 min.
 - [Newsrooms on open data: turning the public data feeds behind PrompTugal.news and the Storm Charles site into one data site, a vault per source with an API and its provenance, then building small, focused newsrooms on top, for farmers, investors, the sea, fire, tourism and AI, each run by an agentic team, each a possible company, and why this is exactly where journalism comes in](../../articles/newsrooms-on-open-data.md), 2026-11-17, 5 min.
 - [Who wrote it, who steered it, who signs it: the provenance model PrompTugal.news adopted today, a type label, five axes and a ladder from "published by an agent" to "on the record", applied to seven articles on this site, and what the ladder cannot see yet, how much of the author is in a piece, the brief, the corrections and months of background](../../articles/who-steered-this.md), 2026-11-17, 7 min.

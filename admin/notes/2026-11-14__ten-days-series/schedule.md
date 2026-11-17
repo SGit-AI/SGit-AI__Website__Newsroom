@@ -18,8 +18,8 @@ Rules for every article: the team is six people, never seven (Dinis, 14 November
 | 5 | live (16 Nov) | The Mac bottleneck | the-mac-bottleneck | PrompTugal__App__iOS briefs/2026-11-10__ci-on-one-mac |
 | 6 | live (16 Nov) | Stopping a hundred agents | stopping-a-hundred-agents | Web-Summit team/conductor/the-big-stop, HOLD.md files across repos |
 | 7 | live (17 Nov) | Agents rating agents (GAMMA-Ray) | agents-rating-agents | SGit-AI__Website__Gamma-Ray |
-| 8 | next | After the storm (Storm Charles, part two) | after-the-storm | PrompTugal__News__Storm-Charles |
-| 9 | queued | A guide born in a storm (Lisbon Tech Fringe) | a-guide-born-in-a-storm | PrompTugal__News__Fringe |
+| 8 | live (17 Nov) | After the storm (Storm Charles, part two) | after-the-storm | PrompTugal__News__Storm-Charles |
+| 9 | next | A guide born in a storm (Lisbon Tech Fringe) | a-guide-born-in-a-storm | PrompTugal__News__Fringe |
 | 10 | queued | Pennies against dollars | pennies-against-dollars | PrompTugal__News__Swarm, __Swarm__Runs, Storm Charles accounts |
 | 11 | queued | Agents that retire themselves | agents-that-retire-themselves | Storm Charles agents/*/HANDOVER.md, data/agents |
 | 12 | queued | The agents that didn't get the memo | the-agents-that-didnt-get-the-memo | SGit-AI__Website__Newsroom__2026__Oct__PHP__team |

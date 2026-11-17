@@ -10,13 +10,14 @@
 
 # Versions of: Ten days at Web Summit
 
-8 published versions of [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](../ten-days-at-web-summit.md). The current one is **v1.7.0**.
+9 published versions of [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](../ten-days-at-web-summit.md). The current one is **v1.8.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.7.0** | 2026-11-17 | minor | 1,276 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`072826392`](https://github.com/SGit-AI/SGit-AI__Website/commit/072826392c9b42f2c9bb4d17e2239f0d84cc310e) | [what changed](ten-days-at-web-summit/v1.7.0.md) · [current](../ten-days-at-web-summit.md) |
+| **v1.8.0** | 2026-11-17 | minor | 1,276 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](ten-days-at-web-summit/v1.8.0.md) · [current](../ten-days-at-web-summit.md) |
+| **v1.7.0** | 2026-11-17 | minor | 1,276 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`072826392`](https://github.com/SGit-AI/SGit-AI__Website/commit/072826392c9b42f2c9bb4d17e2239f0d84cc310e) | [what changed](ten-days-at-web-summit/v1.7.0.md) |
 | **v1.6.0** | 2026-11-16 | minor | 1,276 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`9b1f8f2dc`](https://github.com/SGit-AI/SGit-AI__Website/commit/9b1f8f2dc986ad1757e4f56140ca251f81bcbafd) | [what changed](ten-days-at-web-summit/v1.6.0.md) |
 | **v1.5.0** | 2026-11-16 | minor | 1,276 | +6 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`8d058ce43`](https://github.com/SGit-AI/SGit-AI__Website/commit/8d058ce4382b948885bb513d70c0a713e330337d) | [what changed](ten-days-at-web-summit/v1.5.0.md) |
 | **v1.4.0** | 2026-11-15 | minor | 1,270 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`768c269ca`](https://github.com/SGit-AI/SGit-AI__Website/commit/768c269ca62b2b13fe15df087ed9183f1d136ae8) | [what changed](ten-days-at-web-summit/v1.4.0.md) |
