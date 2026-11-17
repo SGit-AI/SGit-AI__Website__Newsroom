@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: Building native iOS apps solved a lot of problems for us, and shipping them turned out to be the part worth explaining. Our agents work in Linux containers that cannot compile Swift, so CI on a Mac is the compiler: every push runs one Mac job that builds and tests, and copies the errors into the job summary where an agent can read them. Signing is done once, through an App Store Connect API key: archive unsigned, sign ad hoc with the entitlements, export with cloud-managed signing and upload. Every green push to the development branch goes to TestFlight, and a script sends it to external testers with its release notes as What to Test. Then there are three doors to users, and our experience of each, in November 2026. Internal testers, people you add to your App Store Connect team, have a build within about an hour, often less. External testers, by email or a public link, go through Beta App Review: about half a day to a day, and our first approval took about 24 hours. And the App Store itself: PrompTugal's public app has been waiting for review since 8 November, eight days and counting, possibly because that build is now out of date. For most validation, the first two doors are more than enough. Here is the pipeline, the doors, and a prompt to set it up with your own Claude.
-version: v999.0.0
+version: v0.14.133
 license: https://creativecommons.org/licenses/by/4.0/
 tags: ios, testflight, app-store, ci, github-actions, agents, voicedebrief, article
 status: published

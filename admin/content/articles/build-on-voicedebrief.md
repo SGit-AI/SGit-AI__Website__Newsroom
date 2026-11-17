@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: VoiceDebrief is our voice app for iPhone and iPad, and it has quietly become a worked example of a lot of hard things done right, in a public repository under Apache 2.0. I know several people working on voice projects, and they should not have to rediscover any of it. So here are the key learnings, each with where it lives in the code. Record without loss: the note is written to the library the moment recording starts, as WAV that can be repaired, with a second copy of what the speech engine heard as a safety net. Transcribe offline, on the device, with Apple's SpeechAnalyzer: a live preview while you speak, then the kept transcript made again from the file; 6 minutes 44 seconds of speech in 5.4 seconds on an iPad. Debrief with Apple Intelligence: the Foundation Models framework, one fresh session per request, long notes read in parts sized to a small context. Control the app by voice: fixed phrases first, then the model picks one action as a tool call that does nothing by itself, and a person confirms. Route every step to the lowest of three layers that can do it: code, the model on the device, agents. And build it with agents that never touch a Mac: CI is the compiler, the tester and the release, with a picture of every screen. At the end, a prompt to give your own Claude, so it can find all of this in the code and use it in your app.
-version: v999.0.0
+version: v0.14.133
 license: https://creativecommons.org/licenses/by/4.0/
 tags: voicedebrief, ios, on-device-ai, apple-intelligence, speech, open-source, agents, article
 status: published
