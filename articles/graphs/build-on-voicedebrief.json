@@ -1,0 +1,128 @@
+{
+  "slug": "build-on-voicedebrief",
+  "teaser": "VoiceDebrief's techniques for any voice app: record without loss, transcribe offline, debrief with Apple Intelligence, voice control, CI.",
+  "topics": [
+    "site-and-engineering",
+    "agents-and-policy"
+  ],
+  "core_idea": "A public voice app shows how to record without loss, understand speech on the device for free, let a model propose actions the code and person decide, and build it all with agents through CI.",
+  "nodes": [
+    {
+      "id": "record",
+      "label": "Record without loss",
+      "kind": "method",
+      "summary": "Repairable WAV from the first second."
+    },
+    {
+      "id": "speech",
+      "label": "On-device transcription",
+      "kind": "method",
+      "summary": "SpeechAnalyzer, offline."
+    },
+    {
+      "id": "debrief",
+      "label": "Apple Intelligence debrief",
+      "kind": "method",
+      "summary": "Small questions, small context."
+    },
+    {
+      "id": "control",
+      "label": "Voice control",
+      "kind": "method",
+      "summary": "Model proposes, code decides."
+    },
+    {
+      "id": "layers",
+      "label": "Three layers",
+      "kind": "concept",
+      "summary": "Push work down."
+    },
+    {
+      "id": "ci",
+      "label": "CI is the compiler",
+      "kind": "method",
+      "summary": "Agents without a Mac."
+    }
+  ],
+  "edges": [
+    {
+      "from": "speech",
+      "to": "record",
+      "rel": "depends-on"
+    },
+    {
+      "from": "debrief",
+      "to": "speech",
+      "rel": "depends-on"
+    },
+    {
+      "from": "control",
+      "to": "layers",
+      "rel": "extends"
+    },
+    {
+      "from": "debrief",
+      "to": "layers",
+      "rel": "extends"
+    },
+    {
+      "from": "ci",
+      "to": "record",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "voicedebrief-relaunch",
+      "native-apps-by-agents",
+      "the-mac-bottleneck",
+      "five-primitives-one-store",
+      "shipping-an-ios-app-with-agents"
+    ],
+    "pages": [],
+    "sites": [
+      "https://github.com/VoiceDebrief/VoiceDebrief__App__iOS",
+      "https://ios.app.voicedebrief.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "the recording is sacred",
+      "why": "Never lose a recording."
+    },
+    {
+      "text": "A tool carries nothing out",
+      "why": "Voice control."
+    },
+    {
+      "text": "CI is the compiler",
+      "why": "Built by agents."
+    }
+  ],
+  "figures": [
+    {
+      "file": "vdk-offline.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vdk-offline.webp",
+      "caption": "A voice note, offline, end to end on the device: record, preview, transcript, debrief, keep.",
+      "kind": "process"
+    },
+    {
+      "file": "vdk-control.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vdk-control.webp",
+      "caption": "Controlling the app by voice: fixed phrases first, then one tool call, then a person confirms.",
+      "kind": "process"
+    },
+    {
+      "file": "vdk-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vdk-layers.webp",
+      "caption": "Three layers: code, Apple's model on the device, agents in a loop. Push each step to the lowest one that can do it.",
+      "kind": "concept"
+    },
+    {
+      "file": "vdr-screens.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vdr-screens.webp",
+      "caption": "Every screen photographed by CI from invented sample data, iPhone and iPad, and read by synthetic users.",
+      "kind": "collage"
+    }
+  ]
+}

@@ -4,21 +4,26 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.132 · 440 articles since 2026-08-17; the newest is 2026-11-16. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 442 articles since 2026-08-17; the newest is 2026-11-17. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Five primitives, one store: a reply to Andy Goundry on Anthropic's always-on agents guide, why the inbox, timers, memory, permissions and outbox can share one versioned, signed store, how every AgentiCCells cell will ship with all five, and the levels we have added on top, all in public repositories](articles/five-primitives-one-store.md), 2026-11-16, 6 min. A reply to Andy Goundry: Anthropic's five always-on primitives can share one versioned, signed store, and every AgentiCCells cell ships with all five.
+- [Shipping an iOS app with agents: how our agents build, test and send native apps to TestFlight from a Linux container, with CI on a Mac as the compiler, signing done once through the App Store Connect API, every green push in testers' hands, and what the three doors to users took for us, internal testers in about an hour, external testers in half a day to a day, and the App Store still waiting after eight days](articles/shipping-an-ios-app-with-agents.md), 2026-11-17, 5 min. How our agents ship iOS apps from Linux containers via CI on a Mac, and what TestFlight and App Store review actually took.
 
 ## Five more
 
+- [Build on VoiceDebrief: the techniques from our iPhone and iPad voice app that any team can take into its own, from recording without loss and transcribing offline on the device to debriefs by Apple Intelligence, controlling an app by voice, three layers of intelligence and a CI pipeline that lets agents build a native app without a Mac, with a prompt to point your own Claude at the code](articles/build-on-voicedebrief.md), Engineering this newsroom, 2026-11-17, 7 min.
+- [Five primitives, one store: a reply to Andy Goundry on Anthropic's always-on agents guide, why the inbox, timers, memory, permissions and outbox can share one versioned, signed store, how every AgentiCCells cell will ship with all five, and the levels we have added on top, all in public repositories](articles/five-primitives-one-store.md), Working with agents, 2026-11-16, 6 min.
 - [A portfolio with a film first: Silvio Switha's site, made in under an hour by the site factory and five design agents, with his music video in the first screen, his agents as a solar system and a mixing desk, a producer's studio, a proposal for clients and a gig poster, and every claim something he built](articles/a-portfolio-with-a-film-first.md), Startups & strategy, 2026-11-16, 7 min.
 - [A website that is her: how Yiheng Wang's site was made in three passes in one evening, by the site factory, five design agents and then her own agent, with five designs, a kitchen brigade of 26 agents, a printable brief and a page for your AI, and why every claim on it is something she can talk about because she did it](articles/a-website-that-is-her.md), Startups & strategy, 2026-11-16, 9 min.
 - [Stopping a hundred agents: the Big Stop, the hand brake and the final hold at Web Summit, why pausing took seconds but hearing the order took up to an hour, what kept running anyway, and why a stop has to be a file every agent reads first](articles/stopping-a-hundred-agents.md), Working with agents, 2026-11-16, 7 min.
-- [Show me the evidence: websites for people looking for a job, built by an agentic cell, with seven pages that prove instead of list, a page made for each employer, a pack for recruiters, eight personas to fork, a ladder from a free recipe to a recruiter's cell, and the brief for the team that builds it](articles/show-me-the-evidence.md), Startups & strategy, 2026-11-16, 15 min.
-- [Fork it: making forking the way people adopt our cells and template sites, as GitHub made it the way people adopt code, with five ways to make a cell yours, what a fork-ready repository needs, paths from one repository to the next, a hub that lets usage decide what we build, and the brief for the team](articles/fork-it.md), Startups & strategy, 2026-11-16, 5 min.
 
 ## The last five days
+
+### Tuesday 17 November 2026 (2 articles)
+
+- Engineering this newsroom: [Shipping an iOS app with agents: how our agents build, test and send native apps to TestFlight from a Linux container, with CI on a Mac as the compiler, signing done once through the App Store Connect API, every green push in testers' hands, and what the three doors to users took for us, internal testers in about an hour, external testers in half a day to a day, and the App Store still waiting after eight days](articles/shipping-an-ios-app-with-agents.md), 5 min.
+- Engineering this newsroom: [Build on VoiceDebrief: the techniques from our iPhone and iPad voice app that any team can take into its own, from recording without loss and transcribing offline on the device to debriefs by Apple Intelligence, controlling an app by voice, three layers of intelligence and a CI pipeline that lets agents build a native app without a Mac, with a prompt to point your own Claude at the code](articles/build-on-voicedebrief.md), 7 min.
 
 ### Monday 16 November 2026 (21 articles)
 
@@ -82,10 +87,6 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 - Working with agents: [Coding standards are behaviour policies: describe how your agents should write code as intent, map it across every language and team with a fractal graph, and see which rules are kept by a barrier and which only by habit](articles/coding-standards-are-behaviour-policies.md), 6 min.
 
-### Wednesday 11 November 2026 (1 article)
-
-- The future of news: [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](articles/storm-charles-a-newsroom-built-in-a-night.md), 9 min.
-
 ## Sections
 
 Every article is in exactly one of eight sections, by topic.
@@ -130,13 +131,13 @@ Founders, funding, open source economics, Wardley maps, Portugal and Europe, leg
 - [Fork it: making forking the way people adopt our cells and template sites, as GitHub made it the way people adopt code, with five ways to make a cell yours, what a fork-ready repository needs, paths from one repository to the next, a hub that lets usage decide what we build, and the brief for the team](articles/fork-it.md), 2026-11-16.
 - [The cell is the unit: positioning AgentiCCells around small, focused cells, each with an objective, a deliverable and a behaviour policy, each with a page that sells it, a free recipe and three ways to get help, a catalogue that grows one need at a time, in each industry's own words, and why we should run our own work in cells first](articles/the-cell-is-the-unit.md), 2026-11-16.
 
-### [Engineering this newsroom](sections/building/index.md) (49)
+### [Engineering this newsroom](sections/building/index.md) (51)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
+- [Shipping an iOS app with agents: how our agents build, test and send native apps to TestFlight from a Linux container, with CI on a Mac as the compiler, signing done once through the App Store Connect API, every green push in testers' hands, and what the three doors to users took for us, internal testers in about an hour, external testers in half a day to a day, and the App Store still waiting after eight days](articles/shipping-an-ios-app-with-agents.md), 2026-11-17.
+- [Build on VoiceDebrief: the techniques from our iPhone and iPad voice app that any team can take into its own, from recording without loss and transcribing offline on the device to debriefs by Apple Intelligence, controlling an app by voice, three layers of intelligence and a CI pipeline that lets agents build a native app without a Mac, with a prompt to point your own Claude at the code](articles/build-on-voicedebrief.md), 2026-11-17.
 - [VoiceDebrief, relaunched: what the iPhone and iPad app already does, from recording without loss to an on-device transcript, a debrief and an encrypted vault, why the agent workflows move to the CRM app, and the list that takes it to the App Store properly, under its own name and its own accounts](articles/voicedebrief-relaunch.md), 2026-11-16.
 - [The site factory works: three AgentiCCells sites made by hand, then one made by a commit in two minutes and thirty-nine seconds, live over https with a first version written by Claude Code, and the long list of what it took to make something that hard look easy](articles/the-site-factory-works.md), 2026-11-16.
 - [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](articles/a-film-studio-on-a-laptop.md), 2026-11-14.
-- [Synthetic users for your website: how to set up five invented visitors who read your site one screenshot at a time, with Claude, a sub-agent per persona, and an encrypted vault you can publish anywhere](articles/synthetic-users-for-your-website.md), 2026-11-04.
-- [No tech stack to maintain: it is not that there is no backend, it is that the only code you own is HTML, CSS and JavaScript, with every other primitive rented as a commodity or run in the user's browser over encrypted vaults](articles/no-tech-stack-to-maintain.md), 2026-11-03.
 
 ### [Graphs & knowledge](sections/graphs/index.md) (13)
 Fractal semantic graphs, knowledge that maintains itself, search as navigation, and the research community around them.

@@ -2,10 +2,12 @@
 
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
 
-49 articles, newest first.
+51 articles, newest first.
 
 ## November 2026
 
+- [Shipping an iOS app with agents: how our agents build, test and send native apps to TestFlight from a Linux container, with CI on a Mac as the compiler, signing done once through the App Store Connect API, every green push in testers' hands, and what the three doors to users took for us, internal testers in about an hour, external testers in half a day to a day, and the App Store still waiting after eight days](../../articles/shipping-an-ios-app-with-agents.md), 2026-11-17, 5 min.
+- [Build on VoiceDebrief: the techniques from our iPhone and iPad voice app that any team can take into its own, from recording without loss and transcribing offline on the device to debriefs by Apple Intelligence, controlling an app by voice, three layers of intelligence and a CI pipeline that lets agents build a native app without a Mac, with a prompt to point your own Claude at the code](../../articles/build-on-voicedebrief.md), 2026-11-17, 7 min.
 - [VoiceDebrief, relaunched: what the iPhone and iPad app already does, from recording without loss to an on-device transcript, a debrief and an encrypted vault, why the agent workflows move to the CRM app, and the list that takes it to the App Store properly, under its own name and its own accounts](../../articles/voicedebrief-relaunch.md), 2026-11-16, 7 min.
 - [The site factory works: three AgentiCCells sites made by hand, then one made by a commit in two minutes and thirty-nine seconds, live over https with a first version written by Claude Code, and the long list of what it took to make something that hard look easy](../../articles/the-site-factory-works.md), 2026-11-16, 6 min.
 - [A film studio on a laptop: Claude builds, animates and renders a 26-second RiskMandate film in Unreal Engine 5.8 on an unattended MacBook Air, with no mouse and nobody at the keyboard](../../articles/a-film-studio-on-a-laptop.md), 2026-11-14, 6 min.

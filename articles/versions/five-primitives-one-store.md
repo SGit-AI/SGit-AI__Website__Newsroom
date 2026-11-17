@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-16 | published | 1,603 | first published | this release | [current](../five-primitives-one-store.md) |
+| **v1.0.0** | 2026-11-16 | published | 1,603 | first published | [`75e6c7243`](https://github.com/SGit-AI/SGit-AI__Website/commit/75e6c72433e7d3a1b363a3209e9cdf4230053198) | [current](../five-primitives-one-store.md) |
 
 [← Back to the article](../five-primitives-one-store.md) · [All articles](../index.md)
 

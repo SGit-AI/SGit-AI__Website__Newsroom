@@ -1,0 +1,31 @@
+{
+ "slug": "shipping-an-ios-app-with-agents",
+ "teaser": "How our agents ship iOS apps from Linux containers via CI on a Mac, and what TestFlight and App Store review actually took.",
+ "topics": ["site-and-engineering", "startups-and-strategy"],
+ "core_idea": "With CI as the compiler and signing through the App Store Connect API, agents can ship every green build to TestFlight; internal and external testing are fast, App Store review is the slow, unpredictable door.",
+ "nodes": [
+  {"id": "ci", "label": "CI is the compiler", "kind": "method", "summary": "One Mac job per push."},
+  {"id": "sign", "label": "Sign once", "kind": "method", "summary": "Through the API key."},
+  {"id": "tf", "label": "Every push to TestFlight", "kind": "method", "summary": "And on to external testers."},
+  {"id": "internal", "label": "Internal testers", "kind": "example", "summary": "About an hour."},
+  {"id": "external", "label": "External testers", "kind": "example", "summary": "Half a day to a day, public link."},
+  {"id": "store", "label": "App Store", "kind": "example", "summary": "Still waiting after eight days."}
+ ],
+ "edges": [
+  {"from": "sign", "to": "ci", "rel": "depends-on"},
+  {"from": "tf", "to": "sign", "rel": "depends-on"},
+  {"from": "internal", "to": "tf", "rel": "extends"},
+  {"from": "external", "to": "tf", "rel": "extends"},
+  {"from": "store", "to": "tf", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["native-apps-by-agents", "the-mac-bottleneck", "voicedebrief-relaunch", "build-on-voicedebrief"],
+  "pages": [],
+  "sites": ["https://github.com/VoiceDebrief/VoiceDebrief__App__iOS", "https://github.com/PrompTugal/PrompTugal__App__iOS"]
+ },
+ "quotes": [
+  {"text": "CI is the compiler", "why": "The rule."},
+  {"text": "do not plan a launch that depends on a date for App Store review", "why": "The lesson."},
+  {"text": "The speed comes from the pipeline being copied, not rebuilt", "why": "How fast."}
+ ]
+}

@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-11-16",
+  "generated": "2026-11-17",
   "site_version": "v0.7.87",
   "about": "https://newsroom.sgit.ai/newsroom/index.html",
   "front": {
@@ -72,6 +72,66 @@
     }
   ],
   "articles": [
+    {
+      "slug": "shipping-an-ios-app-with-agents",
+      "title": "Shipping an iOS app with agents: how our agents build, test and send native apps to TestFlight from a Linux container, with CI on a Mac as the compiler, signing done once through the App Store Connect API, every green push in testers' hands, and what the three doors to users took for us, internal testers in about an hour, external testers in half a day to a day, and the App Store still waiting after eight days",
+      "date": "2026-11-17",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/shipping-an-ios-app-with-agents.html",
+      "markdown": "https://newsroom.sgit.ai/articles/shipping-an-ios-app-with-agents.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/shipping-an-ios-app-with-agents.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/shipping-an-ios-app-with-agents.json",
+      "teaser": "How our agents ship iOS apps from Linux containers via CI on a Mac, and what TestFlight and App Store review actually took.",
+      "summary": "Building native iOS apps solved a lot of problems for us, and shipping them turned out to be the part worth explaining. Our agents work in Linux containers that cannot compile Swift, so CI on a Mac is the compiler: every push runs one Mac job that builds and tests, and copies the errors into the job summary where an agent can read them. Signing is done once, through an App Store Connect API key: archive unsigned, sign ad hoc with the entitlements, export with cloud-managed signing and upload. Every green push to the development branch goes to TestFlight, and a script sends it to external testers with its release notes as What to Test. Then there are three doors to users, and our experience of each, in November 2026. Internal testers, people you add to your App Store Connect team, have a build within about an hour, often less. External testers, by email or a public link, go through Beta App Review: about half a day to a day, and our first approval took about 24 hours. And the App Store itself: PrompTugal's public app has been waiting for review since 8 November, eight days and counting, possibly because that build is now out of date. For most validation, the first two doors are more than enough. Here is the pipeline, the doors, and a prompt to set it up with your own Claude.",
+      "topics": [
+        "site-and-engineering",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "ios",
+        "testflight",
+        "app-store",
+        "ci",
+        "github-actions",
+        "agents",
+        "voicedebrief",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "build-on-voicedebrief",
+      "title": "Build on VoiceDebrief: the techniques from our iPhone and iPad voice app that any team can take into its own, from recording without loss and transcribing offline on the device to debriefs by Apple Intelligence, controlling an app by voice, three layers of intelligence and a CI pipeline that lets agents build a native app without a Mac, with a prompt to point your own Claude at the code",
+      "date": "2026-11-17",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/build-on-voicedebrief.html",
+      "markdown": "https://newsroom.sgit.ai/articles/build-on-voicedebrief.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/build-on-voicedebrief.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/build-on-voicedebrief.json",
+      "teaser": "VoiceDebrief's techniques for any voice app: record without loss, transcribe offline, debrief with Apple Intelligence, voice control, CI.",
+      "summary": "VoiceDebrief is our voice app for iPhone and iPad, and it has quietly become a worked example of a lot of hard things done right, in a public repository under Apache 2.0. I know several people working on voice projects, and they should not have to rediscover any of it. So here are the key learnings, each with where it lives in the code. Record without loss: the note is written to the library the moment recording starts, as WAV that can be repaired, with a second copy of what the speech engine heard as a safety net. Transcribe offline, on the device, with Apple's SpeechAnalyzer: a live preview while you speak, then the kept transcript made again from the file; 6 minutes 44 seconds of speech in 5.4 seconds on an iPad. Debrief with Apple Intelligence: the Foundation Models framework, one fresh session per request, long notes read in parts sized to a small context. Control the app by voice: fixed phrases first, then the model picks one action as a tool call that does nothing by itself, and a person confirms. Route every step to the lowest of three layers that can do it: code, the model on the device, agents. And build it with agents that never touch a Mac: CI is the compiler, the tester and the release, with a picture of every screen. At the end, a prompt to give your own Claude, so it can find all of this in the code and use it in your app.",
+      "topics": [
+        "site-and-engineering",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "voicedebrief",
+        "ios",
+        "on-device-ai",
+        "apple-intelligence",
+        "speech",
+        "open-source",
+        "agents",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
     {
       "slug": "five-primitives-one-store",
       "title": "Five primitives, one store: a reply to Andy Goundry on Anthropic's always-on agents guide, why the inbox, timers, memory, permissions and outbox can share one versioned, signed store, how every AgentiCCells cell will ship with all five, and the levels we have added on top, all in public repositories",
