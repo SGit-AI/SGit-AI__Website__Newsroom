@@ -103,6 +103,10 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#key
 - [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](a-secret-is-a-qr-code.md) Send a QR code and a link to a public key: the workflow the QR experiment opens, who already does this, and a format to share.
 - [Patient vaults, answered point by point: the seven questions a healthcare team asked before putting any real patient data into sgit vaults, on the live date, the patient's address, the storage region, erasure, backing up the clinic's key, per-patient tokens and writing from another site, and why QR codes and public keys are how a clinic and its patients should pass keys and links](patient-vaults-answered.md) Seven questions a healthcare team asked before putting real patient data into sgit vaults, answered, and why QR codes should carry keys and links.
 
+### Continued by
+
+- [The website cell: what we now sell, a GitHub repository fully set up with a live site on its own address, a CLAUDE.md and a behaviour policy, five designs by a team of agents, and then the site is yours to change with your own Claude, what it should cost, how it compares with Wix, Squarespace, Framer, Lovable and a freelancer, who already sells something close to it, and where to find buyers and partners](the-website-cell.md) The website cell mapped: a repository fully set up, five designs by agents, owned with your own Claude; price, competitors, partners.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 454 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=454)

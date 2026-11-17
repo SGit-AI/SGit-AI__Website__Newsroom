@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-112 articles, newest first.
+113 articles, newest first.
 
 ## November 2026
 
+- [The website cell: what we now sell, a GitHub repository fully set up with a live site on its own address, a CLAUDE.md and a behaviour policy, five designs by a team of agents, and then the site is yours to change with your own Claude, what it should cost, how it compares with Wix, Squarespace, Framer, Lovable and a freelancer, who already sells something close to it, and where to find buyers and partners](../../articles/the-website-cell.md), 2026-11-17, 8 min.
 - [Governance from zero: Nina J. noticed that identity and behaviour policies come with our smallest £500 offer, not as a premium upgrade, because "we're only testing it" has never reassured a security review; my answer is that even the £0 offer has all of it, and here is why open source is what makes that possible, why security sold as an upgrade is a choice, and why a pilot with its governance built in is a pilot that can convert](../../articles/governance-from-zero.md), 2026-11-17, 5 min.
 - [Any data, with any data: why I am now comfortable saying we can connect any data source with any other, the nine steps from access to a vault, a key and a map on the other side, how each owner keeps control, where the person stays in charge, and why connecting two, five, fifty or a hundred datasets should be something an agentic cell sells](../../articles/any-data-with-any-data.md), 2026-11-17, 5 min.
 - [Our companies and UTH: each company, technology and website we have built, mapped to what UAlgTec Heritage needs to build a European HeritageTech sector, from SGit's vaults and pki.sgit.ai's keys to SHarness, Agent Behaviour Policies, RiskMandate, AgentiCCells and its site factory, GAMMA-Ray, VoiceDebrief and PrompTugal.news, with what each could do for a heritage team, and why a sector needs companies like these](../../articles/our-companies-and-uth.md), 2026-11-17, 6 min.

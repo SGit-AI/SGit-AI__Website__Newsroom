@@ -1,0 +1,31 @@
+{
+ "slug": "the-website-cell",
+ "teaser": "The website cell mapped: a repository fully set up, five designs by agents, owned with your own Claude; price, competitors, partners.",
+ "topics": ["startups-and-strategy", "agents-and-policy"],
+ "core_idea": "A website cell, a fully configured repository with a live site, CLAUDE.md and behaviour policy, five agent-made designs and ownership by the person's own Claude, is a one-off product that undercuts lock-in builders and puts behaviour policies into the world.",
+ "nodes": [
+  {"id": "unit", "label": "The website cell", "kind": "method", "summary": "One standalone unit."},
+  {"id": "factory", "label": "The site factory", "kind": "method", "summary": "Sets it up automatically."},
+  {"id": "designs", "label": "Five designs", "kind": "method", "summary": "By a team of agents."},
+  {"id": "owner", "label": "Owned with Claude", "kind": "concept", "summary": "Changed by the owner's agent."},
+  {"id": "market", "label": "The alternatives", "kind": "example", "summary": "Builders, vibe-coding, freelancers."},
+  {"id": "partners", "label": "Partners and channels", "kind": "method", "summary": "50/50, marketplaces."}
+ ],
+ "edges": [
+  {"from": "unit", "to": "factory", "rel": "depends-on"},
+  {"from": "designs", "to": "unit", "rel": "extends"},
+  {"from": "owner", "to": "unit", "rel": "extends"},
+  {"from": "market", "to": "unit", "rel": "compared-with"},
+  {"from": "partners", "to": "unit", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["a-website-that-is-her", "a-portfolio-with-a-film-first", "the-site-factory-works", "your-own-agentic-cell", "where-assist-becomes-execute", "explorer-coding", "show-me-the-evidence", "keys-after-payment", "governance-from-zero"],
+  "pages": [],
+  "sites": ["https://agenticcells.ai/website-cell/", "https://www.mordorintelligence.com/industry-reports/website-builders-market"]
+ },
+ "quotes": [
+  {"text": "Nobody else I found hands over a site with its own CLAUDE.md and behaviour policy.", "why": "The difference."},
+  {"text": "Most will not want to, and that is what we sell.", "why": "Why many."},
+  {"text": "templates wearing a new coat of paint", "why": "The common complaint."}
+ ]
+}
