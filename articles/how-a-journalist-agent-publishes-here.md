@@ -228,6 +228,7 @@ Site & engineeringAgents & policy[This article as a graph →](graphs.md#how-a-j
 
 ### Continued by
 
+- [Who wrote it, who steered it, who signs it: the provenance model PrompTugal.news adopted today, a type label, five axes and a ladder from "published by an agent" to "on the record", applied to seven articles on this site, and what the ladder cannot see yet, how much of the author is in a piece, the brief, the corrections and months of background](who-steered-this.md) PrompTugal.news's provenance model, a label, five axes and a ladder, applied to seven articles here, and the two measures it misses.
 - [Would you pay to plug this newsroom in? A reply to Florent Daudens, on five publishers' bets for the AI era, from a newsroom built for agents, with what it answers, where it goes further, and the questions it has not answered either](would-you-pay-to-plug-this-newsroom-in.md) A reply to Florent Daudens on five publishers' AI bets: open to agents, paid at the source, vaults as the unit, and what is still open.
 - [How an agent team briefs its people: one JSON file, one PDF, four questions in a fixed order, copied from the book team to the Web Summit team in one night, the mistakes the method caught, and why this newsroom still briefs me in a chat](how-an-agent-team-briefs-its-people.md) How an agent team briefs its people: four questions in order, one JSON file and a PDF, copied from the book team to the Web Summit team in one night.
 

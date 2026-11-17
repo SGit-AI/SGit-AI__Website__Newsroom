@@ -108,6 +108,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#herita
 
 ### Continued by
 
+- [Who wrote it, who steered it, who signs it: the provenance model PrompTugal.news adopted today, a type label, five axes and a ladder from "published by an agent" to "on the record", applied to seven articles on this site, and what the ladder cannot see yet, how much of the author is in a piece, the brief, the corrections and months of background](who-steered-this.md) PrompTugal.news's provenance model, a label, five axes and a ladder, applied to seven articles here, and the two measures it misses.
 - [Our companies and UTH: each company, technology and website we have built, mapped to what UAlgTec Heritage needs to build a European HeritageTech sector, from SGit's vaults and pki.sgit.ai's keys to SHarness, Agent Behaviour Policies, RiskMandate, AgentiCCells and its site factory, GAMMA-Ray, VoiceDebrief and PrompTugal.news, with what each could do for a heritage team, and why a sector needs companies like these](our-companies-and-uth.md) Each of our companies, technologies and websites mapped to what UAlgTec Heritage needs to build a European HeritageTech sector.
 
 [All articles](index.md) · [All graphs](graphs.md)

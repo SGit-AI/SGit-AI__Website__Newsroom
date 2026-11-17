@@ -46,9 +46,9 @@ Edition of **2026-10-08**. Third edition. A day of articles on how agents decide
 
 Computed at every build from the files: placements that point at nothing, articles published since the edition, open pitches, articles without a graph or a card. The same list is what `python3 admin/build/desk.py` prints for the Editor.
 
-- Fix`front.json` the lead is 40 days older than the newest article and 406 newer article(s) are unplaced
-- To do`front.json` 406 article(s) published since the 2026-10-08 edition: our-companies-and-uth, heritage-tech-together, working-with-wizpress, keys-after-payment, the-payment-desk, the-atm-that-asked-twice
-- To do`newsletter/` a newsletter issue is due: 251 articles since issue 9 (2026-10-18)
+- Fix`front.json` the lead is 40 days older than the newest article and 407 newer article(s) are unplaced
+- To do`front.json` 407 article(s) published since the 2026-10-08 edition: who-steered-this, our-companies-and-uth, heritage-tech-together, working-with-wizpress, keys-after-payment, the-payment-desk
+- To do`newsletter/` a newsletter issue is due: 252 articles since issue 9 (2026-10-18)
 - To do`newsroom/pitches/2026-10-11__where-the-platform-draws-the-line.md` open pitch from contributor: highlight for where-the-platform-draws-the-line
 - To do`newsroom/pitches/2026-10-11__the-same-argument-in-our-words.md` open pitch from contributor: lead for the-same-argument-in-our-words
 - To do`newsroom/pitches/2026-10-11__the-agent-is-the-reader.md` open pitch from contributor: lead for the-agent-is-the-reader

@@ -99,7 +99,9 @@ My own withdrawal on 17 November 2026: the two screens and my bank's record, pho
 
 Startups & strategyAgents & policy[This article as a graph →](graphs.md#the-atm-that-asked-twice)
 
-No other article links here yet.
+### Continued by
+
+- [Who wrote it, who steered it, who signs it: the provenance model PrompTugal.news adopted today, a type label, five axes and a ladder from "published by an agent" to "on the record", applied to seven articles on this site, and what the ladder cannot see yet, how much of the author is in a piece, the brief, the corrections and months of background](who-steered-this.md) PrompTugal.news's provenance model, a label, five axes and a ladder, applied to seven articles here, and the two measures it misses.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

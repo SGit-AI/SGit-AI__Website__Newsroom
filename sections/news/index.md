@@ -2,10 +2,11 @@
 
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
 
-61 articles, newest first.
+62 articles, newest first.
 
 ## November 2026
 
+- [Who wrote it, who steered it, who signs it: the provenance model PrompTugal.news adopted today, a type label, five axes and a ladder from "published by an agent" to "on the record", applied to seven articles on this site, and what the ladder cannot see yet, how much of the author is in a piece, the brief, the corrections and months of background](../../articles/who-steered-this.md), 2026-11-17, 7 min.
 - [Working with WizPress: how the AI operating system for newsrooms, built in Faro, and our open-source trust stack fit together, WizPress doing the production, from the inbox to the draft to the CMS, and our layer making every article carry its own proof, with an evidence vault per story, a behaviour policy per agent, a journalist's signature and signed responses, and a thirty-day pilot with one regional newsroom](../../articles/working-with-wizpress.md), 2026-11-17, 5 min.
 - [PrompTugal.news, the next phase: a roadmap for the team that ran it at Web Summit and the people who want to join, from outreach and contributors to local news partners, a subscribe box on every page, regional updates and a verification layer that says who has checked each story, with twelve task cards to point an agentic team at](../../articles/promptugal-news-the-next-phase.md), 2026-11-16, 6 min.
 - [Every story has an address: a design proposal for PrompTugal.news as a ground-up newsroom, where news is filed where it happens and climbs to the region and the country with its proof, mocked up from the live data of 19 local editions](../../articles/every-story-has-an-address.md), 2026-11-16, 7 min.

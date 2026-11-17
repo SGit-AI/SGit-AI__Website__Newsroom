@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-17 | published | 1,463 | first published | this release | [current](../our-companies-and-uth.md) |
+| **v1.0.0** | 2026-11-17 | published | 1,463 | first published | [`1638a7134`](https://github.com/SGit-AI/SGit-AI__Website/commit/1638a7134d7e8edb514da44aac20a9ad89162155) | [current](../our-companies-and-uth.md) |
 
 [← Back to the article](../our-companies-and-uth.md) · [All articles](../index.md)
 

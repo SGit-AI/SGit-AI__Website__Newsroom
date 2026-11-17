@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-17 | published | 1,357 | first published | [`576f3202a`](https://github.com/SGit-AI/SGit-AI__Website/commit/576f3202a6918c5f6bf981ed9da311b0c4e3b5c5) | [current](../working-with-wizpress.md) |
+| **v1.0.0** | 2026-11-17 | published | 1,357 | first published | [`db56605bb`](https://github.com/SGit-AI/SGit-AI__Website/commit/db56605bb2c51a4f14b5a2a18e4ba336d0fc6619) | [current](../working-with-wizpress.md) |
 
 [← Back to the article](../working-with-wizpress.md) · [All articles](../index.md)
 

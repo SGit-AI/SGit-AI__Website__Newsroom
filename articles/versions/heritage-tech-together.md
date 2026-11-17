@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-17 | published | 1,732 | first published | this release | [current](../heritage-tech-together.md) |
+| **v1.0.0** | 2026-11-17 | published | 1,732 | first published | [`1638a7134`](https://github.com/SGit-AI/SGit-AI__Website/commit/1638a7134d7e8edb514da44aac20a9ad89162155) | [current](../heritage-tech-together.md) |
 
 [← Back to the article](../heritage-tech-together.md) · [All articles](../index.md)
 

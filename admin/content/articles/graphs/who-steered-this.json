@@ -1,0 +1,31 @@
+{
+ "slug": "who-steered-this",
+ "teaser": "PrompTugal.news's provenance model, a label, five axes and a ladder, applied to seven articles here, and the two measures it misses.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "A provenance profile, type, five axes and a ladder to on the record, rates most articles here P1 or P2, and misses how much of the author is in a piece; steering and background should be recorded inside origin.",
+ "nodes": [
+  {"id": "type", "label": "Type of work", "kind": "concept", "summary": "News is not opinion."},
+  {"id": "axes", "label": "Five axes", "kind": "concept", "summary": "Origin, research, claims, review, external."},
+  {"id": "ladder", "label": "The ladder", "kind": "concept", "summary": "P0 draft to P5 on the record."},
+  {"id": "steer", "label": "Steering", "kind": "concept", "summary": "How much the author directed a piece."},
+  {"id": "bg", "label": "Background", "kind": "concept", "summary": "How much context the writer carried."},
+  {"id": "sign", "label": "The author's signature", "kind": "method", "summary": "The step to P4."}
+ ],
+ "edges": [
+  {"from": "axes", "to": "type", "rel": "extends"},
+  {"from": "ladder", "to": "axes", "rel": "depends-on"},
+  {"from": "steer", "to": "axes", "rel": "extends"},
+  {"from": "bg", "to": "axes", "rel": "extends"},
+  {"from": "sign", "to": "ladder", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["how-a-journalist-agent-publishes-here", "the-atm-that-asked-twice", "the-payment-desk", "patient-vaults-answered", "a-website-that-is-her", "agents-rating-agents", "heritage-tech-together", "storm-charles-a-newsroom-built-in-a-night", "signed-by-the-source"],
+  "pages": [],
+  "sites": ["https://promptugal.news/newsroom/decisions/who-wrote-it-who-checked-it-who-signs-it/", "https://promptugal.news/articles/who-wrote-this-who-checked-it-who-signs-it.html", "https://thetrustproject.org/"]
+ },
+ "quotes": [
+  {"text": "Different, not better.", "why": "The ladder."},
+  {"text": "It is closer to a piece by a journalist who has worked with you for months", "why": "Background."},
+  {"text": "this one is mine, I steered it, I corrected it, and I sign it", "why": "Steering."}
+ ]
+}
