@@ -1,0 +1,56 @@
+{
+ "slug": "deploy-sgit-from-ci",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "Run your own sgit server in your account and region, deployed from CI with the site factory's pattern.",
+   "para": "One image, S3, an access token, OIDC, checks.",
+   "hash": "43dd5e9a918c"
+  },
+  "in-short": {
+   "line": "Your own server; one image; keys never reach it; from CI; no AWS keys; check, deploy, tear down; package it.",
+   "para": "Seven points.",
+   "hash": "70b5e7ee6b18"
+  },
+  "why": {
+   "line": "Sensitive data raises where it lives and who runs the server; your own account and region answers it.",
+   "para": "Ciphertext moves; the trust model does not.",
+   "hash": "8f79cfd84c22"
+  },
+  "what": {
+   "line": "One open-source Docker image, configured by environment variables, with memory, disk or S3 storage.",
+   "para": "CloudFormation templates for Lambda, Fargate and EC2, in beta.",
+   "hash": "39e8bb7b333f"
+  },
+  "pipeline": {
+   "line": "Protected environment, OIDC, trust one repo and environment, least privilege, checks, smoke tests, teardown.",
+   "para": "Learned on the site factory.",
+   "hash": "1e9c94758876"
+  },
+  "steps": {
+   "line": "Region, OIDC provider, deploy role, environment and secrets, image in ECR, check, deploy, point sgit at it.",
+   "para": "With a sketch job.",
+   "hash": "6633d39a605c"
+  },
+  "package": {
+   "line": "A proposed sgit-deploy GitHub Action and a skill for agents.",
+   "para": "Or a request committed to a repository.",
+   "hash": "e143f9c2f59a"
+  },
+  "prompt": {
+   "line": "A prompt to set it up with your own Claude, one step at a time.",
+   "para": "Never pasting a secret.",
+   "hash": "8b86c23db491"
+  },
+  "limits": {
+   "line": "Templates in beta; the job is a sketch to prove in my account; keys still matter; other clouds undocumented.",
+   "para": "Four limits.",
+   "hash": "589331218ab1"
+  },
+  "sources": {
+   "line": "The SG/Send deployment guides vault, its repository, the factory's docs and sgit.ai.",
+   "para": "Read 17 November 2026.",
+   "hash": "032401b4e17f"
+  }
+ }
+}

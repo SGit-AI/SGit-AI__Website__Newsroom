@@ -1,0 +1,86 @@
+{
+ "slug": "deploy-sgit-from-ci",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 269,
+   "line": "Run your own sgit server in your account and region, deployed from CI with the site factory's pattern.",
+   "para": "One image, S3, an access token, OIDC, checks.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 103,
+   "line": "Your own server; one image; keys never reach it; from CI; no AWS keys; check, deploy, tear down; package it.",
+   "para": "Seven points.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "why",
+   "label": "Why your own environment",
+   "words": 155,
+   "line": "Sensitive data raises where it lives and who runs the server; your own account and region answers it.",
+   "para": "Ciphertext moves; the trust model does not.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "what",
+   "label": "What you deploy",
+   "words": 261,
+   "line": "One open-source Docker image, configured by environment variables, with memory, disk or S3 storage.",
+   "para": "CloudFormation templates for Lambda, Fargate and EC2, in beta.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "pipeline",
+   "label": "The pipeline pattern",
+   "words": 454,
+   "line": "Protected environment, OIDC, trust one repo and environment, least privilege, checks, smoke tests, teardown.",
+   "para": "Learned on the site factory.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "steps",
+   "label": "Step by step, on AWS",
+   "words": 302,
+   "line": "Region, OIDC provider, deploy role, environment and secrets, image in ECR, check, deploy, point sgit at it.",
+   "para": "With a sketch job.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "package",
+   "label": "Package it: an Action and a skill",
+   "words": 136,
+   "line": "A proposed sgit-deploy GitHub Action and a skill for agents.",
+   "para": "Or a request committed to a repository.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "prompt",
+   "label": "The prompt for your Claude",
+   "words": 158,
+   "line": "A prompt to set it up with your own Claude, one step at a time.",
+   "para": "Never pasting a secret.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 78,
+   "line": "Templates in beta; the job is a sketch to prove in my account; keys still matter; other clouds undocumented.",
+   "para": "Four limits.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 87,
+   "line": "The SG/Send deployment guides vault, its repository, the factory's docs and sgit.ai.",
+   "para": "Read 17 November 2026.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

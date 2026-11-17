@@ -1,0 +1,3 @@
+# Deploy sgit from CI (17 November 2026)
+
+Dinis: an article on deploying sgit in a team's own environment from a CI pipeline, based on how the AgentiCCells site factory runs pipelines from GitHub to AWS; maybe a skill or GitHub Action to package it; he will deploy it in his own account to check. Prompted by a health-sector team asking real questions (not named). Facts: SG/Send deploy guides vault fyofmkvr (read key published at sgit.ai/deploy/vault.json), SGraph-AI__App__Send (public; deploy/aws templates, deploy-full-cycle.yml; OIDC template trusts repo:*), the factory's SETUP.md and aws-oidc.md. YAML job is a sketch, marked as such.

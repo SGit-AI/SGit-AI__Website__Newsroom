@@ -55,6 +55,151 @@
   ],
   "articles": [
     {
+      "slug": "deploy-sgit-from-ci",
+      "title": "Deploy sgit in your own environment, from a CI pipeline: one Docker image, ciphertext in your own S3 bucket in the region you choose, an access token only you hold, and the pipeline pattern we learned building the AgentiCCells site factory, a protected environment, AWS through OpenID Connect with no keys, a role that trusts one repository and one environment, check workflows before anything real, and a full cycle that deploys, tests and tears down",
+      "date": "2026-11-17",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/deploy-sgit-from-ci.html",
+      "markdown": "https://newsroom.sgit.ai/articles/deploy-sgit-from-ci.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/deploy-sgit-from-ci.webp",
+      "teaser": "Run your own sgit server in your own AWS account and region, deployed from CI with the site factory's pattern: OIDC, no keys, checks first.",
+      "topics": [
+        "site-and-engineering",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "sgit",
+        "vaults",
+        "deployment",
+        "aws",
+        "github-actions",
+        "oidc",
+        "ci",
+        "healthcare",
+        "article"
+      ],
+      "links_out": [
+        "what-sgit-does-that-git-does-not",
+        "the-site-factory-works",
+        "ci-behaviour-policies"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "dep-shape.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dep-shape.webp",
+          "caption": "Your own sgit server: your devices encrypt, your account runs one image, your region holds the ciphertext.",
+          "kind": "concept"
+        },
+        {
+          "file": "dep-pipeline.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dep-pipeline.webp",
+          "caption": "The site factory pattern: protected environment, OIDC, narrow trust, least privilege, checks, teardown.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "deploy-sgit-from-ci",
+        "teaser": "Run your own sgit server in your own AWS account and region, deployed from CI with the site factory's pattern: OIDC, no keys, checks first.",
+        "topics": [
+          "site-and-engineering",
+          "agents-and-policy"
+        ],
+        "core_idea": "A team can hold its own sgit ciphertext in its own account and region, and deploy the server repeatably from CI with OIDC, a protected environment, narrow trust, checks and teardown.",
+        "nodes": [
+          {
+            "id": "image",
+            "label": "One image",
+            "kind": "artefact",
+            "summary": "Configured by environment variables."
+          },
+          {
+            "id": "region",
+            "label": "Your region",
+            "kind": "claim",
+            "summary": "Bucket named by account and region."
+          },
+          {
+            "id": "oidc",
+            "label": "OIDC, no keys",
+            "kind": "method",
+            "summary": "A one-hour role from GitHub."
+          },
+          {
+            "id": "trust",
+            "label": "Narrow trust",
+            "kind": "method",
+            "summary": "One repository, one environment."
+          },
+          {
+            "id": "checks",
+            "label": "Check first",
+            "kind": "method",
+            "summary": "Prove the setup before real runs."
+          },
+          {
+            "id": "action",
+            "label": "An sgit-deploy Action",
+            "kind": "method",
+            "summary": "Package it as one step."
+          }
+        ],
+        "edges": [
+          {
+            "from": "region",
+            "to": "image",
+            "rel": "depends-on"
+          },
+          {
+            "from": "oidc",
+            "to": "image",
+            "rel": "extends"
+          },
+          {
+            "from": "trust",
+            "to": "oidc",
+            "rel": "extends"
+          },
+          {
+            "from": "checks",
+            "to": "trust",
+            "rel": "extends"
+          },
+          {
+            "from": "action",
+            "to": "checks",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-site-factory-works",
+            "ci-behaviour-policies",
+            "what-sgit-does-that-git-does-not"
+          ],
+          "pages": [],
+          "sites": [
+            "https://sgit.ai/deploy/",
+            "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Running your own server changes who holds the ciphertext and where.",
+            "why": "Why."
+          },
+          {
+            "text": "There is no AWS access key in GitHub, so there is none to leak.",
+            "why": "OIDC."
+          },
+          {
+            "text": "nobody should have to repeat it by hand",
+            "why": "Package it."
+          }
+        ]
+      }
+    },
+    {
       "slug": "shipping-an-ios-app-with-agents",
       "title": "Shipping an iOS app with agents: how our agents build, test and send native apps to TestFlight from a Linux container, with CI on a Mac as the compiler, signing done once through the App Store Connect API, every green push in testers' hands, and what the three doors to users took for us, internal testers in about an hour, external testers in half a day to a day, and the App Store still waiting after eight days",
       "date": "2026-11-17",
@@ -3275,6 +3420,7 @@
         "ci-behaviour-policies"
       ],
       "links_in": [
+        "deploy-sgit-from-ci",
         "five-primitives-one-store",
         "a-portfolio-with-a-film-first",
         "a-website-that-is-her",
@@ -3445,6 +3591,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "deploy-sgit-from-ci",
         "fork-it",
         "our-workflow-on-odoo-20",
         "specialist-agents-for-every-team",
@@ -24660,6 +24807,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "deploy-sgit-from-ci",
         "where-to-invest-in-sgit"
       ],
       "figures": [

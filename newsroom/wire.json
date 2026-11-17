@@ -73,6 +73,37 @@
   ],
   "articles": [
     {
+      "slug": "deploy-sgit-from-ci",
+      "title": "Deploy sgit in your own environment, from a CI pipeline: one Docker image, ciphertext in your own S3 bucket in the region you choose, an access token only you hold, and the pipeline pattern we learned building the AgentiCCells site factory, a protected environment, AWS through OpenID Connect with no keys, a role that trusts one repository and one environment, check workflows before anything real, and a full cycle that deploys, tests and tears down",
+      "date": "2026-11-17",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/deploy-sgit-from-ci.html",
+      "markdown": "https://newsroom.sgit.ai/articles/deploy-sgit-from-ci.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/deploy-sgit-from-ci.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/deploy-sgit-from-ci.json",
+      "teaser": "Run your own sgit server in your own AWS account and region, deployed from CI with the site factory's pattern: OIDC, no keys, checks first.",
+      "summary": "More teams now want to use sgit vaults for sensitive data, health data included, and the first real question they ask is where the data lives and who runs the server. The answer can be: you do, in your own cloud account, in the region your data protection assessment needs. sgit's server is one Docker image, configured only by environment variables, that stores ciphertext it cannot read, in memory, on a disk or in Amazon S3; on AWS the bucket is named after your account and your region, and a single access token, kept in your CI's secret store, gates every route. The keys never reach it. CloudFormation templates for Lambda, ECS Fargate and EC2 are written, in beta, in a public repository. What makes it repeatable is the pipeline, and that is what we learned the hard way building the AgentiCCells site factory: deploy jobs that run only in a protected GitHub environment with a person's approval; AWS reached through OpenID Connect, so no AWS key is stored anywhere; a role that trusts one repository and one environment, not any branch; permissions limited to its own stacks; check workflows that prove the setup before anything real runs; and a full cycle that deploys, smoke-tests and destroys. There are a lot of moving parts, and the pain is worth it, because once it works the whole thing is automated. Here is how it works, step by step, a proposal to package it as a GitHub Action and a skill, and a prompt for your own Claude. I am deploying it in my own account first, to prove the steps.",
+      "topics": [
+        "site-and-engineering",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "sgit",
+        "vaults",
+        "deployment",
+        "aws",
+        "github-actions",
+        "oidc",
+        "ci",
+        "healthcare",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "shipping-an-ios-app-with-agents",
       "title": "Shipping an iOS app with agents: how our agents build, test and send native apps to TestFlight from a Linux container, with CI on a Mac as the compiler, signing done once through the App Store Connect API, every green push in testers' hands, and what the three doors to users took for us, internal testers in about an hour, external testers in half a day to a day, and the App Store still waiting after eight days",
       "date": "2026-11-17",

@@ -1,0 +1,31 @@
+{
+ "slug": "deploy-sgit-from-ci",
+ "teaser": "Run your own sgit server in your own AWS account and region, deployed from CI with the site factory's pattern: OIDC, no keys, checks first.",
+ "topics": ["site-and-engineering", "agents-and-policy"],
+ "core_idea": "A team can hold its own sgit ciphertext in its own account and region, and deploy the server repeatably from CI with OIDC, a protected environment, narrow trust, checks and teardown.",
+ "nodes": [
+  {"id": "image", "label": "One image", "kind": "artefact", "summary": "Configured by environment variables."},
+  {"id": "region", "label": "Your region", "kind": "claim", "summary": "Bucket named by account and region."},
+  {"id": "oidc", "label": "OIDC, no keys", "kind": "method", "summary": "A one-hour role from GitHub."},
+  {"id": "trust", "label": "Narrow trust", "kind": "method", "summary": "One repository, one environment."},
+  {"id": "checks", "label": "Check first", "kind": "method", "summary": "Prove the setup before real runs."},
+  {"id": "action", "label": "An sgit-deploy Action", "kind": "method", "summary": "Package it as one step."}
+ ],
+ "edges": [
+  {"from": "region", "to": "image", "rel": "depends-on"},
+  {"from": "oidc", "to": "image", "rel": "extends"},
+  {"from": "trust", "to": "oidc", "rel": "extends"},
+  {"from": "checks", "to": "trust", "rel": "extends"},
+  {"from": "action", "to": "checks", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["the-site-factory-works", "ci-behaviour-policies", "what-sgit-does-that-git-does-not"],
+  "pages": [],
+  "sites": ["https://sgit.ai/deploy/", "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send"]
+ },
+ "quotes": [
+  {"text": "Running your own server changes who holds the ciphertext and where.", "why": "Why."},
+  {"text": "There is no AWS access key in GitHub, so there is none to leak.", "why": "OIDC."},
+  {"text": "nobody should have to repeat it by hand", "why": "Package it."}
+ ]
+}

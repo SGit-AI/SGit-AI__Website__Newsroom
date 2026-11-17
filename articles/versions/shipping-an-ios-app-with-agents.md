@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-17 | published | 1,577 | first published | this release | [current](../shipping-an-ios-app-with-agents.md) |
+| **v1.0.0** | 2026-11-17 | published | 1,577 | first published | [`1fa22cc1b`](https://github.com/SGit-AI/SGit-AI__Website/commit/1fa22cc1b8f67e03bb9605a90c6ce67b253628cd) | [current](../shipping-an-ios-app-with-agents.md) |
 
 [← Back to the article](../shipping-an-ios-app-with-agents.md) · [All articles](../index.md)
 
