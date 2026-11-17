@@ -84,7 +84,7 @@ Neither goes on the ladder. A one-line brief to a fresh model can be right, and 
 
 ## What I will do next {#next}
 
-- **Sign my own:** with my key from pki.sgit.ai, starting with the pieces I steered most; every change after that a signed diff ([signed by the source](/articles/signed-by-the-source.html)).
+- **Sign my own, on the website:** the writer writes and publishes, signed with its agent key, at P1 or P2; I read the article on the site, and sign that exact version there, with my own key from pki.sgit.ai, whose private half never leaves my browser; my signature sits beside the agent's, and the piece reaches P4; every change after that is a signed diff, which I sign again ([signed by the source](/articles/signed-by-the-source.html)). Signing is part of publishing, and done by the author, on the page. That needs a "sign this version" control on every article.
 - **A provenance line on every article here,** in words, under the headline, with the type, origin, steering, background, review and level.
 - **A second model** to re-check the claims of the pieces that make factual claims, for P3.
 - **A first request for a response,** when there is a story where it matters; the ATM piece is the obvious one, and the decision is mine.

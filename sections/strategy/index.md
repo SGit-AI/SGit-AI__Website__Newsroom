@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-110 articles, newest first.
+111 articles, newest first.
 
 ## November 2026
 
+- [Any data, with any data: why I am now comfortable saying we can connect any data source with any other, the nine steps from access to a vault, a key and a map on the other side, how each owner keeps control, where the person stays in charge, and why connecting two, five, fifty or a hundred datasets should be something an agentic cell sells](../../articles/any-data-with-any-data.md), 2026-11-17, 5 min.
 - [Our companies and UTH: each company, technology and website we have built, mapped to what UAlgTec Heritage needs to build a European HeritageTech sector, from SGit's vaults and pki.sgit.ai's keys to SHarness, Agent Behaviour Policies, RiskMandate, AgentiCCells and its site factory, GAMMA-Ray, VoiceDebrief and PrompTugal.news, with what each could do for a heritage team, and why a sector needs companies like these](../../articles/our-companies-and-uth.md), 2026-11-17, 6 min.
 - [Keys after payment: how to hand vault keys and access keys to customers once they have paid, what Stripe does and does not do after the money is taken, what FastSpring, Paddle, Lemon Squeezy, Polar, Gumroad and Square offer instead, and a design where the key is sealed to the buyer's own public key, keys are stock, and a payment provider can sell them without ever holding one](../../articles/keys-after-payment.md), 2026-11-17, 6 min.
 - [The payment desk that could not take payment: paying a utility bill took two clerks, a system that half worked and a desk that accepted only one kind of card, and why I think AI's real impact on business is in small failures like this one, finding them and driving the change to fix them, while the money itself stays in plain, auditable code](../../articles/the-payment-desk.md), 2026-11-17, 3 min.

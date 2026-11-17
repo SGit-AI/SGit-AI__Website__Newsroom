@@ -10,7 +10,7 @@
 
 # Who wrote it, who steered it, who signs it: the provenance model PrompTugal.news adopted today, a type label, five axes and a ladder from "published by an agent" to "on the record", applied to seven articles on this site, and what the ladder cannot see yet, how much of the author is in a piece, the brief, the corrections and months of background
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-17 · [article v1.0.0](versions/who-steered-this.md) · [newsroom v0.14.141](https://newsroom.sgit.ai/admin/versions.html) · provenancejournalismnewsroomreviewsignaturesaipromptugalstandardsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-17 · [article v1.1.0, 2 versions](versions/who-steered-this.md) · [newsroom v0.14.141](https://newsroom.sgit.ai/admin/versions.html) · provenancejournalismnewsroomreviewsignaturesaipromptugalstandardsarticle
 
 ***Abstract:** When an LLM can write five versions of the same article in a minute, a reader needs to know who wrote it, who steered it, who checked it and who stands behind it. Today, with the conductor agent of PrompTugal.news, I mapped a model for that, the way we once adopted Wikipedia's review standard: a type label, from news to opinion; five axes, origin, research, claims, review and external voices, each recorded with who and when; and a ladder, from P0, a draft, through P1, published by an agent, P2, sourced, P3, verified by several models, P4, signed by a person, to P5, on the record, with signed responses from the people a story is about. Here I apply it to seven articles on this site, honestly. Most come out at P1 or P2: every release is signed, but by the writer agent's key, not mine, and nobody has been asked to respond. And rating them showed me what the model misses. The articles written here are not one-prompt pieces. They carry my brief, my photographs, my corrections and a long list of standing instructions, built up over months in one writer's session, with hundreds of earlier articles behind it. That is a big difference, and readers can feel it. So I propose two measures inside origin: steering, how much the author directed this piece, and background, how much context the writer carried. Different, not better; but it should be visible.*
 
@@ -88,7 +88,7 @@ Neither goes on the ladder. A one-line brief to a fresh model can be right, and 
 
 ## What I will do next
 
-- **Sign my own:** with my key from pki.sgit.ai, starting with the pieces I steered most; every change after that a signed diff ([signed by the source](signed-by-the-source.md)).
+- **Sign my own, on the website:** the writer writes and publishes, signed with its agent key, at P1 or P2; I read the article on the site, and sign that exact version there, with my own key from pki.sgit.ai, whose private half never leaves my browser; my signature sits beside the agent's, and the piece reaches P4; every change after that is a signed diff, which I sign again ([signed by the source](signed-by-the-source.md)). Signing is part of publishing, and done by the author, on the page. That needs a "sign this version" control on every article.
 - **A provenance line on every article here,** in words, under the headline, with the type, origin, steering, background, review and level.
 - **A second model** to re-check the claims of the pieces that make factual claims, for P3.
 - **A first request for a response,** when there is a story where it matters; the ATM piece is the obvious one, and the decision is mine.

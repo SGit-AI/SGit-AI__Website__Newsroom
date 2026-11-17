@@ -112,6 +112,7 @@ Site & engineeringAgents & policy[This article as a graph →](graphs.md#relate-
 
 ### Continued by
 
+- [Any data, with any data: why I am now comfortable saying we can connect any data source with any other, the nine steps from access to a vault, a key and a map on the other side, how each owner keeps control, where the person stays in charge, and why connecting two, five, fifty or a hundred datasets should be something an agentic cell sells](any-data-with-any-data.md) Why we can now connect any data source with any other: nine steps, owners keep control, a person approves every key, sold as cells.
 - [Memory is a lifecycle: a reply to Francois Vanderseypen on Neo4j's Relate, agreeing that a graph database is not agent memory, and showing how we answer his four questions, what gets written, trusted, merged and forgotten, with append lanes, signed commits, git-like graph merges and new versions instead of edits, all in encrypted vaults rather than a database](memory-is-a-lifecycle.md) A reply to Francois Vanderseypen: agent memory is a lifecycle, written, trusted, merged, forgotten, and how we answer each without a graph database.
 
 [All articles](index.md) · [All graphs](graphs.md)
