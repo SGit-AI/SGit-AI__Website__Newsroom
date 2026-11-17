@@ -4,7 +4,7 @@ date: 2026-11-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: We now have things people want to buy: secure sends, vaults, access keys to our servers, and agentic cells. What they are buying, in the end, is a key. So we need a good way to hand a key to someone who has just paid, and today we do not have one. Our Stripe integration is a payment link, a payment, and a redirect. My research shows the picture is a little better than I thought, and still not enough. Stripe takes the money and screens fraud very well, sends a signed webhook and can put the session id in the redirect; it has products and prices, but no stock, it does not generate keys, and it knows nothing about the buyer's keys; its Workflows can chain Stripe's own actions after a payment, in preview, with custom code still in private preview. Others go further on keys: FastSpring can sell from a pre-defined list of keys, which is stock, or call your server; Paddle Classic did the same with an uploaded list; Lemon Squeezy, Polar and Gumroad generate keys per sale; Square has none. Not one of them seals a key to the buyer's own public key. So here is the design I want: the buyer's browser makes a key pair before checkout; Stripe takes the money; one small serverless function takes a key from our stock, seals it to the buyer's key, signs it, and hands it back as a link and a QR code that only they can open. And for stock managed by someone else: give the provider claim codes, not keys.
-version: v999.0.0
+version: v0.14.139
 license: https://creativecommons.org/licenses/by/4.0/
 tags: payments, stripe, keys, pki, vaults, qr-codes, product, article
 status: published
