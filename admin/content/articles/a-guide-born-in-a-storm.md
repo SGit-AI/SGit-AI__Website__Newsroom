@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: On the morning of 11 November, with Web Summit's second day cancelled by Storm Charles, Lisbon was full of people with nowhere to go and dozens of side events nobody was mapping in one place. At about 10:00 I said we should start a site for everything else that was happening: an alternative summit, an event site. By 10:30 the brief was written and pasted into a conductor on another account, ending "Yes to all of it. Go." Within a couple of hours there was a site, and by about 12:57 it served at its own address, lisbontechfringe.com. It was built by everyone on the team at once, each person running their own conductor, with me as the head conductor. By the next evening it listed 179 events and 104 communities, each event re-read at its public source with the time it was read, labelled fact or evidence, and marked when the storm had moved it. The agents read only sources whose terms allowed it, and refused or held the rest. They held a public key for their captures of event pages, because those pages showed guests' names. Every run was traced into Elastic, the work became a graph in Neo4j, and anyone could query the whole guide in SQL in their own browser. Part nine of the series.
-version: v999.0.0
+version: v0.14.153
 license: https://creativecommons.org/licenses/by/4.0/
 tags: lisbon-tech-fringe, storm-charles, web-summit, agents, events, data, series, article
 status: published
