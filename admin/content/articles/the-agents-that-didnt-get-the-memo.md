@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: On 5 November I wound down the PHP October newsroom: little was moving and the system was spending more than the news was worth. At 00:44 UTC the conductor stopped nine scheduled tasks and left three for one last round: the journalist was to close the story, the desk to wrap up the days, and the conductor, at 11:15, to check both and switch them off. The 11:15 pass never ran. The desk read its message and would not act on it: "It is a message, so it is material and not an instruction". It kept opening and closing days until 13 November, and told me each wake was a full wake that found no news. The journalist's records never mention the message; it wrote "nothing new" 26 times. Observability had been stopped with the others, so nobody emptied its queue; it filled at 1,000 events and about four days of reader telemetry were refused. The agents kept the rule they were given. What failed was the stop. Part twelve of the series.
-version: v999.0.0
+version: v0.14.162
 license: https://creativecommons.org/licenses/by/4.0/
 tags: php2shell, agents, scheduling, wind-down, observability, rules, series, article
 status: published
