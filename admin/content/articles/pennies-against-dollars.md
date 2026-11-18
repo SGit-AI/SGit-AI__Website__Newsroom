@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: At Web Summit we measured what our agents cost, and the numbers tell one story from two ends. At one end, the swarm: on the night of 11 November, 15 signed requests, each started by a push, ran 216 model calls on four open-weight models through OpenRouter, up to 12 at once, in about ten minutes, for 6.8 cents; the same tokens at a frontier model's list price would have cost about two dollars. At the other end, the newsroom: its accountant agent reported days of 375 to 924 API-equivalent dollars, money we did not spend, because the team runs on a subscription, but a true measure of the work, and on the busiest day 98% of every token was a session re-reading its own history. The storm site said the same: 3.84 billion tokens, 98.7% of them cache reads, against about 2.50 dollars of actual model calls in a day. So the cost of an agent is set less by what it writes than by how long it has been remembering. The lessons: put the repeating work in code and cheap models, check them against each other, keep the frontier model for judgement, and start a fresh session from written notes rather than dragging a long one along. Part ten of the series.
-version: v999.0.0
+version: v0.14.159
 license: https://creativecommons.org/licenses/by/4.0/
 tags: costs, models, open-weight, agents, tokens, swarm, series, article
 status: published
