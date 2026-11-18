@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-17 | published | 1,562 | first published | this release | [current](../partners-sell-we-build.md) |
+| **v1.0.0** | 2026-11-17 | published | 1,562 | first published | [`246097ef9`](https://github.com/SGit-AI/SGit-AI__Website/commit/246097ef9c48c1e310433a7bbf44ba3be13bbb47) | [current](../partners-sell-we-build.md) |
 
 [← Back to the article](../partners-sell-we-build.md) · [All articles](../index.md)
 

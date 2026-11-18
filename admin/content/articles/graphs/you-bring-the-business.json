@@ -1,0 +1,31 @@
+{
+ "slug": "you-bring-the-business",
+ "teaser": "The AgentiCCells partner programme as built overnight: one page per partner, four figures each, £250 launch, free evaluations, ten languages.",
+ "topics": ["startups-and-strategy"],
+ "core_idea": "An article written in the newsroom was implemented overnight by the site's own agent team as a partner programme with standalone pages per partner type, figures, published terms, a launch price, free evaluations and ten languages.",
+ "nodes": [
+  {"id": "tag", "label": "The tagline", "kind": "concept", "summary": "You bring the business, we build the site."},
+  {"id": "pages", "label": "Partner pages", "kind": "example", "summary": "Freelancer, consultancy, firm."},
+  {"id": "figs", "label": "Four figures", "kind": "example", "summary": "Fit, flow, lanes, money."},
+  {"id": "price", "label": "Launch price", "kind": "concept", "summary": "£250 and free evaluations."},
+  {"id": "lang", "label": "Ten languages", "kind": "method", "summary": "International from day one."},
+  {"id": "flow", "label": "Article to site", "kind": "method", "summary": "Newsroom thinks, team builds."}
+ ],
+ "edges": [
+  {"from": "pages", "to": "tag", "rel": "extends"},
+  {"from": "figs", "to": "pages", "rel": "extends"},
+  {"from": "price", "to": "pages", "rel": "extends"},
+  {"from": "lang", "to": "pages", "rel": "extends"},
+  {"from": "pages", "to": "flow", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["partners-sell-we-build", "the-website-cell"],
+  "pages": [],
+  "sites": ["https://agenticcells.ai/partners/", "https://agenticcells.ai/partners/freelancer/", "https://agenticcells.ai/partners/consultancy/", "https://agenticcells.ai/partners/firm/"]
+ },
+ "quotes": [
+  {"text": "Partners: you bring the business, we build the site.", "why": "The tagline."},
+  {"text": "the newsroom thinks it through in public, and the team that owns the site implements it", "why": "The workflow."},
+  {"text": "agents make that cheap", "why": "Ten languages."}
+ ]
+}

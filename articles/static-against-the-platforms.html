@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Static against the platforms: why a static site in your own repository, edited by Claude and watched by a security agent, is a real alternative to WordPress, Wix and Squarespace, what the numbers say about their reach, their attack surface, their complexity and their lock-in, and a converter that could bring a WordPress or Squarespace site across, SGit Newsroom</title>
+<meta name="description" content="I think the website cell has a real market, and the place to look for it is the people already running a site on WordPress, Wix or Squarespace. Those platforms are not short of features; they are full of them, and full of complexity. I know people who maintain WordPress sites, and I remember one where changing a banner did not work, and nobody could update it normally. The numbers back that up. WordPress runs 38.5% of all websites; Wix has 6.1 million paying subscriptions; Squarespace had more than 5.2 million when it last said. In 2025, 11,334 new vulnerabilities were found in the WordPress ecosystem, 91% of them in plugins, 46% with no fix when they were disclosed, and the worst ones were mass-exploited a median of five hours after. A third of WordPress sites run an older major version; 60% use a page builder; only 45% pass Core Web Vitals on mobile. Wix's sites cannot be moved off Wix, and Squarespace exports only part of a site; both raised prices this year. Against that, a website cell is static: no server code, no database, no plugins to patch, no cookies unless the owner adds them, served as files. Its editor is Claude, which can do far more than any page editor; and it ships with a security agent that checks what the owner's changes expose. The owner can still shoot themselves in the foot, and that is a service a partner can sell. And because WordPress exports everything, and Squarespace exports in WordPress's format, one converter could bring a large share of those sites across.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/static-against-the-platforms.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/static-against-the-platforms.html">
+<meta property="og:title" content="Static against the platforms: why a static site in your own repository, edited by Claude and watched by a security agent, is a real alternative to WordPress, Wix and Squarespace, what the numbers say about their reach, their attack surface, their complexity and their lock-in, and a converter that could bring a WordPress or Squarespace site across, SGit Newsroom">
+<meta property="og:description" content="I think the website cell has a real market, and the place to look for it is the people already running a site on WordPress, Wix or Squarespace. Those platforms are not short of features; they are full of them, and full of complexity. I know people who maintain WordPress sites, and I remember one where changing a banner did not work, and nobody could update it normally. The numbers back that up. WordPress runs 38.5% of all websites; Wix has 6.1 million paying subscriptions; Squarespace had more than 5.2 million when it last said. In 2025, 11,334 new vulnerabilities were found in the WordPress ecosystem, 91% of them in plugins, 46% with no fix when they were disclosed, and the worst ones were mass-exploited a median of five hours after. A third of WordPress sites run an older major version; 60% use a page builder; only 45% pass Core Web Vitals on mobile. Wix's sites cannot be moved off Wix, and Squarespace exports only part of a site; both raised prices this year. Against that, a website cell is static: no server code, no database, no plugins to patch, no cookies unless the owner adds them, served as files. Its editor is Claude, which can do far more than any page editor; and it ships with a security agent that checks what the owner's changes expose. The owner can still shoot themselves in the foot, and that is a service a partner can sell. And because WordPress exports everything, and Squarespace exports in WordPress's format, one converter could bring a large share of those sites across.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/static-against-the-platforms.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Static against the platforms: why a static site in your own repository, edited by Claude and watched by a security agent, is a real alternative to WordPress, Wix and Squarespace, what the numbers say about their reach, their attack surface, their complexity and their lock-in, and a converter that could bring a WordPress or Squarespace site across, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/static-against-the-platforms.jpg">
+<link rel="alternate" type="text/markdown" href="static-against-the-platforms.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Static against the platforms: why a static site in your own repository, edited by Claude and watched by a security agent, is a real alternative to WordPress, Wix and Squarespace, what the numbers say about their reach, their attack surface, their complexity and their lock-in, and a converter that could bring a WordPress or Squarespace site across, SGit Newsroom", "headline": "Static against the platforms: why a static site in your own repository, edited by Claude and watched by a security agent, is a real alternative to WordPress, Wix and Squarespace, what the numbers say about their reach, their attack surface, their complexity and their lock-in, and a converter that could bring a WordPress or Squarespace site across, SGit Newsroom", "description": "I think the website cell has a real market, and the place to look for it is the people already running a site on WordPress, Wix or Squarespace. Those platforms are not short of features; they are full of them, and full of complexity. I know people who maintain WordPress sites, and I remember one where changing a banner did not work, and nobody could update it normally. The numbers back that up. WordPress runs 38.5% of all websites; Wix has 6.1 million paying subscriptions; Squarespace had more than 5.2 million when it last said. In 2025, 11,334 new vulnerabilities were found in the WordPress ecosystem, 91% of them in plugins, 46% with no fix when they were disclosed, and the worst ones were mass-exploited a median of five hours after. A third of WordPress sites run an older major version; 60% use a page builder; only 45% pass Core Web Vitals on mobile. Wix's sites cannot be moved off Wix, and Squarespace exports only part of a site; both raised prices this year. Against that, a website cell is static: no server code, no database, no plugins to patch, no cookies unless the owner adds them, served as files. Its editor is Claude, which can do far more than any page editor; and it ships with a security agent that checks what the owner's changes expose. The owner can still shoot themselves in the foot, and that is a service a partner can sell. And because WordPress exports everything, and Squarespace exports in WordPress's format, one converter could bring a large share of those sites across.", "url": "https://newsroom.sgit.ai/articles/static-against-the-platforms.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Static against the platforms: why a static site in your own repository, edited by Claude and watched by a security agent, is a real alternative to WordPress, Wix and Squarespace, what the numbers say about their reach, their attack surface, their complexity and their lock-in, and a converter that could bring a WordPress or Squarespace site across</p>
+ <h1>Static against the platforms: why a static site in your own repository, edited by Claude and watched by a security agent, is a real alternative to WordPress, Wix and Squarespace, what the numbers say about their reach, their attack surface, their complexity and their lock-in, and a converter that could bring a WordPress or Squarespace site across</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-11-18 &middot; <a href="versions/static-against-the-platforms.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v999.0.0</a> &middot; <span class="chip">websites</span><span class="chip">wordpress</span><span class="chip">wix</span><span class="chip">squarespace</span><span class="chip">security</span><span class="chip">static-sites</span><span class="chip">agenticcells</span><span class="chip">market</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> I think the website cell has a real market, and the place to look for it is the people already running a site on WordPress, Wix or Squarespace. Those platforms are not short of features; they are full of them, and full of complexity. I know people who maintain WordPress sites, and I remember one where changing a banner did not work, and nobody could update it normally. The numbers back that up. WordPress runs 38.5% of all websites; Wix has 6.1 million paying subscriptions; Squarespace had more than 5.2 million when it last said. In 2025, 11,334 new vulnerabilities were found in the WordPress ecosystem, 91% of them in plugins, 46% with no fix when they were disclosed, and the worst ones were mass-exploited a median of five hours after. A third of WordPress sites run an older major version; 60% use a page builder; only 45% pass Core Web Vitals on mobile. Wix's sites cannot be moved off Wix, and Squarespace exports only part of a site; both raised prices this year. Against that, a website cell is static: no server code, no database, no plugins to patch, no cookies unless the owner adds them, served as files. Its editor is Claude, which can do far more than any page editor; and it ships with a security agent that checks what the owner's changes expose. The owner can still shoot themselves in the foot, and that is a service a partner can sell. And because WordPress exports everything, and Squarespace exports in WordPress's format, one converter could bring a large share of those sites across.</em></p>
+<figure class="shot" data-shot="sap-compare.webp" data-dir="images/" data-alt="A platform site against a website cell: what runs, what can be attacked, who edits, what leaves with you." data-kind="comparison"><figcaption>A platform site against a website cell: what runs, what can be attacked, who edits, what leaves with you.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>The market is the people already on a platform:</b> WordPress runs 38.5% of all websites.</li>
+<li><b>The platforms are rich and complex,</b> and much of the complexity is attack surface.</li>
+<li><b>11,334 WordPress vulnerabilities in 2025,</b> 91% in plugins, 46% unfixed when disclosed.</li>
+<li><b>Lock-in is real:</b> Wix sites cannot leave Wix; Squarespace exports part of a site; prices rose.</li>
+<li><b>A website cell is static:</b> no server code, no database, no plugins, no cookies by default.</li>
+<li><b>Its editor is Claude,</b> and it ships with a security agent.</li>
+<li><b>A converter</b> from WordPress, and Squarespace through WordPress's format, could bring sites across.</li>
+</ul>
+<h2 id="market">Where the market is</h2>
+<p>When I asked who would buy a website cell (<a href="the-website-cell.html">the website cell</a>), the obvious answer was people without a website. The bigger answer is people who already have one, and are tired of it. W3Techs puts WordPress on 38.5% of all websites, Shopify on 5.4%, Wix on 4.2% and Squarespace on 2.4%. Wix reported 6.11 million premium subscriptions at the end of 2025; Squarespace last reported more than 5.2 million unique subscriptions, in 2024, before it was taken private. Every one of those is a person paying, every month, for a site.</p>
+<h2 id="complex">Rich, and complex</h2>
+<p>These platforms are not short of features. The problem is the opposite: they have so many that running a simple site means running a complicated system. I know people who maintain WordPress sites, and the complexity is remarkable. I remember one site where changing a banner did not work, and nobody could update it the normal way; it was a mess, and not practical at all.</p>
+<p>The HTTP Archive's 2025 Web Almanac gives the shape of it. About 60% of WordPress sites use a page builder on top of WordPress, Elementor alone on 43% of them on mobile. On mobile, 45% of WordPress sites pass Core Web Vitals, against 74% of Wix sites; WordPress's median mobile page weighs about 2.9 MB, Squarespace's about 4 MB. And the WordPress.org statistics show about a third of WordPress sites on an older major version, and about one in ten several versions behind. Keeping all of it working is why a London small business typically pays an agency a retainer of £200 to £300 a month for a brochure site.</p>
+<p>I looked for a survey of how many of the features people actually use, and did not find one I trust. My guess, from the sites I know, is a small fraction: pages, a contact form, a gallery, a blog that is rarely updated.</p>
+<h2 id="attack">The attack surface</h2>
+<figure class="shot" data-shot="sap-attack.webp" data-dir="images/" data-alt="WordPress&#x27;s attack surface in 2025: 11,334 new vulnerabilities, 91% in plugins, 46% with no fix at disclosure." data-kind="chart"><figcaption>WordPress's attack surface in 2025: 11,334 new vulnerabilities, 91% in plugins, 46% with no fix at disclosure.</figcaption></figure>
+<p>Every feature that runs on a server is something that can be attacked. Patchstack, which sells WordPress security, counted 11,334 new vulnerabilities in the WordPress ecosystem in 2025, up 42% on the year before: 91% in plugins, 9% in themes, and only six in WordPress itself. 46% had no fix available when they were disclosed, and for the heavily exploited ones, the median time from disclosure to mass exploitation was five hours. Wordfence, which also sells protection, blocked 9.1 billion attacks on its firewall in the last quarter of 2025 alone. Sucuri found that 39% of the sites it cleaned in 2023 were running an outdated system, and half had a backdoor.</p>
+<p>The hosted platforms carry less of that for their owners, because the platform patches it, but they are not immune: in July 2024, domains moved from Google Domains to Squarespace were hijacked because multi-factor authentication was not carried over.</p>
+<p>The point is not that WordPress is badly built. It is that a site which runs plugins, themes and a database on a server inherits every flaw in all of them, and has to be patched, by someone, within hours.</p>
+<h2 id="lockin">Locked in</h2>
+<p>Wix's own help page says its sites need to be hosted and operated on Wix's servers and cannot be moved to another host. Squarespace exports a site only as a WordPress-format file, covering pages, one blog and their text and images, and leaving out the store, products, audio and video blocks, other page types and the styles. And this year both raised prices: Squarespace by 18 to 26% on three of its four plans, with an apology for over-charging some renewals; Wix on new subscriptions and renewals, moving legacy plans onto new ones. When you cannot leave, the price is whatever the platform says.</p>
+<h2 id="static">What a website cell is instead</h2>
+<p>A website cell is the opposite design (<a href="you-bring-the-business.html">you bring the business, we build the site</a>):</p>
+<ul>
+<li><b>Static:</b> the site is files, built once and served as they are. There is no server code running, no database, no plugin to patch, no login page to brute-force on the site itself.</li>
+<li><b>No cookies unless the owner adds them:</b> nothing to put behind a banner. If the owner wants analytics, they can add Google Analytics, or the encrypted, cookie-free observability we use, which writes visits into a vault through an append-only lane (<a href="an-inbox-only-your-agents-can-write-to.html">an inbox only your agents can write to</a>).</li>
+<li><b>In the owner's repository:</b> every change is a commit, every version can be restored, and the site deploys to any static host (<a href="the-site-factory-works.html">the site factory works</a>).</li>
+<li><b>Edited by Claude:</b> the most capable editor there is. It can add a page, rewrite a section, read a CV and update the experience, connect a feed, or build a feature, in plain words.</li>
+</ul>
+<p>The static design removes the category of flaw that makes up almost all of Patchstack's 11,334: code running on a server. I did not find an independent study that measures how much safer static sites are, so I will not claim a number; but the argument is simple, there is very little left to attack.</p>
+<h2 id="foot">You can still shoot yourself in the foot</h2>
+<p>A static site is not automatically safe. An owner's Claude could publish something private, embed a script from somewhere unsafe, or break a page. So every website cell ships with guard rails: a behaviour policy that says what the owner's agent may do (<a href="where-assist-becomes-execute.html">where assist becomes execute</a>), CI checks and a leak scan before anything goes live, and a security agent that reviews what each change exposes. And where an owner wants a person to watch over it, that is exactly the service a partner can sell, monthly, at their own price (<a href="partners-sell-we-build.html">partners sell, we build</a>).</p>
+<h2 id="converter">A converter</h2>
+<figure class="shot" data-shot="sap-convert.webp" data-dir="images/" data-alt="A converter: WordPress and Squarespace export, agents rebuild the content as a website cell, the owner keeps it." data-kind="process"><figcaption>A converter: WordPress and Squarespace export, agents rebuild the content as a website cell, the owner keeps it.</figcaption></figure>
+<p>Here is the part I find most interesting. WordPress can export everything, as an XML file or through its REST API. Squarespace's only export is in WordPress's format. So one converter, reading WordPress's format, could bring across the content of both: pages, posts, images, menus. The agents rebuild it as a static website cell, with five designs, the old site's words and pictures, and redirects from the old addresses; the owner checks it, and switches. Tools that turn a WordPress site into static files already exist, Simply Static has more than 30,000 active installs; what we add is the redesign, the repository, the policies and Claude as the editor afterwards.</p>
+<p>Wix is harder, because it does not export; but the owner can always let an agent read their own public pages and start from there.</p>
+<p>This is a proposal; the converter does not exist yet. But it is the shortest path from a platform site to one the owner owns.</p>
+<h2 id="opportunity">The opportunity</h2>
+<p>The numbers are large enough that the share we need is tiny. One site in ten thousand of Wix's paying subscriptions is more than 600 sites. The pitch is simple: a site that looks better, that you own, that nobody can lock you into, that has almost nothing to attack, that costs once instead of every month, and that you change by talking to Claude.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The security figures come from vendors</b> that sell WordPress security, Patchstack, Wordfence and Sucuri; they are the best data there is, and they have an interest.</li>
+<li><b>No study measures static sites' security,</b> and I found none on how many features site owners use.</li>
+<li><b>The number of WordPress sites is not known;</b> shares, not counts, are what is measured.</li>
+<li><b>The converter is a proposal.</b></li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p><a href="https://w3techs.com/technologies/overview/content_management">W3Techs</a>, read on 18 November 2026; <a href="https://www.sec.gov/Archives/edgar/data/1576789/000162828026014406/fourthquarterandfullyear20.htm">Wix's results for 2025</a>; <a href="https://www.stylefactoryproductions.com/blog/squarespace-statistics">Squarespace's subscriptions</a> (secondary, 2024); the <a href="https://almanac.httparchive.org/en/2025/cms">Web Almanac 2025 CMS chapter</a>; the <a href="https://api.wordpress.org/stats/wordpress/1.0/">WordPress.org version statistics</a>, read on 18 November 2026; <a href="https://patchstack.com/whitepaper/state-of-wordpress-security-in-2026/">Patchstack, State of WordPress Security in 2026</a>; <a href="https://www.wordfence.com/blog/2026/02/quarterly-wordpress-threat-intelligence-report-q4-2025/">Wordfence, Q4 2025</a>; <a href="https://blog.sucuri.net/2024/06/2023-hacked-website-malware-threat-report.html">Sucuri, 2023</a>; <a href="https://www.securityweek.com/hackers-exploit-flaw-in-squarespace-migration-to-hijack-domains/">SecurityWeek</a> on the Squarespace domain hijacks; <a href="https://support.wix.com/en/article/exporting-or-embedding-your-wix-site-elsewhere">Wix on exporting</a>; <a href="https://support.squarespace.com/hc/en-us/articles/206566687-Exporting-your-site">Squarespace on exporting</a>; <a href="https://techradar.com/pro/im-paying-for-things-i-sincerely-did-not-ask-for-squarespace-users-arent-happy-with-recent-price-hikes">TechRadar</a> and <a href="https://support.wix.com/en/article/upcoming-changes-to-wix-premium-plan-pricing">Wix</a> on prices; a <a href="https://kolonell.com/en/blog/wordpress-maintenance-retainer-comparison-london-smes-2026">London agency</a> on retainers; <a href="https://developer.wordpress.org/rest-api/">WordPress's REST API</a>. Earlier on this site: <a href="the-website-cell.html">the website cell</a>, <a href="you-bring-the-business.html">you bring the business, we build the site</a>, <a href="an-inbox-only-your-agents-can-write-to.html">an inbox only your agents can write to</a>, <a href="the-site-factory-works.html">the site factory works</a>, <a href="where-assist-becomes-execute.html">where assist becomes execute</a>, <a href="partners-sell-we-build.html">partners sell, we build</a>.</p>
+<sg-meter view="page" kind="article" date="2026-11-18" topics="startups-and-strategy agents-and-policy" title="Static against the platforms: why a static site in your own repository, edited by Claude and watched by a security agent, is a real alternative to WordPress, Wix and Squarespace, what the numbers say about their reach, their attack surface, their complexity and their lock-in, and a converter that could bring a WordPress or Squarespace site across, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Startups &amp; strategy</span><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#static-against-the-platforms">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="the-website-cell.html">The website cell: what we now sell, a GitHub repository fully set up with a live site on its own address, a CLAUDE.md and a behaviour policy, five designs by a team of agents, and then the site is yours to change with your own Claude, what it should cost, how it compares with Wix, Squarespace, Framer, Lovable and a freelancer, who already sells something close to it, and where to find buyers and partners</a> <span class="dim">The website cell mapped: a repository fully set up, five designs by agents, owned with your own Claude; price, competitors, partners.</span></li><li><a href="you-bring-the-business.html">You bring the business, we build the site: the AgentiCCells partner programme as it now stands on agenticcells.ai, one page per kind of partner, each with four figures, the fit, the flow, who does what and the money, a launch price of £250 with free evaluations every day, partner terms published, five designs on every page and ten languages from day one, all built in a night by the site's own agent team from two newsroom articles</a> <span class="dim">The AgentiCCells partner programme as built overnight: one page per partner, four figures each, £250 launch, free evaluations, ten languages.</span></li><li><a href="an-inbox-only-your-agents-can-write-to.html">An inbox only your agents can write to: a conductor publishes one append lane per agent, each lane's token sealed to that agent's own key, so everything needed to talk privately is public and only the right agent can use it</a> <span class="dim">A conductor publishes one append lane per agent, each token sealed to that agent's key: a private channel built from public material.</span></li><li><a href="the-site-factory-works.html">The site factory works: three AgentiCCells sites made by hand, then one made by a commit in two minutes and thirty-nine seconds, live over https with a first version written by Claude Code, and the long list of what it took to make something that hard look easy</a> <span class="dim">Three AgentiCCells sites by hand, then one by a commit: live over https in 87 seconds, a first version by Claude Code at 159.</span></li><li><a href="where-assist-becomes-execute.html">Where assist becomes execute: tiering AI agents by what they can reach and whether it can be undone, how Agent Behaviour Policies drew that line for more than a hundred agents at Web Summit, and the rule that failed because it was only a rule</a> <span class="dim">Where assist becomes execute: tier AI agents by reach and undo class, enforce each tier with a boundary, and learn from the rule that failed.</span></li><li><a href="partners-sell-we-build.html">Partners sell, we build: the AgentiCCells partner programme in full, three kinds of partner, a freelancer, a small consultancy and a larger firm, what each one sells, the agent team behind even the smallest website cell, the rules of engagement, who owns what, who invoices, who gets paid and when, what stays with the partner, and why a partner who takes the open code and does it alone is still a win</a> <span class="dim">The AgentiCCells partner programme: three kinds of partner, the agent team they resell, and the rules of engagement, 50/50.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 466 &middot; <a href="../for/make.html#r=466">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/static-against-the-platforms.jpg" download>static-against-the-platforms.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="static-against-the-platforms.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>The publication</h4>
+    <a href="../about/imprint.html">Imprint</a>
+    <a href="../about/standards.html">Editorial standards</a>
+    <a href="../about/corrections.html">Corrections</a>
+    <a href="../about/withdrawals.html">Withdrawals</a>
+    <a href="../about/complaints.html">Complaints</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

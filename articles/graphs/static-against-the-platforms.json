@@ -1,0 +1,124 @@
+{
+  "slug": "static-against-the-platforms",
+  "teaser": "Why a static site in your own repository, edited by Claude, is an alternative to WordPress, Wix and Squarespace, and a converter to bring sites across.",
+  "topics": [
+    "startups-and-strategy",
+    "agents-and-policy"
+  ],
+  "core_idea": "Platform sites carry server-side complexity, a large attack surface and lock-in; a static website cell in the owner's repository, edited by Claude with guard rails, removes most of the surface, and a WordPress-format converter could move many sites across.",
+  "nodes": [
+    {
+      "id": "plat",
+      "label": "Platform sites",
+      "kind": "example",
+      "summary": "WordPress, Wix, Squarespace."
+    },
+    {
+      "id": "attack",
+      "label": "Attack surface",
+      "kind": "concept",
+      "summary": "Plugins, themes, servers."
+    },
+    {
+      "id": "lock",
+      "label": "Lock-in",
+      "kind": "concept",
+      "summary": "No export, rising prices."
+    },
+    {
+      "id": "cell",
+      "label": "The static website cell",
+      "kind": "method",
+      "summary": "Files, repository, Claude."
+    },
+    {
+      "id": "guard",
+      "label": "Guard rails",
+      "kind": "method",
+      "summary": "Policy, CI, security agent."
+    },
+    {
+      "id": "conv",
+      "label": "A converter",
+      "kind": "method",
+      "summary": "WordPress format in, cell out."
+    }
+  ],
+  "edges": [
+    {
+      "from": "attack",
+      "to": "plat",
+      "rel": "extends"
+    },
+    {
+      "from": "lock",
+      "to": "plat",
+      "rel": "extends"
+    },
+    {
+      "from": "cell",
+      "to": "plat",
+      "rel": "contrasts"
+    },
+    {
+      "from": "guard",
+      "to": "cell",
+      "rel": "extends"
+    },
+    {
+      "from": "conv",
+      "to": "cell",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-website-cell",
+      "you-bring-the-business",
+      "an-inbox-only-your-agents-can-write-to",
+      "the-site-factory-works",
+      "where-assist-becomes-execute",
+      "partners-sell-we-build"
+    ],
+    "pages": [],
+    "sites": [
+      "https://w3techs.com/technologies/overview/content_management",
+      "https://patchstack.com/whitepaper/state-of-wordpress-security-in-2026/",
+      "https://almanac.httparchive.org/en/2025/cms"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "there is very little left to attack",
+      "why": "Static."
+    },
+    {
+      "text": "When you cannot leave, the price is whatever the platform says.",
+      "why": "Lock-in."
+    },
+    {
+      "text": "the shortest path from a platform site to one the owner owns",
+      "why": "The converter."
+    }
+  ],
+  "figures": [
+    {
+      "file": "sap-compare.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sap-compare.webp",
+      "caption": "A platform site against a website cell: what runs, what can be attacked, who edits, what leaves with you.",
+      "kind": "comparison"
+    },
+    {
+      "file": "sap-attack.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sap-attack.webp",
+      "caption": "WordPress's attack surface in 2025: 11,334 new vulnerabilities, 91% in plugins, 46% with no fix at disclosure.",
+      "kind": "chart"
+    },
+    {
+      "file": "sap-convert.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sap-convert.webp",
+      "caption": "A converter: WordPress and Squarespace export, agents rebuild the content as a website cell, the owner keeps it.",
+      "kind": "process"
+    }
+  ]
+}

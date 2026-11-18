@@ -116,6 +116,11 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#partne
 - [The intersection: SGit, SHarness, Agent Behaviour Policies, RiskMandate and AgentiCCells as one stack of separate companies, now with real customers, real usage and real examples, one ladder of offers on every site, and a plan to align them all](the-intersection.md) SGit, SHarness, ABP, RiskMandate and AgentiCCells as one stack of separate companies, with real usage and one ladder of offers on every site.
 - [Integrate with whatever is on the other side: why we never start by asking a customer to move, how we build around the systems they already run, from Odoo 12 to Salesforce, and how, over time, either their system gets better and we retire our code, or ours becomes the better place](integrate-with-whatever-is-on-the-other-side.md) We never start by asking a customer to move. We integrate with what they run, build around it, and either retire our code or become the better place.
 
+### Continued by
+
+- [You bring the business, we build the site: the AgentiCCells partner programme as it now stands on agenticcells.ai, one page per kind of partner, each with four figures, the fit, the flow, who does what and the money, a launch price of £250 with free evaluations every day, partner terms published, five designs on every page and ten languages from day one, all built in a night by the site's own agent team from two newsroom articles](you-bring-the-business.md) The AgentiCCells partner programme as built overnight: one page per partner, four figures each, £250 launch, free evaluations, ten languages.
+- [Static against the platforms: why a static site in your own repository, edited by Claude and watched by a security agent, is a real alternative to WordPress, Wix and Squarespace, what the numbers say about their reach, their attack surface, their complexity and their lock-in, and a converter that could bring a WordPress or Squarespace site across](static-against-the-platforms.md) Why a static site in your own repository, edited by Claude, is an alternative to WordPress, Wix and Squarespace, and a converter to bring sites across.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 465 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=465)
