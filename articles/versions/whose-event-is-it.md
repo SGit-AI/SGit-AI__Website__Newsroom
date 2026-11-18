@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-18 | published | 1,929 | first published | this release | [current](../whose-event-is-it.md) |
+| **v1.0.0** | 2026-11-18 | published | 1,929 | first published | [`e9b9d0ebc`](https://github.com/SGit-AI/SGit-AI__Website/commit/e9b9d0ebc84512dfadfcd8a76541cbea777abfc5) | [current](../whose-event-is-it.md) |
 
 [← Back to the article](../whose-event-is-it.md) · [All articles](../index.md)
 

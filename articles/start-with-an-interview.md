@@ -120,6 +120,10 @@ Startups & strategy[This article as a graph →](graphs.md#start-with-an-intervi
 - [A portfolio with a film first: Silvio Switha's site, made in under an hour by the site factory and five design agents, with his music video in the first screen, his agents as a solar system and a mixing desk, a producer's studio, a proposal for clients and a gig poster, and every claim something he built](a-portfolio-with-a-film-first.md) Silvio Switha's portfolio site, made in under an hour by the factory and five design agents: his film first, his agents as a solar system and a mixing desk.
 - [Your own agentic cell, end to end: how a person asks for a site like the ones we made for Yiheng Wang and Silvio Switha, through a key pair in the browser, a vault they fill themselves and the site factory, with only three human gates, and then continues in their own Claude on their own repository](your-own-agentic-cell.md) How a person gets their own agentic cell: a key pair in the browser, a vault they fill themselves, the site factory, and then their own Claude.
 
+### Continued by
+
+- [A factory that films its work: a review of ESF, Mitko Vasilev's open-source Engineering Software Factory, one task into one microVM, one agent, deterministic gates and a verified patch with its evidence, the demo videos and review queue his post shows, which are not yet in the public repository, and what our own factories should take from it, starting with a recording made by the same run that proves the change](a-factory-that-films-its-work.md) A review of ESF, Mitko Vasilev's open software factory: a microVM per run, gates by exit code, evidence, and demo videos from the proving run.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 469 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=469)

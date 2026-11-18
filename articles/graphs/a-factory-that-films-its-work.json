@@ -1,0 +1,119 @@
+{
+  "slug": "a-factory-that-films-its-work",
+  "teaser": "A review of ESF, Mitko Vasilev's open software factory: a microVM per run, gates by exit code, evidence, and demo videos from the proving run.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "ESF runs each coding task in its own microVM with deterministic gates and an evidence folder; its newer idea, a demo recorded by the same run that proves the change, is worth copying, alongside gate integrity and per-run sandboxes.",
+  "nodes": [
+    {
+      "id": "esf",
+      "label": "ESF",
+      "kind": "example",
+      "summary": "One task, one microVM, one agent."
+    },
+    {
+      "id": "gates",
+      "label": "Deterministic gates",
+      "kind": "method",
+      "summary": "Exit codes, not the agent's word."
+    },
+    {
+      "id": "ev",
+      "label": "Evidence per run",
+      "kind": "method",
+      "summary": "One folder, traces."
+    },
+    {
+      "id": "video",
+      "label": "The proving recording",
+      "kind": "method",
+      "summary": "A clip from the same run."
+    },
+    {
+      "id": "ours",
+      "label": "Our factories",
+      "kind": "example",
+      "summary": "Policies, CI, signed commits."
+    },
+    {
+      "id": "abp",
+      "label": "Behaviour policies",
+      "kind": "concept",
+      "summary": "Could compile into ESF config."
+    }
+  ],
+  "edges": [
+    {
+      "from": "gates",
+      "to": "esf",
+      "rel": "extends"
+    },
+    {
+      "from": "ev",
+      "to": "esf",
+      "rel": "extends"
+    },
+    {
+      "from": "video",
+      "to": "gates",
+      "rel": "extends"
+    },
+    {
+      "from": "ours",
+      "to": "esf",
+      "rel": "compared-with"
+    },
+    {
+      "from": "abp",
+      "to": "esf",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-site-factory-works",
+      "introducing-sharness",
+      "what-can-your-agent-reach",
+      "start-with-an-interview"
+    ],
+    "pages": [],
+    "sites": [
+      "https://github.com/mitkox/esf"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The factory records it from the same run that proves the change.",
+      "why": "Mitko Vasilev."
+    },
+    {
+      "text": "the model never declares success",
+      "why": "ESF's gates."
+    },
+    {
+      "text": "it is evidence, not a demo made afterwards for show",
+      "why": "The recording."
+    }
+  ],
+  "figures": [
+    {
+      "file": "esf-post.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/esf-post.webp",
+      "caption": "Mitko Vasilev's post: a software factory that hands back a reviewed change, traces and a 14-second demo clip.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "esf-compare.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/esf-compare.webp",
+      "caption": "ESF and our factories side by side: isolation, gates, evidence, review, policy, video.",
+      "kind": "comparison"
+    },
+    {
+      "file": "esf-loop.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/esf-loop.webp",
+      "caption": "The loop to copy: the change, the gates, a recording made by the same run, and the reviewer sees all three.",
+      "kind": "process"
+    }
+  ]
+}
