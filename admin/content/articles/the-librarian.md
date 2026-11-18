@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: The librarian has always been my favourite agent. When a team of agents reads hundreds of sources a day, someone has to know what was read, where it came from, what it may be used for, and how it connects to everything else. Today PrompTugal.news gave that job its own site: library.promptugal.news, "everything we found, catalogued, sourced and linked". It holds 78 items so far, from the summit's official replays and other people's recordings to our own coverage and seven recorded gaps, each on its own card, what it is, who made it, when and where, its source, its licence, its evidence, and how it connects to the rest; all of it as JSON anyone can use. Behind it, a librarian with a team of its own, an ontologist, a cartographer, a graph keeper, a historian and a reality check, learning from the library our SGraph Send team built as a graph. And on the site, an invitation to librarians, the people, to work with it. The next shelves are the ones I care about most: official sources, government data and the law as it stands, so that every claim about a place can be checked against them. We should be finding budget to hire librarians for this. Part five of the series.
-version: v999.0.0
+version: v0.14.158
 license: https://creativecommons.org/licenses/by/4.0/
 tags: promptugal, library, librarians, catalogue, graphs, agents, series, article
 status: published

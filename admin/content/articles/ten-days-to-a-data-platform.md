@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: The first commit of PrompTugal.news was at 00:08 on 4 November: a newsroom for Web Summit. Two weeks and 6,790 commits later it is a data platform for Portugal's places. The storm site went live just after midnight on 11 November. On 15 November we gave every place its own agent: Portugal, the Algarve and each of its towns, with a behaviour policy each. On 17 November, one decision about the site factory let us create a data site, and then five more sites in one request: weather, travel, civic, startups and the data itself. Today, 18 November, the team added an events site, a register of 92 sources with the reason we do or do not read each, three new data sources, a library, video and webcam sites, and a cyber-threat site whose first two feeds, the known exploited vulnerabilities and the CVE list, were cleared to run by the security agent. Every change now passes a security review before and after. This is part one of the series, the timeline, and the point of it: each step made the next one cheaper, so the speed keeps growing.
-version: v999.0.0
+version: v0.14.158
 license: https://creativecommons.org/licenses/by/4.0/
 tags: promptugal, data, timeline, agents, security, series, article
 status: published

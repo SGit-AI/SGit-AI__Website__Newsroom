@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: Two weeks ago PrompTugal.news was a newsroom we started for Web Summit. Today it is something else: twelve public data sources collected by code, a register of 92 sources read and not read with the reason for each, a dozen sites on its own domain, from weather and events to civic, startups and a library, a security agent checking every change, and a simulated payout that shows how a reader's money would flow back to the sources. In the last day alone the team added three data sources, cleared two cyber-threat feeds, and the factory created six new sites. That is what happens when you productise the way you build: you keep gaining speed. This series tells it in parts. First, the timeline. Then the small thing that unblocked the most: a factory that turns one commit into a repository, an address and its owner's access. Then the business model: money back to the sources, in the open. Then the sites built on top of the data, a real-estate demo with real weather and events among them, each made in minutes. Then the librarian, my favourite agent. And last, the offer: a team like this one, for sale, with the code open and the data public.
-version: v999.0.0
+version: v0.14.158
 license: https://creativecommons.org/licenses/by/4.0/
 tags: promptugal, data, agenticcells, series, speed, platform, article
 status: published

@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: My business model for this platform is a positive feedback loop: the reader pays for what they read, and the money flows back to the sources that made it possible, in a way the reader can see. Today the PrompTugal.news team built the first version of that, as a simulation. A page shows how a reader's £5 would be shared: 30% kept for costs, the rest split among the sources behind the pages they read, weighted by how each was used, a cited fact, quoted words, a data set, a lead; 504 sources behind 112 pages, IPMA's data at the top. No money moves yet, and every page says so. Beside it, every value the sites serve now carries a link to its licence, and a public register lists 92 sources, the 18 we read and the 74 we do not, quoting why. There is no lock-in: everything is published, built on public data, with its evidence. And the gaps are the next step: some publishers do not allow their data to be shown, even data their own users gave them, and the answer is to ask them, on the record, and to make paying them part of the offer. Part three of the series.
-version: v999.0.0
+version: v0.14.158
 license: https://creativecommons.org/licenses/by/4.0/
 tags: promptugal, business-model, payments, licences, sources, open-data, series, article
 status: published

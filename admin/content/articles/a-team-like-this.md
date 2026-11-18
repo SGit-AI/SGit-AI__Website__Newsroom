@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: The last part of the series is the offer. Everything I have described, a newsroom that became a data platform in two weeks, a factory that turns a commit into a site and its owner's access, money flowing back to the sources, sites built on the data in minutes, a library at the heart of it, was built by an agentic team: conductors, a place agent for every town, data agents, a security agent reviewing every change before and after, a behaviour policy for every agent, a librarian. That team is what we sell. The code is open source and the data is public, so anyone can take it; what a customer buys is a team like this one, set up for them, with its policies, running their sources, their sites and their workflows, at the speed they have seen here. It is a live demo of what an agentic team does under agent behaviour policies. And now that PrompTugal.news is a working platform and not a small experiment, I want to talk to the people who could use it, integrate with it, fund it or feed it: councils and regional bodies, tourism, universities, newsrooms, the platforms we cannot read yet, and anyone who needs to know what is happening in a place. Part six of the series.
-version: v999.0.0
+version: v0.14.158
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agenticcells, promptugal, agent-teams, behaviour-policies, go-to-market, series, article
 status: published

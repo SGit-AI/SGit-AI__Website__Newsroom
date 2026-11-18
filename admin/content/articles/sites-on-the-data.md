@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: The data platform and the site factory meet in a way I did not plan, and it may be the most interesting part of all. Because any site can now read PrompTugal.news's public data, and the factory can make a site in under a minute, every idea becomes a site. This morning, at 10:36, I asked for a site showing the IPMA data we have; by 10:48 ipma-data.agenticcells.site was live, drawing IPMA's warnings, forecasts and readings six ways, from a broadsheet weather page to a night-desk board to a single A4 almanac. This afternoon the factory made Cinco Chaminés, an invented company with five holiday homes from Tavira to Sagres: the homes, prices and bookings are simulated and say so, but the weather, the sea, the UV and the local events for your dates are real, read live from the data platform, with links to live beach cameras. Then demos for weather, events and cyber, and a simulated London billboard. This is what I mean by intersection: a real-estate site is more useful with what to do there, the weather and the sea; and each of those is one more data source on the platform. And every experiment, a new industry, a new view, a new way to read the same data, is a demo for what an agentic cell can do. Part four of the series.
-version: v999.0.0
+version: v0.14.158
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agenticcells, data, demos, websites, ipma, real-estate, series, article
 status: published

@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: Some of the things that make the biggest difference are hard to measure, and small. On 17 November, at about 18:20, I said yes to a change in the AgentiCCells site factory, "since it will really make a massive difference": a second domain, a GitHub token per owner, and collaborators. The last one is the detail. The factory could already turn a request file in a commit into a GitHub repository, a DNS record in AWS, a seeded site, its address and HTTPS. Now the same request can name the GitHub accounts that should have access, and the factory invites them at the end. So one commit with the details of a site and its owner's account does everything: when events.promptugal.news was created today, the factory validated the request at 14:28:12, created the repository four seconds later, seeded it, configured it, set the DNS record, enforced HTTPS at 14:29:06 and gave the owner's account access at 14:29:07, 55 seconds in all. The factory has now handled 36 requests. And the hand-over is one sentence: point your Claude at this repository, and start editing. Part two of the series.
-version: v999.0.0
+version: v0.14.158
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agenticcells, site-factory, github, aws, automation, series, article
 status: published
