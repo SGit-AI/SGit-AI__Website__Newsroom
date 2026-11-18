@@ -1,0 +1,108 @@
+{
+  "slug": "agents-that-retire-themselves",
+  "teaser": "How the storm team's agents handed their roles to fresh sessions 106 times, starting again from a librarian's pack and a note.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Because an agent's cost is mostly its own memory, the storm team's agents wrote hand-over notes and restarted from a librarian's pack, reading 53% to 84% less per call.",
+  "nodes": [
+    {
+      "id": "count",
+      "label": "106 hand-overs",
+      "kind": "example",
+      "summary": "In 147 sessions."
+    },
+    {
+      "id": "pack",
+      "label": "The briefing pack",
+      "kind": "method",
+      "summary": "Written by the librarian."
+    },
+    {
+      "id": "cost",
+      "label": "Memory is the cost",
+      "kind": "concept",
+      "summary": "99.4% re-reading."
+    },
+    {
+      "id": "note",
+      "label": "The hand-over note",
+      "kind": "method",
+      "summary": "Per role."
+    },
+    {
+      "id": "fresh",
+      "label": "Fresh sessions",
+      "kind": "method",
+      "summary": "53% to 84% less."
+    },
+    {
+      "id": "key",
+      "label": "Sealed keys",
+      "kind": "method",
+      "summary": "Passed by the conductor."
+    }
+  ],
+  "edges": [
+    {
+      "from": "pack",
+      "to": "cost",
+      "rel": "answers"
+    },
+    {
+      "from": "fresh",
+      "to": "pack",
+      "rel": "depends-on"
+    },
+    {
+      "from": "note",
+      "to": "fresh",
+      "rel": "extends"
+    },
+    {
+      "from": "key",
+      "to": "fresh",
+      "rel": "extends"
+    },
+    {
+      "from": "count",
+      "to": "fresh",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "ten-days-at-web-summit",
+      "storm-charles-a-newsroom-built-in-a-night",
+      "pennies-against-dollars"
+    ],
+    "pages": [],
+    "sites": [
+      "https://storm-charles.promptugal.news/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "the librarian saves tokens and ... implements memory in a much more effective way",
+      "why": "Dinis."
+    },
+    {
+      "text": "A team that writes down what matters, and starts again from that, is not guessing.",
+      "why": "Why it matters."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ret-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ret-flow.webp",
+      "caption": "An agent retiring itself: write the hand-over, start a fresh session from the pack, carry on with less to read.",
+      "kind": "process"
+    },
+    {
+      "file": "ret-calls.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ret-calls.webp",
+      "caption": "Tokens per call before and after a hand-over: the journalist's last call 377,788, its fresh session's first 84,119.",
+      "kind": "chart"
+    }
+  ]
+}

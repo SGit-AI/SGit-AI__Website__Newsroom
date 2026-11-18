@@ -2,10 +2,11 @@
 
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
 
-76 articles, newest first.
+77 articles, newest first.
 
 ## November 2026
 
+- [Agents that retire themselves: how the Storm Charles team's agents handed their roles to fresh sessions 106 times in 147 sessions, each one leaving a hand-over note and starting again from a short pack written by the librarian, why a fresh session read 53% to 84% less on every call, the one hand-over that broke something, and why starting again is cheaper than remembering](../../articles/agents-that-retire-themselves.md), 2026-11-18, 4 min.
 - [Pennies against dollars: what our agents actually cost at Web Summit, the swarm that ran 216 model calls on four open-weight models for under seven cents where the same tokens on a frontier model would have cost about two dollars, newsroom days of hundreds of API-equivalent dollars, almost all of it agents re-reading their own sessions, and the lesson that context is the cost and starting again is cheaper than remembering](../../articles/pennies-against-dollars.md), 2026-11-18, 5 min.
 - [The librarian: my favourite agent, and why a data platform needs a library at its heart, a catalogue of everything PrompTugal.news has read, each item with its source, licence, evidence and links, a graph of how it all connects, an invitation to real librarians, and the next shelves, official sources and the law](../../articles/the-librarian.md), 2026-11-18, 3 min.
 - [Ten days to a data platform: how PrompTugal.news went from a newsroom at Web Summit to twelve public data sources, a register of 92 sources read and not read, a dozen sites on its own domain and two cyber-threat feeds cleared to run, with a security agent on every change, and why each step made the next one cheaper](../../articles/ten-days-to-a-data-platform.md), 2026-11-18, 4 min.

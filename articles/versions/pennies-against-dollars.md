@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-18 | published | 1,298 | first published | this release | [current](../pennies-against-dollars.md) |
+| **v1.0.0** | 2026-11-18 | published | 1,298 | first published | [`50460d281`](https://github.com/SGit-AI/SGit-AI__Website/commit/50460d2810d26f17166176c3a300fa46bea7f86d) | [current](../pennies-against-dollars.md) |
 
 [← Back to the article](../pennies-against-dollars.md) · [All articles](../index.md)
 

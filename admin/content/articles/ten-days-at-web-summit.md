@@ -77,7 +77,7 @@ I will publish these one at a time, and link each one here as it goes live.
 8. [After the storm](/articles/after-the-storm.html): Storm Charles, part two: flights, transport, the cloud and the model router.
 9. [A guide born in a storm](/articles/a-guide-born-in-a-storm.html): Lisbon Tech Fringe, live two and a half hours after its brief.
 10. [Pennies against dollars](/articles/pennies-against-dollars.html): open-weight swarms against frontier models, and the cost of memory.
-11. **Agents that retire themselves:** 147 sessions and 106 hand-overs.
+11. [Agents that retire themselves](/articles/agents-that-retire-themselves.html): 147 sessions and 106 hand-overs.
 12. **The agents that didn't get the memo:** a newsroom that ran nine days on "nothing new".
 13. **One hour to TestFlight:** VoiceDebrief, when there is something to install.
 

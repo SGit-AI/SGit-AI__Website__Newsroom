@@ -55,6 +55,145 @@
   ],
   "articles": [
     {
+      "slug": "agents-that-retire-themselves",
+      "title": "Agents that retire themselves: how the Storm Charles team's agents handed their roles to fresh sessions 106 times in 147 sessions, each one leaving a hand-over note and starting again from a short pack written by the librarian, why a fresh session read 53% to 84% less on every call, the one hand-over that broke something, and why starting again is cheaper than remembering",
+      "date": "2026-11-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/agents-that-retire-themselves.html",
+      "markdown": "https://newsroom.sgit.ai/articles/agents-that-retire-themselves.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/agents-that-retire-themselves.webp",
+      "teaser": "How the storm team's agents handed their roles to fresh sessions 106 times, starting again from a librarian's pack and a note.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "storm-charles",
+        "agents",
+        "memory",
+        "tokens",
+        "hand-overs",
+        "librarian",
+        "series",
+        "article"
+      ],
+      "links_out": [
+        "ten-days-at-web-summit",
+        "storm-charles-a-newsroom-built-in-a-night",
+        "pennies-against-dollars"
+      ],
+      "links_in": [
+        "ten-days-at-web-summit"
+      ],
+      "figures": [
+        {
+          "file": "ret-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ret-flow.webp",
+          "caption": "An agent retiring itself: write the hand-over, start a fresh session from the pack, carry on with less to read.",
+          "kind": "process"
+        },
+        {
+          "file": "ret-calls.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ret-calls.webp",
+          "caption": "Tokens per call before and after a hand-over: the journalist's last call 377,788, its fresh session's first 84,119.",
+          "kind": "chart"
+        }
+      ],
+      "graph": {
+        "slug": "agents-that-retire-themselves",
+        "teaser": "How the storm team's agents handed their roles to fresh sessions 106 times, starting again from a librarian's pack and a note.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Because an agent's cost is mostly its own memory, the storm team's agents wrote hand-over notes and restarted from a librarian's pack, reading 53% to 84% less per call.",
+        "nodes": [
+          {
+            "id": "count",
+            "label": "106 hand-overs",
+            "kind": "example",
+            "summary": "In 147 sessions."
+          },
+          {
+            "id": "pack",
+            "label": "The briefing pack",
+            "kind": "method",
+            "summary": "Written by the librarian."
+          },
+          {
+            "id": "cost",
+            "label": "Memory is the cost",
+            "kind": "concept",
+            "summary": "99.4% re-reading."
+          },
+          {
+            "id": "note",
+            "label": "The hand-over note",
+            "kind": "method",
+            "summary": "Per role."
+          },
+          {
+            "id": "fresh",
+            "label": "Fresh sessions",
+            "kind": "method",
+            "summary": "53% to 84% less."
+          },
+          {
+            "id": "key",
+            "label": "Sealed keys",
+            "kind": "method",
+            "summary": "Passed by the conductor."
+          }
+        ],
+        "edges": [
+          {
+            "from": "pack",
+            "to": "cost",
+            "rel": "answers"
+          },
+          {
+            "from": "fresh",
+            "to": "pack",
+            "rel": "depends-on"
+          },
+          {
+            "from": "note",
+            "to": "fresh",
+            "rel": "extends"
+          },
+          {
+            "from": "key",
+            "to": "fresh",
+            "rel": "extends"
+          },
+          {
+            "from": "count",
+            "to": "fresh",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "ten-days-at-web-summit",
+            "storm-charles-a-newsroom-built-in-a-night",
+            "pennies-against-dollars"
+          ],
+          "pages": [],
+          "sites": [
+            "https://storm-charles.promptugal.news/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "the librarian saves tokens and ... implements memory in a much more effective way",
+            "why": "Dinis."
+          },
+          {
+            "text": "A team that writes down what matters, and starts again from that, is not guessing.",
+            "why": "Why it matters."
+          }
+        ]
+      }
+    },
+    {
       "slug": "pennies-against-dollars",
       "title": "Pennies against dollars: what our agents actually cost at Web Summit, the swarm that ran 216 model calls on four open-weight models for under seven cents where the same tokens on a frontier model would have cost about two dollars, newsroom days of hundreds of API-equivalent dollars, almost all of it agents re-reading their own sessions, and the lesson that context is the cost and starting again is cheaper than remembering",
       "date": "2026-11-18",
@@ -82,6 +221,7 @@
         "spend-fewer-tokens"
       ],
       "links_in": [
+        "agents-that-retire-themselves",
         "ten-days-at-web-summit"
       ],
       "figures": [
@@ -14347,6 +14487,7 @@
         "after-the-storm",
         "a-guide-born-in-a-storm",
         "pennies-against-dollars",
+        "agents-that-retire-themselves",
         "storm-charles-a-newsroom-built-in-a-night",
         "who-else-controls-ai-agents-at-web-summit",
         "an-inbox-only-your-agents-can-write-to",
@@ -14355,6 +14496,7 @@
         "meetscribe"
       ],
       "links_in": [
+        "agents-that-retire-themselves",
         "pennies-against-dollars",
         "gaining-speed",
         "a-guide-born-in-a-storm",
@@ -14935,6 +15077,7 @@
         "who-else-controls-ai-agents-at-web-summit"
       ],
       "links_in": [
+        "agents-that-retire-themselves",
         "ten-days-to-a-data-platform",
         "a-guide-born-in-a-storm",
         "from-a-feed-to-meaning",
