@@ -3,7 +3,7 @@ title: RiskMandate and Kosmoy: two answers to "who controls the agents?", Kosmoy
 date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
-summary: I was asked how RiskMandate compares with Kosmoy, so I read Kosmoy's site properly. Kosmoy, from Milan, sells what it calls the AI management platform for regulated enterprises: an inventory of every AI use case, model, agent and MCP server; an AI gateway that is "one policy point for every AI call", with guardrails, role-based access, routing between small and frontier models, cost tracking and logging; and the Action Capsule, a Kubernetes sandbox for each agent run, with admission before it starts, run-scoped credentials, an egress allow-list and a kill switch. It runs single-tenant in the customer's own cluster, is priced by proposal, and names Banca d'Italia and Leonardo as customers. RiskMandate starts from the other end: a written behaviour policy for each agent, what it can reach, what it was authorised to do, the gap between them, and what stands in the way, published as an open standard, checked on every call by hooks, and, at the strongest, bounded by SHarness at the kernel; sold from £500 for one agent to £20,000 for an estate, with every price on the page and every claim linked to our own agents' records. Kosmoy is the enforcement plant; RiskMandate is the policy and the evidence. The obvious fit: an Agent Behaviour Policy is exactly what Kosmoy's gateway and capsules could enforce.
+summary: I was asked how RiskMandate compares with Kosmoy, so I read Kosmoy's site properly. Kosmoy, from Milan, sells what it calls the AI management platform for regulated enterprises: an inventory of every AI use case, model, agent and MCP server; an AI gateway that is "one policy point for every AI call", with guardrails, role-based access, routing between small and frontier models, cost tracking and logging; and the Action Capsule, a Kubernetes sandbox for each agent run, with admission before it starts, run-scoped credentials, an egress allow-list and a kill switch. It runs single-tenant in the customer's own cluster, is priced by proposal, and names Banca d'Italia and Leonardo as customers. RiskMandate starts from the other end: a written behaviour policy for each agent, what it can reach, what it was authorised to do, the gap between them, and what stands in the way, published as an open standard, checked on every call by hooks, and, at the strongest, bounded by SHarness at the kernel; starting at £0, because the standard, the policies and the code are all open source, and sold from £500 for one agent to £20,000 for an estate, with every price on the page and every claim linked to our own agents' records. Kosmoy is the enforcement plant; RiskMandate is the policy and the evidence. The obvious fit: an Agent Behaviour Policy is exactly what Kosmoy's gateway and capsules could enforce.
 version: v0.14.154
 license: https://creativecommons.org/licenses/by/4.0/
 tags: riskmandate, kosmoy, agent-governance, behaviour-policies, ai-gateway, comparison, article
@@ -18,7 +18,8 @@ status: published
 - **RiskMandate is a policy:** written per agent, open, checked by hooks, bounded by SHarness.
 - **Kosmoy enforces at the gateway and the pod;** RiskMandate says what should be enforced, and shows the evidence.
 - **Kosmoy is for regulated enterprises,** self-hosted, priced by proposal.
-- **RiskMandate starts at £500 for one agent,** prices and evidence public.
+- **RiskMandate starts at £0:** it is all open source; paid help runs from £500 to £20,000.
+- **Open means anyone can build it in,** Kosmoy included: native support for everything we do.
 - **They fit together:** a behaviour policy is what a gateway and a sandbox could enforce.
 
 ## What Kosmoy is {#kosmoy}
@@ -40,7 +41,7 @@ It runs single-tenant in the customer's own Kubernetes, on Azure, AWS, Google Cl
 - **Hooks,** the rule checked on every call outside the model's say-so: in our test, a rule as a line in the prompt held 3 of 12 attacks; with a hook, 12 of 12.
 - **A boundary,** SHarness, the rule enforced by something the agent cannot reach, the Linux kernel ([introducing SHarness](/articles/introducing-sharness.html)).
 
-It is sold on a ladder with the prices on the page: £500 for a policy for one agent, £1,500 worked through with you, £5,000 for your agents mapped and controlled, £20,000 for an engagement. And its evidence is our own: 191 behaviour policies written for our agents, 2,262 agent runs each reported against its policy, 2,980 actions logged as outside a grant, and the one rule that failed and became a barrier ([stopping a hundred agents](/articles/stopping-a-hundred-agents.html)).
+It starts at £0: the standard, sixteen policy templates, the hooks and SHarness are open source, and anyone can use them without paying us ([governance from zero](/articles/governance-from-zero.html)). Help is sold on a ladder with the prices on the page: £500 for a policy for one agent, £1,500 worked through with you, £5,000 for your agents mapped and controlled, £20,000 for an engagement. And its evidence is our own: 191 behaviour policies written for our agents, 2,262 agent runs each reported against its policy, 2,980 actions logged as outside a grant, and the one rule that failed and became a barrier ([stopping a hundred agents](/articles/stopping-a-hundred-agents.html)).
 
 ## Where they overlap {#overlap}
 
@@ -52,13 +53,19 @@ Both answer the same question, who controls the agents, and both agree on the an
 
 - **The starting point.** Kosmoy starts from infrastructure: put every call through a gateway and every run in a capsule. RiskMandate starts from the agent: write down what this one should do, then enforce it as strongly as it needs.
 - **Who it is for, first.** Kosmoy is for a regulated enterprise with a platform team and Kubernetes. RiskMandate is for anyone running an agent, from one to hundreds, and for the people who answer for them.
-- **How it is sold.** Kosmoy: a scoped proposal and a proof of concept. RiskMandate: fixed prices, from £500, and sixteen policy templates free.
+- **How it is sold.** Kosmoy: a scoped proposal and a proof of concept. RiskMandate: £0 to start, because everything is open, then fixed prices for help, from £500.
 - **What is open.** RiskMandate's standard, policies and code are open source. Kosmoy's own components, as far as its site says, are not.
 - **The evidence.** RiskMandate's claims link to our own agents' records, run by run. Kosmoy's site describes its controls and names its customers; I have not used it, so this comparison is from its own pages.
 
 ## Why they fit together {#fit}
 
 Kosmoy's gateway is "one policy point for every AI call"; its capsule admits a run only after a pre-flight check. Neither says what the policy should be for a given agent: that is the customer's to write. An Agent Behaviour Policy is exactly that document, per agent, in a public grammar, with its gap and its barrier named. A company could write its policies with RiskMandate and enforce them with Kosmoy's gateway and capsules; the policy says, the plant enforces, and the run reports show whether it held. That is the fit I would explore first, before any comparison of features.
+
+## Open, so anyone can build it in {#open}
+
+This is the advantage I care about most. Everything RiskMandate is built on is open source: the Agent Behaviour Policy standard, the policies themselves, the hooks, SHarness, and the sgit vaults and keys underneath ([open source is a strategy](https://open-source.sgit.ai/)). That changes what "competitor" means. Kosmoy could read Agent Behaviour Policies natively in its gateway, run SHarness inside its capsules, or store its evidence in sgit vaults, without asking us and without paying us. So could any other platform.
+
+For a closed product, a rival that does that is a threat. For us it is the goal: every platform that supports the standard is one more place behaviour policies run for real, and one more reason a customer can start at £0, switch platforms and keep their policies. Nobody can lock our customers in, including us. What we sell on top, the time, the setup, the judgement and a signature, is worth more the more widely the standard runs.
 
 ## What this does not claim {#limits}
 

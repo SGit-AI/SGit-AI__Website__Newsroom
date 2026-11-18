@@ -4,11 +4,11 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.154 · 470 articles since 2026-08-17; the newest is 2026-11-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 470 articles since 2026-08-17; the newest is 2026-11-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [RiskMandate and Kosmoy: two answers to "who controls the agents?", Kosmoy's self-hosted control plane for regulated enterprises, with an AI gateway, guardrails, a model router, observability and a Kubernetes sandbox for every agent run, and RiskMandate's open behaviour policies, written per agent, checked by hooks and bounded by SHarness, where they overlap, where they differ, and why they fit together](articles/riskmandate-and-kosmoy.md), 2026-11-18, 5 min. RiskMandate and Kosmoy compared: an enterprise AI control plane and an open behaviour policy per agent, and why they fit together.
+- [RiskMandate and Kosmoy: two answers to "who controls the agents?", Kosmoy's self-hosted control plane for regulated enterprises, with an AI gateway, guardrails, a model router, observability and a Kubernetes sandbox for every agent run, and RiskMandate's open behaviour policies, written per agent, checked by hooks and bounded by SHarness, where they overlap, where they differ, and why they fit together](articles/riskmandate-and-kosmoy.md), 2026-11-18, 6 min. RiskMandate and Kosmoy compared: an enterprise AI control plane and an open behaviour policy per agent, and why they fit together.
 
 ## Five more
 
@@ -22,7 +22,7 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ### Wednesday 18 November 2026 (7 articles)
 
-- Agent security & behaviour policies: [RiskMandate and Kosmoy: two answers to "who controls the agents?", Kosmoy's self-hosted control plane for regulated enterprises, with an AI gateway, guardrails, a model router, observability and a Kubernetes sandbox for every agent run, and RiskMandate's open behaviour policies, written per agent, checked by hooks and bounded by SHarness, where they overlap, where they differ, and why they fit together](articles/riskmandate-and-kosmoy.md), 5 min.
+- Agent security & behaviour policies: [RiskMandate and Kosmoy: two answers to "who controls the agents?", Kosmoy's self-hosted control plane for regulated enterprises, with an AI gateway, guardrails, a model router, observability and a Kubernetes sandbox for every agent run, and RiskMandate's open behaviour policies, written per agent, checked by hooks and bounded by SHarness, where they overlap, where they differ, and why they fit together](articles/riskmandate-and-kosmoy.md), 6 min.
 - The future of news: [A guide born in a storm: when Storm Charles cancelled Web Summit's second day, the whole team built Lisbon Tech Fringe, a guide to the city's side events, from a spoken brief at 10:00 to its own address by about 12:57, 179 events and 104 communities each re-read at its source, one conductor per person, terms respected source by source, a guest-list hold, every agent traced, and a graph you can query in your browser](articles/a-guide-born-in-a-storm.md), 5 min.
 - The future of news: [From a feed to meaning: what the Storm Charles site did with public data that our new data site does not do yet, finding a source, reading its terms, writing parsers, keeping provenance, drawing it and saying what it means, three source sites to show it hourly, for the weather, the sea and fire risk, and the relay of briefs from this newsroom to the agents that will build them](articles/from-a-feed-to-meaning.md), 6 min.
 - Startups & strategy: [Start with an interview: how someone goes from "I want to try it" to editing their own site with Claude, by being interviewed by Claude first, about what they want, the sections, their materials and the sites they like, then sending their material in whichever way suits them, getting five designs inspired by what they like, or a better version of the site they already have, and reaching the one milestone that matters](articles/start-with-an-interview.md), 4 min.
