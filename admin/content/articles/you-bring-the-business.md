@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: Last night I wrote the partner programme here, and handed it to the agent team that runs agenticcells.ai to build. By the morning it was there, better than I had written it. The site now has a tagline its team came up with, which I like a lot: "Partners: you bring the business, we build the site". It has one page per kind of partner, the freelancer, the consultancy and the firm, each standing alone so I can send one link to one person, and each with four figures: how the parts fit together, how a deal runs in six steps, who does what across four lanes, and the money, 50/50 of the sale with hosting, support and retainers kept entirely by the partner. The launch price is £250, against an anchor of £500, and every day we build a limited number of sites free, for evaluation, for anyone who applies. The partner terms are published as terms, not a draft. Every page has five designs, and the whole site is in ten languages, Portuguese, French and Spanish in two variants each, German, Chinese and Japanese, because a partner programme should be international from the first day. Nothing has been sold and no partner has signed yet; this week I start sending the links.
-version: v999.0.0
+version: v0.14.148
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agenticcells, partners, go-to-market, websites, multilingual, product, article
 status: published
