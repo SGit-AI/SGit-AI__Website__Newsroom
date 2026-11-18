@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: I was asked how RiskMandate compares with Kosmoy, so I read Kosmoy's site properly. Kosmoy, from Milan, sells what it calls the AI management platform for regulated enterprises: an inventory of every AI use case, model, agent and MCP server; an AI gateway that is "one policy point for every AI call", with guardrails, role-based access, routing between small and frontier models, cost tracking and logging; and the Action Capsule, a Kubernetes sandbox for each agent run, with admission before it starts, run-scoped credentials, an egress allow-list and a kill switch. It runs single-tenant in the customer's own cluster, is priced by proposal, and names Banca d'Italia and Leonardo as customers. RiskMandate starts from the other end: a written behaviour policy for each agent, what it can reach, what it was authorised to do, the gap between them, and what stands in the way, published as an open standard, checked on every call by hooks, and, at the strongest, bounded by SHarness at the kernel; sold from £500 for one agent to £20,000 for an estate, with every price on the page and every claim linked to our own agents' records. Kosmoy is the enforcement plant; RiskMandate is the policy and the evidence. The obvious fit: an Agent Behaviour Policy is exactly what Kosmoy's gateway and capsules could enforce.
-version: v999.0.0
+version: v0.14.154
 license: https://creativecommons.org/licenses/by/4.0/
 tags: riskmandate, kosmoy, agent-governance, behaviour-policies, ai-gateway, comparison, article
 status: published
