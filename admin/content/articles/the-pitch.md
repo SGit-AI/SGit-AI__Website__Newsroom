@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: Writing about WordPress, Wix and Squarespace, one sentence came out that I think is the whole offer: a site that looks better, that you own, that nobody can lock you into, that has almost nothing to attack, that costs once instead of every month, and that you change by talking to Claude. So I took it seriously. It is six promises, and each one has a proof we can already show: five designs by a team of agents; a repository in your own name; static files that move to any host; no server code, database, plugins or cookies; £250 once, at the launch price, instead of a monthly bill; and Claude as the editor, with guard rails. Then I asked a designer agent to build three sites on the pitch alone, each telling it in a different order and voice. "Six promises" sets the sentence itself as the headline, for anyone. "Just say it" leads with a conversation, the owner handing Claude a CV and the site changing, for technologists and people who hate page builders. "Stop renting your website" leads with owning against renting, for people leaving a platform. All three show the sites we have already made, for Yiheng Wang, Silvio Switha and José Bota. My recommendation: "six promises" on the home page, and the other two as the pages we send to their audiences.
-version: v999.0.0
+version: v0.14.149
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agenticcells, positioning, messaging, design, websites, pitch, product, article
 status: published
