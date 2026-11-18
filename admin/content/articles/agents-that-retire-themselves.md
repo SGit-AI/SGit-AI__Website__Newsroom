@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: The Storm Charles team ran 43 agents across 147 sessions, and 106 of those sessions ended the same way: the agent wrote down what mattered, handed its role to a fresh session, and retired. It started with one sentence of mine at about 02:50 on 11 November, that the librarian saves tokens and implements memory in a much more effective way. Five minutes and 37 seconds later the librarian pushed a briefing pack: where things are, the state of the site, a short history, a page per role. The accountant tested it: a new agent that read the pack started with 64% fewer tokens than one that read the whole files, and answered the same questions as well once the pack was corrected. Then the accountant measured every session, and found the real cost: the conductor had read 327 million tokens, 99.4% of them its own context again. So at 03:02 the librarian retired itself and started again from its own pack; within the hour six agents had done the same, and the accountant measured each fresh session reading 53% to 84% less per call. One hand-over broke something and was corrected in three minutes; one could not carry a key, until the conductor held sealed copies. Part eleven of the series.
-version: v999.0.0
+version: v0.14.160
 license: https://creativecommons.org/licenses/by/4.0/
 tags: storm-charles, agents, memory, tokens, hand-overs, librarian, series, article
 status: published
