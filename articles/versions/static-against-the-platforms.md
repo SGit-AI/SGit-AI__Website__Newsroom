@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-18 | published | 1,821 | first published | this release | [current](../static-against-the-platforms.md) |
+| **v1.0.0** | 2026-11-18 | published | 1,821 | first published | [`072fdf4d9`](https://github.com/SGit-AI/SGit-AI__Website/commit/072fdf4d9e99ba6b31391fe0ba790efc338a2920) | [current](../static-against-the-platforms.md) |
 
 [← Back to the article](../static-against-the-platforms.md) · [All articles](../index.md)
 

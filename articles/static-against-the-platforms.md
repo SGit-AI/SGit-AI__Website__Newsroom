@@ -105,6 +105,10 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#static
 - [Where assist becomes execute: tiering AI agents by what they can reach and whether it can be undone, how Agent Behaviour Policies drew that line for more than a hundred agents at Web Summit, and the rule that failed because it was only a rule](where-assist-becomes-execute.md) Where assist becomes execute: tier AI agents by reach and undo class, enforce each tier with a boundary, and learn from the rule that failed.
 - [Partners sell, we build: the AgentiCCells partner programme in full, three kinds of partner, a freelancer, a small consultancy and a larger firm, what each one sells, the agent team behind even the smallest website cell, the rules of engagement, who owns what, who invoices, who gets paid and when, what stays with the partner, and why a partner who takes the open code and does it alone is still a win](partners-sell-we-build.md) The AgentiCCells partner programme: three kinds of partner, the agent team they resell, and the rules of engagement, 50/50.
 
+### Continued by
+
+- [The pitch: a site that looks better, that you own, that nobody can lock you into, that has almost nothing to attack, that costs once instead of every month, and that you change by talking to Claude, six promises, the proof behind each, and three designs for a site built on nothing else, "six promises", "just say it" and "stop renting your website"](the-pitch.md) A site that looks better, that you own, that nobody can lock you into: six promises, their proof, and three designs built on the pitch.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 466 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=466)

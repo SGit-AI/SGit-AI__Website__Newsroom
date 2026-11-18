@@ -55,6 +55,171 @@
   ],
   "articles": [
     {
+      "slug": "the-pitch",
+      "title": "The pitch: a site that looks better, that you own, that nobody can lock you into, that has almost nothing to attack, that costs once instead of every month, and that you change by talking to Claude, six promises, the proof behind each, and three designs for a site built on nothing else, \"six promises\", \"just say it\" and \"stop renting your website\"",
+      "date": "2026-11-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-pitch.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-pitch.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-pitch.webp",
+      "teaser": "A site that looks better, that you own, that nobody can lock you into: six promises, their proof, and three designs built on the pitch.",
+      "topics": [
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "agenticcells",
+        "positioning",
+        "messaging",
+        "design",
+        "websites",
+        "pitch",
+        "product",
+        "article"
+      ],
+      "links_out": [
+        "static-against-the-platforms",
+        "the-website-cell",
+        "a-website-that-is-her",
+        "the-site-factory-works",
+        "you-bring-the-business"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "pch-phones.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pch-phones.webp",
+          "caption": "Three designs for one pitch, on a phone: six promises, just say it, stop renting your website.",
+          "kind": "comparison"
+        },
+        {
+          "file": "pch-a.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pch-a.webp",
+          "caption": "Six promises: the pitch sentence is the headline, one clause per line, the first promise in colour.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "pch-b.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pch-b.webp",
+          "caption": "Just say it: the owner hands Claude a CV, Claude reports its checks, and a before and after shows the site changed.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "pch-c.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pch-c.webp",
+          "caption": "Stop renting your website: owning against renting, with the pitch as a pull quote.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "pch-examples.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pch-examples.webp",
+          "caption": "The sites all three designs show: Yiheng Wang, Silvio Switha, José Bota, and an invented orange grower.",
+          "kind": "collage"
+        }
+      ],
+      "graph": {
+        "slug": "the-pitch",
+        "teaser": "A site that looks better, that you own, that nobody can lock you into: six promises, their proof, and three designs built on the pitch.",
+        "topics": [
+          "startups-and-strategy"
+        ],
+        "core_idea": "The website cell's whole offer fits one sentence of six promises, each provable today, and the order in which a site tells them is the message, so three designs suit three audiences.",
+        "nodes": [
+          {
+            "id": "pitch",
+            "label": "The pitch",
+            "kind": "concept",
+            "summary": "One sentence, six promises."
+          },
+          {
+            "id": "proof",
+            "label": "The proof",
+            "kind": "example",
+            "summary": "Designs, repository, hosts, figures, price, Claude."
+          },
+          {
+            "id": "a",
+            "label": "Six promises",
+            "kind": "example",
+            "summary": "The sentence as headline."
+          },
+          {
+            "id": "b",
+            "label": "Just say it",
+            "kind": "example",
+            "summary": "A conversation first."
+          },
+          {
+            "id": "c",
+            "label": "Stop renting",
+            "kind": "example",
+            "summary": "Owning against renting."
+          },
+          {
+            "id": "ex",
+            "label": "The examples",
+            "kind": "example",
+            "summary": "Real sites with consent."
+          }
+        ],
+        "edges": [
+          {
+            "from": "proof",
+            "to": "pitch",
+            "rel": "extends"
+          },
+          {
+            "from": "a",
+            "to": "pitch",
+            "rel": "produces"
+          },
+          {
+            "from": "b",
+            "to": "pitch",
+            "rel": "produces"
+          },
+          {
+            "from": "c",
+            "to": "pitch",
+            "rel": "produces"
+          },
+          {
+            "from": "ex",
+            "to": "proof",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "static-against-the-platforms",
+            "the-website-cell",
+            "a-website-that-is-her",
+            "the-site-factory-works",
+            "you-bring-the-business"
+          ],
+          "pages": [],
+          "sites": [
+            "https://yiheng-wang.agenticcells.site",
+            "https://silvio-switha.agenticcells.site",
+            "https://jose-bota.agenticcells.site"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The order is the message",
+            "why": "The designs."
+          },
+          {
+            "text": "Your website should not be a subscription.",
+            "why": "Stop renting."
+          },
+          {
+            "text": "it is the whole offer, for everyone, and it is the sentence",
+            "why": "The recommendation."
+          }
+        ]
+      }
+    },
+    {
       "slug": "you-bring-the-business",
       "title": "You bring the business, we build the site: the AgentiCCells partner programme as it now stands on agenticcells.ai, one page per kind of partner, each with four figures, the fit, the flow, who does what and the money, a launch price of £250 with free evaluations every day, partner terms published, five designs on every page and ten languages from day one, all built in a night by the site's own agent team from two newsroom articles",
       "date": "2026-11-18",
@@ -80,6 +245,7 @@
         "the-website-cell"
       ],
       "links_in": [
+        "the-pitch",
         "static-against-the-platforms"
       ],
       "figures": [
@@ -241,7 +407,9 @@
         "where-assist-becomes-execute",
         "partners-sell-we-build"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-pitch"
+      ],
       "figures": [
         {
           "file": "sap-compare.webp",
@@ -571,6 +739,7 @@
         "governance-from-zero"
       ],
       "links_in": [
+        "the-pitch",
         "you-bring-the-business",
         "static-against-the-platforms",
         "partners-sell-we-build"
@@ -4368,6 +4537,7 @@
         "ten-days-at-web-summit"
       ],
       "links_in": [
+        "the-pitch",
         "the-website-cell",
         "who-steered-this",
         "your-own-agentic-cell",
@@ -6900,6 +7070,7 @@
         "ci-behaviour-policies"
       ],
       "links_in": [
+        "the-pitch",
         "static-against-the-platforms",
         "the-website-cell",
         "our-companies-and-uth",

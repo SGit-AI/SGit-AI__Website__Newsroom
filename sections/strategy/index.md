@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-116 articles, newest first.
+117 articles, newest first.
 
 ## November 2026
 
+- [The pitch: a site that looks better, that you own, that nobody can lock you into, that has almost nothing to attack, that costs once instead of every month, and that you change by talking to Claude, six promises, the proof behind each, and three designs for a site built on nothing else, "six promises", "just say it" and "stop renting your website"](../../articles/the-pitch.md), 2026-11-18, 5 min.
 - [You bring the business, we build the site: the AgentiCCells partner programme as it now stands on agenticcells.ai, one page per kind of partner, each with four figures, the fit, the flow, who does what and the money, a launch price of £250 with free evaluations every day, partner terms published, five designs on every page and ten languages from day one, all built in a night by the site's own agent team from two newsroom articles](../../articles/you-bring-the-business.md), 2026-11-18, 5 min.
 - [Static against the platforms: why a static site in your own repository, edited by Claude and watched by a security agent, is a real alternative to WordPress, Wix and Squarespace, what the numbers say about their reach, their attack surface, their complexity and their lock-in, and a converter that could bring a WordPress or Squarespace site across](../../articles/static-against-the-platforms.md), 2026-11-18, 7 min.
 - [Partners sell, we build: the AgentiCCells partner programme in full, three kinds of partner, a freelancer, a small consultancy and a larger firm, what each one sells, the agent team behind even the smallest website cell, the rules of engagement, who owns what, who invoices, who gets paid and when, what stays with the partner, and why a partner who takes the open code and does it alone is still a win](../../articles/partners-sell-we-build.md), 2026-11-17, 6 min.

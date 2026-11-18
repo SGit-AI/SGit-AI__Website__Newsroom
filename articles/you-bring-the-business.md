@@ -97,6 +97,7 @@ Startups & strategy[This article as a graph →](graphs.md#you-bring-the-busines
 
 ### Continued by
 
+- [The pitch: a site that looks better, that you own, that nobody can lock you into, that has almost nothing to attack, that costs once instead of every month, and that you change by talking to Claude, six promises, the proof behind each, and three designs for a site built on nothing else, "six promises", "just say it" and "stop renting your website"](the-pitch.md) A site that looks better, that you own, that nobody can lock you into: six promises, their proof, and three designs built on the pitch.
 - [Static against the platforms: why a static site in your own repository, edited by Claude and watched by a security agent, is a real alternative to WordPress, Wix and Squarespace, what the numbers say about their reach, their attack surface, their complexity and their lock-in, and a converter that could bring a WordPress or Squarespace site across](static-against-the-platforms.md) Why a static site in your own repository, edited by Claude, is an alternative to WordPress, Wix and Squarespace, and a converter to bring sites across.
 
 [All articles](index.md) · [All graphs](graphs.md)
