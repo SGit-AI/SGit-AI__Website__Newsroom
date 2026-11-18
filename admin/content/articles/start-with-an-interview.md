@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: When someone says "cool, I want to try it", what happens next decides whether they ever get a website. Today the first step on agenticcells.ai is an email with our questions in it. I think we can do something much better, and show the power of Claude at the same time: start with an interview. Claude interviews the person about what they want the site to do, the sections they would like, the materials and documents they have, and, the question I like most, which websites they like and why. The answers become the brief. The material can come in whatever way suits them: a zip, an email, links to what is already public, or their own encrypted vault; and the interviewing Claude can even be the one that starts building. The five designs are then inspired by the sites they chose, which is what already happens with our best ones. Someone with a site already can start from it instead, and get a better version back. And all of it is aimed at one milestone: the moment the person changes their own site by talking to Claude. That is when they have what we sell.
-version: v999.0.0
+version: v0.14.151
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agenticcells, onboarding, interviews, websites, claude, product, article
 status: published
