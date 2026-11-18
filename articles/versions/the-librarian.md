@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-18 | published | 928 | first published | this release | [current](../the-librarian.md) |
+| **v1.0.0** | 2026-11-18 | published | 928 | first published | [`e3e91bd32`](https://github.com/SGit-AI/SGit-AI__Website/commit/e3e91bd32d24fd5e99abb5f49239f83d5e0f8e79) | [current](../the-librarian.md) |
 
 [← Back to the article](../the-librarian.md) · [All articles](../index.md)
 

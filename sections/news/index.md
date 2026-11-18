@@ -2,10 +2,11 @@
 
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
 
-75 articles, newest first.
+76 articles, newest first.
 
 ## November 2026
 
+- [Pennies against dollars: what our agents actually cost at Web Summit, the swarm that ran 216 model calls on four open-weight models for under seven cents where the same tokens on a frontier model would have cost about two dollars, newsroom days of hundreds of API-equivalent dollars, almost all of it agents re-reading their own sessions, and the lesson that context is the cost and starting again is cheaper than remembering](../../articles/pennies-against-dollars.md), 2026-11-18, 5 min.
 - [The librarian: my favourite agent, and why a data platform needs a library at its heart, a catalogue of everything PrompTugal.news has read, each item with its source, licence, evidence and links, a graph of how it all connects, an invitation to real librarians, and the next shelves, official sources and the law](../../articles/the-librarian.md), 2026-11-18, 3 min.
 - [Ten days to a data platform: how PrompTugal.news went from a newsroom at Web Summit to twelve public data sources, a register of 92 sources read and not read, a dozen sites on its own domain and two cyber-threat feeds cleared to run, with a security agent on every change, and why each step made the next one cheaper](../../articles/ten-days-to-a-data-platform.md), 2026-11-18, 4 min.
 - [Sites on the data: what happens when a data platform meets a factory that makes a site in minutes, a page that draws IPMA's data six ways, an invented holiday-homes company whose bookings are simulated and whose weather, sea and events are real, demos for weather, events and cyber, and how each experiment, a new industry, a new view, a new idea, is now a site published in ten or twenty minutes](../../articles/sites-on-the-data.md), 2026-11-18, 3 min.

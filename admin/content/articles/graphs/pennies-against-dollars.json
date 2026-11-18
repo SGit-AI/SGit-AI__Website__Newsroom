@@ -1,0 +1,30 @@
+{
+ "slug": "pennies-against-dollars",
+ "teaser": "What our agents cost at Web Summit: 216 open-weight calls for 6.8 cents, and newsroom days where 98% of tokens were memory.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "Agent cost is dominated by sessions re-reading their history, while small signed tasks on open-weight models cost pennies, so put repeating work in code and cheap checked models and restart sessions from notes.",
+ "nodes": [
+  {"id": "swarm", "label": "The swarm", "kind": "example", "summary": "Signed packets, 6.8 cents."},
+  {"id": "news", "label": "The newsroom", "kind": "example", "summary": "API-equivalent hundreds."},
+  {"id": "cache", "label": "Cache reads", "kind": "concept", "summary": "98% of tokens."},
+  {"id": "fresh", "label": "Starting fresh", "kind": "method", "summary": "Cheaper than remembering."},
+  {"id": "second", "label": "Second readers", "kind": "method", "summary": "Cheap models checked."},
+  {"id": "budget", "label": "Budgets per task", "kind": "method", "summary": "Packets carry limits."}
+ ],
+ "edges": [
+  {"from": "swarm", "to": "news", "rel": "contrasts"},
+  {"from": "cache", "to": "news", "rel": "extends"},
+  {"from": "fresh", "to": "cache", "rel": "answers"},
+  {"from": "second", "to": "swarm", "rel": "extends"},
+  {"from": "budget", "to": "swarm", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["ten-days-at-web-summit", "after-the-storm", "spend-fewer-tokens"],
+  "pages": [],
+  "sites": ["https://swarm.promptugal.news/", "https://storm-charles.promptugal.news/accounts/"]
+ },
+ "quotes": [
+  {"text": "Context is the cost.", "why": "The accountant."},
+  {"text": "One run is one commit, one workflow run and one result.", "why": "The swarm."}
+ ]
+}

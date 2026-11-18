@@ -20,8 +20,8 @@ Rules for every article: the team is six people, never seven (Dinis, 14 November
 | 7 | live (17 Nov) | Agents rating agents (GAMMA-Ray) | agents-rating-agents | SGit-AI__Website__Gamma-Ray |
 | 8 | live (17 Nov) | After the storm (Storm Charles, part two) | after-the-storm | PrompTugal__News__Storm-Charles |
 | 9 | live (18 Nov) | A guide born in a storm (Lisbon Tech Fringe) | a-guide-born-in-a-storm | PrompTugal__News__Fringe |
-| 10 | next | Pennies against dollars | pennies-against-dollars | PrompTugal__News__Swarm, __Swarm__Runs, Storm Charles accounts |
-| 11 | queued | Agents that retire themselves | agents-that-retire-themselves | Storm Charles agents/*/HANDOVER.md, data/agents |
+| 10 | live (18 Nov) | Pennies against dollars | pennies-against-dollars | PrompTugal__News__Swarm, __Swarm__Runs, Storm Charles accounts |
+| 11 | next | Agents that retire themselves | agents-that-retire-themselves | Storm Charles agents/*/HANDOVER.md, data/agents |
 | 12 | queued | The agents that didn't get the memo | the-agents-that-didnt-get-the-memo | SGit-AI__Website__Newsroom__2026__Oct__PHP__team |
 | 13 | held | One hour to TestFlight (VoiceDebrief) | one-hour-to-testflight | VoiceDebrief__App__iOS (wait until there is something to install) |
 

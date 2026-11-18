@@ -55,6 +55,146 @@
   ],
   "articles": [
     {
+      "slug": "pennies-against-dollars",
+      "title": "Pennies against dollars: what our agents actually cost at Web Summit, the swarm that ran 216 model calls on four open-weight models for under seven cents where the same tokens on a frontier model would have cost about two dollars, newsroom days of hundreds of API-equivalent dollars, almost all of it agents re-reading their own sessions, and the lesson that context is the cost and starting again is cheaper than remembering",
+      "date": "2026-11-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/pennies-against-dollars.html",
+      "markdown": "https://newsroom.sgit.ai/articles/pennies-against-dollars.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/pennies-against-dollars.webp",
+      "teaser": "What our agents cost at Web Summit: 216 open-weight calls for 6.8 cents, and newsroom days where 98% of tokens were memory.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "costs",
+        "models",
+        "open-weight",
+        "agents",
+        "tokens",
+        "swarm",
+        "series",
+        "article"
+      ],
+      "links_out": [
+        "ten-days-at-web-summit",
+        "after-the-storm",
+        "spend-fewer-tokens"
+      ],
+      "links_in": [
+        "ten-days-at-web-summit"
+      ],
+      "figures": [
+        {
+          "file": "pad-collage.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pad-collage.webp",
+          "caption": "The swarm, one real run at a time; the GitHub flow; the stage; and the storm site's accounts.",
+          "kind": "collage"
+        },
+        {
+          "file": "pad-cost.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pad-cost.webp",
+          "caption": "The same work, priced: the swarm's 6.8 cents against the same tokens at frontier list prices, and a newsroom day.",
+          "kind": "chart"
+        }
+      ],
+      "graph": {
+        "slug": "pennies-against-dollars",
+        "teaser": "What our agents cost at Web Summit: 216 open-weight calls for 6.8 cents, and newsroom days where 98% of tokens were memory.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Agent cost is dominated by sessions re-reading their history, while small signed tasks on open-weight models cost pennies, so put repeating work in code and cheap checked models and restart sessions from notes.",
+        "nodes": [
+          {
+            "id": "swarm",
+            "label": "The swarm",
+            "kind": "example",
+            "summary": "Signed packets, 6.8 cents."
+          },
+          {
+            "id": "news",
+            "label": "The newsroom",
+            "kind": "example",
+            "summary": "API-equivalent hundreds."
+          },
+          {
+            "id": "cache",
+            "label": "Cache reads",
+            "kind": "concept",
+            "summary": "98% of tokens."
+          },
+          {
+            "id": "fresh",
+            "label": "Starting fresh",
+            "kind": "method",
+            "summary": "Cheaper than remembering."
+          },
+          {
+            "id": "second",
+            "label": "Second readers",
+            "kind": "method",
+            "summary": "Cheap models checked."
+          },
+          {
+            "id": "budget",
+            "label": "Budgets per task",
+            "kind": "method",
+            "summary": "Packets carry limits."
+          }
+        ],
+        "edges": [
+          {
+            "from": "swarm",
+            "to": "news",
+            "rel": "contrasts"
+          },
+          {
+            "from": "cache",
+            "to": "news",
+            "rel": "extends"
+          },
+          {
+            "from": "fresh",
+            "to": "cache",
+            "rel": "answers"
+          },
+          {
+            "from": "second",
+            "to": "swarm",
+            "rel": "extends"
+          },
+          {
+            "from": "budget",
+            "to": "swarm",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "ten-days-at-web-summit",
+            "after-the-storm",
+            "spend-fewer-tokens"
+          ],
+          "pages": [],
+          "sites": [
+            "https://swarm.promptugal.news/",
+            "https://storm-charles.promptugal.news/accounts/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Context is the cost.",
+            "why": "The accountant."
+          },
+          {
+            "text": "One run is one commit, one workflow run and one result.",
+            "why": "The swarm."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-librarian",
       "title": "The librarian: my favourite agent, and why a data platform needs a library at its heart, a catalogue of everything PrompTugal.news has read, each item with its source, licence, evidence and links, a graph of how it all connects, an invitation to real librarians, and the next shelves, official sources and the law",
       "date": "2026-11-18",
@@ -2851,6 +2991,7 @@
         "agents-rating-agents"
       ],
       "links_in": [
+        "pennies-against-dollars",
         "from-a-feed-to-meaning",
         "ten-days-at-web-summit"
       ],
@@ -10754,6 +10895,7 @@
         "atomic-cells-end-to-end"
       ],
       "links_in": [
+        "pennies-against-dollars",
         "from-a-feed-to-meaning",
         "newsrooms-on-open-data"
       ],
@@ -14204,6 +14346,7 @@
         "agents-rating-agents",
         "after-the-storm",
         "a-guide-born-in-a-storm",
+        "pennies-against-dollars",
         "storm-charles-a-newsroom-built-in-a-night",
         "who-else-controls-ai-agents-at-web-summit",
         "an-inbox-only-your-agents-can-write-to",
@@ -14212,6 +14355,7 @@
         "meetscribe"
       ],
       "links_in": [
+        "pennies-against-dollars",
         "gaining-speed",
         "a-guide-born-in-a-storm",
         "after-the-storm",
