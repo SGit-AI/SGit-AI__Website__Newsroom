@@ -14,13 +14,37 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-470 of 470 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+471 of 471 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-470 articles, 2382 links between them (3781 mentions in all). 408 articles cite an earlier one; 113 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (42 articles link to it). Most linking: [Always-on agents at team scale](#always-on-agents-at-team-scale) (22 links out). 26 articles not yet linked either way.
+471 articles, 2383 links between them (3783 mentions in all). 409 articles cite an earlier one; 113 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (42 articles link to it). Most linking: [Always-on agents at team scale](#always-on-agents-at-team-scale) (22 links out). 26 articles not yet linked either way.
+
+## [Whose event is it? Why Luma, Eventbrite, Meetup and Partiful will not let a site like PrompTugal.news show the public events their organisers want seen, what their terms actually say, who owns an event listing, what UK, EU and Portuguese law allows, what organisers expect, and how PrompTugal.news now collects events with a legal basis and the evidence for every one](whose-event-is-it.md)
+
+2026-11-18 · Agents & policy
+
+Event listings belong to organisers, who grant platforms only non-exclusive licences; facts can be stated with a link, while descriptions, photos and wholesale copying need permission, so the lawful routes are organisers' permission, readable agendas and facts with links.
+
+*[diagram]*
+**concept**method**example
+
+**6 nodes, 5 edges**
+
+- **The platforms' terms** (example) Scraping forbidden, interfaces limited.
+- **The organiser** (concept) Owns the listing.
+- **Non-exclusive licences** (concept) Organisers can license others.
+- **The law** (concept) Facts, copyright, database right, contract, GDPR.
+- **Our house rule** (example) Stricter than the terms.
+- **How we collect** (method) Agendas, facts and links, submissions, register.
+
+> An organiser who publishes publicly wants to be found. The expectation.
+
+> part of "they do not let us" was us, not them Our own rule.
+
+builds on [A guide born in a storm: when Storm Charles cancelled Web Summit's second day, the whole team built Lisbon Tech Fringe, a guide to the city's side events, from a spoken brief at 10:00 to its own address by about 12:57, 179 events and 104 communities each re-read at its source, one conductor per person, terms respected source by source, a guest-list hold, every agent traced, and a graph you can query in your browser](#a-guide-born-in-a-storm).
 
 ## [RiskMandate and Kosmoy: two answers to "who controls the agents?", Kosmoy's self-hosted control plane for regulated enterprises, with an AI gateway, guardrails, a model router, observability and a Kubernetes sandbox for every agent run, and RiskMandate's open behaviour policies, written per agent, checked by hooks and bounded by SHarness, where they overlap, where they differ, and why they fit together](riskmandate-and-kosmoy.md)
 
@@ -68,7 +92,7 @@ A spoken brief became a guide to 179 side events within hours, built by every pe
 
 > an agent overruling me, in writing, for a good reason The hold.
 
-builds on [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](#ten-days-at-web-summit), [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](#storm-charles-a-newsroom-built-in-a-night), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Stopping a hundred agents: the Big Stop, the hand brake and the final hold at Web Summit, why pausing took seconds but hearing the order took up to an hour, what kept running anyway, and why a stop has to be a file every agent reads first](#stopping-a-hundred-agents); continued by [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](#ten-days-at-web-summit).
+builds on [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](#ten-days-at-web-summit), [Storm Charles, a newsroom built in a night: one person, about thirty agents and a weather face over a data room, where every figure carries its source, the time it was read, and whether it is a fact, evidence or our hypothesis](#storm-charles-a-newsroom-built-in-a-night), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Stopping a hundred agents: the Big Stop, the hand brake and the final hold at Web Summit, why pausing took seconds but hearing the order took up to an hour, what kept running anyway, and why a stop has to be a file every agent reads first](#stopping-a-hundred-agents); continued by [Whose event is it? Why Luma, Eventbrite, Meetup and Partiful will not let a site like PrompTugal.news show the public events their organisers want seen, what their terms actually say, who owns an event listing, what UK, EU and Portuguese law allows, what organisers expect, and how PrompTugal.news now collects events with a legal basis and the evidence for every one](#whose-event-is-it), [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](#ten-days-at-web-summit).
 
 ## [From a feed to meaning: what the Storm Charles site did with public data that our new data site does not do yet, finding a source, reading its terms, writing parsers, keeping provenance, drawing it and saying what it means, three source sites to show it hourly, for the weather, the sea and fire risk, and the relay of briefs from this newsroom to the agents that will build them](from-a-feed-to-meaning.md)
 

@@ -2,10 +2,11 @@
 
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
 
-67 articles, newest first.
+68 articles, newest first.
 
 ## November 2026
 
+- [Whose event is it? Why Luma, Eventbrite, Meetup and Partiful will not let a site like PrompTugal.news show the public events their organisers want seen, what their terms actually say, who owns an event listing, what UK, EU and Portuguese law allows, what organisers expect, and how PrompTugal.news now collects events with a legal basis and the evidence for every one](../../articles/whose-event-is-it.md), 2026-11-18, 8 min.
 - [A guide born in a storm: when Storm Charles cancelled Web Summit's second day, the whole team built Lisbon Tech Fringe, a guide to the city's side events, from a spoken brief at 10:00 to its own address by about 12:57, 179 events and 104 communities each re-read at its source, one conductor per person, terms respected source by source, a guest-list hold, every agent traced, and a graph you can query in your browser](../../articles/a-guide-born-in-a-storm.md), 2026-11-18, 5 min.
 - [From a feed to meaning: what the Storm Charles site did with public data that our new data site does not do yet, finding a source, reading its terms, writing parsers, keeping provenance, drawing it and saying what it means, three source sites to show it hourly, for the weather, the sea and fire risk, and the relay of briefs from this newsroom to the agents that will build them](../../articles/from-a-feed-to-meaning.md), 2026-11-18, 6 min.
 - [After the storm: Storm Charles, part two, how a site built in a night kept growing the next day by spoken briefs, a transport desk that stopped where an operator's terms said stop, flights drawn against the wind within a free feed's daily limit, every collector moved onto open-weight models through one router, an AWS plan with no AWS account, and the night the model account ran empty and only the models stopped](../../articles/after-the-storm.md), 2026-11-17, 7 min.

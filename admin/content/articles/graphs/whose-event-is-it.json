@@ -1,0 +1,31 @@
+{
+ "slug": "whose-event-is-it",
+ "teaser": "Why Luma, Eventbrite, Meetup and Partiful block sites like ours, who owns an event listing, what the law allows, and how we collect now.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "Event listings belong to organisers, who grant platforms only non-exclusive licences; facts can be stated with a link, while descriptions, photos and wholesale copying need permission, so the lawful routes are organisers' permission, readable agendas and facts with links.",
+ "nodes": [
+  {"id": "plat", "label": "The platforms' terms", "kind": "example", "summary": "Scraping forbidden, interfaces limited."},
+  {"id": "org", "label": "The organiser", "kind": "concept", "summary": "Owns the listing."},
+  {"id": "lic", "label": "Non-exclusive licences", "kind": "concept", "summary": "Organisers can license others."},
+  {"id": "law", "label": "The law", "kind": "concept", "summary": "Facts, copyright, database right, contract, GDPR."},
+  {"id": "rule", "label": "Our house rule", "kind": "example", "summary": "Stricter than the terms."},
+  {"id": "method", "label": "How we collect", "kind": "method", "summary": "Agendas, facts and links, submissions, register."}
+ ],
+ "edges": [
+  {"from": "lic", "to": "org", "rel": "depends-on"},
+  {"from": "plat", "to": "lic", "rel": "extends"},
+  {"from": "law", "to": "plat", "rel": "contrasts"},
+  {"from": "rule", "to": "plat", "rel": "compared-with"},
+  {"from": "method", "to": "law", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["a-guide-born-in-a-storm"],
+  "pages": [],
+  "sites": ["https://events.promptugal.news/", "https://events.promptugal.news/sources/", "https://luma.com/terms", "https://partiful.com/terms"]
+ },
+ "quotes": [
+  {"text": "An organiser who publishes publicly wants to be found.", "why": "The expectation."},
+  {"text": "part of \"they do not let us\" was us, not them", "why": "Our own rule."},
+  {"text": "stating the facts and linking is low risk", "why": "The law."}
+ ]
+}

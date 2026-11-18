@@ -55,6 +55,159 @@
   ],
   "articles": [
     {
+      "slug": "whose-event-is-it",
+      "title": "Whose event is it? Why Luma, Eventbrite, Meetup and Partiful will not let a site like PrompTugal.news show the public events their organisers want seen, what their terms actually say, who owns an event listing, what UK, EU and Portuguese law allows, what organisers expect, and how PrompTugal.news now collects events with a legal basis and the evidence for every one",
+      "date": "2026-11-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/whose-event-is-it.html",
+      "markdown": "https://newsroom.sgit.ai/articles/whose-event-is-it.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/whose-event-is-it.webp",
+      "teaser": "Why Luma, Eventbrite, Meetup and Partiful block sites like ours, who owns an event listing, what the law allows, and how we collect now.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "events",
+        "data",
+        "terms",
+        "copyright",
+        "database-right",
+        "gdpr",
+        "promptugal",
+        "platforms",
+        "article"
+      ],
+      "links_out": [
+        "a-guide-born-in-a-storm"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "wev-owner.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wev-owner.webp",
+          "caption": "The organiser owns the event; each platform holds a non-exclusive licence, so the organiser can license us too.",
+          "kind": "diagram"
+        },
+        {
+          "file": "wev-terms.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wev-terms.webp",
+          "caption": "What each platform's terms say about automated access, reuse and images, and the interfaces they offer.",
+          "kind": "table"
+        },
+        {
+          "file": "wev-law.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wev-law.webp",
+          "caption": "What may be shown, and on what basis: facts, descriptions, photos, the platform's database, and guests' names.",
+          "kind": "table"
+        },
+        {
+          "file": "wev-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wev-flow.webp",
+          "caption": "How events are collected now: official agendas, discovery, facts and a link, organisers, the register.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "whose-event-is-it",
+        "teaser": "Why Luma, Eventbrite, Meetup and Partiful block sites like ours, who owns an event listing, what the law allows, and how we collect now.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Event listings belong to organisers, who grant platforms only non-exclusive licences; facts can be stated with a link, while descriptions, photos and wholesale copying need permission, so the lawful routes are organisers' permission, readable agendas and facts with links.",
+        "nodes": [
+          {
+            "id": "plat",
+            "label": "The platforms' terms",
+            "kind": "example",
+            "summary": "Scraping forbidden, interfaces limited."
+          },
+          {
+            "id": "org",
+            "label": "The organiser",
+            "kind": "concept",
+            "summary": "Owns the listing."
+          },
+          {
+            "id": "lic",
+            "label": "Non-exclusive licences",
+            "kind": "concept",
+            "summary": "Organisers can license others."
+          },
+          {
+            "id": "law",
+            "label": "The law",
+            "kind": "concept",
+            "summary": "Facts, copyright, database right, contract, GDPR."
+          },
+          {
+            "id": "rule",
+            "label": "Our house rule",
+            "kind": "example",
+            "summary": "Stricter than the terms."
+          },
+          {
+            "id": "method",
+            "label": "How we collect",
+            "kind": "method",
+            "summary": "Agendas, facts and links, submissions, register."
+          }
+        ],
+        "edges": [
+          {
+            "from": "lic",
+            "to": "org",
+            "rel": "depends-on"
+          },
+          {
+            "from": "plat",
+            "to": "lic",
+            "rel": "extends"
+          },
+          {
+            "from": "law",
+            "to": "plat",
+            "rel": "contrasts"
+          },
+          {
+            "from": "rule",
+            "to": "plat",
+            "rel": "compared-with"
+          },
+          {
+            "from": "method",
+            "to": "law",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-guide-born-in-a-storm"
+          ],
+          "pages": [],
+          "sites": [
+            "https://events.promptugal.news/",
+            "https://events.promptugal.news/sources/",
+            "https://luma.com/terms",
+            "https://partiful.com/terms"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "An organiser who publishes publicly wants to be found.",
+            "why": "The expectation."
+          },
+          {
+            "text": "part of \"they do not let us\" was us, not them",
+            "why": "Our own rule."
+          },
+          {
+            "text": "stating the facts and linking is low risk",
+            "why": "The law."
+          }
+        ]
+      }
+    },
+    {
       "slug": "riskmandate-and-kosmoy",
       "title": "RiskMandate and Kosmoy: two answers to \"who controls the agents?\", Kosmoy's self-hosted control plane for regulated enterprises, with an AI gateway, guardrails, a model router, observability and a Kubernetes sandbox for every agent run, and RiskMandate's open behaviour policies, written per agent, checked by hooks and bounded by SHarness, where they overlap, where they differ, and why they fit together",
       "date": "2026-11-18",
@@ -226,6 +379,7 @@
         "stopping-a-hundred-agents"
       ],
       "links_in": [
+        "whose-event-is-it",
         "ten-days-at-web-summit"
       ],
       "figures": [

@@ -91,6 +91,7 @@ Agents & policy[This article as a graph →](graphs.md#a-guide-born-in-a-storm)
 
 ### Continued by
 
+- [Whose event is it? Why Luma, Eventbrite, Meetup and Partiful will not let a site like PrompTugal.news show the public events their organisers want seen, what their terms actually say, who owns an event listing, what UK, EU and Portuguese law allows, what organisers expect, and how PrompTugal.news now collects events with a legal basis and the evidence for every one](whose-event-is-it.md) Why Luma, Eventbrite, Meetup and Partiful block sites like ours, who owns an event listing, what the law allows, and how we collect now.
 - [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](ten-days-at-web-summit.md) Six people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.
 
 [All articles](index.md) · [All graphs](graphs.md)

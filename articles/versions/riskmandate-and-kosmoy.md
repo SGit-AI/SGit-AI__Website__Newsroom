@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-18 | minor | 1,548 | +248 / −12 words; 3 changed, 5 added, 1 removed paragraphs | this release | [what changed](riskmandate-and-kosmoy/v1.1.0.md) · [current](../riskmandate-and-kosmoy.md) |
+| **v1.1.0** | 2026-11-18 | minor | 1,548 | +248 / −12 words; 3 changed, 5 added, 1 removed paragraphs | [`9d12c613e`](https://github.com/SGit-AI/SGit-AI__Website/commit/9d12c613efba844474bbcb693957f67cdc44cba7) | [what changed](riskmandate-and-kosmoy/v1.1.0.md) · [current](../riskmandate-and-kosmoy.md) |
 | **v1.0.0** | 2026-11-18 | published | 1,312 | first published | [`dd8fe088f`](https://github.com/SGit-AI/SGit-AI__Website/commit/dd8fe088f1125b1d20069d8e6ebd1981b33019ef) |  |
 
 [← Back to the article](../riskmandate-and-kosmoy.md) · [All articles](../index.md)
