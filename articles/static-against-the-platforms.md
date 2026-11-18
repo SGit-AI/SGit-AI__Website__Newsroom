@@ -107,6 +107,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#static
 
 ### Continued by
 
+- [Start with an interview: how someone goes from "I want to try it" to editing their own site with Claude, by being interviewed by Claude first, about what they want, the sections, their materials and the sites they like, then sending their material in whichever way suits them, getting five designs inspired by what they like, or a better version of the site they already have, and reaching the one milestone that matters](start-with-an-interview.md) Onboarding by interview: Claude asks what you want and which sites you like, material comes any way, and you end up editing with Claude.
 - [The pitch: a site that looks better, that you own, that nobody can lock you into, that has almost nothing to attack, that costs once instead of every month, and that you change by talking to Claude, six promises, the proof behind each, and three designs for a site built on nothing else, "six promises", "just say it" and "stop renting your website"](the-pitch.md) A site that looks better, that you own, that nobody can lock you into: six promises, their proof, and three designs built on the pitch.
 
 [All articles](index.md) · [All graphs](graphs.md)

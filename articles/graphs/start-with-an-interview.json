@@ -1,0 +1,120 @@
+{
+  "slug": "start-with-an-interview",
+  "teaser": "Onboarding by interview: Claude asks what you want and which sites you like, material comes any way, and you end up editing with Claude.",
+  "topics": [
+    "startups-and-strategy"
+  ],
+  "core_idea": "Onboarding should start with an interview by Claude that produces a brief, accept material in any form, base the five designs on sites the person likes, and end at the milestone of the owner editing their own site with Claude.",
+  "nodes": [
+    {
+      "id": "int",
+      "label": "The interview",
+      "kind": "method",
+      "summary": "Five parts, by Claude."
+    },
+    {
+      "id": "brief",
+      "label": "The brief",
+      "kind": "method",
+      "summary": "One page, corrected by the person."
+    },
+    {
+      "id": "mat",
+      "label": "Material",
+      "kind": "method",
+      "summary": "Zip, email, links, vault."
+    },
+    {
+      "id": "insp",
+      "label": "Sites you like",
+      "kind": "concept",
+      "summary": "Point, do not describe."
+    },
+    {
+      "id": "exist",
+      "label": "An existing site",
+      "kind": "example",
+      "summary": "The site is the material."
+    },
+    {
+      "id": "mile",
+      "label": "The milestone",
+      "kind": "concept",
+      "summary": "Editing with Claude."
+    }
+  ],
+  "edges": [
+    {
+      "from": "brief",
+      "to": "int",
+      "rel": "produces"
+    },
+    {
+      "from": "insp",
+      "to": "int",
+      "rel": "extends"
+    },
+    {
+      "from": "mat",
+      "to": "brief",
+      "rel": "depends-on"
+    },
+    {
+      "from": "exist",
+      "to": "mat",
+      "rel": "example-of"
+    },
+    {
+      "from": "mile",
+      "to": "brief",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-pitch",
+      "static-against-the-platforms",
+      "a-website-that-is-her",
+      "a-portfolio-with-a-film-first",
+      "your-own-agentic-cell"
+    ],
+    "pages": [],
+    "sites": [
+      "https://agenticcells.ai/start-here/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Most people do not know what they want from a website until someone asks them the right questions.",
+      "why": "Why an interview."
+    },
+    {
+      "text": "People find it hard to describe a design, and easy to point at one.",
+      "why": "Sites you like."
+    },
+    {
+      "text": "the hand-over is not the end of onboarding, it is the middle",
+      "why": "The milestone."
+    }
+  ],
+  "figures": [
+    {
+      "file": "swi-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/swi-flow.webp",
+      "caption": "From \"I want to try it\" to editing with Claude: interview, material, five designs, hand-over, the milestone.",
+      "kind": "process"
+    },
+    {
+      "file": "swi-questions.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/swi-questions.webp",
+      "caption": "The interview in five parts: purpose, sections, materials, sites you like, and what to avoid.",
+      "kind": "concept"
+    },
+    {
+      "file": "swi-milestone.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/swi-milestone.webp",
+      "caption": "Every step aims at one milestone: the owner changing their own site by talking to Claude.",
+      "kind": "concept"
+    }
+  ]
+}

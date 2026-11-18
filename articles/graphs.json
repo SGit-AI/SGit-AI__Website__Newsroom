@@ -55,6 +55,156 @@
   ],
   "articles": [
     {
+      "slug": "start-with-an-interview",
+      "title": "Start with an interview: how someone goes from \"I want to try it\" to editing their own site with Claude, by being interviewed by Claude first, about what they want, the sections, their materials and the sites they like, then sending their material in whichever way suits them, getting five designs inspired by what they like, or a better version of the site they already have, and reaching the one milestone that matters",
+      "date": "2026-11-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/start-with-an-interview.html",
+      "markdown": "https://newsroom.sgit.ai/articles/start-with-an-interview.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/start-with-an-interview.webp",
+      "teaser": "Onboarding by interview: Claude asks what you want and which sites you like, material comes any way, and you end up editing with Claude.",
+      "topics": [
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "agenticcells",
+        "onboarding",
+        "interviews",
+        "websites",
+        "claude",
+        "product",
+        "article"
+      ],
+      "links_out": [
+        "the-pitch",
+        "static-against-the-platforms",
+        "a-website-that-is-her",
+        "a-portfolio-with-a-film-first",
+        "your-own-agentic-cell"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "swi-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/swi-flow.webp",
+          "caption": "From \"I want to try it\" to editing with Claude: interview, material, five designs, hand-over, the milestone.",
+          "kind": "process"
+        },
+        {
+          "file": "swi-questions.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/swi-questions.webp",
+          "caption": "The interview in five parts: purpose, sections, materials, sites you like, and what to avoid.",
+          "kind": "concept"
+        },
+        {
+          "file": "swi-milestone.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/swi-milestone.webp",
+          "caption": "Every step aims at one milestone: the owner changing their own site by talking to Claude.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "start-with-an-interview",
+        "teaser": "Onboarding by interview: Claude asks what you want and which sites you like, material comes any way, and you end up editing with Claude.",
+        "topics": [
+          "startups-and-strategy"
+        ],
+        "core_idea": "Onboarding should start with an interview by Claude that produces a brief, accept material in any form, base the five designs on sites the person likes, and end at the milestone of the owner editing their own site with Claude.",
+        "nodes": [
+          {
+            "id": "int",
+            "label": "The interview",
+            "kind": "method",
+            "summary": "Five parts, by Claude."
+          },
+          {
+            "id": "brief",
+            "label": "The brief",
+            "kind": "method",
+            "summary": "One page, corrected by the person."
+          },
+          {
+            "id": "mat",
+            "label": "Material",
+            "kind": "method",
+            "summary": "Zip, email, links, vault."
+          },
+          {
+            "id": "insp",
+            "label": "Sites you like",
+            "kind": "concept",
+            "summary": "Point, do not describe."
+          },
+          {
+            "id": "exist",
+            "label": "An existing site",
+            "kind": "example",
+            "summary": "The site is the material."
+          },
+          {
+            "id": "mile",
+            "label": "The milestone",
+            "kind": "concept",
+            "summary": "Editing with Claude."
+          }
+        ],
+        "edges": [
+          {
+            "from": "brief",
+            "to": "int",
+            "rel": "produces"
+          },
+          {
+            "from": "insp",
+            "to": "int",
+            "rel": "extends"
+          },
+          {
+            "from": "mat",
+            "to": "brief",
+            "rel": "depends-on"
+          },
+          {
+            "from": "exist",
+            "to": "mat",
+            "rel": "example-of"
+          },
+          {
+            "from": "mile",
+            "to": "brief",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-pitch",
+            "static-against-the-platforms",
+            "a-website-that-is-her",
+            "a-portfolio-with-a-film-first",
+            "your-own-agentic-cell"
+          ],
+          "pages": [],
+          "sites": [
+            "https://agenticcells.ai/start-here/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Most people do not know what they want from a website until someone asks them the right questions.",
+            "why": "Why an interview."
+          },
+          {
+            "text": "People find it hard to describe a design, and easy to point at one.",
+            "why": "Sites you like."
+          },
+          {
+            "text": "the hand-over is not the end of onboarding, it is the middle",
+            "why": "The milestone."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-pitch",
       "title": "The pitch: a site that looks better, that you own, that nobody can lock you into, that has almost nothing to attack, that costs once instead of every month, and that you change by talking to Claude, six promises, the proof behind each, and three designs for a site built on nothing else, \"six promises\", \"just say it\" and \"stop renting your website\"",
       "date": "2026-11-18",
@@ -83,7 +233,9 @@
         "the-site-factory-works",
         "you-bring-the-business"
       ],
-      "links_in": [],
+      "links_in": [
+        "start-with-an-interview"
+      ],
       "figures": [
         {
           "file": "pch-phones.webp",
@@ -408,6 +560,7 @@
         "partners-sell-we-build"
       ],
       "links_in": [
+        "start-with-an-interview",
         "the-pitch"
       ],
       "figures": [
@@ -2803,6 +2956,7 @@
         "patient-vaults-answered"
       ],
       "links_in": [
+        "start-with-an-interview",
         "the-website-cell",
         "our-companies-and-uth",
         "keys-after-payment",
@@ -4344,6 +4498,7 @@
         "show-me-the-evidence"
       ],
       "links_in": [
+        "start-with-an-interview",
         "the-website-cell",
         "your-own-agentic-cell"
       ],
@@ -4537,6 +4692,7 @@
         "ten-days-at-web-summit"
       ],
       "links_in": [
+        "start-with-an-interview",
         "the-pitch",
         "the-website-cell",
         "who-steered-this",

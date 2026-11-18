@@ -99,6 +99,10 @@ Startups & strategy[This article as a graph →](graphs.md#the-pitch)
 - [The site factory works: three AgentiCCells sites made by hand, then one made by a commit in two minutes and thirty-nine seconds, live over https with a first version written by Claude Code, and the long list of what it took to make something that hard look easy](the-site-factory-works.md) Three AgentiCCells sites by hand, then one by a commit: live over https in 87 seconds, a first version by Claude Code at 159.
 - [You bring the business, we build the site: the AgentiCCells partner programme as it now stands on agenticcells.ai, one page per kind of partner, each with four figures, the fit, the flow, who does what and the money, a launch price of £250 with free evaluations every day, partner terms published, five designs on every page and ten languages from day one, all built in a night by the site's own agent team from two newsroom articles](you-bring-the-business.md) The AgentiCCells partner programme as built overnight: one page per partner, four figures each, £250 launch, free evaluations, ten languages.
 
+### Continued by
+
+- [Start with an interview: how someone goes from "I want to try it" to editing their own site with Claude, by being interviewed by Claude first, about what they want, the sections, their materials and the sites they like, then sending their material in whichever way suits them, getting five designs inspired by what they like, or a better version of the site they already have, and reaching the one milestone that matters](start-with-an-interview.md) Onboarding by interview: Claude asks what you want and which sites you like, material comes any way, and you end up editing with Claude.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 468 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=468)
