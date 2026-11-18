@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-18 | published | 1,243 | first published | this release | [current](../agents-that-retire-themselves.md) |
+| **v1.0.0** | 2026-11-18 | published | 1,243 | first published | [`4d5467cd0`](https://github.com/SGit-AI/SGit-AI__Website/commit/4d5467cd02d7e9cb3454be7f6f2c4267926a1f77) | [current](../agents-that-retire-themselves.md) |
 
 [← Back to the article](../agents-that-retire-themselves.md) · [All articles](../index.md)
 

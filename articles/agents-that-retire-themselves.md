@@ -85,6 +85,7 @@ Agents & policy[This article as a graph →](graphs.md#agents-that-retire-themse
 
 ### Continued by
 
+- [The agents that didn't get the memo: how the PHP newsroom I wound down on 5 November kept running for nine more days, its desk refusing a stop message because only the editor gives instructions, its journalist writing "nothing new" 26 times, the conductor's 11:15 pass that never came, and the four days of reader telemetry lost because the agent that emptied the queue was the first one stopped](the-agents-that-didnt-get-the-memo.md) The PHP newsroom I wound down on 5 November ran nine more days: a stop that never came, a desk that refused a message, four days of telemetry lost.
 - [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](ten-days-at-web-summit.md) Six people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.
 
 [All articles](index.md) · [All graphs](graphs.md)

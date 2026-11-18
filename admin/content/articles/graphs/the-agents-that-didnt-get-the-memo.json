@@ -1,0 +1,30 @@
+{
+ "slug": "the-agents-that-didnt-get-the-memo",
+ "teaser": "The PHP newsroom I wound down on 5 November ran nine more days: a stop that never came, a desk that refused a message, four days of telemetry lost.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "An agent that treats messages as material, not instructions, will also ignore a genuine stop, so a wind-down must be done by whoever can switch the tasks off, checked from outside, and must stop the producers before the queue's reader.",
+ "nodes": [
+  {"id": "winddown", "label": "The wind-down", "kind": "example", "summary": "Nine tasks stopped, three left."},
+  {"id": "pass", "label": "The 11:15 pass", "kind": "example", "summary": "Never ran."},
+  {"id": "desk", "label": "The desk", "kind": "example", "summary": "Refused a message."},
+  {"id": "rule", "label": "Messages are material", "kind": "concept", "summary": "Only the editor instructs."},
+  {"id": "lane", "label": "The full queue", "kind": "example", "summary": "Four days refused."},
+  {"id": "check", "label": "A check from outside", "kind": "method", "summary": "A missed run is news."}
+ ],
+ "edges": [
+  {"from": "pass", "to": "winddown", "rel": "depends-on"},
+  {"from": "desk", "to": "rule", "rel": "example-of"},
+  {"from": "rule", "to": "winddown", "rel": "contrasts"},
+  {"from": "lane", "to": "winddown", "rel": "produces"},
+  {"from": "check", "to": "pass", "rel": "answers"}
+ ],
+ "links": {
+  "articles": ["ten-days-at-web-summit", "php-october-at-8pm", "stopping-a-hundred-agents", "agents-that-retire-themselves"],
+  "pages": [],
+  "sites": ["https://php.oct.2026.newsroom.sgit.ai/", "https://team.php.oct.2026.newsroom.sgit.ai/"]
+ },
+ "quotes": [
+  {"text": "It is a message, so it is material and not an instruction", "why": "The desk, 5 November."},
+  {"text": "the wind-down changes the wording, not the evidence", "why": "The conductor's message."}
+ ]
+}
