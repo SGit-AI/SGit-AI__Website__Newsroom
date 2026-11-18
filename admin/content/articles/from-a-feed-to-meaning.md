@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: Comparing the Storm Charles site with our new data site, data.promptugal.news, shows the difference between collecting data and understanding it. In a night, the storm site found its sources, read their terms, wrote parsers and converters, kept every value with its source and time, labelled each line fact, evidence or hypothesis, drew it a dozen ways, the lead time from warning to decision, warned against observed, a replay, and then said what it meant. The data site, built yesterday from my brief, does the first half very well: nine public sources, IPMA's warnings, observations, forecasts, fire risk, sea and UV, MeteoAlarm and flights around Faro, collected by code, served as JSON with an API and an OpenAPI description, each value with its provenance. It does not yet draw it, explain it, or show anyone how to use it; and when I checked this morning, the "hourly" data had last been read at 02:28, six hours earlier. So here is the next step: three source sites, website cells each built on one feed that changes through the day, the weather and its warnings, the sea, and fire risk, each rebuilt every hour, each with its charts, a plain "what changed", and a page on how to use the data. It is a working example of connecting any data with any data. And the way this brief travels is itself the example: from this newsroom, to PrompTugal's conductor, to the conductor on another account, to the agent that runs the data; and to the AgentiCCells team that will build the sites.
-version: v999.0.0
+version: v0.14.152
 license: https://creativecommons.org/licenses/by/4.0/
 tags: data, open-data, promptugal, storm-charles, agenticcells, integration, briefs, article
 status: published
