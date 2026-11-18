@@ -1,0 +1,30 @@
+{
+ "slug": "sites-on-the-data",
+ "teaser": "When a data platform meets a site factory, every idea becomes a site: IPMA six ways, and holiday homes with real weather and events.",
+ "topics": ["startups-and-strategy"],
+ "core_idea": "Public data with an API plus a factory that makes sites in minutes turns every idea, industry or view into a labelled demo site, each one also a demo of an agentic cell.",
+ "nodes": [
+  {"id": "plat", "label": "The data platform", "kind": "example", "summary": "Public data, an API."},
+  {"id": "fac", "label": "The factory", "kind": "method", "summary": "A site in a minute."},
+  {"id": "ipma", "label": "IPMA six ways", "kind": "example", "summary": "Twelve minutes."},
+  {"id": "homes", "label": "Cinco Chaminés", "kind": "example", "summary": "Simulated homes, real data."},
+  {"id": "demos", "label": "Demos", "kind": "method", "summary": "Each question a site."},
+  {"id": "inter", "label": "Intersection", "kind": "concept", "summary": "Data joined for a use."}
+ ],
+ "edges": [
+  {"from": "ipma", "to": "plat", "rel": "depends-on"},
+  {"from": "homes", "to": "plat", "rel": "depends-on"},
+  {"from": "ipma", "to": "fac", "rel": "depends-on"},
+  {"from": "demos", "to": "fac", "rel": "depends-on"},
+  {"from": "inter", "to": "homes", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["gaining-speed", "ten-days-to-a-data-platform", "one-commit-one-site-one-owner", "the-website-cell"],
+  "pages": [],
+  "sites": ["https://ipma-data.agenticcells.site/", "https://algarve-holiday-homes.agenticcells.site/"]
+ },
+ "quotes": [
+  {"text": "Six ways to read the same data is the point", "why": "IPMA."},
+  {"text": "This is the intersection I keep talking about.", "why": "Holiday homes."}
+ ]
+}

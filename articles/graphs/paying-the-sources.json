@@ -1,0 +1,110 @@
+{
+  "slug": "paying-the-sources",
+  "teaser": "The business model: a reader's money flowing back to the sources they read, simulated in the open, with a licence on every value.",
+  "topics": [
+    "startups-and-strategy"
+  ],
+  "core_idea": "Readers pay by the read and the money is shared with the sources behind what they read, by open rules, with licences on every value and a public register, making a positive loop without lock-in.",
+  "nodes": [
+    {
+      "id": "loop",
+      "label": "A positive loop",
+      "kind": "concept",
+      "summary": "Readers pay sources."
+    },
+    {
+      "id": "sim",
+      "label": "The simulation",
+      "kind": "example",
+      "summary": "£5, 30% costs, weights."
+    },
+    {
+      "id": "lic",
+      "label": "Licence links",
+      "kind": "method",
+      "summary": "On every value."
+    },
+    {
+      "id": "reg",
+      "label": "The register",
+      "kind": "method",
+      "summary": "Read and not read."
+    },
+    {
+      "id": "gaps",
+      "label": "Asking the gaps",
+      "kind": "method",
+      "summary": "On the record."
+    },
+    {
+      "id": "open",
+      "label": "No lock-in",
+      "kind": "concept",
+      "summary": "Everything published."
+    }
+  ],
+  "edges": [
+    {
+      "from": "sim",
+      "to": "loop",
+      "rel": "example-of"
+    },
+    {
+      "from": "lic",
+      "to": "loop",
+      "rel": "extends"
+    },
+    {
+      "from": "reg",
+      "to": "lic",
+      "rel": "extends"
+    },
+    {
+      "from": "gaps",
+      "to": "reg",
+      "rel": "extends"
+    },
+    {
+      "from": "open",
+      "to": "loop",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "gaining-speed",
+      "paid-by-the-read",
+      "whose-event-is-it",
+      "governance-from-zero"
+    ],
+    "pages": [],
+    "sites": [
+      "https://promptugal.news/payments/simulated/",
+      "https://data.promptugal.news/sources/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Simulated. No payment is made or collected; no money moves.",
+      "why": "The page."
+    },
+    {
+      "text": "That is a better offer than a takedown request.",
+      "why": "The gaps."
+    }
+  ],
+  "figures": [
+    {
+      "file": "gs-payments.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gs-payments.webp",
+      "caption": "Paying the sources, simulated: how a reader's £5 would be shared among the sources behind what they read.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "gs-sources.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gs-sources.webp",
+      "caption": "The register of sources: each with its owner, what it would give, and whether we read it, with the reason.",
+      "kind": "screenshot"
+    }
+  ]
+}

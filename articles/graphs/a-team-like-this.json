@@ -1,0 +1,116 @@
+{
+  "slug": "a-team-like-this",
+  "teaser": "What we sell is not the open platform but a team like the one that built it, and who I want to talk to now.",
+  "topics": [
+    "startups-and-strategy",
+    "agents-and-policy"
+  ],
+  "core_idea": "With the platform's code and data open, the product is an agentic team like PrompTugal.news's, with roles, behaviour policies and security passes, set up for a customer; the next stage is integrations and use.",
+  "nodes": [
+    {
+      "id": "team",
+      "label": "The team",
+      "kind": "example",
+      "summary": "Conductors to designers."
+    },
+    {
+      "id": "open",
+      "label": "Open code and data",
+      "kind": "concept",
+      "summary": "Anyone can take it."
+    },
+    {
+      "id": "sell",
+      "label": "A team for sale",
+      "kind": "concept",
+      "summary": "Set up for a customer."
+    },
+    {
+      "id": "abp",
+      "label": "Behaviour policies",
+      "kind": "method",
+      "summary": "One per agent."
+    },
+    {
+      "id": "who",
+      "label": "Who to talk to",
+      "kind": "method",
+      "summary": "Councils to insurers."
+    },
+    {
+      "id": "use",
+      "label": "Use and integration",
+      "kind": "concept",
+      "summary": "Traffic, budget, revenue."
+    }
+  ],
+  "edges": [
+    {
+      "from": "sell",
+      "to": "team",
+      "rel": "depends-on"
+    },
+    {
+      "from": "open",
+      "to": "sell",
+      "rel": "extends"
+    },
+    {
+      "from": "abp",
+      "to": "team",
+      "rel": "extends"
+    },
+    {
+      "from": "who",
+      "to": "sell",
+      "rel": "leads-to"
+    },
+    {
+      "from": "use",
+      "to": "who",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "gaining-speed",
+      "ten-days-to-a-data-platform",
+      "governance-from-zero",
+      "the-website-cell",
+      "what-can-your-agent-reach",
+      "sites-on-the-data",
+      "heritage-tech-together",
+      "paid-by-the-read",
+      "whose-event-is-it",
+      "the-librarian"
+    ],
+    "pages": [],
+    "sites": [
+      "https://agenticcells.ai/our-team-as-a-cell/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "what we are going to do here is exactly what we want to sell",
+      "why": "Dinis, 16 November."
+    },
+    {
+      "text": "Real integrations bring real traffic",
+      "why": "The next stage."
+    }
+  ],
+  "figures": [
+    {
+      "file": "atl-team.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/atl-team.webp",
+      "caption": "The team behind the platform: conductors, place agents, data, security, policies, the library, outreach and design.",
+      "kind": "diagram"
+    },
+    {
+      "file": "atl-who.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/atl-who.webp",
+      "caption": "Who to talk to, and what each could do with the platform: use it, integrate, fund it, or feed it.",
+      "kind": "table"
+    }
+  ]
+}

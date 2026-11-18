@@ -1,0 +1,109 @@
+{
+  "slug": "one-commit-one-site-one-owner",
+  "teaser": "The factory change that unblocked the most: one commit makes a repository, DNS, an address, HTTPS and the owner's access in 55 seconds.",
+  "topics": [
+    "startups-and-strategy"
+  ],
+  "core_idea": "Adding the owner's GitHub access to the site factory's request closed the loop, so one commit yields a live site its owner can change by pointing Claude at it.",
+  "nodes": [
+    {
+      "id": "fac",
+      "label": "The site factory",
+      "kind": "method",
+      "summary": "A request file in a commit."
+    },
+    {
+      "id": "col",
+      "label": "Collaborators",
+      "kind": "method",
+      "summary": "The owner's access."
+    },
+    {
+      "id": "tok",
+      "label": "A token per owner",
+      "kind": "method",
+      "summary": "Own credentials."
+    },
+    {
+      "id": "run",
+      "label": "55 seconds",
+      "kind": "example",
+      "summary": "events.promptugal.news."
+    },
+    {
+      "id": "hand",
+      "label": "The hand-over",
+      "kind": "concept",
+      "summary": "Point Claude at it."
+    },
+    {
+      "id": "small",
+      "label": "Small changes",
+      "kind": "concept",
+      "summary": "Remove a person from a loop."
+    }
+  ],
+  "edges": [
+    {
+      "from": "col",
+      "to": "fac",
+      "rel": "extends"
+    },
+    {
+      "from": "tok",
+      "to": "fac",
+      "rel": "extends"
+    },
+    {
+      "from": "run",
+      "to": "fac",
+      "rel": "example-of"
+    },
+    {
+      "from": "hand",
+      "to": "col",
+      "rel": "depends-on"
+    },
+    {
+      "from": "small",
+      "to": "col",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "gaining-speed",
+      "the-site-factory-works",
+      "the-website-cell",
+      "partners-sell-we-build"
+    ],
+    "pages": [],
+    "sites": [
+      "https://events.promptugal.news/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "since it will really make a massive difference",
+      "why": "Dinis's yes."
+    },
+    {
+      "text": "point your Claude at it, and start editing",
+      "why": "The hand-over."
+    }
+  ],
+  "figures": [
+    {
+      "file": "oco-steps.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/oco-steps.webp",
+      "caption": "One commit to a live site with its owner: validate, repository, seed, settings, DNS, HTTPS, access, in 55 seconds.",
+      "kind": "process"
+    },
+    {
+      "file": "oco-run.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/oco-run.webp",
+      "caption": "The factory's record for events.promptugal.news, 18 November, from 14:28:12 to 14:29:07.",
+      "kind": "table"
+    }
+  ]
+}

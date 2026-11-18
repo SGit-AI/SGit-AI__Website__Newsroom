@@ -110,6 +110,11 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#from-a
 - [Who wrote it, who steered it, who signs it: the provenance model PrompTugal.news adopted today, a type label, five axes and a ladder from "published by an agent" to "on the record", applied to seven articles on this site, and what the ladder cannot see yet, how much of the author is in a piece, the brief, the corrections and months of background](who-steered-this.md) PrompTugal.news's provenance model, a label, five axes and a ladder, applied to seven articles here, and the two measures it misses.
 - [Spend fewer tokens: an agentic team's token bill is mostly a design choice, and the levers are files as memory, caching what repeats, code instead of models where you can, the right model for each step, no copy and paste, static outputs, and counting it all](spend-fewer-tokens.md) An agentic team's token bill is mostly a design choice: files as memory, caching, code where you can, the right model per step, static outputs, counting.
 
+### Continued by
+
+- [The librarian: my favourite agent, and why a data platform needs a library at its heart, a catalogue of everything PrompTugal.news has read, each item with its source, licence, evidence and links, a graph of how it all connects, an invitation to real librarians, and the next shelves, official sources and the law](the-librarian.md) The librarian, my favourite agent: a library at the heart of the data platform, every item catalogued, sourced and linked.
+- [Gaining speed: a series on what happens when you productise the way you build, PrompTugal.news going from a newsroom at Web Summit to a data intelligence platform for Portugal's places in two weeks, a factory that turns one commit into a site with its owner, money that flows back to the sources, sites built on the data in minutes, the librarian, and a team like this for sale](gaining-speed.md) A series on what happens when you productise how you build: PrompTugal.news from a summit newsroom to a data platform in two weeks.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 470 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=470)

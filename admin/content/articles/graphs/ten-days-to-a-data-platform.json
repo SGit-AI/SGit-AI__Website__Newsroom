@@ -1,0 +1,30 @@
+{
+ "slug": "ten-days-to-a-data-platform",
+ "teaser": "How PrompTugal.news went from a Web Summit newsroom to twelve data sources, a register of 92 and a dozen sites in two weeks.",
+ "topics": ["startups-and-strategy", "agents-and-policy"],
+ "core_idea": "Each step of PrompTugal.news, the storm site, the place agents, the data site, the factory, left something reusable, so two weeks after its first commit it is a data platform with security on every change.",
+ "nodes": [
+  {"id": "nr", "label": "The newsroom", "kind": "example", "summary": "4 November."},
+  {"id": "st", "label": "The storm site", "kind": "example", "summary": "11 November."},
+  {"id": "pl", "label": "Place agents", "kind": "method", "summary": "15 November."},
+  {"id": "ds", "label": "The data site", "kind": "example", "summary": "17 November."},
+  {"id": "day", "label": "18 November", "kind": "example", "summary": "Events, register, cyber."},
+  {"id": "sec", "label": "Security passes", "kind": "method", "summary": "Before and after every wake."}
+ ],
+ "edges": [
+  {"from": "st", "to": "nr", "rel": "extends"},
+  {"from": "pl", "to": "st", "rel": "extends"},
+  {"from": "ds", "to": "pl", "rel": "extends"},
+  {"from": "day", "to": "ds", "rel": "extends"},
+  {"from": "sec", "to": "day", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["gaining-speed", "promptugal-news-the-newsroom-we-ran", "storm-charles-a-newsroom-built-in-a-night", "promptugal-news-by-place", "newsrooms-on-open-data", "whose-event-is-it", "what-can-your-agent-reach"],
+  "pages": [],
+  "sites": ["https://data.promptugal.news/", "https://events.promptugal.news/", "https://promptugal.news/security/"]
+ },
+ "quotes": [
+  {"text": "Each step left something behind that the next one used.", "why": "Why it speeds up."},
+  {"text": "What changed is how much each commit buys.", "why": "Activity and value."}
+ ]
+}

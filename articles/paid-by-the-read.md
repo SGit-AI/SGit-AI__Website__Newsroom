@@ -120,6 +120,8 @@ Startups & strategy[This article as a graph →](graphs.md#paid-by-the-read)
 
 ### Continued by
 
+- [Paying the sources: the business model behind PrompTugal.news's data, a reader's money flowing back to the sources the reader actually read, worked out in the open and simulated for now, a licence link on every value, a public register of who we read and who we do not, and why a platform built on public data with no lock-in can be a positive loop for everyone who feeds it](paying-the-sources.md) The business model: a reader's money flowing back to the sources they read, simulated in the open, with a licence on every value.
+- [A team like this, for sale: what we sell is not the platform, it is the agentic team that built it, its roles, its behaviour policies, its security passes and its speed, with the code open and the data public, and who I want to talk to now that PrompTugal.news is a working data platform and not an experiment](a-team-like-this.md) What we sell is not the open platform but a team like the one that built it, and who I want to talk to now.
 - [Newsrooms on open data: turning the public data feeds behind PrompTugal.news and the Storm Charles site into one data site, a vault per source with an API and its provenance, then building small, focused newsrooms on top, for farmers, investors, the sea, fire, tourism and AI, each run by an agentic team, each a possible company, and why this is exactly where journalism comes in](newsrooms-on-open-data.md) Turning PrompTugal.news's public data feeds into one data site, then small focused newsrooms on top, each run by an agentic team.
 
 [All articles](index.md) · [All graphs](graphs.md)

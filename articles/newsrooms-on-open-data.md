@@ -105,6 +105,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#newsro
 
 ### Continued by
 
+- [Ten days to a data platform: how PrompTugal.news went from a newsroom at Web Summit to twelve public data sources, a register of 92 sources read and not read, a dozen sites on its own domain and two cyber-threat feeds cleared to run, with a security agent on every change, and why each step made the next one cheaper](ten-days-to-a-data-platform.md) How PrompTugal.news went from a Web Summit newsroom to twelve data sources, a register of 92 and a dozen sites in two weeks.
 - [From a feed to meaning: what the Storm Charles site did with public data that our new data site does not do yet, finding a source, reading its terms, writing parsers, keeping provenance, drawing it and saying what it means, three source sites to show it hourly, for the weather, the sea and fire risk, and the relay of briefs from this newsroom to the agents that will build them](from-a-feed-to-meaning.md) What the Storm Charles site did with public data that our data site does not yet, and three hourly source sites to show it.
 
 [All articles](index.md) · [All graphs](graphs.md)

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-18 | published | 1,589 | first published | this release | [current](../a-factory-that-films-its-work.md) |
+| **v1.0.0** | 2026-11-18 | published | 1,589 | first published | [`2526f92d4`](https://github.com/SGit-AI/SGit-AI__Website/commit/2526f92d4876121f3dd27991c03dc1878b358ca2) | [current](../a-factory-that-films-its-work.md) |
 
 [← Back to the article](../a-factory-that-films-its-work.md) · [All articles](../index.md)
 

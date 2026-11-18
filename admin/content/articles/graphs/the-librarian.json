@@ -1,0 +1,30 @@
+{
+ "slug": "the-librarian",
+ "teaser": "The librarian, my favourite agent: a library at the heart of the data platform, every item catalogued, sourced and linked.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "A data platform needs a library: every item carded with source, licence and evidence, joined in a graph, kept by a librarian agent with its own team, and opened to real librarians, with official sources and the law next.",
+ "nodes": [
+  {"id": "lib", "label": "The library", "kind": "example", "summary": "library.promptugal.news."},
+  {"id": "card", "label": "The card", "kind": "method", "summary": "Source, licence, evidence."},
+  {"id": "graph", "label": "The graph", "kind": "concept", "summary": "How items connect."},
+  {"id": "team", "label": "The librarian's team", "kind": "method", "summary": "Ontologist, cartographer, historian."},
+  {"id": "people", "label": "Real librarians", "kind": "concept", "summary": "An invitation."},
+  {"id": "law", "label": "Official sources", "kind": "concept", "summary": "The next shelves."}
+ ],
+ "edges": [
+  {"from": "card", "to": "lib", "rel": "extends"},
+  {"from": "graph", "to": "lib", "rel": "extends"},
+  {"from": "team", "to": "lib", "rel": "produces"},
+  {"from": "people", "to": "lib", "rel": "extends"},
+  {"from": "law", "to": "lib", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["gaining-speed", "ten-days-to-a-data-platform", "knowledge-graphs-for-kgell", "from-a-feed-to-meaning"],
+  "pages": [],
+  "sites": ["https://library.promptugal.news/"]
+ },
+ "quotes": [
+  {"text": "Without a library it is a pile", "why": "Why."},
+  {"text": "We should be finding budget to hire librarians to work with this", "why": "Real librarians."}
+ ]
+}
