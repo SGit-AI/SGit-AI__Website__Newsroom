@@ -1,0 +1,26 @@
+# Versions of A guide born in a storm, sgit.ai
+
+> Every published version of the article "A guide born in a storm", with the date, the words and what changed.
+
+*Source: <https://newsroom.sgit.ai/articles/versions/a-guide-born-in-a-storm.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+
+---
+
+[Home](../../index.md) / [Articles](../index.md) / [A guide born in a storm](../a-guide-born-in-a-storm.md) / Versions
+
+# Versions of: A guide born in a storm
+
+1 published version of [A guide born in a storm: when Storm Charles cancelled Web Summit's second day, the whole team built Lisbon Tech Fringe, a guide to the city's side events, from a spoken brief at 10:00 to its own address by about 12:57, 179 events and 104 communities each re-read at its source, one conductor per person, terms respected source by source, a guest-list hold, every agent traced, and a graph you can query in your browser](../a-guide-born-in-a-storm.md). The current one is **v1.0.0**.
+
+v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
+
+| Version | Date | Kind | Words | Change from the version before | Commit |  |
+|---|---|---|---|---|---|---|
+| **v1.0.0** | 2026-11-18 | published | 1,464 | first published | this release | [current](../a-guide-born-in-a-storm.md) |
+
+[← Back to the article](../a-guide-born-in-a-storm.md) · [All articles](../index.md)
+
+
+---
+
+*[Site index for agents](../../llms.txt) · [HTML version](https://newsroom.sgit.ai/articles/versions/a-guide-born-in-a-storm.html)*

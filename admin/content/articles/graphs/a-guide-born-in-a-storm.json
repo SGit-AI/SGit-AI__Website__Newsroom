@@ -1,0 +1,31 @@
+{
+ "slug": "a-guide-born-in-a-storm",
+ "teaser": "Lisbon Tech Fringe: a guide to the city's side events, built by the whole team in hours when the storm cancelled Web Summit's day two.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "A spoken brief became a guide to 179 side events within hours, built by every person's conductor at once, with sources read only where terms allowed, guests' names held back by an agent, and every run traced.",
+ "nodes": [
+  {"id": "brief", "label": "The brief", "kind": "example", "summary": "An alternative summit site."},
+  {"id": "team", "label": "One conductor per person", "kind": "method", "summary": "The whole team at once."},
+  {"id": "events", "label": "179 events", "kind": "example", "summary": "Each re-read at source."},
+  {"id": "terms", "label": "Terms respected", "kind": "concept", "summary": "Sources refused or held."},
+  {"id": "hold", "label": "The guest-list hold", "kind": "example", "summary": "An agent overruling Dinis."},
+  {"id": "trace", "label": "Traces and a graph", "kind": "method", "summary": "Elastic, Neo4j, SQL."}
+ ],
+ "edges": [
+  {"from": "team", "to": "brief", "rel": "depends-on"},
+  {"from": "events", "to": "team", "rel": "produces"},
+  {"from": "terms", "to": "events", "rel": "extends"},
+  {"from": "hold", "to": "events", "rel": "extends"},
+  {"from": "trace", "to": "team", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["ten-days-at-web-summit", "storm-charles-a-newsroom-built-in-a-night", "stopping-a-hundred-agents", "what-can-your-agent-reach"],
+  "pages": [],
+  "sites": ["https://lisbontechfringe.com/", "https://lisbontechfringe.com/storm/", "https://lisbontechfringe.com/data/"]
+ },
+ "quotes": [
+  {"text": "Nobody is mapping them in one place.", "why": "The brief."},
+  {"text": "an agent overruling me, in writing, for a good reason", "why": "The hold."},
+  {"text": "Nothing you type leaves your browser.", "why": "The data page."}
+ ]
+}

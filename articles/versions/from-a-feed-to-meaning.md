@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-18 | published | 1,602 | first published | this release | [current](../from-a-feed-to-meaning.md) |
+| **v1.0.0** | 2026-11-18 | published | 1,602 | first published | [`8ba08c71a`](https://github.com/SGit-AI/SGit-AI__Website/commit/8ba08c71a56237a161ccfc306f0710bec06288ec) | [current](../from-a-feed-to-meaning.md) |
 
 [← Back to the article](../from-a-feed-to-meaning.md) · [All articles](../index.md)
 

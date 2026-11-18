@@ -55,6 +55,159 @@
   ],
   "articles": [
     {
+      "slug": "a-guide-born-in-a-storm",
+      "title": "A guide born in a storm: when Storm Charles cancelled Web Summit's second day, the whole team built Lisbon Tech Fringe, a guide to the city's side events, from a spoken brief at 10:00 to its own address by about 12:57, 179 events and 104 communities each re-read at its source, one conductor per person, terms respected source by source, a guest-list hold, every agent traced, and a graph you can query in your browser",
+      "date": "2026-11-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-guide-born-in-a-storm.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-guide-born-in-a-storm.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-guide-born-in-a-storm.webp",
+      "teaser": "Lisbon Tech Fringe: a guide to the city's side events, built by the whole team in hours when the storm cancelled Web Summit's day two.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "lisbon-tech-fringe",
+        "storm-charles",
+        "web-summit",
+        "agents",
+        "events",
+        "data",
+        "series",
+        "article"
+      ],
+      "links_out": [
+        "ten-days-at-web-summit",
+        "storm-charles-a-newsroom-built-in-a-night",
+        "what-can-your-agent-reach",
+        "stopping-a-hundred-agents"
+      ],
+      "links_in": [
+        "ten-days-at-web-summit"
+      ],
+      "figures": [
+        {
+          "file": "gbs-collage.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/gbs-collage.webp",
+          "caption": "Lisbon Tech Fringe: what are you looking for, the storm page, the graph of events, and SQL in your browser.",
+          "kind": "collage"
+        },
+        {
+          "file": "gbs-graph.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/gbs-graph.webp",
+          "caption": "Connect the dots: events, organisations, sources and agents, and how they join, counted from the data.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "gbs-storm.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/gbs-storm.webp",
+          "caption": "The storm page: what was warned, what moved and how to get around, read live from the storm site's data.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "a-guide-born-in-a-storm",
+        "teaser": "Lisbon Tech Fringe: a guide to the city's side events, built by the whole team in hours when the storm cancelled Web Summit's day two.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "A spoken brief became a guide to 179 side events within hours, built by every person's conductor at once, with sources read only where terms allowed, guests' names held back by an agent, and every run traced.",
+        "nodes": [
+          {
+            "id": "brief",
+            "label": "The brief",
+            "kind": "example",
+            "summary": "An alternative summit site."
+          },
+          {
+            "id": "team",
+            "label": "One conductor per person",
+            "kind": "method",
+            "summary": "The whole team at once."
+          },
+          {
+            "id": "events",
+            "label": "179 events",
+            "kind": "example",
+            "summary": "Each re-read at source."
+          },
+          {
+            "id": "terms",
+            "label": "Terms respected",
+            "kind": "concept",
+            "summary": "Sources refused or held."
+          },
+          {
+            "id": "hold",
+            "label": "The guest-list hold",
+            "kind": "example",
+            "summary": "An agent overruling Dinis."
+          },
+          {
+            "id": "trace",
+            "label": "Traces and a graph",
+            "kind": "method",
+            "summary": "Elastic, Neo4j, SQL."
+          }
+        ],
+        "edges": [
+          {
+            "from": "team",
+            "to": "brief",
+            "rel": "depends-on"
+          },
+          {
+            "from": "events",
+            "to": "team",
+            "rel": "produces"
+          },
+          {
+            "from": "terms",
+            "to": "events",
+            "rel": "extends"
+          },
+          {
+            "from": "hold",
+            "to": "events",
+            "rel": "extends"
+          },
+          {
+            "from": "trace",
+            "to": "team",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "ten-days-at-web-summit",
+            "storm-charles-a-newsroom-built-in-a-night",
+            "stopping-a-hundred-agents",
+            "what-can-your-agent-reach"
+          ],
+          "pages": [],
+          "sites": [
+            "https://lisbontechfringe.com/",
+            "https://lisbontechfringe.com/storm/",
+            "https://lisbontechfringe.com/data/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Nobody is mapping them in one place.",
+            "why": "The brief."
+          },
+          {
+            "text": "an agent overruling me, in writing, for a good reason",
+            "why": "The hold."
+          },
+          {
+            "text": "Nothing you type leaves your browser.",
+            "why": "The data page."
+          }
+        ]
+      }
+    },
+    {
       "slug": "from-a-feed-to-meaning",
       "title": "From a feed to meaning: what the Storm Charles site did with public data that our new data site does not do yet, finding a source, reading its terms, writing parsers, keeping provenance, drawing it and saying what it means, three source sites to show it hourly, for the weather, the sea and fire risk, and the relay of briefs from this newsroom to the agents that will build them",
       "date": "2026-11-18",
@@ -5072,6 +5225,7 @@
         "where-assist-becomes-execute"
       ],
       "links_in": [
+        "a-guide-born-in-a-storm",
         "after-the-storm",
         "governance-from-zero",
         "agents-rating-agents",
@@ -12559,6 +12713,7 @@
         "stopping-a-hundred-agents",
         "agents-rating-agents",
         "after-the-storm",
+        "a-guide-born-in-a-storm",
         "storm-charles-a-newsroom-built-in-a-night",
         "who-else-controls-ai-agents-at-web-summit",
         "an-inbox-only-your-agents-can-write-to",
@@ -12567,6 +12722,7 @@
         "meetscribe"
       ],
       "links_in": [
+        "a-guide-born-in-a-storm",
         "after-the-storm",
         "agents-rating-agents",
         "who-hands-out-the-work",
@@ -13144,6 +13300,7 @@
         "who-else-controls-ai-agents-at-web-summit"
       ],
       "links_in": [
+        "a-guide-born-in-a-storm",
         "from-a-feed-to-meaning",
         "after-the-storm",
         "newsrooms-on-open-data",
@@ -54082,6 +54239,7 @@
         "hope-or-enforcement"
       ],
       "links_in": [
+        "a-guide-born-in-a-storm",
         "governance-from-zero",
         "odoo-and-our-stack",
         "ci-behaviour-policies",
