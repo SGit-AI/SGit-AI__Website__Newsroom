@@ -55,6 +55,171 @@
   ],
   "articles": [
     {
+      "slug": "from-a-feed-to-meaning",
+      "title": "From a feed to meaning: what the Storm Charles site did with public data that our new data site does not do yet, finding a source, reading its terms, writing parsers, keeping provenance, drawing it and saying what it means, three source sites to show it hourly, for the weather, the sea and fire risk, and the relay of briefs from this newsroom to the agents that will build them",
+      "date": "2026-11-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/from-a-feed-to-meaning.html",
+      "markdown": "https://newsroom.sgit.ai/articles/from-a-feed-to-meaning.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/from-a-feed-to-meaning.webp",
+      "teaser": "What the Storm Charles site did with public data that our data site does not yet, and three hourly source sites to show it.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "data",
+        "open-data",
+        "promptugal",
+        "storm-charles",
+        "agenticcells",
+        "integration",
+        "briefs",
+        "article"
+      ],
+      "links_out": [
+        "storm-charles-a-newsroom-built-in-a-night",
+        "after-the-storm",
+        "newsrooms-on-open-data",
+        "any-data-with-any-data",
+        "the-website-cell",
+        "who-steered-this",
+        "spend-fewer-tokens"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ftm-ladder.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ftm-ladder.webp",
+          "caption": "From a feed to meaning, in seven steps: what the storm site did, and the steps the data site has reached.",
+          "kind": "process"
+        },
+        {
+          "file": "ftm-cells.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ftm-cells.webp",
+          "caption": "Three source sites on the data site, each rebuilt hourly: warnings and weather, the sea, fire risk.",
+          "kind": "architecture"
+        },
+        {
+          "file": "ftm-site.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ftm-site.webp",
+          "caption": "What each source site carries: the data now, charts, what changed, provenance, and how to use the data.",
+          "kind": "concept"
+        },
+        {
+          "file": "ftm-relay.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ftm-relay.webp",
+          "caption": "How this brief travels: newsroom, two conductors, the data agent, and the site team.",
+          "kind": "diagram"
+        }
+      ],
+      "graph": {
+        "slug": "from-a-feed-to-meaning",
+        "teaser": "What the Storm Charles site did with public data that our data site does not yet, and three hourly source sites to show it.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Going from a public feed to meaning takes seven steps, find, terms, parse, provenance, label, draw, explain; the data site does the first four, and hourly source sites on top can do the rest with code and a little agent work.",
+        "nodes": [
+          {
+            "id": "storm",
+            "label": "The storm site",
+            "kind": "example",
+            "summary": "All seven steps in a night."
+          },
+          {
+            "id": "data",
+            "label": "data.promptugal.news",
+            "kind": "example",
+            "summary": "Four steps, nine sources."
+          },
+          {
+            "id": "steps",
+            "label": "Seven steps",
+            "kind": "method",
+            "summary": "Feed to meaning."
+          },
+          {
+            "id": "cells",
+            "label": "Source sites",
+            "kind": "method",
+            "summary": "Weather, sea, fire risk."
+          },
+          {
+            "id": "chain",
+            "label": "The hourly chain",
+            "kind": "method",
+            "summary": "Code at :15 and :30."
+          },
+          {
+            "id": "relay",
+            "label": "The brief's relay",
+            "kind": "example",
+            "summary": "Session to session."
+          }
+        ],
+        "edges": [
+          {
+            "from": "storm",
+            "to": "steps",
+            "rel": "example-of"
+          },
+          {
+            "from": "data",
+            "to": "steps",
+            "rel": "example-of"
+          },
+          {
+            "from": "cells",
+            "to": "data",
+            "rel": "depends-on"
+          },
+          {
+            "from": "chain",
+            "to": "cells",
+            "rel": "extends"
+          },
+          {
+            "from": "relay",
+            "to": "cells",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "storm-charles-a-newsroom-built-in-a-night",
+            "after-the-storm",
+            "newsrooms-on-open-data",
+            "any-data-with-any-data",
+            "the-website-cell",
+            "who-steered-this",
+            "spend-fewer-tokens"
+          ],
+          "pages": [],
+          "sites": [
+            "https://data.promptugal.news/",
+            "https://weather.promptugal.news/",
+            "https://travel.promptugal.news/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Six hours of nothing",
+            "why": "The stall."
+          },
+          {
+            "text": "Mostly code, so mostly free",
+            "why": "The chain."
+          },
+          {
+            "text": "No person copies anything; I steer, and I approve.",
+            "why": "The relay."
+          }
+        ]
+      }
+    },
+    {
       "slug": "start-with-an-interview",
       "title": "Start with an interview: how someone goes from \"I want to try it\" to editing their own site with Claude, by being interviewed by Claude first, about what they want, the sections, their materials and the sites they like, then sending their material in whichever way suits them, getting five designs inspired by what they like, or a better version of the site they already have, and reaching the one milestone that matters",
       "date": "2026-11-18",
@@ -892,6 +1057,7 @@
         "governance-from-zero"
       ],
       "links_in": [
+        "from-a-feed-to-meaning",
         "the-pitch",
         "you-bring-the-business",
         "static-against-the-platforms",
@@ -1054,6 +1220,7 @@
         "agents-rating-agents"
       ],
       "links_in": [
+        "from-a-feed-to-meaning",
         "ten-days-at-web-summit"
       ],
       "figures": [
@@ -1385,7 +1552,9 @@
         "agents-rating-agents",
         "paid-by-the-read"
       ],
-      "links_in": [],
+      "links_in": [
+        "from-a-feed-to-meaning"
+      ],
       "figures": [
         {
           "file": "vrt-stack.webp",
@@ -1702,6 +1871,7 @@
         "the-intersection"
       ],
       "links_in": [
+        "from-a-feed-to-meaning",
         "partners-sell-we-build"
       ],
       "figures": [
@@ -1865,6 +2035,7 @@
         "signed-by-the-source"
       ],
       "links_in": [
+        "from-a-feed-to-meaning",
         "paid-by-the-read",
         "newsrooms-on-open-data"
       ],
@@ -8940,6 +9111,7 @@
         "atomic-cells-end-to-end"
       ],
       "links_in": [
+        "from-a-feed-to-meaning",
         "newsrooms-on-open-data"
       ],
       "figures": [
@@ -12972,6 +13144,7 @@
         "who-else-controls-ai-agents-at-web-summit"
       ],
       "links_in": [
+        "from-a-feed-to-meaning",
         "after-the-storm",
         "newsrooms-on-open-data",
         "any-data-with-any-data",

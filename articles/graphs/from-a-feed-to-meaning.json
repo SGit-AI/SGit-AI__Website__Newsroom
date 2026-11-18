@@ -1,0 +1,131 @@
+{
+  "slug": "from-a-feed-to-meaning",
+  "teaser": "What the Storm Charles site did with public data that our data site does not yet, and three hourly source sites to show it.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Going from a public feed to meaning takes seven steps, find, terms, parse, provenance, label, draw, explain; the data site does the first four, and hourly source sites on top can do the rest with code and a little agent work.",
+  "nodes": [
+    {
+      "id": "storm",
+      "label": "The storm site",
+      "kind": "example",
+      "summary": "All seven steps in a night."
+    },
+    {
+      "id": "data",
+      "label": "data.promptugal.news",
+      "kind": "example",
+      "summary": "Four steps, nine sources."
+    },
+    {
+      "id": "steps",
+      "label": "Seven steps",
+      "kind": "method",
+      "summary": "Feed to meaning."
+    },
+    {
+      "id": "cells",
+      "label": "Source sites",
+      "kind": "method",
+      "summary": "Weather, sea, fire risk."
+    },
+    {
+      "id": "chain",
+      "label": "The hourly chain",
+      "kind": "method",
+      "summary": "Code at :15 and :30."
+    },
+    {
+      "id": "relay",
+      "label": "The brief's relay",
+      "kind": "example",
+      "summary": "Session to session."
+    }
+  ],
+  "edges": [
+    {
+      "from": "storm",
+      "to": "steps",
+      "rel": "example-of"
+    },
+    {
+      "from": "data",
+      "to": "steps",
+      "rel": "example-of"
+    },
+    {
+      "from": "cells",
+      "to": "data",
+      "rel": "depends-on"
+    },
+    {
+      "from": "chain",
+      "to": "cells",
+      "rel": "extends"
+    },
+    {
+      "from": "relay",
+      "to": "cells",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "storm-charles-a-newsroom-built-in-a-night",
+      "after-the-storm",
+      "newsrooms-on-open-data",
+      "any-data-with-any-data",
+      "the-website-cell",
+      "who-steered-this",
+      "spend-fewer-tokens"
+    ],
+    "pages": [],
+    "sites": [
+      "https://data.promptugal.news/",
+      "https://weather.promptugal.news/",
+      "https://travel.promptugal.news/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Six hours of nothing",
+      "why": "The stall."
+    },
+    {
+      "text": "Mostly code, so mostly free",
+      "why": "The chain."
+    },
+    {
+      "text": "No person copies anything; I steer, and I approve.",
+      "why": "The relay."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ftm-ladder.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ftm-ladder.webp",
+      "caption": "From a feed to meaning, in seven steps: what the storm site did, and the steps the data site has reached.",
+      "kind": "process"
+    },
+    {
+      "file": "ftm-cells.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ftm-cells.webp",
+      "caption": "Three source sites on the data site, each rebuilt hourly: warnings and weather, the sea, fire risk.",
+      "kind": "architecture"
+    },
+    {
+      "file": "ftm-site.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ftm-site.webp",
+      "caption": "What each source site carries: the data now, charts, what changed, provenance, and how to use the data.",
+      "kind": "concept"
+    },
+    {
+      "file": "ftm-relay.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ftm-relay.webp",
+      "caption": "How this brief travels: newsroom, two conductors, the data agent, and the site team.",
+      "kind": "diagram"
+    }
+  ]
+}

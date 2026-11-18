@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-18 | published | 1,287 | first published | this release | [current](../start-with-an-interview.md) |
+| **v1.0.0** | 2026-11-18 | published | 1,287 | first published | [`631b816f1`](https://github.com/SGit-AI/SGit-AI__Website/commit/631b816f150940c97c9109f59524b57e1056b2ef) | [current](../start-with-an-interview.md) |
 
 [← Back to the article](../start-with-an-interview.md) · [All articles](../index.md)
 
