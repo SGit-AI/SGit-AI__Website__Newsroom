@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-18 | published | 1,464 | first published | this release | [current](../a-guide-born-in-a-storm.md) |
+| **v1.0.0** | 2026-11-18 | published | 1,464 | first published | [`6c677f28b`](https://github.com/SGit-AI/SGit-AI__Website/commit/6c677f28b68229ea1cbfbd9a991244b8166670c4) | [current](../a-guide-born-in-a-storm.md) |
 
 [← Back to the article](../a-guide-born-in-a-storm.md) · [All articles](../index.md)
 

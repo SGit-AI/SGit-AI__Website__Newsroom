@@ -1,0 +1,114 @@
+{
+  "slug": "riskmandate-and-kosmoy",
+  "teaser": "RiskMandate and Kosmoy compared: an enterprise AI control plane and an open behaviour policy per agent, and why they fit together.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Kosmoy enforces agent control at an AI gateway and a Kubernetes sandbox per run; RiskMandate writes an open behaviour policy per agent with hooks and kernel boundaries and evidence; the policy is what such a plant could enforce.",
+  "nodes": [
+    {
+      "id": "kos",
+      "label": "Kosmoy",
+      "kind": "example",
+      "summary": "Gateway, sandbox, inventory."
+    },
+    {
+      "id": "rm",
+      "label": "RiskMandate",
+      "kind": "example",
+      "summary": "A policy per agent."
+    },
+    {
+      "id": "gw",
+      "label": "The gateway",
+      "kind": "method",
+      "summary": "One policy point per call."
+    },
+    {
+      "id": "cap",
+      "label": "The Action Capsule",
+      "kind": "method",
+      "summary": "A pod per run."
+    },
+    {
+      "id": "abp",
+      "label": "Agent Behaviour Policy",
+      "kind": "concept",
+      "summary": "Grant, mandate, gap, barrier."
+    },
+    {
+      "id": "fit",
+      "label": "The fit",
+      "kind": "concept",
+      "summary": "Policy says, plant enforces."
+    }
+  ],
+  "edges": [
+    {
+      "from": "gw",
+      "to": "kos",
+      "rel": "extends"
+    },
+    {
+      "from": "cap",
+      "to": "kos",
+      "rel": "extends"
+    },
+    {
+      "from": "abp",
+      "to": "rm",
+      "rel": "extends"
+    },
+    {
+      "from": "kos",
+      "to": "rm",
+      "rel": "compared-with"
+    },
+    {
+      "from": "fit",
+      "to": "abp",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "what-can-your-agent-reach",
+      "introducing-sharness",
+      "stopping-a-hundred-agents"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.kosmoy.com/",
+      "https://kosmoy.com/platform/action-capsule/",
+      "https://riskmandate.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "one policy point for every AI call",
+      "why": "Kosmoy's gateway."
+    },
+    {
+      "text": "not the strongest control, but a lot of value for the money, today",
+      "why": "RiskMandate's policy."
+    },
+    {
+      "text": "the policy says, the plant enforces",
+      "why": "The fit."
+    }
+  ],
+  "figures": [
+    {
+      "file": "kos-compare.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/kos-compare.webp",
+      "caption": "RiskMandate and Kosmoy, side by side: what each is, where it enforces, how it is sold, and what is open.",
+      "kind": "comparison"
+    },
+    {
+      "file": "kos-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/kos-layers.webp",
+      "caption": "Where each one works: the policy and its evidence, the hook, the gateway, the sandbox, the kernel.",
+      "kind": "diagram"
+    }
+  ]
+}
