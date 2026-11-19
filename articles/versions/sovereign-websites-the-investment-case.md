@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-19 | published | 1,412 | first published | this release | [current](../sovereign-websites-the-investment-case.md) |
+| **v1.0.0** | 2026-11-19 | published | 1,412 | first published | [`d3b6112bf`](https://github.com/SGit-AI/SGit-AI__Website/commit/d3b6112bf55241048eb8037e6aa38a410e9f1779) | [current](../sovereign-websites-the-investment-case.md) |
 
 [← Back to the article](../sovereign-websites-the-investment-case.md) · [All articles](../index.md)
 

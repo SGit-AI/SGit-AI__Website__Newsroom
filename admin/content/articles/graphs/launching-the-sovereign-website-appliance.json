@@ -1,0 +1,30 @@
+{
+ "slug": "launching-the-sovereign-website-appliance",
+ "teaser": "The Kickstarter plan: a sovereign website on a configured Android tablet or Raspberry Pis, from a £50 supporter to £1,000.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "Launch Sovereign Website on Kickstarter as an appliance, a sovereign website on an Android tablet or Raspberry Pis the owner holds, with three tiers that promise a hardware spend rather than a model, the UK as the base goal and countries as stretch goals, launching alone on open source and partnering later.",
+ "nodes": [
+  {"id": "appliance", "label": "The appliance", "kind": "concept", "summary": "A site on a device you hold."},
+  {"id": "tiers", "label": "Three tiers", "kind": "artefact", "summary": "£50, £500, £1,000."},
+  {"id": "spend", "label": "A spend, not a model", "kind": "method", "summary": "Backer's choice."},
+  {"id": "pi", "label": "Raspberry Pis as hosts", "kind": "method", "summary": "More than one host."},
+  {"id": "goals", "label": "The UK first, then countries", "kind": "method", "summary": "All-or-nothing."},
+  {"id": "alone", "label": "Launch alone", "kind": "claim", "summary": "Partner later."}
+ ],
+ "edges": [
+  {"from": "tiers", "to": "appliance", "rel": "depends-on"},
+  {"from": "spend", "to": "tiers", "rel": "extends"},
+  {"from": "pi", "to": "appliance", "rel": "extends"},
+  {"from": "goals", "to": "tiers", "rel": "depends-on"},
+  {"from": "alone", "to": "appliance", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["the-launch-plan-in-eleven-turns", "what-is-a-sovereign-website", "a-website-with-a-team-inside", "your-website-from-a-vault", "native-apps-by-agents", "sovereign-websites-the-investment-case"],
+  "pages": [],
+  "sites": ["https://sovereignwebsite.ai/"]
+ },
+ "quotes": [
+  {"text": "The promise is about what we spend, not a model number.", "why": "Dinis."},
+  {"text": "So the honest design is that the Pis are hosts, not the only host", "why": "Dinis."}
+ ]
+}

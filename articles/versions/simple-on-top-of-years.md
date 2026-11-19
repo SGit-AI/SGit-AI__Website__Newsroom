@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-19 | published | 1,161 | first published | this release | [current](../simple-on-top-of-years.md) |
+| **v1.0.0** | 2026-11-19 | published | 1,161 | first published | [`d3b6112bf`](https://github.com/SGit-AI/SGit-AI__Website/commit/d3b6112bf55241048eb8037e6aa38a410e9f1779) | [current](../simple-on-top-of-years.md) |
 
 [← Back to the article](../simple-on-top-of-years.md) · [All articles](../index.md)
 

@@ -1,0 +1,30 @@
+{
+ "slug": "the-launch-plan-in-eleven-turns",
+ "teaser": "How one afternoon took the launch plan from a £50 site on Kickstarter to a configured Android tablet, a supporter tier and a Raspberry Pi.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "Eleven turns in one afternoon, each from a question, moved the launch plan from a service on Kickstarter, which its rules resist, through Indiegogo, Patreon and countries as stretch goals, to a hardware appliance on Android that fits Kickstarter, with what held throughout: one campaign, value first, the UK first, open source.",
+ "nodes": [
+  {"id": "ks", "label": "Kickstarter's rules", "kind": "claim", "summary": "Services and AI."},
+  {"id": "one", "label": "One campaign", "kind": "method", "summary": "Not three."},
+  {"id": "countries", "label": "Countries as stretch goals", "kind": "concept", "summary": "One country at a time."},
+  {"id": "appliance", "label": "The appliance", "kind": "concept", "summary": "A configured tablet."},
+  {"id": "android", "label": "Android first", "kind": "method", "summary": "Full control."},
+  {"id": "pi", "label": "A Raspberry Pi", "kind": "example", "summary": "A box at home."}
+ ],
+ "edges": [
+  {"from": "appliance", "to": "ks", "rel": "answers"},
+  {"from": "android", "to": "appliance", "rel": "depends-on"},
+  {"from": "countries", "to": "one", "rel": "extends"},
+  {"from": "pi", "to": "appliance", "rel": "extends"},
+  {"from": "one", "to": "ks", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["launching-the-sovereign-website-appliance", "sovereign-agentic-website", "designing-sovereignwebsite-ai", "a-website-with-a-team-inside", "your-website-from-a-vault", "sovereign-websites-the-investment-case", "what-is-a-sovereign-website", "native-apps-by-agents"],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "For the first time, I have a platform I can just give somebody: a website.", "why": "Dinis."},
+  {"text": "So a stretch goal cannot be a language. It is a place", "why": "Dinis."}
+ ]
+}
