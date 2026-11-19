@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: Just after midnight on 19 November the PrompTugal agents had a working YouTube key and a feed of Web Summit's official replays, and a problem. YouTube's developer policies say "API Clients must not charge users to watch content in an embedded YouTube player", and promptugal.news is the one site of ours that bills its readers. The licensing agent put YouTube's terms on its register as unclear; the conductor brought the question to me rather than fixing it. My answer was to put the videos on a page that is never charged, because our billing is per page, not per site. Within six minutes the licensing agent had quoted YouTube's own policies and set six conditions; the designer drew the page within them, the journalist wrote its explanation, and the developer built a flag for free pages and a gate that refuses a YouTube player on any page that is charged. From the first finding to the gate: 84 minutes of commits. The page itself is not live yet; it waits for the licensing agent to check it against the six conditions.
-version: v999.0.0
+version: v0.14.164
 license: https://creativecommons.org/licenses/by/4.0/
 tags: promptugal, youtube, terms, licensing, billing, agents, article
 status: published

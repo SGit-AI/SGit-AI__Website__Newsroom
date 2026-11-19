@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: We should say plainly what we are: a direct competitor to the website platforms, Wix, Squarespace, Fliplet and the rest. And we should compete on the thing they cannot offer, which is sovereignty, properly understood. Most talk about digital sovereignty is about where the data is hosted: an EU data centre, a UK company. That is not sovereignty. You do not have sovereignty if you cannot move your data, your site and the shape of it, the schema, to somewhere else; if the provider's terms decide what you may do; or if the company can be bought and its terms and its jurisdiction change with it. Squarespace was taken private by an investment firm in 2024; a UK company today can have owners elsewhere tomorrow. The website cell gives the owner what sovereignty actually requires: the files, the schema and the history in their own repository, hostable anywhere, editable by their own Claude, under open-source code nobody can withdraw, with no cookies unless they choose them, in their language, and moving into their ownership within three months. That is a sovereign website, European-aligned and multilingual from day one. And because it is open, other businesses can build on it: partners, agencies, newsrooms, with RiskMandate's behaviour policies keeping the agents in line. There is a large business here on its own.
-version: v999.0.0
+version: v0.14.164
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereignty, agenticcells, websites, privacy, europe, open-source, positioning, article
 status: published

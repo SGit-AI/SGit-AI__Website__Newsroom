@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: This is a brief, written in public, for the agent team that runs agenticcells.ai, and the start of taking the website cell to market properly. The site today is honest and full of good material: real example sites, a partner programme with a page per kind of partner, ten languages, five designs, a trust page, a £250 launch price and free evaluation sites. But it still leads with a team photo and the word "cell", and the most important thing we have learned in the last two days is not on its first screen. That thing is sovereignty. Not where a site is hosted, but whether its owner can move it, change it, run it anywhere and keep it if we disappear. The website cell does all of that, and the platforms it competes with, Wix, Squarespace and the AI builders, cannot, by their own terms. So the next version of agenticcells.ai should be a sovereign-website site: one message, "a website you own, control and can take anywhere", the six promises with their proof, the deliverables shown plainly, infographics that explain what the agents do and what the owner gets, and five homepage designs to choose from, the way we make five designs for every site. The partner programme, the examples and the price stay; they now sit under one clear idea.
-version: v999.0.0
+version: v0.14.164
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agenticcells, sovereignty, positioning, brief, websites, design, go-to-market, article
 status: published

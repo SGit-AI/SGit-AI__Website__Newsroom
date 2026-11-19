@@ -4,7 +4,7 @@ date: 2026-11-18
 author: Dinis Cruz
 author_url: about/index.html
 summary: The more I compare the website cell with what is out there, the clearer it is that its biggest difference is not the AI, the designs or the price. It is that the customer can leave. Wix's own help page says its sites "need to be hosted and operated on Wix's servers". Squarespace exports only part of a site, in WordPress's format. Fliplet's standard terms say the service and what you build in it are Fliplet's, that it offers no way to transfer or copy your applications, and that when the terms end you must stop using it, with no right to a copy. And the market of people in that position is very large: Wix alone has 6.11 million paying subscriptions, Squarespace reported more than 5.2 million, and both raised their prices this year. Against that, the website cell is files in the owner's own repository, hostable anywhere, edited by their own Claude, paid for once; and, as agreed today, every site we build is expected to move into its owner's ownership within three months. No lock-in should not be a footnote. It should be the headline, and I have briefed the AgentiCCells team to make it one.
-version: v999.0.0
+version: v0.14.164
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agenticcells, lock-in, ownership, websites, market, positioning, article
 status: published
