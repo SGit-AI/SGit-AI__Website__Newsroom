@@ -79,6 +79,10 @@ Agents & policy[This article as a graph →](graphs.md#a-sovereign-website-on-a-
 - [Watch your website being built: a brief for a page that builds a first version of a sovereign website in the visitor's own browser, from a description or a voice note, with their own model key, showing every agent at work, every behaviour policy being applied and every penny it costs, then hands back a zip, the same brief run on several models side by side as evals, and the Web Summit demos it grows from](watch-your-website-being-built.md) A page that builds a first version of a sovereign website in your browser, showing every agent, behaviour policy and penny, then hands back a zip.
 - [How a vault works: an encrypted store that acts like a database, where a server that is fully compromised leaks nothing, one mutable file lets every other object be cached for ever, and a web page can open a file in four requests or run a whole app in a sandbox](how-a-vault-works.md) How an sgit vault acts like a database on a server that cannot read: one key-derived mutable file, everything else immutable.
 
+### Continued by
+
+- [Where to sell the book and the appliances: a map of the places a UK author and maker can sell physical products, printed copies of One Human, Nine Agents, Nineteen Hours from early December and the sovereign website appliances from 1 January after a December Kickstarter, with Amazon, IngramSpark, eBay, OnBuy and our own shop, what each charges, the rules that matter, and the law that comes with selling hardware](where-to-sell-the-book-and-the-appliances.md) Where to sell the printed book and the sovereign website appliances in the UK, when, what each platform charges, and the law that comes with hardware.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 504 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=504)

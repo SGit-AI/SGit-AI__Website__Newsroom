@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-19 | published | 1,169 | first published | this release | [current](../a-sovereign-website-on-a-raspberry-pi.md) |
+| **v1.0.0** | 2026-11-19 | published | 1,169 | first published | [`e86f4f3f2`](https://github.com/SGit-AI/SGit-AI__Website/commit/e86f4f3f2e786703745a257d2d0381fe0d0bb933) | [current](../a-sovereign-website-on-a-raspberry-pi.md) |
 
 [← Back to the article](../a-sovereign-website-on-a-raspberry-pi.md) · [All articles](../index.md)
 

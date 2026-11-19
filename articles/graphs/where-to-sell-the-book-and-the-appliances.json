@@ -1,0 +1,103 @@
+{
+  "slug": "where-to-sell-the-book-and-the-appliances",
+  "teaser": "Where to sell the printed book and the sovereign website appliances in the UK, when, what each platform charges, and the law that comes with hardware.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "The printed book goes on sale in early December through KDP or IngramSpark, since Leanpub sells only ebooks and KDP has no print pre-orders, and the appliances stay on Kickstarter alone through December before going to our own shop, late pledges, eBay, Amazon and OnBuy from 1 January, with the manufacturer's duties that selling hardware brings.",
+  "nodes": [
+    {
+      "id": "book",
+      "label": "The printed book",
+      "kind": "artefact",
+      "summary": "Early December."
+    },
+    {
+      "id": "ingram",
+      "label": "IngramSpark for pre-orders",
+      "kind": "method",
+      "summary": "KDP has none for print."
+    },
+    {
+      "id": "ks",
+      "label": "Kickstarter only in December",
+      "kind": "method",
+      "summary": "Nothing elsewhere."
+    },
+    {
+      "id": "shop",
+      "label": "Our own shop first",
+      "kind": "method",
+      "summary": "Then marketplaces."
+    },
+    {
+      "id": "law",
+      "label": "The manufacturer's duties",
+      "kind": "claim",
+      "summary": "CE or UKCA, WEEE."
+    },
+    {
+      "id": "etsy",
+      "label": "Etsy ruled out",
+      "kind": "example",
+      "summary": "By its own rules."
+    }
+  ],
+  "edges": [
+    {
+      "from": "ingram",
+      "to": "book",
+      "rel": "answers"
+    },
+    {
+      "from": "shop",
+      "to": "ks",
+      "rel": "extends"
+    },
+    {
+      "from": "law",
+      "to": "shop",
+      "rel": "depends-on"
+    },
+    {
+      "from": "etsy",
+      "to": "shop",
+      "rel": "example-of"
+    },
+    {
+      "from": "ks",
+      "to": "law",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-book-is-on-leanpub",
+      "launching-the-sovereign-website-appliance",
+      "a-sovereign-website-on-a-raspberry-pi",
+      "the-launch-plan-in-eleven-turns"
+    ],
+    "pages": [],
+    "sites": [
+      "https://leanpub.com/one-human-nine-agents-nineteen-hours"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Nowhere but Kickstarter.",
+      "why": "Dinis."
+    },
+    {
+      "text": "It is also the sovereign answer.",
+      "why": "Dinis."
+    }
+  ],
+  "figures": [
+    {
+      "file": "shp-when.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/shp-when.webp",
+      "caption": "Where the book and the appliances go on sale, and when, with the shops ranked by fit.",
+      "kind": "chart"
+    }
+  ]
+}

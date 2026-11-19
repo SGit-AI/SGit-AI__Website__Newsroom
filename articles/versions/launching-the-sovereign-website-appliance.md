@@ -16,9 +16,9 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-19 | minor | 2,343 | +1,020 / −419 words; 7 changed, 24 added, 13 removed paragraphs | this release | [what changed](launching-the-sovereign-website-appliance/v1.1.0.md) · [current](../launching-the-sovereign-website-appliance.md) |
-| **v1.0.1** | 2026-11-19 | patch | 1,749 | front matter only (the text is unchanged) | [`6498ef87d`](https://github.com/SGit-AI/SGit-AI__Website/commit/6498ef87de08c573acce8241369aa31069f463e5) | [what changed](launching-the-sovereign-website-appliance/v1.0.1.md) |
-| **v1.0.0** | 2026-11-19 | published | 1,749 | first published | [`074807fde`](https://github.com/SGit-AI/SGit-AI__Website/commit/074807fde4391e200372e7ba2d557a37861a01c1) |  |
+| **v1.1.0** | 2026-11-19 | minor | 2,343 | +1,020 / −419 words; 7 changed, 24 added, 13 removed paragraphs | [`e86f4f3f2`](https://github.com/SGit-AI/SGit-AI__Website/commit/e86f4f3f2e786703745a257d2d0381fe0d0bb933) | [what changed](launching-the-sovereign-website-appliance/v1.1.0.md) · [current](../launching-the-sovereign-website-appliance.md) |
+| **v1.0.1** | 2026-11-19 | patch | 1,749 | front matter only (the text is unchanged) | [`8746987d8`](https://github.com/SGit-AI/SGit-AI__Website/commit/8746987d82c7dea516692b61a1095631309bf6b6) | [what changed](launching-the-sovereign-website-appliance/v1.0.1.md) |
+| **v1.0.0** | 2026-11-19 | published | 1,749 | first published | [`75c52291e`](https://github.com/SGit-AI/SGit-AI__Website/commit/75c52291ee8f77eea202e22ad4924a74fd896872) |  |
 
 [← Back to the article](../launching-the-sovereign-website-appliance.md) · [All articles](../index.md)
 

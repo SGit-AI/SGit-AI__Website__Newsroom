@@ -2,10 +2,12 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-134 articles, newest first.
+136 articles, newest first.
 
 ## November 2026
 
+- [Where to sell the book and the appliances: a map of the places a UK author and maker can sell physical products, printed copies of One Human, Nine Agents, Nineteen Hours from early December and the sovereign website appliances from 1 January after a December Kickstarter, with Amazon, IngramSpark, eBay, OnBuy and our own shop, what each charges, the rules that matter, and the law that comes with selling hardware](../../articles/where-to-sell-the-book-and-the-appliances.md), 2026-11-19, 5 min.
+- [When a publisher asks: exploring offers to license a book that started on Leanpub, which technical publishers take books like this, what they publish about their terms, the books that went from Leanpub or a free online edition to a publisher before, the questions to ask before signing anything, and what I want to keep for One Human, Nine Agents, Nineteen Hours](../../articles/when-a-publisher-asks.md), 2026-11-19, 5 min.
 - [A sovereign website on a Raspberry Pi: the experiment of running the whole thing on one small box at home, a Raspberry Pi 5 with 16GB and 256GB, serving the site, checking the signature of every update, running a local model, building a website on the device itself under behaviour policies, and backing it up to a vault, step by step, what we will measure, and why this becomes a product when the Kickstarter finishes](../../articles/a-sovereign-website-on-a-raspberry-pi.md), 2026-11-19, 4 min.
 - [Watch your website being built: a brief for a page that builds a first version of a sovereign website in the visitor's own browser, from a description or a voice note, with their own model key, showing every agent at work, every behaviour policy being applied and every penny it costs, then hands back a zip, the same brief run on several models side by side as evals, and the Web Summit demos it grows from](../../articles/watch-your-website-being-built.md), 2026-11-19, 6 min.
 - [The launch plan in eleven turns: how one afternoon took the plan for launching Sovereign Website from a £50 site on Kickstarter, through Indiegogo, PPL, Patreon, countries as stretch goals and the UK as home ground, to a configured Android tablet, a supporter tier and a Raspberry Pi, with every variation we tried and why each was kept or set aside](../../articles/the-launch-plan-in-eleven-turns.md), 2026-11-19, 6 min.

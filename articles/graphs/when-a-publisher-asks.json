@@ -1,0 +1,101 @@
+{
+  "slug": "when-a-publisher-asks",
+  "teaser": "Exploring offers to license a book that started on Leanpub: who takes such books, examples from before, and the questions to ask.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Technical publishers have taken books that began on Leanpub or as free editions, Leanpub leaves the rights with the author under a non-exclusive licence, so the right answer to a licensing offer is a limited licence that keeps the open, updated Leanpub edition, with clear scope, term and reversion.",
+  "nodes": [
+    {
+      "id": "ask",
+      "label": "A publisher asks",
+      "kind": "example",
+      "summary": "The first approach."
+    },
+    {
+      "id": "pubs",
+      "label": "Who takes such books",
+      "kind": "artefact",
+      "summary": "Terms vary."
+    },
+    {
+      "id": "before",
+      "label": "Done before",
+      "kind": "example",
+      "summary": "Five books."
+    },
+    {
+      "id": "leanpub",
+      "label": "Leanpub's terms",
+      "kind": "claim",
+      "summary": "Non-exclusive."
+    },
+    {
+      "id": "questions",
+      "label": "The questions",
+      "kind": "method",
+      "summary": "Scope, term, edition."
+    },
+    {
+      "id": "keep",
+      "label": "A licence, not a sale",
+      "kind": "claim",
+      "summary": "Keep the Leanpub edition."
+    }
+  ],
+  "edges": [
+    {
+      "from": "pubs",
+      "to": "ask",
+      "rel": "answers"
+    },
+    {
+      "from": "before",
+      "to": "pubs",
+      "rel": "example-of"
+    },
+    {
+      "from": "questions",
+      "to": "leanpub",
+      "rel": "depends-on"
+    },
+    {
+      "from": "keep",
+      "to": "questions",
+      "rel": "depends-on"
+    },
+    {
+      "from": "keep",
+      "to": "ask",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-book-is-on-leanpub",
+      "where-to-sell-the-book-and-the-appliances"
+    ],
+    "pages": [],
+    "sites": [
+      "https://leanpub.com/one-human-nine-agents-nineteen-hours"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "For this book, the answer I would like to reach with any publisher is a licence, not a sale",
+      "why": "Dinis."
+    },
+    {
+      "text": "an open or early edition did not stop a publisher; in several cases it is why the publisher came.",
+      "why": "Dinis."
+    }
+  ],
+  "figures": [
+    {
+      "file": "pub-options.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pub-options.webp",
+      "caption": "Three ways for a Leanpub book to reach more readers, and what each keeps and gives away.",
+      "kind": "concept"
+    }
+  ]
+}

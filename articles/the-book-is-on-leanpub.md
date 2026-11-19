@@ -71,6 +71,8 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#the-bo
 
 ### Continued by
 
+- [Where to sell the book and the appliances: a map of the places a UK author and maker can sell physical products, printed copies of One Human, Nine Agents, Nineteen Hours from early December and the sovereign website appliances from 1 January after a December Kickstarter, with Amazon, IngramSpark, eBay, OnBuy and our own shop, what each charges, the rules that matter, and the law that comes with selling hardware](where-to-sell-the-book-and-the-appliances.md) Where to sell the printed book and the sovereign website appliances in the UK, when, what each platform charges, and the law that comes with hardware.
+- [When a publisher asks: exploring offers to license a book that started on Leanpub, which technical publishers take books like this, what they publish about their terms, the books that went from Leanpub or a free online edition to a publisher before, the questions to ask before signing anything, and what I want to keep for One Human, Nine Agents, Nineteen Hours](when-a-publisher-asks.md) Exploring offers to license a book that started on Leanpub: who takes such books, examples from before, and the questions to ask.
 - [An agentic console: a simulated control room for a team of agentic teams, with time you can rewind, accounts drawn as trust zones, stops that reach every agent, signed messages on three channels, and the console itself as an agent](an-agentic-console.md) An agentic console, simulated: accounts as trust zones, time you can rewind, signed messages on three channels, honest stops, and the console as an agent.
 
 [All articles](index.md) · [All graphs](graphs.md)
