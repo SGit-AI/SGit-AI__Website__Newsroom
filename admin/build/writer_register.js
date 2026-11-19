@@ -130,15 +130,42 @@ function check(root, errors) {
       try { for (const r of JSON.parse(old).registrations || []) if (r.closed) everClosed.add(r.id); } catch {}
     }
     for (const r of open) if (everClosed.has(r.id)) errors.push(`${REL}: ${r.id} was closed and is open again; a closed registration is never reopened`);
-    for (const r of list.filter(x => x.git_signing && x.key)) {
-      const log = git(root, ['log', '--no-merges', `--since=${r.git_signing.since}`, '--format=%H%x1f%B%x1e']) || '';
-      for (const rec of log.split('\x1e').map(x => x.trim()).filter(Boolean)) {
-        const [sha, body] = rec.split('\x1f');
-        if (!/^@newsroom\.writer:/.test(body) || (body.match(/^Writer-Registration:\s*(\S+)/m) || [])[1] !== r.id) continue;
-        const e = gitSigError(root, sha, r); if (e) errors.push(`${sha.slice(0, 10)}: ${e}`);
-      }
-    }
+    for (const e of checkSignatures(root).fails) errors.push(e);
   }
 }
 
-module.exports = { check, fingerprint, statement, gitSigError, sshLine, REL };
+// Every commit since git_signing began (security@'s five controls, via conductor.b@, 19 November 2026):
+//   - every non-merge writer commit ("@newsroom.writer:") in the history since the earliest git_signing.since is
+//     checked, side branches included; a writer commit that is a merge fails (a writer never merges);
+//   - each commit is checked against its PARENT's register, never its own, so a commit cannot add the key it is signed
+//     with; the commit that first publishes a registration's git_signing is the one commit of it not yet checked;
+//   - the Claude-Session: must be the registration's full session;
+//   - no exemption by name or subject: a commit that is not a writer's is not checked as one. Unsigned commits by
+//     anyone else (CI's version commits, @newsroom.accountant) are listed as warnings, not passed silently; making
+//     them fail needs CI and every other agent to sign, which is the editor's to decide (register.json "enforce").
+// One failure fails validate.js, and the deploy workflow's signatures job refuses the release.
+function checkSignatures(root, rev = 'HEAD') {
+  const fails = [], warns = [];
+  let reg; try { reg = JSON.parse(fs.readFileSync(path.join(root, REL), 'utf8')); } catch { return { fails, warns }; }
+  const starts = (reg.registrations || []).filter(r => r.git_signing).map(r => r.git_signing.since).sort();
+  if (!starts.length) return { fails, warns };
+  const log = git(root, ['log', rev, `--since=${starts[0]}`, '--format=%H%x1f%P%x1f%B%x1e']) || '';
+  const regAt = new Map();
+  for (const rec of log.split('\x1e').map(x => x.trim()).filter(Boolean)) {
+    const [sha, parents, body] = rec.split('\x1f'), id = sha.slice(0, 10), writer = /^@newsroom\.writer:/.test(body);
+    if (parents.split(' ').length > 1) { (writer ? fails : warns).push(`${id}: a merge commit${writer ? ' by the writer; a writer never merges' : ''}`); continue; }
+    if (!writer) { if (!/^gpgsig /m.test(git(root, ['cat-file', 'commit', sha]) || '')) warns.push(`${id}: unsigned, not a writer commit (${body.split('\n')[0].slice(0, 50)})`); continue; }
+    const rid = (body.match(/^Writer-Registration:\s*(\S+)/m) || [])[1];
+    if (!rid) { fails.push(`${id}: a writer commit with no Writer-Registration`); continue; }
+    if (!regAt.has(parents)) { let j = null; try { j = JSON.parse(git(root, ['show', `${parents}:${REL}`]) || 'null'); } catch {} regAt.set(parents, j); }
+    const pr = regAt.get(parents), r = pr && (pr.registrations || []).find(x => x.id === rid);
+    if (!pr) { fails.push(`${id}: its parent has no readable ${REL}`); continue; }
+    if (!r) { fails.push(`${id}: ${rid} is not in its parent's register`); continue; }
+    if (r.closed) { fails.push(`${id}: ${rid} was already closed in its parent's register`); continue; }
+    if (!r.git_signing) continue;   // the commit that publishes git_signing for this registration
+    const e = gitSigError(root, sha, r); if (e) fails.push(`${id}: ${e}`);
+  }
+  return { fails, warns };
+}
+
+module.exports = { check, checkSignatures, fingerprint, statement, gitSigError, sshLine, REL };

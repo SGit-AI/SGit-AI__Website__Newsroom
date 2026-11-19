@@ -41,6 +41,23 @@ jobs:
       - name: Validate the site (structure, links, version, canonical, key-leak tripwire)
         run: node admin/build/validate.js
 
+  # Signed commits (the editor's word, 19 November 2026; admin/notes/2026-11-19__signed-commits/notes.md): every writer
+  # commit since signing began, side branches included, is a git SSH signature by its registration's key, read from
+  # its parent's register. Commits and trees only (blobs fetched as needed), so the 1.3 GB history stays out. One
+  # failure refuses the release and the deploy.
+  signatures:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          filter: blob:none
+      - name: Check the writer's commit signatures
+        run: node admin/writer/tools/check-signatures.cjs
+
   # The reader's code in a real browser: the meter, the reading lists and the review's pinned findings
   # (admin/build/test_*.mjs). Before this job existed the one workflow validated the site and never ran
   # them (newsroom-api/, finding R11). Playwright's Chromium is the only install; the tests skip, and
@@ -156,7 +173,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    needs: [validate, reader-tests]
+    needs: [validate, reader-tests, signatures]
     if: github.event_name == 'push' && (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main')
     permissions:
       contents: write
@@ -249,10 +266,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs: [validate, reader-tests, release]
+    needs: [validate, reader-tests, signatures, release]
     # Publish the commit the release job made, never the pushed one: the pushed tree carries the pending
     # version. Manual dispatch publishes the branch as it is. Never from a pull request, never after a failed gate.
-    if: always() && github.event_name != 'pull_request' && needs.validate.result == 'success' && needs.reader-tests.result == 'success' && (needs.release.result == 'success' || (github.event_name == 'workflow_dispatch' && needs.release.result == 'skipped'))
+    if: always() && github.event_name != 'pull_request' && needs.validate.result == 'success' && needs.reader-tests.result == 'success' && needs.signatures.result == 'success' && (needs.release.result == 'success' || (github.event_name == 'workflow_dispatch' && needs.release.result == 'skipped'))
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

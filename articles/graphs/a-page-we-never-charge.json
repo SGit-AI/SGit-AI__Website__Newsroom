@@ -1,0 +1,108 @@
+{
+  "slug": "a-page-we-never-charge",
+  "teaser": "YouTube forbids charging to watch an embedded player, so promptugal.news, which bills, will show the replays on a page it never charges.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Billing per page lets a site that charges keep another party's terms by never charging for the pages those terms cover, and agents that read and quote terms first can find such a conflict before anything is shown, leaving the decision to a person.",
+  "nodes": [
+    {
+      "id": "clause",
+      "label": "The no-charge clause",
+      "kind": "claim",
+      "summary": "YouTube's Playback Integrity rule."
+    },
+    {
+      "id": "bills",
+      "label": "The site that bills",
+      "kind": "example",
+      "summary": "promptugal.news."
+    },
+    {
+      "id": "free",
+      "label": "A page never charged",
+      "kind": "method",
+      "summary": "Billing per page."
+    },
+    {
+      "id": "six",
+      "label": "Six conditions",
+      "kind": "artefact",
+      "summary": "C1 to C6, quoted."
+    },
+    {
+      "id": "gate",
+      "label": "The gate",
+      "kind": "artefact",
+      "summary": "Refuses YouTube on a charged page."
+    },
+    {
+      "id": "person",
+      "label": "A person decides",
+      "kind": "concept",
+      "summary": "Agents find, Dinis decides."
+    }
+  ],
+  "edges": [
+    {
+      "from": "clause",
+      "to": "bills",
+      "rel": "contrasts"
+    },
+    {
+      "from": "free",
+      "to": "clause",
+      "rel": "answers"
+    },
+    {
+      "from": "six",
+      "to": "free",
+      "rel": "depends-on"
+    },
+    {
+      "from": "gate",
+      "to": "six",
+      "rel": "produces"
+    },
+    {
+      "from": "person",
+      "to": "free",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "paid-by-the-read",
+      "promptugal-news-the-newsroom-we-ran"
+    ],
+    "pages": [],
+    "sites": [
+      "https://github.com/PrompTugal/PrompTugal__News__Website",
+      "https://developers.google.com/youtube/terms/developer-policies"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "API Clients must not charge users to watch content in an embedded YouTube player",
+      "why": "YouTube Developer Policies."
+    },
+    {
+      "text": "what about putting them in a page that is not charged",
+      "why": "Dinis, 19 November."
+    }
+  ],
+  "figures": [
+    {
+      "file": "fyt-mock.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fyt-mock.webp",
+      "caption": "designer@'s mock-up of the free replays page: \"Free to watch\", YouTube's own player, the credit and the Terms link.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "fyt-time.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fyt-time.webp",
+      "caption": "The commits from rights@'s first finding at 00:19 to dev@'s gate at 01:43 UTC on 19 November.",
+      "kind": "chart"
+    }
+  ]
+}

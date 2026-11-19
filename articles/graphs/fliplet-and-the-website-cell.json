@@ -1,0 +1,110 @@
+{
+  "slug": "fliplet-and-the-website-cell",
+  "teaser": "Fliplet, an AI software builder you rent, against the website cell, a one-off build its owner keeps, and a three-month ownership promise.",
+  "topics": [
+    "startups-and-strategy"
+  ],
+  "core_idea": "AI builders like Fliplet rent software on a credit meter with ownership unstated; the website cell builds the same way but hands the site to its owner, and should promise transfer within three months.",
+  "nodes": [
+    {
+      "id": "fl",
+      "label": "Fliplet",
+      "kind": "example",
+      "summary": "Prompt to software, rented."
+    },
+    {
+      "id": "cr",
+      "label": "Credits",
+      "kind": "concept",
+      "summary": "AI, hosting, traffic."
+    },
+    {
+      "id": "cell",
+      "label": "The website cell",
+      "kind": "example",
+      "summary": "Paid once, owned."
+    },
+    {
+      "id": "own",
+      "label": "Ownership",
+      "kind": "concept",
+      "summary": "Repository and files."
+    },
+    {
+      "id": "prom",
+      "label": "Three-month promise",
+      "kind": "method",
+      "summary": "Transfer to the owner."
+    },
+    {
+      "id": "mkt",
+      "label": "A growing market",
+      "kind": "concept",
+      "summary": "More builders coming."
+    }
+  ],
+  "edges": [
+    {
+      "from": "cr",
+      "to": "fl",
+      "rel": "extends"
+    },
+    {
+      "from": "cell",
+      "to": "fl",
+      "rel": "contrasts"
+    },
+    {
+      "from": "own",
+      "to": "cell",
+      "rel": "extends"
+    },
+    {
+      "from": "prom",
+      "to": "own",
+      "rel": "extends"
+    },
+    {
+      "from": "fl",
+      "to": "mkt",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-website-cell",
+      "static-against-the-platforms",
+      "governance-from-zero",
+      "the-pitch"
+    ],
+    "pages": [],
+    "sites": [
+      "https://fliplet.com/",
+      "https://fliplet.com/pricing/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "It is who owns what it makes.",
+      "why": "The question."
+    },
+    {
+      "text": "there is nothing to stop paying for",
+      "why": "The promise."
+    }
+  ],
+  "figures": [
+    {
+      "file": "flp-compare.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/flp-compare.webp",
+      "caption": "Rent or own: Fliplet and the website cell side by side, how each is built, paid for, hosted, changed and owned.",
+      "kind": "comparison"
+    },
+    {
+      "file": "flp-own.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/flp-own.webp",
+      "caption": "What the owner holds at the end: an account on a platform, or the repository and the right to leave.",
+      "kind": "concept"
+    }
+  ]
+}

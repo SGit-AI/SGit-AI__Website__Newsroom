@@ -123,6 +123,7 @@ Startups & strategy[This article as a graph →](graphs.md#start-with-an-intervi
 ### Continued by
 
 - [A factory that films its work: a review of ESF, Mitko Vasilev's open-source Engineering Software Factory, one task into one microVM, one agent, deterministic gates and a verified patch with its evidence, the demo videos and review queue his post shows, which are not yet in the public repository, and what our own factories should take from it, starting with a recording made by the same run that proves the change](a-factory-that-films-its-work.md) A review of ESF, Mitko Vasilev's open software factory: a microVM per run, gates by exit code, evidence, and demo videos from the proving run.
+- [The sovereign website: a pivot brief for agenticcells.ai, what the site says today and what it should say next, sovereignty as the headline, a website you own, control, change and can run anywhere, the deliverables explained, the infographics to draw, five homepage designs to choose from, and the partner programme and examples that already prove it](the-sovereign-website.md) A pivot brief for agenticcells.ai: lead with sovereignty, show the deliverables, draw the infographics, and make five homepage designs.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

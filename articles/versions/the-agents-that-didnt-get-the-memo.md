@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-18 | published | 1,403 | first published | this release | [current](../the-agents-that-didnt-get-the-memo.md) |
+| **v1.0.0** | 2026-11-18 | published | 1,403 | first published | [`263976256`](https://github.com/SGit-AI/SGit-AI__Website/commit/26397625632ffe9b8e058fff79fe42c0c62a240e) | [current](../the-agents-that-didnt-get-the-memo.md) |
 
 [← Back to the article](../the-agents-that-didnt-get-the-memo.md) · [All articles](../index.md)
 

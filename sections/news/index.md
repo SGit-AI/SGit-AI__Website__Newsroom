@@ -2,10 +2,11 @@
 
 Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta and the crawlers, the story vault.
 
-78 articles, newest first.
+79 articles, newest first.
 
 ## November 2026
 
+- [A page we never charge: how the PrompTugal agents found that YouTube's terms forbid charging to watch an embedded player, on the one site of ours that bills, put the conflict to me as a question, quoted the six conditions from YouTube's own policies once I suggested a page that is never charged, and built the gate that refuses a YouTube player on any page that is, in 84 minutes of commits](../../articles/a-page-we-never-charge.md), 2026-11-19, 4 min.
 - [The agents that didn't get the memo: how the PHP newsroom I wound down on 5 November kept running for nine more days, its desk refusing a stop message because only the editor gives instructions, its journalist writing "nothing new" 26 times, the conductor's 11:15 pass that never came, and the four days of reader telemetry lost because the agent that emptied the queue was the first one stopped](../../articles/the-agents-that-didnt-get-the-memo.md), 2026-11-18, 5 min.
 - [Agents that retire themselves: how the Storm Charles team's agents handed their roles to fresh sessions 106 times in 147 sessions, each one leaving a hand-over note and starting again from a short pack written by the librarian, why a fresh session read 53% to 84% less on every call, the one hand-over that broke something, and why starting again is cheaper than remembering](../../articles/agents-that-retire-themselves.md), 2026-11-18, 4 min.
 - [Pennies against dollars: what our agents actually cost at Web Summit, the swarm that ran 216 model calls on four open-weight models for under seven cents where the same tokens on a frontier model would have cost about two dollars, newsroom days of hundreds of API-equivalent dollars, almost all of it agents re-reading their own sessions, and the lesson that context is the cost and starting again is cheaper than remembering](../../articles/pennies-against-dollars.md), 2026-11-18, 5 min.

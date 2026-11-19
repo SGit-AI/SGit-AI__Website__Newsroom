@@ -1,0 +1,30 @@
+{
+ "slug": "no-lock-in",
+ "teaser": "The website cell's biggest difference is that the customer can leave; the platforms' own terms show why that matters.",
+ "topics": ["startups-and-strategy"],
+ "core_idea": "Platforms earn by keeping customers who cannot leave; the website cell's files-in-your-repository, any-host, paid-once model with ownership within three months is the one promise they cannot copy.",
+ "nodes": [
+  {"id": "plat", "label": "Platform lock-in", "kind": "concept", "summary": "Wix, Squarespace, Fliplet."},
+  {"id": "mkt", "label": "The market", "kind": "example", "summary": "Millions of paying sites."},
+  {"id": "cell", "label": "The website cell", "kind": "example", "summary": "Files you own."},
+  {"id": "prom", "label": "Ownership in three months", "kind": "method", "summary": "A soft requirement."},
+  {"id": "open", "label": "Open source", "kind": "concept", "summary": "Even we cannot lock in."},
+  {"id": "head", "label": "The headline", "kind": "method", "summary": "No lock-in first."}
+ ],
+ "edges": [
+  {"from": "mkt", "to": "plat", "rel": "depends-on"},
+  {"from": "cell", "to": "plat", "rel": "contrasts"},
+  {"from": "prom", "to": "cell", "rel": "extends"},
+  {"from": "open", "to": "cell", "rel": "extends"},
+  {"from": "head", "to": "cell", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["fliplet-and-the-website-cell", "static-against-the-platforms", "the-website-cell", "one-commit-one-site-one-owner", "governance-from-zero", "the-pitch"],
+  "pages": [],
+  "sites": ["https://fliplet.com/terms/", "https://support.wix.com/en/article/exporting-or-embedding-your-wix-site-elsewhere"]
+ },
+ "quotes": [
+  {"text": "A platform earns every month because you stay.", "why": "The business model."},
+  {"text": "When you cannot leave, the price is whatever the platform says.", "why": "The market."}
+ ]
+}

@@ -51,7 +51,8 @@ check(r.length === 1 && r[0].byNumber && r[0].doc.u === 'articles/who-owns-the-w
 check(at('agent@riskmandate.ai', 'articles/who-owns-the-words.html', 8) >= 0, 'an address finds the article that answers its sender')
 check(at('passkey PRF door', 'articles/the-passkey-opens-the-vault.html', 1) === 0, 'passkey PRF door: the passkey article first')
 check(at('passk', 'articles/the-passkey-opens-the-vault.html', 1) === 0, 'a word being typed is read as a prefix: passk')
-check(at('sovereignty', 'articles/sovereignty-is-the-ability-to-move.html', 3) >= 0 && at('sovereignty', 'articles/move-the-cloud-not-the-code.html', 3) >= 0, 'sovereignty: both articles on it in the first three')
+// in the top five, not three: sovereignty-you-can-move and the-sovereign-website (19 November 2026) are about it too and rank first
+check(at('sovereignty', 'articles/sovereignty-is-the-ability-to-move.html', 5) >= 0 && at('sovereignty', 'articles/move-the-cloud-not-the-code.html', 5) >= 0, 'sovereignty: both earlier articles on it in the first five')
 check(at('Wardley map', 'articles/why-i-love-wardley-maps.html', 1) === 0, 'Wardley map: Why I love Wardley maps first')
 check(top('agents', { group: 'wire' }).every(x => ['story', 'wire'].includes(x.doc.k)) && top('agents', { group: 'articles' }).every(x => ['article', 'newsletter', 'desk', 'collection', 'deck', 'view'].includes(x.doc.k)), 'a filter keeps only its kinds of page')
 check(top('').length === 0 && top('   ').length === 0 && top('the of and').length > 0, 'an empty query finds nothing; a query of common words alone still searches them')
@@ -99,7 +100,7 @@ try {
     check((await pg.evaluate(() => document.querySelectorAll('#search-results li.tips a').length)) >= 4, 'with no query, it offers examples')
     await pg.fill('#search-q', 'sovereignty'); await pg.waitForTimeout(500)
     let res = await results()
-    check(res.length >= 2 && res.slice(0, 3).some(x => x.u === 'articles/sovereignty-is-the-ability-to-move.html') && /q=sovereignty/.test(pg.url()), `results come as you type, and the query is in the address (${res.length})`)
+    check(res.length >= 2 && res.slice(0, 5).some(x => x.u === 'articles/sovereignty-is-the-ability-to-move.html') && /q=sovereignty/.test(pg.url()), `results come as you type, and the query is in the address (${res.length})`)
     const sov = res.find(x => x.u === 'articles/sovereignty-is-the-ability-to-move.html')
     check(!!sov && /Read · you/.test(sov.meta) && /No\. 94/.test(sov.meta), 'a result I have read says so, with its number')
     check(res.every(x => x.marks.length === 0 || x.marks.some(m => /sovereign/i.test(m))), 'the snippets mark the words found')
