@@ -1,0 +1,3 @@
+# Notes: websites-for-the-moment (19 November 2026)
+
+Dinis, in writer-10's session: a request already given to the sovereign website team, to run continuously with a budget and a workflow: topical websites (he suggested GTA 6; the team picked Christmas delivery times), using Claude, search, embeddings and Google APIs; bring back the Web Summit pieces (the Galaxy) and a site for his book; suggest ideas and a schedule; and someone he met who liked the name and got it straight away (not named). GTA VI's release date of 19 November 2026 is as reported from its publisher's announcement (web search; not checked whether it shipped). The Galaxy is not described: writer-10 found no record of it in the newsroom.

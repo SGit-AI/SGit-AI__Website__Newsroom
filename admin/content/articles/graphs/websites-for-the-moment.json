@@ -1,0 +1,30 @@
+{
+ "slug": "websites-for-the-moment",
+ "teaser": "An agent team building topical websites around what people are looking for now, each built in a day within a budget and sourced.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "Topical websites, proposed by a trend agent, picked by a person and built in a day within a budget, live for their moment and then archived, are a long-running job that shows the factory and agents working, drives traffic and teaches what an agent team does over time.",
+ "nodes": [
+  {"id": "moment", "label": "Websites for the moment", "kind": "concept", "summary": "Topical, then archived."},
+  {"id": "loop", "label": "The weekly loop", "kind": "method", "summary": "Propose, pick, build, count."},
+  {"id": "rules", "label": "Sourced and unofficial", "kind": "claim", "summary": "In the policy."},
+  {"id": "calendar", "label": "A first calendar", "kind": "artefact", "summary": "Now to January."},
+  {"id": "summit", "label": "Web Summit pieces back", "kind": "example", "summary": "X-ray, voice to deck, Galaxy."},
+  {"id": "learn", "label": "What we learn", "kind": "claim", "summary": "An agent left to work."}
+ ],
+ "edges": [
+  {"from": "loop", "to": "moment", "rel": "produces"},
+  {"from": "rules", "to": "loop", "rel": "depends-on"},
+  {"from": "calendar", "to": "loop", "rel": "example-of"},
+  {"from": "summit", "to": "calendar", "rel": "example-of"},
+  {"from": "learn", "to": "loop", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["every-tool-its-own-website", "the-site-factory-works", "the-teams-operating-system", "launching-the-sovereign-website-appliance", "a-sovereign-website-on-a-raspberry-pi", "the-book-is-on-leanpub"],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "Every experiment we run leaves something behind, an arrow in the quiver for later", "why": "Dinis."},
+  {"text": "they give an agent team a long-running job, which is the best way to see what it does when it is left to work.", "why": "Dinis."}
+ ]
+}

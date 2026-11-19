@@ -1,0 +1,111 @@
+{
+  "slug": "every-tool-its-own-website",
+  "teaser": "Turning the 49 tools of tools.sgraph.ai into sovereign websites: one site each, simple first, pinned versions, signed hashes, a team of teams.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "The 49 browser tools built one problem at a time outgrew one repository; as sovereign websites, each gets its own address, documentation, design and agent team, released in waves from the simplest, with shared components versioned, every release pinned beside latest, hashes signed in a separate repository, and a team of teams to change many at once.",
+  "nodes": [
+    {
+      "id": "tools",
+      "label": "49 tools, one problem each",
+      "kind": "artefact",
+      "summary": "tools.sgraph.ai."
+    },
+    {
+      "id": "site",
+      "label": "One site per tool",
+      "kind": "concept",
+      "summary": "Sovereign websites."
+    },
+    {
+      "id": "waves",
+      "label": "Waves, simple first",
+      "kind": "method",
+      "summary": "The factory has begun."
+    },
+    {
+      "id": "pinned",
+      "label": "Latest and pinned versions",
+      "kind": "method",
+      "summary": "With security notes."
+    },
+    {
+      "id": "hashes",
+      "label": "Signed hashes apart",
+      "kind": "method",
+      "summary": "A compromise shows."
+    },
+    {
+      "id": "teams",
+      "label": "A team of teams",
+      "kind": "concept",
+      "summary": "Three levels."
+    }
+  ],
+  "edges": [
+    {
+      "from": "site",
+      "to": "tools",
+      "rel": "answers"
+    },
+    {
+      "from": "waves",
+      "to": "site",
+      "rel": "depends-on"
+    },
+    {
+      "from": "pinned",
+      "to": "site",
+      "rel": "depends-on"
+    },
+    {
+      "from": "hashes",
+      "to": "pinned",
+      "rel": "extends"
+    },
+    {
+      "from": "teams",
+      "to": "waves",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "explorer-coding",
+      "what-is-a-sovereign-website",
+      "a-website-with-a-team-inside",
+      "a-secret-is-a-qr-code",
+      "watch-your-website-being-built"
+    ],
+    "pages": [],
+    "sites": [
+      "https://tools.sgraph.ai/",
+      "https://github.com/the-cyber-boardroom/SGraph-AI__Tools"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "if you have a challenge, you might as well build the tool for it.",
+      "why": "Dinis."
+    },
+    {
+      "text": "the compromise shows instead of spreading.",
+      "why": "Dinis."
+    }
+  ],
+  "figures": [
+    {
+      "file": "tls-families.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tls-families.webp",
+      "caption": "49 tools, each made for a problem: grouped by family, with the first ones the factory has started.",
+      "kind": "concept"
+    },
+    {
+      "file": "tls-model.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tls-model.webp",
+      "caption": "One site per tool: latest and pinned versions, signed hashes kept apart, and a team of teams.",
+      "kind": "concept"
+    }
+  ]
+}

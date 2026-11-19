@@ -2,10 +2,12 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-136 articles, newest first.
+138 articles, newest first.
 
 ## November 2026
 
+- [Websites for the moment: an experiment in letting an agent team keep building topical sites, around what people are looking for now, GTA VI on its launch day, Christmas posting dates, an advent of tools, the Kickstarter itself, each built in a day within a budget, every fact sourced, live for its moment and then archived, and a first calendar to start from](../../articles/websites-for-the-moment.md), 2026-11-19, 3 min.
+- [Every tool its own website: turning the 49 browser tools of tools.sgraph.ai, each built because I had a problem, into sovereign websites of their own, with a theme, documentation and a small agent team each, released in waves from the simplest, with shared components pulled out, pinned versions and signed hashes kept apart, and a team of teams to keep them all moving](../../articles/every-tool-its-own-website.md), 2026-11-19, 7 min.
 - [Where to sell the book and the appliances: a map of the places a UK author and maker can sell physical products, printed copies of One Human, Nine Agents, Nineteen Hours from early December and the sovereign website appliances from 1 January after a December Kickstarter, with Amazon, IngramSpark, eBay, OnBuy and our own shop, what each charges, the rules that matter, and the law that comes with selling hardware](../../articles/where-to-sell-the-book-and-the-appliances.md), 2026-11-19, 5 min.
 - [When a publisher asks: exploring offers to license a book that started on Leanpub, which technical publishers take books like this, what they publish about their terms, the books that went from Leanpub or a free online edition to a publisher before, the questions to ask before signing anything, and what I want to keep for One Human, Nine Agents, Nineteen Hours](../../articles/when-a-publisher-asks.md), 2026-11-19, 5 min.
 - [A sovereign website on a Raspberry Pi: the experiment of running the whole thing on one small box at home, a Raspberry Pi 5 with 16GB and 256GB, serving the site, checking the signature of every update, running a local model, building a website on the device itself under behaviour policies, and backing it up to a vault, step by step, what we will measure, and why this becomes a product when the Kickstarter finishes](../../articles/a-sovereign-website-on-a-raspberry-pi.md), 2026-11-19, 4 min.
