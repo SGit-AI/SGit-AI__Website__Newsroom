@@ -1,0 +1,3 @@
+# Notes: your-website-from-a-vault (19 November 2026)
+
+Dinis, in writer-10's session: demos of people's own websites in encrypted vaults, opened by dropping a vault key, a QR code, a link or a zip on a generic page, with a banner; a demo cell that takes a name; five versions; private keys for vaults still to improve; a name for the page "from sgit" or "from vault", to explore. The address in the piece is a subdomain we already hold (from.sgit.ai) as a proposal; RDAP on 19 November showed fromsgit.com, from-sgit.com, fromsgit.ai and fromvault.ai unregistered and fromvault.com registered; none named in the piece. The example Dinis gave of a site kept unlinked at its owner's request is left out (leave-out list). Figures drawn by writer-10 with sharp.

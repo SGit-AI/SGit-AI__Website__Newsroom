@@ -97,6 +97,10 @@ Agents & policy[This article as a graph →](graphs.md#a-website-with-a-team-ins
 - [Your own agentic cell, end to end: how a person asks for a site like the ones we made for Yiheng Wang and Silvio Switha, through a key pair in the browser, a vault they fill themselves and the site factory, with only three human gates, and then continues in their own Claude on their own repository](your-own-agentic-cell.md) How a person gets their own agentic cell: a key pair in the browser, a vault they fill themselves, the site factory, and then their own Claude.
 - [A team like this, for sale: what we sell is not the platform, it is the agentic team that built it, its roles, its behaviour policies, its security passes and its speed, with the code open and the data public, and who I want to talk to now that PrompTugal.news is a working data platform and not an experiment](a-team-like-this.md) What we sell is not the open platform but a team like the one that built it, and who I want to talk to now.
 
+### Continued by
+
+- [Your website, from a vault: how to show someone five versions of their own website without publishing anything, sealed in an encrypted sgit vault and opened with a QR code, a link or a zip on one drop page, the demo pipeline from a name to an email, and how a demo becomes their sovereign website without starting again](your-website-from-a-vault.md) Show someone five versions of their own website without publishing anything: sealed in a vault, opened with a QR code, a link or a zip.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 496 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=496)

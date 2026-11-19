@@ -1,0 +1,30 @@
+{
+ "slug": "your-website-from-a-vault",
+ "teaser": "Show someone five versions of their own website without publishing anything: sealed in a vault, opened with a QR code, a link or a zip.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "A demo of someone's own website cannot be public, so the demo cell seals five designs in an encrypted sgit vault, which a drop page opens in the browser from a QR code, a link or a zip, and the same vault becomes their sovereign website if they say yes.",
+ "nodes": [
+  {"id": "problem", "label": "A demo cannot be public", "kind": "claim", "summary": "Public by default."},
+  {"id": "vault", "label": "The vault as the demo", "kind": "concept", "summary": "Encrypted, opened in the browser."},
+  {"id": "drop", "label": "The drop page", "kind": "artefact", "summary": "QR code, link or zip."},
+  {"id": "pipeline", "label": "The demo pipeline", "kind": "method", "summary": "A name to an email."},
+  {"id": "convert", "label": "Demo to site", "kind": "method", "summary": "The same vault becomes the site."},
+  {"id": "keys", "label": "Keys sealed to the person", "kind": "concept", "summary": "Still to build."}
+ ],
+ "edges": [
+  {"from": "vault", "to": "problem", "rel": "answers"},
+  {"from": "drop", "to": "vault", "rel": "depends-on"},
+  {"from": "pipeline", "to": "drop", "rel": "produces"},
+  {"from": "convert", "to": "vault", "rel": "extends"},
+  {"from": "keys", "to": "convert", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["how-a-vault-works", "a-secret-is-a-qr-code", "a-key-for-every-person", "the-website-cell", "sovereign-agentic-website", "a-website-with-a-team-inside"],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "A person who has not yet agreed to anything should not find a version of themselves on the open web.", "why": "Dinis."},
+  {"text": "All I am doing is selling.", "why": "Dinis."}
+ ]
+}

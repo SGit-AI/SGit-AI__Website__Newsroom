@@ -55,6 +55,146 @@
   ],
   "articles": [
     {
+      "slug": "your-website-from-a-vault",
+      "title": "Your website, from a vault: how to show someone five versions of their own website without publishing anything, sealed in an encrypted sgit vault and opened with a QR code, a link or a zip on one drop page, the demo pipeline from a name to an email, and how a demo becomes their sovereign website without starting again",
+      "date": "2026-11-19",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/your-website-from-a-vault.html",
+      "markdown": "https://newsroom.sgit.ai/articles/your-website-from-a-vault.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/your-website-from-a-vault.webp",
+      "teaser": "Show someone five versions of their own website without publishing anything: sealed in a vault, opened with a QR code, a link or a zip.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "sovereign-website",
+        "sgit",
+        "vaults",
+        "demos",
+        "qr-codes",
+        "go-to-market",
+        "article"
+      ],
+      "links_out": [
+        "how-a-vault-works",
+        "a-secret-is-a-qr-code",
+        "the-website-cell",
+        "sovereign-agentic-website",
+        "a-website-with-a-team-inside",
+        "a-key-for-every-person"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "fv-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fv-flow.webp",
+          "caption": "The demo pipeline: a name in, five designs sealed in one vault, opened by QR code, link or zip.",
+          "kind": "concept"
+        },
+        {
+          "file": "fv-drop.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fv-drop.webp",
+          "caption": "The drop page: three ways in, and the site rendered in the browser with five designs a tap apart.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "your-website-from-a-vault",
+        "teaser": "Show someone five versions of their own website without publishing anything: sealed in a vault, opened with a QR code, a link or a zip.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "A demo of someone's own website cannot be public, so the demo cell seals five designs in an encrypted sgit vault, which a drop page opens in the browser from a QR code, a link or a zip, and the same vault becomes their sovereign website if they say yes.",
+        "nodes": [
+          {
+            "id": "problem",
+            "label": "A demo cannot be public",
+            "kind": "claim",
+            "summary": "Public by default."
+          },
+          {
+            "id": "vault",
+            "label": "The vault as the demo",
+            "kind": "concept",
+            "summary": "Encrypted, opened in the browser."
+          },
+          {
+            "id": "drop",
+            "label": "The drop page",
+            "kind": "artefact",
+            "summary": "QR code, link or zip."
+          },
+          {
+            "id": "pipeline",
+            "label": "The demo pipeline",
+            "kind": "method",
+            "summary": "A name to an email."
+          },
+          {
+            "id": "convert",
+            "label": "Demo to site",
+            "kind": "method",
+            "summary": "The same vault becomes the site."
+          },
+          {
+            "id": "keys",
+            "label": "Keys sealed to the person",
+            "kind": "concept",
+            "summary": "Still to build."
+          }
+        ],
+        "edges": [
+          {
+            "from": "vault",
+            "to": "problem",
+            "rel": "answers"
+          },
+          {
+            "from": "drop",
+            "to": "vault",
+            "rel": "depends-on"
+          },
+          {
+            "from": "pipeline",
+            "to": "drop",
+            "rel": "produces"
+          },
+          {
+            "from": "convert",
+            "to": "vault",
+            "rel": "extends"
+          },
+          {
+            "from": "keys",
+            "to": "convert",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "how-a-vault-works",
+            "a-secret-is-a-qr-code",
+            "a-key-for-every-person",
+            "the-website-cell",
+            "sovereign-agentic-website",
+            "a-website-with-a-team-inside"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "A person who has not yet agreed to anything should not find a version of themselves on the open web.",
+            "why": "Dinis."
+          },
+          {
+            "text": "All I am doing is selling.",
+            "why": "Dinis."
+          }
+        ]
+      }
+    },
+    {
       "slug": "a-website-with-a-team-inside",
       "title": "A website with a team inside: why a Sovereign Agentic Website is delivered not as a site but as a site with six or seven agents already set up and coordinated in its repository, a conductor, a designer, a writer, a developer, a reviewer, a translator and a keeper, each with a role and a behaviour policy, and what that means for the person who owns it",
       "date": "2026-11-19",
@@ -86,7 +226,9 @@
         "your-own-agentic-cell",
         "a-team-like-this"
       ],
-      "links_in": [],
+      "links_in": [
+        "your-website-from-a-vault"
+      ],
       "figures": [
         {
           "file": "wti-team.webp",
@@ -410,6 +552,7 @@
         "your-own-registrar"
       ],
       "links_in": [
+        "your-website-from-a-vault",
         "a-website-with-a-team-inside",
         "designing-sovereignwebsite-ai"
       ],
@@ -4897,6 +5040,7 @@
         "governance-from-zero"
       ],
       "links_in": [
+        "your-website-from-a-vault",
         "a-website-with-a-team-inside",
         "designing-sovereignwebsite-ai",
         "sovereign-agentic-website",
@@ -18985,6 +19129,7 @@
         "a-directory-of-people-and-keys"
       ],
       "links_in": [
+        "your-website-from-a-vault",
         "governance-from-zero",
         "our-companies-and-uth",
         "memory-is-a-lifecycle",
@@ -20136,6 +20281,7 @@
         "inside-english-with-ines"
       ],
       "links_in": [
+        "your-website-from-a-vault",
         "newsrooms-on-open-data",
         "any-data-with-any-data",
         "our-companies-and-uth",
@@ -44866,6 +45012,7 @@
         "sixteen-notes-i-did-not-want-to-lose"
       ],
       "links_in": [
+        "your-website-from-a-vault",
         "any-data-with-any-data",
         "heritage-tech-together",
         "working-with-wizpress",
