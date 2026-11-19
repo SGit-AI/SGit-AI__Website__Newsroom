@@ -87,6 +87,7 @@ Agents & policy[This article as a graph →](graphs.md#simple-on-top-of-years)
 
 ### Continued by
 
+- [Watch your website being built: a brief for a page that builds a first version of a sovereign website in the visitor's own browser, from a description or a voice note, with their own model key, showing every agent at work, every behaviour policy being applied and every penny it costs, then hands back a zip, the same brief run on several models side by side as evals, and the Web Summit demos it grows from](watch-your-website-being-built.md) A page that builds a first version of a sovereign website in your browser, showing every agent, behaviour policy and penny, then hands back a zip.
 - [Sovereign websites, the investment case: PrompTugal's investor decks rewritten for a deliverable that is needed everywhere, in every language, in a market built on rent and lock-in, a one-off delivery that is already fully agentic, value given before payment through a demo in a vault, a long list of upsells, and why this is now a proper, scalable, investable architecture](sovereign-websites-the-investment-case.md) Sovereign websites as an investment: one deliverable needed everywhere, a one-off agentic delivery, value first through a vault demo, and upsells.
 
 [All articles](index.md) · [All graphs](graphs.md)

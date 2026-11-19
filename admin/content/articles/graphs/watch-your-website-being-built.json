@@ -1,0 +1,30 @@
+{
+ "slug": "watch-your-website-being-built",
+ "teaser": "A page that builds a first version of a sovereign website in your browser, showing every agent, behaviour policy and penny, then hands back a zip.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "Like the Web Summit X-ray and voice-note demos, a static page can run a team of agents in the visitor's browser with their own key, build a first version of their website, show each agent's behaviour policy being enforced and the cost climbing, return a zip, and run the same brief on several models as visible evals.",
+ "nodes": [
+  {"id": "demos", "label": "The Web Summit demos", "kind": "example", "summary": "X-ray and voice note."},
+  {"id": "page", "label": "The build page", "kind": "artefact", "summary": "In the browser."},
+  {"id": "policies", "label": "Policies made visible", "kind": "concept", "summary": "The guard refuses on screen."},
+  {"id": "cost", "label": "Cost against a budget", "kind": "method", "summary": "On the visitor's key."},
+  {"id": "evals", "label": "Same brief, several models", "kind": "method", "summary": "Evals to watch."},
+  {"id": "zip", "label": "A zip, no server", "kind": "claim", "summary": "Sovereign by construction."}
+ ],
+ "edges": [
+  {"from": "page", "to": "demos", "rel": "extends"},
+  {"from": "policies", "to": "page", "rel": "depends-on"},
+  {"from": "cost", "to": "page", "rel": "depends-on"},
+  {"from": "evals", "to": "cost", "rel": "extends"},
+  {"from": "zip", "to": "page", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["the-teams-operating-system", "simple-on-top-of-years", "your-website-from-a-vault", "what-is-a-sovereign-website", "a-website-with-a-team-inside"],
+  "pages": [],
+  "sites": ["https://sovereignwebsite.org/"]
+ },
+ "quotes": [
+  {"text": "A browser tab can run a team of agents, show them working, and hand back something real.", "why": "Dinis."},
+  {"text": "The important part is that the policies are visible while they work.", "why": "Dinis."}
+ ]
+}

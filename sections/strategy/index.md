@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-132 articles, newest first.
+133 articles, newest first.
 
 ## November 2026
 
+- [Watch your website being built: a brief for a page that builds a first version of a sovereign website in the visitor's own browser, from a description or a voice note, with their own model key, showing every agent at work, every behaviour policy being applied and every penny it costs, then hands back a zip, the same brief run on several models side by side as evals, and the Web Summit demos it grows from](../../articles/watch-your-website-being-built.md), 2026-11-19, 6 min.
 - [The launch plan in eleven turns: how one afternoon took the plan for launching Sovereign Website from a £50 site on Kickstarter, through Indiegogo, PPL, Patreon, countries as stretch goals and the UK as home ground, to a configured Android tablet, a supporter tier and a Raspberry Pi, with every variation we tried and why each was kept or set aside](../../articles/the-launch-plan-in-eleven-turns.md), 2026-11-19, 6 min.
 - [Launching the sovereign website appliance: the plan for a Kickstarter campaign that sells a sovereign website on a configured Android tablet or a set of Raspberry Pis, three tiers from a £50 supporter to £1,000, what we promise to spend on hardware and examples of what that buys in the UK today, a European tablet, the UK as the base goal with countries and iOS as stretch goals, and why we launch alone](../../articles/launching-the-sovereign-website-appliance.md), 2026-11-19, 7 min.
 - [What is a sovereign website: defining the category the way serverless was defined, a website you own and can move, built only on commodity technology because one proprietary part anywhere in the middle is enough to lock you in, seven principles, a sovereignty maturity model from rented to proven, and the proof that the same site runs on every host, in Europe and on your own computer](../../articles/what-is-a-sovereign-website.md), 2026-11-19, 6 min.

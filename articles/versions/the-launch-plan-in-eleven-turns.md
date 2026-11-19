@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-19 | published | 1,596 | first published | this release | [current](../the-launch-plan-in-eleven-turns.md) |
+| **v1.0.0** | 2026-11-19 | published | 1,596 | first published | [`d7390e0ad`](https://github.com/SGit-AI/SGit-AI__Website/commit/d7390e0adf2ff352eb8d081aeba06644bdf6b06f) | [current](../the-launch-plan-in-eleven-turns.md) |
 
 [← Back to the article](../the-launch-plan-in-eleven-turns.md) · [All articles](../index.md)
 
