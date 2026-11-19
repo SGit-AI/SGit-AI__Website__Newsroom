@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: We are not just delivering a website. What a Sovereign Agentic Website hands over is a site with a team inside it: six or seven agents already set up in its repository and already coordinated. A conductor the owner talks to in plain words, who turns a request into a plan and hands out the work; a designer, a writer and a developer who make the change; a reviewer who checks the claims, prices, privacy and security before the owner sees anything; a translator for every language the site is in; and a keeper for the weekly care, broken links, speed, accessibility and the domain's renewal. Each has a brief and a behaviour policy in the repository, every change is a signed commit, and nothing goes live until the owner says yes. A florist who asks for a Mother's Day page by Friday does not get a tool to learn; she gets a team that does it. And because the team lives in her repository, it is hers too: when the site moves, the team moves with it.
-version: v999.0.0
+version: v0.14.172
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereign-website, agentic, agent-teams, behaviour-policies, agenticcells, websites, article
 status: published
