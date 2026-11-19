@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-19 | published | 1,190 | first published | this release | [current](../a-page-we-never-charge.md) |
+| **v1.0.0** | 2026-11-19 | published | 1,190 | first published | [`32f10a6e6`](https://github.com/SGit-AI/SGit-AI__Website/commit/32f10a6e6eb9375ff84b67507ee699f45013d072) | [current](../a-page-we-never-charge.md) |
 
 [← Back to the article](../a-page-we-never-charge.md) · [All articles](../index.md)
 

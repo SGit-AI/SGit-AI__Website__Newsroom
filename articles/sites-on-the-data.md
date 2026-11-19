@@ -76,9 +76,9 @@ Startups & strategy[This article as a graph →](graphs.md#sites-on-the-data)
 
 ### Continued by
 
+- [The sovereign website: a pivot brief for agenticcells.ai, what the site says today and what it should say next, sovereignty as the headline, a website you own, control, change and can run anywhere, the deliverables explained, the infographics to draw, five homepage designs to choose from, and the partner programme and examples that already prove it](the-sovereign-website.md) A pivot brief for agenticcells.ai: lead with sovereignty, show the deliverables, draw the infographics, and make five homepage designs.
 - [Gaining speed: a series on what happens when you productise the way you build, PrompTugal.news going from a newsroom at Web Summit to a data intelligence platform for Portugal's places in two weeks, a factory that turns one commit into a site with its owner, money that flows back to the sources, sites built on the data in minutes, the librarian, and a team like this for sale](gaining-speed.md) A series on what happens when you productise how you build: PrompTugal.news from a summit newsroom to a data platform in two weeks.
 - [A team like this, for sale: what we sell is not the platform, it is the agentic team that built it, its roles, its behaviour policies, its security passes and its speed, with the code open and the data public, and who I want to talk to now that PrompTugal.news is a working data platform and not an experiment](a-team-like-this.md) What we sell is not the open platform but a team like the one that built it, and who I want to talk to now.
-- [The sovereign website: a pivot brief for agenticcells.ai, what the site says today and what it should say next, sovereignty as the headline, a website you own, control, change and can run anywhere, the deliverables explained, the infographics to draw, five homepage designs to choose from, and the partner programme and examples that already prove it](the-sovereign-website.md) A pivot brief for agenticcells.ai: lead with sovereignty, show the deliverables, draw the infographics, and make five homepage designs.
 
 [All articles](index.md) · [All graphs](graphs.md)
 
