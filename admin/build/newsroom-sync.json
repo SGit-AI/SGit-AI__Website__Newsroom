@@ -122,6 +122,7 @@
    "admin/content/articles/every-story-has-an-address.md": "71fc0c6d11e3dfb35a766e7f091e11f535b9355de2615244cfedd99000789870",
    "admin/content/articles/explorer-coding.md": "dbdf1ccf5563576a3d39afeddfcf26d719249c559bfa7c153f691be99cf19757",
    "admin/content/articles/false-positives-and-the-harness.md": "bd19e3e4343b5d5d97816ccd3c0d15bd932bc15067e3f186dadc41666ea0585a",
+   "admin/content/articles/feature-behaviour-policies.md": "780338527b82a316579b04ce4aded0d6fb80613504b421f6165454fc59710966",
    "admin/content/articles/feisty-duck-briefed.md": "c0fb0f3b0c45c42586104c956580de6d393901818daf074ee145366b6a4b4fa8",
    "admin/content/articles/five-primitives-one-store.md": "d897c2833200917ee20fc683e746d5040e47f10e7d24a11adc6790e090967845",
    "admin/content/articles/fix-the-page-yourself.md": "1a3a3d28386929ce2c9c815c7efa711c121997001fb11ca8b3e1be1bbf585d02",
@@ -246,6 +247,7 @@
    "admin/content/articles/graphs/every-story-has-an-address.json": "9239d1d19381b314c3194ad629a0fe59bb50269f9d5dbe5db16511f7a4d4c2f2",
    "admin/content/articles/graphs/explorer-coding.json": "41883775deb0f16e3b204abcbdcd9a09b9c9f6f17273b3fd1d2973719ccce884",
    "admin/content/articles/graphs/false-positives-and-the-harness.json": "6afbaf8b932e71e26cca898e9a1150a4edde33c7553345e2a02be9b8b1472141",
+   "admin/content/articles/graphs/feature-behaviour-policies.json": "5f17d553b478055fcbe86e7f6f8318bb7306457098a1732d8e7530a8d282fe02",
    "admin/content/articles/graphs/feisty-duck-briefed.json": "8d63034eaea98bcef88656773a81c03d4bf3e2269d92a627373ca39e58e0dd26",
    "admin/content/articles/graphs/five-primitives-one-store.json": "2e096c968bbe463c7f766f5742c600a6f871745a3ca782185f9c2511f9abc870",
    "admin/content/articles/graphs/fix-the-page-yourself.json": "283a504719145af0daca9619159318da51c10b106f9e49b309664b3b57f21177",
@@ -783,6 +785,8 @@
    "admin/content/articles/images/ex-mourinho.webp": "c94e978c0477db3b622d581e6a47adb9fd65fee08d6cc03a669a34c2e2a05c99",
    "admin/content/articles/images/ex-negotiate.webp": "b0aa1c18f9fccb4d02b50e2afa105e948f22444dd5e25aa45a906abc13cf659e",
    "admin/content/articles/images/ex-wasserman.webp": "101c5f70f2c4198b3f891ca4c9d184b8431645e78b0156ca9fd5afaa1d3f295f",
+   "admin/content/articles/images/fbp-request.webp": "bea637cf5f28256be6b24519d6ac7023fd7c78f003065bf6baf6c450cd43a4d5",
+   "admin/content/articles/images/fbp-tree.webp": "85ab894bb5854d9f33b122b359a603ea1964544fb1ba4672fdb6e60fc7cf6b2d",
    "admin/content/articles/images/fc-abp-frame.webp": "079e1cd96f558fcfcfc75f900dfbcf9b641c53cdfc00dcb93449c198a152bdd9",
    "admin/content/articles/images/fc-abp-rows.webp": "ac995f3b84b0633e59100745a750c71f8a059dabdf8621ba004dc0beabcecabc",
    "admin/content/articles/images/fc-connect.webp": "8e89f41db5d85b37e4d92b4d04ffd64597c36e3312278aad9316dea79ec0c567",
@@ -2051,6 +2055,7 @@
    "admin/content/articles/summaries/explorer-coding.json": "538750d9bfa69b95779435ca42d7a5e1a3573b32c8866068764802d8dbba7930",
    "admin/content/articles/summaries/explorer-to-villager-newsroom.json": "0d7504909ad00d8cacf29c88ba8e7821a0ca584abc8b68d3dab167ac005f759b",
    "admin/content/articles/summaries/false-positives-and-the-harness.json": "63c684b0b3268161fb924a4b0459f014935928cef2842d9cacb1ff342e08d775",
+   "admin/content/articles/summaries/feature-behaviour-policies.json": "fd523c6601903e6b521788aecef477e38a0631c2eb66483b7d4a305a829fac9a",
    "admin/content/articles/summaries/feisty-duck-briefed.json": "5dc5990114781e385d00114b8b08319b5af6dba544382c64040c5761c7871731",
    "admin/content/articles/summaries/firing-journalists.json": "89465ba20eefea51a81a9a3b2bca2e7fddc9789a48c3aa8b0b280f9370334193",
    "admin/content/articles/summaries/five-primitives-one-store.json": "e67ce8f0fc70ac82ab69bf51851eab2693806ed8ea4ce78f626ec4c6df91f69c",
@@ -2642,10 +2647,10 @@
   }
  ],
  "counts": {
-  "files": 7049,
-  "pages": 1639,
-  "articles": 487,
-  "verbatim": 3283,
+  "files": 7059,
+  "pages": 1641,
+  "articles": 488,
+  "verbatim": 3288,
   "dependencies": 52,
   "text_overrides": 11,
   "unresolved_on_sgit_ai": 0
@@ -2758,13 +2763,13 @@
   },
   "articles/a-browser-for-one.html": {
    "from": "articles/a-browser-for-one.html",
-   "sha256_source": "9f19554b6336c674dbb4f3bcdf5df9865ea7a250640c52d4a0a86a1e7c67a7e9",
-   "sha256": "d6efaa3a3f303f30d2f1a2cf9bcf4b48f292f7445977fafe85397e29684206e0"
+   "sha256_source": "c80b55c28a9601bd532b5e5664675fef1c207e38d2970142a373667734334265",
+   "sha256": "6aa014862f5ff91b90ac5a5238c2f4d666fdaf8bfa4fcc434131757989eddca4"
   },
   "articles/a-browser-for-one.md": {
    "from": "articles/a-browser-for-one.md",
-   "sha256_source": "f6bcff9cc5114b7157732c4dd0fcb2911bdfa4458a3cadb33dfa1b299dfe9697",
-   "sha256": "cd161d3659b129cd40525c27b95be8d8533294cf57d223281919951b050a9962"
+   "sha256_source": "8b6430f246b1696594508b0078175770a17aa1798998ad5cd2d2d1bb81c804e1",
+   "sha256": "8f686baef4b0160e41767d159a6d00050ba4661e1131542ff20b10ffb579e847"
   },
   "articles/a-call-for-help.html": {
    "from": "articles/a-call-for-help.html",
@@ -2958,13 +2963,13 @@
   },
   "articles/a-page-we-never-charge.html": {
    "from": "articles/a-page-we-never-charge.html",
-   "sha256_source": "b03cda96bf8260cf2abca1afc8a0af17b317e4d16b5f6c2d7d56d1d1a923fd22",
-   "sha256": "ee5a21bd881e801bae64cda93d9b0b6821c06d0e96b1e719fe63369bf21d52b5"
+   "sha256_source": "e446b4fcb215d39e5e06adda946d8c3a7244b8dcd0b384f3f5ecbc7e4b7ad320",
+   "sha256": "5552239154e216d41310a49d103f33c471aa8813d8115f813ef80929c3a80875"
   },
   "articles/a-page-we-never-charge.md": {
    "from": "articles/a-page-we-never-charge.md",
-   "sha256_source": "0d78ffaea3ed2495650317cac44bd292017278e64d409b808871c68dd0167454",
-   "sha256": "9eef05012e6fc86f5e502bd7c6c38622c06eafaeed5dd437f5f8083192f486cb"
+   "sha256_source": "09f1e9b9dca53ae802427088499838c6306711e0feaa2588f77d5970710b26b6",
+   "sha256": "47dae2839b308154cbe9baf9fbf1668db0bb45f43d3fea54a15524d97bfc1522"
   },
   "articles/a-payout-for-every-row.html": {
    "from": "articles/a-payout-for-every-row.html",
@@ -3488,23 +3493,23 @@
   },
   "articles/application-behaviour-policies.html": {
    "from": "articles/application-behaviour-policies.html",
-   "sha256_source": "6588dc76de13c288a115e1542b50633d96a1a426ac6f22bb3e58320e82d980f1",
-   "sha256": "f5d1ce8445bf730a24ae185289e42822fc6c7357000e61f7ec1bbd8f6865929e"
+   "sha256_source": "07f1bf9202caad2d609ab5efbe2f79854a7e71e8f71dbbb2a48db8ad59c92697",
+   "sha256": "d38f22d5f58d417319585043f89a849886aa661fdbc5ea6ab4e1a23a35e5e419"
   },
   "articles/application-behaviour-policies.md": {
    "from": "articles/application-behaviour-policies.md",
-   "sha256_source": "7df63d7a14fc910cfd69ec1816bada970c551aa5d60c184936abd05bf40fd051",
-   "sha256": "d94faab00c92ea091d07fc4b5b073ea164e2e3014a585da00ef5f7b44e39426c"
+   "sha256_source": "4868bb8deb17b46c979e8ea23137830311966b62f126b1da2e7340fd7011036f",
+   "sha256": "708eb21a7fcc9e4a16838aaaa21fbe3d5623e90ee724ae14a7af32b74363b6d4"
   },
   "articles/approve-at-altitude.html": {
    "from": "articles/approve-at-altitude.html",
-   "sha256_source": "dae50df24b8166be0d0fdc47e33c26977dcc500267ef7845e2c10dee06e99d71",
-   "sha256": "0318baa0088c49d7f1532abc3be6922bf5871babf7e225549d6b7b502de1839a"
+   "sha256_source": "cf11a2c7b53fbb187ac6661dbb8655986cd1de88e412d2eed65e2dc8848051e3",
+   "sha256": "b46173972d227dd94710234749e7944fe22a21a173b17fc810c2ae4042511da9"
   },
   "articles/approve-at-altitude.md": {
    "from": "articles/approve-at-altitude.md",
-   "sha256_source": "b5d5460b04cedd665fe501fb27d18c40d32bc5d419a25b269a582c574ae6d98c",
-   "sha256": "73e527f5ef250973f953cabc7660977fd92ec8728bd817c04b1c3c9fa8f005f0"
+   "sha256_source": "31cbdb53ce2f14f774281270f9e7e40f320e1349178892526cd9019fa40cbd1a",
+   "sha256": "eb2992e88aaee3a02232650a28c3a8f895e71d547a797a49a9eee3b78a706c5f"
   },
   "articles/approved-business-mandates.html": {
    "from": "articles/approved-business-mandates.html",
@@ -3568,8 +3573,8 @@
   },
   "articles/banners/.hashes.json": {
    "from": "articles/banners/.hashes.json",
-   "sha256_source": "260691b49f797e8eb0b8835e4137ded4d7f7461e5758b1f773b1703a601992df",
-   "sha256": "260691b49f797e8eb0b8835e4137ded4d7f7461e5758b1f773b1703a601992df"
+   "sha256_source": "e9f5855f571e199cbaa1c2dca3b26cfa797567f69c4c37e75e0ff37846363c2d",
+   "sha256": "e9f5855f571e199cbaa1c2dca3b26cfa797567f69c4c37e75e0ff37846363c2d"
   },
   "articles/banners/001-agents-doing-real-work.jpg": {
    "from": "articles/banners/001-agents-doing-real-work.jpg",
@@ -4306,6 +4311,11 @@
    "sha256_source": "026f15d393e09353c8c5333285255fef1dcc3dd2307231db571ed8c664b2b7cf",
    "sha256": "026f15d393e09353c8c5333285255fef1dcc3dd2307231db571ed8c664b2b7cf"
   },
+  "articles/banners/feature-behaviour-policies.jpg": {
+   "from": "articles/banners/feature-behaviour-policies.jpg",
+   "sha256_source": "76ae2408d20f642d96d431b24db646f9623457610aefbbd61a90d79326be9378",
+   "sha256": "76ae2408d20f642d96d431b24db646f9623457610aefbbd61a90d79326be9378"
+  },
   "articles/banners/feisty-duck-briefed.jpg": {
    "from": "articles/banners/feisty-duck-briefed.jpg",
    "sha256_source": "c7c59b53b0f64e1e7b77a7287de102973eea06c198cdb92ef906e5e5b3de427a",
@@ -4673,8 +4683,8 @@
   },
   "articles/banners/manifest.json": {
    "from": "articles/banners/manifest.json",
-   "sha256_source": "8a691c109f5a0566bf0c8808100de7f04064ad4210ced51c4d44cd3ca4b9dc1c",
-   "sha256": "8a691c109f5a0566bf0c8808100de7f04064ad4210ced51c4d44cd3ca4b9dc1c"
+   "sha256_source": "97d10a0541262f8f8a39b2207809f6ba25a172a9271608aca71329e6d2caf11f",
+   "sha256": "97d10a0541262f8f8a39b2207809f6ba25a172a9271608aca71329e6d2caf11f"
   },
   "articles/banners/meetscribe.jpg": {
    "from": "articles/banners/meetscribe.jpg",
@@ -5303,8 +5313,8 @@
   },
   "articles/banners/subscribe.jpg": {
    "from": "articles/banners/subscribe.jpg",
-   "sha256_source": "3ed28c15fcffe10be218ca82bd5a8378e005d2daad43a78c364752ca6519bd93",
-   "sha256": "3ed28c15fcffe10be218ca82bd5a8378e005d2daad43a78c364752ca6519bd93"
+   "sha256_source": "5e7dce9a543eb6c97ce341804a148ed01fab7bc9007e11498712963dd2fb01f1",
+   "sha256": "5e7dce9a543eb6c97ce341804a148ed01fab7bc9007e11498712963dd2fb01f1"
   },
   "articles/banners/supply-chain-of-vaults.jpg": {
    "from": "articles/banners/supply-chain-of-vaults.jpg",
@@ -6860,6 +6870,11 @@
    "from": "articles/cards/false-positives-and-the-harness.webp",
    "sha256_source": "4a0f7d69c193d89b32eba538549c61fa57d34704452918bd11713024cbc4e4c1",
    "sha256": "4a0f7d69c193d89b32eba538549c61fa57d34704452918bd11713024cbc4e4c1"
+  },
+  "articles/cards/feature-behaviour-policies.webp": {
+   "from": "articles/cards/feature-behaviour-policies.webp",
+   "sha256_source": "6e7d2dc291a1c762e61b31d90646b0cca132049b7b48f463ca38fd82695bfd94",
+   "sha256": "6e7d2dc291a1c762e61b31d90646b0cca132049b7b48f463ca38fd82695bfd94"
   },
   "articles/cards/feisty-duck-briefed.webp": {
    "from": "articles/cards/feisty-duck-briefed.webp",
@@ -8788,13 +8803,13 @@
   },
   "articles/collections/index.html": {
    "from": "articles/collections/index.html",
-   "sha256_source": "b69f9bf135692afceb50ba73d139f2b037ea01ae5924ed3cba41a3cceff45f6e",
-   "sha256": "5324d1d863f8de90b8add85ab34c9bf0ce44c3d05a3e94e8cf8b82ab7c20cd6e"
+   "sha256_source": "b264e7165505c1be8b35a6b422c8027f103b9398d84ea10d2e5b950b4bb2333d",
+   "sha256": "211f60daa09d5ccd16411d2a6b51e3c7078c3ad8ddc14e3b8dc19bbf38422e70"
   },
   "articles/collections/index.md": {
    "from": "articles/collections/index.md",
-   "sha256_source": "8778429e3df1a12bdc053ff462c51b529a8c4f21587b18b647c9c5a47313898b",
-   "sha256": "216252fa838994d4e3bd454c1807284386c251b37b9c00ab6b2d37cee29d6007"
+   "sha256_source": "95f380b92ca73f28dc0e61f9218d1c662c621a1d56993dd78a215d5d67c0960a",
+   "sha256": "b5caca6039493604f8fccb75b14be1ab76b31af8fe750533fd2d8111047457f1"
   },
   "articles/collections/local-news-kept-as-evidence.html": {
    "from": "articles/collections/local-news-kept-as-evidence.html",
@@ -9008,13 +9023,13 @@
   },
   "articles/desk/index.html": {
    "from": "articles/desk/index.html",
-   "sha256_source": "53873dd3e6c7c1fa735ec1ebe65183493d8041f46c17875a9c83e98707179866",
-   "sha256": "58957d92c2afb2d1a5b5711099abcea0184d612dd688bb4425c43338c158fd34"
+   "sha256_source": "675f2f67f4a38325c0b7310b311fb65104505a6351988910792a70ecec810434",
+   "sha256": "30d77c1b76f4306c8aad9e831673d43e0357f3e953963b9db055f107d02bd249"
   },
   "articles/desk/index.md": {
    "from": "articles/desk/index.md",
-   "sha256_source": "b5346784ca61d64a8d6d828f13bc3550bf8366061f5fe3a5f28b31a2f10f85a3",
-   "sha256": "0236aec119a0a3a8c9ef1a90a10987ba0b16c8e91ca9320148a0622f3c6be7c9"
+   "sha256_source": "620b8d02d78682a0c3cf21ec5fc636577e493d179fe06f9d1f76fcfcf29aa9e8",
+   "sha256": "b456d4fd16370f9731160b8a4b20569d956bdd3a0508a74c403741475ebfbea8"
   },
   "articles/desk/range-is-the-feature-so-the-stop-is-designed.html": {
    "from": "articles/desk/range-is-the-feature-so-the-stop-is-designed.html",
@@ -9186,10 +9201,20 @@
    "sha256_source": "bf3e8f8d9894757982ab56d4ab3b05b6a303693a6772ac235d5f6441e0fe9016",
    "sha256": "38232f443be2d21a537c9ab0ff65396cc5de9f6c7d9d20bb39094eda0b00a26d"
   },
+  "articles/feature-behaviour-policies.html": {
+   "from": "articles/feature-behaviour-policies.html",
+   "sha256_source": "633258011bc6db5b072d43f74caa07f959d320062a404190e6b0e5f989c6ef6a",
+   "sha256": "b75d9ac77fc4a7eb5f82813fa6fac10d3641c4b3a138064cce4f5b2b1cca1320"
+  },
+  "articles/feature-behaviour-policies.md": {
+   "from": "articles/feature-behaviour-policies.md",
+   "sha256_source": "3cafb485b298082a13ed4fa58f530d146d7450ec187fb2d5546d8dae9af8cf45",
+   "sha256": "ecac6c13456adfaf112d7fac8211fb6a482199428be404e3f9dc9b327633aed4"
+  },
   "articles/feed.xml": {
    "from": "articles/feed.xml",
-   "sha256_source": "de33547e46b46d9c6219e43c3068716913ea3cab3e8c28441fdb5b7c8a6d4d14",
-   "sha256": "d66ebe8ce57b298e0e6c7b091c29a351913254b75c84a9c1fee2bf37b6e49c73"
+   "sha256_source": "665c332164f81f4c8fc962ce149599db132175ef0844ffc88ff21066225454c3",
+   "sha256": "eada6348065ed9aef03314cef9c20863e5f05a73bfc9f1e93dcd5b435add8f5d"
   },
   "articles/feisty-duck-briefed.html": {
    "from": "articles/feisty-duck-briefed.html",
@@ -9443,18 +9468,18 @@
   },
   "articles/graphs.html": {
    "from": "articles/graphs.html",
-   "sha256_source": "844a1449668ddd5c23385fa241a6fb47ff63067947783a1f7de503df1b51d336",
-   "sha256": "91d61ce4307d93ce69f3a74fb95ca5aa2a780786f817dd34ec5a5f3e28a28b4d"
+   "sha256_source": "40cae6ec3cb29a934d2aafc125f5788e2371fa6418acf6126400f1c2c8f1af21",
+   "sha256": "a5984a6498a424691286af41fe22149fd612d1eb0732b61a3f0340dce55743a3"
   },
   "articles/graphs.json": {
    "from": "articles/graphs.json",
-   "sha256_source": "a6572f02670e4adaf1cf7c7a0b420b25a626f5655fd171eb5d6077f231cb3e4c",
-   "sha256": "1be19350cc207740c2c6d6fed81b216df55a1ce4efa075d436a8e705b2f27ed1"
+   "sha256_source": "f6c613a32424d7059254813052d2ddd6c0ebb1feb1bc354e9b2388298b4e43e1",
+   "sha256": "2d040373ee758b3387d73c8546fe3182940263921552402ca302cfcb6bb211bd"
   },
   "articles/graphs.md": {
    "from": "articles/graphs.md",
-   "sha256_source": "d32df29f89df5ce8f1e2cea66220fbf121becb1e001b58f3439a1bf68ef201db",
-   "sha256": "848cb6dfb6e10b810234e5cd45dc9f3c9f86e6f9dfebb64d0c2f2c0e059452ee"
+   "sha256_source": "b6e01fd2b374bb16ba466bb3b422f76c142895142a9116077de664e9fc33860f",
+   "sha256": "d2b4813c12ed32c439d838b8b62f4f60015775d859c970a776498abc6cc8e7ee"
   },
   "articles/graphs/a-book-for-one-reader.json": {
    "from": "articles/graphs/a-book-for-one-reader.json",
@@ -10080,6 +10105,11 @@
    "from": "articles/graphs/false-positives-and-the-harness.json",
    "sha256_source": "b6d4f5f2e8bad87dc7eb2220e109162942f1ec27fc2de5945fa0f4d3e7c47a35",
    "sha256": "55346c82dad8603995319b5f6e2a80305143b91a7d2d1e45296e33d7e12bb50b"
+  },
+  "articles/graphs/feature-behaviour-policies.json": {
+   "from": "articles/graphs/feature-behaviour-policies.json",
+   "sha256_source": "4dbff0eae130793cdb2d64205f401d02bbf88c6dd91323b98d008e458d4c6f53",
+   "sha256": "0950a4af32e96b1d4c9710ad16f6998c30524ed7b71ca1736a823d4a77b0f0e7"
   },
   "articles/graphs/feisty-duck-briefed.json": {
    "from": "articles/graphs/feisty-duck-briefed.json",
@@ -13840,6 +13870,16 @@
    "from": "articles/images/ex-wasserman.webp",
    "sha256_source": "101c5f70f2c4198b3f891ca4c9d184b8431645e78b0156ca9fd5afaa1d3f295f",
    "sha256": "101c5f70f2c4198b3f891ca4c9d184b8431645e78b0156ca9fd5afaa1d3f295f"
+  },
+  "articles/images/fbp-request.webp": {
+   "from": "articles/images/fbp-request.webp",
+   "sha256_source": "bea637cf5f28256be6b24519d6ac7023fd7c78f003065bf6baf6c450cd43a4d5",
+   "sha256": "bea637cf5f28256be6b24519d6ac7023fd7c78f003065bf6baf6c450cd43a4d5"
+  },
+  "articles/images/fbp-tree.webp": {
+   "from": "articles/images/fbp-tree.webp",
+   "sha256_source": "85ab894bb5854d9f33b122b359a603ea1964544fb1ba4672fdb6e60fc7cf6b2d",
+   "sha256": "85ab894bb5854d9f33b122b359a603ea1964544fb1ba4672fdb6e60fc7cf6b2d"
   },
   "articles/images/fc-abp-frame.webp": {
    "from": "articles/images/fc-abp-frame.webp",
@@ -20283,13 +20323,13 @@
   },
   "articles/index.html": {
    "from": "articles/index.html",
-   "sha256_source": "7f423bc123f17e22700aef2a3a0e133b2826055277fe4fc80c19e820f54fc93c",
-   "sha256": "9e9c10be64e466ac306de94b49d75f7e984161216e621b53e80c440f08330ff7"
+   "sha256_source": "e7cd6f4563d8b82ad1b5c8b749309d4a9bab151ab900959f650658da81ddf7e1",
+   "sha256": "dba42dd4dacdd4f2543cfd5bf26e5efd491ef1a2087b8103d23639fc2e34e20d"
   },
   "articles/index.md": {
    "from": "articles/index.md",
-   "sha256_source": "9177e7236a9c180ce133c0ebb76e9f4d2a861a1039f36da6caa824a41f5fcd3a",
-   "sha256": "1cd08c36265ddb3dc424c174bb92312bf488859b5ed49c6e641c61111914cec5"
+   "sha256_source": "a09d432a6efb9f5a267434cc5121a29eea4a9da06b2e3e525faa9e8e2f07c6e0",
+   "sha256": "7b7a46a914d112ce4f60840f48ceaf50d6890b229a52c73da7156a58a51e9573"
   },
   "articles/inside-english-with-ines.html": {
    "from": "articles/inside-english-with-ines.html",
@@ -20733,13 +20773,13 @@
   },
   "articles/newsletter/index.html": {
    "from": "articles/newsletter/index.html",
-   "sha256_source": "19c6c7f00f707f39a7b3022abfdd0e9b2793130307732179b0e2e54de633786b",
-   "sha256": "02bde645663756b0c9f2306ed403ed4bb22b509e63dcc9641aeee771dbb6c5f1"
+   "sha256_source": "f57da8efddedb67995f8990fdbb4a40989771a3619ee420b248975669281f282",
+   "sha256": "06274da0168513c58a71b3ffcaa9217cc0a3d80f1106b83e1d5dffb5f33de8ab"
   },
   "articles/newsletter/index.md": {
    "from": "articles/newsletter/index.md",
-   "sha256_source": "9e612b9a44880fcb42aced2eb86a3e2c0e2e7797b898eb3af4ca991c08a269ea",
-   "sha256": "c3511c2ff7a0a8e81ae6fab399818625b1c9a7bc369b78d641abf20aca8147c3"
+   "sha256_source": "dc23560f0c8cf8f8ace5eadd84c242f87367dbf6bbebb5bca15b7245d812dbe7",
+   "sha256": "abbfe3351671ccc493744a3ae74db2dc3ff76c074a9a93037acde9adc3cea5bf"
   },
   "articles/newsrooms-on-open-data.html": {
    "from": "articles/newsrooms-on-open-data.html",
@@ -25831,6 +25871,16 @@
    "sha256_source": "911823cb9762da22e69749f3a0ec189a78da26807def694c317c39ff01ffb8e5",
    "sha256": "5299836719edb8da81defd8628cdd943c8ad92800bfccac652fc1fab378d0998"
   },
+  "articles/versions/feature-behaviour-policies.html": {
+   "from": "articles/versions/feature-behaviour-policies.html",
+   "sha256_source": "abe21ea585b25c53d71379b75286f77bf1fd4c4fb194e93dc3a8a9255bb5c801",
+   "sha256": "6457c20487273c3a53fa86144a4572a9e983be0e80dd06e966a47b42d0d2bb1c"
+  },
+  "articles/versions/feature-behaviour-policies.md": {
+   "from": "articles/versions/feature-behaviour-policies.md",
+   "sha256_source": "cb28930bb380a79b37fdedfaabefeaf1d1f148ea18cd4354700d551673be230e",
+   "sha256": "347553383d08fab3caf6520144313c51cc534ad4617d027ddf80a1603d0207a0"
+  },
   "articles/versions/feisty-duck-briefed.html": {
    "from": "articles/versions/feisty-duck-briefed.html",
    "sha256_source": "96c11d9e681c09a929137bf91f6121d8b503a962b727f840a62f65e468adc5da",
@@ -25913,23 +25963,23 @@
   },
   "articles/versions/fliplet-and-the-website-cell.html": {
    "from": "articles/versions/fliplet-and-the-website-cell.html",
-   "sha256_source": "3fd7309d0fde9b50925b101756281253a0bbb49a7cc801e79992c5ff95273c6f",
-   "sha256": "aa86383c1ac6db84791656fe8c335ceb182642ce7ad4ec39f19e12952dfb8f47"
+   "sha256_source": "36856ec0d32a8adaebedba5c3000fc2a78d8d69b30743c655c2b6ee84f9e5322",
+   "sha256": "8c6d8dad4a3f826984432bd30439d124285990d08339e0f06838a8a6fc7fabe6"
   },
   "articles/versions/fliplet-and-the-website-cell.md": {
    "from": "articles/versions/fliplet-and-the-website-cell.md",
-   "sha256_source": "c5f3ff772683842752e348e763f51637c6027e5ac0c7d9ec10e148b9b6e843a3",
-   "sha256": "a0a2cab59fa981cc2d25685d6eaf0526e15bde9ab4fd91a9b0f890f130900cd4"
+   "sha256_source": "8726225a308b8160555358b8c559adc79b46369dc1825076165f3741d70e442c",
+   "sha256": "d56ab10a7882324ca178052a6f919f666e8c05b407c3e5372c7460a7e216f6b1"
   },
   "articles/versions/fliplet-and-the-website-cell/v1.0.1.html": {
    "from": "articles/versions/fliplet-and-the-website-cell/v1.0.1.html",
-   "sha256_source": "e46416953494477cc97c0abe344928d3c8f4ca119c41fe0323d0fa5758a6f395",
-   "sha256": "d4d61ba5cc3385a25692acb391bddc7cc529243c7f291538e80296252841b7f9"
+   "sha256_source": "32645bab94a58b91051d0bb232593baf412e116ba5a70c5004b4eed0611d606b",
+   "sha256": "0cfcfd2489d08a2c2fc0bd1b4059cc8ea6f8b394c1b1c8639dad9993f84d0c71"
   },
   "articles/versions/fliplet-and-the-website-cell/v1.0.1.md": {
    "from": "articles/versions/fliplet-and-the-website-cell/v1.0.1.md",
-   "sha256_source": "fa8b760b5119b245cb38c37b8e5d5e91a6ca6d2742ee281f47cfc0ba070f7dca",
-   "sha256": "b25b4d6b3d1c51f19531b943a16620791271d80a089ad57763c2d1e89c693a87"
+   "sha256_source": "9143d79f9e27fda4082e4753ede2f99fdb1396200320a184f482558ee5e9a5f6",
+   "sha256": "6af1a5f3c49f9f683e1b5ab8fc43d53b30d35e7813572affe0f2d6037bd621b5"
   },
   "articles/versions/footprint-and-blast-radius.html": {
    "from": "articles/versions/footprint-and-blast-radius.html",
@@ -27673,23 +27723,23 @@
   },
   "articles/versions/no-lock-in.html": {
    "from": "articles/versions/no-lock-in.html",
-   "sha256_source": "99b00751386f813b9fbfea2e17a5f42ec183010f3d1579f8ee09af58ba740732",
-   "sha256": "3fc6f7fbcd3f4227fc8bdaada773a43a3a9ed633f654f904ee64d64194daea82"
+   "sha256_source": "0177d67581d98ab3314021cbe062862731a760e7a5dce9fb24e10183799b94d8",
+   "sha256": "bd6e04ae6f222abdd6420d7d5be6862aa6e7817888f5f5c791f5a96328c3999f"
   },
   "articles/versions/no-lock-in.md": {
    "from": "articles/versions/no-lock-in.md",
-   "sha256_source": "0692790cdf4625a32834b07fb2075de2d91df792dc9a9aef95604769be818232",
-   "sha256": "eae02fc57c40a612319f1a28dc9b74e1b45e89092fb6c3cf4399bb78ff1ea4a5"
+   "sha256_source": "a5753eb06f8205076d04ec8134e07118831838fe96f10d40ae4399234ee32730",
+   "sha256": "f3db364d272b453194cd92be6e708a1f1c1b15f6c96cba43d9ac79732df3be59"
   },
   "articles/versions/no-lock-in/v1.0.1.html": {
    "from": "articles/versions/no-lock-in/v1.0.1.html",
-   "sha256_source": "68e754d6a84d1f362efde6a24341b4a1d69b0118d379cd2bd1d021b0d8a171b0",
-   "sha256": "12816a45ef98eb3ed9144411ef35eb54c072316122e0bd68b47f902e1400b62c"
+   "sha256_source": "d9c80a06952a721370e98613b4168cc67fa5b5aeb1e152583a87a8454bf8f1de",
+   "sha256": "0017a470f1078b367ba6c0f7f296112a113814917bb5696d9b45be634215a5e3"
   },
   "articles/versions/no-lock-in/v1.0.1.md": {
    "from": "articles/versions/no-lock-in/v1.0.1.md",
-   "sha256_source": "48fa26d01d23e281c4a1e4775406436cbe3a6438691345b398695cb4d7157a18",
-   "sha256": "3b12c4dbeba2d39aaf714deb9ea9e4e880cd5b974321cf5cd129554941fea995"
+   "sha256_source": "662732a77186ac8f774e33c06bce63666cccae3f9d88b984c5bb2e237afc39dd",
+   "sha256": "fae66a8b392aead5b0be57b41602fdc98ba5a8959af9baa95e714713130dd055"
   },
   "articles/versions/no-server-by-design.html": {
    "from": "articles/versions/no-server-by-design.html",
@@ -29913,23 +29963,23 @@
   },
   "articles/versions/sovereignty-you-can-move.html": {
    "from": "articles/versions/sovereignty-you-can-move.html",
-   "sha256_source": "f8ab9247cfd0a67664efe4b655b2be5c1dcb7456a45cfaa210a8b8b5828b9993",
-   "sha256": "f38d299a21a5f3d10eb5cc2d16350d765fe9c217b55138ac7dff3d137c91591c"
+   "sha256_source": "091aaf138fd283444e7a9aab1342448f698079098df1303620b31c4ee65ce149",
+   "sha256": "3059a8e2f9eb54be03af084bf69dd35aa0fac18d35e3ab6f6e02dbafd7ebbaf5"
   },
   "articles/versions/sovereignty-you-can-move.md": {
    "from": "articles/versions/sovereignty-you-can-move.md",
-   "sha256_source": "6d8244316f4977c40a08b45a0ca82f42bf0f57bd8a661ab8a2ec3b3446685d31",
-   "sha256": "69f6823dc38205fcb5288faa6961812cf2048ec0fc90182a8fa7716670f04893"
+   "sha256_source": "2070dfae87198d479ddabd4bf2820d30fbd27fab178cdab40fc68d78d428de51",
+   "sha256": "5548962fe1a8ba68876b9f58f3236d1684ef4f2a790cd9b7402d24a071d5581b"
   },
   "articles/versions/sovereignty-you-can-move/v1.0.1.html": {
    "from": "articles/versions/sovereignty-you-can-move/v1.0.1.html",
-   "sha256_source": "b00f02f5cc48a74947386ea881f54e6a6c9085d8d9b53904271192450e35ad45",
-   "sha256": "1589114bdfb889df224ed5760a903ab081337d74149a5d9af3622f7aacb482d5"
+   "sha256_source": "a07ab1b0905470e1983ed61f0fd7d4efc381b728aafa116e238d9978d6d19f31",
+   "sha256": "161dd7ba5ef8ba6f9e478213d4a91d1793587a2162dacb80140543029a286ddb"
   },
   "articles/versions/sovereignty-you-can-move/v1.0.1.md": {
    "from": "articles/versions/sovereignty-you-can-move/v1.0.1.md",
-   "sha256_source": "da808b877e8b215a2cc73e44dc727c547d066666217ef77f17232e30d6a20b09",
-   "sha256": "4d2b836e12d02a41f434acdefbfb8c0ead2203808c3c65081d37595e29b8bd91"
+   "sha256_source": "509338645d879d194e2e8540e6b7130e65b87bf429b609381dc5991a20758a90",
+   "sha256": "d75cfbe737399b8dddb7dfbf62c6d6c0291d2b4c468e83368117e2ed8345e961"
   },
   "articles/versions/specialist-agents-for-every-team.html": {
    "from": "articles/versions/specialist-agents-for-every-team.html",
@@ -32163,23 +32213,23 @@
   },
   "articles/versions/the-sovereign-website.html": {
    "from": "articles/versions/the-sovereign-website.html",
-   "sha256_source": "1e076585ad210a06500912af0ceca73fbd7cd98c070a418a1e237c2a083a7ec6",
-   "sha256": "f4c594a791fc59f29d410be947a2a110e1e3d8870ad2ffc4b5488f494cdcba41"
+   "sha256_source": "82d461d48ffb0c604014bfd6dcd300acafa548181ccf04b1fb63f6507f84cb1a",
+   "sha256": "560a9225332c3eefed82bce571a694478f1b82af381bd23a78c7ea7bc117a4c5"
   },
   "articles/versions/the-sovereign-website.md": {
    "from": "articles/versions/the-sovereign-website.md",
-   "sha256_source": "d5cef37e623351a1f326bb6b5a64602c146d8f870f6ac045c437544bfb02026f",
-   "sha256": "8d596f9e8a279a6f2d7399a087e9b52117f9e0f6117bb592c9bf98b21d09c8c2"
+   "sha256_source": "92d8b8bb26c6f548ad735d7072bb3eeee0e65337a442cf3c48968bdf3a1be59b",
+   "sha256": "78860ad5ea2a108f9ab75bbe5ce18dc63e97ab417ed0a6d38800570c404f0140"
   },
   "articles/versions/the-sovereign-website/v1.0.1.html": {
    "from": "articles/versions/the-sovereign-website/v1.0.1.html",
-   "sha256_source": "a72de7fa89d71f1e26f3a4c19d6e1a2a93d5a9b6358148bdd6b12693b2b96789",
-   "sha256": "d9c5b249251fe89644b0e054d2c94a6201e5eb980d68c86ab56db6a349a3caa7"
+   "sha256_source": "e101d50ad862e71e7867583a9735e5c320a831ad6b7f7706fceea78b5c881fe6",
+   "sha256": "d0d04d89011a2810ca3b37b6fd254563f0097470edb4430e5582fa7c03c48508"
   },
   "articles/versions/the-sovereign-website/v1.0.1.md": {
    "from": "articles/versions/the-sovereign-website/v1.0.1.md",
-   "sha256_source": "a5dcf04883cd0f42c4c720edb059686bfcfe2585f1e2788796cf16a605085de8",
-   "sha256": "9b3ae15ec812bacb90a62ee2fcb7cee01634098c63462abbce72f1cbd405f737"
+   "sha256_source": "4cb4a0b25c7c6275434ebc0e64e067ff22b29ce2e35699cdf0b9fe7a82a50779",
+   "sha256": "56c10f2c24890a5203705a972c3eacbbcd290c5f5449d31f3c88813b26eac6bc"
   },
   "articles/versions/the-teams-operating-system.html": {
    "from": "articles/versions/the-teams-operating-system.html",
@@ -35496,13 +35546,13 @@
   },
   "newsroom/index.html": {
    "from": "newsroom/index.html",
-   "sha256_source": "16d663322fc6f8387a15a48b742d3af23f4f8b40ca63c657f6a07fde3f413ba5",
-   "sha256": "917a7b810e253535ec217f72dbfe7d4efe425ba2ac0e47c303acae469feb2434"
+   "sha256_source": "827ed01e0a04bb4273011fe6eed0dc7466b4bb62af7233b20f54de8e4b95d6c9",
+   "sha256": "9187c193548934d3425885d48f472797b63a29277feda4085924b1cc0e420a99"
   },
   "newsroom/index.md": {
    "from": "newsroom/index.md",
-   "sha256_source": "c28d9409ef44f3cc46c937cdcf9e292b61a3947488e974c231138e26477dea31",
-   "sha256": "08b28cb15253724390083732a5fad7b1afbc393e4e415d104fdf8f7910a11246"
+   "sha256_source": "10f16f546fd461598206e39c4be17d60e70db803b908f2177a7d030edae7e1b7",
+   "sha256": "ede7541923eab29bf20d9f85adef579f2d6551c9f627dfffc6829cfd8fdd7295"
   },
   "newsroom/log.html": {
    "from": "newsroom/log.html",
@@ -35596,8 +35646,8 @@
   },
   "newsroom/wire.json": {
    "from": "newsroom/wire.json",
-   "sha256_source": "4fbcdfcac7697a9b9b7a623bce85688a04898175ddff6672dec30e858674e7c0",
-   "sha256": "8b07c08a95baee5b2b602d375de12ac2d388701e82c95e18bc34e89d22a8a08a"
+   "sha256_source": "90f8898fa17d967d3b6065db288ab83357afa4085bd957c59ede418f5b9e43b7",
+   "sha256": "fb178923d9765185441e038e1cd150476b68a378d4d51f9b41e41cdbb701ec40"
   },
   "og/a-book-for-one-reader.jpg": {
    "from": "og/a-book-for-one-reader.jpg",
@@ -36228,6 +36278,11 @@
    "from": "og/false-positives-and-the-harness.jpg",
    "sha256_source": "2b3ae61d9700c209484420dd8ec7da6fa319ef4785a59011c1a2e97d6b270c3d",
    "sha256": "2b3ae61d9700c209484420dd8ec7da6fa319ef4785a59011c1a2e97d6b270c3d"
+  },
+  "og/feature-behaviour-policies.jpg": {
+   "from": "og/feature-behaviour-policies.jpg",
+   "sha256_source": "c4917025797d185130485bb0857b5376eee335ad5da2037f8bb3782cc6b0d13d",
+   "sha256": "c4917025797d185130485bb0857b5376eee335ad5da2037f8bb3782cc6b0d13d"
   },
   "og/feisty-duck-briefed.jpg": {
    "from": "og/feisty-duck-briefed.jpg",

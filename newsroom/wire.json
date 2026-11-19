@@ -73,6 +73,35 @@
   ],
   "articles": [
     {
+      "slug": "feature-behaviour-policies",
+      "title": "Feature behaviour policies: taking the idea of agent behaviour policies down to every feature, bug fix and resource, so that a feature's policy is also its description, what changed is the difference between two policies, the gap between what a resource can do and what a feature needs is where the vulnerabilities live, and signed policies travelling with each request make a bug or an attack a path that was never supposed to exist",
+      "date": "2026-11-19",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/feature-behaviour-policies.html",
+      "markdown": "https://newsroom.sgit.ai/articles/feature-behaviour-policies.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/feature-behaviour-policies.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/feature-behaviour-policies.json",
+      "teaser": "Write a behaviour policy per feature: it describes the feature, sets what to enforce, and makes a bug or attack a path outside it.",
+      "summary": "We write behaviour policies for agents and, since php2shell, for applications. I think the next step is to write them for every feature. When we hand someone a new feature to test, we usually hand them the whole app; instead we could hand them the feature's behaviour policy, which says what the feature is for and what it does. That policy is the feature's description, and the difference between two versions of it is what changed. It is also what the application enforces, in context, because the same behaviour can be fine in one place and a serious problem in another. Enforced on the client, it cuts the noise that reaches the server; signed and carried with each request, it lets the server, and anyone watching the traffic, see a bug or an attack as a path outside the policy. The reverse is a resource behaviour policy: everything a key, an account or an API lets you do. The gap between the two is the risk, and the application, where features combine, is where new behaviour appears. Agent and user behaviour policies are then the same feature policies plus a workflow; only who runs them differs. Policies become the permission sets for the custom interfaces we build per task. Next, we map them onto our own capabilities.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "behaviour-policies",
+        "abp",
+        "security",
+        "features",
+        "testing",
+        "signing",
+        "agents",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "the-sovereign-website",
       "title": "The sovereign website: a pivot brief for agenticcells.ai, what the site says today and what it should say next, sovereignty as the headline, a website you own, control, change and can run anywhere, the deliverables explained, the infographics to draw, five homepage designs to choose from, and the partner programme and examples that already prove it",
       "date": "2026-11-19",

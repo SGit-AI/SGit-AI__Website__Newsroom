@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.1** | 2026-11-19 | patch | 955 | front matter only (the text is unchanged) | this release | [what changed](no-lock-in/v1.0.1.md) · [current](../no-lock-in.md) |
+| **v1.0.1** | 2026-11-19 | patch | 955 | front matter only (the text is unchanged) | [`006db3b3f`](https://github.com/SGit-AI/SGit-AI__Website/commit/006db3b3f759bd27a5bde4f10420c2ae8c54a07f) | [what changed](no-lock-in/v1.0.1.md) · [current](../no-lock-in.md) |
 | **v1.0.0** | 2026-11-19 | published | 955 | first published | [`32f10a6e6`](https://github.com/SGit-AI/SGit-AI__Website/commit/32f10a6e6eb9375ff84b67507ee699f45013d072) |  |
 
 [← Back to the article](../no-lock-in.md) · [All articles](../index.md)

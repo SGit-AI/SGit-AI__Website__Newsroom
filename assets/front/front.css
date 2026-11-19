@@ -157,6 +157,13 @@ html:not([data-view]) .view-switch { display: none; }
 .bs .day-th .sec-k { grid-column: 2; }
 .bs .day-th .day-min { grid-column: 3; }
 .bs .day-th .day-h, .bs .day-th .day-dek { grid-column: 2 / -1; }
+/* The day list's section label is a quiet tag, not a second headline, and the whole row opens the article: readers
+   on a phone kept tapping the label instead of the title (the editor, 19 November 2026). The label stays a link. */
+.bs .day-i { position: relative; }
+.bs .day-i .sec-k { position: relative; z-index: 1; justify-self: start; font: 500 11px/1.4 var(--font-ui); letter-spacing: .02em; text-transform: none; color: var(--ink-3); padding: 0 0 2px; }
+.bs .day-i .sec-k::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 6px; vertical-align: baseline; background: color-mix(in srgb, var(--sc) 78%, var(--ink)); }
+.bs .day-i .day-h::after { content: ""; position: absolute; inset: 0; }
+.bs .day-i .day-h { margin-top: 2px; }
 @media (max-width: 480px) { .bs .day-i.day-th { grid-template-columns: 88px 1fr auto; } .bs .day-th .day-t img { width: 88px; height: 46px; } }
 
 .bs .sec-grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-4); }

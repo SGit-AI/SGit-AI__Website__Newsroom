@@ -1,0 +1,30 @@
+{
+ "slug": "feature-behaviour-policies",
+ "teaser": "Write a behaviour policy per feature: it describes the feature, sets what to enforce, and makes a bug or attack a path outside it.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "A behaviour policy per feature is both the feature's description and what the application enforces; set against a resource's policy, the gap is the risk, and signed policies carried with requests make bugs and attacks visible as paths outside them.",
+ "nodes": [
+  {"id": "feature", "label": "Feature behaviour policy", "kind": "concept", "summary": "The mandate and the description."},
+  {"id": "resource", "label": "Resource behaviour policy", "kind": "concept", "summary": "Everything a key or API allows."},
+  {"id": "gap", "label": "The gap", "kind": "concept", "summary": "Where the risk lives."},
+  {"id": "app", "label": "Application behaviour policy", "kind": "concept", "summary": "Features combined."},
+  {"id": "signed", "label": "Signed policies on requests", "kind": "method", "summary": "Paths outside them stand out."},
+  {"id": "agent", "label": "Agent and user policies", "kind": "claim", "summary": "Feature policies plus a workflow."}
+ ],
+ "edges": [
+  {"from": "resource", "to": "feature", "rel": "contrasts"},
+  {"from": "gap", "to": "resource", "rel": "depends-on"},
+  {"from": "app", "to": "feature", "rel": "extends"},
+  {"from": "signed", "to": "feature", "rel": "depends-on"},
+  {"from": "agent", "to": "app", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["application-behaviour-policies", "approve-at-altitude", "a-browser-for-one", "a-page-we-never-charge"],
+  "pages": [],
+  "sites": ["https://abp.sgit.ai/"]
+ },
+ "quotes": [
+  {"text": "this does not make sense, this is not supposed to happen here", "why": "Dinis."},
+  {"text": "a path that was never supposed to exist", "why": "Dinis."}
+ ]
+}

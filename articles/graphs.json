@@ -55,6 +55,145 @@
   ],
   "articles": [
     {
+      "slug": "feature-behaviour-policies",
+      "title": "Feature behaviour policies: taking the idea of agent behaviour policies down to every feature, bug fix and resource, so that a feature's policy is also its description, what changed is the difference between two policies, the gap between what a resource can do and what a feature needs is where the vulnerabilities live, and signed policies travelling with each request make a bug or an attack a path that was never supposed to exist",
+      "date": "2026-11-19",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/feature-behaviour-policies.html",
+      "markdown": "https://newsroom.sgit.ai/articles/feature-behaviour-policies.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/feature-behaviour-policies.webp",
+      "teaser": "Write a behaviour policy per feature: it describes the feature, sets what to enforce, and makes a bug or attack a path outside it.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "behaviour-policies",
+        "abp",
+        "security",
+        "features",
+        "testing",
+        "signing",
+        "agents",
+        "article"
+      ],
+      "links_out": [
+        "application-behaviour-policies",
+        "a-browser-for-one",
+        "approve-at-altitude",
+        "a-page-we-never-charge"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "fbp-tree.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fbp-tree.webp",
+          "caption": "A tree of behaviour policies: resources, features and fixes, the application, and the agents and users who run it.",
+          "kind": "concept"
+        },
+        {
+          "file": "fbp-request.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fbp-request.webp",
+          "caption": "A client sends a request with its signed policy; an observer and the server check that the request fits.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "feature-behaviour-policies",
+        "teaser": "Write a behaviour policy per feature: it describes the feature, sets what to enforce, and makes a bug or attack a path outside it.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "A behaviour policy per feature is both the feature's description and what the application enforces; set against a resource's policy, the gap is the risk, and signed policies carried with requests make bugs and attacks visible as paths outside them.",
+        "nodes": [
+          {
+            "id": "feature",
+            "label": "Feature behaviour policy",
+            "kind": "concept",
+            "summary": "The mandate and the description."
+          },
+          {
+            "id": "resource",
+            "label": "Resource behaviour policy",
+            "kind": "concept",
+            "summary": "Everything a key or API allows."
+          },
+          {
+            "id": "gap",
+            "label": "The gap",
+            "kind": "concept",
+            "summary": "Where the risk lives."
+          },
+          {
+            "id": "app",
+            "label": "Application behaviour policy",
+            "kind": "concept",
+            "summary": "Features combined."
+          },
+          {
+            "id": "signed",
+            "label": "Signed policies on requests",
+            "kind": "method",
+            "summary": "Paths outside them stand out."
+          },
+          {
+            "id": "agent",
+            "label": "Agent and user policies",
+            "kind": "claim",
+            "summary": "Feature policies plus a workflow."
+          }
+        ],
+        "edges": [
+          {
+            "from": "resource",
+            "to": "feature",
+            "rel": "contrasts"
+          },
+          {
+            "from": "gap",
+            "to": "resource",
+            "rel": "depends-on"
+          },
+          {
+            "from": "app",
+            "to": "feature",
+            "rel": "extends"
+          },
+          {
+            "from": "signed",
+            "to": "feature",
+            "rel": "depends-on"
+          },
+          {
+            "from": "agent",
+            "to": "app",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "application-behaviour-policies",
+            "approve-at-altitude",
+            "a-browser-for-one",
+            "a-page-we-never-charge"
+          ],
+          "pages": [],
+          "sites": [
+            "https://abp.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "this does not make sense, this is not supposed to happen here",
+            "why": "Dinis."
+          },
+          {
+            "text": "a path that was never supposed to exist",
+            "why": "Dinis."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-sovereign-website",
       "title": "The sovereign website: a pivot brief for agenticcells.ai, what the site says today and what it should say next, sovereignty as the headline, a website you own, control, change and can run anywhere, the deliverables explained, the infographics to draw, five homepage designs to choose from, and the partner programme and examples that already prove it",
       "date": "2026-11-19",
@@ -681,7 +820,9 @@
         "paid-by-the-read",
         "promptugal-news-the-newsroom-we-ran"
       ],
-      "links_in": [],
+      "links_in": [
+        "feature-behaviour-policies"
+      ],
       "figures": [
         {
           "file": "fyt-mock.webp",
@@ -40381,6 +40522,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "feature-behaviour-policies",
         "who-carries-the-risk"
       ],
       "figures": [
@@ -54438,6 +54580,7 @@
         "explorer-coding"
       ],
       "links_in": [
+        "feature-behaviour-policies",
         "an-ipad-to-review-the-book"
       ],
       "figures": [
@@ -58813,6 +58956,7 @@
         "code-review-as-a-fractal-semantic-graph"
       ],
       "links_in": [
+        "feature-behaviour-policies",
         "ci-behaviour-policies",
         "identity-for-agents-layer-by-layer",
         "where-assist-becomes-execute",
