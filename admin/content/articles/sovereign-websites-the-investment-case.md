@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: The investor decks we made for PrompTugal are good, and the structure carries over almost slide for slide. What changes is the product, and this one I think is investable in a way a newsroom is not. A Sovereign Agentic Website is one deliverable that every small business in the world needs, that works in any language and culture, and that walks into a market that is large, inefficient and built on rent and lock-in. The first sale is small and complete: one payment for a site that is the owner's, with CI, tests, security checks, five designs and a team of five to seven agents already inside it, more than almost anyone has today, so we under-promise and over-deliver. The value comes first, because the demo is their own website, in five versions, sealed in a vault before they pay. The cost to serve is low, with no servers of ours and the team running on the owner's own AI. And there is a long list of upsells on a site they already own: their domain, more languages, a shop without a backend, the full team, moving from Wix or WordPress, other cells. The code is open; the velocity, and the years of learning underneath, are the moat. Now the question is go to market.
-version: v999.0.0
+version: v0.14.174
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereign-website, investors, business-model, go-to-market, agenticcells, strategy, article
 status: published

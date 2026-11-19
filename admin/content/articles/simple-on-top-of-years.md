@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: My view of startups has always been that you have to find something very easy: a narrow use case, at scale, that somebody can just use. What is odd is how I got to one. For the last couple of years I have been building from the bottom up, starting from provenance, from understanding and from determinism, because I do not want the black magic. You would expect that to end in something complicated. It ended in something simple: a person scans a QR code and sees their own website in five designs, and if they say yes it becomes theirs, with a team of agents inside it. That simple thing sits on layers I learnt one at a time, each for its own reason: a CI pipeline and tests on every change, almost the first thing I built; a file-sharing service where the server never holds the key, which taught me pricing and payments and also that "the technology worked, the use case was not there yet"; sgit, Git's model encrypted; vaults a web page can open; keys and secrets as QR codes; agentic teams with briefs and behaviour policies; and a factory that turns one commit into a site. None was built for this. Connecting them is the product, and the learning is the moat.
-version: v999.0.0
+version: v0.14.174
 license: https://creativecommons.org/licenses/by/4.0/
 tags: startups, strategy, sovereign-website, sgit, agentic, determinism, article
 status: published

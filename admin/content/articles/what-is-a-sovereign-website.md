@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: I searched for "sovereign website" and found almost nothing. That is an opportunity: we get to define the category, the way serverless was defined, with principles anyone can test a site against. A sovereign website is a website you own and can move. Moving is the hard part, and the lesson I do not think has been learned is that one proprietary component in the middle, however small, is enough to stop you: nobody can move the site for you without rebuilding that part, so you cannot even pay your way out. Lock-in comes from the domain, the technology and the platform alike. So a sovereign website is built only on commodity technology, its content and schema in open formats, its domain in its owner's name. This piece proposes seven principles, a maturity model from level 0, rented, to level 5, sovereign and proven, and a proof every Sovereign Agentic Website should carry: the same commit deployed by one pipeline to GitHub Pages, Cloudflare, Netlify, Azure, AWS, a European host and your own computer. Agentic is how we build them; sovereign is what they are. The principles belong at sovereignwebsite.org.
-version: v999.0.0
+version: v0.14.174
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereign-website, sovereignty, open-source, europe, hosting, principles, article
 status: published
