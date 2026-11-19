@@ -19,6 +19,7 @@ status: published
 - **No limits on scale:** nothing stops five hundred repositories or thousands of DNS records.
 - **The old excuse no longer holds:** pipeline code used to be fixed; here requests arrive as pull requests, and a pull request can change the workflow.
 - **The fix is a behaviour policy for the pipeline:** reach, undo, limit, and a boundary outside the grant.
+- **Updated 19 November:** the job is nine calls; since the 16th the grant has grown to a second organisation and a second DNS zone ([three days later](#update)).
 
 ## A simple job, a large grant {#grant}
 
@@ -57,17 +58,34 @@ An [Agent Behaviour Policy](https://abp.sgit.ai/what-is-an-abp/index.html) recor
 
 Each limit is enforced by something the pipeline's grant does not include. That is the test that matters: "a control bounds a grant only if it is enforced by something the grant does not include."
 
+## Three days later: the whole list, and a wider grant {#update}
+
+On 19 November I went back to the factory's code to write down exactly what one request makes it do. It is a short list, nine calls in all:
+
+- **Create the repository** in the owner's organisation.
+- **Push the seed commit** from the site template, which includes the site's own Pages workflow.
+- **Set the repository's settings:** default branch `dev`, and the website in its About box.
+- **Turn on GitHub Pages,** built by GitHub Actions, with a `github-pages` environment that only `dev` may deploy from.
+- **Set the Pages custom domain,** after the DNS step.
+- **Start the site's Pages workflow** on `dev`.
+- **Add the owner as a collaborator** and **give the team its access** to the new repository.
+- **Write one CNAME** in Route 53, from the site's name to GitHub Pages.
+
+Against that list, the grant has grown since I wrote this piece three days ago. On 17 November the App was also installed on the PrompTugal organisation, on all repositories, so that the factory could make sites there; its own notes say it plainly: "the App's power now covers two organisations". The DNS role now covers a second zone, promptugal.news, still CNAME records only. And the team step needs a permission the App's documented settings do not list: adding a team to a repository needs the organisation permission Members, and the factory's code says so when GitHub refuses. Whether it has been granted is not in the repository.
+
+So the gap is now nine calls against the power to change the settings and workflows of, and delete, every repository in two organisations. Every one of the nine is a small, nameable action. Written as a [feature behaviour policy](/articles/feature-behaviour-policies.html), the factory's job is a page, and each line of it can be enforced by something other than the pipeline's own grant. That is why I think pipelines, and the actions they call, need behaviour policies of their own: the power we hand a pipeline is decided by what the platform's permission model can express, not by what the job needs.
+
 ## Why this matters beyond one factory {#why}
 
 This is a small example of a large shift. Pipelines used to be fixed code with powerful credentials. Now they are being driven by agents, through requests and pull requests, at a pace no person reviews line by line. The credentials did not get smaller, and the code stopped being fixed. That is the gap RiskMandate exists to map and close ([approve at altitude](/articles/approve-at-altitude.html)), and a pipeline needs it as much as any agent does.
 
 ## What this does not claim {#limits}
 
-- **Nothing was exploited.** This is a reading of the grants and the workflow, 16 November 2026.
+- **Nothing was exploited.** This is a reading of the grants and the workflow, 16 November 2026, and of the factory's code again on 19 November.
 - **I have not checked** whether a required reviewer is set on the apply environment, or whether dev and `.github/` are protected.
 - **The proposed limits and brokers do not exist yet;** FAC-007, the pipeline's behaviour policy, is on the factory's board as proposed.
 - **The capability names in the figure** follow the grammar of abp.sgit.ai, applied to a pipeline; they are not part of the published list.
 
 ## Where this comes from {#sources}
 
-AgentiCCells__Site__Factory, read on 16 November 2026: `docs/github-app.md`, `docs/aws-oidc.md`, `docs/SETUP.md`, `.github/workflows/apply.yml`, `build/first-pass.mjs`, `board/FAC-007.md` and the merge commits. [abp.sgit.ai](https://abp.sgit.ai/): [the capability grammar](https://abp.sgit.ai/model/capabilities/index.html), [the undo class](https://abp.sgit.ai/model/undo/index.html) and [the barrier](https://abp.sgit.ai/model/barriers/index.html). Earlier on this site: [the site factory works](/articles/the-site-factory-works.html), [where assist becomes execute](/articles/where-assist-becomes-execute.html), [what can your agent reach?](/articles/what-can-your-agent-reach.html), [approve at altitude](/articles/approve-at-altitude.html).
+AgentiCCells__Site__Factory, read on 16 November 2026, and again on 19 November at 2f17c90 (`build/real.mjs`, `build/access.mjs`, `build/io.mjs`, `docs/github-app.md`, `docs/aws-oidc.md`): `docs/github-app.md`, `docs/aws-oidc.md`, `docs/SETUP.md`, `.github/workflows/apply.yml`, `build/first-pass.mjs`, `board/FAC-007.md` and the merge commits. [abp.sgit.ai](https://abp.sgit.ai/): [the capability grammar](https://abp.sgit.ai/model/capabilities/index.html), [the undo class](https://abp.sgit.ai/model/undo/index.html) and [the barrier](https://abp.sgit.ai/model/barriers/index.html). Earlier on this site: [the site factory works](/articles/the-site-factory-works.html), [where assist becomes execute](/articles/where-assist-becomes-execute.html), [what can your agent reach?](/articles/what-can-your-agent-reach.html), [approve at altitude](/articles/approve-at-altitude.html).

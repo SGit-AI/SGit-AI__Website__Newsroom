@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-19 | published | 1,531 | first published | this release | [current](../feature-behaviour-policies.md) |
+| **v1.0.0** | 2026-11-19 | published | 1,531 | first published | [`0011e1b34`](https://github.com/SGit-AI/SGit-AI__Website/commit/0011e1b3415591921da2d23c0c38529e7757b186) | [current](../feature-behaviour-policies.md) |
 
 [← Back to the article](../feature-behaviour-policies.md) · [All articles](../index.md)
 

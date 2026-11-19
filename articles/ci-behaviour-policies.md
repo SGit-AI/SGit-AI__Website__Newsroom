@@ -10,7 +10,7 @@
 
 # CI behaviour policies: to create one repository and one DNS record per request, our site factory's pipeline holds the power to create, change or delete every repository in the organisation and to point any subdomain anywhere, and why pipelines now need the same behaviour policies as agents
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-16 · [article v1.0.0](versions/ci-behaviour-policies.md) · [newsroom v0.14.116](https://newsroom.sgit.ai/admin/versions.html) · abpcigithub-actionssecurityleast-privilegeagenticcellsriskmandatearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-11-16 · [article v1.1.0, 2 versions](versions/ci-behaviour-policies.md) · [newsroom v0.14.116](https://newsroom.sgit.ai/admin/versions.html) · abpcigithub-actionssecurityleast-privilegeagenticcellsriskmandatearticle
 
 ***Abstract:** The AgentiCCells site factory turns a committed request into a live website in under three minutes, and it holds no long-lived key. But to do what is a simple thing, create one repository and make one DNS change, we ended up giving the pipeline far more power than it needs. Its GitHub App token covers the whole organisation, with write access to administration, contents and workflows on every repository, including the power to delete them; nothing limits how many repositories it can create. Its AWS role is well scoped by type and zone, but it may create, change or delete any CNAME under agenticcells.site and point it anywhere. Why should a pipeline that makes one site per request be able to make five hundred repositories, or thousands of DNS entries? In the past we got away with this because pipeline code did not change: you could lock it and use other security primitives around it. Here it does change. Requests arrive as pull requests, agents write them, and the workflow runs as it is in the merged commit, so a pull request that also edits the workflow would inherit the whole grant. This is the same problem Agent Behaviour Policies address for agents, and the same grammar fits: each capability with a reach, an undo class, a limit, and a boundary that enforces it from outside the grant. Here is that mapping, half seriously named CI behaviour policies.*
 
@@ -23,6 +23,7 @@ What the site factory's pipeline was granted, and what one request actually need
 - **No limits on scale:** nothing stops five hundred repositories or thousands of DNS records.
 - **The old excuse no longer holds:** pipeline code used to be fixed; here requests arrive as pull requests, and a pull request can change the workflow.
 - **The fix is a behaviour policy for the pipeline:** reach, undo, limit, and a boundary outside the grant.
+- **Updated 19 November:** the job is nine calls; since the 16th the grant has grown to a second organisation and a second DNS zone ([three days later](#update)).
 
 ## A simple job, a large grant
 
@@ -61,20 +62,37 @@ An [Agent Behaviour Policy](https://abp.sgit.ai/what-is-an-abp/index.html) recor
 
 Each limit is enforced by something the pipeline's grant does not include. That is the test that matters: "a control bounds a grant only if it is enforced by something the grant does not include."
 
+## Three days later: the whole list, and a wider grant
+
+On 19 November I went back to the factory's code to write down exactly what one request makes it do. It is a short list, nine calls in all:
+
+- **Create the repository** in the owner's organisation.
+- **Push the seed commit** from the site template, which includes the site's own Pages workflow.
+- **Set the repository's settings:** default branch `dev`, and the website in its About box.
+- **Turn on GitHub Pages,** built by GitHub Actions, with a `github-pages` environment that only `dev` may deploy from.
+- **Set the Pages custom domain,** after the DNS step.
+- **Start the site's Pages workflow** on `dev`.
+- **Add the owner as a collaborator** and **give the team its access** to the new repository.
+- **Write one CNAME** in Route 53, from the site's name to GitHub Pages.
+
+Against that list, the grant has grown since I wrote this piece three days ago. On 17 November the App was also installed on the PrompTugal organisation, on all repositories, so that the factory could make sites there; its own notes say it plainly: "the App's power now covers two organisations". The DNS role now covers a second zone, promptugal.news, still CNAME records only. And the team step needs a permission the App's documented settings do not list: adding a team to a repository needs the organisation permission Members, and the factory's code says so when GitHub refuses. Whether it has been granted is not in the repository.
+
+So the gap is now nine calls against the power to change the settings and workflows of, and delete, every repository in two organisations. Every one of the nine is a small, nameable action. Written as a [feature behaviour policy](feature-behaviour-policies.md), the factory's job is a page, and each line of it can be enforced by something other than the pipeline's own grant. That is why I think pipelines, and the actions they call, need behaviour policies of their own: the power we hand a pipeline is decided by what the platform's permission model can express, not by what the job needs.
+
 ## Why this matters beyond one factory
 
 This is a small example of a large shift. Pipelines used to be fixed code with powerful credentials. Now they are being driven by agents, through requests and pull requests, at a pace no person reviews line by line. The credentials did not get smaller, and the code stopped being fixed. That is the gap RiskMandate exists to map and close ([approve at altitude](approve-at-altitude.md)), and a pipeline needs it as much as any agent does.
 
 ## What this does not claim
 
-- **Nothing was exploited.** This is a reading of the grants and the workflow, 16 November 2026.
+- **Nothing was exploited.** This is a reading of the grants and the workflow, 16 November 2026, and of the factory's code again on 19 November.
 - **I have not checked** whether a required reviewer is set on the apply environment, or whether dev and `.github/` are protected.
 - **The proposed limits and brokers do not exist yet;** FAC-007, the pipeline's behaviour policy, is on the factory's board as proposed.
 - **The capability names in the figure** follow the grammar of abp.sgit.ai, applied to a pipeline; they are not part of the published list.
 
 ## Where this comes from
 
-AgentiCCells__Site__Factory, read on 16 November 2026: `docs/github-app.md`, `docs/aws-oidc.md`, `docs/SETUP.md`, `.github/workflows/apply.yml`, `build/first-pass.mjs`, `board/FAC-007.md` and the merge commits. [abp.sgit.ai](https://abp.sgit.ai/): [the capability grammar](https://abp.sgit.ai/model/capabilities/index.html), [the undo class](https://abp.sgit.ai/model/undo/index.html) and [the barrier](https://abp.sgit.ai/model/barriers/index.html). Earlier on this site: [the site factory works](the-site-factory-works.md), [where assist becomes execute](where-assist-becomes-execute.md), [what can your agent reach?](what-can-your-agent-reach.md), [approve at altitude](approve-at-altitude.md).
+AgentiCCells__Site__Factory, read on 16 November 2026, and again on 19 November at 2f17c90 (`build/real.mjs`, `build/access.mjs`, `build/io.mjs`, `docs/github-app.md`, `docs/aws-oidc.md`): `docs/github-app.md`, `docs/aws-oidc.md`, `docs/SETUP.md`, `.github/workflows/apply.yml`, `build/first-pass.mjs`, `board/FAC-007.md` and the merge commits. [abp.sgit.ai](https://abp.sgit.ai/): [the capability grammar](https://abp.sgit.ai/model/capabilities/index.html), [the undo class](https://abp.sgit.ai/model/undo/index.html) and [the barrier](https://abp.sgit.ai/model/barriers/index.html). Earlier on this site: [the site factory works](the-site-factory-works.md), [where assist becomes execute](where-assist-becomes-execute.md), [what can your agent reach?](what-can-your-agent-reach.md), [approve at altitude](approve-at-altitude.md).
 
 ## Threads
 
@@ -84,11 +102,13 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#ci-beha
 
 - [The site factory works: three AgentiCCells sites made by hand, then one made by a commit in two minutes and thirty-nine seconds, live over https with a first version written by Claude Code, and the long list of what it took to make something that hard look easy](the-site-factory-works.md) Three AgentiCCells sites by hand, then one by a commit: live over https in 87 seconds, a first version by Claude Code at 159.
 - [Where assist becomes execute: tiering AI agents by what they can reach and whether it can be undone, how Agent Behaviour Policies drew that line for more than a hundred agents at Web Summit, and the rule that failed because it was only a rule](where-assist-becomes-execute.md) Where assist becomes execute: tier AI agents by reach and undo class, enforce each tier with a boundary, and learn from the rule that failed.
+- [Feature behaviour policies: taking the idea of agent behaviour policies down to every feature, bug fix and resource, so that a feature's policy is also its description, what changed is the difference between two policies, the gap between what a resource can do and what a feature needs is where the vulnerabilities live, and signed policies travelling with each request make a bug or an attack a path that was never supposed to exist](feature-behaviour-policies.md) Write a behaviour policy per feature: it describes the feature, sets what to enforce, and makes a bug or attack a path outside it.
 - [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](approve-at-altitude.md) Models can draft two hundred decision policies; nobody can sign two hundred. Approve at altitude: each level may narrow the one above, never widen it.
 - [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](what-can-your-agent-reach.md) RiskMandate and the Agent Behaviour Policy in plain words: what it does, why it is not real time, which agents it covers, and how it gets into the room.
 
 ### Continued by
 
+- [Policies in practice: four places a behaviour policy earns its keep, measured on a real Google key whose reach is five APIs while the feature uses one, a signed policy for the factory's CI changes, requests that carry the policies they act under, and release notes that say what each fix closes and what it must not open](policies-in-practice.md) Four uses of feature behaviour policies: a real key's gap, signed CI changes, requests carrying policies, and release notes as fixes.
 - [Deploy sgit in your own environment, from a CI pipeline: one Docker image, ciphertext in your own S3 bucket in the region you choose, an access token only you hold, and the pipeline pattern we learned building the AgentiCCells site factory, a protected environment, AWS through OpenID Connect with no keys, a role that trusts one repository and one environment, check workflows before anything real, and a full cycle that deploys, tests and tears down](deploy-sgit-from-ci.md) Run your own sgit server in your own AWS account and region, deployed from CI with the site factory's pattern: OIDC, no keys, checks first.
 - [Fork it: making forking the way people adopt our cells and template sites, as GitHub made it the way people adopt code, with five ways to make a cell yours, what a fork-ready repository needs, paths from one repository to the next, a hub that lets usage decide what we build, and the brief for the team](fork-it.md) Forking as the way people adopt our cells: fork a template, point Claude at it, and it is yours. Five ways, fork-ready repositories, and a hub.
 - [Our workflow on Odoo 20, built and measured: a bills agent with no Odoo credential, a policy check that allowed two proposals and stopped three, a signed approval, a narrow broker, a grant measured from Odoo itself by a new module, and what Odoo's default user role quietly allows](our-workflow-on-odoo-20.md) Our workflow on Odoo 20, built in 98 seconds: a keyless agent, a policy check, a signed approval, a narrow broker and a grant measured from Odoo.

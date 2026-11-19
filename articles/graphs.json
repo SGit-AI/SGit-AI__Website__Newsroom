@@ -55,6 +55,139 @@
   ],
   "articles": [
     {
+      "slug": "policies-in-practice",
+      "title": "Policies in practice: four places a behaviour policy earns its keep, measured on a real Google key whose reach is five APIs while the feature uses one, a signed policy for the factory's CI changes, requests that carry the policies they act under, and release notes that say what each fix closes and what it must not open",
+      "date": "2026-11-19",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/policies-in-practice.html",
+      "markdown": "https://newsroom.sgit.ai/articles/policies-in-practice.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/policies-in-practice.webp",
+      "teaser": "Four uses of feature behaviour policies: a real key's gap, signed CI changes, requests carrying policies, and release notes as fixes.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "behaviour-policies",
+        "abp",
+        "security",
+        "keys",
+        "ci",
+        "signing",
+        "release-notes",
+        "article"
+      ],
+      "links_out": [
+        "feature-behaviour-policies",
+        "ci-behaviour-policies",
+        "application-behaviour-policies",
+        "a-page-we-never-charge"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "pip-key.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pip-key.webp",
+          "caption": "One real key: what it allows, what the replays feature uses, and the barrier on each row, typed.",
+          "kind": "table"
+        }
+      ],
+      "graph": {
+        "slug": "policies-in-practice",
+        "teaser": "Four uses of feature behaviour policies: a real key's gap, signed CI changes, requests carrying policies, and release notes as fixes.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Writing behaviour policies for a real key, a CI capability, requests and fixes shows the gap row by row with each barrier typed, and makes the policy the description, the permission set and the test at once.",
+        "nodes": [
+          {
+            "id": "key",
+            "label": "A real key's gap",
+            "kind": "example",
+            "summary": "Five APIs, one used."
+          },
+          {
+            "id": "barrier",
+            "label": "Barriers typed",
+            "kind": "concept",
+            "summary": "Boundary, setting, expectation."
+          },
+          {
+            "id": "factory",
+            "label": "CI changes policy",
+            "kind": "example",
+            "summary": "Signed, self-enforced."
+          },
+          {
+            "id": "requests",
+            "label": "Requests with policies",
+            "kind": "method",
+            "summary": "Checked by server and observer."
+          },
+          {
+            "id": "fixes",
+            "label": "Fixes as policies",
+            "kind": "method",
+            "summary": "Closes, keeps, must not open."
+          },
+          {
+            "id": "one",
+            "label": "Description, permission, test",
+            "kind": "claim",
+            "summary": "One file."
+          }
+        ],
+        "edges": [
+          {
+            "from": "barrier",
+            "to": "key",
+            "rel": "example-of"
+          },
+          {
+            "from": "factory",
+            "to": "one",
+            "rel": "example-of"
+          },
+          {
+            "from": "requests",
+            "to": "one",
+            "rel": "depends-on"
+          },
+          {
+            "from": "fixes",
+            "to": "one",
+            "rel": "example-of"
+          },
+          {
+            "from": "key",
+            "to": "barrier",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "feature-behaviour-policies",
+            "ci-behaviour-policies",
+            "application-behaviour-policies",
+            "a-page-we-never-charge"
+          ],
+          "pages": [],
+          "sites": [
+            "https://github.com/PrompTugal/PrompTugal__News__Website"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Only a boundary is a control",
+            "why": "Dinis."
+          },
+          {
+            "text": "a call outside the policy that came with it",
+            "why": "Dinis."
+          }
+        ]
+      }
+    },
+    {
       "slug": "feature-behaviour-policies",
       "title": "Feature behaviour policies: taking the idea of agent behaviour policies down to every feature, bug fix and resource, so that a feature's policy is also its description, what changed is the difference between two policies, the gap between what a resource can do and what a feature needs is where the vulnerabilities live, and signed policies travelling with each request make a bug or an attack a path that was never supposed to exist",
       "date": "2026-11-19",
@@ -82,7 +215,10 @@
         "approve-at-altitude",
         "a-page-we-never-charge"
       ],
-      "links_in": [],
+      "links_in": [
+        "policies-in-practice",
+        "ci-behaviour-policies"
+      ],
       "figures": [
         {
           "file": "fbp-tree.webp",
@@ -821,6 +957,7 @@
         "promptugal-news-the-newsroom-we-ran"
       ],
       "links_in": [
+        "policies-in-practice",
         "feature-behaviour-policies"
       ],
       "figures": [
@@ -10538,10 +10675,12 @@
       "links_out": [
         "the-site-factory-works",
         "where-assist-becomes-execute",
+        "feature-behaviour-policies",
         "approve-at-altitude",
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "policies-in-practice",
         "deploy-sgit-from-ci",
         "fork-it",
         "our-workflow-on-odoo-20",
@@ -40522,6 +40661,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "policies-in-practice",
         "feature-behaviour-policies",
         "who-carries-the-risk"
       ],

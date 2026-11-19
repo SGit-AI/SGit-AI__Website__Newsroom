@@ -73,6 +73,35 @@
   ],
   "articles": [
     {
+      "slug": "policies-in-practice",
+      "title": "Policies in practice: four places a behaviour policy earns its keep, measured on a real Google key whose reach is five APIs while the feature uses one, a signed policy for the factory's CI changes, requests that carry the policies they act under, and release notes that say what each fix closes and what it must not open",
+      "date": "2026-11-19",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/policies-in-practice.html",
+      "markdown": "https://newsroom.sgit.ai/articles/policies-in-practice.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/policies-in-practice.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/policies-in-practice.json",
+      "teaser": "Four uses of feature behaviour policies: a real key's gap, signed CI changes, requests carrying policies, and release notes as fixes.",
+      "summary": "Feature behaviour policies are an idea until they are used on something real. This piece takes four. First, one of our own keys. Its reach is five Google APIs across four hosts, open to any session on its environment; the feature that uses it, the replays feed, needs one API. Only one row of that gap has a real boundary; the rest are settings and expectations. Second, the factory's CI changes: a feature policy that says create this repository, make this change and nothing else, signed, and handed to the agent that runs it, so that the agent enforces its own mandate. Third, requests that carry the signed policies they act under, so that a server, or an observer without the context, can check a call against what it was meant to do. Fourth, release notes written as bug behaviour policies, using three fixes from this newsroom's own releases today: each says what it closed, what it kept, and what it must not open. In each case the policy is the description, the permission set and the test.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "behaviour-policies",
+        "abp",
+        "security",
+        "keys",
+        "ci",
+        "signing",
+        "release-notes",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "feature-behaviour-policies",
       "title": "Feature behaviour policies: taking the idea of agent behaviour policies down to every feature, bug fix and resource, so that a feature's policy is also its description, what changed is the difference between two policies, the gap between what a resource can do and what a feature needs is where the vulnerabilities live, and signed policies travelling with each request make a bug or an attack a path that was never supposed to exist",
       "date": "2026-11-19",

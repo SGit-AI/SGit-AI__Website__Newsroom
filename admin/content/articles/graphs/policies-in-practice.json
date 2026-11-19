@@ -1,0 +1,30 @@
+{
+ "slug": "policies-in-practice",
+ "teaser": "Four uses of feature behaviour policies: a real key's gap, signed CI changes, requests carrying policies, and release notes as fixes.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "Writing behaviour policies for a real key, a CI capability, requests and fixes shows the gap row by row with each barrier typed, and makes the policy the description, the permission set and the test at once.",
+ "nodes": [
+  {"id": "key", "label": "A real key's gap", "kind": "example", "summary": "Five APIs, one used."},
+  {"id": "barrier", "label": "Barriers typed", "kind": "concept", "summary": "Boundary, setting, expectation."},
+  {"id": "factory", "label": "CI changes policy", "kind": "example", "summary": "Signed, self-enforced."},
+  {"id": "requests", "label": "Requests with policies", "kind": "method", "summary": "Checked by server and observer."},
+  {"id": "fixes", "label": "Fixes as policies", "kind": "method", "summary": "Closes, keeps, must not open."},
+  {"id": "one", "label": "Description, permission, test", "kind": "claim", "summary": "One file."}
+ ],
+ "edges": [
+  {"from": "barrier", "to": "key", "rel": "example-of"},
+  {"from": "factory", "to": "one", "rel": "example-of"},
+  {"from": "requests", "to": "one", "rel": "depends-on"},
+  {"from": "fixes", "to": "one", "rel": "example-of"},
+  {"from": "key", "to": "barrier", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["feature-behaviour-policies", "ci-behaviour-policies", "application-behaviour-policies", "a-page-we-never-charge"],
+  "pages": [],
+  "sites": ["https://github.com/PrompTugal/PrompTugal__News__Website"]
+ },
+ "quotes": [
+  {"text": "Only a boundary is a control", "why": "Dinis."},
+  {"text": "a call outside the policy that came with it", "why": "Dinis."}
+ ]
+}
