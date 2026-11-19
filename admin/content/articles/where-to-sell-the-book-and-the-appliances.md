@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: Two physical products are coming, and they need places to be sold. The first is the printed edition of One Human, Nine Agents, Nineteen Hours, whose ebook is already on Leanpub, in about two weeks. The second is the sovereign website appliances, a Raspberry Pi or a tablet with a site on it, which go on Kickstarter from 1 to 31 December and on general sale from 1 January 2027. This maps where to sell each, from the platforms' own pages on 19 November 2026. For the book: Leanpub sells only ebooks; Amazon's KDP has no pre-orders for print, only a scheduled release date; IngramSpark can open pre-orders and reaches Amazon, Waterstones, Foyles, Blackwell's and Gardners, but needs our own ISBNs, £93 for one or £174 for ten. For the appliances: nowhere but Kickstarter during the campaign, then our own shop first, Kickstarter's late pledges, eBay, Amazon and OnBuy, with Etsy ruled out by its own rules. And selling a bundle under our own name makes us its manufacturer in law, with CE or UKCA marking and WEEE registration, and the Raspberry Pi name used only as its owners allow.
-version: v999.0.0
+version: v0.14.178
 license: https://creativecommons.org/licenses/by/4.0/
 tags: books, kickstarter, raspberry-pi, ecommerce, amazon, go-to-market, article
 status: published

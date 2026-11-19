@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: A technical publisher has asked whether my book, One Human, Nine Agents, Nineteen Hours, is available for licensing. It is the first such approach, and probably not the last, so this is how I want to think about all of them, not one. Several technical publishers take books that began elsewhere, even if few say so on their author pages: Clojure for the Brave and True and Understanding ECMAScript 6 went from Leanpub to No Starch, Writing APIs With Lumen from Leanpub to Apress, Think Python from a self-published free book to O'Reilly, which kept its Creative Commons licence. What publishers publish about terms varies: the Pragmatic Bookshelf says royalties start at 42%, No Starch shows a menu from 15% with no advance to 10% with an $8,000 one and an exclusive grant in all forms and languages for the life of copyright, others say only "competitive". Leanpub's own terms are the starting point: the author keeps the copyright, Leanpub's licence is non-exclusive, and Leanpub suggests asking a publisher to carve out the ebook. So my questions are about scope: which formats, languages and territories, for how long, whether the Leanpub edition stays on sale with its updates, and what comes back if the publisher does not use it.
-version: v999.0.0
+version: v0.14.178
 license: https://creativecommons.org/licenses/by/4.0/
 tags: books, publishing, leanpub, licensing, rights, strategy, article
 status: published
