@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: The second idea I gave the sovereign website team is one I want to run continuously, because it is the best way to see what an agent team does when it is left to work over time. Build websites for the moment: topical sites around what people are looking for now, built quickly, live while they matter, then archived. The team has already started picking: GTA VI, which its publisher has set for release today, 19 November, and Christmas delivery times. We have what it takes: Claude, search, embeddings, the Google APIs, a factory that makes a site from one commit, and now a place to put them. The loop: a trend agent proposes five sites a week; I pick; a small team builds each in a day within a token budget; every fact is sourced, nothing is presented as official, and each site has a sunset date. The point is to drive traffic, show the workflows working, and capture what we built at Web Summit, from the X-ray and the voice-to-deck demo to the Galaxy. A first calendar runs from now to January, and includes a site for my own book.
-version: v999.0.0
+version: v0.14.179
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereign-website, agents, experiments, topical, traffic, agenticcells, article
 status: published

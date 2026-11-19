@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: Every tool on tools.sgraph.ai exists because I had a problem and built something for it: encrypting a file, making an SSH key, opening a vault in the browser, transcribing a voice note, splitting the audio out of a video. There are 49 of them now, and about 90 shared components, and some became better than anything else I use. They also show the limit of an explorer project: one repository, one site, harder and harder to maintain. And they answer a frustration with the web itself, where simple things are buried under ads and hidden behind sign-ups. Sovereign websites are the place to put them. Each tool gets its own site at its own address, self-contained, documented and good to look at, on GitHub Pages for pennies, forkable, open to a maintainer who wants to take it on, and with a small team of agents inside, and a model where it helps, even one running in the browser. This piece maps the tools by family, proposes the order, starting with the simple ones the factory has already begun, a shared component library, the versioning model the tools already half use, latest and pinned versions with their security notes, signed hashes kept in a separate repository so a compromised site shows, and a team of teams to run it all.
-version: v999.0.0
+version: v0.14.179
 license: https://creativecommons.org/licenses/by/4.0/
 tags: tools, sovereign-website, open-source, components, versioning, agent-teams, article
 status: published
