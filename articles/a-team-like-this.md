@@ -90,6 +90,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#a-team
 
 ### Continued by
 
+- [A website with a team inside: why a Sovereign Agentic Website is delivered not as a site but as a site with six or seven agents already set up and coordinated in its repository, a conductor, a designer, a writer, a developer, a reviewer, a translator and a keeper, each with a role and a behaviour policy, and what that means for the person who owns it](a-website-with-a-team-inside.md) A Sovereign Agentic Website comes with a team inside: seven agents set up and coordinated in the owner's repository, each with a behaviour policy.
 - [Gaining speed: a series on what happens when you productise the way you build, PrompTugal.news going from a newsroom at Web Summit to a data intelligence platform for Portugal's places in two weeks, a factory that turns one commit into a site with its owner, money that flows back to the sources, sites built on the data in minutes, the librarian, and a team like this for sale](gaining-speed.md) A series on what happens when you productise how you build: PrompTugal.news from a summit newsroom to a data platform in two weeks.
 
 [All articles](index.md) · [All graphs](graphs.md)

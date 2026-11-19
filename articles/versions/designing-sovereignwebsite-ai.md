@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-19 | published | 1,409 | first published | this release | [current](../designing-sovereignwebsite-ai.md) |
+| **v1.0.0** | 2026-11-19 | published | 1,409 | first published | [`5a31bdfc7`](https://github.com/SGit-AI/SGit-AI__Website/commit/5a31bdfc7bc1fb62ceca3a91dd9a324890a233ca) | [current](../designing-sovereignwebsite-ai.md) |
 
 [← Back to the article](../designing-sovereignwebsite-ai.md) · [All articles](../index.md)
 

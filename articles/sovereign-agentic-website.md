@@ -83,6 +83,7 @@ Agents & policy[This article as a graph →](graphs.md#sovereign-agentic-website
 
 ### Continued by
 
+- [A website with a team inside: why a Sovereign Agentic Website is delivered not as a site but as a site with six or seven agents already set up and coordinated in its repository, a conductor, a designer, a writer, a developer, a reviewer, a translator and a keeper, each with a role and a behaviour policy, and what that means for the person who owns it](a-website-with-a-team-inside.md) A Sovereign Agentic Website comes with a team inside: seven agents set up and coordinated in the owner's repository, each with a behaviour policy.
 - [Designing sovereignwebsite.ai: the brief for the team that will build the site of our first mass-market product, how the stack now has four layers, SGit, RiskMandate, AgentiCCells and Sovereign Website, six ways to say what it is, the ten pages, the sovereignty maturity model at its centre, how to build the site as a sovereign website itself, and five homepage designs to choose from](designing-sovereignwebsite-ai.md) The brief for sovereignwebsite.ai: a four-layer stack, six messages, ten pages, the sovereignty maturity model and five designs.
 
 [All articles](index.md) · [All graphs](graphs.md)

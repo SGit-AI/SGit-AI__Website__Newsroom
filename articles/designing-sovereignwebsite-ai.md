@@ -106,6 +106,10 @@ Agents & policy[This article as a graph →](graphs.md#designing-sovereignwebsit
 - [The sovereign website: a pivot brief for agenticcells.ai, what the site says today and what it should say next, sovereignty as the headline, a website you own, control, change and can run anywhere, the deliverables explained, the infographics to draw, five homepage designs to choose from, and the partner programme and examples that already prove it](the-sovereign-website.md) A pivot brief for agenticcells.ai: lead with sovereignty, show the deliverables, draw the infographics, and make five homepage designs.
 - [The website cell: what we now sell, a GitHub repository fully set up with a live site on its own address, a CLAUDE.md and a behaviour policy, five designs by a team of agents, and then the site is yours to change with your own Claude, what it should cost, how it compares with Wix, Squarespace, Framer, Lovable and a freelancer, who already sells something close to it, and where to find buyers and partners](the-website-cell.md) The website cell mapped: a repository fully set up, five designs by agents, owned with your own Claude; price, competitors, partners.
 
+### Continued by
+
+- [A website with a team inside: why a Sovereign Agentic Website is delivered not as a site but as a site with six or seven agents already set up and coordinated in its repository, a conductor, a designer, a writer, a developer, a reviewer, a translator and a keeper, each with a role and a behaviour policy, and what that means for the person who owns it](a-website-with-a-team-inside.md) A Sovereign Agentic Website comes with a team inside: seven agents set up and coordinated in the owner's repository, each with a behaviour policy.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 495 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=495)
