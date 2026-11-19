@@ -1,0 +1,106 @@
+{
+  "slug": "simple-on-top-of-years",
+  "teaser": "Why a startup needs something very easy, and how a website opened from a QR code sits on years of layers learnt one at a time.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Building from the bottom up, from provenance, understanding and determinism, ended in a simple product, a website opened from a QR code, because each layer underneath was learnt on its own and is now connected; that learning and velocity is the moat.",
+  "nodes": [
+    {
+      "id": "easy",
+      "label": "Something very easy",
+      "kind": "claim",
+      "summary": "Narrow, at scale."
+    },
+    {
+      "id": "bottom",
+      "label": "Bottom up",
+      "kind": "method",
+      "summary": "Provenance, determinism."
+    },
+    {
+      "id": "layers",
+      "label": "The layers",
+      "kind": "artefact",
+      "summary": "CI to the factory."
+    },
+    {
+      "id": "dots",
+      "label": "Connecting the dots",
+      "kind": "concept",
+      "summary": "Each layer lived."
+    },
+    {
+      "id": "moat",
+      "label": "Velocity as the moat",
+      "kind": "claim",
+      "summary": "Code can be forked."
+    },
+    {
+      "id": "sgsend",
+      "label": "SG/Send's lesson",
+      "kind": "example",
+      "summary": "Users test once."
+    }
+  ],
+  "edges": [
+    {
+      "from": "bottom",
+      "to": "easy",
+      "rel": "produces"
+    },
+    {
+      "from": "layers",
+      "to": "dots",
+      "rel": "depends-on"
+    },
+    {
+      "from": "dots",
+      "to": "easy",
+      "rel": "produces"
+    },
+    {
+      "from": "moat",
+      "to": "layers",
+      "rel": "depends-on"
+    },
+    {
+      "from": "sgsend",
+      "to": "easy",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "from-send-to-sgit",
+      "a-secret-is-a-qr-code",
+      "how-a-vault-works",
+      "the-site-factory-works",
+      "the-second-run",
+      "governance-from-zero",
+      "a-team-like-this",
+      "your-website-from-a-vault",
+      "a-website-with-a-team-inside"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "I do not want the black magic, the parts that work but nobody can say why.",
+      "why": "Dinis."
+    },
+    {
+      "text": "A layer earns its place by making the thing on top simpler for the person using it.",
+      "why": "Dinis."
+    }
+  ],
+  "figures": [
+    {
+      "file": "sty-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sty-layers.webp",
+      "caption": "Simple on top, years underneath: the layers under a website opened from a QR code.",
+      "kind": "concept"
+    }
+  ]
+}

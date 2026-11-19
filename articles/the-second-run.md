@@ -113,6 +113,10 @@ Agents & policy[This article as a graph →](graphs.md#the-second-run)
 - [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](where-a-check-runs.md) Tests as enforcers of behaviour policies, and what moving them out of the agent's environment would gain, measured on this newsroom.
 - [Policies in practice: four places a behaviour policy earns its keep, measured on a real Google key whose reach is five APIs while the feature uses one, a signed policy for the factory's CI changes, requests that carry the policies they act under, and release notes that say what each fix closes and what it must not open](policies-in-practice.md) Four uses of feature behaviour policies: a real key's gap, signed CI changes, requests carrying policies, and release notes as fixes.
 
+### Continued by
+
+- [Simple on top of years: why a startup has to find something very easy, very narrow and able to scale, why building from the bottom up, from provenance, understanding and determinism, ended in a simple product anyway, and how a website in five designs opened from a QR code sits on a CI pipeline, zero-knowledge sharing, sgit, vaults, keys and agentic teams, each learnt on its own](simple-on-top-of-years.md) Why a startup needs something very easy, and how a website opened from a QR code sits on years of layers learnt one at a time.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 492 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=492)

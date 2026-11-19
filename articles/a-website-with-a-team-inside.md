@@ -99,6 +99,8 @@ Agents & policy[This article as a graph →](graphs.md#a-website-with-a-team-ins
 
 ### Continued by
 
+- [Sovereign websites, the investment case: PrompTugal's investor decks rewritten for a deliverable that is needed everywhere, in every language, in a market built on rent and lock-in, a one-off delivery that is already fully agentic, value given before payment through a demo in a vault, a long list of upsells, and why this is now a proper, scalable, investable architecture](sovereign-websites-the-investment-case.md) Sovereign websites as an investment: one deliverable needed everywhere, a one-off agentic delivery, value first through a vault demo, and upsells.
+- [Simple on top of years: why a startup has to find something very easy, very narrow and able to scale, why building from the bottom up, from provenance, understanding and determinism, ended in a simple product anyway, and how a website in five designs opened from a QR code sits on a CI pipeline, zero-knowledge sharing, sgit, vaults, keys and agentic teams, each learnt on its own](simple-on-top-of-years.md) Why a startup needs something very easy, and how a website opened from a QR code sits on years of layers learnt one at a time.
 - [Your website, from a vault: how to show someone five versions of their own website without publishing anything, sealed in an encrypted sgit vault and opened with a QR code, a link or a zip on one drop page, the demo pipeline from a name to an email, and how a demo becomes their sovereign website without starting again](your-website-from-a-vault.md) Show someone five versions of their own website without publishing anything: sealed in a vault, opened with a QR code, a link or a zip.
 
 [All articles](index.md) · [All graphs](graphs.md)

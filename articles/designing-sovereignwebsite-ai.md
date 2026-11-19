@@ -108,6 +108,7 @@ Agents & policy[This article as a graph →](graphs.md#designing-sovereignwebsit
 
 ### Continued by
 
+- [Sovereign websites, the investment case: PrompTugal's investor decks rewritten for a deliverable that is needed everywhere, in every language, in a market built on rent and lock-in, a one-off delivery that is already fully agentic, value given before payment through a demo in a vault, a long list of upsells, and why this is now a proper, scalable, investable architecture](sovereign-websites-the-investment-case.md) Sovereign websites as an investment: one deliverable needed everywhere, a one-off agentic delivery, value first through a vault demo, and upsells.
 - [A website with a team inside: why a Sovereign Agentic Website is delivered not as a site but as a site with six or seven agents already set up and coordinated in its repository, a conductor, a designer, a writer, a developer, a reviewer, a translator and a keeper, each with a role and a behaviour policy, and what that means for the person who owns it](a-website-with-a-team-inside.md) A Sovereign Agentic Website comes with a team inside: seven agents set up and coordinated in the owner's repository, each with a behaviour policy.
 
 [All articles](index.md) · [All graphs](graphs.md)

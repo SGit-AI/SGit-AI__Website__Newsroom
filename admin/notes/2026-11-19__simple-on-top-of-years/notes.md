@@ -1,0 +1,3 @@
+# Notes: simple-on-top-of-years (19 November 2026)
+
+Dinis, in writer-10's session: a startup must find something super easy, narrow and scalable; he built bottom-up from provenance, understanding and determinism, no black magic, and ended in a simple solution sitting on years of work: the CI pipeline almost first, then the vaults, the QR code, the agentic flows, learning Claude; connecting the dots. Dates from the newsroom's articles (from-send-to-sgit, a-secret-is-a-qr-code, how-a-vault-works, the-site-factory-works). The velocity line is quoted from PrompTugal's investor deck 1, slide 7, in its public repository (read by a read-only helper agent on 19 November).

@@ -1,0 +1,30 @@
+{
+ "slug": "what-is-a-sovereign-website",
+ "teaser": "What a sovereign website is: owned and movable, commodity only, seven principles, a maturity model from rented to proven, and every host.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "A sovereign website is one you own and can move, built only on commodity technology because one proprietary part anywhere is enough to lock it in; seven principles and a maturity model from rented to proven define it, and deploying the same commit to every host proves it.",
+ "nodes": [
+  {"id": "category", "label": "Defining the category", "kind": "concept", "summary": "Like serverless."},
+  {"id": "lockin", "label": "One proprietary part locks you in", "kind": "claim", "summary": "However small."},
+  {"id": "principles", "label": "Seven principles", "kind": "artefact", "summary": "To test a site against."},
+  {"id": "model", "label": "The maturity model", "kind": "method", "summary": "0 rented to 5 proven."},
+  {"id": "hosts", "label": "One site, every host", "kind": "method", "summary": "The proof."},
+  {"id": "org", "label": "sovereignwebsite.org", "kind": "artefact", "summary": "The open principles."}
+ ],
+ "edges": [
+  {"from": "principles", "to": "lockin", "rel": "answers"},
+  {"from": "model", "to": "principles", "rel": "extends"},
+  {"from": "hosts", "to": "principles", "rel": "depends-on"},
+  {"from": "category", "to": "principles", "rel": "produces"},
+  {"from": "org", "to": "principles", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["sovereign-agentic-website", "sovereignty-you-can-move", "no-lock-in", "the-website-cell", "your-own-registrar", "feature-behaviour-policies"],
+  "pages": [],
+  "sites": ["https://sovereignwebsite.org/"]
+ },
+ "quotes": [
+  {"text": "Once there is a piece of proprietary technology in the middle, it does not matter how small it is: you cannot move the site.", "why": "Dinis."},
+  {"text": "Agentic is how the site is built and changed: by a team of agents, and then by your own AI.", "why": "Dinis."}
+ ]
+}

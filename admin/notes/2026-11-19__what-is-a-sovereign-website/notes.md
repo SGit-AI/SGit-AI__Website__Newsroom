@@ -1,0 +1,3 @@
+# Notes: what-is-a-sovereign-website (19 November 2026)
+
+Dinis's dictation in writer-10's session: define the category like serverless, principles anyone can test against, lock-in from any proprietary component however small, the domain/technology/platform, deploy to every platform (GitHub Pages, Azure, Cloudflare, Netlify, local, the Claude sandbox), always five designs and very visual, e-commerce without backends, a sovereignty maturity model, the European cloud angle, and buy sovereignwebsite.org. Held until he bought the .org: "don't publish the org just yet. Let me buy the domain first." Released after he wrote "I have just bought sovereignwebsite.org" (19 November). Figures drawn by writer-10 with sharp.

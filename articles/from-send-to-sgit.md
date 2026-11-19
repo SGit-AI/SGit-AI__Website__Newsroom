@@ -108,6 +108,7 @@ Vaults & methodStartups & strategy[This article as a graph →](graphs.md#from-s
 
 ### Continued by
 
+- [Simple on top of years: why a startup has to find something very easy, very narrow and able to scale, why building from the bottom up, from provenance, understanding and determinism, ended in a simple product anyway, and how a website in five designs opened from a QR code sits on a CI pipeline, zero-knowledge sharing, sgit, vaults, keys and agentic teams, each learnt on its own](simple-on-top-of-years.md) Why a startup needs something very easy, and how a website opened from a QR code sits on years of layers learnt one at a time.
 - [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](where-to-invest-in-sgit.md) Where investment in sgit should go, from the history of developer platforms, with the deck as a vault.
 - [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](can-you-sell-it.md) Start selling what you have, however rough. The point is not the sale but what you learn trying, and a payment is the best signal there is.
 - [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](the-librarians-daily-brief.md) A daily brief from the Librarian: yesterday across every repository, the agents' debrief, threads to pick up, and where my leverage is today.

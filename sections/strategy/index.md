@@ -2,10 +2,13 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-127 articles, newest first.
+130 articles, newest first.
 
 ## November 2026
 
+- [What is a sovereign website: defining the category the way serverless was defined, a website you own and can move, built only on commodity technology because one proprietary part anywhere in the middle is enough to lock you in, seven principles, a sovereignty maturity model from rented to proven, and the proof that the same site runs on every host, in Europe and on your own computer](../../articles/what-is-a-sovereign-website.md), 2026-11-19, 6 min.
+- [Sovereign websites, the investment case: PrompTugal's investor decks rewritten for a deliverable that is needed everywhere, in every language, in a market built on rent and lock-in, a one-off delivery that is already fully agentic, value given before payment through a demo in a vault, a long list of upsells, and why this is now a proper, scalable, investable architecture](../../articles/sovereign-websites-the-investment-case.md), 2026-11-19, 5 min.
+- [Simple on top of years: why a startup has to find something very easy, very narrow and able to scale, why building from the bottom up, from provenance, understanding and determinism, ended in a simple product anyway, and how a website in five designs opened from a QR code sits on a CI pipeline, zero-knowledge sharing, sgit, vaults, keys and agentic teams, each learnt on its own](../../articles/simple-on-top-of-years.md), 2026-11-19, 4 min.
 - [Your website, from a vault: how to show someone five versions of their own website without publishing anything, sealed in an encrypted sgit vault and opened with a QR code, a link or a zip on one drop page, the demo pipeline from a name to an email, and how a demo becomes their sovereign website without starting again](../../articles/your-website-from-a-vault.md), 2026-11-19, 5 min.
 - [A website with a team inside: why a Sovereign Agentic Website is delivered not as a site but as a site with six or seven agents already set up and coordinated in its repository, a conductor, a designer, a writer, a developer, a reviewer, a translator and a keeper, each with a role and a behaviour policy, and what that means for the person who owns it](../../articles/a-website-with-a-team-inside.md), 2026-11-19, 5 min.
 - [Designing sovereignwebsite.ai: the brief for the team that will build the site of our first mass-market product, how the stack now has four layers, SGit, RiskMandate, AgentiCCells and Sovereign Website, six ways to say what it is, the ten pages, the sovereignty maturity model at its centre, how to build the site as a sovereign website itself, and five homepage designs to choose from](../../articles/designing-sovereignwebsite-ai.md), 2026-11-19, 5 min.

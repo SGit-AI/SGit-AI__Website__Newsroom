@@ -101,6 +101,11 @@ Agents & policy[This article as a graph →](graphs.md#your-website-from-a-vault
 - [A website with a team inside: why a Sovereign Agentic Website is delivered not as a site but as a site with six or seven agents already set up and coordinated in its repository, a conductor, a designer, a writer, a developer, a reviewer, a translator and a keeper, each with a role and a behaviour policy, and what that means for the person who owns it](a-website-with-a-team-inside.md) A Sovereign Agentic Website comes with a team inside: seven agents set up and coordinated in the owner's repository, each with a behaviour policy.
 - [A key for every person: how each person's conductor issues them a key for the team's site, seals what is for them, and how a signed message turns the public web into a channel the agents can trust](a-key-for-every-person.md) How each person's conductor issues them a key for the team's site: sealed to you, signed by you, and a lane the agents can trust.
 
+### Continued by
+
+- [Sovereign websites, the investment case: PrompTugal's investor decks rewritten for a deliverable that is needed everywhere, in every language, in a market built on rent and lock-in, a one-off delivery that is already fully agentic, value given before payment through a demo in a vault, a long list of upsells, and why this is now a proper, scalable, investable architecture](sovereign-websites-the-investment-case.md) Sovereign websites as an investment: one deliverable needed everywhere, a one-off agentic delivery, value first through a vault demo, and upsells.
+- [Simple on top of years: why a startup has to find something very easy, very narrow and able to scale, why building from the bottom up, from provenance, understanding and determinism, ended in a simple product anyway, and how a website in five designs opened from a QR code sits on a CI pipeline, zero-knowledge sharing, sgit, vaults, keys and agentic teams, each learnt on its own](simple-on-top-of-years.md) Why a startup needs something very easy, and how a website opened from a QR code sits on years of layers learnt one at a time.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 497 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=497)

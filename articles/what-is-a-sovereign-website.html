@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>What is a sovereign website: defining the category the way serverless was defined, a website you own and can move, built only on commodity technology because one proprietary part anywhere in the middle is enough to lock you in, seven principles, a sovereignty maturity model from rented to proven, and the proof that the same site runs on every host, in Europe and on your own computer, SGit Newsroom</title>
+<meta name="description" content="I searched for "sovereign website" and found almost nothing. That is an opportunity: we get to define the category, the way serverless was defined, with principles anyone can test a site against. A sovereign website is a website you own and can move. Moving is the hard part, and the lesson I do not think has been learned is that one proprietary component in the middle, however small, is enough to stop you: nobody can move the site for you without rebuilding that part, so you cannot even pay your way out. Lock-in comes from the domain, the technology and the platform alike. So a sovereign website is built only on commodity technology, its content and schema in open formats, its domain in its owner's name. This piece proposes seven principles, a maturity model from level 0, rented, to level 5, sovereign and proven, and a proof every Sovereign Agentic Website should carry: the same commit deployed by one pipeline to GitHub Pages, Cloudflare, Netlify, Azure, AWS, a European host and your own computer. Agentic is how we build them; sovereign is what they are. The principles belong at sovereignwebsite.org.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/what-is-a-sovereign-website.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/what-is-a-sovereign-website.html">
+<meta property="og:title" content="What is a sovereign website: defining the category the way serverless was defined, a website you own and can move, built only on commodity technology because one proprietary part anywhere in the middle is enough to lock you in, seven principles, a sovereignty maturity model from rented to proven, and the proof that the same site runs on every host, in Europe and on your own computer, SGit Newsroom">
+<meta property="og:description" content="I searched for "sovereign website" and found almost nothing. That is an opportunity: we get to define the category, the way serverless was defined, with principles anyone can test a site against. A sovereign website is a website you own and can move. Moving is the hard part, and the lesson I do not think has been learned is that one proprietary component in the middle, however small, is enough to stop you: nobody can move the site for you without rebuilding that part, so you cannot even pay your way out. Lock-in comes from the domain, the technology and the platform alike. So a sovereign website is built only on commodity technology, its content and schema in open formats, its domain in its owner's name. This piece proposes seven principles, a maturity model from level 0, rented, to level 5, sovereign and proven, and a proof every Sovereign Agentic Website should carry: the same commit deployed by one pipeline to GitHub Pages, Cloudflare, Netlify, Azure, AWS, a European host and your own computer. Agentic is how we build them; sovereign is what they are. The principles belong at sovereignwebsite.org.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/what-is-a-sovereign-website.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="What is a sovereign website: defining the category the way serverless was defined, a website you own and can move, built only on commodity technology because one proprietary part anywhere in the middle is enough to lock you in, seven principles, a sovereignty maturity model from rented to proven, and the proof that the same site runs on every host, in Europe and on your own computer, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/what-is-a-sovereign-website.jpg">
+<link rel="alternate" type="text/markdown" href="what-is-a-sovereign-website.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "What is a sovereign website: defining the category the way serverless was defined, a website you own and can move, built only on commodity technology because one proprietary part anywhere in the middle is enough to lock you in, seven principles, a sovereignty maturity model from rented to proven, and the proof that the same site runs on every host, in Europe and on your own computer, SGit Newsroom", "headline": "What is a sovereign website: defining the category the way serverless was defined, a website you own and can move, built only on commodity technology because one proprietary part anywhere in the middle is enough to lock you in, seven principles, a sovereignty maturity model from rented to proven, and the proof that the same site runs on every host, in Europe and on your own computer, SGit Newsroom", "description": "I searched for \"sovereign website\" and found almost nothing. That is an opportunity: we get to define the category, the way serverless was defined, with principles anyone can test a site against. A sovereign website is a website you own and can move. Moving is the hard part, and the lesson I do not think has been learned is that one proprietary component in the middle, however small, is enough to stop you: nobody can move the site for you without rebuilding that part, so you cannot even pay your way out. Lock-in comes from the domain, the technology and the platform alike. So a sovereign website is built only on commodity technology, its content and schema in open formats, its domain in its owner's name. This piece proposes seven principles, a maturity model from level 0, rented, to level 5, sovereign and proven, and a proof every Sovereign Agentic Website should carry: the same commit deployed by one pipeline to GitHub Pages, Cloudflare, Netlify, Azure, AWS, a European host and your own computer. Agentic is how we build them; sovereign is what they are. The principles belong at sovereignwebsite.org.", "url": "https://newsroom.sgit.ai/articles/what-is-a-sovereign-website.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / What is a sovereign website: defining the category the way serverless was defined, a website you own and can move, built only on commodity technology because one proprietary part anywhere in the middle is enough to lock you in, seven principles, a sovereignty maturity model from rented to proven, and the proof that the same site runs on every host, in Europe and on your own computer</p>
+ <h1>What is a sovereign website: defining the category the way serverless was defined, a website you own and can move, built only on commodity technology because one proprietary part anywhere in the middle is enough to lock you in, seven principles, a sovereignty maturity model from rented to proven, and the proof that the same site runs on every host, in Europe and on your own computer</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-11-19 &middot; <a href="versions/what-is-a-sovereign-website.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v999.0.0</a> &middot; <span class="chip">sovereign-website</span><span class="chip">sovereignty</span><span class="chip">open-source</span><span class="chip">europe</span><span class="chip">hosting</span><span class="chip">principles</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> I searched for "sovereign website" and found almost nothing. That is an opportunity: we get to define the category, the way serverless was defined, with principles anyone can test a site against. A sovereign website is a website you own and can move. Moving is the hard part, and the lesson I do not think has been learned is that one proprietary component in the middle, however small, is enough to stop you: nobody can move the site for you without rebuilding that part, so you cannot even pay your way out. Lock-in comes from the domain, the technology and the platform alike. So a sovereign website is built only on commodity technology, its content and schema in open formats, its domain in its owner's name. This piece proposes seven principles, a maturity model from level 0, rented, to level 5, sovereign and proven, and a proof every Sovereign Agentic Website should carry: the same commit deployed by one pipeline to GitHub Pages, Cloudflare, Netlify, Azure, AWS, a European host and your own computer. Agentic is how we build them; sovereign is what they are. The principles belong at sovereignwebsite.org.</em></p>
+<figure class="shot" data-shot="smm-levels.webp" data-dir="images/" data-alt="A sovereignty maturity model for websites, from level 0, rented, to level 5, sovereign and proven." data-kind="concept"><figcaption>A sovereignty maturity model for websites, from level 0, rented, to level 5, sovereign and proven.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Almost nobody searches for "sovereign website",</b> so we get to define it.</li>
+<li><b>A sovereign website is one you own and can move.</b></li>
+<li><b>One proprietary part in the middle is enough to lock you in,</b> however small.</li>
+<li><b>Seven principles</b> to test a site against, and a <b>maturity model</b> from rented to proven.</li>
+<li><b>The proof:</b> the same site deployed to every host we can find, in Europe and on your own computer.</li>
+<li><b>The principles at sovereignwebsite.org;</b> the commercial side at sovereignwebsite.ai.</li>
+</ul>
+<h2 id="category">Defining the category</h2>
+<p>When I searched for "sovereign website" there was very little: a few uses of the words, no category, no principles. That is an opportunity. Serverless was a category before it was a product; someone had to say what it meant and what it did not, and then everyone could build against that. We can do the same for websites you own.</p>
+<p><a href="sovereign-agentic-website.html">Sovereign Agentic Website</a> is our name for how we make them. But the two words do different jobs. Agentic is how the site is built and changed: by a team of agents, and then by your own AI. Sovereign is what the site is, whoever built it. A sovereign website could be made by hand. That independence matters: the definition should hold for anyone, not only for us.</p>
+<h2 id="lockin">The lesson about lock-in</h2>
+<p>A sovereign website is a website you own and can move. Owning is the easy part. Moving is where it fails, and here is the lesson I do not think has been learned, or really drawn for people to see.</p>
+<p>Once there is a piece of proprietary technology in the middle, it does not matter how small it is: you cannot move the site. There is friction, and worse, nobody else can move it for you. You cannot even pay someone to move it, because they would have to rebuild that component first, and sometimes it is not small at all. A paid plugin, a platform's form handler, a hosting company's special function, an agency's private framework: any one of them is enough.</p>
+<p>And lock-in has more than one place to hide: where the domain is registered, the technology underneath, and the platform it runs on. A site that is portable in its code but registered in someone else's name is not sovereign. Nor is one in your name that only runs on one company's servers.</p>
+<h2 id="principles">Seven principles</h2>
+<p>A website is sovereign when:</p>
+<ol>
+<li><b>You own it.</b> The site, its content and its history are in a repository in your name, and the domain is registered to you, at a registrar you chose (<a href="your-own-registrar.html">your own registrar</a>).</li>
+<li><b>You can move it.</b> It runs on any commodity host that can serve files, without changes.</li>
+<li><b>Nothing in the middle is proprietary.</b> Every part it needs to build and run is open and commodity; if one part is not, the site is not sovereign, however small that part is.</li>
+<li><b>Its content and schema are open.</b> Words, data and their structure are in open formats you can read without the tool that made them.</li>
+<li><b>Anyone can change it.</b> You, any developer, or your own AI, without asking the company that built it (<a href="no-lock-in.html">no lock-in</a>).</li>
+<li><b>What works on it is bounded.</b> Agents and tools that change it work inside a behaviour policy that says what they may touch (<a href="feature-behaviour-policies.html">feature behaviour policies</a>).</li>
+<li><b>It is proven, not claimed.</b> It is deployed, regularly, on more than one host, so that moving is a thing that already happened, not a promise.</li>
+</ol>
+<h2 id="maturity">The maturity model</h2>
+<p>Sovereignty is not yes or no; it is how far you can move, on your terms. The model has six levels:</p>
+<ul>
+<li><b>Level 0, rented.</b> A hosted builder decides everything, and little leaves but some content. Most website platforms sit here by their own terms of service.</li>
+<li><b>Level 1, exportable.</b> You can export your words and images; the design and the functions stay behind.</li>
+<li><b>Level 2, self-hosted, with a part you do not control.</b> The software is open, but one paid plugin, theme or agency component holds the site where it is.</li>
+<li><b>Level 3, open, on one host.</b> Open code in your repository, but tied to one host's special features.</li>
+<li><b>Level 4, portable.</b> Plain files and open tools; any static host can serve it; your domain at your registrar. The website cell is here today.</li>
+<li><b>Level 5, sovereign and proven.</b> Portable, and proven by being deployed on many hosts, one of them in Europe and one your own machine.</li>
+</ul>
+<p>The same model works inside a company. A corporate site built on one cloud provider's proprietary services sits at level 3 at best, however well it is engineered; it cannot move without rebuilding. That is exactly the question many European organisations are now asking of their cloud providers, and it is the same question, smaller, for every website.</p>
+<h2 id="hosts">One site, every host</h2>
+<figure class="shot" data-shot="smm-hosts.webp" data-dir="images/" data-alt="One site, every host: GitHub Pages today, and the hosts the same commit should be proven on." data-kind="concept"><figcaption>One site, every host: GitHub Pages today, and the hosts the same commit should be proven on.</figcaption></figure>
+<p>Principle seven needs a demonstration, and we can build it. Our sites deploy today to GitHub Pages. The next step is a pipeline that takes the same commit of one of our demo sites and deploys it everywhere it can: Cloudflare Pages, Netlify, Azure Static Web Apps, AWS S3 and CloudFront, Codeberg Pages in Germany, a European cloud's storage bucket, and a plain folder on your own computer served by any web server. I will open the accounts; the automation is the factory's.</p>
+<p>There is an interesting extra case: whether such a site can be built and served inside Claude's own sandbox. I do not know yet if its limits allow it; it may need special instructions. If it works, it is a striking proof: a website that runs wherever its owner's AI runs. Either way, each host gets a short set of instructions, so that anyone can repeat it.</p>
+<h2 id="design">Not plain, and not small</h2>
+<p>A sovereign website must not look like a sovereign website demo. Too many open alternatives look vanilla, the way default slide themes do. Every site we make keeps the standard of the website cell: five designs to choose from, very visual, made from the owner's own photos and words (<a href="the-website-cell.html">the website cell</a>). And the pattern goes further than brochure sites. Shops, catalogues and booking pages can be built without a heavy backend, from static files and open services, and still pass all seven principles. We should show that, with real examples.</p>
+<h2 id="next">What comes next</h2>
+<ul>
+<li><b>sovereignwebsite.org</b> for the principles and the open pattern, as wordpress.org is to WordPress; <b>sovereignwebsite.ai</b> for the hosted service.</li>
+<li><b>The principles and the maturity model as a page anyone can test a site against,</b> and a self-assessment.</li>
+<li><b>The every-host pipeline</b> on one demo site, then on all of ours.</li>
+<li><b>Moving our existing sites</b> to the new brand, with their owners' agreement.</li>
+</ul>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The principles and the model are a proposal,</b> written to be argued with and improved.</li>
+<li><b>The every-host pipeline does not exist yet;</b> only GitHub Pages is in use today.</li>
+<li><b>Platform placements on the model are by their published terms,</b> as in <a href="no-lock-in.html">no lock-in</a>; a given site may do better or worse.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>My own thinking, in writer-10's session on 19 November 2026, after a search for "sovereign website" that found little. sovereignwebsite.org was registered the same day, to hold the principles. It builds on <a href="sovereign-agentic-website.html">Sovereign Agentic Website</a>, <a href="sovereignty-you-can-move.html">sovereignty you can move</a>, <a href="no-lock-in.html">no lock-in</a>, <a href="the-website-cell.html">the website cell</a>, <a href="your-own-registrar.html">your own registrar</a> and <a href="feature-behaviour-policies.html">feature behaviour policies</a>.</p>
+<sg-meter view="page" kind="article" date="2026-11-19" topics="agents-and-policy" title="What is a sovereign website: defining the category the way serverless was defined, a website you own and can move, built only on commodity technology because one proprietary part anywhere in the middle is enough to lock you in, seven principles, a sovereignty maturity model from rented to proven, and the proof that the same site runs on every host, in Europe and on your own computer, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#what-is-a-sovereign-website">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="sovereign-agentic-website.html">Sovereign Agentic Website: the name for what we have been building, a website built by agents and owned by the person it is for, an open pattern anyone can use without paying us as WordPress was, a hosted version on sovereignwebsite.site, and why sovereign and agentic are the two words that make it different from the web of 2000</a> <span class="dim">Sovereign Agentic Website: built by agents, owned by you; an open pattern anyone can use, and a hosted version on sovereignwebsite.site.</span></li><li><a href="your-own-registrar.html">Your own registrar: which domain registrar to recommend to a small business in Europe taking its website's domain into its own name, sixteen compared on price and renewal, .eu, .pt and .ai, privacy, and APIs safe enough to hand to an agent, why AWS now sells .ai but is still a heavy choice, and the three we would put forward</a> <span class="dim">Which registrar a small business in Europe should hold its own domain at: sixteen compared, and OVHcloud, Hostinger and INWX.</span></li><li><a href="no-lock-in.html">No lock-in: why the one thing that most separates the website cell from Wix, Squarespace, Fliplet and the rest is that the customer can leave, what the platforms' own terms and export pages say, how large the market of people paying monthly for sites they cannot take with them is, and what a site that promises to move into its owner's hands should say on its front page</a> <span class="dim">The website cell's biggest difference is that the customer can leave; the platforms' own terms show why that matters.</span></li><li><a href="feature-behaviour-policies.html">Feature behaviour policies: taking the idea of agent behaviour policies down to every feature, bug fix and resource, so that a feature's policy is also its description, what changed is the difference between two policies, the gap between what a resource can do and what a feature needs is where the vulnerabilities live, and signed policies travelling with each request make a bug or an attack a path that was never supposed to exist</a> <span class="dim">Write a behaviour policy per feature: it describes the feature, sets what to enforce, and makes a bug or attack a path outside it.</span></li><li><a href="the-website-cell.html">The website cell: what we now sell, a GitHub repository fully set up with a live site on its own address, a CLAUDE.md and a behaviour policy, five designs by a team of agents, and then the site is yours to change with your own Claude, what it should cost, how it compares with Wix, Squarespace, Framer, Lovable and a freelancer, who already sells something close to it, and where to find buyers and partners</a> <span class="dim">The website cell mapped: a repository fully set up, five designs by agents, owned with your own Claude; price, competitors, partners.</span></li><li><a href="sovereignty-you-can-move.html">Sovereignty you can move: why where your data is hosted is not sovereignty, why being able to move the site, the data and the schema is, why that makes the website cell a direct competitor to Wix, Squarespace and Fliplet with a proper sovereign offer, European-aligned, multilingual and privacy-first, and the business that other companies can build on it</a> <span class="dim">Sovereignty is being able to move your site, data and schema, not where it is hosted; the website cell as a sovereign competitor.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 500 &middot; <a href="../for/make.html#r=500">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/what-is-a-sovereign-website.jpg" download>what-is-a-sovereign-website.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="what-is-a-sovereign-website.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>The publication</h4>
+    <a href="../about/imprint.html">Imprint</a>
+    <a href="../about/standards.html">Editorial standards</a>
+    <a href="../about/corrections.html">Corrections</a>
+    <a href="../about/withdrawals.html">Withdrawals</a>
+    <a href="../about/complaints.html">Complaints</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>
