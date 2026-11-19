@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: This is the record of an afternoon of thinking out loud, written down so that none of it is lost. It started with a question, why not launch Sovereign Website on Kickstarter, now that for the first time I have something I can simply give someone, and ended somewhere quite different: a Kickstarter campaign for a sovereign website on a configured Android tablet, with a £50 supporter tier for the site alone and a Raspberry Pi as a box at home. In between there were eleven turns: Kickstarter's rules on services and AI; Indiegogo, PPL and Product Hunt; Patreon and its one-off sales; countries as stretch goals and the angle of bringing sovereign websites to the world; the UK as home ground, with Portugal next; stretch goals as places rather than languages, since every language is there from day one; a hardware appliance, which brings Kickstarter back; iPad or Android, and why TestFlight is not a shop; cost plus 50%, then a simpler promise of what we spend on the tablet; no T-shirt; and the Pi. The plan itself is in the next piece.
-version: v999.0.0
+version: v0.14.175
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereign-website, crowdfunding, kickstarter, go-to-market, android, strategy, article
 status: published

@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: This is the plan we arrived at, after an afternoon of turns recorded in the previous piece. We launch Sovereign Website on Kickstarter as an appliance: a sovereign website on a device its owner holds, an Android tablet configured with the site, its editing, its monitoring and an AI app, or a set of Raspberry Pis that serve it from home. Three tiers. £50, the supporter: the website, set up and handed over, no hardware. £500: we spend about £250 on hardware, the backer's choice, a tablet such as a Lenovo Idea Tab at £209.99 today, or two Raspberry Pi 5 kits with 2GB each. £1,000: we spend about £500, a tablet that can run AI models such as a Samsung Galaxy Tab S10 FE at £509, the German-made Volla tablet with the de-Googled /e/OS, or Pi kits, five with 1GB or three with 2GB. Add-ons for their own app or their own product. The UK is the base goal; Portugal is the first stretch goal; backers vote on the countries after it, and on iOS. All-or-nothing: if we do not reach the goal, nobody pays and we build nothing. And we launch on our own, with Android and open source, and talk to device makers once it works.
-version: v999.0.0
+version: v0.14.175
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereign-website, crowdfunding, kickstarter, android, raspberry-pi, go-to-market, article
 status: published
