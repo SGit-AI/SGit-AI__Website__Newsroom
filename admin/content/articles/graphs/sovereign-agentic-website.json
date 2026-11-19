@@ -1,0 +1,30 @@
+{
+ "slug": "sovereign-agentic-website",
+ "teaser": "Sovereign Agentic Website: built by agents, owned by you; an open pattern anyone can use, and a hosted version on sovereignwebsite.site.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "A website built by a team of agents but owned outright by the person it is for, published as an open pattern anyone can use and offered hosted, is the new way to make a website, and sovereign and agentic are the words that set it apart.",
+ "nodes": [
+  {"id": "saw", "label": "Sovereign Agentic Website", "kind": "concept", "summary": "SAW."},
+  {"id": "sovereign", "label": "Sovereign", "kind": "claim", "summary": "Owned and movable."},
+  {"id": "agentic", "label": "Agentic", "kind": "claim", "summary": "Built and changed by agents."},
+  {"id": "open", "label": "The open pattern", "kind": "method", "summary": "Free to use, like WordPress."},
+  {"id": "hosted", "label": "The hosted version", "kind": "example", "summary": "sovereignwebsite.site."},
+  {"id": "acc", "label": "AgentiCCells", "kind": "example", "summary": "The company selling agentic teams."}
+ ],
+ "edges": [
+  {"from": "sovereign", "to": "saw", "rel": "depends-on"},
+  {"from": "agentic", "to": "saw", "rel": "depends-on"},
+  {"from": "open", "to": "saw", "rel": "produces"},
+  {"from": "hosted", "to": "open", "rel": "extends"},
+  {"from": "saw", "to": "acc", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["the-website-cell", "the-site-factory-works", "sovereignty-you-can-move", "no-lock-in", "the-sovereign-website", "your-own-registrar", "the-email-agentic-cell"],
+  "pages": [],
+  "sites": ["https://sovereignwebsite.ai/", "https://github.com/SovereignWebsite"]
+ },
+ "quotes": [
+  {"text": "built by agents, owned by you", "why": "Dinis."},
+  {"text": "a site you own should not depend on us existing", "why": "Dinis."}
+ ]
+}

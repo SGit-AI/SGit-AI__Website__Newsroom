@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-19 | published | 1,935 | first published | this release | [current](../the-second-run.md) |
+| **v1.0.0** | 2026-11-19 | published | 1,935 | first published | [`7a53513c6`](https://github.com/SGit-AI/SGit-AI__Website/commit/7a53513c688c5b95ed5a150b5db1885156fc8b74) | [current](../the-second-run.md) |
 
 [← Back to the article](../the-second-run.md) · [All articles](../index.md)
 
