@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: We write behaviour policies for agents and, since php2shell, for applications. I think the next step is to write them for every feature. When we hand someone a new feature to test, we usually hand them the whole app; instead we could hand them the feature's behaviour policy, which says what the feature is for and what it does. That policy is the feature's description, and the difference between two versions of it is what changed. It is also what the application enforces, in context, because the same behaviour can be fine in one place and a serious problem in another. Enforced on the client, it cuts the noise that reaches the server; signed and carried with each request, it lets the server, and anyone watching the traffic, see a bug or an attack as a path outside the policy. The reverse is a resource behaviour policy: everything a key, an account or an API lets you do. The gap between the two is the risk, and the application, where features combine, is where new behaviour appears. Agent and user behaviour policies are then the same feature policies plus a workflow; only who runs them differs. Policies become the permission sets for the custom interfaces we build per task. Next, we map them onto our own capabilities.
-version: v999.0.0
+version: v0.14.167
 license: https://creativecommons.org/licenses/by/4.0/
 tags: behaviour-policies, abp, security, features, testing, signing, agents, article
 status: published
