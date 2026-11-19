@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: Feature behaviour policies are an idea until they are used on something real. This piece takes four. First, one of our own keys. Its reach is five Google APIs across four hosts, open to any session on its environment; the feature that uses it, the replays feed, needs one API. Only one row of that gap has a real boundary; the rest are settings and expectations. Second, the factory's CI changes: a feature policy that says create this repository, make this change and nothing else, signed, and handed to the agent that runs it, so that the agent enforces its own mandate. Third, requests that carry the signed policies they act under, so that a server, or an observer without the context, can check a call against what it was meant to do. Fourth, release notes written as bug behaviour policies, using three fixes from this newsroom's own releases today: each says what it closed, what it kept, and what it must not open. In each case the policy is the description, the permission set and the test.
-version: v999.0.0
+version: v0.14.168
 license: https://creativecommons.org/licenses/by/4.0/
 tags: behaviour-policies, abp, security, keys, ci, signing, release-notes, article
 status: published
