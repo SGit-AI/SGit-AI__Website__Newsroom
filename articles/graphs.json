@@ -55,6 +55,272 @@
   ],
   "articles": [
     {
+      "slug": "your-own-registrar",
+      "title": "Your own registrar: which domain registrar to recommend to a small business in Europe taking its website's domain into its own name, sixteen compared on price and renewal, .eu, .pt and .ai, privacy, and APIs safe enough to hand to an agent, why AWS now sells .ai but is still a heavy choice, and the three we would put forward",
+      "date": "2026-11-19",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/your-own-registrar.html",
+      "markdown": "https://newsroom.sgit.ai/articles/your-own-registrar.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/your-own-registrar.webp",
+      "teaser": "Which registrar a small business in Europe should hold its own domain at: sixteen compared, and OVHcloud, Hostinger and INWX.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "domains",
+        "registrars",
+        "europe",
+        "sovereignty",
+        "agenticcells",
+        "agents",
+        "article"
+      ],
+      "links_out": [
+        "sovereignty-you-can-move",
+        "no-lock-in",
+        "policies-in-practice",
+        "the-sovereign-website"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "rgs-compare.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rgs-compare.webp",
+          "caption": "Seven registrars compared: where they are, .com, .eu, .pt and .ai prices, and what an agent can use.",
+          "kind": "table"
+        }
+      ],
+      "graph": {
+        "slug": "your-own-registrar",
+        "teaser": "Which registrar a small business in Europe should hold its own domain at: sixteen compared, and OVHcloud, Hostinger and INWX.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "A domain owner in Europe is best served by an EU registrar with steady renewals and an API whose keys can be narrowed, because the registrar holds the name and its API's reach must be limited before an agent uses it.",
+        "nodes": [
+          {
+            "id": "aws",
+            "label": "AWS Route 53",
+            "kind": "example",
+            "summary": "Sells .ai, heavy."
+          },
+          {
+            "id": "renewal",
+            "label": "Renewal jumps",
+            "kind": "claim",
+            "summary": "The commonest catch."
+          },
+          {
+            "id": "agent",
+            "label": "Agent controls",
+            "kind": "concept",
+            "summary": "Scoped keys, spend caps, no-pay MCP."
+          },
+          {
+            "id": "ovh",
+            "label": "OVHcloud",
+            "kind": "example",
+            "summary": "Steady EU prices."
+          },
+          {
+            "id": "hostinger",
+            "label": "Hostinger",
+            "kind": "example",
+            "summary": "Free privacy, MCP."
+          },
+          {
+            "id": "inwx",
+            "label": "INWX",
+            "kind": "example",
+            "summary": "API first."
+          }
+        ],
+        "edges": [
+          {
+            "from": "renewal",
+            "to": "ovh",
+            "rel": "contrasts"
+          },
+          {
+            "from": "agent",
+            "to": "ovh",
+            "rel": "example-of"
+          },
+          {
+            "from": "agent",
+            "to": "hostinger",
+            "rel": "example-of"
+          },
+          {
+            "from": "inwx",
+            "to": "agent",
+            "rel": "extends"
+          },
+          {
+            "from": "aws",
+            "to": "ovh",
+            "rel": "compared-with"
+          }
+        ],
+        "links": {
+          "articles": [
+            "sovereignty-you-can-move",
+            "no-lock-in",
+            "policies-in-practice",
+            "the-sovereign-website"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.ovhcloud.com/",
+            "https://www.hostinger.com/",
+            "https://www.inwx.com/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "the order form must be paid",
+            "why": "OVHcloud's domain MCP guide."
+          },
+          {
+            "text": "manage but no purchases",
+            "why": "Porkbun's API documentation."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-second-run",
+      "title": "The second run: a forensic look at why a release of this newsroom takes about 24 minutes, measured stage by stage over two timed releases and 437 CI runs since 18 October, what each check protects, what runs twice, what can run side by side, and why, if nothing changed, the second run should do almost no work at all",
+      "date": "2026-11-19",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-second-run.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-second-run.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-second-run.webp",
+      "teaser": "Why a release takes 24 minutes, measured stage by stage, and why a second run with nothing changed should do almost no work.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "ci",
+        "engineering",
+        "testing",
+        "signing",
+        "build",
+        "agenticcells",
+        "article"
+      ],
+      "links_out": [
+        "the-checks-measured",
+        "behaviour-policies-from-the-checks",
+        "where-a-check-runs",
+        "policies-in-practice"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "srn-time.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/srn-time.webp",
+          "caption": "Where a release's 24 minutes go: the writer's build, the gate, and CI to live, in seconds per stage.",
+          "kind": "chart"
+        }
+      ],
+      "graph": {
+        "slug": "the-second-run",
+        "teaser": "Why a release takes 24 minutes, measured stage by stage, and why a second run with nothing changed should do almost no work.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Most of a release's time is a borrowed generator rebuilding everything three times and checks repeated on an unchanged tree, so hashing inputs and committing signed intermediate results lets each run redo only what changed while keeping every check.",
+        "nodes": [
+          {
+            "id": "ci",
+            "label": "CI, steady",
+            "kind": "example",
+            "summary": "5.3 to 5.9 minutes."
+          },
+          {
+            "id": "generator",
+            "label": "The borrowed generator",
+            "kind": "example",
+            "summary": "Three runs, 173 s each."
+          },
+          {
+            "id": "twice",
+            "label": "Work done twice",
+            "kind": "claim",
+            "summary": "Tests, validation, cards."
+          },
+          {
+            "id": "lets",
+            "label": "Load, extract, transform, save",
+            "kind": "method",
+            "summary": "Hashes and manifests."
+          },
+          {
+            "id": "signed",
+            "label": "Signed results",
+            "kind": "method",
+            "summary": "Trusted across machines."
+          },
+          {
+            "id": "daily",
+            "label": "A daily full run",
+            "kind": "method",
+            "summary": "Hashes must match."
+          }
+        ],
+        "edges": [
+          {
+            "from": "generator",
+            "to": "ci",
+            "rel": "contrasts"
+          },
+          {
+            "from": "twice",
+            "to": "generator",
+            "rel": "extends"
+          },
+          {
+            "from": "lets",
+            "to": "twice",
+            "rel": "answers"
+          },
+          {
+            "from": "signed",
+            "to": "lets",
+            "rel": "depends-on"
+          },
+          {
+            "from": "daily",
+            "to": "lets",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-checks-measured",
+            "behaviour-policies-from-the-checks",
+            "where-a-check-runs",
+            "policies-in-practice"
+          ],
+          "pages": [],
+          "sites": [
+            "https://github.com/SGit-AI/SGit-AI__Website__Newsroom/actions"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "why does the second run do any work?",
+            "why": "Dinis."
+          },
+          {
+            "text": "about 80 seconds",
+            "why": "publish.py's own comment, v0.13.7."
+          }
+        ]
+      }
+    },
+    {
       "slug": "policies-in-practice",
       "title": "Policies in practice: four places a behaviour policy earns its keep, measured on a real Google key whose reach is five APIs while the feature uses one, a signed policy for the factory's CI changes, requests that carry the policies they act under, and release notes that say what each fix closes and what it must not open",
       "date": "2026-11-19",
@@ -82,7 +348,10 @@
         "application-behaviour-policies",
         "a-page-we-never-charge"
       ],
-      "links_in": [],
+      "links_in": [
+        "your-own-registrar",
+        "the-second-run"
+      ],
       "figures": [
         {
           "file": "pip-key.webp",
@@ -364,7 +633,9 @@
         "static-against-the-platforms",
         "start-with-an-interview"
       ],
-      "links_in": [],
+      "links_in": [
+        "your-own-registrar"
+      ],
       "figures": [
         {
           "file": "piv-tenets.webp",
@@ -526,6 +797,7 @@
         "partners-sell-we-build"
       ],
       "links_in": [
+        "your-own-registrar",
         "the-sovereign-website"
       ],
       "figures": [
@@ -671,6 +943,7 @@
         "the-pitch"
       ],
       "links_in": [
+        "your-own-registrar",
         "the-sovereign-website",
         "sovereignty-you-can-move"
       ],
@@ -41948,6 +42221,7 @@
         "a-secret-is-a-qr-code"
       ],
       "links_in": [
+        "the-second-run",
         "the-sidecar-repository",
         "the-rules-of-the-game"
       ],
@@ -43516,6 +43790,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "the-second-run",
         "coding-standards-are-behaviour-policies",
         "introducing-sharness",
         "proven-controls-for-agents",
@@ -44289,6 +44564,7 @@
         "the-briefs-so-far"
       ],
       "links_in": [
+        "the-second-run",
         "the-rules-of-the-game",
         "where-a-check-runs",
         "governed-semi-autonomous-development-read-here",

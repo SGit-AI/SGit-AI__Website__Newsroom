@@ -127,6 +127,7 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#where-a
 
 ### Continued by
 
+- [The second run: a forensic look at why a release of this newsroom takes about 24 minutes, measured stage by stage over two timed releases and 437 CI runs since 18 October, what each check protects, what runs twice, what can run side by side, and why, if nothing changed, the second run should do almost no work at all](the-second-run.md) Why a release takes 24 minutes, measured stage by stage, and why a second run with nothing changed should do almost no work.
 - [The sidecar repository: a second repository the agent cannot write to, which checks every release against the policy, trusts signed checks instead of re-running them, and is the only thing that deploys, designed for an agent that is fully compromised](the-sidecar-repository.md) A second repository the agent cannot write to, which checks every release, trusts signed checks instead of re-running them, and is the only thing that deploys.
 - [The rules of the game: a policy for which files an agent may change, and the least GitHub can enforce today without a new tool](the-rules-of-the-game.md) A policy for which files an agent may change, and the least GitHub can enforce on a public repository today without a new tool.
 

@@ -1,0 +1,103 @@
+{
+  "slug": "the-second-run",
+  "teaser": "Why a release takes 24 minutes, measured stage by stage, and why a second run with nothing changed should do almost no work.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Most of a release's time is a borrowed generator rebuilding everything three times and checks repeated on an unchanged tree, so hashing inputs and committing signed intermediate results lets each run redo only what changed while keeping every check.",
+  "nodes": [
+    {
+      "id": "ci",
+      "label": "CI, steady",
+      "kind": "example",
+      "summary": "5.3 to 5.9 minutes."
+    },
+    {
+      "id": "generator",
+      "label": "The borrowed generator",
+      "kind": "example",
+      "summary": "Three runs, 173 s each."
+    },
+    {
+      "id": "twice",
+      "label": "Work done twice",
+      "kind": "claim",
+      "summary": "Tests, validation, cards."
+    },
+    {
+      "id": "lets",
+      "label": "Load, extract, transform, save",
+      "kind": "method",
+      "summary": "Hashes and manifests."
+    },
+    {
+      "id": "signed",
+      "label": "Signed results",
+      "kind": "method",
+      "summary": "Trusted across machines."
+    },
+    {
+      "id": "daily",
+      "label": "A daily full run",
+      "kind": "method",
+      "summary": "Hashes must match."
+    }
+  ],
+  "edges": [
+    {
+      "from": "generator",
+      "to": "ci",
+      "rel": "contrasts"
+    },
+    {
+      "from": "twice",
+      "to": "generator",
+      "rel": "extends"
+    },
+    {
+      "from": "lets",
+      "to": "twice",
+      "rel": "answers"
+    },
+    {
+      "from": "signed",
+      "to": "lets",
+      "rel": "depends-on"
+    },
+    {
+      "from": "daily",
+      "to": "lets",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-checks-measured",
+      "behaviour-policies-from-the-checks",
+      "where-a-check-runs",
+      "policies-in-practice"
+    ],
+    "pages": [],
+    "sites": [
+      "https://github.com/SGit-AI/SGit-AI__Website__Newsroom/actions"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "why does the second run do any work?",
+      "why": "Dinis."
+    },
+    {
+      "text": "about 80 seconds",
+      "why": "publish.py's own comment, v0.13.7."
+    }
+  ],
+  "figures": [
+    {
+      "file": "srn-time.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/srn-time.webp",
+      "caption": "Where a release's 24 minutes go: the writer's build, the gate, and CI to live, in seconds per stage.",
+      "kind": "chart"
+    }
+  ]
+}

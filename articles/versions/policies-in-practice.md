@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-19 | published | 1,299 | first published | this release | [current](../policies-in-practice.md) |
+| **v1.0.0** | 2026-11-19 | published | 1,299 | first published | [`eee87768e`](https://github.com/SGit-AI/SGit-AI__Website/commit/eee87768e585efa5f7a40d63eb9930ea069098c6) | [current](../policies-in-practice.md) |
 
 [← Back to the article](../policies-in-practice.md) · [All articles](../index.md)
 

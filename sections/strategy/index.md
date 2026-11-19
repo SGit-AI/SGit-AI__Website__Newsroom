@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-122 articles, newest first.
+123 articles, newest first.
 
 ## November 2026
 
+- [Your own registrar: which domain registrar to recommend to a small business in Europe taking its website's domain into its own name, sixteen compared on price and renewal, .eu, .pt and .ai, privacy, and APIs safe enough to hand to an agent, why AWS now sells .ai but is still a heavy choice, and the three we would put forward](../../articles/your-own-registrar.md), 2026-11-19, 5 min.
 - [The sovereign website: a pivot brief for agenticcells.ai, what the site says today and what it should say next, sovereignty as the headline, a website you own, control, change and can run anywhere, the deliverables explained, the infographics to draw, five homepage designs to choose from, and the partner programme and examples that already prove it](../../articles/the-sovereign-website.md), 2026-11-19, 7 min.
 - [Sovereignty you can move: why where your data is hosted is not sovereignty, why being able to move the site, the data and the schema is, why that makes the website cell a direct competitor to Wix, Squarespace and Fliplet with a proper sovereign offer, European-aligned, multilingual and privacy-first, and the business that other companies can build on it](../../articles/sovereignty-you-can-move.md), 2026-11-19, 4 min.
 - [No lock-in: why the one thing that most separates the website cell from Wix, Squarespace, Fliplet and the rest is that the customer can leave, what the platforms' own terms and export pages say, how large the market of people paying monthly for sites they cannot take with them is, and what a site that promises to move into its owner's hands should say on its front page](../../articles/no-lock-in.md), 2026-11-19, 3 min.

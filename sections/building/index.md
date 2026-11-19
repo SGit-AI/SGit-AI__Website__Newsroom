@@ -2,10 +2,11 @@
 
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.
 
-52 articles, newest first.
+53 articles, newest first.
 
 ## November 2026
 
+- [The second run: a forensic look at why a release of this newsroom takes about 24 minutes, measured stage by stage over two timed releases and 437 CI runs since 18 October, what each check protects, what runs twice, what can run side by side, and why, if nothing changed, the second run should do almost no work at all](../../articles/the-second-run.md), 2026-11-19, 8 min.
 - [A factory that films its work: a review of ESF, Mitko Vasilev's open-source Engineering Software Factory, one task into one microVM, one agent, deterministic gates and a verified patch with its evidence, the demo videos and review queue his post shows, which are not yet in the public repository, and what our own factories should take from it, starting with a recording made by the same run that proves the change](../../articles/a-factory-that-films-its-work.md), 2026-11-18, 6 min.
 - [Shipping an iOS app with agents: how our agents build, test and send native apps to TestFlight from a Linux container, with CI on a Mac as the compiler, signing done once through the App Store Connect API, every green push in testers' hands, and what the three doors to users took for us, internal testers in about an hour, external testers in half a day to a day, and the App Store still waiting after eight days](../../articles/shipping-an-ios-app-with-agents.md), 2026-11-17, 5 min.
 - [Build on VoiceDebrief: the techniques from our iPhone and iPad voice app that any team can take into its own, from recording without loss and transcribing offline on the device to debriefs by Apple Intelligence, controlling an app by voice, three layers of intelligence and a CI pipeline that lets agents build a native app without a Mac, with a prompt to point your own Claude at the code](../../articles/build-on-voicedebrief.md), 2026-11-17, 7 min.

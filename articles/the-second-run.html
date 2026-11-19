@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The second run: a forensic look at why a release of this newsroom takes about 24 minutes, measured stage by stage over two timed releases and 437 CI runs since 18 October, what each check protects, what runs twice, what can run side by side, and why, if nothing changed, the second run should do almost no work at all, SGit Newsroom</title>
+<meta name="description" content="A release of this newsroom takes about 24 minutes from a finished article to a live page, and I asked why. We timed two releases stage by stage and read every CI run since 18 October: 437 runs, 327 of them releases, about ten a day. CI is not the problem. Its median run has been 5.3 to 5.9 minutes every week since 21 October. The time is on the writer's machine, about 16.7 minutes, and half of that is sgit.ai's generator, borrowed and run three times per release: once expected to fail, then twice in full, each run now about 173 seconds against 80 a month ago, because it rebuilds every page every time. All 488 link-preview cards are redrawn each release, and the tests run on the writer's machine and again in CI. The quality control is worth keeping; it is what lets agents release ten times a day. What has to change is the idea that each run starts from nothing. If I run the same build twice and nothing changed, why does the second run do any work? Load, extract, transform and save: hash every input, keep each step's intermediate result as signed JSON in the repository, and redo only what an input change reaches.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/the-second-run.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/the-second-run.html">
+<meta property="og:title" content="The second run: a forensic look at why a release of this newsroom takes about 24 minutes, measured stage by stage over two timed releases and 437 CI runs since 18 October, what each check protects, what runs twice, what can run side by side, and why, if nothing changed, the second run should do almost no work at all, SGit Newsroom">
+<meta property="og:description" content="A release of this newsroom takes about 24 minutes from a finished article to a live page, and I asked why. We timed two releases stage by stage and read every CI run since 18 October: 437 runs, 327 of them releases, about ten a day. CI is not the problem. Its median run has been 5.3 to 5.9 minutes every week since 21 October. The time is on the writer's machine, about 16.7 minutes, and half of that is sgit.ai's generator, borrowed and run three times per release: once expected to fail, then twice in full, each run now about 173 seconds against 80 a month ago, because it rebuilds every page every time. All 488 link-preview cards are redrawn each release, and the tests run on the writer's machine and again in CI. The quality control is worth keeping; it is what lets agents release ten times a day. What has to change is the idea that each run starts from nothing. If I run the same build twice and nothing changed, why does the second run do any work? Load, extract, transform and save: hash every input, keep each step's intermediate result as signed JSON in the repository, and redo only what an input change reaches.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/the-second-run.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The second run: a forensic look at why a release of this newsroom takes about 24 minutes, measured stage by stage over two timed releases and 437 CI runs since 18 October, what each check protects, what runs twice, what can run side by side, and why, if nothing changed, the second run should do almost no work at all, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/the-second-run.jpg">
+<link rel="alternate" type="text/markdown" href="the-second-run.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "The second run: a forensic look at why a release of this newsroom takes about 24 minutes, measured stage by stage over two timed releases and 437 CI runs since 18 October, what each check protects, what runs twice, what can run side by side, and why, if nothing changed, the second run should do almost no work at all, SGit Newsroom", "headline": "The second run: a forensic look at why a release of this newsroom takes about 24 minutes, measured stage by stage over two timed releases and 437 CI runs since 18 October, what each check protects, what runs twice, what can run side by side, and why, if nothing changed, the second run should do almost no work at all, SGit Newsroom", "description": "A release of this newsroom takes about 24 minutes from a finished article to a live page, and I asked why. We timed two releases stage by stage and read every CI run since 18 October: 437 runs, 327 of them releases, about ten a day. CI is not the problem. Its median run has been 5.3 to 5.9 minutes every week since 21 October. The time is on the writer's machine, about 16.7 minutes, and half of that is sgit.ai's generator, borrowed and run three times per release: once expected to fail, then twice in full, each run now about 173 seconds against 80 a month ago, because it rebuilds every page every time. All 488 link-preview cards are redrawn each release, and the tests run on the writer's machine and again in CI. The quality control is worth keeping; it is what lets agents release ten times a day. What has to change is the idea that each run starts from nothing. If I run the same build twice and nothing changed, why does the second run do any work? Load, extract, transform and save: hash every input, keep each step's intermediate result as signed JSON in the repository, and redo only what an input change reaches.", "url": "https://newsroom.sgit.ai/articles/the-second-run.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The second run: a forensic look at why a release of this newsroom takes about 24 minutes, measured stage by stage over two timed releases and 437 CI runs since 18 October, what each check protects, what runs twice, what can run side by side, and why, if nothing changed, the second run should do almost no work at all</p>
+ <h1>The second run: a forensic look at why a release of this newsroom takes about 24 minutes, measured stage by stage over two timed releases and 437 CI runs since 18 October, what each check protects, what runs twice, what can run side by side, and why, if nothing changed, the second run should do almost no work at all</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-11-19 &middot; <a href="versions/the-second-run.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v999.0.0</a> &middot; <span class="chip">ci</span><span class="chip">engineering</span><span class="chip">testing</span><span class="chip">signing</span><span class="chip">build</span><span class="chip">agenticcells</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> A release of this newsroom takes about 24 minutes from a finished article to a live page, and I asked why. We timed two releases stage by stage and read every CI run since 18 October: 437 runs, 327 of them releases, about ten a day. CI is not the problem. Its median run has been 5.3 to 5.9 minutes every week since 21 October. The time is on the writer's machine, about 16.7 minutes, and half of that is sgit.ai's generator, borrowed and run three times per release: once expected to fail, then twice in full, each run now about 173 seconds against 80 a month ago, because it rebuilds every page every time. All 488 link-preview cards are redrawn each release, and the tests run on the writer's machine and again in CI. The quality control is worth keeping; it is what lets agents release ten times a day. What has to change is the idea that each run starts from nothing. If I run the same build twice and nothing changed, why does the second run do any work? Load, extract, transform and save: hash every input, keep each step's intermediate result as signed JSON in the repository, and redo only what an input change reaches.</em></p>
+<figure class="shot" data-shot="srn-time.webp" data-dir="images/" data-alt="Where a release&#x27;s 24 minutes go: the writer&#x27;s build, the gate, and CI to live, in seconds per stage." data-kind="chart"><figcaption>Where a release's 24 minutes go: the writer's build, the gate, and CI to live, in seconds per stage.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>About 24 minutes</b> from a finished article to a live page: 16.7 on the writer's machine, 1.4 for the gate, 6.3 in CI.</li>
+<li><b>CI is steady:</b> a median of 5.3 to 5.9 minutes a week since 21 October, over 437 runs and 327 releases.</li>
+<li><b>Half the local time is a borrowed generator,</b> run three times, each time rebuilding all of sgit.ai.</li>
+<li><b>Work is redone that did not change:</b> 488 cards redrawn, the tests run twice, the generator from scratch.</li>
+<li><b>The quality control stays.</b> The question is why the second run does any work.</li>
+<li><b>Load, extract, transform, save:</b> signed intermediate results in the repository, and only deltas rebuilt.</li>
+</ul>
+<h2 id="question">The question</h2>
+<p>I like what we have here. Every article goes through a build that checks its links, its captions, its version, its words, its width on a phone, its search, its reading meter, and twenty-two browser and library tests, and then CI checks much of it again and deploys. It is what lets agents release this site about ten times a day without breaking it.</p>
+<p>But a release takes about 24 minutes, and I asked the writer to find out where they go before changing anything: a forensic look first, with numbers, and only then the recommendations. This is that look. It follows <a href="the-checks-measured.html">the checks, measured</a>, a month ago, which found the same 25 minutes for a smaller site, and <a href="behaviour-policies-from-the-checks.html">behaviour policies from the checks</a>, which mapped each check to the behaviour it protects.</p>
+<h2 id="ci">A month of CI</h2>
+<p>From 18 October to 19 November there were 437 runs of the site's workflow: 399 on a push, 38 on a pull request; 344 succeeded, 85 failed, 7 were cancelled. 327 were releases, a successful push to dev. The busiest week, 19 to 25 October, had 130 runs and 96 releases; the busiest day, 28 October, 46 runs. From 5 to 13 November, when most of the team was stopped, there were one to three a day.</p>
+<p>The run time is steady. The median was 8.0 minutes on 18 October, dropped to 5.3 the day <a href="the-checks-measured.html">a faster build</a> made the tests run six at a time (v0.13.7, 21 October), and has stayed between 5.3 and 5.9 minutes every week since. No week rose by more than 30% on the one before. Within a run, over the last 50 releases:</p>
+<ul>
+<li><b>reader-tests: 3.1 minutes,</b> almost all of it the browser tests (147 seconds);</li>
+<li><b>wire-live: 1.8 minutes,</b> in parallel with it, reading the live vaults;</li>
+<li><b>release: 1.6 minutes,</b> of which 66 seconds is checking out the full history;</li>
+<li><b>deploy: 1.0 minute; validate: 0.5 minutes;</b> the new signature check 0.4.</li>
+</ul>
+<p>Failures cluster in one place: 60 of the 92 runs that did not succeed failed in the reader tests, and 5 in the release step. A failing test stops the deploy, as it should since v0.13.48.</p>
+<h2 id="local">The writer's machine</h2>
+<p>That leaves about 16.7 minutes before the push, so we timed two releases on 19 November, each with a new article, every step wrapped with a clock. The two agreed within 15 seconds. In one of them:</p>
+<ul>
+<li><b>Borrowing sgit.ai's generator, 12.6 minutes.</b> The newsroom still builds its articles with sgit.ai's 718 KB generator, in a clone: clone and replay 515 commits of article history (79 seconds), generate (152 seconds, and it stops on purpose, because the new article's card does not exist yet), draw the link-preview cards (118 seconds, all 488 of them), generate again (173 seconds), draw two banner collages (37 seconds), generate a third time (174 seconds), import.</li>
+<li><b>The newsroom's own 36 build steps, 35 seconds,</b> and its validator, 10.</li>
+<li><b>The tests, 212 seconds:</b> 20 files six at a time, then the two that measure timing alone.</li>
+<li><b>The gate, 86 seconds:</b> stamp the summaries, rebuild the sitemap, search and chrome, validate again, check the width, run the meter test again, the leak scan, sign and push.</li>
+</ul>
+<p>Two numbers explain most of the growth since October. A month ago each generator run took "about 80 seconds", in the code's own comment; now each takes about 173, because it rebuilds every one of sgit.ai's 1,848 pages every time, and the site has grown. And it runs three times whenever a release has a new card or banner. The code means the second and third runs to happen only when they have something to pick up; but in both timed releases the second banner pass redrew the same two collages, which already existed, and a third full run followed. That is worth checking: it may be adding three minutes to releases that need none.</p>
+<h2 id="twice">What runs twice</h2>
+<ul>
+<li><b>The tests:</b> 22 files on the writer's machine, and the same browser tests again in CI, on the same tree.</li>
+<li><b>The meter test:</b> in the tests, again in the gate, and again in CI.</li>
+<li><b>Validation:</b> sgit.ai's validator inside the borrowed build, the newsroom's in the build, again in the gate, in CI's validate job, and in CI's release gate.</li>
+<li><b>The sitemap</b> is generated twice in the build; <b>the cards</b> are all redrawn though most did not change.</li>
+</ul>
+<p>Some of this is deliberate. CI validating what the writer pushed is the point: the writer's machine is not trusted, so CI checks again. But running the same check on the same tree twice proves nothing new.</p>
+<h2 id="second-run">The second run</h2>
+<p>So here is the question I want every part of this to answer: if I run the same build twice and nothing changed, why does the second run do any work? We have already done it. We know those files produced those pages, those cards and those results.</p>
+<p>The answer is an old pattern with a name: load, extract, transform, save. Load the inputs and hash them. Extract what each step needs into an intermediate representation: an article parsed, its graph, its summary, its card's text, a page's links, a test's inputs. Transform those into outputs. Save the outputs and a manifest that maps each input hash to the output hash it produced, as JSON. On the next run, a step whose input hashes match the manifest has nothing to do; it skips, and says so.</p>
+<p>Three things make this safe rather than lazy:</p>
+<ul>
+<li><b>Sign the results.</b> The writer already signs every commit with its registered key, and CI verifies it. A step's manifest can be signed the same way, so CI can trust a result the writer produced on the same tree, and nobody can forge a passed test by editing a JSON file.</li>
+<li><b>Commit them.</b> CI already commits to the repository: the version stamp on every release. Adding the manifest of what changed in that version costs nothing, and the change itself is a validation: if one article changed, exactly that article's hashes should have moved, and anything else that moved is a finding.</li>
+<li><b>Run everything once a day anyway.</b> A full rebuild from nothing, compared with the manifests, is a check in its own right: every hash should match. If one does not, a step is not deterministic, or something changed that nobody declared.</li>
+</ul>
+<p>It will mean changing how some things are built and tested: steps with declared inputs, outputs that do not depend on the clock, tests that can say which files they read. That is not a cost; it is what makes the whole pipeline more resilient, and easier for an agent or a person to reason about.</p>
+<h2 id="recommendations">What to do</h2>
+<p>Only now, the recommendations, in the order I would take them:</p>
+<ol>
+<li><b>Stop redoing unchanged work.</b> Draw a card only when its article's card text changed (most releases: one card, not 488). Find out why the two collages are redrawn and trigger a third generator run. Generate the sitemap once.</li>
+<li><b>Do not run a generator that is expected to fail.</b> Write the graphs the card maker needs before the first generator run, so that one run, not three, is the normal case.</li>
+<li><b>Run the tests once per tree.</b> Either the writer's signed test result travels with the commit and CI verifies the signature and the tree hash instead of rerunning, or the writer stops running them and CI is the only place they run. One of the two, not both.</li>
+<li><b>Run side by side what does not depend on each other.</b> Cards and banners together; the newsroom's own steps while the borrowed generator runs; in CI, the release job's full-history checkout (66 seconds) can fetch commits and trees only, as the new signature job already does in about 25 seconds.</li>
+<li><b>Then the real change:</b> load, extract, transform, save, with signed manifests committed beside the version, and a daily full run as the check that the hashes hold.</li>
+<li><b>And the long-standing one:</b> move the newsroom off sgit.ai's generator, so it builds only its own 2,434 pages, and only the ones that changed.</li>
+</ol>
+<p>None of these removes a check. Each makes a check run when its inputs change, and prove it did.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>Two timed releases are a small sample,</b> though they agreed within 15 seconds; both had a new article.</li>
+<li><b>CI durations are each run's start to its last update;</b> 13 pull-request runs from 28 to 30 October whose records were updated later are left out of the slow figures.</li>
+<li><b>The collage finding is a lead, not a diagnosis;</b> the cause is not yet traced in the generator.</li>
+<li><b>The 21 October figures</b> are from <a href="the-checks-measured.html">the checks, measured</a>, measured the same way on a smaller site.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>Two timed runs of <code>admin/writer/tools/release.sh</code> on 19 November 2026 (the same commands, each wrapped with a clock, and <code>publish.py</code>'s output stamped per line), the gate's own timing, and the push-to-live time of v0.14.167. The GitHub Actions record of <code>deploy-pages.yml</code> from 18 October to 19 November 2026: every run, and the jobs and steps of the last 50 releases and of 11 runs across the month. The code of <code>admin/build/publish.py</code> and <code>admin/build/run_tests.sh</code>. Earlier: <a href="the-checks-measured.html">the checks, measured</a>, <a href="behaviour-policies-from-the-checks.html">behaviour policies from the checks</a>, <a href="where-a-check-runs.html">where a check runs</a>, <a href="policies-in-practice.html">policies in practice</a>.</p>
+<sg-meter view="page" kind="article" date="2026-11-19" topics="agents-and-policy" title="The second run: a forensic look at why a release of this newsroom takes about 24 minutes, measured stage by stage over two timed releases and 437 CI runs since 18 October, what each check protects, what runs twice, what can run side by side, and why, if nothing changed, the second run should do almost no work at all, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#the-second-run">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="the-checks-measured.html">The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives</a> <span class="dim">A release measured step by step, 123 local builds, 245 CI runs and 1,061 test checks, and where each check actually lives.</span></li><li><a href="behaviour-policies-from-the-checks.html">Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept</a> <span class="dim">57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept.</span></li><li><a href="where-a-check-runs.html">Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom</a> <span class="dim">Tests as enforcers of behaviour policies, and what moving them out of the agent's environment would gain, measured on this newsroom.</span></li><li><a href="policies-in-practice.html">Policies in practice: four places a behaviour policy earns its keep, measured on a real Google key whose reach is five APIs while the feature uses one, a signed policy for the factory's CI changes, requests that carry the policies they act under, and release notes that say what each fix closes and what it must not open</a> <span class="dim">Four uses of feature behaviour policies: a real key's gap, signed CI changes, requests carrying policies, and release notes as fixes.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 492 &middot; <a href="../for/make.html#r=492">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/the-second-run.jpg" download>the-second-run.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-second-run.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>The publication</h4>
+    <a href="../about/imprint.html">Imprint</a>
+    <a href="../about/standards.html">Editorial standards</a>
+    <a href="../about/corrections.html">Corrections</a>
+    <a href="../about/withdrawals.html">Withdrawals</a>
+    <a href="../about/complaints.html">Complaints</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

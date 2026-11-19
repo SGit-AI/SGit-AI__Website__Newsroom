@@ -88,6 +88,7 @@ Startups & strategy[This article as a graph →](graphs.md#sovereignty-you-can-m
 
 ### Continued by
 
+- [Your own registrar: which domain registrar to recommend to a small business in Europe taking its website's domain into its own name, sixteen compared on price and renewal, .eu, .pt and .ai, privacy, and APIs safe enough to hand to an agent, why AWS now sells .ai but is still a heavy choice, and the three we would put forward](your-own-registrar.md) Which registrar a small business in Europe should hold its own domain at: sixteen compared, and OVHcloud, Hostinger and INWX.
 - [The sovereign website: a pivot brief for agenticcells.ai, what the site says today and what it should say next, sovereignty as the headline, a website you own, control, change and can run anywhere, the deliverables explained, the infographics to draw, five homepage designs to choose from, and the partner programme and examples that already prove it](the-sovereign-website.md) A pivot brief for agenticcells.ai: lead with sovereignty, show the deliverables, draw the infographics, and make five homepage designs.
 
 [All articles](index.md) · [All graphs](graphs.md)

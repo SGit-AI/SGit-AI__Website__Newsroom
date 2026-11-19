@@ -1,0 +1,30 @@
+{
+ "slug": "your-own-registrar",
+ "teaser": "Which registrar a small business in Europe should hold its own domain at: sixteen compared, and OVHcloud, Hostinger and INWX.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "A domain owner in Europe is best served by an EU registrar with steady renewals and an API whose keys can be narrowed, because the registrar holds the name and its API's reach must be limited before an agent uses it.",
+ "nodes": [
+  {"id": "aws", "label": "AWS Route 53", "kind": "example", "summary": "Sells .ai, heavy."},
+  {"id": "renewal", "label": "Renewal jumps", "kind": "claim", "summary": "The commonest catch."},
+  {"id": "agent", "label": "Agent controls", "kind": "concept", "summary": "Scoped keys, spend caps, no-pay MCP."},
+  {"id": "ovh", "label": "OVHcloud", "kind": "example", "summary": "Steady EU prices."},
+  {"id": "hostinger", "label": "Hostinger", "kind": "example", "summary": "Free privacy, MCP."},
+  {"id": "inwx", "label": "INWX", "kind": "example", "summary": "API first."}
+ ],
+ "edges": [
+  {"from": "renewal", "to": "ovh", "rel": "contrasts"},
+  {"from": "agent", "to": "ovh", "rel": "example-of"},
+  {"from": "agent", "to": "hostinger", "rel": "example-of"},
+  {"from": "inwx", "to": "agent", "rel": "extends"},
+  {"from": "aws", "to": "ovh", "rel": "compared-with"}
+ ],
+ "links": {
+  "articles": ["sovereignty-you-can-move", "no-lock-in", "policies-in-practice", "the-sovereign-website"],
+  "pages": [],
+  "sites": ["https://www.ovhcloud.com/", "https://www.hostinger.com/", "https://www.inwx.com/"]
+ },
+ "quotes": [
+  {"text": "the order form must be paid", "why": "OVHcloud's domain MCP guide."},
+  {"text": "manage but no purchases", "why": "Porkbun's API documentation."}
+ ]
+}

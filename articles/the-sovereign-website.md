@@ -148,6 +148,10 @@ Startups & strategy[This article as a graph →](graphs.md#the-sovereign-website
 - [Static against the platforms: why a static site in your own repository, edited by Claude and watched by a security agent, is a real alternative to WordPress, Wix and Squarespace, what the numbers say about their reach, their attack surface, their complexity and their lock-in, and a converter that could bring a WordPress or Squarespace site across](static-against-the-platforms.md) Why a static site in your own repository, edited by Claude, is an alternative to WordPress, Wix and Squarespace, and a converter to bring sites across.
 - [Start with an interview: how someone goes from "I want to try it" to editing their own site with Claude, by being interviewed by Claude first, about what they want, the sections, their materials and the sites they like, then sending their material in whichever way suits them, getting five designs inspired by what they like, or a better version of the site they already have, and reaching the one milestone that matters](start-with-an-interview.md) Onboarding by interview: Claude asks what you want and which sites you like, material comes any way, and you end up editing with Claude.
 
+### Continued by
+
+- [Your own registrar: which domain registrar to recommend to a small business in Europe taking its website's domain into its own name, sixteen compared on price and renewal, .eu, .pt and .ai, privacy, and APIs safe enough to hand to an agent, why AWS now sells .ai but is still a heavy choice, and the three we would put forward](your-own-registrar.md) Which registrar a small business in Europe should hold its own domain at: sixteen compared, and OVHcloud, Hostinger and INWX.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 488 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=488)

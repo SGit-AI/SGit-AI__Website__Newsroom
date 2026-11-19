@@ -73,6 +73,62 @@
   ],
   "articles": [
     {
+      "slug": "your-own-registrar",
+      "title": "Your own registrar: which domain registrar to recommend to a small business in Europe taking its website's domain into its own name, sixteen compared on price and renewal, .eu, .pt and .ai, privacy, and APIs safe enough to hand to an agent, why AWS now sells .ai but is still a heavy choice, and the three we would put forward",
+      "date": "2026-11-19",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/your-own-registrar.html",
+      "markdown": "https://newsroom.sgit.ai/articles/your-own-registrar.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/your-own-registrar.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/your-own-registrar.json",
+      "teaser": "Which registrar a small business in Europe should hold its own domain at: sixteen compared, and OVHcloud, Hostinger and INWX.",
+      "summary": "Some of the people whose websites AgentiCCells builds want their domain in their own name, at a registrar of their own. I wanted to recommend one, and my instinct was AWS, but a whole AWS account just to hold a domain is a heavy thing to ask of a small business. So we compared sixteen registrars from their own pages on 19 November 2026. AWS does now sell .ai, at $137 a year with no privacy protection, but not .pt, and its DNS is billed separately. Cloudflare sells at cost but offers neither .eu nor .pt and makes you use its DNS. The biggest catch across Europe's registrars is renewal: Gandi's .com goes from €11.65 to €31.98 a year. Agent tooling has moved fast: Porkbun, Dynadot, OVHcloud, Hostinger, Namecheap and Cloudflare have official MCP servers, and the controls differ, from keys limited by domain and a spend cap to an agent that cannot pay at all. For a European small business we would put forward OVHcloud, Hostinger and INWX, each with its catch.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "domains",
+        "registrars",
+        "europe",
+        "sovereignty",
+        "agenticcells",
+        "agents",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "the-second-run",
+      "title": "The second run: a forensic look at why a release of this newsroom takes about 24 minutes, measured stage by stage over two timed releases and 437 CI runs since 18 October, what each check protects, what runs twice, what can run side by side, and why, if nothing changed, the second run should do almost no work at all",
+      "date": "2026-11-19",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/the-second-run.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-second-run.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-second-run.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/the-second-run.json",
+      "teaser": "Why a release takes 24 minutes, measured stage by stage, and why a second run with nothing changed should do almost no work.",
+      "summary": "A release of this newsroom takes about 24 minutes from a finished article to a live page, and I asked why. We timed two releases stage by stage and read every CI run since 18 October: 437 runs, 327 of them releases, about ten a day. CI is not the problem. Its median run has been 5.3 to 5.9 minutes every week since 21 October. The time is on the writer's machine, about 16.7 minutes, and half of that is sgit.ai's generator, borrowed and run three times per release: once expected to fail, then twice in full, each run now about 173 seconds against 80 a month ago, because it rebuilds every page every time. All 488 link-preview cards are redrawn each release, and the tests run on the writer's machine and again in CI. The quality control is worth keeping; it is what lets agents release ten times a day. What has to change is the idea that each run starts from nothing. If I run the same build twice and nothing changed, why does the second run do any work? Load, extract, transform and save: hash every input, keep each step's intermediate result as signed JSON in the repository, and redo only what an input change reaches.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "ci",
+        "engineering",
+        "testing",
+        "signing",
+        "build",
+        "agenticcells",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "policies-in-practice",
       "title": "Policies in practice: four places a behaviour policy earns its keep, measured on a real Google key whose reach is five APIs while the feature uses one, a signed policy for the factory's CI changes, requests that carry the policies they act under, and release notes that say what each fix closes and what it must not open",
       "date": "2026-11-19",

@@ -83,6 +83,11 @@ Agents & policy[This article as a graph →](graphs.md#policies-in-practice)
 - [Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius](application-behaviour-policies.md) Map an application the way we map an agent, so a site switched off for php2shell can come back with a known blast radius.
 - [A page we never charge: how the PrompTugal agents found that YouTube's terms forbid charging to watch an embedded player, on the one site of ours that bills, put the conflict to me as a question, quoted the six conditions from YouTube's own policies once I suggested a page that is never charged, and built the gate that refuses a YouTube player on any page that is, in 84 minutes of commits](a-page-we-never-charge.md) YouTube forbids charging to watch an embedded player, so promptugal.news, which bills, will show the replays on a page it never charges.
 
+### Continued by
+
+- [Your own registrar: which domain registrar to recommend to a small business in Europe taking its website's domain into its own name, sixteen compared on price and renewal, .eu, .pt and .ai, privacy, and APIs safe enough to hand to an agent, why AWS now sells .ai but is still a heavy choice, and the three we would put forward](your-own-registrar.md) Which registrar a small business in Europe should hold its own domain at: sixteen compared, and OVHcloud, Hostinger and INWX.
+- [The second run: a forensic look at why a release of this newsroom takes about 24 minutes, measured stage by stage over two timed releases and 437 CI runs since 18 October, what each check protects, what runs twice, what can run side by side, and why, if nothing changed, the second run should do almost no work at all](the-second-run.md) Why a release takes 24 minutes, measured stage by stage, and why a second run with nothing changed should do almost no work.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 491 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=491)
