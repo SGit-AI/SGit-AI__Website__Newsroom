@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Launching the sovereign website appliance: what changed in v1.1.0, SGit Newsroom</title>
+<meta name="description" content="The changes to the article "Launching the sovereign website appliance" in v1.1.0, paragraph by paragraph.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/versions/launching-the-sovereign-website-appliance/v1.1.0.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/versions/launching-the-sovereign-website-appliance/v1.1.0.html">
+<meta property="og:title" content="Launching the sovereign website appliance: what changed in v1.1.0, SGit Newsroom">
+<meta property="og:description" content="The changes to the article "Launching the sovereign website appliance" in v1.1.0, paragraph by paragraph.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Launching the sovereign website appliance: what changed in v1.1.0, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<link rel="alternate" type="text/markdown" href="v1.1.0.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Launching the sovereign website appliance: what changed in v1.1.0, SGit Newsroom", "headline": "Launching the sovereign website appliance: what changed in v1.1.0, SGit Newsroom", "description": "The changes to the article \"Launching the sovereign website appliance\" in v1.1.0, paragraph by paragraph.", "url": "https://newsroom.sgit.ai/articles/versions/launching-the-sovereign-website-appliance/v1.1.0.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../../../assets/themes/themes.css">
+  <link rel="stylesheet" href="../../../assets/site-nav.css">
+  <script src="../../../assets/themes/themes.js"></script>
+  <script src="../../../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../../../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../../../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../../../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../index.html">Front page</a>
+      <a class="sl" href="../../../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../../../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../../../about/index.html">Why this exists</a>
+      <a class="sl" href="../../../desks/index.html">The five desks</a>
+      <a class="sl" href="../../../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../../../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../../../articles/index.html#all">Every article</a>
+      <a class="sl" href="../../../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../../../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../../../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../../../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../../../for/make.html">Make a reading list</a>
+      <a class="sl" href="../../../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../wire/index.html">Today's edition</a>
+      <a class="sl" href="../../../wire/sources.html">The sources</a>
+      <a class="sl" href="../../../wire/how.html">How the wire works</a>
+      <a class="sl" href="../../../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../../../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../../../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../../../wire/days.html">Day by day</a>
+      <a class="sl" href="../../../wire/charter.html">The charter</a>
+      <a class="sl" href="../../../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../account/index.html">Your reading account</a>
+      <a class="sl" href="../../../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../../../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../../../account/personas.html">Your personas</a>
+      <a class="sl" href="../../../account/top-up.html">Top up</a>
+      <a class="sl" href="../../../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../../../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../../../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../../../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../../../newsroom/board.html">The board</a>
+      <a class="sl" href="../../../newsroom/log.html">The run log</a>
+      <a class="sl" href="../../../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../../../team/index.html">The team: who does what</a>
+      <a class="sl" href="../../../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../../../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../../../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../../../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../../../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../../../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../../../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../../../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../../../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../../../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../../../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../../../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../../../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../../../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../../../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../../../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../../../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../archive/index.html">The archive</a>
+      <a class="sl" href="../../../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../../../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../../../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../../../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../../../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../../../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../../../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../../../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../../../network/index.html">The network</a>
+      <a class="sl" href="../../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../../../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../../../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../../../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../../../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../../../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../../../assets/reader/strip.css">
+  <script src="../../../assets/reader/strip.js" defer></script>
+  <script src="../../../assets/reader/highlights.js" defer></script>
+  <script src="../../../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../../../assets/pen/pen.css">
+  <script type="module" src="../../../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../../../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc diff">
+ <p class="crumb"><a href="../../../index.html">Home</a> / <a href="../../index.html">Articles</a> / <a href="../../launching-the-sovereign-website-appliance.html">Launching the sovereign website appliance</a> / <a href="../launching-the-sovereign-website-appliance.html">Versions</a> / v1.1.0</p>
+ <h1>Launching the sovereign website appliance: what changed in v1.1.0</h1>
+ <p class="lead">From v1.0.1 (2026-11-19, <code>6498ef87d</code>) to v1.1.0 (2026-11-19, this release), paragraph by paragraph.</p>
+ <p class="small dim">24 paragraphs added, 13 removed, 7 changed in place, 33 unchanged. About 1,020 words added and 419 removed. Insertions are marked like <ins>this</ins>, deletions like <del>this</del>; unchanged runs are folded to one line; figures appear as their file names.</p>
+ <style>.diff ins{background:#e6f4ea;color:#1a5c36;text-decoration:none;padding:0 2px}.diff del{background:#fde8e6;color:#8a1c12;text-decoration:line-through;padding:0 2px}.diff .diff-same{color:#8a8780;font-size:.85em;border-left:3px solid #e3e0d8;padding-left:.7em;margin:1.2em 0}.diff .added{border-left:3px solid #1a7f5a;padding-left:.7em}.diff .removed{border-left:3px solid #b42318;padding-left:.7em;color:#6b6863;text-decoration:line-through}.diff .changed{border-left:3px solid #b45309;padding-left:.7em}.diff .diff-fig{font-style:italic;color:#6b6863}.diff .diff-li{margin:.3em 0 .3em 1em}</style>
+ <p class="small"><a href="v1.0.1.html">&larr; v1.0.1</a> &middot; <a href="../launching-the-sovereign-website-appliance.html">all versions</a></p>
+ <p class="changed"># Launching the sovereign website appliance: the plan for a Kickstarter campaign that sells a sovereign website on a configured Android tablet or a <del>set of </del>Raspberry <del>Pis,</del><ins>Pi,</ins> <del>three</del><ins>five</ins> tiers from a £50 supporter to £1,000, <del>what</del><ins>the two Pro tiers running local AI models that can build a website on the device itself, the hardware</ins> we <del>promise</del><ins>would</ins> <del>to spend on hardware and examples of what that buys</del><ins>buy</ins> in the UK today, a European tablet, the UK as the base goal with countries and iOS as stretch goals, and why we launch alone</p>
+ <p class="changed">Summary: This is the plan we arrived at, after an afternoon of turns recorded in the previous piece. We launch Sovereign Website on Kickstarter as an appliance: a sovereign website on a device its owner holds, an Android tablet <ins>or a Raspberry Pi, </ins>configured with the site, its <del>editing,</del><ins>editing and</ins> its <del>monitoring</del><ins>monitoring. On the Pro tiers the device also runs a local AI model, so it can build</ins> and <del>an AI app, or</del><ins>change</ins> a <del>set</del><ins>website,</ins> <del>of</del><ins>and</ins> <del>Raspberry</del><ins>run</ins> <del>Pis</del><ins>other</ins> <del>that</del><ins>tasks,</ins> <del>serve</del><ins>with nothing leaving the house. That is proper sovereignty, and some people will want</ins> it <del>from</del><ins>for</ins> <del>home.</del><ins>the</ins> <del>Three</del><ins>setup alone. Five</ins> tiers. £50, the supporter: the website, set up and handed over, no hardware. <del>£500:</del><ins>£400</ins> <del>we</del><ins>for</ins> <del>spend</del><ins>a Raspberry Pi 5 with 8GB,</ins> about <del>£250</del><ins>£230</ins> <del>on</del><ins>of</ins> <del>hardware,</del><ins>hardware</ins> <del>the</del><ins>today,</ins> <del>backer's</del><ins>and</ins> <del>choice,</del><ins>£500 for</ins> a tablet<ins> at about £250,</ins> such as a Lenovo Idea Tab at <del>£209.99</del><ins>£209.99:</ins> <del>today,</del><ins>we</ins> <del>or</del><ins>build</ins> <del>two</del><ins>the website for you, and the device runs it. £900 for a</ins> Raspberry Pi 5 <del>kits </del>with <del>2GB</del><ins>16GB</ins> <del>each.</del><ins>and</ins> <del>£1,000: we spend</del><ins>256GB,</ins> about <del>£500,</del><ins>£400, and £1,000 for</ins> a tablet <del>that</del><ins>at</ins> <del>can</del><ins>about</ins> <del>run AI models</del><ins>£500,</ins> such as a Samsung Galaxy Tab S10 FE at <del>£509,</del><ins>£509: these run local models, and</ins> the<ins> website can be built on the device itself. The</ins> German-made Volla tablet with the de-Googled <del>/e/OS,</del><ins>/e/OS</ins> <del>or</del><ins>is a European alternative. The</ins> Pi <del>kits,</del><ins>is</ins> <del>five</del><ins>the</ins> <del>with</del><ins>cheaper</ins> <del>1GB</del><ins>way</ins> <del>or</del><ins>in</ins> <del>three</del><ins>at</ins> <del>with</del><ins>each</ins> <del>2GB.</del><ins>level;</ins> <del>Add-ons</del><ins>what is left of each pledge after the hardware pays</ins> for <del>their</del><ins>the</ins> <del>own</del><ins>setup,</ins> <del>app</del><ins>the</ins> <del>or</del><ins>site,</ins> <del>their</del><ins>the</ins> <del>own</del><ins>team</ins> <del>product.</del><ins>inside it, support, shipping and the platform's fees.</ins> The UK is the base goal; Portugal is the first stretch goal; backers vote on the countries after it, and on iOS. All-or-nothing: if we do not reach the goal, nobody pays and we build nothing. And we launch on our own, with Android and open source, and talk to device makers once it works.</p>
+ <p class="changed">!shot lsa-tiers.webp | images/ | <del>The</del><ins>Five</ins> tiers: <del>what</del><ins>a</ins> <del>you</del><ins>£50</ins> <del>pledge,</del><ins>supporter,</ins> <del>and</del><ins>then</ins> <del>what</del><ins>a</ins> <del>we</del><ins>Raspberry</ins> <del>spend on hardware, your choice of tablet</del><ins>Pi</ins> or <del>Raspberry</del><ins>a</ins> <del>Pis.</del><ins>tablet, the Pro tiers with local AI models.</ins> | concept</p>
+ <p class="diff-same">2 unchanged paragraphs, under In short {#in-short}</p>
+ <p class="diff-li removed">&bull; <b>Android first,</b> or a set of Raspberry Pis; open source all the way down.</p>
+ <p class="diff-li removed">&bull; <b>Three tiers:</b> £50 supporter; £500 with about £250 of hardware; £1,000 with about £500.</p>
+ <p class="diff-li removed">&bull; <b>The backer chooses the hardware;</b> we buy the best available at the time.</p>
+ <p class="diff-li added">&bull; <b>Android first,</b> or a Raspberry Pi; open source all the way down.</p>
+ <p class="diff-li added">&bull; <b>The Pro tiers run local AI models,</b> and can build a website on the device itself.</p>
+ <p class="diff-li added">&bull; <b>Five tiers:</b> £50 supporter; £400 Pi; £500 tablet; £900 Pi Pro; £1,000 tablet Pro.</p>
+ <p class="diff-li added">&bull; <b>The Pi is the cheaper way in</b> at each level; the rest of each pledge pays for the setup.</p>
+ <p class="diff-same">2 unchanged paragraphs</p>
+ <p class="diff-li added">&bull; <b>The appliances launch officially</b> once the Kickstarter finishes.</p>
+ <p class="diff-same">3 unchanged paragraphs, under The product {#product}</p>
+ <p class="diff-li removed">&bull; <b>Or Raspberry Pis,</b> small computers that serve the site from home, deployed from the same repository by the same pipeline that deploys it to GitHub Pages.</p>
+ <p class="diff-li added">&bull; <b>Or a Raspberry Pi,</b> a small computer that serves the site from home, deployed from the same repository by the same pipeline that deploys it to GitHub Pages.</p>
+ <p class="diff-li added">&bull; <b>On the Pro tiers, an AI model on the device itself,</b> so the device can build and change the site, and run other tasks, without sending anything out.</p>
+ <p class="diff-same">5 unchanged paragraphs, under Android, and why not an iPad first {#android}, The tiers {#tiers}</p>
+ <p class="diff-li removed">&bull; <b>£500, Appliance.</b> Your website, and we spend about £250 on hardware, your choice: a tablet, or two Raspberry Pi kits with 2GB each.</p>
+ <p class="diff-li removed">&bull; <b>£1,000, Appliance Pro.</b> Your website, and we spend about £500 on hardware, your choice: a tablet that can run AI models on the device, a European tablet, or Raspberry Pi kits, five with 1GB or three with 2GB.</p>
+ <p class="diff-li added">&bull; <b>£400, Pi.</b> Your website, and a Raspberry Pi 5 with 8GB, in a starter kit with case, cooling, power and storage, set up with your site. We build the website for you; the Pi runs and serves it.</p>
+ <p class="diff-li added">&bull; <b>£500, Tablet.</b> Your website, and an Android tablet at about £250, set up the same way: we build the site, the tablet runs it.</p>
+ <p class="diff-li added">&bull; <b>£900, Pi Pro, with local AI.</b> Your website, and a Raspberry Pi 5 with 16GB and 256GB, running a local model: it can build and change websites itself.</p>
+ <p class="diff-li added">&bull; <b>£1,000, Tablet Pro, with local AI.</b> Your website, and a tablet at about £500 with the memory and chip to run a local model, so the site can be built on the tablet itself.</p>
+ <p class="diff-same">1 unchanged paragraph</p>
+ <p class="changed"><del>The promise is about what we spend, not a model number. Choices are collected after the campaign, in the pledge survey, and we buy the best hardware available for that amount at the time. </del>What is left of each pledge <ins>after the hardware </ins>pays for the <del>configuration,</del><ins>setup,</ins> the site, the team inside it, support, <del>shipping</del><ins>shipping,</ins> and the platform's <del>fees.</del><ins>fees, which come to about 8 to 10% of a pledge. At today's prices that is about £135 on the £400 Pi, about £205 on the £500 tablet, and about £400 to £420 on the two Pro tiers, before shipping: the entry tiers are thin on purpose, and the Pro tiers carry the margin. We buy the hardware after the campaign, the best for that price at the time, so the models named below are examples, not promises.</ins></p>
+ <p class="diff-same">1 unchanged paragraph</p>
+ <h2 class="removed">What £250 and £500 buy today {#hardware}</h2>
+ <p class="removed">Examples from UK retailers' own pages on 19 November 2026, which will change before we ship:</p>
+ <p class="diff-li removed">&bull; <b>About £250, a tablet:</b> the Lenovo Idea Tab, 11 inches, 8GB and 128GB, with a pen, £209.99 at John Lewis; or the Samsung Galaxy Tab A11+, 11 inches, from £199 to £259 by option, also at John Lewis.</p>
+ <p class="diff-li removed">&bull; <b>About £500, a tablet for AI on the device:</b> the Samsung Galaxy Tab S10 FE, 12GB and 256GB, with Galaxy AI, £509 at John Lewis. Two others to compare at the time, whose current prices we could not confirm: Lenovo's Yoga Tab, with a Snapdragon 8 Gen 3 and 12GB, and the OnePlus Pad 3, with a Snapdragon 8 Elite and 12GB, launched at £529.</p>
+ <p class="diff-li removed">&bull; <b>A European tablet:</b> the Volla Tablet, made by Volla in Germany, sold by Murena with /e/OS, a version of Android without Google: 12.6 inches, 12GB and 512GB, €569.99 in Murena's current offer, normally €649.99. Its chip is old and slow for AI on the device, but for sovereignty it is a strong choice: a European device and an open operating system.</p>
+ <p class="diff-li removed">&bull; <b>Raspberry Pis:</b> a complete Raspberry Pi 5 starter kit, with the board, power supply, case with fan and a 64GB card, is £99.70 with 1GB of memory and £130.90 with 2GB at The Pi Hut. A static website needs very little memory, so about £250 buys two 2GB kits (£261.80), and about £500 buys five 1GB kits (£498.50) or three 2GB kits (£392.70); the backer chooses.</p>
+ <p class="removed">Memory prices have risen sharply this year, and Raspberry Pi prices with them, which is one more reason the promise is a spend, not a part list.</p>
+ <h2 class="added">What the hardware costs today {#hardware}</h2>
+ <p class="added">Examples from UK retailers on 19 November 2026, which will change before we ship:</p>
+ <p class="diff-li added">&bull; <b>Raspberry Pi, standard:</b> an iRasptek starter kit for the Raspberry Pi 5 with 8GB and a 128GB card, case, cooler and power supply, £229.99 on Amazon UK. At The Pi Hut, the official Pi 5 starter kit with 8GB is £224.50.</p>
+ <p class="diff-li added">&bull; <b>Raspberry Pi, Pro:</b> the same iRasptek kit with 16GB, £380.99 with a 128GB card and £397.99 with 256GB, on Amazon UK.</p>
+ <p class="diff-li added">&bull; <b>Tablet, about £250:</b> the Lenovo Idea Tab, 11 inches, 8GB and 128GB, with a pen, £209.99 at John Lewis; or the Samsung Galaxy Tab A11+, from £199 to £259 by option, also at John Lewis.</p>
+ <p class="diff-li added">&bull; <b>Tablet, about £500:</b> the Samsung Galaxy Tab S10 FE, 12GB and 256GB, with Galaxy AI, £509 at John Lewis. Two others to compare at the time, whose current prices we could not confirm: Lenovo's Yoga Tab, with a Snapdragon 8 Gen 3 and 12GB, and the OnePlus Pad 3, with a Snapdragon 8 Elite and 12GB, launched at £529.</p>
+ <p class="diff-li added">&bull; <b>A European tablet:</b> the Volla Tablet, made by Volla in Germany, sold by Murena with /e/OS, a version of Android without Google: 12.6 inches, 12GB and 512GB, €569.99 in Murena's current offer, normally €649.99. Its chip is old and slow for AI on the device, so it would be a European alternative at the Tablet Pro price without the local model: a sovereignty choice, not an AI one.</p>
+ <p class="added">Memory prices have risen sharply this year, and Raspberry Pi prices with them, which is one more reason the devices are chosen at the time we buy them.</p>
+ <h2 class="added">Local AI on the Pro tiers, and sites made on the device {#on-device}</h2>
+ <p class="added">The difference between the standard and the Pro tiers is a local model. On the £400 Pi and the £500 tablet, we build the website for you with our own setup, and the device runs it; they could run a small model, but not well enough to be worth promising. On the £900 Pi Pro and the £1,000 Tablet Pro, the device runs a local model of its own. I have already tried a model running on my Web Summit tablet, in the browser; it was slow, but it worked, and for this it does not need to be fast. A Raspberry Pi 5 with 16GB should run useful open-weight models, more slowly; that is what we will test first.</p>
+ <p class="added">That changes what the device is. It is not only where the site lives; it is where the site can be made. On the Pro tiers, point the build page from <a href="../../watch-your-website-being-built.html">watch your website being built</a> at the device's own model, and a website is built on the device itself, with no key, no cloud and nothing leaving the house. The same model can run other tasks, and connect to other things the owner chooses. Some people will buy the appliance for that alone, because that is proper sovereignty: a computer they own, running a model they own, doing work for them under a behaviour policy they can read.</p>
+ <p class="added">So the campaign should show it working: websites built entirely on a Pi Pro and on a Tablet Pro, published as examples, with how long each took.</p>
+ <p class="diff-same">2 unchanged paragraphs, under A website served from home {#pi}</p>
+ <p class="changed">So the honest design is that the <del>Pis</del><ins>Pi</ins> <del>are</del><ins>is</ins> <del>hosts,</del><ins>a host,</ins> not the only host: the site stays on GitHub Pages or any static host, and the <del>Pis</del><ins>Pi</ins> <del>serve</del><ins>serves</ins> it from home and <del>keep</del><ins>keeps</ins> a full copy. <del>With two or five of them, the</del><ins>The</ins> site <ins>then </ins>runs <del>on</del><ins>in</ins> more than one<ins> place, one of them a</ins> machine its owner holds, which is the seventh principle: proven, not claimed.</p>
+ <p class="diff-same">5 unchanged paragraphs, under The goal and the stretch goals {#goals}</p>
+ <p class="changed"><ins>The appliances, the Raspberry Pi sovereign website among them, launch officially once the Kickstarter finishes: nothing is sold as an appliance before then. </ins>Stretch goals are revealed as the campaign goes. It is all-or-nothing: backers are charged only if the goal is met when the campaign ends, and the money arrives once, after it closes. If we do not reach it, nobody pays and we produce nothing.</p>
+ <p class="diff-same">9 unchanged paragraphs, under Value first {#value}, Launch alone, partner later {#partners}, After the campaign {#after}…</p>
+ <p class="diff-li added">&bull; <b>Local AI on the Pro devices is to be tested;</b> no website has been built on one yet, and local models will be slower than cloud ones.</p>
+ <p class="diff-same">3 unchanged paragraphs, under Where this comes from {#sources}</p>
+ <p class="changed">A conversation in writer-10's session on 19 November 2026, recorded in <a href="../../the-launch-plan-in-eleven-turns.html">the launch plan in eleven turns</a>,<ins> Raspberry Pi kit prices from Amazon UK listings for iRasptek's Raspberry Pi 5 starter kit, shared by Dinis on 19 November,</ins> and hardware prices read that day from <a href="https://www.johnlewis.com/-/p114200305">John Lewis's Lenovo Idea Tab</a>, <a href="https://www.johnlewis.com/samsung-galaxy-tab-a11-tablet-android-wi-fi-11-inch/grey/p114370544">Samsung Galaxy Tab A11+</a> and <a href="https://www.johnlewis.com/samsung-galaxy-tab-s10-fe-tablet-with-bluetooth-s-pen-android-12gb-ram-wi-fi-10-9-inch-256gb/grey/p113528276">Galaxy Tab S10 FE</a> pages, <a href="https://www.oneplus.com/uk/oneplus-pad-3">OnePlus's Pad 3 page</a>, <a href="https://murena.com/shop/smartphones/brand-new/murena-volla-tablet/">Murena's Volla Tablet</a>, <a href="https://thepihut.com/products/raspberry-pi-5-starter-kit">The Pi Hut's Raspberry Pi 5 starter kit</a> and <a href="https://thepihut.com/products/raspberry-pi-5">Raspberry Pi 5</a>. Related: <a href="../../what-is-a-sovereign-website.html">what is a sovereign website</a>, <a href="../../a-website-with-a-team-inside.html">a website with a team inside</a>, <a href="../../your-website-from-a-vault.html">your website, from a vault</a>, <a href="../../native-apps-by-agents.html">native apps by agents</a>, <a href="../../sovereign-websites-the-investment-case.html">sovereign websites, the investment case</a>.</p>
+ <p class="small" style="margin-top:2rem"><a href="v1.0.1.html">&larr; v1.0.1</a> &middot; <a href="../launching-the-sovereign-website-appliance.html">all versions</a></p>
+</main>
+<sg-meter view="page" kind="page" date="" topics="" title="Launching the sovereign website appliance: what changed in v1.1.0, SGit Newsroom" quiet></sg-meter>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../../../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../../admin/versions.html">v999.0.0</a> &middot; <a href="../../../admin/index.html">engineering</a> &middot; <a href="v1.1.0.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../../../index.html">&#8594; The front page</a>
+    <a href="../../../about/index.html">Why this exists</a>
+    <a href="../../../desks/index.html">The five desks</a>
+    <a href="../../../agents/index.html">Written by the agents</a>
+    <a href="../../../wire/index.html">The Industry Wire</a>
+    <a href="../../../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../../../wire/aws/index.html">The AWS Wire</a>
+    <a href="../../../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../../../articles/index.html#all">Every article</a>
+    <a href="../../../articles/newsletter/index.html">The newsletter</a>
+    <a href="../../../articles/collections/index.html">Collections</a>
+    <a href="../../../articles/desk/index.html">From the desk</a>
+    <a href="../../../articles/graphs.html">As graphs</a>
+    <a href="../../../subscribe/index.html">Subscribe</a>
+    <a href="../../../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../../../account/index.html">Your reading account</a>
+    <a href="../../../account/newsroom.html">Your newsroom</a>
+    <a href="../../../account/personas.html">Your personas</a>
+    <a href="../../../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>The publication</h4>
+    <a href="../../../about/imprint.html">Imprint</a>
+    <a href="../../../about/standards.html">Editorial standards</a>
+    <a href="../../../about/corrections.html">Corrections</a>
+    <a href="../../../about/withdrawals.html">Withdrawals</a>
+    <a href="../../../about/complaints.html">Complaints</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../../../newsroom/index.html">How the newsroom runs</a>
+    <a href="../../../newsroom/policies.html">Behaviour policies</a>
+    <a href="../../../newsroom/publish.html">How to publish</a>
+    <a href="../../../newsroom/board.html">The board</a>
+    <a href="../../../newsroom/log.html">The run log</a>
+    <a href="../../../team/index.html">The team</a>
+    <a href="../../../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../../../design/index.html">The design, and what runs</a>
+    <a href="../../../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../../../corrections/index.html">Corrections must propagate</a>
+    <a href="../../../provenance/index.html">Provenance is the product</a>
+    <a href="../../../economics/index.html">Paying the fact creator</a>
+    <a href="../../../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../../../replicate/index.html">Replicate this newsroom</a>
+    <a href="../../../publishers/index.html">For publishers</a>
+    <a href="../../../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../../../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../../../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../../../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../../../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../../../archive/index.html">The archive</a>
+    <a href="../../../network/index.html">The network</a>
+    <a href="../../../admin/versions.html">Release history</a>
+    <a href="../../../admin/index.html">Admin &amp; engineering</a>
+    <a href="../../../about/participant.html">Where we lose</a>
+    <a href="../../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

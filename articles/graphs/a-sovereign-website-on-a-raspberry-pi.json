@@ -1,0 +1,101 @@
+{
+  "slug": "a-sovereign-website-on-a-raspberry-pi",
+  "teaser": "The experiment: a sovereign website, its local model, its build and its signed updates, all on one Raspberry Pi 5 at home.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "A Raspberry Pi 5 with 16GB can be the whole sovereign website: serving the site, accepting only signed updates, running a local model that builds sites under a policy guard, and backing up to a vault, with nothing leaving the house; measured and published, it becomes the prototype for the Pi appliances that launch after the Kickstarter.",
+  "nodes": [
+    {
+      "id": "pi",
+      "label": "One Raspberry Pi",
+      "kind": "concept",
+      "summary": "The whole thing at home."
+    },
+    {
+      "id": "signed",
+      "label": "Only signed updates",
+      "kind": "method",
+      "summary": "Signatures checked."
+    },
+    {
+      "id": "local",
+      "label": "A local model",
+      "kind": "method",
+      "summary": "An OpenAI-style endpoint."
+    },
+    {
+      "id": "build",
+      "label": "A site built on the Pi",
+      "kind": "example",
+      "summary": "Under a policy guard."
+    },
+    {
+      "id": "measure",
+      "label": "What we measure",
+      "kind": "method",
+      "summary": "Speed, time, quality, power."
+    },
+    {
+      "id": "product",
+      "label": "The product after the Kickstarter",
+      "kind": "claim",
+      "summary": "Launches officially then."
+    }
+  ],
+  "edges": [
+    {
+      "from": "signed",
+      "to": "pi",
+      "rel": "depends-on"
+    },
+    {
+      "from": "local",
+      "to": "pi",
+      "rel": "depends-on"
+    },
+    {
+      "from": "build",
+      "to": "local",
+      "rel": "depends-on"
+    },
+    {
+      "from": "measure",
+      "to": "build",
+      "rel": "depends-on"
+    },
+    {
+      "from": "product",
+      "to": "measure",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "launching-the-sovereign-website-appliance",
+      "watch-your-website-being-built",
+      "what-is-a-sovereign-website",
+      "how-a-vault-works"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "Not only where the site is served from, but where it is made.",
+      "why": "Dinis."
+    },
+    {
+      "text": "An update nobody signed never reaches the shelf.",
+      "why": "Dinis."
+    }
+  ],
+  "figures": [
+    {
+      "file": "rpi-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rpi-flow.webp",
+      "caption": "Everything sovereign on one box: what runs on the Pi, what it talks to, and what never leaves the house.",
+      "kind": "concept"
+    }
+  ]
+}

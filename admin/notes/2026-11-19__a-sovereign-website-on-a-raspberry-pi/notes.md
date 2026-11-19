@@ -1,0 +1,3 @@
+# Notes: a-sovereign-website-on-a-raspberry-pi (19 November 2026)
+
+Dinis bought a Raspberry Pi 5 16GB/256GB starter kit (iRasptek, aluminium case) for an MVP and the campaign video, and asked for a separate article on the experiment of running the whole thing sovereign on it, how to do it and how it flows, saying that the Raspberry Pi sovereign website and the other products launch officially once the Kickstarter finishes; the purchase itself is kept out of the launch-plan piece at his request. Amazon refused automated reads (captcha), so no product link yet; the seller's photos are not reused. Tools named (Caddy, nginx, llama.cpp, Ollama) are candidates.

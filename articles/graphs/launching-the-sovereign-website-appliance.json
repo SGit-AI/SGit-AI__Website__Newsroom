@@ -1,10 +1,10 @@
 {
   "slug": "launching-the-sovereign-website-appliance",
-  "teaser": "The Kickstarter plan: a sovereign website on a configured Android tablet or Raspberry Pis, from a £50 supporter to £1,000.",
+  "teaser": "The Kickstarter plan: a sovereign website on a Raspberry Pi or a tablet, five tiers from £50 to £1,000, local AI on the Pro tiers.",
   "topics": [
     "agents-and-policy"
   ],
-  "core_idea": "Launch Sovereign Website on Kickstarter as an appliance, a sovereign website on an Android tablet or Raspberry Pis the owner holds, with three tiers that promise a hardware spend rather than a model, the UK as the base goal and countries as stretch goals, launching alone on open source and partnering later.",
+  "core_idea": "Launch Sovereign Website on Kickstarter as an appliance, a sovereign website on a Raspberry Pi or an Android tablet the owner holds, the Pro tiers running a local AI model that can build the site on the device and run other tasks, in five tiers from £50 to £1,000, the Pi cheaper than the tablet at each level, the UK as the base goal and countries as stretch goals, launching alone on open source.",
   "nodes": [
     {
       "id": "appliance",
@@ -14,19 +14,19 @@
     },
     {
       "id": "tiers",
-      "label": "Three tiers",
+      "label": "Five tiers",
       "kind": "artefact",
-      "summary": "£50, £500, £1,000."
+      "summary": "£50 to £1,000."
     },
     {
-      "id": "spend",
-      "label": "A spend, not a model",
-      "kind": "method",
-      "summary": "Backer's choice."
+      "id": "ondevice",
+      "label": "Local AI on the Pro tiers",
+      "kind": "concept",
+      "summary": "Builds the site there."
     },
     {
       "id": "pi",
-      "label": "Raspberry Pis as hosts",
+      "label": "A Raspberry Pi as a host",
       "kind": "method",
       "summary": "More than one host."
     },
@@ -50,8 +50,8 @@
       "rel": "depends-on"
     },
     {
-      "from": "spend",
-      "to": "tiers",
+      "from": "ondevice",
+      "to": "appliance",
       "rel": "extends"
     },
     {
@@ -77,7 +77,8 @@
       "a-website-with-a-team-inside",
       "your-website-from-a-vault",
       "native-apps-by-agents",
-      "sovereign-websites-the-investment-case"
+      "sovereign-websites-the-investment-case",
+      "watch-your-website-being-built"
     ],
     "pages": [],
     "sites": [
@@ -86,11 +87,11 @@
   },
   "quotes": [
     {
-      "text": "The promise is about what we spend, not a model number.",
+      "text": "That changes what the device is. It is not only where the site lives; it is where the site can be made.",
       "why": "Dinis."
     },
     {
-      "text": "So the honest design is that the Pis are hosts, not the only host",
+      "text": "So the honest design is that the Pi is a host, not the only host",
       "why": "Dinis."
     }
   ],
@@ -98,7 +99,7 @@
     {
       "file": "lsa-tiers.webp",
       "url": "https://newsroom.sgit.ai/articles/images/lsa-tiers.webp",
-      "caption": "The tiers: what you pledge, and what we spend on hardware, your choice of tablet or Raspberry Pis.",
+      "caption": "Five tiers: a £50 supporter, then a Raspberry Pi or a tablet, the Pro tiers with local AI models.",
       "kind": "concept"
     }
   ]

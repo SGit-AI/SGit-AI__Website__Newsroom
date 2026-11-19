@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-19 | published | 1,533 | first published | this release | [current](../watch-your-website-being-built.md) |
+| **v1.0.0** | 2026-11-19 | published | 1,533 | first published | [`9264c6fb5`](https://github.com/SGit-AI/SGit-AI__Website/commit/9264c6fb560b4a35829d4b3fa78bef00964d251d) | [current](../watch-your-website-being-built.md) |
 
 [← Back to the article](../watch-your-website-being-built.md) · [All articles](../index.md)
 
