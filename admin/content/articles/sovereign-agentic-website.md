@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: For the last few weeks we have been building websites a new way, and selling them as the AgentiCCells website cell. That name undersold it. AgentiCCells is about selling agentic teams; the website is one example of what such a team can do. So the website gets a name of its own. It is a Sovereign Agentic Website, SAW for short: built by agents from what you tell them, and owned by you, the files, the schema, the history and the address, in a repository you control, changed by talking to your own AI, and movable anywhere. Sovereign because ownership is the claim only we can make against Wix and Squarespace, and it is where Europe is heading. Agentic because that is what is different in 2026 from 2000. And it is an open pattern: like WordPress, anyone can use it without paying us; we offer a hosted version, with sites on sovereignwebsite.site. The domains, sovereignwebsite.ai, .com and .site, and the SovereignWebsite organisation on GitHub are ours as of today.
-version: v999.0.0
+version: v0.14.170
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereign-website, agentic, websites, open-source, agenticcells, strategy, article
 status: published
