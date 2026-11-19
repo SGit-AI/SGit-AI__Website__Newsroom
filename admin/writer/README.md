@@ -8,6 +8,8 @@ One writer at a time: `register.json` here lists every registration, and at most
 | Tool | What it does |
 |---|---|
 | `tools/register.cjs` | the writer register: `open` a registration at the editor's word (new key), `close` one (key deleted, never reused) |
+| `tools/signing-setup.sh` | sets this checkout's git to sign every commit as a git SSH signature with the open registration's key (`--publish` writes `git_signing` into the register) |
+| `tools/sshsig.mjs` | git's SSH signing program in Node (from PrompTugal's dev@), used by signing-setup.sh |
 | `tools/sign.cjs` | signs the staged tree for a writer's commit; its two lines go in the commit message (validate check 15) |
 | `tools/release.sh` | build, validate and test a release locally (needs `WRITER_SITE`, `WRITER_NODE`, `WRITER_TMP`); ends `fails=0` |
 | `tools/leakscan.sh` | the leak scan on the staged diff; must print PASS before every commit (`WRITER_KEYS` for your vault keys) |
