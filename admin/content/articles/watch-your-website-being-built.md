@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: At Web Summit two of our demos ran agentic workflows in the browser. The RiskMandate X-ray took a company's name, researched it, proposed where agent behaviour policies would matter, and mapped one in full. Another took a voice note, transcribed it through OpenRouter, fired a storyteller and a deck writer, and came back with a deck and an infographic on how we could work together. This is the same idea for websites, and another step in making it simple. A visitor goes to one page, describes the site they want, types it or says it, puts in their own model key, chooses how many designs, their pictures or generated ones, and a budget, and presses build. Then they watch: the conductor hands out the work, each agent's card shows what it may and may not do, the policy guard refuses what it should and says so on screen, the cost climbs against the budget, and the designs arrive one by one. At the end, a zip, in the browser, with no server of ours involved; a vault if they want one; and a recording of the run to replay. Run the same brief at £1, £3 and £5, on open-weight models, Sonnet and Opus, and you have evals anyone can see. It belongs on sovereignwebsite.org, open source, and it is how I would like to show people what we do.
-version: v999.0.0
+version: v0.14.176
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereign-website, agentic, behaviour-policies, evals, browser, demos, article
 status: published
