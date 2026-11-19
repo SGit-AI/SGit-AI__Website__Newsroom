@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: A release of this newsroom takes about 24 minutes from a finished article to a live page, and I asked why. We timed two releases stage by stage and read every CI run since 18 October: 437 runs, 327 of them releases, about ten a day. CI is not the problem. Its median run has been 5.3 to 5.9 minutes every week since 21 October. The time is on the writer's machine, about 16.7 minutes, and half of that is sgit.ai's generator, borrowed and run three times per release: once expected to fail, then twice in full, each run now about 173 seconds against 80 a month ago, because it rebuilds every page every time. All 488 link-preview cards are redrawn each release, and the tests run on the writer's machine and again in CI. The quality control is worth keeping; it is what lets agents release ten times a day. What has to change is the idea that each run starts from nothing. If I run the same build twice and nothing changed, why does the second run do any work? Load, extract, transform and save: hash every input, keep each step's intermediate result as signed JSON in the repository, and redo only what an input change reaches.
-version: v999.0.0
+version: v0.14.169
 license: https://creativecommons.org/licenses/by/4.0/
 tags: ci, engineering, testing, signing, build, agenticcells, article
 status: published

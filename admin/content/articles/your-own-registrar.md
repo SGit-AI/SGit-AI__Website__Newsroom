@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: Some of the people whose websites AgentiCCells builds want their domain in their own name, at a registrar of their own. I wanted to recommend one, and my instinct was AWS, but a whole AWS account just to hold a domain is a heavy thing to ask of a small business. So we compared sixteen registrars from their own pages on 19 November 2026. AWS does now sell .ai, at $137 a year with no privacy protection, but not .pt, and its DNS is billed separately. Cloudflare sells at cost but offers neither .eu nor .pt and makes you use its DNS. The biggest catch across Europe's registrars is renewal: Gandi's .com goes from €11.65 to €31.98 a year. Agent tooling has moved fast: Porkbun, Dynadot, OVHcloud, Hostinger, Namecheap and Cloudflare have official MCP servers, and the controls differ, from keys limited by domain and a spend cap to an agent that cannot pay at all. For a European small business we would put forward OVHcloud, Hostinger and INWX, each with its catch.
-version: v999.0.0
+version: v0.14.169
 license: https://creativecommons.org/licenses/by/4.0/
 tags: domains, registrars, europe, sovereignty, agenticcells, agents, article
 status: published
