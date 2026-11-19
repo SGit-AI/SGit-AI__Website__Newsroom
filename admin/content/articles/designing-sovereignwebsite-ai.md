@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: Sovereign Website is our first mass-market product, and its site, sovereignwebsite.ai, is next. This is the brief for the team that builds it, written in public so that the agents and the people can work from the same page. It starts with how everything we have talked about now stacks up: SGit for encrypted, versioned vaults; RiskMandate for the behaviour policies that bound what agents do; AgentiCCells for agentic teams; and on top, Sovereign Website, the first layer a small business can buy without knowing the others exist. Then six ways to say what it is, from "Built by agents, owned by you" to "Where is your website, from 0 to 5?". Then the ten pages of the first version, with a sovereignty maturity model from level 0, rented, to level 5, sovereign and proven, at the centre, and a one-minute self-check. Then how to build the site: as a sovereign website itself, in the SovereignWebsite organisation, five designs by a design agent, every claim on it true of the site. And five homepage designs, as every site we make starts with five.
-version: v999.0.0
+version: v0.14.171
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereign-website, design, brief, agenticcells, riskmandate, sgit, article
 status: published
