@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-124 articles, newest first.
+125 articles, newest first.
 
 ## November 2026
 
+- [Designing sovereignwebsite.ai: the brief for the team that will build the site of our first mass-market product, how the stack now has four layers, SGit, RiskMandate, AgentiCCells and Sovereign Website, six ways to say what it is, the ten pages, the sovereignty maturity model at its centre, how to build the site as a sovereign website itself, and five homepage designs to choose from](../../articles/designing-sovereignwebsite-ai.md), 2026-11-19, 5 min.
 - [Sovereign Agentic Website: the name for what we have been building, a website built by agents and owned by the person it is for, an open pattern anyone can use without paying us as WordPress was, a hosted version on sovereignwebsite.site, and why sovereign and agentic are the two words that make it different from the web of 2000](../../articles/sovereign-agentic-website.md), 2026-11-19, 4 min.
 - [Your own registrar: which domain registrar to recommend to a small business in Europe taking its website's domain into its own name, sixteen compared on price and renewal, .eu, .pt and .ai, privacy, and APIs safe enough to hand to an agent, why AWS now sells .ai but is still a heavy choice, and the three we would put forward](../../articles/your-own-registrar.md), 2026-11-19, 5 min.
 - [The sovereign website: a pivot brief for agenticcells.ai, what the site says today and what it should say next, sovereignty as the headline, a website you own, control, change and can run anywhere, the deliverables explained, the infographics to draw, five homepage designs to choose from, and the partner programme and examples that already prove it](../../articles/the-sovereign-website.md), 2026-11-19, 7 min.

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-19 | published | 1,079 | first published | this release | [current](../sovereign-agentic-website.md) |
+| **v1.0.0** | 2026-11-19 | published | 1,079 | first published | [`bdccbe68d`](https://github.com/SGit-AI/SGit-AI__Website/commit/bdccbe68dd55d468afb668f14105b385e5a87dc9) | [current](../sovereign-agentic-website.md) |
 
 [← Back to the article](../sovereign-agentic-website.md) · [All articles](../index.md)
 

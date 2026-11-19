@@ -81,6 +81,10 @@ Agents & policy[This article as a graph →](graphs.md#sovereign-agentic-website
 - [The email agentic cell: why connecting Gmail to agents the usual way is a security mess, and the architecture we will build instead, with one gateway agent that alone touches Gmail, a digital twin of the mailbox in a vault that people and agents work on together, signed proposals, approvals and even reads on append lanes, and behaviour policies at five altitudes](the-email-agentic-cell.md) Our own email connector: one gateway agent touches Gmail, everyone else works on a signed twin of the mailbox in a vault, with policies at five altitudes.
 - [Your own registrar: which domain registrar to recommend to a small business in Europe taking its website's domain into its own name, sixteen compared on price and renewal, .eu, .pt and .ai, privacy, and APIs safe enough to hand to an agent, why AWS now sells .ai but is still a heavy choice, and the three we would put forward](your-own-registrar.md) Which registrar a small business in Europe should hold its own domain at: sixteen compared, and OVHcloud, Hostinger and INWX.
 
+### Continued by
+
+- [Designing sovereignwebsite.ai: the brief for the team that will build the site of our first mass-market product, how the stack now has four layers, SGit, RiskMandate, AgentiCCells and Sovereign Website, six ways to say what it is, the ten pages, the sovereignty maturity model at its centre, how to build the site as a sovereign website itself, and five homepage designs to choose from](designing-sovereignwebsite-ai.md) The brief for sovereignwebsite.ai: a four-layer stack, six messages, ten pages, the sovereignty maturity model and five designs.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 494 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=494)

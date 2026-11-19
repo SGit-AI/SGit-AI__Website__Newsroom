@@ -77,6 +77,7 @@ Agents & policy[This article as a graph →](graphs.md#your-own-registrar)
 
 ### Continued by
 
+- [Designing sovereignwebsite.ai: the brief for the team that will build the site of our first mass-market product, how the stack now has four layers, SGit, RiskMandate, AgentiCCells and Sovereign Website, six ways to say what it is, the ten pages, the sovereignty maturity model at its centre, how to build the site as a sovereign website itself, and five homepage designs to choose from](designing-sovereignwebsite-ai.md) The brief for sovereignwebsite.ai: a four-layer stack, six messages, ten pages, the sovereignty maturity model and five designs.
 - [Sovereign Agentic Website: the name for what we have been building, a website built by agents and owned by the person it is for, an open pattern anyone can use without paying us as WordPress was, a hosted version on sovereignwebsite.site, and why sovereign and agentic are the two words that make it different from the web of 2000](sovereign-agentic-website.md) Sovereign Agentic Website: built by agents, owned by you; an open pattern anyone can use, and a hosted version on sovereignwebsite.site.
 
 [All articles](index.md) · [All graphs](graphs.md)
