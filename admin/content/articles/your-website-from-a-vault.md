@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: There are a lot of people I want to show a Sovereign Agentic Website to, and the best way is to show them their own: five versions of it, made by agents. The problem is that a demo cannot be public. Our repositories and sites are public by default, and "public but not linked" has never felt right. The answer has been in front of us: encrypted vaults. The demo cell takes a name, researches only public information, builds five designs, has them reviewed, and seals all five into one sgit vault. The person gets a QR code, a link with the key after the #, or a zip, and drops it on one page, which decrypts the vault in their browser and shows their site in a sandboxed frame, with a banner and the five designs one tap apart. Nothing is published, the key never reaches a server, and if they say yes, the factory makes their repository from the same vault, so the demo becomes the first chapter of their site's history. This piece maps the workflow and the pipeline, and what is still to build.
-version: v999.0.0
+version: v0.14.173
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereign-website, sgit, vaults, demos, qr-codes, go-to-market, article
 status: published
