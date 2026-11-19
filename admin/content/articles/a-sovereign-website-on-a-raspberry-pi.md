@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: We are going to run a sovereign website, and everything that makes it, on one Raspberry Pi. The box is a Raspberry Pi 5 with 16GB of memory and a 256GB card, the hardware of the Pi Pro tier in our Kickstarter plan. The experiment has six parts. Serve the site from home, from a git checkout, on the local network first. Take updates only when every commit's signature checks out. Run open-weight models locally, behind an endpoint the build page can call. Point the build page at that model, and build a website on the Pi itself, with the agents working under a policy guard and no internet unless it is allowed. Back up the site and the runs to an encrypted vault. And, if the owner wants, reach it from the internet without a proprietary tunnel. We will measure the model's speed, the time a site takes, its quality against cloud models, and the power it uses, and publish the sites and the recipe so anyone can repeat it. Nothing in the brief, the model, the drafts or the designs leaves the house. This is the prototype for the Raspberry Pi sovereign website, which launches officially once the Kickstarter finishes.
-version: v999.0.0
+version: v0.14.177
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereign-website, raspberry-pi, local-ai, experiment, behaviour-policies, kickstarter, article
 status: published
