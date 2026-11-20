@@ -4,7 +4,7 @@ date: 2026-11-20
 author: Dinis Cruz
 author_url: about/index.html
 summary: Earlier today we had the first complete round trip of Sovereign Web with someone from outside. Kate Curtis-Evans, a founder I am collaborating with, understood the idea at once; I asked if she wanted a website, she said yes, and it was made during our call, in five designs, with a design agent that now runs on its own and on a schedule doing much better than design done inside the builder's session. Then the handover: Kate has a GitHub account, and the goal is that she edits her own site from her own Claude. It worked, and her Claude pushed its first change about 35 minutes after she accepted the invitation, but it was far harder than it should have been, and it took multiple rounds. Our earlier users were from the summit and already in the organisation; Kate was the first from outside, and getting her in meant making her a member of the organisation, a small piece of the over-privilege our platforms force on everyone. That is the lesson of always shipping: you only find where the friction is by doing it end to end. And it showed the next step: before anyone touches GitHub, a channel from the site itself to the agent, signed with a key the owner gets by QR code and sealed so only the agent can read it, the way VoiceDebrief already sent a message from an iPad to the conductor and got the answer back.
-version: v999.0.0
+version: v0.14.186
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereign-website, handover, design-agent, github, append-lanes, always-be-shipping, article
 status: published
