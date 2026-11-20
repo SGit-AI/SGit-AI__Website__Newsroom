@@ -3,29 +3,29 @@
  "kept_by": "newsroom.accountant",
  "runs": {
   "total": {
-   "runs": 121,
-   "cost_usd": 121.979324,
-   "published": 53,
-   "blocked": 63,
-   "refused": 141
+   "runs": 124,
+   "cost_usd": 126.376881,
+   "published": 55,
+   "blocked": 64,
+   "refused": 143
   },
-  "per_edition_usd": 1.8202,
+  "per_edition_usd": 1.8268,
   "by_task": {
    "newsroom": {
-    "runs": 36,
-    "cost_usd": 15.304567,
+    "runs": 37,
+    "cost_usd": 15.70197,
     "published": 0,
-    "blocked": 36,
-    "output": 288478,
-    "duration_s": 17942.8
+    "blocked": 37,
+    "output": 295622,
+    "duration_s": 18327.5
    },
    "industry": {
-    "runs": 34,
-    "cost_usd": 76.486774,
-    "published": 32,
+    "runs": 35,
+    "cost_usd": 79.775757,
+    "published": 33,
     "blocked": 0,
-    "output": 7296421,
-    "duration_s": 21951.4
+    "output": 7708813,
+    "duration_s": 22933.0
    },
    "aws": {
     "runs": 6,
@@ -44,12 +44,12 @@
     "duration_s": 1073.1
    },
    "dinis": {
-    "runs": 34,
-    "cost_usd": 14.22995,
-    "published": 11,
+    "runs": 35,
+    "cost_usd": 14.941121,
+    "published": 12,
     "blocked": 22,
-    "output": 1066192,
-    "duration_s": 28040.4
+    "output": 1099496,
+    "duration_s": 28583.9
    },
    "owasp": {
     "runs": 5,
@@ -61,6 +61,14 @@
    }
   },
   "by_day": {
+   "2026-11-20": {
+    "runs": 3,
+    "cost_usd": 4.397557,
+    "published": 2,
+    "blocked": 1,
+    "output": 452840,
+    "duration_s": 1909.8
+   },
    "2026-11-19": {
     "runs": 3,
     "cost_usd": 4.262805,
@@ -352,20 +360,20 @@
   },
   "by_model": {
    "claude-sonnet-5-5": {
-    "cost_usd": 103.81958,
-    "input": 7856,
-    "output": 2841377,
-    "cache_read": 239452863,
-    "cache_write": 16739548,
-    "thinking": 292137
+    "cost_usd": 107.607661,
+    "input": 8122,
+    "output": 2953609,
+    "cache_read": 248584356,
+    "cache_write": 17332582,
+    "thinking": 308018
    },
    "claude-haiku-5-5": {
-    "cost_usd": 9.956739,
-    "input": 45146379,
-    "output": 7108339,
-    "cache_read": 26774240,
-    "cache_write": 4142956,
-    "thinking": 4494773
+    "cost_usd": 10.566214,
+    "input": 47302658,
+    "output": 7448947,
+    "cache_read": 28654985,
+    "cache_write": 4387421,
+    "thinking": 4699689
    },
    "claude-opus-5-5": {
     "cost_usd": 8.203007,
@@ -377,6 +385,108 @@
    }
   },
   "rows": [
+   {
+    "id": "5202aeac75d4",
+    "task": "newsroom",
+    "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+    "fired_at": "2026-11-20T06:56:17Z",
+    "finished_at": "2026-11-20T07:02:44Z",
+    "duration_s": 384.7,
+    "models": {
+     "claude-sonnet-5-5": {
+      "cost_usd": 0.397403,
+      "input": 40,
+      "output": 7144,
+      "cache_read": 1306068,
+      "cache_write": 48819,
+      "thinking": 1167
+     }
+    },
+    "cost_usd": 0.397403,
+    "turns": 22,
+    "subagents": 0,
+    "refused": 0,
+    "refused_kinds": [],
+    "outcome": "blocked",
+    "release": null,
+    "added": 0,
+    "updated": 0,
+    "note": "The release was built locally but the git proxy refused the push again."
+   },
+   {
+    "id": "8655af103a40",
+    "task": "dinis",
+    "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+    "fired_at": "2026-11-20T06:08:29Z",
+    "finished_at": "2026-11-20T06:17:35Z",
+    "duration_s": 543.5,
+    "models": {
+     "claude-haiku-5-5": {
+      "cost_usd": 0.013594,
+      "input": 14,
+      "output": 11062,
+      "cache_read": 138676,
+      "cache_write": 53402,
+      "thinking": 1417
+     },
+     "claude-sonnet-5-5": {
+      "cost_usd": 0.697576,
+      "input": 58,
+      "output": 22242,
+      "cache_read": 1019352,
+      "cache_write": 119038,
+      "thinking": 1507
+     }
+    },
+    "cost_usd": 0.711171,
+    "turns": 20,
+    "subagents": 4,
+    "refused": 2,
+    "refused_kinds": [
+     "web fetch"
+    ],
+    "outcome": "published",
+    "release": "2026-11-20.1",
+    "added": 22,
+    "updated": 0,
+    "note": "Published, but page fetches were refused so none of the stories could be checked against their pages."
+   },
+   {
+    "id": "b16fb401539f",
+    "task": "industry",
+    "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+    "fired_at": "2026-11-20T05:47:41Z",
+    "finished_at": "2026-11-20T06:04:06Z",
+    "duration_s": 981.6,
+    "models": {
+     "claude-haiku-5-5": {
+      "cost_usd": 0.595881,
+      "input": 2156265,
+      "output": 329546,
+      "cache_read": 1742069,
+      "cache_write": 191063,
+      "thinking": 203499
+     },
+     "claude-sonnet-5-5": {
+      "cost_usd": 2.693102,
+      "input": 168,
+      "output": 82846,
+      "cache_read": 6806073,
+      "cache_write": 425177,
+      "thinking": 13207
+     }
+    },
+    "cost_usd": 3.288983,
+    "turns": 25,
+    "subagents": 6,
+    "refused": 0,
+    "refused_kinds": [],
+    "outcome": "published",
+    "release": "2026-11-20.1",
+    "added": 13,
+    "updated": 8,
+    "note": "The costliest edition so far; most stories needed wording fixes after the verifier pass."
+   },
    {
     "id": "e486723b87a0",
     "task": "newsroom",
@@ -4406,20 +4516,20 @@
     "name": "@newsroom.accountant's session",
     "kind": "accountant",
     "from": "2026-10-16",
-    "as_of": "2026-11-19T07:55:00Z",
+    "as_of": "2026-11-20T07:55:00Z",
     "models": [
      "claude-sonnet-5-5"
     ],
-    "cost_usd": 70.88470402,
-    "input": 19233,
-    "output": 180142,
-    "cache_read": 95950000,
-    "cache_write": 14856332,
+    "cost_usd": 71.94038786,
+    "input": 19244,
+    "output": 184047,
+    "cache_read": 96972700,
+    "cache_write": 15084760,
     "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
    }
   ]
  },
- "updated": "2026-11-20T01:21:44Z",
+ "updated": "2026-11-20T07:42:34Z",
  "what": "What the wires cost: every image the pipeline made (admin/build/infographics.py), with OpenRouter's own cost per image, summed by wire, edition, month, model and kind, and per piece of work; and every scheduled run of the desks and the newsroom (admin/build/wire-runs.json), with the platform's own cost and tokens per model.",
  "total": {
   "images": 71,
