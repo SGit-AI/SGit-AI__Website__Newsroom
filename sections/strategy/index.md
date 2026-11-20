@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-143 articles, newest first.
+144 articles, newest first.
 
 ## November 2026
 
+- [A European brain for a sovereign website: why the model is a choice the owner makes, like the host, how Mistral fits at every level, from Ministral 3 running on a Pi Pro to Mistral Small 4 on an EU endpoint for the team inside the site, what its terms say about where data goes, the one licence to watch, what we have already run on Mistral, and how we could work with it](../../articles/a-european-brain.md), 2026-11-20, 6 min.
 - [The swarm, one real run at a time: the Web Summit demo that showed agents, the loops they start and the model calls they make, run for real, signed and replayed, step by step from one person and one agent to 24 loops at once, 216 model calls for 6.8 cents, the same work under a harness with 3 of 12 risky actions still possible instead of 11, and the Story Studio, where a spoken answer became a deck in front of you](../../articles/the-swarm-one-real-run-at-a-time.md), 2026-11-20, 4 min.
 - [The RiskMandate X-ray: type a company's name and see what its AI helpers can reach, what they were asked to do and where the two do not match, how four search agents and a collector built it for the stand at Web Summit, why only facts whose sources were read reach the page, what it cost, about 1.13 dollars for thirteen companies, and how the four models compared on accuracy](../../articles/the-riskmandate-x-ray.md), 2026-11-20, 4 min.
 - [A galaxy of agents: the Universe we showed at Web Summit, a live 3D solar system of the RiskMandate team where people are suns, their agents orbit them and their messages travel between them as arcs of light, read from the repositories as it happens, with each agent's behaviour policy one click away, and Gravity, the library it became, which can draw any system the same way](../../articles/a-galaxy-of-agents.md), 2026-11-20, 3 min.

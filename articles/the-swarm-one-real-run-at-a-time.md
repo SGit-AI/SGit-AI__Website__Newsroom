@@ -85,6 +85,10 @@ Agents & policy[This article as a graph →](graphs.md#the-swarm-one-real-run-at
 - [Watch your website being built: a brief for a page that builds a first version of a sovereign website in the visitor's own browser, from a description or a voice note, with their own model key, showing every agent at work, every behaviour policy being applied and every penny it costs, then hands back a zip, the same brief run on several models side by side as evals, and the Web Summit demos it grows from](watch-your-website-being-built.md) A page that builds a first version of a sovereign website in your browser, showing every agent, behaviour policy and penny, then hands back a zip.
 - [Launching the sovereign website appliance: the plan for a Kickstarter campaign that sells a sovereign website on a configured Android tablet or a Raspberry Pi, five tiers from a £50 supporter to £1,000, the two Pro tiers running local AI models that can build a website on the device itself, the hardware we would buy in the UK today, a European tablet, the UK as the base goal with countries and iOS as stretch goals, and why we launch alone](launching-the-sovereign-website-appliance.md) The Kickstarter plan: a sovereign website on a Raspberry Pi or a tablet, five tiers from £50 to £1,000, local AI on the Pro tiers.
 
+### Continued by
+
+- [A European brain for a sovereign website: why the model is a choice the owner makes, like the host, how Mistral fits at every level, from Ministral 3 running on a Pi Pro to Mistral Small 4 on an EU endpoint for the team inside the site, what its terms say about where data goes, the one licence to watch, what we have already run on Mistral, and how we could work with it](a-european-brain.md) Why a sovereign website's model is the owner's choice, and how Mistral fits: Ministral 3 on the device, Mistral Small 4 on an EU endpoint.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 513 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=513)

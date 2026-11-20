@@ -1,0 +1,30 @@
+{
+ "slug": "a-european-brain",
+ "teaser": "Why a sovereign website's model is the owner's choice, and how Mistral fits: Ministral 3 on the device, Mistral Small 4 on an EU endpoint.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "A site sovereign in its files but tied to one model provider is rented in its brain, so the model becomes the owner's choice behind one OpenAI-style interface, with Mistral as the European option at every level, Apache 2.0 models first, and never the only door.",
+ "nodes": [
+  {"id": "challenge", "label": "Abstract the provider", "kind": "claim", "summary": "Angelo's challenge."},
+  {"id": "choice", "label": "The model as a choice", "kind": "concept", "summary": "One interface."},
+  {"id": "ministral", "label": "Ministral 3 on the device", "kind": "method", "summary": "Apache 2.0, to test."},
+  {"id": "eu", "label": "Mistral's EU endpoint", "kind": "method", "summary": "EEA by default."},
+  {"id": "licence", "label": "The licence to watch", "kind": "claim", "summary": "Large 4 needs a licence as a service."},
+  {"id": "partner", "label": "A partnership to propose", "kind": "concept", "summary": "Europe at its heart."}
+ ],
+ "edges": [
+  {"from": "choice", "to": "challenge", "rel": "answers"},
+  {"from": "ministral", "to": "choice", "rel": "example-of"},
+  {"from": "eu", "to": "choice", "rel": "example-of"},
+  {"from": "licence", "to": "eu", "rel": "depends-on"},
+  {"from": "partner", "to": "choice", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["sovereign-agentic-website", "what-is-a-sovereign-website", "launching-the-sovereign-website-appliance", "a-website-with-a-team-inside", "a-sovereign-website-on-a-raspberry-pi", "the-swarm-one-real-run-at-a-time", "free-models-your-own-key", "pennies-against-dollars", "watch-your-website-being-built"],
+  "pages": [],
+  "sites": ["https://mistral.ai/"]
+ },
+ "quotes": [
+  {"text": "the site is sovereign in its files and rented in its brain.", "why": "Dinis."},
+  {"text": "Mistral as the European default, never the only door.", "why": "Dinis."}
+ ]
+}

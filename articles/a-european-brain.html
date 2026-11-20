@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A European brain for a sovereign website: why the model is a choice the owner makes, like the host, how Mistral fits at every level, from Ministral 3 running on a Pi Pro to Mistral Small 4 on an EU endpoint for the team inside the site, what its terms say about where data goes, the one licence to watch, what we have already run on Mistral, and how we could work with it, SGit Newsroom</title>
+<meta name="description" content="When I shared the Sovereign Agentic Website idea, Angelo came back with the right challenge: if we really want to claim the word sovereign, abstract the AI provider, and let people use other models, including European ones such as Mistral. I agree completely. A site whose files are yours but whose brain can only be one American provider has a part in the middle that you do not control. So the model becomes a choice the owner makes, like the host: one standard interface, the OpenAI-style API that Mistral, OpenRouter and local servers all speak, and a European option at every level. On the Pro appliances, Ministral 3, an Apache 2.0 model built for the edge, running on the device. For the team inside the site, Mistral's API on its EU endpoint, where data is hosted in the EEA by default and API data is not used for training. For everything else, the owner's own key. We have already run Mistral in production without saying so: it was one of four open-weight models in the Swarm's 216 calls, and its free mode passed our browser test in October. The one thing to watch is licences: the Apache 2.0 models are clean, while Mistral Large 4 needs a commercial licence to be served as a service. And there is a partnership to propose.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/a-european-brain.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/a-european-brain.html">
+<meta property="og:title" content="A European brain for a sovereign website: why the model is a choice the owner makes, like the host, how Mistral fits at every level, from Ministral 3 running on a Pi Pro to Mistral Small 4 on an EU endpoint for the team inside the site, what its terms say about where data goes, the one licence to watch, what we have already run on Mistral, and how we could work with it, SGit Newsroom">
+<meta property="og:description" content="When I shared the Sovereign Agentic Website idea, Angelo came back with the right challenge: if we really want to claim the word sovereign, abstract the AI provider, and let people use other models, including European ones such as Mistral. I agree completely. A site whose files are yours but whose brain can only be one American provider has a part in the middle that you do not control. So the model becomes a choice the owner makes, like the host: one standard interface, the OpenAI-style API that Mistral, OpenRouter and local servers all speak, and a European option at every level. On the Pro appliances, Ministral 3, an Apache 2.0 model built for the edge, running on the device. For the team inside the site, Mistral's API on its EU endpoint, where data is hosted in the EEA by default and API data is not used for training. For everything else, the owner's own key. We have already run Mistral in production without saying so: it was one of four open-weight models in the Swarm's 216 calls, and its free mode passed our browser test in October. The one thing to watch is licences: the Apache 2.0 models are clean, while Mistral Large 4 needs a commercial licence to be served as a service. And there is a partnership to propose.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/a-european-brain.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A European brain for a sovereign website: why the model is a choice the owner makes, like the host, how Mistral fits at every level, from Ministral 3 running on a Pi Pro to Mistral Small 4 on an EU endpoint for the team inside the site, what its terms say about where data goes, the one licence to watch, what we have already run on Mistral, and how we could work with it, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/a-european-brain.jpg">
+<link rel="alternate" type="text/markdown" href="a-european-brain.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "A European brain for a sovereign website: why the model is a choice the owner makes, like the host, how Mistral fits at every level, from Ministral 3 running on a Pi Pro to Mistral Small 4 on an EU endpoint for the team inside the site, what its terms say about where data goes, the one licence to watch, what we have already run on Mistral, and how we could work with it, SGit Newsroom", "headline": "A European brain for a sovereign website: why the model is a choice the owner makes, like the host, how Mistral fits at every level, from Ministral 3 running on a Pi Pro to Mistral Small 4 on an EU endpoint for the team inside the site, what its terms say about where data goes, the one licence to watch, what we have already run on Mistral, and how we could work with it, SGit Newsroom", "description": "When I shared the Sovereign Agentic Website idea, Angelo came back with the right challenge: if we really want to claim the word sovereign, abstract the AI provider, and let people use other models, including European ones such as Mistral. I agree completely. A site whose files are yours but whose brain can only be one American provider has a part in the middle that you do not control. So the model becomes a choice the owner makes, like the host: one standard interface, the OpenAI-style API that Mistral, OpenRouter and local servers all speak, and a European option at every level. On the Pro appliances, Ministral 3, an Apache 2.0 model built for the edge, running on the device. For the team inside the site, Mistral's API on its EU endpoint, where data is hosted in the EEA by default and API data is not used for training. For everything else, the owner's own key. We have already run Mistral in production without saying so: it was one of four open-weight models in the Swarm's 216 calls, and its free mode passed our browser test in October. The one thing to watch is licences: the Apache 2.0 models are clean, while Mistral Large 4 needs a commercial licence to be served as a service. And there is a partnership to propose.", "url": "https://newsroom.sgit.ai/articles/a-european-brain.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A European brain for a sovereign website: why the model is a choice the owner makes, like the host, how Mistral fits at every level, from Ministral 3 running on a Pi Pro to Mistral Small 4 on an EU endpoint for the team inside the site, what its terms say about where data goes, the one licence to watch, what we have already run on Mistral, and how we could work with it</p>
+ <h1>A European brain for a sovereign website: why the model is a choice the owner makes, like the host, how Mistral fits at every level, from Ministral 3 running on a Pi Pro to Mistral Small 4 on an EU endpoint for the team inside the site, what its terms say about where data goes, the one licence to watch, what we have already run on Mistral, and how we could work with it</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-11-20 &middot; <a href="versions/a-european-brain.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v999.0.0</a> &middot; <span class="chip">sovereignty</span><span class="chip">mistral</span><span class="chip">europe</span><span class="chip">models</span><span class="chip">sovereign-website</span><span class="chip">open-weight</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> When I shared the Sovereign Agentic Website idea, Angelo came back with the right challenge: if we really want to claim the word sovereign, abstract the AI provider, and let people use other models, including European ones such as Mistral. I agree completely. A site whose files are yours but whose brain can only be one American provider has a part in the middle that you do not control. So the model becomes a choice the owner makes, like the host: one standard interface, the OpenAI-style API that Mistral, OpenRouter and local servers all speak, and a European option at every level. On the Pro appliances, Ministral 3, an Apache 2.0 model built for the edge, running on the device. For the team inside the site, Mistral's API on its EU endpoint, where data is hosted in the EEA by default and API data is not used for training. For everything else, the owner's own key. We have already run Mistral in production without saying so: it was one of four open-weight models in the Swarm's 216 calls, and its free mode passed our browser test in October. The one thing to watch is licences: the Apache 2.0 models are clean, while Mistral Large 4 needs a commercial licence to be served as a service. And there is a partnership to propose.</em></p>
+<figure class="shot" data-shot="mis-layers.webp" data-dir="images/" data-alt="The brain is a choice too: a European option on the device, in the EU, and through any provider." data-kind="concept"><figcaption>The brain is a choice too: a European option on the device, in the EU, and through any provider.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Angelo's challenge:</b> if we claim sovereign, abstract the AI provider.</li>
+<li><b>The model is a choice the owner makes,</b> like the host.</li>
+<li><b>Mistral at every level:</b> Ministral 3 on the device, Mistral Small 4 on an EU endpoint.</li>
+<li><b>We have already run Mistral,</b> in the Swarm and in the browser.</li>
+<li><b>One licence to watch:</b> Large 4 needs a commercial licence to be served as a service.</li>
+<li><b>A partnership to propose,</b> with Europe at its heart.</li>
+</ul>
+<h2 id="challenge">The challenge</h2>
+<p>When I sent Angelo the <a href="sovereign-agentic-website.html">Sovereign Agentic Website</a> idea, his answer was short and right: if you really want to claim the word sovereign, abstract the AI provider part, and allow people to use other models and European AI like Mistral. That would be a very powerful sovereign play.</p>
+<p>It follows from our own principles (<a href="what-is-a-sovereign-website.html">what is a sovereign website</a>). One proprietary part in the middle is enough to lock a site in, and the model that builds and changes the site is a part in the middle. If it can only ever be one provider, the site is sovereign in its files and rented in its brain.</p>
+<h2 id="choice">The model is a choice</h2>
+<p>So the design is the one we already use for hosts: one standard interface, several providers. Mistral, OpenRouter and local model servers all speak the same OpenAI-style API; Mistral's own documentation shows its endpoint used with the OpenAI client (<a href="https://docs.mistral.ai/inference/conversations/chat-completion">chat completion</a>). The agents and tools on a sovereign website call that interface, and the owner chooses what sits behind it:</p>
+<ul>
+<li><b>On the device.</b> On the Pro appliances, a local model, so a site can be built and changed with nothing leaving the house (<a href="launching-the-sovereign-website-appliance.html">launching the sovereign website appliance</a>).</li>
+<li><b>In Europe.</b> A European provider for the team inside the site (<a href="a-website-with-a-team-inside.html">a website with a team inside</a>).</li>
+<li><b>Any provider.</b> The owner's own key, through OpenRouter, for Claude, Gemini, open-weight models, or Mistral's again.</li>
+</ul>
+<h2 id="levels">Mistral at every level</h2>
+<p>Mistral, a French company founded in April 2023 (<a href="https://mistral.ai/about/">about</a>), now covers all three:</p>
+<ul>
+<li><b>On the device: Ministral 3.</b> Released in December 2025 in 3B, 8B and 14B sizes, with text and vision, under Apache 2.0, and built for the edge (<a href="https://mistral.ai/news/mistral-3">Mistral 3</a>). Our estimate, to test on <a href="a-sovereign-website-on-a-raspberry-pi.html">the Raspberry Pi</a>: the 3B and 8B, compressed to about 2 to 5GB, should run on a 16GB Pi 5, the 8B slowly; on a tablet, the 3B is the realistic one.</li>
+<li><b>In Europe: Mistral's API.</b> Data is hosted in the EEA by default (<a href="https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data">where data is stored</a>), with an EU endpoint generally available since August 2026 (<a href="https://mistral.ai/news/regional-inference-open-models-new-compute/">regional endpoints</a>), and "data sent through our API isn't used for model training" (<a href="https://mistral.ai/cloud/inference/">inference</a>). Ministral 3 8B is listed at 0.15 dollars per million tokens (<a href="https://docs.mistral.ai/models/ministral-3-8b-25-12">its page</a>); Mistral Small 4, an Apache 2.0 model with 119 billion parameters, 6.5 billion active, at 0.15 and 0.60 (<a href="https://docs.mistral.ai/models/mistral-small-4-0-26-03">its page</a>).</li>
+<li><b>For voice:</b> the Story Studio's spoken answers (<a href="the-swarm-one-real-run-at-a-time.html">the swarm</a>) could be transcribed by Mistral's Voxtral models, some open-weight and some on its API.</li>
+<li><b>For agents:</b> function calling, structured outputs and an agents API (<a href="https://docs.mistral.ai/studio/conversations/function-calling">function calling</a>), and connectors to remote MCP servers in preview (<a href="https://docs.mistral.ai/studio/connectors/overview">connectors</a>).</li>
+</ul>
+<h2 id="terms">What its terms say</h2>
+<ul>
+<li><b>Retention:</b> API inputs and outputs are kept for 30 days for abuse monitoring, unless zero data retention is switched on (<a href="https://legal.mistral.ai/terms/privacy-policy/">privacy policy</a>); that option is available on paid plans for stateless calls only, not for agents, conversations or files (<a href="https://docs.mistral.ai/admin/monitor-comply/zero-data-retention.md">zero data retention</a>).</li>
+<li><b>Where data goes:</b> some features may move data temporarily to processors outside the EU, which Enterprise customers can turn off (<a href="https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data">where data is stored</a>).</li>
+<li><b>Certifications:</b> Mistral states SOC 2 Type II and ISO 27001 and 27701 (<a href="https://help.mistral.ai/en/articles/347638-do-you-have-soc-2-or-iso-27001-certification">certifications</a>).</li>
+</ul>
+<h2 id="licence">The licence to watch</h2>
+<p>Not every open-weight model is equally open. Ministral 3, Mistral Small 4 and Voxtral Small are Apache 2.0, which is as clean as it gets. Mistral Large 4 is under Mistral's own modified MIT licence, which allows commercial use but requires a separate commercial licence for a company serving it as a model-as-a-service (<a href="https://mistral.ai/news/mistral-large-4-oss/">Large 4</a>). If we host models for customers' sites, that line matters. Apache 2.0 models first.</p>
+<h2 id="already">We have already run it</h2>
+<p>We have used Mistral without making a point of it. In October, Mistral's free mode was one of four APIs that passed our test of what a reader can call from the browser with their own key (<a href="free-models-your-own-key.html">free models, your own key</a>). And in the Swarm's scale run at Web Summit, 216 model calls on four open-weight models for 6.8 cents, one of the four was Mistral (<a href="pennies-against-dollars.html">pennies against dollars</a>). What changes now is that it becomes a choice we offer on purpose, and name.</p>
+<h2 id="collaborate">Working with Mistral</h2>
+<p>What I would propose to Mistral is simple: Sovereign Website is a European product about owning what you depend on, and a European model is its natural default. Concretely:</p>
+<ul>
+<li><b>A Mistral option on every site,</b> in the team inside and in the build page, where the same brief can run on Mistral beside other models as an open eval (<a href="watch-your-website-being-built.html">watch your website being built</a>).</li>
+<li><b>Ministral 3 on the Pro appliances,</b> measured on the Pi and published, which shows their edge models doing real work.</li>
+<li><b>The European stretch goals of the Kickstarter,</b> each country with a European model behind it.</li>
+<li><b>Credits for the evals and the demo sites,</b> and a joint story if it works.</li>
+</ul>
+<p>Mistral lists strategic, ecosystem and integration partners (<a href="https://mistral.ai/partners/">partners</a>) but no public application, so this starts as a conversation; its ambassador programme offers API credits to practitioners (<a href="https://docs.mistral.ai/resources/ambassadors">ambassadors</a>).</p>
+<h2 id="not-one">Not one company either</h2>
+<p>Sovereignty cannot rest on one company, European or not. France's finance minister said as much in September: "if European AI is just about Mistral, then we're doomed" (<a href="https://www.malaymail.com/amp/news/tech-gadgets/2026/09/03/were-doomed-french-minister-warns-against-relying-on-mistral-for-ai/233729">reported</a>). Mistral's platform also serves models made elsewhere, and it has a large American partner in Microsoft (<a href="https://news.microsoft.com/source/2026/07/21/microsoft-and-mistral-expand-strategic-partnership-to-give-enterprises-and-regulated-industries-frontier-ai-they-can-control/">the partnership</a>). That is why the design is a choice behind one interface, not a new dependency: Mistral as the European default, never the only door.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>Nothing has been agreed with Mistral;</b> this is a proposal.</li>
+<li><b>The fit on a Pi or a tablet is an estimate,</b> to be measured.</li>
+<li><b>Terms and prices are as Mistral's pages showed on 20 November 2026;</b> the retention detail was read partly through a search snippet.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>Angelo's reply to the Sovereign Agentic Website idea, my own thinking in writer-10's session on 20 November 2026, and Mistral's own pages linked above, read that day. Related: <a href="what-is-a-sovereign-website.html">what is a sovereign website</a>, <a href="free-models-your-own-key.html">free models, your own key</a>, <a href="pennies-against-dollars.html">pennies against dollars</a>, <a href="a-sovereign-website-on-a-raspberry-pi.html">a sovereign website on a Raspberry Pi</a>, <a href="watch-your-website-being-built.html">watch your website being built</a>.</p>
+<sg-meter view="page" kind="article" date="2026-11-20" topics="agents-and-policy" title="A European brain for a sovereign website: why the model is a choice the owner makes, like the host, how Mistral fits at every level, from Ministral 3 running on a Pi Pro to Mistral Small 4 on an EU endpoint for the team inside the site, what its terms say about where data goes, the one licence to watch, what we have already run on Mistral, and how we could work with it, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#a-european-brain">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="sovereign-agentic-website.html">Sovereign Agentic Website: the name for what we have been building, a website built by agents and owned by the person it is for, an open pattern anyone can use without paying us as WordPress was, a hosted version on sovereignwebsite.site, and why sovereign and agentic are the two words that make it different from the web of 2000</a> <span class="dim">Sovereign Agentic Website: built by agents, owned by you; an open pattern anyone can use, and a hosted version on sovereignwebsite.site.</span></li><li><a href="what-is-a-sovereign-website.html">What is a sovereign website: defining the category the way serverless was defined, a website you own and can move, built only on commodity technology because one proprietary part anywhere in the middle is enough to lock you in, seven principles, a sovereignty maturity model from rented to proven, and the proof that the same site runs on every host, in Europe and on your own computer</a> <span class="dim">What a sovereign website is: owned and movable, commodity only, seven principles, a maturity model from rented to proven, and every host.</span></li><li><a href="launching-the-sovereign-website-appliance.html">Launching the sovereign website appliance: the plan for a Kickstarter campaign that sells a sovereign website on a configured Android tablet or a Raspberry Pi, five tiers from a £50 supporter to £1,000, the two Pro tiers running local AI models that can build a website on the device itself, the hardware we would buy in the UK today, a European tablet, the UK as the base goal with countries and iOS as stretch goals, and why we launch alone</a> <span class="dim">The Kickstarter plan: a sovereign website on a Raspberry Pi or a tablet, five tiers from £50 to £1,000, local AI on the Pro tiers.</span></li><li><a href="a-website-with-a-team-inside.html">A website with a team inside: why a Sovereign Agentic Website is delivered not as a site but as a site with six or seven agents already set up and coordinated in its repository, a conductor, a designer, a writer, a developer, a reviewer, a translator and a keeper, each with a role and a behaviour policy, and what that means for the person who owns it</a> <span class="dim">A Sovereign Agentic Website comes with a team inside: seven agents set up and coordinated in the owner's repository, each with a behaviour policy.</span></li><li><a href="a-sovereign-website-on-a-raspberry-pi.html">A sovereign website on a Raspberry Pi: the experiment of running the whole thing on one small box at home, a Raspberry Pi 5 with 16GB and 256GB, serving the site, checking the signature of every update, running a local model, building a website on the device itself under behaviour policies, and backing it up to a vault, step by step, what we will measure, and why this becomes a product when the Kickstarter finishes</a> <span class="dim">The experiment: a sovereign website, its local model, its build and its signed updates, all on one Raspberry Pi 5 at home.</span></li><li><a href="the-swarm-one-real-run-at-a-time.html">The swarm, one real run at a time: the Web Summit demo that showed agents, the loops they start and the model calls they make, run for real, signed and replayed, step by step from one person and one agent to 24 loops at once, 216 model calls for 6.8 cents, the same work under a harness with 3 of 12 risky actions still possible instead of 11, and the Story Studio, where a spoken answer became a deck in front of you</a> <span class="dim">The Swarm from Web Summit: agents run for real, signed and replayed, 216 model calls for 6.8 cents, a harness test, and a voice-to-deck studio.</span></li><li><a href="free-models-your-own-key.html">Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot</a> <span class="dim">Which free model APIs a reader can call from a web page with their own key, October 2026: four pass both tests, NVIDIA fails both, and 2026 took a lot away.</span></li><li><a href="pennies-against-dollars.html">Pennies against dollars: what our agents actually cost at Web Summit, the swarm that ran 216 model calls on four open-weight models for under seven cents where the same tokens on a frontier model would have cost about two dollars, newsroom days of hundreds of API-equivalent dollars, almost all of it agents re-reading their own sessions, and the lesson that context is the cost and starting again is cheaper than remembering</a> <span class="dim">What our agents cost at Web Summit: 216 open-weight calls for 6.8 cents, and newsroom days where 98% of tokens were memory.</span></li><li><a href="watch-your-website-being-built.html">Watch your website being built: a brief for a page that builds a first version of a sovereign website in the visitor's own browser, from a description or a voice note, with their own model key, showing every agent at work, every behaviour policy being applied and every penny it costs, then hands back a zip, the same brief run on several models side by side as evals, and the Web Summit demos it grows from</a> <span class="dim">A page that builds a first version of a sovereign website in your browser, showing every agent, behaviour policy and penny, then hands back a zip.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 514 &middot; <a href="../for/make.html#r=514">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/a-european-brain.jpg" download>a-european-brain.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-european-brain.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>The publication</h4>
+    <a href="../about/imprint.html">Imprint</a>
+    <a href="../about/standards.html">Editorial standards</a>
+    <a href="../about/corrections.html">Corrections</a>
+    <a href="../about/withdrawals.html">Withdrawals</a>
+    <a href="../about/complaints.html">Complaints</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-20 | published | 1,221 | first published | this release | [current](../the-swarm-one-real-run-at-a-time.md) |
+| **v1.0.0** | 2026-11-20 | published | 1,221 | first published | [`786535c70`](https://github.com/SGit-AI/SGit-AI__Website/commit/786535c708371d99c5dfbc83e9f62ce401cf6fa2) | [current](../the-swarm-one-real-run-at-a-time.md) |
 
 [← Back to the article](../the-swarm-one-real-run-at-a-time.md) · [All articles](../index.md)
 
