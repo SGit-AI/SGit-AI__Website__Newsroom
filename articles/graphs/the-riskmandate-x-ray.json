@@ -1,0 +1,108 @@
+{
+  "slug": "the-riskmandate-x-ray",
+  "teaser": "The RiskMandate X-ray: type a company, see its AI helpers' reach, mandate and gap, built by four search agents for about a dime a company.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Built for Web Summit, the X-ray sends a company's name to four search agents, keeps only facts whose sources were read, and shows what the company's AI helpers can reach, what they were asked to do and the gap where a behaviour policy belongs, at about 1.13 dollars for thirteen companies.",
+  "nodes": [
+    {
+      "id": "xray",
+      "label": "The X-ray",
+      "kind": "artefact",
+      "summary": "web-summit.sgit.ai/xray."
+    },
+    {
+      "id": "cards",
+      "label": "Reach, mandate, gap",
+      "kind": "concept",
+      "summary": "Three cards."
+    },
+    {
+      "id": "agents",
+      "label": "Four search agents",
+      "kind": "method",
+      "summary": "And a collector."
+    },
+    {
+      "id": "leads",
+      "label": "Claims are leads",
+      "kind": "claim",
+      "summary": "Only read sources."
+    },
+    {
+      "id": "models",
+      "label": "The models compared",
+      "kind": "example",
+      "summary": "Perplexity to Gemini."
+    },
+    {
+      "id": "cost",
+      "label": "1.13 dollars for 13",
+      "kind": "claim",
+      "summary": "Pennies a search."
+    }
+  ],
+  "edges": [
+    {
+      "from": "cards",
+      "to": "xray",
+      "rel": "depends-on"
+    },
+    {
+      "from": "agents",
+      "to": "xray",
+      "rel": "produces"
+    },
+    {
+      "from": "leads",
+      "to": "agents",
+      "rel": "answers"
+    },
+    {
+      "from": "models",
+      "to": "leads",
+      "rel": "example-of"
+    },
+    {
+      "from": "cost",
+      "to": "agents",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "feature-behaviour-policies",
+      "the-teams-operating-system",
+      "a-galaxy-of-agents"
+    ],
+    "pages": [],
+    "sites": [
+      "https://web-summit.sgit.ai/xray/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "what a model says is a lead until someone reads the source.",
+      "why": "Dinis."
+    },
+    {
+      "text": "A search costs pennies; the value is in what is read and kept.",
+      "why": "Dinis."
+    }
+  ],
+  "figures": [
+    {
+      "file": "wsx-sgit.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wsx-sgit.webp",
+      "caption": "The X-ray of our own SGit: what an agent can reach, what it was asked to do, and the gap.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "wsx-start.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wsx-start.webp",
+      "caption": "The X-ray's start: type a company, or pick one of the thirteen prepared on 7 November.",
+      "kind": "screenshot"
+    }
+  ]
+}

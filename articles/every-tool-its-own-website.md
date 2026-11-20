@@ -108,6 +108,7 @@ Agents & policy[This article as a graph →](graphs.md#every-tool-its-own-websit
 
 ### Continued by
 
+- [A galaxy of agents: the Universe we showed at Web Summit, a live 3D solar system of the RiskMandate team where people are suns, their agents orbit them and their messages travel between them as arcs of light, read from the repositories as it happens, with each agent's behaviour policy one click away, and Gravity, the library it became, which can draw any system the same way](a-galaxy-of-agents.md) The Galaxy from Web Summit: the RiskMandate team as a live 3D solar system of people, agents and messages, and the library it became.
 - [Websites for the moment: an experiment in letting an agent team keep building topical sites, around what people are looking for now, GTA VI on its launch day, Christmas posting dates, an advent of tools, the Kickstarter itself, each built in a day within a budget, every fact sourced, live for its moment and then archived, and a first calendar to start from](websites-for-the-moment.md) An agent team building topical websites around what people are looking for now, each built in a day within a budget and sourced.
 
 [All articles](index.md) · [All graphs](graphs.md)

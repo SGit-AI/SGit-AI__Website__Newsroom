@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-19 | published | 960 | first published | this release | [current](../fifteen-minutes-of-an-expert.md) |
+| **v1.0.0** | 2026-11-20 | published | 960 | first published | [`82a2d0c09`](https://github.com/SGit-AI/SGit-AI__Website/commit/82a2d0c09bcf0fe07cf06a40a128ccc3fd8168fe) | [current](../fifteen-minutes-of-an-expert.md) |
 
 [← Back to the article](../fifteen-minutes-of-an-expert.md) · [All articles](../index.md)
 

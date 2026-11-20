@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-19 | published | 998 | first published | this release | [current](../a-career-website-not-a-cv.md) |
+| **v1.0.0** | 2026-11-20 | published | 998 | first published | [`82a2d0c09`](https://github.com/SGit-AI/SGit-AI__Website/commit/82a2d0c09bcf0fe07cf06a40a128ccc3fd8168fe) | [current](../a-career-website-not-a-cv.md) |
 
 [← Back to the article](../a-career-website-not-a-cv.md) · [All articles](../index.md)
 
