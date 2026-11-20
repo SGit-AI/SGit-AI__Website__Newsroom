@@ -4,7 +4,7 @@ date: 2026-11-20
 author: Dinis Cruz
 author_url: about/index.html
 summary: This is the VoiceDebrief thinking meeting the sovereign website. Picture a small generative AI company that knows one sector well, with people from that industry and the relationships that come with them. What it sells, the way we sell sovereign websites, is a bundle for transcription in that sector: a repository, public or private, designed to be run by the customer's own Claude or ChatGPT, that holds the whole workflow. Drop the recordings and files; transcribe them on the device or in the customer's own AI account; make sense of them in the sector's terms; review them against the sector's rules, kept up to date; produce the notes, reports and documents the sector uses; and keep everything filed, versioned and encrypted where the customer chooses. Inside is a team of agents, a researcher, a writer, a reviewer for the sector's rules, a designer and a document manager, and the company certifies that team. Because it runs in the customer's environment, it answers most of the data governance and privacy questions by design: it augments the worker rather than taking the work away. Real estate, travel, technology, legal, medical: every sector's transcripts need someone from the sector to know what matters. Open source underneath; the customer pays for the certification, the delivery and the knowledge, from £50 to £500 semi-automated, £1,500 with a couple of meetings, and £5,000 with a couple of days of work.
-version: v999.0.0
+version: v0.14.185
 license: https://creativecommons.org/licenses/by/4.0/
 tags: voicedebrief, transcription, sectors, agent-teams, sovereign-website, business-model, article
 status: published
