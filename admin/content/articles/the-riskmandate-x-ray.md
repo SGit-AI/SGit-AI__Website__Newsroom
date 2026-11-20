@@ -4,7 +4,7 @@ date: 2026-11-20
 author: Dinis Cruz
 author_url: about/index.html
 summary: The X-ray was one of the most spectacular things we built for Web Summit, and it runs in a browser. You type a company's name. An orchestrator sends it to four search agents, Perplexity, OpenAI, Gemini and Claude Haiku with web search, a collector gathers what they find, and a graph grows on screen as the evidence arrives. What comes out is three cards: what the company's AI helpers can reach, what they were asked to do, and the gap between the two, which is where an agent behaviour policy belongs. A model's claim is only a lead: only facts whose sources were read reach the page, each with its link. Thirteen companies were X-rayed on 7 November for about 1.13 dollars in total. Before choosing, the team measured the four search agents on the same questions: Perplexity had 45 of 50 claims confirmed, Haiku 49 of 55, OpenAI 35 of 41, Gemini 16 of 23, and Gemini appeared not to search at all. From 11 November it ran live in the stand's command centre, and from 12 November it could X-ray any company, with Claude Sonnet writing the scenario.
-version: v999.0.0
+version: v0.14.181
 license: https://creativecommons.org/licenses/by/4.0/
 tags: riskmandate, x-ray, behaviour-policies, web-summit, agents, search, article
 status: published

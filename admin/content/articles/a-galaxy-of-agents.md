@@ -4,7 +4,7 @@ date: 2026-11-20
 author: Dinis Cruz
 author_url: about/index.html
 summary: The Galaxy is the view I kept coming back to at Web Summit. It is the Universe of the RiskMandate team, drawn as a solar system in the browser: the team at the centre, each person a sun, their agents in orbit, and the messages between agents travelling as arcs of light. It is not a mock-up. It reads the team's repositories live, every person's list of agents, every behaviour policy and each agent's latest commit, and counts a commit that names another agent as a message; tonight it showed 117 agents around six people, 222 messages and 50 pairs in conversation, and how many agents have no policy yet. Click an agent and you see its behaviour policy. It was built for the stand by Silvio Switha's dashboard agent, became the default view on 12 November, and has a calmer Simple view beside it. And it became a library, Gravity, versioned with a latest and a pinned folder, that can draw any system the same way: venues and events, or workloads across clouds.
-version: v999.0.0
+version: v0.14.181
 license: https://creativecommons.org/licenses/by/4.0/
 tags: web-summit, visualisation, agents, behaviour-policies, riskmandate, gravity, article
 status: published
