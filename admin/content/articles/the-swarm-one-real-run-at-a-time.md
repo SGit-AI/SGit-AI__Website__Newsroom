@@ -4,7 +4,7 @@ date: 2026-11-20
 author: Dinis Cruz
 author_url: about/index.html
 summary: The Swarm was one of the sections of the stand's command centre at Web Summit, and has its own site, swarm.promptugal.news. Its idea is simple: show agents, the loops they start and the model calls they make, run for real and recorded, so that anyone can see what each was asked to do, what it could reach, and how to close the gap. It climbs one step at a time, from me asking one agent for one task, to one model call, to four models at once, to loops, to a swarm of 24 loops and a consensus in code, each step a real run on the storm site's public data, saved as a file and replayable. Fifteen signed requests became fifteen jobs on GitHub's compute, twelve at once, making 216 model calls on open-weight models for 6.8 cents; the same tokens on Claude Sonnet would have cost 1.99 dollars. Model text is never stored, only its length and hash. Under a harness, the same work produced the same output, while 3 of 12 risky actions remained possible instead of 11. And the Story Studio is the demo I remember most: someone answers a question out loud, the browser transcribes it, and a coordinator builds a deck in front of them, drawing every step of how it was made, with its time and its cost.
-version: v999.0.0
+version: v0.14.182
 license: https://creativecommons.org/licenses/by/4.0/
 tags: web-summit, swarm, agents, behaviour-policies, harness, promptugal, article
 status: published
