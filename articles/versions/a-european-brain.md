@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-20 | minor | 1,387 | +10 / −0 words; 4 changed, 0 added, 0 removed paragraphs | this release | [what changed](a-european-brain/v1.1.0.md) · [current](../a-european-brain.md) |
+| **v1.1.0** | 2026-11-20 | minor | 1,387 | +10 / −0 words; 4 changed, 0 added, 0 removed paragraphs | [`9a1edb2e0`](https://github.com/SGit-AI/SGit-AI__Website/commit/9a1edb2e0f2538eb49abbdf11f7fabc783c55703) | [what changed](a-european-brain/v1.1.0.md) · [current](../a-european-brain.md) |
 | **v1.0.0** | 2026-11-20 | published | 1,377 | first published | [`ab2b4d754`](https://github.com/SGit-AI/SGit-AI__Website/commit/ab2b4d7544460e2f57a0c8f97b2ef89fe110ddd7) |  |
 
 [← Back to the article](../a-european-brain.md) · [All articles](../index.md)

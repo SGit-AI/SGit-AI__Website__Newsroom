@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-20 | published | 1,154 | first published | this release | [current](../transcription-for-a-sector.md) |
+| **v1.0.0** | 2026-11-20 | published | 1,154 | first published | [`9a1edb2e0`](https://github.com/SGit-AI/SGit-AI__Website/commit/9a1edb2e0f2538eb49abbdf11f7fabc783c55703) | [current](../transcription-for-a-sector.md) |
 
 [← Back to the article](../transcription-for-a-sector.md) · [All articles](../index.md)
 

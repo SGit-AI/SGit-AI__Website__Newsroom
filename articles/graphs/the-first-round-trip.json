@@ -1,0 +1,116 @@
+{
+  "slug": "the-first-round-trip",
+  "teaser": "The first round trip of Sovereign Web with someone from outside: a site made during a call, handed over, and edited by its owner's own Claude.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Shipping a sovereign website end to end to an outside founder proved the flow and exposed its friction, chiefly the over-privilege of joining an organisation, and pointed to a signed, sealed channel from the site to the agent as the first step before GitHub.",
+  "nodes": [
+    {
+      "id": "site",
+      "label": "Kate's site",
+      "kind": "artefact",
+      "summary": "Made during the call."
+    },
+    {
+      "id": "design",
+      "label": "A design agent of its own",
+      "kind": "method",
+      "summary": "On a schedule."
+    },
+    {
+      "id": "handover",
+      "label": "The handover",
+      "kind": "method",
+      "summary": "Multiple rounds."
+    },
+    {
+      "id": "privilege",
+      "label": "Over-privilege",
+      "kind": "concept",
+      "summary": "Joining the organisation."
+    },
+    {
+      "id": "channel",
+      "label": "A channel from the site",
+      "kind": "method",
+      "summary": "Signed and sealed."
+    },
+    {
+      "id": "shipping",
+      "label": "Always be shipping",
+      "kind": "claim",
+      "summary": "Find the friction."
+    }
+  ],
+  "edges": [
+    {
+      "from": "design",
+      "to": "site",
+      "rel": "extends"
+    },
+    {
+      "from": "handover",
+      "to": "site",
+      "rel": "depends-on"
+    },
+    {
+      "from": "privilege",
+      "to": "handover",
+      "rel": "depends-on"
+    },
+    {
+      "from": "channel",
+      "to": "handover",
+      "rel": "extends"
+    },
+    {
+      "from": "shipping",
+      "to": "handover",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-website-that-is-her",
+      "the-website-cell",
+      "a-website-with-a-team-inside",
+      "an-inbox-only-your-agents-can-write-to",
+      "a-key-for-every-person",
+      "build-on-voicedebrief",
+      "feature-behaviour-policies"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "Kate edits it herself on GitHub, since 20 Nov 2026.",
+      "why": "The hub's entry for her site."
+    },
+    {
+      "text": "Round 6, wow not bland: visual chooser and four bold redesigns",
+      "why": "A design agent's commit."
+    }
+  ],
+  "figures": [
+    {
+      "file": "kfr-home.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/kfr-home.webp",
+      "caption": "Kate's site, made during our call: The Workflow Board, one of five designs.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "kfr-start.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/kfr-start.webp",
+      "caption": "The start page: Kate's step-by-step takeover, rewritten from what tripped her up.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "kfr-message.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/kfr-message.webp",
+      "caption": "Message the site's agent: signed with the owner's key, sealed so only the agent can read it.",
+      "kind": "screenshot"
+    }
+  ]
+}

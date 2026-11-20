@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-145 articles, newest first.
+146 articles, newest first.
 
 ## November 2026
 
+- [The first round trip: a sovereign website made for Kate Curtis-Evans during our call, five designs from a design agent of its own, then handed over so she edits it herself from her own Claude, the friction that took multiple rounds to get through, what it says about over-privilege, and the next step, a signed and sealed channel from her site straight to the agent](../../articles/the-first-round-trip.md), 2026-11-20, 5 min.
 - [Transcription for a sector, sold as a team: extending VoiceDebrief with what we have learnt from sovereign websites, a bundle for one industry, a repository the customer's own AI runs, with the whole pipeline from dropping a recording to a reviewed document and a team of agents certified by people from that sector, sold by small AI companies who know the industry, open source underneath, from £50 to £5,000](../../articles/transcription-for-a-sector.md), 2026-11-20, 4 min.
 - [A European brain for a sovereign website: why the model is a choice the owner makes, like the host, how Mistral fits at every level, from Ministral 3 running on a Pi Pro to Mistral Small 4 on an EU endpoint for the team inside the site, what its terms say about where data goes, the one licence to watch, what we have already run on Mistral, and how we could work with it](../../articles/a-european-brain.md), 2026-11-20, 6 min.
 - [The swarm, one real run at a time: the Web Summit demo that showed agents, the loops they start and the model calls they make, run for real, signed and replayed, step by step from one person and one agent to 24 loops at once, 216 model calls for 6.8 cents, the same work under a harness with 3 of 12 risky actions still possible instead of 11, and the Story Studio, where a spoken answer became a deck in front of you](../../articles/the-swarm-one-real-run-at-a-time.md), 2026-11-20, 4 min.

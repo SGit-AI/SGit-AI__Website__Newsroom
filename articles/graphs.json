@@ -55,6 +55,154 @@
   ],
   "articles": [
     {
+      "slug": "the-first-round-trip",
+      "title": "The first round trip: a sovereign website made for Kate Curtis-Evans during our call, five designs from a design agent of its own, then handed over so she edits it herself from her own Claude, the friction that took multiple rounds to get through, what it says about over-privilege, and the next step, a signed and sealed channel from her site straight to the agent",
+      "date": "2026-11-20",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-first-round-trip.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-first-round-trip.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-first-round-trip.webp",
+      "teaser": "The first round trip of Sovereign Web with someone from outside: a site made during a call, handed over, and edited by its owner's own Claude.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "sovereign-website",
+        "handover",
+        "design-agent",
+        "github",
+        "append-lanes",
+        "always-be-shipping",
+        "article"
+      ],
+      "links_out": [
+        "a-website-that-is-her",
+        "the-website-cell",
+        "feature-behaviour-policies",
+        "an-inbox-only-your-agents-can-write-to",
+        "a-key-for-every-person",
+        "build-on-voicedebrief",
+        "a-website-with-a-team-inside"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "kfr-home.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kfr-home.webp",
+          "caption": "Kate's site, made during our call: The Workflow Board, one of five designs.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "kfr-start.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kfr-start.webp",
+          "caption": "The start page: Kate's step-by-step takeover, rewritten from what tripped her up.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "kfr-message.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kfr-message.webp",
+          "caption": "Message the site's agent: signed with the owner's key, sealed so only the agent can read it.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "the-first-round-trip",
+        "teaser": "The first round trip of Sovereign Web with someone from outside: a site made during a call, handed over, and edited by its owner's own Claude.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Shipping a sovereign website end to end to an outside founder proved the flow and exposed its friction, chiefly the over-privilege of joining an organisation, and pointed to a signed, sealed channel from the site to the agent as the first step before GitHub.",
+        "nodes": [
+          {
+            "id": "site",
+            "label": "Kate's site",
+            "kind": "artefact",
+            "summary": "Made during the call."
+          },
+          {
+            "id": "design",
+            "label": "A design agent of its own",
+            "kind": "method",
+            "summary": "On a schedule."
+          },
+          {
+            "id": "handover",
+            "label": "The handover",
+            "kind": "method",
+            "summary": "Multiple rounds."
+          },
+          {
+            "id": "privilege",
+            "label": "Over-privilege",
+            "kind": "concept",
+            "summary": "Joining the organisation."
+          },
+          {
+            "id": "channel",
+            "label": "A channel from the site",
+            "kind": "method",
+            "summary": "Signed and sealed."
+          },
+          {
+            "id": "shipping",
+            "label": "Always be shipping",
+            "kind": "claim",
+            "summary": "Find the friction."
+          }
+        ],
+        "edges": [
+          {
+            "from": "design",
+            "to": "site",
+            "rel": "extends"
+          },
+          {
+            "from": "handover",
+            "to": "site",
+            "rel": "depends-on"
+          },
+          {
+            "from": "privilege",
+            "to": "handover",
+            "rel": "depends-on"
+          },
+          {
+            "from": "channel",
+            "to": "handover",
+            "rel": "extends"
+          },
+          {
+            "from": "shipping",
+            "to": "handover",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-website-that-is-her",
+            "the-website-cell",
+            "a-website-with-a-team-inside",
+            "an-inbox-only-your-agents-can-write-to",
+            "a-key-for-every-person",
+            "build-on-voicedebrief",
+            "feature-behaviour-policies"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "Kate edits it herself on GitHub, since 20 Nov 2026.",
+            "why": "The hub's entry for her site."
+          },
+          {
+            "text": "Round 6, wow not bland: visual chooser and four bold redesigns",
+            "why": "A design agent's commit."
+          }
+        ]
+      }
+    },
+    {
       "slug": "transcription-for-a-sector",
       "title": "Transcription for a sector, sold as a team: extending VoiceDebrief with what we have learnt from sovereign websites, a bundle for one industry, a repository the customer's own AI runs, with the whole pipeline from dropping a recording to a reviewed document and a team of agents certified by people from that sector, sold by small AI companies who know the industry, open source underneath, from £50 to £5,000",
       "date": "2026-11-20",
@@ -2496,6 +2644,7 @@
         "a-team-like-this"
       ],
       "links_in": [
+        "the-first-round-trip",
         "transcription-for-a-sector",
         "a-european-brain",
         "every-tool-its-own-website",
@@ -3394,6 +3543,7 @@
         "a-page-we-never-charge"
       ],
       "links_in": [
+        "the-first-round-trip",
         "transcription-for-a-sector",
         "the-riskmandate-x-ray",
         "a-galaxy-of-agents",
@@ -7608,6 +7758,7 @@
         "governance-from-zero"
       ],
       "links_in": [
+        "the-first-round-trip",
         "what-is-a-sovereign-website",
         "sovereign-websites-the-investment-case",
         "your-website-from-a-vault",
@@ -10906,6 +11057,7 @@
         "the-mac-bottleneck"
       ],
       "links_in": [
+        "the-first-round-trip",
         "transcription-for-a-sector",
         "our-companies-and-uth",
         "heritage-tech-together",
@@ -11444,6 +11596,7 @@
         "ten-days-at-web-summit"
       ],
       "links_in": [
+        "the-first-round-trip",
         "sovereign-websites-the-investment-case",
         "the-sovereign-website",
         "a-career-website-not-a-cv",
@@ -21141,6 +21294,7 @@
         "a-secret-is-a-qr-code"
       ],
       "links_in": [
+        "the-first-round-trip",
         "static-against-the-platforms",
         "heritage-tech-together",
         "your-own-agentic-cell",
@@ -21721,6 +21875,7 @@
         "a-directory-of-people-and-keys"
       ],
       "links_in": [
+        "the-first-round-trip",
         "your-website-from-a-vault",
         "governance-from-zero",
         "our-companies-and-uth",
