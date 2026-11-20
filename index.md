@@ -4,11 +4,11 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.186 · 514 articles since 2026-08-17; the newest is 2026-11-20. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 514 articles since 2026-08-17; the newest is 2026-11-20. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [The first round trip: a sovereign website made for Kate Curtis-Evans during our call, five designs from a design agent of its own, then handed over so she edits it herself from her own Claude, the friction that took multiple rounds to get through, what it says about over-privilege, and the next step, a signed and sealed channel from her site straight to the agent](articles/the-first-round-trip.md), 2026-11-20, 5 min. The first round trip of Sovereign Web with someone from outside: a site made during a call, handed over, and edited by its owner's own Claude.
+- [The first round trip: a sovereign website made for Kate Curtis-Evans during our call, five designs from a design agent of its own, then handed over so she edits it herself from her own Claude, the friction that took multiple rounds to get through, what it says about over-privilege, and the next step, a signed and sealed channel from her site straight to the agent](articles/the-first-round-trip.md), 2026-11-20, 5 min. The first round trip of Sovereign Website with someone from outside: a site made during a call, handed over, and edited by its owner's own Claude.
 
 ## Five more
 
