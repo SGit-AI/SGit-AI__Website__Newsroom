@@ -114,6 +114,7 @@ Site & engineeringAgents & policy[This article as a graph →](graphs.md#meetscr
 
 ### Continued by
 
+- [Transcription for a sector, sold as a team: extending VoiceDebrief with what we have learnt from sovereign websites, a bundle for one industry, a repository the customer's own AI runs, with the whole pipeline from dropping a recording to a reviewed document and a team of agents certified by people from that sector, sold by small AI companies who know the industry, open source underneath, from £50 to £5,000](transcription-for-a-sector.md) Transcription for one sector, sold as a bundle: a repository the customer's own AI runs, with a team of agents certified by people from the sector.
 - [Ten days at Web Summit: what six people and around 250 agents built between 3 and 13 November, in order, and the series of articles that will tell each part](ten-days-at-web-summit.md) Six people and around 250 agents, ten days at Web Summit: what we built, in order, and the series that will tell it.
 
 [All articles](index.md) · [All graphs](graphs.md)

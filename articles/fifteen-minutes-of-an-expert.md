@@ -75,6 +75,7 @@ Agents & policy[This article as a graph →](graphs.md#fifteen-minutes-of-an-exp
 
 ### Continued by
 
+- [Transcription for a sector, sold as a team: extending VoiceDebrief with what we have learnt from sovereign websites, a bundle for one industry, a repository the customer's own AI runs, with the whole pipeline from dropping a recording to a reviewed document and a team of agents certified by people from that sector, sold by small AI companies who know the industry, open source underneath, from £50 to £5,000](transcription-for-a-sector.md) Transcription for one sector, sold as a bundle: a repository the customer's own AI runs, with a team of agents certified by people from the sector.
 - [A career website, not a CV: why people looking for a job, starting with new graduates, may be the first market for sovereign websites, what they get beyond a better chance, their first experience of an agentic workflow, and the workflow to build one with them, from what they give us and a cheap first pass to an interview, five designs, an expert's review and a site of their own](a-career-website-not-a-cv.md) Why people looking for jobs may be the first market for sovereign websites, and the workflow to build a career site with them.
 
 [All articles](index.md) · [All graphs](graphs.md)

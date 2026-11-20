@@ -3,7 +3,7 @@ title: A European brain for a sovereign website: why the model is a choice the o
 date: 2026-11-20
 author: Dinis Cruz
 author_url: about/index.html
-summary: When I shared the Sovereign Agentic Website idea, Angelo came back with the right challenge: if we really want to claim the word sovereign, abstract the AI provider, and let people use other models, including European ones such as Mistral. I agree completely. A site whose files are yours but whose brain can only be one American provider has a part in the middle that you do not control. So the model becomes a choice the owner makes, like the host: one standard interface, the OpenAI-style API that Mistral, OpenRouter and local servers all speak, and a European option at every level. On the Pro appliances, Ministral 3, an Apache 2.0 model built for the edge, running on the device. For the team inside the site, Mistral's API on its EU endpoint, where data is hosted in the EEA by default and API data is not used for training. For everything else, the owner's own key. We have already run Mistral in production without saying so: it was one of four open-weight models in the Swarm's 216 calls, and its free mode passed our browser test in October. The one thing to watch is licences: the Apache 2.0 models are clean, while Mistral Large 4 needs a commercial licence to be served as a service. And there is a partnership to propose.
+summary: When I shared the Sovereign Agentic Website idea, someone I sent it to came back with the right challenge: if we really want to claim the word sovereign, abstract the AI provider, and let people use other models, including European ones such as Mistral. I agree completely. A site whose files are yours but whose brain can only be one American provider has a part in the middle that you do not control. So the model becomes a choice the owner makes, like the host: one standard interface, the OpenAI-style API that Mistral, OpenRouter and local servers all speak, and a European option at every level. On the Pro appliances, Ministral 3, an Apache 2.0 model built for the edge, running on the device. For the team inside the site, Mistral's API on its EU endpoint, where data is hosted in the EEA by default and API data is not used for training. For everything else, the owner's own key. We have already run Mistral in production without saying so: it was one of four open-weight models in the Swarm's 216 calls, and its free mode passed our browser test in October. The one thing to watch is licences: the Apache 2.0 models are clean, while Mistral Large 4 needs a commercial licence to be served as a service. And there is a partnership to propose.
 version: v0.14.184
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereignty, mistral, europe, models, sovereign-website, open-weight, article
@@ -14,7 +14,7 @@ status: published
 
 ## In short {#in-short}
 
-- **Angelo's challenge:** if we claim sovereign, abstract the AI provider.
+- **The challenge:** if we claim sovereign, abstract the AI provider.
 - **The model is a choice the owner makes,** like the host.
 - **Mistral at every level:** Ministral 3 on the device, Mistral Small 4 on an EU endpoint.
 - **We have already run Mistral,** in the Swarm and in the browser.
@@ -23,7 +23,7 @@ status: published
 
 ## The challenge {#challenge}
 
-When I sent Angelo the [Sovereign Agentic Website](/articles/sovereign-agentic-website.html) idea, his answer was short and right: if you really want to claim the word sovereign, abstract the AI provider part, and allow people to use other models and European AI like Mistral. That would be a very powerful sovereign play.
+When I sent the [Sovereign Agentic Website](/articles/sovereign-agentic-website.html) idea to someone who works in this field, the answer was short and right: if you really want to claim the word sovereign, abstract the AI provider part, and allow people to use other models and European AI like Mistral. That would be a very powerful sovereign play.
 
 It follows from our own principles ([what is a sovereign website](/articles/what-is-a-sovereign-website.html)). One proprietary part in the middle is enough to lock a site in, and the model that builds and changes the site is a part in the middle. If it can only ever be one provider, the site is sovereign in its files and rented in its brain.
 
@@ -81,4 +81,4 @@ Sovereignty cannot rest on one company, European or not. France's finance minist
 
 ## Where this comes from {#sources}
 
-Angelo's reply to the Sovereign Agentic Website idea, my own thinking in writer-10's session on 20 November 2026, and Mistral's own pages linked above, read that day. Related: [what is a sovereign website](/articles/what-is-a-sovereign-website.html), [free models, your own key](/articles/free-models-your-own-key.html), [pennies against dollars](/articles/pennies-against-dollars.html), [a sovereign website on a Raspberry Pi](/articles/a-sovereign-website-on-a-raspberry-pi.html), [watch your website being built](/articles/watch-your-website-being-built.html).
+A reply to the Sovereign Agentic Website idea, my own thinking in writer-10's session on 20 November 2026, and Mistral's own pages linked above, read that day. Related: [what is a sovereign website](/articles/what-is-a-sovereign-website.html), [free models, your own key](/articles/free-models-your-own-key.html), [pennies against dollars](/articles/pennies-against-dollars.html), [a sovereign website on a Raspberry Pi](/articles/a-sovereign-website-on-a-raspberry-pi.html), [watch your website being built](/articles/watch-your-website-being-built.html).

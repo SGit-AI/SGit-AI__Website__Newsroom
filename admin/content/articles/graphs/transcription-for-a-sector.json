@@ -1,0 +1,30 @@
+{
+ "slug": "transcription-for-a-sector",
+ "teaser": "Transcription for one sector, sold as a bundle: a repository the customer's own AI runs, with a team of agents certified by people from the sector.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "Small AI companies that know a sector can sell transcription as a one-off bundle: a repository the customer's own AI runs, holding the pipeline from recording to reviewed document and a team of agents they certify, open source underneath, with governance answered by running in the customer's environment.",
+ "nodes": [
+  {"id": "bundle", "label": "The sector bundle", "kind": "artefact", "summary": "A repository with a team."},
+  {"id": "seller", "label": "Sector AI companies", "kind": "concept", "summary": "People from the industry."},
+  {"id": "pipeline", "label": "The pipeline", "kind": "method", "summary": "Drop to keep."},
+  {"id": "certified", "label": "A certified team", "kind": "claim", "summary": "Quality vouched for."},
+  {"id": "governance", "label": "Governance by design", "kind": "claim", "summary": "The customer's environment."},
+  {"id": "price", "label": "£50 to £5,000", "kind": "method", "summary": "One-off."}
+ ],
+ "edges": [
+  {"from": "seller", "to": "bundle", "rel": "produces"},
+  {"from": "pipeline", "to": "bundle", "rel": "depends-on"},
+  {"from": "certified", "to": "bundle", "rel": "extends"},
+  {"from": "governance", "to": "pipeline", "rel": "depends-on"},
+  {"from": "price", "to": "bundle", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["voicedebrief-relaunch", "build-on-voicedebrief", "meetscribe", "a-website-with-a-team-inside", "fifteen-minutes-of-an-expert", "feature-behaviour-policies", "sovereign-websites-the-investment-case"],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "Transcription is never generic.", "why": "Dinis."},
+  {"text": "it augments the worker.", "why": "Dinis."}
+ ]
+}
