@@ -74,6 +74,7 @@ Agents & policy[This article as a graph →](graphs.md#a-galaxy-of-agents)
 
 ### Continued by
 
+- [The swarm, one real run at a time: the Web Summit demo that showed agents, the loops they start and the model calls they make, run for real, signed and replayed, step by step from one person and one agent to 24 loops at once, 216 model calls for 6.8 cents, the same work under a harness with 3 of 12 risky actions still possible instead of 11, and the Story Studio, where a spoken answer became a deck in front of you](the-swarm-one-real-run-at-a-time.md) The Swarm from Web Summit: agents run for real, signed and replayed, 216 model calls for 6.8 cents, a harness test, and a voice-to-deck studio.
 - [The RiskMandate X-ray: type a company's name and see what its AI helpers can reach, what they were asked to do and where the two do not match, how four search agents and a collector built it for the stand at Web Summit, why only facts whose sources were read reach the page, what it cost, about 1.13 dollars for thirteen companies, and how the four models compared on accuracy](the-riskmandate-x-ray.md) The RiskMandate X-ray: type a company, see its AI helpers' reach, mandate and gap, built by four search agents for about a dime a company.
 
 [All articles](index.md) · [All graphs](graphs.md)

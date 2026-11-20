@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-20 | published | 899 | first published | this release | [current](../a-galaxy-of-agents.md) |
+| **v1.0.0** | 2026-11-20 | published | 899 | first published | [`cadf3b90a`](https://github.com/SGit-AI/SGit-AI__Website/commit/cadf3b90a9570a105abb6c5da7eff244bcebc6f1) | [current](../a-galaxy-of-agents.md) |
 
 [← Back to the article](../a-galaxy-of-agents.md) · [All articles](../index.md)
 

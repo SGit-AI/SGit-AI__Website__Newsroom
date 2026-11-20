@@ -1,0 +1,30 @@
+{
+ "slug": "the-swarm-one-real-run-at-a-time",
+ "teaser": "The Swarm from Web Summit: agents run for real, signed and replayed, 216 model calls for 6.8 cents, a harness test, and a voice-to-deck studio.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "The Swarm shows agents, their loops and model calls run for real on public data, signed, budgeted and replayable, cheap on open-weight models, safer under a harness, and in its Story Studio turns a spoken answer into a deck while drawing how it was made.",
+ "nodes": [
+  {"id": "swarm", "label": "The Swarm", "kind": "artefact", "summary": "swarm.promptugal.news."},
+  {"id": "steps", "label": "Step by step", "kind": "method", "summary": "One agent to 24 loops."},
+  {"id": "signed", "label": "Signed and budgeted", "kind": "method", "summary": "GitHub jobs, attested."},
+  {"id": "cost", "label": "216 calls, 6.8 cents", "kind": "claim", "summary": "1.99 dollars on Sonnet."},
+  {"id": "harness", "label": "Under a harness", "kind": "example", "summary": "3 of 12, not 11."},
+  {"id": "studio", "label": "The Story Studio", "kind": "example", "summary": "Voice to deck."}
+ ],
+ "edges": [
+  {"from": "steps", "to": "swarm", "rel": "depends-on"},
+  {"from": "signed", "to": "steps", "rel": "extends"},
+  {"from": "cost", "to": "signed", "rel": "depends-on"},
+  {"from": "harness", "to": "swarm", "rel": "extends"},
+  {"from": "studio", "to": "swarm", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["a-galaxy-of-agents", "the-riskmandate-x-ray", "watch-your-website-being-built", "launching-the-sovereign-website-appliance"],
+  "pages": [],
+  "sites": ["https://swarm.promptugal.news/"]
+ },
+ "quotes": [
+  {"text": "Everything an agent starts runs with the agent's keys", "why": "Dinis."},
+  {"text": "This is the demo I remember most.", "why": "Dinis."}
+ ]
+}

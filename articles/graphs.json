@@ -55,6 +55,150 @@
   ],
   "articles": [
     {
+      "slug": "the-swarm-one-real-run-at-a-time",
+      "title": "The swarm, one real run at a time: the Web Summit demo that showed agents, the loops they start and the model calls they make, run for real, signed and replayed, step by step from one person and one agent to 24 loops at once, 216 model calls for 6.8 cents, the same work under a harness with 3 of 12 risky actions still possible instead of 11, and the Story Studio, where a spoken answer became a deck in front of you",
+      "date": "2026-11-20",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-swarm-one-real-run-at-a-time.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-swarm-one-real-run-at-a-time.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-swarm-one-real-run-at-a-time.webp",
+      "teaser": "The Swarm from Web Summit: agents run for real, signed and replayed, 216 model calls for 6.8 cents, a harness test, and a voice-to-deck studio.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "web-summit",
+        "swarm",
+        "agents",
+        "behaviour-policies",
+        "harness",
+        "promptugal",
+        "article"
+      ],
+      "links_out": [
+        "a-galaxy-of-agents",
+        "the-riskmandate-x-ray",
+        "watch-your-website-being-built",
+        "launching-the-sovereign-website-appliance"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "swm-home.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/swm-home.webp",
+          "caption": "The Swarm at swarm.promptugal.news: every run real, signed and replayable; model text never stored.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "swm-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/swm-flow.webp",
+          "caption": "The execution flow: 15 signed requests, 15 jobs, 216 model calls, every run replayable.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "swm-studio.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/swm-studio.webp",
+          "caption": "The Story Studio: record an answer, and watch a deck being made from it, with its cost.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "the-swarm-one-real-run-at-a-time",
+        "teaser": "The Swarm from Web Summit: agents run for real, signed and replayed, 216 model calls for 6.8 cents, a harness test, and a voice-to-deck studio.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "The Swarm shows agents, their loops and model calls run for real on public data, signed, budgeted and replayable, cheap on open-weight models, safer under a harness, and in its Story Studio turns a spoken answer into a deck while drawing how it was made.",
+        "nodes": [
+          {
+            "id": "swarm",
+            "label": "The Swarm",
+            "kind": "artefact",
+            "summary": "swarm.promptugal.news."
+          },
+          {
+            "id": "steps",
+            "label": "Step by step",
+            "kind": "method",
+            "summary": "One agent to 24 loops."
+          },
+          {
+            "id": "signed",
+            "label": "Signed and budgeted",
+            "kind": "method",
+            "summary": "GitHub jobs, attested."
+          },
+          {
+            "id": "cost",
+            "label": "216 calls, 6.8 cents",
+            "kind": "claim",
+            "summary": "1.99 dollars on Sonnet."
+          },
+          {
+            "id": "harness",
+            "label": "Under a harness",
+            "kind": "example",
+            "summary": "3 of 12, not 11."
+          },
+          {
+            "id": "studio",
+            "label": "The Story Studio",
+            "kind": "example",
+            "summary": "Voice to deck."
+          }
+        ],
+        "edges": [
+          {
+            "from": "steps",
+            "to": "swarm",
+            "rel": "depends-on"
+          },
+          {
+            "from": "signed",
+            "to": "steps",
+            "rel": "extends"
+          },
+          {
+            "from": "cost",
+            "to": "signed",
+            "rel": "depends-on"
+          },
+          {
+            "from": "harness",
+            "to": "swarm",
+            "rel": "extends"
+          },
+          {
+            "from": "studio",
+            "to": "swarm",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-galaxy-of-agents",
+            "the-riskmandate-x-ray",
+            "watch-your-website-being-built",
+            "launching-the-sovereign-website-appliance"
+          ],
+          "pages": [],
+          "sites": [
+            "https://swarm.promptugal.news/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Everything an agent starts runs with the agent's keys",
+            "why": "Dinis."
+          },
+          {
+            "text": "This is the demo I remember most.",
+            "why": "Dinis."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-riskmandate-x-ray",
       "title": "The RiskMandate X-ray: type a company's name and see what its AI helpers can reach, what they were asked to do and where the two do not match, how four search agents and a collector built it for the stand at Web Summit, why only facts whose sources were read reach the page, what it cost, about 1.13 dollars for thirteen companies, and how the four models compared on accuracy",
       "date": "2026-11-20",
@@ -81,6 +225,7 @@
         "a-galaxy-of-agents"
       ],
       "links_in": [
+        "the-swarm-one-real-run-at-a-time",
         "a-galaxy-of-agents"
       ],
       "figures": [
@@ -221,6 +366,7 @@
         "the-teams-operating-system"
       ],
       "links_in": [
+        "the-swarm-one-real-run-at-a-time",
         "the-riskmandate-x-ray"
       ],
       "figures": [
@@ -1030,6 +1176,7 @@
         "a-website-with-a-team-inside"
       ],
       "links_in": [
+        "the-swarm-one-real-run-at-a-time",
         "every-tool-its-own-website",
         "a-sovereign-website-on-a-raspberry-pi",
         "launching-the-sovereign-website-appliance"
@@ -1323,6 +1470,7 @@
         "sovereign-websites-the-investment-case"
       ],
       "links_in": [
+        "the-swarm-one-real-run-at-a-time",
         "websites-for-the-moment",
         "where-to-sell-the-book-and-the-appliances",
         "a-sovereign-website-on-a-raspberry-pi",

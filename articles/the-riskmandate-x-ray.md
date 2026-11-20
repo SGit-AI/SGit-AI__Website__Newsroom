@@ -80,6 +80,7 @@ Agents & policy[This article as a graph →](graphs.md#the-riskmandate-x-ray)
 
 ### Continued by
 
+- [The swarm, one real run at a time: the Web Summit demo that showed agents, the loops they start and the model calls they make, run for real, signed and replayed, step by step from one person and one agent to 24 loops at once, 216 model calls for 6.8 cents, the same work under a harness with 3 of 12 risky actions still possible instead of 11, and the Story Studio, where a spoken answer became a deck in front of you](the-swarm-one-real-run-at-a-time.md) The Swarm from Web Summit: agents run for real, signed and replayed, 216 model calls for 6.8 cents, a harness test, and a voice-to-deck studio.
 - [A galaxy of agents: the Universe we showed at Web Summit, a live 3D solar system of the RiskMandate team where people are suns, their agents orbit them and their messages travel between them as arcs of light, read from the repositories as it happens, with each agent's behaviour policy one click away, and Gravity, the library it became, which can draw any system the same way](a-galaxy-of-agents.md) The Galaxy from Web Summit: the RiskMandate team as a live 3D solar system of people, agents and messages, and the library it became.
 
 [All articles](index.md) · [All graphs](graphs.md)
