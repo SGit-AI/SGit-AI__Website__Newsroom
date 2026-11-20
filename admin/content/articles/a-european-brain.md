@@ -4,7 +4,7 @@ date: 2026-11-20
 author: Dinis Cruz
 author_url: about/index.html
 summary: When I shared the Sovereign Agentic Website idea, Angelo came back with the right challenge: if we really want to claim the word sovereign, abstract the AI provider, and let people use other models, including European ones such as Mistral. I agree completely. A site whose files are yours but whose brain can only be one American provider has a part in the middle that you do not control. So the model becomes a choice the owner makes, like the host: one standard interface, the OpenAI-style API that Mistral, OpenRouter and local servers all speak, and a European option at every level. On the Pro appliances, Ministral 3, an Apache 2.0 model built for the edge, running on the device. For the team inside the site, Mistral's API on its EU endpoint, where data is hosted in the EEA by default and API data is not used for training. For everything else, the owner's own key. We have already run Mistral in production without saying so: it was one of four open-weight models in the Swarm's 216 calls, and its free mode passed our browser test in October. The one thing to watch is licences: the Apache 2.0 models are clean, while Mistral Large 4 needs a commercial licence to be served as a service. And there is a partnership to propose.
-version: v999.0.0
+version: v0.14.184
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereignty, mistral, europe, models, sovereign-website, open-weight, article
 status: published
