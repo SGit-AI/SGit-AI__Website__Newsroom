@@ -2,10 +2,12 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-138 articles, newest first.
+140 articles, newest first.
 
 ## November 2026
 
+- [Fifteen minutes of an expert: how agents make a short review by someone with twenty years in a field worth acting on, so that an expert's quarter of an hour, a few pen notes and a voice memo on a website, a deck or a book, becomes changes with their source, why that is one of the professions that never scaled and now can, my own book as the case, and a career website reviewed by a CISO as the first market](../../articles/fifteen-minutes-of-an-expert.md), 2026-11-19, 3 min.
+- [A career website, not a CV: why people looking for a job, starting with new graduates, may be the first market for sovereign websites, what they get beyond a better chance, their first experience of an agentic workflow, and the workflow to build one with them, from what they give us and a cheap first pass to an interview, five designs, an expert's review and a site of their own](../../articles/a-career-website-not-a-cv.md), 2026-11-19, 3 min.
 - [Websites for the moment: an experiment in letting an agent team keep building topical sites, around what people are looking for now, GTA VI on its launch day, Christmas posting dates, an advent of tools, the Kickstarter itself, each built in a day within a budget, every fact sourced, live for its moment and then archived, and a first calendar to start from](../../articles/websites-for-the-moment.md), 2026-11-19, 3 min.
 - [Every tool its own website: turning the 49 browser tools of tools.sgraph.ai, each built because I had a problem, into sovereign websites of their own, with a theme, documentation and a small agent team each, released in waves from the simplest, with shared components pulled out, pinned versions and signed hashes kept apart, and a team of teams to keep them all moving](../../articles/every-tool-its-own-website.md), 2026-11-19, 7 min.
 - [Where to sell the book and the appliances: a map of the places a UK author and maker can sell physical products, printed copies of One Human, Nine Agents, Nineteen Hours from early December and the sovereign website appliances from 1 January after a December Kickstarter, with Amazon, IngramSpark, eBay, OnBuy and our own shop, what each charges, the rules that matter, and the law that comes with selling hardware](../../articles/where-to-sell-the-book-and-the-appliances.md), 2026-11-19, 5 min.

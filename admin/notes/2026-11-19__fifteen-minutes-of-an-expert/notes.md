@@ -1,0 +1,3 @@
+# Notes: fifteen-minutes-of-an-expert (19 November 2026)
+
+Dinis, in writer-10's session: AI scales professions that never scaled; getting value from 10, 15 minutes or an hour of an expert's time; his book review on paper, on a plane, comments he would never have made, more confident because they will be executed, where before every 5 minutes of review cost half an hour to two hours to implement; a CISO reviewing a cybersecurity job seeker's website; his hiring practice of asking candidates to present; any industry, any artefact (website, deck, book, PDF), typed notes and a voice memo. He suggested it as a separate article from the career-website one.

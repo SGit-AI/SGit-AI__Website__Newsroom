@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-19 | published | 942 | first published | this release | [current](../websites-for-the-moment.md) |
+| **v1.0.0** | 2026-11-19 | published | 942 | first published | [`a56c9bcb3`](https://github.com/SGit-AI/SGit-AI__Website/commit/a56c9bcb3061a886e4a2f38152175cd54682c983) | [current](../websites-for-the-moment.md) |
 
 [← Back to the article](../websites-for-the-moment.md) · [All articles](../index.md)
 

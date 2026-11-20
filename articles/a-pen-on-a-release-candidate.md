@@ -114,6 +114,7 @@ Vaults & methodGraphs & knowledge[This article as a graph →](graphs.md#a-pen-o
 
 ### Continued by
 
+- [Fifteen minutes of an expert: how agents make a short review by someone with twenty years in a field worth acting on, so that an expert's quarter of an hour, a few pen notes and a voice memo on a website, a deck or a book, becomes changes with their source, why that is one of the professions that never scaled and now can, my own book as the case, and a career website reviewed by a CISO as the first market](fifteen-minutes-of-an-expert.md) How agents make fifteen minutes of an expert's review worth acting on, from my printed book to a CISO reviewing a career website.
 - [A book told by its cast: how the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record, and the editor as narrator](a-book-told-by-its-cast.md) A book told by its cast: the nine agents of The Ultimate Insider became characters with moods, fears and running jokes, every trait from the record.
 
 [All articles](index.md) · [All graphs](graphs.md)

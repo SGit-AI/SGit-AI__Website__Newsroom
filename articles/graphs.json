@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-11-19",
+  "generated": "2026-11-20",
   "site_version": "v0.7.87",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
@@ -54,6 +54,274 @@
     "produces"
   ],
   "articles": [
+    {
+      "slug": "fifteen-minutes-of-an-expert",
+      "title": "Fifteen minutes of an expert: how agents make a short review by someone with twenty years in a field worth acting on, so that an expert's quarter of an hour, a few pen notes and a voice memo on a website, a deck or a book, becomes changes with their source, why that is one of the professions that never scaled and now can, my own book as the case, and a career website reviewed by a CISO as the first market",
+      "date": "2026-11-19",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/fifteen-minutes-of-an-expert.html",
+      "markdown": "https://newsroom.sgit.ai/articles/fifteen-minutes-of-an-expert.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/fifteen-minutes-of-an-expert.webp",
+      "teaser": "How agents make fifteen minutes of an expert's review worth acting on, from my printed book to a CISO reviewing a career website.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "experts",
+        "scaling-expertise",
+        "reviews",
+        "careers",
+        "agentic",
+        "workflow",
+        "article"
+      ],
+      "links_out": [
+        "jobs-that-never-scaled",
+        "a-pen-on-a-release-candidate",
+        "a-career-website-not-a-cv"
+      ],
+      "links_in": [
+        "a-career-website-not-a-cv"
+      ],
+      "figures": [
+        {
+          "file": "xpt-loop.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/xpt-loop.webp",
+          "caption": "Fifteen minutes of an expert: the expert marks and talks, the agents turn every note into a change.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "fifteen-minutes-of-an-expert",
+        "teaser": "How agents make fifteen minutes of an expert's review worth acting on, from my printed book to a CISO reviewing a career website.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "A short review by an expert never scaled because applying it cost far more than giving it; agents now turn an expert's pen notes and voice memo into changes with their source, so fifteen minutes on top of twenty years becomes valuable, starting with experts reviewing career websites.",
+        "nodes": [
+          {
+            "id": "never",
+            "label": "A short review never scaled",
+            "kind": "claim",
+            "summary": "Applying it cost too much."
+          },
+          {
+            "id": "agents",
+            "label": "Agents apply the notes",
+            "kind": "method",
+            "summary": "Each change with its source."
+          },
+          {
+            "id": "book",
+            "label": "My book, reviewed on paper",
+            "kind": "example",
+            "summary": "Pen notes on a plane."
+          },
+          {
+            "id": "ciso",
+            "label": "A CISO and a graduate",
+            "kind": "example",
+            "summary": "Fifteen minutes."
+          },
+          {
+            "id": "loop",
+            "label": "The expert loop",
+            "kind": "method",
+            "summary": "Work, expert, agents, person."
+          },
+          {
+            "id": "value",
+            "label": "Worth paying for",
+            "kind": "claim",
+            "summary": "Cheap to deliver."
+          }
+        ],
+        "edges": [
+          {
+            "from": "agents",
+            "to": "never",
+            "rel": "answers"
+          },
+          {
+            "from": "book",
+            "to": "agents",
+            "rel": "example-of"
+          },
+          {
+            "from": "ciso",
+            "to": "loop",
+            "rel": "example-of"
+          },
+          {
+            "from": "loop",
+            "to": "agents",
+            "rel": "depends-on"
+          },
+          {
+            "from": "value",
+            "to": "loop",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "jobs-that-never-scaled",
+            "a-pen-on-a-release-candidate",
+            "a-career-website-not-a-cv"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "For them, that is very valuable. For me, it is fifteen minutes.",
+            "why": "Dinis."
+          },
+          {
+            "text": "The expert's time is the scarce part; everything around it is now the agents'.",
+            "why": "Dinis."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-career-website-not-a-cv",
+      "title": "A career website, not a CV: why people looking for a job, starting with new graduates, may be the first market for sovereign websites, what they get beyond a better chance, their first experience of an agentic workflow, and the workflow to build one with them, from what they give us and a cheap first pass to an interview, five designs, an expert's review and a site of their own",
+      "date": "2026-11-19",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-career-website-not-a-cv.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-career-website-not-a-cv.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-career-website-not-a-cv.webp",
+      "teaser": "Why people looking for jobs may be the first market for sovereign websites, and the workflow to build a career site with them.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "sovereign-website",
+        "careers",
+        "cv",
+        "graduates",
+        "workflow",
+        "agentic",
+        "article"
+      ],
+      "links_out": [
+        "a-website-that-is-her",
+        "a-portfolio-with-a-film-first",
+        "the-website-cell",
+        "a-website-with-a-team-inside",
+        "fifteen-minutes-of-an-expert",
+        "your-own-registrar",
+        "launching-the-sovereign-website-appliance"
+      ],
+      "links_in": [
+        "fifteen-minutes-of-an-expert"
+      ],
+      "figures": [
+        {
+          "file": "cvs-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cvs-flow.webp",
+          "caption": "A career website, built with the person: from what they give us to a site that is theirs.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "a-career-website-not-a-cv",
+        "teaser": "Why people looking for jobs may be the first market for sovereign websites, and the workflow to build a career site with them.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Career websites are most of what we have built and a large market: a graduate gets a better chance than a chatbot CV and a first experience of an agentic workflow, through a six-step workflow from a cheap first pass to an expert's review and a site of their own.",
+        "nodes": [
+          {
+            "id": "market",
+            "label": "Job seekers as a first market",
+            "kind": "claim",
+            "summary": "Starting with graduates."
+          },
+          {
+            "id": "two",
+            "label": "Two things they get",
+            "kind": "concept",
+            "summary": "A chance and an experience."
+          },
+          {
+            "id": "flow",
+            "label": "The six-step workflow",
+            "kind": "method",
+            "summary": "Give to theirs."
+          },
+          {
+            "id": "cheap",
+            "label": "A cheap first pass",
+            "kind": "method",
+            "summary": "Templates and variations."
+          },
+          {
+            "id": "expert",
+            "label": "An expert's review",
+            "kind": "method",
+            "summary": "Fifteen minutes."
+          },
+          {
+            "id": "address",
+            "label": "An address of their own",
+            "kind": "artefact",
+            "summary": "On sovereignwebsite.site."
+          }
+        ],
+        "edges": [
+          {
+            "from": "two",
+            "to": "market",
+            "rel": "answers"
+          },
+          {
+            "from": "flow",
+            "to": "two",
+            "rel": "produces"
+          },
+          {
+            "from": "cheap",
+            "to": "flow",
+            "rel": "depends-on"
+          },
+          {
+            "from": "expert",
+            "to": "flow",
+            "rel": "extends"
+          },
+          {
+            "from": "address",
+            "to": "flow",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-website-that-is-her",
+            "a-portfolio-with-a-film-first",
+            "the-website-cell",
+            "a-website-with-a-team-inside",
+            "your-own-registrar",
+            "fifteen-minutes-of-an-expert",
+            "launching-the-sovereign-website-appliance"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "It stands out because it is real.",
+            "why": "Dinis."
+          },
+          {
+            "text": "Agents make it scale; people make it better.",
+            "why": "Dinis."
+          }
+        ]
+      }
+    },
     {
       "slug": "websites-for-the-moment",
       "title": "Websites for the moment: an experiment in letting an agent team keep building topical sites, around what people are looking for now, GTA VI on its launch day, Christmas posting dates, an advent of tools, the Kickstarter itself, each built in a day within a budget, every fact sourced, live for its moment and then archived, and a first calendar to start from",
@@ -1048,6 +1316,7 @@
         "sovereign-websites-the-investment-case"
       ],
       "links_in": [
+        "a-career-website-not-a-cv",
         "websites-for-the-moment",
         "where-to-sell-the-book-and-the-appliances",
         "a-sovereign-website-on-a-raspberry-pi",
@@ -1787,6 +2056,7 @@
         "a-team-like-this"
       ],
       "links_in": [
+        "a-career-website-not-a-cv",
         "every-tool-its-own-website",
         "watch-your-website-being-built",
         "the-launch-plan-in-eleven-turns",
@@ -2269,6 +2539,7 @@
         "the-sovereign-website"
       ],
       "links_in": [
+        "a-career-website-not-a-cv",
         "what-is-a-sovereign-website",
         "sovereign-websites-the-investment-case",
         "designing-sovereignwebsite-ai",
@@ -6621,6 +6892,7 @@
         "governance-from-zero"
       ],
       "links_in": [
+        "a-career-website-not-a-cv",
         "what-is-a-sovereign-website",
         "sovereign-websites-the-investment-case",
         "your-website-from-a-vault",
@@ -10258,6 +10530,7 @@
         "show-me-the-evidence"
       ],
       "links_in": [
+        "a-career-website-not-a-cv",
         "sovereign-websites-the-investment-case",
         "the-sovereign-website",
         "start-with-an-interview",
@@ -10454,6 +10727,7 @@
         "ten-days-at-web-summit"
       ],
       "links_in": [
+        "a-career-website-not-a-cv",
         "sovereign-websites-the-investment-case",
         "the-sovereign-website",
         "start-with-an-interview",
@@ -25872,6 +26146,7 @@
         "generation-z-developers-again"
       ],
       "links_in": [
+        "fifteen-minutes-of-an-expert",
         "a-book-told-by-its-cast"
       ],
       "figures": [
@@ -47978,6 +48253,7 @@
         "start-a-company"
       ],
       "links_in": [
+        "fifteen-minutes-of-an-expert",
         "specialist-agents-for-every-team",
         "answering-a-draft",
         "the-open-security-summit-and-its-debt",

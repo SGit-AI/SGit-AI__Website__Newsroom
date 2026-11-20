@@ -1,0 +1,100 @@
+{
+  "slug": "fifteen-minutes-of-an-expert",
+  "teaser": "How agents make fifteen minutes of an expert's review worth acting on, from my printed book to a CISO reviewing a career website.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "A short review by an expert never scaled because applying it cost far more than giving it; agents now turn an expert's pen notes and voice memo into changes with their source, so fifteen minutes on top of twenty years becomes valuable, starting with experts reviewing career websites.",
+  "nodes": [
+    {
+      "id": "never",
+      "label": "A short review never scaled",
+      "kind": "claim",
+      "summary": "Applying it cost too much."
+    },
+    {
+      "id": "agents",
+      "label": "Agents apply the notes",
+      "kind": "method",
+      "summary": "Each change with its source."
+    },
+    {
+      "id": "book",
+      "label": "My book, reviewed on paper",
+      "kind": "example",
+      "summary": "Pen notes on a plane."
+    },
+    {
+      "id": "ciso",
+      "label": "A CISO and a graduate",
+      "kind": "example",
+      "summary": "Fifteen minutes."
+    },
+    {
+      "id": "loop",
+      "label": "The expert loop",
+      "kind": "method",
+      "summary": "Work, expert, agents, person."
+    },
+    {
+      "id": "value",
+      "label": "Worth paying for",
+      "kind": "claim",
+      "summary": "Cheap to deliver."
+    }
+  ],
+  "edges": [
+    {
+      "from": "agents",
+      "to": "never",
+      "rel": "answers"
+    },
+    {
+      "from": "book",
+      "to": "agents",
+      "rel": "example-of"
+    },
+    {
+      "from": "ciso",
+      "to": "loop",
+      "rel": "example-of"
+    },
+    {
+      "from": "loop",
+      "to": "agents",
+      "rel": "depends-on"
+    },
+    {
+      "from": "value",
+      "to": "loop",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "jobs-that-never-scaled",
+      "a-pen-on-a-release-candidate",
+      "a-career-website-not-a-cv"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "For them, that is very valuable. For me, it is fifteen minutes.",
+      "why": "Dinis."
+    },
+    {
+      "text": "The expert's time is the scarce part; everything around it is now the agents'.",
+      "why": "Dinis."
+    }
+  ],
+  "figures": [
+    {
+      "file": "xpt-loop.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/xpt-loop.webp",
+      "caption": "Fifteen minutes of an expert: the expert marks and talks, the agents turn every note into a change.",
+      "kind": "concept"
+    }
+  ]
+}
