@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: I keep making the case that AI is about scaling professions that never scaled, and one of them is this: how do you get value from ten, fifteen minutes, an hour of an expert's time? I think we are now close. Take how I am reviewing my book. I print it, and on paper, even on a plane, I write all over it: notes, references, comments of a kind I would never have made before. And I notice myself commenting more, and more confidently, because I know the notes will be acted on. Before, every five minutes of review cost half an hour to two hours of work to apply, so the review mostly did not happen. Now the agents do that work. Apply it to someone looking for a job in cybersecurity. I am a CISO; I have hired and run large teams. Fifteen minutes from me on their website, a few marks and a voice memo, turned by agents into changes with their source, is worth a great deal to them, and costs me fifteen minutes. The same holds for any field, and for a website, a deck, a book or a PDF. The career websites we are building are where it starts.
-version: v999.0.0
+version: v0.14.180
 license: https://creativecommons.org/licenses/by/4.0/
 tags: experts, scaling-expertise, reviews, careers, agentic, workflow, article
 status: published

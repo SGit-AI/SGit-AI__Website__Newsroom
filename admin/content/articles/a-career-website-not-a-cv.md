@@ -4,7 +4,7 @@ date: 2026-11-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: Tonight I talked to a friend who has just graduated and is looking for a job. Applying with a CV, it is very hard to stand out. I showed her Yiheng Wang's site, and her reaction was the one everyone has: that looks really good. Most of the sites we have made so far are career sites, built to help someone get the next job. So I think we should double down on that market, for two reasons. The person gets a better chance than a CV written in one chat: a site that is theirs, made from their own photos and words, at their own address. And they get their first experience of an agentic workflow, which they will tell their friends about, who are looking for jobs too. The workflow needs an onboarding page that says what to give us; a first pass that is cheap, from a template or a variation of a site we have already made; an interview by a conductor or a journalist agent; five designs; a short review by someone who works in the field they are aiming for; and then the site is theirs, at name.sovereignwebsite.site, with a version for each role they apply for. Synthetic examples, and the real ones we have, make the templates.
-version: v999.0.0
+version: v0.14.180
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereign-website, careers, cv, graduates, workflow, agentic, article
 status: published
