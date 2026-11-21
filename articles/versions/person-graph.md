@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-21 | published | 1,591 | first published | this release | [current](../person-graph.md) |
+| **v1.0.0** | 2026-11-21 | published | 1,591 | first published | [`5eba6698b`](https://github.com/SGit-AI/SGit-AI__Website/commit/5eba6698bfdfa47734b7eecb90062118a99f83aa) | [current](../person-graph.md) |
 
 [← Back to the article](../person-graph.md) · [All articles](../index.md)
 

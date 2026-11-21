@@ -1,0 +1,30 @@
+{
+ "slug": "start-stop-slow-down",
+ "teaser": "How a large agent team is started, stopped, slowed and moved to an isolated account: eighteen days, 8,027 commits, one hand brake.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "Controlling an agent team means being able to stop, brake, slow and restart it, through scheduled tasks, a hold file and decisions written down first; budgets and usage limits inform those decisions, and debriefs let a whole team restart on an isolated account, which proves sovereignty and resilience.",
+ "nodes": [
+  {"id": "throttle", "label": "Schedules as throttle", "kind": "method", "summary": "One record per agent."},
+  {"id": "hold", "label": "HOLD.md", "kind": "method", "summary": "The hand brake."},
+  {"id": "ledger", "label": "The spend ledger", "kind": "artefact", "summary": "Measures, does not block."},
+  {"id": "limit", "label": "The seven-day limit", "kind": "concept", "summary": "A useful constraint."},
+  {"id": "debrief", "label": "Debriefs", "kind": "method", "summary": "Before every stop."},
+  {"id": "move", "label": "The account move", "kind": "claim", "summary": "34 agents in four hours."}
+ ],
+ "edges": [
+  {"from": "throttle", "to": "ledger", "rel": "depends-on"},
+  {"from": "limit", "to": "throttle", "rel": "produces"},
+  {"from": "hold", "to": "throttle", "rel": "extends"},
+  {"from": "debrief", "to": "move", "rel": "produces"},
+  {"from": "ledger", "to": "limit", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["the-cost-of-your-agents", "feature-behaviour-policies", "agents-have-an-identity-now", "sovereignty-you-can-move", "promptugal-news-the-newsroom-we-ran"],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "Stop all work (unless it is critical) until we realign on our strategy.", "why": "Dinis, 9 November."},
+  {"text": "We don't need hourly updates.", "why": "Dinis, 19 November."}
+ ]
+}

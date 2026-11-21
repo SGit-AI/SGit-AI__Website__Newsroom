@@ -55,6 +55,150 @@
   ],
   "articles": [
     {
+      "slug": "start-stop-slow-down",
+      "title": "Start, stop, slow down: how I run a large team of agents and keep my hand on the brake, 8,027 commits in eighteen days, a big stop, a hand brake, 560 wakes a day cut to 76 with one sentence, 39 schedules changed in 30 seconds, three warnings from the seven-day limit handled, and 34 agents moved to a completely separate account in four hours, which is what sovereignty and resilience look like in practice",
+      "date": "2026-11-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/start-stop-slow-down.html",
+      "markdown": "https://newsroom.sgit.ai/articles/start-stop-slow-down.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/start-stop-slow-down.webp",
+      "teaser": "How a large agent team is started, stopped, slowed and moved to an isolated account: eighteen days, 8,027 commits, one hand brake.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "control",
+        "budgets",
+        "resilience",
+        "sovereignty",
+        "promptugal",
+        "article"
+      ],
+      "links_out": [
+        "the-cost-of-your-agents",
+        "feature-behaviour-policies",
+        "agents-have-an-identity-now",
+        "sovereignty-you-can-move",
+        "promptugal-news-the-newsroom-we-ran"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ss-commits.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ss-commits.webp",
+          "caption": "8,027 commits by hour, 4 to 21 November, with every start, stop and slow-down marked.",
+          "kind": "chart"
+        },
+        {
+          "file": "ss-wakes.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ss-wakes.webp",
+          "caption": "Scheduled wakes per day: every step is one decision, applied by a conductor editing schedules.",
+          "kind": "chart"
+        },
+        {
+          "file": "ss-spend.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ss-spend.webp",
+          "caption": "Account B's API-equivalent spend: two eras, and the rate falling after each slow-down.",
+          "kind": "chart"
+        }
+      ],
+      "graph": {
+        "slug": "start-stop-slow-down",
+        "teaser": "How a large agent team is started, stopped, slowed and moved to an isolated account: eighteen days, 8,027 commits, one hand brake.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Controlling an agent team means being able to stop, brake, slow and restart it, through scheduled tasks, a hold file and decisions written down first; budgets and usage limits inform those decisions, and debriefs let a whole team restart on an isolated account, which proves sovereignty and resilience.",
+        "nodes": [
+          {
+            "id": "throttle",
+            "label": "Schedules as throttle",
+            "kind": "method",
+            "summary": "One record per agent."
+          },
+          {
+            "id": "hold",
+            "label": "HOLD.md",
+            "kind": "method",
+            "summary": "The hand brake."
+          },
+          {
+            "id": "ledger",
+            "label": "The spend ledger",
+            "kind": "artefact",
+            "summary": "Measures, does not block."
+          },
+          {
+            "id": "limit",
+            "label": "The seven-day limit",
+            "kind": "concept",
+            "summary": "A useful constraint."
+          },
+          {
+            "id": "debrief",
+            "label": "Debriefs",
+            "kind": "method",
+            "summary": "Before every stop."
+          },
+          {
+            "id": "move",
+            "label": "The account move",
+            "kind": "claim",
+            "summary": "34 agents in four hours."
+          }
+        ],
+        "edges": [
+          {
+            "from": "throttle",
+            "to": "ledger",
+            "rel": "depends-on"
+          },
+          {
+            "from": "limit",
+            "to": "throttle",
+            "rel": "produces"
+          },
+          {
+            "from": "hold",
+            "to": "throttle",
+            "rel": "extends"
+          },
+          {
+            "from": "debrief",
+            "to": "move",
+            "rel": "produces"
+          },
+          {
+            "from": "ledger",
+            "to": "limit",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-cost-of-your-agents",
+            "feature-behaviour-policies",
+            "agents-have-an-identity-now",
+            "sovereignty-you-can-move",
+            "promptugal-news-the-newsroom-we-ran"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "Stop all work (unless it is critical) until we realign on our strategy.",
+            "why": "Dinis, 9 November."
+          },
+          {
+            "text": "We don't need hourly updates.",
+            "why": "Dinis, 19 November."
+          }
+        ]
+      }
+    },
+    {
       "slug": "person-graph",
       "title": "Person Graph: one picture of what we have been building, people and their agents with their own keys and repositories, links that count only both ways, kinds of link from \"real\" to \"vouch to hire\", groups as centres of gravity, countersigned claims, anonymous personas, a check for re-identification, all done through each person's own Claude, with mock-ups of the site and a simulation of 150 people and 40 fake accounts that shows why two-way links make bad actors cheap to spot",
       "date": "2026-11-21",
@@ -5289,6 +5433,7 @@
         "a-page-we-never-charge"
       ],
       "links_in": [
+        "start-stop-slow-down",
         "learning-from-wikipedia",
         "a-web-of-trust-for-careers",
         "langgraph-and-us",
@@ -5615,6 +5760,7 @@
         "partners-sell-we-build"
       ],
       "links_in": [
+        "start-stop-slow-down",
         "the-way-in",
         "what-is-a-sovereign-website",
         "sovereign-websites-the-investment-case",
@@ -19869,6 +20015,7 @@
         "always-on-agents-at-team-scale"
       ],
       "links_in": [
+        "start-stop-slow-down",
         "langgraph-and-us",
         "the-way-in",
         "a-page-we-never-charge",
@@ -24610,6 +24757,7 @@
         "a-payout-for-every-row"
       ],
       "links_in": [
+        "start-stop-slow-down",
         "resilience-when-the-workforce-includes-agents"
       ],
       "figures": [
@@ -34358,6 +34506,7 @@
         "the-vendors-layer"
       ],
       "links_in": [
+        "start-stop-slow-down",
         "person-graph",
         "a-web-of-trust-for-careers",
         "identity-for-agents-layer-by-layer",

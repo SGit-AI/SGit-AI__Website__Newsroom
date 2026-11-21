@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-21 | published | 1,211 | first published | [`83a113c5e`](https://github.com/SGit-AI/SGit-AI__Website/commit/83a113c5ef6e38dc4f63b68ac2816861abeeef3b) | [current](../learning-from-wikipedia.md) |
+| **v1.0.0** | 2026-11-21 | published | 1,211 | first published | [`719148d54`](https://github.com/SGit-AI/SGit-AI__Website/commit/719148d54deef1e619977fe870cb8a8fdeb64d2d) | [current](../learning-from-wikipedia.md) |
 
 [← Back to the article](../learning-from-wikipedia.md) · [All articles](../index.md)
 

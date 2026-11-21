@@ -116,6 +116,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#the-co
 
 ### Continued by
 
+- [Start, stop, slow down: how I run a large team of agents and keep my hand on the brake, 8,027 commits in eighteen days, a big stop, a hand brake, 560 wakes a day cut to 76 with one sentence, 39 schedules changed in 30 seconds, three warnings from the seven-day limit handled, and 34 agents moved to a completely separate account in four hours, which is what sovereignty and resilience look like in practice](start-stop-slow-down.md) How a large agent team is started, stopped, slowed and moved to an isolated account: eighteen days, 8,027 commits, one hand brake.
 - [Resilience when the workforce includes agents: what Synergy Six Degrees rates with OCRR, recovers with NeuShield and protects with Actifile, and where RiskMandate, sgit and SHarness meet it](resilience-when-the-workforce-includes-agents.md) What Synergy Six Degrees rates with OCRR and sells with NeuShield and Actifile, and the agent rows RiskMandate, SHarness and sgit add.
 
 [All articles](index.md) · [All graphs](graphs.md)
