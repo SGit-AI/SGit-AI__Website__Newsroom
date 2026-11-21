@@ -4,15 +4,15 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 1716 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 1177 | 4119 | links to sgit.ai's pages and the network sites (38 files this site writes itself) |
-| words | 2259 | 14417 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 1719 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 1179 | 4122 | links to sgit.ai's pages and the network sites (38 files this site writes itself) |
+| words | 2262 | 14432 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 118 | 343 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 1050 × `sgit.ai/about/index.html`
-- 522 × `sgit.ai/about/index.md`
+- 1052 × `sgit.ai/about/index.html`
+- 523 × `sgit.ai/about/index.md`
 - 146 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 70 × `pki.sgit.ai/`
@@ -45,12 +45,12 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 - 19 × `sgit.ai/docs/limitations.html`
 - 19 × `sgit.ai/demos/vaults/bridge-simulation/index.html`
 - 18 × `sgit.ai/docs/vault/vault-from-javascript.html`
+- 18 × `sgit.ai/docs/append-lane-messaging.md`
 - 18 × `sgit.ai/docs/vault/vault-apps.html`
 - 18 × `sgit.ai/docs/vault/static-hosting.html`
-- 18 × `sgit.ai/docs/append-lane-messaging.md`
 - 17 × `nhi.sgit.ai/`
 - 16 × `graphs.sgit.ai/v2/books/index.html`
-- 16 × `sgit.ai/docs/quickstart.html`
+- 16 × `sgit.ai/demos/vaults/regulation-graph/index.html`
 
 ## Network links in pages this site writes itself
 
@@ -104,10 +104,10 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `newsroom-api/index.html` (30)
 - `articles/ids.json` (24)
 - `newsroom-api/map.json` (24)
+- `desks/vaults.html` (22)
 - `admin/notes/2026-10-28__investor-sgit-ai/memo-01.md` (21)
 - `network/index.html` (21)
 - `engineering/index.html` (20)
-- `desks/vaults.html` (19)
 - `engineering/issues/067.html` (19)
 - `README.md` (18)
 - `engineering/issues/019.html` (18)

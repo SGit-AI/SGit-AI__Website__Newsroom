@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-21 | published | 1,440 | first published | this release | [current](../start-stop-slow-down.md) |
+| **v1.0.0** | 2026-11-21 | published | 1,440 | first published | [`b4b53511d`](https://github.com/SGit-AI/SGit-AI__Website/commit/b4b53511d683b600732b236d64e93964eed95a75) | [current](../start-stop-slow-down.md) |
 
 [← Back to the article](../start-stop-slow-down.md) · [All articles](../index.md)
 

@@ -1,0 +1,108 @@
+{
+  "slug": "programmatic-stories",
+  "teaser": "How the PrompTugal bulletins became twelve synthetic presenters on a 3D stage in two days, and why films made by code can tell our stories.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Films made by code, where every frame is a function of time and data, let agents remake bulletins daily, take in live data and real voices, and grow into a game engine for explaining things, as the PrompTugal bulletins showed in six versions over two days.",
+  "nodes": [
+    {
+      "id": "bulletins",
+      "label": "The bulletins",
+      "kind": "artefact",
+      "summary": "bulletins.promptugal.news."
+    },
+    {
+      "id": "presenters",
+      "label": "Twelve presenters",
+      "kind": "artefact",
+      "summary": "Synthetic, labelled."
+    },
+    {
+      "id": "v2",
+      "label": "Version 2 engine",
+      "kind": "artefact",
+      "summary": "69 moves, one skeleton."
+    },
+    {
+      "id": "programmatic",
+      "label": "Programmatic films",
+      "kind": "method",
+      "summary": "Frame = f(t)."
+    },
+    {
+      "id": "stories",
+      "label": "Stories next",
+      "kind": "concept",
+      "summary": "Summaries, Vicky, the Swarm."
+    },
+    {
+      "id": "filmmakers",
+      "label": "Filmmakers",
+      "kind": "concept",
+      "summary": "An invitation."
+    }
+  ],
+  "edges": [
+    {
+      "from": "presenters",
+      "to": "bulletins",
+      "rel": "extends"
+    },
+    {
+      "from": "v2",
+      "to": "presenters",
+      "rel": "extends"
+    },
+    {
+      "from": "programmatic",
+      "to": "v2",
+      "rel": "depends-on"
+    },
+    {
+      "from": "programmatic",
+      "to": "stories",
+      "rel": "produces"
+    },
+    {
+      "from": "filmmakers",
+      "to": "stories",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "every-tool-its-own-website",
+      "the-swarm-one-real-run-at-a-time",
+      "dont-micromanage-your-agents",
+      "promptugal-news-the-newsroom-we-ran",
+      "the-showroom"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "This is the one I liked most: telling the story on the side.",
+      "why": "Dinis."
+    },
+    {
+      "text": "Let's see if it is right.",
+      "why": "Dinis."
+    }
+  ],
+  "figures": [
+    {
+      "file": "bul-evolution.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/bul-evolution.webp",
+      "caption": "Two days of bulletins: from text and a voice to twelve presenters on one stage. Synthetic presenters.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "bul-v2.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/bul-v2.webp",
+      "caption": "Version 2, built by a Claude session from the bulletin agent's brief: stage, model sheet, playground.",
+      "kind": "screenshot"
+    }
+  ]
+}

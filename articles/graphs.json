@@ -55,6 +55,144 @@
   ],
   "articles": [
     {
+      "slug": "programmatic-stories",
+      "title": "Programmatic stories: how the PrompTugal bulletins went from a 30-second text bulletin to twelve synthetic presenters on one 3D stage in two days, movies made by code instead of rendered by hand, every frame a function of time and data, what that makes possible, from live data and real voices to an animated summary for every article, the story of how Vicky Wang ran her agents, a morning briefing I would actually watch, and an invitation to filmmakers",
+      "date": "2026-11-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/programmatic-stories.html",
+      "markdown": "https://newsroom.sgit.ai/articles/programmatic-stories.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/programmatic-stories.webp",
+      "teaser": "How the PrompTugal bulletins became twelve synthetic presenters on a 3D stage in two days, and why films made by code can tell our stories.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "storytelling",
+        "video",
+        "agents",
+        "promptugal",
+        "bulletins",
+        "game-engine",
+        "article"
+      ],
+      "links_out": [
+        "every-tool-its-own-website",
+        "the-swarm-one-real-run-at-a-time",
+        "dont-micromanage-your-agents",
+        "promptugal-news-the-newsroom-we-ran",
+        "the-showroom"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "bul-evolution.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/bul-evolution.webp",
+          "caption": "Two days of bulletins: from text and a voice to twelve presenters on one stage. Synthetic presenters.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "bul-v2.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/bul-v2.webp",
+          "caption": "Version 2, built by a Claude session from the bulletin agent's brief: stage, model sheet, playground.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "programmatic-stories",
+        "teaser": "How the PrompTugal bulletins became twelve synthetic presenters on a 3D stage in two days, and why films made by code can tell our stories.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Films made by code, where every frame is a function of time and data, let agents remake bulletins daily, take in live data and real voices, and grow into a game engine for explaining things, as the PrompTugal bulletins showed in six versions over two days.",
+        "nodes": [
+          {
+            "id": "bulletins",
+            "label": "The bulletins",
+            "kind": "artefact",
+            "summary": "bulletins.promptugal.news."
+          },
+          {
+            "id": "presenters",
+            "label": "Twelve presenters",
+            "kind": "artefact",
+            "summary": "Synthetic, labelled."
+          },
+          {
+            "id": "v2",
+            "label": "Version 2 engine",
+            "kind": "artefact",
+            "summary": "69 moves, one skeleton."
+          },
+          {
+            "id": "programmatic",
+            "label": "Programmatic films",
+            "kind": "method",
+            "summary": "Frame = f(t)."
+          },
+          {
+            "id": "stories",
+            "label": "Stories next",
+            "kind": "concept",
+            "summary": "Summaries, Vicky, the Swarm."
+          },
+          {
+            "id": "filmmakers",
+            "label": "Filmmakers",
+            "kind": "concept",
+            "summary": "An invitation."
+          }
+        ],
+        "edges": [
+          {
+            "from": "presenters",
+            "to": "bulletins",
+            "rel": "extends"
+          },
+          {
+            "from": "v2",
+            "to": "presenters",
+            "rel": "extends"
+          },
+          {
+            "from": "programmatic",
+            "to": "v2",
+            "rel": "depends-on"
+          },
+          {
+            "from": "programmatic",
+            "to": "stories",
+            "rel": "produces"
+          },
+          {
+            "from": "filmmakers",
+            "to": "stories",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "every-tool-its-own-website",
+            "the-swarm-one-real-run-at-a-time",
+            "dont-micromanage-your-agents",
+            "promptugal-news-the-newsroom-we-ran",
+            "the-showroom"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "This is the one I liked most: telling the story on the side.",
+            "why": "Dinis."
+          },
+          {
+            "text": "Let's see if it is right.",
+            "why": "Dinis."
+          }
+        ]
+      }
+    },
+    {
       "slug": "start-stop-slow-down",
       "title": "Start, stop, slow down: how I run a large team of agents and keep my hand on the brake, 8,027 commits in eighteen days, a big stop, a hand brake, 560 wakes a day cut to 76 with one sentence, 39 schedules changed in 30 seconds, three warnings from the seven-day limit handled, and 34 agents moved to a completely separate account in four hours, which is what sovereignty and resilience look like in practice",
       "date": "2026-11-21",
@@ -1479,6 +1617,7 @@
         "the-way-in"
       ],
       "links_in": [
+        "programmatic-stories",
         "person-graph",
         "learning-from-wikipedia",
         "an-anonymous-profile-vouched-for",
@@ -2381,6 +2520,7 @@
         "launching-the-sovereign-website-appliance"
       ],
       "links_in": [
+        "programmatic-stories",
         "can-you-find-me",
         "langgraph-and-us",
         "one-night-on-mistral",
@@ -2947,6 +3087,7 @@
         "a-secret-is-a-qr-code"
       ],
       "links_in": [
+        "programmatic-stories",
         "learning-from-wikipedia",
         "the-showroom",
         "a-galaxy-of-agents",
@@ -18222,6 +18363,7 @@
         "approve-at-altitude"
       ],
       "links_in": [
+        "programmatic-stories",
         "who-hands-out-the-work",
         "a-website-that-is-her",
         "specialist-agents-for-every-team",
@@ -20015,6 +20157,7 @@
         "always-on-agents-at-team-scale"
       ],
       "links_in": [
+        "programmatic-stories",
         "start-stop-slow-down",
         "langgraph-and-us",
         "the-way-in",

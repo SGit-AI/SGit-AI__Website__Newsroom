@@ -1,0 +1,5 @@
+# Notes: programmatic-stories (21 November 2026)
+
+Dinis's spoken brief on the bulletins work: creativity and continuous zoom-in; twelve characters (synthetic users, an animal, robots like the book's); the story told on the side; movies programmatic not rendered, with live data; a game engine; revisit the storyboard (timing, empathy, storylines); multiple agents exploring; Vicky's story with voice, maybe real recorded voices (his and Vicky's); animated article summaries, tried on PrompTugal first; a morning briefing; an invitation to filmmakers; publish the engine as an API with latest and versions, and ask the bulletin agent; show the evolution videos as a case study.
+
+At Dinis's word the writer messaged bulletins.b (session_01Kw9UwEwArsTwsHK8qeZgW5) at about 17:50 UTC asking it to publish the engine as a versioned library with docs and keep the videos published. All six videos returned 200 on bulletins.promptugal.news on 21 Nov. Facts from PrompTugal__News__Bulletins (dev): git log times, src/lab, presenters/v2-claude README and COMPARISON, bulletin-v2 stats. Frames extracted with ffmpeg from the published MP4s.
