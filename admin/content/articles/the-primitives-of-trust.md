@@ -4,7 +4,7 @@ date: 2026-11-21
 author: Dinis Cruz
 author_url: about/index.html
 summary: I tried to build a public key store more than once and never could, because I did not have the right workflows. Now I think we have nailed it, and the reason is a Wardley map lesson: a set of primitives has become commodity, and only then does the next order of magnitude become possible. The primitives are a site per person on GitHub Pages, later DNS; public-key cryptography, which is mature; keys made easily in browsers and inside agent sessions, ephemeral or long-lived; and an engine that signs, verifies, links and follows keys transparently, so the work never lands on the user. That engine is an agent, which is just a model with a loop and some tools; I bet it works with Haiku and small open-weight models too. On top of them sits trust through connectivity. Anybody can link to anybody, but a link from A to B means nothing until B links back, and a person's page only holds the links they made, so bad actors cannot write into anyone's record: they have to convince the person. Links carry kinds and provenance, a date, a place, an event, so they can be confirmed: if someone says they saw me present, my agent nudges me and I confirm. Each owner can define their own schema; only nodes, edges and signatures need to be constant, and the model works out the rest. It is easy to game one node and very hard to game them all at once. And it solves identity in an open way that works with every identity provider rather than replacing them.
-version: v999.0.0
+version: v0.14.200
 license: https://creativecommons.org/licenses/by/4.0/
 tags: identity, pki, web-of-trust, wardley-maps, primitives, agents, article
 status: published
