@@ -1,0 +1,3 @@
+# Notes: an-anonymous-profile-vouched-for (21 November 2026)
+
+Dinis's spoken brief: a persona for someone he knows who wants to leave a company going in the wrong direction but cannot go public; anonymised enough not to trace, strong enough to hire; the web of trust solves contact and credibility; public people vouch for the persona; kinds of connection (real/met or saw on stage, know, worked with, vouch to hire, given rarely); more credible vouchers, more hireable; many vouchers across disciplines; triangulation risk and an agent to reverse-engineer it; Vicky as an example of public vouching instead of a LinkedIn recommendation. The person is deliberately not named or described in any identifying way. Profanity in the brief paraphrased.

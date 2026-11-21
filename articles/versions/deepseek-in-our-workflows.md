@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-21 | published | 1,332 | first published | this release | [current](../deepseek-in-our-workflows.md) |
+| **v1.0.0** | 2026-11-21 | published | 1,332 | first published | [`d95720045`](https://github.com/SGit-AI/SGit-AI__Website/commit/d9572004587adccfa603ba400dedeedb41d9d4cf) | [current](../deepseek-in-our-workflows.md) |
 
 [← Back to the article](../deepseek-in-our-workflows.md) · [All articles](../index.md)
 

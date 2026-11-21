@@ -1,0 +1,104 @@
+{
+  "slug": "a-web-of-trust-for-careers",
+  "teaser": "A web of trust for careers: keys in people's own repositories, links that count only both ways, and jobs and degrees countersigned.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Building on pki.sgit.ai, people publish keys and signed links in repositories they control; a link counts only when both sides publish it, organisations countersign employment and education claims, validity is checked by reading current links rather than revocation lists, and each person's AI walks the graph.",
+  "nodes": [
+    {
+      "id": "repo",
+      "label": "A repository per person",
+      "kind": "artefact",
+      "summary": "Keys, links, claims."
+    },
+    {
+      "id": "two-way",
+      "label": "Two-way links",
+      "kind": "claim",
+      "summary": "Or nothing."
+    },
+    {
+      "id": "countersign",
+      "label": "Countersigned claims",
+      "kind": "method",
+      "summary": "Jobs and degrees."
+    },
+    {
+      "id": "linklists",
+      "label": "Link lists",
+      "kind": "method",
+      "summary": "Not revocation lists."
+    },
+    {
+      "id": "agent",
+      "label": "An agent walks the graph",
+      "kind": "method",
+      "summary": "Plain reads."
+    },
+    {
+      "id": "business",
+      "label": "A business for Europe",
+      "kind": "concept",
+      "summary": "Free for people."
+    }
+  ],
+  "edges": [
+    {
+      "from": "two-way",
+      "to": "repo",
+      "rel": "depends-on"
+    },
+    {
+      "from": "countersign",
+      "to": "two-way",
+      "rel": "extends"
+    },
+    {
+      "from": "linklists",
+      "to": "two-way",
+      "rel": "depends-on"
+    },
+    {
+      "from": "agent",
+      "to": "linklists",
+      "rel": "depends-on"
+    },
+    {
+      "from": "business",
+      "to": "countersign",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-directory-of-people-and-keys",
+      "agents-have-an-identity-now",
+      "a-secret-is-a-qr-code",
+      "the-showroom",
+      "feature-behaviour-policies",
+      "pki-everywhere",
+      "hired-as-an-agentic-worker"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "If I say I know you and you do not say you know me, that is a weak connection and it carries no credibility.",
+      "why": "Dinis."
+    },
+    {
+      "text": "No recommendations, only connections.",
+      "why": "Dinis."
+    }
+  ],
+  "figures": [
+    {
+      "file": "wot-graph.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wot-graph.webp",
+      "caption": "Links in repositories, countersigned: a link counts only while both sides publish it.",
+      "kind": "concept"
+    }
+  ]
+}

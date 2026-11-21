@@ -1,0 +1,3 @@
+# Notes: a-web-of-trust-for-careers (21 November 2026)
+
+Dinis's spoken brief: a network of trust for CVs built on what we have; multiple identities per person; signing in person by QR code, as PGP did; connections not recommendations; verifying employment and education; his 30,000 LinkedIn connections; credibility; two-way links (a one-way link is weak); people publish keys and signatures in repos they control; link lists, not revocation lists; an LLM traverses the graph; seven or eight steps; every organisation needs one internally, all versioned; a LinkedIn for Europe; a business model and names. Background read on 21 November 2026: pki.sgit.ai's home, rules and failure pages; earlier articles. Standards links checked to resolve. Implementation offered, not started.

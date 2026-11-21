@@ -80,6 +80,11 @@ Agents & policy[This article as a graph →](graphs.md#hired-as-an-agentic-worke
 - [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](hired-for-the-workflow.md) October 2026 is the moment to get into agentic work: companies need AI operators, not model builders, and the edge starts with the application.
 - [A career website, not a CV: why people looking for a job, starting with new graduates, may be the first market for sovereign websites, what they get beyond a better chance, their first experience of an agentic workflow, and the workflow to build one with them, from what they give us and a cheap first pass to an interview, five designs, an expert's review and a site of their own](a-career-website-not-a-cv.md) Why people looking for jobs may be the first market for sovereign websites, and the workflow to build a career site with them.
 
+### Continued by
+
+- [An anonymous profile, vouched for: how someone who needs to leave their job without going public can publish a persona that shows the depth of their work but not their name, how the web of trust lets people who know them vouch for it, with different kinds of connection from "this is a real person" to "I would hire them", how an employer reaches them, and the one risk to test, triangulation](an-anonymous-profile-vouched-for.md) An anonymous profile for someone who cannot go public yet, made credible by people who vouch for it in the web of trust.
+- [A web of trust for careers: everyone with their own keys and their own repository, links that count only when both sides sign them, companies and universities countersigning who worked and studied where, link lists instead of revocation lists, an agent that checks any of it by following the graph, a business that somebody should build, and names for it, with Europe in mind](a-web-of-trust-for-careers.md) A web of trust for careers: keys in people's own repositories, links that count only both ways, and jobs and degrees countersigned.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 520 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=520)

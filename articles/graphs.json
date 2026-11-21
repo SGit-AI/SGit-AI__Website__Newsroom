@@ -55,6 +55,279 @@
   ],
   "articles": [
     {
+      "slug": "an-anonymous-profile-vouched-for",
+      "title": "An anonymous profile, vouched for: how someone who needs to leave their job without going public can publish a persona that shows the depth of their work but not their name, how the web of trust lets people who know them vouch for it, with different kinds of connection from \"this is a real person\" to \"I would hire them\", how an employer reaches them, and the one risk to test, triangulation",
+      "date": "2026-11-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/an-anonymous-profile-vouched-for.html",
+      "markdown": "https://newsroom.sgit.ai/articles/an-anonymous-profile-vouched-for.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/an-anonymous-profile-vouched-for.webp",
+      "teaser": "An anonymous profile for someone who cannot go public yet, made credible by people who vouch for it in the web of trust.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "careers",
+        "identity",
+        "web-of-trust",
+        "privacy",
+        "sovereign-website",
+        "personas",
+        "article"
+      ],
+      "links_out": [
+        "the-showroom",
+        "a-web-of-trust-for-careers",
+        "a-key-for-every-person",
+        "an-inbox-only-your-agents-can-write-to",
+        "a-website-that-is-her",
+        "hired-as-an-agentic-worker"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "anon-persona.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/anon-persona.webp",
+          "caption": "An anonymous profile with its own key, vouched for by people you can check, reachable sealed.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "an-anonymous-profile-vouched-for",
+        "teaser": "An anonymous profile for someone who cannot go public yet, made credible by people who vouch for it in the web of trust.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "A persona with its own key can show a job seeker's depth without their identity, while public people vouch for it with typed, countersigned links that employers can check; contact is sealed to the persona, the reveal is the person's choice, and triangulation must be tested first.",
+        "nodes": [
+          {
+            "id": "persona",
+            "label": "The persona",
+            "kind": "artefact",
+            "summary": "Depth, no name."
+          },
+          {
+            "id": "vouchers",
+            "label": "Public vouchers",
+            "kind": "concept",
+            "summary": "Countersigned."
+          },
+          {
+            "id": "kinds",
+            "label": "Kinds of link",
+            "kind": "method",
+            "summary": "Real to vouch to hire."
+          },
+          {
+            "id": "sealed",
+            "label": "Sealed contact",
+            "kind": "method",
+            "summary": "To the persona's key."
+          },
+          {
+            "id": "reveal",
+            "label": "The reveal",
+            "kind": "method",
+            "summary": "One employer, by choice."
+          },
+          {
+            "id": "triangulation",
+            "label": "Triangulation",
+            "kind": "claim",
+            "summary": "Tested by an agent."
+          }
+        ],
+        "edges": [
+          {
+            "from": "vouchers",
+            "to": "persona",
+            "rel": "extends"
+          },
+          {
+            "from": "kinds",
+            "to": "vouchers",
+            "rel": "depends-on"
+          },
+          {
+            "from": "sealed",
+            "to": "persona",
+            "rel": "depends-on"
+          },
+          {
+            "from": "reveal",
+            "to": "sealed",
+            "rel": "produces"
+          },
+          {
+            "from": "triangulation",
+            "to": "vouchers",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-web-of-trust-for-careers",
+            "a-key-for-every-person",
+            "an-inbox-only-your-agents-can-write-to",
+            "a-website-that-is-her",
+            "hired-as-an-agentic-worker",
+            "the-showroom"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "I do not give this easily: there are not many people I would say it about.",
+            "why": "Dinis."
+          },
+          {
+            "text": "The vouchers are public and checkable; the person stays private.",
+            "why": "Dinis."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-web-of-trust-for-careers",
+      "title": "A web of trust for careers: everyone with their own keys and their own repository, links that count only when both sides sign them, companies and universities countersigning who worked and studied where, link lists instead of revocation lists, an agent that checks any of it by following the graph, a business that somebody should build, and names for it, with Europe in mind",
+      "date": "2026-11-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-web-of-trust-for-careers.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-web-of-trust-for-careers.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-web-of-trust-for-careers.webp",
+      "teaser": "A web of trust for careers: keys in people's own repositories, links that count only both ways, and jobs and degrees countersigned.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "identity",
+        "web-of-trust",
+        "careers",
+        "pki",
+        "sovereign-website",
+        "europe",
+        "business-model",
+        "article"
+      ],
+      "links_out": [
+        "a-directory-of-people-and-keys",
+        "agents-have-an-identity-now",
+        "a-secret-is-a-qr-code",
+        "the-showroom",
+        "feature-behaviour-policies",
+        "pki-everywhere",
+        "hired-as-an-agentic-worker"
+      ],
+      "links_in": [
+        "an-anonymous-profile-vouched-for"
+      ],
+      "figures": [
+        {
+          "file": "wot-graph.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wot-graph.webp",
+          "caption": "Links in repositories, countersigned: a link counts only while both sides publish it.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "a-web-of-trust-for-careers",
+        "teaser": "A web of trust for careers: keys in people's own repositories, links that count only both ways, and jobs and degrees countersigned.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Building on pki.sgit.ai, people publish keys and signed links in repositories they control; a link counts only when both sides publish it, organisations countersign employment and education claims, validity is checked by reading current links rather than revocation lists, and each person's AI walks the graph.",
+        "nodes": [
+          {
+            "id": "repo",
+            "label": "A repository per person",
+            "kind": "artefact",
+            "summary": "Keys, links, claims."
+          },
+          {
+            "id": "two-way",
+            "label": "Two-way links",
+            "kind": "claim",
+            "summary": "Or nothing."
+          },
+          {
+            "id": "countersign",
+            "label": "Countersigned claims",
+            "kind": "method",
+            "summary": "Jobs and degrees."
+          },
+          {
+            "id": "linklists",
+            "label": "Link lists",
+            "kind": "method",
+            "summary": "Not revocation lists."
+          },
+          {
+            "id": "agent",
+            "label": "An agent walks the graph",
+            "kind": "method",
+            "summary": "Plain reads."
+          },
+          {
+            "id": "business",
+            "label": "A business for Europe",
+            "kind": "concept",
+            "summary": "Free for people."
+          }
+        ],
+        "edges": [
+          {
+            "from": "two-way",
+            "to": "repo",
+            "rel": "depends-on"
+          },
+          {
+            "from": "countersign",
+            "to": "two-way",
+            "rel": "extends"
+          },
+          {
+            "from": "linklists",
+            "to": "two-way",
+            "rel": "depends-on"
+          },
+          {
+            "from": "agent",
+            "to": "linklists",
+            "rel": "depends-on"
+          },
+          {
+            "from": "business",
+            "to": "countersign",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-directory-of-people-and-keys",
+            "agents-have-an-identity-now",
+            "a-secret-is-a-qr-code",
+            "the-showroom",
+            "feature-behaviour-policies",
+            "pki-everywhere",
+            "hired-as-an-agentic-worker"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "If I say I know you and you do not say you know me, that is a weak connection and it carries no credibility.",
+            "why": "Dinis."
+          },
+          {
+            "text": "No recommendations, only connections.",
+            "why": "Dinis."
+          }
+        ]
+      }
+    },
+    {
       "slug": "deepseek-in-our-workflows",
       "title": "DeepSeek in our workflows and on sovereign websites: what DeepSeek offers today, open weights under MIT, an API that answers calls from the browser and speaks both OpenAI's and Anthropic's formats, at a fraction of the price, where its data goes and where else it can run, and a proposal for a sovereign website that loads Wikipedia articles and draws them as graphs, with DeepSeek doing the reading and code doing the checking",
       "date": "2026-11-21",
@@ -491,7 +764,10 @@
         "hired-for-the-workflow",
         "a-career-website-not-a-cv"
       ],
-      "links_in": [],
+      "links_in": [
+        "an-anonymous-profile-vouched-for",
+        "a-web-of-trust-for-careers"
+      ],
       "figures": [
         {
           "file": "job-levels.webp",
@@ -617,6 +893,8 @@
         "the-way-in"
       ],
       "links_in": [
+        "an-anonymous-profile-vouched-for",
+        "a-web-of-trust-for-careers",
         "hired-as-an-agentic-worker"
       ],
       "figures": [
@@ -4560,6 +4838,7 @@
         "a-page-we-never-charge"
       ],
       "links_in": [
+        "a-web-of-trust-for-careers",
         "langgraph-and-us",
         "one-night-on-mistral",
         "the-way-in",
@@ -12626,6 +12905,7 @@
         "ten-days-at-web-summit"
       ],
       "links_in": [
+        "an-anonymous-profile-vouched-for",
         "hired-as-an-agentic-worker",
         "the-showroom",
         "the-first-round-trip",
@@ -22332,6 +22612,7 @@
         "a-secret-is-a-qr-code"
       ],
       "links_in": [
+        "an-anonymous-profile-vouched-for",
         "the-first-round-trip",
         "static-against-the-platforms",
         "heritage-tech-together",
@@ -22913,6 +23194,7 @@
         "a-directory-of-people-and-keys"
       ],
       "links_in": [
+        "an-anonymous-profile-vouched-for",
         "the-first-round-trip",
         "your-website-from-a-vault",
         "governance-from-zero",
@@ -33624,6 +33906,7 @@
         "the-vendors-layer"
       ],
       "links_in": [
+        "a-web-of-trust-for-careers",
         "identity-for-agents-layer-by-layer",
         "web-summit-how-we-work",
         "one-writer-one-key",
@@ -48804,6 +49087,7 @@
         "sixteen-notes-i-did-not-want-to-lose"
       ],
       "links_in": [
+        "a-web-of-trust-for-careers",
         "every-tool-its-own-website",
         "simple-on-top-of-years",
         "your-website-from-a-vault",
@@ -52528,6 +52812,7 @@
         "the-editors-channel"
       ],
       "links_in": [
+        "a-web-of-trust-for-careers",
         "patient-vaults-answered",
         "one-writer-one-key",
         "an-augmented-pdf-viewer",
@@ -58441,6 +58726,7 @@
         "the-man-behind-the-curtain"
       ],
       "links_in": [
+        "a-web-of-trust-for-careers",
         "identity-for-agents-layer-by-layer",
         "a-key-for-every-person",
         "one-writer-one-key",

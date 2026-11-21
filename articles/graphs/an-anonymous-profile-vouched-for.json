@@ -1,0 +1,103 @@
+{
+  "slug": "an-anonymous-profile-vouched-for",
+  "teaser": "An anonymous profile for someone who cannot go public yet, made credible by people who vouch for it in the web of trust.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "A persona with its own key can show a job seeker's depth without their identity, while public people vouch for it with typed, countersigned links that employers can check; contact is sealed to the persona, the reveal is the person's choice, and triangulation must be tested first.",
+  "nodes": [
+    {
+      "id": "persona",
+      "label": "The persona",
+      "kind": "artefact",
+      "summary": "Depth, no name."
+    },
+    {
+      "id": "vouchers",
+      "label": "Public vouchers",
+      "kind": "concept",
+      "summary": "Countersigned."
+    },
+    {
+      "id": "kinds",
+      "label": "Kinds of link",
+      "kind": "method",
+      "summary": "Real to vouch to hire."
+    },
+    {
+      "id": "sealed",
+      "label": "Sealed contact",
+      "kind": "method",
+      "summary": "To the persona's key."
+    },
+    {
+      "id": "reveal",
+      "label": "The reveal",
+      "kind": "method",
+      "summary": "One employer, by choice."
+    },
+    {
+      "id": "triangulation",
+      "label": "Triangulation",
+      "kind": "claim",
+      "summary": "Tested by an agent."
+    }
+  ],
+  "edges": [
+    {
+      "from": "vouchers",
+      "to": "persona",
+      "rel": "extends"
+    },
+    {
+      "from": "kinds",
+      "to": "vouchers",
+      "rel": "depends-on"
+    },
+    {
+      "from": "sealed",
+      "to": "persona",
+      "rel": "depends-on"
+    },
+    {
+      "from": "reveal",
+      "to": "sealed",
+      "rel": "produces"
+    },
+    {
+      "from": "triangulation",
+      "to": "vouchers",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-web-of-trust-for-careers",
+      "a-key-for-every-person",
+      "an-inbox-only-your-agents-can-write-to",
+      "a-website-that-is-her",
+      "hired-as-an-agentic-worker",
+      "the-showroom"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "I do not give this easily: there are not many people I would say it about.",
+      "why": "Dinis."
+    },
+    {
+      "text": "The vouchers are public and checkable; the person stays private.",
+      "why": "Dinis."
+    }
+  ],
+  "figures": [
+    {
+      "file": "anon-persona.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/anon-persona.webp",
+      "caption": "An anonymous profile with its own key, vouched for by people you can check, reachable sealed.",
+      "kind": "concept"
+    }
+  ]
+}
