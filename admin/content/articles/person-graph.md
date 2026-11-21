@@ -4,7 +4,7 @@ date: 2026-11-21
 author: Dinis Cruz
 author_url: about/index.html
 summary: Everything we have been talking about this week is one thing. Every person, and every agent, has their own keys in a repository they control, usually the one behind their sovereign website. Links between them are signed, have a kind, from "this is a real person" to "I know them", "I worked with them" and "I would hire them", and count only when both sides publish them. Organisations countersign claims about work and study. People can publish an anonymous persona and be vouched for, and an agent team checks it cannot be traced back. Links group into centres of gravity, artists, founders, educators, professionals, agents, so nobody is one node with a thousand strangers, and the graph becomes a way to navigate everything we do. At first I say I know this person, and this one; then it takes on a life of its own, a distributed social network that no platform owns, run through each person's own Claude. I call it Person Graph, and I have mocked up four of its pages. I also simulated it: 150 fictional people in five groups and 40 fake accounts that spam links and fool three real people into linking back. Counting links puts 34 fakes in the top 40; spreading trust from three trusted people through two-way links only puts none there, and leaks 1.2% of the trust to the fakes. It degrades honestly as more real people are fooled, which is why every link must be a deliberate, signed act. Bad-actor detection then scales, because everyone's agent does a little of it.
-version: v999.0.0
+version: v0.14.197
 license: https://creativecommons.org/licenses/by/4.0/
 tags: identity, web-of-trust, person-graph, sovereign-website, agents, simulation, article
 status: published
