@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-152 articles, newest first.
+153 articles, newest first.
 
 ## November 2026
 
+- [DeepSeek in our workflows and on sovereign websites: what DeepSeek offers today, open weights under MIT, an API that answers calls from the browser and speaks both OpenAI's and Anthropic's formats, at a fraction of the price, where its data goes and where else it can run, and a proposal for a sovereign website that loads Wikipedia articles and draws them as graphs, with DeepSeek doing the reading and code doing the checking](../../articles/deepseek-in-our-workflows.md), 2026-11-21, 5 min.
 - [LangGraph and us: how the way we build agent pipelines maps to LangChain, LangGraph, LangSmith and the agent testing toolkits, what is the same, what we do differently, code for each function and every step saved to a vault, what we can learn from them, and where they could run inside our own pipelines](../../articles/langgraph-and-us.md), 2026-11-21, 6 min.
 - [The SGit Server Factory, a brief: an agent and a pipeline that deploy SG/Send and sgit servers the way the site factory makes websites, a request file in and a live, tested server out, in any AWS region and any account, as an ephemeral Lambda, a Lambda on S3, an EC2 appliance or Fargate, with one bootstrap stack to onboard a new account and no keys anywhere](../../articles/the-sgit-server-factory.md), 2026-11-21, 5 min.
 - [Hired as an agentic worker: what a sovereign website offers someone looking for a job, from a better CV that shows the depth of your work, you in action and a video of you talking, to a site you change with your own AI, a team of agents you work with, and a crash course in being an agentic worker served on a plate, four levels of involvement, each one a choice](../../articles/hired-as-an-agentic-worker.md), 2026-11-21, 4 min.

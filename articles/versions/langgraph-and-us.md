@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-21 | published | 1,542 | first published | this release | [current](../langgraph-and-us.md) |
+| **v1.0.0** | 2026-11-21 | published | 1,542 | first published | [`84b4396cf`](https://github.com/SGit-AI/SGit-AI__Website/commit/84b4396cf9318e4440ff77468511564d57e88625) | [current](../langgraph-and-us.md) |
 
 [← Back to the article](../langgraph-and-us.md) · [All articles](../index.md)
 

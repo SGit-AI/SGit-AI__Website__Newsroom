@@ -102,6 +102,10 @@ Agents & policy[This article as a graph →](graphs.md#langgraph-and-us)
 - [Capture first: how a BBC live page at breakfast became an evidence vault, a section here and a site of its own by lunchtime, for a story that was still changing as we covered it](capture-first.md) A BBC live page at breakfast became an evidence vault, a section and a dedicated site by lunchtime: capture first, because a breaking story's pages change by the hour.
 - [Any data, with any data: why I am now comfortable saying we can connect any data source with any other, the nine steps from access to a vault, a key and a map on the other side, how each owner keeps control, where the person stays in charge, and why connecting two, five, fifty or a hundred datasets should be something an agentic cell sells](any-data-with-any-data.md) Why we can now connect any data source with any other: nine steps, owners keep control, a person approves every key, sold as cells.
 
+### Continued by
+
+- [DeepSeek in our workflows and on sovereign websites: what DeepSeek offers today, open weights under MIT, an API that answers calls from the browser and speaks both OpenAI's and Anthropic's formats, at a fraction of the price, where its data goes and where else it can run, and a proposal for a sovereign website that loads Wikipedia articles and draws them as graphs, with DeepSeek doing the reading and code doing the checking](deepseek-in-our-workflows.md) Using DeepSeek in our workflows and on sovereign websites, with open eyes, and a proposal: a Wikipedia explorer where DeepSeek reads and code checks.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 522 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=522)

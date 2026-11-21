@@ -1,0 +1,3 @@
+# Notes: deepseek-in-our-workflows (21 November 2026)
+
+Dinis asked for an article on using DeepSeek from our environments, workflows and sovereign websites, for example a site that uses DeepSeek to load and visualise Wikipedia articles, building on earlier work. Earlier work found: MGraph-AI__Service__Html__Graph (public, Apache 2.0) and the August 2026 graphing-text briefs in SGraph-AI__App__Send (Wikidata as the concept layer). DeepSeek and Wikimedia facts from a research pass on 21 November 2026; the CORS preflights to api.deepseek.com and en.wikipedia.org were rerun by the writer the same day (both allowed). No DeepSeek key used. Government actions limited to those in the cited factbox.

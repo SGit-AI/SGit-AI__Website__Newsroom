@@ -55,6 +55,138 @@
   ],
   "articles": [
     {
+      "slug": "deepseek-in-our-workflows",
+      "title": "DeepSeek in our workflows and on sovereign websites: what DeepSeek offers today, open weights under MIT, an API that answers calls from the browser and speaks both OpenAI's and Anthropic's formats, at a fraction of the price, where its data goes and where else it can run, and a proposal for a sovereign website that loads Wikipedia articles and draws them as graphs, with DeepSeek doing the reading and code doing the checking",
+      "date": "2026-11-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/deepseek-in-our-workflows.html",
+      "markdown": "https://newsroom.sgit.ai/articles/deepseek-in-our-workflows.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/deepseek-in-our-workflows.webp",
+      "teaser": "Using DeepSeek in our workflows and on sovereign websites, with open eyes, and a proposal: a Wikipedia explorer where DeepSeek reads and code checks.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "deepseek",
+        "models",
+        "wikipedia",
+        "sovereign-website",
+        "open-weight",
+        "graphs",
+        "article"
+      ],
+      "links_out": [
+        "a-european-brain",
+        "pennies-against-dollars",
+        "one-night-on-mistral",
+        "langgraph-and-us",
+        "free-models-your-own-key"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ds-explorer.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ds-explorer.webp",
+          "caption": "A Wikipedia explorer on DeepSeek: code loads, the model reads, code checks, and the run is kept.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "deepseek-in-our-workflows",
+        "teaser": "Using DeepSeek in our workflows and on sovereign websites, with open eyes, and a proposal: a Wikipedia explorer where DeepSeek reads and code checks.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "DeepSeek's MIT open weights, low prices and browser-callable API make it a strong owner's choice for public data, while private data should go to the same weights on a chosen host or device; a Wikipedia explorer that loads in code, reads with DeepSeek and checks in code is the natural first site.",
+        "nodes": [
+          {
+            "id": "deepseek",
+            "label": "DeepSeek",
+            "kind": "artefact",
+            "summary": "MIT weights, low prices."
+          },
+          {
+            "id": "data",
+            "label": "Data stored in China",
+            "kind": "claim",
+            "summary": "Public data only."
+          },
+          {
+            "id": "hosts",
+            "label": "Where else it runs",
+            "kind": "method",
+            "summary": "Hosts and devices."
+          },
+          {
+            "id": "explorer",
+            "label": "The Wikipedia explorer",
+            "kind": "artefact",
+            "summary": "A proposal."
+          },
+          {
+            "id": "checks",
+            "label": "Checks in code",
+            "kind": "method",
+            "summary": "Quotes and Wikidata."
+          },
+          {
+            "id": "graph",
+            "label": "Our graph work",
+            "kind": "artefact",
+            "summary": "HTML graph, Wikidata."
+          }
+        ],
+        "edges": [
+          {
+            "from": "deepseek",
+            "to": "explorer",
+            "rel": "depends-on"
+          },
+          {
+            "from": "data",
+            "to": "hosts",
+            "rel": "produces"
+          },
+          {
+            "from": "checks",
+            "to": "explorer",
+            "rel": "extends"
+          },
+          {
+            "from": "graph",
+            "to": "explorer",
+            "rel": "extends"
+          },
+          {
+            "from": "hosts",
+            "to": "deepseek",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-european-brain",
+            "pennies-against-dollars",
+            "one-night-on-mistral",
+            "langgraph-and-us",
+            "free-models-your-own-key"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "we directly collect, process and store your Personal Data in People's Republic of China",
+            "why": "DeepSeek's privacy policy."
+          },
+          {
+            "text": "The owner sees which of the three a page uses before anything is sent.",
+            "why": "Dinis."
+          }
+        ]
+      }
+    },
+    {
       "slug": "langgraph-and-us",
       "title": "LangGraph and us: how the way we build agent pipelines maps to LangChain, LangGraph, LangSmith and the agent testing toolkits, what is the same, what we do differently, code for each function and every step saved to a vault, what we can learn from them, and where they could run inside our own pipelines",
       "date": "2026-11-21",
@@ -86,7 +218,9 @@
         "capture-first",
         "any-data-with-any-data"
       ],
-      "links_in": [],
+      "links_in": [
+        "deepseek-in-our-workflows"
+      ],
       "figures": [
         {
           "file": "lg-map.webp",
@@ -639,6 +773,7 @@
         "pennies-against-dollars"
       ],
       "links_in": [
+        "deepseek-in-our-workflows",
         "langgraph-and-us",
         "the-showroom"
       ],
@@ -1238,6 +1373,7 @@
         "watch-your-website-being-built"
       ],
       "links_in": [
+        "deepseek-in-our-workflows",
         "one-night-on-mistral"
       ],
       "figures": [
@@ -5881,6 +6017,7 @@
         "spend-fewer-tokens"
       ],
       "links_in": [
+        "deepseek-in-our-workflows",
         "one-night-on-mistral",
         "a-european-brain",
         "agents-that-retire-themselves",
@@ -62040,6 +62177,7 @@
         "the-key-is-the-billing-system"
       ],
       "links_in": [
+        "deepseek-in-our-workflows",
         "a-european-brain",
         "inside-the-no-server-studio",
         "the-no-server-startup",
