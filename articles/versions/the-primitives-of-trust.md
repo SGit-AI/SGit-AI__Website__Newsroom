@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-21 | published | 1,495 | first published | this release | [current](../the-primitives-of-trust.md) |
+| **v1.0.0** | 2026-11-21 | published | 1,495 | first published | [`3e0d8f4a3`](https://github.com/SGit-AI/SGit-AI__Website/commit/3e0d8f4a370a77d29407912560ca82192ec53961) | [current](../the-primitives-of-trust.md) |
 
 [← Back to the article](../the-primitives-of-trust.md) · [All articles](../index.md)
 

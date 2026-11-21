@@ -52,7 +52,7 @@ That is the idea I want to explore: movies that are programmatic instead of rend
 
 ## A game engine for explaining {#engine}
 
-What we are building is fundamentally a game engine: characters, moves, a stage, a camera, a timeline, and, soon, mini games. It is a version of what I started in my book, mapping ideas to actions you can see. And it should be published like everything else, as a library with a latest version and pinned versions that never change, so any site, this newsroom included, can import it and tell a story without writing the engine again ([every tool its own website](/articles/every-tool-its-own-website.html)). I have asked the bulletin agent to publish it that way.
+What we are building is fundamentally a game engine: characters, moves, a stage, a camera, a timeline, and, soon, mini games. It is a version of what I started in my book, mapping ideas to actions you can see. And it should be published like everything else, as a library with a latest version and pinned versions that never change, so any site, this newsroom included, can import it and tell a story without writing the engine again ([every tool its own website](/articles/every-tool-its-own-website.html)). Since the evening of 21 November it is published that way, as a preview: the [latest version](https://bulletins.promptugal.news/lib/presenters/latest/), with docs and live examples, and the pinned [version 0.1.0](https://bulletins.promptugal.news/lib/presenters/v0.1.0/). As with our map library, a site copies the pinned folder and checks each file against its pins rather than loading it from the bulletins site.
 
 We tried this once before with the storyboards at Web Summit, and they had a lot of good things, but the timing was not right, the characters had no empathy, and the storylines and animations were not there yet ([the swarm, one real run at a time](/articles/the-swarm-one-real-run-at-a-time.html)). The engine is the missing piece, and it is worth revisiting them with it.
 
@@ -73,7 +73,7 @@ All of this would be ten times better with someone who actually knows how to mak
 ## What this does not claim {#limits}
 
 - **These are experiments,** made in two days; the bulletins are not yet a daily habit.
-- **The engine is not yet published as a library;** the request is with the bulletin agent.
+- **The library is a preview,** at version 0.1.0, until it is security reviewed and listed in the registry.
 - **Real voices will only be used with the person's agreement.**
 
 ## Where this comes from {#sources}
