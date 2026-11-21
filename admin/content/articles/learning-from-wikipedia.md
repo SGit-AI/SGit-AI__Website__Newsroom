@@ -4,7 +4,7 @@ date: 2026-11-21
 author: Dinis Cruz
 author_url: about/index.html
 summary: A friend and I are going to build this together. It is a sovereign website around a tool, and the tool is made of many small tools: a graph, a timeline, a glossary, a quiz, a map, a comparison. With them we make learning materials, one site per topic: someone learning about atoms, someone about maths, someone about dinosaurs. Everything is made from Wikipedia, with DeepSeek doing the reading, and with code checking everything that can be checked: every quote word for word against the article, every entity anchored to Wikidata. An agent team does the whole loop: research, writing, fact checking with a second model, quality control, a review that the language and the content suit the age of the reader, licence and attribution, and accessibility, each agent under a behaviour policy, and a person approving every publish. The age is a question for the legal team: 16 and up, or 18 and up, and the plan holds until they answer. There is no account, no tracking and no data about learners, so nothing about a reader ever goes to a model. Each site has its own repository, like the tools we already publish, and the whole thing is a good example of how we can collaborate with someone from outside.
-version: v999.0.0
+version: v0.14.196
 license: https://creativecommons.org/licenses/by/4.0/
 tags: learning, wikipedia, deepseek, sovereign-website, behaviour-policies, collaboration, plan, article
 status: published
