@@ -55,6 +55,146 @@
   ],
   "articles": [
     {
+      "slug": "langgraph-and-us",
+      "title": "LangGraph and us: how the way we build agent pipelines maps to LangChain, LangGraph, LangSmith and the agent testing toolkits, what is the same, what we do differently, code for each function and every step saved to a vault, what we can learn from them, and where they could run inside our own pipelines",
+      "date": "2026-11-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/langgraph-and-us.html",
+      "markdown": "https://newsroom.sgit.ai/articles/langgraph-and-us.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/langgraph-and-us.webp",
+      "teaser": "How our agent pipelines map to LangGraph, LangChain and the eval toolkits: the same ideas, a more deterministic default, and what to learn and use.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "langgraph",
+        "langchain",
+        "evals",
+        "agents",
+        "determinism",
+        "vaults",
+        "article"
+      ],
+      "links_out": [
+        "one-vault-ten-agents",
+        "who-hands-out-the-work",
+        "promptugal-news-the-newsroom-we-ran",
+        "feature-behaviour-policies",
+        "the-swarm-one-real-run-at-a-time",
+        "one-night-on-mistral",
+        "almost-working",
+        "capture-first",
+        "any-data-with-any-data"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "lg-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lg-map.webp",
+          "caption": "LangGraph's concepts and ours: the same ideas, with a different default.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "langgraph-and-us",
+        "teaser": "How our agent pipelines map to LangGraph, LangChain and the eval toolkits: the same ideas, a more deterministic default, and what to learn and use.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Our pipelines already implement LangGraph's ideas, state, nodes, checkpoints, interrupts, tracing and evals, with a more deterministic default of code per function and every step saved to vaults; we should learn its readable graphs, runtime interrupts and pinned datasets, and use good tools such as Inspect, promptfoo and LangGraph inside our pipelines.",
+        "nodes": [
+          {
+            "id": "langgraph",
+            "label": "LangGraph and LangChain",
+            "kind": "artefact",
+            "summary": "MIT, version 1."
+          },
+          {
+            "id": "vault",
+            "label": "State as a vault",
+            "kind": "concept",
+            "summary": "Every step saved."
+          },
+          {
+            "id": "code",
+            "label": "Code for each function",
+            "kind": "method",
+            "summary": "A model only for judgement."
+          },
+          {
+            "id": "learn",
+            "label": "What to learn",
+            "kind": "claim",
+            "summary": "Graphs, interrupts, datasets."
+          },
+          {
+            "id": "tools",
+            "label": "Eval and trace tools",
+            "kind": "artefact",
+            "summary": "Inspect, promptfoo, Langfuse."
+          },
+          {
+            "id": "bridge",
+            "label": "A vault checkpointer",
+            "kind": "method",
+            "summary": "A proposal."
+          }
+        ],
+        "edges": [
+          {
+            "from": "vault",
+            "to": "langgraph",
+            "rel": "extends"
+          },
+          {
+            "from": "code",
+            "to": "vault",
+            "rel": "depends-on"
+          },
+          {
+            "from": "langgraph",
+            "to": "learn",
+            "rel": "produces"
+          },
+          {
+            "from": "tools",
+            "to": "code",
+            "rel": "extends"
+          },
+          {
+            "from": "bridge",
+            "to": "langgraph",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "one-vault-ten-agents",
+            "who-hands-out-the-work",
+            "promptugal-news-the-newsroom-we-ran",
+            "feature-behaviour-policies",
+            "the-swarm-one-real-run-at-a-time",
+            "one-night-on-mistral",
+            "almost-working",
+            "capture-first",
+            "any-data-with-any-data"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "The difference is the habit, not the library.",
+            "why": "Dinis."
+          },
+          {
+            "text": "The centre is the data and its history; frameworks are tools that read and write it.",
+            "why": "Dinis."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-sgit-server-factory",
       "title": "The SGit Server Factory, a brief: an agent and a pipeline that deploy SG/Send and sgit servers the way the site factory makes websites, a request file in and a live, tested server out, in any AWS region and any account, as an ephemeral Lambda, a Lambda on S3, an EC2 appliance or Fargate, with one bootstrap stack to onboard a new account and no keys anywhere",
       "date": "2026-11-21",
@@ -499,6 +639,7 @@
         "pennies-against-dollars"
       ],
       "links_in": [
+        "langgraph-and-us",
         "the-showroom"
       ],
       "figures": [
@@ -1236,6 +1377,7 @@
         "launching-the-sovereign-website-appliance"
       ],
       "links_in": [
+        "langgraph-and-us",
         "one-night-on-mistral",
         "a-european-brain"
       ],
@@ -4282,6 +4424,7 @@
         "a-page-we-never-charge"
       ],
       "links_in": [
+        "langgraph-and-us",
         "one-night-on-mistral",
         "the-way-in",
         "the-first-round-trip",
@@ -9344,6 +9487,7 @@
         "the-intersection"
       ],
       "links_in": [
+        "langgraph-and-us",
         "from-a-feed-to-meaning",
         "partners-sell-we-build"
       ],
@@ -11060,6 +11204,7 @@
         "stopping-a-hundred-agents"
       ],
       "links_in": [
+        "langgraph-and-us",
         "partners-sell-we-build"
       ],
       "figures": [
@@ -18855,6 +19000,7 @@
         "always-on-agents-at-team-scale"
       ],
       "links_in": [
+        "langgraph-and-us",
         "the-way-in",
         "a-page-we-never-charge",
         "ten-days-to-a-data-platform",
@@ -43972,7 +44118,9 @@
         "article"
       ],
       "links_out": [],
-      "links_in": [],
+      "links_in": [
+        "langgraph-and-us"
+      ],
       "figures": [
         {
           "file": "wk-pipeline.webp",
@@ -45747,6 +45895,7 @@
         "explorer-to-villager-newsroom"
       ],
       "links_in": [
+        "langgraph-and-us",
         "a-desk-anyone-can-open"
       ],
       "figures": [
@@ -66882,6 +67031,7 @@
         "scion-and-sgit"
       ],
       "links_in": [
+        "langgraph-and-us",
         "where-to-invest-in-sgit",
         "three-linkedin-pages",
         "when-is-the-vault-actually-used",

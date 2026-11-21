@@ -111,7 +111,9 @@ My voice memo of 23 October 2026; the PHP story site's briefs, all of 22 and 23 
 
 Agents & policyVaults & method[This article as a graph →](graphs.md#almost-working)
 
-No other article links here yet.
+### Continued by
+
+- [LangGraph and us: how the way we build agent pipelines maps to LangChain, LangGraph, LangSmith and the agent testing toolkits, what is the same, what we do differently, code for each function and every step saved to a vault, what we can learn from them, and where they could run inside our own pipelines](langgraph-and-us.md) How our agent pipelines map to LangGraph, LangChain and the eval toolkits: the same ideas, a more deterministic default, and what to learn and use.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

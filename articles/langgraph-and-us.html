@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LangGraph and us: how the way we build agent pipelines maps to LangChain, LangGraph, LangSmith and the agent testing toolkits, what is the same, what we do differently, code for each function and every step saved to a vault, what we can learn from them, and where they could run inside our own pipelines, SGit Newsroom</title>
+<meta name="description" content="A lot of what we do maps to LangGraph and LangChain, and I wanted to see how much. LangGraph's state is our vault; its nodes are our agents and our plain code; its checkpoints and time travel are sgit's history; its interrupts are our protected environments and reviewers' verdicts; its middleware is our behaviour policies; LangSmith's traces and evaluations are our signed commits, call ledgers and evals. The ideas are the same. The default is different. We write specific code for specific functions, load, extract, transform and save, and use a model only where judgement is needed; we store everything at every stage, raw and curated, in vaults others can read; and we score in code wherever we can. That gives us more determinism, more control and less black magic, and it is what let the PHP desk, PrompTugal and the Swarm scale. But they have learnt things we should take: one readable definition of the graph, interrupts as a first-class part of the runtime, versioned datasets pinned in CI, and a common trace format. And where a tool is good, we should use it inside our pipeline: Inspect and promptfoo for evals and red teaming, OpenTelemetry for traces, and LangGraph itself where a customer already runs it, with its checkpoints saved to a vault.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/langgraph-and-us.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/langgraph-and-us.html">
+<meta property="og:title" content="LangGraph and us: how the way we build agent pipelines maps to LangChain, LangGraph, LangSmith and the agent testing toolkits, what is the same, what we do differently, code for each function and every step saved to a vault, what we can learn from them, and where they could run inside our own pipelines, SGit Newsroom">
+<meta property="og:description" content="A lot of what we do maps to LangGraph and LangChain, and I wanted to see how much. LangGraph's state is our vault; its nodes are our agents and our plain code; its checkpoints and time travel are sgit's history; its interrupts are our protected environments and reviewers' verdicts; its middleware is our behaviour policies; LangSmith's traces and evaluations are our signed commits, call ledgers and evals. The ideas are the same. The default is different. We write specific code for specific functions, load, extract, transform and save, and use a model only where judgement is needed; we store everything at every stage, raw and curated, in vaults others can read; and we score in code wherever we can. That gives us more determinism, more control and less black magic, and it is what let the PHP desk, PrompTugal and the Swarm scale. But they have learnt things we should take: one readable definition of the graph, interrupts as a first-class part of the runtime, versioned datasets pinned in CI, and a common trace format. And where a tool is good, we should use it inside our pipeline: Inspect and promptfoo for evals and red teaming, OpenTelemetry for traces, and LangGraph itself where a customer already runs it, with its checkpoints saved to a vault.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/langgraph-and-us.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="LangGraph and us: how the way we build agent pipelines maps to LangChain, LangGraph, LangSmith and the agent testing toolkits, what is the same, what we do differently, code for each function and every step saved to a vault, what we can learn from them, and where they could run inside our own pipelines, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/langgraph-and-us.jpg">
+<link rel="alternate" type="text/markdown" href="langgraph-and-us.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "LangGraph and us: how the way we build agent pipelines maps to LangChain, LangGraph, LangSmith and the agent testing toolkits, what is the same, what we do differently, code for each function and every step saved to a vault, what we can learn from them, and where they could run inside our own pipelines, SGit Newsroom", "headline": "LangGraph and us: how the way we build agent pipelines maps to LangChain, LangGraph, LangSmith and the agent testing toolkits, what is the same, what we do differently, code for each function and every step saved to a vault, what we can learn from them, and where they could run inside our own pipelines, SGit Newsroom", "description": "A lot of what we do maps to LangGraph and LangChain, and I wanted to see how much. LangGraph's state is our vault; its nodes are our agents and our plain code; its checkpoints and time travel are sgit's history; its interrupts are our protected environments and reviewers' verdicts; its middleware is our behaviour policies; LangSmith's traces and evaluations are our signed commits, call ledgers and evals. The ideas are the same. The default is different. We write specific code for specific functions, load, extract, transform and save, and use a model only where judgement is needed; we store everything at every stage, raw and curated, in vaults others can read; and we score in code wherever we can. That gives us more determinism, more control and less black magic, and it is what let the PHP desk, PrompTugal and the Swarm scale. But they have learnt things we should take: one readable definition of the graph, interrupts as a first-class part of the runtime, versioned datasets pinned in CI, and a common trace format. And where a tool is good, we should use it inside our pipeline: Inspect and promptfoo for evals and red teaming, OpenTelemetry for traces, and LangGraph itself where a customer already runs it, with its checkpoints saved to a vault.", "url": "https://newsroom.sgit.ai/articles/langgraph-and-us.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / LangGraph and us: how the way we build agent pipelines maps to LangChain, LangGraph, LangSmith and the agent testing toolkits, what is the same, what we do differently, code for each function and every step saved to a vault, what we can learn from them, and where they could run inside our own pipelines</p>
+ <h1>LangGraph and us: how the way we build agent pipelines maps to LangChain, LangGraph, LangSmith and the agent testing toolkits, what is the same, what we do differently, code for each function and every step saved to a vault, what we can learn from them, and where they could run inside our own pipelines</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-11-21 &middot; <a href="versions/langgraph-and-us.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v999.0.0</a> &middot; <span class="chip">langgraph</span><span class="chip">langchain</span><span class="chip">evals</span><span class="chip">agents</span><span class="chip">determinism</span><span class="chip">vaults</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> A lot of what we do maps to LangGraph and LangChain, and I wanted to see how much. LangGraph's state is our vault; its nodes are our agents and our plain code; its checkpoints and time travel are sgit's history; its interrupts are our protected environments and reviewers' verdicts; its middleware is our behaviour policies; LangSmith's traces and evaluations are our signed commits, call ledgers and evals. The ideas are the same. The default is different. We write specific code for specific functions, load, extract, transform and save, and use a model only where judgement is needed; we store everything at every stage, raw and curated, in vaults others can read; and we score in code wherever we can. That gives us more determinism, more control and less black magic, and it is what let the PHP desk, PrompTugal and the Swarm scale. But they have learnt things we should take: one readable definition of the graph, interrupts as a first-class part of the runtime, versioned datasets pinned in CI, and a common trace format. And where a tool is good, we should use it inside our pipeline: Inspect and promptfoo for evals and red teaming, OpenTelemetry for traces, and LangGraph itself where a customer already runs it, with its checkpoints saved to a vault.</em></p>
+<figure class="shot" data-shot="lg-map.webp" data-dir="images/" data-alt="LangGraph&#x27;s concepts and ours: the same ideas, with a different default." data-kind="concept"><figcaption>LangGraph's concepts and ours: the same ideas, with a different default.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>What we do maps to LangGraph closely:</b> state, nodes, edges, checkpoints, interrupts, traces, evals.</li>
+<li><b>The default is different:</b> code for each function, a model only where judgement is needed.</li>
+<li><b>We save every step to a vault,</b> raw and curated, signed, readable by others.</li>
+<li><b>We can learn from them:</b> a readable graph, first-class interrupts, pinned datasets, a common trace format.</li>
+<li><b>We should use the good tools inside our pipelines,</b> not replace the pipeline with them.</li>
+</ul>
+<h2 id="landscape">The landscape today</h2>
+<p>LangGraph describes itself as a "low-level orchestration framework for building stateful agents" (<a href="https://github.com/langchain-ai/langgraph">its repository</a>); it reached 1.0 in October 2025 and is at 1.2.24 today, under the MIT licence. LangChain, also MIT and now at 1.5, builds agents on top of it with <code>create_agent</code>, whose middleware hooks are, in its own words, the defining feature (<a href="https://docs.langchain.com/oss/python/releases/langchain-v1">LangChain v1</a>). LangSmith adds tracing, datasets and evaluations, from a free developer plan to 39 dollars a seat a month (<a href="https://www.langchain.com/pricing">pricing</a>), and hosts graphs as LangSmith Deployment. Around them: the OpenAI Agents SDK, CrewAI, Google's ADK, Pydantic AI, the Claude Agent SDK, and Microsoft's Agent Framework, which reached 1.0 in April and replaces AutoGen and Semantic Kernel (<a href="https://visualstudiomagazine.com/articles/2026/04/06/microsoft-ships-production-ready-agent-framework-1-0-for-net-and-python.aspx">Visual Studio Magazine</a>).</p>
+<h2 id="mapping">How we map</h2>
+<ul>
+<li><b>State is a vault.</b> A <code>StateGraph</code> passes a shared state between nodes. Our state is files in a vault: versioned, encrypted, committed at every step (<a href="one-vault-ten-agents.html">one vault, ten agents</a>).</li>
+<li><b>Nodes are agents and code.</b> Some of our nodes are agents with behaviour policies. Many are plain code: load, extract, transform, save.</li>
+<li><b>Edges are a conductor, lanes and a board.</b> Often a fixed chain, the researcher to the curator to the journalist; sometimes a conductor handing out work through append lanes (<a href="who-hands-out-the-work.html">who hands out the work</a>).</li>
+<li><b>Checkpoints and time travel are sgit's history.</b> LangGraph saves a snapshot per thread to a database (<a href="https://docs.langchain.com/oss/python/langgraph/persistence">persistence</a>). We commit every intermediate result, signed by the agent that made it.</li>
+<li><b>Interrupts are our gates.</b> A protected environment waits for a person's approval; a reviewer gives every draft one verdict, Ready, Fix first or Hold (<a href="promptugal-news-the-newsroom-we-ran.html">PrompTugal.news</a>).</li>
+<li><b>Middleware is our behaviour policies,</b> and the harness that enforces them around an agent (<a href="feature-behaviour-policies.html">feature behaviour policies</a>).</li>
+<li><b>LangSmith's traces are our signed commits and ledgers.</b> The Swarm records every model call, storing the text only as its length and hash (<a href="the-swarm-one-real-run-at-a-time.html">the swarm</a>).</li>
+<li><b>Datasets and evaluators are our evals,</b> scored in code and rescored from stored outputs when a check is wrong (<a href="one-night-on-mistral.html">one night on Mistral</a>).</li>
+</ul>
+<h2 id="different">Where we differ</h2>
+<p>The ideas are the same. What differs is the default, and that is where most of our determinism comes from.</p>
+<ul>
+<li><b>Specific code for specific functions.</b> A model is not asked to do what code can do. It reads, judges and writes; code fetches, parses, counts, compares and checks. In the X-ray, a model lists a page's claims, but code gives each claim its verdict.</li>
+<li><b>Everything stored, at every stage.</b> The PHP desk ran as a chain: a researcher captured pages, raw, into one vault; a curator promoted what held into a second; a journalist updated the site from that (<a href="almost-working.html">almost working</a>). Every input, every transformation and every output is still there to read, replay or audit. Capture first, then think (<a href="capture-first.html">capture first</a>).</li>
+<li><b>State others can read.</b> A LangGraph checkpoint lives in the application's database. A vault moves: it can be handed to another team, another pipeline or an auditor, with a key (<a href="any-data-with-any-data.html">any data with any data</a>).</li>
+<li><b>Identity on every step.</b> Every agent commits with its own key, so the record says who did what, not only what happened.</li>
+</ul>
+<p>That is what let these pipelines scale from one article to the PHP story, to PrompTugal's 73 articles in ten days, to the Swarm. Less black magic: when something is wrong, the step, its input and its author are all on file.</p>
+<p>None of this is impossible in LangGraph, which is low-level and can be as deterministic as you make it. The difference is the habit, not the library.</p>
+<h2 id="learn">What we can learn from them</h2>
+<ul>
+<li><b>One readable definition of the graph.</b> Our flows are spread across schedules, lanes and policies. A single file that declares the nodes and edges, as a <code>StateGraph</code> does, would make each pipeline easier to see and review.</li>
+<li><b>Interrupts as part of the runtime.</b> LangGraph makes pausing for a person a feature of the graph, resumable from the checkpoint. Ours are spread across GitHub environments and reviewer agents.</li>
+<li><b>Versioned datasets, pinned in CI.</b> LangSmith's guidance is to pin the dataset version an evaluation runs on (<a href="https://docs.langchain.com/langsmith/evaluation-concepts">evaluation concepts</a>). Our evals are small and recorded, but not yet a pinned suite every release runs.</li>
+<li><b>A common trace format.</b> OpenTelemetry's GenAI conventions define spans for agents, model calls and tools (<a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-agent-spans/">agent spans</a>), still marked as in development. If our ledgers spoke that format, any tracing tool could read them.</li>
+<li><b>Simulated users.</b> τ²-bench tests agents in conversations where a simulated user acts too (<a href="https://github.com/sierra-research/tau2-bench">tau2-bench</a>). That is how we should test the site's message channel and the career interview.</li>
+</ul>
+<h2 id="use">Should we use them?</h2>
+<p>Yes, inside our pipeline, where each is good, and with its results saved to a vault like everything else:</p>
+<ul>
+<li><b>Inspect for evals.</b> The UK AI Security Institute's toolkit, MIT, with datasets, solvers, scorers, sandboxes and a log viewer, and it can run external agents such as Claude Code (<a href="https://inspect.aisi.org.uk/">Inspect</a>). Our Mistral evals would port to it naturally.</li>
+<li><b>promptfoo for red teaming,</b> MIT and built for CI (<a href="https://github.com/promptfoo/promptfoo">promptfoo</a>): the injection lab's scam note, and attacks on behaviour policies, run on every release. OpenAI announced in March that it is acquiring promptfoo and that it stays open source (<a href="https://openai.com/index/openai-to-acquire-promptfoo/">announcement</a>).</li>
+<li><b>Langfuse for traces,</b> MIT at its core and self-hostable (<a href="https://langfuse.com/blog/joining-clickhouse">Langfuse</a>), fed from our ledgers once they speak OpenTelemetry.</li>
+<li><b>LangGraph where a customer already runs it.</b> A cell installed in a customer's environment should work with the framework they have. The natural bridge is a checkpointer that saves LangGraph's state to an sgit vault, so their graph gets our history, signing and portability. That is a proposal; nobody has built it yet.</li>
+<li><b>An open comparison.</b> The same brief through our pipeline and through a LangGraph version, side by side, with time, cost and the record each leaves, as the Mistral site did with five models.</li>
+</ul>
+<p>What I would not do is put a framework at the centre and our pipeline around it. The centre is the data and its history; frameworks are tools that read and write it.</p>
+<h2 id="criticism">The criticism, fairly</h2>
+<p>LangChain was criticised early for abstractions on abstractions that made simple things complex and debugging hard (<a href="https://minimaxir.com/2023/07/langchain-problem/">Max Woolf, 2023</a>; <a href="https://octomind.dev/blog/why-we-no-longer-use-langchain-for-building-our-ai-agents">Octomind, 2024</a>), and Anthropic's own guidance is to start with direct calls to the model (<a href="https://www.anthropic.com/engineering/building-effective-agents">building effective agents</a>). Most of that criticism predates version 1, which promised no breaking changes until 2.0 and made the agent loop explicit with middleware (<a href="https://docs.langchain.com/oss/python/releases-v1">releases</a>). LangChain's own answer is that LangGraph has no hidden prompts (<a href="https://blog.langchain.com/how-to-think-about-agent-frameworks">how to think about agent frameworks</a>). Both are fair. It is also why we use them as tools, not foundations.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>We have not run LangGraph, Inspect or promptfoo in our pipelines yet;</b> the proposals above are to be tested.</li>
+<li><b>Versions and prices are as read on 21 November 2026.</b></li>
+<li><b>The mapping is ours;</b> LangGraph's own features go beyond what is listed here.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>My own thinking in writer-10's session on 21 November 2026; the projects' own documentation, repositories and package records, read that day and linked above; and our earlier articles on how our pipelines work. Related: <a href="almost-working.html">almost working</a>, <a href="capture-first.html">capture first</a>, <a href="one-vault-ten-agents.html">one vault, ten agents</a>, <a href="the-swarm-one-real-run-at-a-time.html">the swarm, one real run at a time</a>, <a href="one-night-on-mistral.html">one night on Mistral</a>, <a href="feature-behaviour-policies.html">feature behaviour policies</a>.</p>
+<sg-meter view="page" kind="article" date="2026-11-21" topics="agents-and-policy" title="LangGraph and us: how the way we build agent pipelines maps to LangChain, LangGraph, LangSmith and the agent testing toolkits, what is the same, what we do differently, code for each function and every step saved to a vault, what we can learn from them, and where they could run inside our own pipelines, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#langgraph-and-us">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="one-vault-ten-agents.html">One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom</a> <span class="dim">The vault behind this newsroom, 35,000 objects and ten agents, measured eight ways: one folder in 13 seconds, history as the edge, storage as the bottleneck.</span></li><li><a href="who-hands-out-the-work.html">Who hands out the work? A reply to Markus Franz on Ippen's editorial team of agents, with our answer from six people and around 250 agents at Web Summit and from this newsroom, a person sets the work, one conductor agent hands it out, specialists and a reviewer do it, and a person decides what goes out, plus one thing we would add to one front door, a way to close it</a> <span class="dim">A reply to Markus Franz: who hands out the work to agents? A person sets it, one conductor hands it out, a person signs off, and the door can close.</span></li><li><a href="promptugal-news-the-newsroom-we-ran.html">PrompTugal.news, the newsroom we ran at Web Summit: desks of agents that captured, mapped, wrote and reviewed 73 signed articles in ten days, an accountant that counted every run, and fifty outreach drafts that no agent was allowed to send</a> <span class="dim">PrompTugal.news: 73 signed articles in ten days from desks of agents, a reviewer for every draft, and fifty outreach drafts no agent could send.</span></li><li><a href="feature-behaviour-policies.html">Feature behaviour policies: taking the idea of agent behaviour policies down to every feature, bug fix and resource, so that a feature's policy is also its description, what changed is the difference between two policies, the gap between what a resource can do and what a feature needs is where the vulnerabilities live, and signed policies travelling with each request make a bug or an attack a path that was never supposed to exist</a> <span class="dim">Write a behaviour policy per feature: it describes the feature, sets what to enforce, and makes a bug or attack a path outside it.</span></li><li><a href="the-swarm-one-real-run-at-a-time.html">The swarm, one real run at a time: the Web Summit demo that showed agents, the loops they start and the model calls they make, run for real, signed and replayed, step by step from one person and one agent to 24 loops at once, 216 model calls for 6.8 cents, the same work under a harness with 3 of 12 risky actions still possible instead of 11, and the Story Studio, where a spoken answer became a deck in front of you</a> <span class="dim">The Swarm from Web Summit: agents run for real, signed and replayed, 216 model calls for 6.8 cents, a harness test, and a voice-to-deck studio.</span></li><li><a href="one-night-on-mistral.html">One night on Mistral: how an agent team turned "a European brain for a sovereign website" into a working site overnight, for the Mistral Vibe Hackathon in London, with 33 demos in the browser, from a shoebox of files to a website and five Mistral models drawn side by side, evals that found which model catches a scam note, the Swarm moved onto Mistral, about 41 cents of Mistral usage, and why this is where I want to start working with Mistral</a> <span class="dim">An agent team turned the European brain article into a working Mistral site overnight: 33 browser demos, evals, the Swarm on Mistral, about 41 cents.</span></li><li><a href="almost-working.html">Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly</a> <span class="dim">A researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why it has to be built slowly.</span></li><li><a href="capture-first.html">Capture first: how a BBC live page at breakfast became an evidence vault, a section here and a site of its own by lunchtime, for a story that was still changing as we covered it</a> <span class="dim">A BBC live page at breakfast became an evidence vault, a section and a dedicated site by lunchtime: capture first, because a breaking story's pages change by the hour.</span></li><li><a href="any-data-with-any-data.html">Any data, with any data: why I am now comfortable saying we can connect any data source with any other, the nine steps from access to a vault, a key and a map on the other side, how each owner keeps control, where the person stays in charge, and why connecting two, five, fifty or a hundred datasets should be something an agentic cell sells</a> <span class="dim">Why we can now connect any data source with any other: nine steps, owners keep control, a person approves every key, sold as cells.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 522 &middot; <a href="../for/make.html#r=522">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/langgraph-and-us.jpg" download>langgraph-and-us.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="langgraph-and-us.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>The publication</h4>
+    <a href="../about/imprint.html">Imprint</a>
+    <a href="../about/standards.html">Editorial standards</a>
+    <a href="../about/corrections.html">Corrections</a>
+    <a href="../about/withdrawals.html">Withdrawals</a>
+    <a href="../about/complaints.html">Complaints</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

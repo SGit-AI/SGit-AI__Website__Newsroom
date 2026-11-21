@@ -1,0 +1,106 @@
+{
+  "slug": "langgraph-and-us",
+  "teaser": "How our agent pipelines map to LangGraph, LangChain and the eval toolkits: the same ideas, a more deterministic default, and what to learn and use.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Our pipelines already implement LangGraph's ideas, state, nodes, checkpoints, interrupts, tracing and evals, with a more deterministic default of code per function and every step saved to vaults; we should learn its readable graphs, runtime interrupts and pinned datasets, and use good tools such as Inspect, promptfoo and LangGraph inside our pipelines.",
+  "nodes": [
+    {
+      "id": "langgraph",
+      "label": "LangGraph and LangChain",
+      "kind": "artefact",
+      "summary": "MIT, version 1."
+    },
+    {
+      "id": "vault",
+      "label": "State as a vault",
+      "kind": "concept",
+      "summary": "Every step saved."
+    },
+    {
+      "id": "code",
+      "label": "Code for each function",
+      "kind": "method",
+      "summary": "A model only for judgement."
+    },
+    {
+      "id": "learn",
+      "label": "What to learn",
+      "kind": "claim",
+      "summary": "Graphs, interrupts, datasets."
+    },
+    {
+      "id": "tools",
+      "label": "Eval and trace tools",
+      "kind": "artefact",
+      "summary": "Inspect, promptfoo, Langfuse."
+    },
+    {
+      "id": "bridge",
+      "label": "A vault checkpointer",
+      "kind": "method",
+      "summary": "A proposal."
+    }
+  ],
+  "edges": [
+    {
+      "from": "vault",
+      "to": "langgraph",
+      "rel": "extends"
+    },
+    {
+      "from": "code",
+      "to": "vault",
+      "rel": "depends-on"
+    },
+    {
+      "from": "langgraph",
+      "to": "learn",
+      "rel": "produces"
+    },
+    {
+      "from": "tools",
+      "to": "code",
+      "rel": "extends"
+    },
+    {
+      "from": "bridge",
+      "to": "langgraph",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "one-vault-ten-agents",
+      "who-hands-out-the-work",
+      "promptugal-news-the-newsroom-we-ran",
+      "feature-behaviour-policies",
+      "the-swarm-one-real-run-at-a-time",
+      "one-night-on-mistral",
+      "almost-working",
+      "capture-first",
+      "any-data-with-any-data"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "The difference is the habit, not the library.",
+      "why": "Dinis."
+    },
+    {
+      "text": "The centre is the data and its history; frameworks are tools that read and write it.",
+      "why": "Dinis."
+    }
+  ],
+  "figures": [
+    {
+      "file": "lg-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lg-map.webp",
+      "caption": "LangGraph's concepts and ours: the same ideas, with a different default.",
+      "kind": "concept"
+    }
+  ]
+}

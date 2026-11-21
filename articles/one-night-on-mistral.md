@@ -109,6 +109,7 @@ Agents & policy[This article as a graph →](graphs.md#one-night-on-mistral)
 
 ### Continued by
 
+- [LangGraph and us: how the way we build agent pipelines maps to LangChain, LangGraph, LangSmith and the agent testing toolkits, what is the same, what we do differently, code for each function and every step saved to a vault, what we can learn from them, and where they could run inside our own pipelines](langgraph-and-us.md) How our agent pipelines map to LangGraph, LangChain and the eval toolkits: the same ideas, a more deterministic default, and what to learn and use.
 - [The showroom: what the Sovereign Website hub shows after its first days, 33 live sites from one pipeline, people's portfolios with five designs each, independent brochures for our startups, a provider guide, tools that run on the owner's own key, made-up businesses, a family of news sites, and the theme that is emerging across all of them, a site that is yours, says how it was made and can be worked on by your own AI](the-showroom.md) The Sovereign Website hub after its first days: 33 live sites from one pipeline, and the shared bones that are becoming the product.
 
 [All articles](index.md) · [All graphs](graphs.md)

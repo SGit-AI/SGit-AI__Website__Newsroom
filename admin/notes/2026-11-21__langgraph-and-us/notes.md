@@ -1,0 +1,3 @@
+# Notes: langgraph-and-us (21 November 2026)
+
+Dinis asked how what we do maps to LangGraph, LangChain and agent testing toolkits, what we can learn, and whether to use them in our workflows; his view: our pipelines are similar but more deterministic, with code for specific functions (load, extract, save), all data stored in vaults with every transformation saved, as in the PHP desk and PrompTugal. External facts from a research pass on 21 November 2026 (PyPI and npm records, the projects' docs and repositories, pricing pages). Unverified items left out: LangGraph subgraph and supervisor pages, LangSmith overage rates, whether the promptfoo acquisition closed (stated as announced). The vault checkpointer is a proposal.

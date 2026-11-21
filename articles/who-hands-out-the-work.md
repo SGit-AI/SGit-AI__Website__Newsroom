@@ -79,6 +79,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#who-ha
 
 ### Continued by
 
+- [LangGraph and us: how the way we build agent pipelines maps to LangChain, LangGraph, LangSmith and the agent testing toolkits, what is the same, what we do differently, code for each function and every step saved to a vault, what we can learn from them, and where they could run inside our own pipelines](langgraph-and-us.md) How our agent pipelines map to LangGraph, LangChain and the eval toolkits: the same ideas, a more deterministic default, and what to learn and use.
 - [Partners sell, we build: the AgentiCCells partner programme in full, three kinds of partner, a freelancer, a small consultancy and a larger firm, what each one sells, the agent team behind even the smallest website cell, the rules of engagement, who owns what, who invoices, who gets paid and when, what stays with the partner, and why a partner who takes the open code and does it alone is still a win](partners-sell-we-build.md) The AgentiCCells partner programme: three kinds of partner, the agent team they resell, and the rules of engagement, 50/50.
 
 [All articles](index.md) · [All graphs](graphs.md)

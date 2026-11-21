@@ -124,6 +124,7 @@ Vaults & method[This article as a graph →](graphs.md#capture-first)
 
 ### Continued by
 
+- [LangGraph and us: how the way we build agent pipelines maps to LangChain, LangGraph, LangSmith and the agent testing toolkits, what is the same, what we do differently, code for each function and every step saved to a vault, what we can learn from them, and where they could run inside our own pipelines](langgraph-and-us.md) How our agent pipelines map to LangGraph, LangChain and the eval toolkits: the same ideas, a more deterministic default, and what to learn and use.
 - [A desk anyone can open: the PHP story's work and who did it, nine names with their responsibilities, and an evidence vault anyone can now read, scanned before its key was published](a-desk-anyone-can-open.md) The PHP story's work and who did it, nine names with their responsibilities, and its evidence vault opened to everyone, scanned before the key was published.
 
 [All articles](index.md) · [All graphs](graphs.md)
