@@ -87,6 +87,7 @@ Agents & policy[This article as a graph →](graphs.md#the-swarm-one-real-run-at
 
 ### Continued by
 
+- [One night on Mistral: how an agent team turned "a European brain for a sovereign website" into a working site overnight, for the Mistral Vibe Hackathon in London, with 33 demos in the browser, from a shoebox of files to a website and five Mistral models drawn side by side, evals that found which model catches a scam note, the Swarm moved onto Mistral, about 41 cents of Mistral usage, and why this is where I want to start working with Mistral](one-night-on-mistral.md) An agent team turned the European brain article into a working Mistral site overnight: 33 browser demos, evals, the Swarm on Mistral, about 41 cents.
 - [A European brain for a sovereign website: why the model is a choice the owner makes, like the host, how Mistral fits at every level, from Ministral 3 running on a Pi Pro to Mistral Small 4 on an EU endpoint for the team inside the site, what its terms say about where data goes, the one licence to watch, what we have already run on Mistral, and how we could work with it](a-european-brain.md) Why a sovereign website's model is the owner's choice, and how Mistral fits: Ministral 3 on the device, Mistral Small 4 on an EU endpoint.
 
 [All articles](index.md) · [All graphs](graphs.md)

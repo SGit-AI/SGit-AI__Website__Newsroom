@@ -1,0 +1,30 @@
+{
+ "slug": "one-night-on-mistral",
+ "teaser": "An agent team turned the European brain article into a working Mistral site overnight: 33 browser demos, evals, the Swarm on Mistral, about 41 cents.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "Overnight, agents under behaviour policies turned an argument for a European model as the owner's choice into a working site of browser demos on Mistral, whose evals, security reviews and research showed both Mistral's fit and where the argument needed correcting.",
+ "nodes": [
+  {"id": "site", "label": "The Mistral provider site", "kind": "artefact", "summary": "33 demos."},
+  {"id": "team", "label": "The overnight team", "kind": "method", "summary": "Signed agents."},
+  {"id": "evals", "label": "The evals", "kind": "claim", "summary": "Only Large 4 caught the note."},
+  {"id": "swarm", "label": "The Swarm on Mistral", "kind": "artefact", "summary": "Signed packets."},
+  {"id": "corrections", "label": "Four corrections", "kind": "claim", "summary": "Read the source."},
+  {"id": "alignment", "label": "Alignment with Mistral", "kind": "concept", "summary": "A proposal next."}
+ ],
+ "edges": [
+  {"from": "team", "to": "site", "rel": "produces"},
+  {"from": "evals", "to": "site", "rel": "extends"},
+  {"from": "swarm", "to": "site", "rel": "extends"},
+  {"from": "corrections", "to": "site", "rel": "depends-on"},
+  {"from": "site", "to": "alignment", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["a-european-brain", "the-swarm-one-real-run-at-a-time", "a-galaxy-of-agents", "the-riskmandate-x-ray", "a-website-with-a-team-inside", "pennies-against-dollars", "feature-behaviour-policies"],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "The model the site is about was the cheap part", "why": "The site's own account."},
+  {"text": "I want to start working with them.", "why": "Dinis."}
+ ]
+}

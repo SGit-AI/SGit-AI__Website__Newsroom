@@ -93,6 +93,10 @@ Agents & policy[This article as a graph →](graphs.md#the-way-in)
 - [Sovereignty you can move: why where your data is hosted is not sovereignty, why being able to move the site, the data and the schema is, why that makes the website cell a direct competitor to Wix, Squarespace and Fliplet with a proper sovereign offer, European-aligned, multilingual and privacy-first, and the business that other companies can build on it](sovereignty-you-can-move.md) Sovereignty is being able to move your site, data and schema, not where it is hosted; the website cell as a sovereign competitor.
 - [An agentic console: a simulated control room for a team of agentic teams, with time you can rewind, accounts drawn as trust zones, stops that reach every agent, signed messages on three channels, and the console itself as an agent](an-agentic-console.md) An agentic console, simulated: accounts as trust zones, time you can rewind, signed messages on three channels, honest stops, and the console as an agent.
 
+### Continued by
+
+- [The showroom: what the Sovereign Website hub shows after its first days, 33 live sites from one pipeline, people's portfolios with five designs each, independent brochures for our startups, a provider guide, tools that run on the owner's own key, made-up businesses, a family of news sites, and the theme that is emerging across all of them, a site that is yours, says how it was made and can be worked on by your own AI](the-showroom.md) The Sovereign Website hub after its first days: 33 live sites from one pipeline, and the shared bones that are becoming the product.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 517 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=517)

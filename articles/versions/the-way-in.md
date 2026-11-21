@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-21 | published | 1,399 | first published | this release | [current](../the-way-in.md) |
+| **v1.0.0** | 2026-11-21 | published | 1,399 | first published | [`45bea0f0b`](https://github.com/SGit-AI/SGit-AI__Website/commit/45bea0f0b8a7246891ad5ad47479585d4d9bb6ab) | [current](../the-way-in.md) |
 
 [← Back to the article](../the-way-in.md) · [All articles](../index.md)
 

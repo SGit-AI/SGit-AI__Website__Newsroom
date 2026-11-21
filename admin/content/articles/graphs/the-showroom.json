@@ -1,0 +1,30 @@
+{
+ "slug": "the-showroom",
+ "teaser": "The Sovereign Website hub after its first days: 33 live sites from one pipeline, and the shared bones that are becoming the product.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "Making many very different sites through one pipeline has produced a shared pattern, own address and repository, several designs, start, AI and how-it-was-made pages, dated sources and no tracking, that is becoming the Sovereign Website product.",
+ "nodes": [
+  {"id": "hub", "label": "The hub", "kind": "artefact", "summary": "33 sites working."},
+  {"id": "people", "label": "People's sites", "kind": "artefact", "summary": "Their own material."},
+  {"id": "brochures", "label": "Startup brochures", "kind": "artefact", "summary": "From public pages."},
+  {"id": "tools", "label": "Tools on the owner's key", "kind": "method", "summary": "Paid services, owner's budget."},
+  {"id": "bones", "label": "The shared bones", "kind": "concept", "summary": "The pattern."},
+  {"id": "product", "label": "The pattern as product", "kind": "claim", "summary": "Each site improves the next."}
+ ],
+ "edges": [
+  {"from": "people", "to": "hub", "rel": "extends"},
+  {"from": "brochures", "to": "hub", "rel": "extends"},
+  {"from": "tools", "to": "hub", "rel": "extends"},
+  {"from": "hub", "to": "bones", "rel": "produces"},
+  {"from": "bones", "to": "product", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["the-first-round-trip", "one-night-on-mistral", "the-way-in", "a-website-that-is-her", "the-website-cell", "every-tool-its-own-website", "what-is-a-sovereign-website"],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "Websites their owners own.", "why": "The hub."},
+  {"text": "Every site here is public and live; open one to see it working.", "why": "The hub."}
+ ]
+}
