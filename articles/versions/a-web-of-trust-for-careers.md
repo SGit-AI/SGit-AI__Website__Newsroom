@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-21 | published | 1,636 | first published | this release | [current](../a-web-of-trust-for-careers.md) |
+| **v1.0.0** | 2026-11-21 | published | 1,636 | first published | [`b1f2cd22a`](https://github.com/SGit-AI/SGit-AI__Website/commit/b1f2cd22ac7f51c3ca28438a73ec513e78086afa) | [current](../a-web-of-trust-for-careers.md) |
 
 [← Back to the article](../a-web-of-trust-for-careers.md) · [All articles](../index.md)
 

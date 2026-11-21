@@ -91,6 +91,10 @@ Agents & policy[This article as a graph →](graphs.md#deepseek-in-our-workflows
 - [LangGraph and us: how the way we build agent pipelines maps to LangChain, LangGraph, LangSmith and the agent testing toolkits, what is the same, what we do differently, code for each function and every step saved to a vault, what we can learn from them, and where they could run inside our own pipelines](langgraph-and-us.md) How our agent pipelines map to LangGraph, LangChain and the eval toolkits: the same ideas, a more deterministic default, and what to learn and use.
 - [Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot](free-models-your-own-key.md) Which free model APIs a reader can call from a web page with their own key, October 2026: four pass both tests, NVIDIA fails both, and 2026 took a lot away.
 
+### Continued by
+
+- [Can you find me? A service that checks whether an anonymous profile can be traced back to its person before it is published, an agent team of six steps with several models attacking the draft on their own, the truth sealed with the owner and compared only in code, a rewriter that closes what leaked, run in a Claude session or in the browser, and who would use it](can-you-find-me.md) A service that tries to re-identify an anonymous profile before it is published: several models attack it, and code checks them against a sealed truth.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 523 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=523)

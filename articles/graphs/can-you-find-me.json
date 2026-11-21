@@ -1,0 +1,103 @@
+{
+  "slug": "can-you-find-me",
+  "teaser": "A service that tries to re-identify an anonymous profile before it is published: several models attack it, and code checks them against a sealed truth.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Because language models can infer personal attributes from text, an anonymous profile should be attacked before publication by an agent team of several independent models, with the owner's real details sealed and compared only in code, and a rewriter closing what leaked.",
+  "nodes": [
+    {
+      "id": "draft",
+      "label": "The draft profile",
+      "kind": "artefact",
+      "summary": "Public anyway."
+    },
+    {
+      "id": "truth",
+      "label": "The sealed truth",
+      "kind": "concept",
+      "summary": "Only code reads it."
+    },
+    {
+      "id": "team",
+      "label": "Six steps",
+      "kind": "method",
+      "summary": "Extract to rewrite."
+    },
+    {
+      "id": "models",
+      "label": "Several models alone",
+      "kind": "method",
+      "summary": "Agreement is risk."
+    },
+    {
+      "id": "report",
+      "label": "The report",
+      "kind": "artefact",
+      "summary": "Risk by attribute."
+    },
+    {
+      "id": "service",
+      "label": "A self-check service",
+      "kind": "concept",
+      "summary": "Free and paid."
+    }
+  ],
+  "edges": [
+    {
+      "from": "team",
+      "to": "draft",
+      "rel": "depends-on"
+    },
+    {
+      "from": "models",
+      "to": "team",
+      "rel": "extends"
+    },
+    {
+      "from": "truth",
+      "to": "report",
+      "rel": "depends-on"
+    },
+    {
+      "from": "team",
+      "to": "report",
+      "rel": "produces"
+    },
+    {
+      "from": "report",
+      "to": "service",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "an-anonymous-profile-vouched-for",
+      "the-riskmandate-x-ray",
+      "the-swarm-one-real-run-at-a-time",
+      "one-night-on-mistral",
+      "deepseek-in-our-workflows",
+      "a-website-with-a-team-inside"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "If models can do that, the right test for an anonymous profile is to let models try.",
+      "why": "Dinis."
+    },
+    {
+      "text": "A pass is not a guarantee",
+      "why": "Dinis."
+    }
+  ],
+  "figures": [
+    {
+      "file": "rid-team.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rid-team.webp",
+      "caption": "An agent team that tries to re-identify a profile; the truth goes only to code.",
+      "kind": "concept"
+    }
+  ]
+}

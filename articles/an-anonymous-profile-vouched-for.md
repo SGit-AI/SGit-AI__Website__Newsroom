@@ -87,6 +87,10 @@ Agents & policy[This article as a graph →](graphs.md#an-anonymous-profile-vouc
 - [A website that is her: how Yiheng Wang's site was made in three passes in one evening, by the site factory, five design agents and then her own agent, with five designs, a kitchen brigade of 26 agents, a printable brief and a page for your AI, and why every claim on it is something she can talk about because she did it](a-website-that-is-her.md) Yiheng Wang's website, made in one evening by the site factory, five design agents and her own agent: five designs, every claim sourced, all of it her.
 - [Hired as an agentic worker: what a sovereign website offers someone looking for a job, from a better CV that shows the depth of your work, you in action and a video of you talking, to a site you change with your own AI, a team of agents you work with, and a crash course in being an agentic worker served on a plate, four levels of involvement, each one a choice](hired-as-an-agentic-worker.md) What a sovereign website offers someone looking for a job: from a better CV to a crash course in being an agentic worker, four levels, each a choice.
 
+### Continued by
+
+- [Can you find me? A service that checks whether an anonymous profile can be traced back to its person before it is published, an agent team of six steps with several models attacking the draft on their own, the truth sealed with the owner and compared only in code, a rewriter that closes what leaked, run in a Claude session or in the browser, and who would use it](can-you-find-me.md) A service that tries to re-identify an anonymous profile before it is published: several models attack it, and code checks them against a sealed truth.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 525 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=525)

@@ -55,6 +55,140 @@
   ],
   "articles": [
     {
+      "slug": "can-you-find-me",
+      "title": "Can you find me? A service that checks whether an anonymous profile can be traced back to its person before it is published, an agent team of six steps with several models attacking the draft on their own, the truth sealed with the owner and compared only in code, a rewriter that closes what leaked, run in a Claude session or in the browser, and who would use it",
+      "date": "2026-11-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/can-you-find-me.html",
+      "markdown": "https://newsroom.sgit.ai/articles/can-you-find-me.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/can-you-find-me.webp",
+      "teaser": "A service that tries to re-identify an anonymous profile before it is published: several models attack it, and code checks them against a sealed truth.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "privacy",
+        "anonymisation",
+        "agents",
+        "evals",
+        "sovereign-website",
+        "personas",
+        "article"
+      ],
+      "links_out": [
+        "an-anonymous-profile-vouched-for",
+        "the-riskmandate-x-ray",
+        "the-swarm-one-real-run-at-a-time",
+        "one-night-on-mistral",
+        "deepseek-in-our-workflows",
+        "a-website-with-a-team-inside"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "rid-team.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rid-team.webp",
+          "caption": "An agent team that tries to re-identify a profile; the truth goes only to code.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "can-you-find-me",
+        "teaser": "A service that tries to re-identify an anonymous profile before it is published: several models attack it, and code checks them against a sealed truth.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Because language models can infer personal attributes from text, an anonymous profile should be attacked before publication by an agent team of several independent models, with the owner's real details sealed and compared only in code, and a rewriter closing what leaked.",
+        "nodes": [
+          {
+            "id": "draft",
+            "label": "The draft profile",
+            "kind": "artefact",
+            "summary": "Public anyway."
+          },
+          {
+            "id": "truth",
+            "label": "The sealed truth",
+            "kind": "concept",
+            "summary": "Only code reads it."
+          },
+          {
+            "id": "team",
+            "label": "Six steps",
+            "kind": "method",
+            "summary": "Extract to rewrite."
+          },
+          {
+            "id": "models",
+            "label": "Several models alone",
+            "kind": "method",
+            "summary": "Agreement is risk."
+          },
+          {
+            "id": "report",
+            "label": "The report",
+            "kind": "artefact",
+            "summary": "Risk by attribute."
+          },
+          {
+            "id": "service",
+            "label": "A self-check service",
+            "kind": "concept",
+            "summary": "Free and paid."
+          }
+        ],
+        "edges": [
+          {
+            "from": "team",
+            "to": "draft",
+            "rel": "depends-on"
+          },
+          {
+            "from": "models",
+            "to": "team",
+            "rel": "extends"
+          },
+          {
+            "from": "truth",
+            "to": "report",
+            "rel": "depends-on"
+          },
+          {
+            "from": "team",
+            "to": "report",
+            "rel": "produces"
+          },
+          {
+            "from": "report",
+            "to": "service",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "an-anonymous-profile-vouched-for",
+            "the-riskmandate-x-ray",
+            "the-swarm-one-real-run-at-a-time",
+            "one-night-on-mistral",
+            "deepseek-in-our-workflows",
+            "a-website-with-a-team-inside"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "If models can do that, the right test for an anonymous profile is to let models try.",
+            "why": "Dinis."
+          },
+          {
+            "text": "A pass is not a guarantee",
+            "why": "Dinis."
+          }
+        ]
+      }
+    },
+    {
       "slug": "an-anonymous-profile-vouched-for",
       "title": "An anonymous profile, vouched for: how someone who needs to leave their job without going public can publish a persona that shows the depth of their work but not their name, how the web of trust lets people who know them vouch for it, with different kinds of connection from \"this is a real person\" to \"I would hire them\", how an employer reaches them, and the one risk to test, triangulation",
       "date": "2026-11-21",
@@ -83,7 +217,9 @@
         "a-website-that-is-her",
         "hired-as-an-agentic-worker"
       ],
-      "links_in": [],
+      "links_in": [
+        "can-you-find-me"
+      ],
       "figures": [
         {
           "file": "anon-persona.webp",
@@ -355,7 +491,9 @@
         "langgraph-and-us",
         "free-models-your-own-key"
       ],
-      "links_in": [],
+      "links_in": [
+        "can-you-find-me"
+      ],
       "figures": [
         {
           "file": "ds-explorer.webp",
@@ -1051,6 +1189,7 @@
         "pennies-against-dollars"
       ],
       "links_in": [
+        "can-you-find-me",
         "deepseek-in-our-workflows",
         "langgraph-and-us",
         "the-showroom"
@@ -1791,6 +1930,7 @@
         "launching-the-sovereign-website-appliance"
       ],
       "links_in": [
+        "can-you-find-me",
         "langgraph-and-us",
         "one-night-on-mistral",
         "a-european-brain"
@@ -1938,6 +2078,7 @@
         "a-galaxy-of-agents"
       ],
       "links_in": [
+        "can-you-find-me",
         "one-night-on-mistral",
         "the-way-in",
         "the-swarm-one-real-run-at-a-time",
@@ -3937,6 +4078,7 @@
         "a-team-like-this"
       ],
       "links_in": [
+        "can-you-find-me",
         "hired-as-an-agentic-worker",
         "one-night-on-mistral",
         "the-first-round-trip",
