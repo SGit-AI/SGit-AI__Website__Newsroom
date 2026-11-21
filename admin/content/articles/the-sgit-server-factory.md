@@ -4,7 +4,7 @@ date: 2026-11-21
 author: Dinis Cruz
 author_url: about/index.html
 summary: The site factory turned a website into a request file: merge it, and a pipeline makes the repository, the address and the live site. Vaults need the same for their servers. Teams that put sensitive data in sgit vaults want the server in their own account and the region their assessment needs, and the pieces already exist: one image, sg-send-vault, CloudFormation templates for Lambda, Fargate and EC2, and the OIDC pattern from the site factory. This is the brief for the SGit Server Factory, an agent and a pipeline that put those pieces together. A request file names the account, the region, the shape, the storage, how long it should live and who owns it. The pipeline checks, assumes that account's deploy role with no keys, copies the image into that region, deploys, smoke-tests by pushing and cloning a vault, records the result and tears ephemeral servers down when their time is up. Onboarding a new account is one bootstrap stack its owner runs, in CloudFormation or Terraform. GitHub is needed for the factory itself, not for each server. It is one of the last pieces of the puzzle.
-version: v999.0.0
+version: v0.14.191
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sgit, sg-send, aws, lambda, deployment, factory, brief, article
 status: published
