@@ -1,0 +1,30 @@
+{
+ "slug": "person-graph",
+ "teaser": "Person Graph: people and agents with their own keys, links that count only both ways, groups, claims, and a simulation of fakes being caught.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "Signed, typed, two-way links in people's own repositories, grouped into centres of gravity and walked by each person's AI, form a distributed social network in which trust spread over two-way links isolates fake clusters, as a simulation of 150 people and 40 fakes shows, until many real people are fooled.",
+ "nodes": [
+  {"id": "people", "label": "People and agents", "kind": "concept", "summary": "Keys in repositories."},
+  {"id": "links", "label": "Two-way typed links", "kind": "method", "summary": "Real to vouch to hire."},
+  {"id": "groups", "label": "Centres of gravity", "kind": "concept", "summary": "Artists, founders, educators."},
+  {"id": "claude", "label": "Each person's Claude", "kind": "method", "summary": "Signs and walks."},
+  {"id": "sim", "label": "The simulation", "kind": "artefact", "summary": "34 against 0."},
+  {"id": "bad", "label": "Bad actors at scale", "kind": "claim", "summary": "Spread across agents."}
+ ],
+ "edges": [
+  {"from": "links", "to": "people", "rel": "depends-on"},
+  {"from": "groups", "to": "links", "rel": "extends"},
+  {"from": "claude", "to": "links", "rel": "produces"},
+  {"from": "sim", "to": "links", "rel": "depends-on"},
+  {"from": "bad", "to": "sim", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["a-web-of-trust-for-careers", "an-anonymous-profile-vouched-for", "can-you-find-me", "a-directory-of-people-and-keys", "agents-have-an-identity-now", "a-galaxy-of-agents", "the-showroom"],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "Nothing is deleted and nobody is banned: the one-way links simply count for nothing, and anyone can see why.", "why": "Dinis."},
+  {"text": "Detection is spread across everyone's agent, not done by one platform.", "why": "Dinis."}
+ ]
+}

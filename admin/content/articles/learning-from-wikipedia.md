@@ -1,12 +1,12 @@
 ---
-title: Learning from Wikipedia, with DeepSeek, a plan: a sovereign website built around a tool made of many small tools, a site for each topic from atoms to dinosaurs to maths, every one its own repository, made from Wikipedia with DeepSeek doing the reading, an agent team that verifies, checks quality and reviews for the right age under behaviour policies, a person approving every publish, and a project to build with a friend in the open
+title: Learning from Wikipedia, with DeepSeek, a plan: a sovereign website built around a tool made of many small tools, a site for each topic from atoms to dinosaurs to maths, every one its own repository, made from Wikipedia with DeepSeek doing the reading, an agent team that verifies, checks quality and reviews for the right age under behaviour policies, a person approving every publish, and the natural next step for sovereign websites, into education
 date: 2026-11-21
 author: Dinis Cruz
 author_url: about/index.html
-summary: A friend and I are going to build this together. It is a sovereign website around a tool, and the tool is made of many small tools: a graph, a timeline, a glossary, a quiz, a map, a comparison. With them we make learning materials, one site per topic: someone learning about atoms, someone about maths, someone about dinosaurs. Everything is made from Wikipedia, with DeepSeek doing the reading, and with code checking everything that can be checked: every quote word for word against the article, every entity anchored to Wikidata. An agent team does the whole loop: research, writing, fact checking with a second model, quality control, a review that the language and the content suit the age of the reader, licence and attribution, and accessibility, each agent under a behaviour policy, and a person approving every publish. The age is a question for the legal team: 16 and up, or 18 and up, and the plan holds until they answer. There is no account, no tracking and no data about learners, so nothing about a reader ever goes to a model. Each site has its own repository, like the tools we already publish, and the whole thing is a good example of how we can collaborate with someone from outside.
+summary: This is the natural progression of what we have been building: the next step, into education. It is a sovereign website around a tool, and the tool is made of many small tools: a graph, a timeline, a glossary, a quiz, a map, a comparison. With them we make learning materials, one site per topic: someone learning about atoms, someone about maths, someone about dinosaurs. Everything is made from Wikipedia, with DeepSeek doing the reading, and with code checking everything that can be checked: every quote word for word against the article, every entity anchored to Wikidata. An agent team does the whole loop: research, writing, fact checking with a second model, quality control, a review that the language and the content suit the age of the reader, licence and attribution, and accessibility, each agent under a behaviour policy, and a person approving every publish. The age is a question for the legal team: 16 and up, or 18 and up, and the plan holds until they answer. There is no account, no tracking and no data about learners, so nothing about a reader ever goes to a model. Each site has its own repository, like the tools we already publish, and I want to bring in people I know who work in education.
 version: v0.14.196
 license: https://creativecommons.org/licenses/by/4.0/
-tags: learning, wikipedia, deepseek, sovereign-website, behaviour-policies, collaboration, plan, article
+tags: learning, wikipedia, deepseek, sovereign-website, behaviour-policies, education, plan, article
 status: published
 ---
 
@@ -19,11 +19,11 @@ status: published
 - **An agent team does the loop:** verify, quality control, age review, licence, approval.
 - **The age is for the legal team to decide:** 16 and up, or 18 and up.
 - **No accounts, no tracking, nothing about readers sent to a model.**
-- **Every site its own repository,** built with a friend in the open.
+- **Every site its own repository,** with people from education involved.
 
 ## The idea {#idea}
 
-Can we make good learning materials, and good visualisations, from Wikipedia? Someone learning about atoms, someone about maths, someone about dinosaurs: each should find a site that explains the topic well, shows how its ideas connect, lets them test themselves, and always leads back to the articles it came from. A friend and I will build it together, as a sovereign website around a tool, and the tool will be made of many small tools.
+Can we make good learning materials, and good visualisations, from Wikipedia? Someone learning about atoms, someone about maths, someone about dinosaurs: each should find a site that explains the topic well, shows how its ideas connect, lets them test themselves, and always leads back to the articles it came from. It is a natural next step for sovereign websites, into education, and I will build it as a sovereign website around a tool, and the tool will be made of many small tools.
 
 It builds directly on the Wikipedia explorer I proposed this morning ([DeepSeek in our workflows](/articles/deepseek-in-our-workflows.html)): code loads, DeepSeek reads, code checks.
 
@@ -65,9 +65,9 @@ I went back and forth on this: 8 to 15, then 16 and up, then 18 and up. It is a 
 
 The sites are static: no accounts, no cookies, no tracking, no chat box that sends a reader's words to a model. All the model work happens when the materials are made, on public Wikipedia text, never when someone reads them. A quiz scores itself in the browser and forgets. That matters for any audience, and more for a young one.
 
-## Working together {#collaborate}
+## People from education {#collaborate}
 
-This is also a good example of how we collaborate with someone outside the team. My friend gets their own repositories, and edits through their own AI, the path we learnt on [the first round trip](/articles/the-first-round-trip.html). Requests and ideas go through a board and an inbox lane, and every change by either of us, or by an agent, is a commit with its author.
+The agents make it scale; people who teach make it right. I want to involve people I know in education to shape the topics, the level and the reviews. Each gets their own repositories and edits through their own AI, the path we learnt on [the first round trip](/articles/the-first-round-trip.html). Requests and ideas go through a board and an inbox lane, and every change, by a person or an agent, is a commit with its author.
 
 ## First steps {#steps}
 
@@ -84,4 +84,4 @@ This is also a good example of how we collaborate with someone outside the team.
 
 ## Where this comes from {#sources}
 
-My own thinking in writer-10's session on 21 November 2026, following the DeepSeek article of the same day. My collaborator is not named here until they choose to be. Related: [DeepSeek in our workflows](/articles/deepseek-in-our-workflows.html), [every tool its own website](/articles/every-tool-its-own-website.html), [feature behaviour policies](/articles/feature-behaviour-policies.html), [the first round trip](/articles/the-first-round-trip.html), [the showroom](/articles/the-showroom.html).
+My own thinking in writer-10's session on 21 November 2026, following the DeepSeek article of the same day. Related: [DeepSeek in our workflows](/articles/deepseek-in-our-workflows.html), [every tool its own website](/articles/every-tool-its-own-website.html), [feature behaviour policies](/articles/feature-behaviour-policies.html), [the first round trip](/articles/the-first-round-trip.html), [the showroom](/articles/the-showroom.html).

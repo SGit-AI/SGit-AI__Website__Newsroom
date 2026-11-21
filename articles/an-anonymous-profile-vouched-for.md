@@ -89,6 +89,7 @@ Agents & policy[This article as a graph →](graphs.md#an-anonymous-profile-vouc
 
 ### Continued by
 
+- [Person Graph: one picture of what we have been building, people and their agents with their own keys and repositories, links that count only both ways, kinds of link from "real" to "vouch to hire", groups as centres of gravity, countersigned claims, anonymous personas, a check for re-identification, all done through each person's own Claude, with mock-ups of the site and a simulation of 150 people and 40 fake accounts that shows why two-way links make bad actors cheap to spot](person-graph.md) Person Graph: people and agents with their own keys, links that count only both ways, groups, claims, and a simulation of fakes being caught.
 - [Can you find me? A service that checks whether an anonymous profile can be traced back to its person before it is published, an agent team of six steps with several models attacking the draft on their own, the truth sealed with the owner and compared only in code, a rewriter that closes what leaked, run in a Claude session or in the browser, and who would use it](can-you-find-me.md) A service that tries to re-identify an anonymous profile before it is published: several models attack it, and code checks them against a sealed truth.
 
 [All articles](index.md) · [All graphs](graphs.md)

@@ -96,6 +96,10 @@ Agents & policy[This article as a graph →](graphs.md#can-you-find-me)
 - [DeepSeek in our workflows and on sovereign websites: what DeepSeek offers today, open weights under MIT, an API that answers calls from the browser and speaks both OpenAI's and Anthropic's formats, at a fraction of the price, where its data goes and where else it can run, and a proposal for a sovereign website that loads Wikipedia articles and draws them as graphs, with DeepSeek doing the reading and code doing the checking](deepseek-in-our-workflows.md) Using DeepSeek in our workflows and on sovereign websites, with open eyes, and a proposal: a Wikipedia explorer where DeepSeek reads and code checks.
 - [A website with a team inside: why a Sovereign Agentic Website is delivered not as a site but as a site with six or seven agents already set up and coordinated in its repository, a conductor, a designer, a writer, a developer, a reviewer, a translator and a keeper, each with a role and a behaviour policy, and what that means for the person who owns it](a-website-with-a-team-inside.md) A Sovereign Agentic Website comes with a team inside: seven agents set up and coordinated in the owner's repository, each with a behaviour policy.
 
+### Continued by
+
+- [Person Graph: one picture of what we have been building, people and their agents with their own keys and repositories, links that count only both ways, kinds of link from "real" to "vouch to hire", groups as centres of gravity, countersigned claims, anonymous personas, a check for re-identification, all done through each person's own Claude, with mock-ups of the site and a simulation of 150 people and 40 fake accounts that shows why two-way links make bad actors cheap to spot](person-graph.md) Person Graph: people and agents with their own keys, links that count only both ways, groups, claims, and a simulation of fakes being caught.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 526 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=526)

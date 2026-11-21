@@ -121,6 +121,7 @@ Agents & policy[This article as a graph →](graphs.md#a-web-of-trust-for-career
 
 ### Continued by
 
+- [Person Graph: one picture of what we have been building, people and their agents with their own keys and repositories, links that count only both ways, kinds of link from "real" to "vouch to hire", groups as centres of gravity, countersigned claims, anonymous personas, a check for re-identification, all done through each person's own Claude, with mock-ups of the site and a simulation of 150 people and 40 fake accounts that shows why two-way links make bad actors cheap to spot](person-graph.md) Person Graph: people and agents with their own keys, links that count only both ways, groups, claims, and a simulation of fakes being caught.
 - [An anonymous profile, vouched for: how someone who needs to leave their job without going public can publish a persona that shows the depth of their work but not their name, how the web of trust lets people who know them vouch for it, with different kinds of connection from "this is a real person" to "I would hire them", how an employer reaches them, and the one risk to test, triangulation](an-anonymous-profile-vouched-for.md) An anonymous profile for someone who cannot go public yet, made credible by people who vouch for it in the web of trust.
 
 [All articles](index.md) · [All graphs](graphs.md)

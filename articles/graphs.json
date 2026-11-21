@@ -55,8 +55,174 @@
   ],
   "articles": [
     {
+      "slug": "person-graph",
+      "title": "Person Graph: one picture of what we have been building, people and their agents with their own keys and repositories, links that count only both ways, kinds of link from \"real\" to \"vouch to hire\", groups as centres of gravity, countersigned claims, anonymous personas, a check for re-identification, all done through each person's own Claude, with mock-ups of the site and a simulation of 150 people and 40 fake accounts that shows why two-way links make bad actors cheap to spot",
+      "date": "2026-11-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/person-graph.html",
+      "markdown": "https://newsroom.sgit.ai/articles/person-graph.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/person-graph.webp",
+      "teaser": "Person Graph: people and agents with their own keys, links that count only both ways, groups, claims, and a simulation of fakes being caught.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "identity",
+        "web-of-trust",
+        "person-graph",
+        "sovereign-website",
+        "agents",
+        "simulation",
+        "article"
+      ],
+      "links_out": [
+        "a-directory-of-people-and-keys",
+        "the-showroom",
+        "a-web-of-trust-for-careers",
+        "an-anonymous-profile-vouched-for",
+        "can-you-find-me",
+        "agents-have-an-identity-now",
+        "a-galaxy-of-agents"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "pg-profile.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pg-profile.webp",
+          "caption": "A Person Graph profile, mocked up: two-way links with their kind, and claims countersigned. Fictional.",
+          "kind": "concept"
+        },
+        {
+          "file": "pg-groups.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pg-groups.webp",
+          "caption": "Groups as centres of gravity: you link to people in an area, not to a thousand strangers. Fictional.",
+          "kind": "concept"
+        },
+        {
+          "file": "pg-check.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pg-check.webp",
+          "caption": "Checking a link: three steps, every link two-way and read now from both repositories. Fictional.",
+          "kind": "concept"
+        },
+        {
+          "file": "pg-network.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pg-network.webp",
+          "caption": "A simulated graph: 150 people in five groups, and 40 fakes that spam links and fool three people.",
+          "kind": "chart"
+        },
+        {
+          "file": "pg-trust.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pg-trust.webp",
+          "caption": "Counting links puts 34 fakes in the top 40; two-way trust puts none, until many real people are fooled.",
+          "kind": "chart"
+        },
+        {
+          "file": "pg-badactor.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pg-badactor.webp",
+          "caption": "An account that does not look right, and the two people who linked back, asked to check. Fictional.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "person-graph",
+        "teaser": "Person Graph: people and agents with their own keys, links that count only both ways, groups, claims, and a simulation of fakes being caught.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Signed, typed, two-way links in people's own repositories, grouped into centres of gravity and walked by each person's AI, form a distributed social network in which trust spread over two-way links isolates fake clusters, as a simulation of 150 people and 40 fakes shows, until many real people are fooled.",
+        "nodes": [
+          {
+            "id": "people",
+            "label": "People and agents",
+            "kind": "concept",
+            "summary": "Keys in repositories."
+          },
+          {
+            "id": "links",
+            "label": "Two-way typed links",
+            "kind": "method",
+            "summary": "Real to vouch to hire."
+          },
+          {
+            "id": "groups",
+            "label": "Centres of gravity",
+            "kind": "concept",
+            "summary": "Artists, founders, educators."
+          },
+          {
+            "id": "claude",
+            "label": "Each person's Claude",
+            "kind": "method",
+            "summary": "Signs and walks."
+          },
+          {
+            "id": "sim",
+            "label": "The simulation",
+            "kind": "artefact",
+            "summary": "34 against 0."
+          },
+          {
+            "id": "bad",
+            "label": "Bad actors at scale",
+            "kind": "claim",
+            "summary": "Spread across agents."
+          }
+        ],
+        "edges": [
+          {
+            "from": "links",
+            "to": "people",
+            "rel": "depends-on"
+          },
+          {
+            "from": "groups",
+            "to": "links",
+            "rel": "extends"
+          },
+          {
+            "from": "claude",
+            "to": "links",
+            "rel": "produces"
+          },
+          {
+            "from": "sim",
+            "to": "links",
+            "rel": "depends-on"
+          },
+          {
+            "from": "bad",
+            "to": "sim",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-web-of-trust-for-careers",
+            "an-anonymous-profile-vouched-for",
+            "can-you-find-me",
+            "a-directory-of-people-and-keys",
+            "agents-have-an-identity-now",
+            "a-galaxy-of-agents",
+            "the-showroom"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "Nothing is deleted and nobody is banned: the one-way links simply count for nothing, and anyone can see why.",
+            "why": "Dinis."
+          },
+          {
+            "text": "Detection is spread across everyone's agent, not done by one platform.",
+            "why": "Dinis."
+          }
+        ]
+      }
+    },
+    {
       "slug": "learning-from-wikipedia",
-      "title": "Learning from Wikipedia, with DeepSeek, a plan: a sovereign website built around a tool made of many small tools, a site for each topic from atoms to dinosaurs to maths, every one its own repository, made from Wikipedia with DeepSeek doing the reading, an agent team that verifies, checks quality and reviews for the right age under behaviour policies, a person approving every publish, and a project to build with a friend in the open",
+      "title": "Learning from Wikipedia, with DeepSeek, a plan: a sovereign website built around a tool made of many small tools, a site for each topic from atoms to dinosaurs to maths, every one its own repository, made from Wikipedia with DeepSeek doing the reading, an agent team that verifies, checks quality and reviews for the right age under behaviour policies, a person approving every publish, and the natural next step for sovereign websites, into education",
       "date": "2026-11-21",
       "updated": "",
       "url": "https://newsroom.sgit.ai/articles/learning-from-wikipedia.html",
@@ -72,7 +238,7 @@
         "deepseek",
         "sovereign-website",
         "behaviour-policies",
-        "collaboration",
+        "education",
         "plan",
         "article"
       ],
@@ -216,7 +382,9 @@
         "deepseek-in-our-workflows",
         "a-website-with-a-team-inside"
       ],
-      "links_in": [],
+      "links_in": [
+        "person-graph"
+      ],
       "figures": [
         {
           "file": "rid-team.webp",
@@ -351,6 +519,7 @@
         "hired-as-an-agentic-worker"
       ],
       "links_in": [
+        "person-graph",
         "can-you-find-me"
       ],
       "figures": [
@@ -489,6 +658,7 @@
         "hired-as-an-agentic-worker"
       ],
       "links_in": [
+        "person-graph",
         "an-anonymous-profile-vouched-for"
       ],
       "figures": [
@@ -1165,6 +1335,7 @@
         "the-way-in"
       ],
       "links_in": [
+        "person-graph",
         "learning-from-wikipedia",
         "an-anonymous-profile-vouched-for",
         "a-web-of-trust-for-careers",
@@ -2358,6 +2529,7 @@
         "the-teams-operating-system"
       ],
       "links_in": [
+        "person-graph",
         "one-night-on-mistral",
         "the-way-in",
         "the-swarm-one-real-run-at-a-time",
@@ -34186,6 +34358,7 @@
         "the-vendors-layer"
       ],
       "links_in": [
+        "person-graph",
         "a-web-of-trust-for-careers",
         "identity-for-agents-layer-by-layer",
         "web-summit-how-we-work",
@@ -59006,6 +59179,7 @@
         "the-man-behind-the-curtain"
       ],
       "links_in": [
+        "person-graph",
         "a-web-of-trust-for-careers",
         "identity-for-agents-layer-by-layer",
         "a-key-for-every-person",
