@@ -4,7 +4,7 @@ date: 2026-11-21
 author: Dinis Cruz
 author_url: about/index.html
 summary: The power is not only that I can run a large number of agents. It is that I can stop them, put a hand brake on, slow them down and speed them up, and control much more tightly how much work is done and what it costs. From 4 to 21 November the PrompTugal team made 8,027 commits. In that time it was stopped on purpose, to test that it could be, and restarted three hours later; held completely for a day with one file, HOLD.md, that every agent checks at every wake; cut from about 560 wakes a day to 76 with one sentence, its API-equivalent spend falling from about 90 dollars an hour to about 11; and slowed until Monday this morning, 39 scheduled tasks changed in about 30 seconds. Three times the subscription's seven-day limit warned, and each time we slowed down. That constraint is not a bad thing: it makes you decide what matters. And on 16 November, 34 agents moved from one account to another, completely isolated by design, in about four hours, because every agent had written a debrief before it stopped. When you can restart from one account on another, you know you have real sovereignty, disaster recovery and resilience. The analysis and every chart here are by maestro.b, the team's main conductor, from the public repository.
-version: v999.0.0
+version: v0.14.198
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, control, budgets, resilience, sovereignty, promptugal, article
 status: published
