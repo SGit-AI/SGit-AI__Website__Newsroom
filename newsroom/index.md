@@ -46,9 +46,9 @@ Edition of **2026-10-08**. Third edition. A day of articles on how agents decide
 
 Computed at every build from the files: placements that point at nothing, articles published since the edition, open pitches, articles without a graph or a card. The same list is what `python3 admin/build/desk.py` prints for the Editor.
 
-- Fix`front.json` the lead is 44 days older than the newest article and 475 newer article(s) are unplaced
-- To do`front.json` 475 article(s) published since the 2026-10-08 edition: can-you-find-me, an-anonymous-profile-vouched-for, a-web-of-trust-for-careers, deepseek-in-our-workflows, langgraph-and-us, the-sgit-server-factory
-- To do`newsletter/` a newsletter issue is due: 320 articles since issue 9 (2026-10-18)
+- Fix`front.json` the lead is 44 days older than the newest article and 476 newer article(s) are unplaced
+- To do`front.json` 476 article(s) published since the 2026-10-08 edition: learning-from-wikipedia, can-you-find-me, an-anonymous-profile-vouched-for, a-web-of-trust-for-careers, deepseek-in-our-workflows, langgraph-and-us
+- To do`newsletter/` a newsletter issue is due: 321 articles since issue 9 (2026-10-18)
 - To do`newsroom/pitches/2026-10-11__where-the-platform-draws-the-line.md` open pitch from contributor: highlight for where-the-platform-draws-the-line
 - To do`newsroom/pitches/2026-10-11__the-same-argument-in-our-words.md` open pitch from contributor: lead for the-same-argument-in-our-words
 - To do`newsroom/pitches/2026-10-11__the-agent-is-the-reader.md` open pitch from contributor: lead for the-agent-is-the-reader

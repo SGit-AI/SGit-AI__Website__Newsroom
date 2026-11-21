@@ -1,0 +1,102 @@
+{
+  "slug": "learning-from-wikipedia",
+  "teaser": "A plan for learning sites made from Wikipedia with DeepSeek: many small tools, a site per topic, reviewed by an agent team.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Learning materials can be made from Wikipedia with DeepSeek reading and code checking, as a hub of small tools and a site per topic, each its own repository, with an agent team under behaviour policies reviewing facts, age, safety and licence and a person approving every publish.",
+  "nodes": [
+    {
+      "id": "hub",
+      "label": "The hub",
+      "kind": "artefact",
+      "summary": "The area's site."
+    },
+    {
+      "id": "tools",
+      "label": "Small tools",
+      "kind": "artefact",
+      "summary": "One job each."
+    },
+    {
+      "id": "topics",
+      "label": "Topic sites",
+      "kind": "artefact",
+      "summary": "Atoms, dinosaurs, maths."
+    },
+    {
+      "id": "loop",
+      "label": "The loop",
+      "kind": "method",
+      "summary": "Load to approve."
+    },
+    {
+      "id": "review",
+      "label": "The review team",
+      "kind": "method",
+      "summary": "Under policies."
+    },
+    {
+      "id": "age",
+      "label": "The age question",
+      "kind": "claim",
+      "summary": "For legal."
+    }
+  ],
+  "edges": [
+    {
+      "from": "tools",
+      "to": "hub",
+      "rel": "extends"
+    },
+    {
+      "from": "topics",
+      "to": "tools",
+      "rel": "depends-on"
+    },
+    {
+      "from": "loop",
+      "to": "topics",
+      "rel": "produces"
+    },
+    {
+      "from": "review",
+      "to": "loop",
+      "rel": "extends"
+    },
+    {
+      "from": "age",
+      "to": "review",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "deepseek-in-our-workflows",
+      "every-tool-its-own-website",
+      "feature-behaviour-policies",
+      "the-first-round-trip",
+      "the-showroom"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "A quiz scores itself in the browser and forgets.",
+      "why": "Dinis."
+    },
+    {
+      "text": "It is a legal question as much as an editorial one, so the legal team decides it.",
+      "why": "Dinis."
+    }
+  ],
+  "figures": [
+    {
+      "file": "learn-plan.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/learn-plan.webp",
+      "caption": "One area, many small sites: a hub, the tools, a site per topic, and the same loop for each.",
+      "kind": "concept"
+    }
+  ]
+}

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-21 | published | 1,193 | first published | this release | [current](../can-you-find-me.md) |
+| **v1.0.0** | 2026-11-21 | published | 1,193 | first published | [`247fba67c`](https://github.com/SGit-AI/SGit-AI__Website/commit/247fba67ceec96cefca49a888b908578c51f1581) | [current](../can-you-find-me.md) |
 
 [← Back to the article](../can-you-find-me.md) · [All articles](../index.md)
 

@@ -55,6 +55,139 @@
   ],
   "articles": [
     {
+      "slug": "learning-from-wikipedia",
+      "title": "Learning from Wikipedia, with DeepSeek, a plan: a sovereign website built around a tool made of many small tools, a site for each topic from atoms to dinosaurs to maths, every one its own repository, made from Wikipedia with DeepSeek doing the reading, an agent team that verifies, checks quality and reviews for the right age under behaviour policies, a person approving every publish, and a project to build with a friend in the open",
+      "date": "2026-11-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/learning-from-wikipedia.html",
+      "markdown": "https://newsroom.sgit.ai/articles/learning-from-wikipedia.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/learning-from-wikipedia.webp",
+      "teaser": "A plan for learning sites made from Wikipedia with DeepSeek: many small tools, a site per topic, reviewed by an agent team.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "learning",
+        "wikipedia",
+        "deepseek",
+        "sovereign-website",
+        "behaviour-policies",
+        "collaboration",
+        "plan",
+        "article"
+      ],
+      "links_out": [
+        "deepseek-in-our-workflows",
+        "every-tool-its-own-website",
+        "feature-behaviour-policies",
+        "the-first-round-trip",
+        "the-showroom"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "learn-plan.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/learn-plan.webp",
+          "caption": "One area, many small sites: a hub, the tools, a site per topic, and the same loop for each.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "learning-from-wikipedia",
+        "teaser": "A plan for learning sites made from Wikipedia with DeepSeek: many small tools, a site per topic, reviewed by an agent team.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Learning materials can be made from Wikipedia with DeepSeek reading and code checking, as a hub of small tools and a site per topic, each its own repository, with an agent team under behaviour policies reviewing facts, age, safety and licence and a person approving every publish.",
+        "nodes": [
+          {
+            "id": "hub",
+            "label": "The hub",
+            "kind": "artefact",
+            "summary": "The area's site."
+          },
+          {
+            "id": "tools",
+            "label": "Small tools",
+            "kind": "artefact",
+            "summary": "One job each."
+          },
+          {
+            "id": "topics",
+            "label": "Topic sites",
+            "kind": "artefact",
+            "summary": "Atoms, dinosaurs, maths."
+          },
+          {
+            "id": "loop",
+            "label": "The loop",
+            "kind": "method",
+            "summary": "Load to approve."
+          },
+          {
+            "id": "review",
+            "label": "The review team",
+            "kind": "method",
+            "summary": "Under policies."
+          },
+          {
+            "id": "age",
+            "label": "The age question",
+            "kind": "claim",
+            "summary": "For legal."
+          }
+        ],
+        "edges": [
+          {
+            "from": "tools",
+            "to": "hub",
+            "rel": "extends"
+          },
+          {
+            "from": "topics",
+            "to": "tools",
+            "rel": "depends-on"
+          },
+          {
+            "from": "loop",
+            "to": "topics",
+            "rel": "produces"
+          },
+          {
+            "from": "review",
+            "to": "loop",
+            "rel": "extends"
+          },
+          {
+            "from": "age",
+            "to": "review",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "deepseek-in-our-workflows",
+            "every-tool-its-own-website",
+            "feature-behaviour-policies",
+            "the-first-round-trip",
+            "the-showroom"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "A quiz scores itself in the browser and forgets.",
+            "why": "Dinis."
+          },
+          {
+            "text": "It is a legal question as much as an editorial one, so the legal team decides it.",
+            "why": "Dinis."
+          }
+        ]
+      }
+    },
+    {
       "slug": "can-you-find-me",
       "title": "Can you find me? A service that checks whether an anonymous profile can be traced back to its person before it is published, an agent team of six steps with several models attacking the draft on their own, the truth sealed with the owner and compared only in code, a rewriter that closes what leaked, run in a Claude session or in the browser, and who would use it",
       "date": "2026-11-21",
@@ -492,6 +625,7 @@
         "free-models-your-own-key"
       ],
       "links_in": [
+        "learning-from-wikipedia",
         "can-you-find-me"
       ],
       "figures": [
@@ -1031,6 +1165,7 @@
         "the-way-in"
       ],
       "links_in": [
+        "learning-from-wikipedia",
         "an-anonymous-profile-vouched-for",
         "a-web-of-trust-for-careers",
         "hired-as-an-agentic-worker"
@@ -1500,6 +1635,7 @@
         "a-website-with-a-team-inside"
       ],
       "links_in": [
+        "learning-from-wikipedia",
         "hired-as-an-agentic-worker",
         "the-showroom",
         "the-way-in"
@@ -2495,6 +2631,7 @@
         "a-secret-is-a-qr-code"
       ],
       "links_in": [
+        "learning-from-wikipedia",
         "the-showroom",
         "a-galaxy-of-agents",
         "websites-for-the-moment"
@@ -4980,6 +5117,7 @@
         "a-page-we-never-charge"
       ],
       "links_in": [
+        "learning-from-wikipedia",
         "a-web-of-trust-for-careers",
         "langgraph-and-us",
         "one-night-on-mistral",

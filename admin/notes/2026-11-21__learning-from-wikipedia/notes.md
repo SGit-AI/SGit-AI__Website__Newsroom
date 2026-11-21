@@ -1,0 +1,3 @@
+# Notes: learning-from-wikipedia (21 November 2026)
+
+Dinis's spoken plan: with a friend, a sovereign website around a tool made of many sub-tools, creating visualisations and learning materials from Wikipedia and DeepSeek (atoms, maths, dinosaurs); behaviour policies controlling everything; an agentic team for verification, quality control and age suitability; age wavered (8 to 15, 16+, 18+) and Dinis said to ask the legal team; a repo per site, like the tools. The writer did not contact the legal team; the question is recorded as open. The friend is not named. Additions by the writer, to confirm: the second-model fact checker, the accessibility reviewer, no reader data, first steps starting with atoms.
