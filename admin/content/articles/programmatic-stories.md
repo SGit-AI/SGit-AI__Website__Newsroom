@@ -4,7 +4,7 @@ date: 2026-11-21
 author: Dinis Cruz
 author_url: about/index.html
 summary: The bulletins of PrompTugal.news are a good example of the kind of creativity we can now have, and of continuous zooming in. On 20 November the bulletin agent made a 30-second bulletin from live weather data with a synthetic voice; an hour later it had a holographic presenter; by the evening, twelve synthetic presenters, from synthetic users to an owl, a cube and robots like the ones in my book, all sharing one small language of actions, and an explainer with the story on one side and the cast on the other. Then a Claude session, briefed by that agent, built version 2: the twelve as 3D puppets on one skeleton, 69 moves, nine mouth shapes driven by the sound, a model sheet, a playground, and a stage, where every frame is a function of time. Today's bulletin uses them: 939 frames, 84 words of voice for a fifth of a cent. The point is movies that are programmatic instead of rendered: they scale, they can take live data, screenshots and real voices, and they can be remade every day. What we are really building is a game engine for explaining things. I want to use it to tell stories: an animated summary for every article, how Vicky ran her team of agents, the Swarm, what a sovereign website is, and a morning briefing I would rather watch than read. And it would be ten times better with someone who knows how to make films, so if you are a filmmaker or a storyteller, let's talk.
-version: v999.0.0
+version: v0.14.199
 license: https://creativecommons.org/licenses/by/4.0/
 tags: storytelling, video, agents, promptugal, bulletins, game-engine, article
 status: published
