@@ -55,6 +55,265 @@
   ],
   "articles": [
     {
+      "slug": "the-sgit-server-factory",
+      "title": "The SGit Server Factory, a brief: an agent and a pipeline that deploy SG/Send and sgit servers the way the site factory makes websites, a request file in and a live, tested server out, in any AWS region and any account, as an ephemeral Lambda, a Lambda on S3, an EC2 appliance or Fargate, with one bootstrap stack to onboard a new account and no keys anywhere",
+      "date": "2026-11-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-sgit-server-factory.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-sgit-server-factory.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-sgit-server-factory.webp",
+      "teaser": "A brief for the SGit Server Factory: a request file in, a tested SG/Send and sgit server out, in any AWS account and region, with no keys.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "sgit",
+        "sg-send",
+        "aws",
+        "lambda",
+        "deployment",
+        "factory",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "the-site-factory-works",
+        "deploy-sgit-from-ci",
+        "ephemeral-town-planner-services",
+        "ci-behaviour-policies",
+        "from-send-to-sgit"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "sgf-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sgf-flow.webp",
+          "caption": "The SGit Server Factory: a request in, a tested server out, in any account and region.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "the-sgit-server-factory",
+        "teaser": "A brief for the SGit Server Factory: a request file in, a tested SG/Send and sgit server out, in any AWS account and region, with no keys.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Joining the existing sg-send-vault image, its CloudFormation templates and the site factory's OIDC pattern into a request-driven factory lets anyone deploy a tested sgit server into any account and region, onboarded once with a bootstrap stack.",
+        "nodes": [
+          {
+            "id": "factory",
+            "label": "The SGit Server Factory",
+            "kind": "artefact",
+            "summary": "Request in, server out."
+          },
+          {
+            "id": "request",
+            "label": "server.json",
+            "kind": "method",
+            "summary": "Account, region, shape."
+          },
+          {
+            "id": "shapes",
+            "label": "Four shapes",
+            "kind": "concept",
+            "summary": "Ephemeral to Fargate."
+          },
+          {
+            "id": "bootstrap",
+            "label": "The bootstrap stack",
+            "kind": "method",
+            "summary": "One per account."
+          },
+          {
+            "id": "prove",
+            "label": "Prove with a vault",
+            "kind": "method",
+            "summary": "Push and clone."
+          },
+          {
+            "id": "phases",
+            "label": "Six phases",
+            "kind": "method",
+            "summary": "Our account first."
+          }
+        ],
+        "edges": [
+          {
+            "from": "request",
+            "to": "factory",
+            "rel": "depends-on"
+          },
+          {
+            "from": "shapes",
+            "to": "factory",
+            "rel": "extends"
+          },
+          {
+            "from": "bootstrap",
+            "to": "factory",
+            "rel": "depends-on"
+          },
+          {
+            "from": "prove",
+            "to": "factory",
+            "rel": "extends"
+          },
+          {
+            "from": "phases",
+            "to": "factory",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "deploy-sgit-from-ci",
+            "the-site-factory-works",
+            "ci-behaviour-policies",
+            "from-send-to-sgit",
+            "ephemeral-town-planner-services"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "It is one of the last pieces of the puzzle.",
+            "why": "Dinis."
+          },
+          {
+            "text": "Removing an account is deleting that stack: the factory can no longer reach it.",
+            "why": "The brief."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "hired-as-an-agentic-worker",
+      "title": "Hired as an agentic worker: what a sovereign website offers someone looking for a job, from a better CV that shows the depth of your work, you in action and a video of you talking, to a site you change with your own AI, a team of agents you work with, and a crash course in being an agentic worker served on a plate, four levels of involvement, each one a choice",
+      "date": "2026-11-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/hired-as-an-agentic-worker.html",
+      "markdown": "https://newsroom.sgit.ai/articles/hired-as-an-agentic-worker.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/hired-as-an-agentic-worker.webp",
+      "teaser": "What a sovereign website offers someone looking for a job: from a better CV to a crash course in being an agentic worker, four levels, each a choice.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "sovereign-website",
+        "careers",
+        "agentic-workers",
+        "jobs",
+        "agent-teams",
+        "article"
+      ],
+      "links_out": [
+        "act-as-the-job-you-want",
+        "the-showroom",
+        "a-website-that-is-her",
+        "launching-the-sovereign-website-appliance",
+        "the-first-round-trip",
+        "a-website-with-a-team-inside",
+        "hired-for-the-workflow",
+        "a-career-website-not-a-cv"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "job-levels.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/job-levels.webp",
+          "caption": "Four levels, one site: from a better CV to an agentic worker, each one a choice.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "hired-as-an-agentic-worker",
+        "teaser": "What a sovereign website offers someone looking for a job: from a better CV to a crash course in being an agentic worker, four levels, each a choice.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "For job seekers a sovereign website is a set of levels, from a better CV to taking over its team of agents, and the higher levels give people, on a plate, the experience of being an agentic worker that employers now value.",
+        "nodes": [
+          {
+            "id": "site",
+            "label": "The site",
+            "kind": "artefact",
+            "summary": "A better CV."
+          },
+          {
+            "id": "change",
+            "label": "Yours to change",
+            "kind": "method",
+            "summary": "Your own AI."
+          },
+          {
+            "id": "team",
+            "label": "The team inside",
+            "kind": "method",
+            "summary": "Work with agents."
+          },
+          {
+            "id": "worker",
+            "label": "An agentic worker",
+            "kind": "claim",
+            "summary": "Valued by employers."
+          },
+          {
+            "id": "choice",
+            "label": "Each level a choice",
+            "kind": "concept",
+            "summary": "None compulsory."
+          }
+        ],
+        "edges": [
+          {
+            "from": "site",
+            "to": "change",
+            "rel": "produces"
+          },
+          {
+            "from": "change",
+            "to": "team",
+            "rel": "produces"
+          },
+          {
+            "from": "team",
+            "to": "worker",
+            "rel": "produces"
+          },
+          {
+            "from": "choice",
+            "to": "site",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-career-website-not-a-cv",
+            "act-as-the-job-you-want",
+            "hired-for-the-workflow",
+            "a-website-that-is-her",
+            "the-showroom",
+            "the-first-round-trip",
+            "a-website-with-a-team-inside",
+            "launching-the-sovereign-website-appliance"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "A CV says what you did. A site like this shows it.",
+            "why": "Dinis."
+          },
+          {
+            "text": "Some will not need it or want it. Many will.",
+            "why": "Dinis."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-showroom",
       "title": "The showroom: what the Sovereign Website hub shows after its first days, 33 live sites from one pipeline, people's portfolios with five designs each, independent brochures for our startups, a provider guide, tools that run on the owner's own key, made-up businesses, a family of news sites, and the theme that is emerging across all of them, a site that is yours, says how it was made and can be worked on by your own AI",
       "date": "2026-11-21",
@@ -83,7 +342,9 @@
         "what-is-a-sovereign-website",
         "the-way-in"
       ],
-      "links_in": [],
+      "links_in": [
+        "hired-as-an-agentic-worker"
+      ],
       "figures": [
         {
           "file": "hub-home.webp",
@@ -546,6 +807,7 @@
         "a-website-with-a-team-inside"
       ],
       "links_in": [
+        "hired-as-an-agentic-worker",
         "the-showroom",
         "the-way-in"
       ],
@@ -2372,6 +2634,7 @@
         "sovereign-websites-the-investment-case"
       ],
       "links_in": [
+        "hired-as-an-agentic-worker",
         "a-european-brain",
         "the-swarm-one-real-run-at-a-time",
         "websites-for-the-moment",
@@ -3118,6 +3381,7 @@
         "a-team-like-this"
       ],
       "links_in": [
+        "hired-as-an-agentic-worker",
         "one-night-on-mistral",
         "the-first-round-trip",
         "transcription-for-a-sector",
@@ -5056,6 +5320,7 @@
         "launching-the-sovereign-website-appliance"
       ],
       "links_in": [
+        "hired-as-an-agentic-worker",
         "fifteen-minutes-of-an-expert"
       ],
       "figures": [
@@ -11241,6 +11506,7 @@
         "ci-behaviour-policies"
       ],
       "links_in": [
+        "the-sgit-server-factory",
         "our-companies-and-uth",
         "heritage-tech-together",
         "patient-vaults-answered"
@@ -12078,6 +12344,7 @@
         "ten-days-at-web-summit"
       ],
       "links_in": [
+        "hired-as-an-agentic-worker",
         "the-showroom",
         "the-first-round-trip",
         "sovereign-websites-the-investment-case",
@@ -14624,6 +14891,7 @@
         "ci-behaviour-policies"
       ],
       "links_in": [
+        "the-sgit-server-factory",
         "websites-for-the-moment",
         "sovereign-websites-the-investment-case",
         "simple-on-top-of-years",
@@ -14808,6 +15076,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "the-sgit-server-factory",
         "policies-in-practice",
         "deploy-sgit-from-ci",
         "fork-it",
@@ -57521,6 +57790,7 @@
         "explorer-coding"
       ],
       "links_in": [
+        "hired-as-an-agentic-worker",
         "a-website-that-is-her",
         "show-me-the-evidence",
         "a-pull-request-by-another-name",
@@ -57697,6 +57967,7 @@
         "your-own-newsroom"
       ],
       "links_in": [
+        "hired-as-an-agentic-worker",
         "show-me-the-evidence",
         "generation-z-developers-again",
         "act-as-the-job-you-want"
@@ -58485,6 +58756,7 @@
         "explorer-coding"
       ],
       "links_in": [
+        "the-sgit-server-factory",
         "decide-then-buy",
         "town-planners-for-mission-critical-code"
       ],
@@ -72029,6 +72301,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "the-sgit-server-factory",
         "simple-on-top-of-years",
         "where-to-invest-in-sgit",
         "can-you-sell-it",

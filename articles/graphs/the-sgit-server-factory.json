@@ -1,0 +1,102 @@
+{
+  "slug": "the-sgit-server-factory",
+  "teaser": "A brief for the SGit Server Factory: a request file in, a tested SG/Send and sgit server out, in any AWS account and region, with no keys.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Joining the existing sg-send-vault image, its CloudFormation templates and the site factory's OIDC pattern into a request-driven factory lets anyone deploy a tested sgit server into any account and region, onboarded once with a bootstrap stack.",
+  "nodes": [
+    {
+      "id": "factory",
+      "label": "The SGit Server Factory",
+      "kind": "artefact",
+      "summary": "Request in, server out."
+    },
+    {
+      "id": "request",
+      "label": "server.json",
+      "kind": "method",
+      "summary": "Account, region, shape."
+    },
+    {
+      "id": "shapes",
+      "label": "Four shapes",
+      "kind": "concept",
+      "summary": "Ephemeral to Fargate."
+    },
+    {
+      "id": "bootstrap",
+      "label": "The bootstrap stack",
+      "kind": "method",
+      "summary": "One per account."
+    },
+    {
+      "id": "prove",
+      "label": "Prove with a vault",
+      "kind": "method",
+      "summary": "Push and clone."
+    },
+    {
+      "id": "phases",
+      "label": "Six phases",
+      "kind": "method",
+      "summary": "Our account first."
+    }
+  ],
+  "edges": [
+    {
+      "from": "request",
+      "to": "factory",
+      "rel": "depends-on"
+    },
+    {
+      "from": "shapes",
+      "to": "factory",
+      "rel": "extends"
+    },
+    {
+      "from": "bootstrap",
+      "to": "factory",
+      "rel": "depends-on"
+    },
+    {
+      "from": "prove",
+      "to": "factory",
+      "rel": "extends"
+    },
+    {
+      "from": "phases",
+      "to": "factory",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "deploy-sgit-from-ci",
+      "the-site-factory-works",
+      "ci-behaviour-policies",
+      "from-send-to-sgit",
+      "ephemeral-town-planner-services"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "It is one of the last pieces of the puzzle.",
+      "why": "Dinis."
+    },
+    {
+      "text": "Removing an account is deleting that stack: the factory can no longer reach it.",
+      "why": "The brief."
+    }
+  ],
+  "figures": [
+    {
+      "file": "sgf-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sgf-flow.webp",
+      "caption": "The SGit Server Factory: a request in, a tested server out, in any account and region.",
+      "kind": "concept"
+    }
+  ]
+}

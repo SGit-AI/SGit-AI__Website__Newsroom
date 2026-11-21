@@ -82,6 +82,7 @@ Agents & policy[This article as a graph →](graphs.md#a-career-website-not-a-cv
 
 ### Continued by
 
+- [Hired as an agentic worker: what a sovereign website offers someone looking for a job, from a better CV that shows the depth of your work, you in action and a video of you talking, to a site you change with your own AI, a team of agents you work with, and a crash course in being an agentic worker served on a plate, four levels of involvement, each one a choice](hired-as-an-agentic-worker.md) What a sovereign website offers someone looking for a job: from a better CV to a crash course in being an agentic worker, four levels, each a choice.
 - [Fifteen minutes of an expert: how agents make a short review by someone with twenty years in a field worth acting on, so that an expert's quarter of an hour, a few pen notes and a voice memo on a website, a deck or a book, becomes changes with their source, why that is one of the professions that never scaled and now can, my own book as the case, and a career website reviewed by a CISO as the first market](fifteen-minutes-of-an-expert.md) How agents make fifteen minutes of an expert's review worth acting on, from my printed book to a CISO reviewing a career website.
 
 [All articles](index.md) · [All graphs](graphs.md)

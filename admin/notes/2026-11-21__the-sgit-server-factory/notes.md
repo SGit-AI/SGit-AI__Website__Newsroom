@@ -1,0 +1,3 @@
+# Notes: the-sgit-server-factory (21 November 2026)
+
+Dinis asked for an article and brief for an agent, like the Sovereign Website factory agent, to deploy sgit and SG/Send easily: Lambda, EC2 or other AWS shapes, ephemeral modes, any region and any account, onboarding with Terraform or CloudFormation, whether GitHub is needed, and the best name. Checked first: deploy-sgit-from-ci (17 November) already covered the server, the templates and the OIDC pipeline and proposed an Action and a skill; this brief is the factory on top. Facts from SGraph-AI__App__Send deploy/aws/README.md and templates, dev branch, read 21 November 2026. Name proposed: SGit Server Factory.

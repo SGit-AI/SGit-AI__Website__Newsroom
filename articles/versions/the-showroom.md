@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-21 | published | 1,141 | first published | this release | [current](../the-showroom.md) |
+| **v1.0.0** | 2026-11-21 | published | 1,141 | first published | [`364a7c7fc`](https://github.com/SGit-AI/SGit-AI__Website/commit/364a7c7fcee36113e45a01a63f1d5f9f0f2bae2f) | [current](../the-showroom.md) |
 
 [← Back to the article](../the-showroom.md) · [All articles](../index.md)
 

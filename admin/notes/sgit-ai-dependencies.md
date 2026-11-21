@@ -4,15 +4,15 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 1686 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 1157 | 4740 | links to sgit.ai's pages and the network sites (38 files this site writes itself) |
-| words | 2228 | 14241 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 1692 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 1161 | 4746 | links to sgit.ai's pages and the network sites (38 files this site writes itself) |
+| words | 2233 | 14258 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 118 | 343 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 1039 × `sgit.ai/about/index.html`
-- 512 × `sgit.ai/about/index.md`
+- 1043 × `sgit.ai/about/index.html`
+- 514 × `sgit.ai/about/index.md`
 - 182 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 68 × `pki.sgit.ai/`
@@ -133,7 +133,6 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `admin/notes/2026-10-11__newsroom-api-map-and-review.md` (11)
 - `admin/notes/2026-10-30__handover__newsroom-writer.md` (11)
 - `admin/notes/articles-to-write.md` (11)
-- `desks/building.html` (11)
 - `admin/build/newsroom-text.json` (10)
 - `articles/find.json` (10)
 - `articles/summaries/aws-from-the-vault.json` (10)
@@ -148,6 +147,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `articles/summaries/a-pen-and-a-key.json` (8)
 - `assets/site.css` (8)
 - `databases/index.html` (8)
+- `desks/building.html` (8)
 - `desks/security.html` (8)
 - `engineering/issues.json` (8)
 - `engineering/issues/091.html` (8)
