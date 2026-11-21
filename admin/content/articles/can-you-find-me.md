@@ -4,7 +4,7 @@ date: 2026-11-21
 author: Dinis Cruz
 author_url: about/index.html
 summary: When we publish an anonymous profile for someone who cannot go public, the most important question is whether it can be reverse-engineered. Can you tell which industry they work in? Which company? Can you zoom in until there is one person left? That is a service we can build, and a good example of why the tools on sovereign websites matter. An agent team works in sequence: one lists everything that could identify the person, one profiles them, one looks at what the vouchers have in common, one estimates how many people could fit. Each step is run by several models on their own, Claude, Mistral, DeepSeek and a local model, and code correlates their answers: when independent models agree, and agree with the truth, the risk is real. The truth itself, the person's real industry, employer, city and years, never goes to a model: it stays sealed with the owner and only code compares the guesses with it. A rewriter then proposes what to generalise, and the check runs again until the risk is low enough. It runs in a Claude session or in the browser with the owner's own keys, and every run is saved. Research shows models can infer personal attributes from text with up to 85% accuracy, and that ordinary anonymisation does not stop them, so this is exactly the check to run before anything is published.
-version: v999.0.0
+version: v0.14.195
 license: https://creativecommons.org/licenses/by/4.0/
 tags: privacy, anonymisation, agents, evals, sovereign-website, personas, article
 status: published
