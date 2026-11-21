@@ -4,7 +4,7 @@ date: 2026-11-21
 author: Dinis Cruz
 author_url: about/index.html
 summary: The Sovereign Website hub at hub.sovereignweb.site is our showroom: "Websites their owners own." After its first days it lists 33 live sites, 11 of them people's sites, and one already handed over, Kate Curtis-Evans's, which she now edits herself. Look across them and a theme is emerging. They are of every kind, actors and designers, founders and AI builders, independent brochures for RiskMandate, AgentiCCells, SGit, The Cyber Boardroom and Sovereign Website itself, a provider guide for Mistral, a whois tool, Google Maps on the owner's own key and budget, made-up businesses with simulated bookings and orders, and the PrompTugal family of news sites. But they share the same bones: their own address and public repository, several designs of the same facts, a start page, a "use with your AI" page, a "how it was made" page, sources with the date each was read, photo credits, and no cookies or tracking. That is the power of doing this many times through one pipeline: each site makes the next one better, and the pattern becomes the product.
-version: v999.0.0
+version: v0.14.190
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sovereign-website, hub, portfolios, site-factory, design, article
 status: published

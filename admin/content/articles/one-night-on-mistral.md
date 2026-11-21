@@ -4,7 +4,7 @@ date: 2026-11-21
 author: Dinis Cruz
 author_url: about/index.html
 summary: Yesterday I wrote that a sovereign website's brain should be a choice the owner makes, and that Mistral fits at every level. At 22:51 UTC that evening a conductor agent took that article as its brief, and by 08:30, when the Mistral Vibe Hackathon opened in London, mistral.provider.sovereignweb.site was live, made by a team of agents each on its own signed key, with a security agent reviewing every page that takes a visitor's key. It now holds 33 demos that run in the browser: Ministral 3 running inside the tab with no key, a shoebox of files turned into a website, a document turned into a newsroom page, five Mistral models running one brief side by side, an X-ray of the site's own claims, an injection lab, PrompTugal's Portuguese data on a European model, and our Swarm moved onto Mistral. The evals found that only Mistral Large 4 caught a hidden scam note, three times out of three. The research also corrected my article in four places. Mistral usage for the night came to about 41 cents; the Claude sessions that did the work cost far more. This is the execution of what we talked about, and the alignment with Mistral is strong: European, open weights, built for the edge. Nothing has been agreed with Mistral. I want to start working with them.
-version: v999.0.0
+version: v0.14.190
 license: https://creativecommons.org/licenses/by/4.0/
 tags: mistral, sovereign-website, agents, evals, europe, hackathon, article
 status: published
