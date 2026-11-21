@@ -1,0 +1,5 @@
+# Notes: the-way-in (21 November 2026)
+
+Dinis's spoken debrief in writer-10's session: why sovereign websites are critical for RiskMandate and its outreach; Web Summit validated technology, direction, need and price points (good interest even in the 20K offering) but nobody said "I'll buy now", because there was no place to start; RiskMandate is learnt by using it; Vicky ran a newsroom without code by delegating to agents under risk policies; Claude as bicycle to plane, so control by role, function and behaviour; AgentiCCells cells make websites, and with GitHub repo creation and AWS Route 53 automated, a new product; B to C to B; one-off, cheap, no lock-in, version control, provenance, Claude or ChatGPT as the CMS; nobody deploys agents they cannot visualise and stop; everyone needs a website, a brand and a newsroom.
+
+Figures: PrompTugal.news's 73 articles in ten days from its own article; the £20,000 tier from partners-sell-we-build's price ladder. Wording softened from superlatives per house rules. Figure way-path.webp drawn with the house helpers.

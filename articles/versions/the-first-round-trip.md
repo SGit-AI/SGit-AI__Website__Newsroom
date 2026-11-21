@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-20 | minor | 1,446 | +0 / −0 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-first-round-trip/v1.1.0.md) · [current](../the-first-round-trip.md) |
+| **v1.1.0** | 2026-11-20 | minor | 1,446 | +0 / −0 words; 3 changed, 0 added, 0 removed paragraphs | [`0484139f8`](https://github.com/SGit-AI/SGit-AI__Website/commit/0484139f842339fa2df55ec40783d4635b7c901b) | [what changed](the-first-round-trip/v1.1.0.md) · [current](../the-first-round-trip.md) |
 | **v1.0.0** | 2026-11-20 | published | 1,446 | first published | [`b194bfc46`](https://github.com/SGit-AI/SGit-AI__Website/commit/b194bfc464aa0b797867c6462b7dc77d9216c326) |  |
 
 [← Back to the article](../the-first-round-trip.md) · [All articles](../index.md)

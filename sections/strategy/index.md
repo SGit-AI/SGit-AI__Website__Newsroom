@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-146 articles, newest first.
+147 articles, newest first.
 
 ## November 2026
 
+- [The way in: why sovereign websites matter so much to RiskMandate, what Web Summit validated and what it showed was missing, something to buy now, how every technology I have been building meets in one product, and why nobody deploys agents they have not touched, seen and been able to stop, so the personal customer becomes the way to the corporate one](../../articles/the-way-in.md), 2026-11-21, 5 min.
 - [The first round trip: a sovereign website made for Kate Curtis-Evans during our call, five designs from a design agent of its own, then handed over so she edits it herself from her own Claude, the friction that took multiple rounds to get through, what it says about over-privilege, and the next step, a signed and sealed channel from her site straight to the agent](../../articles/the-first-round-trip.md), 2026-11-20, 5 min.
 - [Transcription for a sector, sold as a team: extending VoiceDebrief with what we have learnt from sovereign websites, a bundle for one industry, a repository the customer's own AI runs, with the whole pipeline from dropping a recording to a reviewed document and a team of agents certified by people from that sector, sold by small AI companies who know the industry, open source underneath, from £50 to £5,000](../../articles/transcription-for-a-sector.md), 2026-11-20, 4 min.
 - [A European brain for a sovereign website: why the model is a choice the owner makes, like the host, how Mistral fits at every level, from Ministral 3 running on a Pi Pro to Mistral Small 4 on an EU endpoint for the team inside the site, what its terms say about where data goes, the one licence to watch, what we have already run on Mistral, and how we could work with it](../../articles/a-european-brain.md), 2026-11-20, 6 min.
