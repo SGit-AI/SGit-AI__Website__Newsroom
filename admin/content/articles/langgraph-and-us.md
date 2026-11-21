@@ -4,7 +4,7 @@ date: 2026-11-21
 author: Dinis Cruz
 author_url: about/index.html
 summary: A lot of what we do maps to LangGraph and LangChain, and I wanted to see how much. LangGraph's state is our vault; its nodes are our agents and our plain code; its checkpoints and time travel are sgit's history; its interrupts are our protected environments and reviewers' verdicts; its middleware is our behaviour policies; LangSmith's traces and evaluations are our signed commits, call ledgers and evals. The ideas are the same. The default is different. We write specific code for specific functions, load, extract, transform and save, and use a model only where judgement is needed; we store everything at every stage, raw and curated, in vaults others can read; and we score in code wherever we can. That gives us more determinism, more control and less black magic, and it is what let the PHP desk, PrompTugal and the Swarm scale. But they have learnt things we should take: one readable definition of the graph, interrupts as a first-class part of the runtime, versioned datasets pinned in CI, and a common trace format. And where a tool is good, we should use it inside our pipeline: Inspect and promptfoo for evals and red teaming, OpenTelemetry for traces, and LangGraph itself where a customer already runs it, with its checkpoints saved to a vault.
-version: v999.0.0
+version: v0.14.192
 license: https://creativecommons.org/licenses/by/4.0/
 tags: langgraph, langchain, evals, agents, determinism, vaults, article
 status: published
