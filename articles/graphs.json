@@ -55,6 +55,142 @@
   ],
   "articles": [
     {
+      "slug": "the-primitives-of-trust",
+      "title": "The primitives of trust: why a web of trust between people works now when my earlier attempts at a key store did not, a site per person, keys made in browsers and in agent sessions, signing and following links done by an engine the user never sees, links that only count from the other side, kinds and provenance that can be confirmed, schemas each owner defines, and why it is easy to game one node and hard to game them all",
+      "date": "2026-11-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-primitives-of-trust.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-primitives-of-trust.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-primitives-of-trust.webp",
+      "teaser": "Why a web of trust between people works now: commodity primitives, an agent engine users never see, and links that count only both ways.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "identity",
+        "pki",
+        "web-of-trust",
+        "wardley-maps",
+        "primitives",
+        "agents",
+        "article"
+      ],
+      "links_out": [
+        "the-site-factory-works",
+        "agents-have-an-identity-now",
+        "a-secret-is-a-qr-code",
+        "a-web-of-trust-for-careers",
+        "an-anonymous-profile-vouched-for",
+        "person-graph",
+        "a-directory-of-people-and-keys"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "prim-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/prim-map.webp",
+          "caption": "The primitives under a web of trust: what was custom is now commodity, so the top layer works now.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "the-primitives-of-trust",
+        "teaser": "Why a web of trust between people works now: commodity primitives, an agent engine users never see, and links that count only both ways.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "A web of trust became practical once its primitives became commodity, a site per person, mature PKI, keys in browsers and agents, git and an agent engine that signs and follows keys transparently; links count only when returned, carry confirmable provenance, and owner-defined schemas make the whole hard to game.",
+        "nodes": [
+          {
+            "id": "primitives",
+            "label": "Commodity primitives",
+            "kind": "concept",
+            "summary": "Sites, PKI, keys, git."
+          },
+          {
+            "id": "engine",
+            "label": "The agent engine",
+            "kind": "method",
+            "summary": "Signs, verifies, follows."
+          },
+          {
+            "id": "direction",
+            "label": "Two-way links",
+            "kind": "claim",
+            "summary": "Only returned links count."
+          },
+          {
+            "id": "provenance",
+            "label": "Kinds and provenance",
+            "kind": "method",
+            "summary": "Confirmable."
+          },
+          {
+            "id": "fractal",
+            "label": "Owner-defined schemas",
+            "kind": "concept",
+            "summary": "Nodes, edges, signatures constant."
+          },
+          {
+            "id": "identity",
+            "label": "Open identity",
+            "kind": "claim",
+            "summary": "With every provider."
+          }
+        ],
+        "edges": [
+          {
+            "from": "primitives",
+            "to": "engine",
+            "rel": "produces"
+          },
+          {
+            "from": "engine",
+            "to": "direction",
+            "rel": "depends-on"
+          },
+          {
+            "from": "provenance",
+            "to": "direction",
+            "rel": "extends"
+          },
+          {
+            "from": "fractal",
+            "to": "provenance",
+            "rel": "extends"
+          },
+          {
+            "from": "direction",
+            "to": "identity",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-site-factory-works",
+            "agents-have-an-identity-now",
+            "a-secret-is-a-qr-code",
+            "a-web-of-trust-for-careers",
+            "an-anonymous-profile-vouched-for",
+            "person-graph",
+            "a-directory-of-people-and-keys"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "we cannot push this overhead onto users",
+            "why": "Dinis."
+          },
+          {
+            "text": "It is easy to game one node, or one component.",
+            "why": "Dinis."
+          }
+        ]
+      }
+    },
+    {
       "slug": "programmatic-stories",
       "title": "Programmatic stories: how the PrompTugal bulletins went from a 30-second text bulletin to twelve synthetic presenters on one 3D stage in two days, movies made by code instead of rendered by hand, every frame a function of time and data, what that makes possible, from live data and real voices to an animated summary for every article, the story of how Vicky Wang ran her agents, a morning briefing I would actually watch, and an invitation to filmmakers",
       "date": "2026-11-21",
@@ -366,7 +502,9 @@
         "agents-have-an-identity-now",
         "a-galaxy-of-agents"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-primitives-of-trust"
+      ],
       "figures": [
         {
           "file": "pg-profile.webp",
@@ -801,6 +939,7 @@
         "hired-as-an-agentic-worker"
       ],
       "links_in": [
+        "the-primitives-of-trust",
         "person-graph",
         "can-you-find-me"
       ],
@@ -940,6 +1079,7 @@
         "hired-as-an-agentic-worker"
       ],
       "links_in": [
+        "the-primitives-of-trust",
         "person-graph",
         "an-anonymous-profile-vouched-for"
       ],
@@ -16192,6 +16332,7 @@
         "ci-behaviour-policies"
       ],
       "links_in": [
+        "the-primitives-of-trust",
         "the-sgit-server-factory",
         "websites-for-the-moment",
         "sovereign-websites-the-investment-case",
@@ -34649,6 +34790,7 @@
         "the-vendors-layer"
       ],
       "links_in": [
+        "the-primitives-of-trust",
         "start-stop-slow-down",
         "person-graph",
         "a-web-of-trust-for-careers",
@@ -49832,6 +49974,7 @@
         "sixteen-notes-i-did-not-want-to-lose"
       ],
       "links_in": [
+        "the-primitives-of-trust",
         "a-web-of-trust-for-careers",
         "every-tool-its-own-website",
         "simple-on-top-of-years",
@@ -59471,6 +59614,7 @@
         "the-man-behind-the-curtain"
       ],
       "links_in": [
+        "the-primitives-of-trust",
         "person-graph",
         "a-web-of-trust-for-careers",
         "identity-for-agents-layer-by-layer",

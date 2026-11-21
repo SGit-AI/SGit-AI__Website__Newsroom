@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-21 | published | 1,467 | first published | this release | [current](../programmatic-stories.md) |
+| **v1.0.0** | 2026-11-21 | published | 1,467 | first published | [`3461402b2`](https://github.com/SGit-AI/SGit-AI__Website/commit/3461402b21753b8257dd595fb838ddb0822a45d2) | [current](../programmatic-stories.md) |
 
 [← Back to the article](../programmatic-stories.md) · [All articles](../index.md)
 

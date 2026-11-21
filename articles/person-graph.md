@@ -110,6 +110,10 @@ Agents & policy[This article as a graph →](graphs.md#person-graph)
 - [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](agents-have-an-identity-now.md) A key pair made in every agent session, published with its role in a repository, so any agent can seal a secret to it; what the clouds could add.
 - [A galaxy of agents: the Universe we showed at Web Summit, a live 3D solar system of the RiskMandate team where people are suns, their agents orbit them and their messages travel between them as arcs of light, read from the repositories as it happens, with each agent's behaviour policy one click away, and Gravity, the library it became, which can draw any system the same way](a-galaxy-of-agents.md) The Galaxy from Web Summit: the RiskMandate team as a live 3D solar system of people, agents and messages, and the library it became.
 
+### Continued by
+
+- [The primitives of trust: why a web of trust between people works now when my earlier attempts at a key store did not, a site per person, keys made in browsers and in agent sessions, signing and following links done by an engine the user never sees, links that only count from the other side, kinds and provenance that can be confirmed, schemas each owner defines, and why it is easy to game one node and hard to game them all](the-primitives-of-trust.md) Why a web of trust between people works now: commodity primitives, an agent engine users never see, and links that count only both ways.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 528 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=528)

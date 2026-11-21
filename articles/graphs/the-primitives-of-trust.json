@@ -1,0 +1,104 @@
+{
+  "slug": "the-primitives-of-trust",
+  "teaser": "Why a web of trust between people works now: commodity primitives, an agent engine users never see, and links that count only both ways.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "A web of trust became practical once its primitives became commodity, a site per person, mature PKI, keys in browsers and agents, git and an agent engine that signs and follows keys transparently; links count only when returned, carry confirmable provenance, and owner-defined schemas make the whole hard to game.",
+  "nodes": [
+    {
+      "id": "primitives",
+      "label": "Commodity primitives",
+      "kind": "concept",
+      "summary": "Sites, PKI, keys, git."
+    },
+    {
+      "id": "engine",
+      "label": "The agent engine",
+      "kind": "method",
+      "summary": "Signs, verifies, follows."
+    },
+    {
+      "id": "direction",
+      "label": "Two-way links",
+      "kind": "claim",
+      "summary": "Only returned links count."
+    },
+    {
+      "id": "provenance",
+      "label": "Kinds and provenance",
+      "kind": "method",
+      "summary": "Confirmable."
+    },
+    {
+      "id": "fractal",
+      "label": "Owner-defined schemas",
+      "kind": "concept",
+      "summary": "Nodes, edges, signatures constant."
+    },
+    {
+      "id": "identity",
+      "label": "Open identity",
+      "kind": "claim",
+      "summary": "With every provider."
+    }
+  ],
+  "edges": [
+    {
+      "from": "primitives",
+      "to": "engine",
+      "rel": "produces"
+    },
+    {
+      "from": "engine",
+      "to": "direction",
+      "rel": "depends-on"
+    },
+    {
+      "from": "provenance",
+      "to": "direction",
+      "rel": "extends"
+    },
+    {
+      "from": "fractal",
+      "to": "provenance",
+      "rel": "extends"
+    },
+    {
+      "from": "direction",
+      "to": "identity",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-site-factory-works",
+      "agents-have-an-identity-now",
+      "a-secret-is-a-qr-code",
+      "a-web-of-trust-for-careers",
+      "an-anonymous-profile-vouched-for",
+      "person-graph",
+      "a-directory-of-people-and-keys"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "we cannot push this overhead onto users",
+      "why": "Dinis."
+    },
+    {
+      "text": "It is easy to game one node, or one component.",
+      "why": "Dinis."
+    }
+  ],
+  "figures": [
+    {
+      "file": "prim-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/prim-map.webp",
+      "caption": "The primitives under a web of trust: what was custom is now commodity, so the top layer works now.",
+      "kind": "concept"
+    }
+  ]
+}
