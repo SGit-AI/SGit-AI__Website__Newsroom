@@ -4,7 +4,7 @@ date: 2026-11-21
 author: Dinis Cruz
 author_url: about/index.html
 summary: The model is a choice the owner makes, and DeepSeek should be one of the choices, used with open eyes. Its models are open weights under the MIT licence; its API speaks OpenAI's format and Anthropic's, so the same agents and even Claude Code can point at it; it answers calls straight from a browser, which we checked; and its Flash model costs 0.30 dollars per million tokens in and 1.20 out, half that off-peak. We have used it already: DeepSeek was one of the four open-weight models in the Swarm's 216 calls. The other side is just as clear: DeepSeek's own service stores data in China and lists training among its purposes, and several governments have restricted its app. So the rule is simple: public data can go to DeepSeek's API; anything private goes to the same open weights on a host and in a region the owner chooses, or to a small model on the device. The natural first fit is public data, and Wikipedia is the obvious one: a sovereign website that loads an article, asks DeepSeek to extract its facts, people, places and relations, checks every quote in code, anchors entities to Wikidata and draws the graph, building on the HTML graph and Wikidata work we have already done.
-version: v999.0.0
+version: v0.14.193
 license: https://creativecommons.org/licenses/by/4.0/
 tags: deepseek, models, wikipedia, sovereign-website, open-weight, graphs, article
 status: published
