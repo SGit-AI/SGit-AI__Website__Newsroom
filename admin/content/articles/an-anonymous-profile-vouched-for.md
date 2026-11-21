@@ -4,7 +4,7 @@ date: 2026-11-21
 author: Dinis Cruz
 author_url: about/index.html
 summary: Someone I know is in a job at a company heading in the wrong direction. They want to leave, but they cannot go public yet. So we will publish a profile for them, a persona, anonymised enough that nobody can trace it back, but strong enough to make someone say: I want to hire that person, because it shows their history and the depth of their work. The missing piece was how an employer finds and trusts them, and the web of trust solves it. The persona has its own key. People who know the person, and who are public themselves, vouch for the persona with signed links it countersigns. And there are different kinds of link: this is a real person, I met them; I know them; I worked with them; and, given rarely, I would hire them. The more credible the people who vouch, the more hireable the person becomes, and someone who has been in an industry for years should have many, across disciplines. An employer checks the vouchers in the graph and writes to the persona, sealed to its key. The same typed links fix a softer problem too: when I vouch for someone like Vicky Wang, it becomes a signed statement anyone can check, not a recommendation on a platform. The risk is triangulation: with enough vouchers, someone may work out who it is, so an agent should try to, before anyone else does.
-version: v999.0.0
+version: v0.14.194
 license: https://creativecommons.org/licenses/by/4.0/
 tags: careers, identity, web-of-trust, privacy, sovereign-website, personas, article
 status: published

@@ -4,7 +4,7 @@ date: 2026-11-21
 author: Dinis Cruz
 author_url: about/index.html
 summary: How does a company know that someone really worked somewhere, held that job, or graduated from that university? How do I vouch for someone? On LinkedIn I have 30,000 connections and I do not know 30,000 people. We can now build something better on what we already have. Everyone has an identity, in fact several, with keys they make themselves, published in a repository they control, the same repository as their sovereign website. When I know someone, they show me a QR code, I sign, and I publish that link in my repository. It counts only when they publish theirs: a one-way link is a weak claim and carries no credibility. Companies and universities do the same: the person says "I worked here", the company countersigns. There are no revocation lists, only link lists: to check a link, an agent reads both repositories now, and if either side has removed it, it is gone. Following links is a few simple reads, so it scales, and most people are a few steps from anyone. No recommendations, only connections. Every organisation needs one of these internally, everything is versioned, and people's own AI can set up the keys and sign for them. It could be a LinkedIn for Europe, and a company in itself.
-version: v999.0.0
+version: v0.14.194
 license: https://creativecommons.org/licenses/by/4.0/
 tags: identity, web-of-trust, careers, pki, sovereign-website, europe, business-model, article
 status: published
