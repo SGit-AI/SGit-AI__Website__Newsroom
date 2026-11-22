@@ -4,7 +4,7 @@ date: 2026-11-22
 author: Dinis Cruz
 author_url: about/index.html
 summary: Every project that runs on an open source platform should carry a line in its budget for maintaining that platform, and when the line is missing that should show as a named risk. The line is many small purchases rather than one large one, sized in proportion to what the project itself spends, and it has to deliver something every month (patches applied, versions kept current, code removed, questions answered), because anything that looks like insurance is the first thing cut. The money should reach the people who maintain the code, who help set up and maintain what is built on top, and flow on down the chain. Gen AI makes that affordable, not by writing all the code, but by helping people understand code bases, side effects and changes. And there is now data to map the risk. Four weeks after php2shell, the Dutch NCSC's public inventory of software that ships or depends on PHP has 976 entries: 218 with a fix recorded and 214 not vulnerable, but 211 still marked vulnerable, 240 whose safety depends on the PHP runtime underneath them, and 92 with no answer either way. The 211 entries marked vulnerable were 221 on 23 October.
-version: v999.0.0
+version: v0.14.204
 license: https://creativecommons.org/licenses/by/4.0/
 tags: open-source, php2shell, maintainers, maintenance, budgets, risk, business-models, article
 status: published

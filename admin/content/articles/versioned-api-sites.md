@@ -4,7 +4,7 @@ date: 2026-11-22
 author: Dinis Cruz
 author_url: about/index.html
 summary: Three of the sgit.ai sites now keep the code their pages run on a host of its own, api.newsroom.sgit.ai, api.send.sgit.ai and api.storyboards.sgit.ai, and the rule they follow is short. Every release lives at its own versioned path, is a complete copy of all the code rather than an overlay on the one before, is never edited after it is published, and carries a manifest with the SHA-256 of every file; a site pins the release it uses. The rule was written down on 20 October on api.send.sgit.ai and has not had its own write-up here. So on 22 November we checked it from outside. All 296 files of the six published releases match their manifests, byte for byte, 3,984,539 bytes in all. The rule held where it applies. It did not reach two places. The documentation around a release is not under it, and a blanket version bump in the commit that made v0.1.1 turned two of api.send.sgit.ai's pages into nonsense (v0.1.1 starts as a copy of v0.1.1). And the newsroom, the first site to move its code out, serves its own copies: 9 of the 74 files of its last API release, v0.2.5 of 15 October, have been edited in the newsroom since without a new release. No host has cut a release since 20 October.
-version: v999.0.0
+version: v0.14.204
 license: https://creativecommons.org/licenses/by/4.0/
 tags: versioning, api, releases, sgit, manifests, supply-chain, engineering, article
 status: published
