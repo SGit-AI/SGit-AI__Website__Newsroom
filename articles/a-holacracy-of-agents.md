@@ -105,6 +105,10 @@ Agents & policy[This article as a graph →](graphs.md#a-holacracy-of-agents)
 
 - [Start, stop, slow down: how I run a large team of agents and keep my hand on the brake, 8,027 commits in eighteen days, a big stop, a hand brake, 560 wakes a day cut to 76 with one sentence, 39 schedules changed in 30 seconds, three warnings from the seven-day limit handled, and 34 agents moved to a completely separate account in four hours, which is what sovereignty and resilience look like in practice](start-stop-slow-down.md) How a large agent team is started, stopped, slowed and moved to an isolated account: eighteen days, 8,027 commits, one hand brake.
 
+### Continued by
+
+- [Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters](lawyers-in-the-loop.md) A decisions agent under a limited power of attorney signed with my key, a counsel agent, and a paid loop to a named lawyer who answers for it.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 534 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=534)

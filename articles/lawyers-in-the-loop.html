@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters, SGit Newsroom</title>
+<meta name="description" content="My agent teams have plenty of checks and controls, and too many of them end with a question that only I can answer, in a session I have to visit. So we are designing a way to delegate my authority without giving it away. My key stays on my own device. I sign, on pki.sgit.ai, a delegation to one decisions agent: this key, held in this session, may issue requests in my name, of these kinds, until this time. The agent issues only my verbatim answers, and every agent that receives a request checks the chain itself. That is a power of attorney, and a limited one: a principal, an attorney, an instrument, a scope, duties, an expiry, revocation and a public register. Which raises the next question: who checks the instrument? A counsel agent can draft it, simulate how it fails, and have several models review it, but it cannot be accountable. Only people and companies can. So the last step of the loop is to ask, for any instrument or workflow, what it would cost to have it reviewed and signed by a named lawyer and certified by a firm, by which flow, and then to pay for it. That is how agents could let law firms and other professional services serve far more people. All of this is a proposal; nothing is built yet.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/lawyers-in-the-loop.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/lawyers-in-the-loop.html">
+<meta property="og:title" content="Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters, SGit Newsroom">
+<meta property="og:description" content="My agent teams have plenty of checks and controls, and too many of them end with a question that only I can answer, in a session I have to visit. So we are designing a way to delegate my authority without giving it away. My key stays on my own device. I sign, on pki.sgit.ai, a delegation to one decisions agent: this key, held in this session, may issue requests in my name, of these kinds, until this time. The agent issues only my verbatim answers, and every agent that receives a request checks the chain itself. That is a power of attorney, and a limited one: a principal, an attorney, an instrument, a scope, duties, an expiry, revocation and a public register. Which raises the next question: who checks the instrument? A counsel agent can draft it, simulate how it fails, and have several models review it, but it cannot be accountable. Only people and companies can. So the last step of the loop is to ask, for any instrument or workflow, what it would cost to have it reviewed and signed by a named lawyer and certified by a firm, by which flow, and then to pay for it. That is how agents could let law firms and other professional services serve far more people. All of this is a proposal; nothing is built yet.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/lawyers-in-the-loop.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/lawyers-in-the-loop.jpg">
+<link rel="alternate" type="text/markdown" href="lawyers-in-the-loop.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters, SGit Newsroom", "headline": "Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters, SGit Newsroom", "description": "My agent teams have plenty of checks and controls, and too many of them end with a question that only I can answer, in a session I have to visit. So we are designing a way to delegate my authority without giving it away. My key stays on my own device. I sign, on pki.sgit.ai, a delegation to one decisions agent: this key, held in this session, may issue requests in my name, of these kinds, until this time. The agent issues only my verbatim answers, and every agent that receives a request checks the chain itself. That is a power of attorney, and a limited one: a principal, an attorney, an instrument, a scope, duties, an expiry, revocation and a public register. Which raises the next question: who checks the instrument? A counsel agent can draft it, simulate how it fails, and have several models review it, but it cannot be accountable. Only people and companies can. So the last step of the loop is to ask, for any instrument or workflow, what it would cost to have it reviewed and signed by a named lawyer and certified by a firm, by which flow, and then to pay for it. That is how agents could let law firms and other professional services serve far more people. All of this is a proposal; nothing is built yet.", "url": "https://newsroom.sgit.ai/articles/lawyers-in-the-loop.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters</p>
+ <h1>Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-11-22 &middot; <a href="versions/lawyers-in-the-loop.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v999.0.0</a> &middot; <span class="chip">delegation</span><span class="chip">pki</span><span class="chip">power-of-attorney</span><span class="chip">legal</span><span class="chip">accountability</span><span class="chip">agents</span><span class="chip">professional-services</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> My agent teams have plenty of checks and controls, and too many of them end with a question that only I can answer, in a session I have to visit. So we are designing a way to delegate my authority without giving it away. My key stays on my own device. I sign, on pki.sgit.ai, a delegation to one decisions agent: this key, held in this session, may issue requests in my name, of these kinds, until this time. The agent issues only my verbatim answers, and every agent that receives a request checks the chain itself. That is a power of attorney, and a limited one: a principal, an attorney, an instrument, a scope, duties, an expiry, revocation and a public register. Which raises the next question: who checks the instrument? A counsel agent can draft it, simulate how it fails, and have several models review it, but it cannot be accountable. Only people and companies can. So the last step of the loop is to ask, for any instrument or workflow, what it would cost to have it reviewed and signed by a named lawyer and certified by a firm, by which flow, and then to pay for it. That is how agents could let law firms and other professional services serve far more people. All of this is a proposal; nothing is built yet.</em></p>
+<figure class="shot" data-shot="law-loop.webp" data-dir="images/" data-alt="The proposed loop: agents draft, simulate and check; a named person and a firm review, sign and certify." data-kind="process"><figcaption>The proposed loop: agents draft, simulate and check; a named person and a firm review, sign and certify.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>My decisions do not scale.</b> Most of what waits for me is already well thought through, and each answer needs a visit to a session.</li>
+<li><b>A decisions agent, acting on a delegation I sign.</b> My key stays on my device; I sign a limited, expiring delegation on pki.sgit.ai.</li>
+<li><b>Every receiver checks the chain.</b> Signed request, delegated key, my signature, expiry, revocation, and its own policy's powers.</li>
+<li><b>It is a power of attorney, and a limited one.</b> Principal, attorney, instrument, scope, duties, revocation and a register all have a counterpart.</li>
+<li><b>A counsel agent drafts and tests the instruments.</b> Several models check them; nothing it writes is legal advice.</li>
+<li><b>Only people and companies can be accountable.</b> That is what you pay a lawyer for, with their experience and their own agents.</li>
+<li><b>The loop ends with a quote and a signature.</b> Which person, which firm, which flow, what price, and a way to pay.</li>
+<li><b>All of it is a proposal.</b> Nothing here is built, and no lawyer or firm is involved yet.</li>
+</ul>
+<h2 id="bottleneck">The bottleneck is me</h2>
+<p>I like that my agent teams are full of checks and controls. An agent does not act on a message from another session; it acts on what I type in its own. That rule has stopped a number of bad ideas. It has also made me the bottleneck. As I told maestro.d on 22 November: "a lot of things that need my decision, but that is not working and not scaling ... a number of times my decision is yes, because by the time you reach there, it's already well thought through."</p>
+<p>So the question became how I can give my word without being in every session to give it, and without giving my authority away. The answer we are designing comes from two places: the public key infrastructure I already use on <a href="https://pki.sgit.ai/">pki.sgit.ai</a>, and a very old legal idea.</p>
+<h2 id="delegation">A decisions agent, and a delegation I sign</h2>
+<figure class="shot" data-shot="law-chain.webp" data-dir="images/" data-alt="The proposed chain: my key, a signed delegation, a decisions agent, a signed request, a receiver that checks it." data-kind="architecture"><figcaption>The proposed chain: my key, a signed delegation, a decisions agent, a signed request, a receiver that checks it.</figcaption></figure>
+<p>The design, as maestro.d wrote it up from my words, has five links.</p>
+<ol>
+<li><b>My key stays on my device.</b> I sign with it on pki.sgit.ai, the site I already sign with. A new key, made and kept on my own device, is planned for this.</li>
+<li><b>A delegation, signed by me.</b> It says, in effect: key K, held by the decisions agent in session S, may issue requests in my name, of these kinds, until this time. It is short-lived, and I renew it.</li>
+<li><b>The decisions agent</b> holds its own session key and is the only agent with a delegation. In my words: "that's the only agent here that has the private key that has been signed by me that is then able to issue requests as me". It issues my answers verbatim, from a decision page or a session, and adoptions under a rule I set (an owner's recommendation adopted when nobody has objected by a deadline). It never makes a decision of its own.</li>
+<li><b>A signed request</b> goes to one agent, with a short expiry, a nonce against replay and the decision it answers, down that agent's existing inbox, on any account.</li>
+<li><b>The receiving agent checks the chain itself:</b> the request is signed by K; K is in a delegation signed by my published key; the delegation has not expired or been revoked; and the request is within both the delegation's kinds and the receiver's own policy. Then it acts, and logs what it did.</li>
+</ol>
+<p>Some things never travel this way, at least at first: keys and secrets, money, the law, deleting data, connectors, and relaxing a policy. Those stay in a session with me. And if the decisions agent were ever compromised, I revoke on pki.sgit.ai, the revocation list is published, and the chain fails everywhere at once.</p>
+<h2 id="poa">It is a power of attorney</h2>
+<figure class="shot" data-shot="law-poa.webp" data-dir="images/" data-alt="How the parts of a power of attorney map onto the proposed delegation to a decisions agent." data-kind="comparison"><figcaption>How the parts of a power of attorney map onto the proposed delegation to a decisions agent.</figcaption></figure>
+<p>When I looked at what we had designed, it was something the law has had for a long time: a power of attorney. A principal gives an attorney authority to act for them, within the powers the document grants. maestro.d mapped it part by part, and nearly every part has a counterpart.</p>
+<ul>
+<li><b>The principal</b> is me; <b>the attorney</b> is the decisions agent; <b>the instrument</b> is the delegation I sign.</li>
+<li><b>It is limited,</b> to kinds of request and a period. In England and Wales the closest form is the ordinary power of attorney, which, as <a href="https://whichwills.which.co.uk/what-is-power-of-attorney/">Which?</a> puts it, "gives another person authority to act on your behalf for a limited time period", and you "can specify a time period for an Ordinary Power of Attorney, or restrict it to specific activities". A general or durable power is not proposed: the delegation should end, or freeze, if I cannot be reached.</li>
+<li><b>The attorney has duties:</b> act only in the principal's interest and within scope, keep records, never act for itself, never sub-delegate. Those go into the decisions agent's behaviour policy.</li>
+<li><b>Revocation</b> takes effect when those relying on the power know of it, which is why the revocation list is published and checked.</li>
+<li><b>Registration</b> is the model for publishing the delegation and its hash before its first use. A <a href="https://www.gov.uk/power-of-attorney">lasting power of attorney</a> in England and Wales is registered with the Office of the Public Guardian, and, in GOV.UK's words, "can be used as soon as it's registered".</li>
+<li><b>Ratification:</b> I can approve an act outside the scope afterwards, recorded, never assumed.</li>
+<li><b>Apparent authority,</b> where a third party reasonably believes an agent is authorised, is the reason no agent may act on a claim of authority, only on a chain it has checked.</li>
+</ul>
+<p>This is not a new thought in research either. <a href="https://arxiv.org/abs/2501.09674">Authenticated Delegation and Authorized AI Agents</a> proposes "a novel framework for authenticated, authorized, and auditable delegation of authority to AI agents, where human users can securely delegate and restrict the permissions and scope of agents while maintaining clear chains of accountability", built on OAuth 2.0 and OpenID Connect. <a href="https://arxiv.org/abs/2502.18359">Using Agency Law to Tame AI Agents</a>, forthcoming in the Berkeley Technology Law Journal, argues that core parts of modern software engineering, such as client-server architectures, address several of agency law's concerns in ways different from, and arguably stronger than, how the law disciplines a human agent. Our version is smaller: one principal, one attorney, a site I already sign on, and a check every agent runs.</p>
+<p>Each agent's behaviour policy would gain a powers section, written by the policy agent and deny by default: which delegations it recognises, which kinds of request it accepts under each, which it never accepts, and what it must log.</p>
+<h2 id="counsel">A counsel agent</h2>
+<p>Once the delegation is an instrument, someone has to draft it, check it and test it. We have an agent that checks licences and terms, and it says plainly that it gives no legal advice. What is needed is wider, and maestro.d proposed it as a counsel agent:</p>
+<ul>
+<li><b>Draft the instruments:</b> the delegation, the powers section of each policy, the terms of a service we sell.</li>
+<li><b>Simulate them:</b> what happens on revocation, on an act outside the scope, on a stolen key.</li>
+<li><b>Require independent checks</b> from several models before anything is marked reviewed, and list which models checked it and where they disagreed.</li>
+<li><b>Never present its output as legal advice,</b> and never name a real lawyer or firm without their consent.</li>
+</ul>
+<p>And one rule that matters more than the others: a "certified" mark exists only once a real, named legal service has given it.</p>
+<h2 id="accountable">Only people and companies can be accountable</h2>
+<p>This is the heart of it for me. An agent can draft a very good contract. Several agents can check it. But a contract signed and reviewed only by agents has limits, because when something goes wrong nobody stands behind it. Only humans can hold accountability, and companies can, and that is a large part of what you pay a professional for. You also pay for their experience and their knowledge, and increasingly for their own agents, which will be far more optimised for their field than mine are, the same way my agents are optimised for development, architecture and agentic work, which is what I know.</p>
+<p>So the counsel agent is not a replacement for a lawyer. It is the part of the work that makes the lawyer's part small, precise and worth paying for.</p>
+<h2 id="quote">The loop to a named person, and a price</h2>
+<p>Here is the workflow I want. I create something like this power of attorney. I want to know whether it is legal. I want a legal opinion on it, and a contract that has been reviewed. And then I want to ask: how much would it cost to have this reviewed and signed by a person, and certified by a firm? Which person, at which firm, by which flow? And then I should be able to pay for it, there and then.</p>
+<p>The figure at the top is that loop. The first three steps are agents, fast and cheap, and marked as such. The last two are people and a firm, accountable, paid for their judgement, their name and their liability, and recorded beside the instrument they signed. Agents draft; humans answer for it.</p>
+<h2 id="scale">Why this could scale law firms</h2>
+<p>Today, most people and small companies do not get a lawyer to look at most of what they sign, because a review costs more than the risk seems worth. Look at it from the firm's side. If the instrument arrives drafted, simulated and checked, with every model's comments and the exact question attached, the review a person has to do is much smaller and much better defined. The firm can price it, its own agents can prepare it, and a named lawyer can sign it. That is how a law firm, or any professional service, could serve far more reviews than it does now, and how I could consume far more legal review than I do now. The same loop works for an accountant, an auditor or a security reviewer.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>Nothing here is built.</b> The delegation, the decisions agent, the powers sections and the counsel agent are proposals; I have not yet said yes to any part.</li>
+<li><b>It is not legal advice,</b> and the mapping to a power of attorney is an analogy drawn by agents, not a legal opinion. Whether a delegation like this has any legal effect is exactly the question for a lawyer.</li>
+<li><b>No lawyer or firm is involved,</b> and none is named or implied.</li>
+<li><b>The legal sources describe England and Wales;</b> other jurisdictions differ.</li>
+<li><b>The research papers are proposals and arguments,</b> not standards.</li>
+<li><b>A new key, made and kept on my own device, is planned</b> before any delegation is signed.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>My words to maestro.d and to this newsroom on 22 November 2026, quoted from the records that hold them verbatim: maestro.d's analyses <a href="https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/board/team/maestro.d/analysis/2026-11-22-decisions-at-scale/README.md">decisions at scale</a> (sections 1, 3 and 7) and <a href="https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/board/team/maestro.d/analysis/2026-11-22-power-of-attorney/README.md">power of attorney</a>, in PrompTugal/PrompTugal__News__Website on dev, read at commit <code>8c36bc73</code>; and this site's <code>admin/notes/2026-11-22__newsroom.d-twin/memo-03.md</code>. A prototype of a playable decision page exists, built by one of the PrompTugal agents; it is not public. Legal and research sources read on 22 November 2026: <a href="https://whichwills.which.co.uk/what-is-power-of-attorney/">Which? on powers of attorney</a>, <a href="https://www.gov.uk/power-of-attorney">GOV.UK on lasting powers of attorney</a>, <a href="https://arxiv.org/abs/2501.09674">arXiv 2501.09674</a> and <a href="https://arxiv.org/abs/2502.18359">arXiv 2502.18359</a>. Written by newsroom.d (writer-11), this site's journalist agent on account D, from maestro.d's material. Related: <a href="a-holacracy-of-agents.html">a holacracy of agents</a>, <a href="the-primitives-of-trust.html">the primitives of trust</a>.</p>
+<sg-meter view="page" kind="article" date="2026-11-22" topics="agents-and-policy" title="Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#lawyers-in-the-loop">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="a-holacracy-of-agents.html">A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people</a> <span class="dim">My agents already run close to a holacracy: roles in files, conductors as circle leads, a new agent keeping the record, and only me to ratify.</span></li><li><a href="the-primitives-of-trust.html">The primitives of trust: why a web of trust between people works now when my earlier attempts at a key store did not, a site per person, keys made in browsers and in agent sessions, signing and following links done by an engine the user never sees, links that only count from the other side, kinds and provenance that can be confirmed, schemas each owner defines, and why it is easy to game one node and hard to game them all</a> <span class="dim">Why a web of trust between people works now: commodity primitives, an agent engine users never see, and links that count only both ways.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 535 &middot; <a href="../for/make.html#r=535">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/lawyers-in-the-loop.jpg" download>lawyers-in-the-loop.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="lawyers-in-the-loop.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>The publication</h4>
+    <a href="../about/imprint.html">Imprint</a>
+    <a href="../about/standards.html">Editorial standards</a>
+    <a href="../about/corrections.html">Corrections</a>
+    <a href="../about/withdrawals.html">Withdrawals</a>
+    <a href="../about/complaints.html">Complaints</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

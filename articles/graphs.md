@@ -14,13 +14,40 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-532 of 532 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+533 of 533 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-532 articles, 2739 links between them (4429 mentions in all). 470 articles cite an earlier one; 135 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (42 articles link to it). Most linking: [Always-on agents at team scale](#always-on-agents-at-team-scale) (22 links out). 24 articles not yet linked either way.
+533 articles, 2741 links between them (4431 mentions in all). 471 articles cite an earlier one; 135 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (42 articles link to it). Most linking: [Always-on agents at team scale](#always-on-agents-at-team-scale) (22 links out). 24 articles not yet linked either way.
+
+## [Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters](lawyers-in-the-loop.md)
+
+2026-11-22 · Agents & policy
+
+Delegating a person's authority to an agent is a limited power of attorney: a signed, expiring, registered delegation that every receiving agent checks; agents can draft and test such instruments, but only people and firms can be accountable, so the loop should end in a priced, paid review and signature by a named professional.
+
+*[diagram]*
+**concept**claim**method**question
+
+**9 nodes, 9 edges**
+
+- **Decisions do not scale** (question) Each answer needs a session.
+- **A signed delegation** (method) My key, on pki.sgit.ai.
+- **The decisions agent** (concept) Issues only my verbatim answers.
+- **Receivers check the chain** (method) Signature, expiry, revocation, powers.
+- **Power of attorney** (concept) Limited, registered, revocable.
+- **The counsel agent** (concept) Drafts, simulates, checks.
+- **Accountability** (claim) Only people and companies.
+- **A quote and a signature** (method) Which person, firm, flow, price.
+- **Scaling professional services** (claim) Small, priced reviews.
+
+> that's the only agent here that has the private key that has been signed by me that is then able to issue requests as me Dinis, to maestro.d.
+
+> gives another person authority to act on your behalf for a limited time period Which?.
+
+builds on [A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people](#a-holacracy-of-agents), [The primitives of trust: why a web of trust between people works now when my earlier attempts at a key store did not, a site per person, keys made in browsers and in agent sessions, signing and following links done by an engine the user never sees, links that only count from the other side, kinds and provenance that can be confirmed, schemas each owner defines, and why it is easy to game one node and hard to game them all](#the-primitives-of-trust).
 
 ## [A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people](a-holacracy-of-agents.md)
 
@@ -47,7 +74,7 @@ Holacracy's structure of roles, domains, accountabilities and circles already ma
 
 > nearly 20% of Zappos' employees have left the company Fortune, 25 January 2016.
 
-builds on [Start, stop, slow down: how I run a large team of agents and keep my hand on the brake, 8,027 commits in eighteen days, a big stop, a hand brake, 560 wakes a day cut to 76 with one sentence, 39 schedules changed in 30 seconds, three warnings from the seven-day limit handled, and 34 agents moved to a completely separate account in four hours, which is what sovereignty and resilience look like in practice](#start-stop-slow-down).
+builds on [Start, stop, slow down: how I run a large team of agents and keep my hand on the brake, 8,027 commits in eighteen days, a big stop, a hand brake, 560 wakes a day cut to 76 with one sentence, 39 schedules changed in 30 seconds, three warnings from the seven-day limit handled, and 34 agents moved to a completely separate account in four hours, which is what sovereignty and resilience look like in practice](#start-stop-slow-down); continued by [Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters](#lawyers-in-the-loop).
 
 ## [Versioned API sites, a month on: every release a complete copy that is never edited, 296 live files checked against their hashes, and the two places the rule did not reach](versioned-api-sites.md)
 
@@ -125,7 +152,7 @@ A web of trust became practical once its primitives became commodity, a site per
 
 > It is easy to game one node, or one component. Dinis.
 
-builds on [The site factory works: three AgentiCCells sites made by hand, then one made by a commit in two minutes and thirty-nine seconds, live over https with a first version written by Claude Code, and the long list of what it took to make something that hard look easy](#the-site-factory-works), [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](#agents-have-an-identity-now), [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](#a-secret-is-a-qr-code), [A web of trust for careers: everyone with their own keys and their own repository, links that count only when both sides sign them, companies and universities countersigning who worked and studied where, link lists instead of revocation lists, an agent that checks any of it by following the graph, a business that somebody should build, and names for it, with Europe in mind](#a-web-of-trust-for-careers), [An anonymous profile, vouched for: how someone who needs to leave their job without going public can publish a persona that shows the depth of their work but not their name, how the web of trust lets people who know them vouch for it, with different kinds of connection from "this is a real person" to "I would hire them", how an employer reaches them, and the one risk to test, triangulation](#an-anonymous-profile-vouched-for), [Person Graph: one picture of what we have been building, people and their agents with their own keys and repositories, links that count only both ways, kinds of link from "real" to "vouch to hire", groups as centres of gravity, countersigned claims, anonymous personas, a check for re-identification, all done through each person's own Claude, with mock-ups of the site and a simulation of 150 people and 40 fake accounts that shows why two-way links make bad actors cheap to spot](#person-graph), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys).
+builds on [The site factory works: three AgentiCCells sites made by hand, then one made by a commit in two minutes and thirty-nine seconds, live over https with a first version written by Claude Code, and the long list of what it took to make something that hard look easy](#the-site-factory-works), [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](#agents-have-an-identity-now), [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](#a-secret-is-a-qr-code), [A web of trust for careers: everyone with their own keys and their own repository, links that count only when both sides sign them, companies and universities countersigning who worked and studied where, link lists instead of revocation lists, an agent that checks any of it by following the graph, a business that somebody should build, and names for it, with Europe in mind](#a-web-of-trust-for-careers), [An anonymous profile, vouched for: how someone who needs to leave their job without going public can publish a persona that shows the depth of their work but not their name, how the web of trust lets people who know them vouch for it, with different kinds of connection from "this is a real person" to "I would hire them", how an employer reaches them, and the one risk to test, triangulation](#an-anonymous-profile-vouched-for), [Person Graph: one picture of what we have been building, people and their agents with their own keys and repositories, links that count only both ways, kinds of link from "real" to "vouch to hire", groups as centres of gravity, countersigned claims, anonymous personas, a check for re-identification, all done through each person's own Claude, with mock-ups of the site and a simulation of 150 people and 40 fake accounts that shows why two-way links make bad actors cheap to spot](#person-graph), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys); continued by [Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters](#lawyers-in-the-loop).
 
 ## [Programmatic stories: how the PrompTugal bulletins went from a 30-second text bulletin to twelve synthetic presenters on one 3D stage in two days, movies made by code instead of rendered by hand, every frame a function of time and data, what that makes possible, from live data and real voices to an animated summary for every article, the story of how Vicky Wang ran her agents, a morning briefing I would actually watch, and an invitation to filmmakers](programmatic-stories.md)
 

@@ -4,24 +4,25 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.207 · 532 articles since 2026-08-17; the newest is 2026-11-22. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 533 articles since 2026-08-17; the newest is 2026-11-22. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people](articles/a-holacracy-of-agents.md), 2026-11-22, 9 min. My agents already run close to a holacracy: roles in files, conductors as circle leads, a new agent keeping the record, and only me to ratify.
+- [Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters](articles/lawyers-in-the-loop.md), 2026-11-22, 9 min. A decisions agent under a limited power of attorney signed with my key, a counsel agent, and a paid loop to a named lawyer who answers for it.
 
 ## Five more
 
+- [A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people](articles/a-holacracy-of-agents.md), Working with agents, 2026-11-22, 9 min.
 - [Versioned API sites, a month on: every release a complete copy that is never edited, 296 live files checked against their hashes, and the two places the rule did not reach](articles/versioned-api-sites.md), Engineering this newsroom, 2026-11-22, 10 min.
 - [Maintaining the core platforms as a cost item in every project: a line sized to the project, delivering something every month, and what four weeks of php2shell data say happens without it](articles/maintaining-the-core-platforms.md), Startups & strategy, 2026-11-22, 9 min.
 - [The primitives of trust: why a web of trust between people works now when my earlier attempts at a key store did not, a site per person, keys made in browsers and in agent sessions, signing and following links done by an engine the user never sees, links that only count from the other side, kinds and provenance that can be confirmed, schemas each owner defines, and why it is easy to game one node and hard to game them all](articles/the-primitives-of-trust.md), Startups & strategy, 2026-11-21, 5 min.
 - [Programmatic stories: how the PrompTugal bulletins went from a 30-second text bulletin to twelve synthetic presenters on one 3D stage in two days, movies made by code instead of rendered by hand, every frame a function of time and data, what that makes possible, from live data and real voices to an animated summary for every article, the story of how Vicky Wang ran her agents, a morning briefing I would actually watch, and an invitation to filmmakers](articles/programmatic-stories.md), Startups & strategy, 2026-11-21, 6 min.
-- [Start, stop, slow down: how I run a large team of agents and keep my hand on the brake, 8,027 commits in eighteen days, a big stop, a hand brake, 560 wakes a day cut to 76 with one sentence, 39 schedules changed in 30 seconds, three warnings from the seven-day limit handled, and 34 agents moved to a completely separate account in four hours, which is what sovereignty and resilience look like in practice](articles/start-stop-slow-down.md), Startups & strategy, 2026-11-21, 5 min.
 
 ## The last five days
 
-### Sunday 22 November 2026 (3 articles)
+### Sunday 22 November 2026 (4 articles)
 
+- Agent security & behaviour policies: [Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters](articles/lawyers-in-the-loop.md), 9 min.
 - Working with agents: [A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people](articles/a-holacracy-of-agents.md), 9 min.
 - Engineering this newsroom: [Versioned API sites, a month on: every release a complete copy that is never edited, 296 live files checked against their hashes, and the two places the rule did not reach](articles/versioned-api-sites.md), 10 min.
 - Startups & strategy: [Maintaining the core platforms as a cost item in every project: a line sized to the project, delivering something every month, and what four weeks of php2shell data say happens without it](articles/maintaining-the-core-platforms.md), 9 min.
@@ -108,13 +109,13 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 Every article is in exactly one of eight sections, by topic.
 
-### [Agent security & behaviour policies](sections/policy/index.md) (98)
+### [Agent security & behaviour policies](sections/policy/index.md) (99)
 What an agent may do, who carries the risk, and how a policy is enforced: RiskMandate, Agent Behaviour Policies, hooks, accountability, governance.
+- [Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters](articles/lawyers-in-the-loop.md), 2026-11-22.
 - [Policies in practice: four places a behaviour policy earns its keep, measured on a real Google key whose reach is five APIs while the feature uses one, a signed policy for the factory's CI changes, requests that carry the policies they act under, and release notes that say what each fix closes and what it must not open](articles/policies-in-practice.md), 2026-11-19.
 - [Feature behaviour policies: taking the idea of agent behaviour policies down to every feature, bug fix and resource, so that a feature's policy is also its description, what changed is the difference between two policies, the gap between what a resource can do and what a feature needs is where the vulnerabilities live, and signed policies travelling with each request make a bug or an attack a path that was never supposed to exist](articles/feature-behaviour-policies.md), 2026-11-19.
 - [RiskMandate and Kosmoy: two answers to "who controls the agents?", Kosmoy's self-hosted control plane for regulated enterprises, with an AI gateway, guardrails, a model router, observability and a Kubernetes sandbox for every agent run, and RiskMandate's open behaviour policies, written per agent, checked by hooks and bounded by SHarness, where they overlap, where they differ, and why they fit together](articles/riskmandate-and-kosmoy.md), 2026-11-18.
 - [The email agentic cell: why connecting Gmail to agents the usual way is a security mess, and the architecture we will build instead, with one gateway agent that alone touches Gmail, a digital twin of the mailbox in a vault that people and agents work on together, signed proposals, approvals and even reads on append lanes, and behaviour policies at five altitudes](articles/the-email-agentic-cell.md), 2026-11-16.
-- [Our workflow on Odoo 20, built and measured: a bills agent with no Odoo credential, a policy check that allowed two proposals and stopped three, a signed approval, a narrow broker, a grant measured from Odoo itself by a new module, and what Odoo's default user role quietly allows](articles/our-workflow-on-odoo-20.md), 2026-11-16.
 
 ### [Working with agents](sections/agents/index.md) (68)
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.

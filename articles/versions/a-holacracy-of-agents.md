@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-22 | published | 2,137 | first published | this release | [current](../a-holacracy-of-agents.md) |
+| **v1.0.0** | 2026-11-22 | published | 2,137 | first published | [`2708bbb2c`](https://github.com/SGit-AI/SGit-AI__Website/commit/2708bbb2c1e507bc25008f9b110799c200573640) | [current](../a-holacracy-of-agents.md) |
 
 [← Back to the article](../a-holacracy-of-agents.md) · [All articles](../index.md)
 

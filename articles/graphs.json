@@ -55,6 +55,187 @@
   ],
   "articles": [
     {
+      "slug": "lawyers-in-the-loop",
+      "title": "Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters",
+      "date": "2026-11-22",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/lawyers-in-the-loop.html",
+      "markdown": "https://newsroom.sgit.ai/articles/lawyers-in-the-loop.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/lawyers-in-the-loop.webp",
+      "teaser": "A decisions agent under a limited power of attorney signed with my key, a counsel agent, and a paid loop to a named lawyer who answers for it.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "delegation",
+        "pki",
+        "power-of-attorney",
+        "legal",
+        "accountability",
+        "agents",
+        "professional-services",
+        "article"
+      ],
+      "links_out": [
+        "a-holacracy-of-agents",
+        "the-primitives-of-trust"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "law-loop.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/law-loop.webp",
+          "caption": "The proposed loop: agents draft, simulate and check; a named person and a firm review, sign and certify.",
+          "kind": "process"
+        },
+        {
+          "file": "law-chain.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/law-chain.webp",
+          "caption": "The proposed chain: my key, a signed delegation, a decisions agent, a signed request, a receiver that checks it.",
+          "kind": "architecture"
+        },
+        {
+          "file": "law-poa.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/law-poa.webp",
+          "caption": "How the parts of a power of attorney map onto the proposed delegation to a decisions agent.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "lawyers-in-the-loop",
+        "teaser": "A decisions agent under a limited power of attorney signed with my key, a counsel agent, and a paid loop to a named lawyer who answers for it.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Delegating a person's authority to an agent is a limited power of attorney: a signed, expiring, registered delegation that every receiving agent checks; agents can draft and test such instruments, but only people and firms can be accountable, so the loop should end in a priced, paid review and signature by a named professional.",
+        "nodes": [
+          {
+            "id": "bottleneck",
+            "label": "Decisions do not scale",
+            "kind": "question",
+            "summary": "Each answer needs a session."
+          },
+          {
+            "id": "delegation",
+            "label": "A signed delegation",
+            "kind": "method",
+            "summary": "My key, on pki.sgit.ai."
+          },
+          {
+            "id": "decisions",
+            "label": "The decisions agent",
+            "kind": "concept",
+            "summary": "Issues only my verbatim answers."
+          },
+          {
+            "id": "chain",
+            "label": "Receivers check the chain",
+            "kind": "method",
+            "summary": "Signature, expiry, revocation, powers."
+          },
+          {
+            "id": "poa",
+            "label": "Power of attorney",
+            "kind": "concept",
+            "summary": "Limited, registered, revocable."
+          },
+          {
+            "id": "counsel",
+            "label": "The counsel agent",
+            "kind": "concept",
+            "summary": "Drafts, simulates, checks."
+          },
+          {
+            "id": "accountable",
+            "label": "Accountability",
+            "kind": "claim",
+            "summary": "Only people and companies."
+          },
+          {
+            "id": "quote",
+            "label": "A quote and a signature",
+            "kind": "method",
+            "summary": "Which person, firm, flow, price."
+          },
+          {
+            "id": "scale",
+            "label": "Scaling professional services",
+            "kind": "claim",
+            "summary": "Small, priced reviews."
+          }
+        ],
+        "edges": [
+          {
+            "from": "delegation",
+            "to": "bottleneck",
+            "rel": "answers"
+          },
+          {
+            "from": "decisions",
+            "to": "delegation",
+            "rel": "depends-on"
+          },
+          {
+            "from": "chain",
+            "to": "delegation",
+            "rel": "depends-on"
+          },
+          {
+            "from": "delegation",
+            "to": "poa",
+            "rel": "example-of"
+          },
+          {
+            "from": "counsel",
+            "to": "poa",
+            "rel": "produces"
+          },
+          {
+            "from": "accountable",
+            "to": "counsel",
+            "rel": "contrasts"
+          },
+          {
+            "from": "quote",
+            "to": "accountable",
+            "rel": "depends-on"
+          },
+          {
+            "from": "quote",
+            "to": "scale",
+            "rel": "leads-to"
+          },
+          {
+            "from": "counsel",
+            "to": "quote",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-holacracy-of-agents",
+            "the-primitives-of-trust"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "that's the only agent here that has the private key that has been signed by me that is then able to issue requests as me",
+            "why": "Dinis, to maestro.d."
+          },
+          {
+            "text": "gives another person authority to act on your behalf for a limited time period",
+            "why": "Which?."
+          },
+          {
+            "text": "Agents draft; humans answer for it.",
+            "why": "This article."
+          }
+        ]
+      }
+    },
+    {
       "slug": "a-holacracy-of-agents",
       "title": "A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people",
       "date": "2026-11-22",
@@ -78,7 +259,9 @@
       "links_out": [
         "start-stop-slow-down"
       ],
-      "links_in": [],
+      "links_in": [
+        "lawyers-in-the-loop"
+      ],
       "figures": [
         {
           "file": "hol-mapping.webp",
@@ -632,7 +815,9 @@
         "person-graph",
         "a-directory-of-people-and-keys"
       ],
-      "links_in": [],
+      "links_in": [
+        "lawyers-in-the-loop"
+      ],
       "figures": [
         {
           "file": "prim-map.webp",

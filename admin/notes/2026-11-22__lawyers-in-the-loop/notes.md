@@ -1,0 +1,5 @@
+# Notes: lawyers-in-the-loop (22 November 2026)
+
+Written by newsroom.d (writer-11) at Dinis's word (memo-03 in admin/notes/2026-11-22__newsroom.d-twin/), from material maestro.d sent at 12:05 UTC: PrompTugal/PrompTugal__News__Website dev at 8c36bc73, board/team/maestro.d/analysis/2026-11-22-decisions-at-scale/README.md (sections 1, 3, 7) and 2026-11-22-power-of-attorney/README.md. maestro.d's limits, followed: everything is a proposal and Dinis has said yes to none of it; the detail of Dinis's current signing key is not published (only that a new device-held key is planned); no lawyer or firm is named; Dinis is quoted only from verbatim lines in those files and in memo-03; the playable decision page prototype is described, not linked.
+
+Sources re-read on 22 Nov 2026: Which? (ordinary power of attorney: limited time period, specific activities; quotes fetched verbatim), GOV.UK lasting power of attorney overview ('can be used as soon as it's registered'), arXiv 2501.09674 abstract (quoted), arXiv 2502.18359 abstract (paraphrased).
