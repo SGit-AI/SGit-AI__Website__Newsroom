@@ -1,7 +1,7 @@
 {
- "rule": "At most max_open journalist agents at a time (one until 22 November 2026; two since, as twins on different accounts, at the editor's word in admin/notes/2026-11-22__newsroom.d-twin/memo-01.md). A registration is opened only at the editor's word, with a new key; a closed registration is never reopened and its key is never used again. Checked by admin/build/validate.js (check 15); the editor's first words are in admin/notes/2026-10-31__one-writer/memo-01.md.",
- "max_open": 2,
- "max_open_approved": "admin/notes/2026-11-22__newsroom.d-twin/memo-01.md",
+ "rule": "At most max_open journalist agents at a time (one until 22 November 2026; two since, as twins on different accounts, at the editor's word in admin/notes/2026-11-22__newsroom.d-twin/memo-01.md; three since the evening of 22 November, one per account, in admin/notes/2026-11-22__newsroom.c-twin/memo-01.md). A registration is opened only at the editor's word, with a new key; a closed registration is never reopened and its key is never used again. Checked by admin/build/validate.js (check 15); the editor's first words are in admin/notes/2026-10-31__one-writer/memo-01.md.",
+ "max_open": 3,
+ "max_open_approved": "admin/notes/2026-11-22__newsroom.c-twin/memo-01.md",
  "registrations": [
   {
    "id": "writer-01",
@@ -133,6 +133,20 @@
     "since": "2026-11-22T03:28:33Z",
     "approved": "admin/notes/2026-11-19__signed-commits/notes.md"
    }
+  },
+  {
+   "id": "writer-12",
+   "session": "https://claude.ai/code/session_01Kw9UwDDEwnjqeLVyqkUjpm",
+   "opened": "2026-11-22T21:00:36Z",
+   "closed": null,
+   "key": {
+    "alg": "ed25519",
+    "public": "MCowBQYDK2VwAyEAadweCIvPHsnKj9j1LD2tPaJx3wXD58fzJ09/cI+4N1E=",
+    "fingerprint": "sha256:f71a21c7ff15daf7cfebcef3bdc2de64"
+   },
+   "approved": "admin/notes/2026-11-22__newsroom.c-twin/memo-01.md",
+   "account": "c",
+   "agent": "newsroom.c@sgit.ai.dinis"
   }
  ]
 }

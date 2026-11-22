@@ -9,8 +9,8 @@
 //
 // Checked here:
 //   - ids and key fingerprints are unique, so a closed key cannot come back under a new id;
-//   - at most max_open registrations are open (1, or 2 with the editor's approval on file), each on its own account
-//     when there are two, and each has a key and the editor's approval on file;
+//   - at most max_open registrations are open (1, or 2 or 3 with the editor's approval on file), each on its own account
+//     when there is more than one, and each has a key and the editor's approval on file;
 //   - every fingerprint matches its public key;
 //   - when the commit being built is a writer's ("@newsroom.writer:"), it names the open
 //     registration and carries its signature over the commit's tree;
@@ -97,10 +97,11 @@ function check(root, errors) {
     }
   }
   const open = list.filter(r => !r.closed);
-  // How many may be open: one, unless the editor raised it (two since 22 November 2026, twins on different accounts).
+  // How many may be open: one, unless the editor raised it (two since 22 November 2026, twins on different accounts;
+  // three since the same evening, one per account, admin/notes/2026-11-22__newsroom.c-twin/memo-01.md).
   let max = 1;
   if (reg.max_open !== undefined) {
-    if (!Number.isInteger(reg.max_open) || reg.max_open < 1 || reg.max_open > 2) errors.push(`${REL}: max_open must be 1 or 2`);
+    if (!Number.isInteger(reg.max_open) || reg.max_open < 1 || reg.max_open > 3) errors.push(`${REL}: max_open must be 1, 2 or 3`);
     else if (reg.max_open > 1 && (!reg.max_open_approved || !fs.existsSync(path.join(root, reg.max_open_approved)))) errors.push(`${REL}: max_open ${reg.max_open} does not point at the editor's approval in the repository`);
     else max = reg.max_open;
   }
