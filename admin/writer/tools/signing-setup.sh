@@ -11,7 +11,8 @@
 # yourself, signed (the setup is done first, so it is).
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
-ID=$(node -e 'const r=require("./admin/writer/register.json").registrations.filter(x=>!x.closed);if(r.length!==1){console.error("signing-setup: "+r.length+" open registrations");process.exit(1)}console.log(r[0].id)')
+# With twins (two open registrations), the one whose private key is on this machine, as sign.cjs does.
+ID=$(node -e 'const fs=require("fs"),os=require("os"),r=require("./admin/writer/register.json").registrations.filter(x=>!x.closed&&fs.existsSync(os.homedir()+"/.newsroom-writer/"+x.id+".pem"));if(r.length!==1){console.error("signing-setup: "+r.length+" open registrations with a key on this machine; exactly one signs");process.exit(1)}console.log(r[0].id)')
 KEY="$HOME/.newsroom-writer/$ID.pem"
 [ -f "$KEY" ] || { echo "signing-setup: no private key for $ID on this machine ($KEY); this session is not $ID"; exit 1; }
 git config --local gpg.format ssh
