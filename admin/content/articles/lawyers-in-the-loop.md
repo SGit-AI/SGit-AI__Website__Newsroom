@@ -4,7 +4,7 @@ date: 2026-11-22
 author: Dinis Cruz
 author_url: about/index.html
 summary: My agent teams have plenty of checks and controls, and too many of them end with a question that only I can answer, in a session I have to visit. So we are designing a way to delegate my authority without giving it away. My key stays on my own device. I sign, on pki.sgit.ai, a delegation to one decisions agent: this key, held in this session, may issue requests in my name, of these kinds, until this time. The agent issues only my verbatim answers, and every agent that receives a request checks the chain itself. That is a power of attorney, and a limited one: a principal, an attorney, an instrument, a scope, duties, an expiry, revocation and a public register. Which raises the next question: who checks the instrument? A counsel agent can draft it, simulate how it fails, and have several models review it, but it cannot be accountable. Only people and companies can. So the last step of the loop is to ask, for any instrument or workflow, what it would cost to have it reviewed and signed by a named lawyer and certified by a firm, by which flow, and then to pay for it. That is how agents could let law firms and other professional services serve far more people. All of this is a proposal; nothing is built yet.
-version: v999.0.0
+version: v0.14.208
 license: https://creativecommons.org/licenses/by/4.0/
 tags: delegation, pki, power-of-attorney, legal, accountability, agents, professional-services, article
 status: published
