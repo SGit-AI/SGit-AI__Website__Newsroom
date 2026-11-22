@@ -4,24 +4,25 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.209 · 533 articles since 2026-08-17; the newest is 2026-11-22. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 534 articles since 2026-08-17; the newest is 2026-11-22. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters](articles/lawyers-in-the-loop.md), 2026-11-22, 9 min. A decisions agent under a limited power of attorney signed with my key, a counsel agent, and a paid loop to a named lawyer who answers for it.
+- [Out of the box: the five stages it takes today to put a website and a local model on a Raspberry Pi from a Mac, and how the Factory can do every one of them once, so that the sovereign website appliance just works when it is plugged in and scales to many units the same way](articles/out-of-the-box.md), 2026-11-22, 12 min. A Raspberry Pi setup guide in five manual stages, turned round: the Factory images once, the owner plugs in two cables, and every unit is the same.
 
 ## Five more
 
+- [Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters](articles/lawyers-in-the-loop.md), Agent security & behaviour policies, 2026-11-22, 9 min.
 - [A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people](articles/a-holacracy-of-agents.md), Working with agents, 2026-11-22, 9 min.
 - [Versioned API sites, a month on: every release a complete copy that is never edited, 296 live files checked against their hashes, and the two places the rule did not reach](articles/versioned-api-sites.md), Engineering this newsroom, 2026-11-22, 10 min.
 - [Maintaining the core platforms as a cost item in every project: a line sized to the project, delivering something every month, and what four weeks of php2shell data say happens without it](articles/maintaining-the-core-platforms.md), Startups & strategy, 2026-11-22, 9 min.
 - [The primitives of trust: why a web of trust between people works now when my earlier attempts at a key store did not, a site per person, keys made in browsers and in agent sessions, signing and following links done by an engine the user never sees, links that only count from the other side, kinds and provenance that can be confirmed, schemas each owner defines, and why it is easy to game one node and hard to game them all](articles/the-primitives-of-trust.md), Startups & strategy, 2026-11-21, 5 min.
-- [Programmatic stories: how the PrompTugal bulletins went from a 30-second text bulletin to twelve synthetic presenters on one 3D stage in two days, movies made by code instead of rendered by hand, every frame a function of time and data, what that makes possible, from live data and real voices to an animated summary for every article, the story of how Vicky Wang ran her agents, a morning briefing I would actually watch, and an invitation to filmmakers](articles/programmatic-stories.md), Startups & strategy, 2026-11-21, 6 min.
 
 ## The last five days
 
-### Sunday 22 November 2026 (4 articles)
+### Sunday 22 November 2026 (5 articles)
 
+- Startups & strategy: [Out of the box: the five stages it takes today to put a website and a local model on a Raspberry Pi from a Mac, and how the Factory can do every one of them once, so that the sovereign website appliance just works when it is plugged in and scales to many units the same way](articles/out-of-the-box.md), 12 min.
 - Agent security & behaviour policies: [Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters](articles/lawyers-in-the-loop.md), 9 min.
 - Working with agents: [A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people](articles/a-holacracy-of-agents.md), 9 min.
 - Engineering this newsroom: [Versioned API sites, a month on: every release a complete copy that is never edited, 296 live files checked against their hashes, and the two places the rule did not reach](articles/versioned-api-sites.md), 10 min.
@@ -141,13 +142,13 @@ Publishers, AI and who gets paid: the reading meter, local news, licensing, Meta
 - [Pennies against dollars: what our agents actually cost at Web Summit, the swarm that ran 216 model calls on four open-weight models for under seven cents where the same tokens on a frontier model would have cost about two dollars, newsroom days of hundreds of API-equivalent dollars, almost all of it agents re-reading their own sessions, and the lesson that context is the cost and starting again is cheaper than remembering](articles/pennies-against-dollars.md), 2026-11-18.
 - [The librarian: my favourite agent, and why a data platform needs a library at its heart, a catalogue of everything PrompTugal.news has read, each item with its source, licence, evidence and links, a graph of how it all connects, an invitation to real librarians, and the next shelves, official sources and the law](articles/the-librarian.md), 2026-11-18.
 
-### [Startups & strategy](sections/strategy/index.md) (162)
+### [Startups & strategy](sections/strategy/index.md) (163)
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
+- [Out of the box: the five stages it takes today to put a website and a local model on a Raspberry Pi from a Mac, and how the Factory can do every one of them once, so that the sovereign website appliance just works when it is plugged in and scales to many units the same way](articles/out-of-the-box.md), 2026-11-22.
 - [Maintaining the core platforms as a cost item in every project: a line sized to the project, delivering something every month, and what four weeks of php2shell data say happens without it](articles/maintaining-the-core-platforms.md), 2026-11-22.
 - [The primitives of trust: why a web of trust between people works now when my earlier attempts at a key store did not, a site per person, keys made in browsers and in agent sessions, signing and following links done by an engine the user never sees, links that only count from the other side, kinds and provenance that can be confirmed, schemas each owner defines, and why it is easy to game one node and hard to game them all](articles/the-primitives-of-trust.md), 2026-11-21.
 - [Programmatic stories: how the PrompTugal bulletins went from a 30-second text bulletin to twelve synthetic presenters on one 3D stage in two days, movies made by code instead of rendered by hand, every frame a function of time and data, what that makes possible, from live data and real voices to an animated summary for every article, the story of how Vicky Wang ran her agents, a morning briefing I would actually watch, and an invitation to filmmakers](articles/programmatic-stories.md), 2026-11-21.
 - [Start, stop, slow down: how I run a large team of agents and keep my hand on the brake, 8,027 commits in eighteen days, a big stop, a hand brake, 560 wakes a day cut to 76 with one sentence, 39 schedules changed in 30 seconds, three warnings from the seven-day limit handled, and 34 agents moved to a completely separate account in four hours, which is what sovereignty and resilience look like in practice](articles/start-stop-slow-down.md), 2026-11-21.
-- [Person Graph: one picture of what we have been building, people and their agents with their own keys and repositories, links that count only both ways, kinds of link from "real" to "vouch to hire", groups as centres of gravity, countersigned claims, anonymous personas, a check for re-identification, all done through each person's own Claude, with mock-ups of the site and a simulation of 150 people and 40 fake accounts that shows why two-way links make bad actors cheap to spot](articles/person-graph.md), 2026-11-21.
 
 ### [Engineering this newsroom](sections/building/index.md) (54)
 How the site is built and released: the pipeline, the checks, no-server design, the numbers.

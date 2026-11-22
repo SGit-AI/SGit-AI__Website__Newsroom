@@ -55,6 +55,233 @@
   ],
   "articles": [
     {
+      "slug": "out-of-the-box",
+      "title": "Out of the box: the five stages it takes today to put a website and a local model on a Raspberry Pi from a Mac, and how the Factory can do every one of them once, so that the sovereign website appliance just works when it is plugged in and scales to many units the same way",
+      "date": "2026-11-22",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/out-of-the-box.html",
+      "markdown": "https://newsroom.sgit.ai/articles/out-of-the-box.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/out-of-the-box.webp",
+      "teaser": "A Raspberry Pi setup guide in five manual stages, turned round: the Factory images once, the owner plugs in two cables, and every unit is the same.",
+      "topics": [
+        "startups-and-strategy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sovereign-website",
+        "raspberry-pi",
+        "appliance",
+        "local-ai",
+        "kickstarter",
+        "factory",
+        "setup",
+        "go-to-market",
+        "article"
+      ],
+      "links_out": [
+        "launching-the-sovereign-website-appliance",
+        "a-sovereign-website-on-a-raspberry-pi",
+        "what-is-a-sovereign-website",
+        "watch-your-website-being-built",
+        "the-sgit-server-factory",
+        "your-website-from-a-vault",
+        "the-launch-plan-in-eleven-turns",
+        "where-to-sell-the-book-and-the-appliances"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "oob-turned-round.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/oob-turned-round.webp",
+          "caption": "The guide's five stages, done by the owner, beside the same work done once by the Factory: two cables and a page.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "out-of-the-box",
+        "teaser": "A Raspberry Pi setup guide in five manual stages, turned round: the Factory images once, the owner plugs in two cables, and every unit is the same.",
+        "topics": [
+          "startups-and-strategy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Setting up a Raspberry Pi with a website and a local model takes five manual stages full of choices where an owner gives up, so the Factory should do them once as a tested image with a small per-unit part and a printer-style Wi-Fi setup, leaving the owner two cables and a page, which is what lets the appliance scale and what the Kickstarter can promise.",
+        "nodes": [
+          {
+            "id": "guide",
+            "label": "The five-stage setup guide",
+            "kind": "artefact",
+            "summary": "Imager, boot, SSH, update, site and models, from a Mac."
+          },
+          {
+            "id": "official",
+            "label": "Checked against official docs",
+            "kind": "method",
+            "summary": "Every step is in the Raspberry Pi getting-started page."
+          },
+          {
+            "id": "choices",
+            "label": "Choices where owners stop",
+            "kind": "claim",
+            "summary": "Drive, host key, router, runtime, model size."
+          },
+          {
+            "id": "question",
+            "label": "Who should follow the guide",
+            "kind": "question",
+            "summary": "Not how to simplify it, but who does it."
+          },
+          {
+            "id": "turn",
+            "label": "The guide turned round",
+            "kind": "claim",
+            "summary": "The Factory does the owner's work once."
+          },
+          {
+            "id": "image",
+            "label": "One tested image",
+            "kind": "method",
+            "summary": "OS, updates, runtime, site service, measured model."
+          },
+          {
+            "id": "perunit",
+            "label": "A small per-unit part",
+            "kind": "method",
+            "summary": "Hostname, site, keys; no secrets in the image."
+          },
+          {
+            "id": "wifi",
+            "label": "Printer-style Wi-Fi setup",
+            "kind": "method",
+            "summary": "The Pi opens a setup network; the owner joins from a phone."
+          },
+          {
+            "id": "owner",
+            "label": "Two cables and a page",
+            "kind": "claim",
+            "summary": "The owner sees the website from the shelf."
+          },
+          {
+            "id": "scale",
+            "label": "Every unit the same",
+            "kind": "claim",
+            "summary": "Test once, fix once, signed updates to all."
+          },
+          {
+            "id": "factory",
+            "label": "The SGit server factory",
+            "kind": "example",
+            "summary": "Expert work becomes a recipe the agents run."
+          },
+          {
+            "id": "kickstarter",
+            "label": "A box that works, promised",
+            "kind": "claim",
+            "summary": "What the campaign can offer backers."
+          },
+          {
+            "id": "next",
+            "label": "One card, timed",
+            "kind": "artefact",
+            "summary": "The next step: power cable to website."
+          }
+        ],
+        "edges": [
+          {
+            "from": "guide",
+            "to": "official",
+            "rel": "depends-on"
+          },
+          {
+            "from": "guide",
+            "to": "choices",
+            "rel": "produces"
+          },
+          {
+            "from": "choices",
+            "to": "question",
+            "rel": "leads-to"
+          },
+          {
+            "from": "question",
+            "to": "turn",
+            "rel": "answers"
+          },
+          {
+            "from": "factory",
+            "to": "turn",
+            "rel": "example-of"
+          },
+          {
+            "from": "turn",
+            "to": "image",
+            "rel": "produces"
+          },
+          {
+            "from": "turn",
+            "to": "perunit",
+            "rel": "produces"
+          },
+          {
+            "from": "wifi",
+            "to": "perunit",
+            "rel": "extends"
+          },
+          {
+            "from": "image",
+            "to": "owner",
+            "rel": "leads-to"
+          },
+          {
+            "from": "perunit",
+            "to": "owner",
+            "rel": "leads-to"
+          },
+          {
+            "from": "image",
+            "to": "scale",
+            "rel": "produces"
+          },
+          {
+            "from": "scale",
+            "to": "kickstarter",
+            "rel": "leads-to"
+          },
+          {
+            "from": "kickstarter",
+            "to": "next",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "launching-the-sovereign-website-appliance",
+            "a-sovereign-website-on-a-raspberry-pi",
+            "what-is-a-sovereign-website",
+            "watch-your-website-being-built",
+            "the-sgit-server-factory",
+            "your-website-from-a-vault",
+            "the-launch-plan-in-eleven-turns",
+            "where-to-sell-the-book-and-the-appliances"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.raspberrypi.com/documentation/computers/getting-started.html",
+            "https://www.raspberrypi.com/documentation/computers/configuration.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "So the question is not how to make the guide easier to follow. It is who should follow it.",
+            "why": "The turn the article makes, from simplifying the steps to moving them."
+          },
+          {
+            "text": "A thousand units written from one tested image are a thousand of the same thing.",
+            "why": "Why the appliance scales and a guide does not."
+          }
+        ]
+      }
+    },
+    {
       "slug": "lawyers-in-the-loop",
       "title": "Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters",
       "date": "2026-11-22",
@@ -2229,7 +2456,9 @@
         "ci-behaviour-policies",
         "from-send-to-sgit"
       ],
-      "links_in": [],
+      "links_in": [
+        "out-of-the-box"
+      ],
       "figures": [
         {
           "file": "sgf-flow.webp",
@@ -4108,6 +4337,7 @@
         "the-launch-plan-in-eleven-turns"
       ],
       "links_in": [
+        "out-of-the-box",
         "when-a-publisher-asks"
       ],
       "figures": [
@@ -4370,6 +4600,7 @@
         "how-a-vault-works"
       ],
       "links_in": [
+        "out-of-the-box",
         "a-european-brain",
         "websites-for-the-moment",
         "where-to-sell-the-book-and-the-appliances"
@@ -4505,6 +4736,7 @@
         "a-website-with-a-team-inside"
       ],
       "links_in": [
+        "out-of-the-box",
         "a-european-brain",
         "the-swarm-one-real-run-at-a-time",
         "every-tool-its-own-website",
@@ -4660,6 +4892,7 @@
         "native-apps-by-agents"
       ],
       "links_in": [
+        "out-of-the-box",
         "where-to-sell-the-book-and-the-appliances",
         "launching-the-sovereign-website-appliance"
       ],
@@ -4800,6 +5033,7 @@
         "sovereign-websites-the-investment-case"
       ],
       "links_in": [
+        "out-of-the-box",
         "hired-as-an-agentic-worker",
         "a-european-brain",
         "the-swarm-one-real-run-at-a-time",
@@ -4946,6 +5180,7 @@
         "sovereignty-you-can-move"
       ],
       "links_in": [
+        "out-of-the-box",
         "the-showroom",
         "a-european-brain",
         "every-tool-its-own-website",
@@ -5398,6 +5633,7 @@
         "a-key-for-every-person"
       ],
       "links_in": [
+        "out-of-the-box",
         "watch-your-website-being-built",
         "the-launch-plan-in-eleven-turns",
         "launching-the-sovereign-website-appliance",

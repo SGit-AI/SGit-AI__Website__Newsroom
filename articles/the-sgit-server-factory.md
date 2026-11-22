@@ -149,6 +149,10 @@ Agents & policy[This article as a graph →](graphs.md#the-sgit-server-factory)
 - [CI behaviour policies: to create one repository and one DNS record per request, our site factory's pipeline holds the power to create, change or delete every repository in the organisation and to point any subdomain anywhere, and why pipelines now need the same behaviour policies as agents](ci-behaviour-policies.md) Our site factory's pipeline needs one repository and one DNS record per request, yet holds power over the whole organisation. Pipelines need ABPs too.
 - [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](from-send-to-sgit.md) Eight months of SG/Send, checked against its own briefs and commits: how file sharing became sgit and vaults, the pace, and what the market said.
 
+### Continued by
+
+- [Out of the box: the five stages it takes today to put a website and a local model on a Raspberry Pi from a Mac, and how the Factory can do every one of them once, so that the sovereign website appliance just works when it is plugged in and scales to many units the same way](out-of-the-box.md) A Raspberry Pi setup guide in five manual stages, turned round: the Factory images once, the owner plugs in two cables, and every unit is the same.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 521 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=521)

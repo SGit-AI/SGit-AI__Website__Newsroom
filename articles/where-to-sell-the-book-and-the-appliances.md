@@ -89,6 +89,7 @@ Agents & policy[This article as a graph →](graphs.md#where-to-sell-the-book-an
 
 ### Continued by
 
+- [Out of the box: the five stages it takes today to put a website and a local model on a Raspberry Pi from a Mac, and how the Factory can do every one of them once, so that the sovereign website appliance just works when it is plugged in and scales to many units the same way](out-of-the-box.md) A Raspberry Pi setup guide in five manual stages, turned round: the Factory images once, the owner plugs in two cables, and every unit is the same.
 - [When a publisher asks: exploring offers to license a book that started on Leanpub, which technical publishers take books like this, what they publish about their terms, the books that went from Leanpub or a free online edition to a publisher before, the questions to ask before signing anything, and what I want to keep for One Human, Nine Agents, Nineteen Hours](when-a-publisher-asks.md) Exploring offers to license a book that started on Leanpub: who takes such books, examples from before, and the questions to ask.
 
 [All articles](index.md) · [All graphs](graphs.md)

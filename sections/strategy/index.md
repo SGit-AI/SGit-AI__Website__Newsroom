@@ -2,10 +2,11 @@
 
 Founders, funding, open source economics, Wardley maps, Portugal and Europe, legal and go-to-market.
 
-162 articles, newest first.
+163 articles, newest first.
 
 ## November 2026
 
+- [Out of the box: the five stages it takes today to put a website and a local model on a Raspberry Pi from a Mac, and how the Factory can do every one of them once, so that the sovereign website appliance just works when it is plugged in and scales to many units the same way](../../articles/out-of-the-box.md), 2026-11-22, 12 min.
 - [Maintaining the core platforms as a cost item in every project: a line sized to the project, delivering something every month, and what four weeks of php2shell data say happens without it](../../articles/maintaining-the-core-platforms.md), 2026-11-22, 9 min.
 - [The primitives of trust: why a web of trust between people works now when my earlier attempts at a key store did not, a site per person, keys made in browsers and in agent sessions, signing and following links done by an engine the user never sees, links that only count from the other side, kinds and provenance that can be confirmed, schemas each owner defines, and why it is easy to game one node and hard to game them all](../../articles/the-primitives-of-trust.md), 2026-11-21, 5 min.
 - [Programmatic stories: how the PrompTugal bulletins went from a 30-second text bulletin to twelve synthetic presenters on one 3D stage in two days, movies made by code instead of rendered by hand, every frame a function of time and data, what that makes possible, from live data and real voices to an animated summary for every article, the story of how Vicky Wang ran her agents, a morning briefing I would actually watch, and an invitation to filmmakers](../../articles/programmatic-stories.md), 2026-11-21, 6 min.

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-22 | published | 2,239 | first published | this release | [current](../lawyers-in-the-loop.md) |
+| **v1.0.0** | 2026-11-22 | published | 2,239 | first published | [`50827d71a`](https://github.com/SGit-AI/SGit-AI__Website/commit/50827d71a70518224a9080d93f3f5d1f938ddaed) | [current](../lawyers-in-the-loop.md) |
 
 [← Back to the article](../lawyers-in-the-loop.md) · [All articles](../index.md)
 
