@@ -1,9 +1,9 @@
 // The writer register (admin/writer/register.json; the rule is in admin/build/writer_register.js).
-//   node admin/writer/tools/register.cjs open  --id writer-NN --session <claude session url> --approved <path to the editor's words>
+//   node admin/writer/tools/register.cjs open  --id writer-NN --session <claude session url> --approved <path to the editor's words> [--account <letter> --agent <name>]
 //   node admin/writer/tools/register.cjs close --id writer-NN [--reason "..."]
 // open makes a new ed25519 key; the private half goes to ~/.newsroom-writer/<id>.pem and never into the
 // repository. close marks the registration closed and deletes the private half: the key is never used again.
-// Only open a registration at the editor's word, and only when no other is open.
+// Only open a registration at the editor's word, and only while fewer than max_open are open (a twin, on its own account).
 // A writer does not close itself: the editor closes it, or the commit that opens the next writer does
 // (close the old, open the new, sign with the new key), because a writer's commit must be signed while open.
 'use strict';
@@ -20,7 +20,10 @@ if (!id) { console.error('--id is required'); process.exit(2); }
 
 if (cmd === 'open') {
   const open = reg.registrations.filter(r => !r.closed);
-  if (open.length) { console.error(`refused: ${open.map(r => r.id).join(', ')} is open; the editor closes it first`); process.exit(1); }
+  const max = Number.isInteger(reg.max_open) ? reg.max_open : 1;
+  if (open.length >= max) { console.error(`refused: ${open.map(r => r.id).join(', ')} open, at most ${max}; the editor closes one first`); process.exit(1); }
+  if (open.length && !opt('account')) { console.error('refused: another writer is open; a twin names its --account (the letter in its agent name)'); process.exit(1); }
+  if (open.length && open.some(r => r.account === opt('account'))) { console.error(`refused: account ${opt('account')} already has an open writer; twins run on different accounts`); process.exit(1); }
   if (reg.registrations.some(r => r.id === id)) { console.error(`refused: ${id} exists; a registration is never reopened, take a new id`); process.exit(1); }
   const approved = opt('approved');
   if (!approved || !fs.existsSync(path.join(ROOT, approved))) { console.error('refused: --approved must point at the editor\'s words in the repository'); process.exit(1); }
@@ -28,8 +31,11 @@ if (cmd === 'open') {
   const pub = publicKey.export({ format: 'der', type: 'spki' }).toString('base64');
   fs.mkdirSync(KEYS, { recursive: true, mode: 0o700 });
   fs.writeFileSync(path.join(KEYS, id + '.pem'), privateKey.export({ format: 'pem', type: 'pkcs8' }), { mode: 0o600 });
-  reg.registrations.push({ id, session: opt('session') || null, opened: now, closed: null,
-    key: { alg: 'ed25519', public: pub, fingerprint: fingerprint(pub) }, approved });
+  const entry = { id, session: opt('session') || null, opened: now, closed: null,
+    key: { alg: 'ed25519', public: pub, fingerprint: fingerprint(pub) }, approved };
+  if (opt('account')) entry.account = opt('account');
+  if (opt('agent')) entry.agent = opt('agent');
+  reg.registrations.push(entry);
   console.log(`opened ${id}, key ${fingerprint(pub)}; private half in ${path.join(KEYS, id + '.pem')}`);
 } else if (cmd === 'close') {
   const r = reg.registrations.find(x => x.id === id);

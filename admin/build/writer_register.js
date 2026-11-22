@@ -1,5 +1,6 @@
 // The writer register: one journalist agent at a time (the editor's rule, 31 October 2026,
-// admin/notes/2026-10-31__one-writer/memo-01.md). Used by validate.js as check 15.
+// admin/notes/2026-10-31__one-writer/memo-01.md), or two as twins on different accounts since the editor's word of
+// 22 November 2026 (admin/notes/2026-11-22__newsroom.d-twin/memo-01.md). Used by validate.js as check 15.
 //
 // admin/writer/register.json lists every writer registration. A registration is opened only at the
 // editor's word, with a new ed25519 key made by the session; the private half never leaves the
@@ -8,7 +9,8 @@
 //
 // Checked here:
 //   - ids and key fingerprints are unique, so a closed key cannot come back under a new id;
-//   - at most one registration is open, and it has a key and the editor's approval on file;
+//   - at most max_open registrations are open (1, or 2 with the editor's approval on file), each on its own account
+//     when there are two, and each has a key and the editor's approval on file;
 //   - every fingerprint matches its public key;
 //   - when the commit being built is a writer's ("@newsroom.writer:"), it names the open
 //     registration and carries its signature over the commit's tree;
@@ -95,7 +97,19 @@ function check(root, errors) {
     }
   }
   const open = list.filter(r => !r.closed);
-  if (open.length > 1) errors.push(`${REL}: ${open.length} registrations are open (${open.map(r => r.id).join(', ')}); only one writer at a time, and only the editor decides otherwise by closing one`);
+  // How many may be open: one, unless the editor raised it (two since 22 November 2026, twins on different accounts).
+  let max = 1;
+  if (reg.max_open !== undefined) {
+    if (!Number.isInteger(reg.max_open) || reg.max_open < 1 || reg.max_open > 2) errors.push(`${REL}: max_open must be 1 or 2`);
+    else if (reg.max_open > 1 && (!reg.max_open_approved || !fs.existsSync(path.join(root, reg.max_open_approved)))) errors.push(`${REL}: max_open ${reg.max_open} does not point at the editor's approval in the repository`);
+    else max = reg.max_open;
+  }
+  if (open.length > max) errors.push(`${REL}: ${open.length} registrations are open (${open.map(r => r.id).join(', ')}); at most ${max}, and only the editor decides otherwise`);
+  if (open.length > 1) {
+    const accts = open.map(r => r.account);
+    if (accts.some(a => !a)) errors.push(`${REL}: with more than one writer open, every open registration names its account (${open.filter(r => !r.account).map(r => r.id).join(', ')} does not)`);
+    else if (new Set(accts).size !== accts.length) errors.push(`${REL}: two open writers on the same account (${accts.join(', ')}); twins run on different accounts`);
+  }
   for (const r of open) {
     if (!r.key) errors.push(`${REL}: open registration ${r.id} has no key`);
     if (!r.approved || !fs.existsSync(path.join(root, r.approved))) errors.push(`${REL}: open registration ${r.id} does not point at the editor's approval in the repository`);

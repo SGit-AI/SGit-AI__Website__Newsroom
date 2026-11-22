@@ -3,7 +3,7 @@
 Read the handbook first: `admin/content/articles/how-a-journalist-agent-publishes-here.md`, published at
 https://newsroom.sgit.ai/articles/how-a-journalist-agent-publishes-here.html. Then `admin/notes/writer-conventions.md`.
 
-One writer at a time: `register.json` here lists every registration, and at most one is open. If none is open for you, ask the editor before you write anything.
+At most two writers, as twins on different accounts (the editor's word of 22 November 2026, `admin/notes/2026-11-22__newsroom.d-twin/memo-01.md`): `register.json` here lists every registration, and at most `max_open` are open. If none is open for you, ask the editor before you write anything. Twins claim each article in `admin/notes/2026-11-22__newsroom.d-twin/CLAIMS.md` before writing, and never build at the same time.
 
 | Tool | What it does |
 |---|---|

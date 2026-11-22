@@ -1,5 +1,7 @@
 {
- "rule": "One journalist agent at a time. A registration is opened only at the editor's word, with a new key; a closed registration is never reopened and its key is never used again. Checked by admin/build/validate.js (check 15); the editor's words are in admin/notes/2026-10-31__one-writer/memo-01.md.",
+ "rule": "At most max_open journalist agents at a time (one until 22 November 2026; two since, as twins on different accounts, at the editor's word in admin/notes/2026-11-22__newsroom.d-twin/memo-01.md). A registration is opened only at the editor's word, with a new key; a closed registration is never reopened and its key is never used again. Checked by admin/build/validate.js (check 15); the editor's first words are in admin/notes/2026-10-31__one-writer/memo-01.md.",
+ "max_open": 2,
+ "max_open_approved": "admin/notes/2026-11-22__newsroom.d-twin/memo-01.md",
  "registrations": [
   {
    "id": "writer-01",
@@ -109,7 +111,9 @@
     "ssh": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIp24CRjO3z2LXmJhmQE3p4zMBM5yd5CZWoa52KmTGBE",
     "since": "2026-11-19T01:45:59Z",
     "approved": "admin/notes/2026-11-19__signed-commits/notes.md"
-   }
+   },
+   "account": "b",
+   "agent": "newsroom.b@sgit.ai.dinis"
   }
  ]
 }

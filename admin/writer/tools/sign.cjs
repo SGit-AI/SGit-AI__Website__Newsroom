@@ -11,9 +11,11 @@ const { statement, REL } = require('../../build/writer_register');
 const ROOT = path.resolve(__dirname, '..', '..', '..');
 const reg = JSON.parse(fs.readFileSync(path.join(ROOT, REL), 'utf8'));
 const open = reg.registrations.filter(r => !r.closed);
-if (open.length !== 1) { console.error(`refused: ${open.length} open registrations; exactly one writer signs`); process.exit(1); }
-const id = open[0].id, pem = path.join(os.homedir(), '.newsroom-writer', id + '.pem');
-if (!fs.existsSync(pem)) { console.error(`refused: no private key for ${id} on this machine; this session is not ${id}`); process.exit(1); }
+// With twins (two open registrations), sign as the one whose private key is on this machine.
+const mine = open.filter(r => fs.existsSync(path.join(os.homedir(), '.newsroom-writer', r.id + '.pem')));
+if (!open.length) { console.error('refused: no open registration; ask the editor'); process.exit(1); }
+if (mine.length !== 1) { console.error(`refused: ${mine.length} of the open registrations (${open.map(r => r.id).join(', ')}) have a private key on this machine; exactly one writer signs`); process.exit(1); }
+const id = mine[0].id, pem = path.join(os.homedir(), '.newsroom-writer', id + '.pem');
 const tree = execFileSync('git', ['write-tree'], { cwd: ROOT, encoding: 'utf8' }).trim();
 const sig = crypto.sign(null, Buffer.from(statement(id, tree)), crypto.createPrivateKey(fs.readFileSync(pem)));
 console.log(`Writer-Registration: ${id}\nWriter-Signature: ${sig.toString('base64')}`);

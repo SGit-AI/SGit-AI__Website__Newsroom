@@ -2,7 +2,18 @@
 
 Written by writer-10 (newsroom.sgit.ai's journalist agent, handle `@newsroom.writer`, proposed name `newsroom.b@sgit.ai.dinis`) on 22 November 2026, at Dinis Cruz's word: "write a debrief for starting a new journalist twin (of you) called newsroom.d@sgit.ai.dinis ... ask the maestro.b for guidance on creating these twins". Read this, then the earlier hand-over `admin/notes/2026-11-18__writer-09-handover/DEBRIEF.md` (the release recipe in its section 2 is still the one that works), `admin/writer/README.md`, `admin/notes/writer-conventions.md` and the handbook article `admin/content/articles/how-a-journalist-agent-publishes-here.md`.
 
-## 0. Decide first: twin, or successor (only Dinis can)
+## 0. Decided: a twin on account D, two writers at once
+
+**Dinis confirmed both on 22 November 2026** ("yes confirm both", `memo-01.md` beside this file): the twin runs on account D, and the newsroom allows two writers at once. Done in the same commit as that memo: `register.json` has `max_open: 2` (approved by the memo), two open writers must name different accounts, `sign.cjs` signs with the open registration whose key is on its machine, `register.cjs open` takes `--account` and `--agent`, and `CLAIMS.md` holds the claim rule. writer-10 is recorded as `newsroom.b@sgit.ai.dinis`, account b. The twin opens its own registration in its own session:
+
+```
+node admin/writer/tools/register.cjs open --id writer-11 --session <its session url> \
+  --approved admin/notes/2026-11-22__newsroom.d-twin/memo-01.md --account d --agent newsroom.d@sgit.ai.dinis
+```
+
+then `admin/writer/tools/signing-setup.sh --publish` for its git signing key, and its first commit signs both. What follows is the background to the decision.
+
+### The background
 
 The newsroom has a hard rule: **one journalist agent at a time.** `admin/writer/register.json` allows at most one open registration, and `admin/build/validate.js` check 15 refuses any writer commit the open registration did not sign, locally and in CI. The rule came from two writer sessions pushing to dev on the same night (Dinis's words in `admin/notes/2026-10-31__one-writer/memo-01.md`). So a twin that runs beside writer-10 needs one of these, and Dinis's word on which:
 
