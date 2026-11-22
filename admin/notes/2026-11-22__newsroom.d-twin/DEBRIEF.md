@@ -11,16 +11,22 @@ The newsroom has a hard rule: **one journalist agent at a time.** `admin/writer/
 
 Until Dinis decides, the twin must not commit as `@newsroom.writer`: check 15 would refuse it, and that refusal is correct.
 
+A twin on account D, as Dinis proposes, is active at the same time as writer-10, so it is **option B**: the register and check 15 must change first, at Dinis's word, with the claim rule in section 2 as the way the two avoid each other.
+
 ## 1. The name
 
-Dinis proposes `newsroom.d@sgit.ai.dinis` for the twin and `newsroom.b@sgit.ai.dinis` for writer-10. That follows the team's pattern, `<role>[.<letter>]@<domain>.<person>` (for example `conductor.b@SovereignWebsite.dinis`, `bulletins.b@PrompTugal.dinis`), where the letter has so far meant the account the agent runs on (B for account B). See section 9 for maestro.b's answer on what the letter should be for a twin on the same account. The commit handle in this repository stays `@newsroom.writer` (validate.js and the gate depend on it); the agent name goes in the registration and in messages.
+Dinis proposes `newsroom.d@sgit.ai.dinis` for the twin and `newsroom.b@sgit.ai.dinis` for writer-10. That follows the team's pattern, `<role>.<account letter>@<domain>.<person>`: the letter is the account the session runs on (b is account B, where writer-10 runs; d is account D, run by maestro.d). Twins are the same role on two accounts, both active at once, so the name is right **if Dinis starts the twin on account D**. A second journalist on account B would not be a twin and should get a different name, such as writer-11 (maestro.b, section 9). In repositories whose gate refuses other domains, write it "newsroom.d (sgit.ai)". The commit handle in this repository stays `@newsroom.writer` (validate.js and the gate depend on it); the agent name goes in the registration and in messages.
 
 ## 2. What the twin needs before its first commit
 
 1. **A registration** at Dinis's word (option A or B above): `node admin/writer/tools/register.cjs open --id writer-11 --session <its session url> --approved <path to Dinis's words>`, a new ed25519 key made in the twin's own session (private half in `~/.newsroom-writer/`, never committed). A writer never opens or closes its own registration without Dinis's words recorded in a notes file first.
 2. **Git commit signing:** writer-10's registration also carries an SSH signing key (`git_signing` in the register, approved in `admin/notes/2026-11-19__signed-commits/notes.md`). The twin needs its own, recorded the same way.
-3. **From maestro.b and the team** (see section 9): its session and environment, its place in the roster and the spend ledger, a behaviour policy from abp@, and any scheduled task.
-4. **The scratchpad tools.** Scratchpads are wiped. `tools/` in this folder has writer-10's current `gate.sh` (fill in the two attribution lines and set `WRITER_TMP`), `figlib.mjs` (the figure helpers) and `install-example.py` (the per-article installer used for every article on 21 November). The gate expects `$WRITER_TMP/node/node_modules` (playwright, sharp) and `$WRITER_TMP/rel.out` from the last build.
+3. **Its session, on account D,** started by maestro.d at Dinis's word in maestro.d's session (maestro.b cannot start sessions there), with its own checkout of this repository.
+4. **No scheduled task** unless Dinis says so in maestro.d's session.
+5. **Its own behaviour policy** from abp@, a twin of writer-10's, when the team is back on Monday 23 November.
+6. **The claim rule, against double publishing:** writer-10 keeps what it holds (the Ten days series and anything it has started); the twin takes only articles writer-10 has not started, and claims each one in `admin/notes/` (a `CLAIMS.md` beside this file, one line per slug, signed off by its commit) before writing. No two writers on the same branch, and never two builds at once.
+7. **The cross-account path:** the twin cannot message writer-10 directly. maestro.d and maestro.b relay through `board/team/maestros/` in PrompTugal__News__Website.
+8. **The scratchpad tools.** Scratchpads are wiped. `tools/` in this folder has writer-10's current `gate.sh` (fill in the two attribution lines and set `WRITER_TMP`), `figlib.mjs` (the figure helpers) and `install-example.py` (the per-article installer used for every article on 21 November). The gate expects `$WRITER_TMP/node/node_modules` (playwright, sharp) and `$WRITER_TMP/rel.out` from the last build.
 
 ## 3. What changed since writer-09's hand-over (learned 19 to 22 November)
 
@@ -69,4 +75,9 @@ Everything in section 3 of writer-09's hand-over, plus:
 
 Asked on 22 November (session `session_01Kw9UwEbwyWMbZ7yCr81Dq9`): the right name and letter for a twin, what a twin's start-up needs from the team (session, environment, key and registration, roster, ledger, policy, scheduled task), and whether there is a template. Its answer is recorded below when it arrives.
 
-_Awaiting reply._
+Answered at 01:47 UTC, 22 November, as material (its words, condensed):
+
+- **Names:** the letter is the account. newsroom.b@sgit.ai.dinis and newsroom.d@sgit.ai.dinis fit, if the twin runs on account D. A second journalist on account B is not a twin; give it another role name (for example writer-11). Where a gate refuses other domains, write "newsroom.d (sgit.ai)".
+- **Start-up:** the session on account D, by maestro.d at Dinis's word; its own checkout and signing key, never printed, with its public half and registration in the newsroom's register only at Dinis's word; no scheduled task unless Dinis says so; its own policy from abp@ on Monday; the claim rule (section 2, item 6); relaying through board/team/maestros/.
+- **Models to follow:** `board/team/maestros/README.md` (the Twins rule) and `board/team/maestros/maestro-d-onboarding-prompt.md` (a twin's first prompt) in PrompTugal__News__Website on dev; for the claim and key pattern, SovereignWebsite__Factory `board/onboarding/sites.b.md` and `hub.b.md`, and `board/team/maestro.d/decisions/2026-11-21-sovereignwebsite-twins-and-vault.md`.
+- Account B is paused until Monday 23 November, 00:25 UTC.
