@@ -106,7 +106,9 @@ Dion Wiggins' [post](https://lnkd.in/p/eYFQfRRn) and [article](https://www.linke
 
 Startups & strategyNews & evidence[This article as a graph →](graphs.md#the-maintenance-deficit-with-evidence)
 
-No other article links here yet.
+### Continued by
+
+- [Maintaining the core platforms as a cost item in every project: a line sized to the project, delivering something every month, and what four weeks of php2shell data say happens without it](maintaining-the-core-platforms.md) Every project should budget for maintaining the platforms it runs on, sized to it and visible monthly; a month of php2shell data shows the gap.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

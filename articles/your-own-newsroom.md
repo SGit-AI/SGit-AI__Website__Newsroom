@@ -248,6 +248,7 @@ Site & engineeringStartups & strategy[This article as a graph →](graphs.md#you
 
 ### Continued by
 
+- [Versioned API sites, a month on: every release a complete copy that is never edited, 296 live files checked against their hashes, and the two places the rule did not reach](versioned-api-sites.md) Three API hosts, 296 live files matching their manifests, and two places the never-edit rule did not reach: the docs and the newsroom's own copies.
 - [From Lovable to your own newsroom: a brief for José Bota and his agent, to put every app on GitHub Pages under his own domain, and publish each one as an article](from-lovable-to-your-own-newsroom.md) From Lovable to your own newsroom: a brief for José Bota and his agent, every app on GitHub Pages under his own domain, each an article.
 - [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](the-no-server-startup.md) A blueprint for products with no server and no database of yours: static files, the user's own AI key and storage, and agents to build them.
 - [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and an AI edition, dated October 2026, made first.

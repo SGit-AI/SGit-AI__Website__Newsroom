@@ -1,0 +1,38 @@
+{
+ "slug": "versioned-api-sites",
+ "teaser": "Three API hosts, 296 live files matching their manifests, and two places the never-edit rule did not reach: the docs and the newsroom's own copies.",
+ "topics": ["site-and-engineering"],
+ "core_idea": "The sgit.ai API hosts publish every release as a complete, never-edited copy with a manifest of hashes; a check from outside found all 296 live files matching, and found the rule's gaps at its edges: the explaining pages, and a site that stops cutting releases of its own code.",
+ "nodes": [
+  {"id": "rule", "label": "Independent releases", "kind": "method", "summary": "A complete copy per release, never edited."},
+  {"id": "manifest", "label": "The manifest", "kind": "artefact", "summary": "Every file's SHA-256."},
+  {"id": "pin", "label": "Pinning", "kind": "method", "summary": "A site names one release."},
+  {"id": "check", "label": "The outside check", "kind": "example", "summary": "296 files, no mismatch."},
+  {"id": "docs", "label": "The documentation gap", "kind": "example", "summary": "v0.1.1 starts as a copy of v0.1.1."},
+  {"id": "drift", "label": "The newsroom's drift", "kind": "example", "summary": "9 files moved on."},
+  {"id": "ifd", "label": "IFD overlays", "kind": "concept", "summary": "Minors as surgical overrides."},
+  {"id": "cadence", "label": "Release cadence", "kind": "question", "summary": "How often must a site cut one?"},
+  {"id": "gate", "label": "Checks at the edges", "kind": "claim", "summary": "Proposed fixes."}
+ ],
+ "edges": [
+  {"from": "rule", "to": "manifest", "rel": "produces"},
+  {"from": "pin", "to": "rule", "rel": "depends-on"},
+  {"from": "rule", "to": "ifd", "rel": "contrasts"},
+  {"from": "check", "to": "manifest", "rel": "depends-on"},
+  {"from": "docs", "to": "rule", "rel": "contrasts"},
+  {"from": "drift", "to": "cadence", "rel": "leads-to"},
+  {"from": "docs", "to": "gate", "rel": "leads-to"},
+  {"from": "drift", "to": "gate", "rel": "leads-to"},
+  {"from": "check", "to": "rule", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["the-user-keeps-the-meter", "your-own-newsroom", "ci-owns-the-version"],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "nothing in v0.1.1 that loads from v0.1.0", "why": "api.send.sgit.ai, Independent releases."},
+  {"text": "can be read whole, hashed whole and reasoned about whole, by a person or by an agent", "why": "api.send.sgit.ai, Independent releases."},
+  {"text": "A page that explains a release is a contract too, and it changed under its readers.", "why": "This article."}
+ ]
+}

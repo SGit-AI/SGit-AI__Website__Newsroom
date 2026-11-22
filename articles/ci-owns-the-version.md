@@ -156,6 +156,7 @@ Site & engineeringAgents & policy[This article as a graph →](graphs.md#ci-owns
 
 ### Continued by
 
+- [Versioned API sites, a month on: every release a complete copy that is never edited, 296 live files checked against their hashes, and the two places the rule did not reach](versioned-api-sites.md) Three API hosts, 296 live files matching their manifests, and two places the never-edit rule did not reach: the docs and the newsroom's own copies.
 - [Selling less code: the economics of customised open source, where the customer pays for the features they use, the maker certifies what it ships, and the pipeline is finally tied to revenue](selling-less-code.md) The economics of customised open source: the customer pays for the features they use, the maker certifies it, and the pipeline is tied to revenue.
 - [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](investor-sgit-ai.md) A brief for investor.sgit.ai: investors and founders using our tools, with news, contracts as graphs, deal rooms as vaults and sgit as the case study.
 - [A talk built in a day: the ultimate insider, from an empty repository at 00:16 to the stage at hack::soho at 19:00, by nine agents and one editor, every number from their records](the-ultimate-insider-case-study.md) The ultimate insider, built in a day: 814 commits, 210 releases and 162 wakes by nine agents and one editor, from 00:16 to the stage at 19:00.

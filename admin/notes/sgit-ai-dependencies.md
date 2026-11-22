@@ -4,15 +4,15 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 1722 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 1177 | 3324 | links to sgit.ai's pages and the network sites (38 files this site writes itself) |
-| words | 2267 | 14507 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 1728 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 1181 | 3330 | links to sgit.ai's pages and the network sites (38 files this site writes itself) |
+| words | 2280 | 14693 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 118 | 343 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 1043 × `sgit.ai/about/index.html`
-- 524 × `sgit.ai/about/index.md`
+- 1047 × `sgit.ai/about/index.html`
+- 526 × `sgit.ai/about/index.md`
 - 102 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 70 × `pki.sgit.ai/`
@@ -97,7 +97,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 
 ## Words, in pages this site writes itself
 
-- `admin/versions.html` (122)
+- `admin/versions.html` (123)
 - `admin/notes/2026-10-10__newsroom-move-and-content-audit.md` (50)
 - `admin/notes/2026-10-24__signing-in-with-a-public-key.md` (33)
 - `articles/summaries/plural-for-the-family-singular-for-the-site.json` (31)
@@ -124,6 +124,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/releases/v0.12.2.html` (13)
 - `admin/build/pki-message/message.js` (12)
 - `admin/notes/2026-10-18__a-directory-of-people-and-keys.md` (12)
+- `admin/notes/2026-11-22__newsroom.d-twin/DEBRIEF.md` (12)
 - `engineering/releases/v0.12.15.html` (12)
 - `engineering/releases/v0.12.3.html` (12)
 - `engineering/releases/v0.12.4.html` (12)
@@ -145,8 +146,10 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `admin/notes/2026-11-14__ten-days-series/catalogue.md` (9)
 - `assets/pen/identity.js` (9)
 - `engineering/releases/v0.13.64.html` (9)
+- `publishers/versions/index.html` (9)
 - `team/newsroom-reviews.html` (9)
 - `articles/summaries/a-pen-and-a-key.json` (8)
+- `articles/summaries/versioned-api-sites.json` (8)
 - `assets/site.css` (8)
 - `databases/index.html` (8)
 - `engineering/issues.json` (8)
@@ -154,6 +157,3 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/releases/v0.12.10.html` (8)
 - `engineering/releases/v0.12.25.html` (8)
 - `engineering/releases/v0.12.49.html` (8)
-- `engineering/releases/v0.12.60.html` (8)
-- `reviews/vaults.html` (8)
-- `sections/building/index.html` (8)

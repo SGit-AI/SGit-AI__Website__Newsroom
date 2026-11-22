@@ -1,0 +1,153 @@
+{
+  "slug": "maintaining-the-core-platforms",
+  "teaser": "Every project should budget for maintaining the platforms it runs on, sized to it and visible monthly; a month of php2shell data shows the gap.",
+  "topics": [
+    "startups-and-strategy"
+  ],
+  "core_idea": "Maintaining the core open source platforms should be a recurring, proportional cost item in every project's own budget, paid to people connected to the code and visible as work every month, with its absence a named risk; the NCSC-NL php2shell inventory four weeks on shows 543 of 976 entries with no fix or clean status.",
+  "nodes": [
+    {
+      "id": "line",
+      "label": "The cost item",
+      "kind": "concept",
+      "summary": "A line in every project budget."
+    },
+    {
+      "id": "proportional",
+      "label": "In proportion",
+      "kind": "method",
+      "summary": "Sized to the project's spend."
+    },
+    {
+      "id": "monthly",
+      "label": "Value every month",
+      "kind": "claim",
+      "summary": "Never insurance."
+    },
+    {
+      "id": "risk",
+      "label": "A named risk",
+      "kind": "method",
+      "summary": "Absence in the register."
+    },
+    {
+      "id": "inventory",
+      "label": "NCSC-NL inventory",
+      "kind": "artefact",
+      "summary": "976 entries, four weeks on."
+    },
+    {
+      "id": "vulnerable",
+      "label": "211 still vulnerable",
+      "kind": "example",
+      "summary": "221 on 23 October."
+    },
+    {
+      "id": "runtime",
+      "label": "240 runtime-dependent",
+      "kind": "example",
+      "summary": "Whoever runs PHP answers for it."
+    },
+    {
+      "id": "pledge",
+      "label": "Open Source Pledge",
+      "kind": "example",
+      "summary": "Per developer, not per project."
+    },
+    {
+      "id": "chain",
+      "label": "Down the chain",
+      "kind": "concept",
+      "summary": "Maintainers paid to help build on top."
+    }
+  ],
+  "edges": [
+    {
+      "from": "proportional",
+      "to": "line",
+      "rel": "extends"
+    },
+    {
+      "from": "monthly",
+      "to": "line",
+      "rel": "extends"
+    },
+    {
+      "from": "risk",
+      "to": "line",
+      "rel": "depends-on"
+    },
+    {
+      "from": "inventory",
+      "to": "risk",
+      "rel": "produces"
+    },
+    {
+      "from": "vulnerable",
+      "to": "inventory",
+      "rel": "example-of"
+    },
+    {
+      "from": "runtime",
+      "to": "inventory",
+      "rel": "example-of"
+    },
+    {
+      "from": "pledge",
+      "to": "line",
+      "rel": "contrasts"
+    },
+    {
+      "from": "line",
+      "to": "chain",
+      "rel": "leads-to"
+    },
+    {
+      "from": "runtime",
+      "to": "line",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "who-maintains-the-php-you-run",
+      "the-maintenance-deficit-with-evidence"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "Each is a different way of saying that nobody was paid to know.",
+      "why": "This article."
+    },
+    {
+      "text": "This is the line I am proposing, already being paid in risk.",
+      "why": "This article."
+    },
+    {
+      "text": "A flat sponsorship from a central budget does not move when one project doubles; a line inside the project does.",
+      "why": "This article."
+    }
+  ],
+  "figures": [
+    {
+      "file": "cpl-inventory.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cpl-inventory.webp",
+      "caption": "The NCSC-NL php2shell inventory by status, one commit a week from 23 October to 19 November 2026.",
+      "kind": "chart"
+    },
+    {
+      "file": "cpl-missing.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cpl-missing.webp",
+      "caption": "The 543 inventory entries with neither a fix recorded nor a not-vulnerable status, in three kinds.",
+      "kind": "concept"
+    },
+    {
+      "file": "cpl-line.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cpl-line.webp",
+      "caption": "What the line for maintaining a core platform would hold, against insurance, one-off audits and donations.",
+      "kind": "concept"
+    }
+  ]
+}

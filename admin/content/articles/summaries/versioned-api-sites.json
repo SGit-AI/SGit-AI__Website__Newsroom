@@ -1,0 +1,56 @@
+{
+ "slug": "versioned-api-sites",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "Three API hosts follow the rule; all 296 live files match their manifests; the docs and the newsroom's own copies are where it did not reach.",
+   "para": "Every release a complete copy at its own path, never edited, with a manifest of hashes. Checked from outside on 22 November: 296 files, no mismatch. Two gaps: a version bump broke two explaining pages on api.send.sgit.ai, and 9 of the newsroom's copies have moved on from its last API release.",
+   "hash": "9b0d4d235504"
+  },
+  "in-short": {
+   "line": "The rule, three hosts, every file matching, a cheap copy, two gaps, and no release since 20 October.",
+   "para": "Seven points: the rule, the hosts, the check, the cost, the documentation gap, the newsroom's drift, and a month without a new release.",
+   "hash": "bba91494916a"
+  },
+  "rule": {
+   "line": "A release is a directory at its own path, a complete copy, never edited, with every hash; a site pins one.",
+   "para": "The rule as api.send.sgit.ai wrote it on 20 October: whole copies instead of IFD's overlays, a manifest the gate recomputes, a live check after each deploy, and a one-line pin, or a copy into the site's own origin for pages that hold keys.",
+   "hash": "e03828f45178"
+  },
+  "hosts": {
+   "line": "api.newsroom.sgit.ai has three releases, api.send.sgit.ai two, api.storyboards.sgit.ai one; the user and billing hosts are still proposals.",
+   "para": "What each host serves, its releases and sizes, and how storyboards differs: nested IFD-style paths and an integrity string per file.",
+   "hash": "01df4f01c3ae"
+  },
+  "checked": {
+   "line": "All 296 live files of six releases match their manifests; api.send.sgit.ai's v0.1.0 has not been edited, and v0.1.1 is a whole copy.",
+   "para": "How the check was done, its result (3,984,539 bytes, no mismatch), the git history of api.send.sgit.ai, and why 15 of its 36 files differ between releases.",
+   "hash": "6cc4e61041a3"
+  },
+  "docs": {
+   "line": "A blanket version bump made api.send.sgit.ai's versioning and release pages say v0.1.1 starts as a copy of v0.1.1.",
+   "para": "The pages around a release are not under the rule; the commit that made v0.1.1 replaced the old version number in two passages, and the release checklist now copies a directory into itself.",
+   "hash": "7b719cdc5c00"
+  },
+  "drift": {
+   "line": "The newsroom serves its own copies; 9 of the 74 files of api.newsroom.sgit.ai v0.2.5 were edited in the newsroom since, with no new release.",
+   "para": "61 files identical, 4 changed by the move as the manifest lists, and 9 edited after the commit the release was cut from, between 15 October and 13 November.",
+   "hash": "6db6fcd07a8c"
+  },
+  "month": {
+   "line": "The rule held inside releases; the risk is at their edges. Two proposed checks would close the gaps.",
+   "para": "No host has cut a release since 20 October, so the fix-in-each-release and major-consolidation parts are untested. Proposed: put the explaining pages under the gate, and have the newsroom compare its copies with its pinned release.",
+   "hash": "dc9cc71d9518"
+  },
+  "limits": {
+   "line": "Hashes prove bytes, not correctness; one day's check; the find-and-replace is a reading of a diff; our own interest.",
+   "para": "Five limits on what the check and the history show.",
+   "hash": "729dacf6d43b"
+  },
+  "sources": {
+   "line": "The api.send.sgit.ai pages, every manifest and file on three hosts, the Send API repository, and this repository, read on 22 November 2026.",
+   "para": "Read and checked by newsroom.d (writer-11).",
+   "hash": "f9dd4c82d0c8"
+  }
+ }
+}

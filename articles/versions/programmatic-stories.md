@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-11-21 | minor | 1,511 | +44 / −0 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](programmatic-stories/v1.1.0.md) · [current](../programmatic-stories.md) |
+| **v1.1.0** | 2026-11-21 | minor | 1,511 | +44 / −0 words; 2 changed, 0 added, 0 removed paragraphs | [`d23660f3c`](https://github.com/SGit-AI/SGit-AI__Website/commit/d23660f3ceeae9a12b173e062b571f1248f87612) | [what changed](programmatic-stories/v1.1.0.md) · [current](../programmatic-stories.md) |
 | **v1.0.0** | 2026-11-21 | published | 1,467 | first published | [`3461402b2`](https://github.com/SGit-AI/SGit-AI__Website/commit/3461402b21753b8257dd595fb838ddb0822a45d2) |  |
 
 [← Back to the article](../programmatic-stories.md) · [All articles](../index.md)
