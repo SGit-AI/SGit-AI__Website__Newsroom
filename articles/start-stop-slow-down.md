@@ -91,6 +91,10 @@ Agents & policy[This article as a graph →](graphs.md#start-stop-slow-down)
 - [Sovereignty you can move: why where your data is hosted is not sovereignty, why being able to move the site, the data and the schema is, why that makes the website cell a direct competitor to Wix, Squarespace and Fliplet with a proper sovereign offer, European-aligned, multilingual and privacy-first, and the business that other companies can build on it](sovereignty-you-can-move.md) Sovereignty is being able to move your site, data and schema, not where it is hosted; the website cell as a sovereign competitor.
 - [PrompTugal.news, the newsroom we ran at Web Summit: desks of agents that captured, mapped, wrote and reviewed 73 signed articles in ten days, an accountant that counted every run, and fifty outreach drafts that no agent was allowed to send](promptugal-news-the-newsroom-we-ran.md) PrompTugal.news: 73 signed articles in ten days from desks of agents, a reviewer for every draft, and fifty outreach drafts no agent could send.
 
+### Continued by
+
+- [A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people](a-holacracy-of-agents.md) My agents already run close to a holacracy: roles in files, conductors as circle leads, a new agent keeping the record, and only me to ratify.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 529 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=529)

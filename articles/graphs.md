@@ -14,13 +14,40 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-531 of 531 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+532 of 532 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-531 articles, 2738 links between them (4428 mentions in all). 469 articles cite an earlier one; 135 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (42 articles link to it). Most linking: [Always-on agents at team scale](#always-on-agents-at-team-scale) (22 links out). 24 articles not yet linked either way.
+532 articles, 2739 links between them (4429 mentions in all). 470 articles cite an earlier one; 135 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (42 articles link to it). Most linking: [Always-on agents at team scale](#always-on-agents-at-team-scale) (22 links out). 24 articles not yet linked either way.
+
+## [A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people](a-holacracy-of-agents.md)
+
+2026-11-22 · Agents & policy
+
+Holacracy's structure of roles, domains, accountabilities and circles already matches how the agent teams run in files; the missing record of governance and Circle Rep are now one agent's job, which proposes while one person ratifies, and the rules that tire people cost agents only tokens.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 9 edges**
+
+- **Holacracy** (concept) Roles, not people.
+- **The part-by-part match** (claim) 10 strong, 4 partial, 2 missing.
+- **The governance record** (artefact) org-chart.json.
+- **holacracy.d** (example) Keeps the record, writes proposals.
+- **One person ratifies** (method) The control.
+- **Twins** (example) One role, two fillers.
+- **Sites and hub report outside their circle** (example) Proposal 03.
+- **Spend per role** (claim) $93.07 at one moment.
+- **Rules suit software** (claim) Agents do not tire.
+
+> a capacity, potential, or goal that the Role will pursue or express Holacracy Constitution v5.0.
+
+> nearly 20% of Zappos' employees have left the company Fortune, 25 January 2016.
+
+builds on [Start, stop, slow down: how I run a large team of agents and keep my hand on the brake, 8,027 commits in eighteen days, a big stop, a hand brake, 560 wakes a day cut to 76 with one sentence, 39 schedules changed in 30 seconds, three warnings from the seven-day limit handled, and 34 agents moved to a completely separate account in four hours, which is what sovereignty and resilience look like in practice](#start-stop-slow-down).
 
 ## [Versioned API sites, a month on: every release a complete copy that is never edited, 296 live files checked against their hashes, and the two places the rule did not reach](versioned-api-sites.md)
 
@@ -146,7 +173,7 @@ Controlling an agent team means being able to stop, brake, slow and restart it, 
 
 > We don't need hourly updates. Dinis, 19 November.
 
-builds on [The cost of your agents: a RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](#the-cost-of-your-agents), [Feature behaviour policies: taking the idea of agent behaviour policies down to every feature, bug fix and resource, so that a feature's policy is also its description, what changed is the difference between two policies, the gap between what a resource can do and what a feature needs is where the vulnerabilities live, and signed policies travelling with each request make a bug or an attack a path that was never supposed to exist](#feature-behaviour-policies), [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](#agents-have-an-identity-now), [Sovereignty you can move: why where your data is hosted is not sovereignty, why being able to move the site, the data and the schema is, why that makes the website cell a direct competitor to Wix, Squarespace and Fliplet with a proper sovereign offer, European-aligned, multilingual and privacy-first, and the business that other companies can build on it](#sovereignty-you-can-move), [PrompTugal.news, the newsroom we ran at Web Summit: desks of agents that captured, mapped, wrote and reviewed 73 signed articles in ten days, an accountant that counted every run, and fifty outreach drafts that no agent was allowed to send](#promptugal-news-the-newsroom-we-ran).
+builds on [The cost of your agents: a RiskMandate partner integration, where a company that reads agent logs and token spend meets the behaviour policy that says what each agent is for, and together they can say whether the spend is right](#the-cost-of-your-agents), [Feature behaviour policies: taking the idea of agent behaviour policies down to every feature, bug fix and resource, so that a feature's policy is also its description, what changed is the difference between two policies, the gap between what a resource can do and what a feature needs is where the vulnerabilities live, and signed policies travelling with each request make a bug or an attack a path that was never supposed to exist](#feature-behaviour-policies), [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](#agents-have-an-identity-now), [Sovereignty you can move: why where your data is hosted is not sovereignty, why being able to move the site, the data and the schema is, why that makes the website cell a direct competitor to Wix, Squarespace and Fliplet with a proper sovereign offer, European-aligned, multilingual and privacy-first, and the business that other companies can build on it](#sovereignty-you-can-move), [PrompTugal.news, the newsroom we ran at Web Summit: desks of agents that captured, mapped, wrote and reviewed 73 signed articles in ten days, an accountant that counted every run, and fifty outreach drafts that no agent was allowed to send](#promptugal-news-the-newsroom-we-ran); continued by [A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people](#a-holacracy-of-agents).
 
 ## [Person Graph: one picture of what we have been building, people and their agents with their own keys and repositories, links that count only both ways, kinds of link from "real" to "vouch to hire", groups as centres of gravity, countersigned claims, anonymous personas, a check for re-identification, all done through each person's own Claude, with mock-ups of the site and a simulation of 150 people and 40 fake accounts that shows why two-way links make bad actors cheap to spot](person-graph.md)
 

@@ -4,24 +4,25 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.206 · 531 articles since 2026-08-17; the newest is 2026-11-22. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 532 articles since 2026-08-17; the newest is 2026-11-22. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Versioned API sites, a month on: every release a complete copy that is never edited, 296 live files checked against their hashes, and the two places the rule did not reach](articles/versioned-api-sites.md), 2026-11-22, 10 min. Three API hosts, 296 live files matching their manifests, and two places the never-edit rule did not reach: the docs and the newsroom's own copies.
+- [A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people](articles/a-holacracy-of-agents.md), 2026-11-22, 9 min. My agents already run close to a holacracy: roles in files, conductors as circle leads, a new agent keeping the record, and only me to ratify.
 
 ## Five more
 
+- [Versioned API sites, a month on: every release a complete copy that is never edited, 296 live files checked against their hashes, and the two places the rule did not reach](articles/versioned-api-sites.md), Engineering this newsroom, 2026-11-22, 10 min.
 - [Maintaining the core platforms as a cost item in every project: a line sized to the project, delivering something every month, and what four weeks of php2shell data say happens without it](articles/maintaining-the-core-platforms.md), Startups & strategy, 2026-11-22, 9 min.
 - [The primitives of trust: why a web of trust between people works now when my earlier attempts at a key store did not, a site per person, keys made in browsers and in agent sessions, signing and following links done by an engine the user never sees, links that only count from the other side, kinds and provenance that can be confirmed, schemas each owner defines, and why it is easy to game one node and hard to game them all](articles/the-primitives-of-trust.md), Startups & strategy, 2026-11-21, 5 min.
 - [Programmatic stories: how the PrompTugal bulletins went from a 30-second text bulletin to twelve synthetic presenters on one 3D stage in two days, movies made by code instead of rendered by hand, every frame a function of time and data, what that makes possible, from live data and real voices to an animated summary for every article, the story of how Vicky Wang ran her agents, a morning briefing I would actually watch, and an invitation to filmmakers](articles/programmatic-stories.md), Startups & strategy, 2026-11-21, 6 min.
 - [Start, stop, slow down: how I run a large team of agents and keep my hand on the brake, 8,027 commits in eighteen days, a big stop, a hand brake, 560 wakes a day cut to 76 with one sentence, 39 schedules changed in 30 seconds, three warnings from the seven-day limit handled, and 34 agents moved to a completely separate account in four hours, which is what sovereignty and resilience look like in practice](articles/start-stop-slow-down.md), Startups & strategy, 2026-11-21, 5 min.
-- [Person Graph: one picture of what we have been building, people and their agents with their own keys and repositories, links that count only both ways, kinds of link from "real" to "vouch to hire", groups as centres of gravity, countersigned claims, anonymous personas, a check for re-identification, all done through each person's own Claude, with mock-ups of the site and a simulation of 150 people and 40 fake accounts that shows why two-way links make bad actors cheap to spot](articles/person-graph.md), Startups & strategy, 2026-11-21, 6 min.
 
 ## The last five days
 
-### Sunday 22 November 2026 (2 articles)
+### Sunday 22 November 2026 (3 articles)
 
+- Working with agents: [A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people](articles/a-holacracy-of-agents.md), 9 min.
 - Engineering this newsroom: [Versioned API sites, a month on: every release a complete copy that is never edited, 296 live files checked against their hashes, and the two places the rule did not reach](articles/versioned-api-sites.md), 10 min.
 - Startups & strategy: [Maintaining the core platforms as a cost item in every project: a line sized to the project, delivering something every month, and what four weeks of php2shell data say happens without it](articles/maintaining-the-core-platforms.md), 9 min.
 
@@ -115,13 +116,13 @@ What an agent may do, who carries the risk, and how a policy is enforced: RiskMa
 - [The email agentic cell: why connecting Gmail to agents the usual way is a security mess, and the architecture we will build instead, with one gateway agent that alone touches Gmail, a digital twin of the mailbox in a vault that people and agents work on together, signed proposals, approvals and even reads on append lanes, and behaviour policies at five altitudes](articles/the-email-agentic-cell.md), 2026-11-16.
 - [Our workflow on Odoo 20, built and measured: a bills agent with no Odoo credential, a policy check that allowed two proposals and stopped three, a signed approval, a narrow broker, a grant measured from Odoo itself by a new module, and what Odoo's default user role quietly allows](articles/our-workflow-on-odoo-20.md), 2026-11-16.
 
-### [Working with agents](sections/agents/index.md) (67)
+### [Working with agents](sections/agents/index.md) (68)
 Agent teams in practice: how they run, what they remember, where they go wrong, and the workflows that work.
+- [A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people](articles/a-holacracy-of-agents.md), 2026-11-22.
 - [Agents rating agents: GAMMA-Ray, the draft standard eight agents built at Web Summit to rate an AI agent on its freedom and its governance from public evidence, joining eight instruments into 21 questions, with a review workflow where no agent marks its own work, twenty company cards kept at direct links, and every card honestly marked Draft](articles/agents-rating-agents.md), 2026-11-17.
 - [Who hands out the work? A reply to Markus Franz on Ippen's editorial team of agents, with our answer from six people and around 250 agents at Web Summit and from this newsroom, a person sets the work, one conductor agent hands it out, specialists and a reviewer do it, and a person decides what goes out, plus one thing we would add to one front door, a way to close it](articles/who-hands-out-the-work.md), 2026-11-17.
 - [Five primitives, one store: a reply to Andy Goundry on Anthropic's always-on agents guide, why the inbox, timers, memory, permissions and outbox can share one versioned, signed store, how every AgentiCCells cell will ship with all five, and the levels we have added on top, all in public repositories](articles/five-primitives-one-store.md), 2026-11-16.
 - [Stopping a hundred agents: the Big Stop, the hand brake and the final hold at Web Summit, why pausing took seconds but hearing the order took up to an hour, what kept running anyway, and why a stop has to be a file every agent reads first](articles/stopping-a-hundred-agents.md), 2026-11-16.
-- [Specialist agents for every team: long-lived agents that keep one skill, design, UX, code, security, behaviour policies or writing, with a person who owns it, so that new teams start from our best work instead of from scratch, and why that makes expertise that never scaled into something you can hire, even from another company](articles/specialist-agents-for-every-team.md), 2026-11-16.
 
 ### [sgit & vaults](sections/vaults/index.md) (41)
 Encrypted, versioned vaults: sgit, keys and PKI, secrets, publishing from a vault, and what it does that Git does not.

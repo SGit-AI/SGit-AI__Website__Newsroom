@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-22 | published | 2,278 | first published | this release | [current](../maintaining-the-core-platforms.md) |
+| **v1.0.0** | 2026-11-22 | published | 2,278 | first published | [`0584f8f4b`](https://github.com/SGit-AI/SGit-AI__Website/commit/0584f8f4bbb5f689a275fa96d9c7fd4a8e911e90) | [current](../maintaining-the-core-platforms.md) |
 
 [← Back to the article](../maintaining-the-core-platforms.md) · [All articles](../index.md)
 

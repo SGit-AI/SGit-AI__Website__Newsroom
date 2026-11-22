@@ -1,0 +1,158 @@
+{
+  "slug": "a-holacracy-of-agents",
+  "teaser": "My agents already run close to a holacracy: roles in files, conductors as circle leads, a new agent keeping the record, and only me to ratify.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Holacracy's structure of roles, domains, accountabilities and circles already matches how the agent teams run in files; the missing record of governance and Circle Rep are now one agent's job, which proposes while one person ratifies, and the rules that tire people cost agents only tokens.",
+  "nodes": [
+    {
+      "id": "holacracy",
+      "label": "Holacracy",
+      "kind": "concept",
+      "summary": "Roles, not people."
+    },
+    {
+      "id": "mapping",
+      "label": "The part-by-part match",
+      "kind": "claim",
+      "summary": "10 strong, 4 partial, 2 missing."
+    },
+    {
+      "id": "record",
+      "label": "The governance record",
+      "kind": "artefact",
+      "summary": "org-chart.json."
+    },
+    {
+      "id": "agent",
+      "label": "holacracy.d",
+      "kind": "example",
+      "summary": "Keeps the record, writes proposals."
+    },
+    {
+      "id": "ratify",
+      "label": "One person ratifies",
+      "kind": "method",
+      "summary": "The control."
+    },
+    {
+      "id": "twins",
+      "label": "Twins",
+      "kind": "example",
+      "summary": "One role, two fillers."
+    },
+    {
+      "id": "tension",
+      "label": "Sites and hub report outside their circle",
+      "kind": "example",
+      "summary": "Proposal 03."
+    },
+    {
+      "id": "cost",
+      "label": "Spend per role",
+      "kind": "claim",
+      "summary": "$93.07 at one moment."
+    },
+    {
+      "id": "software",
+      "label": "Rules suit software",
+      "kind": "claim",
+      "summary": "Agents do not tire."
+    }
+  ],
+  "edges": [
+    {
+      "from": "mapping",
+      "to": "holacracy",
+      "rel": "depends-on"
+    },
+    {
+      "from": "agent",
+      "to": "record",
+      "rel": "produces"
+    },
+    {
+      "from": "record",
+      "to": "tension",
+      "rel": "produces"
+    },
+    {
+      "from": "ratify",
+      "to": "agent",
+      "rel": "contrasts"
+    },
+    {
+      "from": "twins",
+      "to": "holacracy",
+      "rel": "example-of"
+    },
+    {
+      "from": "record",
+      "to": "cost",
+      "rel": "produces"
+    },
+    {
+      "from": "software",
+      "to": "holacracy",
+      "rel": "answers"
+    },
+    {
+      "from": "mapping",
+      "to": "agent",
+      "rel": "leads-to"
+    },
+    {
+      "from": "tension",
+      "to": "ratify",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "start-stop-slow-down"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "a capacity, potential, or goal that the Role will pursue or express",
+      "why": "Holacracy Constitution v5.0."
+    },
+    {
+      "text": "nearly 20% of Zappos' employees have left the company",
+      "why": "Fortune, 25 January 2016."
+    },
+    {
+      "text": "Agents do not tire of rules.",
+      "why": "This article."
+    }
+  ],
+  "figures": [
+    {
+      "file": "hol-mapping.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hol-mapping.webp",
+      "caption": "Holacracy's parts matched against how the agents work: 10 strong, 4 partial, 2 missing.",
+      "kind": "comparison"
+    },
+    {
+      "file": "hol-twins.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hol-twins.webp",
+      "caption": "A twin is one role filled on two accounts; holacracy.d's first five proposals, all open.",
+      "kind": "concept"
+    },
+    {
+      "file": "hol-circles.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hol-circles.webp",
+      "caption": "Account D's 15 sessions in their circles, under the one person who ratifies.",
+      "kind": "diagram"
+    },
+    {
+      "file": "hol-cost.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hol-cost.webp",
+      "caption": "API-equivalent spend per session on account D at one moment, 03:58 UTC on 22 November.",
+      "kind": "chart"
+    }
+  ]
+}

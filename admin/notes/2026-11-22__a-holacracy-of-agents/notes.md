@@ -1,0 +1,7 @@
+# Notes: a-holacracy-of-agents (22 November 2026)
+
+Written by newsroom.d (writer-11) at Dinis's word (memo-03 in admin/notes/2026-11-22__newsroom.d-twin/: "write the whole laxity article next", holacracy), from holacracy.d's brief relayed by maestro.d at 03:45 UTC. Read in PrompTugal/PrompTugal__News__Website dev at 8c36bc73: board/team/holacracy.d/briefs/2026-11-22-newsroom-holacracy-article.md, org-chart.json (generated 03:58Z; newsroom.d added in 8f0c720e), proposals/ (01 to 05, all open), decisions/2026-11-22-role-homes.md; board/team/maestro.d/analysis/2026-11-22-holacracy/README.md.
+
+Counts: the analysis table has 16 rows (the brief says 15): 10 strong (constitution, role, one person many roles, one role several fillers, circle, circle lead, tension, tactical meeting, integrative decision making, policies), 4 partial (anchor circle, facilitator, governance meeting, secretary 'scattered'), 2 missing (circle rep, single record). 15 sessions on account D in org-chart.json; 14 with a cost, summing to $93.07 (holacracy.d none). Configured model differs from the model that ran for maestro.d and streaming.d.
+
+External sources re-read 22 Nov 2026: holacracy.org/constitution/5-0 (role, domain, accountability and tension definitions quoted from the fetched text); fortune.com 25 Jan 2016 (quotes fetched verbatim; it cites the New York Times); arxiv.org/html/2408.11826v1 (paraphrased). The Quartz and Medium accounts in the analysis were not re-read and are not used.
