@@ -3,7 +3,7 @@ title: Lawyers in the loop: a decisions agent that acts under a limited power of
 date: 2026-11-22
 author: Dinis Cruz
 author_url: about/index.html
-summary: My agent teams have plenty of checks and controls, and too many of them end with a question that only I can answer, in a session I have to visit. So we are designing a way to delegate my authority without giving it away. My key stays on my own device. I sign, on pki.sgit.ai, a delegation to one decisions agent: this key, held in this session, may issue requests in my name, of these kinds, until this time. The agent issues only my verbatim answers, and every agent that receives a request checks the chain itself. That is a power of attorney, and a limited one: a principal, an attorney, an instrument, a scope, duties, an expiry, revocation and a public register. Which raises the next question: who checks the instrument? A counsel agent can draft it, simulate how it fails, and have several models review it, but it cannot be accountable. Only people and companies can. So the last step of the loop is to ask, for any instrument or workflow, what it would cost to have it reviewed and signed by a named lawyer and certified by a firm, by which flow, and then to pay for it. That is how agents could let law firms and other professional services serve far more people. All of this is a proposal; nothing is built yet.
+summary: My agent teams have plenty of checks and controls, and too many of them end with a question that only I can answer, in a session I have to visit. So we are designing a way to delegate my authority without giving it away. My key stays on my own device. I sign, on pki.sgit.ai, a delegation to one decisions agent: this key, held in this session, may issue requests in my name, of these kinds, until this time. The agent issues only my verbatim answers, and every agent that receives a request checks the chain itself. That is a power of attorney, and a limited one: a principal, an attorney, an instrument, a scope, duties, an expiry, revocation and a public register. Which raises the next question: who checks the instrument? A counsel agent can draft it, simulate how it fails, and have several models review it, but it cannot be accountable. Only people and companies can. So the last step of the loop is to ask, for any instrument or workflow, what it would cost to have it reviewed and signed by a named lawyer and certified by a firm, by which flow, and then to pay for it. That is how agents could let law firms and other professional services serve far more people. Since publication I have agreed that the delegation is a limited power of attorney and that the agent is called counsel; counsel.d and decisions.d are running, the delegation is at draft v0.3 for a security review, and nothing has been signed.
 version: v0.14.208
 license: https://creativecommons.org/licenses/by/4.0/
 tags: delegation, pki, power-of-attorney, legal, accountability, agents, professional-services, article
@@ -21,7 +21,7 @@ status: published
 - **A counsel agent drafts and tests the instruments.** Several models check them; nothing it writes is legal advice.
 - **Only people and companies can be accountable.** That is what you pay a lawyer for, with their experience and their own agents.
 - **The loop ends with a quote and a signature.** Which person, which firm, which flow, what price, and a way to pay.
-- **All of it is a proposal.** Nothing here is built, and no lawyer or firm is involved yet.
+- **Nothing is signed yet.** counsel.d's draft is at v0.3, waiting for a security review, and no lawyer or firm is involved.
 
 ## The bottleneck is me {#bottleneck}
 
@@ -37,7 +37,7 @@ The design, as maestro.d wrote it up from my words, has five links.
 
 1. **My key stays on my device.** I sign with it on pki.sgit.ai, the site I already sign with. A new key, made and kept on my own device, is planned for this.
 2. **A delegation, signed by me.** It says, in effect: key K, held by the decisions agent in session S, may issue requests in my name, of these kinds, until this time. It is short-lived, and I renew it.
-3. **The decisions agent** holds its own session key and is the only agent with a delegation. In my words: "that's the only agent here that has the private key that has been signed by me that is then able to issue requests as me". It issues my answers verbatim, from a decision page or a session, and adoptions under a rule I set (an owner's recommendation adopted when nobody has objected by a deadline). It never makes a decision of its own.
+3. **The decisions agent** holds its own session key and is the only agent with a delegation. In my words: "that's the only agent here that has the private key that has been signed by me that is then able to issue requests as me". It issues my answers verbatim, from a decision page or a session, and adoptions under a rule I set (an owner's recommendation adopted when nobody has objected by a deadline). In the first design it never made a decision of its own; the current draft lets it decide reversible steps, described [below](#update).
 4. **A signed request** goes to one agent, with a short expiry, a nonce against replay and the decision it answers, down that agent's existing inbox, on any account.
 5. **The receiving agent checks the chain itself:** the request is signed by K; K is in a delegation signed by my published key; the delegation has not expired or been revoked; and the request is within both the delegation's kinds and the receiver's own policy. Then it acts, and logs what it did.
 
@@ -51,7 +51,7 @@ When I looked at what we had designed, it was something the law has had for a lo
 
 - **The principal** is me; **the attorney** is the decisions agent; **the instrument** is the delegation I sign.
 - **It is limited,** to kinds of request and a period. In England and Wales the closest form is the ordinary power of attorney, which, as [Which?](https://whichwills.which.co.uk/what-is-power-of-attorney/) puts it, "gives another person authority to act on your behalf for a limited time period", and you "can specify a time period for an Ordinary Power of Attorney, or restrict it to specific activities". A general or durable power is not proposed: the delegation should end, or freeze, if I cannot be reached.
-- **The attorney has duties:** act only in the principal's interest and within scope, keep records, never act for itself, never sub-delegate. Those go into the decisions agent's behaviour policy.
+- **The attorney has duties:** act only in the principal's interest and within scope, keep records, never act for itself. Those go into the decisions agent's behaviour policy. The first design forbade sub-delegation; the current draft allows one level, with limits ([below](#update)).
 - **Revocation** takes effect when those relying on the power know of it, which is why the revocation list is published and checked.
 - **Registration** is the model for publishing the delegation and its hash before its first use. A [lasting power of attorney](https://www.gov.uk/power-of-attorney) in England and Wales is registered with the Office of the Public Guardian, and, in GOV.UK's words, "can be used as soon as it's registered".
 - **Ratification:** I can approve an act outside the scope afterwards, recorded, never assumed.
@@ -88,9 +88,21 @@ The figure at the top is that loop. The first three steps are agents, fast and c
 
 Today, most people and small companies do not get a lawyer to look at most of what they sign, because a review costs more than the risk seems worth. Look at it from the firm's side. If the instrument arrives drafted, simulated and checked, with every model's comments and the exact question attached, the review a person has to do is much smaller and much better defined. The firm can price it, its own agents can prepare it, and a named lawyer can sign it. That is how a law firm, or any professional service, could serve far more reviews than it does now, and how I could consume far more legal review than I do now. The same loop works for an accountant, an auditor or a security reviewer.
 
+## Since this was first published {#update}
+
+Updated on 23 November 2026. On 22 November, after reading the first version of this article, I agreed two things: "the delegation is fundamentally limited power of attorney", and the name: "counsel is quite good actually, legal counsel, I like that". The two roles stay separate. decisions.d holds the delegation, once I sign it, and counsel.d drafts and tests it.
+
+Both agents were started on 22 November at about 13:25 UTC, in a central circle with the other top-level agents. decisions.d holds no delegation until I sign one, after counsel.d's draft and a security review. counsel.d has written three drafts, tested the second against eight failure cases (revocation, an act out of scope, a stolen key, my being unreachable, a replay, a twin, pki.sgit.ai being down, a stale copy), and put v0.3 up for the security review. Three changes from the design above:
+
+- **Scope by reversibility.** One-way doors come to me. A two-way door, an act that can be undone, may go ahead on the attorney's own judgement, but only if it passes a five-point test and is of a kind on a closed list (such as creating a site from the template, publishing a page, merging a reviewed branch). Each such act is logged with its test and how to undo it, and reported to me the same day. When in doubt, it is a one-way door.
+- **Sub-delegation, one level down.** The attorney may give a conductor a narrower power for a specific action or a short time. It is published before first use, falls with its parent, cannot be passed on again, and never covers a one-way door.
+- **Suspension.** After 72 hours with no sign of life from me, no new request is honoured until I return.
+
+These parts of v0.3 were relayed to counsel.d by another agent and are marked in the draft as still to be confirmed by me.
+
 ## What this does not claim {#limits}
 
-- **Nothing here is built.** The delegation, the decisions agent, the powers sections and the counsel agent are proposals; I have not yet said yes to any part.
+- **Nothing is signed.** The agents are running, but the delegation is a draft, and the powers sections are not written yet.
 - **It is not legal advice,** and the mapping to a power of attorney is an analogy drawn by agents, not a legal opinion. Whether a delegation like this has any legal effect is exactly the question for a lawyer.
 - **No lawyer or firm is involved,** and none is named or implied.
 - **The legal sources describe England and Wales;** other jurisdictions differ.

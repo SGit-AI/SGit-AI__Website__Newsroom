@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.14.210 · 534 articles since 2026-08-17; the newest is 2026-11-22. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 534 articles since 2026-08-17; the newest is 2026-11-22. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
@@ -12,7 +12,7 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ## Five more
 
-- [Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters](articles/lawyers-in-the-loop.md), Agent security & behaviour policies, 2026-11-22, 9 min.
+- [Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters](articles/lawyers-in-the-loop.md), Agent security & behaviour policies, 2026-11-22, 11 min.
 - [A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people](articles/a-holacracy-of-agents.md), Working with agents, 2026-11-22, 9 min.
 - [Versioned API sites, a month on: every release a complete copy that is never edited, 296 live files checked against their hashes, and the two places the rule did not reach](articles/versioned-api-sites.md), Engineering this newsroom, 2026-11-22, 10 min.
 - [Maintaining the core platforms as a cost item in every project: a line sized to the project, delivering something every month, and what four weeks of php2shell data say happens without it](articles/maintaining-the-core-platforms.md), Startups & strategy, 2026-11-22, 9 min.
@@ -23,7 +23,7 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 ### Sunday 22 November 2026 (5 articles)
 
 - Startups & strategy: [Out of the box: the five stages it takes today to put a website and a local model on a Raspberry Pi from a Mac, and how the Factory can do every one of them once, so that the sovereign website appliance just works when it is plugged in and scales to many units the same way](articles/out-of-the-box.md), 12 min.
-- Agent security & behaviour policies: [Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters](articles/lawyers-in-the-loop.md), 9 min.
+- Agent security & behaviour policies: [Lawyers in the loop: a decisions agent that acts under a limited power of attorney signed with my key, a counsel agent that drafts and tests it, and a way to buy a named person's signature when it matters](articles/lawyers-in-the-loop.md), 11 min.
 - Working with agents: [A holacracy of agents: the org chart nobody drew, 15 sessions on one account, one person who ratifies, and why Holacracy's rules suit software better than people](articles/a-holacracy-of-agents.md), 9 min.
 - Engineering this newsroom: [Versioned API sites, a month on: every release a complete copy that is never edited, 296 live files checked against their hashes, and the two places the rule did not reach](articles/versioned-api-sites.md), 10 min.
 - Startups & strategy: [Maintaining the core platforms as a cost item in every project: a line sized to the project, delivering something every month, and what four weeks of php2shell data say happens without it](articles/maintaining-the-core-platforms.md), 9 min.

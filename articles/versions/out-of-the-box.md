@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-11-22 | published | 3,054 | first published | this release | [current](../out-of-the-box.md) |
+| **v1.0.0** | 2026-11-22 | published | 3,054 | first published | [`d2593dd06`](https://github.com/SGit-AI/SGit-AI__Website/commit/d2593dd062c15e3e8d38a271174aa82313eddd4c) | [current](../out-of-the-box.md) |
 
 [← Back to the article](../out-of-the-box.md) · [All articles](../index.md)
 
