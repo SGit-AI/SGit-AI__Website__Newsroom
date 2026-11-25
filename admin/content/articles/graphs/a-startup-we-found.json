@@ -1,0 +1,30 @@
+{
+ "slug": "a-startup-we-found",
+ "teaser": "The Web Summit chasm made us zoom in to one thing: a £50 Sovereign Website, only possible because of the layers under it.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "A startup needs one small, cheap first thing to buy; the Sovereign Website is that thing, and it is only possible because behaviour policies, signed decisions, keys and a site factory make many agents safe and fast together.",
+ "nodes": [
+  {"id": "chasm", "label": "The chasm", "kind": "example", "summary": "No small first step."},
+  {"id": "saw", "label": "Sovereign Website", "kind": "concept", "summary": "£50 once, yours."},
+  {"id": "market", "label": "Own or rent", "kind": "example", "summary": "Eleven platforms."},
+  {"id": "abp", "label": "Behaviour policies", "kind": "concept", "summary": "Anything not listed is refused."},
+  {"id": "decisions", "label": "Signed decisions", "kind": "method", "summary": "Records agents check."},
+  {"id": "data", "label": "PrompTugal data", "kind": "example", "summary": "9 to 30 sources."}
+ ],
+ "edges": [
+  {"from": "saw", "to": "chasm", "rel": "answers"},
+  {"from": "market", "to": "saw", "rel": "compared-with"},
+  {"from": "saw", "to": "abp", "rel": "depends-on"},
+  {"from": "saw", "to": "decisions", "rel": "depends-on"},
+  {"from": "data", "to": "saw", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["the-way-in", "simple-on-top-of-years", "sovereign-agentic-website", "the-intersection", "sovereign-websites-the-investment-case"],
+  "pages": [],
+  "sites": ["https://sovereignwebsite.ai/", "https://strategy.agents.sovereignweb.site/accounts/b/market/"]
+ },
+ "quotes": [
+  {"text": "We didn't have a good way for them to come out of it and experiment and policy.", "why": "Dinis Cruz, on the Web Summit stand."},
+  {"text": "only Lovable says the same, and it is a tool for people who code.", "why": "The strategy agent's market page, 23 November 2026."}
+ ]
+}

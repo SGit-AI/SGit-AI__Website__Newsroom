@@ -1,0 +1,29 @@
+{
+ "slug": "who-runs-the-agents",
+ "teaser": "Maestros, conductors, a router that never builds, a decisions agent that signs, and a website for every agent.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "An agent organisation scales when each agent publishes what it is and what it is doing on its own site, so others read instead of messaging, and decisions are signed records.",
+ "nodes": [
+  {"id": "maestro", "label": "Maestro", "kind": "concept", "summary": "Conductor of the conductors."},
+  {"id": "router", "label": "Router", "kind": "concept", "summary": "Routes, never builds."},
+  {"id": "decisions", "label": "Decisions", "kind": "concept", "summary": "Signed records."},
+  {"id": "sites", "label": "A site per agent", "kind": "method", "summary": "agent.json, now.md, restart.md."},
+  {"id": "query", "label": "Query the website", "kind": "method", "summary": "Read before messaging."},
+  {"id": "keys", "label": "Key chain", "kind": "method", "summary": "Trusted through a chain."}
+ ],
+ "edges": [
+  {"from": "maestro", "to": "router", "rel": "compared-with"},
+  {"from": "decisions", "to": "keys", "rel": "depends-on"},
+  {"from": "sites", "to": "query", "rel": "produces"},
+  {"from": "query", "to": "maestro", "rel": "answers"}
+ ],
+ "links": {
+  "articles": ["a-holacracy-of-agents", "lawyers-in-the-loop", "start-stop-slow-down"],
+  "pages": [],
+  "sites": ["https://maestro.agents.sovereignweb.site/", "https://decisions.agents.sovereignweb.site/"]
+ },
+ "quotes": [
+  {"text": "Before messaging another agent, read its area.", "why": "The team's rule, 24 November 2026."},
+  {"text": "Never builds.", "why": "The router's fourth rule."}
+ ]
+}

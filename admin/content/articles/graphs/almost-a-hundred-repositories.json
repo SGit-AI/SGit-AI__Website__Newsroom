@@ -1,0 +1,30 @@
+{
+ "slug": "almost-a-hundred-repositories",
+ "teaser": "How a pipeline built as infrastructure as code turned a website into a request file, and made 97 repositories in under six days.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "When a pipeline can create a repository, its hosting and its address within a written list of allowed actions, a website becomes a commit and the person stops being the bottleneck.",
+ "nodes": [
+  {"id": "request", "label": "Request file", "kind": "concept", "summary": "site.json and a yes."},
+  {"id": "orgapply", "label": "Org apply", "kind": "method", "summary": "App token, checked plan."},
+  {"id": "dns", "label": "DNS apply", "kind": "method", "summary": "OIDC role, one record."},
+  {"id": "abp", "label": "Behaviour policy", "kind": "concept", "summary": "Anything not listed is refused."},
+  {"id": "explosion", "label": "97 repositories", "kind": "example", "summary": "Under six days."},
+  {"id": "ratelimit", "label": "Rate limit", "kind": "example", "summary": "What broke."}
+ ],
+ "edges": [
+  {"from": "request", "to": "orgapply", "rel": "leads-to"},
+  {"from": "orgapply", "to": "dns", "rel": "leads-to"},
+  {"from": "abp", "to": "orgapply", "rel": "depends-on"},
+  {"from": "orgapply", "to": "explosion", "rel": "produces"},
+  {"from": "explosion", "to": "ratelimit", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["the-site-factory-works", "the-showroom", "the-sgit-server-factory", "every-tool-its-own-website"],
+  "pages": [],
+  "sites": ["https://github.com/SovereignWebsite/SovereignWebsite__IaC", "https://hub.sovereignweb.site/"]
+ },
+ "quotes": [
+  {"text": "For tasks like this I should not be the bottleneck.", "why": "Dinis Cruz, 22 November 2026."},
+  {"text": "Nothing refused it. Only Dinis noticed.", "why": "The incident note, 22 November 2026."}
+ ]
+}

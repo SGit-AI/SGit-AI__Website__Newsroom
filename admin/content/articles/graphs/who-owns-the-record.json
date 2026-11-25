@@ -1,0 +1,28 @@
+{
+ "slug": "who-owns-the-record",
+ "teaser": "An answer to Nitin Pandya: a kill switch cannot stop a valid workflow acting on a tampered record; a signed mandate checked outside it can.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "When a valid workflow moves money on a tampered record, the missing control is a signed mandate for every change that can release money, checked by a verifier outside the workflow, which also answers who is accountable.",
+ "nodes": [
+  {"id": "record", "label": "Tampered record", "kind": "example", "summary": "A mule account in place of the borrower's."},
+  {"id": "kill", "label": "Kill switch", "kind": "concept", "summary": "Stops a model, not a workflow."},
+  {"id": "mandate", "label": "Signed mandate", "kind": "method", "summary": "Who, under which grant, what scope."},
+  {"id": "verifier", "label": "Outside verifier", "kind": "method", "summary": "Checks before release."},
+  {"id": "owner", "label": "Accountability", "kind": "concept", "summary": "The key that signed."}
+ ],
+ "edges": [
+  {"from": "kill", "to": "record", "rel": "contrasts"},
+  {"from": "mandate", "to": "record", "rel": "answers"},
+  {"from": "verifier", "to": "mandate", "rel": "depends-on"},
+  {"from": "mandate", "to": "owner", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["attacks-rewritten-as-mandates", "approved-business-mandates", "drift-is-the-mandate-moving", "a-policy-beside-the-prompt", "a-trusted-framework-for-agentic-finance"],
+  "pages": [],
+  "sites": ["https://www.medianama.com/2026/11/223-ai-hackers-approved-loans-nbfc/", "https://cyble.com/blog/crafty-falcon-ai-assisted-financial-threat-actor/"]
+ },
+ "quotes": [
+  {"text": "Nothing refused it. Only Dinis noticed.", "why": "Our incident note, 22 November 2026."},
+  {"text": "An agent acts only on a signed record that it has checked.", "why": "The decisions agent's site."}
+ ]
+}
